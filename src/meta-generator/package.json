@@ -1,0 +1,36 @@
+{
+    "name": "meta-generator",
+    "version": "1.0.1",
+    "description": "Vue typescript component documentation generator",
+    "private": true,
+    "author": "Charles Maheu <charles.maheu@dti.ulaval.ca>",
+    "files": [
+        "src/**/*.ts",
+        "dist"
+    ],
+    "main": "dist/main.js",
+    "bin": "./dist/main.js",
+    "license": "Apache-2.0",
+    "scripts": {
+        "clean": "rimraf dist",
+        "prepare": "yarn run clean && yarn run build",
+        "build": "tsc --project tsconfig.json",
+        "dev": "tsc --watch"
+    },
+    "devDependencies": {
+        "@types/jest": "^23.3.14",
+        "@types/lodash": "^4.14.136",
+        "@types/node": "^10.12.20",
+        "@types/webpack-env": "^1.13.6",
+        "copyfiles": "^1.2.0",
+        "node-html-parser": "^1.1.10",
+        "ts-morph": "^1.0.0",
+        "tslint": "^5.14.0",
+        "tslint-config-standard": "^8.0.1",
+        "typescript": "^3.2.2",
+        "typescript-tslint-plugin": "^0.3.0"
+    },
+    "dependencies": {
+        "lodash": "^4.17.15"
+    }
+}
