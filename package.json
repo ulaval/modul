@@ -1,0 +1,43 @@
+{
+    "name": "@ulaval/modul",
+    "version": "1.0.0",
+    "description": "modUL Vue.js component library",
+    "private": true,
+    "author": "Charles Maheu <charles.maheu@dti.ulaval.ca>",
+    "homepage": "https://ulaval.github.io/modul/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ulaval/modul-components.git"
+    },
+    "license": "Apache-2.0",
+    "workspaces": [
+        "packages/*",
+        "src/*"
+    ],
+    "scripts": {
+        "bootstrap": "lerna bootstrap",
+        "prepare": "lerna run --stream --sort prepare",
+        "lint": "lerna run --stream --sort lint",
+        "lint:ci": "lerna run --stream --sort lint",
+        "pretest": "lerna run --stream --sort prepare",
+        "test": "lerna run --stream --sort test",
+        "test:update": "lerna run --stream --sort test:update",
+        "print_version_win": "echo %npm_package_version%",
+        "print_version_nx": "echo $npm_package_version"
+    },
+    "devDependencies": {
+        "lerna": "^3.15.0",
+        "husky": "^1.3.1",
+        "rimraf": "^2.6.2"
+    },
+    "engines": {
+        "node": ">= 10.0.0",
+        "yarn": ">= 1.17.0"
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "node conf/hooks/commit-msg.js",
+            "prepare-commit-msg": "node conf/hooks/prepare-msg.js"
+        }
+    }
+}
