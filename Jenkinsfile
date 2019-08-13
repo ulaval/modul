@@ -28,14 +28,14 @@ pipeline {
 
             agent {
                 docker {
-                    image 'node:9.4.0'
+                    image 'node:10.15'
                 }
             }
 
             steps {
-                sh 'npm ci'
-                sh 'npm run buildWebpack'
-                // Probablement une étape de publish ici.
+                sh 'npm install -g yarn'
+                sh 'yarn install'
+                sh 'yarn bootstrap'
             }
         }
     }
@@ -50,14 +50,15 @@ pipeline {
 
             agent {
                 docker {
-                    image 'node:9.4.0'
+                    image 'node:10.15'
                 }
             }
 
             steps {
-                sh 'npm ci'
-                sh 'npm run buildWebpack'
-                sh 'npm run test'
+                sh 'npm install -g yarn'
+                sh 'yarn install'
+                sh 'yarn bootstrap'
+                sh 'yarn test'
             }
         }
     }
@@ -65,15 +66,15 @@ pipeline {
     post {
         changed {
             echo 'Build status changed'
-            step([$class: 'Mailer', recipients: ['martin.simard@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
+            step([$class: 'Mailer', recipients: ['charles.maheu@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
         }
         failure {
             echo 'Build failure'
-            step([$class: 'Mailer', recipients: ['martin.simard@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
+            step([$class: 'Mailer', recipients: ['charles.maheu@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
         }
         unstable {
             echo 'Build unstable'
-            step([$class: 'Mailer', recipients: ['martin.simard@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
+            step([$class: 'Mailer', recipients: ['charles.maheu@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
         }
     }
 }
