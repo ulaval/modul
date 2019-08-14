@@ -1,0 +1,47 @@
+pipeline {
+    agent {
+        docker {
+            image "docker-local.maven.ulaval.ca/ena2/ena2-openshift-client:18.10.16-1"
+            registryUrl 'https://docker-local.maven.ulaval.ca/v2'
+            registryCredentialsId 'artifactory-docker-registry-credentials'
+        }
+    }
+
+    environment {
+        token = credentials('openshift-ul-modul-dv01')
+        openshiftServer = 'https://console-pca.svc.ulaval.ca'
+        openshiftProject = 'ul-modul-dv01'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building branch ${branch}'
+
+                script {
+                    env.branch = env.BRANCH_NAME
+                    env.appName = env.branch.replace('/', '-').replace('_', '-').toLowerCase();
+                }
+
+                echo "BRANCH_NAME = ${env.BRANCH_NAME}"
+                echo "branch = ${branch}"
+                echo "appName = ${appName}"
+
+                script {
+                    try {
+                        // If application doesn't exist, create it
+                        sh("oc --server=${openshiftServer} --namespace=${openshiftProject} --token=${token} --certificate-authority=/ca-comodo.crt get route ${appName}")
+                        echo("Application ${appName} already exists.")
+
+                        echo("Starting build of ${appName}...")
+                        sh("oc --server=${openshiftServer} --namespace=${openshiftProject} --token=${token} --certificate-authority=/ca-comodo.crt start-build ${appName} --wait")
+                    } catch (e) {
+                        echo("The app does not exist on Openshift.")
+                        // echo "Application ${appName} doesn\'t exists. Creating the app..."
+                        // sh "oc new-app modul-components --server=${openshiftServer} -n=${openshiftProject} -p NAME=${appName} -p SOURCE_REPOSITORY_REF=${branch} -l app=${appName} --token=${token}"
+                    }
+                }
+            }
+        }
+    }
+}
