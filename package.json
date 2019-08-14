@@ -17,6 +17,7 @@
     "scripts": {
         "bootstrap": "lerna bootstrap",
         "prepare": "lerna run --stream --sort prepare",
+        "website": "lerna run dev --scope @ulaval/modul-website --stream",
         "lint": "lerna run --stream --sort lint",
         "lint:ci": "lerna run --stream --sort lint",
         "pretest": "lerna run --stream --sort prepare",

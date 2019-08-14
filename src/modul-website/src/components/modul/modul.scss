@@ -1,0 +1,9 @@
+@import '../../styles/commons';
+
+.modul-website {
+    background-color: $modul-color--black-grey;
+    display: grid;
+    min-height: 100vh;
+    height: 100%;
+    grid-template-rows: auto 1fr auto;
+}

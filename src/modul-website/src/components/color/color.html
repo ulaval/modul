@@ -1,0 +1,14 @@
+<div class="modul-color">
+    <div class="modul-color__header"
+         :style="{
+            'background': hex,
+            'color': textColor
+         }">
+        <p class="modul-color__name">{{ name }}</p>
+    </div>
+    <div class="modul-color__body">
+        <p class="modul-color__hex"><strong><m-i18n k="modul:hex"></m-i18n></strong>{{ hex }}</p>
+        <p class="modul-color__rgb"><strong><m-i18n k="modul:rgb"></m-i18n></strong>{{ rgb }}</p>
+        <p class="modul-color__cmyk"><strong><m-i18n k="modul:cmyk"></m-i18n></strong>{{ cmyk }}</p>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+@import '../../styles/commons';
+@import '../../styles/components/do-dont';
+
+.modul-dont {
+    border-color: $m-color--error;
+
+    &__header {
+        color: $m-color--error !important;
+    }
+
+    ul li::before {
+        @include m-triangle(right, $m-color--error, 10px);
+    }
+}

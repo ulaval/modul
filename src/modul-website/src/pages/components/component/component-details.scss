@@ -1,0 +1,32 @@
+@import '../../../styles/commons';
+
+.website-component-details {
+    width: 100%;
+
+    &__title {
+        margin-bottom: 32px;
+        text-transform: uppercase;
+    }
+
+    &__preview {
+        border-top: 1px solid black;
+        background-color: #f9f9f9;
+        padding: $m-padding--l $m-padding;
+
+        @media (min-width: $m-mq--min--s) {
+            padding: $m-padding--l $m-margin--l;
+        }
+    }
+
+    .modul-u--navbar {
+        padding: 0;
+
+        @media (min-width: $m-mq--min--s) {
+            padding: 0;
+        }
+    }
+
+    /deep/ .m-navbar-item__text {
+        text-transform: uppercase;
+    }
+}

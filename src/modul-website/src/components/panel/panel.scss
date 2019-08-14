@@ -1,0 +1,49 @@
+@import '../../styles/commons';
+
+$modul-menu--list-max-width: 300px;
+$modul-menu-offset-left: $m-padding--s + 2;
+$modul-menu-beta-width: 24px;
+$modul-menu-transition-duration: 0.7s;
+
+.mw-panel {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $modul-color--black-grey;
+    color: $modul-color--grey-light;
+    outline: none;
+    box-shadow: $m-box-shadow--l;
+
+    @media (min-width: #{$m-mq--min--xs}) {
+        top: 80px;
+    }
+
+    @media (min-width: #{$m-mq--min--s}) {
+        padding: $m-padding--xl $m-padding 0 $m-padding;
+    }
+
+    @media (min-width: #{$m-mq--min--l}) {
+        padding-left: $m-padding--xl*2;
+        padding-right: $m-padding--xl*2;
+    }
+
+    &.mw--is {
+        &-enter-active {
+            transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
+        }
+
+        &-leave-active {
+            transition: transform #{$modul-CSS_ANIMATION_MENU_DURATION} ease;
+        }
+
+        &-leave-active,
+        &-enter {
+            transform: translate3d(0, -102%, 0);
+        }
+    }
+}

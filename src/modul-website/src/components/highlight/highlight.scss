@@ -1,0 +1,12 @@
+@import '../../styles/commons';
+
+.modul-highlight {
+    margin: 0;
+    background: $modul-color--black-grey;
+
+    @include m-scrollbar();
+
+    .hljs {
+        max-height: none;
+    }
+}
