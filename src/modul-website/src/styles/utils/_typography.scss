@@ -1,0 +1,162 @@
+// ======================================================================
+//  Titles
+// ======================================================================
+
+.modul-u--h1,
+.modul-u--h2,
+.modul-u--h3,
+.modul-u--h4,
+.modul-u--h5,
+.modul-u--h6 {
+    color: $modul-color--black-grey-dark;
+    line-height: 1.2;
+}
+
+.modul-u--h4,
+.modul-u--h5,
+.modul-u--h6 {
+    font-size: 16px;
+    margin: $m-margin--l 0 0 0;
+}
+
+.modul-u--h1,
+.modul-u--h2 {
+    text-transform: uppercase;
+    font-weight: $m-font-weight--black;
+    font-size: 24px;
+}
+
+.modul-u--h1 {
+    margin: 0;
+}
+
+.modul-u--h2 {
+    margin: $m-padding--l 0 0 0;
+}
+
+.modul-u--h3 {
+    font-size: 22px;
+    margin: $m-padding--l 0 0 0;
+}
+
+.modul-u--h4 {
+    font-weight: $m-font-weight--black;
+}
+
+.modul-u--h5 {
+    font-weight: $m-font-weight--bold;
+}
+
+.modul-markdown {
+    > :first-child {
+        &,
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.modul-page-tab,
+.modul-component-overview {
+    ul:not([class]) {
+        margin: $m-margin 0 0 0;
+
+        @include m-bullet-list();
+    }
+
+    h1:not(.m-u--h1):not([class]),
+    h2:not(.m-u--h2):not([class]),
+    h3:not(.m-u--h3):not([class]),
+    h4:not(.m-u--h4):not([class]) {
+        color: $modul-color--black-grey-dark;
+    }
+
+    h1:not(.m-u--h1):not([class]),
+    h2:not(.m-u--h2):not([class]) {
+        text-transform: uppercase;
+        font-weight: $m-font-weight--black;
+        font-size: 24px;
+
+        + h2:not(.m-u--h2):not([class]),
+        + h3:not(.m-u--h3):not([class]),
+        + h4:not(.m-u--h4):not([class]),
+        + h5:not(.m-u--h5):not([class]),
+        + h6:not(.m-u--h6):not([class]) {
+            margin-top: 12px;
+        }
+    }
+
+    h3:not(.m-u--h3):not([class]) {
+        font-size: 22px;
+
+        + h4:not(.m-u--h4):not([class]),
+        + h5:not(.m-u--h5):not([class]),
+        + h6:not(.m-u--h6):not([class]) {
+            margin-top: 12px;
+        }
+    }
+
+    h4:not(.m-u--h4):not([class]),
+    h5:not(.m-u--h5):not([class]),
+    h6:not(.m-u--h6):not([class]) {
+        font-size: 16px !important;
+    }
+
+    h4:not(.m-u--h4):not([class]) {
+        font-weight: $m-font-weight--black;
+
+        + h5:not(.m-u--h5):not([class]),
+        + h6:not(.m-u--h6):not([class]) {
+            margin-top: 12px;
+        }
+    }
+
+    h5:not(.m-u--h5):not([class]) {
+        font-weight: $m-font-weight--bold;
+
+        + h6:not(.m-u--h6):not([class]) {
+            margin-top: 12px;
+        }
+    }
+
+    table:not([class]) {
+        margin-top: $m-margin;
+
+        @include m-table();
+    }
+}
+
+// ======================================================================
+//  links
+// ======================================================================
+
+.mw-u--highlighted-title {
+    @include mw-highlighted-title();
+}
+
+.mw-u--highlighted-title-link {
+    cursor: pointer;
+    outline: none;
+
+    > a {
+        text-decoration: none;
+        color: $m-color--white;
+    }
+
+    @include mw-highlighted-title();
+
+    &:active {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            width: 64px; // Magic number
+        }
+    }
+
+    &::before {
+        transition: width 0.3s ease;
+    }
+}

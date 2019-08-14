@@ -1,0 +1,51 @@
+<div class="website-component-details">
+    <header>
+        <h2 class="website-component-details__title">
+            <span v-if="component.beta"
+                  class="modul-logo__beta modul-component-details__title__beta-tag">
+            </span>
+            {{component.name }}
+            <span v-if="component.beta">
+                <m-i18n k="website:beta"></m-i18n>
+            </span>
+        </h2>
+        <!-- <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">{{openCloseLabel}}
+        </button> -->
+    </header>
+    <!-- <m-accordion-transition>
+        <div v-if="codePreviewOpen && component.preview">
+            <div class="website-component-details__code">
+                <modul-highlight :template="markdownPreview"></modul-highlight>
+            </div>
+        </div>
+    </m-accordion-transition> -->
+
+    <div class="website-component-details__preview">
+        <span v-if="!component.preview">
+            <m-message skin="light"
+                       state="information">
+                <m-i18n k="modul:preview-not-available"></m-i18n>
+            </m-message>
+        </span>
+        <span v-else>
+            <m-markdown :template="markdownPreview"></m-markdown>
+        </span>
+    </div>
+
+    <div class="modul-u--navbar">
+        <m-navbar skin="tab-arrow"
+                  :arrow-mobile="false"
+                  :auto-select="true">
+            <m-navbar-item :value="'router:overview'+component.url"
+                           :url="{name :'router:overview'+component.url}">
+                <m-i18n k="website:overview"></m-i18n>
+            </m-navbar-item>
+            <m-navbar-item v-if="component.components && component.components.length > 0"
+                           value="'router:code'+component.url"
+                           :url="{name :'router:code'+component.url}">
+                <m-i18n k="website:code"></m-i18n>
+            </m-navbar-item>
+        </m-navbar>
+    </div>
+    <router-view></router-view>
+</div>

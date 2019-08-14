@@ -1,0 +1,82 @@
+@import '../../styles/commons';
+
+$w-sidebar-max-width: 360px;
+$w-sidebar-max-width--s: 100%;
+
+$w-content-padding-top: 60px;
+$w-content-padding-bottom: 120px;
+$w-content-max-width: $mw-max-width;
+
+.mw-standards {
+    background-color: white;
+
+    &__body {
+        min-height: 100vh;
+    }
+
+    &__search {
+        background-color: $modul-color--black-grey;
+        margin-top: - m-spacing(l);
+        margin-left: - m-spacing(l);
+        margin-right: - m-spacing(l);
+        margin-bottom: m-spacing(l);
+        padding: m-spacing(l);
+    }
+
+    &__content {
+        margin: $w-content-padding-top auto $w-content-padding-bottom;
+        padding: 0 m-spacing();
+        max-width: $w-content-max-width;
+    }
+
+    &__button {
+        margin: m-spacing();
+        color: #e8e8e8;
+        float: left;
+    }
+
+    &__sidemenu {
+        position: relative;
+        height: 100%;
+        background-color: #f9f9f9;
+        padding: m-spacing(l);
+
+        &-title {
+            font-size: $m-font-size--l;
+            text-transform: uppercase;
+            font-weight: $m-font-weight--black;
+        }
+
+        &-sub-title {
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-size: $m-font-size--l;
+            font-weight: $m-font-weight--black;
+        }
+
+        &-item {
+            a {
+                display: block;
+                height: 50px;
+                line-height: 50px;
+                padding-left: 12px;
+                border-left: 2px solid $m-color--grey-light;
+                margin-left: 1px;
+                font-size: $m-font-size;
+                font-weight: $m-font-weight;
+                text-decoration: none;
+                color: $m-color--text;
+
+                &:hover {
+                    font-weight: $m-font-weight--bold;
+                }
+
+                &.router-link-active {
+                    font-weight: $m-font-weight--black;
+                    border-left: 4px solid $m-color--ul-yellow;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

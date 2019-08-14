@@ -1,0 +1,109 @@
+@import '../../styles/commons';
+
+.mw-home {
+    &__headline {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        overflow-y: auto;
+        padding: $m-padding--l $m-padding $m-padding--xl $m-padding;
+        background-color: $modul-color--black-grey-dark;
+        background-image: url(./grid.svg);
+        background-position: 0 0;
+        color: #fff;
+        min-height: calc(100vh - #{$mw-header-height});
+
+        @media (min-width: $m-mq--min--s) {
+            // position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-right: $m-padding--l;
+            padding-left: $m-padding--l;
+        }
+
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+            background: linear-gradient(to bottom, $modul-color--black-grey-dark 35%, rgba($modul-color--black-grey-dark, 0.4) 100%);
+            z-index: -1;
+        }
+    }
+
+    &__button {
+        transition: transform 0.6s ease, bottom 0.2s ease;
+        transform: translate3d(-50%, 42px, 0);
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+
+        &-link {
+            border-radius: 0;
+            font-size: 16px;
+            padding: 10px $m-padding; // Magic number
+
+            @include m-button();
+            @include m-button--hover();
+            @include m-button--primary();
+        }
+
+        &:hover {
+            bottom: 0 !important;
+            transform: translate3d(-50%, 0, 0);
+        }
+
+        &-arrow {
+            position: relative;
+            font-size: 40px;
+            color: $m-color--ul-blue;
+
+            &:first-child {
+                top: 8px;
+                font-size: 20px;
+            }
+
+            &:nth-child(2) {
+                top: 6px;
+                font-size: 30px;
+            }
+        }
+    }
+
+    &__body {
+        padding: $m-spacing--l;
+        color: white;
+        z-index: 2;
+        position: relative;
+        background-color: $modul-color--black-grey;
+
+        @media (min-width: $m-mq--min--m) {
+            display: flex;
+            justify-content: center;
+            padding-top: $mw-header-height;
+            padding-bottom: $mw-header-height;
+        }
+    }
+
+    &__icon {
+        display: block;
+        margin: 0 auto m-spacing(8);
+    }
+}
+
+#mw-home__anchor {
+    display: block;
+    position: absolute;
+    top: - $mw-header-height;
+    left: - $mw-header-height;
+}

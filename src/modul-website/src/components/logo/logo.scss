@@ -1,0 +1,89 @@
+@import '../../styles/commons';
+@import url('https://fonts.googleapis.com/css?family=Overpass:600,700');
+
+.mw-logo {
+    font-size: var(--mw-logo-font-size);
+    color: white;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: 'title logo' 'tagline tagline';
+    // font-family: 'Overpass', $m-font-family, sans-serif;
+
+    --mw-logo-item-width: 7px;
+    --mw-logo-item-border-width: 1px solid white;
+    --mw-logo-font-size: 33px;
+    --mw-logo-tagline-font-size: 16px;
+
+    @media (min-width: $m-mq--min--s) {
+        grid-template-areas: 'title logo' 'tagline .';
+        justify-items: flex-end;
+
+        &.mw-is--large {
+            --mw-logo-item-width: 30px;
+            --mw-logo-item-border-width: 3px solid white;
+            --mw-logo-font-size: 144px;
+            --mw-logo-tagline-font-size: 28px;
+        }
+    }
+
+    &.mw-is--small {
+        --mw-logo-item-width: 7px;
+        --mw-logo-item-border-width: 1px solid white;
+        --mw-logo-font-size: 33px;
+    }
+
+    &__title {
+        grid-area: title;
+        font-weight: normal;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    &__tagline {
+        grid-area: tagline;
+        font-size: var(--mw-logo-tagline-font-size);
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    &__logo {
+        grid-area: logo;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-left: 0.5em;
+        table-layout: fixed;
+        position: relative;
+        width: fit-content;
+    }
+
+    &__item {
+        height: var(--mw-logo-item-width);
+        width: var(--mw-logo-item-width);
+        border: var(--mw-logo-item-border-width);
+        border-spacing: 0;
+        transform-origin: 0 0;
+        background-color: m-color(ul, blue);
+
+        &.mw--is-yellow {
+            background-color: m-color(ul, yellow);
+        }
+
+        &.mw--is-red {
+            background-color: transparent;
+            position: relative;
+            border: 0;
+
+            span {
+                background-color: m-color(ul, red);
+                border: var(--mw-logo-item-border-width);
+                display: block;
+                bottom: 0.06em;
+                left: 0.06em;
+                height: var(--mw-logo-item-width);
+                width: var(--mw-logo-item-width);
+                position: absolute;
+            }
+        }
+    }
+}

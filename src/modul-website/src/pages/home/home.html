@@ -1,0 +1,103 @@
+<div class="mw-home">
+    <section class="mw-home__headline">
+
+        <h1>
+            <mw-logo size="large"
+                     :tagline="true"></mw-logo>
+        </h1>
+
+        <div class="mw-home__button"
+             :style="{ bottom: designButtonPosition + 'px' }"
+             v-if="isMqMinS">
+            <m-icon class="mw-home__button-arrow"
+                    name="m-svg__chevron--down"></m-icon>
+            <m-icon class="mw-home__button-arrow"
+                    name="m-svg__chevron--down"></m-icon>
+            <m-icon class="mw-home__button-arrow"
+                    name="m-svg__chevron--down"></m-icon>
+            <a href="#mw-home__anchor"
+               class="mw-home__button-link">
+                <m-i18n k="modul:responsive-design-link"
+                        :params="[' ']"></m-i18n>
+            </a>
+        </div>
+    </section>
+
+    <section class="mw-home__body">
+        <a href
+           id="mw-home__anchor"></a>
+        <mw-card :direction="cardDirection">
+            <template slot="header">
+                <img class="mw-home__icon"
+                     :src="componentIcon"
+                     alt="" />
+                <h2>
+                    <m-i18n k="modul:components"></m-i18n>
+                </h2>
+            </template>
+            <p slot="content">
+                <m-i18n k="modul:components-desc"></m-i18n>
+            </p>
+            <m-link slot="link">
+                <m-i18n k="pages:visual-standards"></m-i18n>
+            </m-link>
+        </mw-card>
+
+        <mw-card :direction="cardDirection">
+            <template slot="header">
+                <img class="mw-home__icon"
+                     :src="normesIcon"
+                     alt="" />
+                <h2>
+                    <m-i18n k="pages:standards"></m-i18n>
+                </h2>
+            </template>
+            <p slot="content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quaerat sint esse, natus libero amet perferendis atque. Blanditiis ea fugit provident nobis qui? A delectus suscipit autem dolor blanditiis quasi.
+            </p>
+            <m-link slot="link">
+                <m-i18n k="pages:visual-standards"></m-i18n>
+            </m-link>
+            <m-link slot="link">
+                <m-i18n k="pages:writing-standards"></m-i18n>
+            </m-link>
+            <m-link slot="link">
+                <m-i18n k="pages:coding-standards"></m-i18n>
+            </m-link>
+        </mw-card>
+
+        <mw-card :direction="cardDirection">
+            <template slot="header">
+                <img class="mw-home__icon"
+                     :src="philoIcon"
+                     alt="" />
+                <h2>
+                    <m-i18n k="website:philosophy"></m-i18n>
+                </h2>
+            </template>
+            <p slot="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur debitis aut fuga cupiditate odio deserunt soluta, blanditiis obcaecati illo, aliquid cum, excepturi ratione totam nihil in quasi suscipit ipsa!
+            </p>
+            <m-link slot="link">
+                <m-i18n k="pages:unified-experience"></m-i18n>
+            </m-link>
+            <m-link slot="link">
+                <m-i18n k="pages:responsive-design"></m-i18n>
+            </m-link>
+        </mw-card>
+
+        <!-- <article class="modul-home-content__panel"
+                 tabindex="0"
+                 @click="onRoute(writingStandards)">
+            <header>
+                <h2 class="modul-u--h2">
+                    <m-i18n k="pages:writing-standards"></m-i18n>
+                </h2>
+            </header>
+            <p>
+                <m-i18n k="pages:writing-standards-desc"></m-i18n>
+            </p>
+        </article> -->
+
+    </section>
+</div>
