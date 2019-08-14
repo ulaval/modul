@@ -1,0 +1,102 @@
+@import '../../styles/commons';
+
+.mw-header {
+    $mw-header-padding: m-spacing();
+
+    min-height: $mw-header-height;
+
+    &__body {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    &__content {
+        display: flex;
+        min-height: $mw-header-height;
+        justify-content: space-between;
+        background: $modul-color--black-grey-dark;
+        padding-left: $mw-header-padding;
+    }
+
+    &__button-menu,
+    &__nav,
+    &__logo,
+    &__aside {
+        display: flex;
+        align-items: center;
+    }
+
+    &__nav {
+        flex: 1;
+        padding-left: $mw-header-padding;
+    }
+
+    &__nav,
+    &__menu {
+        padding-top: $mw-header-padding;
+        padding-bottom: $mw-header-padding;
+    }
+
+    &__logo {
+        a {
+            text-decoration: none;
+        }
+
+        width: 100%;
+        padding-left: $mw-header-padding;
+        max-width: $mw-sidebar-width - $mw-header-padding;
+    }
+
+    &__item {
+        display: flex;
+        align-items: inherit;
+        margin: 0;
+    }
+
+    &__link {
+        font-weight: $m-font-weight--black;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
+        outline: none;
+        margin-right: $m-margin--l;
+
+        &,
+        &:visited {
+            color: $modul-color--grey-dark;
+        }
+
+        &:hover,
+        &:focus,
+        &.router-link-active {
+            color: $m-color--white;
+        }
+
+        &.router-link-active::after {
+            background-color: $m-color--active;
+        }
+
+        &:hover::after {
+            background-color: $m-color--black;
+        }
+    }
+
+    &__search-button {
+        width: $mw-header-height;
+        align-self: stretch;
+
+        @include m-button();
+        @include m-button--primary();
+
+        &:hover {
+            @include m-button--hover();
+        }
+    }
+
+    &__version {
+        white-space: nowrap;
+    }
+}

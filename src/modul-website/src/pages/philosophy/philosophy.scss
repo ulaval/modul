@@ -1,0 +1,18 @@
+@import '../../styles/commons';
+
+.mw-philosophy {
+    max-width: $mw-max-width;
+    margin: 0 auto;
+    color: white;
+    padding: 0 $m-spacing--xl $m-spacing--xl;
+
+    &__title {
+        margin-top: m-spacing(7);
+        margin-bottom: $m-spacing--m;
+        text-transform: uppercase;
+    }
+
+    &__content {
+        margin-bottom: m-spacing(8);
+    }
+}

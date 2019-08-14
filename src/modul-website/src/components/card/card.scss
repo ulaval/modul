@@ -1,0 +1,37 @@
+@import '../../styles/commons';
+
+.mw-card {
+    background-color: $modul-color--black-grey-dark;
+    padding: $m-spacing--xl;
+    text-align: center;
+
+    &__link,
+    &__header {
+        text-transform: uppercase;
+    }
+
+    &__content {
+        margin-top: $m-spacing--l;
+    }
+
+    &__link {
+        margin-top: $m-spacing--l;
+        display: grid;
+        grid-gap: $m-spacing--s;
+        justify-items: center;
+    }
+
+    &.mw-is--row {
+        max-width: 460px;
+
+        & + & {
+            margin-left: $m-spacing--l;
+        }
+    }
+
+    &.mw-is--column {
+        & + & {
+            margin-top: $m-spacing--l;
+        }
+    }
+}

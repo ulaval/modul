@@ -1,0 +1,4 @@
+<span class="modul-go">
+    <m-link v-if="url" :url="url"><slot>{{ label }}</slot></m-link><span v-if="!defaultSlot() && meta"> ({{ tag }}<m-i18n v-if="!url" k="modul:documentation-to-come"></m-i18n>)</span>
+</span>
+
