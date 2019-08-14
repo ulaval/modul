@@ -1,0 +1,94 @@
+<div class="modul-icon-gallery">
+    <section class="modul-icon-gallery__header">
+        <m-textfield class="modul-icon-gallery__header__search-field"
+                     icon-name="search"
+                     :label="searchIconsText"
+                     @focus="onFocus"
+                     @blur="onBlur"
+                     v-model="searchModel"
+                     :max-width="isMqMinS ? maxWidth : '100%'">
+        </m-textfield>
+        <div class="modul-icon-gallery__header__right-wrapper">
+            <m-dropdown class="modul-icon-gallery__header__size-field" v-model="iconSize" width="72px" :label="$i18n.translate('modul:icon-size')">
+                <m-dropdown-item value="16px"></m-dropdown-item>
+                <m-dropdown-item value="24px"></m-dropdown-item>
+                <m-dropdown-item value="32px"></m-dropdown-item>
+                <m-dropdown-item value="64px"></m-dropdown-item>
+            </m-dropdown>
+            <m-icon class="modul-icon-gallery__header__view-mode-button"
+                v-if="isMqMinS && isViewModeBlock"
+                size="28px"
+                name="m-svg__grid-filled">
+            </m-icon>
+            <m-icon-button class="modul-icon-gallery__header__view-mode-button"
+                v-if="isMqMinS && !isViewModeBlock"
+                icon-size="28px"
+                icon-name="m-svg__grid"
+                button-size="28px"
+                :title="$i18n.translate('modul:grid-view-mode')"
+                @click="toggleViewMode()">
+            </m-icon-button>
+            <m-icon class="modul-icon-gallery__header__view-mode-button m-u--margin-left--s"
+                v-if="isMqMinS && !isViewModeBlock"
+                size="28px"
+                name="m-svg__list-filled">
+            </m-icon>
+            <m-icon-button class="modul-icon-gallery__header__view-mode-button m-u--margin-left--s"
+                v-if="isMqMinS && isViewModeBlock"
+                icon-size="28px"
+                icon-name="m-svg__list"
+                button-size="28px"
+                :title="$i18n.translate('modul:list-view-mode')"
+                @click="toggleViewMode()">
+            </m-icon-button>
+        </div>
+
+    </section>
+    <section class="modul-icon-gallery__body">
+        <ul class="modul-icon-gallery__block" v-if="isViewModeBlock && hasSearchResult">
+            <li class="modul-icon-gallery__item"
+                v-for="(icon, index) in searchResult"
+                tabindex="0"
+                @click="openDialog(icon.name, icon.nameFr)"
+                @keydown.enter="openDialog(icon.name, icon.nameFr)">
+                <span class="modul-icon-gallery__icon">
+                    <m-icon :name="icon.name" :size="iconSize"></m-icon>
+                </span>
+                <div class="modul-icon-gallery__bloc-label" aria-hidden="true">
+                    <p class="modul-icon-gallery__label">{{ icon.nameFr }}</p>
+                    <m-link tabindex="-1" class="modul-icon-gallery__link" mode="button" :underline="false">{{ icon.name }}</m-link>
+                </div>
+            </li>
+        </ul>
+        <ul class="modul-icon-gallery__list" v-else-if="!isViewModeBlock && hasSearchResult">
+            <li class="modul-icon-gallery__item"
+                v-for="(icon, index) in searchResult"
+                tabindex="0"
+                @click="openDialog(icon.name, icon.nameFr)"
+                @keydown.enter="openDialog(icon.name, icon.nameFr)">
+                <m-icon class="modul-icon-gallery__icon" :name="icon.name" :size="iconSize"></m-icon>
+                <p class="modul-icon-gallery__label" aria-hidden="true">
+                    <span>{{ icon.nameFr }}&nbsp;/&nbsp;</span>
+                    <m-link tabindex="-1" mode="button" slot="trigger" @click="openDialog(icon.name, icon.nameFr)"> {{ icon.name }}</m-link>
+                </p>
+            </li>
+        </ul>
+        <p class="modul-icon-gallery__no-result" v-else-if="!hasSearchResult">
+            <m-i18n k="modul:search-icons-no-result"></m-i18n>
+        </p>
+    </section>
+
+    <m-modal :title="previewName" :open.sync="dialogOpen">
+        <div class="modul-icon-gallery__preview">
+            <div class="modul-icon-gallery__preview__header">
+                <m-icon :name="previewTag" :size="previewIconSize + 'px'" :svg-title="previewTag"></m-icon>
+            </div>
+            <p class="modul-icon-gallery__preview__body">&lt;m-icon <strong>name="{{ previewTag }}" size="{{ previewIconSize }}px"</strong>&gt;&lt;/m-icon&gt;</p>
+        </div>
+        <div class="modul-icon-gallery__preview__footer" slot="footer">
+            <m-icon-button @click="setSmallIconSize" :icon-name="previewTag" icon-size="16px"></m-icon-button>
+            <m-slider v-model="previewIconSize" max="64"></m-slider>
+            <m-icon-button @click="setLargeIconSize" :icon-name="previewTag" icon-size="32px"></m-icon-button>
+        </div>
+    </m-modal>
+</div>

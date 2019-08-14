@@ -1,0 +1,10 @@
+.modul-website__footer {
+    position: relative;
+    z-index: 3;
+    background-color: $modul-color--black-grey-light;
+    padding: m-spacing(xxl);
+    display: flex;
+    justify-content: center;
+    color: m-color(white);
+    text-transform: uppercase;
+}

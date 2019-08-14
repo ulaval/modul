@@ -1,0 +1,60 @@
+{
+    "name": "@ulaval/modul-website",
+    "version": "2.0.0",
+    "description": "The official website for modUL",
+    "contributors": [
+        "Charles Maheu <charles.maheu@dti.ulaval.ca>",
+        "Philippe Rail <philippe.rail@dti.ulaval.ca>"
+    ],
+    "private": true,
+    "scripts": {
+        "dev": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "serve:dist": "http-server ./dist -p 8083 -g -o"
+    },
+    "dependencies": {
+        "@mojotech/json-type-validation": "^3.1.0",
+        "@ulaval/modul-components": "^1.0.0-beta.117",
+        "@ulaval/modul-vuex": "^1.0.1",
+        "highlight.js": "^9.12.0",
+        "markdown-it": "^8.4.0",
+        "meta-generator": "^1.0.1",
+        "moment": "^2.19.3",
+        "vue": "^2.6.10",
+        "vue-router": "^3.0.1",
+        "vuex": "^3.1.1"
+    },
+    "devDependencies": {
+        "@types/highlight.js": "^9.12.3",
+        "@types/jest": "^23.1.4",
+        "@vue/cli-plugin-babel": "^3.9.2",
+        "@vue/cli-plugin-typescript": "^3.9.0",
+        "@vue/cli-service": "^3.9.3",
+        "@vue/test-utils": "^1.0.0-beta.20",
+        "compression-webpack-plugin": "^2.0.0",
+        "custom-tslint-formatters": "^2.4.0",
+        "http-server": "^0.11.1",
+        "node-sass": "^4.9.0",
+        "sass-loader": "^7.0.1",
+        "source-map-loader": "^0.2.4",
+        "style-loader": "^0.23.1",
+        "stylelint": "^9.8.0",
+        "stylelint-config-standard": "^18.2.0",
+        "stylelint-scss": "^3.4.0",
+        "stylelint-webpack-plugin": "^0.10.5",
+        "svg-inline-loader": "^0.8.0",
+        "tslint": "^5.14.0",
+        "tslint-config-standard": "^8.0.1",
+        "tslint-loader": "^3.5.4",
+        "typescript": "^3.0.0",
+        "vue-class-component": "^6.0.0",
+        "vue-property-decorator": "^7.0.0",
+        "vue-template-compiler": "^2.5.17",
+        "vue-template-loader": "^1.0.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "license": "Apache-2.0"
+}

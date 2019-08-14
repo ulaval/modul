@@ -1,0 +1,71 @@
+<div class="modul-website">
+    <header class="modul-website__header">
+        <mw-header :show-logo="!isHomePage"
+                   @search="toggleSearch"></mw-header>
+    </header>
+
+    <!-- <m-sidebar :open="searchOpen"
+               @open="openSearch"
+               @close="closeSearch"
+               origin="right"
+               :close-button="false"
+               :width="searchWidth"
+               :padding="false">
+        <div class="modul-search__header"
+             slot="header">
+            <m-icon name="m-svg__search"
+                    svg-title="Rechercher"></m-icon>
+            <input type="text"
+                   v-model="searchModel"
+                   placeholder="Rechercher"
+                   value="Rechercher un composant"
+                   class="modul-search__header__input"
+                   ref="search">
+            <button @click="toggleSearch"
+                    class="modul-search__header__close-button m-u--button-primary">
+                <m-icon name="m-svg__close-clear"></m-icon>
+            </button>
+        </div>
+        <transition-group name="modul--is"
+                          tag="ul">
+            <li tabindex="0"
+                @click="closeMenu()"
+                @keyup.enter="closeMenu()"
+                v-for="item in searchResult"
+                key="item.tag"
+                v-if="item.category">
+                <router-link :to="getRouterIndex(item.tag)"
+                             class="modul-search-card">
+                    <div class="modul-search-card__img"
+                         aria-hidden="true">
+                        <m-icon size="90px"
+                                :name="item.tag"></m-icon>
+                    </div>
+                    <div class="modul-search-card__content">
+                        <p class="modul-search-card__content__category">{{ item.category }}</p>
+                        <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
+                        <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
+                    </div>
+                </router-link>
+            </li>
+        </transition-group>
+    </m-sidebar> -->
+
+    <main class="modul-website__body">
+        <router-view></router-view>
+    </main>
+
+    <footer class="modul-website__footer">
+        <div>
+            <p class="m-u--margin-bottom">
+                <m-i18n k="modul:powered-by"></m-i18n>
+            </p>
+            <a href="https://www.ulaval.ca/"
+               target="_blank">
+                <img :src="logo"
+                     alt="l'Université Laval"
+                     title="l'Université Laval" />
+            </a>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,12 @@
+<article class="mw-card"
+         :class="'mw-is--' + direction">
+    <header class="mw-card__header">
+        <slot name="header"></slot>
+    </header>
+    <div class="mw-card__content">
+        <slot name="content"></slot>
+    </div>
+    <div class="mw-card__link">
+        <slot name="link"></slot>
+    </div>
+</article>

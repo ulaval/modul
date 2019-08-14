@@ -1,0 +1,170 @@
+<div class="mw-standards">
+    <m-expandable-layout class="mw-standards__body"
+                         :open="showMenu"
+                         panel-width="360px">
+        <div class="mw-standards__button">
+            <m-icon-button @click="toggleMenu()"
+                           v-if="!showMenu"
+                           icon-name="m-standard-edit"
+                           skin="light"
+                           icon-size="20px"
+                           button-size="20px">
+            </m-icon-button>
+            <m-icon-button @click="toggleMenu()"
+                           v-else
+                           icon-name="m-svg__close-clear"
+                           icon-size="20px"
+                           button-size="20px">
+            </m-icon-button>
+        </div>
+        <div class="mw-standards__content">
+            <router-view></router-view>
+        </div>
+        <template slot="panel">
+            <div class="mw-standards__sidemenu">
+
+                <div class="mw-standards__search">
+                    <m-searchfield></m-searchfield>
+                </div>
+
+                <div class="mw-standards__sidemenu-title">
+                    <m-i18n k="website:standards"></m-i18n>
+                </div>
+                <m-accordion skin="plain"
+                             icon-position="right"
+                             icon-size="small"
+                             :open="urlMatch('router:standards-ui-colors', 'router:standards-ui-iconography','router:standards-ui-typography', 'router:standards-ui-breakpoints')">
+                    <div class="mw-standards__sidemenu-sub-title"
+                         slot="header">
+                        <m-i18n k="website:standards-ui"></m-i18n>
+                    </div>
+                    <div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-ui-colors'}"
+                                         @click.native="onSideMenuSelection()"><span>
+                                    <m-i18n k="website:standards-colors-and-themes"></m-i18n>
+                                </span></router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-ui-iconography'}"
+                                         @click.native="onSideMenuSelection()"><span>
+                                    <m-i18n k="website:standards-iconography"></m-i18n>
+                                </span></router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-ui-typography'}"
+                                         @click.native="onSideMenuSelection()"><span>
+                                    <m-i18n k="website:standards-typography-and-styles"></m-i18n>
+                                </span></router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-ui-breakpoints'}"
+                                         @click.native="onSideMenuSelection()"><span>
+                                    <m-i18n k="website:standards-breakpoints"></m-i18n>
+                                </span></router-link>
+                        </div>
+                    </div>
+                </m-accordion>
+
+                <m-accordion skin="plain"
+                             icon-position="right"
+                             icon-size="small"
+                             :open="urlMatch('router:standards-editorial-tone', 'router:standards-editorial-format', 'router:standards-editorial-glossary', 'router:standards-editorial-message-bank', 'router:standards-editorial-punctuation')">
+                    <div class="mw-standards__sidemenu-sub-title"
+                         slot="header">
+                        <m-i18n k="website:standards-editorial"></m-i18n>
+                    </div>
+                    <div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-editorial-tone'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:standards-editorial-tone"></m-i18n>
+                            </router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-editorial-format'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:standards-editorial-format"></m-i18n>
+                            </router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-editorial-punctuation'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:standards-editorial-punctuation"></m-i18n>
+                            </router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-editorial-glossary'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:standards-editorial-glossary"></m-i18n>
+                            </router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:standards-editorial-message-bank'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:standards-editorial-message-bank"></m-i18n>
+                            </router-link>
+                        </div>
+
+                    </div>
+                </m-accordion>
+                <m-accordion skin="plain"
+                             icon-position="right"
+                             icon-size="small"
+                             :open="urlMatch('router:development-standards-css-sass','router:development-standards-typescript')">
+                    <div class="mw-standards__sidemenu-sub-title"
+                         slot="header">
+                        <m-i18n k="website:standards-development"></m-i18n>
+                    </div>
+                    <div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:development-standards-css-sass'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:standards-development-css-sass"></m-i18n>
+                            </router-link>
+                        </div>
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:development-standards-typescript'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:standards-development-typescript"></m-i18n>
+                            </router-link>
+                        </div>
+                    </div>
+                </m-accordion>
+                <m-accordion skin="plain"
+                             icon-position="right"
+                             icon-size="small"
+                             :open="urlMatch('router:accessibility-standards-why','router:accessibility-standards-implementation', 'router:accessibility-standards-cheatsheet')">
+                    <div class="mw-standards__sidemenu-sub-title"
+                         slot="header">
+                        <m-i18n k="website:accessibility-standards"></m-i18n>
+                    </div>
+                    <div>
+
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:accessibility-standards-why'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:accessibility-standards-why"></m-i18n>
+                            </router-link>
+                        </div>
+
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:accessibility-standards-implementation'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:accessibility-standards-implementation"></m-i18n>
+                            </router-link>
+                        </div>
+
+                        <div class="mw-standards__sidemenu-item">
+                            <router-link :to="{name :'router:accessibility-standards-cheatsheet'}"
+                                         @click.native="onSideMenuSelection()">
+                                <m-i18n k="website:accessibility-standards-cheatsheet"></m-i18n>
+                            </router-link>
+                        </div>
+
+                    </div>
+                </m-accordion>
+            </div>
+        </template>
+    </m-expandable-layout>
+</div>
