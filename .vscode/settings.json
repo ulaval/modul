@@ -12,6 +12,9 @@
     "editor.codeActionsOnSave": {
         "source.organizeImports": true
     },
+    "files.exclude": {
+        "**/.github/": true,
+    },
     "search.exclude": {
         "**/reports/": true,
         "**/dist/": true,
