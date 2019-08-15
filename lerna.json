@@ -6,7 +6,8 @@
         "publish": {
             "allowBranch": [
                 "master",
-                "develop"
+                "develop",
+                "support/*"
             ]
         }
     },
