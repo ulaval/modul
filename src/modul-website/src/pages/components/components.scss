@@ -79,4 +79,9 @@ $w-content-max-width: $mw-max-width;
             }
         }
     }
+
+    &__beta {
+        display: inline;
+        vertical-align: middle;
+    }
 }
