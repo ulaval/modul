@@ -30,7 +30,6 @@ import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/pr
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
 import SearchfieldPlugin from '@ulaval/modul-components/dist/components/searchfield/searchfield';
 import ShowMorePlugin from '@ulaval/modul-components/dist/components/show-more/show-more';
-import SliderPlugin from '@ulaval/modul-components/dist/components/slider/slider';
 import TextareaPlugin from '@ulaval/modul-components/dist/components/textarea/textarea';
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
 import { UtilsPlugin } from '@ulaval/modul-components/dist/utils';
@@ -48,7 +47,6 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(NavbarPlugin);
         Vue.use(LinkPlugin);
         Vue.use(ModalPlugin);
-        Vue.use(SliderPlugin);
         Vue.use(DropdownPlugin);
         Vue.use(TextfieldPlugin);
         Vue.use(PanelPlugin);
