@@ -1,11 +1,10 @@
 <div class="website-component-details">
     <header>
         <h2 class="website-component-details__title">
-            <span v-if="component.beta"
-                  class="modul-logo__beta modul-component-details__title__beta-tag">
-            </span>
+
             {{component.name }}
-            <span v-if="component.beta">
+            <span v-if="component.beta"
+                  class="modul-logo__beta website-component-details__beta">
                 <m-i18n k="website:beta"></m-i18n>
             </span>
         </h2>
