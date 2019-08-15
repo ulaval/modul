@@ -1,10 +1,19 @@
-modul-components utilise [lerna](https://github.com/lerna/lerna) pour la publications des packages sur npm. Et suis la convention du [semantic versioning](https://semver.org/)
+La publication des packages modul sur npm utilisent [lerna](https://github.com/lerna/lerna) et suivent la convention du [semantic versioning](https://semver.org/)
 
-## Publication d'un package
+## description des branches
 
-### Publication d'une version officiel (a partir de develop)
+|nom de la branche   | type de branche  | upstream  | tag npm  | protegé |
+|---|---|---|---|---|
+|master   | stable   |   | latest | oui |
+|develop   | next version  | master  | next | oui |
+|support/**  | stable  | master   | latest | non |
+|feature/hotfix/**  | feature branch | develop   | dev | non |
 
-Cette publication est utilisé lorsque l'on veut publier une nouvelle version officiel (tag npm latest) qui sera généralment une version de type mineur ou majeur. Cette version remplacera la branche `master` en tant que version supporté par celle dans la branche `develop`
+## publication d'un package
+
+### publication d'une version officielle (à partir de develop)
+
+Cette publication est utilisée lorsque l'on veut publier une nouvelle version officielle (avec tag npm `latest`) qui sera généralement un incrément de version mineur ou majeur. Cette version remplacera celle de branche `master` en tant que version supportée par celle dans la branche `develop`
 
 1. Merge de develop dans master
 `git checkout master`
@@ -17,9 +26,9 @@ Cette publication est utilisé lorsque l'on veut publier une nouvelle version of
 `git checkout develop`
 `git rebase origin/master`
 
-### Publication d'une version officiel (a partir d'une branche de support)
+### publication d'une version officielle (a partir d'une branche de support)
 
-Cette publication est utilisé lorsque l'on veut publier une nouvelle version officiel (tag npm latest) qui sera généralment une version patch. Cette version est publié à partir d'une branche de support qui provient de la branche  `master`
+Cette publication est utilisée lorsque l'on veut publier une nouvelle version officielle (tag npm latest) qui sera généralement un incrément de version patch. Cette version est publiée à partir d'une branche de support qui à pour origine la branche `master`
 
 1. Utiliser une branche de support existante ou creer une nouvelle branche a partir de master.
 `git checkout support/**`
@@ -35,7 +44,7 @@ ou
 
 ### Publication d'une version beta pre-release (a partir de develop)
 
-Cette publication est utilisé lorsque l'on veut publier une nouvelle version prérelease (tag npm next). Cette version est publier a partir de la branche develop
+Cette publication est utilisé lorsque l'on veut publier une nouvelle version de type prérelease (avec le tag npm next). Cette version est publier à partir de la branche develop.
 
 1. Publication et push tag des packages dans la branche develop
 `git checkout develop`
@@ -44,7 +53,7 @@ Cette publication est utilisé lorsque l'on veut publier une nouvelle version pr
 
 ### Publication d'une version de type canary (a partir d'une feature branche)
 
-Cette publication est utilisé lorsque l'on veut publier une nouvelle version prérelease (tag npm dev). Cette version est publier a partir d'une feature branche
+Cette publication est utilisée lorsque l'on veut publier une nouvelle version de type prérelease (avec le tag npm dev). Cette version est publié à partir d'une feature branche.
 
 1. Publication et push tag des packages dans la branche develop
 `git checkout feature/**`
