@@ -12,18 +12,18 @@ Before submitting your contribution, please read the following guidelines.
 Avant de soumettre votre contribution, veuillez prendre note de ces quelques lignes directrices.
 
 - Lire à propos de la [structure du monorepo](#psfr).
-- Créer une *feature branch* à partir de la branche désirée (`develop` dans le cas d'ajout d'une nouvelle fonctionnalité ou d'un breaking change, `master` dans le cas d'une correction de bug). Le projet `modul` suit la convention [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/). Le nom de votre branche devrait toujours débuter par *feature/* ou *bugfix/*.
+- Créer une *feature branch* à partir de la `develop`. Le projet `modul` suit la convention [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/). Le nom de votre branche devrait toujours débuter par *feature/* ou *bugfix/*.
 - À moins d'avoir à modifier la structure même du projet, le code touché par le *pull request* (PR) ne devrait concerner que les répertoires `/packages/**` et `/src/**`.
 - S'assurer que le *repository* compile correctement (`yarn run bootstrap`).
-- S'assurer que les tests s'exécutent avec succès (`yarn run test`). Si une mise à jour des snapshots est nécessaire (`yarn run test:update`)
-- S'assurer que le code est bien formatté (`yarn run lint`).
+- S'assurer que les tests s'exécutent avec succès (`yarn run test`). Si une mise à jour des snapshots est nécessaire (`yarn run test:update`).
+- S'assurer que le code respecte les règles de formattage (`yarn run lint`).
 
 - Les versions des projets `modul` suivent la convention du [Semantic versioning](https://semver.org/). Lors de la création de la *pull Request* (PR), il est important de bien suivre les instructions suivantes:
   - S'il s'agit d'une correction de bogue:
     - Bien remplir tous les sections requise dans la description PR.
     - Ajouter le Label `bugfix` à la PR.
     - S'assurer que la PR contient les tests unitaires et stories associés.
-    - Soumettre la PR vers la branche `master`
+    - Soumettre la PR vers la branche `develop`
     - Régler les conflits avec la branche source (s'il y a lieu)
 
   - S'il s'agit d'une nouvelle fonctionnalité:
@@ -45,7 +45,11 @@ Avant de soumettre votre contribution, veuillez prendre note de ces quelques lig
 
 **/conf**: Contient les fichiers de configuration (hook, linters, etc.).
 
-**/packages/--package-name--**: Contient les libraries qui composent `modul`
+**/doc**: Contient diverse information principalement destinées aux contributeurs internes.
+
+**/openshift**: Contient un snapshot des differents scripts utilisés sur openshift
+
+**/packages/modul-[package-name]**: Contient les libraries qui composent `modul` qui sont publiés sur npm
 
 **/src/storybook**: Environnement de développement [storybook](https://storybook.js.org/)
  pour le projet `modul`
