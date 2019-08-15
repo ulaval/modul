@@ -21,7 +21,8 @@ const catogoryDecoder: Decoder<string> = oneOf(
     constant('navigation'),
     constant('layout'),
     constant('windows'),
-    constant('button')
+    constant('button'),
+    constant('tables')
 );
 
 const typeDecoder: Decoder<string> = oneOf(
