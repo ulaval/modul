@@ -32,7 +32,7 @@ export class ModulMeta {
         componentMetas.forEach((componentMeta: ComponentMeta) => {
             if (componentMeta.visible) {
                 if (result[componentMeta.category] && result[componentMeta.category].length > 0) {
-                    result[componentMeta.category].concat(componentMeta);
+                    result[componentMeta.category].push(componentMeta);
                 } else {
                     result[componentMeta.category] = [componentMeta];
                 }

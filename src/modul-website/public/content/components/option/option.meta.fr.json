@@ -1,0 +1,18 @@
+{
+    "name": "Menu d'options",
+    "url": "menu-options",
+    "category": "navigation",
+    "type": "components",
+    "beta": true,
+    "visible": true,
+    "preview": "components/option/option.preview.fr.md",
+    "components": [
+        "m-option",
+        "m-option-item-add",
+        "m-option-item-archive",
+        "m-option-item-delete",
+        "m-option-item-edit",
+        "m-option-title",
+        "m-option-separator"
+    ]
+}
