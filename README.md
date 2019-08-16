@@ -20,7 +20,8 @@ Please refer to [this repository](https://github.com/ulaval/modul-typescript-tem
 
 ### Getting your environment set up
 
-1. Make sure you have `node` installed with a version at _least_ 10.0.0 and `yarn` of at _least_ 1.15.0 or higher.
-2. Run `yarn install` to install all dependencies
-3. Run `yarn run bootstrap` to bootstrap all dependencies
-4. Run `yarn run storybook` to start storybook
+1. Read the [Contribution Guide](./CONTRIBUTING.md)
+2. Make sure you have `node` installed with a version at _least_ 10.0.0 and `yarn` of at _least_ 1.17.0 or higher.
+3. Run `yarn install` to install all dependencies
+4. Run `yarn run bootstrap` to bootstrap all dependencies
+5. Run `yarn run storybook` to start storybook

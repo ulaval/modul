@@ -1,6 +1,5 @@
 Je veux les instructions en [français](#fr)
 
-## `@ulaval\modul`
 # Contributing Guide
 
 Before submitting your contribution, please read the following guidelines.
@@ -42,7 +41,7 @@ Avant de soumettre votre contribution, veuillez prendre note de ces quelques lig
 - Plusieurs *commits* peuvent être effectués au cours du processus d'approbation d'un PR.
 - Un *squash merge* est effectué lorsque le code est rapporté dans la branche `develop` ou `master`.
 
-# <a name="psfr"></a>Structure du répo
+# <a name="psfr"></a>Structure du monorépo
 
 **/conf**: Contient les fichiers de configuration (hook, linters, etc.).
 
