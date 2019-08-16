@@ -1,9 +1,11 @@
 import AccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import AccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import AddPlugin from '@ulaval/modul-components/dist/components/add/add';
+import AutoCompletePlugin from '@ulaval/modul-components/dist/components/autocomplete/autocomplete';
 import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import CarouselPlugin from '@ulaval/modul-components/dist/components/carousel/carousel';
 import CheckboxPlugin from '@ulaval/modul-components/dist/components/checkbox/checkbox';
+import DatepickerPlugin from '@ulaval/modul-components/dist/components/datepicker/datepicker';
 import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/daterangepicker/daterangepicker';
 import DialogPlugin from '@ulaval/modul-components/dist/components/dialog/dialog';
 import DropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
@@ -15,6 +17,7 @@ import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-butt
 import IconFilePlugin from '@ulaval/modul-components/dist/components/icon-file/icon-file';
 import IconPlugin from '@ulaval/modul-components/dist/components/icon/icon';
 import InplaceEditPlugin from '@ulaval/modul-components/dist/components/inplace-edit/inplace-edit';
+import InputGroupPlugin from '@ulaval/modul-components/dist/components/input-group/input-group';
 import LimitTextPlugin from '@ulaval/modul-components/dist/components/limit-text/limit-text';
 import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
 import ListItemPlugin from '@ulaval/modul-components/dist/components/list-item/list-item';
@@ -30,8 +33,15 @@ import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/pr
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
 import SearchfieldPlugin from '@ulaval/modul-components/dist/components/searchfield/searchfield';
 import ShowMorePlugin from '@ulaval/modul-components/dist/components/show-more/show-more';
+import SpinnerPlugin from '@ulaval/modul-components/dist/components/spinner/spinner';
+import SteppersPlugin from '@ulaval/modul-components/dist/components/steppers/steppers';
+import SwitchPlugin from '@ulaval/modul-components/dist/components/switch/switch';
+import TablePlugin from '@ulaval/modul-components/dist/components/table/table';
 import TextareaPlugin from '@ulaval/modul-components/dist/components/textarea/textarea';
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
+import TimepickerPlugin from '@ulaval/modul-components/dist/components/timepicker/timepicker';
+import ToggleButtonsPlugin from '@ulaval/modul-components/dist/components/toggle-buttons/toggle-buttons';
+import TooltipPlugin from '@ulaval/modul-components/dist/components/tooltip/tooltip';
 import { UtilsPlugin } from '@ulaval/modul-components/dist/utils';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import Vue, { PluginObject } from 'vue';
@@ -78,6 +88,17 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(RadioGroupPlugin);
         Vue.use(ScrollToPlugin);
         Vue.use(ShowMorePlugin);
+        Vue.use(SpinnerPlugin);
+        Vue.use(SteppersPlugin);
+        Vue.use(SwitchPlugin);
+        Vue.use(TablePlugin);
+        Vue.use(TooltipPlugin);
+        Vue.use(DatepickerPlugin);
+        Vue.use(TimepickerPlugin);
+        Vue.use(InputGroupPlugin);
+        Vue.use(AutoCompletePlugin);
+        Vue.use(ToggleButtonsPlugin);
+        Vue.use(SearchfieldPlugin);
     }
 };
 
