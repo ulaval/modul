@@ -29,29 +29,6 @@ pipeline {
         timestamps()
     }
 
-    // Les valeurs contenues de cette section ne doit pas se retrouver sur Github
-    environment {
-        // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
-        npm_config_cache = 'npm-cache'
-        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
-        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
-        REPO_URL = "${params.repourl}"
-        GIT_CREDS = '9ec5088f-92ad-4447-a2b2-b25b57d1eb62'
-        BRANCHE_RELEASE = "${params.mergefrom}"
-        JENKINS_USER = 'Jenkins'
-        JENKINS_EMAIL = 'jenkins@dti.ulaval.com'
-        NPM_CONFIG = 'modul-npmrc-config'
-        POST_RECIPIENTS = 'martin.simard@dti.ulaval.ca,vincent.dallaire@dti.ulaval.ca,jean-francois.nadeau.9@ulaval.ca,jean-philippe.goydadin@dti.ulaval.ca,charles.maheu@dti.ulaval.ca'
-        // POST_RECIPIENTS = 'charles.maheu@dti.ulaval.ca'
-        CODEOWNERS_DEV = 'jomat76,gabra20,pytremblay,jsroy19,cabob,jpguilmette,Mboulianne,lucmartin3elien,mturcotteDTI,jacob1992,tharle'
-        CODEOWNERS_DEV_EXT = '*.ts'
-        CODEOWNERS_STYLES = 'Atiomi,sioue19,raphpare,setur52'
-        CODEOWNERS_STYLES_EXT = '*.css,*.scss'
-        CODEOWNERS_TEMPLATES_EXT = '*.html'
-        CODEOWNERS_LEADS = 'jfnadeau,simardo,vidal7'
-        CODEOWNERS_LEADS_EXT = '*'
-    }
-
     stages {
         stage('Création de la branche release') {
             when {
