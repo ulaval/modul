@@ -28,7 +28,7 @@ Cette publication est utilisée lorsque l'on veut publier une nouvelle version o
 
 4. Publication et push tag des packages dans la `release branch`\
 `git checkout release/[release-version]`\
-`lerna publish [major | minor | patch] --contents packages`
+`lerna publish [major | minor | patch]`
 
 5. Fast-forward de la branche `master` avec la `release branch`\
 `git checkout master`\
@@ -50,7 +50,7 @@ Cette publication est utilisée lorsque l'on veut publier une nouvelle version o
 
 2. Publication et push tag des packages dans la `hotfix branch`\
 `git checkout hotfix/[hotfix-version]`\
-`lerna publish patch --contents packages`
+`lerna publish patch`
 
 3. Fast-forward de la branche `master` avec la `hotfix branch`\
 `git checkout master`\
@@ -69,7 +69,7 @@ Cette publication est utilisé lorsque l'on veut publier une nouvelle version de
 
 1. Publication et push tag des packages dans la branche develop\
 `git checkout develop`\
-`lerna publish pre(minor|major|patch) --preid beta --contents packages --dist-tag next`
+`lerna publish pre(minor|major|patch) --preid beta --dist-tag next`
 
 ### Publication d'une version de type canary (a partir d'une feature branche)
 
@@ -77,4 +77,4 @@ Cette publication est utilisée lorsque l'on veut publier une nouvelle version d
 
 1. Publication et push tag des packages dans la branche develop\
 `git checkout feature/**`\
-`lerna publish --canary (minor|major|patch)  --contents packages --dist-tag dev`
+`lerna publish --canary (minor|major|patch) --preid dev --dist-tag dev`
