@@ -203,6 +203,7 @@ export class MLink extends ModulVue {
     }
 
     public onKeyup(event): void {
+        // tslint:disable-next-line: deprecation
         event = event || window.event;
         if (event.keyCode === KeyCode.M_SPACE && this.isButton) {
             this.onClick(event);

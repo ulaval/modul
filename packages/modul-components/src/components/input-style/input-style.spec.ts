@@ -1,5 +1,5 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
-import Vue from '../../../node_modules/vue';
+import Vue from 'vue';
 import { renderComponent } from '../../../tests/helpers/render';
 import InputStylePlugin, { MInputStyle } from './input-style';
 

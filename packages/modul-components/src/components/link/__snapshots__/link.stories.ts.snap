@@ -320,7 +320,9 @@ exports[`Storyshots components|m-link/mode mode="link 1`] = `
 `;
 
 exports[`Storyshots components|m-link/skin="light" bullet-point 1`] = `
-<div>
+<div
+  style="background: grey;"
+>
   <a
     class="m-link m--is-skin-light m--has-left-icon m--has-content"
     href="#"
@@ -352,7 +354,9 @@ exports[`Storyshots components|m-link/skin="light" bullet-point 1`] = `
 `;
 
 exports[`Storyshots components|m-link/skin="light" default 1`] = `
-<div>
+<div
+  style="background: grey;"
+>
   <a
     class="m-link m--is-skin-light m--has-content"
     href="#"
@@ -372,7 +376,9 @@ exports[`Storyshots components|m-link/skin="light" default 1`] = `
 `;
 
 exports[`Storyshots components|m-link/skin="light" icon-name="m-svg__clock" 1`] = `
-<div>
+<div
+  style="background: grey;"
+>
   <a
     class="m-link m--is-skin-light m--has-left-icon m--has-content"
     href="#"
@@ -404,7 +410,9 @@ exports[`Storyshots components|m-link/skin="light" icon-name="m-svg__clock" 1`] 
 `;
 
 exports[`Storyshots components|m-link/skin="light" icon-position="right" 1`] = `
-<div>
+<div
+  style="background: grey;"
+>
   <a
     class="m-link m--is-skin-light m--has-right-icon m--has-content"
     href="#"
@@ -436,7 +444,9 @@ exports[`Storyshots components|m-link/skin="light" icon-position="right" 1`] = `
 `;
 
 exports[`Storyshots components|m-link/skin="light" icon-size="20px" 1`] = `
-<div>
+<div
+  style="background: grey;"
+>
   <a
     class="m-link m--is-skin-light m--has-left-icon m--has-content"
     href="#"

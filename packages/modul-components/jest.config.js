@@ -2,6 +2,7 @@ module.exports = {
     testURL: 'http://localhost/',
     globals: {
         "ts-jest": {
+            "tsConfig": 'tsconfig.json',
             "babelConfig": true
         }
     },
@@ -27,7 +28,7 @@ module.exports = {
         "\\.min\\.(css|less|sass|scss)|\\.svg$": "<rootDir>/tests/jest/jest-ignore.js"
     },
     snapshotSerializers: [
-        "<rootDir>/node_modules/jest-serializer-vue"
+        "<rootDir>../../node_modules/jest-serializer-vue"
     ],
     setupFiles: [
         "<rootDir>/tests/polyfills.js",

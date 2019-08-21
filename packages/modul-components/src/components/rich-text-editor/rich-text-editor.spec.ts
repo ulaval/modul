@@ -1,5 +1,5 @@
-import { mount, shallowMount, Wrapper } from '../../../node_modules/@vue/test-utils';
-import Vue from '../../../node_modules/vue';
+import { mount, shallowMount, Wrapper } from '@vue/test-utils';
+import Vue from 'vue';
 import { renderComponent } from '../../../tests/helpers/render';
 import uuid from '../../utils/uuid/uuid';
 import { MRichTextEditor, MRichTextEditorOption } from './rich-text-editor';

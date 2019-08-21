@@ -9,7 +9,7 @@ exports[`Storyshots components|m-expandable-layout default 1`] = `
     class="m-expandable-layout__main"
   >
     <div
-      style="height: 200vh;"
+      style="background: lightgrey; height: 200vh;"
     >
       main content
     </div>
@@ -42,7 +42,9 @@ exports[`Storyshots components|m-expandable-layout open 1`] = `
   <div
     class="m-expandable-layout__main"
   >
-    <div>
+    <div
+      style="background: lightgrey;"
+    >
       main content
     </div>
      
@@ -70,7 +72,9 @@ exports[`Storyshots components|m-expandable-layout panel-position="right" 1`] = 
   <div
     class="m-expandable-layout__main"
   >
-    <div>
+    <div
+      style="background: lightgrey;"
+    >
       main content
     </div>
      
@@ -98,7 +102,9 @@ exports[`Storyshots components|m-expandable-layout panel-width="600px" 1`] = `
   <div
     class="m-expandable-layout__main"
   >
-    <div>
+    <div
+      style="background: lightgrey;"
+    >
       main content
     </div>
      
@@ -126,7 +132,9 @@ exports[`Storyshots components|m-expandable-layout without panel slot 1`] = `
   <div
     class="m-expandable-layout__main"
   >
-    <div>
+    <div
+      style="background: lightgrey;"
+    >
       main content
     </div>
   </div>
