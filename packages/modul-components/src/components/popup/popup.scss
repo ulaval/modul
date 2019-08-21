@@ -1,0 +1,21 @@
+@import 'commons';
+
+.m-popup {
+    display: none;
+
+    &.m--is-inline {
+        display: inline-block;
+    }
+
+    &__body {
+        position: relative;
+
+        &.m--has-padding {
+            padding: $m-padding;
+        }
+
+        &.m--has--background {
+            background: $m-color--white;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import 'commons';
+
+.m-form {
+    &__message-summary {
+        margin-bottom: $m-spacing--m;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    &__toast-message {
+        margin-top: 0;
+    }
+}

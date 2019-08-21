@@ -58,7 +58,7 @@ pipeline {
                 sh 'npm install -g yarn'
                 sh 'yarn install'
                 sh 'yarn bootstrap'
-                sh 'yarn test'
+                sh 'yarn test:ci'
             }
         }
     }

@@ -1,0 +1,58 @@
+<div class="m-textarea"
+     :class="{ 'm--is-disabled' : isDisabled,
+               'm--is-waiting' : isWaiting,
+               'm--is-readonly' : isReadonly,
+               'm--has-error' : hasTextareaError,
+               'm--is-valid' : isTextareaValid,
+               'm--is-focus' : isFocus,
+               'm--has-label': hasLabel,
+               'm--has-validation-message': hasValidationMessage }"
+     @click="onClick"
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+    <m-input-style :disabled="isDisabled"
+                   :waiting="isWaiting"
+                   :error="hasTextareaError"
+                   :valid="isTextareaValid"
+                   :label="label"
+                   :label-for="id"
+                   :focus="isFocus"
+                   :label-up="labelUp"
+                   :empty="isEmpty"
+                   :readonly="isReadonly"
+                   :required-marker="requiredMarker"
+                   :tag-style="tagStyle">
+        <textarea ref="input"
+                  :id="id"
+                  class="m-textarea__input"
+                  :disabled="isDisabled || isWaiting"
+                  :readonly="isReadonly"
+                  :placeholder="placeholder"
+                  :maxlength="maxLengthNumber"
+                  :autocomplete="autocomplete"
+                  rows="1"
+                  @focus="onFocus"
+                  @blur="onBlur"
+                  @change="onChange"
+                  @keyup="onKeyup"
+                  @keydown="onKeydown"
+                  @paste="onPaste"
+                  v-model="model"
+                  v-m-textarea-auto-height>
+        </textarea>
+    </m-input-style>
+    <div class="m-textarea__validation">
+        <m-validation-message class="m-textarea__validation__message"
+                              :disabled="isDisabled"
+                              :waiting="isWaiting"
+                              :error="hasTextareaError"
+                              :error-message="errorMessage"
+                              :valid="isTextareaValid"
+                              :valid-message="validMessage"
+                              :helper-message="helperMessage"></m-validation-message>
+        <m-character-count class="m-textarea__validation__character-count"
+                           v-if="characterCount"
+                           :value-length="valueLength"
+                           :max-length="maxLength"
+                           :threshold="characterCountThreshold"></m-character-count>
+    </div>
+</div>

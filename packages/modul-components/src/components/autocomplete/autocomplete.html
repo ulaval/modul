@@ -1,0 +1,34 @@
+<m-dropdown :filterable="true"
+            :clear-invalid-selection-on-close="clearInvalidSelectionOnClose"
+            :show-arrow-icon="false"
+            :enable-animation="false"
+            :include-filterable-status-items="false"
+            :clear-model-on-selected-text="false"
+            :placeholder="placeholder"
+            :focus="focus"
+            :force-open="open"
+            :label-up="labelUp"
+            :disabled="disabled"
+            :error-message="errorMessage"
+            :valid-message="validMessage"
+            :helper-message="helperMessage"
+            :width="width"
+            :max-width="maxWidth"
+            :label="label"
+            :required-marker="requiredMarker"
+            :tag-style="tagStyle"
+            :max-length="maxLength"
+            :autocomplete="autocomplete"
+            v-model="selection"
+            @input="onInputChangeThrottled">
+    <m-dropdown-item v-for="i in items"
+                     :key="i.value"
+                     :value="i.value"
+                     :label="i.label"
+                     :non-filterable="true">
+        <slot :item="i">{{ i.label }}</slot>
+    </m-dropdown-item>
+    <m-dropdown-item v-if="showNoResult"
+                     :readonly="true"
+                     :non-filterable="true">{{ propTextNoMatch }}</m-dropdown-item>
+</m-dropdown>

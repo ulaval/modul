@@ -1,0 +1,90 @@
+<table class="m-table"
+       :class="['m--is-skin-' + skin, {'m--is-loading': loading, 'm--is-row-highlighted-on-hover': rowHighlightedOnHover}]"
+       cellspacing="0">
+    <slot name="header">
+        <thead>
+            <tr>
+                <th v-for="(column, index) in columns"
+                    :style="columnWidth(column)"
+                    :class="[{ 'm--is-sortable': column.sortable, 'm--is-sorted': isColumnSorted(column), 'm--is-centered': column.centered }, column.class]"
+                    :key="column.id"
+                    @click="sort(column)"
+                    scope="col">
+                    <slot :name="'header.' + column.dataProp"
+                          :column="column">
+                        <div v-if="column.sortable"
+                             class="m-table__header-wrap">
+                            <span class="m-table__header-name"
+                                  v-html="column.title"></span>
+                            <m-icon-button v-if="column.sortable"
+                                           class="m-table__sortable-icon"
+                                           :class="[getColumnSortDirectionClass(column)]"
+                                           :disabled="loading"
+                                           icon-name="m-svg__arrow-thin--up"
+                                           skin="bold"
+                                           button-size="14px"
+                                           icon-size="12px"
+                                           :title="i18nSort"
+                                           @click.stop="sort(column)"></m-icon-button>
+                        </div>
+                        <template v-else>
+                            <span class="m-table__header-name"
+                                  v-html="column.title"></span>
+                        </template>
+                    </slot>
+
+                </th>
+
+            </tr>
+        </thead>
+    </slot>
+
+    <slot name="body">
+        <tbody>
+            <tr v-if="isEmpty"
+                class="m-table__message">
+                <slot name="empty">
+                    <td :colspan="columns.length">
+                        <p>{{ i18nEmptyTable }}</p>
+                    </td>
+                </slot>
+            </tr>
+            <template v-if="loading">
+                <tr class="m-table__loading">
+                    <td :colspan="columns.length">
+                        <m-progress v-if="loading"
+                                    :indeterminate="true"
+                                    :border-radius="false"></m-progress>
+                    </td>
+                </tr>
+                <tr class="m-table__message">
+                    <slot name="loading">
+                        <td :colspan="columns.length">
+                            <p>{{ i18nLoading }}</p>
+                            <p class="m-table__message__precision">{{ i18nPleaseWait }}</p>
+                        </td>
+                    </slot>
+                </tr>
+            </template>
+            <tr v-else
+                v-for="(row, index) in rows"
+                :key="index">
+                <slot name="row"
+                      :data="row">
+                    <td v-for="column in columns"
+                        :class="{ 'm--is-centered': column.centered }"
+                        :key="'body.' + column.id">
+                        <slot :name="'body.' + column.dataProp"
+                              :data="row">{{ row[column.dataProp] }}</slot>
+                    </td>
+                </slot>
+            </tr>
+        </tbody>
+    </slot>
+
+    <tfoot v-if="$slots.footer">
+        <tr>
+            <slot name="footer"></slot>
+        </tr>
+    </tfoot>
+</table>

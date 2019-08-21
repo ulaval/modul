@@ -1,0 +1,48 @@
+<portal v-if="portalCreated"
+        :target-el="portalTargetSelector"
+        open-trigger="manual">
+    <transition name="m--is">
+        <div v-show="portalMounted && propOpen"
+             class="m-toast"
+             :class="{'m--is-state-confirmation': isStateConfirmation,
+                    'm--is-state-information': isStateInformation,
+                    'm--is-state-warning': isStateWarning,
+                    'm--is-state-error': isStateError,
+                    'm--is-top': isTop,
+                    'm--is-bottom': !isTop,
+                    'm--is-left': isLeft,
+                    'm--is-center': isCenter,
+                    'm--is-right': isRight,
+                    'm--is-mobile': isMqMaxS,
+                    'm--is-desktop': !isMqMaxS}"
+             @mouseover="mouseEnterToast"
+             @mouseleave="mouseLeaveToast"
+             ref="toast">
+            <div class="m-toast__wrap">
+                <div v-if="icon"
+                     class="m-toast__icon">
+                    <m-icon :name="getIcon()"
+                            size="1em"></m-icon>
+                </div>
+                <div class="m-toast__body">
+                    <div class="m-toast__text">
+                        <slot></slot>
+                    </div>
+                    <div v-if="actionLabel"
+                         class="m-toast__actions">
+                        <m-link :mode="buttonMode"
+                                @click="onAction">{{ actionLabel }}</m-link>
+                    </div>
+                </div>
+                <m-icon-button class="m-toast__close-button"
+                               :title="'m-toast:close' | f-m-i18n"
+                               @click="onClose"
+                               icon-name="m-svg__close-clear"
+                               iconSize="12px"
+                               ref="toastclose"
+                               skin="link">
+                </m-icon-button>
+            </div>
+        </div>
+    </transition>
+</portal>

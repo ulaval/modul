@@ -1,0 +1,14 @@
+@import 'commons';
+
+.m-dropdown-group {
+    .m-dropdown-group__header {
+        display: block;
+        padding: $m-padding/2 $m-padding;
+        background: $m-color--grey-darker;
+        color: #fff;
+    }
+
+    .m-dropdown-group__list {
+        padding: 0;
+    }
+}

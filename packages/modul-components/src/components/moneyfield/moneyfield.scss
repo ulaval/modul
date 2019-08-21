@@ -1,0 +1,14 @@
+@import 'commons';
+
+.m-moneyfield {
+    display: inline-flex;
+
+    @include m-input-inline-spacing();
+
+    &__currency-symbol {
+        color: $m-color--grey;
+        margin-left: $m-margin--xs;
+        margin-right: $m-margin--xs;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,17 @@
+<div class="m-address-lookup-field">
+    <m-autocomplete :placeholder="i18nPlaceholder"
+                    :label="i18nSearch"
+                    :results="results"
+                    :open.sync="open"
+                    @complete="onComplete"
+                    @change="onSelect"
+                    v-model="selection">
+        <template slot-scope="{item}">
+            <span :class="item.classesToggle">
+                <span class="m-address-lookup-field__address">{{ item.label }}</span>
+                <span class="m-address-lookup-field__further-information"
+                      v-html="item.description"></span>
+            </span>
+        </template>
+    </m-autocomplete>
+</div>

@@ -1,0 +1,273 @@
+@import 'commons';
+
+@mixin m-navbar-linear-gradient($color, $position) {
+    background: linear-gradient(to $position, rgba($color, 1), rgba($color, 0));
+}
+
+.m-navbar {
+    &__max-width {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    &__contents {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    &:not(.m--is-skin-tab-light):not(.m--is-skin-tab-dark):not(.m--is-skin-plain) {
+        .m-navbar__button {
+            &.m--is-right {
+                button {
+                    margin-right: -$m-padding;
+                }
+            }
+
+            &.m--is-left {
+                button {
+                    margin-left: -$m-padding;
+                }
+            }
+        }
+    }
+
+    &.m--is-skin-plain {
+        .m-navbar__button {
+            background-color: currentColor;
+        }
+    }
+
+    &.m--is-skin-nav-main {
+        background: $m-color--grey-darkest;
+
+        .m-navbar__button {
+            &.m--is-right {
+                @include m-navbar-linear-gradient($m-color--grey-darkest, left);
+            }
+
+            &.m--is-left {
+                @include m-navbar-linear-gradient($m-color--grey-darkest, right);
+            }
+        }
+    }
+
+    &.m--is-skin-nav-sub {
+        background: $m-color--grey-black;
+
+        .m-navbar__button {
+            &.m--is-right {
+                @include m-navbar-linear-gradient($m-color--grey-black, left);
+            }
+
+            &.m--is-left {
+                @include m-navbar-linear-gradient($m-color--grey-black, right);
+            }
+        }
+    }
+
+    &.m--is-skin-tab-underline,
+    &.m--is-skin-tab-soft,
+    &.m--is-skin-tab-arrow {
+        .m-navbar__button {
+            &.m--is-right {
+                @include m-navbar-linear-gradient($m-color--white, left);
+            }
+
+            &.m--is-left {
+                @include m-navbar-linear-gradient($m-color--white, right);
+            }
+        }
+    }
+
+    &.m--is-skin-tab-underline {
+        &::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: $m-border-width--l;
+            width: 100%;
+            content: '';
+            background: $m-color--border;
+        }
+
+        .m-navbar__button {
+            bottom: $m-border-width--l;
+        }
+    }
+
+    &.m--is-skin-tab-arrow {
+        &::before {
+            position: absolute;
+            right: 0;
+            bottom: $m-margin--s;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: $m-border-width--s;
+            background: $m-color--grey;
+        }
+
+        .m-navbar__button {
+            bottom: 7px; // Magic number
+        }
+    }
+
+    &.m--is-skin-tab-light,
+    &.m--is-skin-tab-dark {
+        .m-navbar__button {
+            $m-navbar--button-width: 14px;
+
+            &.m--is-left::after,
+            &.m--is-right::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: $m-navbar--button-width;
+            }
+
+            &.m--is-left {
+                &::after {
+                    right: 0;
+                    transform: translateX(100%);
+                    background: linear-gradient(to right, rgba($m-color--black, 0.05), rgba($m-color--black, 0));
+                }
+            }
+
+            &.m--is-right {
+                &::before {
+                    left: 0;
+                    transform: translateX(-100%);
+                    background: linear-gradient(to left, rgba($m-color--black, 0.1), rgba($m-color--black, 0));
+                }
+            }
+        }
+    }
+
+    &.m--is-skin-tab-dark {
+        .m-navbar__button {
+            background: $m-color--grey-darkest;
+
+            &.m--is-left {
+                border-right: 1px solid $m-color--grey-darker;
+            }
+
+            &.m--is-right {
+                border-left: 1px solid $m-color--grey-darker;
+            }
+        }
+    }
+
+    &.m--is-skin-tab-light {
+        .m-navbar__button {
+            background: $m-color--grey-light;
+
+            &.m--is-left {
+                border-right: 1px solid $m-color--white;
+            }
+
+            &.m--is-right {
+                border-left: 1px solid $m-color--white;
+            }
+        }
+    }
+
+    &.m--is-skin-nav-soft {
+        background: rgba($m-color--white, 0.2);
+    }
+
+    &.m--is-anim-ready {
+        .m-navbar {
+            &__button {
+                &.m--is-enter-active,
+                &.m--is-leave-active {
+                    transition: max-width $m-transition-duration--l ease, opacity $m-transition-duration ease,;
+                }
+
+                &.m--is-enter,
+                &.m--is-leave-to {
+                    max-width: 0;
+                    opacity: 0;
+                }
+            }
+
+            &__line,
+            &__arrow {
+                transition: transform $m-transition-duration ease, width $m-transition-duration ease;
+            }
+        }
+    }
+
+    &__button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 64px;
+        stroke-width: 2;
+
+        &.m--is-left {
+            left: 0;
+        }
+
+        &.m--is-right {
+            right: 0;
+        }
+    }
+
+    &__wrap {
+        position: relative;
+        flex: 1 1 auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    &__list {
+        position: relative;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-flex;
+        text-align: center;
+    }
+
+    &__line,
+    &__arrow {
+        position: absolute;
+    }
+
+    &__line {
+        bottom: 0;
+        background: $m-color--active;
+        height: $m-border-width--l;
+    }
+
+    &__arrow {
+        bottom: $m-margin--s;
+
+        &::before,
+        &::after {
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+
+            @include m-triangle(bottom, currentcolor, 18px);
+        }
+
+        &::before {
+            color: $m-color--grey;
+            top: 0;
+        }
+
+        &::after {
+            color: $m-color--white;
+            top: -1px;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<div class="m-popup"
+     :class="{ 'm--is-inline': hasTriggerSlot }">
+    <m-popper :open.sync="propOpen"
+              @open="onOpen"
+              @close="onClose"
+              @portal-after-open="onPortalAfterOpen"
+              :disabled="disabled"
+              :id="id"
+              ref="popper"
+              :class-name="className"
+              :placement="placement"
+              :focus-management="focusManagement"
+              :open-trigger="propOpenTrigger"
+              :trigger="propTrigger"
+              :before-enter="beforeEnter"
+              :enter="enter"
+              :after-enter="afterEnter"
+              :enter-cancelled="enterCancelled"
+              :before-leave="beforeLeave"
+              :leave="leave"
+              :after-leave="afterLeave"
+              :leave-cancelled="leaveCancelled"
+              :shadow="shadow"
+              :padding="padding"
+              :padding-header="paddingHeader"
+              :padding-body="paddingBody"
+              :padding-footer="paddingFooter"
+              :preload="preload"
+              :width="width"
+              :background="background"
+              :lazy="lazy"
+              v-if="!isMqMaxS"
+              @portal-mounted="onPortalMounted">
+        <div slot="trigger"
+             v-if="hasTriggerSlot">
+            <slot name="trigger"></slot>
+        </div>
+        <slot name="header"
+              slot="header"></slot>
+        <slot></slot>
+        <slot name="footer"
+              slot="footer"></slot>
+    </m-popper>
+    <m-sidebar :open.sync="propOpen"
+               @open="onOpen()"
+               @close="onClose()"
+               @portal-after-open="onPortalAfterOpen"
+               :close-on-backdrop="closeOnBackdrop"
+               :disabled="disabled"
+               :focus-management="focusManagement"
+               :id="id"
+               :padding="padding"
+               :padding-header="paddingHeader"
+               :padding-body="paddingBody"
+               :padding-footer="paddingFooter"
+               :open-trigger="propOpenTrigger"
+               :trigger="propTrigger"
+               :class-name="className"
+               :preload="preload"
+               v-if="isMqMaxS"
+               :lazy="lazy"
+               @portal-mounted="onPortalMounted">
+        <div slot="trigger"
+             v-if="hasTriggerSlot">
+            <slot name="trigger"></slot>
+        </div>
+        <slot name="header"
+              slot="header"></slot>
+        <slot></slot>
+        <slot name="footer"
+              slot="footer"></slot>
+    </m-sidebar>
+</div>

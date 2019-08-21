@@ -1,0 +1,34 @@
+<li class="m-list-item"
+    :class="{ 'm--is-disabled': disabled,
+              'm--is-waiting': isWaiting,
+              'm--has-trigger': $slots['trigger'],
+              'm--has-icon': hasIcon,
+              'm--has-border-top': borderTop,
+              'm--has-border-bottom': borderBottom,
+              'm--has-menu': $slots['menu'],
+              'm--is-full-width': fullWidth,
+              'm--is-full-height': fullHeight }">
+    <div class="m-list-item__content">
+        <slot></slot>
+    </div>
+    <template v-if="!disabled">
+
+        <div class="m-list-item__icon" v-if="hasIcon && !isWaiting" >
+            <m-icon-button :icon-name="iconName" @click="click($event)">
+                <m-i18n :k="iconHiddenText"></m-i18n>
+            </m-icon-button>
+        </div>
+
+        <div class="m-list-item__icon" v-if="$slots['menu'] && !hasIcon && !isWaiting">
+            <slot name="menu"></slot>
+        </div>
+
+        <div class="m-list-item__trigger" v-if="$slots['trigger'] && !hasIcon && !isWaiting">
+            <slot name="trigger"></slot>
+        </div>
+
+        <div class="m-list-item__icon" v-if="isWaiting">
+            <m-spinner size="small"></m-spinner>
+        </div>
+    </template>
+</li>

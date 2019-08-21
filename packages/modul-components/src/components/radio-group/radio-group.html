@@ -1,0 +1,28 @@
+<div class="m-radio-group"
+     :class="{ 'm--is-inline': inline,
+              'm--is-disabled': isDisabled,
+              'm--has-error': hasError,
+              'm--is-valid': isValid,
+              'm--has-validation-message': hasValidationMessage }">
+
+    <m-input-group :label="label"
+                   :required-marker="requiredMarker"
+                   :disabled="isDisabled"
+                   :waiting="isWaiting"
+                   :error="hasError"
+                   :error-message="errorMessage"
+                   :valid="isValid"
+                   :valid-message="validMessage"
+                   :helper-message="helperMessage">
+
+        <template slot="icon">
+            <slot name="icon"></slot>
+        </template>
+
+        <ul class="m-radio-group__body"
+            role="radiogroup">
+            <slot></slot>
+        </ul>
+    </m-input-group>
+
+</div>
