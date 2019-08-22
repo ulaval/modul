@@ -22,13 +22,15 @@
         "@types/lodash": "^4.14.136",
         "@types/node": "^10.12.20",
         "@types/webpack-env": "^1.13.6",
+        "@types/yargs": "^13.0.2",
         "copyfiles": "^1.2.0",
         "node-html-parser": "^1.1.10",
         "ts-morph": "^1.0.0",
         "tslint": "^5.14.0",
         "tslint-config-standard": "^8.0.1",
         "typescript": "^3.2.2",
-        "typescript-tslint-plugin": "^0.3.0"
+        "typescript-tslint-plugin": "^0.3.0",
+        "yargs": "^14.0.0"
     },
     "dependencies": {
         "lodash": "^4.17.15"

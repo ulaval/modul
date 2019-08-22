@@ -11,7 +11,7 @@ declare module 'vue/types/vue' {
     }
 }
 
-export const meta: ModulMeta = new ModulMeta(loadComponentMeta(), require('@ulaval/modul-components/dist/modul-meta.json') as Meta);
+export const meta: ModulMeta = new ModulMeta(loadComponentMeta(), require('@ulaval/modul-components/dist/modul-meta.fr.json') as Meta);
 
 const FrenchPlugin: PluginObject<any> = {
     install(v, options) {

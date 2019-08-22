@@ -2,12 +2,21 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import * as yargs from 'yargs';
 import { MetaGenerator } from './meta-generator';
 import { Meta } from './model';
 
-let destination: string = path.resolve(process.argv[2], 'modul-meta.fr.json');
-let packageFilePath: string = path.resolve('./package.json');
-let projetFilePath: string = path.resolve('./tsconfig.meta.json');
+// tslint:disable-next-line: typedef
+const argv = yargs.options({
+    dest: { type: 'string', demandOption: true },
+    tsconfig: { type: 'string', default: 'tsconfig.json' },
+    package: { type: 'string', default: 'package.json' }
+}).argv;
+
+
+let destination: string = path.resolve(argv.dest, 'modul-meta.fr.json');
+let packageFilePath: string = path.resolve(argv.package);
+let projetFilePath: string = path.resolve(argv.tsconfig);
 
 
 console.log(`Generating components metadata...`);
