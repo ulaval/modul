@@ -1,8 +1,8 @@
 import { FindResponse, ResponseMapper, RetrieveResponse, RetrieveResponseMapper } from './address-lookup-response-mapper';
 
 export class GoogleFindResponse extends FindResponse {
-    public request: google.maps.places.AutocompletionRequest | undefined;
-    public result: google.maps.places.AutocompletePrediction | undefined;
+    public request: any | undefined;
+    public result: any | undefined;
 
     constructor() {
         super();

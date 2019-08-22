@@ -76,7 +76,7 @@ export default class GoogleAPI {
             });
     }
 
-    createToken(): Promise<google.maps.places.AutocompleteSessionToken> {
+    createToken(): Promise<any> {
         return this.instance
             .then(() => {
                 return new google.maps.places.AutocompleteSessionToken();
