@@ -1,8 +1,7 @@
 #!/usr/bin/env groovy
 
 
-
-// Script jenkins pour la publication des packages de modul (dev)
+// Script jenkins pour la publication npm de release des packages de modul
 
 
 pipeline {
@@ -26,6 +25,7 @@ pipeline {
         // Ajouter les timestamps dans le log
         timestamps()
     }
+
 
     stages {
 		stage('Checkout branch') {
