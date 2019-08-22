@@ -20,13 +20,13 @@ export class GoogleFindResponseBuilder {
         this.specimen = new GoogleFindResponse();
     }
 
-    setRequest(request: google.maps.places.AutocompletionRequest): this {
-        this.specimen.request = request;
+    setRequest(request: any): this {
+        this.specimen.request = request as google.maps.places.AutocompletionRequest;
         return this;
     }
 
-    setResult(result: google.maps.places.AutocompletePrediction): this {
-        this.specimen.result = result;
+    setResult(result: any): this {
+        this.specimen.result = result as google.maps.places.AutocompletePrediction;
         return this;
     }
 
@@ -36,8 +36,8 @@ export class GoogleFindResponseBuilder {
 }
 
 export class GoogleRetrieveResponse extends RetrieveResponse {
-    public request: google.maps.places.PlaceDetailsRequest | undefined;
-    public result: google.maps.places.PlaceResult | undefined;
+    public request: any | undefined;
+    public result: any | undefined;
 
     constructor() {
         super();
@@ -55,12 +55,12 @@ export class GoogleRetrieveResponseBuilder {
         this.specimen = new GoogleRetrieveResponse();
     }
 
-    setRequest(request: google.maps.places.PlaceDetailsRequest): this {
+    setRequest(request: any): this {
         this.specimen.request = request;
         return this;
     }
 
-    setResult(result: google.maps.places.PlaceResult): this {
+    setResult(result: any): this {
         this.specimen.result = result;
         return this;
     }
