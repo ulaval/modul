@@ -1,7 +1,7 @@
-import { AxiosResponse, Method } from 'axios';
+import { AxiosResponse } from 'axios';
 
 export interface RequestConfig {
-    method?: Method;
+    method?: string;
     rawUrl?: string;
     pathParams?: any;
     params?: any;
