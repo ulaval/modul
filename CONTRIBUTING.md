@@ -1,6 +1,5 @@
 Je veux les instructions en [français](#fr)
 
-## `@ulaval\modul`
 # Contributing Guide
 
 Before submitting your contribution, please read the following guidelines.
@@ -12,8 +11,8 @@ Before submitting your contribution, please read the following guidelines.
 Avant de soumettre votre contribution, veuillez prendre note de ces quelques lignes directrices.
 
 - Lire à propos de la [structure du monorepo](#psfr).
-- Créer une *feature branch* à partir de la `develop` ou `master` selon son type (voir plus bas). Le nom de votre branche devrait toujours débuter par *feature/* ou *bugfix/*.
-- À moins d'avoir à modifier la structure même du projet, le code touché par le *pull request* (PR) ne devrait concerner que les répertoires `/packages/**` et `/src/**`.
+- Créer une *feature branch* à partir de la `develop` ou `master` en fonction des changements effectué (voir plus bas). Le nom de votre branche devrait toujours débuter par *feature/* ou *bugfix/*.
+- À moins d'avoir à modifier la structure même du projet, le *pull request* (PR) ne devrait concerner que les répertoires `/packages/**` et `/src/**`.
 - S'assurer que le *repository* compile correctement (`yarn run bootstrap`).
 - S'assurer que les tests s'exécutent avec succès (`yarn run test`). Si une mise à jour des snapshots est nécessaire (`yarn run test:update`).
 - S'assurer que le code respecte les règles de formattage (`yarn run lint`).
@@ -42,7 +41,7 @@ Avant de soumettre votre contribution, veuillez prendre note de ces quelques lig
 - Plusieurs *commits* peuvent être effectués au cours du processus d'approbation d'un PR.
 - Un *squash merge* est effectué lorsque le code est rapporté dans la branche `develop` ou `master`.
 
-# <a name="psfr"></a>Structure du répo
+# <a name="psfr"></a>Structure du monorépo
 
 **/conf**: Contient les fichiers de configuration (hook, linters, etc.).
 

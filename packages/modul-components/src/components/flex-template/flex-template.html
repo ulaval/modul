@@ -1,0 +1,38 @@
+<div class="m-flex-template"
+    :class="{ 'm--is-menu-open': transitionDelayOpen,
+              'm--is-menu-right': isMenuOriginRight,
+              'm--no-header': !hasHeaderSlot,
+              'm--is-menu-fixe-fake': isMenuFixeFake,
+              'm--is-header-fixe': propHeaderFixe && !isMenuFixeFake,
+              'm--is-menu-fixe': propMenuFixe,
+              'm--is-header-hidden': headerHidden,
+              'm--has-menu-anim': menuHasAnim,
+              'm--is-small-menu': propSmallMenu,
+              'm--is-eq-max-s': isEqMaxS }">
+    <header class="m-flex-template__header" ref="header" v-if="hasHeaderSlot">
+        <slot name="header"></slot>
+    </header>
+    <div class="m-flex-template__corps" :style="{ 'padding-top': paddingPage }">
+        <transition @enter="transitionEnter" @after-enter="transitionAfterEnter" @leave="transitionLeave">
+            <div class="m-flex-template__menu-container" v-if="propMenuOpen"
+                ref="menuContainer">
+                <div class="m-flex-template__menu" :style="{ 'top': topMenu }" ref="menu">
+                    <div class="m-flex-template__menu__content" :style="{ 'width': menuWidth }" ref="menuContent" tabindex="0">
+                        <slot name="menu"></slot>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+        <div class="m-flex-template__page-container" ref="pageContainer">
+            <div class="m-flex-template__page" :style="{ 'min-height': propPageMinHeight }">
+                <div class="m-flex-template__page__body">
+                    <slot></slot>
+                </div>
+                <footer class="m-flex-template__page__footer" v-if="hasFooterSlot">
+                    <slot name="footer"></slot>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>

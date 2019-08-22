@@ -1,0 +1,13 @@
+@import 'commons';
+
+.m-character-count__wrap {
+    transition: color $m-transition-duration ease;
+    margin-top: 2px; // Magic number
+    font-size: $m-font-size--xs;
+    padding-left: $m-padding--xs;
+    color: currentColor;
+
+    span {
+        font-weight: $m-font-weight--semi-bold;
+    }
+}

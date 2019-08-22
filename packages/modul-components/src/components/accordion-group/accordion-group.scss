@@ -1,0 +1,45 @@
+@import 'commons';
+
+.m-accordion-group {
+    &__header {
+        display: flex;
+        padding: 0 $m-padding $m-margin $m-padding;
+
+        &.m--no-title {
+            justify-content: flex-end;
+        }
+
+        &:not(.m--has-secondary-content):not(.m--no-title).m--is-toggle-link-left {
+            flex-direction: column;
+        }
+
+        &.m--has-secondary-content {
+            flex-direction: column;
+
+            &.m--is-toggle-link-left {
+                .m-accordion-group__secondary-content {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+    }
+
+    &__header-title {
+        flex: 1 1 auto;
+    }
+
+    &__secondary-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-shrink: 0;
+    }
+
+    &__toggle-link {
+        flex-shrink: 0;
+    }
+
+    &__body {
+        margin-top: 2px;
+    }
+}

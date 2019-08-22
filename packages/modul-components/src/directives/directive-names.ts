@@ -1,0 +1,14 @@
+export const BADGE_NAME: string = 'm-badge';
+export const DRAGGABLE_ALLOW_SCROLL_NAME: string = 'm-draggable-allow-scroll';
+export const DRAGGABLE_NAME: string = 'm-draggable';
+export const DROPPABLE_GROUP_NAME: string = 'm-droppable-group';
+export const DROPPABLE_NAME: string = 'm-droppable';
+export const FILE_DROP_NAME: string = 'm-file-drop';
+export const ABSTRACT_CONTROL_NAME: string = 'm-control';
+export const I18N_NAME: string = 'm-i18n';
+export const POPUP_NAME: string = 'm-popup';
+export const REMOVE_USER_SELECT_NAME: string = 'm-remove-user-select';
+export const RIPPLE_EFFECT_NAME: string = 'm-ripple-effect';
+export const SCROLL_TO_NAME: string = 'm-scroll-to';
+export const SORTABLE_NAME: string = 'm-sortable';
+export const TEXTAREA_AUTO_HEIGHT: string = 'm-textarea-auto-height';

@@ -1,0 +1,359 @@
+@import 'commons';
+
+$m-input-style-base-height: $m-line-height + em;
+$m-input-style-border-radius: 3px;
+
+@mixin input-style-cursor($cursor: default) {
+    &,
+    .m-input-style__label,
+    .m-input-style__input,
+    .m-input-style__input input,
+    .m-input-style__input textarea {
+        cursor: $cursor;
+
+        @content;
+    }
+}
+
+.m-input-style {
+    @include input-style-cursor(text);
+
+    position: relative;
+    display: inline-flex;
+    outline: none;
+
+    &__main {
+        border: 1px solid $m-color--grey-light;
+        border-radius: $m-input-style-border-radius;
+        transition: border-color $m-transition-duration--l ease-in-out, margin-top $m-transition-duration ease;
+        display: inline-flex;
+        width: 100%;
+    }
+
+    &__body {
+        position: relative;
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+        padding: $m-input-style--padding;
+        transition: border-color $m-transition-duration--l ease-in-out, margin-top $m-transition-duration ease;
+    }
+
+    &__append {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus):not(.m--is-readonly) {
+        .m-input-style__label {
+            color: $m-color--text;
+        }
+    }
+
+    &.m--is-focus:not(.m--has-error):not(.m--is-valid) {
+        .m-input-style__main {
+            border-color: $m-input-style--color-focus;
+        }
+
+        .m-input-style__label {
+            color: $m-input-style--color-focus;
+        }
+
+        .m-input-style__input {
+            .m-icon-button.m-icon-button,
+            .m-icon.m-icon {
+                color: $m-input-style--color-focus;
+            }
+        }
+    }
+
+    &.m--has-cursor-pointer {
+        @include input-style-cursor(pointer);
+    }
+
+    &.m--has-label:not(.m--is-label-up) {
+        .m-input-style__content {
+            opacity: 0;
+        }
+    }
+
+    &.m--is-label-up {
+        .m-input-style__label {
+            transform: translate3d(0, calc((-50% * 0.8) - #{$m-input-style--padding}), 0) scale(0.8);
+        }
+
+        .m-input-style__text {
+            background: $m-color--white;
+            left: -$m-spacing--xs; // Magic number: align label with text zone
+            padding-left: $m-spacing--xs;
+
+            .m-inplace-edit & {
+                background: $m-color--information;
+            }
+        }
+    }
+
+    &.m--has-error {
+        .m-input-style__main {
+            border-color: $m-input-style--color-error;
+        }
+
+        .m-input-style__label {
+            color: $m-input-style--color-error;
+        }
+
+        .m-input-style__input {
+            .m-icon-button.m-icon-button,
+            .m-icon.m-icon {
+                color: $m-input-style--color-error;
+            }
+        }
+    }
+
+    &.m--is-valid {
+        .m-input-style__main {
+            border-color: $m-input-style--color-valid;
+        }
+
+        .m-input-style__label {
+            color: $m-input-style--color-valid;
+        }
+
+        .m-input-style__input {
+            .m-input-style__label,
+            .m-icon-button.m-icon-button,
+            .m-icon.m-icon {
+                color: $m-input-style--color-valid;
+            }
+        }
+    }
+
+    &.m--is-disabled,
+    &.m--is-waiting,
+    &.m--is-readonly {
+        .m-input-style__main {
+            border-style: dashed;
+        }
+    }
+
+    &.m--is-disabled,
+    &.m--is-waiting {
+        .m-input-style__label,
+        .m-input-style__input,
+        .m-icon-button.m-icon-button,
+        .m-icon.m-icon,
+        input,
+        textarea {
+            color: $m-input-style--color-disabled;
+        }
+    }
+
+    &.m--is-disabled {
+        @include input-style-cursor() {
+            color: $m-input-style--color-disabled;
+            user-select: none;
+        }
+    }
+
+    &.m--is-waiting {
+        @include input-style-cursor(wait);
+    }
+
+    &.m--is-readonly {
+        @include input-style-cursor();
+    }
+
+    &.m--is-anim-ready {
+        .m-input-style__label {
+            transition-property: color, transform, top;
+            transition-duration: $m-transition-duration--l;
+            transition-timing-function: ease;
+        }
+
+        .m-input-style__content {
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    &__label {
+        position: relative;
+        transform-origin: 0 0;
+        z-index: 1;
+        transform: translate3d(0, 0, 0);
+        align-items: center;
+        font-size: $m-font-size;
+        font-weight: $m-font-weight--light;
+        color: $m-color--text-light;
+
+        .m-icon {
+            font-size: 85%;
+            margin-right: $m-spacing--s;
+        }
+    }
+
+    &__text {
+        position: relative;
+        transition: background $m-transition-duration ease, padding $m-transition-duration ease, left $m-transition-duration ease;
+        left: 0;
+        display: inline-block;
+    }
+
+    &__required-marker {
+        color: $m-color--accent;
+        font-size: inherit;
+        font-weight: $m-font-weight--bold;
+        vertical-align: baseline;
+    }
+
+    &__input {
+        display: flex;
+        position: relative;
+        align-items: center;
+        flex: 1 1 auto;
+        width: 100%;
+        font-weight: $m-font-weight--light;
+        text-decoration: none;
+        background-color: $m-color--white;
+        min-height: $m-input-style-base-height;
+        margin-top: -$m-input-style-base-height;
+
+        .m-icon-button.m-icon-button,
+        .m-icon.m-icon {
+            position: relative;
+            z-index: 0;
+            font-size: 16px;
+            color: $m-color--grey-darker;
+        }
+
+        .m-icon-button.m-icon-button {
+            min-width: auto;
+            min-height: auto;
+        }
+
+        .m-icon.m-icon {
+            transition: color 0.3s ease;
+        }
+    }
+
+    &__content {
+        position: relative;
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+
+    &__suffix {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__transparent-text {
+        opacity: 0;
+        width: 0;
+        user-select: none;
+    }
+
+    &__adjust-width-auto {
+        height: 0;
+        opacity: 0;
+        user-select: none;
+        white-space: nowrap;
+        padding-right: $m-input-style--padding;
+    }
+
+    &__spinner {
+        margin-left: $m-spacing--s;
+    }
+
+    ::placeholder {
+        color: $m-color--disabled;
+    }
+
+    &__input,
+    input,
+    textarea {
+        outline: none;
+        text-overflow: ellipsis;
+        font-family: inherit;
+        text-align: left;
+        background: none;
+        border: none;
+        color: $m-color--text;
+    }
+
+    input,
+    textarea {
+        overflow: hidden;
+        width: 100%;
+        padding: 0;
+        font-size: $m-font-size;
+        font-weight: $m-font-weight--light;
+        line-height: $m-line-height;
+        vertical-align: middle;
+
+        &::-ms-clear,
+        &::-ms-reveal {
+            display: none;
+        }
+
+        &:-webkit-autofill {
+            background: rgba($m-color--white, 0);
+            -webkit-box-shadow: 0 0 0 1000px $m-color--white inset !important;
+        }
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    &.m--is-tag-h1,
+    &.m--is-tag-h2,
+    &.m--is-tag-h3,
+    &.m--is-tag-h4,
+    &.m--is-tag-h5,
+    &.m--is-tag-h6 {
+        input,
+        textarea,
+        ::placeholder,
+        .m-input-style__label,
+        .m-input-style__transparent-text {
+            font-size: inherit;
+            font-weight: $m-font-weight--semi-bold;
+        }
+    }
+
+    &.m--is-tag-p {
+        input,
+        textarea,
+        ::placeholder,
+        .m-input-style__label,
+        .m-input-style__transparent-text {
+            font-weight: $m-font-weight--light;
+        }
+    }
+
+    &.m--is-tag- {
+        &h1 {
+            @include m-h1-font-style();
+        }
+
+        &h2 {
+            @include m-h2-font-style();
+        }
+
+        &h3 {
+            @include m-h3-font-style();
+        }
+
+        &h4 {
+            @include m-h4-font-style();
+        }
+
+        &h5 {
+            @include m-h5-font-style();
+        }
+
+        &h6 {
+            @include m-h6-font-style();
+        }
+    }
+}

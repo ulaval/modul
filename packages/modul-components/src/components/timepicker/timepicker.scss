@@ -1,0 +1,101 @@
+@import 'commons';
+$m-timepicker--color-select: $m-color--interactive !default;
+$m-timepicker--height-multiplier: 5;
+
+.m-timepicker {
+    display: inline-flex;
+    flex-direction: column;
+
+    @include m-input-inline-spacing();
+
+    &.m--has-validation-message {
+        .m-timepicker__validation-message {
+            margin-top: $m-spacing--xs;
+        }
+    }
+
+    &__header,
+    &__body,
+    &__footer {
+        background: $m-color--white;
+
+        @media (min-width: #{$m-mq--min--s}) {
+            border-right: $m-border-width--s solid $m-color--border;
+            border-left: $m-border-width--s solid $m-color--border;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: $m-touch-size;
+        padding: $m-margin 0;
+        border-bottom: $m-border-width--s solid $m-color--border;
+        font-weight: $m-font-weight--semi-bold;
+
+        @media (min-width: #{$m-mq--min--s}) {
+            border-top: $m-border-width--s solid $m-color--border;
+        }
+
+        &__hours,
+        &__minutes {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+    }
+
+    &__body {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: $m-touch-size * $m-timepicker--height-multiplier;
+
+        @media (min-width: #{$m-mq--min--s}) {
+            width: 210px;
+            height: $m-touch-size * $m-timepicker--height-multiplier;
+        }
+    }
+
+    &__hours,
+    &__minutes {
+        width: 50%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+
+        @include m-scrollbar();
+
+        &-item {
+            transition: background $m-transition-duration ease;
+            outline: 0;
+            color: inherit;
+            height: $m-touch-size;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: $m-font-weight--bold;
+        }
+    }
+
+    &__footer {
+        border-top: $m-border-width--s solid $m-color--border;
+        padding: $m-margin--s $m-padding;
+        min-height: $m-touch-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: #{$m-mq--min--s}) {
+            border-bottom: $m-border-width--s solid $m-color--border;
+        }
+    }
+
+    &__validation-message {
+        transition: margin-top $m-transition-duration ease;
+    }
+}

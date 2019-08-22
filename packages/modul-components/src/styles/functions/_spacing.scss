@@ -1,0 +1,43 @@
+@mixin m-spacing-factory() {
+    $m-props: 'margin', 'padding';
+    $m-directions: '', '-top', '-right', '-bottom', '-left';
+
+    @each $prop in $m-props {
+        @each $direction in $m-directions {
+            &--no-#{$prop}#{$direction} {
+                #{$prop}#{$direction}: 0;
+            }
+
+            @each $size, $spacing in $m-spacing-map {
+                @if ( $size == 'base') {
+                    &--#{$prop}#{$direction} {
+                        #{$prop}#{$direction}: $spacing;
+                    }
+                }
+
+                @else {
+                    &--#{$prop}#{$direction}--#{$size} {
+                        #{$prop}#{$direction}: $spacing;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@function m-spacing($size: 'base') {
+    $m-map: $m-spacing-map;
+    $m-spacing-multiplier: 8;
+
+    @if map-has-key($m-map, $size) {
+        @return map-get($m-map, $size);
+    }
+
+    @else if(is-number($size)) {
+        @return round($size * $m-spacing-multiplier) + px;
+    }
+
+    @error "Unknown spacing size '#{$size}', valide sizes are : '#{$m-map}' or a number";
+
+    @return null;
+}

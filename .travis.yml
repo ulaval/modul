@@ -14,7 +14,7 @@ install:
 script:
   - yarn run bootstrap
   - yarn run lint:ci
-  - yarn run test
+  - yarn run test:ci
 
 cache:
   directories:

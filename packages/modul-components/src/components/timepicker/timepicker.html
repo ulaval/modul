@@ -1,0 +1,111 @@
+<div class="m-timepicker"
+     :class="{ 'm--is-disabled': isDisabled,
+               'm--is-readonly': isReadonly,
+               'm--has-validation-message': hasValidationMessage }"
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+    <m-input-style :disabled="isDisabled"
+                   :readonly="isReadonly"
+                   :waiting="isWaiting"
+                   :focus="isFocus"
+                   :label-up="labelUp"
+                   :label="label"
+                   :label-for="id"
+                   :empty="isEmpty"
+                   :error="timeError"
+                   :valid="isValid"
+                   @click="focusInput()">
+        <m-input-mask v-model="currentTime"
+                      aria-haspopup="true"
+                      :aria-controls="ariaControls"
+                      :aria-expanded="open"
+                      :disabled="isDisabled || isWaiting"
+                      :id="id"
+                      inputmode="decimal"
+                      :options="inputMaskOptions"
+                      :placeholder="i18nPlaceHolder"
+                      :min="min"
+                      :max="max"
+                      :readonly="isReadonly"
+                      :step="currentStep"
+                      type="text"
+                      :raw="false"
+                      ref="input"
+                      @blur="onBlur"
+                      @focus="onFocus"></m-input-mask>
+        <m-icon-button slot="suffix"
+                       icon-name="m-svg__clock"
+                       :disabled="!active"
+                       button-size="22px"
+                       :aria-controls="id"
+                       v-m-popup:popup>
+            <m-i18n k="m-timepicker:open"
+                    v-if="!open"></m-i18n>
+            <m-i18n k="m-timepicker:close"
+                    v-if="open"></m-i18n>
+        </m-icon-button>
+    </m-input-style>
+    <m-validation-message class="m-timepicker__validation-message"
+                          :disabled="isDisabled"
+                          :waiting="isWaiting"
+                          :error="timeError"
+                          :error-message="timeErrorMessage"
+                          :valid-message="validMessage"
+                          :helper-message="helperMessage"></m-validation-message>
+    <m-popup ref="popup"
+             :open.sync="open"
+             :disabled="!active"
+             :padding="false"
+             :focus-management="isMqMaxS"
+             @open="onPopupOpen"
+             @close="onClose">
+        <div slot="header"
+             class="m-timepicker__header">
+            <m-i18n k="m-timepicker:hours"
+                    class="m-timepicker__header__hours"></m-i18n>:
+            <m-i18n k="m-timepicker:minutes"
+                    class="m-timepicker__header__minutes"></m-i18n>
+        </div>
+        <div :id="ariaControls"
+             class="m-timepicker__body"
+             :aria-labelledby="id">
+            <ul class="m-timepicker__hours"
+                :aria-activedescendant="currentHour"
+                ref="hours"
+                role="listbox"
+                @mousedown="onMousedown"
+                @mouseup="onMouseup"
+                @scroll="onScroll">
+                <li v-for="(h, hoursIndex) in currentfilteredHours"
+                    :key="hoursIndex"
+                    :id="h"
+                    class="m-timepicker__hours-item">
+                    <m-calendar-button :selected="h == currentHour"
+                                       @click="onSelectHour(h)"
+                                       @keyup.enter="onSelectHour(h)"
+                                       role="option">{{formatNumber(h)}}</m-calendar-button>
+                </li>
+            </ul>
+            <ul class="m-timepicker__minutes"
+                :aria-activedescendant="currentMinute"
+                ref="minutes"
+                @mousedown="onMousedown"
+                @mouseup="onMouseup"
+                @scroll="onScroll">
+                <li v-for="(m, minutesIndex) in currentFilteredMinutes"
+                    :key="minutesIndex"
+                    :id="minutesIndex"
+                    class="m-timepicker__minutes-item">
+                    <m-calendar-button :selected="m == currentMinute"
+                                       @click="onSelectMinute(m)"
+                                       @keyup.enter="onSelectMinute(m)"
+                                       role="option">{{formatNumber(m)}}</m-calendar-button>
+                </li>
+            </ul>
+        </div>
+        <div slot="footer"
+             class="m-timepicker__footer">
+            <m-link mode="button"
+                    @click="onOk">{{i18nButton}}</m-link>
+        </div>
+    </m-popup>
+</div>

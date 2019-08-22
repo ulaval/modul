@@ -1,0 +1,66 @@
+<article class="m-accordion"
+         :class="['m--is-' + propSkin,
+            {'m--is-closed': !propOpen,
+            'm--is-open': propOpen,
+            'm--is-disabled': propDisabled,
+            'm--has-icon-left': iconPosition !== 'right',
+            'm--has-icon-large': iconSize=='large',
+            'm--is-empty-content': !hasContent() }]">
+    <div :id="propId"
+         class="m-accordion__header"
+         :class="{ 'm--has-padding': paddingHeader && padding }"
+         :aria-expanded="propOpen"
+         :aria-controls="idBodyWrap"
+         @click.prevent="toggleAccordion"
+         @keyup.self.enter="toggleAccordion"
+         :tabindex="headerTabindex"
+         role="tab"
+         ref="accordionHeader">
+        <div class="m-accordion__header__content">
+            <slot name="header"></slot>
+            <m-i18n v-if="!propOpen"
+                    class="m-accordion__hidden"
+                    k="m-accordion:open"></m-i18n>
+            <m-i18n v-if="propOpen"
+                    class="m-accordion__hidden"
+                    k="m-accordion:close"></m-i18n>
+        </div>
+        <m-plus v-if="hasContent()"
+                class="m-accordion__header-icon"
+                :class="{ 'm--is-left': iconPosition !== 'right' }"
+                :border="hasIconBorder"
+                :large="iconSize=='large'"
+                :open="propOpen"
+                :skin="plusSkin"
+                :title-open="titleMenuOpen"
+                :title-close="titleMenuClose"
+                aria-hidden="true"></m-plus>
+    </div>
+    <m-accordion-transition v-if="hasContent()"
+                            :height-delta="skin === 'default' || skin === 'dark' || skin === 'dark-b' ? 32 : 0">
+        <template v-if="!keepContentAlive">
+            <div v-if="propOpen"
+                 :id="idBodyWrap"
+                 class="m-accordion__body-wrap"
+                 :aria-labelledby="propId"
+                 role="tabpanel">
+                <div class="m-accordion__body"
+                     :class="classBody">
+                    <slot></slot>
+                </div>
+            </div>
+        </template>
+        <template v-else>
+            <div v-show="propOpen"
+                 :id="idBodyWrap"
+                 class="m-accordion__body-wrap"
+                 :aria-labelledby="propId"
+                 role="tabpanel">
+                <div class="m-accordion__body"
+                     :class="classBody">
+                    <slot></slot>
+                </div>
+            </div>
+        </template>
+    </m-accordion-transition>
+</article>

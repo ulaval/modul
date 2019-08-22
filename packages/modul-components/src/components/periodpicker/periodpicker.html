@@ -1,0 +1,24 @@
+<div class="m-periodpicker">
+    <div class="m-periodpicker__body">
+        <div class="m-periodpicker__item"
+             :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+            <slot name="first"
+                  :props="firstInputState.props"
+                  :handlers="firstInputState.handlers"></slot>
+        </div>
+        <div class="m-periodpicker__item"
+             :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+            <slot name="second"
+                  :props="secondInputState.props"
+                  :handlers="secondInputState.handlers"></slot>
+        </div>
+    </div>
+
+    <m-validation-message :disabled="isDisabled"
+                          :waiting="isWaiting"
+                          :error="hasTextfieldError"
+                          :error-message="errorMessage"
+                          :valid="isTextfieldValid"
+                          :valid-message="validMessage"
+                          :helper-message="helperMessage"></m-validation-message>
+</div>

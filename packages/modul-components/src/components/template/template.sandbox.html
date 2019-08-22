@@ -1,0 +1,11 @@
+<div>
+    <!-- Sandbox template -->
+    <h2>Apparition asynchrone de l'entete</h2>
+    <m-template class="m-u--margin-top">
+        <h2 slot="header" v-if="hasEntete">Entete</h2>
+        <p slot="subHeader">Slot subHeader</p>
+        <p>Corps</p>
+        <div slot="column">Colonne</div>
+        <div slot="footer">Footer</div>
+    </m-template>
+</div>

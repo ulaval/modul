@@ -1,0 +1,24 @@
+@import 'commons';
+$m-line-height-rich-text: 21px !default;
+
+.m-rich-text {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+
+    &.m--has-validation-message {
+        .m-rich-text__validation-message {
+            margin-top: $m-spacing--xs;
+        }
+    }
+
+    &__validation-message {
+        transition: margin-top $m-transition-duration ease;
+    }
+
+    /deep/ .m-input-style {
+        &__label {
+            line-height: $m-line-height-rich-text;
+        }
+    }
+}

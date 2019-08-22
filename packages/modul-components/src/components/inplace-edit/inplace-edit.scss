@@ -1,0 +1,30 @@
+@import 'commons';
+
+.m-inplace-edit {
+    padding: 0;
+    background: $m-color--white;
+    transition: padding $m-transition-duration ease, background $m-transition-duration--s linear;
+
+    &.m--is-edit-mode {
+        padding: $m-spacing;
+        background: $m-color--information;
+    }
+
+    &.m--has-erreur {
+        background: $m-color--error-lightest;
+    }
+
+    &__buttons {
+        margin-top: $m-margin--l;
+
+        > :first-child {
+            margin-right: $m-margin--s;
+        }
+    }
+}
+
+.m-edit-inplace__title {
+    margin: 0;
+    font-size: $m-font-size--h4;
+    font-weight: $m-font-weight--semi-bold;
+}

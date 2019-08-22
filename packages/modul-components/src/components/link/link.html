@@ -1,0 +1,33 @@
+<component class="m-link"
+           :class="{ 'm--is-unvisited': isUnvisited,
+                     'm--is-disabled': disabled,
+                     'm--no-underline': !underline,
+                     'm--is-button': isButton,
+                     'm--is-skin-text': isSkinText,
+                     'm--is-skin-light': isSkinLight,
+                     'm--has-right-icon' : isIconPositionRight,
+                     'm--has-left-icon' : isIconPositionLeft,
+                     'm--has-content': $slots.default }"
+           :is="tagName"
+           :to="routerLinkUrl"
+           :event="routerEvent"
+           :ref="linkRef"
+           :role="roleButton"
+           :href="propUrl"
+           :target="target"
+           :tabindex="disabled ? '-1' : tabindex"
+           @keyup="onKeyup"
+           @click="onClick">
+    <m-icon v-if="hasIcon"
+            class="m-link__icon"
+            :class="{ 'm--has-large-stroke': iconHasLargeStroke }"
+            :name="propIconName"
+            :size="propIconSize"
+            aria-hidden="true"></m-icon>
+    <span class="m-link__text">
+        <slot></slot>
+    </span>
+    <m-i18n v-if="isTargetBlank"
+            class="m-link__hidden"
+            k="m-link:open-new-tab"></m-i18n>
+</component>

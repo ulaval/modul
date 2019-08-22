@@ -26,7 +26,7 @@ jobs:
 
       - run:
           name:  test
-          command: yarn run test
+          command: yarn run test:ci
 
       - save_cache:
           paths:
