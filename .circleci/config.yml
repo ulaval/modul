@@ -10,11 +10,11 @@ jobs:
       - checkout
 
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
-          - v1-dependencies-{{ checksum "yarn.lock" }}
-          - v1-dependencies-
+            - yarn-packages-{{ checksum "yarn.lock" }}
 
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
 
       - run:
           name: bootstrap
@@ -29,7 +29,9 @@ jobs:
           command: yarn run test:ci
 
       - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock"" }}
+          name: Save Yarn Package Cache
+            key: yarn-packages-{{ checksum "yarn.lock" }}
+            paths:
+              - ~/.cache/yarn
+
 
