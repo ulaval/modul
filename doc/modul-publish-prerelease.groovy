@@ -47,10 +47,7 @@ pipeline {
 			steps {
 				withNPM(npmrcConfig: NPM_CONFIG) {
 					echo "Install dependancies..."
-					sh "yarn install"
-
-					echo "Bootstrap lerna workspace..."
-					sh "yarn run bootstrap"
+					sh "yarn install --frozen-lockfile"
 				}
 			}
 		}
