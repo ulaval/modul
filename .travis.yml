@@ -9,13 +9,14 @@ branches:
   - develop
 
 install:
-  - yarn install
+  - yarn install --frozen-lockfile
 
 script:
   - yarn run lint:ci
   - yarn run test:ci
 
 cache:
+  yarn: true
   directories:
     - node_modules
 
