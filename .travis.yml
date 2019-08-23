@@ -12,7 +12,6 @@ install:
   - yarn install
 
 script:
-  - yarn run bootstrap
   - yarn run lint:ci
   - yarn run test:ci
 

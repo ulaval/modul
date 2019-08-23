@@ -17,10 +17,6 @@ jobs:
       - run: yarn install
 
       - run:
-          name: bootstrap
-          command: yarn run bootstrap
-
-      - run:
           name: lint
           command: yarn run lint:ci
 
