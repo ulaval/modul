@@ -1,0 +1,20 @@
+@import 'commons';
+
+.m-breadcrumbs {
+    &__fil-ariane__elem {
+        display: inline-block;
+    }
+
+    .move-enter-active {
+        transition: all 1s ease;
+    }
+
+    .move-enter {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    .move-enter-to {
+        opacity: 1;
+    }
+}

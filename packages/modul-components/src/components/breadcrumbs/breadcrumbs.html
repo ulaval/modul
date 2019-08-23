@@ -1,0 +1,14 @@
+<div class="m-breadcrumbs">
+    <transition-group name="move">
+        <span v-for="item in definedItems"
+              v-bind:key="item.text"
+              class="m-breadcrumbs__fil-ariane__elem ">
+            <m-link v-if="item.url"
+                    :icon-name="item.iconName"
+                    :disabled="disabled || item.disabled"
+                    :url="item.url"> {{ item.divider || divider }}{{ item.text }}
+            </m-link>
+            <span v-else> {{ item.divider || divider }}{{ item.text }}</span>
+        </span>
+    </transition-group>
+</div>
