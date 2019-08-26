@@ -18,7 +18,8 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
             nbTab: 7,
             skinNavbar: MNavbarSkin.TabLight,
             disabledTransiton: false,
-            buttonSkin: MButtonSkin.Secondary
+            buttonSkin: MButtonSkin.Secondary,
+            transitionEmit: ''
         }),
         methods: {
             showTab(newIndex): void {
@@ -26,6 +27,41 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
                 _this.direction = (newIndex < _this.selectedTabIndex) ? MSlideTransitionDirection.LeftToRight : MSlideTransitionDirection.RightToLeft;
                 _this.selectedTabIndex = newIndex;
                 _this.nbParagraphe = (_this.selectedTabIndex % 2) === 0 ? 4 : newIndex;
+            },
+            beforeEnter(): void {
+                (this as any).transitionEmit = 'before-enter';
+                this.$log.log(`@emit('before-enter')`);
+            },
+            enter(): void {
+                (this as any).transitionEmit = 'enter';
+                this.$log.log(`@emit('enter')`);
+            },
+            afterEnter(): void {
+                (this as any).transitionEmit = 'after-enter';
+                this.$log.log(`@emit('after-enter')`);
+            },
+            enterCancelled(): void {
+                (this as any).transitionEmit = 'enter-cancelled';
+                this.$log.log(`@emit('enter-cancelled')`);
+            },
+            beforeLeave(): void {
+                (this as any).transitionEmit = 'before-leave';
+                this.$log.log(`@emit('before-leave')`);
+            },
+            leave(): void {
+                (this as any).transitionEmit = 'leave';
+                this.$log.log(`@emit('leave')`);
+            },
+            afterLeave(): void {
+                (this as any).transitionEmit = 'after-leave';
+                this.$log.log(`@emit('after-leave')`);
+                setTimeout(() => {
+                    (this as any).transitionEmit = '';
+                }, 500);
+            },
+            leaveCancelled(): void {
+                (this as any).transitionEmit = 'leave-cancelled';
+                this.$log.log(`@emit('leave-cancelled')`);
             }
         },
         template: `
@@ -40,7 +76,15 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
                 </m-navbar-item>
             </m-navbar>
             <m-slide-transition :direction="direction"
-                                :disabled="disabledTransiton">
+                                :disabled="disabledTransiton"
+                                @before-enter="beforeEnter"
+                                @enter="enter"
+                                @after-enter="afterEnter"
+                                @enter-cancelled="enterCancelled"
+                                @before-leave="beforeLeave"
+                                @leave="leave"
+                                @after-leave="afterLeave"
+                                @leave-cancelled="leaveCancelled">
                 <div v-for="index in nbTab"
                      :key="index"
                      v-if="selectedTabIndex === index"
@@ -61,5 +105,6 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
                           class="m-u--margin-left"
                           @click="disabledTransiton = !disabledTransiton">{{disabledTransiton ? 'Enabled' : 'Disabled'}} transition</m-button>
             </div>
+            <p v-if="transitionEmit">Transition emit: {{transitionEmit}}</p>
         </div>`
     }));
