@@ -120,7 +120,7 @@ $m-accordion--color-default: $m-color--interactive !default;
 
         .m-accordion.m--is-light > & {
             &:hover {
-                .m-accordion__header__content {
+                .m-accordion__header-content {
                     transition: color $m-transition-duration ease;
                     color: $m-color--interactive;
                 }
@@ -163,8 +163,9 @@ $m-accordion--color-default: $m-color--interactive !default;
         }
     }
 
-    &__header__content {
-        flex: 1;
+    &__header-content {
+        flex: 1 1 auto;
+        max-width: 100%;
     }
 
     &__header-icon {

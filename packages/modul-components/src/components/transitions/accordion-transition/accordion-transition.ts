@@ -35,7 +35,7 @@ export class MAccordionTransition extends ModulVue {
     }
 
     @Emit('enter')
-    public enter(el: HTMLElement): void {
+    public enter(el: HTMLElement, done): void {
         const heightDelta: number = this.heightDelta || 0;
         el.style.height = `${el.scrollHeight - heightDelta}px`;
     }
@@ -45,6 +45,9 @@ export class MAccordionTransition extends ModulVue {
         el.style.removeProperty('height');
     }
 
+    @Emit('enter-cancelled')
+    public enterCancelled(el: HTMLElement): void { }
+
     @Emit('before-leave')
     public beforeLeave(el: HTMLElement): void {
         el.style.height = parseInt((window.getComputedStyle(el).height as string), 10) + 'px';
@@ -52,13 +55,15 @@ export class MAccordionTransition extends ModulVue {
     }
 
     @Emit('leave')
-    public leave(el: HTMLElement): void {
-    }
+    public leave(el: HTMLElement, done): void { }
 
     @Emit('after-leave')
     public afterLeave(el: HTMLElement): void {
         el.style.removeProperty('height');
     }
+
+    @Emit('leave-cancelled')
+    public leaveCancelled(el: HTMLElement): void { }
 }
 
 const AccordionTransitionPlugin: PluginObject<any> = {
