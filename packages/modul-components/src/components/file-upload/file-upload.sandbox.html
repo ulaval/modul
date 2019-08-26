@@ -26,6 +26,12 @@
             <m-file-upload :rejected-extensions="['jpg', 'jpeg']" :allowed-extensions="['jpg', 'jpeg', 'png', 'mp4']"><m-button>File upload</m-button></m-file-upload>
         </div>
 
+
+        <div class="m-u--margin-bottom">
+            <h5>Allowed extensions with help message</h5>
+            <m-file-upload :allowed-extensions="['jpg', 'jpeg', 'png']" selection-help-message="Images larger than 400 pixels are recommended"><m-button>File upload</m-button></m-file-upload>
+        </div>
+
         <div class="m-u--margin-bottom">
             <h5>Single file upload</h5>
             <m-file-upload :allowed-extensions="['jpg', 'jpeg', 'png']" :max-files="1"><m-button>File upload</m-button></m-file-upload>

@@ -68,6 +68,7 @@
                         k="m-file-upload:format"
                         :nb="allowedExtensions.length"></m-i18n>: {{fileAllowedExtensions}}
             </p>
+            <p class="m-file-upload__drop-zone__format" v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
         </div>
         <div class="m-file-upload__no-drop-zone"
              v-else>
@@ -87,6 +88,7 @@
                         k="m-file-upload:format"
                         :nb="allowedExtensions.length"></m-i18n>: {{fileAllowedExtensions}}
             </p>
+            <p class="m-file-upload__drop-zone__format" v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
         </div>
 
         <h3 class="m-file-upload__title"
