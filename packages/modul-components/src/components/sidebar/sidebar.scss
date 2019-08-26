@@ -27,6 +27,12 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        &.m--is-full-height {
+            &.m--is-origin-bottom .m-sidebar__article {
+                height: calc(100% - #{$m-touch-size * 2});
+            }
+        }
+
         &.m--is-origin {
             &-top,
             &-right,

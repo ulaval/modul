@@ -1,0 +1,10 @@
+<div>
+    <m-typeahead v-model="value"
+                 label="text"
+                 :results="items">
+        <div slot="result"
+             slot-scope="{result}">
+            <b>{{result}}</b>
+        </div>
+    </m-typeahead>
+</div>

@@ -8,9 +8,10 @@
                  v-if="portalMounted"
                  class="m-sidebar__wrap"
                  :class="[{ 'm--is-close-on-backdrop': closeOnBackdrop,
-                           'm--is-disabled':disabled },
-                           'm--is-origin-' + origin,
-                           className ]"
+                            'm--is-disabled':disabled,
+                            'm--is-full-height': fullHeight },
+                            'm--is-origin-' + origin,
+                            className ]"
                  @click.self="backdropClick"
                  ref="modalWrap">
                 <article class="m-sidebar__article"
