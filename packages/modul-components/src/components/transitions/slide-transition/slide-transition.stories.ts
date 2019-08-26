@@ -17,7 +17,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
             nbParagraphe: 1,
             nbTab: 7,
             skinNavbar: MNavbarSkin.TabLight,
-            disabledTransiton: false,
+            disabledTransition: false,
             buttonSkin: MButtonSkin.Secondary,
             transitionEmit: ''
         }),
@@ -73,7 +73,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
                 </m-navbar-item>
             </m-navbar>
             <m-slide-transition :direction="direction"
-                                :disabled="disabledTransiton"
+                                :disabled="disabledTransition"
                                 @before-enter="beforeEnter"
                                 @enter="enter"
                                 @after-enter="afterEnter"
@@ -100,7 +100,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
                           @click="nbTab--">Delete tab</m-button>
                 <m-button :skin="buttonSkin"
                           class="m-u--margin-left"
-                          @click="disabledTransiton = !disabledTransiton">{{disabledTransiton ? 'Enabled' : 'Disabled'}} transition</m-button>
+                          @click="disabledTransition = !disabledTransition">{{disabledTransition ? 'Enabled' : 'Disabled'}} transition</m-button>
             </div>
             <p v-if="transitionEmit">Last transition emit: {{transitionEmit}}</p>
         </div>`

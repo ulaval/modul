@@ -23,7 +23,9 @@ export class MAccordionTransition extends ModulVue {
         }
 
         if (!this.disabled) {
-            el.classList.add(CLASS_HAS_TRANSITION);
+            if (!el.classList.contains(CLASS_HAS_TRANSITION)) {
+                el.classList.add(CLASS_HAS_TRANSITION);
+            }
         } else if (el.classList.contains(CLASS_HAS_TRANSITION)) {
             el.classList.remove(CLASS_HAS_TRANSITION);
         }
@@ -46,7 +48,9 @@ export class MAccordionTransition extends ModulVue {
     }
 
     @Emit('enter-cancelled')
-    public enterCancelled(el: HTMLElement): void { }
+    public enterCancelled(el: HTMLElement): void {
+        el.style.removeProperty('height');
+    }
 
     @Emit('before-leave')
     public beforeLeave(el: HTMLElement): void {
@@ -63,7 +67,9 @@ export class MAccordionTransition extends ModulVue {
     }
 
     @Emit('leave-cancelled')
-    public leaveCancelled(el: HTMLElement): void { }
+    public leaveCancelled(el: HTMLElement): void {
+        el.style.removeProperty('height');
+    }
 }
 
 const AccordionTransitionPlugin: PluginObject<any> = {

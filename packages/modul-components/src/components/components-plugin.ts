@@ -88,6 +88,7 @@ import ToastPlugin from './toast/toast';
 import ToggleButtonsPlugin from './toggle-buttons/toggle-buttons';
 import TooltipPlugin from './tooltip/tooltip';
 import AccordionTransitionPlugin from './transitions/accordion-transition/accordion-transition';
+import OpacityTransitionPlugin from './transitions/opacity-transition/opacity-transition';
 import SlideTransitionPlugin from './transitions/slide-transition/slide-transition';
 import TreePlugin from './tree/tree';
 import ValidationMessagePlugin from './validation-message/validation-message';
@@ -153,6 +154,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(MessagePlugin);
         Vue.use(DialogPlugin);
         Vue.use(NavbarPlugin);
+        Vue.use(OpacityTransitionPlugin);
         Vue.use(OptionPlugin);
         Vue.use(MenuPlugin);
         Vue.use(PageNotFoundPlugin);
