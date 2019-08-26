@@ -1,6 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import { MWCard, MWCARD_NAME } from './card/card';
 import { COLOR_NAME, MColor } from './color/color';
+import { COMPONENT_API_NAME, MComponentApi } from './component-api/component-api';
 import { DEMO_NAME, MDemo } from './demo/demo';
 import { DO_NAME, MDo } from './do/do';
 import { DONT_NAME, MDont } from './dont/dont';
@@ -31,6 +32,7 @@ const WebsiteComponentsPlugin: PluginObject<any> = {
         Vue.component(MWPANEL_NAME, MWPanel);
         Vue.component(HIGHLIGHT_NAME, MHighlight);
         Vue.component(ICON_GALLERY_NAME, MIconGallery);
+        Vue.component(COMPONENT_API_NAME, MComponentApi);
         Vue.component('mw-dynamic-template', MDynamicTemplate);
     }
 };

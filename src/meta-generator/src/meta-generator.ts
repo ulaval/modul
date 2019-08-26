@@ -39,7 +39,7 @@ export class MetaGenerator {
         //     tsConfigFilePath: projetFilePath,
         //     addFilesFromTsConfig: false
         // });
-        // this.project.addExistingSourceFile('src/components/button/button.ts');
+        // this.project.addExistingSourceFile('src/components/textfield/textfield.ts');
 
         this.typeChecker = this.project.getTypeChecker();
         this.languageService = this.project.getLanguageService();
@@ -211,7 +211,7 @@ export class MetaGenerator {
         };
 
         // extact values of non nullable enum literal type
-        if (type.getNonNullableType().isEnumLiteral()) {
+        if (type.getNonNullableType().isEnum()) {
             output.values = this.getTypeTypesAsStrings(type.getNonNullableType().compilerType);
         }
 

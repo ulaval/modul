@@ -1,0 +1,25 @@
+<div class="modul-component-api">
+    <h3>
+        <{{componentMeta.componentName}}>
+    </h3>
+    <m-navbar skin="tab-soft"
+              :selected.sync="selectedItem"
+              title-button-left="Naviguer précédent"
+              title-button-right="Naviguer suivant">
+        <m-navbar-item value="props">
+            Propriétés
+        </m-navbar-item>
+        <m-navbar-item value="events">
+            Évènements
+        </m-navbar-item>
+        <m-navbar-item value="slots">
+            Slots
+        </m-navbar-item>
+    </m-navbar>
+    <modul-component-properties v-if="selectedItem === 'props'"
+                                :component-name="componentMeta.componentName"></modul-component-properties>
+    <modul-component-events v-if="selectedItem === 'events'"
+                            :component-name="componentMeta.componentName"></modul-component-events>
+    <modul-component-slots v-if="selectedItem === 'slots'"
+                           :component-name="componentMeta.componentName"></modul-component-slots>
+</div>

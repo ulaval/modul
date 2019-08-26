@@ -5,7 +5,6 @@ import * as TouchPlugin from 'vue-touch';
 import { ModulWebsite } from '../modul-website';
 import WithRender from './slider.html?style=./slider.scss';
 
-
 @WithRender
 @Component
 export class MSlider extends ModulWebsite {

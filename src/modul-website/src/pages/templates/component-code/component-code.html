@@ -1,5 +1,6 @@
-<div>
-    <p v-for="componentMeta in componentMetas"
-       :key="componentMeta.componentName"
-       style="word-wrap: break-word;">{{ JSON.stringify(componentMeta) }}</p>
+<div class="mw-component-code">
+    <mw-component-api v-for="componentMeta in componentMetas"
+                      :key="componentMeta.componentName"
+                      :component-name="componentMeta.componentName">
+    </mw-component-api>
 </div>
