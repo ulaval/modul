@@ -71,15 +71,15 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPACITY_TRANSITION_NAME}`, modul
                 </m-button>
             </div>
             <m-opacity-transition :disabled="disabledTransition"
-                                    @before-enter="beforeEnter"
-                                    @enter="enter"
-                                    @after-enter="afterEnter"
-                                    @enter-cancelled="enterCancelled"
-                                    @before-leave="beforeLeave"
-                                    @leave="leave"
-                                    @after-leave="afterLeave"
-                                    @leave-cancelled="leaveCancelled">
-                <m-icon v-if="open" name="m-svg__clock"></m-icon>
+                                  @before-enter="beforeEnter"
+                                  @enter="enter"
+                                  @after-enter="afterEnter"
+                                  @enter-cancelled="enterCancelled"
+                                  @before-leave="beforeLeave"
+                                  @leave="leave"
+                                  @after-leave="afterLeave"
+                                  @leave-cancelled="leaveCancelled">
+                <m-icon v-if="open" class="m-u--margin-top" name="m-svg__clock"></m-icon>
             </m-opacity-transition>
             <p v-if="transitionEmit">Last transition emit: {{transitionEmit}}</p>
         </div>`
@@ -96,11 +96,13 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPACITY_TRANSITION_NAME}`, modul
         },
         template: `
         <div>
-            <m-button @click="toggleDisplay()">
-                {{open ? 'Hide' : 'Show'}} icon
-            </m-button>
+            <div>
+                <m-button @click="toggleDisplay()">
+                    {{open ? 'Hide' : 'Show'}} icon
+                </m-button>
+            </div>
             <m-opacity-transition :zoom-effect="false">
-                <m-icon v-if="open" name="m-svg__clock"></m-icon>
+                <m-icon v-if="open" class="m-u--margin-top" name="m-svg__clock"></m-icon>
             </m-opacity-transition>
         </div>`
     }));
