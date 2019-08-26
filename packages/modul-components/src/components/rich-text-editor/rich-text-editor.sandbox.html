@@ -63,9 +63,9 @@
         </div>
     </div>
     <div class="m-u--margin-bottom">
-        <h5>Mode media</h5>
-        <m-rich-text-editor v-model="mediaModel"
-                            :options="options"
+        <h5>With IMAGE option</h5>
+        <m-rich-text-editor v-model="imageModel"
+                            :options="imageOptions"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"
@@ -73,8 +73,9 @@
                             @image-removed="imageRemoved"></m-rich-text-editor>
     </div>
     <div class="m-u--margin-bottom">
-        <m-rich-text-editor v-model="mediaModel2"
-                            :options="options"
+        <h5>With IMAGE_NO_ALIGN option</h5>
+        <m-rich-text-editor v-model="imageNoLayoutModel"
+                            :options="imageNoLayoutOptions"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"

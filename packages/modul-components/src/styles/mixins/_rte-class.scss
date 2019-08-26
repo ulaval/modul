@@ -1,0 +1,27 @@
+img {
+    &.m--is-not-aligned {
+        max-width: 100%;
+        display: block;
+        margin: $m-spacing;
+        margin-left: 0;
+    }
+
+    &.m--is-aligned {
+        max-width: 100%;
+        display: block;
+    }
+
+    &.m--is-aligned:not(.fr-fil):not(.fr-fir) {
+        margin: $m-spacing auto;
+    }
+
+    &.fr-fil {
+        float: left;
+        margin-right: $m-spacing;
+    }
+
+    &.fr-fir {
+        float: right;
+        margin-left: $m-spacing;
+    }
+}
