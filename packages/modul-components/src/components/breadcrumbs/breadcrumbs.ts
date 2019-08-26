@@ -14,9 +14,15 @@ export interface BreadcrumbItem {
     url: string;
 }
 
+export interface BreadcrumbsProps {
+    items: BreadcrumbItem[];
+    divider?: string;
+    disabled?: boolean;
+}
+
 @WithRender
 @Component
-export class MBreadcrumbs extends Vue {
+export class MBreadcrumbs extends Vue implements BreadcrumbsProps {
 
     @Prop({ default: [] })
     public items!: BreadcrumbItem[];
