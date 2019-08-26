@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse, Method } from 'axios';
 import { PluginObject } from 'vue';
 import { WindowErrorHandler } from '../errors/window-error-handler';
 import * as strUtils from '../str/str';
@@ -99,7 +99,7 @@ export class HttpService implements RestAdapter {
     private buildConfig(config: RequestConfig): AxiosRequestConfig {
         let axiosConfig: AxiosRequestConfig = {};
         axiosConfig.url = this.resolveUrl(config);
-        axiosConfig.method = config.method;
+        axiosConfig.method = config.method as Method;
         axiosConfig.params = config.params;
         axiosConfig.headers = config.headers;
 
