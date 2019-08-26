@@ -90,6 +90,7 @@ import TooltipPlugin from './tooltip/tooltip';
 import AccordionTransitionPlugin from './transitions/accordion-transition/accordion-transition';
 import SlideTransitionPlugin from './transitions/slide-transition/slide-transition';
 import TreePlugin from './tree/tree';
+import TypeaheadPlugin from './typeahead/typeahead';
 import ValidationMessagePlugin from './validation-message/validation-message';
 
 export interface ComponentPluginOptions {
@@ -192,9 +193,10 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ToastPlugin);
         Vue.use(ToggleButtonsPlugin);
         Vue.use(TooltipPlugin);
+        Vue.use(TreePlugin);
+        Vue.use(TypeaheadPlugin);
         Vue.use(ValidationMessagePlugin);
         Vue.use(InplaceEditPlugin);
-        Vue.use(TreePlugin);
     }
 };
 

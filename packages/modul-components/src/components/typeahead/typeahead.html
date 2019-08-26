@@ -1,0 +1,104 @@
+<div class="m-typeahead"
+     :class="{ 'm--is-results-window-open': isResultsPopupOpen,
+               'm--is-disabled': isDisabled,
+               'm--is-waiting': isWaiting,
+               'm--has-validation-message': hasValidationMessage }"
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+    <m-textfield v-model="textfieldValue"
+                 :label="label"
+                 :placeholder="placeholder"
+                 :disabled="isDisabled"
+                 :waiting="isWaiting"
+                 :focus="focus"
+                 :error="hasError"
+                 :valid="isValid"
+                 :required-marker="requiredMarker"
+                 :tag-style="tagStyle"
+                 :cursor-pointer="true"
+                 :max-length="maxLength"
+                 :length-overflow="lengthOverflow"
+                 :character-count="characterCount"
+                 :character-count-threshold="characterCountThreshold"
+                 :max-width="inputMaxWidth"
+                 :aria-controls="ariaControls"
+                 aria-haspopup="true"
+                 :aria-expanded="isResultsPopupOpen"
+                 @focus="onFocus"
+                 @blur="onBlur"
+                 @keydown.up.prevent="onKeydownUp"
+                 @keydown.down.prevent="onKeydownDown"
+                 @keydown.enter.prevent="onKeydownEnter"
+                 @keydown.return.prevent="onKeydownEnter"
+                 @keydown.esc="onKeydownEsc"
+                 @keydown.tab="onKeydownTab"
+                 @keydown="onKeydown"
+                 @keyup="onKeyup"
+                 @input="onInput"
+                 v-m-popup:popup>
+    </m-textfield>
+    <m-validation-message class="m-typeahead__validation-message"
+                          :disabled="isDisabled"
+                          :waiting="isWaiting"
+                          :error="hasError"
+                          :valid="isValid"
+                          :error-message="errorMessage"
+                          :valid-message="validMessage"
+                          :helper-message="helperMessage"></m-validation-message>
+    <m-popup placement="bottom-start"
+             :open.sync="isResultsPopupOpen"
+             :disabled="!active"
+             :padding="false"
+             :preload="true"
+             :lazy="false"
+             :focus-management="false"
+             :close-on-backdrop="true"
+             :sidebar-full-height="true"
+             @open="onOpenResultPopup"
+             ref="popup">
+        <template slot="header"
+                  v-if="isMqMaxS">
+            <h2 class="m-typeahead__label-popup"
+                v-if="label">{{ label }}</h2>
+            <div class="m-typeahead__research-popup">
+                <input class="m-typeahead__research-input-popup"
+                       v-model="textfieldValue"
+                       type="text"
+                       :placeholder="placeholder || 'm-typeahead:search' | f-m-i18n"
+                       :max-length="maxLength"
+                       :aria-controls="ariaControls"
+                       @keydown.up.prevent="onKeydownUp"
+                       @keydown.down.prevent="onKeydownDown"
+                       @keydown.enter.prevent="onKeydownEnter"
+                       @keydown.return.prevent="onKeydownEnter"
+                       @keydown.esc="onKeydownEsc"
+                       @keydown.tab="onKeydownTab"
+                       @keydown="onKeydown"
+                       @keyup="onKeyup"
+                       ref="researchInput" />
+                <m-icon-button class="m-typeahead__research-button-popup"
+                               icon-name="m-svg__search"
+                               @click="focusOnResearchInput">
+                    {{'m-typeahead:research' | f-m-i18n}}
+                </m-icon-button>
+            </div>
+        </template>
+        <ul v-if="isResultsPopupOpen"
+            :id="ariaControls"
+            class="m-typeahead__list"
+            :style="{ minWidth: inputMaxWidth }"
+            ref="resultsList"
+            :aria-labelledby="id"
+            aria-live="polite">
+            <m-select-item v-for="(result, index) of filteredResultsWithStyles"
+                           :key="index"
+                           :focused="index === focusedIndex"
+                           :selected="isSelected(index)"
+                           :disabled="loddingResults || throttleTimeoutActive"
+                           @click="selectAndCloseResultWindow(index)">
+                <slot name="result"
+                      :result="result"
+                      :index="index"><span v-html="result"></span></slot>
+            </m-select-item>
+        </ul>
+    </m-popup>
+</div>

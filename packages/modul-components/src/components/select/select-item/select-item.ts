@@ -3,8 +3,6 @@ import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
 import WithRender from './select-item.html?style=./select-item.scss';
 
-
-
 @WithRender
 @Component({
     mixins: [MediaQueries]
@@ -28,17 +26,12 @@ export class MSelectItem extends ModulVue {
     @Prop()
     public focused: boolean;
 
-    public get propLabel(): string | undefined {
-        return this.label;
-    }
+    @Emit('click')
+    public clickEmit(): void { }
 
-
-    private _onClick(): void {
+    public onClick(): void {
         if (!this.disabled) {
-            this.onClick();
+            this.clickEmit();
         }
     }
-
-    @Emit('click')
-    onClick(): void { }
 }
