@@ -1,8 +1,7 @@
 #!/usr/bin/env groovy
 
 
-
-// Script jenkins pour la publication des packages de modul (dev)
+// Script jenkins pour la publication npm de release des packages de modul
 
 
 pipeline {
@@ -27,6 +26,7 @@ pipeline {
         timestamps()
     }
 
+
     stages {
 		stage('Checkout branch') {
 
@@ -48,10 +48,7 @@ pipeline {
 			steps {
 				withNPM(npmrcConfig: NPM_CONFIG) {
 					echo "Install dependancies..."
-					sh "yarn install"
-
-					echo "Bootstrap lerna workspace..."
-					sh "yarn run bootstrap"
+					sh "yarn install --frozen-lockfile"
 				}
 			}
 		}
