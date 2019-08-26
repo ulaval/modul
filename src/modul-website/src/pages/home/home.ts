@@ -1,5 +1,6 @@
 import { MWCardDirections } from '@/components/card/card';
 import { ModulWebsite } from '@/components/modul-website';
+import { ROUTER_COMPONENTS_UI, ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
@@ -59,35 +60,29 @@ export class MWHomePage extends ModulWebsite {
         this.$router.push(route);
     }
 
-    // private get visualStandards(): string {
-    //     return this.$routerIndex.for(VISUAL_STANDARDS);
-    // }
+    private get philosophy(): string {
+        return this.$routerIndex.for(ROUTER_PHILOSOPHY);
+    }
 
-    // private get writingStandards(): string {
-    //     return this.$routerIndex.for(WRITING_STANDARDS);
-    // }
+    private get componentsUi(): string {
+        return this.$routerIndex.for(ROUTER_COMPONENTS_UI);
+    }
 
-    // private get components(): string {
-    //     return this.$routerIndex.for(CATEGORY_CONTENT);
-    // }
+    private get uiStandards(): any {
+        return { name: ROUTER_STANDARDS_UI };
+    }
 
-    // private get ecosystem(): string {
-    //     return this.$routerIndex.for(ROUTER_ECOSYSTEM);
-    // }
+    private get devStandards(): any {
+        return { name: ROUTER_STANDARDS_DEVELOPMENT };
+    }
 
-    // private get codingStandards(): string {
-    //     return this.$routerIndex.for(CODING_STANDARDS);
-    // }
+    private get editorialStandards(): any {
+        return { name: ROUTER_STANDARDS_EDITORIAL };
 
-    // private get gettingStarted(): string {
-    //     return this.$routerIndex.for(GETTING_STARTED);
-    // }
+    }
 
-    // private get unifiedExperience(): string {
-    //     return this.$routerIndex.for(UNIFIED_EXPERIENCE);
-    // }
+    private get a11yStandards(): any {
+        return { name: ROUTER_STANDARDS_ACCESSIBILITY };
+    }
 
-    // private get responsiveDesign(): string {
-    //     return this.$routerIndex.for(RESPONSIVE_DESIGN);
-    // }
 }

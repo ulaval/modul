@@ -38,8 +38,9 @@
             <p slot="content">
                 <m-i18n k="modul:components-desc"></m-i18n>
             </p>
-            <m-link slot="link">
-                <m-i18n k="pages:visual-standards"></m-i18n>
+            <m-link slot="link"
+                    :url="componentsUi">
+                <m-i18n k="website:components-ui"></m-i18n>
             </m-link>
         </mw-card>
 
@@ -55,14 +56,21 @@
             <p slot="content">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quaerat sint esse, natus libero amet perferendis atque. Blanditiis ea fugit provident nobis qui? A delectus suscipit autem dolor blanditiis quasi.
             </p>
-            <m-link slot="link">
-                <m-i18n k="pages:visual-standards"></m-i18n>
+            <m-link slot="link"
+                    :url="uiStandards">
+                <m-i18n k="website:standards-ui"></m-i18n>
             </m-link>
-            <m-link slot="link">
-                <m-i18n k="pages:writing-standards"></m-i18n>
+            <m-link slot="link"
+                    :url="editorialStandards">
+                <m-i18n k="website:standards-editorial"></m-i18n>
             </m-link>
-            <m-link slot="link">
-                <m-i18n k="pages:coding-standards"></m-i18n>
+            <m-link slot="link"
+                    :url="devStandards">
+                <m-i18n k="website:standards-development"></m-i18n>
+            </m-link>
+            <m-link slot="link"
+                    :url="a11yStandards">
+                <m-i18n k="website:accessibility-standards"></m-i18n>
             </m-link>
         </mw-card>
 
@@ -78,12 +86,11 @@
             <p slot="content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur debitis aut fuga cupiditate odio deserunt soluta, blanditiis obcaecati illo, aliquid cum, excepturi ratione totam nihil in quasi suscipit ipsa!
             </p>
-            <m-link slot="link">
-                <m-i18n k="pages:unified-experience"></m-i18n>
+            <m-link slot="link"
+                    :url="philosophy">
+                <m-i18n k="website:philosophy"></m-i18n>
             </m-link>
-            <m-link slot="link">
-                <m-i18n k="pages:responsive-design"></m-i18n>
-            </m-link>
+
         </mw-card>
 
         <!-- <article class="modul-home-content__panel"
