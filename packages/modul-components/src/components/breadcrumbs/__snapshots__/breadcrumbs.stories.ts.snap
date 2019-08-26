@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots components|m-breadcrumbs Default 1`] = `
+<div
+  class="m-breadcrumbs"
+>
+  <span>
+    <span
+      class="m-breadcrumbs__fil-ariane__elem "
+    >
+      <span>
+          &lt;  
+      </span>
+       
+      <a
+        class="m-link m-breadcrumbs_link m--has-content"
+        href="#/#"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithDivider
+            
+        </span>
+         
+        <!---->
+      </a>
+    </span>
+    <span
+      class="m-breadcrumbs__fil-ariane__elem "
+    >
+      <span>
+          /  
+      </span>
+       
+      <a
+        class="m-link m-breadcrumbs_link router-link-exact-active router-link-active m--is-disabled m--has-content"
+        href="#/"
+        tabindex="-1"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemDisabled
+            
+        </span>
+         
+        <!---->
+      </a>
+    </span>
+    <span
+      class="m-breadcrumbs__fil-ariane__elem "
+    >
+      <span>
+          /  
+      </span>
+       
+      <a
+        class="m-link m-breadcrumbs_link m--has-left-icon m--has-content"
+        href="#/#"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-link__icon"
+          height="1em"
+          width="1em"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithIcon
+            
+        </span>
+         
+        <!---->
+      </a>
+    </span>
+    <span
+      class="m-breadcrumbs__fil-ariane__elem "
+    >
+      <span>
+          /  
+      </span>
+       
+      <span>
+        itemWithoutUrl
+      </span>
+    </span>
+  </span>
+</div>
+`;
