@@ -6,7 +6,6 @@ import { BREADCRUMBS_NAME } from '../component-names';
 import LinkPlugin, { MLinkIconPosition, MLinkMode } from '../link/link';
 import WithRender from './breadcrumbs.html?style=./breadcrumbs.scss';
 
-
 export interface BreadcrumbItem {
     divider: string;
     iconName: string;
