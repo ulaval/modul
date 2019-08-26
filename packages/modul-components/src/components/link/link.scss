@@ -14,6 +14,11 @@
     color: var(--m-link--color);
     text-decoration: none;
 
+    &.m--has-icon {
+        display: inline-flex;
+        align-items: center;
+    }
+
     &.m--has-right-icon.m--has-content {
         flex-direction: row-reverse;
 
