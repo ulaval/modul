@@ -6,7 +6,7 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
 >
   <span>
     <span
-      class="m-breadcrumbs__fil-ariane__elem"
+      class="m-breadcrumbs__item"
     >
       <span
         class="m-breadcrumbs__divider"
@@ -15,8 +15,8 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
       </span>
        
       <a
-        class="m-link m-breadcrumbs_link m--has-content"
-        href="#/#"
+        class="m-link m--has-content"
+        href="#"
         tabindex="0"
       >
         <!---->
@@ -32,7 +32,7 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
       </a>
     </span>
     <span
-      class="m-breadcrumbs__fil-ariane__elem"
+      class="m-breadcrumbs__item"
     >
       <span
         class="m-breadcrumbs__divider"
@@ -41,8 +41,7 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
       </span>
        
       <a
-        class="m-link m-breadcrumbs_link router-link-exact-active router-link-active m--is-disabled m--has-content"
-        href="#/"
+        class="m-link m--is-disabled m--has-content"
         tabindex="-1"
       >
         <!---->
@@ -58,7 +57,7 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
       </a>
     </span>
     <span
-      class="m-breadcrumbs__fil-ariane__elem"
+      class="m-breadcrumbs__item"
     >
       <span
         class="m-breadcrumbs__divider"
@@ -67,8 +66,8 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
       </span>
        
       <a
-        class="m-link m-breadcrumbs_link m--has-left-icon m--has-content"
-        href="#/#"
+        class="m-link m--has-left-icon m--has-content"
+        href="#"
         tabindex="0"
       >
         <svg
@@ -96,7 +95,7 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
       </a>
     </span>
     <span
-      class="m-breadcrumbs__fil-ariane__elem"
+      class="m-breadcrumbs__item"
     >
       <span
         class="m-breadcrumbs__divider"

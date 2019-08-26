@@ -15,7 +15,7 @@ export interface BreadcrumbItem {
 }
 
 export interface BreadcrumbsProps {
-    items: BreadcrumbItem[];
+    items?: BreadcrumbItem[];
     divider?: string;
     disabled?: boolean;
 }
@@ -28,16 +28,16 @@ export class MBreadcrumbs extends Vue implements BreadcrumbsProps {
     public items!: BreadcrumbItem[];
 
     @Prop({ default: '/' })
-    public divider?: string;
+    public divider!: string;
 
     @Prop({ default: false })
-    public disabled?: boolean;
+    public disabled!: boolean;
 
     get definedItems(): BreadcrumbItem[] {
         return this.items.filter((item: BreadcrumbItem) => item.text || item.iconName);
     }
 
-    linkMode: MLinkMode = MLinkMode.RouterLink;
+    linkMode: MLinkMode = MLinkMode.Link;
     iconPosition: MLinkIconPosition = MLinkIconPosition.Left;
 }
 
