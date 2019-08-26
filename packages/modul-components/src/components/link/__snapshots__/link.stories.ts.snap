@@ -95,6 +95,35 @@ exports[`Storyshots components|m-link icon-name 1`] = `
 </a>
 `;
 
+exports[`Storyshots components|m-link icon-name with no text and title 1`] = `
+<a
+  class="m-link m--has-left-icon"
+  href="#"
+  tabindex="0"
+  title="Profile"
+>
+  <svg
+    aria-hidden="true"
+    class="m-icon m-link__icon"
+    height="1em"
+    width="1em"
+  >
+    <!---->
+     
+    <use
+      aria-hidden="true"
+      class=""
+    />
+  </svg>
+   
+  <span
+    class="m-link__text"
+  />
+   
+  <!---->
+</a>
+`;
+
 exports[`Storyshots components|m-link icon-position="right" 1`] = `
 <a
   class="m-link m--has-right-icon m--has-content"
