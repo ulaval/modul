@@ -8,7 +8,6 @@ import { BREADCRUMBS_NAME } from '../component-names';
 import LinkPlugin from '../link/link';
 import BreadcrumbsPlugin, { BreadcrumbItem, MBreadcrumbs } from './breadcrumbs';
 
-
 Vue.use(BreadcrumbsPlugin);
 Vue.use(LinkPlugin);
 Vue.use(VueRouter);
