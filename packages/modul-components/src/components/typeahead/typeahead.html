@@ -93,7 +93,7 @@
                            :key="index"
                            :focused="index === focusedIndex"
                            :selected="isSelected(index)"
-                           :disabled="loddingResults || throttleTimeoutActive"
+                           :waiting="waitingResults || throttleTimeoutActive"
                            @click="selectAndCloseResultWindow(index)">
                 <slot name="result"
                       :result="result"

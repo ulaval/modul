@@ -18,6 +18,9 @@ export class MSelectItem extends ModulVue {
     public disabled: boolean;
 
     @Prop()
+    public waiting: boolean;
+
+    @Prop()
     public readonly: boolean;
 
     @Prop()
@@ -28,6 +31,10 @@ export class MSelectItem extends ModulVue {
 
     @Emit('click')
     public clickEmit(): void { }
+
+    public get isItemActive(): boolean {
+        return !this.disabled && !this.waiting;
+    }
 
     public onClick(): void {
         if (!this.disabled) {

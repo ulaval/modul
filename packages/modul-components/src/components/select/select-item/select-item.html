@@ -1,10 +1,12 @@
 <li class="m-select-item"
-    :class="{ 'm--is-focus': focused && !disabled,
-              'm--is-selected': selected && !disabled,
+    :class="{ 'm--is-focus': focused && isItemActive,
+              'm--is-selected': selected && isItemActive,
+              'm--is-item-active': isItemActive,
               'm--is-disabled': disabled,
+              'm--is-waiting': waiting,
               'm--readonly': readonly }"
     role="option"
-    :aria-selected="selected && !disabled"
+    :aria-selected="selected && isItemActive"
     @click.prevent="onClick">
 
     <slot v-if="isMqMinS || readonly"><span class="m-select-item__element-text">{{ label }}</span></slot>

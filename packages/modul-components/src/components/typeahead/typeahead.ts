@@ -41,13 +41,13 @@ export class MTypeahead extends ModulVue {
     public results: any[];
 
     @Prop()
-    public loddingResults: boolean;
+    public waitingResults: boolean;
 
     @Prop()
-    filterResultsManually: boolean;
+    public filterResultsManually: boolean;
 
     @Prop({ default: 0 })
-    throttle: number;
+    public throttle: number;
 
     @Prop()
     public focus: boolean;
@@ -137,7 +137,7 @@ export class MTypeahead extends ModulVue {
     }
 
     public get isResultPopupActive(): boolean {
-        return this.isResultsPopupOpen && !this.loddingResults && this.as<InputState>().active && !this.throttleTimeoutActive;
+        return this.isResultsPopupOpen && !this.waitingResults && this.as<InputState>().active && !this.throttleTimeoutActive;
     }
 
     public get resultsCouldBeDisplay(): boolean {
