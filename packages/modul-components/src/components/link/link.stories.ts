@@ -83,6 +83,9 @@ storiesOf(`${componentsHierarchyRootSeparator}${LINK_NAME}`, module)
         },
         template: '<m-link :icon-name="iconName" mode="link" url="#" >A link</m-link>'
     }))
+    .add('icon-name with no text and title', () => ({
+        template: '<m-link icon-name="m-svg__profile" mode="link" url="#" title="Profile"></m-link>'
+    }))
     .add('icon-position="right"', () => ({
         template: '<m-link mode="link" url="#" icon-name="m-svg__chevron--right" icon-position="right">A link</m-link>'
     }))

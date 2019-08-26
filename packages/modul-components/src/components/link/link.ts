@@ -83,6 +83,9 @@ export class MLink extends ModulVue {
     @Prop({ default: '0' })
     public tabindex: string;
 
+    @Prop()
+    public title: string;
+
     @Emit('click')
     private emitClick(event: Event): void { }
 
