@@ -55,9 +55,6 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
             afterLeave(): void {
                 (this as any).transitionEmit = 'after-leave';
                 this.$log.log(`@emit('after-leave')`);
-                setTimeout(() => {
-                    (this as any).transitionEmit = '';
-                }, 500);
             },
             leaveCancelled(): void {
                 (this as any).transitionEmit = 'leave-cancelled';
@@ -105,6 +102,6 @@ storiesOf(`${componentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, module)
                           class="m-u--margin-left"
                           @click="disabledTransiton = !disabledTransiton">{{disabledTransiton ? 'Enabled' : 'Disabled'}} transition</m-button>
             </div>
-            <p v-if="transitionEmit">Transition emit: {{transitionEmit}}</p>
+            <p v-if="transitionEmit">Last transition emit: {{transitionEmit}}</p>
         </div>`
     }));

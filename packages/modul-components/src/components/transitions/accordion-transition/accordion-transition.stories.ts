@@ -51,9 +51,6 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_TRANSITION_NAME}`, mod
             afterLeave(): void {
                 (this as any).transitionEmit = 'after-leave';
                 this.$log.log(`@emit('after-leave')`);
-                setTimeout(() => {
-                    (this as any).transitionEmit = '';
-                }, 500);
             },
             leaveCancelled(): void {
                 (this as any).transitionEmit = 'leave-cancelled';
@@ -86,6 +83,6 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_TRANSITION_NAME}`, mod
                        :key="index">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A laudantium odio ipsum, quae quos cum dolor, omnis perferendis, veritatis deleniti iusto consectetur? Impedit tempora quam ab laborum maiores sapiente earum?</p>
                 </div>
             </m-accordion-transition>
-            <p v-if="transitionEmit">Transition emit: {{transitionEmit}}</p>
+            <p v-if="transitionEmit">Last transition emit: {{transitionEmit}}</p>
         </div>`
     }));
