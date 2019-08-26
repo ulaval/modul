@@ -23,7 +23,7 @@ export default class GoogleAPI {
         return this.initPromise;
     }
 
-    promisifyFetch<TRequest, TResult>(fetchFunction: (request: TRequest, callback: (results: TResult, status: google.maps.places.PlacesServiceStatus) => void) => void, request: TRequest):
+    promisifyFetch<TRequest, TResult>(fetchFunction: (request: TRequest, callback: (results: TResult, status: any) => void) => void, request: TRequest):
         Promise<TResult extends Array<any> ? TResult : TResult[]> {
         return new Promise(function(resolve: any, reject: any): void {
             fetchFunction(request, (results: TResult, status: google.maps.places.PlacesServiceStatus) => {
@@ -48,7 +48,7 @@ export default class GoogleAPI {
         });
     }
 
-    get placesAutocomplete(): Promise<google.maps.places.AutocompleteService> {
+    get placesAutocomplete(): Promise<any> {
         return this.instance
             .then(() => {
                 const service: google.maps.places.AutocompleteService = new google.maps.places.AutocompleteService();
@@ -59,7 +59,7 @@ export default class GoogleAPI {
             });
     }
 
-    get placesService(): Promise<google.maps.places.PlacesService> {
+    get placesService(): Promise<any> {
         return this.instance
             .then(() => {
                 // the elements is never rendered in the DOM.  We have to show attributions manually after fetching an address.
@@ -76,7 +76,7 @@ export default class GoogleAPI {
             });
     }
 
-    createToken(): Promise<google.maps.places.AutocompleteSessionToken> {
+    createToken(): Promise<any> {
         return this.instance
             .then(() => {
                 return new google.maps.places.AutocompleteSessionToken();
