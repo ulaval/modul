@@ -30,6 +30,9 @@ export interface MColumnTable {
     class?: string;
     sortDirection?: MColumnSortDirection;
     defaultSortDirection?: MColumnSortDirection;
+}
+
+interface MColumnTableInternal extends MColumnTable {
     isInitialSort?: boolean;
 }
 
@@ -71,7 +74,7 @@ export class MTable extends ModulVue {
         return this.rows.length === 0 && !this.loading;
     }
 
-    public sort(columnTable: MColumnTable): void {
+    public sort(columnTable: MColumnTableInternal): void {
         if (this.loading || !columnTable.sortable) {
             return;
         }
@@ -80,7 +83,7 @@ export class MTable extends ModulVue {
             columnTable.sortDirection = MColumnSortDirection.None;
         }
 
-        this.columns.forEach(c => {
+        this.columnsInternal.forEach(c => {
             if (c !== columnTable) {
                 c.sortDirection = MColumnSortDirection.None;
             }
@@ -141,6 +144,10 @@ export class MTable extends ModulVue {
 
     public columnWidth(col: MColumnTable): { width: string } | '' {
         return col.width ? { width: col.width } : '';
+    }
+
+    get columnsInternal(): MColumnTableInternal[] {
+        return this.columns.map((c: MColumnTable) => ({ ...c }));
     }
 }
 
