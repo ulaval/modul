@@ -13,7 +13,7 @@
         "source.organizeImports": true
     },
     "files.exclude": {
-        "**/.github/": true,
+        ".github/": true,
     },
     "search.exclude": {
         "**/reports/": true,
