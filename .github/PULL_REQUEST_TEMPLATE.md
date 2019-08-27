@@ -13,13 +13,14 @@ Content can be written in English or in French
 ## Types of changes
 <!--- Indicated here what types of changes does your code introduce -->
 - [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Enhancement (non-breaking change which adds functionality such as new props, slots, event or method to existing components or service)
+- [ ] New feature (new component, directive, filter or service)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Improvement/refactoring (non-breaking change that doesn't add any features but makes things better)
 - [ ] Documentation/storybook (a change that do not affect any packages)
 
-## How can this be tested?
-<!-- If your change affect a package, indicate how it can be tested -->
+## How can this be tested
+
 - [ ] Unit test (A new unit test as been created)
 - [ ] Storybook (Indicate the name of the storybook to test the PR)
 - [ ] Manual/Sandboxe (Indicate the name of the sandbox to test the PR)
