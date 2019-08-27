@@ -71,7 +71,7 @@ describe(`Address lookup loqate service`, () => {
     describe('find', () => {
         beforeAll(() => {
             const response: AxiosResponse<any> = { data: { Items: LOQATE_FIND_RESULTS }, status: 200, statusText: 'success', headers: {}, config: {} };
-            axios.get = jest.fn((url: string, params: any) => Promise.resolve(response));
+            axios.get = jest.fn((url: string, params: any) => Promise.resolve(response)) as any;
         });
 
         it(`Searching for address will return parsed list`, async () => {
@@ -100,7 +100,7 @@ describe(`Address lookup loqate service`, () => {
     describe('retrieve', () => {
         beforeAll(() => {
             const response: AxiosResponse<any> = { data: { Items: LOQATE_RETRIEVE_RESULTS }, status: 200, statusText: 'success', headers: {}, config: {} };
-            axios.get = jest.fn((url: string, params: any) => Promise.resolve(response));
+            axios.get = jest.fn((url: string, params: any) => Promise.resolve(response)) as any;
         });
 
         it(`Searching for address will return parsed list`, async () => {
