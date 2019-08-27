@@ -8,6 +8,8 @@
         "src/**/*.ts",
         "dist"
     ],
+    "main": "app.js",
+    "bin": "app.js",
     "license": "Apache-2.0",
     "scripts": {
         "clean": "rimraf dist",
