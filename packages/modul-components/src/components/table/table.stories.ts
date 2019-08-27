@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue';
 import Vue from 'vue';
 import { componentsHierarchyRootSeparator } from '../../../conf/storybook/utils';
 import { TABLE_NAME } from '../component-names';
-import TablePlugin, { MColumnTable } from './table';
+import TablePlugin, { MColumnSortDirection, MColumnTable } from './table';
 Vue.use(TablePlugin);
 
 function defaultOnSortApplied(columnTable: MColumnTable): void {
@@ -253,7 +253,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TABLE_NAME}`, module)
             columns: {
                 default: [
                     { id: 'name', title: 'Name', dataProp: 'name', sortable: true },
-                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, defaultSortDirection: -1 },
+                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, defaultSortDirection: MColumnSortDirection.Dsc },
                     { id: 'username', title: 'Username', dataProp: 'username', sortable: true }
                 ]
             }
@@ -279,7 +279,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TABLE_NAME}`, module)
             columns: {
                 default: [
                     { id: 'name', title: 'Name', dataProp: 'name', sortable: true, enableUnsort: true },
-                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true, defaultSortDirection: MColumnSortDirection.Dsc },
                     { id: 'username', title: 'Username', dataProp: 'username', sortable: true, enableUnsort: true }
                 ]
             }
