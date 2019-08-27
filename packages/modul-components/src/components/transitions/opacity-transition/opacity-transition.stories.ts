@@ -60,7 +60,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPACITY_TRANSITION_NAME}`, modul
         },
         template: `
         <div>
-            <div>
+            <div class="m-u--margin-bottom">
                 <m-button @click="toggleDisplay()">
                     {{open ? 'Hide' : 'Show'}} icon
                 </m-button>
@@ -79,7 +79,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPACITY_TRANSITION_NAME}`, modul
                                   @leave="leave"
                                   @after-leave="afterLeave"
                                   @leave-cancelled="leaveCancelled">
-                <m-icon v-if="open" class="m-u--margin-top" name="m-svg__clock"></m-icon>
+                <m-icon v-if="open" name="m-svg__clock"></m-icon>
             </m-opacity-transition>
             <p v-if="transitionEmit">Last transition emit: {{transitionEmit}}</p>
         </div>`
