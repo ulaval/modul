@@ -253,7 +253,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TABLE_NAME}`, module)
             columns: {
                 default: [
                     { id: 'name', title: 'Name', dataProp: 'name', sortable: true },
-                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, defaultSortDirection: -1 },
                     { id: 'username', title: 'Username', dataProp: 'username', sortable: true }
                 ]
             }

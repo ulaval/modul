@@ -6,7 +6,7 @@
             <tr>
                 <th v-for="(column, index) in columns"
                     :style="columnWidth(column)"
-                    :class="[{ 'm--is-sortable': column.sortable, 'm--is-sorted': isColumnSorted(column), 'm--is-centered': column.centered }, column.class]"
+                    :class="[{ 'm--is-sortable': column.sortable, 'm--is-sorted': isColumnSorted(column), 'm--is-centered': column.centered, 'm--is-initial-sort': column.isInitialSort }, column.class]"
                     :key="column.id"
                     @click="sort(column)"
                     scope="col">
@@ -20,7 +20,7 @@
                                            class="m-table__sortable-icon"
                                            :class="[getColumnSortDirectionClass(column)]"
                                            :disabled="loading"
-                                           icon-name="m-svg__arrow-thin--up"
+                                           :icon-name="getColumnSortIcon(column)"
                                            skin="bold"
                                            button-size="14px"
                                            icon-size="12px"
