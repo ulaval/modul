@@ -6,10 +6,10 @@
         "Charles Maheu <charles.maheu@dti.ulaval.ca>",
         "Philippe Rail <philippe.rail@dti.ulaval.ca>"
     ],
-    "private": true,
     "scripts": {
         "dev": "vue-cli-service serve",
         "build": "vue-cli-service build",
+        "prepack": "yarn run build",
         "lint": "vue-cli-service lint",
         "serve:dist": "http-server ./dist -p 8083 -g -o"
     },
