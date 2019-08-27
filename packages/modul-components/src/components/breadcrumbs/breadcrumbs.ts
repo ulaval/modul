@@ -3,6 +3,7 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 
 import { BREADCRUMBS_NAME } from '../component-names';
+import LimitTextPlugin from '../limit-text/limit-text';
 import LinkPlugin, { MLinkIconPosition, MLinkMode } from '../link/link';
 import WithRender from './breadcrumbs.html?style=./breadcrumbs.scss';
 
@@ -45,6 +46,7 @@ const BreadcrumbsPlugin: PluginObject<any> = {
     install(v): void {
         v.prototype.$log.debug(BREADCRUMBS_NAME, 'plugin.install');
         v.use(LinkPlugin);
+        v.use(LimitTextPlugin);
         v.component(BREADCRUMBS_NAME, MBreadcrumbs);
     }
 };

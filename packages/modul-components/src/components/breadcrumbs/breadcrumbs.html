@@ -1,17 +1,19 @@
 <div class="m-breadcrumbs">
-    <transition-group name="move">
-        <span v-for="item in definedItems"
-              v-bind:key="item.text"
-              class="m-breadcrumbs__item">
-            <span class="m-breadcrumbs__divider">{{ item.divider || divider }}</span>
-            <m-link v-if="item.url || item.iconName"
-                    :icon-name="item.iconName"
-                    :icon-position="iconPosition"
-                    :mode="linkMode"
-                    :disabled="disabled || item.disabled"
-                    :url="item.url">{{ item.text }}
-            </m-link>
-            <span v-else>{{ item.text }}</span>
-        </span>
-    </transition-group>
+    <m-limit-text lines="2">
+        <transition-group name="move">
+            <span v-for="item in definedItems"
+                  v-bind:key="item.text"
+                  class="m-breadcrumbs__item">
+                <span class="m-breadcrumbs__divider">{{ item.divider || divider }}</span>
+                <m-link v-if="item.url || item.iconName"
+                        :icon-name="item.iconName"
+                        :icon-position="iconPosition"
+                        :mode="linkMode"
+                        :disabled="disabled || item.disabled"
+                        :url="item.url">{{ item.text }}
+                </m-link>
+                <span v-else>{{ item.text }}</span>
+            </span>
+        </transition-group>
+    </m-limit-text>
 </div>

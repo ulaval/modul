@@ -8,6 +8,7 @@ import { BREADCRUMBS_NAME } from '../component-names';
 import LinkPlugin from '../link/link';
 import BreadcrumbsPlugin, { BreadcrumbItem, MBreadcrumbs } from './breadcrumbs';
 
+
 Vue.use(BreadcrumbsPlugin);
 Vue.use(LinkPlugin);
 Vue.use(VueRouter);
@@ -64,7 +65,7 @@ const itemWithoutUrl: BreadcrumbItem = {
     url: ''
 };
 
-const breadcrumbItems: BreadcrumbItem[] = [itemWithDivider, itemDisabled, itemWithoutText, itemWithIcon, itemWithoutUrl];
+const breadcrumbItems: BreadcrumbItem[] = [itemWithDivider, itemDisabled, itemWithoutText, itemWithIcon, itemWithoutUrl, itemWithoutUrl, itemWithoutUrl, itemWithoutUrl];
 
 storiesOf(`${componentsHierarchyRootSeparator}${BREADCRUMBS_NAME}`, module)
     .addDecorator(storyRouterDecorator())

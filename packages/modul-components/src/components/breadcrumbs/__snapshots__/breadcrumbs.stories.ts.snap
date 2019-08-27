@@ -4,109 +4,335 @@ exports[`Storyshots components|m-breadcrumbs Default 1`] = `
 <div
   class="m-breadcrumbs"
 >
-  <span>
-    <span
-      class="m-breadcrumbs__item"
+  <div
+    class="m-limit-text"
+  >
+    <div
+      aria-hidden="true"
+      class="m-limit-text__original"
     >
-      <span
-        class="m-breadcrumbs__divider"
-      >
-        &lt;
-      </span>
-       
-      <a
-        class="m-link m--has-content"
-        href="#"
-        tabindex="0"
-      >
-        <!---->
-         
-        <span
-          class="m-link__text"
-        >
-          itemWithDivider
-            
-        </span>
-         
-        <!---->
-      </a>
-    </span>
-    <span
-      class="m-breadcrumbs__item"
-    >
-      <span
-        class="m-breadcrumbs__divider"
-      >
-        /
-      </span>
-       
-      <a
-        class="m-link m--is-disabled m--has-content"
-        tabindex="-1"
-      >
-        <!---->
-         
-        <span
-          class="m-link__text"
-        >
-          itemDisabled
-            
-        </span>
-         
-        <!---->
-      </a>
-    </span>
-    <span
-      class="m-breadcrumbs__item"
-    >
-      <span
-        class="m-breadcrumbs__divider"
-      >
-        /
-      </span>
-       
-      <a
-        class="m-link m--has-left-icon m--has-content"
-        href="#"
-        tabindex="0"
-      >
-        <svg
-          aria-hidden="true"
-          class="m-icon m-link__icon"
-          height="1em"
-          width="1em"
-        >
-          <!---->
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
-        <span
-          class="m-link__text"
-        >
-          itemWithIcon
-            
-        </span>
-         
-        <!---->
-      </a>
-    </span>
-    <span
-      class="m-breadcrumbs__item"
-    >
-      <span
-        class="m-breadcrumbs__divider"
-      >
-        /
-      </span>
-       
       <span>
-        itemWithoutUrl
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            &lt;
+          </span>
+           
+          <a
+            class="m-link m--has-content"
+            href="#"
+            tabindex="0"
+          >
+            <!---->
+             
+            <span
+              class="m-link__text"
+            >
+              itemWithDivider
+                
+            </span>
+             
+            <!---->
+          </a>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <a
+            class="m-link m--is-disabled m--has-content"
+            tabindex="-1"
+          >
+            <!---->
+             
+            <span
+              class="m-link__text"
+            >
+              itemDisabled
+                
+            </span>
+             
+            <!---->
+          </a>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <a
+            class="m-link m--has-left-icon m--has-content"
+            href="#"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-link__icon"
+              height="1em"
+              width="1em"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="m-link__text"
+            >
+              itemWithIcon
+                
+            </span>
+             
+            <!---->
+          </a>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
       </span>
-    </span>
-  </span>
+    </div>
+     
+    <div
+      aria-hidden="true"
+      class="m-limit-text__testing-text"
+      style="white-space: normal;"
+    >
+      <span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            &lt;
+          </span>
+           
+          <a
+            class="m-link m--has-content"
+            href="#"
+            tabindex="0"
+          >
+            <!---->
+             
+            <span
+              class="m-link__text"
+            >
+              itemWithDivider
+                
+            </span>
+             
+            <!---->
+          </a>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <a
+            class="m-link m--is-disabled m--has-content"
+            tabindex="-1"
+          >
+            <!---->
+             
+            <span
+              class="m-link__text"
+            >
+              itemDisabled
+                
+            </span>
+             
+            <!---->
+          </a>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <a
+            class="m-link m--has-left-icon m--has-content"
+            href="#"
+            tabindex="0"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-link__icon"
+              height="1em"
+              width="1em"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="m-link__text"
+            >
+              itemWithIcon
+                
+            </span>
+             
+            <!---->
+          </a>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
+        <span
+          class="m-breadcrumbs__item"
+        >
+          <span
+            class="m-breadcrumbs__divider"
+          >
+            /
+          </span>
+           
+          <span>
+            itemWithoutUrl
+          </span>
+        </span>
+      </span>
+    </div>
+     
+    <div
+      class="m-limit-text__content"
+      style="display: none;"
+    />
+     
+    <!---->
+    <div
+      class="resize-sensor"
+      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;
