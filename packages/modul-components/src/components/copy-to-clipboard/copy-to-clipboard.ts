@@ -79,6 +79,10 @@ export class MCopyToClipboard extends ModulVue {
         return { ...this.$props, ...new DefaultCopyToClipboardPropsValue(this.selectedText, this.value) };
     }
 
+    get showButton(): boolean {
+        return !(!!this.as<InputState>().disabled || !!this.as<InputState>().waiting);
+    }
+
     get buttonHandlers(): { [key: string]: (value: string) => void } {
         return {
             click: this.copyText
