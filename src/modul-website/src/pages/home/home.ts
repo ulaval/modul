@@ -2,6 +2,7 @@ import { MWCardDirections } from '@/components/card/card';
 import { ModulWebsite } from '@/components/modul-website';
 import { ROUTER_COMPONENTS_UI, ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
+import { ScrollToDuration } from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import Component from 'vue-class-component';
 import WithRender from './home.html?style=./home.scss';
 
@@ -19,6 +20,10 @@ export class MWHomePage extends ModulWebsite {
     public componentIcon: any = require('./castle.svg');
     public normesIcon: any = require('./square-and-pen.svg');
     public philoIcon: any = require('./brain.svg');
+
+    public refs: {
+        body: HTMLElement;
+    };
 
     public get cardDirection(): MWCardDirections {
         return !this.as<MediaQueries>().isMqMinM ? MWCardDirections.Column : MWCardDirections.Row;
@@ -55,6 +60,11 @@ export class MWHomePage extends ModulWebsite {
     //         }
     //     }
     // }
+
+    public scrollToBody(): void {
+        let offsetToScroll: number = (this.$refs.body as HTMLElement).offsetTop - 80;
+        this.$scrollTo.goTo(document.body, offsetToScroll, ScrollToDuration.Long);
+    }
 
     private onRoute(route: string): void {
         this.$router.push(route);

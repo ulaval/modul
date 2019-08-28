@@ -3,16 +3,16 @@
 .mw-philosophy {
     max-width: $mw-max-width;
     margin: 0 auto;
-    color: white;
-    padding: 0 $m-spacing--xl $m-spacing--xl;
+    color: $m-color--white;
+    padding: $m-spacing--xl $m-spacing;
 
-    &__title {
-        margin-top: m-spacing(7);
-        margin-bottom: $m-spacing--m;
-        text-transform: uppercase;
+    @media (min-width: $m-mq--min--s) {
+        padding: $m-spacing--xxxxl $m-spacing--l;
     }
 
-    &__content {
-        margin-bottom: m-spacing(8);
+    &__title {
+        margin-top: 0;
+        text-transform: uppercase;
+        font-weight: $m-font-weight--black;
     }
 }

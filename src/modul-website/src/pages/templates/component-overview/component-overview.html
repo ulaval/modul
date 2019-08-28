@@ -1,9 +1,6 @@
-<span v-if="!component.overview">
-    <m-message skin="light"
-               state="information">
-        <m-i18n k="modul:in-development"></m-i18n>
-    </m-message>
-</span>
-<span v-else>
-    <m-markdown :template="markdown"></m-markdown>
-</span>
+<m-message v-if="!component.overview"
+           skin="light"
+           state="information">{{'modul:in-development' | f-m-i18n}}
+</m-message>
+<m-markdown v-else
+            :template="markdown"></m-markdown>

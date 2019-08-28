@@ -130,17 +130,18 @@
 //  links
 // ======================================================================
 
-.mw-u--highlighted-title {
+.m-u--app-body .mw-u--highlighted-title {
     @include mw-highlighted-title();
 }
 
-.mw-u--highlighted-title-link {
+.m-u--app-body .mw-u--highlighted-title-link {
     cursor: pointer;
     outline: none;
 
     > a {
         text-decoration: none;
         color: $m-color--white;
+        outline: none;
     }
 
     @include mw-highlighted-title();

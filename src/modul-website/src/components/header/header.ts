@@ -24,9 +24,9 @@ export class MWHeader extends ModulWebsite {
     @Prop({ default: false })
     public showLogo: boolean;
 
-    openSearch: boolean = false;
-    openMegaMenu: boolean = false;
-    megaMenuType: string = '';
+    public openSearch: boolean = false;
+    public openMegaMenu: boolean = false;
+    public megaMenuType: string = '';
 
     @Emit('search')
     private onSearch(): void {
@@ -42,11 +42,11 @@ export class MWHeader extends ModulWebsite {
         }
     }
 
-    get toggleSearch(): boolean {
+    public get toggleSearch(): boolean {
         return this.openSearch;
     }
 
-    get modulVersion(): string {
+    public get modulVersion(): string {
         return this.$meta.version;
     }
 

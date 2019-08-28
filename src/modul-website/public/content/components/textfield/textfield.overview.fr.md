@@ -11,10 +11,7 @@ Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). 
 <modul-demo>
 
 ```html
-
-<p>
-    <m-textfield label="Code postal" type="text" helperMessage="Ex. : A0A 2B2"></m-textfield>
-</p>
+<m-textfield label="Code postal" type="text" helperMessage="Ex. : A0A 2B2"></m-textfield>
 ```
 
 </modul-demo>
@@ -25,22 +22,19 @@ Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). 
 <modul-demo>
 
 ```html
-
-<p>
-    <m-textfield label="Identifiant" type="text"></m-textfield>
-    <m-tooltip placement="right">
-        <h5>Quel identifiant utiliser pour me connecter?</h5>
-        <br />
-        <strong>Étudiant ou membre du personnel de l’Université Laval</strong><br />
-        Votre identifiant est votre IDUL. Celui-ci est composé de cinq lettres, générées à partir de votre prénom et de votre nom, suivies généralement d'un à trois chiffres.
-        <br /><br />
-        <strong>Utilisateur temporaire</strong><br />
-        Si vous disposez d’un compte d’accès temporaire au Portail des cours, votre identifiant vous a été envoyé par courriel à la création du compte. Il débute par « UT » et est suivi de six chiffres.
-        <br /><br />
-        <strong>Participant au MOOC</strong><br />
-        Si vous avez créé un compte pour vous inscrire à un MOOC, votre identifiant est le courriel saisi lors de la création du compte. Si vous vous êtes inscrit au MOOC avec votre IDUL, utilisez plutôt ce dernier pour vous connecter.
-    </m-tooltip>
-</p>
+<m-textfield label="Identifiant" type="text"></m-textfield>
+<m-tooltip placement="right">
+    <h5>Quel identifiant utiliser pour me connecter?</h5>
+    <br />
+    <strong>Étudiant ou membre du personnel de l’Université Laval</strong><br />
+    Votre identifiant est votre IDUL. Celui-ci est composé de cinq lettres, générées à partir de votre prénom et de votre nom, suivies généralement d'un à trois chiffres.
+    <br /><br />
+    <strong>Utilisateur temporaire</strong><br />
+    Si vous disposez d’un compte d’accès temporaire au Portail des cours, votre identifiant vous a été envoyé par courriel à la création du compte. Il débute par « UT » et est suivi de six chiffres.
+    <br /><br />
+    <strong>Participant au MOOC</strong><br />
+    Si vous avez créé un compte pour vous inscrire à un MOOC, votre identifiant est le courriel saisi lors de la création du compte. Si vous vous êtes inscrit au MOOC avec votre IDUL, utilisez plutôt ce dernier pour vous connecter.
+</m-tooltip>
 ```
 
 </modul-demo>
@@ -51,13 +45,8 @@ Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). 
 <modul-demo>
 
 ```html
-
-<p>
-    <m-textfield type="text" placeholder="Note sans titre"></m-textfield>
-</p>
-<p>
-    <m-textfield type="text" placeholder="Saisir la description de la note"></m-textfield>
-</p>
+<m-textfield type="text" placeholder="Note sans titre"></m-textfield>
+<m-textfield type="text" placeholder="Saisir la description de la note"></m-textfield>
 ```
 
 </modul-demo>
@@ -68,21 +57,11 @@ Le type de champ est très important, surtout lors de l'utilisation avec un appa
 <modul-demo>
 
 ```html
-<p>
-    <m-textfield label="Texte" type="text"></m-textfield>
-</p>
-<p>
-    <m-textfield label="Mots de passe" type="password" ></m-textfield>
-</p>
-<p>
-    <m-textfield label="Courriel" type="email"></m-textfield>
-</p>
-<p>
-    <m-textfield label="Url" type="url"></m-textfield>
-</p>
-<p>
-    <m-textfield label="Téléphone" type="tel"></m-textfield>
-</p>
+<m-textfield label="Texte" type="text"></m-textfield>
+<m-textfield label="Mots de passe" type="password" ></m-textfield>
+<m-textfield label="Courriel" type="email"></m-textfield>
+<m-textfield label="Url" type="url"></m-textfield>
+<m-textfield label="Téléphone" type="tel"></m-textfield>
 ```
 
 </modul-demo>
@@ -101,9 +80,7 @@ Par exemple, si on s'attend à un code postal, le champ pourrait afficher 7 cara
 <modul-demo>
 
 ```html
-<p>
-    <m-textfield :disabled="true" ></m-textfield>
-</p>
+<m-textfield :disabled="true" ></m-textfield>
 ```
 
 </modul-demo>
@@ -125,9 +102,7 @@ Par exemple, si on s'attend à un code postal, le champ pourrait afficher 7 cara
 <modul-demo>
 
 ```html
-<p>
-    <m-textfield label="Identifiant" :error="true" error-message="L'identifiant est obligatoire."></m-textfield>
-</p>
+<m-textfield label="Identifiant" :error="true" error-message="L'identifiant est obligatoire."></m-textfield>
 ```
 
 </modul-demo>
@@ -137,9 +112,7 @@ Par exemple, si on s'attend à un code postal, le champ pourrait afficher 7 cara
 <modul-demo>
 
 ```html
-<p>
-    <m-textfield label="Mot de passe" value="abcdefgh" type="password" :passwordIcon="false" :valid="true" valid-message="Votre mot de passe est sécuritaire."></m-textfield>
-</p>
+<m-textfield label="Mot de passe" value="abcdefgh" type="password" :passwordIcon="false" :valid="true" valid-message="Votre mot de passe est sécuritaire."></m-textfield>
 ```
 
 </modul-demo>
