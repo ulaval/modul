@@ -8,7 +8,7 @@
     }
 
     /deep/ {
-        @include m-commons-froala-styles();
+        @include m-commons-rte-styles();
 
         img {
             max-width: 100%;
