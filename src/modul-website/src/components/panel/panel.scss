@@ -7,7 +7,7 @@ $modul-menu-transition-duration: 0.7s;
 
 .mw-panel {
     position: fixed;
-    top: 80px;
+    top: $mw-header-height--s;
     right: 0;
     bottom: 0;
     left: 0;
@@ -19,8 +19,8 @@ $modul-menu-transition-duration: 0.7s;
     outline: none;
     box-shadow: $m-box-shadow--l;
 
-    @media (min-width: #{$m-mq--min--xs}) {
-        top: 80px;
+    @media (min-width: #{$m-mq--min--s}) {
+        top: $mw-header-height;
     }
 
     @media (min-width: #{$m-mq--min--s}) {

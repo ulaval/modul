@@ -22,7 +22,11 @@
 
     &.mw-is--small {
         .mw-logo__img {
-            width: 130px;
+            width: 95px;
+
+            @media (min-width: $m-mq--min--s) {
+                width: 130px;
+            }
         }
     }
 
