@@ -47,7 +47,7 @@ exports[`Storyshots components|m-copy-to-clipboard States 1`] = `
                     readonly="readonly"
                     type="text"
                   />
-                    
+                     
                   <!---->
                    
                   <!---->
@@ -59,23 +59,6 @@ exports[`Storyshots components|m-copy-to-clipboard States 1`] = `
                   class="m-input-style__suffix"
                 >
                   <!---->
-                   
-                  <a
-                    class="m-link m-copy-to-clipboard__button m--is-unvisited m--no-underline m--is-button m--has-content"
-                    href="#"
-                    role="button"
-                    tabindex="0"
-                  >
-                    <!---->
-                     
-                    <span
-                      class="m-link__text"
-                    >
-                      Copier
-                    </span>
-                     
-                    <!---->
-                  </a>
                    
                   <!---->
                 </div>
@@ -148,7 +131,7 @@ exports[`Storyshots components|m-copy-to-clipboard States 1`] = `
                     readonly="readonly"
                     type="text"
                   />
-                    
+                     
                   <!---->
                    
                   <!---->
@@ -161,29 +144,20 @@ exports[`Storyshots components|m-copy-to-clipboard States 1`] = `
                 >
                   <!---->
                    
-                  <a
-                    class="m-link m-copy-to-clipboard__button m--is-unvisited m--no-underline m--is-button m--has-content"
-                    href="#"
-                    role="button"
-                    tabindex="0"
-                  >
-                    <!---->
-                     
-                    <span
-                      class="m-link__text"
-                    >
-                      Copier
-                    </span>
-                     
-                    <!---->
-                  </a>
-                   
                   <!---->
                 </div>
               </div>
             </div>
              
-            <!---->
+            <div
+              class="m-input-style__append"
+            >
+              <button
+                class="m-copy-to-clipboard__button"
+              >
+                Copier
+              </button>
+            </div>
           </div>
         </div>
          
@@ -249,7 +223,7 @@ exports[`Storyshots components|m-copy-to-clipboard States 1`] = `
                     placeholder="Waiting"
                     type="text"
                   />
-                    
+                     
                   <!---->
                    
                   <!---->
@@ -261,7 +235,7 @@ exports[`Storyshots components|m-copy-to-clipboard States 1`] = `
                   class="m-input-style__suffix"
                 >
                   <!---->
-                    
+                   
                   <div
                     class="m-spinner m-input-style__spinner"
                   >
@@ -293,10 +267,6 @@ exports[`Storyshots components|m-copy-to-clipboard States 1`] = `
       </div>
     </div>
   </div>
-   
-  <button>
-    Test
-  </button>
 </div>
 `;
 
@@ -350,7 +320,7 @@ exports[`Storyshots components|m-copy-to-clipboard custom 1`] = `
                   readonly="readonly"
                   type="text"
                 />
-                  
+                   
                 <!---->
                  
                 <!---->
@@ -362,7 +332,7 @@ exports[`Storyshots components|m-copy-to-clipboard custom 1`] = `
                 class="m-input-style__suffix"
               >
                 <!---->
-                  
+                 
                 <!---->
               </div>
             </div>
@@ -435,7 +405,7 @@ exports[`Storyshots components|m-copy-to-clipboard custom 1`] = `
                   readonly="readonly"
                   type="text"
                 />
-                  
+                   
                 <!---->
                  
                 <!---->
@@ -448,16 +418,18 @@ exports[`Storyshots components|m-copy-to-clipboard custom 1`] = `
               >
                 <!---->
                  
-                <button>
-                  Some button
-                </button>
-                 
                 <!---->
               </div>
             </div>
           </div>
            
-          <!---->
+          <div
+            class="m-input-style__append"
+          >
+            <button>
+              Some button
+            </button>
+          </div>
         </div>
       </div>
        
@@ -523,7 +495,7 @@ exports[`Storyshots components|m-copy-to-clipboard custom user feedback 1`] = `
                 readonly="readonly"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -536,29 +508,20 @@ exports[`Storyshots components|m-copy-to-clipboard custom user feedback 1`] = `
             >
               <!---->
                
-              <a
-                class="m-link m-copy-to-clipboard__button m--is-unvisited m--no-underline m--is-button m--has-content"
-                href="#"
-                role="button"
-                tabindex="0"
-              >
-                <!---->
-                 
-                <span
-                  class="m-link__text"
-                >
-                  Copier
-                </span>
-                 
-                <!---->
-              </a>
-               
               <!---->
             </div>
           </div>
         </div>
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            class="m-copy-to-clipboard__button"
+          >
+            Copier
+          </button>
+        </div>
       </div>
     </div>
      
@@ -623,7 +586,7 @@ exports[`Storyshots components|m-copy-to-clipboard default 1`] = `
                 readonly="readonly"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -636,29 +599,20 @@ exports[`Storyshots components|m-copy-to-clipboard default 1`] = `
             >
               <!---->
                
-              <a
-                class="m-link m-copy-to-clipboard__button m--is-unvisited m--no-underline m--is-button m--has-content"
-                href="#"
-                role="button"
-                tabindex="0"
-              >
-                <!---->
-                 
-                <span
-                  class="m-link__text"
-                >
-                  Copier
-                </span>
-                 
-                <!---->
-              </a>
-               
               <!---->
             </div>
           </div>
         </div>
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            class="m-copy-to-clipboard__button"
+          >
+            Copier
+          </button>
+        </div>
       </div>
     </div>
      
@@ -723,7 +677,7 @@ exports[`Storyshots components|m-copy-to-clipboard default with value 1`] = `
                 readonly="readonly"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -736,29 +690,20 @@ exports[`Storyshots components|m-copy-to-clipboard default with value 1`] = `
             >
               <!---->
                
-              <a
-                class="m-link m-copy-to-clipboard__button m--is-unvisited m--no-underline m--is-button m--has-content"
-                href="#"
-                role="button"
-                tabindex="0"
-              >
-                <!---->
-                 
-                <span
-                  class="m-link__text"
-                >
-                  Copier
-                </span>
-                 
-                <!---->
-              </a>
-               
               <!---->
             </div>
           </div>
         </div>
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            class="m-copy-to-clipboard__button"
+          >
+            Copier
+          </button>
+        </div>
       </div>
     </div>
      
@@ -823,7 +768,7 @@ exports[`Storyshots components|m-copy-to-clipboard user feedback 1`] = `
                 readonly="readonly"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -836,29 +781,20 @@ exports[`Storyshots components|m-copy-to-clipboard user feedback 1`] = `
             >
               <!---->
                
-              <a
-                class="m-link m-copy-to-clipboard__button m--is-unvisited m--no-underline m--is-button m--has-content"
-                href="#"
-                role="button"
-                tabindex="0"
-              >
-                <!---->
-                 
-                <span
-                  class="m-link__text"
-                >
-                  Copier
-                </span>
-                 
-                <!---->
-              </a>
-               
               <!---->
             </div>
           </div>
         </div>
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            class="m-copy-to-clipboard__button"
+          >
+            Copier
+          </button>
+        </div>
       </div>
     </div>
      

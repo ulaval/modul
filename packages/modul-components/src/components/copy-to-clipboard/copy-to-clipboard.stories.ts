@@ -26,7 +26,6 @@ storiesOf(`${componentsHierarchyRootSeparator}${COPY_TO_CLIPBOARD_NAME}`, module
                 <div><${componentName} v-model="value" :disabled="true" :placeholder="'Disabled'" /></div>
                 <div><${componentName} v-model="value" :placeholder="'Read-only'" :readonly="true" /></div>
                 <div><${componentName} v-model="value" :placeholder="'Waiting'" :waiting="true" /></div>
-                <button @click="test">Test</button>
             </div>
         `,
         data: () => ({
