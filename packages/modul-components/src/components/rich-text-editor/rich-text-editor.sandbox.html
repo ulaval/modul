@@ -63,9 +63,9 @@
         </div>
     </div>
     <div class="m-u--margin-bottom">
-        <h5>With IMAGE option</h5>
-        <m-rich-text-editor v-model="imageModel"
-                            :options="imageOptions"
+        <h5>Mode media</h5>
+        <m-rich-text-editor v-model="mediaModel"
+                            :options="options"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"
@@ -73,9 +73,8 @@
                             @image-removed="imageRemoved"></m-rich-text-editor>
     </div>
     <div class="m-u--margin-bottom">
-        <h5>With IMAGE_HIDE_LAYOUT_MENU option</h5>
-        <m-rich-text-editor v-model="imageNoLayoutModel"
-                            :options="imageNoLayoutOptions"
+        <m-rich-text-editor v-model="mediaModel2"
+                            :options="options"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"

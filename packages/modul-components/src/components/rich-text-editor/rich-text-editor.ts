@@ -32,8 +32,7 @@ export enum MRichTextEditorMode {
 }
 
 export enum MRichTextEditorOption {
-    IMAGE,
-    IMAGE_HIDE_LAYOUT_MENU
+    IMAGE
 }
 
 export type MRichTextEditorOptions = MRichTextEditorOption[];
@@ -124,7 +123,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     }
 
     public get internalOptions(): any {
-        const propOptions: any = {
+        let propOptions: any = {
             // Hack to "hide" the default froala placeholder text
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
@@ -143,20 +142,20 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
         if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
             options.pluginsEnabled.push('image');
-            options.toolbarButtons.push('insertImage');
 
-            let imageEditButtons: string[] = ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
-
-            if (this.options.includes(MRichTextEditorOption.IMAGE_HIDE_LAYOUT_MENU)) {
-                imageEditButtons.splice(1, 1);
-            }
-
-            options.imageEditButtons = imageEditButtons;
+            // toolbar for desktop devices
+            options.toolbarButtons.moreRich.buttons.push('insertImage');
+            // for mobile devices
+            options.toolbarButtonsXS.moreRich.buttons.push('insertImage');
         }
 
         if (this.titleAvailable) {
-            options.toolbarButtons.splice(2, 0, 'paragraphStyle');
             options.paragraphStyles = this.manageHeaderLevels();
+
+            // toolbar for desktop devices
+            options.toolbarButtons.moreText.buttons.splice(0, 0, 'paragraphStyle');
+            // for mobile devices
+            options.toolbarButtonsXS.moreText.buttons.splice(0, 0, 'paragraphStyle');
         }
 
         return options;
@@ -213,10 +212,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         return /^-*\d+$/.test(this.toolbarStickyOffset);
     }
 
-    protected getScrollableContainer(): string | undefined {
-        if (this.scrollableContainer) {
-            return this.scrollableContainer;
-        }
+    protected getScrollableContainer(): string {
+        // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
+        return this.scrollableContainer ? this.scrollableContainer : 'body';
     }
 
     protected testSelectorProps(): void {
