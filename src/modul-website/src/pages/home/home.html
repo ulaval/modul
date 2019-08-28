@@ -6,7 +6,8 @@
                      :tagline="true"></mw-logo>
         </h1>
 
-        <div class="mw-home__headline-button"
+        <div v-if="hasButtonScrollToBody"
+             class="mw-home__headline-button"
              tabindex="0"
              role="button"
              @click="scrollToBody()">

@@ -1,13 +1,25 @@
 .mw-website__footer {
     position: relative;
-    z-index: 1;
-    background-color: $modul-color--black-grey-dark;
-    color: m-color(white);
-    text-transform: uppercase;
+    z-index: 0;
+
+    &-wrap {
+        color: m-color(white);
+        text-transform: uppercase;
+        background-color: $modul-color--black-grey-dark;
+    }
 
     &.mw--is-large-footer {
-        padding: $m-spacing--xxl;
-        text-align: center;
+        height: 190px;
+
+        .mw-website__footer-wrap {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            padding: $m-spacing--xxl;
+            text-align: center;
+        }
 
         a {
             width: 130px;
@@ -16,10 +28,14 @@
     }
 
     &:not(.mw--is-large-footer) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: $m-spacing;
+        font-size: $m-font-size--s;
+
+        .mw-website__footer-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: $m-spacing;
+        }
 
         a {
             width: 80px;

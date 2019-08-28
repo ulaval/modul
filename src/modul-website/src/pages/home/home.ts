@@ -18,6 +18,7 @@ export class MWHomePage extends ModulWebsite {
 
     // public designButtonPosition: number = 1;
     public windowScrollY: number = 0;
+    public hasButtonScrollToBody: boolean = true;
     public componentIcon: any = require('./castle.svg');
     public normesIcon: any = require('./square-and-pen.svg');
     public philoIcon: any = require('./brain.svg');
@@ -83,7 +84,7 @@ export class MWHomePage extends ModulWebsite {
     }
 
     public scrollToBody(): void {
-        let offsetToScroll: number = (this.$refs.body as HTMLElement).offsetTop - 80;
+        let offsetToScroll: number = (this.$refs.body as HTMLElement).offsetTop;
         this.$scrollTo.goTo(document.body, offsetToScroll, ScrollToDuration.Long);
     }
 
@@ -97,5 +98,11 @@ export class MWHomePage extends ModulWebsite {
 
     private setParallaxEffect(): void {
         this.windowScrollY = window.scrollY;
+        let windowheight: number = window.innerHeight;
+        if (this.windowScrollY > (windowheight / 3)) {
+            this.hasButtonScrollToBody = false;
+        } else {
+            this.hasButtonScrollToBody = true;
+        }
     }
 }

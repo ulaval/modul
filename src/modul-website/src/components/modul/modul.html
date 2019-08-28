@@ -51,20 +51,23 @@
         </transition-group>
     </m-sidebar> -->
 
-    <main class="mw-website__body">
+    <main class="mw-website__body"
+          :class="{'mw--has-dark-background': isHomePage || isPhilosophyPage}">
         <router-view></router-view>
     </main>
 
     <footer class="mw-website__footer"
             :class="{'mw--is-large-footer': isHomePage || isPhilosophyPage }">
-        <p>
-            <m-i18n k="modul:powered-by"></m-i18n>
-        </p>
-        <a href="https://www.ulaval.ca/"
-           target="_blank">
-            <img :src="logoUl"
-                 alt="l'Université Laval"
-                 title="l'Université Laval" />
-        </a>
+        <div class="mw-website__footer-wrap">
+            <p>
+                <m-i18n k="modul:powered-by"></m-i18n>
+            </p>
+            <a href="https://www.ulaval.ca/"
+               target="_blank">
+                <img :src="logoUl"
+                     alt="l'Université Laval"
+                     title="l'Université Laval" />
+            </a>
+        </div>
     </footer>
 </div>
