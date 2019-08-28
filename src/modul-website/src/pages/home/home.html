@@ -1,21 +1,21 @@
 <div class="mw-home">
     <section class="mw-home__headline">
-        <h1>
+        <h1 class="mw-home__logo-modul"
+            :style="logoModulStyle">
             <mw-logo size="large"
                      :tagline="true"></mw-logo>
         </h1>
 
-        <div class="mw-home__button"
-             :style="{ bottom: designButtonPosition + 'px' }"
+        <div class="mw-home__headline-button"
              tabindex="0"
              role="button"
              @click="scrollToBody()">
             <m-icon v-for="index in 3"
                     :key="index"
-                    class="mw-home__button-arrow"
+                    class="mw-home__headline-button-arrow"
                     name="m-svg__chevron--down"
                     :size=" 18 + (index * 4) + 'px'"></m-icon>
-            <div class="mw-home__button-link">{{'modul:responsive-design-link' | f-m-i18n}}</div>
+            <div class="mw-home__headline-button-link">{{'modul:responsive-design-link' | f-m-i18n}}</div>
         </div>
     </section>
 

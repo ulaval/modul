@@ -11,7 +11,8 @@
 
     &.mw-is--large {
         .mw-logo__img {
-            width: 300px;
+            width: 280px;
+            user-select: none;
 
             @media (min-width: $m-mq--min--s) {
                 width: 400px;
@@ -26,13 +27,15 @@
     }
 
     &__tagline {
-        grid-area: tagline;
-        font-size: var(--mw-logo-tagline-font-size);
+        display: flex;
+        font-size: 22px;
         font-weight: 300;
         text-transform: uppercase;
+        margin-top: $m-spacing--s;
 
         @media (min-width: $m-mq--min--s) {
             margin-top: $m-spacing;
+            font-size: 32px;
         }
     }
 

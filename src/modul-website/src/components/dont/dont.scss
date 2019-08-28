@@ -8,7 +8,21 @@
         color: $m-color--error !important;
     }
 
-    ul li::before {
-        @include m-triangle(right, $m-color--error, 10px);
+    ul {
+        li {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: 9px; //Magic number
+                left: -$m-spacing;
+
+                @include m-triangle(right, $m-color--error, 10px);
+            }
+
+            + li {
+                margin-top: $m-spacing--s;
+            }
+        }
     }
 }
