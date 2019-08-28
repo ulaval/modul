@@ -15,7 +15,8 @@
             </div>
         </div>
         <template slot="panel">
-            <div class="mw-components__sidemenu">
+            <div class="mw-components__sidemenu"
+                 :key="fullPath">
 
                 <div class="mw-components__search">
                     <m-searchfield></m-searchfield>

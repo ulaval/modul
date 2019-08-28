@@ -15,6 +15,7 @@ Vue.use(ExpandableLayoutPlugin);
 export class MWStandardsPage extends ModulVue {
 
     showMenu = false;
+    fullPath: string;
 
     mounted() {
         this.isMqMinMChanged(this.as<MediaQueriesMixin>().isMqMinM);
@@ -38,5 +39,10 @@ export class MWStandardsPage extends ModulVue {
 
     toggleMenu() {
         this.showMenu = !this.showMenu;
+    }
+
+    @Watch('$route', { immediate: true })
+    private routeChanged(): void {
+        this.fullPath = this.$route.fullPath;
     }
 }
