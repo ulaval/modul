@@ -61,7 +61,7 @@ export class MWMegaMenu extends ModulWebsite {
                     },
                     {
                         id: ROUTER_STANDARDS_UI_TYPOGRAPHY,
-                        text: this.$i18n.translate('website:standards-typography')
+                        text: this.$i18n.translate('website:standards-typography-and-styles')
                     },
                     {
                         id: ROUTER_STANDARDS_UI_BREAKPOINTS,
@@ -117,7 +117,7 @@ export class MWMegaMenu extends ModulWebsite {
                 pages: [
                     {
                         id: ROUTER_STANDARDS_ACCESSIBILITY_WHY,
-                        text: this.$i18n.translate('website:website:accessibility-standards-why')
+                        text: this.$i18n.translate('website:accessibility-standards-why')
                     },
                     {
                         id: ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET,
