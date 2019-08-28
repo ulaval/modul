@@ -14,7 +14,8 @@
         background-color: $modul-color--black-grey-dark;
         background-image: url(./grid.svg);
         background-position: 0 0;
-        color: #fff;
+        background-attachment: fixed;
+        color: $m-color--white;
         min-height: calc(100vh - #{$mw-header-height});
 
         @media (min-width: $m-mq--min--s) {
@@ -37,7 +38,16 @@
         }
     }
 
-    &__button {
+    &__logo-modul {
+        transition: margin-top $m-transition-duration--xs ease;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &__headline-button {
         transition: transform 0.6s ease, bottom 0.2s ease;
         transform: translate3d(-50%, 42px, 0);
         position: fixed;
@@ -55,12 +65,12 @@
         }
     }
 
-    &__button-arrow {
+    &__headline-button-arrow {
         position: relative;
         color: $m-color--ul-blue;
     }
 
-    &__button-link {
+    &__headline-button-link {
         border-radius: 0;
         font-size: 16px;
         margin-top: $m-spacing--s;
