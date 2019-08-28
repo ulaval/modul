@@ -97,6 +97,7 @@
     }
 
     &__search-button {
+        flex-shrink: 0;
         width: $mw-header-height--s;
         align-self: stretch;
 
@@ -113,7 +114,9 @@
         }
     }
 
-    &__version {
+    &__link-version {
         white-space: nowrap;
+        font-size: $m-font-size--xs;
+        margin-right: $m-spacing--s;
     }
 }
