@@ -72,7 +72,7 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: 'svg-inline-loader',
-                exclude: /(logo-ul|grid|brain|castle|square-and-pen)\.svg$/,
+                exclude: /(logo-modul|logo-ul-blanc|grid|brain|castle|square-and-pen)\.svg$/,
                 options: {
                     removeTags: true,
                     removingTags: ['desc', 'defs', 'style'],
@@ -80,7 +80,7 @@ module.exports = {
                 }
             },
             {
-                test: /(logo-ul\.svg|grid\.svg|brain\.svg|castle\.svg|square-and-pen\.svg|\.png)$/,
+                test: /(logo-modul.svg|logo-ul-blanc\.svg|grid\.svg|brain\.svg|castle\.svg|square-and-pen\.svg|\.png)$/,
                 loader: 'url-loader',
                 options: {
                     limit: 10000

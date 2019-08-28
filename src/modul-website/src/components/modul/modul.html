@@ -1,5 +1,5 @@
-<div class="modul-website">
-    <header class="modul-website__header">
+<div class="mw-website">
+    <header class="mw-website__header">
         <mw-header :show-logo="!isHomePage"
                    @search="toggleSearch"></mw-header>
     </header>
@@ -51,21 +51,20 @@
         </transition-group>
     </m-sidebar> -->
 
-    <main class="modul-website__body">
+    <main class="mw-website__body">
         <router-view></router-view>
     </main>
 
-    <footer class="modul-website__footer">
-        <div>
-            <p class="m-u--margin-bottom">
-                <m-i18n k="modul:powered-by"></m-i18n>
-            </p>
-            <a href="https://www.ulaval.ca/"
-               target="_blank">
-                <img :src="logo"
-                     alt="l'Université Laval"
-                     title="l'Université Laval" />
-            </a>
-        </div>
+    <footer class="mw-website__footer"
+            :class="{'mw--is-large-footer': isHomePage || isPhilosophyPage }">
+        <p>
+            <m-i18n k="modul:powered-by"></m-i18n>
+        </p>
+        <a href="https://www.ulaval.ca/"
+           target="_blank">
+            <img :src="logoUl"
+                 alt="l'Université Laval"
+                 title="l'Université Laval" />
+        </a>
     </footer>
 </div>

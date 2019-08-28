@@ -19,6 +19,10 @@
         justify-content: space-between;
         background: $modul-color--black-grey-dark;
         padding-left: $mw-header-padding;
+
+        @media (min-width: $m-mq--min--s) {
+            padding-left: $m-spacing--l;
+        }
     }
 
     &__button-menu,
@@ -41,13 +45,16 @@
     }
 
     &__logo {
-        a {
-            text-decoration: none;
+        width: 100%;
+
+        @media (min-width: $m-mq--min--s) {
+            max-width: 304px;
         }
 
-        width: 100%;
-        padding-left: $mw-header-padding;
-        max-width: $mw-sidebar-width - $mw-header-padding;
+        a {
+            text-decoration: none;
+            outline: none;
+        }
     }
 
     &__item {

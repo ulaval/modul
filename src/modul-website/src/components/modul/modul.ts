@@ -1,3 +1,4 @@
+import { ROUTER_PHILOSOPHY } from '@/router';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
@@ -26,14 +27,18 @@ export default class Modul extends ModulWebsite {
     private searchWidth: string = '400px';
 
     private components: Component[] = [];
-    public logo: any = require('./logo-ul.svg');
+    public logoUl: any = require('./logo-ul-blanc.svg');
 
     // get modulVersion() {
     //     return MetaAll.getModulVersion();
     // }
 
-    get isHomePage(): boolean {
+    public get isHomePage(): boolean {
         return this.$route.path == '/';
+    }
+
+    public get isPhilosophyPage(): boolean {
+        return this.$route.path === this.$routerIndex.for(ROUTER_PHILOSOPHY);
     }
 
     // TODO: another way to index?

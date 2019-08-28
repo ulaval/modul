@@ -17,11 +17,15 @@
     color: $m-color--white;
     position: relative;
     text-decoration: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: $m-font-weight--black;
+    font-size: 24px;
 
     &::before {
-        content: "";
+        content: '';
         display: block;
-        margin-bottom: $m-padding;
+        margin-bottom: $m-spacing--s;
         width: 32px;
         height: 4px;
         background-color: $modul-color--yellow;

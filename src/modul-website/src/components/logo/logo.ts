@@ -24,6 +24,8 @@ export class MWLogo extends ModulWebsite {
     })
     public size: MWLogoSize;
 
+    public logoModul: any = require('./logo-modul.svg');
+
     @Prop({
         default: false
     })
