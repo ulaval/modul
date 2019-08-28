@@ -126,7 +126,9 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
 
     @Watch('visible', { immediate: true })
     visibleChanged(visible: boolean): void {
-        if (visible && this.isTypeYearsMonths) {
+        const isInYearView: boolean = this.isTypeYearsMonths || this.initialView === MBaseCalendarView.YEARS_MONTHS;
+
+        if (visible && isInYearView) {
             this.scrollToCurrentYear();
         }
     }
