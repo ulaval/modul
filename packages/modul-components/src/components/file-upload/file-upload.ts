@@ -49,6 +49,8 @@ export class MFileUpload extends ModulVue {
     public maxSizeKb?: number;
     @Prop()
     public maxFiles?: number;
+    @Prop()
+    public selectionHelpMessage?: string;
     @Prop({
         default: DEFAULT_STORE_NAME
     })
