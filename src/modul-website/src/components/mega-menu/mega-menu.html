@@ -27,13 +27,25 @@
                 </ul>
             </nav>
             <nav class="mw-mega-menu__list"
-                 v-for="page in pagesStandards"
-                 :key="page.id"
+                 v-for="category in pagesStandards"
+                 :key="category.id"
                  v-if="type != 'components'">
-                <h1 class="mw-mega-menu__title modul-u--h1 mw-u--highlighted-title-link">
-                    <router-link :to="{ name : page.id }"
-                                 tabindex="0"><span>{{ page.text }}</span></router-link>
-                </h1>
+                <h2 class="mw-mega-menu__title modul-u--h1 mw-u--highlighted-title-link">
+                    <router-link :to="{ name : category.id }"
+                                 tabindex="0"><span>{{ category.text }}</span></router-link>
+                </h2>
+                <ul>
+                    <li v-for="page in category.pages"
+                        @click.prevent="close()">
+                        <router-link :to="getRouterIndex(page.id)"
+                                     tag="a"
+                                     class="mw-mega-menu__link">
+                            <span class="mw-mega-menu__wrapper">
+                                {{ page.text }}
+                            </span>
+                        </router-link>
+                    </li>
+                </ul>
             </nav>
         </div>
         <template v-else>
