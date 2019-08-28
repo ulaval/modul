@@ -1,6 +1,6 @@
+import _ from 'lodash';
 import { Meta, MetaService } from 'meta-generator/dist';
 import { ComponentMeta } from './content/components.meta.loader';
-
 export interface ComponentState {
     [k: string]: ComponentMeta[];
 }
@@ -23,6 +23,10 @@ export class ModulMeta {
         return this._componentState;
     }
 
+    get categories(): string[] {
+        return Object.keys(this._componentState);
+    }
+
     get metaService(): MetaService {
         return this._metaService;
     }
@@ -33,6 +37,7 @@ export class ModulMeta {
             if (componentMeta.visible) {
                 if (result[componentMeta.category] && result[componentMeta.category].length > 0) {
                     result[componentMeta.category].push(componentMeta);
+                    result[componentMeta.category] = _.sortBy(result[componentMeta.category], componentMeta => _.deburr(componentMeta.name));
                 } else {
                     result[componentMeta.category] = [componentMeta];
                 }

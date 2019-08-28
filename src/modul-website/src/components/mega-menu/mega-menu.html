@@ -6,8 +6,10 @@
                  v-for="category in categoriesComponent"
                  :key="category.id"
                  v-if="type == 'components'">
-                <h2 class="mw-mega-menu__title modul-u--h2 mw-u--highlighted-title-link">
-                    <a tabindex="-1"><span>{{category.text}}</span></a>
+                <h2 class="mw-mega-menu__title modul-u--h2 mw-u--highlighted-title-link"
+                    @click.prevent="close()">
+                    <router-link :to="getCategoryRoute(category.id)"
+                                 tabindex="0"><span>{{ category.text }}</span></router-link>
                 </h2>
                 <ul>
                     <li v-for="component in getCategoryComponents(category.id)"
@@ -30,14 +32,15 @@
                  v-for="category in pagesStandards"
                  :key="category.id"
                  v-if="type != 'components'">
-                <h2 class="mw-mega-menu__title modul-u--h1 mw-u--highlighted-title-link">
+                <h2 class="mw-mega-menu__title modul-u--h1 mw-u--highlighted-title-link"
+                    @click.prevent="close()">
                     <router-link :to="{ name : category.id }"
                                  tabindex="0"><span>{{ category.text }}</span></router-link>
                 </h2>
                 <ul>
                     <li v-for="page in category.pages"
                         @click.prevent="close()">
-                        <router-link :to="getRouterIndex(page.id)"
+                        <router-link :to="{ name : page.id }"
                                      tag="a"
                                      class="mw-mega-menu__link">
                             <span class="mw-mega-menu__wrapper">
@@ -113,17 +116,29 @@
                                 </li>
                             </ul>
                         </m-accordion>
-                        <nav v-if="menuSection != 'components'">
+                        <m-accordion class="mw-mobile-menu__elem mw--is-accordion"
+                                     skin="plain"
+                                     v-for="category in pagesStandards"
+                                     :key="category.id"
+                                     v-if="menuSection != 'components'">
+                            <h2 class="mw-mobile-menu__accordion-title"
+                                slot="header">
+                                <!-- <router-link :to="getRouterIndex(category.id)"> --> <span>{{category.text}}</span><!-- </router-link>-->
+                            </h2>
                             <ul>
-                                <li v-for="page in pagesStandards"
-                                    class="mw-mobile-menu__elem">
-                                    <router-link class="mw-mobile-menu__title"
-                                                 :to="{name : page.id}">
-                                        <m-i18n :k="page.text"></m-i18n>
+                                <li v-for="page in category.pages"
+                                    :key="page.id"
+                                    click="closeMenu()"
+                                    @keyup.enter="closeMenu()">
+                                    <router-link :to="{ name : page.id }"
+                                                 class="mw-mobile-menu__link">
+                                        <span class="mw-mobile-menu__wrapper">
+                                            {{ page.text }}
+                                        </span>
                                     </router-link>
                                 </li>
                             </ul>
-                        </nav>
+                        </m-accordion>
                     </div>
                 </div>
             </transition>

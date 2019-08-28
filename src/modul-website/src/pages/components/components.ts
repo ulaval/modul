@@ -2,6 +2,7 @@
 import { ModulWebsite } from '@/components/modul-website';
 import { ComponentMeta } from '@/content/components.meta.loader';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
+import _ from 'lodash';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { MWComponent } from './component/component-details';
@@ -19,7 +20,10 @@ export class MWComponentsPage extends ModulWebsite {
 
     showMenu = false;
 
+    fullPath: string;
+
     mounted() {
+
         this.isMqMinMChanged(this.as<MediaQueriesMixin>().isMqMinM);
     }
 
@@ -29,7 +33,7 @@ export class MWComponentsPage extends ModulWebsite {
     }
 
     get componentCategoryIds(): string[] {
-        return Object.keys(this.$meta.componentState);
+        return _.sortBy(this.$meta.categories, name => _.deburr(this.$i18n.translate(`categories:${name}`)));
     }
 
     getRouterIndex(tag: string): string {
@@ -37,9 +41,7 @@ export class MWComponentsPage extends ModulWebsite {
     }
 
     getCategoryComponents(category): ComponentMeta[] {
-        return this.$meta.componentState[category].sort((a, b) => {
-            return a.name < b.name ? -1 : (a.name > b.name ? 1 : 0);
-        });
+        return this.$meta.componentState[category];
     }
 
     onSideMenuSelection() {
@@ -50,10 +52,16 @@ export class MWComponentsPage extends ModulWebsite {
 
     urlMatchPath(categoryId: string) {
         let path: string = this.$i18n.translate(`categories:${categoryId}-route`);
-        return this.$route.fullPath.includes(`/${path}`);
+        console.log(`is ${this.fullPath} match  /${path} ? ${this.fullPath.includes(`/${path}`)}`);
+        return this.fullPath.includes(`/${path}`);
     }
 
     toggleMenu() {
         this.showMenu = !this.showMenu;
+    }
+
+    @Watch('$route', { immediate: true })
+    private routeChanged(): void {
+        this.fullPath = this.$route.fullPath;
     }
 }

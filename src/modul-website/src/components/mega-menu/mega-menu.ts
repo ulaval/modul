@@ -3,6 +3,7 @@ import { ComponentMeta } from '@/content/components.meta.loader';
 import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET, ROUTER_STANDARDS_ACCESSIBILITY_IMPLEMENTATION, ROUTER_STANDARDS_ACCESSIBILITY_WHY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS, ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_EDITORIAL_FORMAT, ROUTER_STANDARDS_EDITORIAL_GLOSSARY, ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK, ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION, ROUTER_STANDARDS_EDITORIAL_TONE, ROUTER_STANDARDS_UI, ROUTER_STANDARDS_UI_BREAKPOINTS, ROUTER_STANDARDS_UI_COLORS, ROUTER_STANDARDS_UI_ICONOGRAPHY, ROUTER_STANDARDS_UI_TYPOGRAPHY } from '@/router';
 import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
+import _ from 'lodash';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
@@ -39,7 +40,7 @@ export class MWMegaMenu extends ModulWebsite {
 
     beforeMount(): void {
 
-        Object.keys(this.$meta.componentState).forEach(category => {
+        _.sortBy(this.$meta.categories, name => _.deburr(this.$i18n.translate(`categories:${name}`))).forEach(category => {
             this.categoriesComponent.push({
                 id: category,
                 text: this.$i18n.translate(`categories:${category}`)
@@ -134,9 +135,7 @@ export class MWMegaMenu extends ModulWebsite {
     }
 
     getCategoryComponents(category): ComponentMeta[] {
-        return this.$meta.componentState[category].sort((a, b) => {
-            return a.name < b.name ? -1 : (a.name > b.name ? 1 : 0);
-        });
+        return this.$meta.componentState[category];
     }
 
     getRouterIndex(tag: string): string {
@@ -145,6 +144,10 @@ export class MWMegaMenu extends ModulWebsite {
 
     get isOpen(): boolean {
         return this.open;
+    }
+
+    getCategoryRoute(categories: string): string {
+        return this.$routerIndex.for(`router:${categories}`);
     }
 
     get routerPhilosophy(): string {

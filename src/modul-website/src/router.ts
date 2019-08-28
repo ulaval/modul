@@ -139,17 +139,24 @@ const routerFactory: RouterFactoryFn = (meta: ModulMeta) => {
         component: MWPhilosophyPage
     });
 
-    let isFirst = true;
-
     Object.keys(meta.componentState).forEach(category => {
         let categoryRoute: string = i18n.translate(`categories:${category}-route`);
         meta.componentState[category].forEach((components: ComponentMeta) => {
 
-            if (isFirst) {
-                // the first component become the default route
-                isFirst = false;
+            // the first component in list become the default route for router:component
+            if (!routeIndex[ROUTER_COMPONENTS_UI]) {
                 pushRoute(ROUTER_COMPONENTS_UI, modulRoutes, {
+                    name: ROUTER_COMPONENTS_UI,
                     path: `/${componentsRoute}/${componentsUiRoute}`,
+                    redirect: `/${componentsRoute}/${componentsUiRoute}/${categoryRoute}/${components.url}`
+                });
+            }
+
+            // the first component of a category becode the default route for categories:${category}-route
+            if (!routeIndex[`router:${category}`]) {
+                pushRoute(`router:${category}`, modulRoutes, {
+                    name: `router:${category}`,
+                    path: `/${componentsRoute}/${componentsUiRoute}/${categoryRoute}`,
                     redirect: `/${componentsRoute}/${componentsUiRoute}/${categoryRoute}/${components.url}`
                 });
             }
