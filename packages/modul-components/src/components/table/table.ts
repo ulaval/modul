@@ -29,6 +29,11 @@ export interface MColumnTable {
     centered?: boolean;
     class?: string;
     sortDirection?: MColumnSortDirection;
+    defaultSortDirection?: MColumnSortDirection;
+}
+
+interface MColumnTableInternal extends MColumnTable {
+    isInitialSort?: boolean;
 }
 
 @WithRender
@@ -69,7 +74,7 @@ export class MTable extends ModulVue {
         return this.rows.length === 0 && !this.loading;
     }
 
-    public sort(columnTable: MColumnTable): void {
+    public sort(columnTable: MColumnTableInternal): void {
         if (this.loading || !columnTable.sortable) {
             return;
         }
@@ -78,7 +83,7 @@ export class MTable extends ModulVue {
             columnTable.sortDirection = MColumnSortDirection.None;
         }
 
-        this.columns.forEach(c => {
+        this.columnsInternal.forEach(c => {
             if (c !== columnTable) {
                 c.sortDirection = MColumnSortDirection.None;
             }
@@ -86,13 +91,24 @@ export class MTable extends ModulVue {
 
         switch (columnTable.sortDirection) {
             case MColumnSortDirection.None:
-                columnTable.sortDirection = MColumnSortDirection.Asc;
+                columnTable.sortDirection = columnTable.defaultSortDirection ? columnTable.defaultSortDirection : MColumnSortDirection.Asc;
+                columnTable.isInitialSort = true;
                 break;
             case MColumnSortDirection.Asc:
-                columnTable.sortDirection = MColumnSortDirection.Dsc;
+                if (columnTable.enableUnsort) {
+                    columnTable.sortDirection = columnTable.defaultSortDirection === MColumnSortDirection.Dsc ? MColumnSortDirection.None : MColumnSortDirection.Dsc;
+                } else {
+                    columnTable.sortDirection = MColumnSortDirection.Dsc;
+                }
+                columnTable.isInitialSort = false;
                 break;
             case MColumnSortDirection.Dsc:
-                columnTable.sortDirection = columnTable.enableUnsort ? MColumnSortDirection.None : MColumnSortDirection.Asc;
+                if (columnTable.enableUnsort) {
+                    columnTable.sortDirection = (columnTable.defaultSortDirection === MColumnSortDirection.Asc || columnTable.defaultSortDirection === undefined) ? MColumnSortDirection.None : MColumnSortDirection.Asc;
+                } else {
+                    columnTable.sortDirection = MColumnSortDirection.Asc;
+                }
+                columnTable.isInitialSort = false;
                 break;
         }
 
@@ -110,12 +126,28 @@ export class MTable extends ModulVue {
             case MColumnSortDirection.Dsc:
                 return 'm--is-sort-desc';
             default:
-                return undefined;
+                if (columnTable.defaultSortDirection) {
+                    return columnTable.defaultSortDirection === MColumnSortDirection.Asc ? 'm--is-sort-asc' : 'm--is-sort-desc';
+                } else {
+                    return undefined;
+                }
+        }
+    }
+
+    public getColumnSortIcon(columnTable: MColumnTable): string {
+        if (columnTable.sortDirection) {
+            return 'm-svg__arrow-thin--up'; // CSS rotate transform animation takes care of the arrow position
+        } else {
+            return columnTable.defaultSortDirection === MColumnSortDirection.Dsc ? 'm-svg__arrow-thin--down' : 'm-svg__arrow-thin--up';
         }
     }
 
     public columnWidth(col: MColumnTable): { width: string } | '' {
         return col.width ? { width: col.width } : '';
+    }
+
+    get columnsInternal(): MColumnTableInternal[] {
+        return this.columns.map((c: MColumnTable) => ({ ...c }));
     }
 }
 
