@@ -13,8 +13,9 @@ beforeEach(() => {
     initializeWrapper();
 });
 
-describe(`m-autocomplete-textfield`, () => {
+describe(`m-typeahead`, () => {
     it(`should render correctly`, () => {
         expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
     });
 });
+
