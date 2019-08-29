@@ -1,5 +1,6 @@
 <div class="mw-mega-menu">
-    <mw-panel :open="isOpen">
+    <mw-panel :open="isOpen"
+              @close="close">
         <div class="mw-mega-menu__body"
              v-if="isMqMinS">
             <nav class="mw-mega-menu__list"

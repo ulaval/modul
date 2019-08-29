@@ -46,4 +46,14 @@ $modul-menu-transition-duration: 0.7s;
             transform: translate3d(0, -102%, 0);
         }
     }
+
+    &__close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @media (max-width: #{$m-mq--min--s}) {
+            display: none;
+        }
+    }
 }
