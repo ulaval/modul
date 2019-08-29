@@ -1,7 +1,10 @@
+import { ComponentMeta } from '@/content/components.meta.loader';
 import { ROUTER_PHILOSOPHY } from '@/router';
+import { InputManagement } from '@ulaval/modul-components/dist/mixins/input-management/input-management';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
+import _ from 'lodash';
 import Component from 'vue-class-component';
+import { Watch } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
 import WithRender from './modul.html?style=./modul.scss';
 
@@ -10,10 +13,11 @@ console.debug('TODO: eliminate regex to identify current page');
 // animation constant shared with css in header.scss and menu.scss
 const CSS_ANIMATION_MENU_DURATION: number = 650;
 
-type Component = {
+type SearchResultComponent = {
     tag: string;
     category: string;
     text: string;
+    url: string;
 };
 
 @WithRender
@@ -22,83 +26,94 @@ type Component = {
 })
 export default class Modul extends ModulWebsite {
 
-    private searchOpen: boolean = false;
-    private searchModel: string = '';
-    private searchWidth: string = '400px';
+    $refs: {
+        searchfield: InputManagement;
+    };
 
-    private components: Component[] = [];
+    searchOpen: boolean = false;
+    searchModel: string = '';
+    searchWidth: string = '400px';
+
+    searchResult: SearchResultComponent[] = [];
+
     public logoUl: any = require('./logo-ul-blanc.svg');
 
-    // get modulVersion() {
-    //     return MetaAll.getModulVersion();
-    // }
-
-    public get isHomePage(): boolean {
+    get isHomePage(): boolean {
         return this.$route.path == '/';
     }
 
-    public get isPhilosophyPage(): boolean {
+    get isPhilosophyPage(): boolean {
         return this.$route.path === this.$routerIndex.for(ROUTER_PHILOSOPHY);
     }
 
-    // TODO: another way to index?
-    // private searchData(): any[] {
-    //     return MetaAll.getAllMeta().map(metaData => {
-    //         let nameObj: {};
-    //         if (metaData.name && metaData.category) {
-    //             nameObj = {
-    //                 tag: metaData.tag,
-    //                 category: this.$i18n.translate(metaData.category),
-    //                 text: this.$i18n.translate(metaData.name)
-    //             };
-    //         } else {
-    //             nameObj = {
-    //                 tag: metaData.tag,
-    //                 category: undefined,
-    //                 text: undefined
-    //             };
-    //         }
-    //         return nameObj;
-    //     });
-    // }
-
-    private get searchResult(): any[] {
-        let filtereComponents: any[] = [];
-        if (this.searchModel != '') {
-            filtereComponents = this.components.filter((element) => {
-                let textToSearch = element.category + ' ' + element.text + ' ' + element.tag;
-                return normalizeString(textToSearch).match(normalizeString(this.searchModel));
+    get searchData(): SearchResultComponent[] {
+        let results: SearchResultComponent[] = [];
+        this.$meta.categories.forEach(category => {
+            this.$meta.componentState[category].forEach((componentMeta: ComponentMeta) => {
+                if (componentMeta.components && componentMeta.components.length > 0) {
+                    componentMeta.components.forEach(tag => {
+                        results.push({
+                            tag: tag,
+                            category: category,
+                            text: componentMeta.name,
+                            url: componentMeta.url
+                        });
+                    });
+                } else {
+                    results.push({
+                        tag: '',
+                        category: category,
+                        text: componentMeta.name,
+                        url: componentMeta.url
+                    });
+                }
             });
-        }
-        return filtereComponents;
+        });
+        return results;
     }
 
-    private get isSearchOpen(): boolean {
+    getRouterIndex(tag: string): string {
+        return this.$routerIndex.for(tag);
+    }
+
+    get isSearchOpen(): boolean {
         return this.searchOpen;
     }
 
-    // private isProduction(status): boolean {
-    //     return status === ModulComponentStatus.Production;
-    // }
-
-    private toggleSearch(): void {
+    toggleSearch(): void {
         this.searchOpen = !this.searchOpen;
-        // if (this.searchOpen) {
-        //     this.components = this.searchData();
-        // }
     }
 
-    private openSearch(): void {
+    @Watch('searchModel')
+    onSearcModelChange(searchTerm: string) {
+        this.debouncedSearchFunction();
+    }
+
+    onSearch() {
+        if (this.searchModel != '' && this.searchModel.length > 2) {
+            this.searchResult = this.searchData.filter((searchResultComponent: SearchResultComponent) => {
+                let textToSearch = searchResultComponent.category + ' ' + searchResultComponent.text + ' ' + searchResultComponent.tag;
+                return _.deburr(textToSearch.toLowerCase()).match(_.deburr(this.searchModel.toLowerCase()));
+            });
+        }
+    }
+
+    debouncedSearchFunction = _.debounce(() => {
+        this.onSearch();
+    }, 300);
+
+    openSearch(): void {
         this.searchOpen = true;
         setTimeout(() => {
-            (this.$refs.search as HTMLInputElement).focus();
+            this.$refs.searchfield.focusInput();
         }, CSS_ANIMATION_MENU_DURATION);
     }
 
-    private closeSearch(): void {
+    closeSearch(): void {
         this.searchOpen = false;
         setTimeout(() => {
             this.searchModel = '';
+            this.searchResult = [];
         }, CSS_ANIMATION_MENU_DURATION);
     }
 }

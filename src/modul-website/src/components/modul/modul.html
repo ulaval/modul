@@ -4,37 +4,30 @@
                    @search="toggleSearch"></mw-header>
     </header>
 
-    <!-- <m-sidebar :open="searchOpen"
+    <m-sidebar :open="searchOpen"
+               style="display: none;"
                @open="openSearch"
                @close="closeSearch"
                origin="right"
                :close-button="false"
-               :width="searchWidth"
                :padding="false">
         <div class="modul-search__header"
              slot="header">
-            <m-icon name="m-svg__search"
-                    svg-title="Rechercher"></m-icon>
-            <input type="text"
-                   v-model="searchModel"
-                   placeholder="Rechercher"
-                   value="Rechercher un composant"
-                   class="modul-search__header__input"
-                   ref="search">
-            <button @click="toggleSearch"
-                    class="modul-search__header__close-button m-u--button-primary">
-                <m-icon name="m-svg__close-clear"></m-icon>
-            </button>
+            <m-searchfield ref="searchfield"
+                           v-model="searchModel"
+                           @search="onSearch"
+                           :placeholder="'website:recherche-placeholder' | f-m-i18n"
+                           max-width="none"></m-searchfield>
         </div>
         <transition-group name="modul--is"
                           tag="ul">
             <li tabindex="0"
-                @click="closeMenu()"
-                @keyup.enter="closeMenu()"
-                v-for="item in searchResult"
-                key="item.tag"
+                @click="closeSearch"
+                @keyup.enter="closeSearch"
+                v-for="(item,index) in searchResult"
+                :key="index"
                 v-if="item.category">
-                <router-link :to="getRouterIndex(item.tag)"
+                <router-link :to="getRouterIndex(item.url)"
                              class="modul-search-card">
                     <div class="modul-search-card__img"
                          aria-hidden="true">
@@ -49,7 +42,7 @@
                 </router-link>
             </li>
         </transition-group>
-    </m-sidebar> -->
+    </m-sidebar>
 
     <main class="mw-website__body"
           :class="{'mw--has-dark-background': isHomePage || isPhilosophyPage}">

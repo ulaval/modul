@@ -52,7 +52,6 @@ export class MWComponentsPage extends ModulWebsite {
 
     urlMatchPath(categoryId: string) {
         let path: string = this.$i18n.translate(`categories:${categoryId}-route`);
-        console.log(`is ${this.fullPath} match  /${path} ? ${this.fullPath.includes(`/${path}`)}`);
         return this.fullPath.includes(`/${path}`);
     }
 
