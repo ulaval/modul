@@ -1,6 +1,8 @@
 @import 'commons';
 
 .m-typeahead {
+    @include m-input-inline-spacing();
+
     &__list {
         margin: 0;
         padding: 0;

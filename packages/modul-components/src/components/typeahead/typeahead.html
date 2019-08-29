@@ -34,7 +34,8 @@
                  @keydown="onKeydown"
                  @keyup="onKeyup"
                  @input="onInput"
-                 v-m-popup:popup>
+                 v-m-popup:popup
+                 ref="mTextfield">
     </m-textfield>
     <m-validation-message class="m-typeahead__validation-message"
                           :disabled="isDisabled"
@@ -54,6 +55,7 @@
              :close-on-backdrop="true"
              :sidebar-full-height="true"
              @open="onOpenResultPopup"
+             @close="onCloseResultPopup"
              ref="popup">
         <template slot="header"
                   v-if="isMqMaxS">

@@ -11,7 +11,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { TYPEAHEAD_NAME } from '../component-names';
 import PopupPlugin from '../popup/popup';
 import { MSelectItem } from '../select/select-item/select-item';
-import TextfieldPlugin from '../textfield/textfield';
+import TextfieldPlugin, { MTextfield } from '../textfield/textfield';
 import WithRender from './typeahead.html?style=./typeahead.scss';
 
 @WithRender
@@ -27,7 +27,6 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
     ]
 })
 export class MTypeahead extends ModulVue {
-
     @Model('input')
     @Prop({
         required: true
@@ -65,6 +64,7 @@ export class MTypeahead extends ModulVue {
     public characterCountThreshold: number;
 
     public $refs: {
+        mTextfield: MTextfield;
         result: HTMLUListElement;
         resultsList: HTMLElement;
         researchInput: HTMLElement;
@@ -86,11 +86,14 @@ export class MTypeahead extends ModulVue {
         this.scrollToFocused();
     }
 
+    @Emit('close')
+    public onCloseResultPopup(): void { }
+
     @Emit('filter-results')
     public filterResultsEmit(): void { }
 
     @Emit('input')
-    public onInput(): void {
+    public onInput($event: Event): void {
         this.openResultsPopup();
     }
 
@@ -113,7 +116,7 @@ export class MTypeahead extends ModulVue {
 
     public set textfieldValue(value: string) {
         this.textfieldValueInternal = value;
-        this.$emit('update:value', value);
+        this.$emit('input', value);
     }
 
     public get textfieldValue(): string {
@@ -194,7 +197,7 @@ export class MTypeahead extends ModulVue {
         return this.isResultsPopupOpen ? this.textfieldValue.indexOf(this.filteredResults[index]) > -1 : false;
     }
 
-    @Emit('keydup')
+    @Emit('keyup')
     public onKeyup(event: KeyboardEvent): void {
         // tslint:disable-next-line: deprecation
         if (event.keyCode === KeyCode.M_UP || event.keyCode === KeyCode.M_DOWN) {
