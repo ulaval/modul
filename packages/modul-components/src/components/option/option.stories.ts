@@ -14,12 +14,37 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}`, module)
         data: () => ({
             model1: ''
         }),
-        template: `<m-option>
+        template: `<div><m-option :disabled="true">
                        <m-option-item-add></m-option-item-add>
                        <m-option-item-edit></m-option-item-edit>
                        <m-option-item-archive></m-option-item-archive>
                        <m-option-item-delete :disabled="true"></m-option-item-delete>
-                   </m-option>`
+                   </m-option><br>
+                   <m-option skin="over-mixed" :disabled="true">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option></div>
+                   `
+    }))
+    .add('skin', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<div><m-option :disabled="true">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option><br>
+                   <m-option skin="over-dark" :disabled="true">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option></div>
+                   `
     }))
     .add('option-separator', () => ({
         data: () => ({
@@ -70,3 +95,82 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}`, module)
                        <m-option-item-delete></m-option-item-delete>
                    </m-option>`
     }));
+
+storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}/skin`, module)
+
+    .add('skin="over-light" (default)', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option>
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option>
+                   `
+    }))
+    .add('skin="over-dark"', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option skin="over-dark">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option>
+                   `
+    }))
+    .add('skin="over-mixed"', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option skin="over-mixed">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option>
+                   `
+    }));
+
+storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}/disabled`, module)
+
+    .add('skin="over-light"', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option disabled="true">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option>
+                   `
+    }))
+    .add('skin="over-dark"', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option skin="over-dark" disabled="true">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option>
+                   `
+    }))
+    .add('skin="over-mixed"', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option skin="over-mixed" disabled="true">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-edit></m-option-item-edit>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete :disabled="true"></m-option-item-delete>
+                   </m-option>
+                   `
+    }));
+
