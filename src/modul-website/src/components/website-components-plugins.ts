@@ -6,6 +6,7 @@ import { DEMO_NAME, MDemo } from './demo/demo';
 import { DO_NAME, MDo } from './do/do';
 import { DONT_NAME, MDont } from './dont/dont';
 import { MDynamicTemplate } from './dynamic-template/dynamic-template';
+import { MWExpandablePanel } from './expendable-panel/expandable-panel';
 import { GO_NAME, MGo } from './go/go';
 import { MWHeader, MWHEADER_NAME } from './header/header';
 import { HIGHLIGHT_NAME, MHighlight } from './highlight/highlight';
@@ -34,6 +35,7 @@ const WebsiteComponentsPlugin: PluginObject<any> = {
         Vue.component(ICON_GALLERY_NAME, MIconGallery);
         Vue.component(COMPONENT_API_NAME, MComponentApi);
         Vue.component('mw-dynamic-template', MDynamicTemplate);
+        Vue.component('mw-expandable-panel', MWExpandablePanel);
     }
 };
 

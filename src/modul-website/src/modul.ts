@@ -99,6 +99,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(AutoCompletePlugin);
         Vue.use(ToggleButtonsPlugin);
         Vue.use(SearchfieldPlugin);
+
     }
 };
 

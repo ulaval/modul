@@ -5,13 +5,16 @@ $w-sidebar-max-width--s: 100%;
 
 $w-content-max-width: $mw-max-width;
 
-.mw-components {
+.mw-expandable-panel {
     background-color: $m-color--white;
+
+    &__sidemenu-body {
+        padding: $m-spacing--l;
+    }
 
     &,
     &__page,
-    &__body,
-    &__content {
+    &__body {
         height: 100%;
     }
 
@@ -46,10 +49,6 @@ $w-content-max-width: $mw-max-width;
         position: relative;
         height: 100%;
         background-color: $modul-color--grey-light;
-    }
-
-    &__sidemenu-body {
-        padding: $m-spacing--l;
     }
 
     &__sidemenu-title {

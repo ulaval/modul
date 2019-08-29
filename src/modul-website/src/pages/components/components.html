@@ -1,59 +1,44 @@
-<div class="mw-components">
-    <m-expandable-layout class="mw-components__body"
-                         :open="showMenu"
-                         panel-width="320px">
-        <div class="mw-components__page">
-            <m-icon-button class="mw-components__menu-button"
-                           @click="toggleMenu()"
-                           :icon-name="showMenu ? 'm-svg__close-clear' : 'm-standard-edit'"
-                           skin="light"
-                           icon-size="20px">
-            </m-icon-button>
+<mw-expandable-panel ref="expandablePanel">
+    <mw-component-details :component="component"></mw-component-details>
+    <template slot="sidemenu">
+        <div class="mw-expandable-panel__sidemenu"
+             :key="fullPath">
 
-            <div class="mw-components__content">
-                <mw-component-details :component="component"></mw-component-details>
+            <!-- <div class="mw-expandable-panel__search">
+                        <m-searchfield></m-searchfield>
+                    </div> -->
+            <div class="mw-expandable-panel__sidemenu-body">
+                <div class="mw-expandable-panel__sidemenu-title">
+                    <m-i18n k="website:components-ui"></m-i18n>
+                </div>
+                <m-accordion skin="plain"
+                             icon-position="right"
+                             icon-size="small"
+                             v-for="categoryId in componentCategoryIds"
+                             :key="categoryId"
+                             :open="urlMatchPath(categoryId)">
+                    <div class="mw-expandable-panel__sidemenu-sub-title"
+                         slot="header">
+                        <m-i18n :k="'categories:'+categoryId"></m-i18n>
+                    </div>
+                    <div>
+                        <div class="mw-expandable-panel__sidemenu-item"
+                             v-for="component in getCategoryComponents(categoryId)"
+                             :key="component.url">
+                            <router-link :to="getRouterIndex(component.url)"
+                                         @click.native="onSideMenuSelection()"><span>
+                                    {{component.name}}
+                                </span>
+                                <span v-if="component.beta">
+                                    <span class="modul-logo__beta mw-expandable-panel__beta">
+                                        <m-i18n k="website:beta"></m-i18n>
+                                    </span>
+                                </span>
+                            </router-link>
+                        </div>
+                    </div>
+                </m-accordion>
             </div>
         </div>
-        <template slot="panel">
-            <div class="mw-components__sidemenu"
-                 :key="fullPath">
-
-                <!-- <div class="mw-components__search">
-                    <m-searchfield></m-searchfield>
-                </div> -->
-                <div class="mw-components__sidemenu-body">
-                    <div class="mw-components__sidemenu-title">
-                        <m-i18n k="website:components-ui"></m-i18n>
-                    </div>
-                    <m-accordion skin="plain"
-                                 icon-position="right"
-                                 icon-size="small"
-                                 v-for="categoryId in componentCategoryIds"
-                                 :key="categoryId"
-                                 :open="urlMatchPath(categoryId)">
-                        <div class="mw-components__sidemenu-sub-title"
-                             slot="header">
-                            <m-i18n :k="'categories:'+categoryId"></m-i18n>
-                        </div>
-                        <div>
-                            <div class="mw-components__sidemenu-item"
-                                 v-for="component in getCategoryComponents(categoryId)"
-                                 :key="component.url">
-                                <router-link :to="getRouterIndex(component.url)"
-                                             @click.native="onSideMenuSelection()"><span>
-                                        {{component.name}}
-                                    </span>
-                                    <span v-if="component.beta">
-                                        <span class="modul-logo__beta mw-components__beta">
-                                            <m-i18n k="website:beta"></m-i18n>
-                                        </span>
-                                    </span>
-                                </router-link>
-                            </div>
-                        </div>
-                    </m-accordion>
-                </div>
-            </div>
-        </template>
-    </m-expandable-layout>
-</div>
+    </template>
+</mw-expandable-panel>

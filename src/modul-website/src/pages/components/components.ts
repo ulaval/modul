@@ -1,36 +1,27 @@
 
+import { MWExpandablePanel } from '@/components/expendable-panel/expandable-panel';
 import { ModulWebsite } from '@/components/modul-website';
 import { ComponentMeta } from '@/content/components.meta.loader';
-import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import _ from 'lodash';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { MWComponent } from './component/component-details';
-import WithRender from './components.html?style=./components.scss';
+import WithRender from './components.html';
 
 @WithRender
 @Component({
-    components: { 'mw-component-details': MWComponent },
-    mixins: [MediaQueries]
+    components: { 'mw-component-details': MWComponent }
 })
 export class MWComponentsPage extends ModulWebsite {
 
     @Prop()
     component: ComponentMeta;
 
-    showMenu = false;
+    $refs: {
+        expandablePanel: MWExpandablePanel;
+    };
 
     fullPath: string;
-
-    mounted() {
-
-        this.isMqMinMChanged(this.as<MediaQueriesMixin>().isMqMinM);
-    }
-
-    @Watch('isMqMinM')
-    private isMqMinMChanged(value): void {
-        this.showMenu = value;
-    }
 
     get componentCategoryIds(): string[] {
         return _.sortBy(this.$meta.categories, name => _.deburr(this.$i18n.translate(`categories:${name}`)));
@@ -44,19 +35,13 @@ export class MWComponentsPage extends ModulWebsite {
         return this.$meta.componentState[category];
     }
 
-    onSideMenuSelection() {
-        if (this.showMenu && this.as<MediaQueriesMixin>().isMqMaxM) {
-            this.showMenu = false;
-        }
-    }
-
     urlMatchPath(categoryId: string) {
         let path: string = this.$i18n.translate(`categories:${categoryId}-route`);
         return this.fullPath.includes(`/${path}`);
     }
 
-    toggleMenu() {
-        this.showMenu = !this.showMenu;
+    onSideMenuSelection() {
+        this.$refs.expandablePanel.onSideMenuSelection();
     }
 
     @Watch('$route', { immediate: true })
