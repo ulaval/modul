@@ -464,21 +464,26 @@ const ENTER_KEYCODE: number = 13;
                 [froalaEvents.ShowLinkInsert]: (_e, editor) => {
                     this.manageLinkInsert(editor);
                 },
-                [froalaEvents.ImageRemoved]: (_e, _editor, img) => {
+                [froalaEvents.ImageRemoved]: (_e, _editor, img: HTMLImageElement[]) => {
                     this.$emit('image-removed', img[0].dataset.id, this.fileUploadStoreName);
                     this.updateModel();
                 },
-                [froalaEvents.ImageInserted]: (_e, _editor, img) => {
-                    if (_editor.opts.modulImageUploaded) {
+                [froalaEvents.ImageInserted]: (_e, editor, img: HTMLImageElement[]) => {
+                    if (editor.opts.modulImageUploaded) {
                         img[0].alt = '';
+                        if (editor.opts.imageEditButtons.includes('imageAlign')) {
+                            img[0].classList.add('m--is-aligned');
+                        } else {
+                            img[0].classList.add('m--is-not-aligned');
+                        }
                         this.updateModel();
                     } else {
                         setTimeout(() => {
-                            _editor.image.remove(img);
+                            editor.image.remove(img);
                         });
                     }
 
-                    _editor.opts.modulImageUploaded = false;
+                    editor.opts.modulImageUploaded = false;
                 }
             }
         });

@@ -2,10 +2,9 @@
 
 @mixin m-table-sortable-icon-select() {
     opacity: 1;
-    transform: translate(0, 0);
 
     &.m--is-sort-desc {
-        transform: translate(0, 0) rotate(180deg);
+        transform: rotate(180deg);
     }
 }
 
@@ -55,8 +54,7 @@
 
                     .m-table__sortable-icon {
                         color: $m-color--grey;
-
-                        @include m-table-sortable-icon-select();
+                        opacity: 1;
                     }
                 }
 
@@ -67,6 +65,12 @@
                         color: $m-color--grey-darker;
 
                         @include m-table-sortable-icon-select();
+                    }
+                }
+
+                &.m--is-initial-sort {
+                    .m-table__sortable-icon {
+                        transition: transform 0s, opacity $m-transition-duration ease;
                     }
                 }
             }
@@ -128,12 +132,10 @@
         z-index: 0;
         opacity: 0;
         margin-left: $m-spacing--xs;
-        transform: translate(0, 4px);
 
         &:focus {
             color: $m-color--text;
             opacity: 1;
-            transform: translate(0, 0);
         }
     }
 

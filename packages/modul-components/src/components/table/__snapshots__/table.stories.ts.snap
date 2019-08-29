@@ -1610,7 +1610,7 @@ exports[`Storyshots components|m-table Sortable 1`] = `
           </span>
            
           <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
             style="width: 14px; height: 14px;"
             title="Trier la colonne"
             type="button"
@@ -1826,7 +1826,7 @@ exports[`Storyshots components|m-table Sortable with unsorting 1`] = `
           </span>
            
           <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
             style="width: 14px; height: 14px;"
             title="Trier la colonne"
             type="button"
