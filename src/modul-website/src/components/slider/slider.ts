@@ -1,7 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Model, Prop, Watch } from 'vue-property-decorator';
-import * as TouchPlugin from 'vue-touch';
 import { ModulWebsite } from '../modul-website';
 import WithRender from './slider.html?style=./slider.scss';
 
@@ -95,7 +94,7 @@ export class MSlider extends ModulWebsite {
 
 const SliderPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(TouchPlugin, { name: 'v-touch' }); // @todo really needed? should be loaded only by slider component.
+        //  v.use(require('vue-touch')); // @todo really needed? should be loaded only by slider component.
         v.component('m-slider', MSlider);
     }
 };

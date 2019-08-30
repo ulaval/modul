@@ -16,6 +16,7 @@ import { MARKDOWN_NAME, MMarkdown } from './markdown/markdown';
 import { MWMegaMenu, MWMEGAMENU_NAME } from './mega-menu/mega-menu';
 import { MWPanel, MWPANEL_NAME } from './panel/panel';
 import { MPreview, PREVIEW_NAME } from './preview/preview';
+import SliderPlugin from './slider/slider';
 
 const WebsiteComponentsPlugin: PluginObject<any> = {
     install(v): void {
@@ -36,6 +37,8 @@ const WebsiteComponentsPlugin: PluginObject<any> = {
         Vue.component(COMPONENT_API_NAME, MComponentApi);
         Vue.component('mw-dynamic-template', MDynamicTemplate);
         Vue.component('mw-expandable-panel', MWExpandablePanel);
+        Vue.component('mw-expandable-panel', MWExpandablePanel);
+        Vue.use(SliderPlugin);
     }
 };
 

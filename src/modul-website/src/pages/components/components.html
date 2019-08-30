@@ -1,5 +1,19 @@
 <mw-expandable-panel ref="expandablePanel">
     <mw-component-details :component="component"></mw-component-details>
+    <div class="mw-component-details__component-navigation">
+        <router-link :to="getRouterIndex(prevComponent.url)"
+                     class="mw-component-details__component-navigation-prev">
+            <m-icon name="m-svg__arrow-thin--left"
+                    class="mw-component-details__component-navigation-prev--icon"
+                    size="24px"></m-icon> {{ prevComponent.name }}
+        </router-link>
+        <router-link :to="getRouterIndex(nextComponent.url)"
+                     class="mw-component-details__component-navigation-next">
+            {{ nextComponent.name }} <m-icon name="m-svg__arrow-thin--right"
+                    class="mw-component-details__component-navigation-next--icon"
+                    size="24px"></m-icon>
+        </router-link>
+    </div>
     <template slot="sidemenu">
         <div class="mw-expandable-panel__sidemenu"
              :key="fullPath">

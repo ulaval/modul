@@ -1,0 +1,33 @@
+@import '../../styles/commons';
+
+.mw-component-details {
+    width: 100%;
+
+    &__component-navigation {
+        display: flex;
+        margin-top: 48px;
+        color: $m-color--interactive-light;
+    }
+
+    &__component-navigation-next,
+    &__component-navigation-prev {
+        line-height: 24px;
+        position: relative;
+        padding: 1rem;
+        flex-grow: 1;
+        border: 1px solid;
+        text-align: center;
+        text-decoration: none;
+        font-weight: $m-font-weight--semi-bold;
+    }
+
+    &__component-navigation-next--icon {
+        position: absolute;
+        right: 16px;
+    }
+
+    &__component-navigation-prev--icon {
+        position: absolute;
+        left: 16px;
+    }
+}
