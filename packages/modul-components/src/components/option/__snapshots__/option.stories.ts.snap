@@ -1,92 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots components|m-option default 1`] = `
-<div>
+<div
+  class="m-option"
+>
   <div
-    class="m-option"
+    class="m-popup m--is-inline"
   >
     <div
-      class="m-popup m--is-inline"
+      class="m-popper"
     >
-      <div
-        class="m-popper"
-      >
-        <div>
-          <button
-            aria-controls="mOption-uuid-controls"
-            aria-haspopup="true"
-            class="m-icon-button m--is-skin-light m--has-ripple m--is-disabled"
-            disabled="disabled"
-            id="mOption-uuid"
-            style="width: 44px; height: 44px;"
-            title="Ouvrir le menu"
-            type="button"
+      <div>
+        <button
+          aria-controls="mOption-uuid-controls"
+          aria-haspopup="true"
+          class="m-icon-button m--is-skin-light m--has-ripple"
+          id="mOption-uuid"
+          style="width: 44px; height: 44px;"
+          title="Ouvrir le menu"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="m-icon m-icon-button__icon"
+            height="20px"
+            width="20px"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="20px"
-              width="20px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
             <!---->
-          </button>
-        </div>
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-  <br />
-   
-  <div
-    class="m-option"
-  >
-    <div
-      class="m-popup m--is-inline"
-    >
-      <div
-        class="m-popper"
-      >
-        <div>
-          <button
-            aria-controls="mOption-uuid-controls"
-            aria-haspopup="true"
-            class="m-option__button"
-            disabled="disabled"
-            id="mOption-uuid"
-          >
-            <svg
+             
+            <use
               aria-hidden="true"
-              class="m-icon"
-              height="20px"
-              title="Ouvrir le menu"
-              width="20px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </button>
-        </div>
-         
-        <!---->
+              class=""
+            />
+          </svg>
+           
+          <!---->
+        </button>
       </div>
        
       <!---->
     </div>
+     
+    <!---->
   </div>
 </div>
 `;
@@ -271,101 +226,6 @@ exports[`Storyshots components|m-option scroll 1`] = `
     </div>
      
     <!---->
-  </div>
-</div>
-`;
-
-exports[`Storyshots components|m-option skin 1`] = `
-<div>
-  <div
-    class="m-option"
-  >
-    <div
-      class="m-popup m--is-inline"
-    >
-      <div
-        class="m-popper"
-      >
-        <div>
-          <button
-            aria-controls="mOption-uuid-controls"
-            aria-haspopup="true"
-            class="m-icon-button m--is-skin-light m--has-ripple m--is-disabled"
-            disabled="disabled"
-            id="mOption-uuid"
-            style="width: 44px; height: 44px;"
-            title="Ouvrir le menu"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="20px"
-              width="20px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-  <br />
-   
-  <div
-    class="m-option"
-  >
-    <div
-      class="m-popup m--is-inline"
-    >
-      <div
-        class="m-popper"
-      >
-        <div>
-          <button
-            aria-controls="mOption-uuid-controls"
-            aria-haspopup="true"
-            class="m-icon-button m--is-skin-dark m--has-ripple m--is-disabled"
-            disabled="disabled"
-            id="mOption-uuid"
-            style="width: 44px; height: 44px;"
-            title="Ouvrir le menu"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="20px"
-              width="20px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
   </div>
 </div>
 `;

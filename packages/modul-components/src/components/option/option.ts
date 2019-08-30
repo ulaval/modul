@@ -137,13 +137,14 @@ export class MOption extends BaseOption implements MOptionInterface {
         return this.skin === MOptionsSkin.Mixed;
     }
 
-    private get iconButtonSkin(): string {
-        if (this.skin === MOptionsSkin.Light) {
-            return MIconButtonSkin.Light;
-        } else if (this.skin === MOptionsSkin.Dark) {
-            return MIconButtonSkin.Dark;
-        } else {
-            return '';
+    private get iconButtonSkin(): string | undefined {
+        switch (this.skin) {
+            case MOptionsSkin.Light:
+                return MIconButtonSkin.Light;
+            case MOptionsSkin.Dark:
+                return MIconButtonSkin.Dark;
+            default:
+                break;
         }
     }
 }

@@ -14,36 +14,12 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}`, module)
         data: () => ({
             model1: ''
         }),
-        template: `<div><m-option :disabled="true">
+        template: `<m-option>
                        <m-option-item-add></m-option-item-add>
                        <m-option-item-edit></m-option-item-edit>
                        <m-option-item-archive></m-option-item-archive>
                        <m-option-item-delete :disabled="true"></m-option-item-delete>
-                   </m-option><br>
-                   <m-option skin="over-mixed" :disabled="true">
-                       <m-option-item-add></m-option-item-add>
-                       <m-option-item-edit></m-option-item-edit>
-                       <m-option-item-archive></m-option-item-archive>
-                       <m-option-item-delete :disabled="true"></m-option-item-delete>
-                   </m-option></div>
-                   `
-    }))
-    .add('skin', () => ({
-        data: () => ({
-            model1: ''
-        }),
-        template: `<div><m-option :disabled="true">
-                       <m-option-item-add></m-option-item-add>
-                       <m-option-item-edit></m-option-item-edit>
-                       <m-option-item-archive></m-option-item-archive>
-                       <m-option-item-delete :disabled="true"></m-option-item-delete>
-                   </m-option><br>
-                   <m-option skin="over-dark" :disabled="true">
-                       <m-option-item-add></m-option-item-add>
-                       <m-option-item-edit></m-option-item-edit>
-                       <m-option-item-archive></m-option-item-archive>
-                       <m-option-item-delete :disabled="true"></m-option-item-delete>
-                   </m-option></div>
+                   </m-option>
                    `
     }))
     .add('option-separator', () => ({
