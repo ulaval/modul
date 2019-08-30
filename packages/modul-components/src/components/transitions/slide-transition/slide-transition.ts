@@ -22,7 +22,7 @@ export class MSlideTransition extends ModulVue {
     @Prop({ default: 0 })
     public scrollToOffset: number; // the offset to add (in case of a sticky header)
 
-    @Prop({ default: true })
+    @Prop({ default: false })
     public disabled: boolean;
 
     public get transitionName(): string | undefined {
