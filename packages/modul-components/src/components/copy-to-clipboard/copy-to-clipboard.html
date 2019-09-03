@@ -7,15 +7,13 @@
     <slot :input-props="inputProps"
           :button-handlers="buttonHandlers">
         <m-textfield :max-width="fieldMaxWidth"
+                     :append="showButton"
                      v-bind="inputProps">
-            <template slot="suffix-button">
+            <template slot="append">
                 <slot name="inputButton"
                       :button-handlers="buttonHandlers">
-                    <m-link mode="button"
-                            :underline="false"
-                            v-if="!isWaiting"
-                            v-on="buttonHandlers"
-                            class="m-copy-to-clipboard__button">{{labelCopyBtn}}</m-link>
+                    <button class="m-copy-to-clipboard__button"
+                            v-on="buttonHandlers">{{labelCopyBtn}}</button>
                 </slot>
             </template>
         </m-textfield>

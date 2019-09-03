@@ -64,6 +64,8 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
     public characterCountThreshold: number;
     @Prop({ default: '' })
     public selection: string;
+    @Prop({ default: false })
+    public append: boolean;
 
     readonly internalValue: string;
 
