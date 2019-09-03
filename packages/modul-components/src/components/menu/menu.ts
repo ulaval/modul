@@ -10,6 +10,7 @@ import IconPlugin from '../icon/icon';
 import PlusPlugin from '../plus/plus';
 import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import { MMenuItem } from './menu-item/menu-item';
+import MMenuItemHelper from './menu-item/menu-item-helper';
 import WithRender from './menu.html?style=./menu.scss';
 
 export abstract class BaseMenu extends ModulVue {
@@ -118,6 +119,7 @@ export class MMenu extends BaseMenu implements Menu {
         if (this.internalItems) {
             this.internalItems.forEach((item) => {
                 if (!item.isDisabled) {
+                    item.propOpen = false;
                     if (item.value === this.model) {
                         item.selected = true;
                     } else if (item.selected) {
@@ -132,6 +134,10 @@ export class MMenu extends BaseMenu implements Menu {
                         let groupSelected: boolean = false;
                         item.$children.forEach(itemGroup => {
                             itemGroup.$children.forEach(subItem => {
+                                if (subItem instanceof MMenuItem) {
+                                    subItem.selected = MMenuItemHelper.isRouterLinkActive(subItem);
+                                }
+
                                 if (subItem instanceof MMenuItem && subItem.selected) {
                                     item.propOpen = true;
                                     item.selected = true;
