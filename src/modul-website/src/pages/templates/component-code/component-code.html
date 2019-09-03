@@ -1,7 +1,2 @@
-<div class="mw-component-code">
-    <mw-component-api v-for="(componentMeta, index) in componentMetas"
-                      :key="componentMeta.componentName"
-                      :class="{'m-u--margin-top--m': index > 0}"
-                      :component-name="componentMeta.componentName">
-    </mw-component-api>
-</div>
+<mw-component-api :component="component">
+</mw-component-api>

@@ -29,9 +29,9 @@ export class MComponentProperties extends ModulWebsite {
 
     get columns(): MColumnTable[] {
         return [
-            { id: 'name', title: 'Nom', dataProp: 'name' },
-            { id: 'value', title: 'Valeur', dataProp: 'value', centered: true },
-            { id: 'description', title: 'Description', dataProp: 'description', centered: true }
+            { id: 'name', title: this.$i18n.translate('modul:slots-name'), dataProp: 'name' },
+            { id: 'value', title: this.$i18n.translate('modul:value'), dataProp: 'value', centered: true },
+            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description', centered: true }
         ];
     }
 
@@ -51,7 +51,7 @@ export class MComponentProperties extends ModulWebsite {
     }
 
     private mapMetaComponentProps(mixinMetaComponent: MetaComponent, inheritFrom = false): ComponentProperties[] {
-        return Object.keys(mixinMetaComponent.props).map((propName) => ({
+        let props: ComponentProperties[] = Object.keys(mixinMetaComponent.props).map((propName) => ({
             name: _.kebabCase(propName),
             inheritFrom: inheritFrom ? _.kebabCase(mixinMetaComponent.componentName) : undefined,
             type: mixinMetaComponent.props[propName].type ? mixinMetaComponent.props[propName].type : 'string',
@@ -59,6 +59,8 @@ export class MComponentProperties extends ModulWebsite {
             defaultValue: mixinMetaComponent.props[propName].default ? mixinMetaComponent.props[propName].default : undefined,
             description: mixinMetaComponent.props[propName].description ? mixinMetaComponent.props[propName].description : undefined
         }));
+
+        return _.sortBy(props, (prop: ComponentProperties) => prop.name);
     }
 
     private getValues(attribute: MetaProps): string {

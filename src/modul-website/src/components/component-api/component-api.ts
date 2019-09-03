@@ -1,3 +1,4 @@
+import { ComponentMeta } from '@/content/components.meta.loader';
 import { MetaComponent } from 'meta-generator/dist';
 import { Component, Prop } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
@@ -16,13 +17,21 @@ import { MComponentSlots } from './component-slots/component-slots';
 })
 export class MComponentApi extends ModulWebsite {
 
-    private selectedItem: string = 'props';
-
     @Prop()
-    componentName: string;
+    component: ComponentMeta;
 
-    get componentMeta(): MetaComponent {
-        return this.$meta.metaService.findMetaComponentByTagName(this.componentName);
+    componentMeta: MetaComponent = null;
+
+    beforeMount() {
+        if (this.componentMetas && this.componentMetas.length > 0) {
+            this.componentMeta = this.componentMetas[0];
+        }
+    }
+
+    get componentMetas(): MetaComponent[] {
+        return this.component.components.map(tag => {
+            return this.$meta.metaService.findMetaComponentByTagName(tag);
+        });
     }
 }
 

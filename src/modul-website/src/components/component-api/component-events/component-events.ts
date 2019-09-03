@@ -25,9 +25,9 @@ export class MComponentEvents extends ModulWebsite {
 
     get columns(): MColumnTable[] {
         return [
-            { id: 'name', title: 'Nom', dataProp: 'name' },
-            { id: 'value', title: 'Arguments', dataProp: 'value', centered: true },
-            { id: 'description', title: 'Description', dataProp: 'description', centered: true }
+            { id: 'name', title: this.$i18n.translate('modul:slots-name'), dataProp: 'name' },
+            { id: 'value', title: this.$i18n.translate('modul:parameters'), dataProp: 'value', centered: true },
+            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description', centered: true }
         ];
     }
 
@@ -47,12 +47,14 @@ export class MComponentEvents extends ModulWebsite {
     }
 
     private mapMetaComponentEvent(metaComponent: MetaComponent, inheritFrom = false): ComponentEvents[] {
-        return Object.keys(metaComponent.events).map((eventName) => ({
+        let events: ComponentEvents[] = Object.keys(metaComponent.events).map((eventName) => ({
             name: _.kebabCase(eventName),
             inheritFrom: inheritFrom ? _.kebabCase(metaComponent.componentName) : undefined,
             arguments: this.getArguments(metaComponent.events[eventName]),
             description: metaComponent.events[eventName].description ? metaComponent.events[eventName].description : undefined
         }));
+
+        return _.sortBy(events, (event: ComponentEvents) => event.name);
     }
 
     private getArguments(event: MetaEvent): string {

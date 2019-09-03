@@ -1,12 +1,13 @@
 {
-    "name": "Groupe de contrôles",
-    "url": "groupe-de-controles",
-    "category": "forms",
+    "name": "Tableau",
+    "url": "tableau",
+    "category": "tables",
     "type": "components",
     "beta": false,
     "visible": true,
-    "preview": "components/input-group/input-group.preview.fr.md",
+    "preview": "components/table/table.preview.fr.md",
     "components": [
-        "m-input-group"
+        "m-table",
+        "m-table-header"
     ]
 }

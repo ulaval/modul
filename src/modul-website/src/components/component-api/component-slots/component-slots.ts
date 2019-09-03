@@ -23,8 +23,8 @@ export class MComponentSlots extends ModulWebsite {
 
     get columns(): MColumnTable[] {
         return [
-            { id: 'name', title: 'Nom', dataProp: 'name' },
-            { id: 'description', title: 'Description', dataProp: 'description', centered: true }
+            { id: 'name', title: this.$i18n.translate('modul:slots-name'), dataProp: 'name' },
+            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description', centered: true }
         ];
     }
 
@@ -44,10 +44,12 @@ export class MComponentSlots extends ModulWebsite {
     }
 
     private mapMetaComponentSlot(metaComponent: MetaComponent, inheritFrom = false): ComponentSlot[] {
-        return Object.keys(metaComponent.slots).map((slotName) => ({
+        let slots: ComponentSlot[] = Object.keys(metaComponent.slots).map((slotName) => ({
             name: _.kebabCase(slotName),
             inheritFrom: inheritFrom ? _.kebabCase(metaComponent.componentName) : undefined,
             description: metaComponent.slots[slotName].description ? metaComponent.slots[slotName].description : undefined
         }));
+
+        return _.sortBy(slots, (slot: ComponentSlot) => slot.name);
     }
 }
