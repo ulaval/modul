@@ -1,12 +1,39 @@
 {
     "props": {
         "type": {
-            "type": "new type",
-            "description": "type de bouton"
+            "description": "Type de bouton"
         },
-        "new-props": {
-            "type": "string",
-            "description": "type de bouton"
+        "skin": {
+            "description": "Propriété pour changer le visuel du bouton"
+        },
+        "disabled": {
+            "description": "Propriété pour désactiver le bouton"
+        },
+        "waiting": {
+            "description": "Propriété pour mettre le bouton en attente"
+        },
+        "fullSize": {
+            "description": "Propriété pour mettre le bouton pleine largeur"
+        },
+        "iconName": {
+            "description": "Nom de l'icône"
+        },
+        "iconPosition": {
+            "description": "Propriété pour positioner l'icône"
+        },
+        "iconSize": {
+            "description": "Propriété pour changer la grosse de l'icône"
+        },
+        "precision": {
+            "description": "Ajouter un texte de précision au bouton"
+        }
+    },
+    "slots": {
+        "default": {
+            "description": "Contenu du bouton"
+        },
+        "precision": {
+            "description": "Contenu du block precision du bouton"
         }
     }
 }

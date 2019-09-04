@@ -8,7 +8,7 @@
                  width="100%">
             <template v-slot:row="{data}">
 
-                <td> <strong>{{ data.name }}</strong>:{{ data.type }}
+                <td> <strong v-html="data.name"></strong>:{{ data.type }}
                     <p v-if="data.inheritFrom"
                        class="modul-component-properties__default-value">({{data.inheritFrom}})</p>
                 </td>
@@ -17,10 +17,10 @@
                     <span v-html="data.values"></span>
                     <span v-if="data.defaultValue"
                           class="modul-component-properties__default-value"><br />
-                        <m-i18n k="modul:defaut"></m-i18n> : {{data.defaultValue}}
+                        <m-i18n k="modul:defaut"></m-i18n>&nbsp;:&nbsp;{{data.defaultValue}}
                     </span>
                 </td>
-                <td style="text-align: center;">
+                <td style="text-align: left;">
                     <m-i18n v-if="data.description"
                             v-html="data.description"></m-i18n>
                 </td>

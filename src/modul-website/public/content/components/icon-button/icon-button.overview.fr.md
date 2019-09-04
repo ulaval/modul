@@ -65,7 +65,7 @@ Le composant *icône cliquable* offre plusieurs traitements visuels.
 </modul-demo>
 
 ### Taille
-Tout comme une <modul-go name="m-icon"></modul-go>, la taille de l'icône cliquable n'est pas normée. Cependant, sur les petits écrans, il est important de conserver une zone cliquable minimum de 44px. L'utilisation des doigts pour interagir avec l'appareil offre peu de précision, ce minimum garantit une expérience utilisateur optimale sur ce genre d'appareil.
+Tout comme une <modul-go url="icone">icône</modul-go>, la taille de l'icône cliquable n'est pas normée. Cependant, sur les petits écrans, il est important de conserver une zone cliquable minimum de 44px. L'utilisation des doigts pour interagir avec l'appareil offre peu de précision, ce minimum garantit une expérience utilisateur optimale sur ce genre d'appareil.
 
 <!-- Mettre un exemple du plus petit icône pour préserver le 44px minimum
 <modul-demo>
@@ -79,4 +79,4 @@ Tout comme une <modul-go name="m-icon"></modul-go>, la taille de l'icône cliqua
 </modul-demo>-->
 
 ### Accessibilité
-Afin d'améliorer l'expérience des personnes utilisant un lecteur vocal, il est obligatoire de définir le libellé d'une icône cliquable. Comme pour un <modul-go name="m-button"></modul-go>, le libellé devrait être un verbe d'action à l'infinitif désignant l'action effectuée lorsque l'utilisateur clique sur l'icône.
+Afin d'améliorer l'expérience des personnes utilisant un lecteur vocal, il est obligatoire de définir le libellé d'une icône cliquable. Comme pour un <modul-go url="bouton"></modul-go>, le libellé devrait être un verbe d'action à l'infinitif désignant l'action effectuée lorsque l'utilisateur clique sur l'icône.

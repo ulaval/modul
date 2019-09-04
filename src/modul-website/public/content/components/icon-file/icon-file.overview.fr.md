@@ -17,7 +17,7 @@ De façon générale, les icônes fichiers héritent de la couleur de la police 
 </modul-demo>
 
 ### Pastille
-Une pastille peut-être superposée à une icône de fichier, pour représenter un fichier téléversé avec succès par exemple. Voir <modul-go name="m-icon"></modul-go> pour plus de détail.
+Une pastille peut-être superposée à une icône de fichier, pour représenter un fichier téléversé avec succès par exemple. Voir <modul-go url="icone">icône</modul-go> pour plus de détail.
 <!-- Exemple d'icône de fichier avec pastille comme dans le téléverseur succès et error -->
 
 <modul-demo>

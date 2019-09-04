@@ -24,7 +24,7 @@ export class MComponentSlots extends ModulWebsite {
     get columns(): MColumnTable[] {
         return [
             { id: 'name', title: this.$i18n.translate('modul:slots-name'), dataProp: 'name' },
-            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description', centered: true }
+            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description' }
         ];
     }
 

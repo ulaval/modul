@@ -8,39 +8,39 @@ import WithRender from './go.html?style=./go.scss';
 @Component
 export class MGo extends ModulWebsite {
 
-    @Prop()
-    public name!: string;
+    @Prop({
+        required: true
+    })
+    public url!: string;
 
     @Prop()
     public tab!: string;
 
-    private get url(): string | undefined {
+    private get linkurl(): string | undefined {
         let result: string;
-        if (this.tab) {
-            result = this.$routerIndex.for(this.tab, _ => this.name);
-        } else {
-            result = this.$routerIndex.for(this.name);
-        }
+
+        result = this.$routerIndex.for(this.url);
+
         return result ? result : undefined;
     }
 
-    private get meta(): any {
-        return {};
-        // TODO refactor for
-        //    return Meta.getMetaByTag(this.name);
-    }
+    // private get meta(): any {
+    //     return {};
+    //     // TODO refactor for
+    //     //    return Meta.getMetaByTag(this.name);
+    // }
 
-    private get label(): string {
-        return this.name;
-        //  return this.meta ? this.$i18n.translate(this.meta.name ? this.meta.name : '').toLowerCase() : this.$i18n.translate('pages:' + this.name).toLowerCase();
-    }
+    // private get label(): string {
+    //     return this.name;
+    //     //  return this.meta ? this.$i18n.translate(this.meta.name ? this.meta.name : '').toLowerCase() : this.$i18n.translate('pages:' + this.name).toLowerCase();
+    // }
 
-    private get tag(): string {
-        return this.name;
-        //   return this.meta ? this.meta.tag : '';
-    }
+    // private get tag(): string {
+    //     return this.name;
+    //     //   return this.meta ? this.meta.tag : '';
+    // }
 
-    private defaultSlot(): boolean {
+    defaultSlot(): boolean {
         return !!this.$slots.default;
     }
 }

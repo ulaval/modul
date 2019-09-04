@@ -27,7 +27,7 @@ export class MComponentEvents extends ModulWebsite {
         return [
             { id: 'name', title: this.$i18n.translate('modul:slots-name'), dataProp: 'name' },
             { id: 'value', title: this.$i18n.translate('modul:parameters'), dataProp: 'value', centered: true },
-            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description', centered: true }
+            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description' }
         ];
     }
 

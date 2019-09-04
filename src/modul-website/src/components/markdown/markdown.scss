@@ -1,0 +1,12 @@
+@import '../../styles/commons';
+
+.modul-markdown {
+    ul {
+        padding: 0 0 0 24px;
+
+        li {
+            list-style: disc;
+            margin: 0 0 4px;
+        }
+    }
+}

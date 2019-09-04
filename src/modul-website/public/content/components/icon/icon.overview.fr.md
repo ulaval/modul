@@ -12,13 +12,13 @@ Les icônes augmentent la clarté d’une interface en donnant des repères visu
 ## Caractéristiques
 
 ### Choix
-La <m-link mode="link" url='/normes/normes-graphiques/iconographie'>librairie d'icônes</m-link> met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface. Dans un même écosytème, une icône devrait être utilisée pour représenter la même notion. Afin d'encourager cette pratique, chaque icône est nommée en fonction de l'action ou la notion qu'elle représente. Par exemple, l'icône de poubelle est nommée <em>Supprimer</em>.
+La <m-link :url="{name :'router:standards-ui-iconography-icons'}" >librairie d'icônes</m-link> met à votre disposition un ensemble d'icônes communément utilisées dans la conception d'une interface. Dans un même écosytème, une icône devrait être utilisée pour représenter la même notion. Afin d'encourager cette pratique, chaque icône est nommée en fonction de l'action ou la notion qu'elle représente. Par exemple, l'icône de poubelle est nommée <em>Supprimer</em>.
 
 #### Icônes de fichier
-Pour illustrer le type d'un fichier, il est recommandé d'utiliser le composant <modul-go name="m-icon-file"></modul-go>, qui associe la bonne icône automatiquement en fonction de l'extension du fichier.
+Pour illustrer le type d'un fichier, il est recommandé d'utiliser le composant <modul-go url="icone-de-fichier">icône de fichier</modul-go>, qui associe la bonne icône automatiquement en fonction de l'extension du fichier.
 
 #### Icônes personnalisées
-Bien qu'il soit recommandé d'utiliser le plus plus possible les icônes de <m-link mode="link" url='/normes/normes-graphiques/iconographie'>la librairie existante</m-link>, il est possible de créer une nouvelle icône pour un besoin spécifique. La marche à suivre est décrite à la page <m-link mode="link" url='/normes/normes-graphiques/iconographie'>icône personnalisée</m-link>.
+Bien qu'il soit recommandé d'utiliser le plus plus possible les icônes de <m-link :url="{name :'router:standards-ui-iconography-icons'}" >la librairie existante</m-link>, il est possible de créer une nouvelle icône pour un besoin spécifique. La marche à suivre est décrite à la page <m-link :url="{name :'router:standards-ui-iconography-documentation'}" >icône personnalisée</m-link>.
 
 ### Taille
 La taille d'une icône n'est pas normée. Sa valeur par défaut de 18px peut être ajustée en fonction du contexte. Pour des tailles inférieures à 18px, assurez-vous cependant de préserver la lisibilité de l'icône.

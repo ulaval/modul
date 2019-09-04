@@ -47,14 +47,14 @@
     font-weight: $m-font-weight--bold;
 }
 
-.modul-markdown {
-    > :first-child {
-        &,
-        > :first-child {
-            margin-top: 0;
-        }
-    }
-}
+// .modul-markdown {
+//     > :first-child {
+//         &,
+//         > :first-child {
+//             margin-top: 0;
+//         }
+//     }
+// }
 
 .modul-page-tab,
 .modul-component-overview {

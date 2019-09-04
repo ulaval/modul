@@ -31,7 +31,7 @@ export class MComponentProperties extends ModulWebsite {
         return [
             { id: 'name', title: this.$i18n.translate('modul:slots-name'), dataProp: 'name' },
             { id: 'value', title: this.$i18n.translate('modul:value'), dataProp: 'value', centered: true },
-            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description', centered: true }
+            { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description' }
         ];
     }
 
@@ -52,7 +52,7 @@ export class MComponentProperties extends ModulWebsite {
 
     private mapMetaComponentProps(mixinMetaComponent: MetaComponent, inheritFrom = false): ComponentProperties[] {
         let props: ComponentProperties[] = Object.keys(mixinMetaComponent.props).map((propName) => ({
-            name: _.kebabCase(propName),
+            name: _.replace(_.kebabCase(propName), /-/g, '&#8209;'),
             inheritFrom: inheritFrom ? _.kebabCase(mixinMetaComponent.componentName) : undefined,
             type: mixinMetaComponent.props[propName].type ? mixinMetaComponent.props[propName].type : 'string',
             values: this.getValues(mixinMetaComponent.props[propName]),

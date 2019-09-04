@@ -2,8 +2,8 @@ Un bouton permet de poser une action dans le site et peut contenir un libellé, 
 
 <modul-do>
     <ul>
-        <li>L'utilisation d'un bouton est recommandée lorsque l'utilisateur doit poser une action dans le site. Une action permet généralement de débuter, de poursuivre ou d'annuler un processus. Si l'utilisateur désire consulter du contenu dans le site, on utilise un <em><modul-go name="m-link"></modul-go></em> plutôt qu'un bouton.</li>
-        <li>Si une icône est utilisé sans libellé l'utilisation du composant <em><modul-go name="m-icon-button"></modul-go></em> est recommandé</li>
+        <li>L'utilisation d'un bouton est recommandée lorsque l'utilisateur doit poser une action dans le site. Une action permet généralement de débuter, de poursuivre ou d'annuler un processus. Si l'utilisateur désire consulter du contenu dans le site, on utilise un <em><modul-go url="lien">lien</modul-go></em> plutôt qu'un bouton.</li>
+        <li>Si une icône est utilisé sans libellé l'utilisation du composant <em><modul-go url="icone-cliquable">icône cliquable</modul-go></em> est recommandé</li>
     </ul>
 </modul-do>
 
@@ -75,8 +75,8 @@ Le bouton peut être accompagné d'une icône positionnée soit à droite ou gau
 <modul-demo>
 
 ```html
-<m-button icon-name="default">Bouton</m-button>
-<m-button icon-name="default" icon-position="right">Bouton</m-button>
+<m-button icon-name="m-edit">Bouton</m-button>
+<m-button icon-name="m-edit" icon-position="right">Bouton</m-button>
 ```
 </modul-demo>
 

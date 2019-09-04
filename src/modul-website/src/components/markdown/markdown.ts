@@ -1,9 +1,10 @@
+import hljs from 'highlight.js';
+import MarkdownIt from 'markdown-it';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import WithRender from './markdown.html';
-import MarkdownIt from 'markdown-it';
-import hljs from 'highlight.js';
+import './markdown.scss';
 
 @WithRender
 @Component
