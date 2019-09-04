@@ -1,12 +1,10 @@
 @import '../../styles/commons';
 
-.modul-markdown {
-    ul {
-        padding: 0 0 0 24px;
+.modul-markdown > ul {
+    padding: 0 0 0 24px !important;
 
-        li {
-            list-style: disc;
-            margin: 0 0 4px;
-        }
+    li {
+        list-style: disc;
+        margin: 0 0 4px;
     }
 }

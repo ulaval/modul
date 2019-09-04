@@ -41,10 +41,12 @@ import TablePlugin from '@ulaval/modul-components/dist/components/table/table';
 import TextareaPlugin from '@ulaval/modul-components/dist/components/textarea/textarea';
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
 import TimepickerPlugin from '@ulaval/modul-components/dist/components/timepicker/timepicker';
+import ToastPlugin from '@ulaval/modul-components/dist/components/toast/toast';
 import ToggleButtonsPlugin from '@ulaval/modul-components/dist/components/toggle-buttons/toggle-buttons';
 import TooltipPlugin from '@ulaval/modul-components/dist/components/tooltip/tooltip';
 import AccordionTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/accordion-transition/accordion-transition';
 import SlideTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/slide-transition/slide-transition';
+import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
 import { UtilsPlugin } from '@ulaval/modul-components/dist/utils';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import Vue, { PluginObject } from 'vue';
@@ -105,6 +107,8 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(TableHeaderPlugin);
         Vue.use(SlideTransitionPlugin);
         Vue.use(AccordionTransitionPlugin);
+        Vue.use(TreePlugin);
+        Vue.use(ToastPlugin);
     }
 };
 

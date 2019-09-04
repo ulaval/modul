@@ -9,7 +9,7 @@ Le composant *groupe d'accordéons* permet de grouper du contenu sous différent
     </ul>
 </modul-do>
 
-<modul-dont>Pour les grands écrans, lorsque le contenu de la page est très long, il peut être intéressant de revoir la navigation et de favoriser l'utilisation du composant *<modul-go name="m-tabs"></modul-go>*</modul-dont>.
+<modul-dont>Pour les grands écrans, lorsque le contenu de la page est très long, il peut être intéressant de revoir la navigation et de favoriser l'utilisation du composant *<modul-go url="tabs"></modul-go>*</modul-dont>.
 
 ## Caractéristiques
 ### Ouverture non simultanée

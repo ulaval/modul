@@ -8,10 +8,8 @@ import WithRender from './go.html?style=./go.scss';
 @Component
 export class MGo extends ModulWebsite {
 
-    @Prop({
-        required: true
-    })
-    public url!: string;
+    @Prop()
+    public url: string;
 
     @Prop()
     public tab!: string;

@@ -5,6 +5,7 @@ import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import { VueRouter } from 'vue-router/types/router';
 import Vuex, { Store } from 'vuex';
+import ComponentExamplesPlugin from './component-examples/component-example-plugins';
 import Modul from './components/modul/modul';
 import WebsiteComponentsPlugin from './components/website-components-plugins';
 import ModulPlugin from './modul';
@@ -20,6 +21,7 @@ const curLang: string = localStorage.getItem('lang') || FRENCH;
 Vue.use(ModulPlugin, { curLang });
 Vue.use(SvgPlugin);
 Vue.use(WebsiteComponentsPlugin);
+Vue.use(ComponentExamplesPlugin);
 Vue.use(Vuex);
 
 const store: Store<any> = new Vuex.Store({
