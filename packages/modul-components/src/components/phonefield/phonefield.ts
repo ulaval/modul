@@ -82,7 +82,7 @@ export class MPhonefield extends ModulVue {
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
     i18nExample: string = this.$i18n.translate('m-phonefield:example');
 
-    created(): void {
+    beforeMount(): void {
         if (this.value) {
             this.parsePhoneNumber(this.value);
         }
@@ -141,7 +141,6 @@ export class MPhonefield extends ModulVue {
     }
 
     inputChanged(value): void {
-        this.parsePhoneNumber(value);
         this.emitNewValue(value);
     }
 
@@ -199,6 +198,13 @@ export class MPhonefield extends ModulVue {
             this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
         }
 
+    }
+
+    @Watch('value', { immediate: true })
+    onValueChanged(value: string): void {
+        if (value) {
+            this.parsePhoneNumber(value);
+        }
     }
 
 }

@@ -25,7 +25,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${PHONEFIELD_NAME}`, module)
         }),
         template: `<div>
                         <div>
-                            <p>Select a pohne number</p>
+                            <p>Select a phone number</p>
                             <m-select :options="options" v-model="model">
                                 <template slot="selection">{{ model }}</template>
                                 <template slot="option" slot-scope="{option, index}"> {{ option }} </template>
