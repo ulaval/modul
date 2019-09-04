@@ -1,4 +1,4 @@
-import { mount, Wrapper } from '@vue/test-utils';
+import { mount, shallowMount, Wrapper } from '@vue/test-utils';
 import moment from 'moment';
 import Vue from 'vue';
 import { addMessages } from '../../../tests/helpers/lang';
@@ -25,7 +25,7 @@ describe('MErrorMessage', () => {
     });
 
     it('should render correctly collapsed', () => {
-        const error: Wrapper<MErrorMessage> = mount(MErrorMessage, {
+        const error: Wrapper<MErrorMessage> = shallowMount(MErrorMessage, {
             localVue: Vue
         });
 
@@ -50,7 +50,7 @@ describe('MErrorMessage', () => {
 
     describe('given error', () => {
         it('should render correctly expanded', () => {
-            const error: Wrapper<MErrorMessage> = mount(MErrorMessage, {
+            const error: Wrapper<MErrorMessage> = shallowMount(MErrorMessage, {
                 localVue: Vue,
                 propsData: {
                     date: moment('2018-01-02T00:01:02'),
@@ -69,7 +69,7 @@ describe('MErrorMessage', () => {
         });
 
         it('should render correctly expanded with stack trace on', () => {
-            const error: Wrapper<MErrorMessage> = mount(MErrorMessage, {
+            const error: Wrapper<MErrorMessage> = shallowMount(MErrorMessage, {
                 localVue: Vue,
                 propsData: {
                     date: moment('2018-01-02T00:01:02'),
@@ -91,7 +91,7 @@ describe('MErrorMessage', () => {
 
     describe('given error with stack trace', () => {
         it('should render correctly expanded', () => {
-            const error: Wrapper<MErrorMessage> = mount(MErrorMessage, {
+            const error: Wrapper<MErrorMessage> = shallowMount(MErrorMessage, {
                 localVue: Vue,
                 propsData: {
                     date: moment('2018-01-02T00:01:02'),
@@ -111,7 +111,7 @@ describe('MErrorMessage', () => {
         });
 
         it('should render correctly expanded with stack trace on', () => {
-            const error: Wrapper<MErrorMessage> = mount(MErrorMessage, {
+            const error: Wrapper<MErrorMessage> = shallowMount(MErrorMessage, {
                 localVue: Vue,
                 propsData: {
                     date: moment('2018-01-02T00:01:02'),
