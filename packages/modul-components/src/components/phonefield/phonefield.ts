@@ -146,9 +146,9 @@ export class MPhonefield extends ModulVue {
     }
 
     parsePhoneNumber(value: string): void {
-        const testResult: ParsedNumber = parseNumber(value, { extended: true });
-        if (testResult.country && testResult.valid) {
-            this.countryModelInternal = testResult.country.toLowerCase();
+        const parsedNumber: ParsedNumber = parseNumber(value, { extended: true });
+        if (parsedNumber.country && parsedNumber.valid) {
+            this.countryModelInternal = parsedNumber.country.toLowerCase();
             this.internalCountry = this.countries.find((country: CountryOptions) => country.iso2 === this.countryModelInternal)!;
             this.emitContrySelected({
                 iso: this.internalCountry.iso2,
