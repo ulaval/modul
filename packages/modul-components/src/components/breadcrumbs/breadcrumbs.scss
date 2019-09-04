@@ -1,0 +1,28 @@
+@import 'commons';
+
+.m-breadcrumbs {
+    &__item {
+        display: inline-block;
+    }
+
+    &__divider {
+        margin: 0 $m-margin--s;
+    }
+
+    .move-enter-active {
+        transition: all 1s ease;
+    }
+
+    .move-enter {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    .move-enter-to {
+        opacity: 1;
+    }
+
+    .m-link {
+        align-items: flex-start;
+    }
+}

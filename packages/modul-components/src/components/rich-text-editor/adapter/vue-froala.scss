@@ -163,7 +163,7 @@ $m-collapsed-input-style--margin: 16px !default;
     }
 
     /deep/ {
-        @include m-commons-froala-styles();
+        @include m-commons-rte-styles();
 
         .fr-box.fr-basic.fr-top .fr-wrapper {
             background: rgba($m-color--white, 0);

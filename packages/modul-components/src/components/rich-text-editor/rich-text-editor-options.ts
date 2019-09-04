@@ -23,9 +23,8 @@ export class MRichTextEditorDefaultOptions {
     public linkEditButtons: string[] = ['linkOpen', 'linkEdit', 'linkRemove'];
     public linkInsertButtons: string[] = [];
 
-    public imageResizeWithPercent: boolean = true;
     public imageDefaultWidth: number = 0;
-    public imageEditButtons: string[] = ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
+    public imageEditButtons: string[] = [];
 
     constructor(public key: string, public language: string = 'en_CA') {
         if (!key) {
