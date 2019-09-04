@@ -1,0 +1,25 @@
+{
+    "props": {
+        "openTrigger": {
+            "description": "Déclencheur d'ouverture"
+        },
+        "open": {
+            "description": "Propriété pour ouvrir ou fermer la composante"
+        },
+        "id": {
+            "description": "Identifiant unique de la composante"
+        },
+        "disabled": {
+            "description": "Propriété pour désactiver la composante"
+        },
+        "trigger": {
+            "description": "L'élément HTML pour déclencher l'ouverture"
+        },
+        "className": {
+            "description": "Nom de classe ajoutée sur la composante portal"
+        },
+        "preload": {
+            "description": "Précharger ou non la composante"
+        }
+    }
+}

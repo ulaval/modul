@@ -1,0 +1,28 @@
+{
+    "props": {
+        "size": {
+            "description": "Grosseur de la fenêtre modale"
+        },
+        "closeOnBackdrop": {
+            "description": "Fermer ou non la fenêtre sur le clique en arrière plan"
+        },
+        "title": {
+            "description": "Titre de la fenêtre modale"
+        },
+        "bodyMaxWidth": {
+            "description": "Largeur maximale du corps"
+        },
+        "padding": {
+            "description": "Propriété pour enlever ou mettre de l'espacement"
+        },
+        "paddingHeader": {
+            "description": "Propriété pour enlever ou mettre de l'espacement sur l'entête"
+        },
+        "paddingBody": {
+            "description": "Propriété pour enlever ou mettre de l'espacement sur le corps"
+        },
+        "paddingFooter": {
+            "description": "Propriété pour enlever ou mettre de l'espacement sur le bas de page"
+        }
+    }
+}

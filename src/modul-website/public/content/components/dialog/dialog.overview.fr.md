@@ -1,6 +1,6 @@
 Une *fenêtre de dialogue* amorce toujours un dialogue avec l'utilisateur suite à une action posée dans l'interface. Par exemple, elle est utilisée pour poser une question, demander la confirmation d'une opération, avertir d'une erreur ou encore pour proposer de nouvelles actions à l'utilisateur. De plus, l'utilisateur ne peut continuer à travailler tant qu'il n'a pas accusé réception du message à l'aide des boutons ou du lien de fermeture, s'il est disponible.
 
-Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utilisateur en contexte de la page, il faut utiliser le composant *<modul-go name="m-modal"></modul-go>*.
+Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utilisateur en contexte de la page, il faut utiliser le composant *<modul-go url="fenetre-modale">fenêtre modale</modul-go>*.
 
 </modul-do>
 
@@ -9,7 +9,7 @@ Pour tous les autres cas où il faut afficher du contenu tout en gardant l'utili
 Une *fenêtre de dialogue* doit contenir au minimum un énoncé principal et un bouton. Il est également possible de faire afficher un message supplémentaire (information ou avertissement), une zone de conseils et un lien permettant de fermer la fenêtre. Le message supplémentaire et la zone de conseils doivent se trouver sous l'énoncé principal.
 
 Puisque plusieurs cas d'utilisation sont possibles, voici quelques principes de présentation de contenu à respecter :
-* Lorsque la situation ayant déclenché l'affichage de la *fenêtre de dialogue* a une conséquence directe sur le cheminement de l'étudiant, sa réussite, son dossier financier, etc., il est important d'utiliser le composant *<modul-go name="m-message"></modul-go>* en mode *avertissement* pour afficher l'énoncé principal.
+* Lorsque la situation ayant déclenché l'affichage de la *fenêtre de dialogue* a une conséquence directe sur le cheminement de l'étudiant, sa réussite, son dossier financier, etc., il est important d'utiliser le composant *<modul-go url="message">message</modul-go>* en mode *avertissement* pour afficher l'énoncé principal.
 
 <modul-demo>
 
