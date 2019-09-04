@@ -21,8 +21,8 @@
             :max-length="maxLength"
             :autocomplete="autocomplete"
             @input="onInputChangeThrottled">
-    <m-dropdown-item v-for="i in items"
-                     :key="i.value"
+    <m-dropdown-item v-for="(i, index) in items"
+                     :key="index"
                      :value="i.value"
                      :label="i.label"
                      :non-filterable="true">
