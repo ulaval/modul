@@ -27,6 +27,7 @@ import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
 import OptionPlugin from '@ulaval/modul-components/dist/components/option/option';
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
+import PaginationPlugin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
 import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
 import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/progress';
@@ -109,6 +110,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(AccordionTransitionPlugin);
         Vue.use(TreePlugin);
         Vue.use(ToastPlugin);
+        Vue.use(PaginationPlugin);
     }
 };
 

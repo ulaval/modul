@@ -1,10 +1,10 @@
 Le menu d'options permet d'afficher la liste des actions ou options disponibles pour un élément. Des boutons sont utilisés pour les actions et des boîtes à cocher sont utilisées pour les options. L'utilisation du menu d'options est recommandée dès qu'il y a plus d'une action ou option disponible pour un élément.
 
-Le composant *<modul-go name="m-menu-item"></modul-go>* doit être utilisé pour chaque élément du menu d'options.
+Le composant *m-menu-item* doit être utilisé pour chaque élément du menu d'options.
 
 <modul-do>Il est possible d'afficher à la fois des actions et des options dans le menu. Toutefois, il est important de grouper les éléments de même type, afin de ne pas mélanger des actions avec des options. De plus, les actions doivent toujours être positionnées avant les options.</modul-do>
 
-<modul-dont>Si une seule action ou option est disponible, il ne faut pas utiliser un menu d'options. On recommande plutôt l'utilisation d'un *<modul-go name="m-icon-button"></modul-go>* pour une action ou d'un *<modul-go name="m-switch"></modul-go>* pour une option.</modul-dont>
+<modul-dont>Si une seule action ou option est disponible, il ne faut pas utiliser un menu d'options. On recommande plutôt l'utilisation d'un *<modul-go url="icone-cliquable"></modul-go>* pour une action ou d'un *<modul-go url="interrupteur"></modul-go>* pour une option.</modul-dont>
 
 ## Caractériqtiques
 ### Actions
@@ -30,4 +30,4 @@ Il est important d'associer les actions à la bonne icône et au bon libélé. L
 <small class="m-u--display--block m-u--margin-top--s">À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.</small>
 
 ### Ouverture
-Le menu d'options apparaît toujours sous forme de *<modul-go name="m-popup"></modul-go>*, sauf pour les petits écrans. Dans ce cas, il prends la forme d'une *<modul-go name="m-sidebar"></modul-go>* qui s'affiche dans le bas de la fenêtre d'affichage (viewport) et la hauteur est automatiquement ajustée en fonction du contenu du menu.
+Le menu d'options apparaît toujours sous forme de *<modul-go url="fenetre-contextuelle"></modul-go>*, sauf pour les petits écrans. Dans ce cas, il prends la forme d'un *m-sidebar* qui s'affiche dans le bas de la fenêtre d'affichage (viewport) et la hauteur est automatiquement ajustée en fonction du contenu du menu.
