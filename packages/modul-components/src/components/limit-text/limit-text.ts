@@ -1,6 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
+
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../utils/vue/vue';
@@ -8,8 +9,6 @@ import { LIMIT_TEXT_NAME } from '../component-names';
 import DynamicTemplatePlugin from '../dynamic-template/dynamic-template';
 import I18nPlugin from '../i18n/i18n';
 import WithRender from './limit-text.html?style=./limit-text.scss';
-
-
 
 @WithRender
 @Component({

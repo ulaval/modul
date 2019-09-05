@@ -4,9 +4,9 @@
     <slot name="header">
         <thead>
             <tr>
-                <th v-for="(column, index) in columns"
+                <th v-for="(column, index) in columnsInternal"
                     :style="columnWidth(column)"
-                    :class="[{ 'm--is-sortable': column.sortable, 'm--is-sorted': isColumnSorted(column), 'm--is-centered': column.centered }, column.class]"
+                    :class="[{ 'm--is-sortable': column.sortable, 'm--is-sorted': isColumnSorted(column), 'm--is-centered': column.centered, 'm--is-initial-sort': column.isInitialSort }, column.class]"
                     :key="column.id"
                     @click="sort(column)"
                     scope="col">
@@ -20,7 +20,7 @@
                                            class="m-table__sortable-icon"
                                            :class="[getColumnSortDirectionClass(column)]"
                                            :disabled="loading"
-                                           icon-name="m-svg__arrow-thin--up"
+                                           :icon-name="getColumnSortIcon(column)"
                                            skin="bold"
                                            button-size="14px"
                                            icon-size="12px"
@@ -44,14 +44,14 @@
             <tr v-if="isEmpty"
                 class="m-table__message">
                 <slot name="empty">
-                    <td :colspan="columns.length">
+                    <td :colspan="columnsInternal.length">
                         <p>{{ i18nEmptyTable }}</p>
                     </td>
                 </slot>
             </tr>
             <template v-if="loading">
                 <tr class="m-table__loading">
-                    <td :colspan="columns.length">
+                    <td :colspan="columnsInternal.length">
                         <m-progress v-if="loading"
                                     :indeterminate="true"
                                     :border-radius="false"></m-progress>
@@ -59,7 +59,7 @@
                 </tr>
                 <tr class="m-table__message">
                     <slot name="loading">
-                        <td :colspan="columns.length">
+                        <td :colspan="columnsInternal.length">
                             <p>{{ i18nLoading }}</p>
                             <p class="m-table__message__precision">{{ i18nPleaseWait }}</p>
                         </td>
@@ -71,7 +71,7 @@
                 :key="index">
                 <slot name="row"
                       :data="row">
-                    <td v-for="column in columns"
+                    <td v-for="column in columnsInternal"
                         :class="{ 'm--is-centered': column.centered }"
                         :key="'body.' + column.id">
                         <slot :name="'body.' + column.dataProp"
