@@ -23,7 +23,9 @@ export class MAccordionTransition extends ModulVue {
         }
 
         if (!this.disabled) {
-            el.classList.add(CLASS_HAS_TRANSITION);
+            if (!el.classList.contains(CLASS_HAS_TRANSITION)) {
+                el.classList.add(CLASS_HAS_TRANSITION);
+            }
         } else if (el.classList.contains(CLASS_HAS_TRANSITION)) {
             el.classList.remove(CLASS_HAS_TRANSITION);
         }
@@ -35,13 +37,18 @@ export class MAccordionTransition extends ModulVue {
     }
 
     @Emit('enter')
-    public enter(el: HTMLElement): void {
+    public enter(el: HTMLElement, done): void {
         const heightDelta: number = this.heightDelta || 0;
         el.style.height = `${el.scrollHeight - heightDelta}px`;
     }
 
     @Emit('after-enter')
     public afterEnter(el: HTMLElement): void {
+        el.style.removeProperty('height');
+    }
+
+    @Emit('enter-cancelled')
+    public enterCancelled(el: HTMLElement): void {
         el.style.removeProperty('height');
     }
 
@@ -52,11 +59,15 @@ export class MAccordionTransition extends ModulVue {
     }
 
     @Emit('leave')
-    public leave(el: HTMLElement): void {
-    }
+    public leave(el: HTMLElement, done): void { }
 
     @Emit('after-leave')
     public afterLeave(el: HTMLElement): void {
+        el.style.removeProperty('height');
+    }
+
+    @Emit('leave-cancelled')
+    public leaveCancelled(el: HTMLElement): void {
         el.style.removeProperty('height');
     }
 }
