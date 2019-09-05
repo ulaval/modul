@@ -10,7 +10,6 @@ import IconPlugin from '../icon/icon';
 import PlusPlugin from '../plus/plus';
 import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import { MMenuItem } from './menu-item/menu-item';
-import MMenuItemHelper from './menu-item/menu-item-helper';
 import WithRender from './menu.html?style=./menu.scss';
 
 export abstract class BaseMenu extends ModulVue {
@@ -129,24 +128,22 @@ export class MMenu extends BaseMenu implements Menu {
             });
 
             this.internalItems.forEach((item) => {
-                if (!item.isDisabled) {
-                    if (item.group) {
-                        let groupSelected: boolean = false;
-                        item.$children.forEach(itemGroup => {
-                            itemGroup.$children.forEach(subItem => {
-                                if (subItem instanceof MMenuItem) {
-                                    subItem.selected = MMenuItemHelper.isRouterLinkActive(subItem);
-                                }
+                if (!item.isDisabled && item.group) {
+                    let groupSelected: boolean = false;
+                    item.$children.forEach(itemGroup => {
+                        itemGroup.$children.forEach(subItem => {
+                            if (subItem instanceof MMenuItem) {
+                                subItem.selected = this.isRouterLinkActive(subItem);
+                            }
 
-                                if (subItem instanceof MMenuItem && subItem.selected) {
-                                    item.propOpen = true;
-                                    item.selected = true;
-                                    groupSelected = true;
-                                }
-                            });
+                            if (subItem instanceof MMenuItem) {
+                                item.propOpen = subItem.selected;
+                                item.selected = subItem.selected;
+                                groupSelected = subItem.selected;
+                            }
                         });
-                        item.groupSelected = groupSelected;
-                    }
+                    });
+                    item.groupSelected = groupSelected;
                 }
             });
         }
@@ -212,6 +209,10 @@ export class MMenu extends BaseMenu implements Menu {
 
     private get hasSlotTrigger(): boolean {
         return !!this.$slots.trigger;
+    }
+
+    private isRouterLinkActive(menuItem: MMenuItem): boolean {
+        return !!menuItem.$el.querySelector('.router-link-exact-active');
     }
 }
 
