@@ -130,14 +130,12 @@ export class MMenu extends BaseMenu implements Menu {
             this.internalItems.forEach((item) => {
                 if (!item.isDisabled && item.group) {
                     let groupSelected: boolean = false;
-                    item.$children.forEach(itemGroup => {
-                        itemGroup.$children.forEach(subItem => {
-                            if (subItem instanceof MMenuItem) {
-                                subItem.selected = this.isRouterLinkActive(subItem);
-                                item.propOpen = subItem.selected;
-                                item.selected = subItem.selected;
-                                groupSelected = subItem.selected;
-                            }
+                    item.$children.forEach((itemGroup: MMenuItem) => {
+                        itemGroup.$children.forEach((subItem: MMenuItem) => {
+                            subItem.selected = this.isRouterLinkActive(subItem);
+                            item.propOpen = subItem.selected;
+                            item.selected = subItem.selected;
+                            groupSelected = subItem.selected;
                         });
                     });
                     item.groupSelected = groupSelected;
