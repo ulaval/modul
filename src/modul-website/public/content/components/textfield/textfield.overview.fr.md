@@ -17,7 +17,7 @@ Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). 
 </modul-demo>
 
 **Infobulle**
-<p>Lorsqu'une précision n'est pas suffisante pour clarifier la signification du libellé, il est possible de lever l'ambiguïté à l'aide d'une <em><modul-go name="m-tooltip"></modul-go></em>.</p>
+<p>Lorsqu'une précision n'est pas suffisante pour clarifier la signification du libellé, il est possible de lever l'ambiguïté à l'aide d'une <em><modul-go url="infobulle"></modul-go></em>.</p>
 
 <modul-demo>
 
@@ -40,7 +40,7 @@ Autant que possible, utiliser un libellé court et descriptif (un mot ou deux). 
 </modul-demo>
 
 **Texte de remplissage**
-<p>Si vos champs de saisie ne peuvent pas être accompagnés d'un libellé (comme pour l'<em><modul-go name="m-inplaceedit"></modul-go></em>), l'utilisation d'un texte remplissage lorsque le champs est vide est recommandé. Ce texte par défaut disparait dès que le premier caractère est saisi.</p>
+<p>Si vos champs de saisie ne peuvent pas être accompagnés d'un libellé (comme pour l'<em><modul-go url="edition-sur-place">édition sur place</modul-go></em>), l'utilisation d'un texte remplissage lorsque le champs est vide est recommandé. Ce texte par défaut disparait dès que le premier caractère est saisi.</p>
 
 <modul-demo>
 

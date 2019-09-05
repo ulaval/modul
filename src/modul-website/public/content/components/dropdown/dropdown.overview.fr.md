@@ -1,7 +1,5 @@
 Une liste déroulante permet de sélectionner un seul élément dans une liste. Cet élément est le seul demeurant visible lorsque la liste est fermée. Les listes déroulants peuvent aussi être utilisées lorsqu’il est nécessaire de conserver l'espace dans l'écran, ou d’empêcher les les utilisateurs d'entrer des données erronées.
 
-Ce composant doit être utilisé avec le composant *<modul-go name="m-dropdown-item"></modul-go>*.
-
 <modul-do>
     <ul>
         <li>La première option d’une liste déroulante devrait être un libellé significatif.</li>
@@ -11,7 +9,7 @@ Ce composant doit être utilisé avec le composant *<modul-go name="m-dropdown-i
 
 <modul-dont>
     <ul>
-        <li>Ne pas utiliser de liste déroulante lorsque le nombre d’options est inférieur à 7, utiliser plutôt des <em><modul-go name="m-radio-group"></modul-go></em>. Toutefois, lorsque le nombre d'éléments présenté varie d'un utilisateur à l'autre, la liste déroulante peut être utilisée.</li>
+        <li>Ne pas utiliser de liste déroulante lorsque le nombre d’options est inférieur à 7, utiliser plutôt des <em><modul-go url="radio"> boutons radio</modul-go></em>. Toutefois, lorsque le nombre d'éléments présenté varie d'un utilisateur à l'autre, la liste déroulante peut être utilisée.</li>
         <li>Éviter de sélectionner une option comme valeur par défaut, particulièrement si c'est un champ obligatoire.</li>
     </ul>
 </modul-dont>

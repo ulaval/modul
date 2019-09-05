@@ -7,7 +7,7 @@ Une zone de texte permet à l'utilisateur de saisir des texte longs servant gén
 </modul-do>
 
 <modul-dont>
-    <p>Si l'information saisie dans le champ est généralement court et ne tombe pas sur deux ligne le composant  <modul-go name="m-textfield"></modul-go> devrait être utilisé au lieu de la zone de texte.</p>
+    <p>Si l'information saisie dans le champ est généralement court et ne tombe pas sur deux ligne le composant  <modul-go url="champs-de-saisie">champ de saisie</modul-go> devrait être utilisé au lieu de la zone de texte.</p>
 </modul-dont>
 
 ## Caractéristiques

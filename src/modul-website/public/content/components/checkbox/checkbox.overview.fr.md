@@ -1,4 +1,4 @@
-Les cases à cocher sont utilisées lorsqu’un utilisateur peut sélectionner un seul, aucun ou plusieurs choix d’une liste d'options. Ce composant, tout comme les *<modul-go name="m-radio-group"></modul-go>*, offrent l’avantage d’empêcher les utilisateurs d'entrer des données erronées.
+Les cases à cocher sont utilisées lorsqu’un utilisateur peut sélectionner un seul, aucun ou plusieurs choix d’une liste d'options. Ce composant permet d’empêcher les utilisateurs d'entrer des données erronées.
 
 <modul-do>
     <ul>
@@ -10,8 +10,8 @@ Les cases à cocher sont utilisées lorsqu’un utilisateur peut sélectionner u
 
 <modul-dont>
     <ul>
-        <li>Ne pas utiliser une case à cocher pour accomplir une action, utiliser plutôt le composant <em><modul-go name="m-switch"></modul-go></em>.</li>
-        <li>L’activation d’une case à cocher ne devrait pas déclencher une action. Par exemple, pour l'envoi d’un formulaire, un <em><modul-go name="m-button"></modul-go></em> devrait être utilisé en plus de la case à cocher.</li>
+        <li>Ne pas utiliser une case à cocher pour accomplir une action, utiliser plutôt le composant <em><modul-go url="interrupteur"></modul-go></em>.</li>
+        <li>L’activation d’une case à cocher ne devrait pas déclencher une action. Par exemple, pour l'envoi d’un formulaire, un <em><modul-go url="bouton"></modul-go></em> devrait être utilisé en plus de la case à cocher.</li>
     </ul>
 </modul-dont>
 
