@@ -82,12 +82,6 @@ export class MPhonefield extends ModulVue {
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
     i18nExample: string = this.$i18n.translate('m-phonefield:example');
 
-    beforeMount(): void {
-        if (this.value) {
-            this.parsePhoneNumber(this.value);
-        }
-    }
-
     @Emit('input')
     emitNewValue(_newValue: string): void { }
 
