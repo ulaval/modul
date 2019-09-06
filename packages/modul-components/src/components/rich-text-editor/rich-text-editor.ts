@@ -32,7 +32,8 @@ export enum MRichTextEditorMode {
 }
 
 export enum MRichTextEditorOption {
-    IMAGE
+    IMAGE,
+    IMAGE_HIDE_LAYOUT_MENU
 }
 
 export type MRichTextEditorOptions = MRichTextEditorOption[];
