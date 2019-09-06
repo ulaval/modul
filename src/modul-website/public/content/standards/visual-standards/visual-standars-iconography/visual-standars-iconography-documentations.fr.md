@@ -1,14 +1,6 @@
-## ICÔNES MODUL
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-## ICÔNES STREAMLINE 3.0
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Lien vers Streamline 3.0
-
 ## AJOUT D'ICÔNES PERSONNALISÉES
 
-<p class="m-u--typo--precision m-u--margin-top--l">Pour plus d'informations sur l'utilisation des icônes, veuillez vous référer aux composants <modul-go name="m-icon"></modul-go> et <modul-go name="m-icon-button"></modul-go>.</p>
+<p class="m-u--typo--precision m-u--margin-top--l">Pour plus d'informations sur l'utilisation des icônes, veuillez vous référer aux composants <modul-go url="icone">icône</modul-go> et <modul-go url="icone-cliquable">icône cliquable</modul-go>.</p>
 
 ## AJOUT D'ICÔNES PERSONNALISÉES
 Bien que l'utilisation d'icônes de la librairie existante soit à privilégier, de nouvelles icônes peuvent être créées pour répondre à des besoins spécifiques.

@@ -2,7 +2,6 @@ import { Messages } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import Vue from 'vue';
 import Router, { RouteConfig } from 'vue-router';
 import { VueRouter } from 'vue-router/types/router';
-import { MIconGallery } from './components/icon-gallery/icon-gallery';
 import { ComponentMeta } from './content/components.meta.loader';
 import { ModulMeta } from './modul-meta';
 import { MWComponentsPage } from './pages/components/components';
@@ -250,9 +249,10 @@ const routerFactory: RouterFactoryFn = (meta: ModulMeta) => {
                     }, {
                         name: ROUTER_STANDARDS_UI_ICONOGRAPHY_ICONS,
                         path: `${i18n.translate(ROUTER_STANDARDS_UI_ICONOGRAPHY_ICONS)}`,
-                        component: MIconGallery,
+                        component: MWMarkdownPage,
                         meta: {
-                            title: i18n.translate('website:standards-iconography')
+                            title: i18n.translate('website:standards-iconography'),
+                            markupFileName: 'standards/visual-standards/visual-standars-iconography/visual-standars-iconography-icons.fr.md'
                         }
                     }]
             },
