@@ -38,6 +38,10 @@ export class MBreadcrumbs extends Vue implements BreadcrumbsProps {
         return this.items.filter((item: BreadcrumbItem) => item.text || item.iconName);
     }
 
+    itemDivider(index: number): string {
+        return index < this.definedItems.length ? this.definedItems[index].divider || this.divider : '';
+    }
+
     linkMode: MLinkMode = MLinkMode.Link;
     iconPosition: MLinkIconPosition = MLinkIconPosition.Left;
 }

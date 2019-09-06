@@ -2,10 +2,14 @@
      :class="{'m--is-left-to-right-transition': isLeftToRight}">
     <transition :name="transitionName"
                 :css="!disabled"
-                @enter="transitionEnter"
-                @after-enter="transitionAfterEnter"
-                @before-leave="transitionBeforeLeave"
-                @after-leave="transitionAfterLeave">
+                @before-enter="beforeEnter"
+                @enter="enter"
+                @after-enter="afterEnter"
+                @enter-cancelled="enterCancelled"
+                @before-leave="beforeLeave"
+                @leave="leave"
+                @after-leave="afterLeave"
+                @leave-cancelled="leaveCancelled">
         <slot></slot>
     </transition>
 </div>
