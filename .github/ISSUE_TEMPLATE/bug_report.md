@@ -1,6 +1,6 @@
 ---
 name: Rapport de bogue
-about: Rapporter un bogue dans modUL
+about: Soumettre un rapport bogue dans modUL
 title: 'bug: '
 labels: ''
 assignees: ''
@@ -36,5 +36,5 @@ Si possible, ajoutez des captures d'écran pour expliquer votre problème.
  - OS: [e.g. iOS8.1]
  - Navigateur [e.g. stock browser, safari]
 
-**Liens vers les récits / épopées**
+**Liens vers les récits Jira**
 Si vous êtes un contributeur interne, ajouter les liens vers vos récits ou épopées Jira.
