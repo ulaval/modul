@@ -1,20 +1,24 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
+name: Proposition de nouvelle fonctionnalité
+about: Proposition pour l'ajout d'une fonctionalité dans modUL
+title: 'feature: '
 labels: ''
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+<!--
+Content can be written in English or in French
+-->
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Description du besoin**
+Une description claire et concise de la nature du besoin.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Description sommaire de la solution proposé**
+Description des nouveaux Composants, Filtre , Directive ou service.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Captures d'écran / Screenshots**
+Si possible, ajoutez des captures d'écran pour démontrer la nouvelle fonctionnalité.
+
+**Liens vers les récits / épopées**
+Si vous êtes un contributeur interne, ajouter les liens vers vos récits ou épopées Jira.

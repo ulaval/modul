@@ -1,33 +1,40 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
+name: Rapport de bogue
+about: Rapporter un bogue dans modUL
+title: 'bug: '
 labels: ''
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+<!--
+Content can be written in English or in French
+-->
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**Description du bogue / Describe the bug**
+Une description claire et concise de ce qu'est le bogue.
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Reproduction / To Reproduce**
+Étapes pour reproduire le problème:
+1. Aller à '...'
+2. Cliquer sur '....'
+3. Faites défiler jusqu'à '....'
+4. Voir erreur
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**Comportement attendu / Expected behavior**
+Une description claire et concise de ce à quoi vous vous attendiez.
 
-**Affected Versions**
- - Package name: [e.g. : modul-components]
- - Package version: [e.g. : 1.0.0]
+**Captures d'écran / Screenshots**
+Si possible, ajoutez des captures d'écran pour expliquer votre problème.
 
-**Environment (please complete the following information):**
- - Device: [e.g. iPhone6]
+**Versions affectées / Affected Versions**
+ - Package: [e.g. : modul-components]
+ - version: [e.g. : 1.0.0]
+
+**Environnement / Environment**
+ - Appareil : [e.g. iPhone6]
  - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
+ - Navigateur [e.g. stock browser, safari]
+
+**Liens vers les récits / épopées**
+Si vous êtes un contributeur interne, ajouter les liens vers vos récits ou épopées Jira.
