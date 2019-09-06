@@ -33,7 +33,7 @@ export enum MRichTextEditorMode {
 
 export enum MRichTextEditorOption {
     IMAGE,
-    IMAGE_HIDE_LAYOUT_MENU
+    IMAGE_HIDE_INLINE_LAYOUT
 }
 
 export type MRichTextEditorOptions = MRichTextEditorOption[];
@@ -128,7 +128,8 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             // Hack to "hide" the default froala placeholder text
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
-            scrollableContainer: this.getScrollableContainer()
+            scrollableContainer: this.getScrollableContainer(),
+            imageHideInlineLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_INLINE_LAYOUT)
         };
 
         return Object.assign(this.getOptions(), propOptions);
@@ -143,13 +144,10 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
         if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
             options.pluginsEnabled.push('image');
+            options.pluginsEnabled.push('imageLayoutPlugin');
             options.toolbarButtons.push('insertImage');
 
-            let imageEditButtons: string[] = ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
-
-            if (this.options.includes(MRichTextEditorOption.IMAGE_HIDE_LAYOUT_MENU)) {
-                imageEditButtons.splice(1, 1);
-            }
+            let imageEditButtons: string[] = ['imageReplace', 'imageLayout', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
 
             options.imageEditButtons = imageEditButtons;
         }

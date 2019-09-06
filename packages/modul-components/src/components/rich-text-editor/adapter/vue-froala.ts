@@ -4,9 +4,6 @@ import $ from 'jquery';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import boldIcon from '../../../assets/icons/svg/Froala-bold.svg';
-import imageAlignCenterIcon from '../../../assets/icons/svg/Froala-image-align-center.svg';
-import imageAlignLeftIcon from '../../../assets/icons/svg/Froala-image-align-left.svg';
-import imageAlignRightIcon from '../../../assets/icons/svg/Froala-image-align-right.svg';
 import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
 import stylesIcon from '../../../assets/icons/svg/Froala-styles.svg';
@@ -16,6 +13,7 @@ import { replaceTags } from '../../../utils/clean/htmlClean';
 import { MFile } from '../../../utils/file/file';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
+import { initializeImageCommands } from './image-layout-commands';
 import { PopupPlugin } from './popup-plugin';
 import SubMenuPlugin from './submenu-plugin';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
@@ -258,9 +256,7 @@ const ENTER_KEYCODE: number = 13;
             }
         });
 
-        $.FroalaEditor.DefineIcon('image-align-center', { SVG: (imageAlignCenterIcon as string), template: 'custom-icons' });
-        $.FroalaEditor.DefineIcon('image-align-left', { SVG: (imageAlignLeftIcon as string), template: 'custom-icons' });
-        $.FroalaEditor.DefineIcon('image-align-right', { SVG: (imageAlignRightIcon as string), template: 'custom-icons' });
+        initializeImageCommands($.FroalaEditor);
     }
 
     protected filesReady(files: MFile[]): void {
@@ -471,11 +467,7 @@ const ENTER_KEYCODE: number = 13;
                 [froalaEvents.ImageInserted]: (_e, editor, img: HTMLImageElement[]) => {
                     if (editor.opts.modulImageUploaded) {
                         img[0].alt = '';
-                        if (editor.opts.imageEditButtons.includes('imageAlign')) {
-                            img[0].classList.add('m--is-aligned');
-                        } else {
-                            img[0].classList.add('m--is-not-aligned');
-                        }
+                        img[0].classList.add('m--fr-block-left');
                         this.updateModel();
                     } else {
                         setTimeout(() => {

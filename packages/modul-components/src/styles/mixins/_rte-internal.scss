@@ -1,4 +1,10 @@
+.m-u--app-body i {
+    font-style: normal;
+}
+
 img {
+    max-width: 100%;
+
     &.m--is-not-aligned {
         max-width: 100%;
         display: block;
@@ -23,5 +29,28 @@ img {
     &.fr-fir {
         float: right;
         margin-left: $m-spacing;
+    }
+
+    &.m--fr-block-left {
+        display: block;
+        margin: $m-spacing;
+        margin-left: 0;
+    }
+
+    &.m--fr-block-center {
+        display: block;
+        margin: $m-spacing auto;
+    }
+
+    &.m--fr-inline-left {
+        float: left;
+        margin: $m-spacing;
+        margin-left: 0;
+    }
+
+    &.m--fr-inline-right {
+        float: right;
+        margin: $m-spacing;
+        margin-right: 0;
     }
 }
