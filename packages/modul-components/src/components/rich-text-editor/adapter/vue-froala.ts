@@ -364,6 +364,13 @@ const ENTER_KEYCODE: number = 13;
                 [froalaEvents.ImageInserted]: ($img) => {
                     if (this.froalaEditor.opts.modulImageUploaded) {
                         $img[0].alt = '';
+
+                        if (this.froalaEditor.opts.imageEditButtons.includes('imageAlign')) {
+                            $img[0].classList.add('m--is-aligned');
+                        } else {
+                            $img[0].classList.add('m--is-not-aligned');
+                        }
+
                         this.updateModel();
                     } else {
                         setTimeout(() => {

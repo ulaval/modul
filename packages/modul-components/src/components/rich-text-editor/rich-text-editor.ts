@@ -139,27 +139,31 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     }
 
     public getOptions(): MRichTextEditorDefaultOptions {
-        const options: MRichTextEditorDefaultOptions = new MRichTextEditorDefaultOptions(this.froalaLicenseKey, this.$i18n.currentLang());
+        const richTextEditorOptions: MRichTextEditorDefaultOptions = new MRichTextEditorDefaultOptions(this.froalaLicenseKey, this.$i18n.currentLang());
 
         if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
-            options.pluginsEnabled.push('image');
+            richTextEditorOptions.pluginsEnabled.push('image');
 
             // toolbar for desktop devices
-            options.toolbarButtons.moreRich.buttons.push('insertImage');
+            richTextEditorOptions.toolbarButtons.moreRich.buttons.push('insertImage');
             // for mobile devices
-            options.toolbarButtonsXS.moreRich.buttons.push('insertImage');
+            richTextEditorOptions.toolbarButtonsXS.moreRich.buttons.push('insertImage');
+        }
+
+        if (this.options.includes(MRichTextEditorOption.IMAGE_HIDE_LAYOUT_MENU)) {
+            richTextEditorOptions.imageEditButtons = richTextEditorOptions.imageEditButtons.filter((button: string) => button !== 'imageAlign');
         }
 
         if (this.titleAvailable) {
-            options.paragraphStyles = this.manageHeaderLevels();
+            richTextEditorOptions.paragraphStyles = this.manageHeaderLevels();
 
             // toolbar for desktop devices
-            options.toolbarButtons.moreText.buttons.splice(0, 0, 'paragraphStyle');
+            richTextEditorOptions.toolbarButtons.moreText.buttons.splice(0, 0, 'paragraphStyle');
             // for mobile devices
-            options.toolbarButtonsXS.moreText.buttons.splice(0, 0, 'paragraphStyle');
+            richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(0, 0, 'paragraphStyle');
         }
 
-        return options;
+        return richTextEditorOptions;
     }
 
     public manageHeaderLevels(): any {
