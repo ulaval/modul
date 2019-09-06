@@ -10,7 +10,7 @@ Content can be written in English or in French
 <!-- Décrivez brièvement les changements introduits par ce PR / Provide a small description of the changes introduced by this PR -->
 
 ## Types de changements
-<!--- Indiquez ici quels types de modifications votre code introduit-il / Indicated here what types of changes does your code introduce -->
+<!--- Indiquez ici quels types de modifications votre code introduit / Indicated here what types of changes does your code introduce -->
 - [ ] Correction de bug (sans `breaking change`)
 - [ ] Amélioration (ajout par example une nouvelle propriété, évènement, slot ou méthode à un composant existant sans `breaking change`)
 - [ ] Nouvelle fonctionalité (nouveau composant, directive, filtre ou service)

@@ -14,7 +14,7 @@ Content can be written in English or in French
 **Description du besoin**
 Une description claire et concise de la nature du besoin.
 
-**Description sommaire de la solution proposé**
+**Description sommaire de la solution proposée**
 Description de tout nouveaux composants, filtres, directives ou services souhaités.
 
 **Captures d'écran**
