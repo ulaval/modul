@@ -1,4 +1,5 @@
 import Vue, { PluginObject } from 'vue';
+
 import { AddressLookupPluginOptions } from '../utils/address-lookup/address-lookup.plugin';
 import LoggerPlugin from '../utils/logger/logger';
 import AccordionGroupPlugin from './accordion-group/accordion-group';
@@ -6,6 +7,7 @@ import AccordionPlugin from './accordion/accordion';
 import AddPlugin from './add/add';
 import AddressPlugin from './address/address';
 import AvatarPlugin from './avatar/avatar';
+import BreadcrumbsPlugin from './breadcrumbs/breadcrumbs';
 import ButtonPlugin from './button/button';
 import CalendarPlugin from './calendar/calendar';
 import CarouselPlugin from './carousel/carousel';
@@ -88,6 +90,7 @@ import ToastPlugin from './toast/toast';
 import ToggleButtonsPlugin from './toggle-buttons/toggle-buttons';
 import TooltipPlugin from './tooltip/tooltip';
 import AccordionTransitionPlugin from './transitions/accordion-transition/accordion-transition';
+import OpacityTransitionPlugin from './transitions/opacity-transition/opacity-transition';
 import SlideTransitionPlugin from './transitions/slide-transition/slide-transition';
 import TreePlugin from './tree/tree';
 import ValidationMessagePlugin from './validation-message/validation-message';
@@ -111,6 +114,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(AddPlugin);
         Vue.use(AddressPlugin, { loqateKey: options.loquateOptions ? 'LOQATE_KEY=BT13-ZT19-TB79-DC28' : undefined } as AddressLookupPluginOptions);
         Vue.use(AvatarPlugin);
+        Vue.use(BreadcrumbsPlugin);
         Vue.use(ButtonPlugin);
         Vue.use(CalendarPlugin);
         Vue.use(CarouselPlugin);
@@ -153,6 +157,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(MessagePlugin);
         Vue.use(DialogPlugin);
         Vue.use(NavbarPlugin);
+        Vue.use(OpacityTransitionPlugin);
         Vue.use(OptionPlugin);
         Vue.use(MenuPlugin);
         Vue.use(PageNotFoundPlugin);
