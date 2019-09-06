@@ -1,6 +1,8 @@
 @import 'commons';
 @import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css'); /* FA CSS import */
 $m-collapsed-input-style--margin: 16px !default;
+$m-froala-toolbar-btn-width: 38px !default;
+$m-froala-toolbar-btn-height: 38px !default;
 
 .vue-froala {
     overflow: hidden;
@@ -118,6 +120,8 @@ $m-collapsed-input-style--margin: 16px !default;
         .fr-placeholder {
             color: $m-color--disabled;
             font-weight: $m-font-weight--semi-bold;
+            position: absolute;
+            top: 22px; // Magic number
         }
 
         .fr-box.fr-basic .fr-element {
@@ -320,12 +324,47 @@ $m-collapsed-input-style--margin: 16px !default;
         }
 
         .fr-command.fr-btn {
-            width: 38px;
-            height: 38px;
+            width: $m-froala-toolbar-btn-width;
+            height: $m-froala-toolbar-btn-height;
             margin: 0 2px;
+
+            &.fr-open {
+                background-color: $m-color--grey-lighter;
+
+                > .fr-sub-menu {
+                    &::after {
+                        border-top: 0;
+                        border-bottom: 4px solid #222;
+                    }
+                }
+            }
 
             &.fr-active {
                 color: $m-color--interactive;
+            }
+
+            .fr-sub-menu {
+                &::after {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-top: 4px solid #333;
+                    right: 2px;
+                    top: 18px;
+                    -webkit-transition: all 0.3s;
+                    -moz-transition: all 0.3s;
+                    -ms-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    content: "";
+                }
+            }
+
+            .fr-icon-special-characters {
+                text-align: center;
+                padding: 0;
+                width: $m-froala-toolbar-btn-width;
             }
         }
 

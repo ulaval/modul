@@ -74,13 +74,16 @@
     a {
         @extend .m-u--link;
 
+        display: inline;
+
         &:hover,
         &:focus {
             @extend %m-u--link-text--hover-focus;
         }
     }
 
-    svg {
+    .fr-btn > svg,
+    .fr-sub-menu > svg {
         width: 14px;
         height: 14px;
         margin: 12px;

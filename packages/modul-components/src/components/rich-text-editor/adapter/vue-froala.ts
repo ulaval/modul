@@ -3,6 +3,7 @@
 import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/js/languages/fr.js';
 import 'froala-editor/js/plugins.pkgd.min.js';
 import $ from 'jquery';
 import Component from 'vue-class-component';
@@ -22,10 +23,10 @@ import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
-require('froala-editor/js/languages/fr.js');
 // Bug placeholder in the version 3.0.5.
-// Bug watch The button "Special Characters" isn't work in mobile  https://github.com/froala/angular-froala-wysiwyg/issues/317
-// Bug watch "JQuery dependence isn't fully removed from Froala" https://github.com/froala/angular-froala-wysiwyg/issues/324
+// Bug watch 'The button "Special Characters" isn't work in mobile'  https://github.com/froala/wysiwyg-editor/issues/3650
+// Bug watch "JQuery dependence isn't fully removed from Froala" https://github.com/froala/wysiwyg-editor/issues/3649
+// Bug watch "Placeholder text is not aligned with the cursor in inline mode after 3.0.5" https://github.com/froala/wysiwyg-editor/issues/3628
 
 enum froalaEvents {
     Blur = 'blur',
@@ -148,6 +149,8 @@ const ENTER_KEYCODE: number = 13;
 
     protected addCustomIcons(): void {
         FroalaEditor.DefineIconTemplate('custom-icons', '[SVG]');
+        FroalaEditor.DefineIconTemplate('custom-icons-sub-menu', '<div class="fr-sub-menu">[SVG]</div>');
+        FroalaEditor.DefineIconTemplate('custom-icons-span', '[SPAN]');
 
         if (this.$i18n.currentLang() === 'fr') {
             FroalaEditor.DefineIcon('bold', { SVG: (boldIcon as string), template: 'custom-icons' });
@@ -158,8 +161,9 @@ const ENTER_KEYCODE: number = 13;
         }
 
         FroalaEditor.DefineIcon('paragraphStyle', { SVG: (titleIcon as string), template: 'custom-icons' });
-        FroalaEditor.DefineIcon('moreText', { SVG: (stylesIcon as string), template: 'custom-icons' });
-        FroalaEditor.DefineIcon('moreParagraph', { SVG: (listsIcon as string), template: 'custom-icons' });
+        FroalaEditor.DefineIcon('moreText', { SVG: (stylesIcon as string), template: 'custom-icons-sub-menu' });
+        FroalaEditor.DefineIcon('moreParagraph', { SVG: (listsIcon as string), template: 'custom-icons-sub-menu' });
+        FroalaEditor.DefineIcon('specialCharacters', { SPAN: '<span class="fr-icon-special-characters" >Ω</span>', template: 'custom-icons-span' });
     }
 
     protected addImageButton(): void {
