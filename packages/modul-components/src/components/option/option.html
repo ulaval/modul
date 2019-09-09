@@ -9,8 +9,8 @@
              :focus-management="focusManagement"
              @open="onOpen"
              @close="onClose">
-        <button class="m-option__button"
-                v-if="isSkinMixed"
+        <button v-if="isSkinMixed"
+                class="m-option__button"
                 @click="onClick"
                 :id="id"
                 aria-haspopup="true"

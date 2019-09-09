@@ -101,15 +101,15 @@ export class MOption extends BaseOption implements MOptionInterface {
         this.onClose();
     }
 
-    private onOpen(): void {
+    public onOpen(): void {
         this.$emit('open');
     }
 
-    private onClose(): void {
+    public onClose(): void {
         this.$emit('close');
     }
 
-    private onClick($event: MouseEvent): void {
+    public onClick($event: MouseEvent): void {
         this.$emit('click', $event);
     }
 
@@ -121,30 +121,30 @@ export class MOption extends BaseOption implements MOptionInterface {
         return this.closeTitle === undefined ? this.$i18n.translate('m-option:close') : this.closeTitle;
     }
 
-    private get propTitle(): string {
+    public get propTitle(): string {
         return this.open ? this.getCloseTitle() : this.getOpenTitle();
     }
 
-    private get ariaControls(): string {
+    public get ariaControls(): string {
         return this.id + '-controls';
     }
 
-    private get menuMaxHeight(): string | undefined {
+    public get menuMaxHeight(): string | undefined {
         return this.scroll ? undefined : 'none';
     }
 
-    private get isSkinMixed(): boolean {
+    public get isSkinMixed(): boolean {
         return this.skin === MOptionsSkin.Mixed;
     }
 
-    private get iconButtonSkin(): string | undefined {
+    public get iconButtonSkin(): string | undefined {
         switch (this.skin) {
             case MOptionsSkin.Light:
                 return MIconButtonSkin.Light;
             case MOptionsSkin.Dark:
                 return MIconButtonSkin.Dark;
             default:
-                break;
+                throw new Error('skin not supported!');
         }
     }
 }

@@ -6,8 +6,6 @@ import OptionPlugin from './option';
 
 Vue.use(OptionPlugin);
 
-
-
 storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}`, module)
 
     .add('default', () => ({
@@ -100,14 +98,18 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}/skin`, module)
     }))
     .add('skin="over-mixed"', () => ({
         data: () => ({
-            model1: ''
+            model1: '',
+            img: 'https://picsum.photos/id/1025/400/300'
         }),
-        template: `<m-option skin="over-mixed">
-                       <m-option-item-add></m-option-item-add>
-                       <m-option-item-edit></m-option-item-edit>
-                       <m-option-item-archive></m-option-item-archive>
-                       <m-option-item-delete :disabled="true"></m-option-item-delete>
-                   </m-option>
+        template: `<div style="position:relative;">
+                        <m-option style="position:relative; z-index:2;" skin="over-mixed">
+                            <m-option-item-add></m-option-item-add>
+                            <m-option-item-edit></m-option-item-edit>
+                            <m-option-item-archive></m-option-item-archive>
+                            <m-option-item-delete :disabled="true"></m-option-item-delete>
+                        </m-option>
+                        <img style="position:absolute; left:0;" :src="img" alt="exemple"/>
+                   </div>
                    `
     }));
 
