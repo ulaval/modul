@@ -34,9 +34,6 @@ export class MTypeahead extends ModulVue {
     public value: any;
 
     @Prop()
-    public placeholder: string;
-
-    @Prop()
     public results: any[];
 
     @Prop()
@@ -47,6 +44,9 @@ export class MTypeahead extends ModulVue {
 
     @Prop({ default: 0 })
     public throttle: number;
+
+    @Prop()
+    public placeholder: string;
 
     @Prop()
     public focus: boolean;
@@ -77,30 +77,35 @@ export class MTypeahead extends ModulVue {
     public isTexfieldFocus: boolean = false;
     public filteredResults: any[] = [];
     public filteredResultsWithStyles: any[] = [];
+    public ariaControls: string = this.id + '-controls';
     public throttleTimeoutActive: boolean = false;
     private throttleTimeout: any;
 
     @Emit('open')
-    public async onOpenResultPopup(): Promise<void> {
+    public async emitOpenResultPopup(): Promise<void> {
         await this.$nextTick();
         this.scrollToFocused();
     }
 
-    @Emit('close')
-    public onCloseResultPopup(): void { }
-
-    @Emit('filter-results')
-    public filterResultsEmit(): void { }
-
     @Emit('input')
-    public onInput($event: Event): void {
-        this.openResultsPopup();
-    }
+    public emitInput(event: string): void { }
 
     @Watch('results', { immediate: true })
     public onResultsChange(): void {
-        this.onFilterResulats();
+        this.onFilterResults();
     }
+
+    @Emit('keydown')
+    public emitKeydown(event: KeyboardEvent): void { }
+
+    @Emit('keyup')
+    public emitKeyup(event: KeyboardEvent): void { }
+
+    @Emit('close')
+    public emitCloseResultPopup(): void { }
+
+    @Emit('filter-results')
+    public emitFilterResults(): void { }
 
     @Watch('value', { immediate: true })
     public onValueChange(newValue: string): void {
@@ -116,15 +121,11 @@ export class MTypeahead extends ModulVue {
 
     public set textfieldValue(value: string) {
         this.textfieldValueInternal = value;
-        this.$emit('input', value);
+        this.emitInput(value);
     }
 
     public get textfieldValue(): string {
         return this.textfieldValueInternal;
-    }
-
-    public get ariaControls(): string {
-        return this.id + '-controls';
     }
 
     public get hasResults(): boolean {
@@ -151,53 +152,39 @@ export class MTypeahead extends ModulVue {
         }
     }
 
-    public openResultsPopup(): void {
-        if (this.isResultsPopupOpen) {
-            return;
-        }
-        if (this.resultsCouldBeDisplay) {
-            this.isResultsPopupOpen = true;
-        }
-    }
-
-    public closeResultsPopup(): void {
-        if (!this.isResultsPopupOpen) {
-            return;
-        }
-        this.isResultsPopupOpen = false;
-    }
-
-    public selectAndCloseResultWindow(index): void {
-        this.select(index);
-        this.closeResultsPopup();
-    }
-
-    public onFocus(): void {
-        this.isTexfieldFocus = true;
-    }
-
-    public onBlur(): void {
-        this.isTexfieldFocus = false;
-    }
-
     public get hasSomeAResultSelected(): boolean {
         return this.filteredResults.some((e, index) => this.isSelected(index));
     }
 
-    public select(index: number): void {
-        if (this.hasSomeAResultSelected) {
-            this.focusedIndex = index;
-        } else {
-            this.focusedIndex = 0;
+    public openResultsPopup(): void {
+        if (this.isResultsPopupOpen) {
+            return;
         }
+        this.isResultsPopupOpen = this.resultsCouldBeDisplay;
+    }
+
+    public closeResultsPopup(): void {
+        this.isResultsPopupOpen = false;
+    }
+
+    public selectAndCloseResultWindow(index): void {
+        this.focusedIndex = index;
+        this.selectFocusedItem();
+        this.closeResultsPopup();
+    }
+
+    public selectFocusedItem(): void {
         this.textfieldValue = this.filteredResults[this.focusedIndex];
     }
 
     public isSelected(index: number): boolean {
-        return this.isResultsPopupOpen ? this.textfieldValue.indexOf(this.filteredResults[index]) > -1 : false;
+        return this.isResultsPopupOpen && this.textfieldValue.indexOf(this.filteredResults[index]) > -1;
     }
 
-    @Emit('keyup')
+    public focusOnResearchInput(): void {
+        this.$refs.researchInput.focus();
+    }
+
     public onKeyup(event: KeyboardEvent): void {
         // tslint:disable-next-line: deprecation
         if (event.keyCode === KeyCode.M_UP || event.keyCode === KeyCode.M_DOWN) {
@@ -210,23 +197,23 @@ export class MTypeahead extends ModulVue {
         this.throttleTimeout = setTimeout(() => {
             this.throttleTimeout = undefined;
             this.throttleTimeoutActive = false;
-            this.onFilterResulats();
-            this.filterResultsEmit();
+            this.onFilterResults();
+            this.emitFilterResults();
         }, this.throttle);
+
+        this.emitKeyup(event);
     }
 
-    @Emit('keydown')
-    public onKeydown(event: KeyboardEvent): void { }
-
-    public onFilterResulats(): void {
+    public onFilterResults(): void {
         if (this.filterResultsManually) {
             this.filteredResults = this.results;
         } else {
-            this.filteredResults = this.results.filter((r) => {
-                if (this.hasTextfieldValue) {
-                    return r.toLowerCase().includes(this.textfieldValue.toLowerCase());
-                }
-            }).sort();
+            this.filteredResults = this.results
+                .filter(r =>
+                    this.hasTextfieldValue
+                    &&
+                    r.toLowerCase().includes(this.textfieldValue.toLowerCase()))
+                .sort();
         }
 
         this.filteredResultsWithStyles = this.filteredResults.map((fr) => {
@@ -243,7 +230,7 @@ export class MTypeahead extends ModulVue {
             return;
         }
         this.focusPreviousItem();
-        this.select(this.focusedIndex);
+        this.selectFocusedItem();
     }
 
     public onKeydownDown($event: KeyboardEvent): void {
@@ -251,7 +238,8 @@ export class MTypeahead extends ModulVue {
             return;
         }
         this.focusNextItem();
-        this.select(this.focusedIndex);
+        this.focusedIndex = this.hasSomeAResultSelected ? this.focusedIndex : 0;
+        this.selectFocusedItem();
     }
 
     public onKeydownTab($event: KeyboardEvent): void {
@@ -271,35 +259,46 @@ export class MTypeahead extends ModulVue {
             return;
         }
         if (this.focusedIndex > -1) {
-            this.select(this.focusedIndex);
+            this.selectFocusedItem();
             this.closeResultsPopup();
         }
     }
 
-    public focusOnResearchInput(): void {
-        this.$refs.researchInput.focus();
+    public onInput(event: string): void {
+        this.openResultsPopup();
+        this.emitInput(event);
+    }
+
+    public onFocus(): void {
+        this.isTexfieldFocus = true;
+    }
+
+    public onBlur(): void {
+        this.isTexfieldFocus = false;
     }
 
     private scrollToFocused(): void {
-        if (!this.isResultPopupActive) {
+        if (!this.isResultPopupActive
+            &&
+            !(this.focusedIndex > -1)
+            &&
+            this.as<MediaQueriesMixin>().isMqMaxS) {
             return;
         }
-        if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
 
-            let container: HTMLElement = this.$refs.resultsList;
-            if (container) {
-                let element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
+        let container: HTMLElement = this.$refs.resultsList;
+        if (container) {
+            let element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
 
-                if (element) {
-                    let top: number = element.offsetTop;
-                    let bottom: number = element.offsetTop + element.offsetHeight;
-                    let viewRectTop: number = container.scrollTop;
-                    let viewRectBottom: number = viewRectTop + container.clientHeight;
-                    if (top < viewRectTop) {
-                        container.scrollTop = top;
-                    } else if (bottom > viewRectBottom) {
-                        container.scrollTop = bottom - container.clientHeight;
-                    }
+            if (element) {
+                let top: number = element.offsetTop;
+                let bottom: number = element.offsetTop + element.offsetHeight;
+                let viewRectTop: number = container.scrollTop;
+                let viewRectBottom: number = viewRectTop + container.clientHeight;
+                if (top < viewRectTop) {
+                    container.scrollTop = top;
+                } else if (bottom > viewRectBottom) {
+                    container.scrollTop = bottom - container.clientHeight;
                 }
             }
         }
@@ -309,14 +308,20 @@ export class MTypeahead extends ModulVue {
         if (!this.isResultPopupActive) {
             return;
         }
-        if (this.focusedIndex > -1) {
-            this.focusedIndex++;
-            if (this.focusedIndex >= this.filteredResults.length) {
-                this.focusedIndex = 0;
+
+        if (this.hasSomeAResultSelected) {
+            if (this.focusedIndex > -1) {
+                this.focusedIndex++;
+                if (this.focusedIndex >= this.filteredResults.length) {
+                    this.focusedIndex = 0;
+                }
+            } else {
+                this.focusedIndex = this.filteredResults.length === 0 ? -1 : 0;
             }
         } else {
-            this.focusedIndex = this.filteredResults.length === 0 ? -1 : 0;
+            this.focusedIndex = 0;
         }
+
         this.scrollToFocused();
     }
 
@@ -324,14 +329,20 @@ export class MTypeahead extends ModulVue {
         if (!this.isResultPopupActive) {
             return;
         }
-        if (this.focusedIndex > -1) {
-            this.focusedIndex--;
-            if (this.focusedIndex < 0) {
+
+        if (this.hasSomeAResultSelected) {
+            if (this.focusedIndex > -1) {
+                this.focusedIndex--;
+                if (this.focusedIndex < 0) {
+                    this.focusedIndex = this.filteredResults.length - 1;
+                }
+            } else {
                 this.focusedIndex = this.filteredResults.length - 1;
             }
         } else {
-            this.focusedIndex = this.filteredResults.length - 1;
+            this.focusedIndex = 0;
         }
+
         this.scrollToFocused();
     }
 }

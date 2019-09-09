@@ -9,14 +9,6 @@ import IconPlugin from '../icon/icon';
 import LinkPlugin from '../link/link';
 import BreadcrumbsPlugin, { BreadcrumbItem, MBreadcrumbs } from './breadcrumbs';
 
-
-
-
-
-
-
-
-
 Vue.use(BreadcrumbsPlugin);
 Vue.use(IconPlugin);
 Vue.use(LinkPlugin);

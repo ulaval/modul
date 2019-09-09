@@ -22,7 +22,7 @@ export class MSlideTransition extends ModulVue {
     @Prop({ default: 0 })
     public scrollToOffset: number; // the offset to add (in case of a sticky header)
 
-    @Prop({ default: true })
+    @Prop({ default: false })
     public disabled: boolean;
 
     public get transitionName(): string | undefined {
@@ -33,34 +33,56 @@ export class MSlideTransition extends ModulVue {
         return this.direction === MSlideTransitionDirection.LeftToRight;
     }
 
+    @Emit('before-enter')
+    public beforeEnter(el: HTMLElement): void { }
+
     @Emit('enter')
-    private transitionEnter(el: HTMLElement, done): void {
+    public enter(el: HTMLElement, done): void {
         if (!this.disabled) {
             this.$scrollTo.goTo(this.$el as HTMLElement, this.scrollToOffset, ScrollToDuration.Regular);
             setTimeout(() => {
-                this.transitionBeforeLeave(el);
+                this.addStyleProperty(el);
             }, 100);
         } else {
             done();
         }
     }
 
-    private transitionAfterEnter(): void {
-        (this.$el as HTMLElement).style.removeProperty('height');
-        (this.$el as HTMLElement).style.removeProperty('overflow');
+    @Emit('after-enter')
+    public afterEnter(el: HTMLElement): void {
+        this.removeStyleProperty(el);
     }
 
-    private transitionBeforeLeave(el: HTMLElement): void {
+    @Emit('enter-cancelled')
+    public enterCancelled(el: HTMLElement): void { }
+
+    @Emit('before-leave')
+    public beforeLeave(el: HTMLElement): void {
+        this.addStyleProperty(el);
+    }
+
+    @Emit('leave')
+    public leave(el: HTMLElement, done): void { }
+
+    @Emit('after-leave')
+    public afterLeave(el: HTMLElement): void {
+        this.removeStyleProperty(el);
+    }
+
+    @Emit('leave-cancelled')
+    public leaveCancelled(el: HTMLElement): void { }
+
+    public addStyleProperty(el: HTMLElement): void {
         (this.$el as HTMLElement).style.height = this.getHeightEl(el) + 'px';
         (this.$el as HTMLElement).style.overflow = 'hidden';
     }
 
-    @Emit('afterLeave')
-    private transitionAfterLeave(): void {
-        this.transitionAfterEnter();
+    public removeStyleProperty(el: HTMLElement): void {
+        (this.$el as HTMLElement).style.removeProperty('height');
+        (this.$el as HTMLElement).style.removeProperty('overflow');
     }
 
-    private getHeightEl(el): number {
+    private getHeightEl(el: HTMLElement): number {
         let elComputedStyle: any = window.getComputedStyle(el);
         return el.getBoundingClientRect().height +
             + parseInt(elComputedStyle.marginTop as string, 10)
