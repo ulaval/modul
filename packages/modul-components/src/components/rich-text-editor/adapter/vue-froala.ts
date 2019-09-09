@@ -73,7 +73,7 @@ export enum FroalaToolbarButtons {
 }
 
 const ENTER_KEYCODE: number = 13;
-const SCROLL_TO_DURATION: number = -50;
+const SCROLL_TO_OFFSET: number = -50;
 
 @WithRender
 @Component({
@@ -340,7 +340,7 @@ const SCROLL_TO_DURATION: number = -50;
                         if (fullscreenWasActivated) {
                             this.froalaEditor.toolbar.hide();
                         } else {
-                            this.$scrollTo.goTo(this.$el as HTMLElement, SCROLL_TO_DURATION, ScrollToDuration.Instant);
+                            this.$scrollTo.goTo(this.$el as HTMLElement, SCROLL_TO_OFFSET, ScrollToDuration.Instant);
                         }
                         this.onFullscreen(fullscreenWasActivated);
                     }
@@ -350,7 +350,7 @@ const SCROLL_TO_DURATION: number = -50;
                         if (this.froalaEditor.fullscreen.isActive()) {
                             this.froalaEditor.toolbar.show();
                         } else {
-                            this.$scrollTo.goTo(this.$el as HTMLElement, SCROLL_TO_DURATION, ScrollToDuration.Instant);
+                            this.$scrollTo.goTo(this.$el as HTMLElement, SCROLL_TO_OFFSET, ScrollToDuration.Instant);
                             this.froalaEditor.events.focus();
                         }
                     }
