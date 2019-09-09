@@ -133,9 +133,11 @@ export class MMenu extends BaseMenu implements Menu {
                     item.$children.forEach(itemGroup => {
                         itemGroup.$children.forEach((subItem: MMenuItem) => {
                             subItem.selected = this.isRouterLinkActive(subItem);
-                            item.propOpen = subItem.selected;
-                            item.selected = subItem.selected;
-                            groupSelected = subItem.selected;
+                            if (subItem.selected) {
+                                item.propOpen = subItem.selected;
+                                item.selected = subItem.selected;
+                                groupSelected = subItem.selected;
+                            }
                         });
                     });
                     item.groupSelected = groupSelected;
