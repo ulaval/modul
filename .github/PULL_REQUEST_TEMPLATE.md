@@ -32,6 +32,6 @@ Content can be written in English or in French
 <!-- Pour chaque breaking changes , inscrire la description du changement et les instructions pour la migration -->
 
 ## Liens vers les récits Jira
-<!-- Si vous êtes un contributeur interne, ajouter les liens vers vos récits ou épopées Jira -->
+<!-- Si vous êtes un contributeur interne, ajouter les liens vers vos billets Jira. -->
 
 <!--  Merci d'avoir contribué! / Thanks for contributing! -->

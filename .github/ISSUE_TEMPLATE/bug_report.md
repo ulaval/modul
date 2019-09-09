@@ -1,7 +1,7 @@
 ---
-name: Rapport de bogue
-about: Soumettre un rapport bogue dans modUL
-title: 'bug: '
+name: Rapport d'anomalie
+about: Soumettre un bogue dans modUL
+title: 'bogue: '
 labels: ''
 assignees: ''
 
@@ -12,7 +12,7 @@ Content can be written in English or in French
 -->
 
 **Description du bogue / Describe the bug**
-Une description claire et concise de ce qu'est le bogue.
+Une description claire et concise du problème.
 
 **Reproduction / To Reproduce**
 Étapes pour reproduire le problème:
@@ -25,7 +25,7 @@ Une description claire et concise de ce qu'est le bogue.
 Une description claire et concise de ce à quoi vous vous attendiez.
 
 **Captures d'écran / Screenshots**
-Si possible, ajoutez des captures d'écran pour expliquer votre problème.
+Si possible, ajoutez des captures d'écran pour décrire le problème.
 
 **Versions affectées / Affected Versions**
  - Package: [e.g. : modul-components]
@@ -37,4 +37,4 @@ Si possible, ajoutez des captures d'écran pour expliquer votre problème.
  - Navigateur [e.g. stock browser, safari]
 
 **Liens vers les récits Jira**
-Si vous êtes un contributeur interne, ajouter les liens vers vos récits ou épopées Jira.
+Si vous êtes un contributeur interne, ajouter les liens vers vos billets Jira.

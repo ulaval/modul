@@ -1,7 +1,7 @@
 ---
 name: Proposition de nouvelle fonctionnalité
 about: Soumettre une proposition pour l'ajout d'une fonctionalité dans modUL
-title: 'feature: '
+title: 'proposition: '
 labels: ''
 assignees: ''
 
@@ -21,4 +21,4 @@ Description de tout nouveaux composants, filtres, directives ou services souhait
 Si possible, ajoutez des captures d'écran pour démontrer la nouvelle fonctionnalité.
 
 **Liens vers les récits Jira**
-Si vous êtes un contributeur interne, ajouter les liens vers vos récits ou épopées Jira.
+Si vous êtes un contributeur interne, ajouter les liens vers vos billets Jira.
