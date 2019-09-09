@@ -461,42 +461,53 @@ exports[`Storyshots components|m-option/skin skin="over-light" (default) 1`] = `
 
 exports[`Storyshots components|m-option/skin skin="over-mixed" 1`] = `
 <div
-  class="m-option"
+  style="position: relative;"
 >
   <div
-    class="m-popup m--is-inline"
+    class="m-option"
+    style="position: relative; z-index: 2;"
   >
     <div
-      class="m-popper"
+      class="m-popup m--is-inline"
     >
-      <div>
-        <button
-          aria-controls="mOption-uuid-controls"
-          aria-haspopup="true"
-          class="m-option__button"
-          id="mOption-uuid"
-        >
-          <svg
-            aria-hidden="true"
-            class="m-icon"
-            height="20px"
-            title="Ouvrir le menu"
-            width="20px"
+      <div
+        class="m-popper"
+      >
+        <div>
+          <button
+            aria-controls="mOption-uuid-controls"
+            aria-haspopup="true"
+            class="m-option__button"
+            id="mOption-uuid"
           >
-            <!---->
-             
-            <use
+            <svg
               aria-hidden="true"
-              class=""
-            />
-          </svg>
-        </button>
+              class="m-icon"
+              height="20px"
+              title="Ouvrir le menu"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+          </button>
+        </div>
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-     
-    <!---->
   </div>
+   
+  <img
+    alt="exemple"
+    src="https://picsum.photos/id/1025/400/300"
+    style="position: absolute; left: 0px;"
+  />
 </div>
 `;
