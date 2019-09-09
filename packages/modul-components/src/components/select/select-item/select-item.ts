@@ -30,15 +30,15 @@ export class MSelectItem extends ModulVue {
     public focused: boolean;
 
     @Emit('click')
-    public clickEmit(): void { }
+    public emitClick($event: Event): void { }
 
     public get isItemActive(): boolean {
         return !this.disabled && !this.waiting;
     }
 
-    public onClick(): void {
+    public onClick($event: Event): void {
         if (!this.disabled) {
-            this.clickEmit();
+            this.emitClick($event);
         }
     }
 }
