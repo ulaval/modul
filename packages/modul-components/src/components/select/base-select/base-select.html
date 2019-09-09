@@ -1,0 +1,67 @@
+<div class="m-base-select">
+    <div @keydown.up.prevent="onKeydownUp"
+         @keydown.down.prevent="onKeydownDown"
+         @keydown.enter.prevent="onKeydownEnter"
+         @keydown.return.prevent="onKeydownEnter"
+         @keydown.esc="onKeydownEsc"
+         @keydown.tab="onKeydownTab"
+         v-m-popup:popup>
+        <slot></slot>
+    </div>
+    <m-popup ref="popup"
+             placement="bottom-start"
+             :open.sync="internalOpen"
+             :disabled="!active"
+             :padding="false"
+             :preload="true"
+             :lazy="false"
+             :focus-management="false"
+             :close-on-backdrop="true"
+             :open-trigger="'mousedown'"
+             @open="onOpen"
+             @close="onClose">
+        <!-- <template slot="header"
+                  v-if="isMqMaxS">
+            <h2 class="m-typeahead__label-popup"
+                v-if="label">{{ label }}</h2>
+            <div class="m-typeahead__research-popup">
+                <input class="m-typeahead__research-input-popup"
+                       v-model="textfieldValue"
+                       type="text"
+                       :placeholder="placeholder || 'm-typeahead:search' | f-m-i18n"
+                       :max-length="maxLength"
+                       :aria-controls="ariaControls"
+                       @keydown.up.prevent="onKeydownUp"
+                       @keydown.down.prevent="onKeydownDown"
+                       @keydown.enter.prevent="onKeydownEnter"
+                       @keydown.return.prevent="onKeydownEnter"
+                       @keydown.esc="onKeydownEsc"
+                       @keydown.tab="onKeydownTab"
+                       @keydown="onKeydown"
+                       @keyup="onKeyup"
+                       ref="researchInput" />
+                <m-icon-button class="m-typeahead__research-button-popup"
+                               icon-name="m-svg__search"
+                               @click="focusOnResearchInput">
+                    {{'m-typeahead:research' | f-m-i18n}}
+                </m-icon-button>
+            </div>
+        </template> -->
+        <ul :id="ariaControls"
+            class="m-base-select__list"
+            ref="items"
+            :aria-labelledby="controlId"
+            aria-live="polite"
+            :style="{ minWidth: inputMaxWidth }">
+            <m-select-item v-for="(item, index) of items"
+                           :key="index"
+                           :focused="index === focusedIndex"
+                           :selected="isSelected(item)"
+                           @click="select(item, index)">
+                <slot name="items"
+                      :item="item"
+                      :index="index"><span v-html="item"></span></slot>
+            </m-select-item>
+        </ul>
+    </m-popup>
+</div>

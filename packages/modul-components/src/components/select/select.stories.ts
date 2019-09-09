@@ -19,7 +19,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${SELECT_NAME}`, module)
             model1: 'avocados',
             options: ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc']
         }),
-        template: `<div><m-select  @open="open" @close="close" @focus="focus" @blur="blur" :options="options" v-model="model1"><template slot="selection">{{ model1 }}</template><template  slot="option" slot-scope="{option, index}"> {{ index }} - {{ option }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
+        template: `<div><m-select  @open="open" @close="close" @focus="focus" @blur="blur" :options="options" v-model="model1"><template v-slot:default>The selection is :{{ model1 }}</template><template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
     })
     );
 
