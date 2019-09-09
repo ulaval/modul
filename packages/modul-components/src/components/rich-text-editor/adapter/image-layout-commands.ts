@@ -10,6 +10,7 @@ export namespace ImageLayoutCommands {
     const IMG_FLOAT_LEFT_CMD: string = 'image-float-left';
     const IMG_FLOAT_RIGHT_CMD: string = 'image-float-right';
     const PREFIX: string = 'm--fr-';
+    const ACTIVE_CLASS: string = `${PREFIX}active`;
 
     export const IMG_LAYOUT_CMD: string = 'image-layout';
     export const DEFAULT_IMG_LAYOUT_CLASS: string = `${PREFIX}${IMG_BLOCK_LEFT_CMD}`;
@@ -29,6 +30,12 @@ export namespace ImageLayoutCommands {
             type: 'dropdown',
             html: function(): string {
                 return this.button.buildList(getCommandList.call(this));
+            },
+            refreshOnShow: function(_$btn: any, $dropdown: any): void {
+                const dropdown: HTMLElement = $dropdown[0];
+                if (!dropdown.querySelector(`.fr-btn.${ACTIVE_CLASS}`)) {
+                    getElementFromDataCmd(dropdown, IMG_BLOCK_LEFT_CMD)!.classList.add(ACTIVE_CLASS);
+                }
             }
         });
     }
@@ -40,14 +47,15 @@ export namespace ImageLayoutCommands {
             undo: true,
             showOnMobile: true,
             callback: function(): void {
-                const classes: DOMTokenList = (this.image.get()[0] as HTMLElement).classList;
+                const popup: HTMLElement = this.popups.areVisible()[0];
+                const imageClasses: DOMTokenList = (this.image.get()[0] as HTMLElement).classList;
                 getCommandList.call(this).forEach((currentCmd: string) => {
-                    classes.remove(`${PREFIX}${currentCmd}`);
-                    (this.popups.areVisible().find(`[data-cmd="${currentCmd}"]`)[0] as HTMLElement).classList.remove(`${PREFIX}active`);
+                    imageClasses.remove(`${PREFIX}${currentCmd}`);
+                    getElementFromDataCmd(popup, currentCmd)!.classList.remove(ACTIVE_CLASS);
                 });
                 this.image.applyStyle(`${PREFIX}${cmd}`);
-                (this.popups.areVisible().find(`[data-cmd="${cmd}"]`)[0] as HTMLElement).classList.add(`${PREFIX}active`);
-                this.popups.areVisible().find(`[data-cmd="${IMG_LAYOUT_CMD}"]`).html(icon);
+                getElementFromDataCmd(popup, cmd)!.classList.add(ACTIVE_CLASS);
+                getElementFromDataCmd(popup, IMG_LAYOUT_CMD)!.innerHTML = icon;
             }
         });
     }
@@ -58,5 +66,9 @@ export namespace ImageLayoutCommands {
         } else {
             return [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD];
         }
+    }
+
+    function getElementFromDataCmd(root: HTMLElement, value: string): Element | null {
+        return root.querySelector(`[data-cmd="${value}"]`);
     }
 }
