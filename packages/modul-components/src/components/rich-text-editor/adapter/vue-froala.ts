@@ -73,6 +73,7 @@ export enum FroalaToolbarButtons {
 }
 
 const ENTER_KEYCODE: number = 13;
+const SCROLL_TO_DURATION: number = -50;
 
 @WithRender
 @Component({
@@ -339,7 +340,7 @@ const ENTER_KEYCODE: number = 13;
                         if (fullscreenWasActivated) {
                             this.froalaEditor.toolbar.hide();
                         } else {
-                            this.$scrollTo.goTo(this.$el as HTMLElement, -50, ScrollToDuration.Instant); // Hot fix for bug
+                            this.$scrollTo.goTo(this.$el as HTMLElement, SCROLL_TO_DURATION, ScrollToDuration.Instant);
                         }
                         this.onFullscreen(fullscreenWasActivated);
                     }
@@ -349,7 +350,7 @@ const ENTER_KEYCODE: number = 13;
                         if (this.froalaEditor.fullscreen.isActive()) {
                             this.froalaEditor.toolbar.show();
                         } else {
-                            this.$scrollTo.goTo(this.$el as HTMLElement, -50, ScrollToDuration.Instant);
+                            this.$scrollTo.goTo(this.$el as HTMLElement, SCROLL_TO_DURATION, ScrollToDuration.Instant);
                             this.froalaEditor.events.focus();
                         }
                     }
@@ -362,13 +363,13 @@ const ENTER_KEYCODE: number = 13;
                     this.updateModel();
                 },
                 [froalaEvents.ImageInserted]: ($img) => {
+                    global.console.log('FroalaEvents.ImageInserted');
+                    global.console.log(this.froalaEditor.opts);
                     if (this.froalaEditor.opts.modulImageUploaded) {
                         $img[0].alt = '';
 
-                        if (this.froalaEditor.opts.imageEditButtons.includes('imageAlign')) {
-                            $img[0].classList.add('m--is-aligned');
-                        } else {
-                            $img[0].classList.add('m--is-not-aligned');
+                        if (!this.froalaEditor.opts.imageEditButtons.includes('imageAlign')) {
+                            $img[0].classList.add('fr-fil');
                         }
 
                         this.updateModel();

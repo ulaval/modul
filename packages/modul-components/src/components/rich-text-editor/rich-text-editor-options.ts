@@ -10,7 +10,7 @@ export class MRichTextEditorDefaultOptions {
     public toolbarSticky: boolean = true;
     public scrollableContainer: string = 'body'; // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
     public toolbarStickyOffset: number = 0;
-    public pluginsEnabled: string[] = ['align', 'draggable', 'embedly', 'entities', 'file', 'fontFamily', 'fontSize', 'fullscreen', 'inlineStyle', 'lineBreaker', 'link', 'lists', 'paragraphFormat', 'paragraphStyle', 'quote', 'save', 'specialCharacters', 'table', 'url', 'wordPaste', 'stylesSubMenu', 'listesSubMenu', 'insertionsSubMenu', 'embedly'];
+    public pluginsEnabled: string[] = ['align', 'draggable', 'embedly', 'entities', 'file', 'fontFamily', 'fontSize', 'fullscreen', 'inlineStyle', 'link', 'lists', 'paragraphFormat', 'paragraphStyle', 'quote', 'save', 'specialCharacters', 'table', 'url', 'wordPaste', 'stylesSubMenu', 'listesSubMenu', 'insertionsSubMenu', 'embedly'];
     public wordPasteModal: boolean = false;
     public initOnClick: boolean = true;
     public wordPasteKeepFormatting: boolean = false;
@@ -24,7 +24,7 @@ export class MRichTextEditorDefaultOptions {
     public linkEditButtons: string[] = ['linkOpen', 'linkEdit', 'linkRemove'];
     public linkInsertButtons: string[] = [];
     public imageResizeWithPercent: boolean = true;
-    public imageDefaultWidth: number = 0;// Sets the default wiparagraphStylesdth of the image. Setting it to 0 will not set any width.
+    public imageDefaultWidth: number = 0;// Sets the default with of the image. Setting it to 0 will not set any width.
     public imageEditButtons: string[] = ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
     public shortcutsEnabled: string[] = ['paragraphStyle', 'bold', 'italic', 'subscript', 'superscript', 'formatUL', 'formatOL', 'outdent', 'indent', 'insertLink', 'specialCharacters', 'insertImage', 'fullscreen', 'undo', 'redo'];
 

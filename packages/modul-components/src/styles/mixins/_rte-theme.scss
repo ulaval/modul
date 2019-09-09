@@ -1,4 +1,5 @@
 @import "../utils/link";
+$m-fr-icon-size: 14px !default;
 
 @mixin m-commons-rte-styles() {
     @include m-titles-styles();
@@ -84,8 +85,8 @@
 
     .fr-btn > svg,
     .fr-sub-menu > svg {
-        width: 14px;
-        height: 14px;
-        margin: 12px;
+        width: $m-fr-icon-size;
+        height: $m-fr-icon-size;
+        margin: $m-margin;
     }
 }

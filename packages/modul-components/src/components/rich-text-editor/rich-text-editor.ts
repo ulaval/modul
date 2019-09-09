@@ -219,7 +219,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
     protected getScrollableContainer(): string {
         // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
-        return this.scrollableContainer ? this.scrollableContainer : 'body';
+        return this.scrollableContainer || 'body';
     }
 
     protected testSelectorProps(): void {
