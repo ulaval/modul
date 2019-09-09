@@ -118,6 +118,7 @@ export class MMenu extends BaseMenu implements Menu {
         if (this.internalItems) {
             this.internalItems.forEach((item) => {
                 if (!item.isDisabled) {
+                    item.propOpen = false;
                     if (item.value === this.model) {
                         item.selected = true;
                     } else if (item.selected) {
@@ -127,20 +128,17 @@ export class MMenu extends BaseMenu implements Menu {
             });
 
             this.internalItems.forEach((item) => {
-                if (!item.isDisabled) {
-                    if (item.group) {
-                        let groupSelected: boolean = false;
-                        item.$children.forEach(itemGroup => {
-                            itemGroup.$children.forEach(subItem => {
-                                if (subItem instanceof MMenuItem && subItem.selected) {
-                                    item.propOpen = true;
-                                    item.selected = true;
-                                    groupSelected = true;
-                                }
-                            });
+                if (!item.isDisabled && item.group) {
+                    let groupSelected: boolean = false;
+                    item.$children.forEach(itemGroup => {
+                        itemGroup.$children.forEach((subItem: MMenuItem) => {
+                            subItem.selected = this.isRouterLinkActive(subItem);
+                            item.propOpen = subItem.selected;
+                            item.selected = subItem.selected;
+                            groupSelected = subItem.selected;
                         });
-                        item.groupSelected = groupSelected;
-                    }
+                    });
+                    item.groupSelected = groupSelected;
                 }
             });
         }
@@ -206,6 +204,10 @@ export class MMenu extends BaseMenu implements Menu {
 
     private get hasSlotTrigger(): boolean {
         return !!this.$slots.trigger;
+    }
+
+    private isRouterLinkActive(menuItem: MMenuItem): boolean {
+        return !!menuItem.$el.querySelector('.router-link-exact-active');
     }
 }
 

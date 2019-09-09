@@ -1,27 +1,31 @@
 <div class="m-breadcrumbs">
-    <m-limit-text lines="2">
-        <transition-group name="move">
-            <span v-for="item in definedItems"
-                  v-bind:key="item.text"
-                  class="m-breadcrumbs__item">
-                <span v-if="item.divider || divider"
-                      class="m-breadcrumbs__divider">
-                    <slot name="divider">
-                        {{ item.divider || divider }}
-                    </slot>
-                </span>
-                <slot name="item"
-                      v-bind:item="item">
-                    <m-link v-if="item.url || item.iconName"
-                            :icon-name="item.iconName"
-                            :icon-position="iconPosition"
-                            :mode="linkMode"
-                            :disabled="disabled || item.disabled"
-                            :url="item.url">{{ item.text }}
-                    </m-link>
-                    <span v-else>{{ item.text }}</span>
+    <transition-group name="move">
+        <span v-for="(item, index) in definedItems"
+              v-bind:key="item.text"
+              class="m-breadcrumbs__item">
+            <span v-if="index === 0 && (item.divider || divider)"
+                  class="m-breadcrumbs__divider">
+                <slot name="divider">
+                    {{ item.divider || divider }}
                 </slot>
             </span>
-        </transition-group>
-    </m-limit-text>
+            <slot name="item"
+                  v-bind:item="item">
+                <m-link v-if="item.url || item.iconName"
+                        :icon-name="item.iconName"
+                        :icon-position="iconPosition"
+                        :mode="linkMode"
+                        :disabled="disabled || item.disabled"
+                        :url="item.url">{{ item.text }}
+                </m-link>
+                <span v-else>{{ item.text }}</span>
+            </slot>
+            <span v-if="itemDivider(index + 1)"
+                  class="m-breadcrumbs__divider">
+                <slot name="divider">
+                    {{ itemDivider(index + 1) }}
+                </slot>
+            </span>
+        </span>
+    </transition-group>
 </div>

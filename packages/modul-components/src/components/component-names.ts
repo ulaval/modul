@@ -62,6 +62,7 @@ export const MONEYFIELD_NAME: string = 'm-moneyfield';
 export const MODAL_NAME: string = 'm-modal';
 export const NAVBAR_NAME: string = 'm-navbar';
 export const NAVBAR_ITEM_NAME: string = 'm-navbar-item';
+export const OPACITY_TRANSITION_NAME: string = 'm-opacity-transition';
 export const OPTION_NAME: string = 'm-option';
 export const OPTION_ITEM_NAME: string = 'm-option-item';
 export const OPTION_ITEM_ADD_NAME: string = 'm-option-item-add';
