@@ -168,16 +168,12 @@ export class MTypeahead extends ModulVue {
     }
 
     public selectAndCloseResultWindow(index): void {
-        this.select(index);
+        this.focusedIndex = index;
+        this.selectFocusedItem();
         this.closeResultsPopup();
     }
 
-    public select(index: number): void {
-        if (this.hasSomeAResultSelected) {
-            this.focusedIndex = index;
-        } else {
-            this.focusedIndex = 0;
-        }
+    public selectFocusedItem(): void {
         this.textfieldValue = this.filteredResults[this.focusedIndex];
     }
 
@@ -234,7 +230,7 @@ export class MTypeahead extends ModulVue {
             return;
         }
         this.focusPreviousItem();
-        this.select(this.focusedIndex);
+        this.selectFocusedItem();
     }
 
     public onKeydownDown($event: KeyboardEvent): void {
@@ -242,7 +238,8 @@ export class MTypeahead extends ModulVue {
             return;
         }
         this.focusNextItem();
-        this.select(this.focusedIndex);
+        this.focusedIndex = this.hasSomeAResultSelected ? this.focusedIndex : 0;
+        this.selectFocusedItem();
     }
 
     public onKeydownTab($event: KeyboardEvent): void {
@@ -262,7 +259,7 @@ export class MTypeahead extends ModulVue {
             return;
         }
         if (this.focusedIndex > -1) {
-            this.select(this.focusedIndex);
+            this.selectFocusedItem();
             this.closeResultsPopup();
         }
     }
@@ -311,14 +308,20 @@ export class MTypeahead extends ModulVue {
         if (!this.isResultPopupActive) {
             return;
         }
-        if (this.focusedIndex > -1) {
-            this.focusedIndex++;
-            if (this.focusedIndex >= this.filteredResults.length) {
-                this.focusedIndex = 0;
+
+        if (this.hasSomeAResultSelected) {
+            if (this.focusedIndex > -1) {
+                this.focusedIndex++;
+                if (this.focusedIndex >= this.filteredResults.length) {
+                    this.focusedIndex = 0;
+                }
+            } else {
+                this.focusedIndex = this.filteredResults.length === 0 ? -1 : 0;
             }
         } else {
-            this.focusedIndex = this.filteredResults.length === 0 ? -1 : 0;
+            this.focusedIndex = 0;
         }
+
         this.scrollToFocused();
     }
 
@@ -326,14 +329,20 @@ export class MTypeahead extends ModulVue {
         if (!this.isResultPopupActive) {
             return;
         }
-        if (this.focusedIndex > -1) {
-            this.focusedIndex--;
-            if (this.focusedIndex < 0) {
+
+        if (this.hasSomeAResultSelected) {
+            if (this.focusedIndex > -1) {
+                this.focusedIndex--;
+                if (this.focusedIndex < 0) {
+                    this.focusedIndex = this.filteredResults.length - 1;
+                }
+            } else {
                 this.focusedIndex = this.filteredResults.length - 1;
             }
         } else {
-            this.focusedIndex = this.filteredResults.length - 1;
+            this.focusedIndex = 0;
         }
+
         this.scrollToFocused();
     }
 }
