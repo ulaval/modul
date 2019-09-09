@@ -27,6 +27,7 @@ type SearchResultComponent = {
 export default class Modul extends ModulWebsite {
 
     $refs: {
+        header: HTMLElement;
         searchfield: InputManagement;
     };
 

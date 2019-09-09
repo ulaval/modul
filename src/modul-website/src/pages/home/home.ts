@@ -84,7 +84,7 @@ export class MWHomePage extends ModulWebsite {
     }
 
     public scrollToBody(): void {
-        let offsetToScroll: number = (this.$refs.body as HTMLElement).offsetTop;
+        let offsetToScroll: number = (this.$refs.body as HTMLElement).offsetTop - 54;
         this.$scrollTo.goTo(document.body, offsetToScroll, ScrollToDuration.Long);
     }
 

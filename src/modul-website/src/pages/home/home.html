@@ -23,55 +23,56 @@
     <section class="mw-home__body"
              ref="body">
         <div class="mw-home__body-wrap">
-            <mw-card>
-                <template slot="header">
-                    <img class="mw-home__icon"
-                         :src="componentIcon"
-                         alt="" />
-                    <h2>{{'modul:components' | f-m-i18n}}</h2>
-                </template>
-                <p slot="content"
-                   v-html="$i18n.translate('modul:components-desc')">
-                </p>
-                <m-link slot="link"
-                        :url="componentsUi">{{'website:components-ui' | f-m-i18n}}</m-link>
-            </mw-card>
+            <div class="mw-home__cards-wrap">
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="componentIcon"
+                             alt="" />
+                        <h2>{{'modul:components' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content"
+                       v-html="$i18n.translate('modul:components-desc')">
+                    </p>
+                    <m-link slot="link"
+                            :url="componentsUi">{{'website:components-ui' | f-m-i18n}}</m-link>
+                </mw-card>
 
-            <mw-card>
-                <template slot="header">
-                    <img class="mw-home__icon"
-                         :src="normesIcon"
-                         alt="" />
-                    <h2>{{'website:standards' | f-m-i18n}}</h2>
-                </template>
-                <p slot="content">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quaerat sint esse, natus libero amet perferendis atque. Blanditiis ea fugit provident nobis qui? A delectus suscipit autem dolor blanditiis quasi.
-                </p>
-                <m-link slot="link"
-                        :url="uiStandards">{{'website:standards-ui' | f-m-i18n}}</m-link>
-                <m-link slot="link"
-                        :url="editorialStandards">{{'website:standards-editorial' | f-m-i18n}}</m-link>
-                <m-link slot="link"
-                        :url="devStandards">{{'website:standards-development' | f-m-i18n}}</m-link>
-                <m-link slot="link"
-                        :url="a11yStandards">{{'website:accessibility-standards' | f-m-i18n}}</m-link>
-            </mw-card>
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="normesIcon"
+                             alt="" />
+                        <h2>{{'website:standards' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quaerat sint esse, natus libero amet perferendis atque. Blanditiis ea fugit provident nobis qui? A delectus suscipit autem dolor blanditiis quasi.
+                    </p>
+                    <m-link slot="link"
+                            :url="uiStandards">{{'website:standards-ui' | f-m-i18n}}</m-link>
+                    <m-link slot="link"
+                            :url="editorialStandards">{{'website:standards-editorial' | f-m-i18n}}</m-link>
+                    <m-link slot="link"
+                            :url="devStandards">{{'website:standards-development' | f-m-i18n}}</m-link>
+                    <m-link slot="link"
+                            :url="a11yStandards">{{'website:accessibility-standards' | f-m-i18n}}</m-link>
+                </mw-card>
 
-            <mw-card>
-                <template slot="header">
-                    <img class="mw-home__icon"
-                         :src="philoIcon"
-                         alt="" />
-                    <h2>{{'website:philosophy' | f-m-i18n}}</h2>
-                </template>
-                <p slot="content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur debitis aut fuga cupiditate odio deserunt soluta, blanditiis obcaecati illo, aliquid cum, excepturi ratione totam nihil in quasi suscipit ipsa!
-                </p>
-                <m-link slot="link"
-                        :url="philosophy">{{'website:philosophy' | f-m-i18n}}</m-link>
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="philoIcon"
+                             alt="" />
+                        <h2>{{'website:philosophy' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur debitis aut fuga cupiditate odio deserunt soluta, blanditiis obcaecati illo, aliquid cum, excepturi ratione totam nihil in quasi suscipit ipsa!
+                    </p>
+                    <m-link slot="link"
+                            :url="philosophy">{{'website:philosophy' | f-m-i18n}}</m-link>
 
-            </mw-card>
-            <!-- <article class="modul-home-content__panel"
+                </mw-card>
+                <!-- <article class="modul-home-content__panel"
                  tabindex="0"
                  @click="onRoute(writingStandards)">
             <header>
@@ -83,6 +84,7 @@
                 {{'pages:writing-standards-desc' | f-m-i18n}}
             </p>
         </article> -->
+            </div>
         </div>
     </section>
 </div>
