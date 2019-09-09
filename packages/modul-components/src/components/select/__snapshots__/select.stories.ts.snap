@@ -3,84 +3,90 @@
 exports[`Storyshots components|m-select default 1`] = `
 <div>
   <div
-    class="m-select"
-    style="width: 100%; max-width: 288px;"
-    tabindex="0"
+    class="m-base-select"
   >
-    <div
-      class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
-    >
+    <div>
       <div
-        class="m-input-style__main"
+        class="m-select"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
       >
         <div
-          class="m-input-style__body"
+          class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
+          style="margin-top: 10px;"
         >
-          <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
-           
           <div
-            class="m-input-style__input"
+            class="m-input-style__main"
           >
             <div
-              class="m-input-style__prefix"
-            />
-             
-            <div
-              class="m-input-style__content"
+              class="m-input-style__body"
             >
-              <div>
-                avocados
-              </div>
-                
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <div
-                class="m-select__arrow"
+              <span
+                class="m-input-style__label"
+                style="z-index: -1;"
               >
-                <svg
-                  aria-hidden="true"
-                  class="m-icon m-select__arrow__icon"
-                  height="16px"
-                  width="16px"
+                <span
+                  class="m-input-style__text"
+                />
+              </span>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <div
+                  class="m-input-style__prefix"
+                />
+                 
+                <div
+                  class="m-input-style__content"
                 >
+                  <div>
+                    The selection is :avocados
+                  </div>
+                    
                   <!---->
                    
-                  <use
-                    aria-hidden="true"
-                    class=""
-                  />
-                </svg>
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="16px"
+                      width="16px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
               </div>
-               
-              <!---->
             </div>
+             
+            <!---->
           </div>
         </div>
          
-        <!---->
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
       </div>
-    </div>
-     
-    <div
-      class="m-validation-message m-select__validation-message"
-    >
-      <!---->
-       
-      <!---->
     </div>
      
     <div
