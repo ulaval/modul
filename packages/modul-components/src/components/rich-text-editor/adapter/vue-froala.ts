@@ -13,7 +13,7 @@ import { replaceTags } from '../../../utils/clean/htmlClean';
 import { MFile } from '../../../utils/file/file';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
-import { initializeImageCommands } from './image-layout-commands';
+import { ImageLayoutCommands } from './image-layout-commands';
 import { PopupPlugin } from './popup-plugin';
 import SubMenuPlugin from './submenu-plugin';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
@@ -256,7 +256,7 @@ const ENTER_KEYCODE: number = 13;
             }
         });
 
-        initializeImageCommands($.FroalaEditor);
+        ImageLayoutCommands.register($.FroalaEditor);
     }
 
     protected filesReady(files: MFile[]): void {
@@ -467,7 +467,7 @@ const ENTER_KEYCODE: number = 13;
                 [froalaEvents.ImageInserted]: (_e, editor, img: HTMLImageElement[]) => {
                     if (editor.opts.modulImageUploaded) {
                         img[0].alt = '';
-                        img[0].classList.add('m--fr-block-left');
+                        img[0].classList.add(ImageLayoutCommands.DEFAULT_IMG_LAYOUT_CLASS);
                         this.updateModel();
                     } else {
                         setTimeout(() => {

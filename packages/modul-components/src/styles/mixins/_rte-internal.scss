@@ -1,56 +1,38 @@
-.m-u--app-body i {
+$m--fr-active-color: #222;
+$m--fr-active-background: #d6d6d6;
+
+.fr-btn i {
     font-style: normal;
 }
 
-img {
+img.fr-dib {
     max-width: 100%;
+}
 
-    &.m--is-not-aligned {
-        max-width: 100%;
-        display: block;
-        margin: $m-spacing;
-        margin-left: 0;
-    }
+.fr-popup .fr-command.fr-btn.m--fr-active {
+    color: $m--fr-active-color;
+    background: $m--fr-active-background;
+}
 
-    &.m--is-aligned {
-        max-width: 100%;
-        display: block;
-    }
+.m--fr-image-block-left {
+    display: block;
+    margin: $m-spacing;
+    margin-left: 0;
+}
 
-    &.m--is-aligned:not(.fr-fil):not(.fr-fir) {
-        margin: $m-spacing auto;
-    }
+.m--fr-image-block-center {
+    display: block;
+    margin: $m-spacing auto;
+}
 
-    &.fr-fil {
-        float: left;
-        margin-right: $m-spacing;
-    }
+.m--fr-image-float-left {
+    float: left;
+    margin: $m-spacing;
+    margin-left: 0;
+}
 
-    &.fr-fir {
-        float: right;
-        margin-left: $m-spacing;
-    }
-
-    &.m--fr-block-left {
-        display: block;
-        margin: $m-spacing;
-        margin-left: 0;
-    }
-
-    &.m--fr-block-center {
-        display: block;
-        margin: $m-spacing auto;
-    }
-
-    &.m--fr-inline-left {
-        float: left;
-        margin: $m-spacing;
-        margin-left: 0;
-    }
-
-    &.m--fr-inline-right {
-        float: right;
-        margin: $m-spacing;
-        margin-right: 0;
-    }
+.m--fr-image-float-right {
+    float: right;
+    margin: $m-spacing;
+    margin-right: 0;
 }
