@@ -1,7 +1,7 @@
 import imageBlockCenterIcon from '../../../assets/icons/svg/Froala-image-block-center.svg';
 import imageBlockLeftIcon from '../../../assets/icons/svg/Froala-image-block-left.svg';
-import imageFloatLeftIcon from '../../../assets/icons/svg/Froala-image-inline-left.svg';
-import imageFloatRightIcon from '../../../assets/icons/svg/Froala-image-inline-right.svg';
+import imageFloatLeftIcon from '../../../assets/icons/svg/Froala-image-float-left.svg';
+import imageFloatRightIcon from '../../../assets/icons/svg/Froala-image-float-right.svg';
 import { ModulVue } from '../../../utils/vue/vue';
 
 export namespace ImageLayoutCommands {
@@ -53,7 +53,7 @@ export namespace ImageLayoutCommands {
     }
 
     function getCommandList(): string[] {
-        if (this.$oel[0].parentNode.__vue__.config.imageHideInlineLayout) {
+        if (this.$oel[0].parentNode.__vue__.config.imageHideFloatLayout) {
             return [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD];
         } else {
             return [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD];

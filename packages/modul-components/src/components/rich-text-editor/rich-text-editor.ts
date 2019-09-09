@@ -34,7 +34,7 @@ export enum MRichTextEditorMode {
 
 export enum MRichTextEditorOption {
     IMAGE,
-    IMAGE_HIDE_INLINE_LAYOUT
+    IMAGE_HIDE_FLOAT_LAYOUT
 }
 
 export type MRichTextEditorOptions = MRichTextEditorOption[];
@@ -130,7 +130,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
             scrollableContainer: this.getScrollableContainer(),
-            imageHideInlineLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_INLINE_LAYOUT)
+            imageHideFloatLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT)
         };
 
         return Object.assign(this.getOptions(), propOptions);
