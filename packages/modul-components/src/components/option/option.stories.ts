@@ -88,12 +88,14 @@ storiesOf(`${componentsHierarchyRootSeparator}${OPTION_NAME}/skin`, module)
         data: () => ({
             model1: ''
         }),
-        template: `<m-option skin="over-dark">
+        template: `<div style="position:relative;background-color:black;">
+                    <m-option skin="over-dark">
                        <m-option-item-add></m-option-item-add>
                        <m-option-item-edit></m-option-item-edit>
                        <m-option-item-archive></m-option-item-archive>
                        <m-option-item-delete :disabled="true"></m-option-item-delete>
                    </m-option>
+                   </div>
                    `
     }))
     .add('skin="over-mixed"', () => ({
