@@ -1,34 +1,37 @@
 <!--
-Please review the contribution guidelines: https://github.com/ulaval/modul-components/blob/develop/.github/CONTRIBUTING.md.
+Veuillez consulter les directives de contribution / Please review the contribution guidelines: https://github.com/ulaval/modul-components/blob/develop/.github/CONTRIBUTING.md.
 -->
 
 <!--
-Update "[ ]" to "[x]" to check a box
 Content can be written in English or in French
 -->
 
 ## Description
-<!-- Provide a small description of the changes introduced by this PR -->
+<!-- Décrivez brièvement les changements introduits par ce PR / Provide a small description of the changes introduced by this PR -->
 
-## Types of changes
-<!--- Indicated here what types of changes does your code introduce -->
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (new component, directive, filter or service)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] Enhancement (non-breaking change which adds functionality such as new props, slots, event or method to an existing service)
-- [ ] Refactoring/cleanup (non-breaking change that doesn't add any features but makes things better)
-- [ ] Documentation/storybook (a change that do not affect any packages)
+## Types de changements
+<!--- Indiquez ici quels types de modifications votre code introduit / Indicated here what types of changes does your code introduce -->
+- [ ] Correction de bug (sans `breaking change`)
+- [ ] Amélioration (ajout par example une nouvelle propriété, évènement, slot ou méthode à un composant existant sans `breaking change`)
+- [ ] Nouvelle fonctionalité (nouveau composant, directive, filtre ou service)
+- [ ] Breaking change (modification à une fonctionnalités existante qui nécessite une migration *remplir la section release note*)
+- [ ] Refactoring/ménage (sans `breaking change`)
+- [ ] Documentation/storybook (changement à la documentation ou aux storybooks qui n'affecte aucun package)
+- [ ] Autre
+<!-- si vous avez sélectionner autre, préciser ici -->
 
-## How can this be tested
-- [ ] Unit test (A new unit test as been created)
-- [ ] Storybook (Indicate the name of the storybook to test the PR)
-- [ ] Manual/Sandboxe (Indicate the name of the sandbox to test the PR)
-<!--- Please describe how you tested your changes. -->
+## Comment cela peut-il être testé?
+<!--- Décrivez comment vous avez testé vos modifications / Please describe how you tested your changes -->
+- [ ] Test unitaire (un nouveau test unitaire à été fait)
+- [ ] Storybook
+- [ ] Test manuel / Sandboxes
+- [ ] Autre
+<!-- si vous avez sélectionner autre, préciser ici -->
 
-## Include this section in the release notes
-<!-- If any new breaking changes, include release notes here... (in english)  -->
+## Inclure cette section dans les release notes
+<!-- Pour chaque breaking changes , inscrire la description du changement et les instructions pour la migration -->
 
-## Links to issues
-<!-- Add any links to jira or github issue here...-->
+## Liens vers les récits Jira
+<!-- Si vous êtes un contributeur interne, ajouter les liens vers vos billets Jira. -->
 
-<!-- Thanks for contributing! -->
+<!--  Merci d'avoir contribué! / Thanks for contributing! -->
