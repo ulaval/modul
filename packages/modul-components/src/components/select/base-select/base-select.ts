@@ -105,10 +105,12 @@ export class MBaseSelect extends ModulVue {
         if (this.focusedIndex > -1) {
             this.focusedIndex++;
             if (this.focusedIndex >= this.items.length) {
-                this.focusedIndex = 0;
+
+                this.focus(this.items[0], 0);
             }
         } else {
-            this.focusedIndex = this.items.length === 0 ? -1 : 0;
+            const _focusedIndex: number = this.items.length === 0 ? -1 : 0;
+            this.focus(this.items[_focusedIndex], _focusedIndex);
         }
         this.scrollToFocused();
     }
@@ -117,10 +119,12 @@ export class MBaseSelect extends ModulVue {
         if (this.focusedIndex > -1) {
             this.focusedIndex--;
             if (this.focusedIndex < 0) {
-                this.focusedIndex = this.items.length - 1;
+                const _focusedItemIndex: number = this.items.length - 1;
+                this.focus(this.items[_focusedItemIndex], _focusedItemIndex);
             }
         } else {
-            this.focusedIndex = this.items.length - 1;
+            const _focusedItemIndex: number = this.items.length - 1;
+            this.focus(this.items[_focusedItemIndex], _focusedItemIndex);
         }
         this.scrollToFocused();
     }
@@ -132,10 +136,16 @@ export class MBaseSelect extends ModulVue {
         return false;
     }
 
-    @Emit('select')
+    @Emit('select-item')
     select(option: any, index: number): void {
         this.internalOpen = false;
     }
+
+    @Emit('focus-item')
+    focus(option: any, index: number): void {
+        this.focusedIndex = index;
+    }
+
 
     // keyboard navigation
     onKeydownDown($event: KeyboardEvent): void {

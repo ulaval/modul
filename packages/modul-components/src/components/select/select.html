@@ -4,7 +4,7 @@
                :selected-items="selectedItems"
                :open.sync="open"
                :input-max-width="inputMaxWidth"
-               @select="onSelect">
+               @select-item="onSelect">
     <template v-slot:default="scope">
         <div class="m-select"
              :class="{ 'm--is-open': open,
