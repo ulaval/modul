@@ -26,6 +26,7 @@ import ErrorMessage from './error-message/error-message';
 import ErrorAccessDenied from './error-pages/error-access-denied/error-access-denied';
 import ErrorBrowserNotSupported from './error-pages/error-browser-not-supported/error-browser-not-supported';
 import ErrorConfigNotSupported from './error-pages/error-config-not-supported/error-config-not-supported';
+import ErrorConflictPlugin from './error-pages/error-conflict/error-conflict';
 import ErrorCookiesNotSupported from './error-pages/error-cookies-not-supported/error-cookies-not-supported';
 import ErrorPageNotFoundPlugin from './error-pages/error-page-not-found/error-page-not-found';
 import ErrorResourceUnavailablePlugin from './error-pages/error-resource-unavailable/error-resource-unavailable';
@@ -137,6 +138,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ErrorConfigNotSupported);
         Vue.use(ErrorCookiesNotSupported);
         Vue.use(ErrorMessage);
+        Vue.use(ErrorConflictPlugin);
         Vue.use(ErrorPageNotFoundPlugin);
         Vue.use(ErrorResourceUnavailablePlugin);
         Vue.use(ErrorTechnicalDifficultyPlugin);

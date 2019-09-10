@@ -33,6 +33,7 @@ export const DYNAMIC_TEMPLATE_NAME: string = 'm-dynamic-template';
 export const ERROR_ACCESS_DENIED_NAME: string = 'm-error-access-denied';
 export const ERROR_BROWSER_NOT_SUPPORTED_NAME: string = 'm-error-browser-not-supported';
 export const ERROR_CONFIG_NOT_SUPPORTED_NAME: string = 'm-error-config-not-supported';
+export const ERROR_CONFLICT_NAME: string = 'm-error-conflict';
 export const ERROR_COOKIES_NOT_SUPPORTED_NAME: string = 'm-error-cookies-not-supported';
 export const ERROR_MESSAGE_NAME: string = 'm-error-message';
 export const ERROR_PAGE_NOT_FOUND_NAME: string = 'm-error-page-not-found';
