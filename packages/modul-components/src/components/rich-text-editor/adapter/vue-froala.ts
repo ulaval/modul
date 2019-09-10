@@ -9,9 +9,6 @@ import $ from 'jquery';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import boldIcon from '../../../assets/icons/svg/Froala-bold.svg';
-import imageAlignCenterIcon from '../../../assets/icons/svg/Froala-image-align-center.svg';
-import imageAlignLeftIcon from '../../../assets/icons/svg/Froala-image-align-left.svg';
-import imageAlignRightIcon from '../../../assets/icons/svg/Froala-image-align-right.svg';
 import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
 import stylesIcon from '../../../assets/icons/svg/Froala-styles.svg';
@@ -22,6 +19,7 @@ import { MFile } from '../../../utils/file/file';
 import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
+import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
 // Bug placeholder in the version 3.0.5.
 // Bug watch 'The button "Special Characters" isn't work in mobile'  https://github.com/froala/wysiwyg-editor/issues/3650
@@ -202,6 +200,7 @@ const SCROLL_TO_OFFSET: number = -50;
             }
         });
 
+        ImageLayoutCommands.register(FroalaEditor);
         FroalaEditor.DefineIcon('image-align-center', { SVG: (imageAlignCenterIcon as string), template: 'custom-icons' });
         FroalaEditor.DefineIcon('image-align-left', { SVG: (imageAlignLeftIcon as string), template: 'custom-icons' });
         FroalaEditor.DefineIcon('image-align-right', { SVG: (imageAlignRightIcon as string), template: 'custom-icons' });
@@ -367,10 +366,10 @@ const SCROLL_TO_OFFSET: number = -50;
                     global.console.log(this.froalaEditor.opts);
                     if (this.froalaEditor.opts.modulImageUploaded) {
                         $img[0].alt = '';
+                        $img[0].classList.add(ImageLayoutCommands.DEFAULT_IMG_LAYOUT_CLASS);
 
                         if (!this.froalaEditor.opts.imageEditButtons.includes('imageAlign')) {
                             $img[0].classList.add('fr-fil');
-                        }
 
                         this.updateModel();
                     } else {

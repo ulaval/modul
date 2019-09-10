@@ -16,6 +16,7 @@ import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import FileUploadPlugin from '../file-upload/file-upload';
 import InputStylePlugin from '../input-style/input-style';
 import ValidationMessagePlugin from '../validation-message/validation-message';
+import { ImageLayoutCommands } from './adapter/image-layout-commands';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
@@ -33,7 +34,7 @@ export enum MRichTextEditorMode {
 
 export enum MRichTextEditorOption {
     IMAGE,
-    IMAGE_HIDE_LAYOUT_MENU
+    IMAGE_HIDE_FLOAT_LAYOUT
 }
 
 export type MRichTextEditorOptions = MRichTextEditorOption[];
@@ -128,7 +129,8 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             // Hack to "hide" the default froala placeholder text
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
-            scrollableContainer: this.getScrollableContainer()
+            scrollableContainer: this.getScrollableContainer(),
+            imageHideFloatLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT)
         };
 
         return Object.assign(this.getOptions(), propOptions);
@@ -143,7 +145,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
         if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
             richTextEditorOptions.pluginsEnabled.push('image');
-
+            // let imageEditButtons: string[] = ['imageReplace', ImageLayoutCommands.IMG_LAYOUT_CMD, 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
             // toolbar for desktop devices
             richTextEditorOptions.toolbarButtons.moreRich.buttons.push('insertImage');
             // for mobile devices
