@@ -19,7 +19,7 @@ Une description claire et concise du problème.
 1. Aller à '...'
 2. Cliquer sur '....'
 3. Faites défiler jusqu'à '....'
-4. Voir erreur
+4. Comportement observé
 
 **Comportement attendu / Expected behavior**
 Une description claire et concise de ce à quoi vous vous attendiez.
