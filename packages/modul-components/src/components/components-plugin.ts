@@ -1,5 +1,4 @@
 import Vue, { PluginObject } from 'vue';
-
 import { AddressLookupPluginOptions } from '../utils/address-lookup/address-lookup.plugin';
 import LoggerPlugin from '../utils/logger/logger';
 import AccordionGroupPlugin from './accordion-group/accordion-group';
@@ -29,6 +28,7 @@ import ErrorBrowserNotSupported from './error-pages/error-browser-not-supported/
 import ErrorConfigNotSupported from './error-pages/error-config-not-supported/error-config-not-supported';
 import ErrorCookiesNotSupported from './error-pages/error-cookies-not-supported/error-cookies-not-supported';
 import ErrorPageNotFoundPlugin from './error-pages/error-page-not-found/error-page-not-found';
+import ErrorResourceUnavailablePlugin from './error-pages/error-resource-unavailable/error-resource-unavailable';
 import ErrorTechnicalDifficultyPlugin from './error-pages/error-technical-difficulty/error-technical-difficulty';
 import ExpandableLayoutPlugin from './expandable-layout/expandable-layout';
 import FileSelectPlugin from './file-select/file-select';
@@ -95,6 +95,7 @@ import SlideTransitionPlugin from './transitions/slide-transition/slide-transiti
 import TreePlugin from './tree/tree';
 import ValidationMessagePlugin from './validation-message/validation-message';
 
+
 export interface ComponentPluginOptions {
     richTextOptions?: RichTextLicensePluginOptions;
     loquateOptions?: AddressLookupPluginOptions;
@@ -137,6 +138,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ErrorCookiesNotSupported);
         Vue.use(ErrorMessage);
         Vue.use(ErrorPageNotFoundPlugin);
+        Vue.use(ErrorResourceUnavailablePlugin);
         Vue.use(ErrorTechnicalDifficultyPlugin);
         Vue.use(ExpandableLayoutPlugin);
         Vue.use(MessagePagePlugin);

@@ -36,6 +36,7 @@ export const ERROR_CONFIG_NOT_SUPPORTED_NAME: string = 'm-error-config-not-suppo
 export const ERROR_COOKIES_NOT_SUPPORTED_NAME: string = 'm-error-cookies-not-supported';
 export const ERROR_MESSAGE_NAME: string = 'm-error-message';
 export const ERROR_PAGE_NOT_FOUND_NAME: string = 'm-error-page-not-found';
+export const ERROR_RESOURCE_UNAVAILABLE_NAME: string = 'm-error-resource-unavailable';
 export const ERROR_TECHNICAL_DIFFICULTY_NAME: string = 'm-error-technical-difficulty';
 export const EXPANDABLE_LAYOUT_NAME: string = 'm-expandable-layout';
 export const FILE_SELECT_NAME: string = 'm-file-select';

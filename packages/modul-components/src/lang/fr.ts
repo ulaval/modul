@@ -28,6 +28,7 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../components/error-pages/error-cookies-not-supported/error-cookies-not-supported.lang.fr.json'),
                 require('../components/error-message/error-message.lang.fr.json'),
                 require('../components/error-pages/error-page-not-found/error-page-not-found.lang.fr.json'),
+                require('../components/error-pages/error-resource-unavailable/error-resource-unavailable.lang.fr.json'),
                 require('../components/error-pages/error-technical-difficulty/error-technical-difficulty.lang.fr.json'),
                 require('../components/file-select/file-select.lang.fr.json'),
                 require('../components/file-upload/file-upload.lang.fr.json'),
