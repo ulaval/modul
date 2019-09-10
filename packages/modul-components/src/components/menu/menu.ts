@@ -118,7 +118,6 @@ export class MMenu extends BaseMenu implements Menu {
         if (this.internalItems) {
             this.internalItems.forEach((item) => {
                 if (!item.isDisabled) {
-                    item.propOpen = false;
                     if (item.value === this.model) {
                         item.selected = true;
                     } else if (item.selected) {
@@ -128,15 +127,19 @@ export class MMenu extends BaseMenu implements Menu {
             });
 
             this.internalItems.forEach((item) => {
+                item.propOpen = false;
                 if (!item.isDisabled && item.group) {
                     let groupSelected: boolean = false;
                     item.$children.forEach(itemGroup => {
                         itemGroup.$children.forEach((subItem: MMenuItem) => {
-                            subItem.selected = this.isRouterLinkActive(subItem);
+                            if (subItem.isUrl) {
+                                subItem.selected = this.isRouterLinkActive(subItem);
+                            }
+
                             if (subItem.selected) {
-                                item.propOpen = subItem.selected;
-                                item.selected = subItem.selected;
-                                groupSelected = subItem.selected;
+                                item.propOpen = true;
+                                item.selected = true;
+                                groupSelected = true;
                             }
                         });
                     });
