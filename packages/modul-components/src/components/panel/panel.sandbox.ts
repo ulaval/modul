@@ -13,7 +13,7 @@ export class MPanelSandbox extends Vue {
     public hasBody: boolean = true;
     public hasFooter: boolean = true;
 
-    public getSkinButton(value: boolean): string {
+    public getSkinButton(value: boolean): MButtonSkin {
         return value ? MButtonSkin.Primary : MButtonSkin.Secondary;
     }
 }
