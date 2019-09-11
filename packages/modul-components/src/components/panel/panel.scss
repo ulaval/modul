@@ -203,7 +203,7 @@ $m-panel--screen--min: 640px;
     }
 
     &__footer {
-        border-top: 1px solid $m-color--grey;
+        border-top: 1px solid $m-color--grey-light;
     }
 
     &[max-width~="#{ $m-panel--screen--max }"] {

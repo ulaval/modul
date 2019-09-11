@@ -1,6 +1,18 @@
 <div>
     <m-panel>
-        <h2 slot="header">I am a title</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur odit ut excepturi omnis ea explicabo blanditiis quaerat cupiditate odio a?</p>
+        <h2 v-if="hasHeader"
+            slot="header">I am a title</h2>
+        <p v-if="hasBody">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur odit ut excepturi omnis ea explicabo blanditiis quaerat cupiditate odio a?</p>
+        <p v-if="hasFooter"
+           slot="footer">I am footer</p>
     </m-panel>
+    <m-button class="m-u--margin-top"
+              :skin="getSkinButton(hasHeader)"
+              @click="hasHeader = !hasHeader">Toogle header</m-button>
+    <m-button class="m-u--margin-top"
+              :skin="getSkinButton(hasBody)"
+              @click="hasBody = !hasBody">Toogle Body</m-button>
+    <m-button class="m-u--margin-top"
+              :skin="getSkinButton(hasFooter)"
+              @click="hasFooter = !hasFooter">Toogle Footer</m-button>
 </div>
