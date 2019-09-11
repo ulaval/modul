@@ -91,23 +91,20 @@ export class MTable extends ModulVue {
 
         switch (columnTable.sortDirection) {
             case MColumnSortDirection.None:
-                columnTable.sortDirection = columnTable.defaultSortDirection ? columnTable.defaultSortDirection : MColumnSortDirection.Asc;
+                columnTable.sortDirection = MColumnSortDirection.Asc;
                 columnTable.isInitialSort = true;
                 break;
             case MColumnSortDirection.Asc:
-                if (columnTable.enableUnsort) {
-                    columnTable.sortDirection = columnTable.defaultSortDirection === MColumnSortDirection.Dsc ? MColumnSortDirection.None : MColumnSortDirection.Dsc;
-                } else {
-                    columnTable.sortDirection = MColumnSortDirection.Dsc;
-                }
+                columnTable.sortDirection = MColumnSortDirection.Dsc;
                 columnTable.isInitialSort = false;
                 break;
             case MColumnSortDirection.Dsc:
                 if (columnTable.enableUnsort) {
-                    columnTable.sortDirection = (columnTable.defaultSortDirection === MColumnSortDirection.Asc || columnTable.defaultSortDirection === undefined) ? MColumnSortDirection.None : MColumnSortDirection.Asc;
+                    columnTable.sortDirection = MColumnSortDirection.None;
                 } else {
                     columnTable.sortDirection = MColumnSortDirection.Asc;
                 }
+
                 columnTable.isInitialSort = false;
                 break;
         }
