@@ -2,7 +2,7 @@
 
 exports[`MTextArea max-length should render correctly state when text length is lesser than max length 1`] = `
 <div class="m-textarea" style="width:100%;max-width:288px;">
-  <div class="m-input-style m--has-value m--is-tag-default" style="margin-top:10px;">
+  <div class="m-input-style m--has-value m--is-tag-default" style="margin-top:;">
     <div class="m-input-style__main">
       <div class="m-input-style__body"><span class="m-input-style__label" style="z-index:-1;"><span class="m-input-style__text"></span></span>
         <div class="m-input-style__input">
@@ -21,7 +21,7 @@ exports[`MTextArea max-length should render correctly state when text length is 
 
 exports[`MTextArea max-length should render invalid state when text length is greater than max length 1`] = `
 <div class="m-textarea" style="width:100%;max-width:288px;">
-  <div class="m-input-style m--has-value m--is-tag-default" style="margin-top:10px;">
+  <div class="m-input-style m--has-value m--is-tag-default" style="margin-top:;">
     <div class="m-input-style__main">
       <div class="m-input-style__body"><span class="m-input-style__label" style="z-index:-1;"><span class="m-input-style__text"></span></span>
         <div class="m-input-style__input">
@@ -40,7 +40,7 @@ exports[`MTextArea max-length should render invalid state when text length is gr
 
 exports[`MTextArea should render correctly 1`] = `
 <div class="m-textarea" style="width:100%;max-width:288px;">
-  <div class="m-input-style m--is-tag-default" style="margin-top:10px;">
+  <div class="m-input-style m--is-tag-default" style="margin-top:;">
     <div class="m-input-style__main">
       <div class="m-input-style__body"><span class="m-input-style__label" style="z-index:-1;"><span class="m-input-style__text"></span></span>
         <div class="m-input-style__input">
