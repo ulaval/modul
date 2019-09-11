@@ -21,6 +21,8 @@ import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
+// import { PopupPlugin } from './popup-plugin';
+// import SubMenuPlugin from './submenu-plugin';
 // Bug placeholder in the version 3.0.5.
 // Bug watch 'The button "Special Characters" isn't work in mobile'  https://github.com/froala/wysiwyg-editor/issues/3650
 // Bug watch "JQuery dependence isn't fully removed from Froala" https://github.com/froala/wysiwyg-editor/issues/3649
@@ -201,9 +203,6 @@ const SCROLL_TO_OFFSET: number = -50;
         });
 
         ImageLayoutCommands.register(FroalaEditor);
-        FroalaEditor.DefineIcon('image-align-center', { SVG: (imageAlignCenterIcon as string), template: 'custom-icons' });
-        FroalaEditor.DefineIcon('image-align-left', { SVG: (imageAlignLeftIcon as string), template: 'custom-icons' });
-        FroalaEditor.DefineIcon('image-align-right', { SVG: (imageAlignRightIcon as string), template: 'custom-icons' });
     }
 
     protected filesReady(files: MFile[]): void {
@@ -362,15 +361,9 @@ const SCROLL_TO_OFFSET: number = -50;
                     this.updateModel();
                 },
                 [froalaEvents.ImageInserted]: ($img) => {
-                    global.console.log('FroalaEvents.ImageInserted');
-                    global.console.log(this.froalaEditor.opts);
                     if (this.froalaEditor.opts.modulImageUploaded) {
                         $img[0].alt = '';
                         $img[0].classList.add(ImageLayoutCommands.DEFAULT_IMG_LAYOUT_CLASS);
-
-                        if (!this.froalaEditor.opts.imageEditButtons.includes('imageAlign')) {
-                            $img[0].classList.add('fr-fil');
-
                         this.updateModel();
                     } else {
                         setTimeout(() => {

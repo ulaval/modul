@@ -7,32 +7,30 @@ $m--fr-active-background: #d6d6d6;
 
 img.fr-dib {
     max-width: 100%;
+
+    &.m--fr-image-block-left {
+        margin: $m-spacing;
+        margin-left: 0;
+    }
+
+    &.m--fr-image-block-center {
+        margin: $m-spacing auto;
+    }
+
+    &.m--fr-image-float-left {
+        float: left;
+        margin: $m-spacing;
+        margin-left: 0;
+    }
+
+    &.m--fr-image-float-right {
+        float: right;
+        margin: $m-spacing;
+        margin-right: 0;
+    }
 }
 
 .fr-popup .fr-command.fr-btn.m--fr-active {
     color: $m--fr-active-color;
     background: $m--fr-active-background;
-}
-
-.m--fr-image-block-left {
-    display: block;
-    margin: $m-spacing;
-    margin-left: 0;
-}
-
-.m--fr-image-block-center {
-    display: block;
-    margin: $m-spacing auto;
-}
-
-.m--fr-image-float-left {
-    float: left;
-    margin: $m-spacing;
-    margin-left: 0;
-}
-
-.m--fr-image-float-right {
-    float: right;
-    margin: $m-spacing;
-    margin-right: 0;
 }

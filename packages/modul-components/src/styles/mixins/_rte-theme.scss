@@ -54,24 +54,6 @@ $m-fr-icon-size: 14px !default;
         @include m-table();
     }
 
-    img {
-        max-width: 100%;
-        display: block;
-        margin: auto;
-        text-align: center;
-        position: relative;
-
-        &.fr-fil {
-            float: left;
-            margin-right: $m-spacing--s;
-        }
-
-        &.fr-fir {
-            float: right;
-            margin-left: $m-spacing--s;
-        }
-    }
-
     a {
         @extend .m-u--link;
 
