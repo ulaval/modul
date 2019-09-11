@@ -21,11 +21,12 @@ $m-input-style-border-radius: 3px;
     position: relative;
     display: inline-flex;
     outline: none;
+    transition: margin-top $m-transition-duration ease;
 
     &__main {
         border: 1px solid $m-color--grey-light;
         border-radius: $m-input-style-border-radius;
-        transition: border-color $m-transition-duration--l ease-in-out, margin-top $m-transition-duration ease;
+        transition: border-color $m-transition-duration--l ease-in-out;
         display: inline-flex;
         width: 100%;
     }
@@ -36,7 +37,6 @@ $m-input-style-border-radius: 3px;
         flex-direction: column;
         width: 100%;
         padding: $m-input-style--padding;
-        transition: border-color $m-transition-duration--l ease-in-out, margin-top $m-transition-duration ease;
     }
 
     &__append {

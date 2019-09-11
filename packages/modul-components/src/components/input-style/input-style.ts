@@ -8,8 +8,6 @@ import I18nPlugin from '../i18n/i18n';
 import SpinnerPlugin from '../spinner/spinner';
 import WithRender from './input-style.html?style=./input-style.scss';
 
-export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
-
 @WithRender
 @Component({
     mixins: [InputState]
@@ -44,8 +42,8 @@ export class MInputStyle extends ModulVue {
         suffix: HTMLElement
     };
 
-    public labelOffset: string | undefined = CSS_LABEL_DEFAULT_MARGIN + 'px';
-    public suffixOffset: string | undefined = '0px';
+    public labelOffset: string = '';
+    public suffixOffset: string = '';
     public animReady: boolean = false;
 
     protected created(): void {
@@ -93,20 +91,18 @@ export class MInputStyle extends ModulVue {
     @Watch('isLabelUp')
     private computeLabelOffset(): void {
         if (this.label) {
-            let labelOffset: number = this.$refs.label.clientHeight / 2;
-            this.labelOffset = this.isLabelUp && labelOffset > CSS_LABEL_DEFAULT_MARGIN ? `${labelOffset}px` : `${CSS_LABEL_DEFAULT_MARGIN}px`;
-        } else {
-            this.labelOffset = undefined;
+            let labelHeight: number = this.$refs.label.clientHeight
+            let labelOffset: number = Math.ceil(labelHeight * 0.5);
+            let labelComputedStyle: CSSStyleDeclaration = window.getComputedStyle(this.$refs.label);
+            let labelfontSize: number = parseFloat(labelComputedStyle.getPropertyValue('font-size'));
+            let lines: number = Math.floor(labelHeight / labelfontSize);
+            this.labelOffset = this.isLabelUp && lines > 1 ? `${labelOffset}px` : '';
         }
     }
 
     public async computeSuffixOffset(): Promise<void> {
         await this.$nextTick();
-        if (this.label && this.$refs.suffix) {
-            this.suffixOffset = this.$refs.suffix.clientWidth + 'px';
-        } else {
-            this.suffixOffset = undefined;
-        }
+        this.suffixOffset = this.label ? this.$refs.suffix.clientWidth + 'px' : '';
     }
 
     public get isLabelUp(): boolean {

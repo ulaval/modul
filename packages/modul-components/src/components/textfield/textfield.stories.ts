@@ -46,12 +46,15 @@ storiesOf(`${componentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
         template: '<m-textfield :placeholder="placeholder"></m-textfield>'
     }))
     .add('label', () => ({
-        props: {
-            label: {
-                default: text('Label', 'A Label')
-            }
-        },
-        template: '<m-textfield :label="label"></m-textfield>'
+        data: () => ({
+            shortLabel: 'A short Label',
+            longLabel: 'A longer label. Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+        }),
+        template: `
+        <div>
+            <m-textfield :label="shortLabel"></m-textfield><br />
+            <m-textfield :label="longLabel"></m-textfield>
+        </div>`
     }))
     .add('value', () => ({
         props: {
@@ -248,7 +251,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TEXTFIELD_NAME}/max-width`, modu
             <br />
             <m-textfield label="medium" max-width="medium" value=""></m-textfield>
             <br />
-            <m-textfield label="large" max-width="large" value=""></m-textfield>
+            <m-textfield label="Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quae tempore aut sit doloribus error maiores unde repellat asperiores! Voluptatum doloremque pariatur ex minima culpa nobis, ullam blanditiis officiis numquam." max-width="large" value=""></m-textfield>
         </div>
         `
     }));
