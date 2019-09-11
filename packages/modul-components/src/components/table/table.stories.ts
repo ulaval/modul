@@ -6,6 +6,11 @@ import TablePlugin, { MColumnSortDirection, MColumnTable } from './table';
 Vue.use(TablePlugin);
 
 function defaultOnSortApplied(columnTable: MColumnTable): void {
+    if (columnTable.sortDirection === MColumnSortDirection.None) {
+        this.$data.rows.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+        return;
+    }
+
     this.$data.rows.sort((a, b) => {
         if (a[columnTable.dataProp] < b[columnTable.dataProp]) {
             return -1 * columnTable.sortDirection!;
@@ -278,29 +283,15 @@ storiesOf(`${componentsHierarchyRootSeparator}${TABLE_NAME}`, module)
         props: {
             columns: {
                 default: [
-                    { id: 'name', title: 'Name', dataProp: 'name', sortable: true, enableUnsort: true, defaultSortDirection: MColumnSortDirection.None },
-                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true, defaultSortDirection: MColumnSortDirection.None },
-                    { id: 'username', title: 'Username', dataProp: 'username', sortable: true, enableUnsort: true, defaultSortDirection: MColumnSortDirection.None }
+                    { id: 'name', title: 'Name', dataProp: 'name', sortable: true, enableUnsort: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true, defaultSortDirection: MColumnSortDirection.Dsc },
+                    { id: 'username', title: 'Username', dataProp: 'username', sortable: true, enableUnsort: true }
                 ]
             }
         },
-        template: '<m-table :columns="columns" :rows="rows" width="100%" @sort-applied="onSortApplied($event, rows)"></m-table>',
+        template: '<m-table :columns="columns" :rows="rows" width="100%" @sort-applied="onSortApplied($event)"></m-table>',
         methods: {
-            onSortApplied: (column: MColumnTable, rows: any[]): void => {
-                if (column.sortDirection === MColumnSortDirection.None) {
-                    rows.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
-                    return;
-                }
-
-                rows.sort((a, b) => {
-                    if (a[column.dataProp] < b[column.dataProp]) {
-                        return -1 * column.sortDirection!;
-                    } else if (a[column.dataProp] > b[column.dataProp]) {
-                        return 1 * column.sortDirection!;
-                    }
-                    return 0;
-                });
-            }
+            onSortApplied: defaultOnSortApplied
         }
     }))
     .add('skin="simple"', () => ({
