@@ -91,7 +91,7 @@ export class MInputStyle extends ModulVue {
     @Watch('isLabelUp')
     private computeLabelOffset(): void {
         if (this.label) {
-            let labelHeight: number = this.$refs.label.clientHeight
+            let labelHeight: number = this.$refs.label.clientHeight;
             let labelOffset: number = Math.ceil(labelHeight * 0.5);
             let labelComputedStyle: CSSStyleDeclaration = window.getComputedStyle(this.$refs.label);
             let labelfontSize: number = parseFloat(labelComputedStyle.getPropertyValue('font-size'));
