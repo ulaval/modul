@@ -8,7 +8,6 @@ exports[`Storyshots components|m-textfield default 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -89,7 +88,6 @@ exports[`Storyshots components|m-textfield disabled 1`] = `
 >
   <div
     class="m-input-style m--is-disabled m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -168,7 +166,6 @@ exports[`Storyshots components|m-textfield error 1`] = `
 >
   <div
     class="m-input-style m--has-error m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -246,7 +243,6 @@ exports[`Storyshots components|m-textfield error-message 1`] = `
 >
   <div
     class="m-input-style m--has-error m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -347,7 +343,6 @@ exports[`Storyshots components|m-textfield focus 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -358,7 +353,6 @@ exports[`Storyshots components|m-textfield focus 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -431,7 +425,6 @@ exports[`Storyshots components|m-textfield helper-message 1`] = `
 >
   <div
     class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -507,84 +500,164 @@ exports[`Storyshots components|m-textfield helper-message 1`] = `
 `;
 
 exports[`Storyshots components|m-textfield label 1`] = `
-<div
-  class="m-textfield m--has-label m--is-type-text"
-  style="width: 100%; max-width: 288px;"
->
+<div>
   <div
-    class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-textfield m--has-label m--is-type-text"
+    style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style m--has-label m--is-tag-default"
     >
       <div
-        class="m-input-style__body"
+        class="m-input-style__main"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-uuid"
-          style="margin-right: 0px;"
-        >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              A Label
-            </span>
-             
-            <!---->
-          </span>
-        </label>
-         
         <div
-          class="m-input-style__input"
+          class="m-input-style__body"
         >
-          <!---->
+          <label
+            class="m-input-style__label"
+            for="mTextfield-uuid"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                A short Label
+              </span>
+               
+              <!---->
+            </span>
+          </label>
            
           <div
-            class="m-input-style__content"
+            class="m-input-style__input"
           >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-uuid"
-              maxlength="Infinity"
-              type="text"
-            />
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                class="m-textfield__input"
+                id="mTextfield-uuid"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
                
-            <!---->
+              <!---->
+               
+              <!---->
+            </div>
              
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <!---->
+            </div>
           </div>
         </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-textfield__validation"
+    >
+      <div
+        class="m-validation-message m-textfield__validation__message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
   </div>
+  <br />
    
   <div
-    class="m-textfield__validation"
+    class="m-textfield m--has-label m--is-type-text"
+    style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-validation-message m-textfield__validation__message"
+      class="m-input-style m--has-label m--is-tag-default"
     >
-      <!---->
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mTextfield-uuid"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                A longer label. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                class="m-textfield__input"
+                id="mTextfield-uuid"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-textfield__validation"
+    >
+      <div
+        class="m-validation-message m-textfield__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
        
       <!---->
     </div>
-     
-    <!---->
   </div>
 </div>
 `;
@@ -596,7 +669,6 @@ exports[`Storyshots components|m-textfield label-up 1`] = `
 >
   <div
     class="m-input-style m--is-label-up m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -607,7 +679,6 @@ exports[`Storyshots components|m-textfield label-up 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -680,7 +751,6 @@ exports[`Storyshots components|m-textfield placeholder 1`] = `
 >
   <div
     class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -759,7 +829,6 @@ exports[`Storyshots components|m-textfield readonly 1`] = `
 >
   <div
     class="m-input-style m--is-readonly m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -838,7 +907,6 @@ exports[`Storyshots components|m-textfield required-marker 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -849,7 +917,6 @@ exports[`Storyshots components|m-textfield required-marker 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -925,7 +992,6 @@ exports[`Storyshots components|m-textfield valid 1`] = `
 >
   <div
     class="m-input-style m--is-valid m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -1003,7 +1069,6 @@ exports[`Storyshots components|m-textfield valid-message 1`] = `
 >
   <div
     class="m-input-style m--is-valid m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -1104,7 +1169,6 @@ exports[`Storyshots components|m-textfield value 1`] = `
 >
   <div
     class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -1182,7 +1246,6 @@ exports[`Storyshots components|m-textfield waiting 1`] = `
 >
   <div
     class="m-input-style m--is-waiting m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -1267,7 +1330,6 @@ exports[`Storyshots components|m-textfield word-wrap 1`] = `
 >
   <div
     class="m-input-style m--is-waiting m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -1354,7 +1416,6 @@ exports[`Storyshots components|m-textfield/Counter all props 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -1365,7 +1426,6 @@ exports[`Storyshots components|m-textfield/Counter all props 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -1502,7 +1562,6 @@ exports[`Storyshots components|m-textfield/Counter character-count 1`] = `
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -1625,7 +1684,6 @@ exports[`Storyshots components|m-textfield/Counter character-count-threshold="10
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -1762,7 +1820,6 @@ exports[`Storyshots components|m-textfield/Counter length-overflow="true" 1`] = 
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -1873,7 +1930,6 @@ exports[`Storyshots components|m-textfield/Counter max-length="20" 1`] = `
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -1984,7 +2040,6 @@ exports[`Storyshots components|m-textfield/Counter max-length="200" and :word-wr
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2109,7 +2164,6 @@ exports[`Storyshots components|m-textfield/max-width all max-width presets 1`] =
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -2120,7 +2174,6 @@ exports[`Storyshots components|m-textfield/max-width all max-width presets 1`] =
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -2192,7 +2245,6 @@ exports[`Storyshots components|m-textfield/max-width custom width 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -2203,7 +2255,6 @@ exports[`Storyshots components|m-textfield/max-width custom width 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -2275,7 +2326,6 @@ exports[`Storyshots components|m-textfield/max-width large 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -2286,7 +2336,6 @@ exports[`Storyshots components|m-textfield/max-width large 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -2358,7 +2407,6 @@ exports[`Storyshots components|m-textfield/max-width medium 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -2369,7 +2417,6 @@ exports[`Storyshots components|m-textfield/max-width medium 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -2442,7 +2489,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2453,7 +2499,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -2523,7 +2568,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2534,7 +2578,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -2604,7 +2647,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2615,7 +2657,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -2685,7 +2726,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2696,7 +2736,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -2768,7 +2807,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2779,7 +2817,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -2849,7 +2886,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2860,7 +2896,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -2932,7 +2967,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2943,7 +2977,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -3013,7 +3046,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -3024,7 +3056,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -3096,7 +3127,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -3107,7 +3137,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -3179,7 +3208,6 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -3190,13 +3218,12 @@ exports[`Storyshots components|m-textfield/max-width pyramid 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
             >
               <span>
-                large
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quae tempore aut sit doloribus error maiores unde repellat asperiores! Voluptatum doloremque pariatur ex minima culpa nobis, ullam blanditiis officiis numquam.
               </span>
                
               <!---->
@@ -3263,7 +3290,6 @@ exports[`Storyshots components|m-textfield/max-width regular 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3274,7 +3300,6 @@ exports[`Storyshots components|m-textfield/max-width regular 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -3346,7 +3371,6 @@ exports[`Storyshots components|m-textfield/max-width small 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3357,7 +3381,6 @@ exports[`Storyshots components|m-textfield/max-width small 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -3429,7 +3452,6 @@ exports[`Storyshots components|m-textfield/max-width x-small 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3440,7 +3462,6 @@ exports[`Storyshots components|m-textfield/max-width x-small 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -3512,7 +3533,6 @@ exports[`Storyshots components|m-textfield/tag-style all tag styles 1`] = `
 >
   <div
     class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-h3"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3523,7 +3543,6 @@ exports[`Storyshots components|m-textfield/tag-style all tag styles 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -3595,7 +3614,6 @@ exports[`Storyshots components|m-textfield/type all types 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3606,7 +3624,6 @@ exports[`Storyshots components|m-textfield/type all types 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -3679,7 +3696,6 @@ exports[`Storyshots components|m-textfield/type type="email" 1`] = `
 >
   <div
     class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3757,7 +3773,6 @@ exports[`Storyshots components|m-textfield/type type="number" 1`] = `
 >
   <div
     class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3835,7 +3850,6 @@ exports[`Storyshots components|m-textfield/type type="password" 1`] = `
 >
   <div
     class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -3846,7 +3860,6 @@ exports[`Storyshots components|m-textfield/type type="password" 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-uuid"
-          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
@@ -3940,7 +3953,6 @@ exports[`Storyshots components|m-textfield/type type="tel" 1`] = `
 >
   <div
     class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -4018,7 +4030,6 @@ exports[`Storyshots components|m-textfield/type type="text" 1`] = `
 >
   <div
     class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
@@ -4096,7 +4107,6 @@ exports[`Storyshots components|m-textfield/type type="url" 1`] = `
 >
   <div
     class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"

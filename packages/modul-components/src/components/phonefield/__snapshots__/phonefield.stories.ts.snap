@@ -15,7 +15,6 @@ exports[`Storyshots components|m-phonefield default 1`] = `
       >
         <div
           class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-          style="margin-top: 10px;"
         >
           <div
             class="m-input-style__main"
@@ -26,7 +25,6 @@ exports[`Storyshots components|m-phonefield default 1`] = `
               <label
                 class="m-input-style__label"
                 for="m-select-uuid"
-                style="margin-right: 0px;"
               >
                 <span
                   class="m-input-style__text"
@@ -123,7 +121,6 @@ exports[`Storyshots components|m-phonefield default 1`] = `
       <div>
         <div
           class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-          style="margin-top: 10px;"
         >
           <div
             class="m-input-style__main"
@@ -134,7 +131,6 @@ exports[`Storyshots components|m-phonefield default 1`] = `
               <label
                 class="m-input-style__label"
                 for="mIntegerfield-uuid"
-                style="margin-right: 0px;"
               >
                 <span
                   class="m-input-style__text"
@@ -221,7 +217,6 @@ exports[`Storyshots components|m-phonefield detect country 1`] = `
     >
       <div
         class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -324,7 +319,6 @@ exports[`Storyshots components|m-phonefield detect country 1`] = `
         >
           <div
             class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
-            style="margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -335,7 +329,6 @@ exports[`Storyshots components|m-phonefield detect country 1`] = `
                 <label
                   class="m-input-style__label"
                   for="m-select-uuid"
-                  style="margin-right: 0px;"
                 >
                   <span
                     class="m-input-style__text"
@@ -432,7 +425,6 @@ exports[`Storyshots components|m-phonefield detect country 1`] = `
         <div>
           <div
             class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -443,7 +435,6 @@ exports[`Storyshots components|m-phonefield detect country 1`] = `
                 <label
                   class="m-input-style__label"
                   for="mIntegerfield-uuid"
-                  style="margin-right: 0px;"
                 >
                   <span
                     class="m-input-style__text"
@@ -533,7 +524,6 @@ exports[`Storyshots components|m-phonefield disabled 1`] = `
     >
       <div
         class="m-input-style m--is-label-up m--is-disabled m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -544,7 +534,6 @@ exports[`Storyshots components|m-phonefield disabled 1`] = `
             <label
               class="m-input-style__label"
               for="m-select-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -626,7 +615,6 @@ exports[`Storyshots components|m-phonefield disabled 1`] = `
     <div>
       <div
         class="m-input-style m-phonefield__number m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -637,7 +625,6 @@ exports[`Storyshots components|m-phonefield disabled 1`] = `
             <label
               class="m-input-style__label"
               for="mIntegerfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -718,7 +705,6 @@ exports[`Storyshots components|m-phonefield error 1`] = `
     >
       <div
         class="m-input-style m--is-label-up m--has-cursor-pointer m--has-error m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -729,7 +715,6 @@ exports[`Storyshots components|m-phonefield error 1`] = `
             <label
               class="m-input-style__label"
               for="m-select-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -826,7 +811,6 @@ exports[`Storyshots components|m-phonefield error 1`] = `
     <div>
       <div
         class="m-input-style m-phonefield__number m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -837,7 +821,6 @@ exports[`Storyshots components|m-phonefield error 1`] = `
             <label
               class="m-input-style__label"
               for="mIntegerfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -917,7 +900,6 @@ exports[`Storyshots components|m-phonefield error message 1`] = `
     >
       <div
         class="m-input-style m--is-label-up m--has-cursor-pointer m--has-error m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -928,7 +910,6 @@ exports[`Storyshots components|m-phonefield error message 1`] = `
             <label
               class="m-input-style__label"
               for="m-select-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -1025,7 +1006,6 @@ exports[`Storyshots components|m-phonefield error message 1`] = `
     <div>
       <div
         class="m-input-style m-phonefield__number m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -1036,7 +1016,6 @@ exports[`Storyshots components|m-phonefield error message 1`] = `
             <label
               class="m-input-style__label"
               for="mIntegerfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -1139,7 +1118,6 @@ exports[`Storyshots components|m-phonefield waiting 1`] = `
     >
       <div
         class="m-input-style m--is-label-up m--is-disabled m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -1150,7 +1128,6 @@ exports[`Storyshots components|m-phonefield waiting 1`] = `
             <label
               class="m-input-style__label"
               for="m-select-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -1232,7 +1209,6 @@ exports[`Storyshots components|m-phonefield waiting 1`] = `
     <div>
       <div
         class="m-input-style m-phonefield__number m--is-label-up m--is-waiting m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -1243,7 +1219,6 @@ exports[`Storyshots components|m-phonefield waiting 1`] = `
             <label
               class="m-input-style__label"
               for="mIntegerfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"

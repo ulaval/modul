@@ -14,7 +14,6 @@ exports[`Storyshots components|m-form default 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -145,7 +144,6 @@ exports[`Storyshots components|m-form reactive initial value 1`] = `
     >
       <div
         class="m-input-style m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -298,7 +296,6 @@ exports[`Storyshots components|m-form submit outside-form 1`] = `
     >
       <div
         class="m-input-style m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -445,7 +442,7 @@ exports[`Storyshots components|m-form/all fields autocomplete 1`] = `
   >
     <div
       class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
+      style="width: 100%;"
     >
       <div
         class="m-input-style__main"
@@ -456,7 +453,6 @@ exports[`Storyshots components|m-form/all fields autocomplete 1`] = `
           <label
             class="m-input-style__label"
             for="mDropdown-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -730,7 +726,6 @@ exports[`Storyshots components|m-form/all fields datepicker 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -741,7 +736,6 @@ exports[`Storyshots components|m-form/all fields datepicker 1`] = `
           <label
             class="m-input-style__label"
             for="mDatepicker-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -985,7 +979,6 @@ exports[`Storyshots components|m-form/all fields decimalfield 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -996,7 +989,6 @@ exports[`Storyshots components|m-form/all fields decimalfield 1`] = `
           <label
             class="m-input-style__label"
             for="mDecimalfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -1133,7 +1125,7 @@ exports[`Storyshots components|m-form/all fields dropdown 1`] = `
   >
     <div
       class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
+      style="width: 100%;"
     >
       <div
         class="m-input-style__main"
@@ -1144,7 +1136,6 @@ exports[`Storyshots components|m-form/all fields dropdown 1`] = `
           <label
             class="m-input-style__label"
             for="mDropdown-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -1799,7 +1790,6 @@ exports[`Storyshots components|m-form/all fields textfield 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -1810,7 +1800,6 @@ exports[`Storyshots components|m-form/all fields textfield 1`] = `
           <label
             class="m-input-style__label"
             for="mTextfield-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -1948,7 +1937,6 @@ exports[`Storyshots components|m-form/all fields timepicker 1`] = `
   >
     <div
       class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -1959,7 +1947,6 @@ exports[`Storyshots components|m-form/all fields timepicker 1`] = `
           <label
             class="m-input-style__label"
             for="mTimepicker-uuid"
-            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
@@ -2114,7 +2101,6 @@ exports[`Storyshots components|m-form/built-in action-fallouts default 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2244,7 +2230,6 @@ exports[`Storyshots components|m-form/built-in action-fallouts focus first field
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2374,7 +2359,6 @@ exports[`Storyshots components|m-form/built-in action-fallouts message summary a
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -2504,7 +2488,6 @@ exports[`Storyshots components|m-form/built-in action-fallouts toast and clear t
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -3046,7 +3029,6 @@ exports[`Storyshots components|m-form/rules Email confirmation 1`] = `
           >
             <div
               class="m-input-style m--has-label m--is-tag-default"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__main"
@@ -3057,7 +3039,6 @@ exports[`Storyshots components|m-form/rules Email confirmation 1`] = `
                   <label
                     class="m-input-style__label"
                     for="mTextfield-uuid"
-                    style="margin-right: 0px;"
                   >
                     <span
                       class="m-input-style__text"
@@ -3127,7 +3108,6 @@ exports[`Storyshots components|m-form/rules Email confirmation 1`] = `
           >
             <div
               class="m-input-style m--has-label m--is-tag-default"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__main"
@@ -3138,7 +3118,6 @@ exports[`Storyshots components|m-form/rules Email confirmation 1`] = `
                   <label
                     class="m-input-style__label"
                     for="mTextfield-uuid"
-                    style="margin-right: 0px;"
                   >
                     <span
                       class="m-input-style__text"
@@ -3271,7 +3250,6 @@ exports[`Storyshots components|m-form/rules Format with fixed max characters (po
     >
       <div
         class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -3282,7 +3260,6 @@ exports[`Storyshots components|m-form/rules Format with fixed max characters (po
             <label
               class="m-input-style__label"
               for="mTextfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -3412,7 +3389,6 @@ exports[`Storyshots components|m-form/rules Format without fixed max characters 
     >
       <div
         class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -3423,7 +3399,6 @@ exports[`Storyshots components|m-form/rules Format without fixed max characters 
             <label
               class="m-input-style__label"
               for="mTextfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -3557,7 +3532,6 @@ exports[`Storyshots components|m-form/rules Live check username availability (as
     >
       <div
         class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -3568,7 +3542,6 @@ exports[`Storyshots components|m-form/rules Live check username availability (as
             <label
               class="m-input-style__label"
               for="mTextfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -3702,7 +3675,6 @@ exports[`Storyshots components|m-form/rules More than one validations (course co
     >
       <div
         class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -3713,7 +3685,6 @@ exports[`Storyshots components|m-form/rules More than one validations (course co
             <label
               class="m-input-style__label"
               for="mTextfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -4084,7 +4055,6 @@ exports[`Storyshots components|m-form/rules required and 5 characters min 1`] = 
     >
       <div
         class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -4095,7 +4065,6 @@ exports[`Storyshots components|m-form/rules required and 5 characters min 1`] = 
             <label
               class="m-input-style__label"
               for="mTextfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -4225,7 +4194,6 @@ exports[`Storyshots components|m-form/rules required and 20 characters max 1`] =
     >
       <div
         class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -4236,7 +4204,6 @@ exports[`Storyshots components|m-form/rules required and 20 characters max 1`] =
             <label
               class="m-input-style__label"
               for="mTextfield-uuid"
-              style="margin-right: 0px;"
             >
               <span
                 class="m-input-style__text"
@@ -4369,7 +4336,6 @@ exports[`Storyshots components|m-form/validation-type at-exit 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -4503,7 +4469,6 @@ exports[`Storyshots components|m-form/validation-type correction 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -4637,7 +4602,6 @@ exports[`Storyshots components|m-form/validation-type modification 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -4771,7 +4735,6 @@ exports[`Storyshots components|m-form/validation-type on-going 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -5050,7 +5013,6 @@ exports[`Storyshots components|m-form/validators date between 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -5214,7 +5176,6 @@ exports[`Storyshots components|m-form/validators date format 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -5378,7 +5339,6 @@ exports[`Storyshots components|m-form/validators email 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -5574,7 +5534,6 @@ exports[`Storyshots components|m-form/validators max-length 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -5770,7 +5729,6 @@ exports[`Storyshots components|m-form/validators min-length 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
@@ -5904,7 +5862,6 @@ exports[`Storyshots components|m-form/validators required 1`] = `
   >
     <div
       class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
