@@ -45,9 +45,8 @@
                              alt="" />
                         <h2>{{'website:standards' | f-m-i18n}}</h2>
                     </template>
-                    <p slot="content">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quaerat sint esse, natus libero amet perferendis atque. Blanditiis ea fugit provident nobis qui? A delectus suscipit autem dolor blanditiis quasi.
-                    </p>
+                    <p slot="content"
+                       v-html="$i18n.translate('modul:standards-desc')"></p>
                     <m-link slot="link"
                             :url="uiStandards">{{'website:standards-ui' | f-m-i18n}}</m-link>
                     <m-link slot="link"
@@ -65,9 +64,8 @@
                              alt="" />
                         <h2>{{'website:philosophy' | f-m-i18n}}</h2>
                     </template>
-                    <p slot="content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur debitis aut fuga cupiditate odio deserunt soluta, blanditiis obcaecati illo, aliquid cum, excepturi ratione totam nihil in quasi suscipit ipsa!
-                    </p>
+                    <p slot="content"
+                       v-html="$i18n.translate('modul:philosophy-desc')"></p>
                     <m-link slot="link"
                             :url="philosophy">{{'website:philosophy' | f-m-i18n}}</m-link>
 
