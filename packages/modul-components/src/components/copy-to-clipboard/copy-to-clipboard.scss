@@ -13,6 +13,7 @@ $m-searchfield-color: $m-color--grey-lightest;
         width: 100%;
         color: $m-color--interactive;
         padding: 0 $m-input-style--padding;
+        white-space: nowrap;
 
         @include m-button--hover();
     }

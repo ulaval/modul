@@ -16,6 +16,7 @@ import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import FileUploadPlugin from '../file-upload/file-upload';
 import InputStylePlugin from '../input-style/input-style';
 import ValidationMessagePlugin from '../validation-message/validation-message';
+import { ImageLayoutCommands } from './adapter/image-layout-commands';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
