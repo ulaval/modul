@@ -1,5 +1,5 @@
 import 'cleave.js/dist/addons/cleave-phone.i18n.js';
-import { CountryCode, getExampleNumber, PhoneNumber } from 'libphonenumber-js';
+import { CountryCode, getExampleNumber, ParsedNumber, parseNumber, PhoneNumber } from 'libphonenumber-js';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
@@ -138,6 +138,18 @@ export class MPhonefield extends ModulVue {
         this.emitNewValue(value);
     }
 
+    parsePhoneNumber(value: string): void {
+        const parsedNumber: ParsedNumber = parseNumber(value, { extended: true });
+        if (parsedNumber.country && parsedNumber.valid) {
+            this.countryModelInternal = parsedNumber.country.toLowerCase();
+            this.internalCountry = this.countries.find((country: CountryOptions) => country.iso2 === this.countryModelInternal)!;
+            this.emitContrySelected({
+                iso: this.internalCountry.iso2,
+                prefix: this.internalCountry.dialCode
+            });
+        }
+    }
+
     nameNormalize(name: string): string {
         return name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
@@ -180,6 +192,13 @@ export class MPhonefield extends ModulVue {
             this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
         }
 
+    }
+
+    @Watch('value', { immediate: true })
+    onValueChanged(value: string): void {
+        if (value) {
+            this.parsePhoneNumber(value);
+        }
     }
 
 }
