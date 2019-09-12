@@ -10,14 +10,14 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { TYPEAHEAD_NAME } from '../component-names';
 import PopupPlugin from '../popup/popup';
-import { MSelectItem } from '../select/select-item/select-item';
+import { MBaseSelect } from '../select/base-select/base-select';
 import TextfieldPlugin, { MTextfield } from '../textfield/textfield';
 import WithRender from './typeahead.html?style=./typeahead.scss';
 
 @WithRender
 @Component({
     components: {
-        MSelectItem
+        MBaseSelect
     },
     mixins: [
         InputLabel,
@@ -68,24 +68,17 @@ export class MTypeahead extends ModulVue {
         result: HTMLUListElement;
         resultsList: HTMLElement;
         researchInput: HTMLElement;
+        mBaseSelect: MBaseSelect;
     };
 
     public id: string = `${TYPEAHEAD_NAME}-${uuid.generate()}`;
-    public focusedIndex: number = -1;
     public isResultsPopupOpen: boolean = false;
     public textfieldValueInternal: string = '';
     public isTexfieldFocus: boolean = false;
     public filteredResults: any[] = [];
-    public filteredResultsWithStyles: any[] = [];
     public ariaControls: string = this.id + '-controls';
     public throttleTimeoutActive: boolean = false;
-    private throttleTimeout: any;
-
-    @Emit('open')
-    public async emitOpenResultPopup(): Promise<void> {
-        await this.$nextTick();
-        this.scrollToFocused();
-    }
+    private throttleTimeout: number;
 
     @Emit('input')
     public emitInput(event: string): void { }
@@ -140,10 +133,6 @@ export class MTypeahead extends ModulVue {
         return this.textfieldValue.length > 0;
     }
 
-    public get isResultPopupActive(): boolean {
-        return this.isResultsPopupOpen && !this.waitingResults && this.as<InputState>().active && !this.throttleTimeoutActive;
-    }
-
     public get resultsCouldBeDisplay(): boolean {
         if (this.as<MediaQueriesMixin>().isMqMinS) {
             return this.hasResults && this.isTexfieldFocus && this.hasTextfieldValue && this.as<InputState>().active;
@@ -156,25 +145,24 @@ export class MTypeahead extends ModulVue {
         return this.filteredResults.some((e, index) => this.isSelected(index));
     }
 
-    public openResultsPopup(): void {
+    public async openResultsPopup(): Promise<void> {
         if (this.isResultsPopupOpen) {
             return;
         }
-        this.isResultsPopupOpen = this.resultsCouldBeDisplay;
+
+        if (this.resultsCouldBeDisplay) {
+            this.$refs.mBaseSelect.setFocusedIndex(0);
+            this.isResultsPopupOpen = true;
+        }
+
     }
 
     public closeResultsPopup(): void {
         this.isResultsPopupOpen = false;
     }
 
-    public selectAndCloseResultWindow(index): void {
-        this.focusedIndex = index;
-        this.selectFocusedItem();
-        this.closeResultsPopup();
-    }
-
-    public selectFocusedItem(): void {
-        this.textfieldValue = this.filteredResults[this.focusedIndex];
+    onSelect(option: any, index: number): void {
+        this.textfieldValue = this.filteredResults[index];
     }
 
     public isSelected(index: number): boolean {
@@ -191,11 +179,10 @@ export class MTypeahead extends ModulVue {
             return;
         }
 
-        clearTimeout(this.throttleTimeout);
+        window.clearTimeout(this.throttleTimeout);
         this.throttleTimeoutActive = true;
 
-        this.throttleTimeout = setTimeout(() => {
-            this.throttleTimeout = undefined;
+        this.throttleTimeout = window.setTimeout(() => {
             this.throttleTimeoutActive = false;
             this.onFilterResults();
             this.emitFilterResults();
@@ -216,52 +203,11 @@ export class MTypeahead extends ModulVue {
                 .sort();
         }
 
-        this.filteredResultsWithStyles = this.filteredResults.map((fr) => {
-            let regex: RegExp = RegExp(this.textfieldValue, 'i');
-            return fr.replace(regex, '<b>$&</b>');
-        });
-
-        this.focusedIndex = -1;
-        this.focusNextItem();
     }
 
-    public onKeydownUp($event: KeyboardEvent): void {
-        if (!this.isResultPopupActive) {
-            return;
-        }
-        this.focusPreviousItem();
-        this.selectFocusedItem();
-    }
-
-    public onKeydownDown($event: KeyboardEvent): void {
-        if (!this.isResultPopupActive) {
-            return;
-        }
-        this.focusNextItem();
-        this.focusedIndex = this.hasSomeAResultSelected ? this.focusedIndex : 0;
-        this.selectFocusedItem();
-    }
-
-    public onKeydownTab($event: KeyboardEvent): void {
-        if (this.as<MediaQueries>().isMqMinS) {
-            this.closeResultsPopup();
-        }
-    }
-
-    public onKeydownEsc($event: KeyboardEvent): void {
-        if (this.as<MediaQueries>().isMqMinS) {
-            this.closeResultsPopup();
-        }
-    }
-
-    public onKeydownEnter($event: KeyboardEvent): void {
-        if (!this.isResultPopupActive) {
-            return;
-        }
-        if (this.focusedIndex > -1) {
-            this.selectFocusedItem();
-            this.closeResultsPopup();
-        }
+    getTextHighlight(item): string {
+        let regex: RegExp = RegExp(this.textfieldValue, 'i');
+        return item.replace(regex, '<b>$&</b>');
     }
 
     public onInput(event: string): void {
@@ -277,74 +223,6 @@ export class MTypeahead extends ModulVue {
         this.isTexfieldFocus = false;
     }
 
-    private scrollToFocused(): void {
-        if (!this.isResultPopupActive
-            &&
-            !(this.focusedIndex > -1)
-            &&
-            this.as<MediaQueriesMixin>().isMqMaxS) {
-            return;
-        }
-
-        let container: HTMLElement = this.$refs.resultsList;
-        if (container) {
-            let element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
-
-            if (element) {
-                let top: number = element.offsetTop;
-                let bottom: number = element.offsetTop + element.offsetHeight;
-                let viewRectTop: number = container.scrollTop;
-                let viewRectBottom: number = viewRectTop + container.clientHeight;
-                if (top < viewRectTop) {
-                    container.scrollTop = top;
-                } else if (bottom > viewRectBottom) {
-                    container.scrollTop = bottom - container.clientHeight;
-                }
-            }
-        }
-    }
-
-    private focusNextItem(): void {
-        if (!this.isResultPopupActive) {
-            return;
-        }
-
-        if (this.hasSomeAResultSelected) {
-            if (this.focusedIndex > -1) {
-                this.focusedIndex++;
-                if (this.focusedIndex >= this.filteredResults.length) {
-                    this.focusedIndex = 0;
-                }
-            } else {
-                this.focusedIndex = this.filteredResults.length === 0 ? -1 : 0;
-            }
-        } else {
-            this.focusedIndex = 0;
-        }
-
-        this.scrollToFocused();
-    }
-
-    private focusPreviousItem(): void {
-        if (!this.isResultPopupActive) {
-            return;
-        }
-
-        if (this.hasSomeAResultSelected) {
-            if (this.focusedIndex > -1) {
-                this.focusedIndex--;
-                if (this.focusedIndex < 0) {
-                    this.focusedIndex = this.filteredResults.length - 1;
-                }
-            } else {
-                this.focusedIndex = this.filteredResults.length - 1;
-            }
-        } else {
-            this.focusedIndex = 0;
-        }
-
-        this.scrollToFocused();
-    }
 }
 
 const TypeaheadPlugin: PluginObject<any> = {
