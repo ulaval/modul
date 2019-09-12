@@ -1,4 +1,3 @@
-import ElementQueries from 'css-element-queries/src/ElementQueries';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
@@ -57,11 +56,13 @@ export class MPanel extends Vue {
     onClick(): void { }
 
     protected mounted(): void {
-        ElementQueries.init();
+        // @todo Le ElementQueries cause un probleme de performance dans les vue qui utilise
+        // plusieurs m-panel et son unmounted et mounted souvent, il faudrait trouver une meilleur solution.
+        // ElementQueries.init();
     }
 
     protected beforeDestroy(): void {
-        ElementQueries.detach(this.$el);
+        // ElementQueries.detach(this.$el);
     }
 
     private get lightSkin(): boolean {
