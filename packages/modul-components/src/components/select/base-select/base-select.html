@@ -1,12 +1,12 @@
 <div class="m-base-select">
-    <div @keydown.up.prevent="onKeydownUp"
-         @keydown.down.prevent="onKeydownDown"
-         @keydown.enter.prevent="onKeydownEnter"
-         @keydown.return.prevent="onKeydownEnter"
-         @keydown.esc="onKeydownEsc"
-         @keydown.tab="onKeydownTab"
-         v-m-popup:popup>
-        <slot></slot>
+    <div v-m-popup:popup>
+        <slot :toggle="togglePopup"
+              :key-up="onKeydownUp"
+              :key-down="onKeydownDown"
+              :key-tab="onKeydownTab"
+              :key-esc="onKeydownEsc"
+              :key-enter="onKeydownEnter"
+              :key-space="onKeydownSpace"></slot>
     </div>
     <m-popup ref="popup"
              placement="bottom-start"
@@ -17,9 +17,20 @@
              :lazy="false"
              :focus-management="false"
              :close-on-backdrop="true"
-             :open-trigger="'mousedown'"
+             :open-trigger="'manual'"
              @open="onOpen"
              @close="onClose">
+        <template slot="header"
+                  v-if="isMqMaxS">
+            <slot name="popup-header"
+                  :key-up="onKeydownUp"
+                  :key-down="onKeydownDown"
+                  :key-tab="onKeydownTab"
+                  :key-esc="onKeydownEsc"
+                  :key-enter="onKeydownEnter"
+                  :key-space="onKeydownSpace">
+            </slot>
+        </template>
         <!-- <template slot="header"
                   v-if="isMqMaxS">
             <h2 class="m-typeahead__label-popup"
@@ -57,7 +68,7 @@
                            :key="index"
                            :focused="index === focusedIndex"
                            :selected="isSelected(item)"
-                           @click="select(item, index)">
+                           @click="onSelectItem(item, index)">
                 <slot name="items"
                       :item="item"
                       :index="index"><span v-html="item"></span></slot>

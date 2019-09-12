@@ -45,7 +45,6 @@ export class MBaseSelect extends ModulVue {
     internalOpen: boolean = false;
     focusedIndex: number = -1;
 
-
     async onOpen(): Promise<void> {
         await this.$nextTick();
         this.focusFirstSelected();
@@ -57,9 +56,12 @@ export class MBaseSelect extends ModulVue {
         return this.controlId + '-controls';
     }
 
-
     onClose(): void {
         this.$emit('update:open', false);
+    }
+
+    @Emit('select-item')
+    select(option: any, index: number): void {
     }
 
     @Watch('open', { immediate: true })
@@ -69,13 +71,67 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
+    onSelectItem(option: any, index: number): void {
+        this.select(option, index);
+        this.closePopup();
+    }
 
-    private focusFirstSelected(): void {
+    public togglePopup(): void {
+        this.internalOpen = !this.internalOpen;
+    }
+
+    public closePopup(): void {
+        this.internalOpen = false;
+    }
+
+
+    public setFocusedIndex(index): void {
+        this.focusedIndex = index;
+    }
+
+
+    public selectFocusedItem(): void {
+        this.select(this.items[this.focusedIndex], this.focusedIndex);
+    }
+
+
+    public focusFirstSelected(): void {
         if (this.selectedItems && this.selectedItems.length > 0) {
             this.focusedIndex = this.items.indexOf(this.selectedItems[0]);
-        } else {
-            this.focusedIndex = -1;
         }
+    }
+
+
+    public focusNextItem(): void {
+        if (this.focusedIndex > -1) {
+            this.focusedIndex++;
+            if (this.focusedIndex >= this.items.length) {
+                this.focusedIndex = 0;
+            }
+        } else {
+            this.focusedIndex = this.items.length === 0 ? -1 : 0;
+
+        }
+        this.scrollToFocused();
+    }
+
+    public focusPreviousItem(): void {
+        if (this.focusedIndex > -1) {
+            this.focusedIndex--;
+            if (this.focusedIndex < 0) {
+                this.focusedIndex = this.items.length - 1;
+            }
+        } else {
+            this.focusedIndex = this.items.length - 1;
+        }
+        this.scrollToFocused();
+    }
+
+    isSelected(option: any): boolean {
+        if (this.selectedItems && this.selectedItems.length > 0) {
+            return this.selectedItems.indexOf(option) > -1;
+        }
+        return false;
     }
 
     private scrollToFocused(): void {
@@ -101,89 +157,41 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
-    private focusNextItem(): void {
-        if (this.focusedIndex > -1) {
-            this.focusedIndex++;
-            if (this.focusedIndex >= this.items.length) {
-
-                this.focus(this.items[0], 0);
-            }
-        } else {
-            const _focusedIndex: number = this.items.length === 0 ? -1 : 0;
-            this.focus(this.items[_focusedIndex], _focusedIndex);
-        }
-        this.scrollToFocused();
-    }
-
-    private focusPreviousItem(): void {
-        if (this.focusedIndex > -1) {
-            this.focusedIndex--;
-            if (this.focusedIndex < 0) {
-                const _focusedItemIndex: number = this.items.length - 1;
-                this.focus(this.items[_focusedItemIndex], _focusedItemIndex);
-            }
-        } else {
-            const _focusedItemIndex: number = this.items.length - 1;
-            this.focus(this.items[_focusedItemIndex], _focusedItemIndex);
-        }
-        this.scrollToFocused();
-    }
-
-    isSelected(option: any): boolean {
-        if (this.selectedItems && this.selectedItems.length > 0) {
-            return this.selectedItems.indexOf(option) > -1;
-        }
-        return false;
-    }
-
-    @Emit('select-item')
-    select(option: any, index: number): void {
-        this.internalOpen = false;
-    }
-
-    @Emit('focus-item')
-    focus(option: any, index: number): void {
-        this.focusedIndex = index;
-    }
 
 
-    // keyboard navigation
+
+    // keyboard navigation of a drowdown
+    // tab or esc : close the popup
+    // up and down : change the focused option
+    // enter : select the focused option and close popup
+    // space : open the popup
     onKeydownDown($event: KeyboardEvent): void {
-        if (!this.internalOpen) {
-            this.internalOpen = true;
-        } else {
-            this.focusNextItem();
-        }
+        this.focusNextItem();
+        this.selectFocusedItem();
     }
 
     onKeydownUp($event: KeyboardEvent): void {
-        if (!this.internalOpen) {
-            this.internalOpen = true;
-        } else {
-            this.focusPreviousItem();
-        }
+        this.focusPreviousItem();
+        this.selectFocusedItem();
+    }
+
+    onKeydownSpace($event: KeyboardEvent): void {
+        this.togglePopup();
     }
 
     onKeydownTab($event: KeyboardEvent): void {
-        if (this.as<MediaQueries>().isMqMinS) {
-            this.internalOpen = false;
-        }
+        this.closePopup();
     }
 
     onKeydownEsc($event: KeyboardEvent): void {
-        if (this.as<MediaQueries>().isMqMinS) {
-            this.internalOpen = false;
-        }
+        this.closePopup();
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
-        if (!this.internalOpen) {
-            this.internalOpen = true;
-        }
         if (this.focusedIndex > -1) {
-
             this.select(this.items[this.focusedIndex], this.focusedIndex);
         }
+        this.closePopup();
     }
 
 
