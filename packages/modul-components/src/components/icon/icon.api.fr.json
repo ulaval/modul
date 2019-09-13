@@ -1,0 +1,13 @@
+{
+    "props": {
+        "name": {
+            "description": "Nom de l'icône, par exemple «&nbsp;m-svg__edit&nbsp;». Si l'icône fait partie de la librairie MODUL, le préfixe n'est pas nécessaire, vous pouvez utiliser uniquement sa désignation «&nbsp;edit&nbsp;». Consulter la <modul-go url='/normes/normes-graphiques/iconographie/'>librairie</modul-go> pour la liste complète des icônes disponibles."
+        },
+        "size": {
+            "description": "Taille de l'icône en pixels, par exemple «&nbsp;30px&nbsp;»."
+        },
+        "svgTitle": {
+            "description": "Libellé affiché au survol de l'icône et lu aux personnes utilisant un lecteur vocal. Il est obligatoire lorsque l'icône n'est pas accompagnée d'un libellé dans l'interface."
+        }
+    }
+}

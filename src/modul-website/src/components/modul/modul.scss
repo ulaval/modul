@@ -1,0 +1,88 @@
+@import '../../styles/commons';
+
+.mw-website {
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto 1fr auto;
+
+    &__body {
+        &.mw--has-dark-background {
+            background-color: $modul-color--black-grey;
+        }
+    }
+}
+
+.modul-search-card {
+    position: relative;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: $m-color--text;
+    display: flex;
+    min-height: 100px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+
+    &:hover {
+        .modul-search-card {
+            &__img {
+                background-color: $m-color--interactive-light;
+            }
+        }
+    }
+
+    &:active,
+    &:focus {
+        .modul-search-card {
+            &__img {
+                background-color: $m-color--interactive-dark;
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+    }
+
+    &__content {
+        padding: $m-padding--l $m-padding;
+        border-bottom: 1px solid $m-color--grey-light;
+        flex: 1;
+
+        &__category,
+        &__title,
+        &__tagname {
+            margin-top: 0;
+        }
+
+        &__tagname {
+            font-size: $m-font-size--s;
+            color: $m-color--grey-darker;
+            font-style: italic;
+        }
+    }
+
+    &__img {
+        transition: background 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 1 100px;
+        background: $m-color--interactive;
+        border-bottom: 1px solid #006698;
+        padding: $m-padding;
+    }
+
+    &.modul--is {
+        &-enter-active,
+        &-leave-active {
+            transition: transform 0.45s ease, opacity 0.3s linear;
+        }
+
+        &-enter,
+        &-leave-to {
+            opacity: 0;
+            transform: translate3d(-$m-margin, 0, 0);
+        }
+    }
+}

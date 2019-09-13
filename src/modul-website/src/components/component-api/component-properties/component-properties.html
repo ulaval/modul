@@ -1,0 +1,30 @@
+<div class="modul-component-properties">
+    <template v-if="properties.length > 0 ">
+        <m-table-header><template v-slot:left>
+                <h3>{{'modul:attributes' | f-m-i18n}}</h3>
+            </template></m-table-header>
+        <m-table :columns="columns"
+                 :rows="properties"
+                 width="100%">
+            <template v-slot:row="{data}">
+
+                <td> <strong v-html="data.name"></strong>:{{ data.type }}
+                    <p v-if="data.inheritFrom"
+                       class="modul-component-properties__default-value">({{data.inheritFrom}})</p>
+                </td>
+
+                <td style="text-align: center;">
+                    <span v-html="data.values"></span>
+                    <span v-if="data.defaultValue"
+                          class="modul-component-properties__default-value"><br />
+                        <m-i18n k="modul:defaut"></m-i18n>&nbsp;:&nbsp;{{data.defaultValue}}
+                    </span>
+                </td>
+                <td style="text-align: left;">
+                    <m-i18n v-if="data.description"
+                            v-html="data.description"></m-i18n>
+                </td>
+            </template>
+        </m-table>
+    </template>
+</div>

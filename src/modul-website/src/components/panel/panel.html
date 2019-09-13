@@ -1,0 +1,13 @@
+<transition name="mw--is">
+    <section class="mw-panel"
+             v-if="open"
+             tabindex="0">
+        <m-icon-button class="mw-panel__close-button"
+                       @click="closeMenu"
+                       icon-name="m-svg__close-clear"
+                       skin="light"
+                       icon-size="20px">
+        </m-icon-button>
+        <slot></slot>
+    </section>
+</transition>

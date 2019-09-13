@@ -1,0 +1,28 @@
+{
+    "props": {
+        "disabled": {
+            "description": "Détermine si la composante est désactivée ou non"
+        },
+        "waiting": {
+            "description": "Détermine si la composante est en attente ou non"
+        },
+        "error": {
+            "description": "Détermine si la composante est en erreur ou non"
+        },
+        "valid": {
+            "description": "Détermine si la composante est valide ou non"
+        },
+        "errorMessage": {
+            "description": "Message d'erreur"
+        },
+        "validMessage": {
+            "description": "Message de validation"
+        },
+        "helperMessage": {
+            "description": "Message d'aide"
+        },
+        "tagStyle": {
+            "description": "Balise de style pour le texte de la composante"
+        }
+    }
+}
