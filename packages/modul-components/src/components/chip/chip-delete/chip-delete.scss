@@ -7,6 +7,33 @@
     border: 1px solid $m-color--grey;
     background: $m-color--grey-lighter;
 
+    &.m--is-small {
+        @include m-chip-small-style();
+
+        background: $m-color--grey-light;
+        font-size: 0.75em;
+        font-weight: $m-font-weight--semi-bold;
+        border: none;
+
+        .m-chip-delete__button {
+            $m-chip-delete--button-width: 20px;
+
+            width: $m-chip-delete--button-width;
+            height: $m-chip-delete--button-width;
+            margin: 0;
+        }
+
+        .m-chip-delete__icon {
+            $m-chip-delete--icon-width: 20px;
+
+            width: $m-chip-delete--icon-width;
+            height: $m-chip-delete--icon-width;
+            left: 0;
+            padding: 5px; // Magic number: perfect icon size
+            transform: translate(0, -50%);
+        }
+    }
+
     &:not(.m--is-disabled) {
         .m-chip-delete__button {
             cursor: pointer;

@@ -10,6 +10,12 @@
     height: 42px; // Magic number: chip height;
 }
 
+@mixin m-chip-small-style() {
+    padding: ($m-spacing--s + $m-spacing--xs/2)/2 7px; // Magic number: padding-side
+    border-radius: 12px;
+    height: 20px; // Magic number: chip height;
+}
+
 @mixin m-chip-body-style() {
     display: flex;
     justify-content: space-between;

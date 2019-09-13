@@ -1,5 +1,5 @@
 <div class="m-chip-delete"
-     :class="{'m--is-disabled': disabled}">
+     :class="{'m--is-disabled': disabled, 'm--is-small' : size === 'small'}">
     <div class="m-chip-delete__body">
         <span :id="textId"
               class="m-chip-delete__text">
@@ -12,7 +12,7 @@
                 @click="onClick"
                 type="button">
             <m-icon class="m-chip-delete__icon"
-                    size="14px"
+                    :size="iconSize"
                     name="m-svg__close-clear">
             </m-icon>
         </button>
