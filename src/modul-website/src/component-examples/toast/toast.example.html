@@ -1,0 +1,4 @@
+<div>
+    <m-button @click="onClick"><span v-if="!openProp">Afficher</span><span v-if="openProp">Cacher</span> le toast</m-button>
+    <m-toast :open.sync="openProp">Toast!</m-toast>
+</div>

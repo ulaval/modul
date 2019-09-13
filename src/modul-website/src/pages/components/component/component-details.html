@@ -1,0 +1,48 @@
+<div class="mw-component-details">
+    <header class="mw-component-details__header">
+        <h2 class="mw-component-details__title">
+
+            {{component.name }}
+            <span v-if="component.beta"
+                  class="modul-logo__beta mw-component-details__beta">
+                <m-i18n k="website:beta"></m-i18n>
+            </span>
+        </h2>
+        <!-- <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">{{openCloseLabel}}
+        </button> -->
+    </header>
+    <!-- <m-accordion-transition>
+        <div v-if="codePreviewOpen && component.preview">
+            <div class="mw-component-details__code">
+                <modul-highlight :template="markdownPreview"></modul-highlight>
+            </div>
+        </div>
+    </m-accordion-transition> -->
+
+    <div class="mw-component-details__preview">
+        <m-message v-if="!component.preview"
+                   skin="light"
+                   state="information">
+            <m-i18n k="modul:preview-not-available"></m-i18n>
+        </m-message>
+        <m-markdown v-else
+                    :template="markdownPreview"></m-markdown>
+    </div>
+
+    <div class="modul-u--navbar">
+        <m-navbar skin="tab-arrow"
+                  :arrow-mobile="false"
+                  :auto-select="true">
+            <m-navbar-item :value="'router:overview'+component.url"
+                           :url="{name :'router:overview'+component.url}">{{'website:overview' | f-m-i18n}}
+            </m-navbar-item>
+            <m-navbar-item v-if="component.components && component.components.length > 0"
+                           value="'router:code'+component.url"
+                           :url="{name :'router:code'+component.url}">{{'website:code' | f-m-i18n}}
+            </m-navbar-item>
+        </m-navbar>
+    </div>
+    <div class="mw-component-details__body">
+        <router-view></router-view>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.modul-u--light-template-transition {
+    &-enter-active,
+    &-leave-active {
+        @media (min-width: #{$m-mq--min--s}) {
+            transition: transform $m-transition-duration--l ease, opacity $m-transition-duration--l ease;
+        }
+    }
+
+    &-enter,
+    &-leave-to {
+        @media (min-width: #{$m-mq--min--s}) {
+            transform: translate3d(0, 44px, 0);
+            opacity: 0.6;
+        }
+    }
+}
