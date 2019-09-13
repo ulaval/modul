@@ -209,18 +209,4 @@ $m-panel--screen--min: 640px;
     &__footer {
         border-top: 1px solid $m-color--grey-light;
     }
-
-    // &[max-width~="#{ $m-panel--screen--max }"] {
-    //     &.m--is-skin-light {
-    //         .m-panel__header {
-    //             display: block;
-    //         }
-    //     }
-
-    //     &:not(.m--is-right-content-alone) {
-    //         .m-panel__header__content-right {
-    //             margin-top: $m-margin;
-    //         }
-    //     }
-    // }
 }
