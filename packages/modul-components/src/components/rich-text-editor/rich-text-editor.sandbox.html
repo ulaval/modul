@@ -73,7 +73,7 @@
                             @image-removed="imageRemoved"></m-rich-text-editor>
     </div>
     <div class="m-u--margin-bottom">
-        <h5>With IMAGE_HIDE_LAYOUT_MENU option</h5>
+        <h5>With IMAGE_HIDE_FLOAT_LAYOUT option</h5>
         <m-rich-text-editor v-model="imageNoLayoutModel"
                             :options="imageNoLayoutOptions"
                             label="rich text"
@@ -87,7 +87,6 @@
         <div>
             <m-rich-text-editor v-model="modelTitle1"
                                 :title-available="true"
-                                :options="options"
                                 label="rich text"
                                 max-width="large"
                                 first-header-level="1"
@@ -98,7 +97,6 @@
         <h5>Title and subtitle</h5>
         <div>
             <m-rich-text-editor v-model="modelTitle2"
-                                :options="options"
                                 :title-available="true"
                                 label="rich text"
                                 max-width="large"
@@ -110,7 +108,6 @@
         <h5>Multiple titles</h5>
         <div>
             <m-rich-text-editor v-model="modelTitle3"
-                                :options="options"
                                 :title-available="true"
                                 label="rich text"
                                 max-width="large"
