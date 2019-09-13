@@ -1,6 +1,6 @@
 import 'cleave.js/dist/addons/cleave-phone.i18n.js';
 import { CountryCode, getExampleNumber, ParsedNumber, parseNumber, PhoneNumber } from 'libphonenumber-js';
-import { PluginObject } from 'vue';
+import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -155,8 +155,12 @@ export class MPhonefield extends ModulVue {
     }
 
     spriteId(iso: string): string | undefined {
+        const svg: SpritesService = Vue.prototype.$svg;
+
         if (document.getElementById('m-svg__flag-' + iso)) {
             return '#m-svg__flag-' + iso;
+        } else if (svg && svg.getExternalSpritesFromSpriteId('m-svg__flag-' + iso)) {
+            return svg.getExternalSpritesFromSpriteId('m-svg__flag-' + iso);
         } else if (iso) {
             this.$log.warn('"' + iso + '" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.');
         }
@@ -212,7 +216,7 @@ const PhonefieldPlugin: PluginObject<any> = {
 
         const svg: SpritesService = (v.prototype).$svg;
         if (svg) {
-            svg.addSprites(require('../../assets/icons/sprites-flags.svg'));
+            svg.addInternalSprites(require('../../assets/icons/sprites-flags.svg'));
 
         } else {
             v.prototype.$log.error(

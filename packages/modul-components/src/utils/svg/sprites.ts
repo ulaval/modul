@@ -1,4 +1,4 @@
-import { PluginObject } from 'vue';
+import Vue, { PluginObject } from 'vue';
 import uuid from '../uuid/uuid';
 
 declare module 'vue/types/vue' {
@@ -8,7 +8,14 @@ declare module 'vue/types/vue' {
 }
 
 export class SpritesService {
+    private externalSpriteIdPrefixes: Map<string, string> = new Map();
+
+    /** @deprecated Use addInternalSprites or addExternalSprites instead */
     public addSprites(sprites: string): string {
+        return this.addInternalSprites(sprites);
+    }
+
+    public addInternalSprites(sprites: string): string {
         let div: HTMLDivElement = document.createElement('div');
         let id: string = uuid.generate();
         div.id = id;
@@ -18,6 +25,34 @@ export class SpritesService {
         document.body.insertBefore(div, document.body.childNodes[0]);
 
         return id;
+    }
+
+    public addExternalSprites(sprites: string, externalSpriteIdPrefix: string): void {
+        if (this.isInExternalSprites(externalSpriteIdPrefix)) {
+            Vue.prototype.$log.warn('"' + externalSpriteIdPrefix + '" already exists in the externalSpriteIdPrefixes. You are overwriting a sprites collection.');
+        }
+
+        this.externalSpriteIdPrefixes.set(externalSpriteIdPrefix, sprites);
+    }
+
+    public getExternalSpritesFromSpriteId(spriteId: string): string | undefined {
+        if (this.isInExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId))) {
+            return this.getExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId)!) + '#' + spriteId;
+        }
+    }
+
+    private isInExternalSprites(externalSpriteIdPrefix?: string): boolean {
+        return externalSpriteIdPrefix !== undefined && this.externalSpriteIdPrefixes.has(externalSpriteIdPrefix);
+    }
+
+    private getExternalSpriteIdPrefixFromSpriteId(spriteId: string): string | undefined {
+        if (spriteId.indexOf('__') !== -1) {
+            return spriteId.split('__')[0];
+        }
+    }
+
+    private getExternalSprites(externalSpriteIdPrefix: string): string | undefined {
+        return this.externalSpriteIdPrefixes.get(externalSpriteIdPrefix);
     }
 }
 

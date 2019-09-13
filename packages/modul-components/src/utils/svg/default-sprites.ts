@@ -7,7 +7,7 @@ const DefaultSpritesPlugin: PluginObject<any> = {
         v.prototype.$log.debug('sprites-default.svg', 'plugin.install');
         const svg: SpritesService = (v.prototype).$svg;
         if (svg) {
-            svg.addSprites(require('../../assets/icons/sprites-default.svg'));
+            svg.addInternalSprites(require('../../assets/icons/sprites-default.svg'));
 
         } else {
             v.prototype.$log.error(
