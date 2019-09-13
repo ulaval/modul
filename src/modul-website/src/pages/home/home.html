@@ -31,8 +31,8 @@
                              alt="" />
                         <h2>{{'modul:components' | f-m-i18n}}</h2>
                     </template>
-                    <p slot="content"
-                       v-html="$i18n.translate('modul:components-desc')">
+                    <p slot="content">
+                        Les composants sont les éléments réutilisables qui composent les interfaces des applications <strong>modUL</strong>. Chaque composant est accompagné d’une documentation facilitant leur utilisation en plus d'une implémentations complète avec la platform VueJS
                     </p>
                     <m-link slot="link"
                             :url="componentsUi">{{'website:components-ui' | f-m-i18n}}</m-link>
@@ -45,8 +45,9 @@
                              alt="" />
                         <h2>{{'website:standards' | f-m-i18n}}</h2>
                     </template>
-                    <p slot="content"
-                       v-html="$i18n.translate('modul:standards-desc')"></p>
+                    <p slot="content">
+                        Les normes et standards définissent les guides utilisés pour la conception des composants et les interfaces des applications <strong>modul</strong>
+                    </p>
                     <m-link slot="link"
                             :url="uiStandards">{{'website:standards-ui' | f-m-i18n}}</m-link>
                     <m-link slot="link"
@@ -64,8 +65,9 @@
                              alt="" />
                         <h2>{{'website:philosophy' | f-m-i18n}}</h2>
                     </template>
-                    <p slot="content"
-                       v-html="$i18n.translate('modul:philosophy-desc')"></p>
+                    <p slot="content">
+                        <strong>modUL</strong> repose sur une approche de conception intégrée qui encourage une unification de l'expérience utilisateur à travers les applications, et ce, peu importe l’appareil utilisé
+                    </p>
                     <m-link slot="link"
                             :url="philosophy">{{'website:philosophy' | f-m-i18n}}</m-link>
 
