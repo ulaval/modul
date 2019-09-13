@@ -9,6 +9,7 @@ declare module 'vue/types/vue' {
 
 export class SpritesService {
     private externalSpriteIdPrefixes: Map<string, string> = new Map();
+    public static externalSpriteIdPrefixSeparator = '-';
 
     /** @deprecated Use addInternalSprites or addExternalSprites instead */
     public addSprites(sprites: string): string {
@@ -46,14 +47,18 @@ export class SpritesService {
     }
 
     private getExternalSpriteIdPrefixFromSpriteId(spriteId: string): string | undefined {
-        if (spriteId.indexOf('__') !== -1) {
-            return spriteId.split('__')[0];
+        if (spriteId.indexOf(SpritesService.externalSpriteIdPrefixSeparator) !== -1) {
+            return spriteId.split(SpritesService.externalSpriteIdPrefixSeparator)[0];
         }
     }
 
     private getExternalSprites(externalSpriteIdPrefix: string): string | undefined {
         return this.externalSpriteIdPrefixes.get(externalSpriteIdPrefix);
     }
+}
+
+export interface SpritesPluginOptions {
+    externalSprites: boolean;
 }
 
 const SpritesPlugin: PluginObject<any> = {
