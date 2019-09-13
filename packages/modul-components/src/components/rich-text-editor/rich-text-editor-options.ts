@@ -26,7 +26,6 @@ export class MRichTextEditorDefaultOptions {
     public linkInsertButtons: string[] = [];
     public imageResizeWithPercent: boolean = true;
     public imageDefaultWidth: number = 0;// Sets the default with of the image. Setting it to 0 will not set any width.
-    // public imageEditButtons: string[] = ['imageReplace', 'imageAlign', 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
     public imageEditButtons: string[] = ['imageReplace', ImageLayoutCommands.IMG_LAYOUT_CMD, 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
     public shortcutsEnabled: string[] = ['paragraphStyle', 'bold', 'italic', 'subscript', 'superscript', 'formatUL', 'formatOL', 'outdent', 'indent', 'insertLink', 'specialCharacters', 'insertImage', 'fullscreen', 'undo', 'redo'];
 

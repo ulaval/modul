@@ -16,7 +16,6 @@ import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import FileUploadPlugin from '../file-upload/file-upload';
 import InputStylePlugin from '../input-style/input-style';
 import ValidationMessagePlugin from '../validation-message/validation-message';
-import { ImageLayoutCommands } from './adapter/image-layout-commands';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
@@ -151,12 +150,6 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             // for mobile devices
             richTextEditorOptions.toolbarButtonsXS.moreRich.buttons.push('insertImage');
         }
-
-        // if (this.options.includes(MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT)) {
-        //     richTextEditorOptions.imageEditButtons = richTextEditorOptions.imageEditButtons.filter((button: string) => button !== 'imageAlign');
-        // }
-
-
 
         if (this.titleAvailable) {
             richTextEditorOptions.paragraphStyles = this.manageHeaderLevels();
