@@ -129,9 +129,19 @@ $m-panel--screen--min: 640px;
 
     &__header {
         position: relative;
+        display: flex;
+        align-items: center;
 
         &.m--has-menu {
             padding-right: $m-touch-size;
+        }
+
+        &.m--is-right-content-alone {
+            justify-content: flex-end;
+        }
+
+        &:not(.m--is-right-content-alone) {
+            justify-content: space-between;
         }
 
         &:not(.m--no-padding) {
@@ -141,7 +151,7 @@ $m-panel--screen--min: 640px;
         }
 
         &__content {
-            flex: 1;
+            flex: 1 1 auto;
 
             > :first-child {
                 margin-top: 0;
@@ -155,12 +165,6 @@ $m-panel--screen--min: 640px;
         &__menu {
             .m--is-skin-light & {
                 right: $m-spacing;
-            }
-        }
-
-        &.m--is-right-content-alone {
-            &[min-width~="#{ $m-panel--screen--min }"] {
-                justify-content: flex-end;
             }
         }
     }
@@ -206,34 +210,17 @@ $m-panel--screen--min: 640px;
         border-top: 1px solid $m-color--grey-light;
     }
 
-    &[max-width~="#{ $m-panel--screen--max }"] {
-        &.m--is-skin-light {
-            .m-panel__header {
-                display: block;
-            }
-        }
+    // &[max-width~="#{ $m-panel--screen--max }"] {
+    //     &.m--is-skin-light {
+    //         .m-panel__header {
+    //             display: block;
+    //         }
+    //     }
 
-        &:not(.m--is-right-content-alone) {
-            .m-panel__header__content-right {
-                margin-top: $m-margin;
-            }
-        }
-    }
-
-    &[min-width~="#{ $m-panel--screen--min }"] {
-        .m-panel__header {
-            display: flex;
-            align-items: center;
-
-            &__content {
-                flex: 1 1 auto;
-            }
-        }
-
-        &:not(.m--is-right-content-alone) {
-            .m-panel__header {
-                justify-content: space-between;
-            }
-        }
-    }
+    //     &:not(.m--is-right-content-alone) {
+    //         .m-panel__header__content-right {
+    //             margin-top: $m-margin;
+    //         }
+    //     }
+    // }
 }

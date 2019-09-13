@@ -1,4 +1,3 @@
-import ElementQueries from 'css-element-queries/src/ElementQueries';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
@@ -52,14 +51,6 @@ export class MPanel extends Vue {
 
     @Emit('click')
     onClick(): void { }
-
-    protected mounted(): void {
-        ElementQueries.init();
-    }
-
-    protected beforeDestroy(): void {
-        ElementQueries.detach(this.$el);
-    }
 
     public get lightSkin(): boolean {
         return this.skin === MPanelSkin.Light;
