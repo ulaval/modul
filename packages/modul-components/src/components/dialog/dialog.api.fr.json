@@ -1,0 +1,19 @@
+{
+    "props": {
+        "title": {
+            "description": "Titre de la fenêtre de dialogue"
+        },
+        "message": {
+            "description": "Message de la fenêtre de dialogue"
+        },
+        "okLabel": {
+            "description": "Texte du champs ok"
+        },
+        "cancelLabel": {
+            "description": "Texte du champs cancel"
+        },
+        "negativeLink": {
+            "description": "Afficher ou non le bouton d'abandon"
+        }
+    }
+}

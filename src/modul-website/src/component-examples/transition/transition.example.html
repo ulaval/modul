@@ -1,0 +1,15 @@
+<div>
+    <m-button @click="toggleOpenAccordion()">
+        Basculer l'affichage
+    </m-button>
+    <!-- <m-button @click="toggleOpenSlide()">
+        Slide transition
+    </m-button> -->
+    <component :is="type"
+               :disabled="false">
+        <div v-if="open">
+            <p v-for="index in 4"
+               :key="index">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A laudantium odio ipsum, quae quos cum dolor, omnis perferendis, veritatis deleniti iusto consectetur? Impedit tempora quam ab laborum maiores sapiente earum?</p>
+        </div>
+    </component>
+</div>

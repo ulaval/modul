@@ -1,0 +1,65 @@
+@import '../../styles/commons';
+$modul-color--bp: 590px;
+
+.modul-color {
+    width: 100%;
+    margin-top: $m-padding;
+    border-color: $m-color--success;
+
+    @media (min-width: $modul-color--bp) {
+        display: flex;
+    }
+
+    + .modul-color {
+        @media (min-width: $modul-color--bp) {
+            margin-top: $m-margin--xs;
+        }
+    }
+
+    &__header,
+    &__body {
+        display: flex;
+        align-items: center;
+    }
+
+    &__header {
+        width: 100%;
+        justify-content: center;
+        font-size: $m-font-size--s;
+        padding: $m-padding--l 0;
+
+        @media (min-width: $modul-color--bp) {
+            width: 33.33%;
+            min-width: 220px;
+            padding: $m-padding--l 4px;
+        }
+    }
+
+    &__body {
+        flex: 1 1 auto;
+        justify-content: space-between;
+        background: $m-color--grey-lighter;
+        padding: $m-padding--s $m-padding;
+
+        @media (min-width: $modul-color--bp) {
+            padding: $m-padding--l;
+            background: $m-color--grey-lightest;
+        }
+
+        strong {
+            display: block;
+        }
+    }
+
+    &__name {
+        margin: 0;
+        text-align: center;
+    }
+
+    &__hex,
+    &__rgb,
+    &__cmyk {
+        margin: 0;
+        width: 33.33%;
+    }
+}

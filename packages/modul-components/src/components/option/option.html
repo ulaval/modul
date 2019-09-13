@@ -1,33 +1,46 @@
-<m-popup class="m-option"
-         :class="{ 'm--is-disabled': disabled }"
-         :open.sync="open"
-         :padding="false"
-         :placement="placement"
-         :disabled="disabled"
-         :close-on-backdrop="true"
-         :background="false"
-         :shadow="false"
-         :focus-management="focusManagement"
-         @open="onOpen"
-         @close="onClose">
-    <m-icon-button :id="id"
-                   class="m-option__button"
-                   aria-haspopup="true"
-                   :aria-controls="ariaControls"
-                   :aria-expanded="open"
-                   slot="trigger"
-                   :skin="skin"
-                   :title="propTitle"
-                   icon-name="m-svg__options"
-                   :disabled="disabled"
-                   :button-size="size"
-                   @click="onClick">
-    </m-icon-button>
-    <ul :id="ariaControls"
-        class="m-option__list"
-        :style="{ maxHeight: menuMaxHeight }"
-        :aria-labelledby="id"
-        ref="menu">
-        <slot></slot>
-    </ul>
-</m-popup>
+<div class="m-option">
+    <m-popup :open.sync="open"
+             :padding="false"
+             :placement="placement"
+             :disabled="disabled"
+             :close-on-backdrop="true"
+             :background="false"
+             :shadow="false"
+             :focus-management="focusManagement"
+             @open="onOpen"
+             @close="onClose">
+        <button v-if="isSkinMixed"
+                class="m-option__button"
+                @click="onClick"
+                :id="id"
+                aria-haspopup="true"
+                :aria-controls="ariaControls"
+                :aria-expanded="open"
+                :disabled="disabled"
+                slot="trigger">
+            <m-icon :title="propTitle"
+                    name="m-svg__options">
+            </m-icon>
+        </button>
+        <m-icon-button :id="id"
+                       v-else
+                       aria-haspopup="true"
+                       :aria-controls="ariaControls"
+                       :aria-expanded="open"
+                       slot="trigger"
+                       :skin="iconButtonSkin"
+                       :title="propTitle"
+                       icon-name="m-svg__options"
+                       :disabled="disabled"
+                       :button-size="size"
+                       @click="onClick">
+        </m-icon-button>
+        <ul :id="ariaControls"
+            class="m-option__list"
+            :style="{ maxHeight: menuMaxHeight }"
+            :aria-labelledby="id"
+            ref="menu">
+            <slot></slot>
+        </ul>
+    </m-popup>
+</div>

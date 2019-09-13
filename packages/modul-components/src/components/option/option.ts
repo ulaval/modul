@@ -5,7 +5,7 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { OPTION_ITEM_ADD_NAME, OPTION_ITEM_ARCHIVE_NAME, OPTION_ITEM_DELETE_NAME, OPTION_ITEM_EDIT_NAME, OPTION_ITEM_NAME, OPTION_NAME, OPTION_SEPARATOR, OPTION_TITLE } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin from '../icon-button/icon-button';
+import IconButtonPlugin, { MIconButtonSkin } from '../icon-button/icon-button';
 import IconPlugin from '../icon/icon';
 import { MPopperPlacement } from '../popper/popper';
 import PopupPlugin from '../popup/popup';
@@ -16,7 +16,8 @@ import { MOptionItemDelete } from './option-item/option-item-delete';
 import { MOptionItemEdit } from './option-item/option-item-edit';
 import { MOptionSeparator } from './option-separator/option-separator';
 import { MOptionTitle } from './option-title/option-title';
-import WithRender from './option.html?style=./option.scss';
+import WithRender from './option.html';
+import './option.scss';
 
 export abstract class BaseOption extends ModulVue {
 }
@@ -30,8 +31,9 @@ export interface MOptionInterface {
 }
 
 export enum MOptionsSkin {
-    Light = 'light',
-    Dark = 'dark'
+    Light = 'over-light',
+    Dark = 'over-dark',
+    Mixed = 'over-mixed'
 }
 
 @WithRender
@@ -58,7 +60,8 @@ export class MOption extends BaseOption implements MOptionInterface {
         default: MOptionsSkin.Light,
         validator: value =>
             value === MOptionsSkin.Light ||
-            value === MOptionsSkin.Dark
+            value === MOptionsSkin.Dark ||
+            value === MOptionsSkin.Mixed
     })
     public skin: MOptionsSkin;
     @Prop()
@@ -98,15 +101,15 @@ export class MOption extends BaseOption implements MOptionInterface {
         this.onClose();
     }
 
-    private onOpen(): void {
+    public onOpen(): void {
         this.$emit('open');
     }
 
-    private onClose(): void {
+    public onClose(): void {
         this.$emit('close');
     }
 
-    private onClick($event: MouseEvent): void {
+    public onClick($event: MouseEvent): void {
         this.$emit('click', $event);
     }
 
@@ -118,16 +121,31 @@ export class MOption extends BaseOption implements MOptionInterface {
         return this.closeTitle === undefined ? this.$i18n.translate('m-option:close') : this.closeTitle;
     }
 
-    private get propTitle(): string {
+    public get propTitle(): string {
         return this.open ? this.getCloseTitle() : this.getOpenTitle();
     }
 
-    private get ariaControls(): string {
+    public get ariaControls(): string {
         return this.id + '-controls';
     }
 
-    private get menuMaxHeight(): string | undefined {
+    public get menuMaxHeight(): string | undefined {
         return this.scroll ? undefined : 'none';
+    }
+
+    public get isSkinMixed(): boolean {
+        return this.skin === MOptionsSkin.Mixed;
+    }
+
+    public get iconButtonSkin(): string | undefined {
+        switch (this.skin) {
+            case MOptionsSkin.Light:
+                return MIconButtonSkin.Light;
+            case MOptionsSkin.Dark:
+                return MIconButtonSkin.Dark;
+            default:
+                throw new Error('skin not supported!');
+        }
     }
 }
 

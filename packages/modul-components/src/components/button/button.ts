@@ -68,19 +68,19 @@ export class MButton extends Vue {
     }
 
     @Emit('mousedown')
-    onMousedown(event: Event): void { }
+    onMousedown(event: MouseEvent): void { }
 
     @Emit('touchstart')
-    onTouchstart(event: Event): void { }
+    onTouchstart(event: TouchEvent): void { }
 
     @Emit('touchend')
-    onTouchend(event: Event): void { }
+    onTouchend(event: TouchEvent): void { }
 
     @Emit('focus')
-    onFocus(event: Event): void { }
+    onFocus(event: FocusEvent): void { }
 
     @Emit('blur')
-    onBlur(event: Event): void { }
+    onBlur(event: FocusEvent): void { }
 
     private get isSkinPrimary(): boolean {
         return this.skin === MButtonSkin.Primary;

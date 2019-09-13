@@ -1,0 +1,18 @@
+<div class="website-standards-ui-iconography">
+    <m-markdown :template="markdown"></m-markdown>
+    <div class="modul-u--navbar">
+        <m-navbar skin="tab-arrow"
+                  :arrow-mobile="false"
+                  :auto-select="true">
+            <m-navbar-item value="standards-ui-iconography-documentation"
+                           :url="{name :'router:standards-ui-iconography-documentation'}">
+                <m-i18n k="website:documentation"></m-i18n>
+            </m-navbar-item>
+            <m-navbar-item value="standards-ui-iconography-icons"
+                           :url="{name :'router:standards-ui-iconography-icons'}">
+                <m-i18n k="website:icons"></m-i18n>
+            </m-navbar-item>
+        </m-navbar>
+    </div>
+    <router-view></router-view>
+</div>
