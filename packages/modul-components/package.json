@@ -1,6 +1,6 @@
 {
     "name": "@ulaval/modul-components",
-    "version": "1.0.0-beta.123",
+    "version": "1.0.0-beta.124",
     "description": "Component library",
     "author": "Martin Simard <martin.simard@dti.ulaval.ca>",
     "private": false,
@@ -107,6 +107,7 @@
         "jest-html-reporter": "^2.4.4",
         "jest-junit": "^3.6.0",
         "jest-serializer-vue": "^2.0.2",
+        "meta-generator": "^1.0.2-beta.0",
         "node-html-parser": "^1.1.10",
         "node-sass": "^4.11.0",
         "postcss-loader": "^3.0.0",
@@ -140,8 +141,7 @@
         "webpack": "^4.29.3",
         "webpack-bundle-analyzer": "^3.3.2",
         "webpack-cli": "^3.2.3",
-        "webpack-dev-server": "^3.1.14",
-        "meta-generator": "^1.0.1"
+        "webpack-dev-server": "^3.1.14"
     },
     "repository": {
         "type": "git",
