@@ -16,6 +16,7 @@ pipeline {
         choice(name: 'version', description: 'Incrément de la version.', choices: 'prerelease\npremajor\npreminor\nprepatch')
         string(name: 'prereleaseid', description: 'Indenficatieur de prerelease (eg. 1.0.1-beta.0)', defaultValue: 'beta')
         string(name: 'disttag', description: "Tag spécifique à associer au package sur npm", defaultValue: 'next')
+        booleanParam(name: 'synccdn', description: "Synchroniser website avec le CDN.", defaultValue: true)
 	}
 
     options {
@@ -85,6 +86,25 @@ pipeline {
 				}
 			}
 		}
+
+        stage('Deployer website CDN') {
+			when {
+                expression { params.synccdn == true }
+            }
+
+            steps {
+                script {
+                    build(job: "MonPortail/Mpo-Contenu/sync-npm-ul",
+                    parameters: [
+                        [$class: 'StringParameterValue', name: 'scope', value: '@ulaval'],
+						[$class: 'StringParameterValue', name: 'nom', value: 'modul-website'],
+						[$class: 'StringParameterValue', name: 'version', value: params.disttag],
+                        [$class: 'BooleanParameterValue', name: 'force_release', value: true],
+                        [$class: 'BooleanParameterValue', name: 'dryrun', value: false]
+                    ])
+                }
+            }
+        }
 
 	}
 

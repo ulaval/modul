@@ -1,8 +1,8 @@
 import Vue, { DirectiveOptions, PluginObject, VNode, VNodeDirective, VueConstructor } from 'vue';
 import { MIconFile } from '../../components/icon-file/icon-file';
 import { MIcon } from '../../components/icon/icon';
-import { ComponentMeta } from '../../meta/meta';
 import { BADGE_NAME } from '../directive-names';
+
 
 // Icon state
 export enum MBadgeState {
@@ -39,7 +39,7 @@ const BADGE_COLOR: BadgeIcon = {
 };
 
 const getBadgeOrigin: (vnode: VNode) => String[] = (vnode: VNode) => {
-    let elTag: string = (vnode.componentOptions as ComponentMeta).tag;
+    let elTag: string = vnode.componentOptions!.tag!;
     let elID: string = '';
     if (elTag === 'm-icon') {
         elID = (vnode.componentInstance as MIcon).name;
@@ -77,7 +77,7 @@ const getBadgePosition: (element: HTMLElement, binding: VNodeDirective, vnode: V
     let badgeOrigin: String[] = getBadgeOrigin(vnode);
     let badgeOffset: BadgeOffset = getBadgeOffset(binding);
 
-    let elSize: number = (vnode.componentOptions as ComponentMeta)['propsData']['size'] ? parseInt((vnode.componentOptions as ComponentMeta)['propsData']['size'], 10) : (vnode.elm as HTMLElement).clientWidth;
+    let elSize: number = (vnode.componentOptions)!['propsData']!['size'] ? parseInt((vnode.componentOptions)!['propsData']!['size'], 10) : (vnode.elm as HTMLElement).clientWidth;
     let badgeSize: number = elSize * BADGE_SIZE_RATIO;
     let elLeftOrigin: number = Number(parseFloat(badgeOrigin[0].replace(/,/g, '.')).toFixed(2));
     let elTopOrigin: number = Number(parseFloat(badgeOrigin[1].replace(/,/g, '.')).toFixed(2));

@@ -1,0 +1,84 @@
+// ======================================================================
+//  Titles
+// ======================================================================
+
+.modul-u--h1,
+.modul-u--h2,
+.modul-u--h3,
+.modul-u--h4,
+.modul-u--h5,
+.modul-u--h6 {
+    color: $modul-color--black-grey-dark;
+    line-height: 1.2;
+}
+
+.modul-u--h4,
+.modul-u--h5,
+.modul-u--h6 {
+    font-size: 16px;
+    margin: $m-margin--l 0 0 0;
+}
+
+.modul-u--h1,
+.modul-u--h2 {
+    text-transform: uppercase;
+    font-weight: $m-font-weight--black;
+    font-size: 24px;
+}
+
+.modul-u--h1 {
+    margin: 0;
+}
+
+.modul-u--h2 {
+    margin: $m-padding--l 0 0 0;
+}
+
+.modul-u--h3 {
+    font-size: 22px;
+    margin: $m-padding--l 0 0 0;
+}
+
+.modul-u--h4 {
+    font-weight: $m-font-weight--black;
+}
+
+.modul-u--h5 {
+    font-weight: $m-font-weight--bold;
+}
+
+// ======================================================================
+//  links
+// ======================================================================
+
+.m-u--app-body .mw-u--highlighted-title {
+    @include mw-highlighted-title();
+}
+
+.m-u--app-body .mw-u--highlighted-title-link {
+    cursor: pointer;
+    outline: none;
+
+    > a {
+        text-decoration: none;
+        color: $m-color--white;
+        outline: none;
+    }
+
+    @include mw-highlighted-title();
+
+    &:active {
+        outline: none;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            width: 64px; // Magic number
+        }
+    }
+
+    &::before {
+        transition: width 0.3s ease;
+    }
+}
