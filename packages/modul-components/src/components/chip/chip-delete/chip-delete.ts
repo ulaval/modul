@@ -27,6 +27,7 @@ export class MChipDelete extends Vue {
     public emitDelete(): void { }
 
     public textId: string = `mChipDeleteText-${uuid.generate()}`;
+    public iconHover: boolean = false;
 
     public get iconSize(): string {
         return this.size === MChipSize.Small ? '8px' : '14px';
@@ -38,6 +39,14 @@ export class MChipDelete extends Vue {
         }
         this.emitClick();
         this.emitDelete();
+    }
+
+    public onMouseOver(event: Event): void {
+        this.iconHover = true;
+    }
+
+    public onMouseLeave(event: Event): void {
+        this.iconHover = false;
     }
 }
 

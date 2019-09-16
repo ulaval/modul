@@ -10,10 +10,10 @@
     &.m--is-small {
         @include m-chip-small-style();
 
-        background: $m-color--grey-light;
+        border-color: $m-color--interactive;
+        background: none;
         font-size: 0.75em;
         font-weight: $m-font-weight--semi-bold;
-        border: none;
 
         .m-chip-delete__button {
             $m-chip-delete--button-width: 20px;
@@ -29,8 +29,23 @@
             width: $m-chip-delete--icon-width;
             height: $m-chip-delete--icon-width;
             left: 0;
+            top: 0;
             padding: 5px; // Magic number: perfect icon size
-            transform: translate(0, -50%);
+            transform: none;
+        }
+
+        &:not(.m--is-disabled) {
+            &.m--is-hover {
+                @include m-button--hover();
+
+                &:hover,
+                &:focus,
+                &:active {
+                    .m-chip-delete__icon {
+                        color: $m-color--white;
+                    }
+                }
+            }
         }
     }
 
@@ -95,6 +110,7 @@
         height: $m-chip-delete--icon-width;
         transform: translate(-50%, -50%);
         stroke-width: 3;
+        transition: color $m-transition-duration ease;
     }
 
     &__hidden-text {
