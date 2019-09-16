@@ -1,0 +1,42 @@
+.mw-website__footer {
+    position: relative;
+    z-index: 0;
+    color: m-color(white);
+    text-transform: uppercase;
+    background-color: $modul-color--black-grey-dark;
+
+    &.mw--is-large-footer {
+        padding: $m-spacing--xxl;
+        text-align: center;
+
+        a {
+            width: 130px;
+            margin: $m-spacing auto 0 auto;
+        }
+    }
+
+    &:not(.mw--is-large-footer) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $m-spacing;
+        font-size: $m-font-size--s;
+
+        a {
+            width: 80px;
+            margin-left: $m-spacing--s;
+        }
+    }
+
+    a {
+        display: block;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    p {
+        margin: 0;
+    }
+}

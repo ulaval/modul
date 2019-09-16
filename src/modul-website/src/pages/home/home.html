@@ -1,0 +1,90 @@
+<div class="mw-home">
+    <section class="mw-home__headline">
+        <h1 class="mw-home__logo-modul"
+            :style="logoModulStyle">
+            <mw-logo size="large"
+                     :tagline="true"></mw-logo>
+        </h1>
+
+        <div v-if="hasButtonScrollToBody"
+             class="mw-home__headline-button"
+             tabindex="0"
+             role="button"
+             @click="scrollToBody()">
+            <m-icon v-for="index in 3"
+                    :key="index"
+                    class="mw-home__headline-button-arrow"
+                    name="m-svg__chevron--down"
+                    :size=" 18 + (index * 4) + 'px'"></m-icon>
+            <div class="mw-home__headline-button-link">{{'modul:responsive-design-link' | f-m-i18n}}</div>
+        </div>
+    </section>
+
+    <section class="mw-home__body"
+             ref="body">
+        <div class="mw-home__body-wrap">
+            <div class="mw-home__cards-wrap">
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="componentIcon"
+                             alt="" />
+                        <h2>{{'modul:components' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content">
+                        Les composants sont les éléments réutilisables qui composent les interfaces des applications <strong>modUL</strong>. Chaque composant est accompagné d’une documentation facilitant leur utilisation en plus d'une implémentations complète avec la platform VueJS
+                    </p>
+                    <m-link slot="link"
+                            :url="componentsUi">{{'website:components-ui' | f-m-i18n}}</m-link>
+                </mw-card>
+
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="normesIcon"
+                             alt="" />
+                        <h2>{{'website:standards' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content">
+                        Les normes et standards définissent les guides utilisés pour la conception des composants et les interfaces des applications <strong>modul</strong>
+                    </p>
+                    <m-link slot="link"
+                            :url="uiStandards">{{'website:standards-ui' | f-m-i18n}}</m-link>
+                    <m-link slot="link"
+                            :url="editorialStandards">{{'website:standards-editorial' | f-m-i18n}}</m-link>
+                    <m-link slot="link"
+                            :url="devStandards">{{'website:standards-development' | f-m-i18n}}</m-link>
+                    <m-link slot="link"
+                            :url="a11yStandards">{{'website:accessibility-standards' | f-m-i18n}}</m-link>
+                </mw-card>
+
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="philoIcon"
+                             alt="" />
+                        <h2>{{'website:philosophy' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content">
+                        <strong>modUL</strong> repose sur une approche de conception intégrée qui encourage une unification de l'expérience utilisateur à travers les applications, et ce, peu importe l’appareil utilisé
+                    </p>
+                    <m-link slot="link"
+                            :url="philosophy">{{'website:philosophy' | f-m-i18n}}</m-link>
+
+                </mw-card>
+                <!-- <article class="modul-home-content__panel"
+                 tabindex="0"
+                 @click="onRoute(writingStandards)">
+            <header>
+                <h2 class="modul-u--h2">
+                    {{'pages:writing-standards' | f-m-i18n}}
+                </h2>
+            </header>
+            <p>
+                {{'pages:writing-standards-desc' | f-m-i18n}}
+            </p>
+        </article> -->
+            </div>
+        </div>
+    </section>
+</div>

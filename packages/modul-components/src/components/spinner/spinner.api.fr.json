@@ -1,0 +1,25 @@
+{
+    "props": {
+        "title": {
+            "description": "Propriété pour afficher ou non le titre"
+        },
+        "titleMessage": {
+            "description": "Texte pour le titre"
+        },
+        "description": {
+            "description": "Propriété pour afficher ou non la description"
+        },
+        "descriptionMessage": {
+            "description": "Texte pour la description"
+        },
+        "skin": {
+            "description": "Propriété pour changer le visuel"
+        },
+        "size": {
+            "description": "Grossir ou réduire la dimension"
+        },
+        "processing": {
+            "description": "Propriété pour mettre le mode traitement est en cours"
+        }
+    }
+}

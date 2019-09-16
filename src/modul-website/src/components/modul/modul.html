@@ -1,0 +1,64 @@
+<div class="mw-website">
+    <header class="mw-website__header">
+        <mw-header :show-logo="!isHomePage"
+                   @search="toggleSearch"></mw-header>
+    </header>
+
+    <m-sidebar :open="searchOpen"
+               style="display: none;"
+               @open="openSearch"
+               @close="closeSearch"
+               origin="right"
+               :close-button="false"
+               :padding="false">
+        <div class="modul-search__header"
+             slot="header">
+            <m-searchfield ref="searchfield"
+                           v-model="searchModel"
+                           @search="onSearch"
+                           :placeholder="'website:recherche-placeholder' | f-m-i18n"
+                           max-width="none"></m-searchfield>
+        </div>
+        <transition-group name="modul--is"
+                          tag="ul">
+            <li tabindex="0"
+                @click="closeSearch"
+                @keyup.enter="closeSearch"
+                v-for="(item,index) in searchResult"
+                :key="index"
+                v-if="item.category">
+                <router-link :to="getRouterIndex(item.url)"
+                             class="modul-search-card">
+                    <div class="modul-search-card__img"
+                         aria-hidden="true">
+                        <m-icon size="90px"
+                                :name="item.tag"></m-icon>
+                    </div>
+                    <div class="modul-search-card__content">
+                        <p class="modul-search-card__content__category">{{ item.category }}</p>
+                        <h2 class="modul-search-card__content__title modul-u--h3">{{ item.text }}</h2>
+                        <p class="modul-search-card__content__tagname">{{ item.tag }}</p>
+                    </div>
+                </router-link>
+            </li>
+        </transition-group>
+    </m-sidebar>
+
+    <main class="mw-website__body"
+          :class="{'mw--has-dark-background': isHomePage || isPhilosophyPage}">
+        <router-view></router-view>
+    </main>
+
+    <footer class="mw-website__footer"
+            :class="{'mw--is-large-footer': isHomePage || isPhilosophyPage }">
+        <p>
+            <m-i18n k="modul:powered-by"></m-i18n>
+        </p>
+        <a href="https://www.ulaval.ca/"
+           target="_blank">
+            <img :src="logoUl"
+                 alt="l'Université Laval"
+                 title="l'Université Laval" />
+        </a>
+    </footer>
+</div>

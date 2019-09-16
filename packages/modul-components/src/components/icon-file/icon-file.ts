@@ -104,8 +104,6 @@ type FileGroup = {
 export class MIconFile extends Vue {
     @Prop()
     public extension: string;
-    @Prop()
-    public $i18n: Messages;
 
     @Prop({ default: '24px' })
     public size: string;
@@ -114,10 +112,10 @@ export class MIconFile extends Vue {
     private fileMap: FileGroup = {};
 
     @Emit('click')
-    onClick(event: Event): void { }
+    onClick(event: MouseEvent): void { }
 
     @Emit('keydown')
-    onKeydown(event: Event): void { }
+    onKeydown(event: KeyboardEvent): void { }
 
     public get spriteId(): string {
         let cleanExtension: string = this.extension ? this.extension.replace('.', '').toLowerCase() : '';

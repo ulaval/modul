@@ -18,10 +18,10 @@ export class MIcon extends Vue {
     public showNameAsClass: boolean;
 
     @Emit('click')
-    onClick(event: Event): void { }
+    onClick(event: MouseEvent): void { }
 
     @Emit('keydown')
-    onKeydown(event: Event): void { }
+    onKeydown(event: KeyboardEvent): void { }
 
     private get hasSvgTitle(): boolean {
         return !!this.svgTitle;
