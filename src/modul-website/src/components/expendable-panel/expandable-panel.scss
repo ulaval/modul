@@ -1,0 +1,98 @@
+@import '../../styles/commons';
+
+$w-sidebar-max-width: 230px;
+$w-sidebar-max-width--s: 100%;
+
+$w-content-max-width: $mw-max-width;
+
+.mw-expandable-panel {
+    background-color: $m-color--white;
+
+    &__sidemenu-body {
+        padding: $m-spacing--l;
+    }
+
+    &,
+    &__page,
+    &__body {
+        height: 100%;
+    }
+
+    &__page {
+        position: relative;
+        min-width: $m-min-width;
+    }
+
+    &__menu-button.m-icon-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__search {
+        background-color: $modul-color--black-grey;
+        padding: m-spacing(l);
+    }
+
+    &__content {
+        margin: 0 auto;
+        padding: $m-spacing--xxxl $m-spacing;
+        max-width: $w-content-max-width;
+
+        @media (min-width: $m-mq--min--s) {
+            padding-left: $m-spacing--l;
+            padding-right: $m-spacing--l;
+        }
+    }
+
+    &__sidemenu {
+        position: relative;
+        height: 100%;
+        background-color: $modul-color--grey-light;
+    }
+
+    &__sidemenu-title {
+        font-size: $m-font-size--l;
+        text-transform: uppercase;
+        font-weight: $m-font-weight--black;
+    }
+
+    &__sidemenu-sub-title {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        font-size: $m-font-size--l;
+        font-weight: $m-font-weight--black;
+    }
+
+    &__sidemenu-item {
+        a {
+            transition: font-weight $m-transition-duration--s linear;
+            display: block;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 12px;
+            border-left: 2px solid $m-color--grey-light;
+            margin-left: 1px;
+            font-size: $m-font-size;
+            font-weight: $m-font-weight;
+            text-decoration: none;
+            color: $m-color--text;
+
+            &:hover,
+            &:focus {
+                font-weight: $m-font-weight--bold;
+            }
+
+            &.router-link-active {
+                font-weight: $m-font-weight--black;
+                border-left: 4px solid $m-color--ul-yellow;
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__beta {
+        display: inline;
+        vertical-align: middle;
+    }
+}

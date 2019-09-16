@@ -1,0 +1,37 @@
+{
+    "props": {
+        "id": {
+            "description": "Identifiant unique de l'accordéon"
+        },
+        "open": {
+            "description": "Propriété pour ouvrir ou fermer l'accordéon"
+        },
+        "disabled": {
+            "description": "Propriété pour désactiver l'accordéon"
+        },
+        "skin": {
+            "description": "Propriété pour changer le visuel de l'accordéon"
+        },
+        "iconPosition": {
+            "description": "Propriété pour positioner l'icône"
+        },
+        "iconBorder": {
+            "description": "Propriété pour enlever ou mettre une bordure sur l'icône"
+        },
+        "iconSize": {
+            "description": "Propriété pour changer la grosseur de l'icône"
+        },
+        "padding": {
+            "description": "Propriété pour enlever ou mettre de l'espacement"
+        },
+        "paddingHeader": {
+            "description": "Propriété pour enlever ou mettre de l'espacement sur l'entête"
+        },
+        "paddingBody": {
+            "description": "Propriété pour enlever ou mettre de l'espacement sur le corps"
+        },
+        "keepContentAlive": {
+            "description": "Permet de garder le contenu de l'accordion dans le DOM (en utilisant la directive v-show au lieu de v-if)"
+        }
+    }
+}

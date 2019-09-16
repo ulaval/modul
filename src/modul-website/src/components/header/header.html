@@ -1,0 +1,75 @@
+<div class="mw-header">
+
+    <mw-mega-menu :open.sync="openMegaMenu"
+                  :type="megaMenuType"></mw-mega-menu>
+
+    <div class="mw-header__body">
+
+        <div class="mw-header__content">
+            <div v-if="showLogo"
+                 class="mw-header__logo">
+                <a href
+                   @click.prevent="navigateTo($event, 'home')">
+                    <mw-logo size="small"></mw-logo>
+                </a>
+            </div>
+
+            <nav class="mw-header__nav">
+                <ul v-if="isMqMinS"
+                    class="mw-header__item">
+                    <li>
+                        <a href
+                           @click.prevent="navigateTo($event, 'philosophy')"
+                           class="mw-header__link">
+                            <m-i18n k="website:philosophy"></m-i18n>
+                        </a>
+                    </li>
+                    <li>
+                        <a href
+                           @click.prevent="toggleMegaMenu('components')"
+                           class="mw-header__link">
+                            <m-i18n k="modul:components"></m-i18n>
+                        </a>
+                    </li>
+                    <li>
+                        <a href
+                           @click.prevent="toggleMegaMenu('standards')"
+                           class="mw-header__link">
+                            <m-i18n k="modul:standards"></m-i18n>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <aside class="mw-header__aside">
+
+                <a v-if="isMqMinS"
+                   href="https://github.com/ulaval/modul/releases"
+                   class="mw-header__link mw-header__link-version"
+                   target="_blank">
+                    <m-i18n k="modul:version"></m-i18n> {{modulVersion}}
+                </a>
+                <a v-if="isMqMinS"
+                   href="https://github.com/ulaval/modul/"
+                   class="mw-header__link mw-header__version"
+                   target="_blank">
+                    <m-icon size="32px"
+                            svg-title="Github"
+                            name="m-github-logo"></m-icon>
+                </a>
+                <a href
+                   v-else
+                   @click.prevent="toggleMegaMenu"
+                   class="mw-header__link mw-header__menu">
+                    <m-i18n k="modul:menu-label"></m-i18n>
+                </a>
+
+                <button @click="onSearch"
+                        class="mw-header__search-button">
+                    <m-icon :svg-title="'website:recherche' | f-m-i18n"
+                            name="m-svg__search"></m-icon>
+                </button>
+            </aside>
+        </div>
+    </div>
+</div>

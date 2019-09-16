@@ -1,0 +1,21 @@
+<div class="mw-expandable-panel">
+    <m-expandable-layout class="mw-expandable-panel__body"
+                         :open="showMenu"
+                         panel-width="320px">
+        <div class="mw-expandable-panel__page">
+            <m-icon-button class="mw-components__menu-button"
+                           @click="toggleMenu()"
+                           :icon-name="showMenu ? 'm-svg__close-clear' : 'm-standard-edit'"
+                           skin="light"
+                           icon-size="20px">
+            </m-icon-button>
+
+            <div class="mw-expandable-panel__content">
+                <slot></slot>
+            </div>
+        </div>
+        <template slot="panel">
+            <slot name="sidemenu"></slot>
+        </template>
+    </m-expandable-layout>
+</div>

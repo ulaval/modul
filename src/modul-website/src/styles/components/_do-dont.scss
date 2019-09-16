@@ -1,0 +1,35 @@
+.modul-do,
+.modul-dont {
+    padding: 0 0 0 $m-padding;
+    border-left: $m-border-width--l solid;
+    margin-top: $m-margin--l;
+
+    ul {
+        padding-left: $m-padding;
+
+        li {
+            &::before {
+                margin-top: -4px;
+                border-radius: 0;
+                background: none;
+            }
+        }
+    }
+
+    &__header {
+        margin: 0;
+        text-transform: uppercase !important;
+        font-size: $m-font-size--xs !important;
+    }
+
+    &__body {
+        margin-top: $m-margin--s;
+
+        > :first-child {
+            &,
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

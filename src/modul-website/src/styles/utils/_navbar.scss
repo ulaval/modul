@@ -1,0 +1,43 @@
+.modul-u--navbar {
+    position: relative;
+    border-top: $m-border-width--l solid $m-color--ul-yellow;
+
+    &::after {
+        position: absolute;
+        bottom: $m-margin--s; // Magic number
+        left: 0;
+        right: 0;
+        z-index: 0;
+        content: '';
+        height: 1px;
+        background: $m-color--grey;
+    }
+
+    .m-navbar {
+        position: relative;
+        z-index: 1;
+
+        // &__wrap {
+        //     background: $m-color--white;
+        // }
+
+        .m-navbar-item.m--is-selected .modul-u--navbar__item {
+            color: $modul-color--black-grey-dark;
+        }
+    }
+
+    .m-navbar-item {
+        .modul-u--navbar__item {
+            padding: 25px 0; //Magic Number
+            font-weight: $m-font-weight--black;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $modul-color--grey-dark;
+
+            &:hover,
+            &:focus {
+                color: $modul-color--grey-darker;
+            }
+        }
+    }
+}

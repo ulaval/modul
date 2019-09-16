@@ -1,0 +1,16 @@
+{
+    "props": {
+        "disabled": {
+            "description": "Propriété pour désactiver l'accordéon"
+        },
+        "concurrent": {
+            "description": "Propriété pour mettre le groupe en mode simultanée"
+        },
+        "openedIds": {
+            "description": "Liste des identifiants des accordéons ouverts"
+        },
+        "skin": {
+            "description": "Propriété pour changer le visuel de l'accordéon"
+        }
+    }
+}
