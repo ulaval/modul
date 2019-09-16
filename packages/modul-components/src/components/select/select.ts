@@ -1,6 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Model, Prop } from 'vue-property-decorator';
+import { Emit, Model, Prop } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -39,6 +39,19 @@ export class MSelect extends ModulVue {
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
+    @Emit('select-item')
+    onSelect(option: any, index: number): void {
+        this.as<InputManagement>().model = this.options[index];
+    }
+
+    @Emit('open')
+    onOpen(): void {
+    }
+
+    @Emit('close')
+    onClose(): void {
+    }
+
     get hasItems(): boolean {
         return this.options && this.options.length > 0;
     }
@@ -47,11 +60,6 @@ export class MSelect extends ModulVue {
         return this.as<InputManagement>().hasValue || (this.open) ? false : true;
     }
 
-    onSelect(option: any, index: number): void {
-        // tslint:disable-next-line: no-console
-        console.log(`selected ${JSON.stringify(option)} index = ${index}`);
-        this.as<InputManagement>().model = this.options[index];
-    }
 
     get selectedItems(): any {
         if (this.value) {
@@ -59,46 +67,6 @@ export class MSelect extends ModulVue {
         }
         return [];
     }
-
-
-    // transitionEnter(el: HTMLElement, done: any): void {
-    //     this.$nextTick(() => {
-
-    //         if (this.as<MediaQueriesMixin>().isMqMinS) {
-    //             let height: number = el.clientHeight;
-
-    //             el.style.transition = DROPDOWN_STYLE_TRANSITION;
-    //             el.style.overflowY = 'hidden';
-    //             el.style.maxHeight = '0';
-
-    //             requestAnimationFrame(() => {
-    //                 el.style.maxHeight = height + 'px';
-    //                 done();
-    //             });
-    //         } else {
-    //             done();
-    //         }
-
-    //     });
-    // }
-
-    // transitionLeave(el: HTMLElement, done: any): void {
-    //     this.$nextTick(() => {
-    //         if (this.as<MediaQueriesMixin>().isMqMinS) {
-    //             let height: number = el.clientHeight;
-
-    //             el.style.maxHeight = height + 'px';
-    //             el.style.maxHeight = '0';
-
-    //             setTimeout(() => {
-    //                 el.style.maxHeight = 'none';
-    //                 done();
-    //             }, 300);
-    //         } else {
-    //             done();
-    //         }
-    //     });
-    // }
 
 }
 

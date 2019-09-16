@@ -15,13 +15,14 @@ storiesOf(`${componentsHierarchyRootSeparator}${SELECT_NAME}`, module)
             'open',
             'close',
             'focus',
-            'blur'
+            'blur',
+            'select'
         ),
         data: () => ({
             model1: 'avocados',
             options: options
         }),
-        template: `<div><m-select  @open="open" @close="close" @focus="focus" @blur="blur" :options="options" v-model="model1"><template v-slot:default>The selection is :{{ model1 }}</template><template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
+        template: `<div><m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:default>The selection is :{{ model1 }}</template><template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
     })
     );
 

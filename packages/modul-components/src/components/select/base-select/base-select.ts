@@ -38,6 +38,11 @@ export class MBaseSelect extends ModulVue {
     })
     public open: boolean;
 
+    @Prop({
+        default: false
+    })
+    public sidebarFullHeight: boolean;
+
     public $refs: {
         items: HTMLUListElement;
     };
@@ -45,6 +50,7 @@ export class MBaseSelect extends ModulVue {
     internalOpen: boolean = false;
     focusedIndex: number = -1;
 
+    @Emit('open')
     async onOpen(): Promise<void> {
         await this.$nextTick();
         this.focusFirstSelected();
@@ -56,6 +62,7 @@ export class MBaseSelect extends ModulVue {
         return this.controlId + '-controls';
     }
 
+    @Emit('close')
     onClose(): void {
         this.$emit('update:open', false);
     }
@@ -72,6 +79,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     onSelectItem(option: any, index: number): void {
+
         this.select(option, index);
         this.closePopup();
     }

@@ -83,19 +83,11 @@ export class MTypeahead extends ModulVue {
     @Emit('input')
     public emitInput(event: string): void { }
 
-    @Watch('results', { immediate: true })
-    public onResultsChange(): void {
-        this.onFilterResults();
-    }
-
     @Emit('keydown')
     public emitKeydown(event: KeyboardEvent): void { }
 
     @Emit('keyup')
     public emitKeyup(event: KeyboardEvent): void { }
-
-    @Emit('close')
-    public emitCloseResultPopup(): void { }
 
     @Emit('filter-results')
     public emitFilterResults(): void { }
@@ -103,6 +95,11 @@ export class MTypeahead extends ModulVue {
     @Watch('value', { immediate: true })
     public onValueChange(newValue: string): void {
         this.textfieldValue = newValue;
+    }
+
+    @Watch('results', { immediate: true })
+    public onResultsChange(): void {
+        this.onFilterResults();
     }
 
     @Watch('focus', { immediate: true })
@@ -114,7 +111,6 @@ export class MTypeahead extends ModulVue {
 
     public set textfieldValue(value: string) {
         this.textfieldValueInternal = value;
-        this.emitInput(value);
     }
 
     public get textfieldValue(): string {
@@ -153,6 +149,8 @@ export class MTypeahead extends ModulVue {
         if (this.resultsCouldBeDisplay) {
             this.$refs.mBaseSelect.setFocusedIndex(0);
             this.isResultsPopupOpen = true;
+        } else {
+            this.isResultsPopupOpen = false;
         }
 
     }
@@ -163,6 +161,7 @@ export class MTypeahead extends ModulVue {
 
     onSelect(option: any, index: number): void {
         this.textfieldValue = this.filteredResults[index];
+        this.emitInput(this.textfieldValue);
     }
 
     public isSelected(index: number): boolean {
@@ -184,11 +183,27 @@ export class MTypeahead extends ModulVue {
 
         this.throttleTimeout = window.setTimeout(() => {
             this.throttleTimeoutActive = false;
+
             this.onFilterResults();
+
+            if (this.filteredResults.length > 0) {
+                this.openResultsPopup();
+            } else {
+                this.closeResultsPopup();
+            }
+
             this.emitFilterResults();
         }, this.throttle);
 
         this.emitKeyup(event);
+    }
+
+    public onKeydownEnter($event: KeyboardEvent): void {
+        if (this.isResultsPopupOpen && this.filteredResults.length > 0) {
+            this.$refs.mBaseSelect.selectFocusedItem();
+            this.$refs.mBaseSelect.closePopup();
+        }
+
     }
 
     public onFilterResults(): void {
@@ -199,10 +214,11 @@ export class MTypeahead extends ModulVue {
                 .filter(r =>
                     this.hasTextfieldValue
                     &&
-                    r.toLowerCase().includes(this.textfieldValue.toLowerCase()))
+                    r.toLowerCase().includes(this.textfieldValue.toLowerCase())
+                    &&
+                    r.toLowerCase() !== this.textfieldValue.toLowerCase())
                 .sort();
         }
-
     }
 
     getTextHighlight(item): string {
@@ -211,7 +227,6 @@ export class MTypeahead extends ModulVue {
     }
 
     public onInput(event: string): void {
-        this.openResultsPopup();
         this.emitInput(event);
     }
 
@@ -221,6 +236,31 @@ export class MTypeahead extends ModulVue {
 
     public onBlur(): void {
         this.isTexfieldFocus = false;
+    }
+
+    onKeydownDown($event: KeyboardEvent): void {
+        if (this.isResultsPopupOpen) {
+            this.$refs.mBaseSelect.onKeydownDown($event);
+        }
+    }
+
+    onKeydownUp($event: KeyboardEvent): void {
+        if (this.isResultsPopupOpen) {
+            this.$refs.mBaseSelect.onKeydownUp($event);
+        }
+    }
+
+    onKeydownTab($event: KeyboardEvent): void {
+        if (this.isResultsPopupOpen) {
+            this.$refs.mBaseSelect.onKeydownTab($event);
+        }
+    }
+
+    onKeydownEsc($event: KeyboardEvent): void {
+        if (this.isResultsPopupOpen) {
+            this.$refs.mBaseSelect.onKeydownEsc($event);
+        }
+
     }
 
 }

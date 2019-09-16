@@ -1,3 +1,4 @@
+import { actions } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/vue';
 import Vue from 'vue';
 import { componentsHierarchyRootSeparator } from '../../../conf/storybook/utils';
@@ -11,14 +12,22 @@ const RESULTS: string[] = ['Tomato', 'Celery', 'Apple', 'Bannana', 'Patate', 'Ca
 storiesOf(`${componentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
 
     .add('Default', () => ({
+        methods: actions(
+            'input',
+            'keyup',
+            'keydown',
+            'focus',
+            'blur'
+        ),
         data: () => ({
             label: 'Fruits and vegetables',
             results: RESULTS,
-            value: ''
+            value: 'b'
         }),
         template: `<div>
-            <m-typeahead v-model="value" :label="label" :results="results"></m-typeahead>
-            <h2 class="m-u--h5">Results</h2>
+            <m-typeahead @input="input" v-model="value" :label="label" :results="results"></m-typeahead>
+            <p>v-model = {{ value }}</p>
+            <h2 class="m-u--h5">Values</h2>
             <p v-html="results"></p>
         </div>`
     }))
@@ -50,3 +59,19 @@ storiesOf(`${componentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             <p v-html="results"></p>
         </div>`
     }));
+
+storiesOf(`${componentsHierarchyRootSeparator}${TYPEAHEAD_NAME}/mobile`, module)
+    .addParameters({ viewport: { defaultViewport: 'iphone6' } })
+    .add('iphone6', () => ({
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: ''
+        }),
+        template: `<div>
+            <m-typeahead v-model="value" :label="label" :results="results"></m-typeahead>
+            <h2 class="m-u--h5">Results</h2>
+            <p v-html="results"></p>
+        </div>`
+    })
+    );
