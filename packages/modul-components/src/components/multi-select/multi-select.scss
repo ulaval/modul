@@ -1,0 +1,40 @@
+@import 'commons';
+
+.m-select {
+    display: inline-flex;
+    flex-direction: column;
+
+    &:focus {
+        outline: 0 solid transparent;
+    }
+
+    &.m--has-validation-message {
+        .m-select__validation-message {
+            margin-top: $m-spacing--xs;
+        }
+    }
+
+    &:not(.m--is-disabled) {
+        .m-select__arrow {
+            cursor: pointer;
+        }
+    }
+
+    &__arrow {
+        cursor: pointer;
+
+        &__icon {
+            transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
+        }
+
+        &.m--is-open {
+            .m-select__arrow__icon {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__validation-message {
+        transition: margin-top $m-transition-duration ease;
+    }
+}

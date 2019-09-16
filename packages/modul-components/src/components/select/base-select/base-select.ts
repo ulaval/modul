@@ -38,6 +38,11 @@ export class MBaseSelect extends ModulVue {
     })
     public open: boolean;
 
+    @Prop({
+        default: true
+    })
+    public closeOnSelect: boolean;
+
     public $refs: {
         items: HTMLUListElement;
     };
@@ -61,7 +66,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     @Emit('select-item')
-    select(option: any, index: number): void {
+    select(option: any, index: number, $event: Event): void {
     }
 
     @Watch('open', { immediate: true })
@@ -71,9 +76,11 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
-    onSelectItem(option: any, index: number): void {
-        this.select(option, index);
-        this.closePopup();
+    onSelectItem(option: any, index: number, $event: Event): void {
+        this.select(option, index, $event);
+        if (this.closeOnSelect) {
+            this.closePopup();
+        }
     }
 
     public togglePopup(): void {
@@ -90,8 +97,8 @@ export class MBaseSelect extends ModulVue {
     }
 
 
-    public selectFocusedItem(): void {
-        this.select(this.items[this.focusedIndex], this.focusedIndex);
+    public selectFocusedItem($event: Event): void {
+        this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
     }
 
 
@@ -167,12 +174,12 @@ export class MBaseSelect extends ModulVue {
     // space : open the popup
     onKeydownDown($event: KeyboardEvent): void {
         this.focusNextItem();
-        this.selectFocusedItem();
+        this.selectFocusedItem($event);
     }
 
     onKeydownUp($event: KeyboardEvent): void {
         this.focusPreviousItem();
-        this.selectFocusedItem();
+        this.selectFocusedItem($event);
     }
 
     onKeydownSpace($event: KeyboardEvent): void {
@@ -189,7 +196,7 @@ export class MBaseSelect extends ModulVue {
 
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.focusedIndex > -1) {
-            this.select(this.items[this.focusedIndex], this.focusedIndex);
+            this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
         this.closePopup();
     }
