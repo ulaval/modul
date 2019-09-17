@@ -9,6 +9,7 @@
                    :items="filteredResults"
                    :open.sync="isResultsPopupOpen"
                    :input-max-width="inputMaxWidth"
+                   :sidebar-full-height="true"
                    @select-item="onSelect"
                    ref="mBaseSelect">
         <template v-slot:default="scope">
@@ -34,12 +35,12 @@
                          @input="onInput"
                          @keydown="emitKeydown"
                          @keyup="onKeyup"
-                         @keydown.up.prevent="scope.keyUp"
-                         @keydown.down.prevent="scope.keyDown"
-                         @keydown.enter.prevent="scope.keyEnter"
-                         @keydown.return.prevent="scope.keyEnter"
-                         @keydown.esc="scope.keyEsc"
-                         @keydown.tab="scope.keyTab"
+                         @keydown.up.prevent="onKeydownUp"
+                         @keydown.down.prevent="onKeydownDown"
+                         @keydown.enter.prevent="onKeydownEnter"
+                         @keydown.return.prevent="onKeydownEnter"
+                         @keydown.esc="onKeydownEsc"
+                         @keydown.tab="onKeydownTab"
                          @focus="onFocus"
                          @blur="onBlur"
                          ref="mTextfield">
@@ -53,8 +54,34 @@
                                   :valid-message="validMessage"
                                   :helper-message="helperMessage"></m-validation-message>
         </template>
+        <template v-slot:popup-header="scope"
+                  v-if="isMqMaxS">
+            <h2 class="m-typeahead__label-popup"
+                v-if="label">{{ label }}</h2>
+            <div class="m-typeahead__research-popup">
+                <input class="m-typeahead__research-input-popup"
+                       v-model="textfieldValue"
+                       type="text"
+                       :placeholder="placeholder || 'm-typeahead:search' | f-m-i18n"
+                       :max-length="maxLength"
+                       :aria-controls="ariaControls"
+                       @keydown.up.prevent="onKeydownUp"
+                       @keydown.down.prevent="onKeydownDown"
+                       @keydown.enter.prevent="onKeydownEnter"
+                       @keydown.return.prevent="onKeydownEnter"
+                       @keydown.esc="onKeydownEsc"
+                       @keydown.tab="onKeydownTab"
+                       @keydown="emitKeydown"
+                       @keyup="onKeyup"
+                       ref="researchInput" />
+                <m-icon-button class="m-typeahead__research-button-popup"
+                               icon-name="m-svg__search"
+                               @click="focusOnResearchInput">
+                    {{'m-typeahead:research' | f-m-i18n}}
+                </m-icon-button>
+            </div>
+        </template>
         <template v-slot:items="{item , index }">
-
             <slot name="items"
                   :item="item"
                   :index="index"><span v-html="getTextHighlight(item)"></span></slot>
