@@ -14,21 +14,51 @@ storiesOf(`${componentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
     .add('Default', () => ({
         methods: actions(
             'input',
-            'keyup',
-            'keydown',
             'focus',
-            'blur'
+            'blur',
+            'filter'
         ),
         data: () => ({
             label: 'Fruits and vegetables',
             results: RESULTS,
-            value: 'b'
+            value: ''
         }),
         template: `<div>
-            <m-typeahead @input="input" v-model="value" :label="label" :results="results"></m-typeahead>
+            <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" v-model="value" :label="label" :results="results"></m-typeahead>
             <p>v-model = {{ value }}</p>
             <h2 class="m-u--h5">Values</h2>
             <p v-html="results"></p>
+        </div>`
+    }))
+    .add('max-results', () => ({
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: '',
+            maxResults: 5
+        }),
+        template: `<div>
+            <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results"></m-typeahead>
+            <p>maxResult = {{ maxResults}}</p>
+            <h2 class="m-u--h5">Values</h2>
+            <p v-html="results"></p>
+        </div>`
+    }))
+    .add('custom results', () => ({
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: '',
+            maxResults: 5
+        }),
+        template: `<div>
+            <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results">
+                <template  v-slot:items="{item , index, highlight }">
+                   <span v-html="highlight"/><br/>
+                   <em class="m-u--typo--precision">{{item}} in the uk</em>
+                </template>
+            </m-typeahead>
+
         </div>`
     }))
     .add('filter-results-manually', () => ({
@@ -54,7 +84,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             }
         },
         template: `<div>
-            <m-typeahead v-model="value" :filter-results-manually="true" :throttle="500" :placeholder="placeholder" :results="filterResult" :lodding-results="loddingResults" @filter-results="onFilter"></m-typeahead>
+            <m-typeahead v-model="value" :filter-results-manually="true" :throttle="500" :placeholder="placeholder" :results="filterResult" :waiting-results="loddingResults" @filter-results="onFilter"></m-typeahead>
             <h2 class="m-u--h5">Results</h2>
             <p v-html="results"></p>
         </div>`
