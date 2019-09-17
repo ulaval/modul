@@ -28,6 +28,9 @@ export class MBaseSelect extends ModulVue {
     @Prop()
     public inputMaxWidth: string;
 
+    @Prop()
+    public waitingResults: boolean;
+
     @Prop({
         required: true
     })

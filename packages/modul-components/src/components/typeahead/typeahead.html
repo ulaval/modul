@@ -10,10 +10,11 @@
                    :open.sync="isResultsPopupOpen"
                    :input-max-width="inputMaxWidth"
                    :sidebar-full-height="true"
+                   :waiting-results="waitingResults"
                    @select-item="onSelect"
                    ref="mBaseSelect">
         <template v-slot:default="scope">
-            <m-textfield v-model="textfieldValue"
+            <m-textfield :value="textfieldValue"
                          :label="label"
                          :placeholder="placeholder"
                          :disabled="isDisabled"
@@ -33,8 +34,6 @@
                          aria-haspopup="true"
                          :aria-expanded="scope.open"
                          @input="onInput"
-                         @keydown="emitKeydown"
-                         @keyup="onKeyup"
                          @keydown.up.prevent="onKeydownUp"
                          @keydown.down.prevent="onKeydownDown"
                          @keydown.enter.prevent="onKeydownEnter"
@@ -60,19 +59,18 @@
                 v-if="label">{{ label }}</h2>
             <div class="m-typeahead__research-popup">
                 <input class="m-typeahead__research-input-popup"
-                       v-model="textfieldValue"
+                       :value="textfieldValue"
                        type="text"
                        :placeholder="placeholder || 'm-typeahead:search' | f-m-i18n"
                        :max-length="maxLength"
                        :aria-controls="ariaControls"
+                       @input="onInput($event.target.value)"
                        @keydown.up.prevent="onKeydownUp"
                        @keydown.down.prevent="onKeydownDown"
                        @keydown.enter.prevent="onKeydownEnter"
                        @keydown.return.prevent="onKeydownEnter"
                        @keydown.esc="onKeydownEsc"
                        @keydown.tab="onKeydownTab"
-                       @keydown="emitKeydown"
-                       @keyup="onKeyup"
                        ref="researchInput" />
                 <m-icon-button class="m-typeahead__research-button-popup"
                                icon-name="m-svg__search"
@@ -84,7 +82,8 @@
         <template v-slot:items="{item , index }">
             <slot name="items"
                   :item="item"
-                  :index="index"><span v-html="getTextHighlight(item)"></span></slot>
+                  :index="index"
+                  :highlight="getTextHighlight(item)"><span v-html="getTextHighlight(item)"></span></slot>
         </template>
     </m-base-select>
 </div>
