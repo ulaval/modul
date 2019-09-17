@@ -12,7 +12,7 @@ import I18nPlugin from '../i18n/i18n';
 import { MBaseSelect } from './../select/base-select/base-select';
 import WithRender from './multi-select.html?style=./multi-select.scss';
 
-const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
+const MAX_LENGTH_CHIP_LABEL: number = 12;
 
 @WithRender
 @Component({
@@ -93,7 +93,7 @@ export class MMultiSelect extends ModulVue {
             this.onDelete(positionInModel);
         }
 
-        if ($event.type == 'click') {
+        if ($event.type === 'click') {
             (this.$refs.baseSelect as MBaseSelect).focusedIndex = -1;
         }
     }
@@ -126,6 +126,11 @@ export class MMultiSelect extends ModulVue {
         if ((this.$refs.baseSelect as MBaseSelect).focusedIndex > -1) {
             (this.$refs.baseSelect as MBaseSelect).select((this.$refs.baseSelect as MBaseSelect).items[(this.$refs.baseSelect as MBaseSelect).focusedIndex], (this.$refs.baseSelect as MBaseSelect).focusedIndex, $event);
         }
+    }
+
+    getChipLabel(item: any): string {
+        let ellipsis: string = item.toString().length > MAX_LENGTH_CHIP_LABEL ? '...' : '';
+        return `${item.toString().substring(0, MAX_LENGTH_CHIP_LABEL)}${ellipsis}`;
     }
 
     @Watch('value', { immediate: true })

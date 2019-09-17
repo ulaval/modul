@@ -98,23 +98,19 @@ export class MBaseSelect extends ModulVue {
         this.internalOpen = false;
     }
 
-
     public setFocusedIndex(index): void {
         this.focusedIndex = index;
     }
 
-
     public selectFocusedItem($event: Event): void {
         this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
     }
-
 
     public focusFirstSelected(): void {
         if (this.selectedItems && this.selectedItems.length > 0) {
             this.focusedIndex = this.items.indexOf(this.selectedItems[0]);
         }
     }
-
 
     public focusNextItem(): void {
         if (this.focusedIndex > -1) {
@@ -171,9 +167,6 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
-
-
-
     // keyboard navigation of a drowdown
     // tab or esc : close the popup
     // up and down : change the focused option
@@ -207,6 +200,4 @@ export class MBaseSelect extends ModulVue {
         }
         this.closePopup();
     }
-
-
 }

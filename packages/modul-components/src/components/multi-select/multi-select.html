@@ -8,7 +8,7 @@
                @select-item="onSelect"
                ref="baseSelect">
     <template v-slot:default="scope">
-        <div class="m-select"
+        <div class="m-multi-select"
              :class="{ 'm--is-open': open,
                 'm--is-disabled': isDisabled,
                 'm--is-waiting': isWaiting,
@@ -38,11 +38,20 @@
                            :valid="isValid"
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle">
-                <div>
-                    <m-chip v-for="item, index in internalValue"
+                <div class="m-multi-select__chips">
+                    <m-chip class="m-multi-select__chip"
+                            v-for="item, index in internalValue"
                             mode="delete"
                             size="small"
-                            @delete="onDelete(index)">{{ item }}</m-chip>
+                            @delete="onDelete(index)">
+                        <template v-slot:default>
+                            <slot name="chips"
+                                  :item="item"
+                                  :index="index">
+                                {{ getChipLabel(item) }}
+                            </slot>
+                        </template>
+                    </m-chip>
                 </div>
 
                 <div class="m-select__arrow"

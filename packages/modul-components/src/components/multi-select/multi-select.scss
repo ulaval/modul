@@ -1,6 +1,6 @@
 @import 'commons';
 
-.m-select {
+.m-multi-select {
     display: inline-flex;
     flex-direction: column;
 
@@ -36,5 +36,9 @@
 
     &__validation-message {
         transition: margin-top $m-transition-duration ease;
+    }
+
+    &__chip {
+        margin-right: $m-margin--xs;
     }
 }

@@ -200,7 +200,7 @@ export class MTypeahead extends ModulVue {
 
     public onKeydownEnter($event: KeyboardEvent): void {
         if (this.isResultsPopupOpen && this.filteredResults.length > 0) {
-            this.$refs.mBaseSelect.selectFocusedItem();
+            this.$refs.mBaseSelect.selectFocusedItem($event);
             this.$refs.mBaseSelect.closePopup();
         }
 
