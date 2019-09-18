@@ -11,7 +11,7 @@ module.exports = {
     runtimeCompiler: true,
     productionSourceMap: true,
     filenameHashing: false,
-    baseUrl: process.env.NODE_ENV === 'production' ? 'https://contenu.monportail.ulaval.ca/mpo/packages/@ulaval/modul-website/website/' : '/',
+    baseUrl: process.env.NODE_ENV === 'production' ? 'https://contenu.monportail.ulaval.ca/mpo/packages/@ulaval/modul-website/latest/' : '/',
     chainWebpack: config => {
         config.module.rules.delete("svg");
         config.module.rules.delete("scss");
