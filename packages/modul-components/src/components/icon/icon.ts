@@ -29,7 +29,7 @@ export class MIcon extends Vue {
     }
 
     private get spriteId(): string | undefined {
-        const svg: SpritesService = Vue.prototype.$svg;
+        const svg: SpritesService = this.$svg;
 
         if (document.getElementById(this.name)) {
             return '#' + this.name;

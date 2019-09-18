@@ -1,6 +1,6 @@
 import 'cleave.js/dist/addons/cleave-phone.i18n.js';
 import { CountryCode, getExampleNumber, ParsedNumber, parseNumber, PhoneNumber } from 'libphonenumber-js';
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -155,7 +155,7 @@ export class MPhonefield extends ModulVue {
     }
 
     spriteId(iso: string): string | undefined {
-        const svg: SpritesService = Vue.prototype.$svg;
+        const svg: SpritesService = this.$svg;
         const spriteId: string = 'mflag-svg__flag-' + iso;
 
         if (document.getElementById(spriteId)) {
