@@ -49,24 +49,4 @@ $m-select-item--color-active: $m-color--grey-lightest !default;
             }
         }
     }
-
-    &:not(.m--is-disabled).m--is-waiting {
-        animation: SelectItemWaiting 0.6s infinite;
-        animation-direction: alternate-reverse;
-        color: $m-color--disabled;
-        background: $m-color--grey-lightest;
-        cursor: wait;
-    }
-}
-
-@keyframes SelectItemWaiting {
-    0% {
-        color: $m-color--disabled;
-        background: $m-color--grey-lightest;
-    }
-
-    100% {
-        color: $m-color--grey-lighter;
-        background: $m-color--white;
-    }
 }

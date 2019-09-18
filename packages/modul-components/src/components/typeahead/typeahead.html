@@ -10,7 +10,7 @@
                    :open.sync="isResultsPopupOpen"
                    :input-max-width="inputMaxWidth"
                    :sidebar-full-height="true"
-                   :waiting-results="waitingResults"
+                   :enable-animation="false"
                    @select-item="onSelect"
                    ref="mBaseSelect">
         <template v-slot:default="scope">
@@ -43,6 +43,12 @@
                          @focus="onFocus"
                          @blur="onBlur"
                          ref="mTextfield">
+                <template v-slot:suffix>
+                    <div v-if="waitingResults">
+                        <m-spinner class="m-input-style__spinner"
+                                   size="small"></m-spinner>
+                    </div>
+                </template>
             </m-textfield>
             <m-validation-message class="m-typeahead__validation-message"
                                   :disabled="isDisabled"
