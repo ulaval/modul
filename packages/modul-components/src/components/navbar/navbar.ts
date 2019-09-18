@@ -1,6 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
+
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import ModulPlugin from '../../utils/modul/modul';
 import { ModulVue } from '../../utils/vue/vue';
@@ -35,7 +36,9 @@ export enum MNavbarSkin {
     NavSub = 'nav-sub',
     NavSoft = 'nav-soft',
     TabLight = 'tab-light',
+    TabLightMain = 'tab-light-main',
     TabDark = 'tab-dark',
+    TabDarkMain = 'tab-dark-main',
     TabArrow = 'tab-arrow',
     TabUnderline = 'tab-underline',
     TabSoft = 'tab-soft',
@@ -65,7 +68,9 @@ export class MNavbar extends BaseNavbar implements Navbar {
             value === MNavbarSkin.NavSub ||
             value === MNavbarSkin.NavSoft ||
             value === MNavbarSkin.TabLight ||
+            value === MNavbarSkin.TabLightMain ||
             value === MNavbarSkin.TabDark ||
+            value === MNavbarSkin.TabDarkMain ||
             value === MNavbarSkin.TabArrow ||
             value === MNavbarSkin.TabUnderline ||
             value === MNavbarSkin.TabSoft ||
@@ -78,6 +83,8 @@ export class MNavbar extends BaseNavbar implements Navbar {
     public navigationArrow: boolean;
     @Prop({ default: MNavbarMaxWidth.Large })
     public maxWidth: string;
+    @Prop({ default: '0px' })
+    public minHeight: string;
     @Prop({ default: true })
     public multiline: boolean;
     @Prop()
@@ -264,7 +271,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     private get buttonSkin(): string {
-        return this.skin === MNavbarSkin.NavMain || this.skin === MNavbarSkin.NavSub || this.skin === MNavbarSkin.NavSoft || this.skin === MNavbarSkin.TabDark ? 'dark' : 'light';
+        return this.skin === MNavbarSkin.NavMain || this.skin === MNavbarSkin.NavSub || this.skin === MNavbarSkin.NavSoft || this.skin === MNavbarSkin.TabDark || this.skin === MNavbarSkin.TabDarkMain ? 'dark' : 'light';
     }
 
     private get buttonRipple(): boolean {
@@ -272,7 +279,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     private get isTabLightSkin(): boolean {
-        return this.skin === MNavbarSkin.TabLight;
+        return this.skin === MNavbarSkin.TabLight || this.skin === MNavbarSkin.TabLightMain;
     }
 
     private get isTabUnderlineSkin(): boolean {
