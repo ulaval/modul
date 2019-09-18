@@ -1,0 +1,104 @@
+// @import '~@ulaval/modul-components/dist/components/accordion/accordion-transition.scss';
+@import '../../styles/commons';
+
+.modul-demo {
+    &__wrapper {
+        text-align: right;
+        border-bottom: 1px solid $modul-color--grey-dark;
+    }
+
+    &__button {
+        margin-top: $m-margin--s;
+        font-size: 14px;
+        font-weight: 400;
+        color: $modul-color--grey-dark;
+        text-transform: uppercase;
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: color $m-transition-duration ease;
+
+        &:hover,
+        &:focus {
+            color: $modul-color--black-grey-dark;
+        }
+    }
+
+    &__code {
+        position: relative;
+        padding: $m-margin--l $m-margin--l;
+        background: $modul-color--black-grey-light;
+        border: 1px solid $modul-color--grey-dark;
+        border-top: none;
+
+        &__arrow {
+            position: absolute;
+            left: 48%;
+            bottom: -8px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-top: 8px solid $modul-color--black-grey-light;
+        }
+
+        &__header {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            &__button {
+                padding: $m-padding--s $m-margin;
+                margin: 0 $m-margin--s 0 0;
+                font-size: 14px;
+                font-weight: 400;
+                color: $modul-color--grey-dark;
+                text-transform: uppercase;
+                background: none;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                transition: background-color $m-transition-duration ease;
+            }
+
+            li {
+                display: inline-block;
+
+                &::before {
+                    content: none;
+                }
+
+                &.active button,
+                button:hover,
+                button:focus {
+                    background-color: $modul-color--black-grey;
+                }
+
+                &:not(.active) button:active {
+                    background-color: $modul-color--black-grey-dark;
+                }
+            }
+        }
+
+        &__content {
+            display: none;
+            margin: 0;
+
+            &.active {
+                display: block;
+                margin: -24px 0; //Magic Number
+            }
+
+            &__code {
+                white-space: pre-wrap;
+                color: #fff;
+            }
+        }
+    }
+
+    &__preview {
+        padding: $m-margin--l;
+        background: $modul-color--grey-light;
+    }
+}

@@ -1,0 +1,49 @@
+@import '../../styles/commons';
+@import url('https://fonts.googleapis.com/css?family=Overpass:600,700');
+
+.mw-logo {
+    font-size: var(--mw-logo-font-size);
+    color: $m-color--white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.mw-is--large {
+        .mw-logo__img {
+            width: 280px;
+            user-select: none;
+
+            @media (min-width: $m-mq--min--s) {
+                width: 460px;
+            }
+        }
+    }
+
+    &.mw-is--small {
+        .mw-logo__img {
+            width: 95px;
+
+            @media (min-width: $m-mq--min--s) {
+                width: 130px;
+            }
+        }
+    }
+
+    &__tagline {
+        display: flex;
+        font-size: 22px;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-top: $m-spacing;
+
+        @media (min-width: $m-mq--min--s) {
+            margin-top: $m-spacing--m;
+            font-size: 32px;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+}

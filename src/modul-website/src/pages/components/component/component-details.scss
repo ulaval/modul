@@ -1,0 +1,43 @@
+@import '../../../styles/commons';
+
+.mw-component-details {
+    width: 100%;
+    min-height: 300px;
+
+    &__title {
+        margin: 0;
+        text-transform: uppercase;
+        border-bottom: 1px solid black;
+        padding-bottom: $m-spacing;
+        font-weight: $m-font-weight--black;
+    }
+
+    &__preview {
+        background-color: #f9f9f9;
+        padding: $m-padding--l $m-padding;
+
+        @media (min-width: $m-mq--min--s) {
+            padding: $m-padding--l $m-margin--l;
+        }
+    }
+
+    &__beta {
+        vertical-align: top;
+    }
+
+    &__body {
+        padding-top: $m-spacing;
+    }
+
+    .modul-u--navbar {
+        padding: 0;
+
+        @media (min-width: $m-mq--min--s) {
+            padding: 0;
+        }
+    }
+
+    /deep/ .m-navbar-item__text {
+        text-transform: uppercase;
+    }
+}

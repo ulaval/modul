@@ -1,0 +1,46 @@
+<div class="modul-demo">
+    <div class="m-u--visually-hidden">
+        <slot></slot>
+    </div>
+
+    <div class="modul-demo__block">
+        <div class="modul-demo__wrapper">
+            <button @click.prevent="isOpened = !isOpened" class="modul-demo__button">{{ openCloseLabel }}</button>
+        </div>
+
+        <m-accordion-transition>
+            <div v-if="isOpened">
+                <div class="modul-demo__code" >
+                    <div class="modul-demo__code__arrow"></div>
+                    <ul class="modul-demo__code__header">
+                        <li :class="{'active': htmlActive}">
+                            <button class="modul-demo__code__header__button" @click="switchTab('html')">HTML</button>
+                        </li>
+                        <li :class="{'active': jsActive}" v-if="hasJs">
+                            <button class="modul-demo__code__header__button" @click="switchTab('js')">JS</button>
+                        </li>
+                        <li :class="{'active': cssActive}" v-if="hasCss">
+                            <button class="modul-demo__code__header__button" @click="switchTab('css')">CSS</button>
+                        </li>
+                    </ul>
+
+                    <pre class="modul-demo__code__content" :class="{'active': htmlActive}">
+                        <code class="modul-demo__code__content__code" v-html="htmlHl"></code>
+                    </pre>
+
+                    <pre class="modul-demo__code__content" :class="{'active': jsActive}" v-if="hasJs">
+                        <code class="modul-demo__code__content__code" v-html="jsHl"></code>
+                    </pre>
+
+                    <pre class="modul-demo__code__content" :class="{'active': cssActive}" v-if="hasCss">
+                        <code class="modul-demo__code__content__code" v-html="cssHl"></code>
+                    </pre>
+                </div>
+            </div>
+        </m-accordion-transition>
+
+        <div class="modul-demo__preview">
+            <div ref="demoContent"></div>
+        </div>
+    </div>
+</div>
