@@ -6,7 +6,7 @@ const SvgPlugin: PluginObject<any> = {
     install(v, options) {
         v.use(DefaultSpritesPlugin);
         let svg: SpritesService = (v.prototype).$svg;
-        svg.addSprites(require('./sprites-website.svg'));
+        svg.addInternalSprites(require('./sprites-website.svg'));
     }
 };
 
