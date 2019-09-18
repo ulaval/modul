@@ -96,7 +96,6 @@
              :sidebar-full-height="filterable"
              @open="onOpen"
              @close="onClose"
-             @portal-after-open="calculateFilterableListeHeight"
              @portal-mounted="portalMounted">
         <template slot="header"
                   v-if="isMqMaxS && (hasLabel || filterable)">
