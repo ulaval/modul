@@ -144,7 +144,6 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
         if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
             richTextEditorOptions.pluginsEnabled.push('image');
-            // let imageEditButtons: string[] = ['imageReplace', ImageLayoutCommands.IMG_LAYOUT_CMD, 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
             // toolbar for desktop devices
             richTextEditorOptions.toolbarButtons.moreRich.buttons.push('insertImage');
             // for mobile devices

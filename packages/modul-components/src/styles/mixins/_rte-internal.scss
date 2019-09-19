@@ -1,5 +1,7 @@
 $m--fr-active-color: #222;
 $m--fr-active-background: #d6d6d6;
+$m-fr-icon-popup-size: 16px;
+$m-fr-btn-popup-size: 38px;
 
 .fr-btn i {
     font-style: normal;
@@ -30,7 +32,18 @@ $m--fr-active-background: #d6d6d6;
     }
 }
 
-.fr-popup .fr-command.fr-btn.m--fr-active {
-    color: $m--fr-active-color;
-    background: $m--fr-active-background;
+.fr-popup {
+    &.fr-command.fr-btn.m--fr-active {
+        color: $m--fr-active-color;
+        background: $m--fr-active-background;
+    }
+
+    & .fr-buttons .fr-btn {
+        width: $m-fr-btn-popup-size;
+        height: $m-fr-btn-popup-size;
+
+        & svg {
+            width: $m-fr-icon-popup-size;
+        }
+    }
 }
