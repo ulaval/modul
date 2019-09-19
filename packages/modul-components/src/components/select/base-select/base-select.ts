@@ -6,6 +6,7 @@ import { MSelectItem } from '../../select/select-item/select-item';
 import WithRender from './base-select.html';
 import './base-select.scss';
 
+const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
@@ -29,9 +30,6 @@ export class MBaseSelect extends ModulVue {
     @Prop()
     public inputMaxWidth: string;
 
-    @Prop()
-    public waitingResults: boolean;
-
     @Prop({
         required: true
     })
@@ -51,6 +49,9 @@ export class MBaseSelect extends ModulVue {
         default: false
     })
     public sidebarFullHeight: boolean;
+
+    @Prop({ default: true })
+    public enableAnimation: boolean;
 
     public $refs: {
         items: HTMLUListElement;
@@ -169,6 +170,53 @@ export class MBaseSelect extends ModulVue {
                 }
             }
 
+        }
+    }
+
+    transitionEnter(el: HTMLElement, done: any): void {
+        if (this.enableAnimation) {
+            this.$nextTick(() => {
+
+                if (this.as<MediaQueriesMixin>().isMqMinS) {
+                    let height: number = el.clientHeight;
+
+                    el.style.transition = DROPDOWN_STYLE_TRANSITION;
+                    el.style.overflowY = 'hidden';
+                    el.style.maxHeight = '0';
+
+                    requestAnimationFrame(() => {
+                        el.style.maxHeight = height + 'px';
+                        done();
+                    });
+                } else {
+                    done();
+                }
+
+            });
+        } else {
+            done();
+        }
+    }
+
+    transitionLeave(el: HTMLElement, done: any): void {
+        if (this.enableAnimation) {
+            this.$nextTick(() => {
+                if (this.as<MediaQueriesMixin>().isMqMinS) {
+                    let height: number = el.clientHeight;
+
+                    el.style.maxHeight = height + 'px';
+                    el.style.maxHeight = '0';
+
+                    setTimeout(() => {
+                        el.style.maxHeight = 'none';
+                        done();
+                    }, 300);
+                } else {
+                    done();
+                }
+            });
+        } else {
+            done();
         }
     }
 

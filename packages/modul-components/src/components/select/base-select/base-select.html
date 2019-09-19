@@ -12,6 +12,8 @@
              placement="bottom-start"
              :open.sync="internalOpen"
              :disabled="!active"
+             :enter="transitionEnter"
+             :leave="transitionLeave"
              :padding="false"
              :preload="true"
              :lazy="false"
@@ -41,7 +43,6 @@
                            :key="index"
                            :focused="index === focusedIndex"
                            :selected="isSelected(item)"
-                           :waiting="waitingResults"
                            @click="onSelectItem(item, index, $event)">
                 <slot name="items"
                       :item="item"

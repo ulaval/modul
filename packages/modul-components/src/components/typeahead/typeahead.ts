@@ -11,6 +11,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { TYPEAHEAD_NAME } from '../component-names';
 import PopupPlugin from '../popup/popup';
 import { MBaseSelect } from '../select/base-select/base-select';
+import SpinnerPlugin from '../spinner/spinner';
 import TextfieldPlugin, { MTextfield } from '../textfield/textfield';
 import WithRender from './typeahead.html?style=./typeahead.scss';
 
@@ -208,7 +209,6 @@ export class MTypeahead extends ModulVue {
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay && this.as<MediaQueries>().isMqMinS) {
             this.$refs.mBaseSelect.selectFocusedItem($event);
-
         }
         this.$refs.mBaseSelect.closePopup();
     }
@@ -244,6 +244,7 @@ const TypeaheadPlugin: PluginObject<any> = {
         v.prototype.$log.debug(TYPEAHEAD_NAME, 'plugin.install');
         v.use(TextfieldPlugin);
         v.use(PopupPlugin);
+        v.use(SpinnerPlugin);
         v.component(TYPEAHEAD_NAME, MTypeahead);
     }
 };
