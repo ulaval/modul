@@ -40,14 +40,13 @@ export class MBaseSelect extends ModulVue {
     })
     public open: boolean;
 
-    @Prop({
-        default: true
-    })
+    @Prop({ default: true })
     public closeOnSelect: boolean;
 
-    @Prop({
-        default: false
-    })
+    @Prop({ default: false })
+    public hideRadioButtonMobile: boolean;
+
+    @Prop({ default: false })
     public sidebarFullHeight: boolean;
 
     @Prop({ default: true })

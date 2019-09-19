@@ -110,7 +110,7 @@ export class MMultiSelect extends ModulVue {
             this.onDelete(positionInModel);
         }
 
-        if (this.$refs.baseSelect.$refs.popup.$refs.popper) { // Pas en mobile
+        if (this.$refs.baseSelect.$refs.popup.$refs.popper) { // Pas de popper en mobile
             this.$refs.baseSelect.$refs.popup.$refs.popper.update();
         }
 

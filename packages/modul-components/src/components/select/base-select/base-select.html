@@ -43,6 +43,7 @@
                            :key="index"
                            :focused="index === focusedIndex"
                            :selected="isSelected(item)"
+                           :hide-radio-button-mobile="hideRadioButtonMobile"
                            @click="onSelectItem(item, index, $event)">
                 <slot name="items"
                       :item="item"
