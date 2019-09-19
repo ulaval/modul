@@ -11,7 +11,7 @@ Vue.use(AccordionGroupPlugin);
 
 
 storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
-    .add('default', () => ({
+    .add('With content', () => ({
         props: {
             text: {
                 default: text('Text', 'An Accordion Group')
@@ -22,6 +22,49 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
                         <m-accordion>Some Accordion Content</m-accordion>
                         <m-accordion>Some Accordion Content</m-accordion>
     </m-accordion-group>`
+    }))
+    .add('No content', () => ({
+        props: {
+            text: {
+                default: text('Text', 'An Accordion Group')
+            }
+        },
+        template: `
+        <div>
+            Accordions with no content don't count toward computing open all / close all button.
+            Open all will hide when every accordion with content is expended.
+            Same logic for close all.
+            <m-accordion-group>
+                <m-accordion></m-accordion>
+                <m-accordion></m-accordion>
+                <m-accordion></m-accordion>
+            </m-accordion-group>
+        </div>`
+    }))
+    .add('Mixed content / no content', () => ({
+        props: {
+            text: {
+                default: text('Text', 'An Accordion Group')
+            }
+        },
+        template: `
+        <div>
+            Accordions with no content don't count toward computing open all / close all button.
+            Open all will hide when every accordion with content is expended.
+            Same logic for close all.
+            <m-accordion-group>
+                <m-accordion></m-accordion>
+                <m-accordion>Some Accordion Content</m-accordion>
+                <m-accordion>Some Accordion Content</m-accordion>
+                <m-accordion>Some Accordion Content</m-accordion>
+                <m-accordion></m-accordion>
+                <m-accordion></m-accordion>
+                <m-accordion></m-accordion>
+                <m-accordion>Some Accordion Content</m-accordion>
+                <m-accordion></m-accordion>
+                <m-accordion>Some Accordion Content</m-accordion>
+            </m-accordion-group>
+        </div>`
     }))
     .add('header', () => ({
         template: `<m-accordion-group>
@@ -46,13 +89,23 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
                         <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
     </m-accordion-group>`
     }))
+    // toggleLinkLeft
     .add('toggle-link-left', () => ({
-        template: `<m-accordion-group :toggle-link-left="true">
-                        <h2 slot="title">An Accordion Group Title</h2>
-                        <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
-                        <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
-                        <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
-    </m-accordion-group>`
+        template: `
+            <div>
+                <m-accordion-group :toggle-link-left="true">
+                    <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
+                </m-accordion-group>
+                <m-accordion-group :toggle-link-left="true">
+                    <h2 slot="title">An Accordion Group Title</h2>
+                    <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
+                </m-accordion-group>
+                <m-accordion-group>
+                    <h2 slot="title">An Accordion Group Title</h2>
+                    <h3 slot="secondary-content">An Accordion Group Title</h3>
+                    <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
+                </m-accordion-group>
+            </div>`
     }))
     .add('concurrent', () => ({
         template: `<m-accordion-group :concurrent="true">
@@ -60,6 +113,36 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
                         <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
                         <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
     </m-accordion-group>`
+    }));
+
+storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openAll="true"`, module)
+    .add('With initial content', () => ({
+        template: `
+        <m-accordion-group :open-all="true">
+            <m-accordion>Some Accordion Content</m-accordion>
+            <m-accordion>Some Accordion Content</m-accordion>
+            <m-accordion>Some Accordion Content</m-accordion>
+        </m-accordion-group>`
+    }))
+    .add('With dynamically added content', () => ({
+        data(): any {
+            return {
+                list: [{ text: 'Some Accordion Content' }]
+            };
+        },
+        methods: {
+            addAccordion(): void {
+                (this as any).list.push({ text: 'Some Accordion Content' });
+            }
+        },
+        template: `
+            <div>
+                <button @click="addAccordion">Add accordion</button>
+                <m-accordion-group :open-all="true">
+                    <m-accordion v-for="item in list">{{ item.text }}</m-accordion>
+                </m-accordion-group>
+            </div>
+        `
     }));
 
 storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled="true"`, module)

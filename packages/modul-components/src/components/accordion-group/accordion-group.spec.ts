@@ -38,9 +38,11 @@ describe('MAcordionGroup', () => {
             slots: {
                 default: `<m-accordion id="a" :open="true">
                                 <span slot="header">A</span>
+                                Some Content
                             </m-accordion>
                             <m-accordion id="b" :open="true">
                                 <span slot="header">B</span>
+                                Some Content
                             </m-accordion>'`
             }
         });
