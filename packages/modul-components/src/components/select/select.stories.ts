@@ -7,19 +7,33 @@ import SelectPlugin from './select';
 
 Vue.use(SelectPlugin);
 
+const options: string[] = ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc'];
+
 storiesOf(`${componentsHierarchyRootSeparator}${SELECT_NAME}`, module)
     .add('default', () => ({
         methods: actions(
             'open',
             'close',
             'focus',
-            'blur'
+            'blur',
+            'select'
         ),
         data: () => ({
             model1: 'avocados',
+            options: options
+        }),
+        template: `<div><m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:default>The selection is :{{ model1 }}</template><template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
+    })
+    );
+
+storiesOf(`${componentsHierarchyRootSeparator}${SELECT_NAME}/mobile`, module)
+    .addParameters({ viewport: { defaultViewport: 'iphone6' } })
+    .add('iphone6', () => ({
+        data: () => ({
+            model1: '',
             options: ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc']
         }),
-        template: `<div><m-select  @open="open" @close="close" @focus="focus" @blur="blur" :options="options" v-model="model1"><template slot="selection">{{ model1 }}</template><template  slot="option" slot-scope="{option, index}"> {{ index }} - {{ option }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
+        template: `<div><m-select :options="options" v-model="model1"><template v-slot:default>The selection is :{{ model1 }}</template><template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
     })
     );
 
