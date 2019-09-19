@@ -5,6 +5,7 @@
                :open.sync="open"
                :input-max-width="inputMaxWidth"
                :close-on-select="false"
+               :hide-radio-button-mobile="true"
                @select-item="onSelect"
                ref="baseSelect">
     <template v-slot:default="scope">
@@ -85,7 +86,8 @@
               v-slot:popup-header>
         <m-select-item @click="onToggleAll"
                        class="m-multi-select__popup-header"
-                       :focused="selectAllFocused">
+                       :focused="selectAllFocused"
+                       :hide-radio-button-mobile="true">
             <m-i18n k="m-multi-select:select-all"
                     v-if="!allSelected"></m-i18n>
             <m-i18n k="m-multi-select:deselect-all"
