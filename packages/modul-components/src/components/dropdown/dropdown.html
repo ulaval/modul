@@ -93,9 +93,9 @@
              :preload="true"
              :open-trigger="'mousedown'"
              :lazy="false"
+             :sidebar-full-height="filterable"
              @open="onOpen"
              @close="onClose"
-             @portal-after-open="calculateFilterableListeHeight"
              @portal-mounted="portalMounted">
         <template slot="header"
                   v-if="isMqMaxS && (hasLabel || filterable)">
@@ -105,7 +105,7 @@
                  v-if="filterable">
                 <input class="m-dropdown__header__research-input"
                        type="text"
-                       placeholder="Recherche"
+                       :placeholder="'m-dropdown:search' | f-m-i18n"
                        ref="researchInput"
                        v-model="selectedText"
                        :max-length="maxLength"
@@ -120,7 +120,6 @@
         <ul :id="ariaControls"
             class="m-dropdown__list"
             ref="items"
-            :style="itemsHeightStyle"
             :aria-labelledby="id"
             aria-live="polite"
             @mouseup="selectText">
