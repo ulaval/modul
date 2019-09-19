@@ -3,9 +3,7 @@
      @keydown="onKeydown"
      :aria-hidden="!hasSvgTitle"
      :width="size"
-     :height="size"
-     @mouseover="onMouseOver"
-     @mouseleave="onMouseLeave">
+     :height="size">
     <title v-if="hasSvgTitle">{{svgTitle}}</title>
     <use :xlink:href="spriteId"
          aria-hidden="true"

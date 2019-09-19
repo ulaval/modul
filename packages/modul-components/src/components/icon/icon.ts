@@ -40,12 +40,6 @@ export class MIcon extends Vue {
     private get showNameAsClassInHtml(): string {
         return this.showNameAsClass ? this.name : '';
     }
-
-    @Emit('mouseover')
-    public onMouseOver(event: Event): void { }
-
-    @Emit('mouseleave')
-    public onMouseLeave(event: Event): void { }
 }
 
 const IconPlugin: PluginObject<any> = {

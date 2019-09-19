@@ -41,7 +41,6 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../components/menu/menu.lang.fr.json'),
                 require('../components/message/message.lang.fr.json'),
                 require('../components/modal/modal.lang.fr.json'),
-                require('../components/multi-select/multi-select.lang.fr.json'),
                 require('../components/overlay/overlay.lang.fr.json'),
                 require('../components/option/option.lang.fr.json'),
                 require('../components/page-not-found/page-not-found.lang.fr.json'),

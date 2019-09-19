@@ -8,13 +8,6 @@
     font-size: 1em;
     font-family: $m-font-family;
 
-    &.m--is-small {
-        @include m-chip-small-style();
-
-        font-weight: $m-font-weight--semi-bold;
-        font-size: 0.75em;
-    }
-
     &:not(.m--is-disabled) {
         @include m-button--hover();
 

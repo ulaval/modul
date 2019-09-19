@@ -1,5 +1,5 @@
 <div class="m-chip-delete"
-     :class="{'m--is-disabled': disabled, 'm--is-small' : size === 'small', 'm--is-hover': iconHover}">
+     :class="{'m--is-disabled': disabled}">
     <div class="m-chip-delete__body">
         <span :id="textId"
               class="m-chip-delete__text">
@@ -9,13 +9,11 @@
         <button class="m-chip-delete__button"
                 :aria-labelledby="textId"
                 :disabled="disabled"
-                @click.stop="onClick"
+                @click="onClick"
                 type="button">
             <m-icon class="m-chip-delete__icon"
-                    :size="iconSize"
-                    name="m-svg__close-clear"
-                    @mouseover="onMouseOver"
-                    @mouseleave="onMouseLeave">
+                    size="14px"
+                    name="m-svg__close-clear">
             </m-icon>
         </button>
     </div>

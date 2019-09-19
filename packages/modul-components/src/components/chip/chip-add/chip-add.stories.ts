@@ -40,20 +40,4 @@ storiesOf(`${componentsHierarchyRootSeparator}${CHIP_ADD_NAME}`, module)
     }))
     .add('icon=false', () => ({
         template: '<m-chip-add :icon="false">Chip</m-chip-add>'
-    }))
-    .add('small', () => ({
-        props: {
-            text: {
-                default: text('Text', 'Chip add')
-            }
-        },
-        methods: {
-            onAdd(): void {
-                alert('@Emit(\'add\')');
-            },
-            onClick(): void {
-                alert('@Emit(\'click\')');
-            }
-        },
-        template: '<m-chip-add size="small" @add="onAdd()" @click="onClick()">{{text}}</m-chip-add>'
     }));

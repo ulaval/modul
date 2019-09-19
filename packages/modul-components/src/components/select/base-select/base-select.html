@@ -43,7 +43,7 @@
                            :key="index"
                            :focused="index === focusedIndex"
                            :selected="isSelected(item)"
-                           @click="onSelectItem(item, index, $event)">
+                           @click="onSelectItem(item, index)">
                 <slot name="items"
                       :item="item"
                       :index="index"><span v-html="item"></span></slot>
