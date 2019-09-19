@@ -1,0 +1,45 @@
+@import 'commons';
+
+.m-typeahead {
+    @include m-input-inline-spacing();
+
+    &__label-popup {
+        margin: 0;
+        padding: $m-padding--s $m-padding;
+        font-size: $m-font-size--s;
+        font-weight: $m-font-weight--semi-bold;
+        color: $m-color--white;
+        background: $m-color--interactive;
+    }
+
+    &__research-popup {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background: $m-color--grey-lightest;
+    }
+
+    &__research-input-popup {
+        width: 100%;
+        font-size: $m-font-size;
+        font-weight: $m-font-weight--light;
+        border: none;
+        outline: none;
+        background: none;
+        padding: $m-padding 0 $m-padding $m-padding;
+    }
+
+    &__research-button-popup {
+        stroke-width: 2px;
+    }
+
+    &__validation-message {
+        transition: margin-top $m-transition-duration ease;
+    }
+
+    &.m--has-validation-message {
+        .m-typeahead__validation-message {
+            margin-top: $m-spacing--xs;
+        }
+    }
+}

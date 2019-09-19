@@ -53,6 +53,7 @@ const EnglishPlugin: PluginObject<any> = {
                 require('../components/textfield/textfield.lang.en.json'),
                 require('../components/timepicker/timepicker.lang.en.json'),
                 require('../components/tooltip/tooltip.lang.en.json'),
+                require('../components/typeahead/typeahead.lang.en.json'),
                 require('../components/validation-message/validation-message.lang.en.json'),
                 require('../filters/filesize/filesize.lang.en.json'),
                 require('../filters/date/date/date.lang.en.json'),

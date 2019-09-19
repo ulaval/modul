@@ -17,7 +17,6 @@ import { MDropdownGroup } from '../dropdown-group/dropdown-group';
 import InputStylePlugin, { MInputStyle } from '../input-style/input-style';
 import PopupPlugin, { MPopup } from '../popup/popup';
 import RadioStylePlugin from '../radio-style/radio-style';
-import { MSidebar } from '../sidebar/sidebar';
 import ValidationMessagePlugin from '../validation-message/validation-message';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import { BaseDropdown, BaseDropdownGroup, MDropdownInterface, MDropdownItem } from './dropdown-item/dropdown-item';
@@ -86,10 +85,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     private internalOpen: boolean = false;
     private dirty: boolean = false;
     private id: string = `mDropdown-${uuid.generate()}`;
-    private itemsHeightStyleInternal: number | object | undefined = {};
 
     @Watch('forceOpen')
-    onForceOpenUpdate(): void {
+    public onForceOpenUpdate(): void {
         if (this.forceOpen) {
             this.internalOpen = this.forceOpen;
         }
@@ -157,9 +155,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
         this.focusSelected();
         this.scrollToFocused();
-        // Reset the height of the list before calculating its height
-        // (this code is executed before the method calculateFilterableListeHeight())
-        this.itemsHeightStyle = undefined;
     }
 
     @Emit('close')
@@ -169,35 +164,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (this.clearInvalidSelectionOnClose && !hasMatch && this.selectedText === '') {
             this.$emit('input', '');
             this.setModel('', true);
-        }
-    }
-
-    private set itemsHeightStyle(value: object | number | undefined) {
-        this.itemsHeightStyleInternal = value === undefined ? undefined : { height: value + 'px' };
-    }
-
-    private get itemsHeightStyle(): object | number | undefined {
-        return this.itemsHeightStyleInternal;
-    }
-
-    private calculateFilterableListeHeight(): void {
-        // To display the contents of the list above the device keyboard,
-        // fixed the height of the list when the dropdown is filterable and in mobile mode.
-        if (this.filterable && !UserAgentUtil.isAndroid() && this.as<MediaQueries>().isMqMaxS) {
-            this.$children.forEach((popup, index) => {
-
-                // Find the MPopup component that has the MSidebar child component
-                if (popup.$options.name === MPopup.name) {
-                    popup.$children.forEach((sidebar, index) => {
-                        if (sidebar.$options.name === MSidebar.name) {
-                            // Set height of the list with height of MSidebar body
-                            let sidebarComponent: MSidebar = sidebar as MSidebar;
-                            this.itemsHeightStyle = sidebarComponent.$refs.body.clientHeight;
-                            sidebarComponent.$refs.body.style.overflow = 'hidden';
-                        }
-                    });
-                }
-            });
         }
     }
 
@@ -283,7 +249,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private setInputWidth(): void {
         this.$nextTick(() => {
-            this.$refs.mInputStyle.setInputWidth();
+            if (this.$refs.mInputStyle) {
+                this.$refs.mInputStyle.setInputWidth();
+            }
         });
     }
 
@@ -456,6 +424,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private focusNextItem(): void {
+        if (!this.hasItems) {
+            return;
+        }
         if (this.focusedIndex > -1) {
             this.focusedIndex++;
             if (this.focusedIndex >= this.internalNavigationItems.length) {
@@ -468,6 +439,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private focusPreviousItem(): void {
+        if (!this.hasItems) {
+            return;
+        }
         if (this.focusedIndex > -1) {
             this.focusedIndex--;
             if (this.focusedIndex < 0) {
@@ -480,6 +454,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private scrollToFocused(): void {
+        if (!this.hasItems) {
+            return;
+        }
         if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
             this.$nextTick(() => {
                 let container: HTMLElement = this.$refs.items;

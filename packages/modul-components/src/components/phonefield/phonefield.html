@@ -30,13 +30,13 @@
                 </svg>
             </div>
 
-            <template slot="option"
-                      slot-scope="{option, index}">
+            <template slot="items"
+                      slot-scope="{item, index}">
                 <div class="m-phonefield__item-wrapper">
                     <div class="m-phonefield__item-flag-wrapper">
                         <svg width="27px"
                              height="20px">
-                            <use :xlink:href="spriteId(option)"
+                            <use :xlink:href="spriteId(item)"
                                  aria-hidden="true"></use>
                         </svg>
                     </div>
