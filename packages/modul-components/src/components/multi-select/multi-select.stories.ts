@@ -17,13 +17,82 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
             'open',
             'close',
             'focus',
-            'blur'
+            'blur',
+            'select'
         ),
         data: () => ({
             model1: [optionsVonTrapp[0]],
             options: optionsVonTrapp
         }),
-        template: `<div><m-multi-select label="La famille Von Trapp"  @open="open" @close="close" @focus="focus" @blur="blur" :options="options" v-model="model1"><template v-slot:default>The selection is :{{ model1 }}</template><template v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-multi-select> </div>`
+        template: `<div><m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select> </div>`
+    })
+    );
+
+storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('Label', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: [optionsVonTrapp[0]],
+            options: optionsVonTrapp
+        }),
+        template: `<div><m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" label="La famille Von Trapp" :options="options" v-model="model1"></m-multi-select> </div>`
+    })
+    );
+
+storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('Custom select-item', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: [optionsLionKing[0]],
+            options: optionsLionKing
+        }),
+        template: `<div><m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-multi-select> </div>`
+    })
+    );
+
+storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('Custom chip info', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: [optionsLionKing[0]],
+            options: optionsLionKing
+        }),
+        template: `<div><m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:chips="{item , index }"> {{ index }} - {{ item }} </template></m-multi-select> </div>`
+    })
+    );
+
+storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('Select all', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: [optionsVonTrapp[0]],
+            options: optionsVonTrapp
+        }),
+        template: `<div><m-multi-select :select-all="true" @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select> </div>`
     })
     );
 
@@ -31,9 +100,20 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}/mobile`, modu
     .addParameters({ viewport: { defaultViewport: 'iphone6' } })
     .add('iphone6', () => ({
         data: () => ({
-            model1: [''],
+            model1: [],
             options: optionsPawPatrol
         }),
-        template: `<div><m-multi-select :options="options" v-model="model1"><template v-slot:default>The selection is :{{ model1 }}</template><template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-multi-select> <p>v-model = {{ model1 }}</p></div>`
+        template: `<div><m-multi-select :options="options" v-model="model1"></m-multi-select></div>`
+    })
+    );
+
+storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}/mobile`, module)
+    .addParameters({ viewport: { defaultViewport: 'iphone6' } })
+    .add('iphone6 - Select all', () => ({
+        data: () => ({
+            model1: [],
+            options: optionsPawPatrol
+        }),
+        template: `<div><m-multi-select :options="options" v-model="model1" :select-all="true"></m-multi-select></div>`
     })
     );

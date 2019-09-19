@@ -1,6 +1,7 @@
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
+import { MPopup } from '../../popup/popup';
 import { MSelectItem } from '../../select/select-item/select-item';
 import WithRender from './base-select.html';
 import './base-select.scss';
@@ -53,6 +54,7 @@ export class MBaseSelect extends ModulVue {
 
     public $refs: {
         items: HTMLUListElement;
+        popup: MPopup;
     };
 
     internalOpen: boolean = false;

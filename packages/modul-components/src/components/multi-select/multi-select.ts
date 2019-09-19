@@ -1,6 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Model, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
@@ -10,6 +10,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { MULTI_SELECT_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
 import { MBaseSelect } from './../select/base-select/base-select';
+import { MSelectItem } from './../select/select-item/select-item';
 import WithRender from './multi-select.html?style=./multi-select.scss';
 
 const MAX_LENGTH_CHIP_LABEL: number = 12;
@@ -17,7 +18,8 @@ const MAX_LENGTH_CHIP_LABEL: number = 12;
 @WithRender
 @Component({
     components: {
-        MBaseSelect
+        MBaseSelect,
+        MSelectItem
     },
     mixins: [
         InputState,
@@ -41,10 +43,20 @@ export class MMultiSelect extends ModulVue {
     @Prop()
     public focus: boolean;
 
+    @Prop({
+        default: false
+    })
+    public selectAll: boolean;
+
     public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
     public internalValue: any[] = [];
     public internalIsFocus: boolean = false;
+    public selectAllFocused: boolean = false;
     public open: boolean = false;
+
+    public $refs: {
+        baseSelect: MBaseSelect;
+    };
 
     created(): void {
         if (!Array.isArray(this.value)) {
@@ -85,6 +97,11 @@ export class MMultiSelect extends ModulVue {
         return !!(this.model && this.model.length > 0);
     }
 
+    get allSelected(): boolean {
+        return this.options.length === this.value.length;
+    }
+
+    @Emit('select-item')
     onSelect(option: any, index: number, $event: Event): void {
         let positionInModel: number = this.model.indexOf(option);
         if (positionInModel === -1) {
@@ -93,8 +110,12 @@ export class MMultiSelect extends ModulVue {
             this.onDelete(positionInModel);
         }
 
+        if (this.$refs.baseSelect.$refs.popup.$refs.popper) { // Pas en mobile
+            this.$refs.baseSelect.$refs.popup.$refs.popper.update();
+        }
+
         if ($event.type === 'click') {
-            (this.$refs.baseSelect as MBaseSelect).focusedIndex = -1;
+            this.$refs.baseSelect.focusedIndex = -1;
         }
     }
 
@@ -109,22 +130,44 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
+    @Emit('blur')
     onBlur($event: Event): void {
         this.internalIsFocus = false;
-        this.$emit('blur', $event);
     }
 
     onKeydownDown($event: KeyboardEvent): void {
-        (this.$refs.baseSelect as MBaseSelect).focusNextItem();
+        if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.selectAll) {
+            this.$refs.baseSelect.focusedIndex = -1;
+            this.selectAllFocused = true;
+        } else {
+            this.selectAllFocused = false;
+            this.$refs.baseSelect.focusNextItem();
+        }
     }
 
     onKeydownUp($event: KeyboardEvent): void {
-        (this.$refs.baseSelect as MBaseSelect).focusPreviousItem();
+        if (this.$refs.baseSelect.focusedIndex === 0 && this.selectAll) {
+            this.$refs.baseSelect.focusedIndex = -1;
+            this.selectAllFocused = true;
+        } else {
+            this.selectAllFocused = false;
+            this.$refs.baseSelect.focusPreviousItem();
+        }
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
-        if ((this.$refs.baseSelect as MBaseSelect).focusedIndex > -1) {
-            (this.$refs.baseSelect as MBaseSelect).select((this.$refs.baseSelect as MBaseSelect).items[(this.$refs.baseSelect as MBaseSelect).focusedIndex], (this.$refs.baseSelect as MBaseSelect).focusedIndex, $event);
+        if (this.$refs.baseSelect.focusedIndex > -1) {
+            this.$refs.baseSelect.select(this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex], this.$refs.baseSelect.focusedIndex, $event);
+        } else if (this.selectAllFocused) {
+            this.onToggleAll();
+        }
+    }
+
+    onToggleAll(): void {
+        if (this.allSelected) {
+            this.model.splice(0, this.model.length);
+        } else {
+            this.model.splice(0, this.model.length, ...this.options);
         }
     }
 

@@ -34,6 +34,7 @@ const EnglishPlugin: PluginObject<any> = {
                 require('../components/login/login.lang.en.json'),
                 require('../components/message/message.lang.en.json'),
                 require('../components/menu/menu.lang.en.json'),
+                require('../components/multi-select/multi-select.lang.en.json'),
                 require('../components/option/option.lang.en.json'),
                 require('../components/dialog/dialog.lang.en.json'),
                 require('../components/pagination/pagination.lang.en.json'),

@@ -41,4 +41,8 @@
     &__chip {
         margin: $m-margin--xs/2 $m-margin--xs $m-margin--xs/2 0;
     }
+
+    &__popup-header {
+        border-bottom: 1px solid $m-color--grey-light;
+    }
 }
