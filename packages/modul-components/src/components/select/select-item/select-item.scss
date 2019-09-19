@@ -20,18 +20,16 @@ $m-select-item--color-active: $m-color--grey-lightest !default;
         line-height: 20px;
 
         &.m--is-item-active {
-            &:not(.m--is-selected) {
-                cursor: pointer;
+            cursor: pointer;
 
-                &:hover,
-                &:focus,
-                &.m--is-focus {
-                    background: $m-select-item--color-hover;
-                }
+            &:hover,
+            &:focus,
+            &.m--is-focus {
+                background: $m-select-item--color-hover;
+            }
 
-                &:active {
-                    background: $m-select-item--color-active;
-                }
+            &:active {
+                background: $m-select-item--color-active;
             }
         }
 

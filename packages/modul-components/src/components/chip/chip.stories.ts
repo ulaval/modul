@@ -70,4 +70,37 @@ storiesOf(`${componentsHierarchyRootSeparator}${CHIP_NAME}`, module)
             }
         },
         template: '<m-chip :mode="mode" @delete="onDelete()" @click="onClick()">Delete mode</m-chip>'
+    }))
+
+    .add('size="small" - add', () => ({
+        props: {
+            mode: {
+                default: text('Text', MChipMode.Add)
+            }
+        },
+        methods: {
+            onAdd(): void {
+                alert('@Emit(\'add\')');
+            },
+            onClick(): void {
+                alert('@Emit(\'click\')');
+            }
+        },
+        template: '<m-chip :mode="mode" size="small" @add="onAdd()" @click="onClick()">Add mode</m-chip>'
+    }))
+    .add('size="small" - delete', () => ({
+        props: {
+            mode: {
+                default: text('Text', MChipMode.Delete)
+            }
+        },
+        methods: {
+            onDelete(): void {
+                alert('@Emit(\'delete\')');
+            },
+            onClick(): void {
+                alert('@Emit(\'click\')');
+            }
+        },
+        template: '<m-chip :mode="mode" size="small" @delete="onDelete()" @click="onClick()">Delete mode</m-chip>'
     }));

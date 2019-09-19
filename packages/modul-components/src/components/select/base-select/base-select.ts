@@ -1,6 +1,7 @@
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
+import { MPopup } from '../../popup/popup';
 import { MSelectItem } from '../../select/select-item/select-item';
 import WithRender from './base-select.html';
 import './base-select.scss';
@@ -40,6 +41,11 @@ export class MBaseSelect extends ModulVue {
     public open: boolean;
 
     @Prop({
+        default: true
+    })
+    public closeOnSelect: boolean;
+
+    @Prop({
         default: false
     })
     public sidebarFullHeight: boolean;
@@ -49,6 +55,7 @@ export class MBaseSelect extends ModulVue {
 
     public $refs: {
         items: HTMLUListElement;
+        popup: MPopup;
     };
 
     internalOpen: boolean = false;
@@ -72,7 +79,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     @Emit('select-item')
-    select(option: any, index: number): void {
+    select(option: any, index: number, $event: Event): void {
     }
 
     @Watch('open', { immediate: true })
@@ -82,10 +89,11 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
-    onSelectItem(option: any, index: number): void {
-
-        this.select(option, index);
-        this.closePopup();
+    onSelectItem(option: any, index: number, $event: Event): void {
+        this.select(option, index, $event);
+        if (this.closeOnSelect) {
+            this.closePopup();
+        }
     }
 
     public togglePopup(): void {
@@ -96,23 +104,19 @@ export class MBaseSelect extends ModulVue {
         this.internalOpen = false;
     }
 
-
     public setFocusedIndex(index): void {
         this.focusedIndex = index;
     }
 
-
-    public selectFocusedItem(): void {
-        this.select(this.items[this.focusedIndex], this.focusedIndex);
+    public selectFocusedItem($event: Event): void {
+        this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
     }
-
 
     public focusFirstSelected(): void {
         if (this.selectedItems && this.selectedItems.length > 0) {
             this.focusedIndex = this.items.indexOf(this.selectedItems[0]);
         }
     }
-
 
     public focusNextItem(): void {
         if (this.focusedIndex > -1) {
@@ -223,12 +227,12 @@ export class MBaseSelect extends ModulVue {
     // space : open the popup
     onKeydownDown($event: KeyboardEvent): void {
         this.focusNextItem();
-        this.selectFocusedItem();
+        this.selectFocusedItem($event);
     }
 
     onKeydownUp($event: KeyboardEvent): void {
         this.focusPreviousItem();
-        this.selectFocusedItem();
+        this.selectFocusedItem($event);
     }
 
     onKeydownSpace($event: KeyboardEvent): void {
@@ -245,10 +249,8 @@ export class MBaseSelect extends ModulVue {
 
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.focusedIndex > -1) {
-            this.select(this.items[this.focusedIndex], this.focusedIndex);
+            this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
         this.closePopup();
     }
-
-
 }
