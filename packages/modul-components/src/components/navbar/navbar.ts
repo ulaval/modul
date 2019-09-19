@@ -10,7 +10,6 @@ import IconButtonPlugin from '../icon-button/icon-button';
 import { MNavbarItem } from './navbar-item/navbar-item';
 import WithRender from './navbar.html?style=./navbar.scss';
 
-
 const OVERFLOWOFFSET: number = 20;
 
 export abstract class BaseNavbar extends ModulVue { }
@@ -83,8 +82,6 @@ export class MNavbar extends BaseNavbar implements Navbar {
     public navigationArrow: boolean;
     @Prop({ default: MNavbarMaxWidth.Large })
     public maxWidth: string;
-    @Prop({ default: '0px' })
-    public minHeight: string;
     @Prop({ default: true })
     public multiline: boolean;
     @Prop()
