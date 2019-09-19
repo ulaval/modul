@@ -1,4 +1,3 @@
-import ElementQueries from 'css-element-queries/src/ElementQueries';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
@@ -10,9 +9,6 @@ export enum MPanelSkin {
     Dark = 'dark',
     Darker = 'darker'
 }
-
-const HEADER_RIGHT_CONTENT: string = 'header-right-content';
-const MENU: string = 'menu';
 
 @WithRender
 @Component
@@ -56,65 +52,29 @@ export class MPanel extends Vue {
     @Emit('click')
     onClick(): void { }
 
-    protected mounted(): void {
-        ElementQueries.init();
-    }
-
-    protected beforeDestroy(): void {
-        ElementQueries.detach(this.$el);
-    }
-
-    private get lightSkin(): boolean {
+    public get lightSkin(): boolean {
         return this.skin === MPanelSkin.Light;
     }
 
-    private get darkSkin(): boolean {
+    public get darkSkin(): boolean {
         return this.skin === MPanelSkin.Dark;
     }
 
-    private get darkerSkin(): boolean {
+    public get darkerSkin(): boolean {
         return this.skin === MPanelSkin.Darker;
     }
 
-    private get hasHeader(): boolean {
-        if (this.$slots.header || this.$slots[HEADER_RIGHT_CONTENT]) {
-            return true;
-        }
-        return false;
-    }
-
-    private get hasHeaderRightContentSlot(): boolean {
-        return !!this.$slots[HEADER_RIGHT_CONTENT];
-    }
-
-    private get hasHeaderMenuSlot(): boolean {
-        return !!this.$slots[MENU];
-    }
-
-    private get hasHeaderSlot(): boolean {
-        return !!this.$slots.header;
-    }
-
-    private get hasDefaultSlot(): boolean {
-        return !!this.$slots.default;
-    }
-
-    private get hasFooterSlot(): boolean {
-        return !!this.$slots.footer;
-    }
-
-    private get hasPaddingHeader(): boolean {
+    public get hasPaddingHeader(): boolean {
         return this.paddingHeader && this.padding;
     }
 
-    private get hasPaddingBody(): boolean {
+    public get hasPaddingBody(): boolean {
         return this.paddingBody && this.padding;
     }
 
-    private get hasPaddingFooter(): boolean {
+    public get hasPaddingFooter(): boolean {
         return this.paddingFooter && this.padding;
     }
-
 }
 
 const PanelPlugin: PluginObject<any> = {
