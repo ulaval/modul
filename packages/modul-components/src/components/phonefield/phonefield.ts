@@ -173,7 +173,6 @@ export class MPhonefield extends ModulVue {
             iso: this.internalCountry.iso2,
             prefix: this.internalCountry.dialCode
         });
-        this.focusInput();
     }
 
     onSelectFocus(): void {
@@ -182,6 +181,7 @@ export class MPhonefield extends ModulVue {
 
     onSelectBlur(): void {
         this.internalFocus = false;
+        this.focusInput();
     }
 
     public async focusInput(): Promise<any> {

@@ -35,7 +35,6 @@ export class InputPopup extends ModulVue {
     }
 
     public inputOnKeydown($event: KeyboardEvent): void {
-
         // tslint:disable: deprecation
         if ($event.keyCode !== KeyCode.M_RETURN &&
             $event.keyCode !== KeyCode.M_ENTER &&

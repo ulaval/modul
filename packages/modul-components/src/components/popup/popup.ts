@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { MOpenTrigger, OpenTrigger, OpenTriggerMixin } from '../../mixins/open-trigger/open-trigger';
 import { ModulVue } from '../../utils/vue/vue';
@@ -70,6 +70,8 @@ export class MPopup extends ModulVue {
     public trigger: HTMLElement;
     @Prop({ default: true })
     public lazy: boolean;
+    @Prop()
+    public sidebarFullHeight: boolean;
 
     public $refs: {
         popper: MPopper;
@@ -77,26 +79,39 @@ export class MPopup extends ModulVue {
 
     private internalOpen: boolean = false;
 
+    @Emit('open')
+    public onOpen(): void { }
+
+    @Emit('close')
+    public onClose(): void { }
+
+    @Emit('portal-mounted')
+    public onPortalMounted(): void { }
+
+    @Emit('portal-after-open')
+    public onPortalAfterOpen(): void { }
+
+    @Watch('open', { immediate: true })
+    public onOpenChange(open: boolean): void {
+        if (!this.disabled) {
+            this.internalOpen = open;
+        }
+    }
+
     public get popupBody(): Element {
         return (this.$children[0] as any).popupBody;
     }
 
-    private get propOpen(): boolean {
-        return this.open === undefined ? this.internalOpen : this.open;
+    public get propOpen(): boolean {
+        return this.internalOpen;
     }
 
-    private set propOpen(value: boolean) {
+    public set propOpen(value: boolean) {
         if (!this.disabled) {
             this.internalOpen = value;
             this.$emit('update:open', value);
         }
     }
-
-    @Emit('open')
-    private onOpen(): void { }
-
-    @Emit('close')
-    private onClose(): void { }
 
     public get propOpenTrigger(): MOpenTrigger {
         return this.openTrigger; // todo: mobile + hover ??
@@ -106,15 +121,7 @@ export class MPopup extends ModulVue {
         return this.trigger || this.as<OpenTriggerMixin>().triggerHook || undefined;
     }
 
-    private onPortalMounted(): void {
-        this.$emit('portal-mounted');
-    }
-
-    private onPortalAfterOpen(): void {
-        this.$emit('portal-after-open');
-    }
-
-    private get hasTriggerSlot(): boolean {
+    public get hasTriggerSlot(): boolean {
         return !!this.$slots.trigger;
     }
 }
