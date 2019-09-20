@@ -15,8 +15,13 @@ $m-accordion--color-default: $m-color--interactive !default;
             margin-top: -$m-accordion--border-size;
         }
 
-        &.m--is-open + .m-accordion {
+        &.m--is-open:not(.m--is-empty-content) + .m-accordion {
             margin-top: -1px;
+        }
+
+        &.m--is-empty-content + .m-accordion.m--is-open,
+        &.m--is-empty-content + .m-accordion.m--is-closed {
+            margin-top: -2px;
         }
     }
 

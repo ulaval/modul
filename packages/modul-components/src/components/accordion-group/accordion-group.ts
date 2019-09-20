@@ -38,12 +38,17 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     })
     public toggleLinkLeft: boolean;
 
+    @Prop({
+        default: false
+    })
+    public openAll: boolean;
+
     private accordions: { [id: string]: AccordionGateway } = {};
 
     public addAccordion(accordion: AccordionGateway): void {
         accordion.$on('update:open', this.emitValueChange);
         this.$set(this.accordions, accordion.propId, accordion);
-        if (this.openedIds && this.openedIds.find(v => v === accordion.propId)) {
+        if (this.openAll || (this.openedIds && this.openedIds.find(v => v === accordion.propId))) {
             accordion.propOpen = true;
         }
     }
@@ -62,7 +67,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     private get propAllOpen(): boolean {
         let allOpened: boolean = true;
         for (const id in this.accordions) {
-            allOpened = this.accordions[id].propOpen;
+            allOpened = this.accordions[id].propOpen || this.accordions[id].$slots.default === undefined;
             if (!allOpened && !this.accordions[id].propDisabled) {
                 break;
             }
@@ -73,7 +78,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     private get propAllClosed(): boolean {
         let allClosed: boolean = true;
         for (const id in this.accordions) {
-            allClosed = !this.accordions[id].propOpen;
+            allClosed = !this.accordions[id].propOpen || this.accordions[id].$slots.default === undefined;
             if (!allClosed && !this.accordions[id].propDisabled) {
                 break;
             }
