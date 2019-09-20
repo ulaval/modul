@@ -1,0 +1,45 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "target": "es5",
+        "lib": [
+            "es5",
+            "es6",
+            "dom"
+        ],
+        "module": "es2015",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
+        "paths": {
+            "@ulaval/modul-components/dist/*": [
+                "../../packages/modul-components/src/*"
+            ]
+            // "@ulaval/modul-form/dist/*": [
+            //     "../../packages/modul-form/src/*"
+            // ]
+        },
+        "typeRoots": [
+            "../../node_modules/@types"
+        ],
+        "plugins": [
+            {
+                "name": "typescript-tslint-plugin"
+            }
+        ]
+    },
+    "include": [
+        "../../packages/modul-components/src/*",
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+    ],
+    "exclude": [
+        "../../packages/modul-components/src/typings.d.ts"
+        // "../../packages/modul-form/src/typings.d.ts"
+    ]
+}
