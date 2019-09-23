@@ -106,7 +106,6 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     @Emit('fullscreen')
     onFullscreen(fullscreenWasActived: boolean): void { }
 
-
     public $refs: {
         input: HTMLElement
     };
