@@ -68,6 +68,12 @@ export class MTimepicker extends ModulVue {
     @Prop({ default: InputMaxWidth.Small })
     public maxWidth: string;
 
+    public $refs: {
+        input: MInputMask;
+        hours: HTMLElement
+        minutes: HTMLElement;
+    };
+
     public i18nButton: string = this.$i18n.translate('m-timepicker:button-ok');
     public i18nPlaceHolder: string = this.$i18n.translate('m-timepicker:placeholder');
     public i18nOutOfBoundsError: string = this.$i18n.translate('m-timepicker:out-of-bounds-error', { min: this.min, max: this.max }, undefined, undefined, undefined, FormatMode.Sprintf);
@@ -265,7 +271,7 @@ export class MTimepicker extends ModulVue {
 
     private async focusInput(): Promise<void> {
         await this.$nextTick();
-        const inputEl: HTMLInputElement = (this.$refs.input as MInputMask).$el as HTMLInputElement;
+        const inputEl: HTMLInputElement = this.$refs.input.$el as HTMLInputElement;
         inputEl.focus();
         this.open = true;
     }
@@ -338,8 +344,8 @@ export class MTimepicker extends ModulVue {
         this.internalOpen = open;
         setTimeout(() => {
             if (this.internalOpen) {
-                this.scrollToSelection(this.$refs.hours as HTMLElement);
-                this.scrollToSelection(this.$refs.minutes as HTMLElement);
+                this.scrollToSelection(this.$refs.hours);
+                this.scrollToSelection(this.$refs.minutes);
                 this.$emit('open');
             } else {
                 this.$emit('close');
