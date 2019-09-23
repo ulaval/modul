@@ -76,7 +76,7 @@ export class MMenuItem extends BaseMenuItem implements MenuItem {
     }
 
     @Emit('click')
-    public emitClick(event: Event): void { }
+    public emitClick(event: MouseEvent): void { }
 
     @Watch('open', { immediate: true })
     private openChanged(open: boolean): void {
@@ -110,7 +110,7 @@ export class MMenuItem extends BaseMenuItem implements MenuItem {
         return this.menuRoot && this.menuRoot.propDisabled ? true : this.disabled;
     }
 
-    public onClick(event: Event): void {
+    public onClick(event: MouseEvent): void {
         if (!this.isDisabled && this.menuRoot && !this.menuRoot.closeOnSelectionInAction) {
             if (this.group) {
                 this.toggleOpen();

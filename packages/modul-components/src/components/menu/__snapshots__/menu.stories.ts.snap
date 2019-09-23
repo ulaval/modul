@@ -2,17 +2,18 @@
 
 exports[`Storyshots components|m-menu closeOnSelection="false" 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -21,11 +22,9 @@ exports[`Storyshots components|m-menu closeOnSelection="false" 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -628,17 +627,18 @@ exports[`Storyshots components|m-menu default 1`] = `
 
 exports[`Storyshots components|m-menu disabled 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open m--is-disabled"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
-    tabindex="0"
+    tabindex="-1"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -647,11 +647,9 @@ exports[`Storyshots components|m-menu disabled 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -941,17 +939,18 @@ exports[`Storyshots components|m-menu disabled 1`] = `
 
 exports[`Storyshots components|m-menu idAriaControls="ariaTest" 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="ariaTest"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -960,11 +959,9 @@ exports[`Storyshots components|m-menu idAriaControls="ariaTest" 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="ariaTest"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -1254,17 +1251,18 @@ exports[`Storyshots components|m-menu idAriaControls="ariaTest" 1`] = `
 
 exports[`Storyshots components|m-menu open 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -1273,11 +1271,9 @@ exports[`Storyshots components|m-menu open 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -1567,17 +1563,18 @@ exports[`Storyshots components|m-menu open 1`] = `
 
 exports[`Storyshots components|m-menu skin=light" 1`] = `
 <div
-  class="m-menu m--is-skin-light"
+  class="m-menu m--is-skin-light m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -1586,11 +1583,9 @@ exports[`Storyshots components|m-menu skin=light" 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2191,19 +2186,342 @@ exports[`Storyshots components|m-menu trigger (slot) 1`] = `
 </div>
 `;
 
+exports[`Storyshots components|m-menu/Add dynamically subitems Edit subitem 1`] = `
+<div>
+  <div
+    class="m-menu m--is-skin-dark m--is-open"
+  >
+    <div
+      aria-controls="mMenu-uuid-controls"
+      aria-expanded="true"
+      aria-haspopup="true"
+      class="m-menu__trigger"
+      tabindex="0"
+    >
+      <span
+        class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+        title="Fermer le menu"
+      />
+       
+      <div>
+        Menu
+      </div>
+    </div>
+     
+    <ul
+      class="m-menu__body"
+      id="mMenu-uuid-controls"
+      role="menu"
+    >
+       
+      <li
+        class="m-menu-item"
+        role="none"
+      >
+        <span
+          class="m-menu-item__link"
+          tabindex="0"
+        >
+          <!---->
+           
+          <span
+            class="m-menu-item__label"
+          >
+            Item 1
+          </span>
+           
+          <!---->
+        </span>
+         
+        <ul
+          aria-hidden="true"
+          class="m-menu-item__group"
+          id="mMenuItem-uuid-controls"
+          style="display: none;"
+        />
+      </li>
+       
+      <li
+        class="m-menu-item"
+        role="none"
+      >
+        <span
+          class="m-menu-item__link"
+          tabindex="0"
+        >
+          <!---->
+           
+          <span
+            class="m-menu-item__label"
+          >
+            Item 2
+          </span>
+           
+          <!---->
+        </span>
+         
+        <ul
+          aria-hidden="true"
+          class="m-menu-item__group"
+          id="mMenuItem-uuid-controls"
+          style="display: none;"
+        />
+      </li>
+       
+      <li
+        class="m-menu-item"
+        role="none"
+      >
+        <span
+          class="m-menu-item__link"
+          tabindex="0"
+        >
+          <!---->
+           
+          <span
+            class="m-menu-item__label"
+          >
+            Item 3
+          </span>
+           
+          <!---->
+        </span>
+         
+        <ul
+          aria-hidden="true"
+          class="m-menu-item__group"
+          id="mMenuItem-uuid-controls"
+          style="display: none;"
+        >
+          <li
+            class="m-menu-item"
+            role="none"
+          >
+            <span
+              class="m-menu-item__link"
+              tabindex="0"
+            >
+              <!---->
+               
+              <span
+                class="m-menu-item__label"
+              >
+                Subitem 1
+              </span>
+               
+              <!---->
+            </span>
+             
+            <ul
+              aria-hidden="true"
+              class="m-menu-item__group"
+              id="mMenuItem-uuid-controls"
+              style="display: none;"
+            />
+          </li>
+           
+          <li
+            class="m-menu-item"
+            role="none"
+          >
+            <span
+              class="m-menu-item__link"
+              tabindex="0"
+            >
+              <!---->
+               
+              <span
+                class="m-menu-item__label"
+              >
+                Subitem 2
+              </span>
+               
+              <!---->
+            </span>
+             
+            <ul
+              aria-hidden="true"
+              class="m-menu-item__group"
+              id="mMenuItem-uuid-controls"
+              style="display: none;"
+            />
+          </li>
+           
+          <!---->
+        </ul>
+      </li>
+    </ul>
+  </div>
+   
+  <button
+    class="m-button m-u--margin-top m--is-skin-primary"
+    type="button"
+  >
+    <!---->
+     
+    <!---->
+     
+    <span
+      class="m-button__text"
+    >
+      Add subitem 3 to item 3 
+      <!---->
+    </span>
+     
+    <!---->
+     
+    <!---->
+  </button>
+</div>
+`;
+
+exports[`Storyshots components|m-menu/Add dynamically subitems Edit subitems group 1`] = `
+<div>
+  <div
+    class="m-menu m--is-skin-dark m--is-open"
+  >
+    <div
+      aria-controls="mMenu-uuid-controls"
+      aria-expanded="true"
+      aria-haspopup="true"
+      class="m-menu__trigger"
+      tabindex="0"
+    >
+      <span
+        class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+        title="Fermer le menu"
+      />
+       
+      <div>
+        Menu
+      </div>
+    </div>
+     
+    <ul
+      class="m-menu__body"
+      id="mMenu-uuid-controls"
+      role="menu"
+    >
+       
+      <li
+        class="m-menu-item"
+        role="none"
+      >
+        <span
+          class="m-menu-item__link"
+          tabindex="0"
+        >
+          <!---->
+           
+          <span
+            class="m-menu-item__label"
+          >
+            Item 1
+          </span>
+           
+          <!---->
+        </span>
+         
+        <ul
+          aria-hidden="true"
+          class="m-menu-item__group"
+          id="mMenuItem-uuid-controls"
+          style="display: none;"
+        />
+      </li>
+       
+      <li
+        class="m-menu-item"
+        role="none"
+      >
+        <span
+          class="m-menu-item__link"
+          tabindex="0"
+        >
+          <!---->
+           
+          <span
+            class="m-menu-item__label"
+          >
+            Item 2
+          </span>
+           
+          <!---->
+        </span>
+         
+        <ul
+          aria-hidden="true"
+          class="m-menu-item__group"
+          id="mMenuItem-uuid-controls"
+          style="display: none;"
+        />
+      </li>
+       
+      <li
+        class="m-menu-item"
+        role="none"
+      >
+        <span
+          class="m-menu-item__link"
+          tabindex="0"
+        >
+          <!---->
+           
+          <span
+            class="m-menu-item__label"
+          >
+            Item 3
+          </span>
+           
+          <!---->
+        </span>
+         
+        <ul
+          aria-hidden="true"
+          class="m-menu-item__group"
+          id="mMenuItem-uuid-controls"
+          style="display: none;"
+        />
+      </li>
+    </ul>
+  </div>
+   
+  <button
+    class="m-button m-u--margin-top m--is-skin-primary"
+    type="button"
+  >
+    <!---->
+     
+    <!---->
+     
+    <span
+      class="m-button__text"
+    >
+      Add 2 subitems to item 3 
+      <!---->
+    </span>
+     
+    <!---->
+     
+    <!---->
+  </button>
+</div>
+`;
+
 exports[`Storyshots components|m-menu/menuItem default 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2212,11 +2530,9 @@ exports[`Storyshots components|m-menu/menuItem default 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2263,17 +2579,18 @@ exports[`Storyshots components|m-menu/menuItem default 1`] = `
 
 exports[`Storyshots components|m-menu/menuItem disabled 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2282,11 +2599,9 @@ exports[`Storyshots components|m-menu/menuItem disabled 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2321,17 +2636,18 @@ exports[`Storyshots components|m-menu/menuItem disabled 1`] = `
 
 exports[`Storyshots components|m-menu/menuItem iconName 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2340,11 +2656,9 @@ exports[`Storyshots components|m-menu/menuItem iconName 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2391,17 +2705,18 @@ exports[`Storyshots components|m-menu/menuItem iconName 1`] = `
 
 exports[`Storyshots components|m-menu/menuItem label 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2410,11 +2725,9 @@ exports[`Storyshots components|m-menu/menuItem label 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2449,17 +2762,18 @@ exports[`Storyshots components|m-menu/menuItem label 1`] = `
 
 exports[`Storyshots components|m-menu/menuItem open 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2468,11 +2782,9 @@ exports[`Storyshots components|m-menu/menuItem open 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2681,17 +2993,18 @@ exports[`Storyshots components|m-menu/menuItem open 1`] = `
 
 exports[`Storyshots components|m-menu/menuItem readonly 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2700,11 +3013,9 @@ exports[`Storyshots components|m-menu/menuItem readonly 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2740,17 +3051,18 @@ exports[`Storyshots components|m-menu/menuItem readonly 1`] = `
 
 exports[`Storyshots components|m-menu/menuItem url (router-link) 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2759,11 +3071,9 @@ exports[`Storyshots components|m-menu/menuItem url (router-link) 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li
@@ -2797,17 +3107,18 @@ exports[`Storyshots components|m-menu/menuItem url (router-link) 1`] = `
 
 exports[`Storyshots components|m-menu/menuItem value 1`] = `
 <div
-  class="m-menu m--is-skin-dark"
+  class="m-menu m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-uuid-controls"
+    aria-expanded="true"
     aria-haspopup="true"
     class="m-menu__trigger"
     tabindex="0"
   >
     <span
-      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
-      title="Ouvrir le menu"
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
     />
      
     <div>
@@ -2816,11 +3127,9 @@ exports[`Storyshots components|m-menu/menuItem value 1`] = `
   </div>
    
   <ul
-    aria-hidden="true"
     class="m-menu__body"
     id="mMenu-uuid-controls"
     role="menu"
-    style="display: none;"
   >
      
     <li

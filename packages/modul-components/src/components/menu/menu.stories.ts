@@ -112,33 +112,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${MENU_NAME}`, module)
                         <div slot="trigger">Menu</div>
                         ${DEFAULT_MENU_ITEMS}
                  </m-menu>`
-    }))
-    .add('Add dynamically subitem', () => ({
-        data: () => ({
-            selectedItem: 'item1',
-            hasSubitem: false
-        }),
-        methods: {
-            toggleSubitem(): void {
-                (this as any).hasSubitem = !(this as any).hasSubitem;
-            }
-        },
-        template: `<div><m-menu :closeOnSelection="false" :selected.sync="selectedItem">
-                        <div slot="trigger">Menu</div>
-                        <m-menu-item value="item1" label="Item 1"></m-menu-item>
-                        <m-menu-item value="item2" label="Item 2"></m-menu-item>
-                        <m-menu-item label="Item 3">
-                            <template v-if="hasSubitem">
-                                <m-menu-item value="subitem1" label="Subitem 1"></m-menu-item>
-                                <m-menu-item value="subitem2" label="Subitem 2"></m-menu-item>
-                                <m-menu-item value="subitem3" label="Subitem 3"></m-menu-item>
-                            </template>
-                        </m-menu-item>
-                 </m-menu>
-                 <m-button class="m-u--margin-top" @click="toggleSubitem">{{hasSubitem ? 'Delete' : 'Add'}} 3 subitems to item 3</m-button>
-                 </div>`
     }));
-
 
 storiesOf(`${componentsHierarchyRootSeparator}${MENU_NAME}/menuItem`, module)
 
@@ -251,3 +225,65 @@ storiesOf(`${componentsHierarchyRootSeparator}${MENU_NAME}/menuItem`, module)
                    </m-menu>`
     }));
 
+
+storiesOf(`${componentsHierarchyRootSeparator}${MENU_NAME}/Add dynamically subitems`, module)
+    .addDecorator(storyRouterDecorator())
+    .add('Edit subitems group', () => ({
+        data: () => ({
+            menuOpen: true,
+            selectedItem: 'item1',
+            hasSubitems: false,
+            item3Open: false
+        }),
+        methods: {
+            toggleSubitems(): void {
+                (this as any).hasSubitems = !(this as any).hasSubitems;
+                this.$nextTick(() => {
+                    if ((this as any).hasSubitems) {
+                        (this as any).item3Open = true;
+                    }
+                });
+            }
+        },
+        template: `<div><m-menu :open.sync="menuOpen" :closeOnSelection="false" :selected.sync="selectedItem">
+                        <div slot="trigger">Menu</div>
+                        <m-menu-item label="Item 1"></m-menu-item>
+                        <m-menu-item value="item2" label="Item 2"></m-menu-item>
+                        <m-menu-item :open.sync="item3Open" label="Item 3">
+                            <template v-if="hasSubitems">
+                                <m-menu-item value="subitem1" label="Subitem 1"></m-menu-item>
+                                <m-menu-item value="subitem2" label="Subitem 2"></m-menu-item>
+                            </template>
+                        </m-menu-item>
+                 </m-menu>
+                 <m-button class="m-u--margin-top" @click="toggleSubitems">{{hasSubitems ? 'Delete' : 'Add'}} 2 subitems to item 3</m-button>
+                 </div>`
+    }))
+    .add('Edit subitem', () => ({
+        data: () => ({
+            menuOpen: true,
+            selectedItem: 'item1',
+            hasSubitem: false,
+            item3Open: false
+        }),
+        methods: {
+            toggleSubitem3(): void {
+                (this as any).hasSubitem = !(this as any).hasSubitem;
+                if ((this as any).hasSubitem) {
+                    (this as any).item3Open = true;
+                }
+            }
+        },
+        template: `<div><m-menu :open.sync="menuOpen" :closeOnSelection="false" :selected.sync="selectedItem">
+                        <div slot="trigger">Menu</div>
+                        <m-menu-item value="item1" label="Item 1"></m-menu-item>
+                        <m-menu-item value="item2" label="Item 2"></m-menu-item>
+                        <m-menu-item :open.sync="item3Open" label="Item 3">
+                            <m-menu-item value="subitem1" label="Subitem 1"></m-menu-item>
+                            <m-menu-item value="subitem2" label="Subitem 2"></m-menu-item>
+                            <m-menu-item v-if="hasSubitem" value="subitem3" label="Subitem 3"></m-menu-item>
+                        </m-menu-item>
+                 </m-menu>
+                 <m-button class="m-u--margin-top" @click="toggleSubitem3">{{hasSubitem ? 'Delete' : 'Add'}} subitem 3 to item 3</m-button>
+                 </div>`
+    }));
