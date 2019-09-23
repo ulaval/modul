@@ -16,7 +16,10 @@ storiesOf(`${componentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             'input',
             'focus',
             'blur',
-            'filter'
+            'filter',
+            'keydown',
+            'keyup',
+            'paste'
         ),
         data: () => ({
             label: 'Fruits and vegetables',
@@ -24,7 +27,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             value: ''
         }),
         template: `<div>
-            <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" v-model="value" :label="label" :results="results"></m-typeahead>
+            <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" @keydown="keydown" @keyup="keyup" @paste="paste" v-model="value" :label="label" :results="results"></m-typeahead>
             <p>v-model = {{ value }}</p>
             <h2 class="m-u--h5">Values</h2>
             <p v-html="results"></p>
