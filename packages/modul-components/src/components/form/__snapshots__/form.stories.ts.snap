@@ -2574,6 +2574,82 @@ exports[`Storyshots components|m-form/built-in action-fallouts toast and clear t
     </div>
   </div>
    
+  <div
+    class="m-textfield m--is-type-text"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                class="m-textfield__input"
+                id="mTextfield-uuid"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-textfield__validation"
+    >
+      <div
+        class="m-validation-message m-textfield__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
   <p
     class="m-u--margin-bottom--l"
   >
@@ -2626,384 +2702,7 @@ exports[`Storyshots components|m-form/rules Checkbox 2 to 5 selections 1`] = `
     Checkbox 2 to 5 selections
   </h2>
    
-  <form
-    class="m-form m-u--margin-top"
-  >
-    <!---->
-     
-    <!---->
-     
-    <p>
-      <strong>
-        Select 2 to 5 roles :
-      </strong>
-    </p>
-     
-    <ul
-      class="m-u--no-margin"
-    >
-      <div
-        class="m-input-group"
-      >
-        <!---->
-         
-        <div
-          class="m-input-group__body"
-        >
-          <div
-            class="m-validation-message m-input-group__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-group__content"
-          >
-            <li>
-              <div
-                class="m-checkbox m--is-checkbox-left"
-              >
-                <input
-                  class="m-checkbox__hidden"
-                  id="mCheckbox-uuid"
-                  type="checkbox"
-                />
-                 
-                <!---->
-                 
-                <label
-                  class="m-checkbox__wrap"
-                  for="mCheckbox-uuid"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-checkbox__input"
-                  >
-                    <span
-                      class="m-checkbox__input__icon"
-                    />
-                  </span>
-                   
-                  <span
-                    class="m-checkbox__label"
-                  >
-                    
-                            Sys admin
-                  </span>
-                </label>
-                 
-                <div
-                  class="m-validation-message m-checkbox__message"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="m-checkbox m--is-checkbox-left"
-              >
-                <input
-                  class="m-checkbox__hidden"
-                  id="mCheckbox-uuid"
-                  type="checkbox"
-                />
-                 
-                <!---->
-                 
-                <label
-                  class="m-checkbox__wrap"
-                  for="mCheckbox-uuid"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-checkbox__input"
-                  >
-                    <span
-                      class="m-checkbox__input__icon"
-                    />
-                  </span>
-                   
-                  <span
-                    class="m-checkbox__label"
-                  >
-                    
-                            Unit admin
-                  </span>
-                </label>
-                 
-                <div
-                  class="m-validation-message m-checkbox__message"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="m-checkbox m--is-checkbox-left"
-              >
-                <input
-                  class="m-checkbox__hidden"
-                  id="mCheckbox-uuid"
-                  type="checkbox"
-                />
-                 
-                <!---->
-                 
-                <label
-                  class="m-checkbox__wrap"
-                  for="mCheckbox-uuid"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-checkbox__input"
-                  >
-                    <span
-                      class="m-checkbox__input__icon"
-                    />
-                  </span>
-                   
-                  <span
-                    class="m-checkbox__label"
-                  >
-                    
-                            Conceptor
-                  </span>
-                </label>
-                 
-                <div
-                  class="m-validation-message m-checkbox__message"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="m-checkbox m--is-checkbox-left"
-              >
-                <input
-                  class="m-checkbox__hidden"
-                  id="mCheckbox-uuid"
-                  type="checkbox"
-                />
-                 
-                <!---->
-                 
-                <label
-                  class="m-checkbox__wrap"
-                  for="mCheckbox-uuid"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-checkbox__input"
-                  >
-                    <span
-                      class="m-checkbox__input__icon"
-                    />
-                  </span>
-                   
-                  <span
-                    class="m-checkbox__label"
-                  >
-                    
-                            Assitant
-                  </span>
-                </label>
-                 
-                <div
-                  class="m-validation-message m-checkbox__message"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="m-checkbox m--is-checkbox-left"
-              >
-                <input
-                  class="m-checkbox__hidden"
-                  id="mCheckbox-uuid"
-                  type="checkbox"
-                />
-                 
-                <!---->
-                 
-                <label
-                  class="m-checkbox__wrap"
-                  for="mCheckbox-uuid"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-checkbox__input"
-                  >
-                    <span
-                      class="m-checkbox__input__icon"
-                    />
-                  </span>
-                   
-                  <span
-                    class="m-checkbox__label"
-                  >
-                    
-                            Moderator
-                  </span>
-                </label>
-                 
-                <div
-                  class="m-validation-message m-checkbox__message"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="m-checkbox m--is-checkbox-left"
-              >
-                <input
-                  class="m-checkbox__hidden"
-                  id="mCheckbox-uuid"
-                  type="checkbox"
-                />
-                 
-                <!---->
-                 
-                <label
-                  class="m-checkbox__wrap"
-                  for="mCheckbox-uuid"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-checkbox__input"
-                  >
-                    <span
-                      class="m-checkbox__input__icon"
-                    />
-                  </span>
-                   
-                  <span
-                    class="m-checkbox__label"
-                  >
-                    
-                            Student
-                  </span>
-                </label>
-                 
-                <div
-                  class="m-validation-message m-checkbox__message"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </li>
-            <li>
-              <div
-                class="m-checkbox m--is-checkbox-left"
-              >
-                <input
-                  class="m-checkbox__hidden"
-                  id="mCheckbox-uuid"
-                  type="checkbox"
-                />
-                 
-                <!---->
-                 
-                <label
-                  class="m-checkbox__wrap"
-                  for="mCheckbox-uuid"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-checkbox__input"
-                  >
-                    <span
-                      class="m-checkbox__input__icon"
-                    />
-                  </span>
-                   
-                  <span
-                    class="m-checkbox__label"
-                  >
-                    
-                            Invited
-                  </span>
-                </label>
-                 
-                <div
-                  class="m-validation-message m-checkbox__message"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </li>
-          </div>
-        </div>
-      </div>
-    </ul>
-     
-    <p
-      class="m-u--margin-bottom--l"
-    >
-      <button
-        class="m-button m--is-skin-primary"
-        type="submit"
-      >
-        <!---->
-         
-        <!---->
-         
-        <span
-          class="m-button__text"
-        >
-          Submit 
-          <!---->
-        </span>
-         
-        <!---->
-         
-        <!---->
-      </button>
-       
-      <button
-        class="m-button m--is-skin-secondary"
-        type="reset"
-      >
-        <!---->
-         
-        <!---->
-         
-        <span
-          class="m-button__text"
-        >
-          Reset 
-          <!---->
-        </span>
-         
-        <!---->
-         
-        <!---->
-      </button>
-    </p>
-  </form>
+  <!---->
 </div>
 `;
 
