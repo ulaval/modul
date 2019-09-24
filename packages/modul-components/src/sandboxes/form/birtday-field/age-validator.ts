@@ -1,5 +1,5 @@
 import moment, { Moment } from 'moment';
-import { ControlValidatorValidationType } from '../../../../dist/utils/form/control-validator-validation-type';
+import { ControlValidatorValidationType } from '../../../utils/form/control-validator-validation-type';
 import { ControlValidator } from '../../../utils/form/validators/control-validator';
 import BirthdayFieldFormGroup from './birthday-field-form-group';
 
@@ -24,7 +24,7 @@ function getValidation(minimumAge: number): ControlValidator {
         validationFunction: validationFunction(minimumAge),
         error: {
             message: `You must be ${minimumAge} or older`,
-            groupMessage: `You must be ${minimumAge} or older`,
+            groupMessage: `You must be ${minimumAge} or older`
         },
         validationType: ControlValidatorValidationType.Correction
     };
