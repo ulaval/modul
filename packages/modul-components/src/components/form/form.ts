@@ -45,7 +45,7 @@ export class MForm extends ModulVue {
     }
 
     public get toastMessage(): string {
-        let errorCount: number = this.formErrors.length;
+        let errorCount: number = this._controlsInErrorCount();
 
         return this.$i18n.translate(
             errorCount <= 1 ? 'm-form:multipleErrorsToCorrect' : 'm-form:multipleErrorsToCorrect.p',
@@ -130,4 +130,25 @@ export class MForm extends ModulVue {
     private _hideSummaryAndToast(): void {
         this.displaySummary = this.displayToast = false;
     }
+
+    private _controlsInErrorCount(control: FormGroup | FormArray = this.formGroup): number {
+        let count: number = 0;
+
+        this.formGroup.controls.forEach(c => {
+            if (c instanceof FormGroup || c instanceof FormArray) {
+                if (!c.hasErrorDeep) {
+                    return;
+                }
+
+                count += this._controlsInErrorCount(c);
+            } else if (c instanceof FormControl) {
+                if (c.hasError) {
+                    count++;
+                }
+            }
+        });
+
+        return count;
+    }
+
 }
