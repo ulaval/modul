@@ -8,7 +8,7 @@ import { InputManagement } from '../../mixins/input-management/input-management'
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { FRENCH } from '../../utils/i18n/i18n';
-import { SpritesService } from '../../utils/svg/sprites';
+import { SpritesPluginOptions, SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { PHONEFIELD_NAME } from '../component-names';
@@ -155,8 +155,13 @@ export class MPhonefield extends ModulVue {
     }
 
     spriteId(iso: string): string | undefined {
-        if (document.getElementById('m-svg__flag-' + iso)) {
-            return '#m-svg__flag-' + iso;
+        const svg: SpritesService = this.$svg;
+        const spriteId: string = 'mflag-svg__flag-' + iso;
+
+        if (document.getElementById(spriteId)) {
+            return '#' + spriteId;
+        } else if (svg && svg.getExternalSpritesFromSpriteId(spriteId)) {
+            return svg.getExternalSpritesFromSpriteId(spriteId);
         } else if (iso) {
             this.$log.warn('"' + iso + '" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.');
         }
@@ -203,17 +208,20 @@ export class MPhonefield extends ModulVue {
 
 }
 
-
-
 const PhonefieldPlugin: PluginObject<any> = {
-    install(v): void {
+    install(v, options: SpritesPluginOptions = { externalSprites: false }): void {
         v.use(InputStyle);
         v.use(ValidationMesagePlugin);
 
         const svg: SpritesService = (v.prototype).$svg;
         if (svg) {
-            svg.addSprites(require('../../assets/icons/sprites-flags.svg'));
+            const sprites: string = require('../../assets/icons/sprites-flags.svg');
 
+            if (options.externalSprites) {
+                svg.addExternalSprites(sprites, 'mflag');
+            } else {
+                svg.addInternalSprites(sprites);
+            }
         } else {
             v.prototype.$log.error(
                 'PhonefieldPlugin.install -> You must use the svg plugin.'
