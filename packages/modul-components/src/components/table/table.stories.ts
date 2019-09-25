@@ -6,6 +6,11 @@ import TablePlugin, { MColumnSortDirection, MColumnTable } from './table';
 Vue.use(TablePlugin);
 
 function defaultOnSortApplied(columnTable: MColumnTable): void {
+    if (columnTable.sortDirection === MColumnSortDirection.None) {
+        this.$data.rows.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+        return;
+    }
+
     this.$data.rows.sort((a, b) => {
         if (a[columnTable.dataProp] < b[columnTable.dataProp]) {
             return -1 * columnTable.sortDirection!;
@@ -279,7 +284,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TABLE_NAME}`, module)
             columns: {
                 default: [
                     { id: 'name', title: 'Name', dataProp: 'name', sortable: true, enableUnsort: true },
-                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true, defaultSortDirection: MColumnSortDirection.Dsc },
+                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true },
                     { id: 'username', title: 'Username', dataProp: 'username', sortable: true, enableUnsort: true }
                 ]
             }
