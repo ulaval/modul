@@ -99,7 +99,7 @@ export abstract class AbstractControl<T = any> {
 
     /**
      * The submit method reset the edition context and runs all validations in
-     * a downward manner (from parents (FormGroup and FormArray) to childs (FormControl))
+     * a downward manner from parents (FormGroup and FormArray) to childs (FormControl).
      */
     public async submit(): Promise<void> {
         this._editionContext = ControlEditionContext.None;
