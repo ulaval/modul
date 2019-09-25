@@ -111,13 +111,13 @@ export class MNavbar extends BaseNavbar implements Navbar {
     private observer: MutationObserver;
 
     @Emit('click')
-    private emitClick(event: Event, value: string): void { }
+    private emitClick(event: MouseEvent, value: string): void { }
 
     @Emit('mouseover')
-    private emitMouseover(event: Event, value: string): void { }
+    private emitMouseover(event: MouseEvent, value: string): void { }
 
     @Emit('mouseleave')
-    private emitMouseleave(event: Event, value: string): void { }
+    private emitMouseleave(event: MouseEvent, value: string): void { }
 
     @Watch('model', { immediate: true })
     private onModelChangement(): void {
@@ -180,15 +180,15 @@ export class MNavbar extends BaseNavbar implements Navbar {
         this.model = value;
     }
 
-    public onMouseover(event: Event, value: string): void {
+    public onMouseover(event: MouseEvent, value: string): void {
         this.emitMouseover(event, value);
     }
 
-    public onMouseleave(event: Event, value: string): void {
+    public onMouseleave(event: MouseEvent, value: string): void {
         this.emitMouseleave(event, value);
     }
 
-    public onClick(event: Event, value: string): void {
+    public onClick(event: MouseEvent, value: string): void {
         this.emitClick(event, value);
     }
 

@@ -34,10 +34,10 @@ export class MNavbarItem extends ModulVue {
     private emitClick(event: MouseEvent): void { }
 
     @Emit('mouseover')
-    private emitMouseover(event: Event): void { }
+    private emitMouseover(event: MouseEvent): void { }
 
     @Emit('mouseleave')
-    private emitMouseleave(event: Event): void { }
+    private emitMouseleave(event: MouseEvent): void { }
 
     @Watch('isMultiline')
     private isMultilineChanged(): void {
@@ -96,14 +96,14 @@ export class MNavbarItem extends ModulVue {
         }
     }
 
-    public onMouseover(event: Event): void {
+    public onMouseover(event: MouseEvent): void {
         if (!this.disabled && this.parentNavbar) {
             this.parentNavbar.onMouseover(event, this.value);
             this.emitMouseover(event);
         }
     }
 
-    public onMouseleave(event: Event): void {
+    public onMouseleave(event: MouseEvent): void {
         if (!this.disabled && this.parentNavbar) {
             this.parentNavbar.onMouseleave(event, this.value);
             this.emitMouseleave(event);
