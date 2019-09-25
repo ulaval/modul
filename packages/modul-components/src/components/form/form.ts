@@ -115,7 +115,7 @@ export class MForm extends ModulVue {
         return control.controls.reduce((a: number, c: AbstractControl): number => {
             if (c instanceof FormGroup || c instanceof FormArray) {
                 if (!c.hasErrorDeep()) {
-                    return 0;
+                    return a;
                 }
 
                 a += this._formControlsInErrorCount(c);
