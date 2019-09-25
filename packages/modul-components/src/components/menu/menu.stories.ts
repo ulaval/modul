@@ -34,12 +34,7 @@ const DEFAULT_MENU_ITEMS: string = `<m-menu-item value="item1" label="Item 1" ic
                                       <m-menu-item value="subitem5" label="Subitem 5"></m-menu-item>
                                   </m-menu-item>`;
 
-
-
-
 storiesOf(`${componentsHierarchyRootSeparator}${MENU_NAME}`, module)
-
-
     .add('default', () => ({
         data: () => ({
             menuIsOpened: false
