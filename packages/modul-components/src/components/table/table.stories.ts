@@ -284,7 +284,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${TABLE_NAME}`, module)
             columns: {
                 default: [
                     { id: 'name', title: 'Name', dataProp: 'name', sortable: true, enableUnsort: true },
-                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, enableUnsort: true, defaultSortDirection: MColumnSortDirection.Dsc },
                     { id: 'username', title: 'Username', dataProp: 'username', sortable: true, enableUnsort: true }
                 ]
             }
