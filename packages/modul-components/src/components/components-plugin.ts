@@ -1,5 +1,4 @@
 import Vue, { PluginObject } from 'vue';
-
 import { AddressLookupPluginOptions } from '../utils/address-lookup/address-lookup.plugin';
 import LoggerPlugin from '../utils/logger/logger';
 import AccordionGroupPlugin from './accordion-group/accordion-group';
@@ -57,6 +56,7 @@ import PageNotFoundPlugin from './page-not-found/page-not-found';
 import PanelPlugin from './panel/panel';
 import PeriodpickerPlugin from './periodpicker/periodpicker';
 import PhoneNumberPlugin from './phone-number/phone-number';
+import CropImagePlugin from './photo-editor/crop-image/crop-image';
 import PlusPlugin from './plus/plus';
 import PopperPlugin from './popper/popper';
 import PopupPlugin from './popup/popup';
@@ -124,6 +124,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ChipPlugin);
         Vue.use(ChipAddPlugin);
         Vue.use(ChipDeletePlugin);
+        Vue.use(CropImagePlugin);
         Vue.use(DatefieldsPlugin);
         Vue.use(DatepickerPlugin);
         Vue.use(DaterangepickerPlugin);
