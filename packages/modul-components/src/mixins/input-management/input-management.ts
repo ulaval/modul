@@ -39,28 +39,28 @@ export class InputManagement extends ModulVue
     public internalIsFocus: boolean = false;
 
     @Emit('click')
-    emitClick(event: Event): void { }
+    emitClick(event: MouseEvent): void { }
 
     @Emit('input')
     emitInput(internalValue: string): void { }
 
     @Emit('focus')
-    emitFocus(event: Event): void { }
+    emitFocus(event: FocusEvent): void { }
 
     @Emit('blur')
-    emitBlur(event: Event): void { }
+    emitBlur(event: FocusEvent): void { }
 
     @Emit('keyup')
-    emitKeyup(event: Event, model: string): void { }
+    emitKeyup(event: KeyboardEvent, model: string): void { }
 
     @Emit('keydown')
-    emitKeydown(event: Event): void { }
+    emitKeydown(event: KeyboardEvent): void { }
 
     @Emit('change')
     emitChange(model: string): void { }
 
     @Emit('paste')
-    emitPaste(event: Event): void { }
+    emitPaste(event: ClipboardEvent): void { }
 
     protected mounted(): void {
         if (this.focus) {
@@ -95,18 +95,18 @@ export class InputManagement extends ModulVue
         }
     }
 
-    onBlur(event: Event): void {
+    onBlur(event: FocusEvent): void {
         this.internalIsFocus = false;
         this.emitBlur(event);
     }
 
-    onKeyup(event: Event): void {
+    onKeyup(event: KeyboardEvent): void {
         if (this.as<InputStateMixin>().active) {
             this.emitKeyup(event, this.model);
         }
     }
 
-    onKeydown(event: Event): void {
+    onKeydown(event: KeyboardEvent): void {
         if (this.as<InputStateMixin>().active) {
             this.emitKeydown(event);
         }
@@ -116,7 +116,7 @@ export class InputManagement extends ModulVue
         this.emitChange(this.model);
     }
 
-    onPaste(event: Event): void {
+    onPaste(event: ClipboardEvent): void {
         this.emitPaste(event);
     }
 
