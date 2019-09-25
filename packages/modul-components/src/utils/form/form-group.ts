@@ -98,8 +98,8 @@ export class FormGroup<T = any> extends AbstractControl {
     }
 
     public async submit(): Promise<void> {
+        super.submit();
         await Promise.all(this.controls.map(c => c.submit()));
-
         if (!this._hasAnyControlsInError()) {
             this.validate();
             await this.validateAsync();

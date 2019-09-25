@@ -97,7 +97,13 @@ export abstract class AbstractControl<T = any> {
         this._parent = parent;
     }
 
-    public abstract submit(): Promise<void>;
+    /**
+     * The submit method reset the edition context and runs all validations in
+     * a downward manner (from parents (FormGroup and FormArray) to childs (FormControl))
+     */
+    public async submit(): Promise<void> {
+        this._editionContext = ControlEditionContext.None;
+    }
 
     public reset(): void {
         this._pristine = true;

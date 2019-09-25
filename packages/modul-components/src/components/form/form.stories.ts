@@ -307,7 +307,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
             formGroup: new FormGroup(
                 {
                     'name': new FormControl<string>(
-                        [RequiredValidator({ controlLabel: 'name' })]
+                        [RequiredValidator()]
                     )
                 }
             )
@@ -341,7 +341,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
             formGroup: new FormGroup(
                 {
                     'email': new FormControl<string>(
-                        [EmailValidator({ controlLabel: 'email' })]
+                        [EmailValidator()]
                     )
                 }
             )
@@ -375,7 +375,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
             formGroup: new FormGroup(
                 {
                     'min5': new FormControl<string>(
-                        [MinLengthValidator(5, { controlLabel: 'min5' })]
+                        [MinLengthValidator(5)]
                     )
                 }
             )
@@ -409,7 +409,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
             formGroup: new FormGroup(
                 {
                     'max5': new FormControl<string>(
-                        [MaxLengthValidator(5, { controlLabel: 'max5' })]
+                        [MaxLengthValidator(5)]
                     )
                 }
             )
@@ -443,7 +443,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
             formGroup: new FormGroup(
                 {
                     'min5': new FormControl<number>(
-                        [MinValidator(5, { controlLabel: 'min5' })]
+                        [MinValidator(5)]
                     )
                 }
             )
@@ -628,11 +628,9 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
         data: () => ({
             formGroup: new FormGroup(
                 {
-                    'email': new FormControl<number>(
-                        [EmailValidator({ controlLabel: 'email' })]
+                    'email': new FormControl<string>(
                     ),
-                    'confirmemail': new FormControl<number>(
-                        [EmailValidator({ controlLabel: 'confirmemail' })]
+                    'confirmemail': new FormControl<string>(
                     )
                 },
                 [
@@ -640,6 +638,12 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
                 ]
             )
         }),
+        methods: {
+            submit(): void {
+                // tslint:disable-next-line: no-console
+                console.log('submit');
+            }
+        },
         computed: {
             emailField(): FormControl<string> {
                 return this.formGroup.getControl('email');
@@ -650,22 +654,23 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/validators`, module)
         },
         template: `
         <m-form class="m-u--margin-top"
-                :form-group="formGroup">
+                :form-group="formGroup"
+                @submit="submit()">
             <p>default validationType =  {{ formGroup.validators[0].validationType }}</p>
             <m-input-group legend="compare two field"
                            :valid="formGroup.valid"
                            :error="formGroup.hasError()"
                            :error-message="formGroup.errorMessage">
-                <div slot-scope="{  }">
+                <div>
                     <m-textfield v-model="emailField.value"
-                                    :error="emailField.hasError()"
+                                    :error="emailField.hasError() || formGroup.hasError()"
                                     :error-message="emailField.errorMessage"
                                     label="email"
                                     :valid="emailField.valid"
                                     v-m-control="emailField">
                     </m-textfield>
                     <m-textfield v-model="confirmemailField.value"
-                                    :error="confirmemailField.hasError()"
+                                    :error="confirmemailField.hasError() || formGroup.hasError()"
                                     :error-message="confirmemailField.errorMessage"
                                     label="confirm email"
                                     :valid="confirmemailField.valid"
@@ -896,7 +901,8 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/rules`, module)
                                 error: {
                                     message: 'Enter a security answer at least 5 characters long'
                                 },
-                                controlLabel: 'required min5'
+                                controlLabel: 'required min5',
+                                validationType: ControlValidatorValidationType.AtExit
                             })
                         ]
                     )
