@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|m-error-conflict default 1`] = `
+exports[`Storyshots components|/error-pages/m-error-conflict default 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -33,53 +33,20 @@ exports[`Storyshots components|m-error-conflict default 1`] = `
       class="m-message-page__body"
     >
       <p
-        class="m-message-page__hints"
+        class="m-message-page__hints m--no-content"
       >
-        Les modifications que vous avez apportées n'ont pas été enregistrées. Veuillez les soumettre à nouveau.
+        Vos modifications n'ont pas été enregistrées et les données ont été rafraichies. Veuillez reprendre votre travail.
       </p>
        
       <!---->
        
-      <ul
-        class="m-message-page__links"
-      >
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="\\\\"
-            tabindex="0"
-            target=""
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              Accueil
-            </span>
-             
-            <!---->
-          </a>
-        </li>
-      </ul>
+      <!---->
     </div>
   </article>
 </div>
 `;
 
-exports[`Storyshots components|m-error-conflict hints 1`] = `
+exports[`Storyshots components|/error-pages/m-error-conflict hints 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -112,12 +79,12 @@ exports[`Storyshots components|m-error-conflict hints 1`] = `
       class="m-message-page__body"
     >
       <p
-        class="m-message-page__hints"
+        class="m-message-page__hints m--no-content"
       >
         My only custom hint
       </p>
       <p
-        class="m-message-page__hints"
+        class="m-message-page__hints m--no-content"
       >
         My second (long) custom hint.Lorem ipsum dolor
                 sit amet, consectetur adipiscing elit. Nulla egestas urna rhoncus ipsum congue lobortis. 
@@ -125,46 +92,13 @@ exports[`Storyshots components|m-error-conflict hints 1`] = `
        
       <!---->
        
-      <ul
-        class="m-message-page__links"
-      >
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="\\\\"
-            tabindex="0"
-            target=""
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              Accueil
-            </span>
-             
-            <!---->
-          </a>
-        </li>
-      </ul>
+      <!---->
     </div>
   </article>
 </div>
 `;
 
-exports[`Storyshots components|m-error-conflict links 1`] = `
+exports[`Storyshots components|/error-pages/m-error-conflict links 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -199,7 +133,7 @@ exports[`Storyshots components|m-error-conflict links 1`] = `
       <p
         class="m-message-page__hints"
       >
-        Les modifications que vous avez apportées n'ont pas été enregistrées. Veuillez les soumettre à nouveau.
+        Vos modifications n'ont pas été enregistrées et les données ont été rafraichies. Veuillez reprendre votre travail.
       </p>
        
       <!---->
@@ -282,7 +216,7 @@ exports[`Storyshots components|m-error-conflict links 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|m-error-conflict title 1`] = `
+exports[`Storyshots components|/error-pages/m-error-conflict title 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -315,47 +249,14 @@ exports[`Storyshots components|m-error-conflict title 1`] = `
       class="m-message-page__body"
     >
       <p
-        class="m-message-page__hints"
+        class="m-message-page__hints m--no-content"
       >
-        Les modifications que vous avez apportées n'ont pas été enregistrées. Veuillez les soumettre à nouveau.
+        Vos modifications n'ont pas été enregistrées et les données ont été rafraichies. Veuillez reprendre votre travail.
       </p>
        
       <!---->
        
-      <ul
-        class="m-message-page__links"
-      >
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="\\\\"
-            tabindex="0"
-            target=""
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              Accueil
-            </span>
-             
-            <!---->
-          </a>
-        </li>
-      </ul>
+      <!---->
     </div>
   </article>
 </div>
