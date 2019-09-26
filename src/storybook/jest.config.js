@@ -1,19 +1,16 @@
 
+const { defaults: tsjPreset } = require('ts-jest/presets');
+
 module.exports = {
     testURL: 'http://localhost/',
-    globals: {
-        "ts-jest": {
-            "babelConfig": true
-        }
+
+    transform: {
+        ...tsjPreset.transform,
+        "^.+\\.html(\\?style=\\..+)?$": "<rootDir>/tests/jest/vue-template-transformer.js"
     },
     roots: [
         '<rootDir>/src/'
     ],
-    transform: {
-        "^.+\\.jsx?$": "babel-jest",
-        "^.+\\.tsx?$": "ts-jest",
-        "^.+\\.html(\\?style=\\..+)?$": "<rootDir>/tests/jest/vue-template-transformer.js"
-    },
     testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     moduleFileExtensions: [
         "ts",
@@ -27,18 +24,14 @@ module.exports = {
         "^(.+\\.html)(\\?style=\\..+)?$": "$1",
         "\\.(css|less|sass|scss)$": "<rootDir>/tests/jest/jest-ignore.js",
         "\\.min\\.(css|less|sass|scss)|\\.svg$": "<rootDir>/tests/jest/jest-ignore.js",
-        "@ulaval/modul-components/dist/(.*)": "<rootDir>/../../packages/modul-components/src/$1"
-        // "@ulaval/modul-form/dist/(.*)": "<rootDir>/../../packages/modul-form/src/$1"
+        "@ulaval/modul-components/dist/(.*)": "<rootDir>/../../packages/modul-components/src/$1",
+        "@ulaval/modul-website/src/(.*)": "<rootDir>/../modul-website/src/$1"
     },
     snapshotSerializers: [
         "<rootDir>../../node_modules/jest-serializer-vue"
     ],
     setupFiles: [
-        "<rootDir>/tests/polyfills.js",
-        "<rootDir>/tests/setup.ts"
-    ],
-    transformIgnorePatterns: [
-        "node_modules/(?!(@ulaval/modul-components)/)"
+        "<rootDir>/tests/polyfills.js"
     ],
     coverageDirectory: "<rootDir>/reports/coverage"
 };

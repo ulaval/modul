@@ -1,7 +1,7 @@
 import { Welcome } from './welcome/welcome';
 
 export default {
-    title: 'modul-storybook'
+    title: `storybook`
 };
 
 export const welcome: any = () => ({

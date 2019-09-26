@@ -6,7 +6,7 @@ declare module '@storybook/addon-storyshots' {
 initStoryshots({
     configPath: 'conf/storybook/config.jest.ts',
     test: multiSnapshotWithOptions({}),
-    storyKindRegex: /^((?!.*?modul-storybook).)*$/,
+    storyKindRegex: /^((?!.*?storybook|modul-website).)*$/,
     stories2snapsConverter: new Stories2SnapsConverter({
         snapshotExtension: '.ts.snap'
     })

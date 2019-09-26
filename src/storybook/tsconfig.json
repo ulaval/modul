@@ -2,6 +2,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "target": "es5",
+        "esModuleInterop": true,
         "lib": [
             "es5",
             "es6",
@@ -16,10 +17,10 @@
         "paths": {
             "@ulaval/modul-components/dist/*": [
                 "../../packages/modul-components/src/*"
+            ],
+            "@ulaval/modul-website/src/*": [
+                "../modul-website/src/*"
             ]
-            // "@ulaval/modul-form/dist/*": [
-            //     "../../packages/modul-form/src/*"
-            // ]
         },
         "typeRoots": [
             "../../node_modules/@types"
@@ -32,6 +33,7 @@
     },
     "include": [
         "../../packages/modul-components/src/*",
+        "../modul-website/src/*",
         "src/**/*.ts",
         "src/**/*.tsx",
         "src/**/*.vue",
@@ -39,7 +41,7 @@
         "tests/**/*.tsx"
     ],
     "exclude": [
-        "../../packages/modul-components/src/typings.d.ts"
-        // "../../packages/modul-form/src/typings.d.ts"
+        "../../packages/modul-components/src/typings.d.ts",
+        "../modul-website/src/typings.d.ts"
     ]
 }
