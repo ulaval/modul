@@ -36,6 +36,9 @@ export class MSelect extends ModulVue {
     @Prop()
     public options: any[];
 
+    @Prop({ default: false })
+    public clearSelection: boolean;
+
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
@@ -52,12 +55,20 @@ export class MSelect extends ModulVue {
     onClose(): void {
     }
 
+    public onReset(): void {
+        this.as<InputManagement>().model = '';
+    }
+
     get hasItems(): boolean {
         return this.options && this.options.length > 0;
     }
 
     get isEmpty(): boolean {
         return this.as<InputManagement>().hasValue || (this.open) ? false : true;
+    }
+
+    get isClearShowing(): boolean {
+        return this.hasItems && !this.open && this.clearSelection && !this.isEmpty;
     }
 
 

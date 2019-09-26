@@ -38,12 +38,24 @@
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle">
                 <div>
-                    <slot>{{ internalValue }}</slot>
+                    <slot>
+                        <input v-model="internalValue"
+                               :placeholder="placeholder"
+                               :readonly="true" />
+                    </slot>
                 </div>
                 <div class="m-select__arrow"
                      slot="suffix"
                      :class="{ 'm--is-open': open }"
                      v-if="active">
+                    <m-icon-button v-if="isClearShowing"
+                                   class="m-searchfield__reset"
+                                   :aria-controls="id"
+                                   @click="onReset"
+                                   key="resetIcon"
+                                   button-size="1em"
+                                   icon-size="11px"
+                                   icon-name="m-svg__close-clear"></m-icon-button>
                     <m-icon class="m-select__arrow__icon"
                             ref="arrow"
                             name="m-svg__arrow-head-filled--down"

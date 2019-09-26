@@ -26,6 +26,26 @@ storiesOf(`${componentsHierarchyRootSeparator}${SELECT_NAME}`, module)
     })
     );
 
+storiesOf(`${componentsHierarchyRootSeparator}${SELECT_NAME}`, module)
+    .add('Clear selection', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: '',
+            options: options,
+            clearSelection: true,
+            label: 'Fruits',
+            placeholder: 'Choose a fruit'
+        }),
+        template: `<div><m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" :clear-selection="clearSelection" :label="label" :label-up="true" :placeholder="placeholder" v-model="model1"><template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template></m-select> <p>v-model = {{ model1 }}</p></div>`
+    })
+    );
+
 storiesOf(`${componentsHierarchyRootSeparator}${SELECT_NAME}/mobile`, module)
     .addParameters({ viewport: { defaultViewport: 'iphone6' } })
     .add('iphone6', () => ({
