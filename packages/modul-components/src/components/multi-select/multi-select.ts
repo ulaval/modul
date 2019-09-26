@@ -9,6 +9,7 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MULTI_SELECT_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
+import { MChipDelete } from './../chip/chip-delete/chip-delete';
 import { MBaseSelect } from './../select/base-select/base-select';
 import { MSelectItem } from './../select/select-item/select-item';
 import WithRender from './multi-select.html?style=./multi-select.scss';
@@ -19,7 +20,8 @@ const MAX_LENGTH_CHIP_LABEL: number = 12;
 @Component({
     components: {
         MBaseSelect,
-        MSelectItem
+        MSelectItem,
+        MChipDelete
     },
     mixins: [
         InputState,
@@ -47,6 +49,11 @@ export class MMultiSelect extends ModulVue {
         default: false
     })
     public selectAll: boolean;
+
+    @Prop({
+        default: 5
+    })
+    public maxChips: number;
 
     public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
     public internalValue: any[] = [];
@@ -89,6 +96,10 @@ export class MMultiSelect extends ModulVue {
         return [];
     }
 
+    get numberOfItemsSelected(): number {
+        return this.selectedItems.length;
+    }
+
     get isEmpty(): boolean {
         return this.hasValue || (this.open) ? false : true;
     }
@@ -101,6 +112,15 @@ export class MMultiSelect extends ModulVue {
         return this.options.length === this.value.length;
     }
 
+    get chipsDisplayMode(): number {
+        if (this.allSelected) {
+            return 1;
+        } else if (this.numberOfItemsSelected > this.maxChips) {
+            return 0;
+        }
+        return -1;
+    }
+
     @Emit('select-item')
     onSelect(option: any, index: number, $event: Event): void {
         let positionInModel: number = this.model.indexOf(option);
@@ -109,10 +129,7 @@ export class MMultiSelect extends ModulVue {
         } else {
             this.onDelete(positionInModel);
         }
-
-        if (this.$refs.baseSelect.$refs.popup.$refs.popper) { // Pas de popper en mobile
-            this.$refs.baseSelect.$refs.popup.$refs.popper.update();
-        }
+        this.$refs.baseSelect.update();
 
         if ($event.type === 'click') {
             this.$refs.baseSelect.focusedIndex = -1;
@@ -121,6 +138,12 @@ export class MMultiSelect extends ModulVue {
 
     onDelete(index: number): void {
         this.model.splice(index, 1);
+        this.$refs.baseSelect.update();
+    }
+
+    onDeleteAll(): void {
+        this.model.splice(0);
+        this.$refs.baseSelect.update();
     }
 
     onFocus($event: FocusEvent): void {
@@ -131,7 +154,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     @Emit('blur')
-    onBlur($event: Event): void {
+    onBlur($event: FocusEvent): void {
         this.internalIsFocus = false;
     }
 

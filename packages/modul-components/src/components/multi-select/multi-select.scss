@@ -21,6 +21,7 @@
     }
 
     &__arrow {
+        display: flex;
         cursor: pointer;
 
         &__icon {
@@ -44,5 +45,10 @@
 
     &__popup-header {
         border-bottom: 1px solid $m-color--grey-light;
+    }
+
+    &__more {
+        white-space: nowrap;
+        font-size: 12px;
     }
 }

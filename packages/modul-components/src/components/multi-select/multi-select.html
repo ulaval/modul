@@ -41,19 +41,54 @@
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle">
                 <div class="m-multi-select__chips">
-                    <m-chip class="m-multi-select__chip"
-                            v-for="item, index in internalValue"
-                            mode="delete"
-                            size="small"
-                            @delete="onDelete(index)">
-                        <template v-slot:default>
-                            <slot name="chips"
-                                  :item="item"
-                                  :index="index">
-                                {{ getChipLabel(item) }}
+                    <template v-if="chipsDisplayMode === 1">
+                        <m-chip-delete class="m-multi-select__chip"
+                                       size="small"
+                                       @delete="onDeleteAll()">
+                            <template v-slot:default>
+                                <slot name="chips-all">
+                                    <m-i18n k="m-multi-select:all-selected"
+                                            :params="[numberOfItemsSelected]"></m-i18n>
+                                </slot>
+                            </template>
+                        </m-chip-delete>
+                    </template>
+                    <template v-else-if="chipsDisplayMode === 0">
+                        <m-chip-delete class="m-multi-select__chip"
+                                       v-for="item, index in internalValue.slice(0, maxChips)"
+                                       :key="index"
+                                       size="small"
+                                       @delete="onDelete(index)">
+                            <template v-slot:default>
+                                <slot name="chips"
+                                      :item="item"
+                                      :index="index">
+                                    {{ getChipLabel(item) }}
+                                </slot>
+                            </template>
+                        </m-chip-delete>
+                        <span class="m-multi-select__more">
+                            <slot name="more">
+                                <m-i18n k="m-multi-select:more"
+                                        :params="[numberOfItemsSelected - maxChips]"></m-i18n>
                             </slot>
-                        </template>
-                    </m-chip>
+                        </span>
+                    </template>
+                    <template v-else-if="chipsDisplayMode === -1">
+                        <m-chip-delete class="m-multi-select__chip"
+                                       v-for="item, index in internalValue"
+                                       :key="index"
+                                       size="small"
+                                       @delete="onDelete(index)">
+                            <template v-slot:default>
+                                <slot name="chips"
+                                      :item="item"
+                                      :index="index">
+                                    {{ getChipLabel(item) }}
+                                </slot>
+                            </template>
+                        </m-chip-delete>
+                    </template>
                 </div>
 
                 <div class="m-multi-select__arrow"

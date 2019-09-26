@@ -142,6 +142,10 @@ export class MBaseSelect extends ModulVue {
         this.scrollToFocused();
     }
 
+    public update(): void {
+        this.$refs.popup.update();
+    }
+
     isSelected(option: any): boolean {
         if (this.selectedItems && this.selectedItems.length > 0) {
             return this.selectedItems.indexOf(option) > -1;
