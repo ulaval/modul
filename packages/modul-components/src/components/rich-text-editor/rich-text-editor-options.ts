@@ -21,6 +21,7 @@ export class MRichTextEditorDefaultOptions {
 
     public paragraphStyles: any = {};
     public paragraphMultipleStyles: boolean = false;
+    public pastePlain: boolean = true;
 
     public linkEditButtons: string[] = ['linkOpen', 'linkEdit', 'linkRemove'];
     public linkInsertButtons: string[] = [];
