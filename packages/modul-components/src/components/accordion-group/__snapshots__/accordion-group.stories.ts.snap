@@ -2161,6 +2161,37 @@ exports[`Storyshots components|m-accordion-group/disabled=false childrens disabl
 </article>
 `;
 
+exports[`Storyshots components|m-accordion-group/openAll="true" With delay 1`] = `
+<article
+  class="m-accordion-group"
+>
+  <div
+    class="m-accordion-group__header m--no-title"
+  >
+    <!---->
+     
+    <div
+      class="m-accordion-group__secondary-content"
+    >
+       
+      <div
+        class="m-accordion-group__toggle-link"
+      >
+        <!---->
+         
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-accordion-group__body"
+  />
+</article>
+`;
+
 exports[`Storyshots components|m-accordion-group/openAll="true" With dynamically added content 1`] = `
 <div>
   <button>
