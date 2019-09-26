@@ -43,7 +43,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
             model1: [],
             options: optionsColor
         }),
-        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="CSS Colors">
+        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="CSS Colors" max-width="large" max-visible-chips="20">
             <template v-slot:chips="{item , index }"><div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
             <template v-slot:items="{item , index }">{{ index }} - <div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
         </m-multi-select>`
@@ -51,7 +51,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
     );
 
 storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
-    .add('object', () => ({
+    .add('object as options', () => ({
         methods: actions(
             'open',
             'close',
@@ -63,10 +63,10 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
             model1: [],
             options: optionsObjects
         }),
-        template: `<div>Value: {{model1}}<br /><m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="Facultés">
+        template: `<div><m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="Facultés">
             <template v-slot:chips="{ item , index }">{{ item.abbr }}</template>
-            <template v-slot:items="{ item , index }">{{ index }} - {{ item.nomLong }}</template>
-        </m-multi-select></div>`
+            <template v-slot:items="{ item , index }">{{ item.nomLong }} ({{ item.abbr }})</template>
+        </m-multi-select><br /><br /><br /><br /><br /><br /><br />Value: {{model1}}</div>`
     })
     );
 
@@ -122,7 +122,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
     );
 
 storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
-    .add('select all', () => ({
+    .add('select all link', () => ({
         methods: actions(
             'open',
             'close',
@@ -134,7 +134,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
             model1: [optionsVonTrapp[0]],
             options: optionsVonTrapp
         }),
-        template: `<m-multi-select :select-all="true" @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select>`
+        template: `<m-multi-select :link-select-all="true" @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select>`
     })
     );
 
@@ -151,11 +151,11 @@ storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}/mobile`, modu
 
 storiesOf(`${componentsHierarchyRootSeparator}${MULTI_SELECT_NAME}/mobile`, module)
     .addParameters({ viewport: { defaultViewport: 'iphone6' } })
-    .add('iphone6 - Select all', () => ({
+    .add('iphone6 - select all link', () => ({
         data: () => ({
             model1: [],
             options: optionsPawPatrol
         }),
-        template: `<m-multi-select :options="options" v-model="model1" :select-all="true"></m-multi-select>`
+        template: `<m-multi-select :options="options" v-model="model1" :link-select-all="true"></m-multi-select>`
     })
     );

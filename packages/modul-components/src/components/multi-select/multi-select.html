@@ -6,7 +6,7 @@
                :input-max-width="inputMaxWidth"
                :close-on-select="false"
                :hide-radio-button-mobile="true"
-               :enable-animation="!selectAll"
+               :enable-animation="!linkSelectAll"
                @select-item="onSelect"
                ref="baseSelect">
     <template v-slot:default="scope">
@@ -118,15 +118,15 @@
                                   :helper-message="helperMessage"></m-validation-message>
         </div>
     </template>
-    <template v-if="selectAll"
+    <template v-if="linkSelectAll"
               v-slot:popup-header>
         <m-select-item @click="onToggleAll"
                        class="m-multi-select__popup-header"
                        :focused="selectAllFocused"
                        :hide-radio-button-mobile="true">
-            <m-i18n k="m-multi-select:select-all"
+            <m-i18n k="m-multi-select:link-select-all"
                     v-if="!allSelected"></m-i18n>
-            <m-i18n k="m-multi-select:deselect-all"
+            <m-i18n k="m-multi-select:link-deselect-all"
                     v-else></m-i18n>
         </m-select-item>
     </template>

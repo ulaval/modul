@@ -1,0 +1,38 @@
+{
+    "props": {
+        "value": {
+            "description": "La ou les valeurs sélectionnées dans la liste déroulante."
+        },
+        "options": {
+            "description": "L'ensemble des options disponibles dans la liste déroulante. Chaque option peut être un objet contenant plusieurs informations. Par  exemple, une option pourrait être composée d'un libellé long pour afficher dans la liste, et d'une abbréviation courte pour l'étiquette lorsque l'option est sélectionnée."
+        },
+        "maxVisibleChips": {
+            "description": "Nombre maximun d'options sélectionnées affichées avant de voir apparaître le libellé « X de plus... ». À ajuster en fonction de l'espace disponible."
+        },
+        "linkSelectAll": {
+            "description": "Affiche un lien en tête de la liste d'options permettant de sélectionner et désélectionner toutes les options en un clic."
+        },
+        "focus": {
+            "description": "Permet de donner le focus à la liste déroulante."
+        }
+    },
+    "slots": {
+        "default": {
+            "description": "Contenu du bouton"
+        },
+        "items": {
+            "description": "Contenu de l'option dans la liste déroulante. Généralement la version longue et complète de l'option."
+        },
+        "chips": {
+            "description": "Contenu de l'étiquette une fois l'option sélectionnée. Si possible, une version courte de l'option est à privilégier pour optimiser le nombre d'options sélectionnées visibles."
+        }
+    },
+    "events": {
+        "onSelect": {
+            "description": "Lancé lorsqu'une option est sélectionnée dans la liste."
+        },
+        "onBlur": {
+            "description": "Lancé lorsque la liste perd le focus."
+        }
+    }
+}

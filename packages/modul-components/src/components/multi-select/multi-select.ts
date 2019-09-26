@@ -48,7 +48,7 @@ export class MMultiSelect extends ModulVue {
     @Prop({
         default: false
     })
-    public selectAll: boolean;
+    public linkSelectAll: boolean;
 
     @Prop({
         default: 5
@@ -159,7 +159,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     onKeydownDown($event: KeyboardEvent): void {
-        if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.selectAll) {
+        if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
             this.$refs.baseSelect.focusedIndex = -1;
             this.selectAllFocused = true;
         } else {
@@ -169,7 +169,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     onKeydownUp($event: KeyboardEvent): void {
-        if (this.$refs.baseSelect.focusedIndex === 0 && this.selectAll) {
+        if (this.$refs.baseSelect.focusedIndex === 0 && this.linkSelectAll) {
             this.$refs.baseSelect.focusedIndex = -1;
             this.selectAllFocused = true;
         } else {
