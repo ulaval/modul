@@ -14,6 +14,7 @@
         "assetsToDist": "copyfiles -u 1 \"./src/assets/**/*\" dist",
         "start": "webpack --config conf/webpack.config.js --env.openshift && http-server \"./dist\" -p 8080 -a 0.0.0.0",
         "test": "jest --verbose --silent",
+        "test:update": "jest --verbose --silent --updateSnapshot",
         "unitwatch": "jest --watch --verbose --silent",
         "metagen": "meta-generator --dest ./dist --package package.json --tsconfig tsconfig.json",
         "test:ci": "jest --ci -w 1 --silent --coverage --testResultsProcessor=./tests/jest/ci-test-processor && jest -w 1 --ci --silent --config ./conf/storybook/jest.config.storybook.js --verbose",

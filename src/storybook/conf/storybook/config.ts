@@ -8,6 +8,7 @@ import modulTheme from './modul-theme';
 import { getSandboxPlugin } from './sandbox-loader';
 import './styles/storybook.scss';
 
+
 declare module '@storybook/addon-knobs' {
     export function withKnobs(): any;
 }
@@ -56,7 +57,7 @@ addParameters({
         theme: modulTheme,
         storySort: (a, b) => {
 
-            if (a[1].id.startsWith('modul-storybook')) {
+            if (a[1].id.startsWith('storybook--welcome')) {
                 return -1;
             }
             return a[1].id.localeCompare(b[1].id);

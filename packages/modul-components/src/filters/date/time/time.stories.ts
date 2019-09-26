@@ -9,10 +9,6 @@ import { ModulVue } from '../../../utils/vue/vue';
 import { TIME_NAME } from './../../filter-names';
 import TimeFilterPlugin, { TimeFilterPrepositions } from './time';
 
-declare module '@storybook/addon-knobs' {
-    export function withKnobs(): any;
-}
-
 Vue.use(TimeFilterPlugin);
 
 addDecorator(withKnobs);
