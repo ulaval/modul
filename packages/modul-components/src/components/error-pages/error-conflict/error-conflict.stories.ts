@@ -8,7 +8,7 @@ import ErrorConflictPlugin from './error-conflict';
 
 Vue.use(ErrorConflictPlugin);
 
-storiesOf(`${componentsHierarchyRootSeparator}${ERROR_CONFLICT_NAME}`, module)
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_CONFLICT_NAME}`, module)
 
 
     .add('default', () => ({

@@ -39,6 +39,7 @@ export const ERROR_MESSAGE_NAME: string = 'm-error-message';
 export const ERROR_PAGE_NOT_FOUND_NAME: string = 'm-error-page-not-found';
 export const ERROR_RESOURCE_UNAVAILABLE_NAME: string = 'm-error-resource-unavailable';
 export const ERROR_TECHNICAL_DIFFICULTY_NAME: string = 'm-error-technical-difficulty';
+export const ERROR_SESSION_EXPIRED_NAME: string = 'm-error-session-expired';
 export const EXPANDABLE_LAYOUT_NAME: string = 'm-expandable-layout';
 export const FILE_SELECT_NAME: string = 'm-file-select';
 export const FILE_UPLOAD_NAME: string = 'm-file-upload';

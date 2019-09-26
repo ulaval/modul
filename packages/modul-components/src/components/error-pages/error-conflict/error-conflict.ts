@@ -16,10 +16,7 @@ export class MErrorOperationFailed extends ModulVue {
     })
     public title: string;
 
-    @Prop({
-        default: () => [
-            new Link((Vue.prototype).$i18n.translate('m-error-conflict:home-label'), `\\`)]
-    })
+    @Prop()
     public links: Link[];
 
     @Prop({

@@ -31,6 +31,7 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../components/error-pages/error-page-not-found/error-page-not-found.lang.fr.json'),
                 require('../components/error-pages/error-resource-unavailable/error-resource-unavailable.lang.fr.json'),
                 require('../components/error-pages/error-technical-difficulty/error-technical-difficulty.lang.fr.json'),
+                require('../components/error-pages/error-session-expired/error-session-expired.lang.fr.json'),
                 require('../components/file-select/file-select.lang.fr.json'),
                 require('../components/file-upload/file-upload.lang.fr.json'),
                 require('../components/form/form.lang.fr.json'),

@@ -10,7 +10,7 @@ Vue.use(ErrorPageNotFoundPlugin);
 
 
 
-storiesOf(`${componentsHierarchyRootSeparator}${ERROR_PAGE_NOT_FOUND_NAME}`, module)
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_PAGE_NOT_FOUND_NAME}`, module)
 
 
     .add('default', () => ({

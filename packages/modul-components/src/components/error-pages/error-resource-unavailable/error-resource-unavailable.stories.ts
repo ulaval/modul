@@ -8,7 +8,7 @@ import ErrorResourceUnavailablePlugin from './error-resource-unavailable';
 
 Vue.use(ErrorResourceUnavailablePlugin);
 
-storiesOf(`${componentsHierarchyRootSeparator}${ERROR_RESOURCE_UNAVAILABLE_NAME}`, module)
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_RESOURCE_UNAVAILABLE_NAME}`, module)
     .add('default', () => ({
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-resource-unavailable></m-error-resource-unavailable>
