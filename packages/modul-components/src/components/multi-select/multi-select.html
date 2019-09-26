@@ -55,7 +55,7 @@
                     </template>
                     <template v-else-if="chipsDisplayMode === 0">
                         <m-chip-delete class="m-multi-select__chip"
-                                       v-for="item, index in internalValue.slice(0, maxChips)"
+                                       v-for="item, index in internalValue.slice(0, maxVisibleChips)"
                                        :key="index"
                                        size="small"
                                        @delete="onDelete(index)">
@@ -70,7 +70,7 @@
                         <span class="m-multi-select__more">
                             <slot name="more">
                                 <m-i18n k="m-multi-select:more"
-                                        :params="[numberOfItemsSelected - maxChips]"></m-i18n>
+                                        :params="[numberOfItemsSelected - maxVisibleChips]"></m-i18n>
                             </slot>
                         </span>
                     </template>

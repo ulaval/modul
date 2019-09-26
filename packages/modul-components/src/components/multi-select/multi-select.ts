@@ -35,7 +35,7 @@ export class MMultiSelect extends ModulVue {
     @Prop({
         validator: value => Array.isArray(value)
     })
-    public value: string[];
+    public value: any[];
 
     @Prop({
         validator: value => Array.isArray(value)
@@ -53,7 +53,7 @@ export class MMultiSelect extends ModulVue {
     @Prop({
         default: 5
     })
-    public maxChips: number;
+    public maxVisibleChips: number;
 
     public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
     public internalValue: any[] = [];
@@ -115,7 +115,7 @@ export class MMultiSelect extends ModulVue {
     get chipsDisplayMode(): number {
         if (this.allSelected) {
             return 1;
-        } else if (this.numberOfItemsSelected > this.maxChips) {
+        } else if (this.numberOfItemsSelected > this.maxVisibleChips) {
             return 0;
         }
         return -1;
