@@ -1,4 +1,4 @@
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
 import { MWAutocompleteExample } from './autocomplete/autocomplete.example';
 import { MWMultiSelectExample } from './multi-select/multi-select.example';
 import { MWShowmoreExample } from './show-more/show-more.example';
@@ -9,13 +9,13 @@ import { MWTreeExample } from './tree/tree.example';
 
 const ComponentExamplesPlugin: PluginObject<any> = {
     install(v): void {
-        Vue.component('mw-tree-example', MWTreeExample);
-        Vue.component('mw-toast-example', MWToastExample);
-        Vue.component('mw-transition-example', MWTransitionExample);
-        Vue.component('mw-toggle-buttons-example', MWToggleButtonsExample);
-        Vue.component('mw-autocomplete-example', MWAutocompleteExample);
-        Vue.component('mw-show-more-example', MWShowmoreExample);
-        Vue.component('mw-multi-select-example', MWMultiSelectExample);
+        v.component('mw-tree-example', MWTreeExample);
+        v.component('mw-toast-example', MWToastExample);
+        v.component('mw-transition-example', MWTransitionExample);
+        v.component('mw-toggle-buttons-example', MWToggleButtonsExample);
+        v.component('mw-autocomplete-example', MWAutocompleteExample);
+        v.component('mw-show-more-example', MWShowmoreExample);
+        v.component('mw-multi-select-example', MWMultiSelectExample);
     }
 };
 
