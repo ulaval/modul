@@ -1,0 +1,736 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-breadcrumbs Breadcrumb-item Slot 1`] = `
+<div
+  class="m-breadcrumbs"
+>
+  <span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    &lt;
+                
+      </span>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-button__icon m--is-left"
+          height="12px"
+          width="12px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          itemWithDivider 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-button__icon m--is-left"
+          height="12px"
+          width="12px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          itemDisabled 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-button__icon m--is-left"
+          height="12px"
+          width="12px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          itemWithIcon 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-button__icon m--is-left"
+          height="12px"
+          width="12px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          itemWithoutUrl 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <!---->
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-breadcrumbs Custom divider 1`] = `
+<div
+  class="m-breadcrumbs"
+>
+  <span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    &lt;
+                
+      </span>
+       
+      <a
+        class="m-link m--has-content"
+        href="#"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithDivider
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    $
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--is-disabled m--has-content"
+        tabindex="-1"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemDisabled
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    $
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--has-left-icon m--has-content"
+        href="#"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-link__icon"
+          height="1em"
+          width="1em"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithIcon
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    $
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <span>
+        itemWithoutUrl
+      </span>
+       
+      <!---->
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-breadcrumbs Default 1`] = `
+<div
+  class="m-breadcrumbs"
+>
+  <span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    &lt;
+                
+      </span>
+       
+      <a
+        class="m-link m--has-content"
+        href="#"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithDivider
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--is-disabled m--has-content"
+        tabindex="-1"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemDisabled
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--has-left-icon m--has-content"
+        href="#"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-link__icon"
+          height="1em"
+          width="1em"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithIcon
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <span>
+        itemWithoutUrl
+      </span>
+       
+      <!---->
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-breadcrumbs Disabled 1`] = `
+<div
+  class="m-breadcrumbs"
+>
+  <span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    &lt;
+                
+      </span>
+       
+      <a
+        class="m-link m--is-disabled m--has-content"
+        tabindex="-1"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithDivider
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--is-disabled m--has-content"
+        tabindex="-1"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemDisabled
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--is-disabled m--has-left-icon m--has-content"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-link__icon"
+          height="1em"
+          width="1em"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithIcon
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        
+                    /
+                
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <span>
+        itemWithoutUrl
+      </span>
+       
+      <!---->
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-breadcrumbs Divider Slot 1`] = `
+<div
+  class="m-breadcrumbs"
+>
+  <span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon"
+          height="20px"
+          width="20px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </span>
+       
+      <a
+        class="m-link m--has-content"
+        href="#"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithDivider
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon"
+          height="20px"
+          width="20px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--is-disabled m--has-content"
+        tabindex="-1"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          itemDisabled
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon"
+          height="20px"
+          width="20px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <a
+        class="m-link m--has-left-icon m--has-content"
+        href="#"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-link__icon"
+          height="1em"
+          width="1em"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-link__text"
+        >
+          itemWithIcon
+                
+        </span>
+         
+        <!---->
+      </a>
+       
+      <span
+        class="m-breadcrumbs__divider"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon"
+          height="20px"
+          width="20px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </span>
+    </span>
+    <span
+      class="m-breadcrumbs__item"
+    >
+      <!---->
+       
+      <span>
+        itemWithoutUrl
+      </span>
+       
+      <!---->
+    </span>
+  </span>
+</div>
+`;
