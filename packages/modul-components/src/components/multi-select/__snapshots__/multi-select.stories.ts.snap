@@ -4,7 +4,10 @@ exports[`Storyshots components|m-multi-select complete 1`] = `
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 896px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 896px;"
@@ -112,7 +115,10 @@ exports[`Storyshots components|m-multi-select custom chip info 1`] = `
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 288px;"
@@ -255,7 +261,10 @@ exports[`Storyshots components|m-multi-select custom select-item 1`] = `
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 288px;"
@@ -400,7 +409,10 @@ exports[`Storyshots components|m-multi-select default 1`] = `
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 288px;"
@@ -545,7 +557,10 @@ exports[`Storyshots components|m-multi-select label 1`] = `
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 288px;"
@@ -696,7 +711,10 @@ exports[`Storyshots components|m-multi-select object as options 1`] = `
   <div
     class="m-base-select"
   >
-    <div>
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
       <div
         class="m-multi-select"
         style="width: 100%; max-width: 288px;"
@@ -813,7 +831,10 @@ exports[`Storyshots components|m-multi-select select all link 1`] = `
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 288px;"
@@ -958,7 +979,10 @@ exports[`Storyshots components|m-multi-select/mobile iphone6 - select all link 1
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 288px;"
@@ -1061,7 +1085,10 @@ exports[`Storyshots components|m-multi-select/mobile iphone6 1`] = `
 <div
   class="m-base-select"
 >
-  <div>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
     <div
       class="m-multi-select"
       style="width: 100%; max-width: 288px;"
