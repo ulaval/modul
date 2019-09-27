@@ -143,6 +143,24 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openAll="t
                 </m-accordion-group>
             </div>
         `
+    }))
+    .add('With delay', () => ({
+        template: `
+        <m-accordion-group :open-all="true">
+            <m-accordion v-for="item in list" :key="item.id">{{ item.text }}</m-accordion>
+        </m-accordion-group>`,
+        data(): any {
+            return {
+                list: []
+            };
+        },
+        created(): void {
+            setTimeout(() => {
+                this.list.push({ id: 1, text: 'Some Accordion Content' });
+                this.list.push({ id: 2, text: 'Some Accordion Content' });
+                this.list.push({ id: 3, text: 'Some Accordion Content' });
+            }, 3000);
+        }
     }));
 
 storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled="true"`, module)
