@@ -1,16 +1,11 @@
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
-import Vue from 'vue';
-import { componentsHierarchyRootSeparator } from '../../../conf/storybook/utils';
-import { ACCORDION_GROUP_NAME } from '../component-names';
-import AccordionGroupPlugin from './accordion-group';
-Vue.use(AccordionGroupPlugin);
+import { ACCORDION_GROUP_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 
 
-
-
-storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
     .add('With content', () => ({
         props: {
             text: {
@@ -115,7 +110,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
     </m-accordion-group>`
     }));
 
-storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openAll="true"`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openAll="true"`, module)
     .add('With initial content', () => ({
         template: `
         <m-accordion-group :open-all="true">
@@ -163,7 +158,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openAll="t
         }
     }));
 
-storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled="true"`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled="true"`, module)
     .add('all childrens disabled="false"', () => ({
         template: `<m-accordion-group :disabled="true">
                         <m-accordion :disabled="false"><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
@@ -186,7 +181,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled="
     </m-accordion-group>`
     }));
 
-storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled=false`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled=false`, module)
     .add('all childrens disabled="false"', () => ({
         template: `<m-accordion-group :disabled="false">
                         <m-accordion :disabled="false"><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
@@ -210,7 +205,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/disabled=f
     }));
 
 
-storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/skin`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/skin`, module)
 
     .add('skin="default"', () => ({
         template: `<m-accordion-group>
@@ -234,7 +229,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/skin`, mod
     </m-accordion-group>`
     }));
 
-storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openedIds=[x,y,z]`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openedIds=[x,y,z]`, module)
 
     .add('openedIds=[1,2,3]', () => ({
         template: `<m-accordion-group :openedIds="[1,2,3]">
@@ -258,7 +253,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/openedIds=
     </m-accordion-group>`
     }));
 
-storiesOf(`${componentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/secondary-content`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}/secondary-content`, module)
 
     .add('default', () => ({
         template: `<m-accordion-group>
