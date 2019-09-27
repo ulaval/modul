@@ -81,3 +81,34 @@ exports[`Storyshots components|m-chip-add icon=false 1`] = `
   </div>
 </button>
 `;
+
+exports[`Storyshots components|m-chip-add small 1`] = `
+<button
+  class="m-chip-add m--is-small"
+  type="button"
+>
+  <div
+    class="m-chip-add__body"
+  >
+    <span
+      class="m-chip-add__hidden-text"
+    >
+      Ajouter : 
+    </span>
+     Chip add 
+    <svg
+      aria-hidden="true"
+      class="m-icon m-chip-add__icon"
+      height="13px"
+      width="13px"
+    >
+      <!---->
+       
+      <use
+        aria-hidden="true"
+        class=""
+      />
+    </svg>
+  </div>
+</button>
+`;

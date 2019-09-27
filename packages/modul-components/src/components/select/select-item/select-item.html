@@ -3,12 +3,13 @@
               'm--is-selected': selected && isItemActive,
               'm--is-item-active': isItemActive,
               'm--is-disabled': disabled,
-              'm--readonly': readonly }"
+              'm--readonly': readonly,
+              'm--without-radio': hideRadioButtonMobile }"
     role="option"
     :aria-selected="selected && isItemActive"
     @click.prevent="onClick">
 
-    <slot v-if="isMqMinS || readonly"><span class="m-select-item__element-text">{{ label }}</span></slot>
+    <slot v-if="isMqMinS || readonly || hideRadioButtonMobile"><span class="m-select-item__element-text">{{ label }}</span></slot>
 
     <m-radio-style :full-width="true"
                    radio-position="right"

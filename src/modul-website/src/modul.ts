@@ -5,6 +5,7 @@ import AutoCompletePlugin from '@ulaval/modul-components/dist/components/autocom
 import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import CarouselPlugin from '@ulaval/modul-components/dist/components/carousel/carousel';
 import CheckboxPlugin from '@ulaval/modul-components/dist/components/checkbox/checkbox';
+import ChipDeletePlugin from '@ulaval/modul-components/dist/components/chip/chip-delete/chip-delete';
 import DatepickerPlugin from '@ulaval/modul-components/dist/components/datepicker/datepicker';
 import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/daterangepicker/daterangepicker';
 import DialogPlugin from '@ulaval/modul-components/dist/components/dialog/dialog';
@@ -24,6 +25,7 @@ import ListItemPlugin from '@ulaval/modul-components/dist/components/list-item/l
 import MenuPlugin from '@ulaval/modul-components/dist/components/menu/menu';
 import MessagePlugin from '@ulaval/modul-components/dist/components/message/message';
 import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
+import MultiSelectPlugin from '@ulaval/modul-components/dist/components/multi-select/multi-select';
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
 import OptionPlugin from '@ulaval/modul-components/dist/components/option/option';
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
@@ -85,6 +87,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(MenuPlugin);
         Vue.use(MessagePlugin);
         Vue.use(ModalPlugin);
+        Vue.use(MultiSelectPlugin);
         Vue.use(NavbarPlugin);
         Vue.use(OptionPlugin);
         Vue.use(OverlayPlugin);
@@ -111,6 +114,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(TreePlugin);
         Vue.use(ToastPlugin);
         Vue.use(PaginationPlugin);
+        Vue.use(ChipDeletePlugin);
     }
 };
 

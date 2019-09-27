@@ -1,5 +1,6 @@
 import { PluginObject } from 'vue';
 import { MWAutocompleteExample } from './autocomplete/autocomplete.example';
+import { MWMultiSelectExample } from './multi-select/multi-select.example';
 import { MWShowmoreExample } from './show-more/show-more.example';
 import { MWToastExample } from './toast/toast.example';
 import { MWToggleButtonsExample } from './toggle-buttons/toggle-buttons.example';
@@ -14,6 +15,7 @@ const ComponentExamplesPlugin: PluginObject<any> = {
         v.component('mw-toggle-buttons-example', MWToggleButtonsExample);
         v.component('mw-autocomplete-example', MWAutocompleteExample);
         v.component('mw-show-more-example', MWShowmoreExample);
+        v.component('mw-multi-select-example', MWMultiSelectExample);
     }
 };
 

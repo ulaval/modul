@@ -11,7 +11,10 @@ exports[`Storyshots components|m-phonefield default 1`] = `
       <div
         class="m-base-select m-phonefield__country"
       >
-        <div>
+        <div
+          class="m-base-select__popup"
+          style="width: 288px;"
+        >
           <div
             class="m-select"
             style="width: auto; max-width: 288px;"
@@ -223,7 +226,10 @@ exports[`Storyshots components|m-phonefield detect country 1`] = `
     <div
       class="m-base-select"
     >
-      <div>
+      <div
+        class="m-base-select__popup"
+        style="width: 288px;"
+      >
         <div
           class="m-select"
           style="width: 100%; max-width: 288px;"
@@ -332,7 +338,10 @@ exports[`Storyshots components|m-phonefield detect country 1`] = `
         <div
           class="m-base-select m-phonefield__country"
         >
-          <div>
+          <div
+            class="m-base-select__popup"
+            style="width: 288px;"
+          >
             <div
               class="m-select"
               style="width: auto; max-width: 288px;"
@@ -547,7 +556,10 @@ exports[`Storyshots components|m-phonefield disabled 1`] = `
     <div
       class="m-base-select m-phonefield__country"
     >
-      <div>
+      <div
+        class="m-base-select__popup"
+        style="width: 288px;"
+      >
         <div
           class="m-select m--is-disabled"
           style="width: auto; max-width: 288px;"
@@ -738,7 +750,10 @@ exports[`Storyshots components|m-phonefield error 1`] = `
     <div
       class="m-base-select m-phonefield__country"
     >
-      <div>
+      <div
+        class="m-base-select__popup"
+        style="width: 288px;"
+      >
         <div
           class="m-select"
           style="width: auto; max-width: 288px;"
@@ -943,7 +958,10 @@ exports[`Storyshots components|m-phonefield error message 1`] = `
     <div
       class="m-base-select m-phonefield__country"
     >
-      <div>
+      <div
+        class="m-base-select__popup"
+        style="width: 288px;"
+      >
         <div
           class="m-select"
           style="width: auto; max-width: 288px;"
@@ -1171,7 +1189,10 @@ exports[`Storyshots components|m-phonefield waiting 1`] = `
     <div
       class="m-base-select m-phonefield__country"
     >
-      <div>
+      <div
+        class="m-base-select__popup"
+        style="width: 288px;"
+      >
         <div
           class="m-select m--is-disabled"
           style="width: auto; max-width: 288px;"

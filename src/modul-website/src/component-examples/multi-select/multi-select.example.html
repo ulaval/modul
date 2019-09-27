@@ -1,0 +1,18 @@
+<m-multi-select :options="options"
+                :select-all="true"
+                v-model="model"
+                label="CSS Colors">
+
+    <template v-slot:chips="{item , index }">
+        <div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;"
+             :style="{ background: item }"></div>
+        {{ item }}
+    </template>
+
+    <template v-slot:items="{item , index }">
+        {{ index }} -
+        <div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;"
+             :style="{ background: item }"></div> {{ item }}
+    </template>
+
+</m-multi-select>
