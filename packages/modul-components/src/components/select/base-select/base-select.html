@@ -1,5 +1,7 @@
 <div class="m-base-select">
-    <div v-m-popup:popup>
+    <div v-m-popup:popup
+         class="m-base-select__popup"
+         :style="{ width: inputMaxWidth }">
         <slot :toggle="togglePopup"
               :key-up="onKeydownUp"
               :key-down="onKeydownDown"
