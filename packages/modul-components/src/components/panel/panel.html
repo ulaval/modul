@@ -6,30 +6,36 @@
                    'm--has-border': border,
                    'm--has-border-large': borderLarge,
                    'm--has-padding-large': paddingLarge,
-                   'm--is-highlighted': highlighted}" @click="onClick">
+                   'm--is-highlighted': highlighted}"
+         @click="onClick">
     <header class="m-panel__header"
             :class="{ 'm--no-padding': !hasPaddingHeader,
-                      'm--is-right-content-alone': !hasHeaderSlot,
-                      'm--has-menu': hasHeaderMenuSlot, }"
-        v-if="hasHeader">
-        <div class="m-panel__header__content" :aria-hidden="!hasHeaderSlot">
+                      'm--is-right-content-alone': !($slots.header || $slots['header-right-content']),
+                      'm--has-menu': $slots.menu }"
+            v-if="$slots.header || $slots['header-right-content']">
+        <div class="m-panel__header__content"
+             :aria-hidden="!($slots.header || $slots['header-right-content'])">
             <slot name="header"></slot>
         </div>
-        <div class="m-panel__header__content-right" v-if="hasHeaderRightContentSlot">
+        <div class="m-panel__header__content-right"
+             v-if="$slots['header-right-content']">
             <slot name="header-right-content"></slot>
         </div>
-        <div class="m-panel__header__menu" v-if="hasHeaderMenuSlot">
+        <div class="m-panel__header__menu"
+             v-if="$slots.menu">
             <slot name="menu"></slot>
         </div>
     </header>
     <div class="m-panel__body"
          :class="{ 'm--no-padding': !hasPaddingBody,
-                   'm--has-padding-top': !hasHeader && hasPaddingBody,
-                   'm--has-padding-bottom': !hasFooterSlot && hasPaddingBody }"
-         v-if="hasDefaultSlot">
+                   'm--has-padding-top': !$slots.header && hasPaddingBody,
+                   'm--has-padding-bottom': hasPaddingBody }"
+         v-if="$slots.default">
         <slot></slot>
     </div>
-    <footer class="m-panel__footer" :class="{ 'm--no-padding': !hasPaddingFooter }" v-if="hasFooterSlot">
+    <footer class="m-panel__footer"
+            :class="{ 'm--no-padding': !hasPaddingFooter }"
+            v-if="$slots.footer">
         <slot name="footer"></slot>
     </footer>
 </article>

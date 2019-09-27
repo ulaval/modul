@@ -1,4 +1,4 @@
-import { array, text } from '@storybook/addon-knobs';
+import { array } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import Vue from 'vue';
 import { componentsHierarchyRootSeparator } from '../../../../conf/storybook/utils';
@@ -10,7 +10,7 @@ Vue.use(ErrorAccessDeniedPlugin);
 
 
 
-storiesOf(`${componentsHierarchyRootSeparator}${ERROR_ACCESS_DENIED_NAME}`, module)
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_ACCESS_DENIED_NAME}`, module)
 
 
     .add('default', () => ({
@@ -19,11 +19,7 @@ storiesOf(`${componentsHierarchyRootSeparator}${ERROR_ACCESS_DENIED_NAME}`, modu
                    </div>`
     }))
     .add('title', () => ({
-        props: {
-            title: {
-                default: text('Title', 'A Custom Title')
-            }
-        },
+
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-access-denied :title="title"></m-error-access-denied>
                    </div>`

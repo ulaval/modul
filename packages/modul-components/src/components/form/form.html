@@ -1,6 +1,7 @@
 <form class="m-form"
       @submit.prevent="submit(false)"
-      @reset.prevent="reset(false)">
+      @reset.prevent="reset(false)"
+      novalidate>
     <m-accordion-transition>
         <m-message class="m-form__message-summary"
                    v-if="displaySummary"

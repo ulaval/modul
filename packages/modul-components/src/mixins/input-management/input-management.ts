@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Model, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
 import { InputStateMixin } from '../input-state/input-state';
 
@@ -38,20 +38,44 @@ export class InputManagement extends ModulVue
 
     public internalIsFocus: boolean = false;
 
-    private mounted(): void {
+    @Emit('click')
+    emitClick(event: MouseEvent): void { }
+
+    @Emit('input')
+    emitInput(internalValue: string): void { }
+
+    @Emit('focus')
+    emitFocus(event: FocusEvent): void { }
+
+    @Emit('blur')
+    emitBlur(event: FocusEvent): void { }
+
+    @Emit('keyup')
+    emitKeyup(event: KeyboardEvent, model: string): void { }
+
+    @Emit('keydown')
+    emitKeydown(event: KeyboardEvent): void { }
+
+    @Emit('change')
+    emitChange(model: string): void { }
+
+    @Emit('paste')
+    emitPaste(event: ClipboardEvent): void { }
+
+    protected mounted(): void {
         if (this.focus) {
             this.focusChanged(this.focus);
         }
     }
 
-    public focusInput(): void {
+    focusInput(): void {
         let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
         if (inputEl) {
             inputEl.focus();
         }
     }
 
-    public get hasValue(): boolean {
+    get hasValue(): boolean {
         return !!(this.model || '').toString().trim();
     }
 
@@ -61,39 +85,39 @@ export class InputManagement extends ModulVue
         if (this.internalIsFocus && inputEl) {
             inputEl.focus();
         }
-        this.$emit('click');
+        this.emitClick(event);
     }
 
     onFocus(event: FocusEvent): void {
         this.internalIsFocus = this.as<InputStateMixin>().active;
         if (this.internalIsFocus) {
-            this.$emit('focus', event);
+            this.emitFocus(event);
         }
     }
 
-    onBlur(event: Event): void {
+    onBlur(event: FocusEvent): void {
         this.internalIsFocus = false;
-        this.$emit('blur', event);
+        this.emitBlur(event);
     }
 
-    onKeyup(event: Event): void {
+    onKeyup(event: KeyboardEvent): void {
         if (this.as<InputStateMixin>().active) {
-            this.$emit('keyup', event, this.model);
+            this.emitKeyup(event, this.model);
         }
     }
 
-    onKeydown(event: Event): void {
+    onKeydown(event: KeyboardEvent): void {
         if (this.as<InputStateMixin>().active) {
-            this.$emit('keydown', event);
+            this.emitKeydown(event);
         }
     }
 
     onChange(event: Event): void {
-        this.$emit('change', this.model);
+        this.emitChange(this.model);
     }
 
-    onPaste(event: Event): void {
-        this.$emit('paste', event);
+    onPaste(event: ClipboardEvent): void {
+        this.emitPaste(event);
     }
 
     getTrimValue(value: string): string {
@@ -102,7 +126,7 @@ export class InputManagement extends ModulVue
 
     set model(value: string) {
         this.internalValue = this.getTrimValue(value);
-        this.$emit('input', this.internalValue);
+        this.emitInput(this.internalValue);
     }
 
     get model(): string {
