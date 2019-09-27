@@ -26,6 +26,10 @@ export class MSearchfield extends ModulVue {
     public id: string = `mSearchfield-${uuid.generate()}`;
     public searchIconDescription: string = this.$i18n.translate('m-textfield:search');
 
+    public $refs: {
+        input: HTMLElement
+    };
+
     public onReset(): void {
         this.as<InputManagement>().model = '';
     }
