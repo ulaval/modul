@@ -10,7 +10,7 @@ Vue.use(ErrorConfigNotSupportedPlugin);
 
 
 
-storiesOf(`${componentsHierarchyRootSeparator}${ERROR_CONFIG_NOT_SUPPORTED_NAME}`, module)
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_CONFIG_NOT_SUPPORTED_NAME}`, module)
 
 
     .add('default', () => ({
