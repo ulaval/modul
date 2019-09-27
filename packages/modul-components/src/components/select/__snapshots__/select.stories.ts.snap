@@ -5,7 +5,10 @@ exports[`Storyshots components|m-select default 1`] = `
   <div
     class="m-base-select"
   >
-    <div>
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
       <div
         class="m-select"
         style="width: 100%; max-width: 288px;"
@@ -114,7 +117,10 @@ exports[`Storyshots components|m-select/mobile iphone6 1`] = `
   <div
     class="m-base-select"
   >
-    <div>
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
       <div
         class="m-select"
         style="width: 100%; max-width: 288px;"

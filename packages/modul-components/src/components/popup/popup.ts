@@ -117,6 +117,12 @@ export class MPopup extends ModulVue {
     public get hasTriggerSlot(): boolean {
         return !!this.$slots.trigger;
     }
+
+    public update(): void {
+        if (!this.as<MediaQueries>().isMqMaxS) { // Pas de popper en mobile
+            this.$refs.popper.update();
+        }
+    }
 }
 
 const PopupPlugin: PluginObject<any> = {
