@@ -14,8 +14,6 @@ import { MBaseSelect } from './../select/base-select/base-select';
 import { MSelectItem } from './../select/select-item/select-item';
 import WithRender from './multi-select.html?style=./multi-select.scss';
 
-const MAX_LENGTH_CHIP_LABEL: number = 12;
-
 @WithRender
 @Component({
     components: {
@@ -54,6 +52,11 @@ export class MMultiSelect extends ModulVue {
         default: 5
     })
     public maxVisibleChips: number;
+
+    @Prop({
+        default: 12
+    })
+    public defaultChipCharsTrunk: number;
 
     public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
     public internalValue: any[] = [];
@@ -205,8 +208,8 @@ export class MMultiSelect extends ModulVue {
     }
 
     getChipLabel(item: any): string {
-        let ellipsis: string = item.toString().length > MAX_LENGTH_CHIP_LABEL ? '...' : '';
-        return `${item.toString().substring(0, MAX_LENGTH_CHIP_LABEL)}${ellipsis}`;
+        let ellipsis: string = item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
+        return `${item.toString().substring(0, this.defaultChipCharsTrunk)}${ellipsis}`;
     }
 
     @Watch('value', { immediate: true })
