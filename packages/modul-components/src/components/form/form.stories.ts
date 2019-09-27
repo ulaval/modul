@@ -10,12 +10,12 @@ import { CompareValidator } from '../../utils/form/validators/compare/compare';
 import { DateBetweenValidator } from '../../utils/form/validators/date-between/date-between';
 import { DateFormatValidator } from '../../utils/form/validators/date-format/date-format';
 import { EmailValidator } from '../../utils/form/validators/email/email';
-import { MaxLengthValidator } from '../../utils/form/validators/max-length/max-length';
 import { MaxValidator } from '../../utils/form/validators/max/max';
 import { MinLengthValidator } from '../../utils/form/validators/min-length/min-length';
 import { MinValidator } from '../../utils/form/validators/min/min';
 import { RequiredValidator } from '../../utils/form/validators/required/required';
 import { FORM_NAME } from '../component-names';
+import { MaxLengthValidator } from './../../utils/form/validators/max-length/max-length';
 import { ClearErrorToast, ClearSummaryMessage, ErrorToast, FocusOnFirstError, SummaryMessage } from './fallouts/built-in-form-action-fallouts';
 import FormPlugin from './form.plugin';
 
@@ -196,7 +196,15 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/built-in action-fallo
             formGroup: new FormGroup(
                 {
                     'name': new FormControl<string>(
-                        [RequiredValidator({ controlLabel: 'name' })]
+                        [
+                            RequiredValidator()
+                        ]
+                    ),
+                    'email': new FormControl<string>(
+                        [
+                            EmailValidator(),
+                            MaxLengthValidator(10)
+                        ]
                     )
                 }
             ),
@@ -206,18 +214,28 @@ storiesOf(`${componentsHierarchyRootSeparator}${FORM_NAME}/built-in action-fallo
             ]
         }),
         computed: {
-            nameField(): void {
-                return this.$data.formGroup.getControl('name');
+            nameControl(): FormControl<string> {
+                return this.$data.formGroup.getControl('name') as FormControl<string>;
+            },
+            emailControl(): FormControl<string> {
+                return this.$data.formGroup.getControl('email') as FormControl<string>;
             }
         },
         template: `
         <m-form class="m-u--margin-top"
                 :form-group="formGroup"
                 :action-fallouts="actionFallouts">
-            <m-textfield v-model.trim="nameField.value"
-                        :error-message="nameField.errors.length > 0 ? nameField.errors[0].message : null"
-                        :label="nameField.name"
-                        v-m-control="nameField">
+            <m-textfield v-model.trim="nameControl.value"
+                        :error="nameControl.hasError()"
+                        :error-message="nameControl.errorMessage"
+                        :label="nameControl.name"
+                        v-m-control="nameControl">
+            </m-textfield>
+            <m-textfield v-model.trim="emailControl.value"
+                        :error="emailControl.hasError()"
+                        :error-message="emailControl.errorMessage"
+                        :label="emailControl.name"
+                        v-m-control="emailControl">
             </m-textfield>
             <p class="m-u--margin-bottom--l">
                 <m-button type="submit">Submit</m-button>
