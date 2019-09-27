@@ -106,6 +106,10 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     @Emit('fullscreen')
     onFullscreen(fullscreenWasActived: boolean): void { }
 
+    public $refs: {
+        input: HTMLElement
+    };
+
     public customTranslations: { [key: string]: string } = {
         'Update': this.$i18n.translate('m-inplace-edit:modify'),
         'URL': this.$i18n.translate('m-rich-text-editor:URL')

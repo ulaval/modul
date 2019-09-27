@@ -6,6 +6,11 @@ import TablePlugin, { MColumnSortDirection, MColumnTable } from './table';
 Vue.use(TablePlugin);
 
 function defaultOnSortApplied(columnTable: MColumnTable): void {
+    if (columnTable.sortDirection === MColumnSortDirection.None) {
+        this.$data.rows.sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+        return;
+    }
+
     this.$data.rows.sort((a, b) => {
         if (a[columnTable.dataProp] < b[columnTable.dataProp]) {
             return -1 * columnTable.sortDirection!;

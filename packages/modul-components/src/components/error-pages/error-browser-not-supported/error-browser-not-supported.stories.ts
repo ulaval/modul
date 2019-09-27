@@ -10,7 +10,7 @@ Vue.use(ErrorBrowserNotSupported);
 
 
 
-storiesOf(`${componentsHierarchyRootSeparator}${ERROR_BROWSER_NOT_SUPPORTED_NAME}`, module)
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_BROWSER_NOT_SUPPORTED_NAME}`, module)
 
     .add('default', () => ({
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
