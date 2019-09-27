@@ -4,6 +4,7 @@ import { ACCORDION_NAME } from '@ulaval/modul-components/dist/components/compone
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 
+
 storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_NAME}`, module)
 
     .add('default', () => ({

@@ -32,7 +32,7 @@
         ]
     },
     "include": [
-        "../../packages/modul-components/src/*",
+        "../../packages/modul-components/src/**/*.ts",
         "src/**/*.ts"
     ],
     "exclude": [
