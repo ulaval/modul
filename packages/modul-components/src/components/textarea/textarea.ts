@@ -36,6 +36,10 @@ export class MTextarea extends ModulVue implements InputManagementData {
     @Prop({ default: 0 })
     public characterCountThreshold: number;
 
+    public $refs: {
+        input: HTMLElement
+    };
+
     readonly internalValue: string;
     private internalTextareaHeight: string = '0';
     private id: string = `mTextarea-${uuid.generate()}`;
