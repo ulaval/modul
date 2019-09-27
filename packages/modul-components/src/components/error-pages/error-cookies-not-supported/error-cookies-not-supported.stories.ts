@@ -10,7 +10,7 @@ Vue.use(ErrorCookiesNotSupportedPlugin);
 
 
 
-storiesOf(`${componentsHierarchyRootSeparator}${ERROR_COOKIES_NOT_SUPPORTED_NAME}`, module)
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_COOKIES_NOT_SUPPORTED_NAME}`, module)
 
 
     .add('default', () => ({

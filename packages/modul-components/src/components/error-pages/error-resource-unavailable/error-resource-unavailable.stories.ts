@@ -2,20 +2,16 @@ import { array, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import Vue from 'vue';
 import { componentsHierarchyRootSeparator } from '../../../../conf/storybook/utils';
-import { ERROR_PAGE_NOT_FOUND_NAME } from '../../component-names';
+import { ERROR_RESOURCE_UNAVAILABLE_NAME } from '../../component-names';
 import { Link } from '../../message-page/message-page';
-import ErrorPageNotFoundPlugin from './error-page-not-found';
+import ErrorResourceUnavailablePlugin from './error-resource-unavailable';
 
-Vue.use(ErrorPageNotFoundPlugin);
+Vue.use(ErrorResourceUnavailablePlugin);
 
-
-
-storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_PAGE_NOT_FOUND_NAME}`, module)
-
-
+storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_RESOURCE_UNAVAILABLE_NAME}`, module)
     .add('default', () => ({
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
-                        <m-error-page-not-found></m-error-page-not-found>
+                        <m-error-resource-unavailable></m-error-resource-unavailable>
                    </div>`
     }))
     .add('title', () => ({
@@ -25,7 +21,7 @@ storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_PAGE_NOT_FOUN
             }
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
-                        <m-error-page-not-found :title="title"></m-error-page-not-found>
+                        <m-error-resource-unavailable :title="title"></m-error-resource-unavailable>
                    </div>`
     }))
     .add('links', () => ({
@@ -36,7 +32,7 @@ storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_PAGE_NOT_FOUN
             }
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
-                        <m-error-page-not-found :links="links"></m-error-page-not-found>
+                        <m-error-resource-unavailable :links="links"></m-error-resource-unavailable>
                    </div>`
     }))
     .add('hints', () => ({
@@ -47,6 +43,6 @@ storiesOf(`${componentsHierarchyRootSeparator}/error-pages/${ERROR_PAGE_NOT_FOUN
             }
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
-                        <m-error-page-not-found :hints="hints"></m-error-page-not-found>
+                        <m-error-resource-unavailable :hints="hints"></m-error-resource-unavailable>
                    </div>`
     }));

@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { MOpenTrigger, OpenTrigger, OpenTriggerMixin } from '../../mixins/open-trigger/open-trigger';
 import { ModulVue } from '../../utils/vue/vue';
@@ -91,19 +91,12 @@ export class MPopup extends ModulVue {
     @Emit('portal-after-open')
     public onPortalAfterOpen(): void { }
 
-    @Watch('open', { immediate: true })
-    public onOpenChange(open: boolean): void {
-        if (!this.disabled) {
-            this.internalOpen = open;
-        }
-    }
-
     public get popupBody(): Element {
         return (this.$children[0] as any).popupBody;
     }
 
     public get propOpen(): boolean {
-        return this.internalOpen;
+        return this.open === undefined ? this.internalOpen : this.open;
     }
 
     public set propOpen(value: boolean) {

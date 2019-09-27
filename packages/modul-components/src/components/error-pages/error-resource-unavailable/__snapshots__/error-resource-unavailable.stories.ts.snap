@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|/error-pages/m-error-page-not-found default 1`] = `
+exports[`Storyshots components|/error-pages/m-error-resource-unavailable default 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -13,9 +13,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found default 1`] =
       <h2
         class="m-message-page__title"
       >
-        La page demandée
-        <br />
-        n'a pas été trouvée
+        Cette section est actuellement indisponible.
       </h2>
        
       <div
@@ -37,7 +35,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found default 1`] =
       <p
         class="m-message-page__hints"
       >
-        Elle a peut-être été déplacée ou retirée, ou son nom a changé. Vous pouvez vérifier l'adresse (URL) indiquée dans votre navigateur et réessayer.
+        Nous travaillons à rétablir la situation dans les meilleurs délais.
       </p>
        
       <!---->
@@ -81,7 +79,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found default 1`] =
 </div>
 `;
 
-exports[`Storyshots components|/error-pages/m-error-page-not-found hints 1`] = `
+exports[`Storyshots components|/error-pages/m-error-resource-unavailable hints 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -94,9 +92,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found hints 1`] = `
       <h2
         class="m-message-page__title"
       >
-        La page demandée
-        <br />
-        n'a pas été trouvée
+        Cette section est actuellement indisponible.
       </h2>
        
       <div
@@ -168,7 +164,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found hints 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|/error-pages/m-error-page-not-found links 1`] = `
+exports[`Storyshots components|/error-pages/m-error-resource-unavailable links 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -181,9 +177,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found links 1`] = `
       <h2
         class="m-message-page__title"
       >
-        La page demandée
-        <br />
-        n'a pas été trouvée
+        Cette section est actuellement indisponible.
       </h2>
        
       <div
@@ -205,7 +199,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found links 1`] = `
       <p
         class="m-message-page__hints"
       >
-        Elle a peut-être été déplacée ou retirée, ou son nom a changé. Vous pouvez vérifier l'adresse (URL) indiquée dans votre navigateur et réessayer.
+        Nous travaillons à rétablir la situation dans les meilleurs délais.
       </p>
        
       <!---->
@@ -288,7 +282,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found links 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|/error-pages/m-error-page-not-found title 1`] = `
+exports[`Storyshots components|/error-pages/m-error-resource-unavailable title 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -323,7 +317,7 @@ exports[`Storyshots components|/error-pages/m-error-page-not-found title 1`] = `
       <p
         class="m-message-page__hints"
       >
-        Elle a peut-être été déplacée ou retirée, ou son nom a changé. Vous pouvez vérifier l'adresse (URL) indiquée dans votre navigateur et réessayer.
+        Nous travaillons à rétablir la situation dans les meilleurs délais.
       </p>
        
       <!---->
