@@ -56,6 +56,7 @@ import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/defaul
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils/utils-plugin';
 import ComponentExamplesPlugin from '@ulaval/modul-website/src/component-examples/component-example-plugins';
 import Vue, { PluginObject } from 'vue';
+import './styles/storybook.scss';
 
 export const ModulPlugin: PluginObject<any> = {
     install(v, options): void {

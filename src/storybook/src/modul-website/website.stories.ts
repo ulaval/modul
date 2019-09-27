@@ -1,4 +1,4 @@
-import { modulWebsiteHierarchyRootSeparator } from '../../conf/storybook/utils';
+import { modulWebsiteHierarchyRootSeparator } from '../utils';
 
 export default {
     title: `${modulWebsiteHierarchyRootSeparator}preview`

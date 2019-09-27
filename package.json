@@ -23,7 +23,7 @@
         "test": "lerna run --stream --sort test",
         "test:ci": "lerna run --stream --sort test:ci",
         "test:update": "lerna run --stream --sort test:update",
-        "storybook": "lerna run dev --scope @ulaval/modul-components --stream"
+        "storybook": "lerna run storybook --scope storybook --stream"
     },
     "devDependencies": {
         "lerna": "^3.15.0",

@@ -6,7 +6,7 @@ import Vue from 'vue';
 import { ModulPlugin } from '../../src/modul';
 import modulTheme from './modul-theme';
 import { getSandboxPlugin } from './sandbox-loader';
-import './styles/storybook.scss';
+
 
 
 declare module '@storybook/addon-knobs' {

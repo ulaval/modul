@@ -1,3 +1,5 @@
+
+import { sandboxDecorator } from '../sandbox-decorator';
 import { TypoAndStyles } from './typo-and-styles/typo-and-styles';
 import { Welcome } from './welcome/welcome';
 
@@ -22,5 +24,6 @@ welcome.story = {
 };
 
 typoAndStyles.story = {
+    decorators: [sandboxDecorator],
     parameters: { fileName: __filename, options: { showPanel: false, isToolshown: true } }
 };
