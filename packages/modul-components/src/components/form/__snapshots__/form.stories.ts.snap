@@ -3,6 +3,7 @@
 exports[`Storyshots components|m-form default 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -134,6 +135,7 @@ exports[`Storyshots components|m-form reactive initial value 1`] = `
 <div>
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -287,6 +289,7 @@ exports[`Storyshots components|m-form submit outside-form 1`] = `
   <form
     class="m-form m-u--margin-top"
     id="123-456"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -420,6 +423,7 @@ exports[`Storyshots components|m-form submit outside-form 1`] = `
 exports[`Storyshots components|m-form/all fields autocomplete 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -597,6 +601,7 @@ exports[`Storyshots components|m-form/all fields autocomplete 1`] = `
 exports[`Storyshots components|m-form/all fields checkbox 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -705,6 +710,7 @@ exports[`Storyshots components|m-form/all fields checkbox 1`] = `
 exports[`Storyshots components|m-form/all fields datepicker 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -888,6 +894,7 @@ exports[`Storyshots components|m-form/all fields datepicker 1`] = `
 exports[`Storyshots components|m-form/all fields daterangepicker 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -960,6 +967,7 @@ exports[`Storyshots components|m-form/all fields daterangepicker 1`] = `
 exports[`Storyshots components|m-form/all fields decimalfield 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1108,6 +1116,7 @@ exports[`Storyshots components|m-form/all fields decimalfield 1`] = `
 exports[`Storyshots components|m-form/all fields dropdown 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1288,6 +1297,7 @@ exports[`Storyshots components|m-form/all fields dropdown 1`] = `
 exports[`Storyshots components|m-form/all fields integerfield 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1362,6 +1372,7 @@ exports[`Storyshots components|m-form/all fields integerfield 1`] = `
 exports[`Storyshots components|m-form/all fields moneyfield 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1436,6 +1447,7 @@ exports[`Storyshots components|m-form/all fields moneyfield 1`] = `
 exports[`Storyshots components|m-form/all fields radio 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1627,6 +1639,7 @@ exports[`Storyshots components|m-form/all fields radio 1`] = `
 exports[`Storyshots components|m-form/all fields switch 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1701,6 +1714,7 @@ exports[`Storyshots components|m-form/all fields switch 1`] = `
 exports[`Storyshots components|m-form/all fields textarea 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1774,6 +1788,7 @@ exports[`Storyshots components|m-form/all fields textarea 1`] = `
 exports[`Storyshots components|m-form/all fields textfield 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -1923,6 +1938,7 @@ exports[`Storyshots components|m-form/all fields textfield 1`] = `
 exports[`Storyshots components|m-form/all fields timepicker 1`] = `
 <form
   class="m-form"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -2103,6 +2119,7 @@ exports[`Storyshots components|m-form/all fields timepicker 1`] = `
 exports[`Storyshots components|m-form/built-in action-fallouts default 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -2233,6 +2250,7 @@ exports[`Storyshots components|m-form/built-in action-fallouts default 1`] = `
 exports[`Storyshots components|m-form/built-in action-fallouts focus first field with error 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -2363,6 +2381,7 @@ exports[`Storyshots components|m-form/built-in action-fallouts focus first field
 exports[`Storyshots components|m-form/built-in action-fallouts message summary and clear message summary 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -2493,6 +2512,7 @@ exports[`Storyshots components|m-form/built-in action-fallouts message summary a
 exports[`Storyshots components|m-form/built-in action-fallouts toast and clear toast 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -2704,6 +2724,7 @@ exports[`Storyshots components|m-form/rules Checkbox 2 to 5 selections 1`] = `
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -3091,6 +3112,7 @@ exports[`Storyshots components|m-form/rules Email confirmation 1`] = `
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -3336,6 +3358,7 @@ exports[`Storyshots components|m-form/rules Format with fixed max characters (po
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -3477,6 +3500,7 @@ exports[`Storyshots components|m-form/rules Format without fixed max characters 
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -3622,6 +3646,7 @@ exports[`Storyshots components|m-form/rules Live check username availability (as
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -3767,6 +3792,7 @@ exports[`Storyshots components|m-form/rules More than one validations (course co
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -3908,6 +3934,7 @@ exports[`Storyshots components|m-form/rules Radio button required 1`] = `
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -4149,6 +4176,7 @@ exports[`Storyshots components|m-form/rules required and 5 characters min 1`] = 
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -4290,6 +4318,7 @@ exports[`Storyshots components|m-form/rules required and 20 characters max 1`] =
    
   <form
     class="m-form m-u--margin-top"
+    novalidate="novalidate"
   >
     <!---->
      
@@ -4430,6 +4459,7 @@ exports[`Storyshots components|m-form/rules required and 20 characters max 1`] =
 exports[`Storyshots components|m-form/validation-type at-exit 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -4564,6 +4594,7 @@ exports[`Storyshots components|m-form/validation-type at-exit 1`] = `
 exports[`Storyshots components|m-form/validation-type correction 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -4698,6 +4729,7 @@ exports[`Storyshots components|m-form/validation-type correction 1`] = `
 exports[`Storyshots components|m-form/validation-type modification 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -4832,6 +4864,7 @@ exports[`Storyshots components|m-form/validation-type modification 1`] = `
 exports[`Storyshots components|m-form/validation-type on-going 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -4966,6 +4999,7 @@ exports[`Storyshots components|m-form/validation-type on-going 1`] = `
 exports[`Storyshots components|m-form/validators between number 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5028,6 +5062,7 @@ exports[`Storyshots components|m-form/validators between number 1`] = `
 exports[`Storyshots components|m-form/validators compare fields 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5054,7 +5089,173 @@ exports[`Storyshots components|m-form/validators compare fields 1`] = `
         <!---->
       </div>
        
-      <!---->
+      <div
+        class="m-input-group__content"
+      >
+        <div>
+          <div
+            class="m-textfield m--is-valid m--has-label m--is-type-text"
+            style="width: 100%; max-width: 288px;"
+          >
+            <div
+              class="m-input-style m--is-valid m--has-label m--is-tag-default"
+              style="margin-top: 10px;"
+            >
+              <div
+                class="m-input-style__main"
+              >
+                <div
+                  class="m-input-style__body"
+                >
+                  <label
+                    class="m-input-style__label"
+                    for="mTextfield-uuid"
+                    style="margin-right: 0px;"
+                  >
+                    <span
+                      class="m-input-style__text"
+                    >
+                      <span>
+                        email
+                      </span>
+                       
+                      <!---->
+                    </span>
+                  </label>
+                   
+                  <div
+                    class="m-input-style__input"
+                  >
+                    <!---->
+                     
+                    <div
+                      class="m-input-style__content"
+                    >
+                      <input
+                        class="m-textfield__input"
+                        id="mTextfield-uuid"
+                        maxlength="Infinity"
+                        type="text"
+                      />
+                         
+                      <!---->
+                       
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="m-input-style__suffix"
+                    >
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+             
+            <div
+              class="m-textfield__validation"
+            >
+              <div
+                class="m-validation-message m-textfield__validation__message"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+           
+          <div
+            class="m-textfield m--is-valid m--has-label m--is-type-text"
+            style="width: 100%; max-width: 288px;"
+          >
+            <div
+              class="m-input-style m--is-valid m--has-label m--is-tag-default"
+              style="margin-top: 10px;"
+            >
+              <div
+                class="m-input-style__main"
+              >
+                <div
+                  class="m-input-style__body"
+                >
+                  <label
+                    class="m-input-style__label"
+                    for="mTextfield-uuid"
+                    style="margin-right: 0px;"
+                  >
+                    <span
+                      class="m-input-style__text"
+                    >
+                      <span>
+                        confirm email
+                      </span>
+                       
+                      <!---->
+                    </span>
+                  </label>
+                   
+                  <div
+                    class="m-input-style__input"
+                  >
+                    <!---->
+                     
+                    <div
+                      class="m-input-style__content"
+                    >
+                      <input
+                        class="m-textfield__input"
+                        id="mTextfield-uuid"
+                        maxlength="Infinity"
+                        type="text"
+                      />
+                         
+                      <!---->
+                       
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="m-input-style__suffix"
+                    >
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+             
+            <div
+              class="m-textfield__validation"
+            >
+              <div
+                class="m-validation-message m-textfield__validation__message"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
    
@@ -5107,6 +5308,7 @@ exports[`Storyshots components|m-form/validators compare fields 1`] = `
 exports[`Storyshots components|m-form/validators date between 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5275,6 +5477,7 @@ exports[`Storyshots components|m-form/validators date between 1`] = `
 exports[`Storyshots components|m-form/validators date format 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5439,6 +5642,7 @@ exports[`Storyshots components|m-form/validators date format 1`] = `
 exports[`Storyshots components|m-form/validators email 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5573,6 +5777,7 @@ exports[`Storyshots components|m-form/validators email 1`] = `
 exports[`Storyshots components|m-form/validators max number 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5635,6 +5840,7 @@ exports[`Storyshots components|m-form/validators max number 1`] = `
 exports[`Storyshots components|m-form/validators max-length 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5769,6 +5975,7 @@ exports[`Storyshots components|m-form/validators max-length 1`] = `
 exports[`Storyshots components|m-form/validators min number 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
@@ -5831,13 +6038,14 @@ exports[`Storyshots components|m-form/validators min number 1`] = `
 exports[`Storyshots components|m-form/validators min-length 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    
   <!---->
    
   <p>
-    default validationType =  modification
+    default validationType =  correction
   </p>
    
   <div
@@ -5965,6 +6173,7 @@ exports[`Storyshots components|m-form/validators min-length 1`] = `
 exports[`Storyshots components|m-form/validators required 1`] = `
 <form
   class="m-form m-u--margin-top"
+  novalidate="novalidate"
 >
   <!---->
    

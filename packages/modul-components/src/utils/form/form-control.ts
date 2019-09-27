@@ -128,6 +128,7 @@ export class FormControl<T> extends AbstractControl {
      *
      */
     public async submit(): Promise<void> {
+        super.submit();
         this.validate();
         await this.validateAsync();
     }

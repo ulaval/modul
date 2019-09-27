@@ -67,7 +67,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     private get propAllOpen(): boolean {
         let allOpened: boolean = true;
         for (const id in this.accordions) {
-            allOpened = this.accordions[id].propOpen || this.accordions[id].$slots.default === undefined;
+            allOpened = this.accordions[id].propOpen || !this.accordionHasContent(id);
             if (!allOpened && !this.accordions[id].propDisabled) {
                 break;
             }
@@ -78,7 +78,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     private get propAllClosed(): boolean {
         let allClosed: boolean = true;
         for (const id in this.accordions) {
-            allClosed = !this.accordions[id].propOpen || this.accordions[id].$slots.default === undefined;
+            allClosed = !this.accordions[id].propOpen || !this.accordionHasContent(id);
             if (!allClosed && !this.accordions[id].propDisabled) {
                 break;
             }
@@ -91,11 +91,11 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     }
 
     private get hasTitleSlot(): boolean {
-        return !!this.$slots['title'];
+        return !!this.$slots['title'] || !!this.$scopedSlots['title'];
     }
 
     private get hasSecondaryContentSlot(): boolean {
-        return !!this.$slots['secondary-content'];
+        return !!this.$slots['secondary-content'] || !!this.$scopedSlots['secondary-content'];
     }
 
     private openAllAccordions(): void {
@@ -118,6 +118,11 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
             this.accordions[id].propOpen =
                 val.find(openedId => openedId === id) !== undefined;
         }
+    }
+
+    private accordionHasContent(id: string): boolean {
+        return !!this.accordions[id].$slots.default ||
+            (!!this.accordions[id].$scopedSlots.default && !!this.accordions[id].$scopedSlots.default!(undefined));
     }
 }
 
