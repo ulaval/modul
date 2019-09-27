@@ -1,0 +1,148 @@
+<div class="mw-mega-menu">
+    <mw-panel :open="isOpen"
+              @close="close">
+        <div class="mw-mega-menu__body"
+             v-if="isMqMinS">
+            <nav class="mw-mega-menu__list"
+                 v-for="category in categoriesComponent"
+                 :key="category.id"
+                 v-if="type == 'components'">
+                <h2 class="mw-mega-menu__title modul-u--h2 mw-u--highlighted-title-link"
+                    @click.prevent="close()">
+                    <router-link :to="getCategoryRoute(category.id)"
+                                 tabindex="0"><span>{{ category.text }}</span></router-link>
+                </h2>
+                <ul>
+                    <li v-for="component in getCategoryComponents(category.id)"
+                        @click.prevent="close()">
+                        <router-link :to="getRouterIndex(component.url)"
+                                     tag="a"
+                                     class="mw-mega-menu__link">
+                            <span class="mw-mega-menu__wrapper">
+                                <m-i18n :k="component.name"
+                                        class="mw-mega-menu__label"></m-i18n>&nbsp;<span v-if="component.beta"
+                                      class="modul-logo__beta mw-mega-menu__beta-tag">
+                                    {{'website:beta' | f-m-i18n}}
+                                </span>
+                            </span>
+                        </router-link>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="mw-mega-menu__list"
+                 v-for="category in pagesStandards"
+                 :key="category.id"
+                 v-if="type != 'components'">
+                <h2 class="mw-mega-menu__title modul-u--h1 mw-u--highlighted-title-link"
+                    @click.prevent="close()">
+                    <router-link :to="{ name : category.id }"
+                                 tabindex="0"><span>{{ category.text }}</span></router-link>
+                </h2>
+                <ul>
+                    <li v-for="page in category.pages"
+                        @click.prevent="close()">
+                        <router-link :to="{ name : page.id }"
+                                     tag="a"
+                                     class="mw-mega-menu__link">
+                            <span class="mw-mega-menu__wrapper">
+                                {{ page.text }}
+                            </span>
+                        </router-link>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <template v-else>
+            <transition name="mw--is">
+                <nav class="mw-mobile-menu mw--is-level-1"
+                     v-if="menuLevelOne">
+                    <ul>
+                        <li class="mw-mobile-menu__elem">
+                            <router-link :to="routerPhilosophy"
+                                         class="mw-mobile-menu__title">
+                                <m-i18n k="website:philosophy"></m-i18n>
+                                <m-icon name="m-svg__chevron--right"></m-icon>
+                            </router-link>
+                        </li>
+                        <li class="mw-mobile-menu__elem">
+                            <a href
+                               @click.prevent="showMenuLevelTwo('components')"
+                               class="mw-mobile-menu__title">
+                                <m-i18n k="modul:components"></m-i18n>
+                                <m-icon name="m-svg__chevron--right"></m-icon>
+                            </a>
+                        </li>
+                        <li class="mw-mobile-menu__elem">
+                            <a href
+                               @click.prevent="showMenuLevelTwo('standards')"
+                               class="mw-mobile-menu__title">
+                                <m-i18n k="modul:standards"></m-i18n>
+                                <m-icon name="m-svg__chevron--right"></m-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mw-mobile-menu mw--is-level-2"
+                     v-if="!menuLevelOne">
+                    <header class="mw-mobile-menu__header">
+                        <m-link mode="button"
+                                :underline="false"
+                                icon-name="m-svg__chevron--left"
+                                @click="showMenuLevelOne">Retour</m-link>
+                    </header>
+                    <div class="mw-mobile-menu__body">
+                        <m-accordion class="mw-mobile-menu__elem mw--is-accordion"
+                                     skin="plain"
+                                     v-for="category in categoriesComponent"
+                                     :key="category.id"
+                                     v-if="menuSection == 'components'">
+                            <h2 class="mw-mobile-menu__accordion-title"
+                                slot="header">
+                                <!-- <router-link :to="getRouterIndex(category.id)"> --> <span>{{category.text}}</span><!-- </router-link>-->
+                            </h2>
+                            <ul>
+                                <li v-for="component in getCategoryComponents(category.id)"
+                                    :key="component.url"
+                                    click="closeMenu()"
+                                    @keyup.enter="closeMenu()">
+                                    <router-link :to="getRouterIndex(component.url)"
+                                                 class="mw-mobile-menu__link">
+                                        <span class="mw-mobile-menu__wrapper">
+                                            <m-i18n :k="component.name"
+                                                    class="mw-mega-menu__label"></m-i18n>&nbsp;<span v-if="component.beta"
+                                                  class="modul-logo__beta mw-mega-menu__beta-tag">{{'website:beta' | f-m-i18n}}</span>
+                                        </span>
+                                        <!-- <span class="mw-mega-menu__tag">{{ component.tag }}</span> -->
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </m-accordion>
+                        <m-accordion class="mw-mobile-menu__elem mw--is-accordion"
+                                     skin="plain"
+                                     v-for="category in pagesStandards"
+                                     :key="category.id"
+                                     v-if="menuSection != 'components'">
+                            <h2 class="mw-mobile-menu__accordion-title"
+                                slot="header">
+                                <!-- <router-link :to="getRouterIndex(category.id)"> --> <span>{{category.text}}</span><!-- </router-link>-->
+                            </h2>
+                            <ul>
+                                <li v-for="page in category.pages"
+                                    :key="page.id"
+                                    click="closeMenu()"
+                                    @keyup.enter="closeMenu()">
+                                    <router-link :to="{ name : page.id }"
+                                                 class="mw-mobile-menu__link">
+                                        <span class="mw-mobile-menu__wrapper">
+                                            {{ page.text }}
+                                        </span>
+                                    </router-link>
+                                </li>
+                            </ul>
+                        </m-accordion>
+                    </div>
+                </div>
+            </transition>
+        </template>
+    </mw-panel>
+</div>

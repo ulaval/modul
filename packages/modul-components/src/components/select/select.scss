@@ -20,30 +20,6 @@
         }
     }
 
-    &__list {
-        height: auto;
-        overflow-x: hidden;
-        overflow-y: auto;
-        margin: 0;
-        padding: 0;
-        user-select: none;
-        list-style: none;
-        text-align: left;
-        background: $m-color--white;
-
-        @media (min-width: $m-mq--min--s) {
-            // Magic number: Height of 4 items
-            max-height: 208px;
-        }
-
-        @include m-scrollbar();
-
-        &.m--is-hidden {
-            position: absolute;
-            visibility: hidden;
-        }
-    }
-
     &__arrow {
         cursor: pointer;
 

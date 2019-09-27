@@ -1,0 +1,12 @@
+@import '../../../styles/commons';
+
+.modul-component-properties {
+    display: block;
+
+    &__default-value {
+        font-style: italic;
+        font-size: $m-font-size--s;
+        color: $modul-color--grey-darker;
+        margin-top: $m-margin--xs;
+    }
+}

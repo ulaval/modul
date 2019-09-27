@@ -1,0 +1,25 @@
+<div class="modul-component-slots">
+    <template v-if="slots.length > 0">
+        <m-table-header><template v-slot:left>
+                <h3>{{'modul:slots' | f-m-i18n}}</h3>
+            </template></m-table-header>
+        <m-table :columns="columns"
+                 :rows="slots"
+                 width="100%">
+
+
+            <template v-slot:row="{data}">
+
+                <td> <strong>{{ data.name }}</strong>
+                    <p v-if="data.inheritFrom"
+                       class="modul-component-properties__default-value">({{data.inheritFrom}})</p>
+                </td>
+
+                <td style="text-align: left;">
+                    <m-i18n v-if="data.description"
+                            v-html="data.description"></m-i18n>
+                </td>
+            </template>
+        </m-table>
+    </template>
+</div>

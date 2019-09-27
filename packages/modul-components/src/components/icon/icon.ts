@@ -1,6 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { SpritesService } from '../../utils/svg/sprites';
 import { ICON_NAME } from '../component-names';
 import WithRender from './icon.html?style=./icon.scss';
 
@@ -18,20 +19,26 @@ export class MIcon extends Vue {
     public showNameAsClass: boolean;
 
     @Emit('click')
-    onClick(event: Event): void { }
+    onClick(event: MouseEvent): void { }
 
     @Emit('keydown')
-    onKeydown(event: Event): void { }
+    onKeydown(event: KeyboardEvent): void { }
 
     private get hasSvgTitle(): boolean {
         return !!this.svgTitle;
     }
 
     private get spriteId(): string | undefined {
+        const svg: SpritesService = this.$svg;
+
         if (document.getElementById(this.name)) {
             return '#' + this.name;
         } else if (document.getElementById('m-svg__' + this.name)) {
             return '#m-svg__' + this.name;
+        } else if (svg && svg.getExternalSpritesFromSpriteId(this.name)) {
+            return svg.getExternalSpritesFromSpriteId(this.name);
+        } else if (svg && svg.getExternalSpritesFromSpriteId('m-svg__' + this.name)) {
+            svg.getExternalSpritesFromSpriteId('m-svg__' + this.name);
         } else if (this.name) {
             Vue.prototype.$log.warn('"' + this.name + '" is not a valid svg id. Make sure that the sprite has been loaded via the $svg instance service.');
         }

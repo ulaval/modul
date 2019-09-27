@@ -19,7 +19,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Build & test') {
             when {
                 expression {
                     env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
@@ -33,31 +33,8 @@ pipeline {
             }
 
             steps {
-                sh 'npm install -g yarn'
                 sh 'yarn install'
-                sh 'yarn bootstrap'
-            }
-        }
-    }
-
-    stages {
-        stage('Test') {
-            when {
-                expression {
-                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
-                }
-            }
-
-            agent {
-                docker {
-                    image 'node:10.15'
-                }
-            }
-
-            steps {
-                sh 'npm install -g yarn'
-                sh 'yarn install'
-                sh 'yarn bootstrap'
+                sh 'yarn lint:ci'
                 sh 'yarn test:ci'
             }
         }
