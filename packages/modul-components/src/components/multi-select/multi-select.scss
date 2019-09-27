@@ -39,6 +39,10 @@
         transition: margin-top $m-transition-duration ease;
     }
 
+    &__chips {
+        min-height: 24px;  // Magic number
+    }
+
     &__chip {
         margin: $m-margin--xs/2 $m-margin--xs $m-margin--xs/2 0;
     }
@@ -46,10 +50,26 @@
     &__popup-header {
         border-bottom: 1px solid $m-color--grey-light;
         color: $m-color--interactive-darker;
+
+        &.m--is-item-active {
+            &.m--is-focus,
+            &:hover {
+                background: none;
+
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     &__more {
         white-space: nowrap;
         font-size: 12px;
+    }
+
+    /deep/ .m-input-style__body {
+        padding-top: 10px; // Magic number pour avoir la même hauteur que le m-select
+        padding-bottom: 9px; // Magic number pour avoir la même hauteur que le m-select
     }
 }

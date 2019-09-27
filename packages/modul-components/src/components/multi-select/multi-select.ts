@@ -121,6 +121,11 @@ export class MMultiSelect extends ModulVue {
         return -1;
     }
 
+    public toggle(): void {
+        this.selectAllFocused = false;
+        this.$refs.baseSelect.togglePopup();
+    }
+
     @Emit('select-item')
     onSelect(option: any, index: number, $event: Event): void {
         let positionInModel: number = this.model.indexOf(option);
@@ -184,6 +189,11 @@ export class MMultiSelect extends ModulVue {
         } else if (this.selectAllFocused) {
             this.onToggleAll();
         }
+    }
+
+    onKeydownSpace($event: KeyboardEvent): void {
+        this.selectAllFocused = false;
+        this.$refs.baseSelect.onKeydownSpace($event);
     }
 
     onToggleAll(): void {

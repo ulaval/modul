@@ -18,14 +18,14 @@
              :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
              @focus="onFocus"
              @blur="onBlur"
-             @click="scope.toggle"
+             @click="toggle"
              @keydown.up.prevent="onKeydownUp"
              @keydown.down.prevent="onKeydownDown"
              @keydown.enter.prevent="onKeydownEnter"
              @keydown.return.prevent="onKeydownEnter"
              @keydown.esc="scope.keyEsc"
              @keydown.tab="scope.keyTab"
-             @keydown.space="scope.keySpace"
+             @keydown.space="onKeydownSpace"
              tabindex="0">
 
             <m-input-style :label="label"

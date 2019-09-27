@@ -10,8 +10,8 @@
     &.m--is-small {
         @include m-chip-small-style();
 
-        border-color: $m-color--interactive;
-        background: none;
+        border-color: $m-color--grey-light;
+        background: $m-color--grey-lighter;
         font-size: 0.75em;
         font-weight: $m-font-weight--semi-bold;
 
