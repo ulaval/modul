@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots components|m-error-access-denied default 1`] = `
+exports[`Storyshots components|/error-pages/m-error-access-denied default 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -48,7 +48,7 @@ exports[`Storyshots components|m-error-access-denied default 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|m-error-access-denied hints 1`] = `
+exports[`Storyshots components|/error-pages/m-error-access-denied hints 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -102,7 +102,7 @@ exports[`Storyshots components|m-error-access-denied hints 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|m-error-access-denied links 1`] = `
+exports[`Storyshots components|/error-pages/m-error-access-denied links 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -222,7 +222,7 @@ exports[`Storyshots components|m-error-access-denied links 1`] = `
 </div>
 `;
 
-exports[`Storyshots components|m-error-access-denied title 1`] = `
+exports[`Storyshots components|/error-pages/m-error-access-denied title 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -235,7 +235,9 @@ exports[`Storyshots components|m-error-access-denied title 1`] = `
       <h2
         class="m-message-page__title"
       >
-        A Custom Title
+        Vous n'avez pas les privilèges
+        <br />
+        pour voir cette page
       </h2>
        
       <div
