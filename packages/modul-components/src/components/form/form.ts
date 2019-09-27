@@ -31,7 +31,7 @@ export class MForm extends ModulVue {
 
     @Watch('formErrors')
     public onFormGroupErrorsChange(controlErrors: ControlError[]): void {
-        if (controlErrors.length === 0) {
+        if (this.formErrors.length === 0) {
             this._hideSummaryAndToast();
         }
     }
@@ -45,11 +45,11 @@ export class MForm extends ModulVue {
     }
 
     public get toastMessage(): string {
-        let errorCount: number = this.formErrors.length;
+        let count: number = this._formControlsInErrorCount();
 
         return this.$i18n.translate(
-            errorCount <= 1 ? 'm-form:multipleErrorsToCorrect' : 'm-form:multipleErrorsToCorrect.p',
-            { totalNbOfErrors: errorCount <= 1 ? 1 : errorCount },
+            count <= 1 ? 'm-form:multipleErrorsToCorrect' : 'm-form:multipleErrorsToCorrect.p',
+            { totalNbOfErrors: count <= 1 ? 1 : count },
             undefined, undefined, undefined, FormatMode.Sprintf
         );
     }
@@ -107,27 +107,23 @@ export class MForm extends ModulVue {
         return result;
     }
 
-    private _getAllControlsInError(control: FormGroup | FormArray): AbstractControl[] {
-        let controls: AbstractControl[] = [];
-
-        if (control.hasError()) {
-            controls.push(control);
-        }
-
-        control.controls.forEach(c => {
-            if (c.hasError()) {
-                controls.push(c);
-            }
-
-            if (c instanceof FormGroup || c instanceof FormArray) {
-                controls = controls.concat(this._getAllControlsInError(c));
-            }
-        });
-
-        return controls;
-    }
-
     private _hideSummaryAndToast(): void {
         this.displaySummary = this.displayToast = false;
+    }
+
+    private _formControlsInErrorCount(control: FormGroup | FormArray = this.formGroup): number {
+        return control.controls.reduce((a: number, c: AbstractControl): number => {
+            if (c instanceof FormGroup || c instanceof FormArray) {
+                if (!c.hasErrorDeep()) {
+                    return a;
+                }
+
+                a += this._formControlsInErrorCount(c);
+            } else if (c instanceof FormControl && c.hasError()) {
+                a++;
+            }
+
+            return a;
+        }, 0);
     }
 }
