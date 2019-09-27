@@ -15,7 +15,9 @@ import WithRender from './form.html?style=./form.scss';
 @WithRender
 @Component
 export class MForm extends ModulVue {
-    @Prop()
+    @Prop({
+        required: true
+    })
     public readonly formGroup!: FormGroup;
     public displaySummary: boolean = false;
     public displayToast: boolean = false;
