@@ -9,7 +9,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 Vue.use(ErrorAccessDeniedPlugin);
 
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_ACCESS_DENIED_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_ACCESS_DENIED_NAME}`, module)
 
 
     .add('default', () => ({

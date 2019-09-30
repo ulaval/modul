@@ -8,7 +8,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(ErrorCookiesNotSupportedPlugin);
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_COOKIES_NOT_SUPPORTED_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_COOKIES_NOT_SUPPORTED_NAME}`, module)
 
 
     .add('default', () => ({

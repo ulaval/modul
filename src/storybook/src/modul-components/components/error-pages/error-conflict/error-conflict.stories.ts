@@ -8,7 +8,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(ErrorConflictPlugin);
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_CONFLICT_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_CONFLICT_NAME}`, module)
 
 
     .add('default', () => ({

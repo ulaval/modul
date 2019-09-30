@@ -7,7 +7,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(ErrorSessionExpiredPlugin);
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_SESSION_EXPIRED_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_SESSION_EXPIRED_NAME}`, module)
     .add('default', () => ({
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-session-expired></m-error-session-expired>

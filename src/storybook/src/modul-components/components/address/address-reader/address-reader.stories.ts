@@ -4,7 +4,7 @@ import { ADDRESS_READER } from '@ulaval/modul-components/dist/components/compone
 import { CountryKey, ProvinceKey } from '@ulaval/modul-components/dist/utils/address-lookup/address';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/address/${ADDRESS_READER}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_READER}`, module)
     .add('default', () => ({
         components: {},
         data: () => ({

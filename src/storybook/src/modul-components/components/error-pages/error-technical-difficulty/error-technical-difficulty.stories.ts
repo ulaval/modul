@@ -12,7 +12,7 @@ Vue.use(ErrorTechnicalDifficultyPlugin);
 
 
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_TECHNICAL_DIFFICULTY_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_TECHNICAL_DIFFICULTY_NAME}`, module)
 
 
     .add('default', () => ({

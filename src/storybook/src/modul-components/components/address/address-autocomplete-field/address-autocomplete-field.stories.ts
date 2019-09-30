@@ -118,7 +118,7 @@ const validations: { [field: string]: AddressEditorValidator[] } = {
 };
 
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/address/${ADDRESS_AUTOCOMPLETE_FIELD_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_AUTOCOMPLETE_FIELD_NAME}`, module)
     .add('default', () => ({
         data: () => ({
             address: {},

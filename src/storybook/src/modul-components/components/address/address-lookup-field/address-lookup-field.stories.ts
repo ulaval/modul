@@ -4,7 +4,7 @@ import { Address } from '@ulaval/modul-components/dist/utils/address-lookup/addr
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/address/${ADDRESS_LOOKUP_FIELD_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_LOOKUP_FIELD_NAME}`, module)
     .add('default', () => ({
         data: () => ({
             origin: 'CA',
