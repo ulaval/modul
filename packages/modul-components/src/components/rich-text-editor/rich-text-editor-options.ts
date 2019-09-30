@@ -22,12 +22,13 @@ export class MRichTextEditorDefaultOptions {
     public paragraphStyles: any = {};
     public paragraphMultipleStyles: boolean = false;
     public pastePlain: boolean = true;
-
+    // fr-fic  fr-fil
     public linkEditButtons: string[] = ['linkOpen', 'linkEdit', 'linkRemove'];
     public linkInsertButtons: string[] = [];
     public imageResizeWithPercent: boolean = true;
     public imageDefaultWidth: number = 0;// Sets the default with of the image. Setting it to 0 will not set any width.
     public imageEditButtons: string[] = ['imageReplace', ImageLayoutCommands.IMG_LAYOUT_CMD, 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
+    // public imageDefaultAlign: string = 'left';
     public shortcutsEnabled: string[] = ['paragraphStyle', 'bold', 'italic', 'subscript', 'superscript', 'formatUL', 'formatOL', 'outdent', 'indent', 'insertLink', 'specialCharacters', 'insertImage', 'fullscreen', 'undo', 'redo'];
 
     // The list of buttons that appear in the rich text editor's toolbar on large devices (≥ 1200px). 'styles-sub-menu', 'listes-sub-menu'
