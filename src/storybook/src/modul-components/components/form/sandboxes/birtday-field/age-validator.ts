@@ -1,6 +1,6 @@
+import { ControlValidatorValidationType } from '@ulaval/modul-components/dist/utils/form/control-validator-validation-type';
+import { ControlValidator } from '@ulaval/modul-components/dist/utils/form/validators/control-validator';
 import moment, { Moment } from 'moment';
-import { ControlValidatorValidationType } from '../../../utils/form/control-validator-validation-type';
-import { ControlValidator } from '../../../utils/form/validators/control-validator';
 import BirthdayFieldFormGroup from './birthday-field-form-group';
 
 function validationFunction(minimumAge: number): (formControl: BirthdayFieldFormGroup) => boolean {

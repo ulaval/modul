@@ -1,9 +1,9 @@
 
+import FormPlugin from '@ulaval/modul-components/dist/components/form/form.plugin';
+import { FormGroup } from '@ulaval/modul-components/dist/utils/form/form-group';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import FormPlugin from '../../../components/form/form.plugin';
-import { FormGroup } from '../../../utils/form/form-group';
-import { ModulVue } from '../../../utils/vue/vue';
 import ageValidator from './age-validator';
 import BirthdayField from './birthday-field';
 import BirthdayFieldFormGroup from './birthday-field-form-group';

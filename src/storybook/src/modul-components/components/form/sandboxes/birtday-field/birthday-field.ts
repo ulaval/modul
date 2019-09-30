@@ -1,6 +1,6 @@
+import { AbstractControl } from '@ulaval/modul-components/dist/utils/form/abstract-control';
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator';
-import { AbstractControl } from '../../../utils/form/abstract-control';
 import BirthdayFieldFirstEditContextDetector from './birthday-field-first-edit-context-detector';
 import BirthdayFieldFormGroup from './birthday-field-form-group';
 import WithRender from './birthday-field.html?style=./birthday-field.scss';

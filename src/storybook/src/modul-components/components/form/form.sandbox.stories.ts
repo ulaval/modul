@@ -13,3 +13,5 @@ export const complex: any = () => `<${FORM_NAME}-complex-sandbox></${FORM_NAME}-
 export const externalValidation: any = () => `<${FORM_NAME}-external-validation-sandbox></${FORM_NAME}-external-validation-sandbox>`;
 
 export const reactivity: any = () => `<${FORM_NAME}-reactivity-sandbox></${FORM_NAME}-reactivity-sandbox>`;
+
+export const birthday: any = () => `<m-birthday-field-sandbox></m-birthday-field-sandbox>`;

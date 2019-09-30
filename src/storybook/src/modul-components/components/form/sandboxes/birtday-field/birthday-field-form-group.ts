@@ -1,11 +1,11 @@
+import { AbstractControl } from '@ulaval/modul-components/dist/utils/form/abstract-control';
+import { FormControl } from '@ulaval/modul-components/dist/utils/form/form-control';
+import { FormGroup } from '@ulaval/modul-components/dist/utils/form/form-group';
+import { ControlValidator, ControlValidatorOptions } from '@ulaval/modul-components/dist/utils/form/validators/control-validator';
+import { MaxValidator } from '@ulaval/modul-components/dist/utils/form/validators/max/max';
+import { MinValidator } from '@ulaval/modul-components/dist/utils/form/validators/min/min';
+import { RequiredValidator } from '@ulaval/modul-components/dist/utils/form/validators/required/required';
 import moment, { Moment } from 'moment';
-import { AbstractControl } from '../../../utils/form/abstract-control';
-import { FormControl } from '../../../utils/form/form-control';
-import { FormGroup } from '../../../utils/form/form-group';
-import { ControlValidator, ControlValidatorOptions } from '../../../utils/form/validators/control-validator';
-import { MaxValidator } from '../../../utils/form/validators/max/max';
-import { MinValidator } from '../../../utils/form/validators/min/min';
-import { RequiredValidator } from '../../../utils/form/validators/required/required';
 import birthdayFieldDateValidation from './birthday-field-date-validation';
 
 function getErrorMessageOption(message: string): ControlValidatorOptions {
