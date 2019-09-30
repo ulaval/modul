@@ -1,11 +1,11 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-
 import { BREADCRUMBS_NAME } from '../component-names';
 import LimitTextPlugin from '../limit-text/limit-text';
 import LinkPlugin, { MLinkIconPosition, MLinkMode } from '../link/link';
 import WithRender from './breadcrumbs.html?style=./breadcrumbs.scss';
+
 
 export interface BreadcrumbItem {
     divider: string;

@@ -10,6 +10,11 @@ export enum MChipMode {
     Delete = 'delete'
 }
 
+export enum MChipSize {
+    Small = 'small',
+    Large = 'large'
+}
+
 @WithRender
 @Component
 export class MChip extends Vue {
@@ -23,6 +28,14 @@ export class MChip extends Vue {
             value === MChipMode.Delete
     })
     mode: MChipMode;
+
+    @Prop({
+        default: MChipSize.Large,
+        validator: value =>
+            value === MChipSize.Large ||
+            value === MChipSize.Small
+    })
+    size: MChipSize;
 
     @Emit('click')
     public emitClick(): void { }

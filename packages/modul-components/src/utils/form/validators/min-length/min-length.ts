@@ -52,6 +52,6 @@ export const MinLengthValidator: (minLength: number, options?: ControlValidatorO
                     : undefined
             },
         validationType: options && options.validationType ?
-            options.validationType : ControlValidatorValidationType.Modification
+            options.validationType : ControlValidatorValidationType.Correction
     };
 };

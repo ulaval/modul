@@ -40,8 +40,11 @@
                          @keydown.return.prevent="onKeydownEnter"
                          @keydown.esc="onKeydownEsc"
                          @keydown.tab="onKeydownTab"
+                         @keydown="onKeydown"
+                         @keyup="onKeyup"
                          @focus="onFocus"
                          @blur="onBlur"
+                         @paste="onPaste"
                          ref="mTextfield">
                 <template v-slot:suffix>
                     <div v-if="waitingResults">
