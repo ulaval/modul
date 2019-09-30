@@ -10,7 +10,7 @@ Vue.use(ErrorBrowserNotSupported);
 
 
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_BROWSER_NOT_SUPPORTED_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_BROWSER_NOT_SUPPORTED_NAME}`, module)
 
     .add('default', () => ({
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
@@ -29,10 +29,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_BROWSER_
     }))
     .add('linksDesktop', () => ({
         props: {
-            linksDesktop: {
-                default: array('Links[Array]', [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
-                link`, 'http://www.google.com', true)])
-            }
+            linksDesktop: [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
+                link`, 'http://www.google.com', true)]
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-browser-not-supported :linksDesktop="linksDesktop"></m-error-browser-not-supported>
@@ -40,10 +38,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_BROWSER_
     }))
     .add('linksMobile', () => ({
         props: {
-            linksMobile: {
-                default: array('Links[Array]', [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
-                link`, 'http://www.google.com', true)])
-            }
+            linksMobile: [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
+                link`, 'http://www.google.com', true)]
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-browser-not-supported :linksMobile="linksMobile"></m-error-browser-not-supported>

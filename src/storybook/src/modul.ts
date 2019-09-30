@@ -1,7 +1,6 @@
 import AccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import AccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import AddPlugin from '@ulaval/modul-components/dist/components/add/add';
-import AddressPlugin from '@ulaval/modul-components/dist/components/address/address';
 import AutoCompletePlugin from '@ulaval/modul-components/dist/components/autocomplete/autocomplete';
 import AvatarPlugin from '@ulaval/modul-components/dist/components/avatar/avatar';
 import BreadcrumbsPlugin from '@ulaval/modul-components/dist/components/breadcrumbs/breadcrumbs';
@@ -155,7 +154,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(SelectPlugin);
 
         Vue.use(DecimalfieldPlugin);
-        Vue.use(AddressPlugin, { loqateKey: '', googleKey: '' });
+
 
         Vue.use(FormPlugin);
 

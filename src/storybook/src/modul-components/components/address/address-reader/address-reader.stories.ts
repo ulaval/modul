@@ -1,10 +1,14 @@
 import { storiesOf } from '@storybook/vue';
+import AddressPlugin from '@ulaval/modul-components/dist/components/address/address';
 import { MAddressReader } from '@ulaval/modul-components/dist/components/address/address-reader/address-reader';
 import { ADDRESS_READER } from '@ulaval/modul-components/dist/components/component-names';
 import { CountryKey, ProvinceKey } from '@ulaval/modul-components/dist/utils/address-lookup/address';
+import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/address/${ADDRESS_READER}`, module)
+Vue.use(AddressPlugin, { loqateKey: '', googleKey: '' });
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_READER}`, module)
     .add('default', () => ({
         components: {},
         data: () => ({

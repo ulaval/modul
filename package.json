@@ -15,6 +15,7 @@
         "src/*"
     ],
     "scripts": {
+        "clean": "lerna clean",
         "prepare": "lerna run --stream --sort prepare",
         "website": "lerna run dev --scope @ulaval/modul-website --stream",
         "lint": "lerna run --stream --sort lint",
