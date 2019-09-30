@@ -5,17 +5,17 @@ exports[`Storyshots modul-components|/m-address/m-address-reader Restructuring u
   <address
     class="m-address-reader"
   >
-    
-                G1V 0A6 
+
+                G1V 0A6
     <br />
-    
-                Canada 
+
+                Canada
     <br />
-    
-                Québec, QC 
+
+                Québec, QC
     <br />
-    
-                2325 rue de l'Université 
+
+                2325 rue de l'Université
     <!---->
   </address>
 </div>
@@ -27,11 +27,11 @@ exports[`Storyshots modul-components|/m-address/m-address-reader default 1`] = `
     class="m-address-reader"
   >
     <!---->
-     
+
     <!---->
-     2325 rue de l'Université 
+     2325 rue de l'Université
     <br />
-     
+
     <span>
       Québec ,
     </span>
@@ -39,12 +39,12 @@ exports[`Storyshots modul-components|/m-address/m-address-reader default 1`] = `
        QC
     </span>
     <br />
-    
-        Canada 
+
+        Canada
     <br />
-    
+
         G1V 0A6
-    
+
   </address>
 </div>
 `;
@@ -55,22 +55,22 @@ exports[`Storyshots modul-components|/m-address/m-address-reader empty province 
     class="m-address-reader"
   >
     <!---->
-     
+
     <!---->
-     2325 rue de l'Université 
+     2325 rue de l'Université
     <br />
-     
+
     <span>
       Québec ,
     </span>
     <!---->
     <br />
-    
-        Canada 
+
+        Canada
     <br />
-    
+
         G1V 0A6
-    
+
   </address>
 </div>
 `;
