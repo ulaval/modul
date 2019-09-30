@@ -1,19 +1,20 @@
 * @chuckmah
 /package.json @chuckmah
 /yarn.lock @chuckmah
-
+*.api.fr.json @jipigi
 
 # modul-website
-/src/modul-website/ @Atiomi
 /src/modul-website/public/content/ @jipigi
 
 # m-form
 /packages/modul-components/src/components/form/ @guignol1981
 /packages/modul-components/src/utils/form/ @guignol1981
+/src/storybook/src/modul-components/components/form/ @guignol1981
 
 # m-address
 /packages/modul-components/src/components/address/ @jfdion
 /packages/modul-components/src/utils/address-lookup/ @jfdion
+/src/storybook/src/modul-components/components/address/ @jfdion
 
 # m-copy-to-clipboard
 /packages/modul-components/src/components/copy-to-clipboard/ @Mboulianne

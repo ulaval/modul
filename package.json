@@ -15,6 +15,7 @@
         "src/*"
     ],
     "scripts": {
+        "clean": "lerna clean",
         "prepare": "lerna run --stream --sort prepare",
         "website": "lerna run dev --scope @ulaval/modul-website --stream",
         "lint": "lerna run --stream --sort lint",
@@ -23,10 +24,7 @@
         "test": "lerna run --stream --sort test",
         "test:ci": "lerna run --stream --sort test:ci",
         "test:update": "lerna run --stream --sort test:update",
-        "storybook": "lerna run dev --scope @ulaval/modul-components --stream",
-        "storybook:openshift": "lerna run storybook:openshift --scope @ulaval/modul-components --stream",
-        "storybook:unit": "lerna run storybook:unit --scope @ulaval/modul-components --stream",
-        "storybook:unit:update": "lerna run storybook:unit:update --scope @ulaval/modul-components --stream"
+        "storybook": "lerna run storybook --scope storybook --stream"
     },
     "devDependencies": {
         "lerna": "^3.15.0",
