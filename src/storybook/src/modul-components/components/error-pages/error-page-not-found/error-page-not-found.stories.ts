@@ -30,10 +30,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_PAGE_N
     }))
     .add('links', () => ({
         props: {
-            links: {
-                default: array('Links[Array]', [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
-                link`, 'http://www.google.com', true)])
-            }
+            links: [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
+                link`, 'http://www.google.com', true)]
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-page-not-found :links="links"></m-error-page-not-found>

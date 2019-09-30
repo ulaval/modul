@@ -142,91 +142,19 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-config-not-supported
       class="m-message-page__body"
     >
       <p
-        class="m-message-page__hints"
+        class="m-message-page__hints m--no-content"
       >
         La version du navigateur ou du système d'exploitation que vous utilisez n'est pas officiellement prise en charge.
       </p>
       <p
-        class="m-message-page__hints"
+        class="m-message-page__hints m--no-content"
       >
         Pour une expérience optimale, assurez-vous d'utiliser la version la plus récente de votre navigateur préféré, sur un système d'exploitation compatible.
       </p>
        
       <!---->
        
-      <ul
-        class="m-message-page__links"
-      >
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="http://www.ulaval.ca"
-            tabindex="0"
-            target="_blank"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              The first custom link
-            </span>
-             
-            <span
-              class="m-i18n m-link__hidden"
-            >
-              Cet hyperlien s'ouvrira dans un nouvel onglet.
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="http://www.google.com"
-            tabindex="0"
-            target="_blank"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              The second custom
-                link
-            </span>
-             
-            <span
-              class="m-i18n m-link__hidden"
-            >
-              Cet hyperlien s'ouvrira dans un nouvel onglet.
-            </span>
-          </a>
-        </li>
-      </ul>
+      <!---->
     </div>
   </article>
 </div>

@@ -28,10 +28,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_COOKIE
     }))
     .add('links', () => ({
         props: {
-            links: {
-                default: array('Links[Array]', [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
-                link`, 'http://www.google.com', true)])
-            }
+            links: [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
+                link`, 'http://www.google.com', true)]
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-cookies-not-supported :links="links"></m-error-cookies-not-supported>
