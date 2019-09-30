@@ -65,6 +65,7 @@ import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll
 import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils/utils-plugin';
 import ComponentExamplesPlugin from '@ulaval/modul-website/src/component-examples/component-example-plugins';
+import ComponentPatternsPlugin from '@ulaval/modul-website/src/component-patterns/component-patterns-plugins';
 import Vue, { PluginObject } from 'vue';
 import VueRouter from 'vue-router';
 import './styles/storybook.scss';
@@ -160,5 +161,6 @@ export const ModulPlugin: PluginObject<any> = {
 
         // modul-website
         Vue.use(ComponentExamplesPlugin);
+        Vue.use(ComponentPatternsPlugin);
     }
 };

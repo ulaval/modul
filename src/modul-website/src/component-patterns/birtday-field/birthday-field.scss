@@ -1,0 +1,52 @@
+@import "commons";
+
+.p-date-selector {
+    &__column {
+        &:last-child {
+            margin-right: 0;
+        }
+
+        width: auto;
+        max-width: 390px;
+        margin-right: 25px;
+
+        @media (max-width: $m-mq--max--m) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .m-textfield {
+            @media (max-width: $m-mq--max--m) {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            margin-top: 0;
+        }
+
+        .m-input-style {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+.days {
+    max-width: 72px;
+}
+
+.months {
+    max-width: 188px;
+}
+
+.years {
+    max-width: 81px;
+}
+
+.label {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.field-wrapper {
+    display: flex;
+}

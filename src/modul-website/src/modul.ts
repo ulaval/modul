@@ -13,6 +13,7 @@ import DropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dr
 import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
 import FileSelectPlugin from '@ulaval/modul-components/dist/components/file-select/file-select';
 import FileUploadPlugin from '@ulaval/modul-components/dist/components/file-upload/file-upload';
+import FormPlugin from '@ulaval/modul-components/dist/components/form/form.plugin';
 import I18nPlugin from '@ulaval/modul-components/dist/components/i18n/i18n';
 import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import IconFilePlugin from '@ulaval/modul-components/dist/components/icon-file/icon-file';
@@ -115,6 +116,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(ToastPlugin);
         Vue.use(PaginationPlugin);
         Vue.use(ChipDeletePlugin);
+        Vue.use(FormPlugin);
     }
 };
 
