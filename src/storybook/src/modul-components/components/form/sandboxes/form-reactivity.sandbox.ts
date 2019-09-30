@@ -1,13 +1,13 @@
+import { FORM_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import FormPlugin from '@ulaval/modul-components/dist/components/form/form.plugin';
+import { ControlValidatorValidationType } from '@ulaval/modul-components/dist/utils/form/control-validator-validation-type';
+import { FormControl } from '@ulaval/modul-components/dist/utils/form/form-control';
+import { FormGroup } from '@ulaval/modul-components/dist/utils/form/form-group';
+import { ControlValidator } from '@ulaval/modul-components/dist/utils/form/validators/control-validator';
+import { RequiredValidator } from '@ulaval/modul-components/dist/utils/form/validators/required/required';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component, Watch } from 'vue-property-decorator';
-import { FORM_NAME } from '../../components/component-names';
-import FormPlugin from '../../components/form/form.plugin';
-import { ControlValidatorValidationType } from '../../utils/form/control-validator-validation-type';
-import { FormControl } from '../../utils/form/form-control';
-import { FormGroup } from '../../utils/form/form-group';
-import { ControlValidator } from '../../utils/form/validators/control-validator';
-import { RequiredValidator } from '../../utils/form/validators/required/required';
-import { ModulVue } from '../../utils/vue/vue';
 import WithRender from './form-reactivity.sandbox.html';
 
 const ID_FORM_CONTROL_NAME: string = 'name';
