@@ -21,19 +21,19 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-session-expired defa
             width="1em"
           >
             <!---->
-
+             
             <use
               aria-hidden="true"
               class=""
             />
           </svg>
         </div>
-
+         
         <div
           class="m-message__body"
         >
           <!---->
-
+           
           <div
             class="m-message__text"
           >
@@ -44,11 +44,11 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-session-expired defa
             </span>
           </div>
         </div>
-
+         
         <!---->
       </div>
     </div>
-
+     
     <p>
       <span
         class="m-i18n"
@@ -56,7 +56,7 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-session-expired defa
         En raison d'une trop grande période d'inactivité ou parce que vous vous êtes déconnecté d’un système partenaire, votre session de travail a été interrompue.
       </span>
     </p>
-
+     
     <p>
       <span
         class="m-i18n"
@@ -64,22 +64,22 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-session-expired defa
         Vous devrez peut-être vous connecter de nouveau.
       </span>
     </p>
-
+     
     <a
       class="m-link m--has-content"
       href="/"
       tabindex="0"
     >
       <!---->
-
+       
       <span
         class="m-link__text"
       >
-
+        
         Retour au portail
-
+    
       </span>
-
+       
       <!---->
     </a>
   </div>
