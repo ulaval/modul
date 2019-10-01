@@ -1,0 +1,56 @@
+<div class="m-base-select">
+    <div v-m-popup:popup
+         class="m-base-select__popup"
+         :style="{ width: inputMaxWidth }">
+        <slot :toggle="togglePopup"
+              :key-up="onKeydownUp"
+              :key-down="onKeydownDown"
+              :key-tab="onKeydownTab"
+              :key-esc="onKeydownEsc"
+              :key-enter="onKeydownEnter"
+              :key-space="onKeydownSpace"></slot>
+    </div>
+    <m-popup ref="popup"
+             placement="bottom-start"
+             :open.sync="internalOpen"
+             :disabled="!active"
+             :enter="transitionEnter"
+             :leave="transitionLeave"
+             :padding="false"
+             :preload="true"
+             :lazy="false"
+             :focus-management="false"
+             :close-on-backdrop="true"
+             :open-trigger="'manual'"
+             :sidebar-full-height="sidebarFullHeight"
+             @open="onOpen"
+             @close="onClose">
+        <template slot="header">
+            <slot name="popup-header"
+                  :key-up="onKeydownUp"
+                  :key-down="onKeydownDown"
+                  :key-tab="onKeydownTab"
+                  :key-esc="onKeydownEsc"
+                  :key-enter="onKeydownEnter"
+                  :key-space="onKeydownSpace">
+            </slot>
+        </template>
+        <ul :id="ariaControls"
+            class="m-base-select__list"
+            ref="items"
+            :aria-labelledby="controlId"
+            aria-live="polite"
+            :style="{ minWidth: inputMaxWidth }">
+            <m-select-item v-for="(item, index) of items"
+                           :key="index"
+                           :focused="index === focusedIndex"
+                           :selected="isSelected(item)"
+                           :hide-radio-button-mobile="hideRadioButtonMobile"
+                           @click="onSelectItem(item, index, $event)">
+                <slot name="items"
+                      :item="item"
+                      :index="index"><span v-html="item"></span></slot>
+            </m-select-item>
+        </ul>
+    </m-popup>
+</div>

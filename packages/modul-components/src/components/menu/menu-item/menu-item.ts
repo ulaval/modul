@@ -102,6 +102,10 @@ export class MMenuItem extends BaseMenuItem implements MenuItem {
             .map(child => child as MMenuItem);
     }
 
+    public get isAnimReady(): boolean {
+        return this.menuRoot ? this.menuRoot.animReady : false;
+    }
+
     public get isUrl(): boolean {
         return !!this.url && !this.group;
     }

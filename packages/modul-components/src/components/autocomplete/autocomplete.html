@@ -1,4 +1,5 @@
-<m-dropdown :filterable="true"
+<m-dropdown v-model="selection"
+            :filterable="true"
             :clear-invalid-selection-on-close="clearInvalidSelectionOnClose"
             :show-arrow-icon="false"
             :enable-animation="false"
@@ -19,7 +20,6 @@
             :tag-style="tagStyle"
             :max-length="maxLength"
             :autocomplete="autocomplete"
-            v-model="selection"
             @input="onInputChangeThrottled">
     <m-dropdown-item v-for="(i, index) in items"
                      :key="index"

@@ -1,7 +1,7 @@
 {
     "extends": "tslint-config-standard",
     "rulesDirectory": [
-        "./conf/tslint"
+        "../../conf/tslint"
     ],
     "rules": {
         "no-consecutive-blank-lines": false,

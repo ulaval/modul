@@ -1,0 +1,20 @@
+@import 'commons';
+
+.m-base-select {
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        @include m-scrollbar();
+
+        @media (min-width: $m-mq--min--s) {
+            max-height: 208px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+
+    &__popup {
+        display: inline-block;
+    }
+}

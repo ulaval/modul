@@ -1,13 +1,15 @@
 <li class="m-select-item"
-    :class="{ 'm--is-selected': selected,
+    :class="{ 'm--is-focus': focused && isItemActive,
+              'm--is-selected': selected && isItemActive,
+              'm--is-item-active': isItemActive,
               'm--is-disabled': disabled,
-              'm--is-focus': focused,
-              'm--readonly': readonly }"
+              'm--readonly': readonly,
+              'm--without-radio': hideRadioButtonMobile }"
     role="option"
-    :aria-selected="selected"
+    :aria-selected="selected && isItemActive"
     @click.prevent="onClick">
 
-    <slot v-if="isMqMinS || readonly"><span class="m-select-item__element-text">{{ propLabel }}</span></slot>
+    <slot v-if="isMqMinS || readonly || hideRadioButtonMobile"><span class="m-select-item__element-text">{{ label }}</span></slot>
 
     <m-radio-style :full-width="true"
                    radio-position="right"
@@ -17,7 +19,7 @@
                    tabindex="0"
                    v-else>
 
-        <slot><span class="m-select-item__element-text">{{ propLabel }}</span></slot>
+        <slot><span class="m-select-item__element-text">{{ label }}</span></slot>
 
     </m-radio-style>
 </li>

@@ -63,6 +63,9 @@ export class MSidebar extends ModulVue implements PortalMixinImpl {
     @Prop({ default: true })
     public paddingFooter: boolean;
 
+    @Prop({ default: false })
+    public fullHeight: boolean;
+
     public $refs: {
         baseWindow: HTMLElement;
         article: HTMLElement;

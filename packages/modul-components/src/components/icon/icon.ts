@@ -1,6 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { SpritesService } from '../../utils/svg/sprites';
 import { ICON_NAME } from '../component-names';
 import WithRender from './icon.html?style=./icon.scss';
 
@@ -28,10 +29,16 @@ export class MIcon extends Vue {
     }
 
     private get spriteId(): string | undefined {
+        const svg: SpritesService = this.$svg;
+
         if (document.getElementById(this.name)) {
             return '#' + this.name;
         } else if (document.getElementById('m-svg__' + this.name)) {
             return '#m-svg__' + this.name;
+        } else if (svg && svg.getExternalSpritesFromSpriteId(this.name)) {
+            return svg.getExternalSpritesFromSpriteId(this.name);
+        } else if (svg && svg.getExternalSpritesFromSpriteId('m-svg__' + this.name)) {
+            svg.getExternalSpritesFromSpriteId('m-svg__' + this.name);
         } else if (this.name) {
             Vue.prototype.$log.warn('"' + this.name + '" is not a valid svg id. Make sure that the sprite has been loaded via the $svg instance service.');
         }
@@ -40,6 +47,12 @@ export class MIcon extends Vue {
     private get showNameAsClassInHtml(): string {
         return this.showNameAsClass ? this.name : '';
     }
+
+    @Emit('mouseover')
+    public onMouseOver(event: Event): void { }
+
+    @Emit('mouseleave')
+    public onMouseLeave(event: Event): void { }
 }
 
 const IconPlugin: PluginObject<any> = {

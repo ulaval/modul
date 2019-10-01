@@ -3,8 +3,6 @@ import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
 import WithRender from './select-item.html?style=./select-item.scss';
 
-
-
 @WithRender
 @Component({
     mixins: [MediaQueries]
@@ -20,6 +18,9 @@ export class MSelectItem extends ModulVue {
     public disabled: boolean;
 
     @Prop()
+    public waiting: boolean;
+
+    @Prop()
     public readonly: boolean;
 
     @Prop()
@@ -28,17 +29,19 @@ export class MSelectItem extends ModulVue {
     @Prop()
     public focused: boolean;
 
-    public get propLabel(): string | undefined {
-        return this.label;
-    }
-
-
-    private _onClick(): void {
-        if (!this.disabled) {
-            this.onClick();
-        }
-    }
+    @Prop({ default: false })
+    public hideRadioButtonMobile: boolean;
 
     @Emit('click')
-    onClick(): void { }
+    public emitClick($event: Event): void { }
+
+    public get isItemActive(): boolean {
+        return !this.disabled;
+    }
+
+    public onClick($event: Event): void {
+        if (!this.disabled) {
+            this.emitClick($event);
+        }
+    }
 }

@@ -3,8 +3,27 @@ $m-select-item--color-hover: $m-color--interactive-lightest !default;
 $m-select-item--color-select: $m-color--grey-lighter !default;
 $m-select-item--color-active: $m-color--grey-lightest !default;
 
+@mixin m-select-item() {
+    padding: $m-padding $m-padding--s;
+    line-height: 20px;
+
+    &.m--is-disabled {
+        cursor: default;
+        color: $m-color--disabled;
+    }
+
+    &.m--is-selected {
+        background: $m-select-item--color-select;
+
+        .m-select__list__element-text {
+            cursor: default;
+            background: $m-select-item--color-select;
+        }
+    }
+}
+
 .m-select-item {
-    transition: background $m-transition-duration ease;
+    transition: background $m-transition-duration ease, color $m-transition-duration ease;
     display: block;
     padding: $m-padding;
     margin: 0;
@@ -16,39 +35,46 @@ $m-select-item--color-active: $m-color--grey-lightest !default;
     @include m-word-wrap();
 
     @media (min-width: $m-mq--min--s) {
-        padding: $m-padding $m-padding--s;
-        line-height: 20px;
+        @include m-select-item();
 
-        &:not(.m--is-disabled) {
-            &:not(.m--is-inactive):not(.m--is-readonly) {
-                &:not(.m--is-selected) {
-                    cursor: pointer;
+        &.m--is-item-active {
+            cursor: pointer;
 
-                    &:hover,
-                    &:focus,
-                    &.m--is-focus {
-                        background: $m-select-item--color-hover;
-                    }
+            &:hover,
+            &:focus,
+            &.m--is-focus {
+                background: $m-select-item--color-hover;
+            }
 
-                    &:active {
-                        background: $m-select-item--color-active;
-                    }
-                }
+            &:active {
+                background: $m-select-item--color-active;
             }
         }
+    }
 
-        &.m--is-disabled {
-            cursor: default;
-            color: $m-color--grey-light;
+    @media (max-width: $m-mq--max--s) {
+        &.m--without-radio {
+            @include m-select-item();
         }
+    }
 
-        &.m--is-selected {
-            background: $m-select-item--color-select;
+    &:not(.m--is-disabled).m--is-waiting {
+        animation: SelectItemWaiting 0.6s infinite;
+        animation-direction: alternate-reverse;
+        color: $m-color--disabled;
+        background: $m-color--grey-lightest;
+        cursor: wait;
+    }
+}
 
-            .m-select__list__element-text {
-                cursor: default;
-                background: $m-select-item--color-select;
-            }
-        }
+@keyframes SelectItemWaiting {
+    0% {
+        color: $m-color--disabled;
+        background: $m-color--grey-lightest;
+    }
+
+    100% {
+        color: $m-color--grey-lighter;
+        background: $m-color--white;
     }
 }
