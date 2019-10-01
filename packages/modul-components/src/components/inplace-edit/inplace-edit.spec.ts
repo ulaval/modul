@@ -19,7 +19,7 @@ const READ_SLOT: string = '<div class="' + READ_SLOT_CLASS + '">readSlot</div>';
 const EDIT_SLOT_CLASS: string = 'editSlot';
 const EDIT_SLOT: string = '<input class="' + EDIT_SLOT_CLASS + '" type="text" name="inputEditMode" value="myInput">';
 
-const AN_EVENT: Event = new Event('An event');
+const AN_MOUSE_EVENT: MouseEvent = new MouseEvent('An event');
 
 describe('Component inplace-edit - Element wrapper edition inline with default values', () => {
 
@@ -61,7 +61,7 @@ describe('Component inplace-edit - Element wrapper edition inline set to read mo
         test(`must not send events to parent`, () => {
             let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
 
-            inplaceEdit.confirm(AN_EVENT);
+            inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
             expect(spy).not.toBeCalled();
         });
@@ -71,7 +71,7 @@ describe('Component inplace-edit - Element wrapper edition inline set to read mo
         it(`must not send event to parent`, () => {
             let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
 
-            inplaceEdit.cancel(AN_EVENT);
+            inplaceEdit.emitCancel(AN_MOUSE_EVENT);
 
             expect(spy).not.toBeCalled();
         });
@@ -91,7 +91,7 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
             it(`must emit confirmation event to parent`, () => {
                 let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
 
-                inplaceEdit.confirm(AN_EVENT);
+                inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
                 expect(spy).toHaveBeenCalledWith(CONFIRM_EVENT);
             });
@@ -101,7 +101,7 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
             it(`must emit cancellation event to parent`, () => {
                 let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
 
-                inplaceEdit.cancel(AN_EVENT);
+                inplaceEdit.emitCancel(AN_MOUSE_EVENT);
 
                 expect(spy).toBeCalledWith(CANCEL_EVENT);
             });
@@ -120,7 +120,7 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
             it(`must emit confirmation event to parent`, () => {
                 let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
 
-                inplaceEdit.confirm(AN_EVENT);
+                inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
                 expect(spy).toBeCalledWith(CONFIRM_EVENT);
             });
@@ -128,9 +128,9 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
 
         describe('when cancelling after a failed confirmation', () => {
             it('must not be in error', async () => {
-                await inplaceEdit.confirm(AN_EVENT);
+                await inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
-                inplaceEdit.cancel(AN_EVENT);
+                inplaceEdit.emitCancel(AN_MOUSE_EVENT);
 
                 expect(inplaceEdit.error).toBeFalsy();
             });
@@ -234,7 +234,7 @@ describe('Component inplace-edit - Complete component mobile', () => {
             wrapper.find(REF_OVERLAY).vm.$emit('close');
 
             // then
-            expect(wrapper.vm.cancel).toHaveBeenCalledWith();
+            expect(wrapper.vm.emitCancel).toHaveBeenCalledWith();
         });
 
         it(`should confirm on overlay save`, () => {
@@ -245,7 +245,7 @@ describe('Component inplace-edit - Complete component mobile', () => {
             wrapper.find(REF_OVERLAY).vm.$emit('save');
 
             // then
-            expect(wrapper.vm.confirm).toHaveBeenCalledWith();
+            expect(wrapper.vm.onConfirm).toHaveBeenCalledWith();
         });
     });
 });
