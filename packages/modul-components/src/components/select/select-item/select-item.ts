@@ -18,6 +18,9 @@ export class MSelectItem extends ModulVue {
     public disabled: boolean;
 
     @Prop()
+    public waiting: boolean;
+
+    @Prop()
     public readonly: boolean;
 
     @Prop()
@@ -25,6 +28,9 @@ export class MSelectItem extends ModulVue {
 
     @Prop()
     public focused: boolean;
+
+    @Prop({ default: false })
+    public hideRadioButtonMobile: boolean;
 
     @Emit('click')
     public emitClick($event: Event): void { }

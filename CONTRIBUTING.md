@@ -13,7 +13,7 @@ Avant de soumettre votre contribution, veuillez prendre note de ces quelques lig
 - Lire à propos de la [structure du monorepo](#psfr).
 - Créer une *feature branch* à partir de la `develop` ou `master` en fonction des changements effectué (voir plus bas). Le nom de votre branche devrait toujours débuter par *feature/* ou *bugfix/*.
 - À moins d'avoir à modifier la structure même du projet, le *pull request* (PR) ne devrait concerner que les répertoires `/packages/**` et `/src/**`.
-- S'assurer que le *repository* compile correctement (`yarn run bootstrap`).
+- S'assurer que le *repository* compile correctement (`yarn run install`).
 - S'assurer que les tests s'exécutent avec succès (`yarn run test`). Si une mise à jour des snapshots est nécessaire (`yarn run test:update`).
 - S'assurer que le code respecte les règles de formattage (`yarn run lint`).
 

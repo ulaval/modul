@@ -208,7 +208,7 @@ export class MTypeahead extends ModulVue {
 
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay && this.as<MediaQueries>().isMqMinS) {
-            this.$refs.mBaseSelect.selectFocusedItem();
+            this.$refs.mBaseSelect.selectFocusedItem($event);
         }
         this.$refs.mBaseSelect.closePopup();
     }
