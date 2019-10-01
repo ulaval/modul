@@ -45,4 +45,14 @@ describe('compare validator', () => {
 
         expect(formGroup.valid).toBe(true);
     });
+
+    it('it should return true if all values are undefined and some or empty', () => {
+        (formGroup.getControl('test1') as FormControl<string>).value = '';
+        (formGroup.getControl('test2') as FormControl<string>).value = undefined;
+        (formGroup.getControl('test3') as FormControl<string>).value = '';
+
+        formGroup.validate();
+
+        expect(formGroup.valid).toBe(true);
+    });
 });
