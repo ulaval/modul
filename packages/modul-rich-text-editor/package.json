@@ -1,0 +1,26 @@
+{
+    "name": "@ulaval/modul-rich-text-editor",
+    "version": "1.0.0-beta.1",
+    "description": "MODUL rich text editor",
+    "author": "\"\"Charles Maheu\"\" <\"\"charles.maheu@dti.ulaval.ca\"\">",
+    "homepage": "https://ulaval.github.io/modul/tree/master/packages/modul-rich-text-editor#readme",
+    "license": "Apache-2.0",
+    "directories": {
+        "lib": "dist",
+        "test": "__tests__"
+    },
+    "files": [
+        "src/**/*.ts",
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ulaval/modul.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ulaval/modul/issues"
+    },
+    "dependencies": {
+        "@ulaval/modul-components": "^1.0.0-beta.127"
+    }
+}
