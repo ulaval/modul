@@ -33,7 +33,9 @@
         "tslint": "^5.14.0",
         "tslint-config-standard": "^8.0.1",
         "typescript": "^3.2.2",
-        "typescript-tslint-plugin": "^0.3.0"
+        "typescript-tslint-plugin": "^0.3.0",
+        "custom-tslint-formatters": "^2.4.0",
+        "copyfiles": "^1.2.0"
     },
     "engines": {
         "node": ">= 10.0.0",

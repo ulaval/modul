@@ -2,6 +2,7 @@ import Vue from 'vue';
 import MessagePlugin, { DebugMode, ENGLISH, I18nPluginOptions } from '../src/utils/i18n/i18n';
 import LoggerPlugin, { ConsoleOptions } from '../src/utils/logger/logger';
 
+const world: string = 'World';
 
 let i18nOptions: I18nPluginOptions = {
     curLang: ENGLISH,
