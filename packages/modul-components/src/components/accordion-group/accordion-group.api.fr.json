@@ -1,16 +1,22 @@
 {
     "props": {
+        "concurrent": {
+            "description": "Propriété pour mettre le groupe en mode simultanée"
+        },
         "disabled": {
             "description": "Propriété pour désactiver l'accordéon"
         },
-        "concurrent": {
-            "description": "Propriété pour mettre le groupe en mode simultanée"
+        "openAll": {
+            "description": "Détermine si les accordéons seront tous ouverts / fermés par défaut"
         },
         "openedIds": {
             "description": "Liste des identifiants des accordéons ouverts"
         },
         "skin": {
             "description": "Propriété pour changer le visuel de l'accordéon"
+        },
+        "toggleLinkLeft": {
+            "description": "Positionne les boutons ouvrir tous / fermer tous à gauche"
         }
     }
 }

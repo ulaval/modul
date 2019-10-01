@@ -1,0 +1,15 @@
+{
+    "extends": "../../tslint.json",
+    "linterOptions": {
+        "exclude": [
+            "../modul-website/src/**/*",
+            "../../packages/modul-components/src/**/*"
+        ]
+    },
+    "rules": {
+        "no-console": [
+            false
+        ],
+        "typedef": false
+    }
+}

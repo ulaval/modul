@@ -1,0 +1,75 @@
+@import 'commons';
+
+.m-multi-select {
+    display: inline-flex;
+    flex-direction: column;
+
+    &:focus {
+        outline: 0 solid transparent;
+    }
+
+    &.m--has-validation-message {
+        .m-select__validation-message {
+            margin-top: $m-spacing--xs;
+        }
+    }
+
+    &:not(.m--is-disabled) {
+        .m-select__arrow {
+            cursor: pointer;
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        cursor: pointer;
+
+        &__icon {
+            transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
+        }
+
+        &.m--is-open {
+            .m-select__arrow__icon {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__validation-message {
+        transition: margin-top $m-transition-duration ease;
+    }
+
+    &__chips {
+        min-height: 24px;  // Magic number
+    }
+
+    &__chip {
+        margin: $m-margin--xs/2 $m-margin--xs $m-margin--xs/2 0;
+    }
+
+    &__popup-header {
+        border-bottom: 1px solid $m-color--grey-light;
+        color: $m-color--interactive-darker;
+
+        &.m--is-item-active {
+            &.m--is-focus,
+            &:hover {
+                background: none;
+
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__more {
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    /deep/ .m-input-style__body {
+        padding-top: 10px; // Magic number pour avoir la même hauteur que le m-select
+        padding-bottom: 9px; // Magic number pour avoir la même hauteur que le m-select
+    }
+}
