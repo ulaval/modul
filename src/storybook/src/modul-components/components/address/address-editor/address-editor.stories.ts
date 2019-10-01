@@ -1,9 +1,12 @@
 import { storiesOf } from '@storybook/vue';
+import AddressPlugin from '@ulaval/modul-components/dist/components/address/address';
 import MAddressEditor, { AddressEditorValidator } from '@ulaval/modul-components/dist/components/address/address-editor/address-editor';
 import { ADDRESS_EDITOR_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { Address, AddressField, Country, Province } from '@ulaval/modul-components/dist/utils/address-lookup/address';
+import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
+Vue.use(AddressPlugin, { loqateKey: '', googleKey: '' });
 
 
 
@@ -118,7 +121,7 @@ const validations: { [field: string]: AddressEditorValidator[] } = {
     ]
 };
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/address/${ADDRESS_EDITOR_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_EDITOR_NAME}`, module)
     .add('default', () => ({
         components: { MAddressEditor },
         data: () => ({

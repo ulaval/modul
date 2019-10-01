@@ -8,7 +8,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(ErrorCookiesNotSupportedPlugin);
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_COOKIES_NOT_SUPPORTED_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_COOKIES_NOT_SUPPORTED_NAME}`, module)
 
 
     .add('default', () => ({
@@ -28,10 +28,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_COOKIES_
     }))
     .add('links', () => ({
         props: {
-            links: {
-                default: array('Links[Array]', [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
-                link`, 'http://www.google.com', true)])
-            }
+            links: [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
+                link`, 'http://www.google.com', true)]
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-cookies-not-supported :links="links"></m-error-cookies-not-supported>

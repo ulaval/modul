@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported default 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-cookies-not-supported default 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -81,7 +81,7 @@ exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported 
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported hints 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-cookies-not-supported hints 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -168,7 +168,7 @@ exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported 
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported links 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-cookies-not-supported links 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -216,9 +216,9 @@ exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported 
         <li>
           <a
             class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="http://www.ulaval.ca"
+            href="\\\\"
             tabindex="0"
-            target="_blank"
+            target=""
           >
             <svg
               aria-hidden="true"
@@ -237,49 +237,10 @@ exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported 
             <span
               class="m-link__text"
             >
-              The first custom link
+              Accueil
             </span>
              
-            <span
-              class="m-i18n m-link__hidden"
-            >
-              Cet hyperlien s'ouvrira dans un nouvel onglet.
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="http://www.google.com"
-            tabindex="0"
-            target="_blank"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              The second custom
-                link
-            </span>
-             
-            <span
-              class="m-i18n m-link__hidden"
-            >
-              Cet hyperlien s'ouvrira dans un nouvel onglet.
-            </span>
+            <!---->
           </a>
         </li>
       </ul>
@@ -288,7 +249,7 @@ exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported 
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-cookies-not-supported title 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-cookies-not-supported title 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >

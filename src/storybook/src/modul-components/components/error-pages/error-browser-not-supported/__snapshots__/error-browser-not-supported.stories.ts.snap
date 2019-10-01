@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported default 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-browser-not-supported default 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -48,7 +48,7 @@ exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported 
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported hintsDesktop 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-browser-not-supported hintsDesktop 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -96,7 +96,7 @@ exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported 
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported hintsMobile 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-browser-not-supported hintsMobile 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -150,7 +150,7 @@ exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported 
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported linksDesktop 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-browser-not-supported linksDesktop 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -198,7 +198,7 @@ exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported 
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported linksMobile 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-browser-not-supported linksMobile 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
@@ -233,92 +233,20 @@ exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported 
       class="m-message-page__body"
     >
       <p
-        class="m-message-page__hints"
+        class="m-message-page__hints m--no-content"
       >
         Une mise à niveau de votre navigateur est nécessaire pour accéder à ce site. Pour ce faire, consulter la boutique de téléchargement d'application de votre appareil
       </p>
        
       <!---->
        
-      <ul
-        class="m-message-page__links"
-      >
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="http://www.ulaval.ca"
-            tabindex="0"
-            target="_blank"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              The first custom link
-            </span>
-             
-            <span
-              class="m-i18n m-link__hidden"
-            >
-              Cet hyperlien s'ouvrira dans un nouvel onglet.
-            </span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="m-link m-message-page__link m--has-left-icon m--has-content"
-            href="http://www.google.com"
-            tabindex="0"
-            target="_blank"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-link__icon m--has-large-stroke"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-link__text"
-            >
-              The second custom
-                link
-            </span>
-             
-            <span
-              class="m-i18n m-link__hidden"
-            >
-              Cet hyperlien s'ouvrira dans un nouvel onglet.
-            </span>
-          </a>
-        </li>
-      </ul>
+      <!---->
     </div>
   </article>
 </div>
 `;
 
-exports[`Storyshots modul-components|/error-pages/m-error-browser-not-supported title 1`] = `
+exports[`Storyshots modul-components|/m-error-pages/m-error-browser-not-supported title 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >

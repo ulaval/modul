@@ -8,7 +8,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(ErrorConflictPlugin);
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_CONFLICT_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_CONFLICT_NAME}`, module)
 
 
     .add('default', () => ({
@@ -28,10 +28,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/error-pages/${ERROR_CONFLICT
     }))
     .add('links', () => ({
         props: {
-            links: {
-                default: array('Links[Array]', [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
-                link`, 'http://www.google.com', true)])
-            }
+            links: [new Link('The first custom link', 'http://www.ulaval.ca', true), new Link(`The second custom
+                link`, 'http://www.google.com', true)]
         },
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
                         <m-error-conflict :links="links"></m-error-conflict>

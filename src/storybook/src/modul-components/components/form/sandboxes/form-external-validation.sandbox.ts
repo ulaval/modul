@@ -1,14 +1,14 @@
+import { FORM_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MForm } from '@ulaval/modul-components/dist/components/form/form';
+import { FormActions } from '@ulaval/modul-components/dist/components/form/form-action-type';
+import FormPlugin from '@ulaval/modul-components/dist/components/form/form.plugin';
+import { AbstractControl } from '@ulaval/modul-components/dist/utils/form/abstract-control';
+import { FormControl } from '@ulaval/modul-components/dist/utils/form/form-control';
+import { FormGroup } from '@ulaval/modul-components/dist/utils/form/form-group';
+import { MaxLengthValidator } from '@ulaval/modul-components/dist/utils/form/validators/max-length/max-length';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import { FORM_NAME } from '../../components/component-names';
-import { MForm } from '../../components/form/form';
-import { FormActions } from '../../components/form/form-action-type';
-import FormPlugin from '../../components/form/form.plugin';
-import { AbstractControl } from '../../utils/form/abstract-control';
-import { FormControl } from '../../utils/form/form-control';
-import { FormGroup } from '../../utils/form/form-group';
-import { MaxLengthValidator } from '../../utils/form/validators/max-length/max-length';
-import { ModulVue } from '../../utils/vue/vue';
 import WithRender from './form-external-validation.sandbox.html';
 
 const ID_FORM_CONTROL_NAME: string = 'name';
