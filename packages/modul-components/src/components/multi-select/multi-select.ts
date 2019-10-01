@@ -213,7 +213,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     @Watch('value', { immediate: true })
-    private onValueChange(value: string): void {
+    private onValueChange(value: any[]): void {
         this.internalValue = this.value;
     }
 
