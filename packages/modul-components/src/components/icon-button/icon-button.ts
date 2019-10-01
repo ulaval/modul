@@ -1,6 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ICON_BUTTON_NAME } from '../component-names';
 import IconPlugin from '../icon/icon';
@@ -35,6 +35,9 @@ export class MIconButton extends Vue {
     public ripple: boolean;
     @Prop()
     public title: string;
+
+    @Emit('keydown')
+    onKeydown(event: KeyboardEvent): void { }
 
     private hasSlot: boolean = false;
 

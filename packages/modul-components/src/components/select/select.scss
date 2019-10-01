@@ -37,4 +37,8 @@
     &__validation-message {
         transition: margin-top $m-transition-duration ease;
     }
+
+    &__reset {
+        margin-left: $m-spacing--s;
+    }
 }

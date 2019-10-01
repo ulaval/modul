@@ -49,9 +49,10 @@
                      :class="{ 'm--is-open': open }"
                      v-if="active">
                     <m-icon-button v-if="isClearShowing"
-                                   class="m-searchfield__reset"
+                                   class="m-select__reset"
                                    :aria-controls="id"
-                                   @click="onReset"
+                                   @click.stop="onReset"
+                                   @keydown.stop="onKeydown"
                                    key="resetIcon"
                                    button-size="1em"
                                    icon-size="11px"

@@ -59,6 +59,14 @@ export class MSelect extends ModulVue {
         this.as<InputManagement>().model = '';
     }
 
+    public onKeydown(event: KeyboardEvent): void {
+        // tslint:disable-next-line: no-console
+        console.log(event);
+        if (event.key === 'Enter' || event.key === 'Delete' || event.key === 'Backspace') {
+            this.onReset();
+        }
+    }
+
     get hasItems(): boolean {
         return this.options && this.options.length > 0;
     }
@@ -68,9 +76,8 @@ export class MSelect extends ModulVue {
     }
 
     get isClearShowing(): boolean {
-        return this.hasItems && !this.open && this.clearSelection && !this.isEmpty;
+        return this.hasItems && this.clearSelection && this.as<InputManagement>().hasValue;
     }
-
 
     get selectedItems(): any {
         if (this.value) {
