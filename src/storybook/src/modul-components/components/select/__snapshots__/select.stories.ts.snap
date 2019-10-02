@@ -1,0 +1,1894 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-select default 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    default
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select focus 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    focus
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select label up 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    label up
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder="Choose a fruit"
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select selection clear button activate 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    selection clear activate
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder="Choose a fruit"
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/Others tests m-select with long option 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    m-select with long option
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder="Choose a fruits"
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/disabled Item selected, with label 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    Item selected, with label
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-disabled"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = banana
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/disabled No selection, no label 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    No selection, no label
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-disabled"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-disabled m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <span
+                class="m-input-style__label"
+                style="z-index: -1;"
+              >
+                <span
+                  class="m-input-style__text"
+                />
+              </span>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <div
+                  class="m-input-style__prefix"
+                />
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/disabled No selection, no label, with placeholder 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    No selection, no label, with placeholder
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-disabled"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-disabled m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <span
+                class="m-input-style__label"
+                style="z-index: -1;"
+              >
+                <span
+                  class="m-input-style__text"
+                />
+              </span>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <div
+                  class="m-input-style__prefix"
+                />
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder="Choose a fruit"
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/disabled No selection, with label 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    No selection, with label
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-disabled"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-disabled m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/mobile iphone6 1`] = `
+<div>
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--has-cursor-pointer m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <span
+                class="m-input-style__label"
+                style="z-index: -1;"
+              >
+                <span
+                  class="m-input-style__text"
+                />
+              </span>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <div
+                  class="m-input-style__prefix"
+                />
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    The selection is :
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/readonly Item selected, with label 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    Item selected, with label
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-readonly"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = bannana
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/readonly No selection, no label 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    No selection, no label
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-readonly"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-readonly m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <span
+                class="m-input-style__label"
+                style="z-index: -1;"
+              >
+                <span
+                  class="m-input-style__text"
+                />
+              </span>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <div
+                  class="m-input-style__prefix"
+                />
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/readonly No selection, no label, with placeholder 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    No selection, no label, with placeholder
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-readonly"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-readonly m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <span
+                class="m-input-style__label"
+                style="z-index: -1;"
+              >
+                <span
+                  class="m-input-style__text"
+                />
+              </span>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <div
+                  class="m-input-style__prefix"
+                />
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/readonly No selection, with label 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    No selection, with label
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-readonly"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select/readonly No selection, with label, with placeholder 1`] = `
+<div>
+  <p
+    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
+  >
+    No selection, with label, with placeholder
+  </p>
+   
+  <div
+    class="m-base-select"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-select m--is-readonly"
+        style="width: 100%; max-width: 288px;"
+        tabindex="0"
+      >
+        <div
+          class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Fruits
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div>
+                    <input
+                      placeholder=""
+                      readonly="readonly"
+                    />
+                  </div>
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <!---->
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      disabled="disabled"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-select__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p>
+    v-model = 
+  </p>
+</div>
+`;

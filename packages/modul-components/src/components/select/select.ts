@@ -39,6 +39,9 @@ export class MSelect extends ModulVue {
     @Prop({ default: false })
     public clearSelection: boolean;
 
+    @Prop({ default: true })
+    public showArrowIcon: boolean;
+
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
@@ -53,18 +56,6 @@ export class MSelect extends ModulVue {
 
     @Emit('close')
     onClose(): void {
-    }
-
-    public onReset(): void {
-        this.as<InputManagement>().model = '';
-    }
-
-    public onKeydown(event: KeyboardEvent): void {
-        // tslint:disable-next-line: no-console
-        console.log(event);
-        if (event.key === 'Enter' || event.key === 'Delete' || event.key === 'Backspace') {
-            this.onReset();
-        }
     }
 
     get hasItems(): boolean {
@@ -84,6 +75,29 @@ export class MSelect extends ModulVue {
             return [this.value];
         }
         return [];
+    }
+
+    get hasPointer(): boolean {
+        return !this.as<InputState>().isDisabled &&
+            !this.as<InputState>().isReadonly;
+    }
+
+    get internalLabelUp(): boolean {
+        return !this.as<InputState>().isReadonly ? this.as<InputLabel>().labelUp : true;
+    }
+
+    get internalPlaceholder(): string {
+        return !this.as<InputState>().isReadonly ? this.as<InputManagement>().placeholder : '';
+    }
+
+    public onReset(): void {
+        this.as<InputManagement>().model = '';
+    }
+
+    public onKeyDownDelete(event: KeyboardEvent): void {
+        if (event.key === 'Delete') {
+            this.onReset();
+        }
     }
 
 }
