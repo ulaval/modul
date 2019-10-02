@@ -4,7 +4,7 @@ import { SELECT_NAME } from '@ulaval/modul-components/dist/components/component-
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 const options: string[] = ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc'];
-const options_long: string[] = ['apple juice', 'bannana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
+const optionsLong: string[] = ['apple juice', 'bannana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
     .add('default', () => ({
@@ -359,7 +359,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}/Others tests`,
         data: () => ({
             model14: '',
             label: 'Fruits',
-            options: options_long,
+            options: optionsLong,
             placeholder: 'Choose a fruits'
         }),
         template: `<div>
