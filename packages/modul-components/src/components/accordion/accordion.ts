@@ -120,6 +120,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     }
 
     public get propDisabled(): boolean {
+
         return (isAccordionGroup(this.$parent) && this.$parent.disabled) ||
             this.disabled;
     }
