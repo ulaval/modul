@@ -1,4 +1,4 @@
-@import 'commons';
+@import "commons";
 
 @mixin m-table-sortable-icon-select() {
     opacity: 1;
@@ -75,8 +75,16 @@
                 }
             }
 
-            &.m--is-centered {
+            &.m--is-text-align-center {
                 text-align: center;
+            }
+
+            &.m--is-text-align-left {
+                text-align: left;
+            }
+
+            &.m--is-text-align-right {
+                text-align: right;
             }
         }
     }
@@ -107,11 +115,27 @@
             padding-right: $m-spacing--s;
         }
 
-        &.m--is-centered {
+        &.m--is-text-align-center {
             text-align: center;
 
             > * {
                 text-align: center;
+            }
+        }
+
+        &.m--is-text-align-left {
+            text-align: left;
+
+            > * {
+                text-align: left;
+            }
+        }
+
+        &.m--is-text-align-right {
+            text-align: right;
+
+            > * {
+                text-align: right;
             }
         }
     }

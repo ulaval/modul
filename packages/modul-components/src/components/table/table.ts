@@ -19,6 +19,12 @@ export enum MColumnSortDirection {
     Dsc = -1
 }
 
+export enum MColumnTextAlign {
+    Center = 'center',
+    Left = 'left',
+    Right = 'right'
+}
+
 export interface MColumnTable {
     id: string;
     title: string;
@@ -26,7 +32,7 @@ export interface MColumnTable {
     width?: string;
     sortable?: boolean;
     enableUnsort?: boolean;
-    centered?: boolean;
+    textAlign?: MColumnTextAlign;
     class?: string;
     sortDirection?: MColumnSortDirection;
     defaultSortDirection?: MColumnSortDirection;
@@ -117,6 +123,18 @@ export class MTable extends ModulVue {
 
     public isColumnSorted(columnTable: MColumnTable): boolean {
         return columnTable.sortDirection === MColumnSortDirection.Asc || columnTable.sortDirection === MColumnSortDirection.Dsc;
+    }
+
+    public isColumnTextAlignCenter(columnTable: MColumnTable): boolean {
+        return columnTable.textAlign === MColumnTextAlign.Center;
+    }
+
+    public isColumnTextAlignLeft(columnTable: MColumnTable): boolean {
+        return columnTable.textAlign === MColumnTextAlign.Left;
+    }
+
+    public isColumnTextAlignRight(columnTable: MColumnTable): boolean {
+        return columnTable.textAlign === MColumnTextAlign.Right;
     }
 
     public getColumnSortDirectionClass(columnTable: MColumnTable): string | undefined {
