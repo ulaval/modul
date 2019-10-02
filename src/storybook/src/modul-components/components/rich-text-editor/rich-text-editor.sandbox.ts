@@ -16,6 +16,7 @@ import { Component } from 'vue-property-decorator';
 import WithRender from './rich-text-editor.sandbox.html';
 
 
+
 @WithRender
 @Component({
     components: { MRichTextEditor, MRichText }
