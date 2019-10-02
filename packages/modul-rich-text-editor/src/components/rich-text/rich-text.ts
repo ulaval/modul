@@ -1,8 +1,8 @@
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { ModulVue } from '../../utils/vue/vue';
-import { RICH_TEXT_NAME } from '../component-names';
+import { RICH_TEXT_NAME } from '../../component-names';
 import WithRender from './rich-text.html?style=./rich-text.scss';
 
 @WithRender
@@ -19,3 +19,4 @@ const RichTextPlugin: PluginObject<any> = {
 };
 
 export default RichTextPlugin;
+

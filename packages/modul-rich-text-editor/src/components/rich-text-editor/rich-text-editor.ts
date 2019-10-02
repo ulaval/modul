@@ -1,22 +1,18 @@
 // tslint:disable:deprecation
-
+import { ElementQueries } from '@ulaval/modul-components/dist/mixins/element-queries/element-queries';
+import { InputLabel } from '@ulaval/modul-components/dist/mixins/input-label/input-label';
+import { InputManagement, InputManagementData } from '@ulaval/modul-components/dist/mixins/input-management/input-management';
+import { InputState, InputStateInputSelector } from '@ulaval/modul-components/dist/mixins/input-state/input-state';
+import { InputWidth } from '@ulaval/modul-components/dist/mixins/input-width/input-width';
+import { MFile } from '@ulaval/modul-components/dist/utils/file/file';
+import { FormatMode } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import uuid from '@ulaval/modul-components/dist/utils/uuid/uuid';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { ElementQueries } from '../../mixins/element-queries/element-queries';
-import { InputLabel } from '../../mixins/input-label/input-label';
-import { InputManagement, InputManagementData } from '../../mixins/input-management/input-management';
-import { InputState, InputStateInputSelector } from '../../mixins/input-state/input-state';
-import { InputWidth } from '../../mixins/input-width/input-width';
-import { MFile } from '../../utils/file/file';
-import { FormatMode } from '../../utils/i18n/i18n';
-import uuid from '../../utils/uuid/uuid';
-import { ModulVue } from '../../utils/vue/vue';
-import { RICH_TEXT_EDITOR_NAME } from '../component-names';
-import FileUploadPlugin from '../file-upload/file-upload';
-import InputStylePlugin from '../input-style/input-style';
-import ValidationMessagePlugin from '../validation-message/validation-message';
-import VueFroala from './adapter/vue-froala';
+import { RICH_TEXT_EDITOR_NAME } from '../../component-names';
+import { VueFroala } from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
 
@@ -260,9 +256,6 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
 const RichTextEditorPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(FileUploadPlugin);
-        v.use(InputStylePlugin);
-        v.use(ValidationMessagePlugin);
         v.component(RICH_TEXT_EDITOR_NAME, MRichTextEditor);
     }
 };

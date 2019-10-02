@@ -1,13 +1,13 @@
+import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { mount, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
 import { renderComponent } from '../../../tests/helpers/render';
-import uuid from '../../utils/uuid/uuid';
+import { RichTextEditorModulPlugin } from '../../rich-text-editor.plugin';
 import { MRichTextEditor, MRichTextEditorOption } from './rich-text-editor';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
-import RichTextLicensePlugin from './rich-text-license-plugin';
 
-jest.mock('../../utils/uuid/uuid');
-(uuid.generate as jest.Mock).mockReturnValue('uuid');
+// jest.mock('../../utils/uuid/uuid');
+// (uuid.generate as jest.Mock).mockReturnValue('uuid');
 
 const froalaLicenseKey: string = 'testKey';
 let wrapper: Wrapper<MRichTextEditor>;
@@ -20,7 +20,7 @@ let i18nTitleLevel: string = 'm-rich-text-editor:title-level';
 
 describe('MRichTextEditor', () => {
     beforeEach(() => {
-        Vue.use(RichTextLicensePlugin, { key: froalaLicenseKey });
+        Vue.use(RichTextEditorModulPlugin, { key: froalaLicenseKey, curlang: FRENCH });
         wrapper = mount(MRichTextEditor,
             {
                 stubs: {

@@ -15,6 +15,9 @@
         "allowSyntheticDefaultImports": true,
         "strictNullChecks": true,
         "paths": {
+            "@ulaval/modul-rich-text-editor/dist/*": [
+                "../../packages/modul-rich-text-editor/src/*"
+            ],
             "@ulaval/modul-components/dist/*": [
                 "../../packages/modul-components/src/*"
             ],
@@ -33,9 +36,11 @@
     },
     "include": [
         "../../packages/modul-components/src/**/*.ts",
+        "../../packages/modul-rich-text-editor/src/**/*.ts",
         "src/**/*.ts"
     ],
     "exclude": [
-        "../../packages/modul-components/src/typings.d.ts"
+        "../../packages/modul-components/src/typings.d.ts",
+        "../../packages/modul-rich-text-editor/src/typings.d.ts"
     ]
 }

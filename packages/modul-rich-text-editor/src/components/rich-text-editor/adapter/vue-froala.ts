@@ -1,5 +1,11 @@
 // This code is largery borrowed from https://github.com/froala/vue-froala-wysiwyg.
 // However some changes have been made to "inputify" the froala editor and render is compatible with modUL input-style.
+import { ElementQueries } from '@ulaval/modul-components/dist/mixins/element-queries/element-queries';
+import { replaceTags } from '@ulaval/modul-components/dist/utils/clean/htmlClean';
+import { MFile } from '@ulaval/modul-components/dist/utils/file/file';
+import { ScrollToDuration } from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
+import uuid from '@ulaval/modul-components/dist/utils/uuid/uuid';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'froala-editor/css/froala_style.min.css';
@@ -13,12 +19,6 @@ import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
 import stylesIcon from '../../../assets/icons/svg/Froala-styles.svg';
 import titleIcon from '../../../assets/icons/svg/Froala-title.svg';
-import { ElementQueries } from '../../../mixins/element-queries/element-queries';
-import { replaceTags } from '../../../utils/clean/htmlClean';
-import { MFile } from '../../../utils/file/file';
-import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
-import uuid from '../../../utils/uuid/uuid';
-import { ModulVue } from '../../../utils/vue/vue';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
 // import { PopupPlugin } from './popup-plugin';

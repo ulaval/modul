@@ -3,18 +3,18 @@ import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
 import RadioPlugin from '@ulaval/modul-components/dist/components/radio/radio';
-import { MRichTextEditor, MRichTextEditorOption, MRichTextEditorOptions } from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-editor';
-import RichTextLicensePlugin from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-license-plugin';
-import { MRichText } from '@ulaval/modul-components/dist/components/rich-text/rich-text';
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
 import { InputManagement } from '@ulaval/modul-components/dist/mixins/input-management/input-management';
 import FilePlugin, { MFile } from '@ulaval/modul-components/dist/utils/file/file';
+import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import uuid from '@ulaval/modul-components/dist/utils/uuid/uuid';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
+import { MRichTextEditor, MRichTextEditorOption, MRichTextEditorOptions } from '@ulaval/modul-rich-text-editor/dist/components/rich-text-editor/rich-text-editor';
+import { MRichText } from '@ulaval/modul-rich-text-editor/dist/components/rich-text/rich-text';
+import { RichTextEditorModulPlugin } from '@ulaval/modul-rich-text-editor/dist/rich-text-editor.plugin';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
 import WithRender from './rich-text-editor.sandbox.html';
-
 
 @WithRender
 @Component({
@@ -103,7 +103,7 @@ const RichTextEditorSandBoxPlugin: PluginObject<any> = {
         v.use(RadioGroupPlugin);
         v.use(RadioPlugin);
         v.use(FilePlugin);
-        v.use(RichTextLicensePlugin, { key: `test` });
+        v.use(RichTextEditorModulPlugin, { key: `test`, curlang: FRENCH });
         v.component(`m-rich-text-editor-sandbox`, MRichTextEditorSandBox);
     }
 };

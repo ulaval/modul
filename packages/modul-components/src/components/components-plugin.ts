@@ -65,9 +65,6 @@ import ProgressPluggin from './progress/progress';
 import RadioGroupPlugin from './radio-group/radio-group';
 import RadioStylePlugin from './radio-style/radio-style';
 import RadioPlugin from './radio/radio';
-import RichTextEditorPlugin from './rich-text-editor/rich-text-editor';
-import RichTextLicensePlugin, { RichTextLicensePluginOptions } from './rich-text-editor/rich-text-license-plugin';
-import RichTextPlugin from './rich-text/rich-text';
 import ScrollTopPlugin from './scroll-top/scroll-top';
 import SearchfieldPlugin from './searchfield/searchfield';
 import SessionExpiredPlugin from './session-expired/session-expired';
@@ -98,8 +95,8 @@ import TypeaheadPlugin from './typeahead/typeahead';
 import ValidationMessagePlugin from './validation-message/validation-message';
 
 
+
 export interface ComponentPluginOptions {
-    richTextOptions?: RichTextLicensePluginOptions;
     loquateOptions?: AddressLookupPluginOptions;
 }
 
@@ -176,9 +173,6 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(RadioPlugin);
         Vue.use(RadioGroupPlugin);
         Vue.use(RadioStylePlugin);
-        Vue.use(RichTextLicensePlugin, { key: options.richTextOptions ? options.richTextOptions.key : undefined });
-        Vue.use(RichTextPlugin);
-        Vue.use(RichTextEditorPlugin);
         Vue.use(ScrollTopPlugin);
         Vue.use(SessionExpiredPlugin);
         Vue.use(ShowMorePlugin);
