@@ -129,9 +129,7 @@ const SCROLL_TO_OFFSET: number = -50;
     protected isFileUploadOpen: boolean = false;
     protected fileUploadStoreName: string = uuid.generate();
     protected selectedImage: HTMLElement | undefined;
-    protected allowedExtensions: string[] = [];
-
-    private imageExtensions: string[] = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'bmp'];
+    protected imageExtensions: string[] = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'bmp'];
     private mousedownTriggered: boolean = false;
     private mousedownInsideEditor: boolean = false;
 

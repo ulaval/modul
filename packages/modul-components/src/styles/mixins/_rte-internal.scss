@@ -33,7 +33,7 @@ $m-fr-btn-popup-size: 38px;
     }
 }
 
-.fr-popup {
+.fr-popup.fr-popup {
     &.fr-command.fr-btn.m--fr-active {
         color: $m--fr-active-color;
         background: $m--fr-active-background;
