@@ -51,15 +51,17 @@
                      slot="suffix"
                      :class="{ 'm--is-open': open }"
                      v-if="showArrowIcon">
-                    <m-icon-button v-if="isClearShowing"
-                                   class="m-select__reset"
-                                   :aria-controls="id"
-                                   @click.stop="onReset"
-                                   key="resetIcon"
-                                   button-size="1em"
-                                   icon-size="11px"
-                                   icon-name="m-svg__close-clear"
-                                   tabindex="-1"></m-icon-button>
+                    <m-opacity-transition>
+                        <m-icon-button v-if="isClearShowing"
+                                       class="m-select__reset"
+                                       :aria-controls="id"
+                                       @click.stop="onReset"
+                                       key="resetIcon"
+                                       button-size="1em"
+                                       icon-size="11px"
+                                       icon-name="m-svg__close-clear"
+                                       tabindex="-1"></m-icon-button>
+                    </m-opacity-transition>
                     <m-icon class="m-select__arrow__icon"
                             ref="arrow"
                             name="m-svg__arrow-head-filled--down"
