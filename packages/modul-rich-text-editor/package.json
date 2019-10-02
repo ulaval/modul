@@ -1,0 +1,42 @@
+{
+    "name": "@ulaval/modul-rich-text-editor",
+    "version": "1.0.0-beta.1",
+    "description": "MODUL rich text editor",
+    "author": "\"\"Charles Maheu\"\" <\"\"charles.maheu@dti.ulaval.ca\"\">",
+    "private": true,
+    "dependencies": {
+        "@ulaval/modul-components": "^1.0.0-beta.127"
+    },
+    "peerDependencies": {
+        "vue": "^2.6.4"
+    },
+    "devDependencies": {
+        "@vue/test-utils": "^1.0.0-beta.29",
+        "jest": "^24.9.0",
+        "jest-html-reporter": "^2.6.2",
+        "jest-junit": "^8.0.0",
+        "jest-serializer-vue": "^2.0.2",
+        "meta-generator": "^1.0.2-beta.0",
+        "stylelint": "^9.3.0",
+        "stylelint-config-standard": "^18.2.0",
+        "stylelint-scss": "^3.1.3",
+        "ts-jest": "^24.1.0",
+        "vue": "^2.6.10",
+        "vue-class-component": "^6.1.1",
+        "vue-property-decorator": "^6.0.0",
+        "vue-template-loader": "^1.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ulaval/modul.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ulaval/modul/issues"
+    },
+    "files": [
+        "src/**/*.ts",
+        "dist"
+    ],
+    "license": "Apache-2.0",
+    "gitHead": "7e2e44d649a6d7a6ecdd879c943b919084878a11"
+}
