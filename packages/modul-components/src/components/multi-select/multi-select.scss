@@ -9,13 +9,13 @@
     }
 
     &.m--has-validation-message {
-        .m-select__validation-message {
+        .m-multi-select__validation-message {
             margin-top: $m-spacing--xs;
         }
     }
 
     &:not(.m--is-disabled) {
-        .m-select__arrow {
+        .m-multi-select__arrow {
             cursor: pointer;
         }
     }
@@ -29,7 +29,7 @@
         }
 
         &.m--is-open {
-            .m-select__arrow__icon {
+            .m-multi-select__arrow__icon {
                 transform: rotate(-180deg);
             }
         }
