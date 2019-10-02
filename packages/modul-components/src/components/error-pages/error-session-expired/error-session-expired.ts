@@ -1,6 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { ERROR_SESSION_EXPIRED_NAME } from '../../component-names';
 import I18nPlugin from '../../i18n/i18n';
 import LinkPlugin from '../../link/link';
@@ -20,6 +20,9 @@ export class MErrorSessionExpired extends Vue {
 
     @Prop()
     public target: string;
+
+    @Emit('click')
+    public onClick(event: Event): void { }
 }
 
 const SessionExpiredPlugin: PluginObject<any> = {
