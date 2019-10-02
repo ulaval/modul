@@ -7,8 +7,6 @@ import LinkPlugin from '../../link/link';
 import MessagePlugin from '../../message/message';
 import WithRender from './error-session-expired.html';
 
-
-
 @WithRender
 @Component
 export class MErrorSessionExpired extends Vue {
@@ -16,6 +14,12 @@ export class MErrorSessionExpired extends Vue {
         default: () => Vue.prototype.$i18n.translate('m-session-expired:back-to-portal')
     })
     public backToLabel: string;
+
+    @Prop({ default: '/' })
+    public url: string | Location;
+
+    @Prop()
+    public target: string;
 }
 
 const SessionExpiredPlugin: PluginObject<any> = {
