@@ -30,6 +30,10 @@
         flex-direction: row;
         margin-right: -1px; // Magic Number
 
+        /deep/ .m-base-select__popup {
+            width: auto !important;
+        }
+
         /deep/ .m-input-style__label {
             visibility: hidden;
         }
@@ -77,6 +81,10 @@
         /deep/ .m-input-style__main {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+        }
+
+        /deep/ .m-input-style__content {
+            height: 18px;
         }
     }
 
