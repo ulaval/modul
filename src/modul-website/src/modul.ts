@@ -32,6 +32,7 @@ import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/over
 import PaginationPlugin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
 import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
+import PoweredByGooglePlugin from '@ulaval/modul-components/dist/components/powered-by-google/powered-by-google';
 import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/progress';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
 import SearchfieldPlugin from '@ulaval/modul-components/dist/components/searchfield/searchfield';
@@ -93,6 +94,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(OverlayPlugin);
         Vue.use(AddPlugin);
         Vue.use(PopupPlugin);
+        Vue.use(PoweredByGooglePlugin);
         Vue.use(ProgressPlugin);
         Vue.use(RadioGroupPlugin);
         Vue.use(ScrollToPlugin);

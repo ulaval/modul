@@ -1,12 +1,13 @@
 
 import { AxiosInstance } from 'axios';
 import { Address, AddressSummary } from './address';
-import { AddressLookupFindQuery, AddressLookupRetrieveQuery, AddressLookupService } from './address-lookup';
+import { AddressLookupFindQuery, AddressLookupRetrieveQuery, AddressLookupService, AddressLookupServiceProvider } from './address-lookup';
 import { GoogleFindResponseBuilder, GoogleRetrieveResponseBuilder } from './address-lookup-google';
 import { AddressLookupToAddressSummary, AddressRetrieveToAddress } from './address-lookup-response-mapper';
 import GoogleAPI from './google-api';
 
 export default class AddressLookupGoogleService implements AddressLookupService {
+    serviceProvider = AddressLookupServiceProvider.Google;
     private readonly googleAPI: GoogleAPI;
     private sessionToken?: google.maps.places.AutocompleteSessionToken;
 

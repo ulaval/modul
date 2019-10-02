@@ -84,6 +84,7 @@ export const PHONE_NUMBER_NAME: string = 'm-phone-number';
 export const PLUS_NAME: string = 'm-plus';
 export const POPPER_NAME: string = 'm-popper';
 export const POPUP_NAME: string = 'm-popup';
+export const POWERED_BY_GOOGLE: string = 'm-powered-by-google';
 export const PROGRESS_NAME: string = 'm-progress';
 export const RADIO_NAME: string = 'm-radio';
 export const RADIO_GROUP_NAME: string = 'm-radio-group';
