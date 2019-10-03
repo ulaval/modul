@@ -39,9 +39,6 @@ export class MSelect extends ModulVue {
     @Prop({ default: false })
     public clearSelection: boolean;
 
-    @Prop({ default: true })
-    public showArrowIcon: boolean;
-
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
