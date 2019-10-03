@@ -16,7 +16,6 @@ import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import FileUploadPlugin from '../file-upload/file-upload';
 import InputStylePlugin from '../input-style/input-style';
 import ValidationMessagePlugin from '../validation-message/validation-message';
-import { ImageLayoutCommands } from './adapter/image-layout-commands';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
@@ -129,7 +128,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     }
 
     public get internalOptions(): any {
-        const propOptions: any = {
+        let propOptions: any = {
             // Hack to "hide" the default froala placeholder text
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
@@ -145,23 +144,26 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     }
 
     public getOptions(): MRichTextEditorDefaultOptions {
-        const options: MRichTextEditorDefaultOptions = new MRichTextEditorDefaultOptions(this.froalaLicenseKey, this.$i18n.currentLang());
+        const richTextEditorOptions: MRichTextEditorDefaultOptions = new MRichTextEditorDefaultOptions(this.froalaLicenseKey, this.$i18n.currentLang());
 
         if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
-            options.pluginsEnabled.push('image');
-            options.toolbarButtons.push('insertImage');
-
-            let imageEditButtons: string[] = ['imageReplace', ImageLayoutCommands.IMG_LAYOUT_CMD, 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
-
-            options.imageEditButtons = imageEditButtons;
+            richTextEditorOptions.pluginsEnabled.push('image');
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreRich.buttons.push('insertImage');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreRich.buttons.push('insertImage');
         }
 
         if (this.titleAvailable) {
-            options.toolbarButtons.splice(2, 0, 'paragraphStyle');
-            options.paragraphStyles = this.manageHeaderLevels();
+            richTextEditorOptions.paragraphStyles = this.manageHeaderLevels();
+
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreText.buttons.splice(0, 0, 'paragraphStyle');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(0, 0, 'paragraphStyle');
         }
 
-        return options;
+        return richTextEditorOptions;
     }
 
     public manageHeaderLevels(): any {
@@ -215,10 +217,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         return /^-*\d+$/.test(this.toolbarStickyOffset);
     }
 
-    protected getScrollableContainer(): string | undefined {
-        if (this.scrollableContainer) {
-            return this.scrollableContainer;
-        }
+    protected getScrollableContainer(): string {
+        // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
+        return this.scrollableContainer || 'body';
     }
 
     protected testSelectorProps(): void {
