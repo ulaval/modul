@@ -13,7 +13,6 @@ import I18nPlugin from '../i18n/i18n';
 import { MBaseSelect } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
 
-const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
@@ -38,6 +37,9 @@ export class MSelect extends ModulVue {
 
     @Prop({ default: false })
     public clearSelection: boolean;
+
+    @Prop({ default: true })
+    public showArrowIcon: boolean;
 
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
