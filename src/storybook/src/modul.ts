@@ -26,6 +26,7 @@ import IconFilePlugin from '@ulaval/modul-components/dist/components/icon-file/i
 import IconPlugin from '@ulaval/modul-components/dist/components/icon/icon';
 import InplaceEditPlugin from '@ulaval/modul-components/dist/components/inplace-edit/inplace-edit';
 import InputGroupPlugin from '@ulaval/modul-components/dist/components/input-group/input-group';
+import IntegerfieldPlugin from '@ulaval/modul-components/dist/components/integerfield/integerfield';
 import LimitTextPlugin from '@ulaval/modul-components/dist/components/limit-text/limit-text';
 import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
 import ListItemPlugin from '@ulaval/modul-components/dist/components/list-item/list-item';
@@ -154,7 +155,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(SelectPlugin);
 
         Vue.use(DecimalfieldPlugin);
-
+        Vue.use(IntegerfieldPlugin);
 
         Vue.use(FormPlugin);
 
