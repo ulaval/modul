@@ -130,6 +130,7 @@ const SCROLL_TO_OFFSET: number = -50;
     protected fileUploadStoreName: string = uuid.generate();
     protected selectedImage: HTMLElement | undefined;
     protected imageExtensions: string[] = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'bmp'];
+    protected allowedExtensions: string[] = [];
     private mousedownTriggered: boolean = false;
     private mousedownInsideEditor: boolean = false;
 
