@@ -35,6 +35,8 @@ export default class AddressLookupGoogleService implements AddressLookupService 
         await this.ensureCreateToken();
         const request: google.maps.places.PlaceDetailsRequest = {
             placeId: query.id,
+            // Use only Basic Data: https://developers.google.com/places/web-service/usage-and-billing#basic-data
+            fields: ['address_component', 'adr_address', 'formatted_address', 'name', 'type'],
             sessionToken: this.sessionToken
         };
 
