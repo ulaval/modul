@@ -37,6 +37,7 @@
                            :empty="isEmpty"
                            :error="hasError"
                            :cursor-pointer="hasPointer"
+                           :append="showArrowIcon"
                            :valid="isValid"
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle">
@@ -47,33 +48,35 @@
                                :readonly="true" />
                     </slot>
                 </div>
-                <div class="m-select__arrow"
-                     slot="suffix"
-                     :class="{ 'm--is-open': open }"
-                     v-if="showArrowIcon">
+
+                <template slot="append">
                     <m-opacity-transition>
                         <m-icon-button v-if="isClearShowing"
-                                       class="m-select__reset"
                                        :aria-controls="id"
                                        @click.stop="onReset"
                                        key="resetIcon"
-                                       button-size="1em"
                                        icon-size="11px"
                                        icon-name="m-svg__close-clear"
                                        tabindex="-1"></m-icon-button>
                     </m-opacity-transition>
-                    <m-icon class="m-select__arrow__icon"
-                            ref="arrow"
-                            name="m-svg__arrow-head-filled--down"
-                            size="12px"
-                            :disabled="!active"
-                            @keydown.enter.prevent="open = active">
-                        <m-i18n k="m-select:open"
-                                v-if="!open"></m-i18n>
-                        <m-i18n k="m-select:close"
-                                v-else></m-i18n>
-                    </m-icon>
-                </div>
+
+                    <div class="m-select__arrow"
+                         :class="{ 'm--is-open': open }"
+                         v-if="showArrowIcon">
+                        <m-icon class="m-select__arrow__icon"
+                                ref="arrow"
+                                name="m-svg__arrow-head-filled--down"
+                                size="12px"
+                                :disabled="!active"
+                                @keydown.enter.prevent="open = active">
+                            <m-i18n k="m-select:open"
+                                    v-if="!open"></m-i18n>
+                            <m-i18n k="m-select:close"
+                                    v-else></m-i18n>
+                        </m-icon>
+                    </div>
+                </template>
+
             </m-input-style>
             <m-validation-message class="m-select__validation-message"
                                   :disabled="isDisabled"

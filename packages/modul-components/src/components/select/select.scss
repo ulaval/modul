@@ -22,6 +22,11 @@
 
     &__arrow {
         cursor: pointer;
+        height: $m-touch-size;
+        width: calc(#{$m-touch-size} - #{$m-spacing});
+        display: flex;
+        align-items: center;
+        justify-content: left;
 
         &__icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
@@ -47,9 +52,5 @@
 
     &__validation-message {
         transition: margin-top $m-transition-duration ease;
-    }
-
-    &__reset {
-        margin-left: $m-spacing--s;
     }
 }
