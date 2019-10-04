@@ -1561,11 +1561,85 @@ exports[`Storyshots modul-components|m-form/all fields integerfield 1`] = `
     style="width: 300px; margin-bottom: 5px; border-bottom: 1px solid black; display: flex; padding-bottom: 10px;"
   />
    
-  <m-integerfield
-    error-message=""
-    label="Integer"
-    required-marker="true"
-  />
+  <div
+    class="m-integerfield m--has-label"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--has-label m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mIntegerfield-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Integer
+              </span>
+               
+              <sup
+                class="m-input-style__required-marker"
+              >
+                *
+              </sup>
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                class="m-integerfield__input"
+                id="mIntegerfield-fakeId"
+                inputmode="decimal"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-integerfield__validation"
+    >
+      <div
+        class="m-validation-message m-integerfield__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
    
   <div
     class="m-u--margin-top--l m-u--margin-bottom--l"
@@ -5393,9 +5467,76 @@ exports[`Storyshots modul-components|m-form/validators between number 1`] = `
     default validationType =  correction
   </p>
    
-  <m-integerfield
-    error-message=""
-  />
+  <div
+    class="m-integerfield"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                class="m-integerfield__input"
+                id="mIntegerfield-fakeId"
+                inputmode="decimal"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-integerfield__validation"
+    >
+      <div
+        class="m-validation-message m-integerfield__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
    
   <p
     class="m-u--margin-bottom--l"
@@ -6171,9 +6312,76 @@ exports[`Storyshots modul-components|m-form/validators max number 1`] = `
     default validationType =  correction
   </p>
    
-  <m-integerfield
-    error-message=""
-  />
+  <div
+    class="m-integerfield"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                class="m-integerfield__input"
+                id="mIntegerfield-fakeId"
+                inputmode="decimal"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-integerfield__validation"
+    >
+      <div
+        class="m-validation-message m-integerfield__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
    
   <p
     class="m-u--margin-bottom--l"
@@ -6231,7 +6439,7 @@ exports[`Storyshots modul-components|m-form/validators max-length 1`] = `
   <!---->
    
   <p>
-    default validationType =  correction
+    default validationType =  on-going
   </p>
    
   <div
@@ -6306,7 +6514,11 @@ exports[`Storyshots modul-components|m-form/validators max-length 1`] = `
         <!---->
       </div>
        
-      <!---->
+      <div
+        class="m-character-count m-textfield__validation__character-count"
+      >
+        <!---->
+      </div>
     </div>
   </div>
    
@@ -6369,9 +6581,76 @@ exports[`Storyshots modul-components|m-form/validators min number 1`] = `
     default validationType =  correction
   </p>
    
-  <m-integerfield
-    error-message=""
-  />
+  <div
+    class="m-integerfield"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                class="m-integerfield__input"
+                id="mIntegerfield-fakeId"
+                inputmode="decimal"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-integerfield__validation"
+    >
+      <div
+        class="m-validation-message m-integerfield__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
    
   <p
     class="m-u--margin-bottom--l"
@@ -6429,15 +6708,15 @@ exports[`Storyshots modul-components|m-form/validators min-length 1`] = `
   <!---->
    
   <p>
-    default validationType =  correction
+    default validationType = correction
   </p>
    
   <div
-    class="m-textfield m--is-type-text"
+    class="m-textfield m--has-label m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--is-tag-default"
+      class="m-input-style m--has-label m--is-tag-default"
       style="margin-top: 10px;"
     >
       <div
@@ -6446,21 +6725,26 @@ exports[`Storyshots modul-components|m-form/validators min-length 1`] = `
         <div
           class="m-input-style__body"
         >
-          <span
+          <label
             class="m-input-style__label"
-            style="z-index: -1;"
+            for="mTextfield-fakeId"
+            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
-            />
-          </span>
+            >
+              <span>
+                min5Field.name
+              </span>
+               
+              <!---->
+            </span>
+          </label>
            
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
