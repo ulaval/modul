@@ -36,10 +36,7 @@ export class MSelect extends ModulVue {
     public options: any[];
 
     @Prop({ default: false })
-    public clearSelection: boolean;
-
-    @Prop({ default: true })
-    public showArrowIcon: boolean;
+    public clearable: boolean;
 
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
@@ -65,8 +62,8 @@ export class MSelect extends ModulVue {
         return this.as<InputManagement>().hasValue || (this.open) ? false : true;
     }
 
-    get isClearShowing(): boolean {
-        return this.hasItems && this.clearSelection && this.as<InputManagement>().hasValue;
+    get isClearable(): boolean {
+        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue;
     }
 
     get selectedItems(): any {
@@ -94,7 +91,7 @@ export class MSelect extends ModulVue {
     }
 
     public onKeyDownDelete(event: KeyboardEvent): void {
-        if (event.key === 'Delete') {
+        if (event.key === 'Delete' && this.isClearable) {
             this.onReset();
         }
     }

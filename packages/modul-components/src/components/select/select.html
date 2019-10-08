@@ -37,7 +37,7 @@
                            :empty="isEmpty"
                            :error="hasError"
                            :cursor-pointer="hasPointer"
-                           :append="showArrowIcon"
+                           :append="true"
                            :valid="isValid"
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle">
@@ -51,7 +51,7 @@
 
                 <template slot="append">
                     <m-opacity-transition>
-                        <m-icon-button v-if="isClearShowing"
+                        <m-icon-button v-if="isClearable"
                                        :aria-controls="id"
                                        @click.stop="onReset"
                                        key="resetIcon"
@@ -61,8 +61,7 @@
                     </m-opacity-transition>
 
                     <div class="m-select__arrow"
-                         :class="{ 'm--is-open': open }"
-                         v-if="showArrowIcon">
+                         :class="{ 'm--is-open': open }">
                         <m-icon class="m-select__arrow__icon"
                                 ref="arrow"
                                 name="m-svg__arrow-head-filled--down"
