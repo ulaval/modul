@@ -402,13 +402,13 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/validators`, mod
         template: `
         <m-form class="m-u--margin-top"
                 :form-group="formGroup">
-            <p>default validationType =  {{ min5Field.validators[0].validationType }}</p>
-            <m-textfield    v-model="min5Field.value"
-                            :error="min5Field.hasError()"
-                            :error-message="min5Field.errorMessage"
-                            :label="min5Field.name"
-                            :valid="min5Field.valid"
-                            v-m-control="min5Field">
+            <p>default validationType = {{ min5Field.validators[0].validationType }}</p>
+            <m-textfield v-model="min5Field.value"
+                         :error="min5Field.hasError()"
+                         :error-message="min5Field.errorMessage"
+                         label="min5Field.name"
+                         :valid="min5Field.valid"
+                         v-m-control="min5Field">
             </m-textfield>
             <p class="m-u--margin-bottom--l">
                 <m-button type="submit">Submit</m-button>
@@ -438,9 +438,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/validators`, mod
                 :form-group="formGroup">
             <p>default validationType =  {{ max5Field.validators[0].validationType }}</p>
             <m-textfield v-model="max5Field.value"
+                        :character-count="true"
+                        :character-count-threshold="5 * .75"
                         :error="max5Field.hasError()"
                         :error-message="max5Field.errorMessage"
                         :label="max5Field.name"
+                        :max-length="5"
                         :valid="max5Field.valid"
                         v-m-control="max5Field">
             </m-textfield>

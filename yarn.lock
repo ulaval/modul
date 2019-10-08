@@ -7599,11 +7599,6 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.2.6"
 
-font-awesome@>=4.4.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
-  integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
-
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -7671,13 +7666,10 @@ fresh@0.5.2:
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
   integrity sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
 
-froala-editor@2.9.3:
-  version "2.9.3"
-  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-2.9.3.tgz#206cfbd66b29fa1ef79a763c6f2150aed9822deb"
-  integrity sha512-3ijpP3ovXmbsErlX1lLMdSFT6/B8Ajng9PKDrbKJ6zXu8N7hC0JHwJNiNm0j97qIV2+HxniXrSoGTUf26E9m5A==
-  dependencies:
-    font-awesome ">=4.4.0"
-    jquery ">=1.11.0"
+froala-editor@3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-3.0.5.tgz#abcfb93c1133de3870de727cc1d16fa194aeb8aa"
+  integrity sha512-DWdKuhtRnI/OSOVaC03Vqc3Y9AiqZVCPQ/D8Si/3yu/FJgxdjFVGluseAEVmz2AhHe2lh6ni2S7SqDOuk/8XJg==
 
 from2@^2.1.0:
   version "2.3.0"
@@ -9720,7 +9712,7 @@ jest@^24.9.0:
     import-local "^2.0.0"
     jest-cli "^24.9.0"
 
-jquery@>=1.11.0, jquery@^3.3.1:
+jquery@^3.3.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==

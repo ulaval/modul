@@ -17,6 +17,7 @@
     "scripts": {
         "clean": "lerna clean",
         "prepare": "lerna run --stream --sort prepare",
+        "build": "lerna run --stream --sort build",
         "website": "lerna run dev --scope @ulaval/modul-website --stream",
         "lint": "lerna run --stream --sort lint",
         "lint:ci": "lerna run --stream --sort lint",

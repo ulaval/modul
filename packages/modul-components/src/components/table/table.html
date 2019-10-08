@@ -6,7 +6,12 @@
             <tr>
                 <th v-for="(column, index) in columnsInternal"
                     :style="columnWidth(column)"
-                    :class="[{ 'm--is-sortable': column.sortable, 'm--is-sorted': isColumnSorted(column), 'm--is-centered': column.centered, 'm--is-initial-sort': column.isInitialSort }, column.class]"
+                    :class="[{ 'm--is-sortable': column.sortable,
+                               'm--is-sorted': isColumnSorted(column),
+                               'm--is-text-align-center': isColumnTextAlignCenter(column),
+                               'm--is-text-align-left': isColumnTextAlignLeft(column),
+                               'm--is-text-align-right': isColumnTextAlignRight(column),
+                               'm--is-initial-sort': column.isInitialSort }, column.class]"
                     :key="column.id"
                     @click="sort(column)"
                     scope="col">
@@ -72,7 +77,9 @@
                 <slot name="row"
                       :data="row">
                     <td v-for="column in columnsInternal"
-                        :class="{ 'm--is-centered': column.centered }"
+                        :class="{ 'm--is-text-align-center': isColumnTextAlignCenter(column),
+                                  'm--is-text-align-left': isColumnTextAlignLeft(column),
+                                  'm--is-text-align-right': isColumnTextAlignRight(column), }"
                         :key="'body.' + column.id">
                         <slot :name="'body.' + column.dataProp"
                               :data="row">{{ row[column.dataProp] }}</slot>
