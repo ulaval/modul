@@ -67,7 +67,7 @@ export class MAddressLookupField extends ModulVue {
     }
 
     get googleIsUsed(): boolean {
-        return this.$addressLookup.serviceProvider === AddressLookupServiceProvider.Google;
+        return [AddressLookupServiceProvider.Google, AddressLookupServiceProvider.GoogleProxy].indexOf(this.$addressLookup.serviceProvider) !== -1;
     }
 
     private async fetchData(value: string, id?: string): Promise<void> {
