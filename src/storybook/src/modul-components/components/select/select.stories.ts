@@ -7,7 +7,7 @@ const options: string[] = ['apple', 'bannana', 'patate', 'tomato', 'avocados', '
 const optionsLong: string[] = ['apple juice', 'bannana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
-    .add('default', () => ({
+    .add('Default', () => ({
         methods: actions(
             'open',
             'close',
@@ -21,7 +21,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
             options: options
         }),
         template: `<div>
-                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">default</p>
+                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Default</p>
                     <m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :label="label" :options="options" v-model="model1">
                         <template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template>
                     </m-select>
@@ -31,7 +31,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
     );
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
-    .add('focus', () => ({
+    .add('Focus', () => ({
         methods: actions(
             'open',
             'close',
@@ -45,7 +45,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
             options: options
         }),
         template: `<div>
-                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">focus</p>
+                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Focus</p>
                     <m-select  @open="open" @close="close" @focus="focus" @blur="blur" :focus="true" @select-item="select" :label="label" :options="options" v-model="model2">
                         <template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template>
                     </m-select>
@@ -55,7 +55,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
     );
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
-    .add('label up', () => ({
+    .add('Label up', () => ({
         methods: actions(
             'open',
             'close',
@@ -70,7 +70,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
             placeholder: 'Choose a fruit'
         }),
         template: `<div>
-                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">label up</p>
+                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Label up</p>
                     <m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :label="label" :label-up="true" :placeholder="placeholder" :options="options" v-model="model3">
                         <template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template>
                     </m-select>
@@ -80,7 +80,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
     );
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
-    .add('selection clear button activate', () => ({
+    .add('Clearable activate with no required marker', () => ({
         methods: actions(
             'open',
             'close',
@@ -91,13 +91,39 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
         data: () => ({
             model4: '',
             options: options,
-            clearSelection: true,
+            clearable: true,
             label: 'Fruits',
             placeholder: 'Choose a fruit'
         }),
         template: `<div>
-                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">selection clear activate</p>
-                    <m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" :clear-selection="clearSelection" :label="label" :label-up="true" :placeholder="placeholder" v-model="model4">
+                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Clearable activate with no required marker</p>
+                    <m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" :clearable="clearable" :label="label" :label-up="true" :placeholder="placeholder" v-model="model4">
+                        <template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template>
+                    </m-select>
+                    <p>v-model = {{ model4 }}</p>
+                </div>`
+    })
+    );
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
+    .add('Clearable activate with required marker', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model4: '',
+            options: options,
+            clearable: true,
+            label: 'Fruits',
+            placeholder: 'Choose a fruit'
+        }),
+        template: `<div>
+                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Clearable activate with required marker</p>
+                    <m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" :clearable="clearable" :label="label" :label-up="true" :required-marker="true" :placeholder="placeholder" v-model="model4">
                         <template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template>
                     </m-select>
                     <p>v-model = {{ model4 }}</p>
@@ -332,7 +358,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}/disabled`, mod
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}/mobile`, module)
     .addParameters({ viewport: { defaultViewport: 'iphone6' } })
-    .add('iphone6', () => ({
+    .add('Iphone6', () => ({
         data: () => ({
             model1: '',
             options: ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc']
