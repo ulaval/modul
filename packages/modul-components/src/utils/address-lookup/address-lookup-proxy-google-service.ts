@@ -63,13 +63,6 @@ export default class AddressLookupGoogleProxyService implements AddressLookupSer
             .mapTo(new AddressRetrieveToAddress());
 
         return [address];
-
-        // return results
-        //     .map((results: google.maps.places.PlaceResult) => new GoogleRetrieveResponseBuilder()
-        //         .setRequest(request)
-        //         .setResult(results)
-        //         .build()
-        //         .mapTo(new AddressRetrieveToAddress()));
     }
 
     private ensureCreateToken(): void {
