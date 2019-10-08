@@ -17,11 +17,8 @@
                @mouseover="onMouseover"
                @mouseleave="onMouseleave"
                ref="item">
-        <span v-if="$slots.default"
-              class="m-navbar-item__text">
-            <slot></slot>
+        <span class="m-navbar-item__text">
+            <slot>{{ value }}</slot>
         </span>
-        <span v-else
-              class="m-navbar-item__text">{{ value }}</span>
     </component>
 </li>
