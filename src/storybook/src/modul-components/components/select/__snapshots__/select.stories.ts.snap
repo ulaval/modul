@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|m-select Clearable activate with no required marker 1`] = `
+exports[`Storyshots modul-components|m-select Clearable activate 1`] = `
 <div>
   <p
     class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
   >
-    Clearable activate with no required marker
+    Clearable activate
   </p>
    
   <div
@@ -43,141 +43,6 @@ exports[`Storyshots modul-components|m-select Clearable activate with no require
                   </span>
                    
                   <!---->
-                </span>
-              </label>
-               
-              <div
-                class="m-input-style__input"
-              >
-                <!---->
-                 
-                <div
-                  class="m-input-style__content"
-                >
-                  <div>
-                    <input
-                      placeholder="Choose a fruit"
-                      readonly="readonly"
-                    />
-                  </div>
-                    
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                   
-                  <!---->
-                </div>
-              </div>
-            </div>
-             
-            <div
-              class="m-input-style__append"
-            >
-              <!---->
-               
-              <div
-                class="m-select__arrow"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="m-icon m-select__arrow__icon"
-                  height="12px"
-                  width="12px"
-                >
-                  <!---->
-                   
-                  <use
-                    aria-hidden="true"
-                    class=""
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="m-validation-message m-select__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-     
-    <div
-      class="m-popup"
-    >
-      <div
-        class="m-popper"
-      >
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <p>
-    v-model = 
-  </p>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-select Clearable activate with required marker 1`] = `
-<div>
-  <p
-    class="m-u--font-weight--semi-bold m-u--padding-bottom--s"
-  >
-    Clearable activate with required marker
-  </p>
-   
-  <div
-    class="m-base-select"
-  >
-    <div
-      class="m-base-select__popup"
-      style="width: 288px;"
-    >
-      <div
-        class="m-select"
-        style="width: 100%; max-width: 288px;"
-        tabindex="0"
-      >
-        <div
-          class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
-          style="margin-top: 10px;"
-        >
-          <div
-            class="m-input-style__main"
-          >
-            <div
-              class="m-input-style__body"
-            >
-              <label
-                class="m-input-style__label"
-                for="m-select-fakeId"
-                style="margin-right: 0px;"
-              >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    Fruits
-                  </span>
-                   
-                  <sup
-                    class="m-input-style__required-marker"
-                  >
-                    *
-                  </sup>
                 </span>
               </label>
                

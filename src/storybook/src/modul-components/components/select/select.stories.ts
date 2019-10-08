@@ -80,7 +80,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
     );
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
-    .add('Clearable activate with no required marker', () => ({
+    .add('Clearable activate', () => ({
         methods: actions(
             'open',
             'close',
@@ -96,34 +96,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
             placeholder: 'Choose a fruit'
         }),
         template: `<div>
-                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Clearable activate with no required marker</p>
+                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Clearable activate</p>
                     <m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" :clearable="clearable" :label="label" :label-up="true" :placeholder="placeholder" v-model="model4">
-                        <template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template>
-                    </m-select>
-                    <p>v-model = {{ model4 }}</p>
-                </div>`
-    })
-    );
-
-storiesOf(`${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`, module)
-    .add('Clearable activate with required marker', () => ({
-        methods: actions(
-            'open',
-            'close',
-            'focus',
-            'blur',
-            'select'
-        ),
-        data: () => ({
-            model4: '',
-            options: options,
-            clearable: true,
-            label: 'Fruits',
-            placeholder: 'Choose a fruit'
-        }),
-        template: `<div>
-                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Clearable activate with required marker</p>
-                    <m-select  @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" :clearable="clearable" :label="label" :label-up="true" :required-marker="true" :placeholder="placeholder" v-model="model4">
                         <template  v-slot:items="{item , index }"> {{ index }} - {{ item }} </template>
                     </m-select>
                     <p>v-model = {{ model4 }}</p>
