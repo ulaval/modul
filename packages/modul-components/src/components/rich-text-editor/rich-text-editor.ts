@@ -100,6 +100,21 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     public lastHeaderLevel: number;
 
     @Prop({ default: false })
+    public showCharCounter: boolean;
+
+    @Prop()
+    public charCounterMax: number;
+
+    @Prop({ default: false })
+    public showParagraphAlignementButtons: boolean;
+
+    @Prop({ default: false })
+    public showUnderlineButton: boolean;
+
+    @Prop({ default: false })
+    public showStrikeThroughButton: boolean;
+
+    @Prop({ default: false })
     public titleAvailable: boolean; // temporary
 
     @Emit('fullscreen')
@@ -133,7 +148,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
             scrollableContainer: this.getScrollableContainer(),
-            imageHideFloatLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT)
+            imageHideFloatLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT),
+            charCounterCount: this.showCharCounter || !!this.charCounterMax,
+            charCounterMax: !this.charCounterMax ? -1 : this.charCounterMax
         };
 
         return Object.assign(this.getOptions(), propOptions);
@@ -161,6 +178,27 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             richTextEditorOptions.toolbarButtons.moreText.buttons.splice(0, 0, 'paragraphStyle');
             // for mobile devices
             richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(0, 0, 'paragraphStyle');
+        }
+
+        if (this.showUnderlineButton) {
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'underline');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'underline');
+        }
+
+        if (this.showStrikeThroughButton) {
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'strikeThrough');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'strikeThrough');
+        }
+
+        if (this.showParagraphAlignementButtons) {
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreParagraph.buttons.splice(0, 0, 'alignLeft', 'alignCenter', 'alignRight', 'alignJustify');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreParagraph.buttons.splice(0, 0, 'alignLeft', 'alignCenter', 'alignRight', 'alignJustify');
         }
 
         return richTextEditorOptions;

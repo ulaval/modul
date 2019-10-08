@@ -6,12 +6,13 @@ export class MRichTextEditorDefaultOptions {
     public immediateVueModelUpdate: boolean = true;
     public iconsTemplate: string = 'font_awesome_5';
     public charCounterCount: boolean = false;
+    public charCounterMax: number = -1;
     public tableInsertHelper: boolean = false;
     public zIndex: number = 5;
     public toolbarSticky: boolean = true;
     public scrollableContainer: string = 'body'; // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
     public toolbarStickyOffset: number = 0;
-    public pluginsEnabled: string[] = ['align', 'draggable', 'embedly', 'entities', 'file', 'fontFamily', 'fontSize', 'fullscreen', 'inlineStyle', 'link', 'lists', 'paragraphFormat', 'paragraphStyle', 'quote', 'save', 'specialCharacters', 'table', 'url', 'wordPaste', 'stylesSubMenu', 'listesSubMenu', 'insertionsSubMenu', 'embedly'];
+    public pluginsEnabled: string[] = ['align', 'charCounter', 'draggable', 'embedly', 'entities', 'file', 'fontFamily', 'fontSize', 'fullscreen', 'inlineStyle', 'link', 'lists', 'paragraphFormat', 'paragraphStyle', 'quote', 'save', 'specialCharacters', 'table', 'url', 'wordPaste', 'stylesSubMenu', 'listesSubMenu', 'insertionsSubMenu', 'embedly'];
     public wordPasteModal: boolean = false;
     public initOnClick: boolean = true;
     public wordPasteKeepFormatting: boolean = false;

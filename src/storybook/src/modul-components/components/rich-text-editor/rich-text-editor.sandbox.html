@@ -335,4 +335,64 @@
                             :disabled="radioValue != 1"></m-rich-text-editor>
         <m-radio value="2">Option 2</m-radio>
     </m-radio-group>
+
+    <h5 class="m-u--margin-bottom">Nombre de charactères maximum</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            char-counter-max="20"></m-rich-text-editor>
+    </div>
+
+    <h5 class="m-u--margin-bottom">Afficher boutons alignement du texte</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-paragraph-alignement-buttons="true"></m-rich-text-editor>
+    </div>
+
+    <h5 class="m-u--margin-bottom">Afficher bouton soulignement du texte</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-underline-button="true"></m-rich-text-editor>
+    </div>
+
+    <h5 class="m-u--margin-bottom">Afficher bouton texte barré</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-strike-through-button="true"></m-rich-text-editor>
+    </div>
 </div>
