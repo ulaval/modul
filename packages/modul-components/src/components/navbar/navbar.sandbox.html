@@ -437,6 +437,175 @@
         </m-navbar>
     </div>
 
+    <h3>Skin tab-light-main composé avec tab-underline</h3>
+    <m-navbar skin="tab-light-main"
+              :selected.sync="selectedItem"
+              :multiline="multiline"
+              title-button-left="Naviguer précédent"
+              title-button-right="Naviguer suivant">
+        <m-navbar-item value="item1">
+            1 souris verte
+        </m-navbar-item>
+        <m-navbar-item value="item2">
+            2
+        </m-navbar-item>
+        <m-navbar-item value="item3">
+            3
+        </m-navbar-item>
+        <m-navbar-item value="item4">
+            4
+        </m-navbar-item>
+        <m-navbar-item value="item5">
+            5
+        </m-navbar-item>
+        <m-navbar-item value="item6">
+            6
+        </m-navbar-item>
+        <m-navbar-item value="item7">
+            7
+        </m-navbar-item>
+        <m-navbar-item value="item8">
+            8
+        </m-navbar-item>
+        <m-navbar-item value="item9">
+            9 singes
+        </m-navbar-item>
+        <m-navbar-item value="item10"
+                       :disabled="true">
+            10 chèvres et 10 moutons
+        </m-navbar-item>
+        <m-navbar-item value="item11">
+            11 barnacles magestueuses volant vers le lointain
+        </m-navbar-item>
+        <m-navbar-item value="item12">
+            12 zaine d'oeufs
+        </m-navbar-item>
+    </m-navbar>
+    <m-accordion-transition>
+        <div v-if="navOpenPres">
+            <m-navbar skin="tab-underline"
+                      :selected.sync="selectedItemPres">
+                <m-navbar-item value="item1">
+                    Introduction
+                </m-navbar-item>
+                <m-navbar-item value="item2">
+                    Liens entre le cours et le programme
+                </m-navbar-item>
+                <m-navbar-item value="item3">
+                    Modalités particulières de l’offre de cours
+                </m-navbar-item>
+                <m-navbar-item value="item4">
+                    Objectifs généraux
+                </m-navbar-item>
+                <m-navbar-item value="item5">
+                    Objectifs particuliers
+                </m-navbar-item>
+                <m-navbar-item value="item6">
+                    Éléments de contenu
+                </m-navbar-item>
+                <m-navbar-item value="item7">
+                    Approche pédagogique
+                </m-navbar-item>
+                <m-navbar-item value="item8">
+                    Modalités d'encadrement
+                </m-navbar-item>
+                <m-navbar-item value="item9">
+                    Appréciation de l'enseignement
+                </m-navbar-item>
+            </m-navbar>
+        </div>
+    </m-accordion-transition>
+
+    <h3>Skin tab-light-main</h3>
+    <m-navbar skin="tab-light-main"
+              :selected.sync="selectedItem"
+              :multiline="multiline"
+              title-button-left="Naviguer précédent"
+              title-button-right="Naviguer suivant">
+        <m-navbar-item value="item1">
+            1 souris verte
+        </m-navbar-item>
+        <m-navbar-item value="item2">
+            2
+        </m-navbar-item>
+        <m-navbar-item value="item3">
+            3
+        </m-navbar-item>
+        <m-navbar-item value="item4">
+            4
+        </m-navbar-item>
+        <m-navbar-item value="item5">
+            5
+        </m-navbar-item>
+        <m-navbar-item value="item6">
+            6
+        </m-navbar-item>
+        <m-navbar-item value="item7">
+            7
+        </m-navbar-item>
+        <m-navbar-item value="item8">
+            8
+        </m-navbar-item>
+        <m-navbar-item value="item9">
+            9 singes
+        </m-navbar-item>
+        <m-navbar-item value="item10"
+                       :disabled="true">
+            10 chèvres et 10 moutons
+        </m-navbar-item>
+        <m-navbar-item value="item11">
+            11 barnacles magestueuses volant vers le lointain
+        </m-navbar-item>
+        <m-navbar-item value="item12">
+            12 zaine d'oeufs
+        </m-navbar-item>
+    </m-navbar>
+
+    <h3>Skin tab-dark-main</h3>
+    <m-navbar skin="tab-dark-main"
+              :selected.sync="selectedItem"
+              :multiline="multiline"
+              title-button-left="Naviguer précédent"
+              title-button-right="Naviguer suivant">
+        <m-navbar-item value="item1">
+            1 souris verte
+        </m-navbar-item>
+        <m-navbar-item value="item2">
+            2
+        </m-navbar-item>
+        <m-navbar-item value="item3">
+            3
+        </m-navbar-item>
+        <m-navbar-item value="item4">
+            4
+        </m-navbar-item>
+        <m-navbar-item value="item5">
+            5
+        </m-navbar-item>
+        <m-navbar-item value="item6">
+            6
+        </m-navbar-item>
+        <m-navbar-item value="item7">
+            7
+        </m-navbar-item>
+        <m-navbar-item value="item8">
+            8
+        </m-navbar-item>
+        <m-navbar-item value="item9">
+            9 singes
+        </m-navbar-item>
+        <m-navbar-item value="item10"
+                       :disabled="true">
+            10 chèvres et 10 moutons
+        </m-navbar-item>
+        <m-navbar-item value="item11">
+            11 barnacles magestueuses volant vers le lointain
+        </m-navbar-item>
+        <m-navbar-item value="item12">
+            12 zaine d'oeufs
+        </m-navbar-item>
+    </m-navbar>
+
     <h2>Main navbar with sub menu</h2>
     <m-navbar skin="nav-main"
               :selected.sync="selectedItemMainMenu"
@@ -536,6 +705,10 @@
             </m-navbar>
         </div>
     </m-accordion-transition>
+
+    TabLightMain = 'tab-light-main',
+    TabDark = 'tab-dark',
+    TabDarkMain = 'tab-dark-main',
 
     <!-- <h2>Support for vue-router named route (MODUL-616)</h2>
     <m-navbar :selected.sync="selectedItemMod">

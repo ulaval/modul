@@ -132,6 +132,11 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     protected created(): void {
+        if (this.skin === MNavbarSkin.TabLight) {
+            this.$log.warn('MNavbarSkin.TabLight is deprecated, please use MNavbarSkin.TabLightMain instead.');
+        } else if (this.skin === MNavbarSkin.TabDark) {
+            this.$log.warn('MNavbarSkin.TabDark is deprecated, please use MNavbarSkin.TabDarkMain instead.');
+        }
         this.internalValue = undefined;
     }
 
