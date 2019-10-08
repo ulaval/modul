@@ -1,5 +1,5 @@
 import { PluginObject } from 'vue';
-import AddressLookupPlugin, { AddressLookupPluginOptions } from '../../utils/address-lookup/address-lookup.plugin';
+import AddressLookupPlugin, { AddressLookupPluginOptions, GoogleProxyLookupPluginOptions } from '../../utils/address-lookup/address-lookup.plugin';
 import AutoCompletePlugin from '../autocomplete/autocomplete';
 import { ADDRESS_AUTOCOMPLETE_FIELD_NAME, ADDRESS_LOOKUP_FIELD_NAME } from '../component-names';
 import PoweredByGooglePlugin from '../powered-by-google/powered-by-google';
@@ -12,11 +12,12 @@ import { MAddressReader } from './address-reader/address-reader';
 export interface AddressPluginOptions {
     loqateKey: string;
     googleKey: string;
+    googleProxy: GoogleProxyLookupPluginOptions;
 }
 
 const AddressPlugin: PluginObject<any> = {
-    install(v, options: AddressPluginOptions | undefined = { loqateKey: '', googleKey: '' }): void {
-        v.use(AddressLookupPlugin, { loqateKey: options.loqateKey, googleKey: options.googleKey } as AddressLookupPluginOptions);
+    install(v, options: AddressPluginOptions | undefined = { loqateKey: '', googleKey: '', googleProxy: {} }): void {
+        v.use(AddressLookupPlugin, { loqateKey: options.loqateKey, googleKey: options.googleKey, googleProxy: options.googleProxy } as AddressLookupPluginOptions);
         v.use(AutoCompletePlugin);
         v.use(PoweredByGooglePlugin);
         v.component(ADDRESS_AUTOCOMPLETE_FIELD_NAME, MAddressAutocompleteField);
@@ -27,4 +28,3 @@ const AddressPlugin: PluginObject<any> = {
 };
 
 export default AddressPlugin;
-

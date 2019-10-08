@@ -2,7 +2,8 @@ import { Address, AddressSummary } from './address';
 
 export enum AddressLookupServiceProvider {
     Google,
-    Loqate
+    Loqate,
+    GoogleProxy
 }
 
 export interface AddressLookupService {
