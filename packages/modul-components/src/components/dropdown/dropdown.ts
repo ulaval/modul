@@ -186,7 +186,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (this.filterable && this.internalFilter !== '') {
             let value: string = '';
             this.internalItems.every(item => {
-                if (item.propLabel === this.internalFilter) {
+                if (item.propLabel && normalizeString(item.propLabel) === normalizeString(this.internalFilter)) {
                     value = item.value;
                     return false;
                 }

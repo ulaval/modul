@@ -1,6 +1,6 @@
 {
     "name": "meta-generator",
-    "version": "1.0.2-beta.0",
+    "version": "1.0.2-beta.1",
     "description": "Vue typescript component documentation generator",
     "private": true,
     "author": "Charles Maheu <charles.maheu@dti.ulaval.ca>",
@@ -26,10 +26,6 @@
         "copyfiles": "^1.2.0",
         "node-html-parser": "^1.1.10",
         "ts-morph": "^1.0.0",
-        "tslint": "^5.14.0",
-        "tslint-config-standard": "^8.0.1",
-        "typescript": "^3.2.2",
-        "typescript-tslint-plugin": "^0.3.0",
         "yargs": "^14.0.0"
     },
     "dependencies": {

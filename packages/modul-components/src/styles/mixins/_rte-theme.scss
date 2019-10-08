@@ -1,4 +1,5 @@
 @import "../utils/link";
+$m-fr-icon-size: 14px !default;
 
 @mixin m-commons-rte-styles() {
     @include m-titles-styles();
@@ -56,9 +57,18 @@
     a {
         @extend .m-u--link;
 
+        display: inline;
+
         &:hover,
         &:focus {
             @extend %m-u--link-text--hover-focus;
         }
+    }
+
+    .fr-btn > svg,
+    .fr-sub-menu > svg {
+        width: $m-fr-icon-size;
+        height: $m-fr-icon-size;
+        margin: $m-margin;
     }
 }
