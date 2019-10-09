@@ -77,6 +77,13 @@ export const labelUp = () => ({
     template: `<m-select :options="options" label="Fruits" :label-up="true" ></m-select>`
 });
 
+export const clearableActivated = () => ({
+    data: () => ({
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" :clearable="true" ></m-select>`
+});
+
 export const longOptionMenu = () => ({
     data: () => ({
         options: LONG_OPTIONS
@@ -120,7 +127,7 @@ export const readonlyItemSelectedWithLabel = () => ({
     template: `<m-select :options="options" :readonly="true" label="Fruits" v-model="patate" v-model="model" ></m-select>`
 });
 
-export const readonlyItemSelectedWithLabelClearableActivate = () => ({
+export const readonlyItemSelectedWithLabelClearableActivated = () => ({
     data: () => ({
         model: 'banana',
         options: OPTIONS
@@ -164,7 +171,7 @@ export const disabledItemSelectedWithLabel = () => ({
     template: `<m-select :options="options" :disabled="true" label="Fruits" v-model="model" ></m-select>`
 });
 
-export const disabledItemSelectedWithLabelClearableActivate = () => ({
+export const disabledItemSelectedWithLabelClearableActivated = () => ({
     data: () => ({
         model: 'banana',
         options: OPTIONS
