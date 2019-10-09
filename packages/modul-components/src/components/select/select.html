@@ -36,7 +36,7 @@
                            :label-up="internalLabelUp"
                            :empty="isEmpty"
                            :error="hasError"
-                           :cursor-pointer="hasPointer"
+                           :cursor-pointer="isSelectable"
                            :append="true"
                            :valid="isValid"
                            :required-marker="requiredMarker"
@@ -49,7 +49,7 @@
                     </slot>
                 </div>
 
-                <template slot="append">
+                <template v-slot:append>
                     <m-opacity-transition>
                         <m-icon-button v-if="isClearable"
                                        :aria-controls="id"

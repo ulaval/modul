@@ -63,7 +63,8 @@ export class MSelect extends ModulVue {
     }
 
     get isClearable(): boolean {
-        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue && !this.as<InputState>().isDisabled && !this.as<InputState>().isReadonly;
+        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue &&
+            this.isSelectable;
     }
 
     get selectedItems(): any {
@@ -73,7 +74,7 @@ export class MSelect extends ModulVue {
         return [];
     }
 
-    get hasPointer(): boolean {
+    get isSelectable(): boolean {
         return !this.as<InputState>().isDisabled &&
             !this.as<InputState>().isReadonly;
     }

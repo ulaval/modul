@@ -36,10 +36,10 @@ export class MIconButton extends Vue {
     @Prop()
     public title: string;
 
+    private hasSlot: boolean = false;
+
     @Emit('keydown')
     onKeydown(event: KeyboardEvent): void { }
-
-    private hasSlot: boolean = false;
 
     protected mounted(): void {
         this.hasSlot = !!this.$slots.default;
