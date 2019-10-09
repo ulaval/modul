@@ -29,7 +29,7 @@ export const defaultStory = () => ({
             default: boolean('Readonly', false)
         },
         isClearable: {
-            default: boolean('Clearable activated', false)
+            default: boolean('Clearable', false)
         }
     },
     methods: actions(
@@ -77,7 +77,7 @@ export const labelUp = () => ({
     template: `<m-select :options="options" label="Fruits" :label-up="true" ></m-select>`
 });
 
-export const clearableActivated = () => ({
+export const clearable = () => ({
     data: () => ({
         options: OPTIONS
     }),
@@ -127,7 +127,7 @@ export const readonlyItemSelectedWithLabel = () => ({
     template: `<m-select :options="options" :readonly="true" label="Fruits" v-model="patate" v-model="model" ></m-select>`
 });
 
-export const readonlyItemSelectedWithLabelClearableActivated = () => ({
+export const readonlyItemSelectedWithLabelClearable = () => ({
     data: () => ({
         model: 'banana',
         options: OPTIONS
@@ -171,7 +171,7 @@ export const disabledItemSelectedWithLabel = () => ({
     template: `<m-select :options="options" :disabled="true" label="Fruits" v-model="model" ></m-select>`
 });
 
-export const disabledItemSelectedWithLabelClearableActivated = () => ({
+export const disabledItemSelectedWithLabelClearable = () => ({
     data: () => ({
         model: 'banana',
         options: OPTIONS
