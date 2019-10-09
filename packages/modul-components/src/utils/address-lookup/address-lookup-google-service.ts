@@ -56,7 +56,6 @@ export default class AddressLookupGoogleService implements AddressLookupService 
     }
 
     private discardToken(): void {
-        // The moment at which the token should be discarded is still unclear.  It might get moved later.
         this.sessionToken = undefined;
     }
 }

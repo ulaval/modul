@@ -13,37 +13,39 @@ export default class AddressLookupGoogleProxyService implements AddressLookupSer
     private findUrl: string;
     private retrieveUrl: string;
 
+    /**
+     * Use this service if you have your own proxy to google. Such a proxy is useful to keep your googleAPI key secret.
+     * @param findUrl https://developers.google.com/places/web-service/autocomplete
+     * @param retrieveUrl https://developers.google.com/places/web-service/details
+     */
     constructor(findUrl: string, retrieveUrl: string) {
         this.httpService = new HttpService();
         this.findUrl = findUrl;
         this.retrieveUrl = retrieveUrl;
-
     }
 
     async find(query: AddressLookupFindQuery): Promise<AddressSummary[]> {
         this.ensureCreateToken();
-        const request: google.maps.places.AutocompletionRequest = {
+        const params: google.maps.places.AutocompletionRequest = {
             input: query.input,
             sessionToken: this.sessionToken
         };
         const results: google.maps.places.AutocompletePrediction[] = await this.httpService.execute({
             method: 'GET',
             rawUrl: this.findUrl,
-            params: {
-                ...request
-            }
+            params
         }).then((r: AxiosResponse<unknown>) => ((r.data as any).predictions as google.maps.places.AutocompletePrediction[]));
 
         return results
             .map((prediction: google.maps.places.AutocompletePrediction) => new GoogleFindResponseBuilder()
-                .setRequest(request)
+                .setRequest(params)
                 .setResult(prediction)
                 .build()
                 .mapTo(new AddressLookupToAddressSummary()));
     }
 
     async retrieve(query: AddressLookupRetrieveQuery): Promise<Address[]> {
-        const request: google.maps.places.PlaceDetailsRequest = {
+        const params: google.maps.places.PlaceDetailsRequest = {
             placeId: query.id,
             sessionToken: this.sessionToken
         };
@@ -51,13 +53,13 @@ export default class AddressLookupGoogleProxyService implements AddressLookupSer
         const results: google.maps.places.PlaceResult = await this.httpService.execute({
             method: 'GET',
             rawUrl: this.retrieveUrl,
-            params: {
-                ...request
-            }
+            params
         }).then((r: AxiosResponse<unknown>) => (r.data as any) as google.maps.places.PlaceResult);
+
         this.discardToken();
+
         const address: Address = new GoogleRetrieveResponseBuilder()
-            .setRequest(request)
+            .setRequest(params)
             .setResult(results)
             .build()
             .mapTo(new AddressRetrieveToAddress());
