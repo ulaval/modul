@@ -1,0 +1,8 @@
+@import 'commons';
+
+.m-page-not-found {
+    &__text,
+    &__link {
+        margin-top: $m-spacing;
+    }
+}

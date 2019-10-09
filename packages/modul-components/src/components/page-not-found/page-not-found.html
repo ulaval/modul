@@ -1,9 +1,10 @@
-<div>
+<div class="m-page-not-found">
     <m-message state="warning">
         <p>{{'m-page-not-found:message' | f-m-i18n}}</p>
     </m-message>
-    <p>{{'m-page-not-found:directions' | f-m-i18n}}</p>
-    <m-link mode="link">
+    <p class="m-page-not-found__text">{{'m-page-not-found:directions' | f-m-i18n}}</p>
+    <m-link class="m-page-not-found__link"
+            mode="link">
         {{backToLabel}}
     </m-link>
 </div>

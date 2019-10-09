@@ -36,6 +36,7 @@ import MultiSelectPlugin from '@ulaval/modul-components/dist/components/multi-se
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
 import OptionPlugin from '@ulaval/modul-components/dist/components/option/option';
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
+import PageNotFoundPlugin from '@ulaval/modul-components/dist/components/page-not-found/page-not-found';
 import PaginationPlguin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
 import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
@@ -153,10 +154,9 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(CopyToClipboardPlugin);
         Vue.use(MultiSelectPlugin);
         Vue.use(SelectPlugin);
-
         Vue.use(DecimalfieldPlugin);
         Vue.use(IntegerfieldPlugin);
-
+        Vue.use(PageNotFoundPlugin);
         Vue.use(FormPlugin);
 
         // modul-website

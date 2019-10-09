@@ -5,8 +5,6 @@ import { InputStateTagStyle } from '@ulaval/modul-components/dist/mixins/input-s
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${INPLACE_EDIT_NAME}`, module)
-
-
     .add('default', () => ({
         data: () => ({
             value: 'This is a value',

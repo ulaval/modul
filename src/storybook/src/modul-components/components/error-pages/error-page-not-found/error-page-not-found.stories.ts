@@ -8,10 +8,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(ErrorPageNotFoundPlugin);
 
-
-
 storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_PAGE_NOT_FOUND_NAME}`, module)
-
 
     .add('default', () => ({
         template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">

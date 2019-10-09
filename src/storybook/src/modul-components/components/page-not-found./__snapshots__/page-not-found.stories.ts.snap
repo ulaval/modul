@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-page-not-found default 1`] = `
+<div
+  class="m-page-not-found"
+>
+  <div
+    class="m-message m--is-state-warning m--is-skin-default"
+  >
+    <div
+      class="m-message__wrap"
+    >
+      <div
+        class="m-message__icon"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon"
+          height="1em"
+          width="1em"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </div>
+       
+      <div
+        class="m-message__body"
+      >
+        <!---->
+         
+        <div
+          class="m-message__text"
+        >
+          <p>
+            La page demandée n'a pas été trouvée.
+          </p>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <p
+    class="m-page-not-found__text"
+  >
+    Elle a peut-être été déplacée ou retirée, ou son nom a changé. Veuillez vérifier l'adresse (URL) indiquée dans votre navigateur et réessayer.
+  </p>
+   
+  <a
+    class="m-link m-page-not-found__link m--has-content"
+    href="/"
+    tabindex="0"
+  >
+    <!---->
+     
+    <span
+      class="m-link__text"
+    >
+      
+        Retour au portail
+    
+    </span>
+     
+    <!---->
+  </a>
+</div>
+`;

@@ -5,8 +5,7 @@ import { PAGE_NOT_FOUND_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
 import LinkPlugin from '../link/link';
 import MessagePlugin from '../message/message';
-import WithRender from './page-not-found.html';
-
+import WithRender from './page-not-found.html?style=./page-not-found.scss';
 
 @WithRender
 @Component
