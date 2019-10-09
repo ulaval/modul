@@ -8,8 +8,8 @@
     ],
     "scripts": {
         "dev": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "prepack": "cross-env NODE_ENV=cdn yarn run build",
+        "build": "cross-env NODE_ENV=openshift vue-cli-service build",
+        "prepack": "cross-env NODE_ENV=cdn vue-cli-service build",
         "lint": "vue-cli-service lint"
     },
     "devDependencies": {
