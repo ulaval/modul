@@ -101,9 +101,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     private isHidden: boolean = false;
     private observer: MutationObserver;
 
-    transitionNameDefault: string = 'm--is';
-    transitionNameCurrent: string = this.transitionNameDefault;
-
     public handlesFocus(): boolean {
         return this.focusManagement;
     }
@@ -157,8 +154,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         document.addEventListener('mouseup', this.onDocumentClick);
 
         this.$on('portal-mounted', this.setPopperMutationObserver);
-
-        document.addEventListener('visibilitychange', this.onVisibilityChange);
     }
 
     protected beforeDestroy(): void {
@@ -169,17 +164,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
 
         this.$off('portal-mounted', this.setPopperMutationObserver);
 
-        document.removeEventListener('visibilitychange', this.onVisibilityChange);
-
         this.destroyPopper();
-    }
-
-    private onVisibilityChange(): void {
-        if (document.hidden) {
-            this.transitionNameCurrent = '';
-        } else {
-            this.transitionNameCurrent = this.transitionNameDefault;
-        }
     }
 
     public get popupBody(): HTMLElement {
