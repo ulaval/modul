@@ -145,18 +145,22 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     protected mounted(): void {
-        this.setupScrolllH();
-        this.as<ElementQueries>().$on('resize', this.setupScrolllH);
-
-        this.$children.forEach((child: Vue) => {
-            child.$on('resize', this.setupScrolllH);
-        });
+        this.watchResizes();
 
         this.$refs.wrap.addEventListener('scroll', this.setDisplayNavigationButtons);
 
-        if (this.isTabUnderlineSkin || this.isTabArrowSkin) {
-            this.observer = new MutationObserver(() => this.updateSelectedIndicatorPosition());
-            this.observer.observe(this.$refs.list, { subtree: true, childList: true, characterData: true });
+        this.observer = new MutationObserver((mutations: MutationRecord[]) => {
+            if (mutations.some((mutation: MutationRecord) => mutation.type === 'childList')) {
+                this.watchResizes();
+            }
+
+            if (this.skin === MNavbarSkin.TabUnderline || this.skin === MNavbarSkin.TabArrow) {
+                this.updateSelectedIndicatorPosition();
+            }
+        });
+
+        this.observer.observe(this.$refs.list, { subtree: true, childList: true, characterData: true });
+        if (this.skin === MNavbarSkin.TabUnderline || this.skin === MNavbarSkin.TabArrow) {
             if (this.selected) { this.updateSelectedIndicatorPosition(); }
         }
     }
@@ -218,6 +222,20 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
     public get isTabArrowSkin(): boolean {
         return this.skin === MNavbarSkin.TabArrow;
+    }
+
+    private watchResizes(): void {
+        this.as<ElementQueries>().$off('resize', this.setupScrolllH);
+        this.$children.forEach((child: Vue) => {
+            child.$off('resize', this.setupScrolllH);
+        });
+
+        this.setupScrolllH();
+
+        this.as<ElementQueries>().$on('resize', this.setupScrolllH);
+        this.$children.forEach((child: Vue) => {
+            child.$on('resize', this.setupScrolllH);
+        });
     }
 
     private setSelectedIndicatorPosition(element, ref: string): void {
