@@ -4,10 +4,13 @@
             "description": "La ou les valeurs sélectionnées dans la liste déroulante."
         },
         "options": {
-            "description": "L'ensemble des options disponibles dans la liste déroulante. Chaque option peut être un objet contenant plusieurs informations. Par  exemple, une option pourrait être composée d'un libellé long pour afficher dans la liste, et d'une abbréviation courte pour l'étiquette lorsque l'option est sélectionnée."
+            "description": "L'ensemble des options disponibles dans la liste déroulante. Il est possible de définir un libellé différent (généralement plus court) à afficher une fois l'option sélectionnée."
         },
         "maxVisibleChips": {
             "description": "Nombre maximun d'options sélectionnées affichées avant de voir apparaître le libellé « X de plus... ». À ajuster en fonction de l'espace disponible."
+        },
+        "default‑chip‑chars‑trunk": {
+            "description": "Nombre de caractères maximum du libellé d'une étiquette avant d'afficher « ... »."
         },
         "linkSelectAll": {
             "description": "Affiche un lien en tête de la liste d'options permettant de sélectionner et désélectionner toutes les options en un clic."
@@ -18,20 +21,20 @@
     },
     "slots": {
         "default": {
-            "description": "Contenu du bouton"
+            "description": ""
         },
         "items": {
-            "description": "Contenu de l'option dans la liste déroulante. Généralement la version longue et complète de l'option."
+            "description": "Liste des options proposées par la liste déroulante. Il est possible de définir un libellé différent (généralement plus court) à afficher une fois l'option sélectionnée (voir chips)."
         },
         "chips": {
-            "description": "Contenu de l'étiquette une fois l'option sélectionnée. Si possible, une version courte de l'option est à privilégier pour optimiser le nombre d'options sélectionnées visibles."
+            "description": "Liste des étiquettes une fois l'option sélectionnée. Si possible, une version courte est à privilégier pour optimiser le nombre d'étiquettes visibles."
         }
     },
     "events": {
-        "onSelect": {
+        "select-item": {
             "description": "Lancé lorsqu'une option est sélectionnée dans la liste."
         },
-        "onBlur": {
+        "on-blur": {
             "description": "Lancé lorsque la liste perd le focus."
         }
     }
