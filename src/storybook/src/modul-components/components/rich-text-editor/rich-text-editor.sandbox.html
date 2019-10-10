@@ -395,4 +395,22 @@
                             :disabled="disabled"
                             :show-strike-through-button="true"></m-rich-text-editor>
     </div>
+
+    <h5 class="m-u--margin-bottom">Avec tous les boutons</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-paragraph-alignement-buttons="true"
+                            :show-underline-button="true"
+                            :show-strike-through-button="true"
+                            :options="imageNoLayoutOptions"></m-rich-text-editor>
+    </div>
 </div>
