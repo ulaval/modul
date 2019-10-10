@@ -196,9 +196,13 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
         if (this.showParagraphAlignementButtons) {
             // toolbar for desktop devices
-            richTextEditorOptions.toolbarButtons.moreParagraph.buttons.splice(0, 0, 'alignLeft', 'alignCenter', 'alignRight', 'alignJustify');
+            richTextEditorOptions.toolbarButtons.moreParagraph.buttons.splice(0, 0, 'align');
             // for mobile devices
-            richTextEditorOptions.toolbarButtonsXS.moreParagraph.buttons.splice(0, 0, 'alignLeft', 'alignCenter', 'alignRight', 'alignJustify');
+            richTextEditorOptions.toolbarButtonsXS.moreParagraph.buttons.splice(0, 0, 'align');
+        }
+
+        if (this.showCharCounter || this.charCounterMax) {
+            richTextEditorOptions.pluginsEnabled.push('charCounter');
         }
 
         return richTextEditorOptions;

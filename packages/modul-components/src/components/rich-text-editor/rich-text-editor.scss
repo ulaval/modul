@@ -21,4 +21,23 @@ $m-line-height-rich-text: 21px !default;
             line-height: $m-line-height-rich-text;
         }
     }
+
+    /deep/ div[id*="dropdown-menu-align"] .fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list {
+        min-width: 0;
+        padding: 0;
+
+        li {
+            a {
+                padding: $m-margin;
+            }
+        }
+    }
+
+    /deep/ .fr-counter {
+        padding-bottom: 0;
+    }
+
+    /deep/ .vue-froala {
+        overflow: unset;
+    }
 }

@@ -12,7 +12,7 @@ export class MRichTextEditorDefaultOptions {
     public toolbarSticky: boolean = true;
     public scrollableContainer: string = 'body'; // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
     public toolbarStickyOffset: number = 0;
-    public pluginsEnabled: string[] = ['align', 'charCounter', 'draggable', 'embedly', 'entities', 'file', 'fontFamily', 'fontSize', 'fullscreen', 'inlineStyle', 'link', 'lists', 'paragraphFormat', 'paragraphStyle', 'quote', 'save', 'specialCharacters', 'table', 'url', 'wordPaste', 'stylesSubMenu', 'listesSubMenu', 'insertionsSubMenu', 'embedly'];
+    public pluginsEnabled: string[] = ['align', 'draggable', 'embedly', 'entities', 'file', 'fontFamily', 'fontSize', 'fullscreen', 'inlineStyle', 'link', 'lists', 'paragraphFormat', 'paragraphStyle', 'quote', 'save', 'specialCharacters', 'table', 'url', 'wordPaste', 'stylesSubMenu', 'listesSubMenu', 'insertionsSubMenu', 'embedly'];
     public wordPasteModal: boolean = false;
     public initOnClick: boolean = true;
     public wordPasteKeepFormatting: boolean = false;
