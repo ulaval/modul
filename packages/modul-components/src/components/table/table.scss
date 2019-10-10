@@ -1,5 +1,7 @@
 @import 'commons';
 
+$m-sortable-icon-size: 14px;
+
 @mixin m-table-sortable-icon-select() {
     opacity: 1;
 
@@ -77,14 +79,26 @@
 
             &.m--is-text-align-center {
                 text-align: center;
+
+                .m-table__header-wrap {
+                    justify-content: center;
+                }
             }
 
             &.m--is-text-align-left {
                 text-align: left;
+
+                .m-table__header-wrap {
+                    justify-content: flex-start;
+                }
             }
 
             &.m--is-text-align-right {
                 text-align: right;
+
+                .m-table__header-wrap {
+                    justify-content: flex-end;
+                }
             }
         }
     }
@@ -105,6 +119,10 @@
 
         &:last-child {
             padding-right: $m-spacing;
+
+            &.m--is-sortable {
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
+            }
         }
 
         &:not(:first-child) {
@@ -113,6 +131,10 @@
 
         &:not(:last-child) {
             padding-right: $m-spacing--s;
+
+            &.m--is-sortable {
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
+            }
         }
 
         &.m--is-text-align-center {
@@ -145,6 +167,12 @@
         align-items: center;
     }
 
+    &__sortable-icon-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
     &__header-name {
         position: relative;
         z-index: 1;
@@ -152,10 +180,10 @@
 
     .m-table__sortable-icon {
         transition: transform $m-transition-duration ease, opacity $m-transition-duration ease;
-        position: relative;
+        position: absolute;
+        right: calc((#{$m-sortable-icon-size} + #{$m-spacing--xs}) * -1);
         z-index: 0;
         opacity: 0;
-        margin-left: $m-spacing--xs;
 
         &:focus {
             color: $m-color--text;
