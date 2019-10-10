@@ -186,13 +186,13 @@ $m-sortable-icon-size: 14px;
 
     td {
         &:last-child {
-            &.m--is-sortable {
+            &.m--is-sortable.m--is-text-align-right {
                 padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
             }
         }
 
         &:not(:last-child) {
-            &.m--is-sortable {
+            &.m--is-sortable.m--is-text-align-right {
                 padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
             }
         }
