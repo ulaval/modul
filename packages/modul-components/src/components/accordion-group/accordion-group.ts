@@ -43,10 +43,20 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     })
     public openAll: boolean;
 
+    isAllOpen: boolean = false;
+    isAllClosed: boolean = false;
     private accordions: { [id: string]: AccordionGateway } = {};
 
+    protected mounted(): void {
+        this.updateToggleLinks();
+    }
+
+    protected updated(): void {
+        this.updateToggleLinks();
+    }
+
     public addAccordion(accordion: AccordionGateway): void {
-        accordion.$on('update:open', this.emitValueChange);
+        accordion.$on('update:open', this.onAccordionOpenChange);
         this.$set(this.accordions, accordion.propId, accordion);
         if (this.openAll || (this.openedIds && this.openedIds.find(v => v === accordion.propId))) {
             accordion.propOpen = true;
@@ -54,7 +64,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     }
 
     public removeAccordion(id: string): void {
-        this.accordions[id].$off('update:open', this.emitValueChange);
+        this.accordions[id].$off('update:open', this.onAccordionOpenChange);
         this.$delete(this.accordions, id);
     }
 
@@ -64,7 +74,9 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
         }
     }
 
-    private get propAllOpen(): boolean {
+    private updateIsAllOpen(): void {
+        // A computed wouldn't work here since we want to recompute the value each time the DOM changes (when a child is removed, added, updated, etc)
+
         let allOpened: boolean = true;
         for (const id in this.accordions) {
             allOpened = this.accordions[id].propOpen || !this.accordionHasContent(id);
@@ -72,10 +84,14 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
                 break;
             }
         }
-        return allOpened;
+
+
+        this.isAllOpen = allOpened;
     }
 
-    private get propAllClosed(): boolean {
+    private updateIsAllClosed(): void {
+        // A computed wouldn't work here since we want to recompute the value each time the DOM changes (when a child is removed, added, updated, etc)
+
         let allClosed: boolean = true;
         for (const id in this.accordions) {
             allClosed = !this.accordions[id].propOpen || !this.accordionHasContent(id);
@@ -83,7 +99,8 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
                 break;
             }
         }
-        return allClosed;
+
+        this.isAllClosed = allClosed;
     }
 
     private get propSkin(): MAccordionSkin {
@@ -104,7 +121,8 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
         }
     }
 
-    private emitValueChange(): void {
+    private onAccordionOpenChange(): void {
+        this.updateToggleLinks();
         const openedIds: string[] = Object.keys(this.accordions).filter(
             id => this.accordions[id].propOpen
         );
@@ -123,6 +141,11 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     private accordionHasContent(id: string): boolean {
         return !!this.accordions[id].$slots.default ||
             (!!this.accordions[id].$scopedSlots.default && !!this.accordions[id].$scopedSlots.default!(undefined));
+    }
+
+    private updateToggleLinks(): void {
+        this.updateIsAllOpen();
+        this.updateIsAllClosed();
     }
 }
 
