@@ -24,11 +24,17 @@ pipeline {
     stages {
         stage('echo branch name') {
             steps {
-            	echo "branch name ${env.BRANCH_NAME} pull-request ${env.CHANGE_ID}"
+            	echo "branch name ${env.BRANCH_NAME} pull-request ${env.GITHUB_PR_NUMBER}"
             }
         }
 
-        stage('Build & test') {
+        stage('install, build, lint & test') {
+
+            when {
+                expression {
+                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
+                }
+            }
 
             steps {
                 sh 'yarn install --frozen-lockfile'
