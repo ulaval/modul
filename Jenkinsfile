@@ -33,7 +33,8 @@ pipeline {
             }
 
             steps {
-                sh 'yarn install'
+                sh 'yarn install --frozen-lockfile'
+                sh 'yarn build'
                 sh 'yarn lint:ci'
                 sh 'yarn test:ci'
             }
