@@ -1,7 +1,16 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
+	agent {
+		docker {
+			image 'node:10'
+		}
+	}
+
+    environment {
+        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
+        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
+    }
 
     options {
         // Discarter après 10 builds
@@ -11,14 +20,12 @@ pipeline {
         timestamps()
     }
 
-    environment {
-        // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
-        npm_config_cache = 'npm-cache'
-        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
-        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
-    }
 
     stages {
+        stage('echo branch name') {
+            	echo "branch name ${env.BRANCH_NAME}"
+        }
+
         stage('Build & test') {
             when {
                 expression {
@@ -42,6 +49,11 @@ pipeline {
     }
 
     post {
+
+        always {
+            cleanWs()
+        }
+
         changed {
             echo 'Build status changed'
             step([$class: 'Mailer', recipients: ['charles.maheu@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
