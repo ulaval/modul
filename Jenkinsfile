@@ -23,7 +23,9 @@ pipeline {
 
     stages {
         stage('echo branch name') {
+            steps {
             	echo "branch name ${env.BRANCH_NAME}"
+            }
         }
 
         stage('Build & test') {
