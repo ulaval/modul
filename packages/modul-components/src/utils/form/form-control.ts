@@ -5,7 +5,7 @@ import { ControlValidator } from './validators/control-validator';
 
 export class FormControl<T> extends AbstractControl {
     private _value?: T;
-    private _initialValue?: T;
+    private _initialValue?: string; // String au lieu de T pour éviter que _initialValue contienne une référence à un autre objet. Sa valeur doit rester fixe.
     private _oldValue?: T;
 
     constructor(
@@ -16,7 +16,9 @@ export class FormControl<T> extends AbstractControl {
 
         if (options) {
             if (options.initialValue !== undefined) {
-                this._initialValue = this._value = this._oldValue = options.initialValue;
+                this._initialValue = JSON.stringify(options.initialValue);
+                this._value = options.initialValue;
+                this._oldValue = options.initialValue;
             }
         } else {
             // ensure reactivity
@@ -49,10 +51,6 @@ export class FormControl<T> extends AbstractControl {
         this._value = value;
 
         this.upwardValueChanged();
-    }
-
-    set initalValue(initalValue: T) {
-        this._initialValue = initalValue;
     }
 
     public get valid(): boolean {
@@ -117,9 +115,11 @@ export class FormControl<T> extends AbstractControl {
         this._touched = false;
 
         if (typeof initialValue === 'undefined') {
-            this._value = this._oldValue = this._initialValue;
+            this._value = this._initialValue ? JSON.parse(this._initialValue) : undefined;
+            this._oldValue = this._initialValue ? JSON.parse(this._initialValue) : undefined;
         } else {
-            this._initialValue = this._value = this._oldValue = initialValue;
+            this._value = this._oldValue = initialValue;
+            this._initialValue = JSON.stringify(initialValue);
         }
     }
 
