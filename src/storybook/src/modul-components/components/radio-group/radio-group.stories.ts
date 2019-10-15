@@ -56,6 +56,13 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${RADIO_GROUP_NAME}`, module)
                    </m-radio-group>`
     }))
     .add('focus', () => ({
+        template: `<m-radio-group :focus="true">
+                        <m-radio value="1">Radio Option 1</m-radio>
+                        <m-radio value="2">Radio Option 2</m-radio>
+                        <m-radio value="3">Radio Option 3</m-radio>
+                   </m-radio-group>`
+    }))
+    .add('focus with model', () => ({
         data: () => ({
             model: '2'
         }),

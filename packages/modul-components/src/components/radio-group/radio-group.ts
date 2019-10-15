@@ -107,19 +107,25 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
 
     @Watch('focus')
     private focusChanged(focus: boolean): void {
-        const elements: HTMLElement[] | undefined = this.getRadioInput();
+        const selector: string = this.as<InputStateInputSelector>().selector || 'input, textarea, [contenteditable=true]';
+        const elements: NodeListOf<Element> = this.$el.querySelectorAll(selector);
         let inputEl: HTMLElement | undefined;
-        if (elements) {
-            if (elements.length > 1) {
-                elements.forEach((radio) => {
-                    if ((radio as unknown as MRadio).value === this.value) {
-                        inputEl = radio;
-                    }
-                });
-            } else {
-                inputEl = elements[0];
+
+        // Find right element to focus
+        if (elements.length > 1) {
+            elements.forEach((radio) => {
+                if ((radio as unknown as MRadio).value === this.value) {
+                    inputEl = radio as HTMLElement;
+                }
+            });
+            if (inputEl === undefined) {
+                inputEl = elements[0] as HTMLElement;
             }
+        } else {
+            inputEl = elements[0] as HTMLElement;
         }
+
+        // Focus on the element
         if (inputEl) {
             if (focus) {
                 inputEl.focus();
@@ -144,12 +150,6 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
 
     private get idValidationMessage(): string | undefined {
         return this.as<InputState>().errorMessage || this.as<InputState>().validMessage || this.as<InputState>().helperMessage ? uuid.generate() : undefined;
-    }
-
-    private getRadioInput(): HTMLElement[] | undefined {
-        const selector: string = this.as<InputStateInputSelector>().selector || 'input, textarea, [contenteditable=true]';
-        const elements: NodeListOf<Element> = this.$el.querySelectorAll(selector);
-        return elements as unknown as HTMLElement[] | undefined;
     }
 }
 
