@@ -88,13 +88,15 @@ export class Portal extends ModulVue implements PortalMixin {
     public setFocusToPortal(): void {
         if (this.as<PortalMixinImpl>().handlesFocus()) {
             let el: HTMLElement = this.as<PortalMixinImpl>().getPortalElement();
-            let x: number = window.pageXOffset; // AEL-53
-            let y: number = window.pageYOffset; // AEL-53
-            el.setAttribute('tabindex', '0');
-            el.focus();
-            window.scrollTo(x, y); // AEL-53
-            el.blur();
-            el.removeAttribute('tabindex');
+            if (el) {
+                let x: number = window.pageXOffset; // AEL-53
+                let y: number = window.pageYOffset; // AEL-53
+                el.setAttribute('tabindex', '0');
+                el.focus();
+                window.scrollTo(x, y); // AEL-53
+                el.blur();
+                el.removeAttribute('tabindex');
+            }
         }
     }
 

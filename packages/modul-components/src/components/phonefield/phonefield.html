@@ -62,12 +62,12 @@
                            :tag-style="tagStyle">
                 <m-input-mask ref="inputMask"
                               :value="internalValue"
-                              @input="inputChanged($event)"
                               :id="id"
                               :disabled="isDisabled || isWaiting"
                               :placeholder="placeholder"
                               :readonly="isReadonly"
                               :options="inputMaskOptions"
+                              @input="inputChanged($event)"
                               @focus="onFocus"
                               @blur="onBlur"
                               @keyup="onKeyup"
