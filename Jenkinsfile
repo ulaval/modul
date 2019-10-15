@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 
 pipeline {
-	agent {
-		docker {
-			image 'node:10'
-		}
-	}
+	// agent {
+	// 	docker {
+	// 		image 'node:10'
+	// 	}
+	// }
 
     environment {
         DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
@@ -53,7 +53,7 @@ pipeline {
 
             steps {
                 script {
-                    build(job: "MODUL/modul-openshift/modul-build-docker",
+                    build(job: "modul-openshift/modul-build-docker",
                     parameters: [
                         [$class: 'StringParameterValue', name: 'branch', value: env.BRANCH_NAME]
                     ])
