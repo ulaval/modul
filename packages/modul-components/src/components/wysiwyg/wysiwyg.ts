@@ -12,6 +12,15 @@ export class MWysiwyg extends Vue {
     @Prop()
     public value: string;
 
+    @Prop()
+    public label: string;
+
+    @Prop()
+    public error: boolean;
+
+    @Prop()
+    public errorMessage: string;
+
     @Emit('input')
     public emitInput(value: string): void { }
 
@@ -44,6 +53,10 @@ export class MWysiwyg extends Vue {
         if (this.$refs.body) {
             this.observer.observe(this.$refs.body, { subtree: true, childList: true, characterData: true });
         }
+    }
+
+    public get hasErrorOrHasErrorMessage(): boolean {
+        return this.error || !!this.errorMessage;
     }
 
     public execCommand(command: string, value?: any): void {

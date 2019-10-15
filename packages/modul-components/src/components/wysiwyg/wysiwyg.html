@@ -1,53 +1,61 @@
-<m-input-style class="m-wysiwyg"
-               :focus="isFocused"
-               :class="{'m--is-focused': isFocused}"
-               @click="onClick()">
-    <m-accordion-transition>
-        <div v-if="isFocused"
-             class="m-wysiwyg__menu"
-             onmousedown="event.preventDefault();">
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('undo')"><i class="fas fa-undo"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('redo')"><i class="fas fa-redo"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('bold')"><i class="fa fa-bold"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('italic')"><i class="fa fa-italic"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('underline')"><i class="fa fa-underline"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="link()"><i class="fa fa-link"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('strikeThrough')"><i class="fa fa-strikethrough"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('justifyLeft')"><i class="fa fa-align-left"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('justifyCenter')"><i class="fa fa-align-center"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('justifyRight')"><i class="fa fa-align-right"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('justifyFull')"><i class="fa fa-align-justify"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('indent')"><i class="fa fa-indent"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('outdent')"><i class="fa fa-outdent"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('insertUnorderedList')"><i class="fa fa-list-ul"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('insertOrderedList')"><i class="fa fa-list-ol"></i></div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('formatBlock', 'h1')">H1</div>
-            <div class="m-wysiwyg__button"
-                 @click="execCommand('formatBlock', 'h2')">H2</div>
-        </div>
-    </m-accordion-transition>
+<div class="m-wysiwyg"
+     :class="{'m--is-focused': isFocused}">
+    <m-input-style class="m-wysiwyg__input-style"
+                   :label="label"
+                   :error="hasErrorOrHasErrorMessage"
+                   :focus="isFocused"
+                   @click="onClick()">
+        <m-accordion-transition>
+            <div v-if="isFocused"
+                 class="m-wysiwyg__menu"
+                 onmousedown="event.preventDefault();">
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('undo')"><i class="fas fa-undo"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('redo')"><i class="fas fa-redo"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('bold')"><i class="fa fa-bold"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('italic')"><i class="fa fa-italic"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('underline')"><i class="fa fa-underline"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="link()"><i class="fa fa-link"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('strikeThrough')"><i class="fa fa-strikethrough"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('justifyLeft')"><i class="fa fa-align-left"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('justifyCenter')"><i class="fa fa-align-center"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('justifyRight')"><i class="fa fa-align-right"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('justifyFull')"><i class="fa fa-align-justify"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('indent')"><i class="fa fa-indent"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('outdent')"><i class="fa fa-outdent"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('insertUnorderedList')"><i class="fa fa-list-ul"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('insertOrderedList')"><i class="fa fa-list-ol"></i></div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('formatBlock', 'h1')">H1</div>
+                <div class="m-wysiwyg__button"
+                     @click="execCommand('formatBlock', 'h2')">H2</div>
+            </div>
+        </m-accordion-transition>
 
-    <div class="m-wysiwyg__body"
-         contenteditable="true"
-         ref="body"
-         @change="onChange()"
-         @focus="onFocus()"
-         @blur="onBlur()">
+        <div class="m-wysiwyg__body"
+             contenteditable="true"
+             ref="body"
+             @change="onChange()"
+             @focus="onFocus()"
+             @blur="onBlur()">
+        </div>
+    </m-input-style>
+    <div class="m-wysiwyg__validation">
+        <m-validation-message class="m-wysiwyg__validation__message"
+                              :error-message="errorMessage"></m-validation-message>
     </div>
-</m-input-style>
+</div>
