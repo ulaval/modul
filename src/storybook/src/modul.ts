@@ -65,6 +65,7 @@ import '@ulaval/modul-components/dist/utils/polyfills';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils/utils-plugin';
+import MWysiwygPlugin from '@ulaval/modul-components/src/components/wysiwyg/wysiwyg';
 import ComponentExamplesPlugin from '@ulaval/modul-website/src/component-examples/component-example-plugins';
 import Vue, { PluginObject } from 'vue';
 import VueRouter from 'vue-router';
@@ -158,6 +159,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(IntegerfieldPlugin);
 
         Vue.use(FormPlugin);
+        Vue.use(MWysiwygPlugin);
 
         // modul-website
         Vue.use(ComponentExamplesPlugin);

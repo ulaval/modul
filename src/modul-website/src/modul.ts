@@ -52,6 +52,7 @@ import SlideTransitionPlugin from '@ulaval/modul-components/dist/components/tran
 import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
 import { UtilsPlugin } from '@ulaval/modul-components/dist/utils';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
+import MWysiwygPlugin from '@ulaval/modul-components/src/components/wysiwyg/wysiwyg';
 import Vue, { PluginObject } from 'vue';
 
 const ModulPlugin: PluginObject<any> = {
@@ -115,6 +116,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(ToastPlugin);
         Vue.use(PaginationPlugin);
         Vue.use(ChipDeletePlugin);
+        Vue.use(MWysiwygPlugin);
     }
 };
 

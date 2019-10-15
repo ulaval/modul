@@ -1,0 +1,95 @@
+<div class="m-wysiwyg">
+    <div onmousedown="event.preventDefault();">
+        <m-button @click="updateSelectedText()">selected text</m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('undo')"><i class="fas fa-undo"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('redo')"><i class="fas fa-redo"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('bold')"><i class="fa fa-bold"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('italic')"><i class="fa fa-italic"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('underline')"><i class="fa fa-underline"></i></m-button>
+        <m-button skin="secondary"
+                  @click="link()"><i class="fa fa-link"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('strikeThrough')"><i class="fa fa-strikethrough"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('justifyLeft')"><i class="fa fa-align-left"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('justifyCenter')"><i class="fa fa-align-center"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('justifyRight')"><i class="fa fa-align-right"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('justifyFull')"><i class="fa fa-align-justify"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('indent')"><i class="fa fa-indent"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('outdent')"><i class="fa fa-outdent"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('insertUnorderedList')"><i class="fa fa-list-ul"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('insertOrderedList')"><i class="fa fa-list-ol"></i></m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('formatBlock', 'h1')">H1</m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('formatBlock', 'h2')">H2</m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('formatBlock', 'p')">p</m-button>
+        <m-button skin="secondary"
+                  @click="execCommand('backColor', backColor)">
+            <i class="fas fa-paint-brush"></i>
+        </m-button>
+        <m-option>
+            <m-option-item style="background-color: #2ecc71;"
+                           @click="backColor = '#2ecc71'">
+            </m-option-item>
+            <m-option-item style="background-color: #8e44ad;"
+                           @click="backColor = '#8e44ad'">
+            </m-option-item>
+            <m-option-item style="background-color: #2ecc71;"
+                           @click="backColor = '#2ecc71'">
+            </m-option-item>
+            <m-option-item style="background-color: #0abde3;"
+                           @click="baclColor = '#0abde3'">
+            </m-option-item>
+            <m-option-item style="background-color: #f1c40f;"
+                           @click="backColor = '#f1c40f'">
+            </m-option-item>
+        </m-option>
+        <m-button skin="secondary"
+                  @click="execCommand('foreColor', foreColor)">
+            <i class="fa fa-tint"></i>
+        </m-button>
+        <m-option>
+            <m-option-item style="background-color: #2ecc71;"
+                           @click="foreColor = '#2ecc71'">
+            </m-option-item>
+            <m-option-item style="background-color: #8e44ad;"
+                           @click="foreColor = '#8e44ad'">
+            </m-option-item>
+            <m-option-item style="background-color: #2ecc71;"
+                           @click="foreColor = '#2ecc71'">
+            </m-option-item>
+            <m-option-item style="background-color: #0abde3;"
+                           @click="foreColor = '#0abde3'">
+            </m-option-item>
+            <m-option-item style="background-color: #f1c40f;"
+                           @click="foreColor = '#f1c40f'">
+            </m-option-item>
+        </m-option>
+    </div>
+
+    <div class="body"
+         ref="body"
+         contenteditable="true">
+    </div>
+
+    <div>
+        selected text: {{selectedText}}
+    </div>
+    <div v-html="result">
+
+    </div>
+</div>
