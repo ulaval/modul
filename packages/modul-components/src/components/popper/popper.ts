@@ -22,6 +22,7 @@ export enum MPopperPlacement {
     LeftEnd = 'left-end'
 }
 
+
 @WithRender
 @Component({
     mixins: [Portal]
