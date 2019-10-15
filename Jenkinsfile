@@ -22,25 +22,42 @@ pipeline {
 
 
     stages {
-        stage('echo branch name') {
-            steps {
-            	echo "branch name ${env.BRANCH_NAME} pull-request ${env.GITHUB_PR_NUMBER}"
-            }
-        }
+        // stage('echo branch name') {
+        //     steps {
+        //     	echo "branch name ${env.BRANCH_NAME} pull-request ${env.GITHUB_PR_NUMBER}"
+        //     }
+        // }
 
-        stage('install, build, lint & test') {
+        // stage('install, build, lint & test') {
 
+        //     when {
+        //         expression {
+        //             env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
+        //         }
+        //     }
+
+        //     steps {
+        //         sh 'yarn install --frozen-lockfile'
+        //         sh 'yarn build'
+        //         sh 'yarn lint:ci'
+        //         sh 'yarn test:ci'
+        //     }
+        // }
+
+        stage('Build docker for openshift') {
             when {
                 expression {
-                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
+                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop' || env.BRANCH_NAME=='feature/configuration_openshift'
                 }
             }
 
             steps {
-                sh 'yarn install --frozen-lockfile'
-                sh 'yarn build'
-                sh 'yarn lint:ci'
-                sh 'yarn test:ci'
+                script {
+                    build(job: "MODUL/modul-openshift/modul-build-docker",
+                    parameters: [
+                        [$class: 'StringParameterValue', name: 'branch', value: env.BRANCH_NAME]
+                    ])
+                }
             }
         }
     }
