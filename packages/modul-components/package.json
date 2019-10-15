@@ -18,7 +18,6 @@
         "lint": "tsc --noEmit && tslint --project tsconfig.json -s ../../node_modules/custom-tslint-formatters/formatters -t grouped ",
         "lint:ci": "tsc --noEmit && tslint --project tsconfig.json -t junit -o reports/junit/js-lint-results.xml ",
         "prepare": "yarn run build",
-        "prepack": "yarn run buildlib",
         "stats": "webpack --config conf/webpack.config.js --env.lib --env.silent --colors --profile --json > reports/stats.json && webpack-bundle-analyzer reports/stats.json",
         "print_version_win": "echo %npm_package_version%",
         "print_version_nx": "echo $npm_package_version",
