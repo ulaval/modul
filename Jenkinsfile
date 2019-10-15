@@ -1,11 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-	// agent {
-	// 	docker {
-	// 		image 'node:10'
-	// 	}
-	// }
+    agent any
 
     environment {
         DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
@@ -22,14 +18,14 @@ pipeline {
 
 
     stages {
-        // stage('echo branch name') {
-        //     steps {
-        //     	echo "branch name ${env.BRANCH_NAME} pull-request ${env.GITHUB_PR_NUMBER}"
-        //     }
-        // }
+
 
         // stage('install, build, lint & test') {
-
+	// agent {
+	// 	docker {
+	// 		image 'node:10'
+	// 	}
+	// }
         //     when {
         //         expression {
         //             env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
