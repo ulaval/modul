@@ -20,6 +20,8 @@ export interface Address {
     postalCode: string;
     country: Country;
     subBuilding: string;
+    formattedAddress: string;
+    adrFormattedAddress: string;
     attributions: string[];
     source: AddressSources;
     isEstablishment: boolean;

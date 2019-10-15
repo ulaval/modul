@@ -110,6 +110,8 @@ describe(`Address lookup loqate service`, () => {
 
             expect(result).toEqual([
                 {
+                    adrFormattedAddress: '',
+                    formattedAddress: '',
                     source: AddressSources.LOQATE,
                     attributions: [],
                     isEstablishment: false,
@@ -123,6 +125,8 @@ describe(`Address lookup loqate service`, () => {
                     subBuilding: undefined
                 },
                 {
+                    adrFormattedAddress: '',
+                    formattedAddress: '',
                     source: AddressSources.LOQATE,
                     attributions: [],
                     isEstablishment: false,
