@@ -8,10 +8,9 @@
     ],
     "scripts": {
         "dev": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "prepack": "yarn run build",
-        "lint": "vue-cli-service lint",
-        "serve:dist": "http-server ./dist -p 8083 -g -o"
+        "build": "cross-env NODE_ENV=openshift vue-cli-service build",
+        "prepack": "cross-env NODE_ENV=cdn vue-cli-service build",
+        "lint": "vue-cli-service lint"
     },
     "devDependencies": {
         "@mojotech/json-type-validation": "^3.1.0",
@@ -27,7 +26,6 @@
         "compression-webpack-plugin": "^2.0.0",
         "custom-tslint-formatters": "^2.4.0",
         "highlight.js": "^9.12.0",
-        "http-server": "^0.11.1",
         "lodash": "^4.17.15",
         "markdown-it": "^8.4.0",
         "meta-generator": "^1.0.2-beta.1",
