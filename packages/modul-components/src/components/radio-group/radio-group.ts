@@ -1,11 +1,11 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
-import { InputState } from '../../mixins/input-state/input-state';
+import { InputState, InputStateInputSelector } from '../../mixins/input-state/input-state';
 import uuid from '../../utils/uuid/uuid';
 import { RADIO_GROUP_NAME } from '../component-names';
 import InputGroupPlugin from '../input-group/input-group';
-import RadioPlugin, { BaseRadioGroup, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
+import RadioPlugin, { BaseRadioGroup, MRadio, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
 import WithRender from './radio-group.html?style=./radio-group.scss';
 
 @WithRender
@@ -39,18 +39,31 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     public radiosVerticalAlign: MRadioVerticalAlignement;
     @Prop()
     public radiosMarginTop: string;
+    @Prop()
+    public focus: boolean;
 
     public name: string = uuid.generate();
     private internalValue: any | undefined = '';
+    private internalIsFocus: boolean = false;
 
     @Emit('change')
-    onChange(value: any): void { }
+    private onChange(value: any): void { }
 
     @Emit('focus')
-    onFocus(event: Event): void { }
+    private emitFocus(event: FocusEvent): void { }
 
     @Emit('blur')
-    onBlur(event: Event): void { }
+    private emitBlur(event: FocusEvent): void { }
+
+    protected created(): void {
+        this.internalValue = undefined;
+    }
+
+    protected mounted(): void {
+        if (this.focus) {
+            this.focusChanged(this.focus);
+        }
+    }
 
     public get stateIsDisabled(): boolean {
         return this.as<InputState>().isDisabled;
@@ -64,6 +77,10 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
         return this.as<InputState>().isValid;
     }
 
+    public get idLabel(): string | undefined {
+        return this.hasLabel ? uuid.generate() : undefined;
+    }
+
     public getValue(): any {
         return this.model;
     }
@@ -72,8 +89,15 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
         this.model = value;
     }
 
-    protected created(): void {
-        this.internalValue = undefined;
+    public onFocus(event: FocusEvent): void {
+        if (!this.internalIsFocus) {
+            this.internalIsFocus = true;
+            this.emitFocus(event);
+        }
+    }
+
+    public onBlur(event: FocusEvent): void {
+        this.emitBlur(event);
     }
 
     @Watch('value')
@@ -81,25 +105,51 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
         this.internalValue = value;
     }
 
+    @Watch('focus')
+    private focusChanged(focus: boolean): void {
+        const elements: HTMLElement[] | undefined = this.getRadioInput();
+        let inputEl: HTMLElement | undefined;
+        if (elements) {
+            if (elements.length > 1) {
+                elements.forEach((radio) => {
+                    if ((radio as unknown as MRadio).value === this.value) {
+                        inputEl = radio;
+                    }
+                });
+            } else {
+                inputEl = elements[0];
+            }
+        }
+        if (inputEl) {
+            if (focus) {
+                inputEl.focus();
+            } else {
+                inputEl.blur();
+            }
+        }
+    }
+
     private get model(): any {
         return this.value === undefined ? this.internalValue : this.value;
+    }
+
+    private set model(value: any) {
+        this.internalValue = value;
+        this.onChange(value);
     }
 
     private get hasLabel(): boolean {
         return !!this.label;
     }
 
-    public get idLabel(): string | undefined {
-        return this.hasLabel ? uuid.generate() : undefined;
-    }
-
     private get idValidationMessage(): string | undefined {
         return this.as<InputState>().errorMessage || this.as<InputState>().validMessage || this.as<InputState>().helperMessage ? uuid.generate() : undefined;
     }
 
-    private set model(value: any) {
-        this.internalValue = value;
-        this.onChange(value);
+    private getRadioInput(): HTMLElement[] | undefined {
+        const selector: string = this.as<InputStateInputSelector>().selector || 'input, textarea, [contenteditable=true]';
+        const elements: NodeListOf<Element> = this.$el.querySelectorAll(selector);
+        return elements as unknown as HTMLElement[] | undefined;
     }
 }
 
