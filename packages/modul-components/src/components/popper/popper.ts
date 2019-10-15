@@ -22,6 +22,7 @@ export enum MPopperPlacement {
     LeftEnd = 'left-end'
 }
 
+
 @WithRender
 @Component({
     mixins: [Portal]
@@ -154,7 +155,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         document.addEventListener('mouseup', this.onDocumentClick);
 
         this.$on('portal-mounted', this.setPopperMutationObserver);
-
     }
 
     protected beforeDestroy(): void {
@@ -185,8 +185,11 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         if (this.as<PortalMixin>().propOpen) {
             let trigger: HTMLElement | undefined = this.as<PortalMixin>().getTrigger();
             const element: HTMLElement = this.as<PortalMixin>().getPortalElement();
-            if (!(element && element.contains(event.target as Node) || this.$el.contains(event.target as HTMLElement) ||
-                (trigger && trigger.contains(event.target as HTMLElement)))) {
+            if (this.closeOnClickOutside
+                && !(element && element.contains(event.target as Node)
+                    || this.$el.contains(event.target as HTMLElement) ||
+                    (trigger && trigger.contains(event.target as HTMLElement)))
+            ) {
                 this.as<PortalMixin>().propOpen = false;
             }
         }
@@ -230,8 +233,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
             } else {
                 let transitionDuration: number = (window.getComputedStyle(el).getPropertyValue('transition-duration').slice(1, -1) as any) * 1000;
                 setTimeout(() => {
-                    this.defaultAnimOpen = true;
-                    done();
+                    this.defaultAnimOpen = false;
                 }, transitionDuration);
             }
         });
@@ -262,9 +264,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
             this.leave(el.children[0], done);
         } else {
             this.defaultAnimOpen = false;
-            setTimeout(() => {
-                done();
-            }, 300);
         }
     }
 
