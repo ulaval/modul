@@ -1,77 +1,82 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
+import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { WYSIWYG_NAME } from '../component-names';
+import InputStylePlugin from '../input-style/input-style';
 import WithRender from './wysiwyg.html?style=./wysiwyg.scss';
 
 @WithRender
 @Component
 export class MWysiwyg extends Vue {
-    public backColor = '#f1c40f';
-    public foreColor = '#00000';
+    @Model('input')
+    @Prop()
+    public value: string;
 
-    public selectedText: string = '';
-    public result: string = '';
-    public count = 1;
+    @Emit('input')
+    public emitInput(value: string): void { }
+
+    public isFocused: boolean = false;
+    public internalValue: string = '';
+    private observer: MutationObserver;
+
+    public $refs: {
+        body: HTMLElement
+    };
+
+    @Watch('value', { immediate: true })
+    public onValueChange(): void {
+        this.$nextTick(() => {
+            this.internalValue = this.value;
+
+            if (this.$refs.body.innerHTML === this.value) {
+                return;
+            }
+
+            this.$refs.body.innerHTML = this.value;
+        });
+    }
 
     protected mounted(): void {
-        setInterval(() => this.print(), 10);
+        this.observer = new MutationObserver(() => {
+            this.onChange();
+        });
+
+        if (this.$refs.body) {
+            this.observer.observe(this.$refs.body, { subtree: true, childList: true, characterData: true });
+        }
     }
 
     public execCommand(command: string, value?: any): void {
-        if (command === 'bold') {
-            let el: HTMLElement = window.getSelection()!.focusNode!.parentElement!; // Get the element in question
-            let pa: Node = el.parentNode!;
+        document.execCommand(command, false, value || '');
+    }
 
-            if (el.localName === 'b' && el.firstChild) {
-                pa.insertBefore(el.firstChild, el);
-                pa.removeChild(el);
-                pa.normalize();
-            }
-        }
-
-        document.execCommand(command, false, value);
+    public onChange(): void {
+        this.internalValue = this.$refs.body.innerHTML;
+        this.emitInput(this.$refs.body.innerHTML);
     }
 
     public link(): void {
-        const url: string | null = prompt('Enter the URL');
+        const url: string | null = prompt(`Entrez l'URL`);
         document.execCommand('createLink', false, url || undefined);
     }
 
-    public print(): void {
-        this.result = (this.$refs['body'] as HTMLElement).innerHTML;
+    public onClick(): void {
+        this.$refs.body.focus();
     }
 
-    updateSelectedText(): void {
-        let text: string = '';
-
-        if (window.getSelection()) {
-            text = window.getSelection()!.toString();
-        }
-
-        this.selectedText = text;
+    public onFocus(): void {
+        this.isFocused = true;
     }
 
-    placeCaretAfterNode(node: Node): void {
-        const sel: Selection | null = window.getSelection();
-
-        if (!sel) {
-            return;
-        }
-
-        let range: Range = sel.getRangeAt(0);
-        range.collapse(false);
-        range.insertNode(node);
-        range = range.cloneRange();
-        range.selectNodeContents(node);
-        range.collapse(false);
-        sel.removeAllRanges();
-        sel.addRange(range);
+    public onBlur(): void {
+        this.isFocused = false;
     }
 }
 
 const MWysiwygPlugin: PluginObject<any> = {
     install(v, options): void {
         v.prototype.$log.debug(WYSIWYG_NAME, 'plugin.install');
+        v.use(InputStylePlugin);
         v.component(WYSIWYG_NAME, MWysiwyg);
     }
 };

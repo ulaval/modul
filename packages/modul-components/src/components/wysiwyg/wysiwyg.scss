@@ -1,11 +1,33 @@
 @import 'commons';
 
 .m-wysiwyg {
-    // todo
-}
-
-.body {
-    height: 10rem;
     width: 100%;
-    border: 1px solid black;
+
+    &__menu {
+        display: flex;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $m-touch-size;
+        height: $m-touch-size;
+        margin: -#{$m-spacing--s} 0 0 0;
+        color: $m-color--text-light;
+
+        &:hover {
+            color: $m-color--text;
+        }
+    }
+
+    &__body {
+        outline: none;
+    }
+
+    &.m--is-focused {
+        .m-wysiwyg__body {
+            padding-top: $m-spacing;
+        }
+    }
 }
