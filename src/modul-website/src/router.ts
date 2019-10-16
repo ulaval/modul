@@ -384,7 +384,7 @@ const routerFactory: RouterFactoryFn = (meta: ModulMeta) => {
 
     let vueRouter: VueRouter = new Router({
         mode: process.env.NODE_ENV === 'openshift' ? 'hash' : 'history',
-        base: process.env.NODE_ENV === 'openshift' ? '/website/' : '/',
+        base: process.env.NODE_ENV === 'cdn' ? '/modul/' : (process.env.NODE_ENV === 'openshift' ? '/website/' : '/'),
         routes: modulRoutes,
         scrollBehavior(to, from, savedPosition) {
             if (savedPosition) {
