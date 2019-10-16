@@ -57,29 +57,40 @@ exports[`Storyshots modul-components|m-popper Default Story 1`] = `
 `;
 
 exports[`Storyshots modul-components|m-popper On Tab Change Restore Transition 1`] = `
-<div
-  class="m-popper"
->
-  <button
-    class="m-button m--is-skin-primary"
-    type="button"
+<div>
+  <div
+    class="m-popper"
   >
-    <!---->
-     
-    <!---->
-     
-    <span
-      class="m-button__text"
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
     >
-      Open popper 
       <!---->
-    </span>
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        Open popper 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
      
     <!---->
-     
-    <!---->
-  </button>
+  </div>
    
-  <!---->
+  <p>
+    <a
+      href="http://twitter.com"
+      target="_blank"
+    >
+      Go to twitter
+    </a>
+  </p>
 </div>
 `;
