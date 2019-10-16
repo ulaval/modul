@@ -2,6 +2,7 @@ import Croppie from 'croppie';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { MFile } from '../../../utils/file/file';
 import { ModulVue } from '../../../utils/vue/vue';
 import { CROP_IMAGE_NAME } from '../../component-names';
 import WithRender from './crop-image.html?style=./crop-image.scss';
@@ -35,6 +36,15 @@ export class MCropImage extends ModulVue {
     bind(): void {
         this.croppie.bind({
             url: this.urlImage
+        });
+    }
+
+    click(): void {
+        this.croppie.result({
+            format: 'jpeg',
+            type: 'blob'
+        }).then((rep: MFile) => {
+            this.$emit('upload', rep);
         });
     }
 
