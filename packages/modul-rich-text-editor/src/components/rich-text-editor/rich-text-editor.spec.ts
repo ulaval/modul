@@ -1,25 +1,22 @@
+import ModulPlugin from '@ulaval/modul-components/dist/utils/modul/modul';
 import { mount, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
-import { renderComponent } from '../../../tests/helpers/render';
-import uuid from '../../utils/uuid/uuid';
 import { MRichTextEditor, MRichTextEditorOption } from './rich-text-editor';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import RichTextLicensePlugin from './rich-text-license-plugin';
-
-jest.mock('../../utils/uuid/uuid');
-(uuid.generate as jest.Mock).mockReturnValue('uuid');
 
 const froalaLicenseKey: string = 'testKey';
 let wrapper: Wrapper<MRichTextEditor>;
 let richTextEditor: MRichTextEditor;
 let defaultOptions: MRichTextEditorDefaultOptions;
-let headerNormalOption: any = { '': 'm-rich-text-editor:normal-level' };
-let i18nTitle: string = 'm-rich-text-editor:title';
-let i18nSubtitle: string = 'm-rich-text-editor:subtitle';
-let i18nTitleLevel: string = 'm-rich-text-editor:title-level';
+let headerNormalOption: any = { '': 'Normal' };
+let i18nTitle: string = 'Title';
+let i18nSubtitle: string = 'Subtitle';
+let i18nTitleLevel: string = 'Title';
 
 describe('MRichTextEditor', () => {
     beforeEach(() => {
+        Vue.use(ModulPlugin);
         Vue.use(RichTextLicensePlugin, { key: froalaLicenseKey });
         wrapper = mount(MRichTextEditor,
             {
@@ -38,10 +35,6 @@ describe('MRichTextEditor', () => {
         Object.keys(richTextEditor.customTranslations).forEach(key => {
             expect(richTextEditor.customTranslations[key]).not.toBe('');
         });
-    });
-
-    it('should render correctly', () => {
-        expect(renderComponent(richTextEditor)).resolves.toMatchSnapshot();
     });
 
     it('the key is stored', () => {
@@ -106,7 +99,7 @@ describe('MRichTextEditor', () => {
 
                 let headersOptions: any = wrapper.vm.manageHeaderLevels();
 
-                expect(headersOptions).toEqual({ ...headerNormalOption, 'rte-h1 rte_h_level1': i18nTitleLevel, 'rte-h2 rte_h_level2': i18nTitleLevel, 'rte-h3 rte_h_level3': i18nTitleLevel });
+                expect(headersOptions).toEqual({ ...headerNormalOption, 'rte-h1 rte_h_level1': i18nTitleLevel + ' 1', 'rte-h2 rte_h_level2': i18nTitleLevel + ' 2', 'rte-h3 rte_h_level3': i18nTitleLevel + ' 3' });
             });
 
         });

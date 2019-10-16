@@ -5,10 +5,22 @@
     "author": "\"\"Charles Maheu\"\" <\"\"charles.maheu@dti.ulaval.ca\"\">",
     "private": true,
     "dependencies": {
-        "@ulaval/modul-components": "^1.0.0-beta.128"
+        "@ulaval/modul-components": "^1.0.0-beta.131",
+        "froala-editor": "3.0.5",
+        "jquery": "^3.3.1"
     },
     "peerDependencies": {
         "vue": "^2.6.4"
+    },
+    "scripts": {
+        "build": "tsc --project tsconfig.lib.json && copyfiles -u 1 \"./src/**/*.json\" dist && copyfiles -u 1 \"./src/**/*.html\" dist && copyfiles -u 1 \"./src/**/*.scss\" dist && copyfiles -u 1 \"./src/**/*.css\" dist && yarn run assetsToDist",
+        "assetsToDist": "copyfiles -u 1 \"./src/assets/**/*\" dist",
+        "metagen": "meta-generator --dest ./dist --package package.json --tsconfig tsconfig.json",
+        "lint": "tsc --noEmit && tslint --project tsconfig.json -s ../../node_modules/custom-tslint-formatters/formatters -t grouped ",
+        "lint:ci": "tsc --noEmit && tslint --project tsconfig.json -t junit -o reports/junit/js-lint-results.xml ",
+        "test": "jest --verbose",
+        "test:update": "jest --verbose --silent --updateSnapshot",
+        "test:ci": "jest --ci -w 1 --silent --coverage --testResultsProcessor=./tests/jest/ci-test-processor"
     },
     "devDependencies": {
         "@vue/test-utils": "^1.0.0-beta.29",
