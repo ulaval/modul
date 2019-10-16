@@ -152,6 +152,8 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         // sometimes, the document.click event is stopped causing a menu to stay open, even if another menu has been clicked.
         // mouseup will always be caught even if click is stopped.
         document.addEventListener('mouseup', this.onDocumentClick);
+        document.addEventListener('visibilitychange', this.onVisibilityChange);
+
 
         this.$on('portal-mounted', this.setPopperMutationObserver);
     }
@@ -159,12 +161,19 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     protected beforeDestroy(): void {
         this.$modul.event.$off('updateAfterResize', this.update);
         document.removeEventListener('mouseup', this.onDocumentClick);
+        document.removeEventListener('visibilitychange', this.onVisibilityChange);
 
         if (this.observer) { this.observer.disconnect(); }
 
         this.$off('portal-mounted', this.setPopperMutationObserver);
 
         this.destroyPopper();
+    }
+
+    private onVisibilityChange(): void {
+        if (!document.hidden) {
+
+        }
     }
 
     public get popupBody(): HTMLElement {
@@ -233,6 +242,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
                 let transitionDuration: number = (window.getComputedStyle(el).getPropertyValue('transition-duration').slice(1, -1) as any) * 1000;
                 setTimeout(() => {
                     this.defaultAnimOpen = false;
+                    done();
                 }, transitionDuration);
             }
         });
@@ -242,6 +252,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         if (this.afterEnter) {
             this.afterEnter(el.children[0]);
         }
+        this.defaultAnimOpen = false;
         this.$emit('after-enter', el);
         this.as<PortalMixin>().setFocusToPortal();
     }
@@ -263,6 +274,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
             this.leave(el.children[0], done);
         } else {
             this.defaultAnimOpen = false;
+            setTimeout(done, 300);
         }
     }
 
@@ -270,7 +282,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         if (this.afterLeave) {
             this.afterLeave(el.children[0]);
         }
-
+        this.defaultAnimOpen = false;
         this.as<PortalMixin>().setFocusToTrigger();
     }
 

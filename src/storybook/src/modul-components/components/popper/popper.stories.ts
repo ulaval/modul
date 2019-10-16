@@ -47,8 +47,18 @@ export const onTabChangeRestoreTransition = () => ({
             }
         }
     },
-    template: `<m-popper :open.sync="isOpen">
-                    <m-button slot="trigger">Open popper</m-button>
-                    <a href="http://google.com" @click="onClose" target="_blank">Open in new tab</a>
-                </m-popper>`
+    template: `<div>
+                    <m-popper :open.sync="isOpen">
+                        <m-button slot="trigger">Open popper</m-button>
+                        <p>
+                            A link opening in a new tab should not interrupt current transition
+                        </p>
+                        <p>
+                            <a href="http://google.com" @click="onClose" target="_blank">Open in new tab</a>
+                        </p>
+                    </m-popper>
+                    <p>
+                        <a href="http://twitter.com" target="_blank">Go to twitter</a>
+                    </p>
+                </div>`
 });
