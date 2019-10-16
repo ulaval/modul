@@ -21,7 +21,6 @@ export const CHIP_ADD_NAME: string = 'm-chip-add';
 export const CHIP_DELETE_NAME: string = 'm-chip-delete';
 export const COPY_TO_CLIPBOARD_NAME: string = 'm-copy-to-clipboard';
 export const COPY_TO_CLIPBOARD_FEEDBACK_NAME: string = 'm-copy-to-clipboard-feedback';
-export const CROP_IMAGE_NAME: string = 'm-crop-image';
 export const DATEFIELDS_NAME: string = 'm-datefields';
 export const DATEPICKER_NAME: string = 'm-datepicker';
 export const DATERANGEPICKER_NAME: string = 'm-daterangepicker';

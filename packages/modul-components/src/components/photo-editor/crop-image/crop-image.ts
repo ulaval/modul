@@ -4,7 +4,7 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { MFile } from '../../../utils/file/file';
 import { ModulVue } from '../../../utils/vue/vue';
-import { CROP_IMAGE_NAME } from '../../component-names';
+import { CROP_IMAGE_NAME } from '../component-names';
 import WithRender from './crop-image.html?style=./crop-image.scss';
 
 require('croppie/croppie.css');

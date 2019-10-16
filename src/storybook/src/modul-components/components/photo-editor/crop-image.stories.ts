@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/vue';
-import { CROP_IMAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { CROP_IMAGE_NAME } from '@ulaval/modul-components/dist/components/photo-editor/component-names';
 import CropImagePlugin from '@ulaval/modul-components/dist/components/photo-editor/crop-image/crop-image';
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';

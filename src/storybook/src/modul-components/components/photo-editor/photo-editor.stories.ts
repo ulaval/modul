@@ -8,6 +8,9 @@ Vue.use(PhotoEditorPlugin);
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${PHOTO_EDITOR_NAME}`, module)
 
-    .add('default', () => ({
-        template: '<m-photo-editor></m-photo-editor>'
+    .add('With a photo', () => ({
+        template: '<m-photo-editor url-photo="http://placekitten.com/g/192/192" :open="true"></m-photo-editor>'
+    }))
+    .add('Without a photo', () => ({
+        template: '<m-photo-editor :open="true"></m-photo-editor>'
     }));

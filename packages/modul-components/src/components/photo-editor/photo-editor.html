@@ -1,15 +1,28 @@
-<m-modal :open="true"
-         title="Modifier ma photo de profil"
+<m-modal :open.sync="open"
+         :title="i18nTitleModal"
          :size="modalSize">
 
-    <template #footer>
-        <div class="p-form-photo-profil__footer">
-            <m-file-select store-name="stsadfsfdsoreName"
-                           :full-size="true"
-                           :multiple="false"
-                           :keep-store="true"
-                           label="Choisir une photo"></m-file-select>
-            <m-button :full-size="true">Annuler</m-button>
+    <template #default>
+        <div class="m-photo-editor__avatar">
+            <m-avatar :size="avatarSize">
+                <img v-if="urlPhoto"
+                     :src="urlPhoto"
+                     alt="" />
+            </m-avatar>
         </div>
+    </template>
+
+    <template #footer>
+        <m-file-select class="m-photo-editor__button"
+                       :store-name="storeName"
+                       :full-size="true"
+                       :multiple="false"
+                       :keep-store="true"
+                       :label="i18nChoosePhoto"
+                       :skin="primaryButton"
+                       :allowed-extension="allowedExtensions"></m-file-select>
+        <m-button class="m-photo-editor__cancel"
+                  :skin="secondaryButton"
+                  :full-size="true">{{ i18nCancel }}</m-button>
     </template>
 </m-modal>
