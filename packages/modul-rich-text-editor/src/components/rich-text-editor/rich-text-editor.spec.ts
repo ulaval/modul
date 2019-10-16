@@ -1,3 +1,5 @@
+import MessagePlugin, { DebugMode, ENGLISH, I18nPluginOptions } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import LoggerPlugin, { ConsoleOptions } from '@ulaval/modul-components/dist/utils/logger/logger';
 import ModulPlugin from '@ulaval/modul-components/dist/utils/modul/modul';
 import { mount, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
@@ -14,8 +16,24 @@ let i18nTitle: string = 'Title';
 let i18nSubtitle: string = 'Subtitle';
 let i18nTitleLevel: string = 'Title';
 
+let i18nOptions: I18nPluginOptions = {
+    curLang: ENGLISH,
+    debug: DebugMode.Warn
+};
+
+let consoleOptions: ConsoleOptions = {
+    displayDebugs: false
+};
+
 describe('MRichTextEditor', () => {
     beforeEach(() => {
+
+        Vue.config.productionTip = false;
+        Vue.config.silent = true;
+        Vue.use(LoggerPlugin, consoleOptions);
+        Vue.use(MessagePlugin, i18nOptions);
+
+
         Vue.use(ModulPlugin);
         Vue.use(RichTextLicensePlugin, { key: froalaLicenseKey });
         wrapper = mount(MRichTextEditor,

@@ -24,6 +24,13 @@
         "test:update": "jest --verbose --silent --updateSnapshot",
         "test:ci": "jest --ci -w 1 --silent --coverage --testResultsProcessor=./tests/jest/ci-test-processor"
     },
+    "jest-junit": {
+        "output": "reports/junit/js-test-results.xml"
+    },
+    "jest-html-reporter": {
+        "outputPath": "reports/junit/js-test-results.html",
+        "includeFailureMsg": true
+    },
     "devDependencies": {
         "@vue/test-utils": "^1.0.0-beta.29",
         "jest": "^24.9.0",
