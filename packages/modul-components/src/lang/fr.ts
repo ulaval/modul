@@ -52,7 +52,6 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../components/phone-number/phone-number.lang.fr.json'),
                 require('../components/phonefield/phonefield.lang.fr.json'),
                 require('../components/repeater/repeater.lang.fr.json'),
-                require('../components/rich-text-editor/rich-text-editor.lang.fr.json'),
                 require('../components/select/select.lang.fr.json'),
                 require('../components/scroll-top/scroll-top.lang.fr.json'),
                 require('../components/session-expired/session-expired.lang.fr.json'),

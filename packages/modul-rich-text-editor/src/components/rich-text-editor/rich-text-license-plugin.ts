@@ -13,7 +13,7 @@ export interface RichTextLicensePluginOptions {
 
 const RICH_TEXT_LICENSE_KEY: string = 'm-rich-text-license-key';
 
-export class RichTextLicensePlugin implements PluginObject<RichTextLicensePluginOptions | undefined> {
+export const RichTextLicensePlugin: PluginObject<RichTextLicensePluginOptions | undefined> = {
     install(v, options: RichTextLicensePluginOptions | undefined = { key: '', curlang: FRENCH }): void {
         v.use(LicensePlugin);
         v.use(InputStylePlugin);
@@ -33,6 +33,7 @@ export class RichTextLicensePlugin implements PluginObject<RichTextLicensePlugin
             (v.prototype as ModulVue).$license.addLicense(RICH_TEXT_LICENSE_KEY, options.key);
         }
     }
-}
+};
 
-export default new RichTextLicensePlugin();
+export default RichTextLicensePlugin;
+

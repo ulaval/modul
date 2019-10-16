@@ -5,6 +5,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 
 
+
 storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_GROUP_NAME}`, module)
     .add('With content', () => ({
         props: {

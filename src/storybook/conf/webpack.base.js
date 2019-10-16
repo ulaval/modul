@@ -13,7 +13,8 @@ module.exports = function (isLib) {
             extensions: ['.js', '.ts', '.html'],
             alias: {
                 'vue$': 'vue/dist/vue.esm.js',
-                '@ulaval/modul-components/dist': resolve("../../packages/modul-components/src")
+                '@ulaval/modul-components/dist': resolve("../../packages/modul-components/src"),
+                '@ulaval/modul-rich-text-editor/dist': resolve("../../packages/modul-rich-text-editor/src")
                 // '@ulaval/modul-form/dist': resolve("../../packages/modul-form/src")
             }
         },

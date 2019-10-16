@@ -1,6 +1,5 @@
 // tslint:disable:deprecation
 
-import { RICH_TEXT_EDITOR_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import FileUploadPlugin from '@ulaval/modul-components/dist/components/file-upload/file-upload';
 import InputStylePlugin from '@ulaval/modul-components/dist/components/input-style/input-style';
 import ValidationMessagePlugin from '@ulaval/modul-components/dist/components/validation-message/validation-message';
@@ -16,6 +15,7 @@ import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';

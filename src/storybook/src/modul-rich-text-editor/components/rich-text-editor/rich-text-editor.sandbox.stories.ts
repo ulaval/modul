@@ -1,9 +1,9 @@
-import { RICH_TEXT_EDITOR_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { RICH_TEXT_EDITOR_NAME } from '@ulaval/modul-rich-text-editor/dist/components/component-names';
 import { sandboxDecorator } from '../../../sandbox-decorator';
-import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import { modulRteHierarchyRootSeparator } from '../../../utils';
 
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${RICH_TEXT_EDITOR_NAME}`
+    title: `${modulRteHierarchyRootSeparator}${RICH_TEXT_EDITOR_NAME}`
 };
 
 export const sandbox: any = () => '<m-rich-text-editor-sandbox></m-rich-text-editor-sandbox>';

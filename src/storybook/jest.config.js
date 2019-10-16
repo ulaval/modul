@@ -25,6 +25,7 @@ module.exports = {
         "\\.(css|less|sass|scss)$": "<rootDir>/tests/jest/jest-ignore.js",
         "\\.min\\.(css|less|sass|scss)|\\.svg$": "<rootDir>/tests/jest/jest-ignore.js",
         "@ulaval/modul-components/dist/(.*)": "<rootDir>/../../packages/modul-components/src/$1",
+        "@ulaval/modul-rich-text-editor/dist/(.*)": "<rootDir>/../../packages/modul-rich-text-editor/src/$1",
         "@ulaval/modul-website/src/(.*)": "<rootDir>/../modul-website/src/$1"
     },
     snapshotSerializers: [

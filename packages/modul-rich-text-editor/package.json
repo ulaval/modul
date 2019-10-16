@@ -13,7 +13,9 @@
         "vue": "^2.6.4"
     },
     "scripts": {
+        "clean": "rimraf dist",
         "build": "tsc --project tsconfig.lib.json && copyfiles -u 1 \"./src/**/*.json\" dist && copyfiles -u 1 \"./src/**/*.html\" dist && copyfiles -u 1 \"./src/**/*.scss\" dist && copyfiles -u 1 \"./src/**/*.css\" dist && yarn run assetsToDist",
+        "prepare": "yarn run clean && yarn run build",
         "assetsToDist": "copyfiles -u 1 \"./src/assets/**/*\" dist",
         "metagen": "meta-generator --dest ./dist --package package.json --tsconfig tsconfig.json",
         "lint": "tsc --noEmit && tslint --project tsconfig.json -s ../../node_modules/custom-tslint-formatters/formatters -t grouped ",
