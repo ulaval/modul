@@ -4,7 +4,11 @@ const { jsWithBabel: tsjPreset } = require('ts-jest/presets');
 
 module.exports = {
     testURL: 'http://localhost/',
-
+    globals: {
+        'ts-jest': {
+            diagnostics: false
+        }
+    },
     roots: [
         '<rootDir>/src/'
     ],
