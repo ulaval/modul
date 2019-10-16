@@ -17,8 +17,10 @@
            :name="propName"
            :value="value"
            v-model="model"
-           type="radio" />
-    <label class="m-radio__wrap"
+           type="radio"
+           ref="radioInput" />
+    <label class="
+           m-radio__wrap"
            ref="label"
            :for="radioID">
         <span class="m-radio__input"

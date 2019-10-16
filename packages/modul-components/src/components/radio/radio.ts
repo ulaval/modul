@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop } from 'vue-property-decorator';
+import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
@@ -65,6 +65,12 @@ export class MRadio extends ModulVue {
     public radioVerticalAlign: MRadioVerticalAlignement;
     @Prop()
     public radioMarginTop: string;
+    @Prop()
+    public focus: boolean;
+
+    $refs: {
+        radioInput: HTMLInputElement;
+    };
 
     public radioID: string = uuid.generate();
 
@@ -75,7 +81,44 @@ export class MRadio extends ModulVue {
     private internalDisabled: boolean = false;
 
     @Emit('change')
-    onChange(value: any): void { }
+    private onChange(value: any): void { }
+
+    @Emit('focus')
+    private onFocus(event: Event): void {
+        this.hasFocus = true;
+    }
+
+    @Emit('blur')
+    private onBlur(event: Event): void {
+        this.hasFocus = false;
+    }
+
+    @Watch('focus')
+    private focusChanged(focus: boolean): void {
+        if (focus) {
+            this.$refs.radioInput.focus();
+        } else {
+            this.$refs.radioInput.blur();
+        }
+    }
+
+    protected mounted(): void {
+        if (this.focus) {
+            this.focusChanged(this.focus);
+        }
+    }
+
+    protected get model(): string {
+        return this.isGroup() ? this.parentGroup.getValue() : this.modelValue;
+    }
+
+    protected set model(value: string) {
+        if (this.isGroup()) {
+            this.parentGroup.updateValue(value);
+        } else {
+            this.onChange(value);
+        }
+    }
 
     public get propPosition(): MRadioPosition {
         return this.isGroup() ? this.parentGroup.radiosPosition : this.radioPosition;
@@ -112,18 +155,6 @@ export class MRadio extends ModulVue {
         return this.isGroup() ? this.parentGroup.inline : false;
     }
 
-    protected get model(): string {
-        return this.isGroup() ? this.parentGroup.getValue() : this.modelValue;
-    }
-
-    protected set model(value: string) {
-        if (this.isGroup()) {
-            this.parentGroup.updateValue(value);
-        } else {
-            this.onChange(value);
-        }
-    }
-
     public get propReadonly(): boolean {
         if (this.as<InputStateMixin>().readonly !== undefined) {
             return this.as<InputStateMixin>().readonly;
@@ -147,16 +178,6 @@ export class MRadio extends ModulVue {
             }
         }
         return !!this.hasParentGroup;
-    }
-
-    @Emit('focus')
-    private onFocus(event: Event): void {
-        this.hasFocus = true;
-    }
-
-    @Emit('blur')
-    private onBlur(event: Event): void {
-        this.hasFocus = false;
     }
 }
 
