@@ -45,6 +45,7 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     public name: string = uuid.generate();
     private internalValue: any | undefined = '';
     private internalIsFocus: boolean = false;
+    private internalIsBlur: boolean = false;
 
     @Emit('change')
     private onChange(value: any): void { }
@@ -90,14 +91,21 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     }
 
     public onFocus(event: FocusEvent): void {
-        if (!this.internalIsFocus) {
-            this.internalIsFocus = true;
+        if (!this.internalIsBlur) {
             this.emitFocus(event);
         }
+        this.internalIsFocus = true;
     }
 
     public onBlur(event: FocusEvent): void {
-        this.emitBlur(event);
+        this.internalIsFocus = false;
+        this.internalIsBlur = true;
+        setTimeout(() => {
+            if (!this.internalIsFocus) {
+                this.emitBlur(event);
+            }
+            this.internalIsBlur = false;
+        });
     }
 
     @Watch('value')

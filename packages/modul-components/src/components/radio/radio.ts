@@ -27,8 +27,6 @@ export interface RadioGroup {
     inline: boolean;
     radiosVerticalAlign: MRadioVerticalAlignement;
     radiosMarginTop: string;
-    onFocus(event: Event): void;
-    onBlur(event: Event): void;
     getValue(): string;
     updateValue(value: string): void;
 }
@@ -153,17 +151,11 @@ export class MRadio extends ModulVue {
 
     @Emit('focus')
     private onFocus(event: Event): void {
-        if (this.isGroup()) {
-            this.parentGroup.onFocus(event);
-        }
         this.hasFocus = true;
     }
 
     @Emit('blur')
     private onBlur(event: Event): void {
-        if (this.isGroup()) {
-            this.parentGroup.onBlur(event);
-        }
         this.hasFocus = false;
     }
 }
