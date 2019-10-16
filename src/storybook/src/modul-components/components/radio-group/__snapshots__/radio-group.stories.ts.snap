@@ -534,7 +534,6 @@ exports[`Storyshots modul-components|m-radio-group error-message 1`] = `
 exports[`Storyshots modul-components|m-radio-group focus 1`] = `
 <div
   class="m-radio-group"
-  focus="true"
 >
   <div
     class="m-input-group"
@@ -561,14 +560,14 @@ exports[`Storyshots modul-components|m-radio-group focus 1`] = `
           role="radiogroup"
         >
           <li
-            class="m-radio m--is-checked"
+            class="m-radio"
           >
             <input
               class="m-radio__hidden"
               id="fakeId"
               name="fakeId"
               type="radio"
-              value=""
+              value="1"
             />
              
             <label
@@ -589,14 +588,14 @@ exports[`Storyshots modul-components|m-radio-group focus 1`] = `
           </li>
            
           <li
-            class="m-radio m--is-checked"
+            class="m-radio"
           >
             <input
               class="m-radio__hidden"
               id="fakeId"
               name="fakeId"
               type="radio"
-              value=""
+              value="2"
             />
              
             <label
@@ -617,14 +616,14 @@ exports[`Storyshots modul-components|m-radio-group focus 1`] = `
           </li>
            
           <li
-            class="m-radio m--is-checked"
+            class="m-radio"
           >
             <input
               class="m-radio__hidden"
               id="fakeId"
               name="fakeId"
               type="radio"
-              value=""
+              value="3"
             />
              
             <label
@@ -2895,7 +2894,6 @@ exports[`Storyshots modul-components|m-radio-group/radios-position="right" error
 exports[`Storyshots modul-components|m-radio-group/radios-position="right" focus 1`] = `
 <div
   class="m-radio-group"
-  focus="true"
 >
   <div
     class="m-input-group"
