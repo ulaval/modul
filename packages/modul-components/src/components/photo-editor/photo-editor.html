@@ -1,0 +1,15 @@
+<m-modal :open="true"
+         title="Modifier ma photo de profil"
+         :size="modalSize">
+
+    <template #footer>
+        <div class="p-form-photo-profil__footer">
+            <m-file-select store-name="stsadfsfdsoreName"
+                           :full-size="true"
+                           :multiple="false"
+                           :keep-store="true"
+                           label="Choisir une photo"></m-file-select>
+            <m-button :full-size="true">Annuler</m-button>
+        </div>
+    </template>
+</m-modal>
