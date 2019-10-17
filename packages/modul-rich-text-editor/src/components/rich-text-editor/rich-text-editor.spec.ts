@@ -3,7 +3,8 @@ import LoggerPlugin, { ConsoleOptions } from '@ulaval/modul-components/dist/util
 import ModulPlugin from '@ulaval/modul-components/dist/utils/modul/modul';
 import { mount, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
-import { MRichTextEditor, MRichTextEditorOption } from './rich-text-editor';
+import { MRichTextEditorOption } from '../..';
+import { MRichTextEditor } from './rich-text-editor';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import RichTextLicensePlugin from './rich-text-license-plugin';
 
