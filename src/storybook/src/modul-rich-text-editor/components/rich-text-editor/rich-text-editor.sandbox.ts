@@ -7,7 +7,6 @@ import { MRichText } from '@ulaval/modul-components/dist/components/rich-text/ri
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
 import { InputManagement } from '@ulaval/modul-components/dist/mixins/input-management/input-management';
 import FilePlugin, { MFile } from '@ulaval/modul-components/dist/utils/file/file';
-import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import uuid from '@ulaval/modul-components/dist/utils/uuid/uuid';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { MRichTextEditor } from '@ulaval/modul-rich-text-editor/dist/components/rich-text-editor/rich-text-editor';
@@ -106,7 +105,7 @@ const RichTextEditorSandBoxPlugin: PluginObject<any> = {
         v.use(RadioGroupPlugin);
         v.use(RadioPlugin);
         v.use(FilePlugin);
-        v.use(RichTextLicensePlugin, { key: `test`, curlang: FRENCH });
+        v.use(RichTextLicensePlugin, { key: `test` });
         v.component(`m-rich-text-editor-sandbox`, MRichTextEditorSandBox);
     }
 };

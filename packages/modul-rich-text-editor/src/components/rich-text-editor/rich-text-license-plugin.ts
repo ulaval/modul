@@ -9,13 +9,12 @@ import { PluginObject } from 'vue';
 import '../../styles/main.scss';
 export interface RichTextLicensePluginOptions {
     key: string;
-    curlang: string;
 }
 
 const RICH_TEXT_LICENSE_KEY: string = 'm-rich-text-license-key';
 
 export const RichTextLicensePlugin: PluginObject<RichTextLicensePluginOptions | undefined> = {
-    install(v, options: RichTextLicensePluginOptions | undefined = { key: '', curlang: FRENCH }): void {
+    install(v, options: RichTextLicensePluginOptions | undefined = { key: '' }): void {
         v.use(FileUploadPlugin);
         v.use(LicensePlugin);
         v.use(InputStylePlugin);
@@ -23,9 +22,8 @@ export const RichTextLicensePlugin: PluginObject<RichTextLicensePluginOptions | 
 
         v.use(I18nPlugin);
         const i18n: Messages = (v.prototype).$i18n;
-        if (i18n && options.curlang === ENGLISH) {
+        if (i18n) {
             i18n.addMessages(FRENCH, require('./rich-text-editor.lang.fr.json'));
-        } else {
             i18n.addMessages(ENGLISH, require('./rich-text-editor.lang.en.json'));
         }
 
