@@ -1,0 +1,26 @@
+@import "commons";
+
+.m-image-selector {
+    &__avatar {
+        position: relative;
+        width: 100%;
+        padding: $m-spacing--m 0;
+        background-color: $m-color--grey-lighter;
+
+        .m-avatar {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: $m-spacing--s;
+    }
+
+    &__cancel {
+        margin-top: $m-spacing;
+    }
+}
