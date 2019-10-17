@@ -10,8 +10,9 @@ import FilePlugin, { MFile } from '@ulaval/modul-components/dist/utils/file/file
 import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import uuid from '@ulaval/modul-components/dist/utils/uuid/uuid';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
-import { MRichTextEditor, MRichTextEditorOption, MRichTextEditorOptions } from '@ulaval/modul-rich-text-editor/dist/components/rich-text-editor/rich-text-editor';
+import { MRichTextEditor } from '@ulaval/modul-rich-text-editor/dist/components/rich-text-editor/rich-text-editor';
 import { RichTextLicensePlugin } from '@ulaval/modul-rich-text-editor/dist/components/rich-text-editor/rich-text-license-plugin';
+import { MRichTextEditorOption, MRichTextEditorOptions } from '@ulaval/modul-rich-text-editor/dist/index';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
 import WithRender from './rich-text-editor.sandbox.html';

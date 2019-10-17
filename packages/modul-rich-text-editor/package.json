@@ -1,16 +1,15 @@
 {
-    "name": "@chuckmah/modul-rich-text-editor",
-    "version": "1.0.0-beta.2",
+    "name": "@ulaval/modul-rich-text-editor",
+    "version": "1.0.0-beta.7",
     "description": "MODUL rich text editor",
     "author": "\"\"Charles Maheu\"\" <\"\"charles.maheu@dti.ulaval.ca\"\">",
     "private": false,
     "dependencies": {
-        "@ulaval/modul-components": "^1.0.0-beta.131",
         "froala-editor": "3.0.5",
         "jquery": "^3.3.1"
     },
     "peerDependencies": {
-        "vue": "^2.6.4"
+        "@ulaval/modul-components": "^1.0.0-beta.131"
     },
     "scripts": {
         "clean": "rimraf dist",
@@ -24,6 +23,13 @@
         "test:update": "jest --verbose --silent --updateSnapshot",
         "test:ci": "jest --ci -w 1 --silent --coverage --testResultsProcessor=./tests/jest/ci-test-processor"
     },
+    "sideEffects": [
+        "*.sass",
+        "*.scss",
+        "*.css"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "jest-junit": {
         "output": "reports/junit/js-test-results.xml"
     },
@@ -32,6 +38,7 @@
         "includeFailureMsg": true
     },
     "devDependencies": {
+        "@ulaval/modul-components": "^1.0.0-beta.131",
         "@vue/test-utils": "^1.0.0-beta.29",
         "jest": "^24.9.0",
         "jest-html-reporter": "^2.6.2",
@@ -59,5 +66,5 @@
         "dist"
     ],
     "license": "Apache-2.0",
-    "gitHead": "7e2e44d649a6d7a6ecdd879c943b919084878a11"
+    "gitHead": "0a3712b94ecd2325e7a78ef119a8c8a4b11267d7"
 }

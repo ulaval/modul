@@ -15,6 +15,7 @@ import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { MRichTextEditorOption, MRichTextEditorOptions } from '../..';
 import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
@@ -31,12 +32,6 @@ export enum MRichTextEditorMode {
     MEDIA
 }
 
-export enum MRichTextEditorOption {
-    IMAGE,
-    IMAGE_HIDE_FLOAT_LAYOUT
-}
-
-export type MRichTextEditorOptions = MRichTextEditorOption[];
 
 @WithRender
 @Component({
@@ -258,7 +253,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     }
 }
 
-const RichTextEditorPlugin: PluginObject<any> = {
+export const RichTextEditorPlugin: PluginObject<any> = {
     install(v, options): void {
         v.use(FileUploadPlugin);
         v.use(InputStylePlugin);
