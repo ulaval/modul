@@ -9,5 +9,5 @@ Vue.use(CropImagePlugin);
 storiesOf(`${modulComponentsHierarchyRootSeparator}${CROP_IMAGE_NAME}`, module)
 
     .add('default', () => ({
-        template: '<m-crop-image url-image="http://placekitten.com/g/700/400"></m-crop-image>'
+        template: '<m-crop-image url-image="http://placekitten.com/g/700/400" :open="true"></m-crop-image>'
     }));

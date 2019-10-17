@@ -1,5 +1,7 @@
 <div>
     <m-image-selector :url-photo="urlPhoto"
-                      :open="open"
-                      @image-selected="selectImage"></m-image-selector>
+                      :open="selectImageOpen"
+                      @replace-image="selectImage"></m-image-selector>
+    <m-crop-image :open="cropImageOpen"
+                  :url-image="imageToCrop"></m-crop-image>
 </div>

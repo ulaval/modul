@@ -26,7 +26,6 @@ export class MImageSelector extends ModulVue {
     i18nTitleModal: string = this.$i18n.translate('m-photo-editor:title');
     i18nChoosePhoto: string = this.$i18n.translate('m-photo-editor:choose-photo');
     i18nCancel: string = this.$i18n.translate('m-photo-editor:cancel');
-    i18nSave: string = this.$i18n.translate('m-photo-editor:save');
     i18nDelete: string = this.$i18n.translate('m-photo-editor:delete');
 
     modalSize: MModalSize = MModalSize.Small;

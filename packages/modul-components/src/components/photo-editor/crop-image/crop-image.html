@@ -1,5 +1,19 @@
-<div>
-    <div class="m-crop-image"
-         ref="croppieContainer"></div>
-    <m-button @click="click"></m-button>
-</div>
+<m-modal class="m-crop-image"
+         :open="open"
+         :title="i18nTitleModal"
+         :size="modalSize"
+         :close-on-backdrop="false"
+         @portal-after-open="bind">
+    <template #default>
+        <div class="m-crop-image_cropper"
+             ref="croppieContainer"></div>
+    </template>
+    <template #footer>
+        <m-button :skin="primaryButton"
+                  :full-size="true"
+                  @click="click">{{ i18nSave }}</m-button>
+        <m-button class="m-crop-image__cancel"
+                  :skin="secondaryButton"
+                  :full-size="true">{{ i18nCancel }}</m-button>
+    </template>
+</m-modal>

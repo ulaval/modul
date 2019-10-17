@@ -1,1 +1,7 @@
 @import "commons";
+
+.m-crop-image {
+    &__cancel {
+        margin-top: $m-spacing;
+    }
+}
