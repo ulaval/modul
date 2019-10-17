@@ -82,24 +82,36 @@ describe('file-select', () => {
         expect(fileSelect.emitted('click')).toBeTruthy();
     });
 
-    it('it should add selected files to $file', () => {
-        const mockFiles: FileList = createMockFileList([createMockFile('file')]);
+    describe(`when the file is added`, () => {
 
+        const mockFiles: FileList = createMockFileList([createMockFile('file')]);
         const fileSelect: Wrapper<MFileSelect> = mount(MFileSelect, {
             localVue: Vue
         });
-        fileSelect.vm.$file.add = jest.fn();
-        (fileSelect.vm.$refs.inputFile as any) = {
-            files: mockFiles
-        };
 
-        fileSelect.find('input').trigger('change');
+        beforeEach(() => {
+            fileSelect.vm.$file.add = jest.fn();
+            (fileSelect.vm.$refs.inputFile as any) = {
+                files: mockFiles
+            };
 
-        expect(fileSelect.vm.$file.add).toHaveBeenCalledWith(
-            mockFiles,
-            DEFAULT_STORE_NAME
-        );
+            fileSelect.find('input').trigger('change');
+        });
+
+        it('it should add selected files to $file', () => {
+            expect(fileSelect.vm.$file.add).toHaveBeenCalledWith(
+                mockFiles,
+                DEFAULT_STORE_NAME
+            );
+        });
+
+        it(`should emit 'file-selected'`, () => {
+            expect(fileSelect.emitted('file-selected')).toBeTruthy();
+        });
+
     });
+
+
 
     it('it should support optional store name prop', () => {
         const fileSelect: Wrapper<MFileSelect> = mount(MFileSelect, {
