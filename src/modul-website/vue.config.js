@@ -9,9 +9,9 @@ function resolve(dir) {
 module.exports = {
     lintOnSave: false,
     runtimeCompiler: true,
-    productionSourceMap: true,
-    filenameHashing: false,
-    baseUrl: process.env.NODE_ENV === 'production' ? 'https://contenu.monportail.ulaval.ca/mpo/packages/@ulaval/modul-website/latest/' : '/',
+    productionSourceMap: process.env.NODE_ENV === 'cdn' ? false : true,
+    filenameHashing: process.env.NODE_ENV === 'cdn' ? false : true,
+    publicPath: process.env.NODE_ENV === 'cdn' ? 'https://contenu.monportail.ulaval.ca/mpo/packages/@ulaval/modul-website/latest/' : (process.env.NODE_ENV === 'openshift' ? '/website/' : '/'),
     chainWebpack: config => {
         config.module.rules.delete("svg");
         config.module.rules.delete("scss");
