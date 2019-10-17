@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-image-selector With a photo 1`] = `
+<div
+  class="m-modal m-image-selector"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
+</div>
+`;
+
+exports[`Storyshots modul-components|m-image-selector Without a photo 1`] = `
+<div
+  class="m-modal m-image-selector"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
+</div>
+`;

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-crop-image default 1`] = `
+<div>
+  <div
+    class="m-crop-image croppie-container"
+  >
+    <div
+      aria-dropeffect="none"
+      class="cr-boundary"
+      style="width: 300px; height: 300px;"
+    >
+      <canvas
+        alt="preview"
+        aria-grabbed="false"
+        class="cr-image"
+      />
+      <div
+        class="cr-viewport cr-vp-square"
+        style="width: 100px; height: 100px;"
+        tabindex="0"
+      />
+      <div
+        class="cr-overlay"
+      />
+    </div>
+    <div
+      class="cr-slider-wrap"
+    >
+      <input
+        aria-label="zoom"
+        class="cr-slider"
+        step="0.0001"
+        type="range"
+      />
+    </div>
+  </div>
+   
+  <button
+    class="m-button m--is-skin-primary"
+    type="button"
+  >
+    <!---->
+     
+    <!---->
+     
+    <span
+      class="m-button__text"
+    >
+       
+      <!---->
+    </span>
+     
+    <!---->
+     
+    <!---->
+  </button>
+</div>
+`;

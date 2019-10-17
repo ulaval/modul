@@ -1,28 +1,5 @@
-<m-modal :open.sync="open"
-         :title="i18nTitleModal"
-         :size="modalSize">
-
-    <template #default>
-        <div class="m-photo-editor__avatar">
-            <m-avatar :size="avatarSize">
-                <img v-if="urlPhoto"
-                     :src="urlPhoto"
-                     alt="" />
-            </m-avatar>
-        </div>
-    </template>
-
-    <template #footer>
-        <m-file-select class="m-photo-editor__button"
-                       :store-name="storeName"
-                       :full-size="true"
-                       :multiple="false"
-                       :keep-store="true"
-                       :label="i18nChoosePhoto"
-                       :skin="primaryButton"
-                       :allowed-extension="allowedExtensions"></m-file-select>
-        <m-button class="m-photo-editor__cancel"
-                  :skin="secondaryButton"
-                  :full-size="true">{{ i18nCancel }}</m-button>
-    </template>
-</m-modal>
+<div>
+    <m-image-selector :url-photo="urlPhoto"
+                      :open="open"
+                      @image-selected="selectImage"></m-image-selector>
+</div>

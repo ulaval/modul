@@ -1,18 +1,1 @@
 @import "commons";
-
-.m-photo-editor {
-    &__avatar {
-        width: 100%;
-        padding: $m-spacing--m 0;
-        background-color: $m-color--grey-lighter;
-
-        .m-avatar {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
-    &__cancel {
-        margin-top: $m-spacing;
-    }
-}
