@@ -11,6 +11,7 @@
         <div class="m-select"
              :class="{ 'm--is-open': open,
                 'm--is-disabled': isDisabled,
+                'm--is-readonly': isReadonly,
                 'm--is-waiting': isWaiting,
                 'm--has-validation-message': hasValidationMessage }"
              :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
@@ -24,38 +25,57 @@
              @keydown.esc="scope.keyEsc"
              @keydown.tab="scope.keyTab"
              @keydown.space="scope.keySpace"
+             @keydown.delete="onKeyDownDelete"
              tabindex="0">
             <m-input-style :label="label"
                            :label-for="id"
                            :disabled="isDisabled"
+                           :readonly="isReadonly"
                            :waiting="isWaiting"
                            :focus="internalIsFocus"
-                           :label-up="labelUp"
+                           :label-up="internalLabelUp"
                            :empty="isEmpty"
                            :error="hasError"
-                           :cursor-pointer="true"
+                           :cursor-pointer="isSelectable"
+                           :append="true"
                            :valid="isValid"
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle">
                 <div>
-                    <slot>{{ internalValue }}</slot>
+                    <slot>
+                        <input v-model="internalValue"
+                               :placeholder="internalPlaceholder"
+                               :readonly="true" />
+                    </slot>
                 </div>
-                <div class="m-select__arrow"
-                     slot="suffix"
-                     :class="{ 'm--is-open': open }"
-                     v-if="active">
-                    <m-icon class="m-select__arrow__icon"
-                            ref="arrow"
-                            name="m-svg__arrow-head-filled--down"
-                            size="16px"
-                            :disabled="!active"
-                            @keydown.enter.prevent="open = active">
-                        <m-i18n k="m-select:open"
-                                v-if="!open"></m-i18n>
-                        <m-i18n k="m-select:close"
-                                v-else></m-i18n>
-                    </m-icon>
-                </div>
+
+                <template v-slot:append>
+                    <m-opacity-transition>
+                        <m-icon-button v-if="isClearable"
+                                       :aria-controls="id"
+                                       @click.stop="onReset"
+                                       key="resetIcon"
+                                       icon-size="11px"
+                                       icon-name="m-svg__close-clear"
+                                       tabindex="-1"></m-icon-button>
+                    </m-opacity-transition>
+
+                    <div class="m-select__arrow"
+                         :class="{ 'm--is-open': open }">
+                        <m-icon class="m-select__arrow__icon"
+                                ref="arrow"
+                                name="m-svg__arrow-head-filled--down"
+                                size="12px"
+                                :disabled="!active"
+                                @keydown.enter.prevent="open = active">
+                            <m-i18n k="m-select:open"
+                                    v-if="!open"></m-i18n>
+                            <m-i18n k="m-select:close"
+                                    v-else></m-i18n>
+                        </m-icon>
+                    </div>
+                </template>
+
             </m-input-style>
             <m-validation-message class="m-select__validation-message"
                                   :disabled="isDisabled"
