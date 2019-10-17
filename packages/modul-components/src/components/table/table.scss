@@ -1,5 +1,7 @@
 @import 'commons';
 
+$m-sortable-icon-size: 14px;
+
 @mixin m-table-sortable-icon-select() {
     opacity: 1;
 
@@ -77,14 +79,26 @@
 
             &.m--is-text-align-center {
                 text-align: center;
+
+                .m-table__header-wrap {
+                    justify-content: center;
+                }
             }
 
             &.m--is-text-align-left {
                 text-align: left;
+
+                .m-table__header-wrap {
+                    justify-content: flex-start;
+                }
             }
 
             &.m--is-text-align-right {
                 text-align: right;
+
+                .m-table__header-wrap {
+                    justify-content: flex-end;
+                }
             }
         }
     }
@@ -140,7 +154,57 @@
         }
     }
 
+    th {
+        &:first-child {
+            &.m--is-sortable {
+                &.m--is-text-align-center {
+                    padding-left: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
+                }
+            }
+        }
+
+        &:last-child {
+            &.m--is-sortable {
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
+            }
+        }
+
+        &:not(:first-child) {
+            &.m--is-sortable {
+                &.m--is-text-align-center {
+                    padding-left: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
+                }
+            }
+        }
+
+        &:not(:last-child) {
+            &.m--is-sortable {
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
+            }
+        }
+    }
+
+    td {
+        &:last-child {
+            &.m--is-sortable.m--is-text-align-right {
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
+            }
+        }
+
+        &:not(:last-child) {
+            &.m--is-sortable.m--is-text-align-right {
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
+            }
+        }
+    }
+
     &__header-wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &__sortable-icon-wrap {
+        position: relative;
         display: flex;
         align-items: center;
     }
@@ -152,10 +216,10 @@
 
     .m-table__sortable-icon {
         transition: transform $m-transition-duration ease, opacity $m-transition-duration ease;
-        position: relative;
+        position: absolute;
+        right: calc((#{$m-sortable-icon-size} + #{$m-spacing--xs}) * -1);
         z-index: 0;
         opacity: 0;
-        margin-left: $m-spacing--xs;
 
         &:focus {
             color: $m-color--text;

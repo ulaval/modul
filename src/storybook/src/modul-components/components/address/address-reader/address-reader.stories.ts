@@ -6,7 +6,7 @@ import { CountryKey, ProvinceKey } from '@ulaval/modul-components/dist/utils/add
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-Vue.use(AddressPlugin, { loqateKey: '', googleKey: '' });
+Vue.use(AddressPlugin);
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_READER}`, module)
     .add('default', () => ({
