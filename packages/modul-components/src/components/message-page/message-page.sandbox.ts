@@ -1,3 +1,4 @@
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
@@ -7,7 +8,6 @@ import { MESSAGE_PAGE_NAME } from '../component-names';
 import { MMessageState } from '../message/message';
 import MessagePagePlugin, { Link } from './message-page';
 import WithRender from './message-page.sandbox.html';
-
 
 @WithRender
 @Component
