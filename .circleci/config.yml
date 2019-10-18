@@ -60,7 +60,7 @@ jobs:
 
       - run:
           name: "What branch am I on?"
-          command: echo ${CIRCLE_BRANCH}
+          command: echo ${CIRCLE_BRANCH/[_/]/-}
 workflows:
   version: 2
   one_and_two:
