@@ -1,10 +1,10 @@
 import { shallowMount, Wrapper } from '@vue/test-utils';
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue from 'vue';
 import { ACCORDION_NAME, I18N_NAME, MESSAGE_PAGE_NAME, PANEL_NAME } from '../../component-names';
 import { Link } from '../../message-page/message-page';
 import { MErrorTechnicalDifficulty } from './error-technical-difficulty';
-
 
 // mock moment implementation to set the "present date/time" to a fixed value.
 const mockCurrentDate: string = '2016-01-01';

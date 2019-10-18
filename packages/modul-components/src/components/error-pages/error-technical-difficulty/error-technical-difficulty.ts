@@ -1,9 +1,9 @@
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import I18nFilterPlugin from '../../../filters/i18n/i18n';
-import { FRENCH, Messages } from '../../../utils/i18n/i18n';
 import { ModulVue } from '../../../utils/vue/vue';
 import AccordionPlugin from '../../accordion/accordion';
 import { ERROR_TECHNICAL_DIFFICULTY_NAME } from '../../component-names';
