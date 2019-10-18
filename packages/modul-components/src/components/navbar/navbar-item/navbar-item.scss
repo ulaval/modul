@@ -470,7 +470,9 @@
 
 // Tabs skin styles
 .m-navbar.m--is-skin-tab-light,
-.m-navbar.m--is-skin-tab-dark {
+.m-navbar.m--is-skin-tab-light-main,
+.m-navbar.m--is-skin-tab-dark,
+.m-navbar.m--is-skin-tab-dark-main {
     &.m--is-anim-ready {
         .m-navbar-item:not(.m--is-selected):not(.m--is-disabled) {
             .m-navbar-item__contents {
@@ -508,13 +510,15 @@
         }
 
         &__contents {
-            padding: $m-padding $m-margin--l;
+            padding: $m-spacing--m $m-spacing--l;
+            font-size: $m-font-size--l;
         }
     }
 }
 
 // Light tab skin styles
-.m-navbar.m--is-skin-tab-light {
+.m-navbar.m--is-skin-tab-light,
+.m-navbar.m--is-skin-tab-light-main {
     .m-navbar-item {
         + .m-navbar-item {
             border-left-color: $m-color--white;
@@ -565,7 +569,8 @@
 }
 
 // Dark tab skin styles
-.m-navbar.m--is-skin-tab-dark {
+.m-navbar.m--is-skin-tab-dark,
+.m-navbar.m--is-skin-tab-dark-main {
     .m-navbar-item {
         + .m-navbar-item {
             border-left-color: $m-color--grey-darker;
