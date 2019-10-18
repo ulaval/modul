@@ -100,6 +100,8 @@ export class AddressRetrieveToAddress implements RetrieveResponseMapper<Address>
                 countryIso2: response.result.CountryIso2
             },
             subBuilding: response.result.SubBuilding,
+            formattedAddress: '',
+            adrFormattedAddress: '',
             attributions: [],
             source: AddressSources.LOQATE,
             isEstablishment: false
@@ -141,6 +143,8 @@ export class AddressRetrieveToAddress implements RetrieveResponseMapper<Address>
                 countryIso2: componentsByType[GOOGLE_ADDRESS_COMPONENTS.COUNTRY].short_name
             },
             subBuilding: '',
+            formattedAddress: response.result.formatted_address,
+            adrFormattedAddress: response.result.adr_address,
             attributions: response.result.html_attributions || [],
             source: AddressSources.GOOGLE_PLACES,
             isEstablishment: !!(response.result.types || []).find((type: string) => type === 'establishment'),
