@@ -51,23 +51,16 @@ jobs:
 
       - setup_remote_docker
 
-      - run:
-          name: "Setup tag name environment variables"
-          command: |
-            echo "${CIRCLE_BRANCH}" | sed -r 's/[_/]+/-/g' >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
       - attach_workspace:
           at: ~/repo
 
       - run:
-          name: "list dir"
-          command: ls
+          name: "Setup tag name as environment variables"
+          command: |
+            echo "${CIRCLE_BRANCH}" | sed -r 's/[_/]+/-/g' >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
 
       - run:
-          name: "list dirworksapce"
-          command: ls  ~/repo/src/storybook/dist/assets
-
-      - run:
-          name: "What branch am I on?"
+          name: "What TAG_NAME is set?"
           command: echo ${TAG_NAME}
 
       - run:
@@ -79,7 +72,7 @@ jobs:
           name: Publish Docker Image to Docker Hub
           command: |
             echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push $IMAGE_NAME:${TAG_NAME}
+            docker push chocmah/modul::${TAG_NAME}
 workflows:
   version: 2
   one_and_two:
