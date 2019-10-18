@@ -16,20 +16,20 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      - run:
-          name: lint
-          command: yarn run lint:ci
+      #- run:
+      #    name: lint
+      #    command: yarn run lint:ci
 
-      - run:
-          name:  test
-          command: yarn run test:ci
+      #- run:
+      #    name:  test
+      #    command: yarn run test:ci
 
       - run:
           name: build
           command: yarn run build
 
       - persist_to_workspace:
-          root: /
+          root: .
           paths:
             - src/storybook/dist/*
             - src/modul-website/dist/*
@@ -42,15 +42,23 @@ jobs:
   buildimage:
     machine: true
 
+    working_directory: ~/repo
+
     steps:
       - checkout
 
       - attach_workspace:
-          at: /
+          at: ~/repo
 
       - run:
           name: "list dir"
           command: ls
+
+      - run:
+          name: Are my assets here?
+          command: |
+            pwd
+            ls -lrt
 
       - run:
           name: "list dirworksapce"
