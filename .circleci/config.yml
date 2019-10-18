@@ -31,8 +31,8 @@ jobs:
       - persist_to_workspace:
           root: /
           paths:
-            - /src/storybook/dist/*
-            - /src/modul-website/dist/*
+            - src/storybook/dist/*
+            - src/modul-website/dist/*
 
       - save_cache:
           name: Save Yarn Package Cache
