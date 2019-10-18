@@ -1,11 +1,11 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
-import { InputState, InputStateInputSelector } from '../../mixins/input-state/input-state';
+import { InputState } from '../../mixins/input-state/input-state';
 import uuid from '../../utils/uuid/uuid';
 import { RADIO_GROUP_NAME } from '../component-names';
 import InputGroupPlugin from '../input-group/input-group';
-import RadioPlugin, { BaseRadioGroup, MRadio, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
+import RadioPlugin, { BaseRadioGroup, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
 import WithRender from './radio-group.html?style=./radio-group.scss';
 
 @WithRender
@@ -115,14 +115,13 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
 
     @Watch('focus')
     private focusChanged(focus: boolean): void {
-        const selector: string = this.as<InputStateInputSelector>().selector || 'input, textarea, [contenteditable=true]';
-        const elements: NodeListOf<Element> = this.$el.querySelectorAll(selector);
+        const elements: NodeListOf<Element> = this.$el.querySelectorAll('input');
         let inputEl: HTMLElement | undefined;
 
         // Find right element to focus
         if (elements.length > 1) {
-            elements.forEach((radio) => {
-                if ((radio as unknown as MRadio).value === this.value) {
+            elements.forEach((radio: Element) => {
+                if ((radio as HTMLInputElement).value === this.value) {
                     inputEl = radio as HTMLElement;
                 }
             });
