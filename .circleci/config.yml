@@ -54,8 +54,7 @@ jobs:
       - run:
           name: "Setup tag name environment variables"
           command: |
-            echo 'export TAG_NAME=${CIRCLE_BRANCH//[_/]/-}' >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
-
+            echo "${CIRCLE_BRANCH}" | sed -r 's/[_/]+/-/g' >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
       - attach_workspace:
           at: ~/repo
 
