@@ -61,7 +61,7 @@ jobs:
 
       - run:
           name: "What TAG_NAME is set?"
-          command: echo ${TAG_NAME}
+          command: echo $TAG_NAME
 
       - run:
           name: Build Docker image
@@ -72,7 +72,7 @@ jobs:
           name: Publish Docker Image to Docker Hub
           command: |
             echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push 'ulaval/modul:${TAG_NAME}'
+            docker push 'ulaval/modul:$TAG_NAME'
 workflows:
   version: 2
   build_and_publish_image:
