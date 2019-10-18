@@ -1,3 +1,4 @@
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
@@ -10,7 +11,6 @@ import I18nPlugin from '../i18n/i18n';
 import IconButtonPlugin from '../icon-button/icon-button';
 import SpinnerPlugin from '../spinner/spinner';
 import WithRender from './datefields.html?style=./datefields.scss';
-
 
 const VIEW_DATE: string = 'date';
 const VIEW_MONTH: string = 'month';

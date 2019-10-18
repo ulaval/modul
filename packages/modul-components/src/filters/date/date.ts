@@ -1,3 +1,4 @@
+// tslint:disable-next-line: import-blacklist
 import 'moment/locale/fr';
 import { PluginObject } from 'vue';
 import { DATE_NAME, DATE_TIME_NAME, PERIOD_NAME } from '../filter-names';
