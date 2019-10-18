@@ -14,14 +14,14 @@
                  v-if="!concurrent && !disabled">
                 <m-link mode="button"
                         @click="openAllAccordions"
-                        v-if="!propAllOpen"
+                        v-if="!isAllOpen"
                         ref="openAllButton">
                     <m-i18n k="m-accordion-group:open-all"></m-i18n>
                 </m-link>
-                <template v-if="!propAllOpen && !propAllClosed">&nbsp;&nbsp;|&nbsp;&nbsp;</template>
+                <template v-if="!isAllOpen && !isAllClosed">&nbsp;&nbsp;|&nbsp;&nbsp;</template>
                 <m-link mode="button"
                         @click="closeAllAccordions"
-                        v-if="!propAllClosed"
+                        v-if="!isAllClosed"
                         ref="closeAllButton">
                     <m-i18n k="m-accordion-group:close-all"></m-i18n>
                 </m-link>
