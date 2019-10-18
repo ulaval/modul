@@ -47,7 +47,7 @@ export class MImageSelector extends ModulVue {
         if (this.imageSelected) {
             const url: string = URL.createObjectURL(this.imageSelected.file);
             this.imageSelected.url = url;
-            this.$emit('replace-image', this.imageSelected);
+            this.$emit('image-selected', this.imageSelected);
         }
     }
 

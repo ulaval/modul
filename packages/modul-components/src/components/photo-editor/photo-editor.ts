@@ -30,13 +30,13 @@ export class MPhotoEditor extends ModulVue {
 
     // on open => ouvrir image-selector
 
-    selectImage(image: MFile): void {
+    enableCrop(image: MFile): void {
         this.imageToCrop = image;
         this.cropImageOpen = true;
         this.selectImageOpen = false;
     }
 
-    save(imageFile: File): void {
+    saveImage(imageFile: File): void {
         this.imageToCrop.file = imageFile;
         this.imageToCrop.url = URL.createObjectURL(this.imageToCrop.file);
         this.$emit('save-image', this.imageToCrop);

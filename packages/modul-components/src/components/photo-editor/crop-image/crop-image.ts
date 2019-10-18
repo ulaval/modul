@@ -67,7 +67,7 @@ export class MCropImage extends ModulVue {
             type: 'blob',
             circle: false
         }).then((imageCropped: File) => {
-            this.$emit('cropped', imageCropped);
+            this.$emit('image-cropped', imageCropped);
         });
     }
 
