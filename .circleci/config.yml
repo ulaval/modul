@@ -40,15 +40,16 @@ jobs:
           paths:
             - ~/.cache/yarn
   buildimage:
-    machine: true
+    docker:
+      - image: circleci/buildpack-deps:stretch
 
     working_directory: ~/repo
 
     steps:
 
-      - setup_remote_docker
-
       - checkout
+
+      - setup_remote_docker
 
       - run:
           name: "Setup tag name environment variables"
