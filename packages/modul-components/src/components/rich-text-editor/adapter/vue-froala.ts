@@ -575,8 +575,11 @@ const SCROLL_TO_OFFSET: number = -50;
     }
 
     private get minHeight(): string {
-        const rowHeight: number = 55; // 2*padding + line-height + line-margin
-        return +this.minRowNumber > 1 ? +this.minRowNumber * rowHeight + 'px' : 'initial';
+        const padding: number = 11;
+        const lieHeight = 21;
+        const lineMargin: number = 12
+        const rowHeight: number = lieHeight + lineMargin;
+        return +this.minRowNumber > 1 ? +this.minRowNumber * rowHeight - lineMargin + 2*padding + 'px' : 'initial';
     }
 }
 

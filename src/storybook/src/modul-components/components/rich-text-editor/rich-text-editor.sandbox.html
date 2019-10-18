@@ -414,5 +414,22 @@
                             :show-strike-through-button="true"
                             :show-image-button="true"
                             :show-image-float-layout="true"></m-rich-text-editor>
+
+    <div class="m-u--margin-bottom">
+        <h5 class="m-u--margin-bottom">RTE avec une taille par taille minimum de 5</h5>
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text with placeholder'"
+                            :max-width="'large'"
+                            :placeholder="'some placeholder'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :readonly="readonly"
+                            :min-row-number="5"></m-rich-text-editor>
+    </div>
     </div>
 </div>
