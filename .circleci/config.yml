@@ -55,14 +55,8 @@ jobs:
           command: ls
 
       - run:
-          name: Are my assets here?
-          command: |
-            pwd
-            ls -lrt
-
-      - run:
           name: "list dirworksapce"
-          command: ls  /src/storybook/dist
+          command: ls  ~/repo/src/storybook/dist
 
       - run:
           name: "What branch am I on?"
