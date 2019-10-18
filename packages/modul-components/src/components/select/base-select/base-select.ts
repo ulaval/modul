@@ -96,7 +96,9 @@ export class MBaseSelect extends ModulVue {
     }
 
     public togglePopup(): void {
-        this.internalOpen = !this.internalOpen;
+        if (this.active) {
+            this.internalOpen = !this.internalOpen;
+        }
     }
 
     public closePopup(): void {

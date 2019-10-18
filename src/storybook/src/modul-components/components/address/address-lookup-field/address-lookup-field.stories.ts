@@ -5,7 +5,7 @@ import { Address } from '@ulaval/modul-components/dist/utils/address-lookup/addr
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-Vue.use(AddressPlugin, { loqateKey: '', googleKey: '' });
+Vue.use(AddressPlugin);
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_LOOKUP_FIELD_NAME}`, module)
     .add('default', () => ({
