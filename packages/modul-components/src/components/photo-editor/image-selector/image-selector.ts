@@ -20,7 +20,7 @@ export class MImageSelector extends ModulVue {
     @Prop({ default: false })
     open: boolean;
 
-    @Prop({ default: () => [] })
+    @Prop({ default: () => ['jpg', 'gif', 'png'] })
     allowedExtensions: string[];
 
     i18nTitleModal: string = this.$i18n.translate('m-photo-editor:title');
@@ -33,7 +33,6 @@ export class MImageSelector extends ModulVue {
     primaryButton: MButtonSkin.Primary = MButtonSkin.Primary;
     secondaryButton: MButtonSkin.Secondary = MButtonSkin.Secondary;
     storeName: string = '';
-    test: string = '';
 
     @Watch('open', { immediate: true })
     manageStoreName(): void {
@@ -45,12 +44,10 @@ export class MImageSelector extends ModulVue {
     }
 
     replaceImage(): void {
-        const newImage: MFile | undefined = this.$file.files(this.storeName)[0];
-        if (newImage) {
-            const url: string = URL.createObjectURL(newImage.file);
-            newImage.url = url;
-            this.test = url;
-            this.$emit('replace-image', newImage);
+        if (this.imageSelected) {
+            const url: string = URL.createObjectURL(this.imageSelected.file);
+            this.imageSelected.url = url;
+            this.$emit('replace-image', this.imageSelected);
         }
     }
 

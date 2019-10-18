@@ -29,6 +29,7 @@
                        :keep-store="true"
                        :label="i18nChoosePhoto"
                        :skin="primaryButton"
+                       :allowed-extensions="allowedExtensions"
                        @file-selected="replaceImage"></m-file-select>
         <m-button class="m-image-selector__cancel"
                   :skin="secondaryButton"

@@ -3,7 +3,7 @@
          :title="i18nTitleModal"
          :size="modalSize"
          :close-on-backdrop="false"
-         @portal-after-open="bind">
+         @portal-after-open="initialize">
     <template #default>
         <div class="m-crop-image_cropper"
              ref="croppieContainer"></div>
@@ -11,7 +11,7 @@
     <template #footer>
         <m-button :skin="primaryButton"
                   :full-size="true"
-                  @click="click">{{ i18nSave }}</m-button>
+                  @click="crop">{{ i18nSave }}</m-button>
         <m-button class="m-crop-image__cancel"
                   :skin="secondaryButton"
                   :full-size="true">{{ i18nCancel }}</m-button>

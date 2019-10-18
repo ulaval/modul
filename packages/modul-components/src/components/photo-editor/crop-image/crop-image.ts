@@ -12,12 +12,17 @@ import WithRender from './crop-image.html?style=./crop-image.scss';
 
 require('croppie/croppie.css');
 
+enum MResultFormat {
+    PNG = 'png',
+    JPG = 'jpeg'
+}
+
 @WithRender
 @Component
 export class MCropImage extends ModulVue {
 
-    @Prop({ default: '' })
-    urlImage: string;
+    @Prop({ required: true })
+    image: MFile;
 
     @Prop({ default: false })
     open: boolean;
@@ -35,26 +40,39 @@ export class MCropImage extends ModulVue {
         croppieContainer: HTMLElement;
     };
 
-    bind(): void {
-        let el: HTMLElement = this.$refs.croppieContainer;
-        this.croppie = new Croppie(el, {
-            viewport: { width: MAvatarSize.LARGE, height: MAvatarSize.LARGE, type: 'circle' },
-            boundary: { width: 300, height: 300 },
-            enableOrientation: true
-        });
+    // gérer annuler
 
+    initialize(): void {
+        if (this.image.url) {
+            let el: HTMLElement = this.$refs.croppieContainer;
+            this.croppie = new Croppie(el, {
+                viewport: { width: MAvatarSize.LARGE, height: MAvatarSize.LARGE, type: 'circle' },
+                boundary: { width: 300, height: 300 },
+                enableOrientation: true
+            });
+
+            this.bind();
+        }
+    }
+
+    bind(): void {
         this.croppie.bind({
-            url: this.urlImage
+            url: this.image.url
         });
     }
 
-    click(): void {
+    crop(): void {
         this.croppie.result({
-            format: 'jpeg',
-            type: 'blob'
-        }).then((rep: MFile) => {
-            this.$emit('upload', rep);
+            format: this.imageWithTransparency ? MResultFormat.PNG : MResultFormat.JPG,
+            type: 'blob',
+            circle: false
+        }).then((imageCropped: File) => {
+            this.$emit('cropped', imageCropped);
         });
+    }
+
+    get imageWithTransparency(): boolean {
+        return this.image.extension === 'png' || this.image.extension === 'gif';
     }
 
 }
