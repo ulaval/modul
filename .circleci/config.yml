@@ -66,7 +66,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-              docker build -t 'ulaval/modul:${TAG_NAME}' .
+              docker build -t 'ulaval/modul:$TAG_NAME' .
 
       - run:
           name: Publish Docker Image to Docker Hub
