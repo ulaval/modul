@@ -32,6 +32,10 @@ export class MAddressLookupField extends ModulVue {
 
     results: AddressSummary[] = [];
 
+    clear(): void {
+        this.selection = '';
+    }
+
     async onComplete(value: string): Promise<void> {
         this.fetchData(value);
     }
