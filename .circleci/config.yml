@@ -28,6 +28,12 @@ jobs:
           name: build
           command: yarn run build
 
+      - persist_to_workspace:
+          root: /
+          paths:
+            - /src/storybook/dist/*
+            - /src/modul-website/dist/*
+
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
@@ -37,16 +43,28 @@ jobs:
     machine: true
 
     steps:
+      - checkout
+
+      - attach_workspace:
+          at: /
+
+      - run:
+          name: "list dir"
+          command: ls
+
+      - run:
+          name: "list dirworksapce"
+          command: ls  /src/storybook/dist
+
       - run:
           name: "What branch am I on?"
           command: echo ${CIRCLE_BRANCH}
-      - run:
-          name: "What was my custom environment variable?"
-          command: echo ${MY_ENV_VAR}
 workflows:
   version: 2
   one_and_two:
      jobs:
        - build
        - buildimage
+        requires:
+          - build
 
