@@ -64,7 +64,7 @@ workflows:
   one_and_two:
      jobs:
        - build
-       - buildimage
-        requires:
-          - build
+       - buildimage:
+          requires:
+            - build
 
