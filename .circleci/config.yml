@@ -45,12 +45,15 @@ jobs:
     working_directory: ~/repo
 
     steps:
+
+      - setup_remote_docker
+
       - checkout
 
       - run:
           name: "Setup tag name environment variables"
           command: |
-            echo 'export TAG_NAME=${CIRCLE_BRANCH//[_/]/-} >> $BASH_ENV # Redirect MY_ENV_VAR into $BASH_ENV
+            echo 'export TAG_NAME=${CIRCLE_BRANCH//[_/]/-}' >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
 
       - attach_workspace:
           at: ~/repo
