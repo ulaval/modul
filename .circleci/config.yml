@@ -39,7 +39,7 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-  buildimage:
+  publish_image:
     docker:
       - image: circleci/buildpack-deps:stretch
 
@@ -72,13 +72,13 @@ jobs:
           name: Publish Docker Image to Docker Hub
           command: |
             echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push chocmah/modul::${TAG_NAME}
+            docker push chocmah/modul:${TAG_NAME}
 workflows:
   version: 2
-  one_and_two:
+  build_and_publish_image:
      jobs:
        - build
-       - buildimage:
+       - publish_image:
           requires:
             - build
 
