@@ -57,7 +57,7 @@ jobs:
       - run:
           name: "Setup tag name as environment variables"
           command: |
-             echo "export TAG_NAME=$(${CIRCLE_BRANCH} | sed -r 's/[_/]+/-/g' | cut -c1-127)" >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
+             echo "export TAG_NAME=$(echo ${CIRCLE_BRANCH} | sed -r 's/[_/]+/-/g' | cut -c1-127)" >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
 
       - run:
           name: "What TAG_NAME is set?"
