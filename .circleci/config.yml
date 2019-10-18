@@ -61,7 +61,7 @@ jobs:
 
       - run:
           name: "list dirworksapce"
-          command: ls  ~/repo/src/storybook/dist
+          command: ls  ~/repo/src/storybook/dist/assets
 
       - run:
           name: "What branch am I on?"
