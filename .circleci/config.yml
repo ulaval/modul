@@ -57,7 +57,7 @@ jobs:
       - run:
           name: "Setup tag name as environment variables"
           command: |
-            echo "${CIRCLE_BRANCH}" | sed -r 's/[_/]+/-/g' | cut -c1-127 >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
+             echo "export TAG_NAME=$(${CIRCLE_BRANCH} | sed -r 's/[_/]+/-/g' | cut -c1-127)" >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
 
       - run:
           name: "What TAG_NAME is set?"
@@ -66,13 +66,13 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-              docker build -t ulaval/modul:latest .
+              docker build -t ulaval/modul:${TAG_NAME} .
 
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
             echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push ulaval/modul:latest
+            docker push ulaval/modul:${TAG_NAME}
 workflows:
   version: 2
   build_and_publish_image:
