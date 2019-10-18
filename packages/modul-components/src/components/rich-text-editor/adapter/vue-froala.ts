@@ -576,10 +576,10 @@ const SCROLL_TO_OFFSET: number = -50;
 
     private get minHeight(): string {
         const padding: number = 11;
-        const lieHeight = 21;
-        const lineMargin: number = 12
-        const rowHeight: number = lieHeight + lineMargin;
-        return +this.minRowNumber > 1 ? +this.minRowNumber * rowHeight - lineMargin + 2*padding + 'px' : 'initial';
+        const lineHeight: number = 21;
+        const lineMargin: number = 12;
+        const rowHeight: number = lineHeight + lineMargin;
+        return +this.minRowNumber > 1 ? +this.minRowNumber * rowHeight - lineMargin + 2 * padding + 'px' : 'initial';
     }
 }
 
