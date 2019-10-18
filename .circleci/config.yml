@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -24,10 +24,24 @@ jobs:
           name:  test
           command: yarn run test:ci
 
+      - run:
+          name: build
+          command: yarn run build
+
       - save_cache:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
+  buildimage:
+    machine: true
+
+    steps:
+      - run:
+          name: "What branch am I on?"
+          command: echo ${CIRCLE_BRANCH}
+      - run:
+          name: "What was my custom environment variable?"
+          command: echo ${MY_ENV_VAR}
 
 
