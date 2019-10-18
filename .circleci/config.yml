@@ -66,13 +66,13 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-              docker build -t ulaval/modul:$TAG_NAME .
+              docker build -t ulaval/modul:"{$TAG_NAME}" .
 
       - run:
           name: Publish Docker Image to Docker Hub
           command: |
             echo "$DOCKERHUB_PASS" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            docker push ulaval/modul:$TAG_NAME
+            docker push ulaval/modul:"${TAG_NAME}"
 workflows:
   version: 2
   build_and_publish_image:
