@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
@@ -43,5 +43,10 @@ jobs:
       - run:
           name: "What was my custom environment variable?"
           command: echo ${MY_ENV_VAR}
-
+workflows:
+  version: 2
+  one_and_two:
+     jobs:
+       - build
+       - buildimage
 
