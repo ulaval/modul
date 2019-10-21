@@ -8,6 +8,8 @@ import InputGroupPlugin from '../input-group/input-group';
 import RadioPlugin, { BaseRadioGroup, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
 import WithRender from './radio-group.html?style=./radio-group.scss';
 
+const FOCUS_OUT_TIMEOUT_MS: number = 200;
+
 @WithRender
 @Component({
     mixins: [InputState]
@@ -39,18 +41,33 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     public radiosVerticalAlign: MRadioVerticalAlignement;
     @Prop()
     public radiosMarginTop: string;
+    @Prop()
+    public focus: boolean;
 
     public name: string = uuid.generate();
     private internalValue: any | undefined = '';
+    private internalIsFocus: boolean = false;
+    private internalIsBlur: boolean = false;
+    private hasFocusInTimeout: any;
 
     @Emit('change')
-    onChange(value: any): void { }
+    private onChange(value: any): void { }
 
     @Emit('focus')
-    onFocus(event: Event): void { }
+    private emitFocus(event: FocusEvent): void { }
 
     @Emit('blur')
-    onBlur(event: Event): void { }
+    private emitBlur(event: FocusEvent): void { }
+
+    protected created(): void {
+        this.internalValue = undefined;
+    }
+
+    protected mounted(): void {
+        if (this.focus) {
+            this.focusChanged(this.focus);
+        }
+    }
 
     public get stateIsDisabled(): boolean {
         return this.as<InputState>().isDisabled;
@@ -64,6 +81,10 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
         return this.as<InputState>().isValid;
     }
 
+    public get idLabel(): string | undefined {
+        return this.hasLabel ? uuid.generate() : undefined;
+    }
+
     public getValue(): any {
         return this.model;
     }
@@ -72,8 +93,23 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
         this.model = value;
     }
 
-    protected created(): void {
-        this.internalValue = undefined;
+    public onFocus(event: FocusEvent): void {
+        clearTimeout(this.hasFocusInTimeout);
+        if (!this.internalIsBlur) {
+            this.emitFocus(event);
+        }
+        this.internalIsFocus = true;
+    }
+
+    public onBlur(event: FocusEvent): void {
+        this.internalIsFocus = false;
+        this.internalIsBlur = true;
+        this.hasFocusInTimeout = setTimeout(() => {
+            if (!this.internalIsFocus) {
+                this.emitBlur(event);
+            }
+            this.internalIsBlur = false;
+        }, FOCUS_OUT_TIMEOUT_MS);
     }
 
     @Watch('value')
@@ -81,25 +117,50 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
         this.internalValue = value;
     }
 
+    @Watch('focus')
+    private focusChanged(focus: boolean): void {
+        const elements: NodeListOf<Element> = this.$el.querySelectorAll('input');
+        let inputEl: HTMLElement | undefined;
+
+        // Find right element to focus
+        if (elements.length > 1) {
+            elements.forEach((radio: Element) => {
+                if ((radio as HTMLInputElement).value === this.value) {
+                    inputEl = radio as HTMLElement;
+                }
+            });
+            if (inputEl === undefined) {
+                inputEl = elements[0] as HTMLElement;
+            }
+        } else {
+            inputEl = elements[0] as HTMLElement;
+        }
+
+        // Focus on the element
+        if (inputEl) {
+            if (focus) {
+                inputEl.focus();
+            } else {
+                inputEl.blur();
+            }
+        }
+    }
+
     private get model(): any {
         return this.value === undefined ? this.internalValue : this.value;
+    }
+
+    private set model(value: any) {
+        this.internalValue = value;
+        this.onChange(value);
     }
 
     private get hasLabel(): boolean {
         return !!this.label;
     }
 
-    public get idLabel(): string | undefined {
-        return this.hasLabel ? uuid.generate() : undefined;
-    }
-
     private get idValidationMessage(): string | undefined {
         return this.as<InputState>().errorMessage || this.as<InputState>().validMessage || this.as<InputState>().helperMessage ? uuid.generate() : undefined;
-    }
-
-    private set model(value: any) {
-        this.internalValue = value;
-        this.onChange(value);
     }
 }
 
