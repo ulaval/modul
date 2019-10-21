@@ -5,7 +5,7 @@ import { ControlValidator } from './validators/control-validator';
 
 export class FormControl<T> extends AbstractControl {
     private _value?: T;
-    private _initialValue?: string; // String au lieu de T pour éviter que _initialValue contienne une référence à un autre objet. Sa valeur doit rester fixe.
+    private _initialValue?: string; // String instead of T to avoid that _initialValue contains a reference to another object. It's value must not be mutated.
     private _oldValue?: T;
 
     constructor(
