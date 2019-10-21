@@ -12,9 +12,25 @@ import WithRender from './crop-image.html?style=./crop-image.scss';
 
 require('croppie/croppie.css');
 
-enum MResultFormat {
+enum MExportFormat {
     PNG = 'png',
     JPG = 'jpeg'
+}
+
+interface MCropImageViewport {
+    width: number;
+    height: number;
+    type: string;
+}
+
+interface MCropImageBoundary {
+    height: number;
+}
+
+interface MCropImageOptions {
+    viewport: MCropImageViewport;
+    boundary: MCropImageBoundary;
+    enableOrientation: boolean;
 }
 
 @WithRender
@@ -40,16 +56,20 @@ export class MCropImage extends ModulVue {
         croppieContainer: HTMLElement;
     };
 
-    // gérer annuler
-
     initialize(): void {
         if (this.image.url) {
             let el: HTMLElement = this.$refs.croppieContainer;
             this.croppie = new Croppie(el, {
-                viewport: { width: MAvatarSize.LARGE, height: MAvatarSize.LARGE, type: 'circle' },
-                boundary: { height: 300 },
+                viewport: {
+                    width: MAvatarSize.LARGE,
+                    height: MAvatarSize.LARGE,
+                    type: 'circle'
+                },
+                boundary: {
+                    height: 240
+                },
                 enableOrientation: true
-            });
+            } as MCropImageOptions);
 
             this.bind();
         }
@@ -63,7 +83,7 @@ export class MCropImage extends ModulVue {
 
     crop(): void {
         this.croppie.result({
-            format: this.imageWithTransparency ? MResultFormat.PNG : MResultFormat.JPG,
+            format: this.imageWithTransparency ? MExportFormat.PNG : MExportFormat.JPG,
             type: 'blob',
             circle: false
         }).then((imageCropped: File) => {
