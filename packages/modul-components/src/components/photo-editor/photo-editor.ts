@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Prop, Watch } from 'vue-property-decorator';
 import { MFile } from '../../utils/file/file';
 import { ModulVue } from '../../utils/vue/vue';
 import { PHOTO_EDITOR_NAME } from '../component-names';
@@ -23,11 +23,17 @@ export class MPhotoEditor extends ModulVue {
     cropImageOpen: boolean = false;
     selectImageOpen: boolean = false;
 
-    created(): void {
-        this.selectImageOpen = this.open;
-    }
+    @Watch('open', { immediate: true })
+    initialize(): void {
+        if (this.open) {
+            this.selectImageOpen = true;
+        } else {
+            this.selectImageOpen = false;
+        }
 
-    // on open => ouvrir image-selector
+        this.imageToCrop = {} as MFile;
+        this.cropImageOpen = false;
+    }
 
     enableCrop(image: MFile): void {
         this.imageToCrop = image;
@@ -39,12 +45,7 @@ export class MPhotoEditor extends ModulVue {
         this.imageToCrop.file = imageFile;
         this.imageToCrop.url = URL.createObjectURL(this.imageToCrop.file);
         this.$emit('save-image', this.imageToCrop);
-    }
-
-    cancelCrop(): void {
-        this.imageToCrop = {} as MFile;
-        this.selectImageOpen = true;
-        this.cropImageOpen = false;
+        this.$emit('update:open', false);
     }
 
     get readyToCrop(): boolean {
