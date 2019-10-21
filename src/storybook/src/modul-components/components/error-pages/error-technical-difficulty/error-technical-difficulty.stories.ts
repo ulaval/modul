@@ -3,14 +3,12 @@ import { storiesOf } from '@storybook/vue';
 import { ERROR_TECHNICAL_DIFFICULTY_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import ErrorTechnicalDifficultyPlugin from '@ulaval/modul-components/dist/components/error-pages/error-technical-difficulty/error-technical-difficulty';
 import { Link } from '@ulaval/modul-components/dist/components/message-page/message-page';
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-
 Vue.use(ErrorTechnicalDifficultyPlugin);
-
-
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_TECHNICAL_DIFFICULTY_NAME}`, module)
 

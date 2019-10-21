@@ -13,7 +13,6 @@ import I18nPlugin from '../i18n/i18n';
 import { MBaseSelect } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
 
-const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
@@ -35,6 +34,9 @@ export class MSelect extends ModulVue {
 
     @Prop()
     public options: any[];
+
+    @Prop({ default: false })
+    public clearable: boolean;
 
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
@@ -60,12 +62,39 @@ export class MSelect extends ModulVue {
         return this.as<InputManagement>().hasValue || (this.open) ? false : true;
     }
 
+    get isClearable(): boolean {
+        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue &&
+            this.isSelectable;
+    }
 
     get selectedItems(): any {
         if (this.value) {
             return [this.value];
         }
         return [];
+    }
+
+    get isSelectable(): boolean {
+        return !this.as<InputState>().isDisabled &&
+            !this.as<InputState>().isReadonly;
+    }
+
+    get internalLabelUp(): boolean {
+        return !this.as<InputState>().isReadonly ? this.as<InputLabel>().labelUp : true;
+    }
+
+    get internalPlaceholder(): string {
+        return !this.as<InputState>().isReadonly ? this.as<InputManagement>().placeholder : '';
+    }
+
+    public onReset(): void {
+        this.as<InputManagement>().model = '';
+    }
+
+    public onKeyDownDelete(event: KeyboardEvent): void {
+        if (event.key === 'Delete' && this.isClearable) {
+            this.onReset();
+        }
     }
 
 }

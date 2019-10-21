@@ -25,8 +25,11 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_NAME}`, module)
     .add('open', () => ({
         template: '<m-accordion open="true"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
     }))
-    .add('disabled', () => ({
+    .add('disabled and closed', () => ({
         template: '<m-accordion :disabled="true"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
+    }))
+    .add('disabled and open', () => ({
+        template: '<m-accordion :disabled="true" :open="true"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
     }))
     .add('icon-border="true"', () => ({
         template: '<m-accordion icon-border="true"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'

@@ -1879,4 +1879,43 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/all fields`, mod
             </div>
         </m-form>
         `
+    }))
+    .add('multi-select', () => ({
+        data: () => ({
+            formGroup: new FormGroup(
+                {
+                    'multi-select': new FormControl<string[]>(
+                        [
+                            RequiredValidator({ controlLabel: 'multi-select' })
+                        ], { initialValue: [] }
+                    )
+                }
+            ),
+            options: ['Maria Rainer', 'Georg von Trapp', 'Liesl von Trapp', 'Friedrich von Trapp', 'Louisa von Trapp', 'Kurt von Trapp', 'Brigitta von Trapp', 'Marta von Trapp', 'Gretl von Trapp']
+        }),
+        computed: {
+            multiSelectField(): void {
+                return (this).$data.formGroup.getControl('multi-select');
+            }
+        },
+        template: `
+        <m-form :form-group="formGroup"
+                v-m-control="formGroup">
+            <h4 class="m-u--h6">Multi-Select</h4>
+            <p>edition context: {{multiSelectField['_editionContext']}}</p>
+            <span style="width: 300px; margin-bottom: 5px; border-bottom: 1px solid black; display: flex; padding-bottom: 10px"></span>
+            <m-multi-select v-model="multiSelectField.value"
+                            v-m-control="multiSelectField"
+                            :error="multiSelectField.hasError()"
+                            :error-message="multiSelectField.errorMessage"
+                            label="La famille Von Trapp"
+                            :link-select-all="true"
+                            :options="options"
+                            :required-marker="true"></m-multi-select>
+            <div class="m-u--margin-top--l m-u--margin-bottom--l">
+                <m-button type="submit">Submit</m-button>
+                <m-button type="reset" @reset([])
+                          skin="secondary">Reset</m-button>
+            </div>
+        </m-form>`
     }));

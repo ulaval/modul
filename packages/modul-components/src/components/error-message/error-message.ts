@@ -1,3 +1,4 @@
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
@@ -11,7 +12,6 @@ import LinkPlugin from '../link/link';
 import MessagePlugin from '../message/message';
 import PanelPlugin from '../panel/panel';
 import WithRender from './error-message.html?style=./error-message.scss';
-
 
 @WithRender
 @Component

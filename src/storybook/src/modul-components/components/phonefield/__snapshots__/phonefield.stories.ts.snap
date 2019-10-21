@@ -69,7 +69,7 @@ exports[`Storyshots modul-components|m-phonefield default 1`] = `
                           </svg>
                         </div>
                       </div>
-                        
+                       
                       <!---->
                        
                       <!---->
@@ -78,30 +78,35 @@ exports[`Storyshots modul-components|m-phonefield default 1`] = `
                     <div
                       class="m-input-style__suffix"
                     >
-                      <div
-                        class="m-select__arrow"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-select__arrow__icon"
-                          height="16px"
-                          width="16px"
-                        >
-                          <!---->
-                           
-                          <use
-                            aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </div>
                        
                       <!---->
                     </div>
                   </div>
                 </div>
                  
-                <!---->
+                <div
+                  class="m-input-style__append"
+                >
+                  <!---->
+                   
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-select__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
              
@@ -265,9 +270,11 @@ exports[`Storyshots modul-components|m-phonefield detect country 1`] = `
                     class="m-input-style__content"
                   >
                     <div>
-                      +14188753893
+                      <input
+                        readonly="readonly"
+                      />
                     </div>
-                      
+                     
                     <!---->
                      
                     <!---->
@@ -276,30 +283,35 @@ exports[`Storyshots modul-components|m-phonefield detect country 1`] = `
                   <div
                     class="m-input-style__suffix"
                   >
-                    <div
-                      class="m-select__arrow"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-select__arrow__icon"
-                        height="16px"
-                        width="16px"
-                      >
-                        <!---->
-                         
-                        <use
-                          aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </div>
                      
                     <!---->
                   </div>
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="m-input-style__append"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__arrow__icon"
+                    height="12px"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
            
@@ -396,7 +408,7 @@ exports[`Storyshots modul-components|m-phonefield detect country 1`] = `
                             </svg>
                           </div>
                         </div>
-                          
+                         
                         <!---->
                          
                         <!---->
@@ -405,30 +417,35 @@ exports[`Storyshots modul-components|m-phonefield detect country 1`] = `
                       <div
                         class="m-input-style__suffix"
                       >
-                        <div
-                          class="m-select__arrow"
-                        >
-                          <svg
-                            aria-hidden="true"
-                            class="m-icon m-select__arrow__icon"
-                            height="16px"
-                            width="16px"
-                          >
-                            <!---->
-                             
-                            <use
-                              aria-hidden="true"
-                              class=""
-                            />
-                          </svg>
-                        </div>
                          
                         <!---->
                       </div>
                     </div>
                   </div>
                    
-                  <!---->
+                  <div
+                    class="m-input-style__append"
+                  >
+                    <!---->
+                     
+                    <div
+                      class="m-select__arrow"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="m-icon m-select__arrow__icon"
+                        height="12px"
+                        width="12px"
+                      >
+                        <!---->
+                         
+                        <use
+                          aria-hidden="true"
+                          class=""
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
                
@@ -566,7 +583,7 @@ exports[`Storyshots modul-components|m-phonefield disabled 1`] = `
           tabindex="0"
         >
           <div
-            class="m-input-style m--is-label-up m--is-disabled m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+            class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
             style="margin-top: 10px;"
           >
             <div
@@ -618,8 +635,6 @@ exports[`Storyshots modul-components|m-phonefield disabled 1`] = `
                     <!---->
                      
                     <!---->
-                     
-                    <!---->
                   </div>
                    
                   <div
@@ -631,7 +646,30 @@ exports[`Storyshots modul-components|m-phonefield disabled 1`] = `
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="m-input-style__append"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__arrow__icon"
+                    disabled="disabled"
+                    height="12px"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
            
@@ -808,7 +846,7 @@ exports[`Storyshots modul-components|m-phonefield error 1`] = `
                         </svg>
                       </div>
                     </div>
-                      
+                     
                     <!---->
                      
                     <!---->
@@ -817,30 +855,35 @@ exports[`Storyshots modul-components|m-phonefield error 1`] = `
                   <div
                     class="m-input-style__suffix"
                   >
-                    <div
-                      class="m-select__arrow"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-select__arrow__icon"
-                        height="16px"
-                        width="16px"
-                      >
-                        <!---->
-                         
-                        <use
-                          aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </div>
                      
                     <!---->
                   </div>
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="m-input-style__append"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__arrow__icon"
+                    height="12px"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
            
@@ -1016,7 +1059,7 @@ exports[`Storyshots modul-components|m-phonefield error message 1`] = `
                         </svg>
                       </div>
                     </div>
-                      
+                     
                     <!---->
                      
                     <!---->
@@ -1025,30 +1068,35 @@ exports[`Storyshots modul-components|m-phonefield error message 1`] = `
                   <div
                     class="m-input-style__suffix"
                   >
-                    <div
-                      class="m-select__arrow"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-select__arrow__icon"
-                        height="16px"
-                        width="16px"
-                      >
-                        <!---->
-                         
-                        <use
-                          aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </div>
                      
                     <!---->
                   </div>
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="m-input-style__append"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__arrow__icon"
+                    height="12px"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
            
@@ -1199,7 +1247,7 @@ exports[`Storyshots modul-components|m-phonefield waiting 1`] = `
           tabindex="0"
         >
           <div
-            class="m-input-style m--is-label-up m--is-disabled m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+            class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
             style="margin-top: 10px;"
           >
             <div
@@ -1251,8 +1299,6 @@ exports[`Storyshots modul-components|m-phonefield waiting 1`] = `
                     <!---->
                      
                     <!---->
-                     
-                    <!---->
                   </div>
                    
                   <div
@@ -1264,7 +1310,30 @@ exports[`Storyshots modul-components|m-phonefield waiting 1`] = `
                 </div>
               </div>
                
-              <!---->
+              <div
+                class="m-input-style__append"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__arrow__icon"
+                    disabled="disabled"
+                    height="12px"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
            
