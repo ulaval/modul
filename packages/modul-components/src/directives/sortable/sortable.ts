@@ -35,6 +35,7 @@ export interface MSortEvent extends CustomEvent {
 
 export enum MSortableClassNames {
     Sortable = 'm--is-sortable',
+    CantSort = 'm--cant-sort',
     SortBefore = 'm--is-sortbefore',
     SortIn = 'm--is-sortin',
     SortAfter = 'm--is-sortafter',
@@ -331,7 +332,18 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
             case MSortInsertPositions.Before: insertionClass = MSortableClassNames.SortBefore; break;
             case MSortInsertPositions.In: insertionClass = MSortableClassNames.SortIn; break;
         }
-        if (insertionClass) { element.classList.add(insertionClass); }
+
+        const isSortingOnPreviousSibling: boolean = !!MDroppable.currentHoverDroppable && !!MDraggable.currentDraggable
+            && MDroppable.currentHoverDroppable.element === MDraggable.currentDraggable.element.previousElementSibling && newInsertPosition === MSortInsertPositions.After;
+        const isSortingOnNextSibling: boolean = !!MDroppable.currentHoverDroppable && !!MDraggable.currentDraggable
+            && MDroppable.currentHoverDroppable.element === MDraggable.currentDraggable.element.nextElementSibling && newInsertPosition === MSortInsertPositions.Before;
+
+        if (insertionClass) {
+            element.classList.add(insertionClass);
+            if (isSortingOnPreviousSibling || isSortingOnNextSibling) {
+                element.classList.add(MSortableClassNames.CantSort);
+            }
+        }
     }
 
     private getInsertionMarkerBehavior(): MSortableInsertionMarkerBehavior {
@@ -404,6 +416,10 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
         const mSortBeforeElement: Element | null = this.element.querySelector(`.${MSortableClassNames.SortBefore}`);
         if (mSortBeforeElement) { mSortBeforeElement.classList.remove(MSortableClassNames.SortBefore); }
         this.element.classList.remove(MSortableClassNames.SortBefore);
+
+        const mCantSort: Element | null = this.element.querySelector(`.${MSortableClassNames.CantSort}`);
+        if (mCantSort) { mCantSort.classList.remove(MSortableClassNames.CantSort); }
+        this.element.classList.remove(MSortableClassNames.CantSort);
     }
 }
 
