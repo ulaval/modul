@@ -16,12 +16,13 @@ pipeline {
     }
 
     parameters {
-        string(defaultValue: 'feature/configuration_openshift', description: '', name: 'branch')
+        string(defaultValue: '', description: 'nom de la branche', name: 'branch')
+
     }
 
     environment {
         NAME = branch.toLowerCase().replace('/', '-').replace('_', '-').take(127)
-        DOCKER_REPOSITORY_NAME = 'chocmah/modul'
+        DOCKER_REPOSITORY_NAME = 'ulaval/modul'
     }
 
     stages {
