@@ -1,7 +1,7 @@
 import Croppie from 'croppie';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { MFile } from '../../../utils/file/file';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MAvatarSize } from '../../avatar/avatar';
@@ -47,7 +47,7 @@ export class MCropImage extends ModulVue {
             let el: HTMLElement = this.$refs.croppieContainer;
             this.croppie = new Croppie(el, {
                 viewport: { width: MAvatarSize.LARGE, height: MAvatarSize.LARGE, type: 'circle' },
-                boundary: { width: 300, height: 300 },
+                boundary: { height: 300 },
                 enableOrientation: true
             });
 
@@ -70,6 +70,9 @@ export class MCropImage extends ModulVue {
             this.$emit('image-cropped', imageCropped);
         });
     }
+
+    @Emit('cancel')
+    cancel(): void { }
 
     get imageWithTransparency(): boolean {
         return this.image.extension === 'png' || this.image.extension === 'gif';

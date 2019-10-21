@@ -6,5 +6,6 @@
     <m-crop-image v-if="readyToCrop"
                   :open="cropImageOpen"
                   :image="imageToCrop"
-                  @image-cropped="saveImage"></m-crop-image>
+                  @image-cropped="saveImage"
+                  @cancel="cancelCrop"></m-crop-image>
 </div>

@@ -22,7 +22,6 @@ export class MPhotoEditor extends ModulVue {
     imageToCrop: MFile = {} as MFile;
     cropImageOpen: boolean = false;
     selectImageOpen: boolean = false;
-    test: string = '';
 
     created(): void {
         this.selectImageOpen = this.open;
@@ -40,6 +39,12 @@ export class MPhotoEditor extends ModulVue {
         this.imageToCrop.file = imageFile;
         this.imageToCrop.url = URL.createObjectURL(this.imageToCrop.file);
         this.$emit('save-image', this.imageToCrop);
+    }
+
+    cancelCrop(): void {
+        this.imageToCrop = {} as MFile;
+        this.selectImageOpen = true;
+        this.cropImageOpen = false;
     }
 
     get readyToCrop(): boolean {

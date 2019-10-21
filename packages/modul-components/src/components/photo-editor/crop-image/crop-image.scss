@@ -1,6 +1,10 @@
 @import "commons";
 
 .m-crop-image {
+    &__cropper {
+        min-height: 300px;
+    }
+
     &__cancel {
         margin-top: $m-spacing;
     }
