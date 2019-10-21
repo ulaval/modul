@@ -8,6 +8,8 @@ import InputGroupPlugin from '../input-group/input-group';
 import RadioPlugin, { BaseRadioGroup, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
 import WithRender from './radio-group.html?style=./radio-group.scss';
 
+const FOCUS_OUT_TIMEOUT_MS: number = 200;
+
 @WithRender
 @Component({
     mixins: [InputState]
@@ -46,6 +48,7 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     private internalValue: any | undefined = '';
     private internalIsFocus: boolean = false;
     private internalIsBlur: boolean = false;
+    private hasFocusInTimeout: any;
 
     @Emit('change')
     private onChange(value: any): void { }
@@ -91,6 +94,7 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     }
 
     public onFocus(event: FocusEvent): void {
+        clearTimeout(this.hasFocusInTimeout);
         if (!this.internalIsBlur) {
             this.emitFocus(event);
         }
@@ -100,12 +104,12 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     public onBlur(event: FocusEvent): void {
         this.internalIsFocus = false;
         this.internalIsBlur = true;
-        setTimeout(() => {
+        this.hasFocusInTimeout = setTimeout(() => {
             if (!this.internalIsFocus) {
                 this.emitBlur(event);
             }
             this.internalIsBlur = false;
-        });
+        }, FOCUS_OUT_TIMEOUT_MS);
     }
 
     @Watch('value')
