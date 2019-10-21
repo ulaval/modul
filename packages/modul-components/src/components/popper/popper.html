@@ -23,7 +23,8 @@
                                 className ]"
                      :aria-hidden="!propOpen || isHidden"
                      :style="{ width: width }"
-                     v-if="propOpen && portalMounted">
+                     v-show="propOpen"
+                     v-if="portalMounted">
                 <header class="m-popper__header"
                         :class="{ 'm--no-padding': !padding || !paddingHeader }"
                         v-if="hasHeaderSlot">
