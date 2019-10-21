@@ -54,9 +54,8 @@ export class MImageSelector extends ModulVue {
     @Emit('delete')
     deleteImage(): void { }
 
-    cancel(): void {
-        this.$emit('update:open', false);
-    }
+    @Emit('cancel')
+    cancel(): void { }
 
     get imageSelected(): MFile | undefined {
         const images: MFile[] = this.$file.files(this.storeName).filter((f: MFile) => f.status === MFileStatus.READY || f.status === MFileStatus.COMPLETED || f.status === MFileStatus.UPLOADING);

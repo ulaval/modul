@@ -2,7 +2,8 @@
     <m-image-selector :url-photo="urlPhoto"
                       :open="selectImageOpen"
                       :allowed-extensions="allowedExtensions"
-                      @image-selected="enableCrop"></m-image-selector>
+                      @image-selected="enableCrop"
+                      @cancel="close"></m-image-selector>
     <m-crop-image v-if="readyToCrop"
                   :open="cropImageOpen"
                   :image="imageToCrop"
