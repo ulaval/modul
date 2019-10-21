@@ -16,12 +16,12 @@ pipeline {
     }
 
     parameters {
-        string(defaultValue: 'feature/configuration_openshift', description: '', name: 'branch')
+        string(defaultValue: '', description: 'nom de la branche', name: 'branch')
     }
 
     environment {
         NAME = branch.toLowerCase().replace('/', '-').replace('_', '-').take(127)
-        DOCKER_REPOSITORY_NAME = 'chocmah/modul'
+        DOCKER_REPOSITORY_NAME = 'ulaval/modul'
     }
 
     stages {
@@ -57,6 +57,17 @@ pipeline {
                     sh("oc expose svc ${NAME} --port=5003 --server=https://console-pca.svc.ulaval.ca -n=ul-modul-dv01 --token=${TOKEN} --certificate-authority='/ca-comodo.crt'")
                 }
             }
+        }
+    }
+
+    post {
+        success  {
+
+            emailext body: "<p>Openshift application successfully created application at <a href=http://${NAME}-ul-modul-dv01.pca.svc.ulaval.ca>http://${NAME}-ul-modul-dv01.pca.svc.ulaval.ca</a> </p>",
+                mimeType: 'text/html',
+                recipientProviders: [[$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Job ${env.JOB_NAME} - build ${env.BUILD_NUMBER} : ${currentBuild.currentResult}"
+
         }
     }
 }

@@ -20,40 +20,23 @@ pipeline {
     stages {
 
 
-        // stage('install, build, lint & test') {
-	// agent {
-	// 	docker {
-	// 		image 'node:10'
-	// 	}
-	// }
-        //     when {
-        //         expression {
-        //             env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
-        //         }
-        //     }
-
-        //     steps {
-        //         sh 'yarn install --frozen-lockfile'
-        //         sh 'yarn build'
-        //         sh 'yarn lint:ci'
-        //         sh 'yarn test:ci'
-        //     }
-        // }
-
-        stage('Build docker for openshift') {
+        stage('install, build, lint & test') {
+            agent {
+                docker {
+                    image 'node:10'
+                }
+            }
             when {
                 expression {
-                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop' || env.BRANCH_NAME=='feature/configuration_openshift'
+                    env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
                 }
             }
 
             steps {
-                script {
-                    build(job: "modul-openshift/modul-build-docker",
-                    parameters: [
-                        [$class: 'StringParameterValue', name: 'branch', value: env.BRANCH_NAME]
-                    ])
-                }
+                sh 'yarn install --frozen-lockfile'
+                sh 'yarn build'
+                sh 'yarn lint:ci'
+                sh 'yarn test:ci'
             }
         }
     }
