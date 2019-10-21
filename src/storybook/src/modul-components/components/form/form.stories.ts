@@ -1914,7 +1914,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/all fields`, mod
                             :required-marker="true"></m-multi-select>
             <div class="m-u--margin-top--l m-u--margin-bottom--l">
                 <m-button type="submit">Submit</m-button>
-                <m-button type="reset"
+                <m-button type="reset" @reset([])
                           skin="secondary">Reset</m-button>
             </div>
         </m-form>`
