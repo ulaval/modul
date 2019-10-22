@@ -427,10 +427,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         }
     }
 
-    private focusItem(): void {
-
-    }
-
     private focusNextItem(): void {
         if (!this.hasItems) {
             return;
