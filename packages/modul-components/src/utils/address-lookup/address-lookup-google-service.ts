@@ -1,12 +1,13 @@
 
 import { AxiosInstance } from 'axios';
 import { Address, AddressSummary } from './address';
-import { AddressLookupFindQuery, AddressLookupRetrieveQuery, AddressLookupService } from './address-lookup';
+import { AddressLookupFindQuery, AddressLookupRetrieveQuery, AddressLookupService, AddressLookupServiceProvider } from './address-lookup';
 import { GoogleFindResponseBuilder, GoogleRetrieveResponseBuilder } from './address-lookup-google';
 import { AddressLookupToAddressSummary, AddressRetrieveToAddress } from './address-lookup-response-mapper';
 import GoogleAPI from './google-api';
 
 export default class AddressLookupGoogleService implements AddressLookupService {
+    serviceProvider = AddressLookupServiceProvider.Google;
     private readonly googleAPI: GoogleAPI;
     private sessionToken?: google.maps.places.AutocompleteSessionToken;
 
@@ -34,6 +35,8 @@ export default class AddressLookupGoogleService implements AddressLookupService 
         await this.ensureCreateToken();
         const request: google.maps.places.PlaceDetailsRequest = {
             placeId: query.id,
+            // Use only Basic Data: https://developers.google.com/places/web-service/usage-and-billing#basic-data
+            fields: ['address_component', 'adr_address', 'formatted_address', 'name', 'type'],
             sessionToken: this.sessionToken
         };
 
@@ -53,7 +56,6 @@ export default class AddressLookupGoogleService implements AddressLookupService 
     }
 
     private discardToken(): void {
-        // The moment at which the token should be discarded is still unclear.  It might get moved later.
         this.sessionToken = undefined;
     }
 }

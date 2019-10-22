@@ -1,10 +1,10 @@
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue, { VueConstructor } from 'vue';
-
 import { addMessages } from '../../../tests/helpers/lang';
 import { renderComponent } from '../../../tests/helpers/render';
-import DatefieldsPlugin, { MDatefields } from './datefields';
+import { MDatefields } from './datefields';
 
 describe('MDateFields', () => {
     let localVue: VueConstructor<Vue>;

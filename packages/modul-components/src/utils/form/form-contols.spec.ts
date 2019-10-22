@@ -126,4 +126,22 @@ describe('FromControl', () => {
 
         });
     });
+
+
+    describe('When value change, initialvalue must not', () => {
+        beforeAll(() => {
+            formControl = new FormControl<string>([],
+                {
+                    initialValue: 'foo'
+                });
+
+            formControl.value = ['bar'];
+        });
+
+
+        it('should run validation and set flag', () => {
+            expect((formControl as any)._initialValue).toBe('\"foo\"');
+            expect(formControl.value).toMatchObject(['bar']);
+        });
+    });
 });

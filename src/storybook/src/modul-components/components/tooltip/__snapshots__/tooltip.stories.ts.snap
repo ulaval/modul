@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-tooltip change icon 1`] = `
+<span>
+  Lorem Ipsum
+  <div
+    class="m-popup m-tooltip m--is-inline"
+  >
+    <div
+      class="m-popper"
+    >
+      <div>
+        <button
+          aria-controls="mTooltip-fakeId-controls"
+          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
+          id="mTooltip-fakeId"
+          style="width: 22px; height: 22px;"
+          title="Ouvrir l'infobulle"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="m-icon m-icon-button__icon"
+            height="20px"
+            width="20px"
+          >
+            <!---->
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <!---->
+        </button>
+      </div>
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</span>
+`;
+
 exports[`Storyshots modul-components|m-tooltip close-button="false" 1`] = `
 <span>
   Lorem Ipsum
