@@ -409,11 +409,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private focusSelected(): void {
-        if (this.internalNavigationItems.length === 1) {
-            this.focusNextItem();
-            return;
-        }
-
         this.internalNavigationItems.every((item, i) => {
             if (item.value === this.model) {
                 this.focusedIndex = i;
@@ -426,6 +421,14 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
                 return true;
             }
         });
+
+        if (this.focusedIndex === -1) {
+            this.focusNextItem();
+        }
+    }
+
+    private focusItem(): void {
+
     }
 
     private focusNextItem(): void {
