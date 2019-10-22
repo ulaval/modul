@@ -4,6 +4,8 @@ import { Prop, Watch } from 'vue-property-decorator';
 import { MFile } from '../../utils/file/file';
 import { ModulVue } from '../../utils/vue/vue';
 import { PHOTO_EDITOR_NAME } from '../component-names';
+import CropImagePlugin from './crop-image/crop-image';
+import ImageSelectorPlugin from './image-selector/image-selector';
 import WithRender from './photo-editor.html?style=./photo-editor.scss';
 
 @WithRender
@@ -63,6 +65,8 @@ export class MPhotoEditor extends ModulVue {
 const PhotoEditorPlugin: PluginObject<any> = {
     install(v, options): void {
         v.prototype.$log.debug(PHOTO_EDITOR_NAME, 'plugin.install');
+        v.use(ImageSelectorPlugin);
+        v.use(CropImagePlugin);
         v.component(PHOTO_EDITOR_NAME, MPhotoEditor);
     }
 };
