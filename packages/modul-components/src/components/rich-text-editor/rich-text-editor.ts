@@ -20,23 +20,7 @@ import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
 
-
 const RICH_TEXT_LICENSE_KEY: string = 'm-rich-text-license-key';
-
-/**
- * @deprecated use MRichTextEditorOption instead
- */
-export enum MRichTextEditorMode {
-    STANDARD,
-    MEDIA
-}
-
-export enum MRichTextEditorOption {
-    IMAGE,
-    IMAGE_HIDE_FLOAT_LAYOUT
-}
-
-export type MRichTextEditorOptions = MRichTextEditorOption[];
 
 @WithRender
 @Component({
@@ -56,26 +40,6 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
     @Prop({ default: '' })
     public value: string;
-
-    /**
-     * @deprecated use options instead
-     */
-    @Prop({
-        default: MRichTextEditorMode.STANDARD,
-        validator: value => {
-            return value === MRichTextEditorMode.STANDARD
-                || value === MRichTextEditorMode.MEDIA;
-        }
-    })
-    public mode: MRichTextEditorMode;
-
-    @Prop({
-        default: () => [],
-        validator: (options: MRichTextEditorOptions) => {
-            return options.filter(option => !MRichTextEditorOption[option]).length === 0;
-        }
-    })
-    public options: MRichTextEditorOptions;
 
     @Prop({ default: '0' })
     public toolbarStickyOffset: string;
@@ -115,10 +79,13 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     public showStrikeThroughButton: boolean;
 
     @Prop({ default: false })
-    public titleAvailable: boolean; // temporary
+    public showImageButton: boolean;
 
-    @Emit('fullscreen')
-    onFullscreen(fullscreenWasActived: boolean): void { }
+    @Prop({ default: false })
+    public showImageFloatLayout: boolean;
+
+    @Prop({ default: false })
+    public titleAvailable: boolean; // temporary
 
     public $refs: {
         input: HTMLElement
@@ -148,7 +115,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
             scrollableContainer: this.getScrollableContainer(),
-            imageHideFloatLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT),
+            imageHideFloatLayout: this.showImageFloatLayout,
             charCounterCount: this.showCharCounter || !!this.charCounterMax,
             charCounterMax: !this.charCounterMax ? -1 : this.charCounterMax
         };
@@ -160,10 +127,14 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         return this.$license.getLicense<string>(RICH_TEXT_LICENSE_KEY) || '';
     }
 
+    private get headerLevelValid(): boolean {
+        return this.firstHeaderLevel <= this.lastHeaderLevel;
+    }
+
     public getOptions(): MRichTextEditorDefaultOptions {
         const richTextEditorOptions: MRichTextEditorDefaultOptions = new MRichTextEditorDefaultOptions(this.froalaLicenseKey, this.$i18n.currentLang());
 
-        if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
+        if (this.showImageButton) {
             richTextEditorOptions.pluginsEnabled.push('image');
             // toolbar for desktop devices
             richTextEditorOptions.toolbarButtons.moreRich.buttons.push('insertImage');
@@ -283,9 +254,8 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         }
     }
 
-    private get headerLevelValid(): boolean {
-        return this.firstHeaderLevel <= this.lastHeaderLevel;
-    }
+    @Emit('fullscreen')
+    onFullscreen(fullscreenWasActived: boolean): void { }
 
     @Emit('image-ready')
     protected imageReady(file: MFile, storeName: string): void {

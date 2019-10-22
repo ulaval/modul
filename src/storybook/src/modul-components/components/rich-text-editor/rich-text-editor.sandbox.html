@@ -65,7 +65,7 @@
     <div class="m-u--margin-bottom">
         <h5>With IMAGE option</h5>
         <m-rich-text-editor v-model="imageModel"
-                            :options="imageOptions"
+                            :show-image-button="true"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"
@@ -79,7 +79,8 @@
     <div class="m-u--margin-bottom">
         <h5>With IMAGE_HIDE_FLOAT_LAYOUT option</h5>
         <m-rich-text-editor v-model="imageNoLayoutModel"
-                            :options="imageNoLayoutOptions"
+                            :show-image-button="true"
+                            :show-image-float-layout="true"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"
@@ -411,6 +412,7 @@
                             :show-paragraph-alignement-buttons="true"
                             :show-underline-button="true"
                             :show-strike-through-button="true"
-                            :options="imageNoLayoutOptions"></m-rich-text-editor>
+                            :show-image-button="true"
+                            :show-image-float-layout="true"></m-rich-text-editor>
     </div>
 </div>
