@@ -1,27 +1,9 @@
-<m-modal class="m-crop-image"
-         :open="open"
-         :title="i18nTitleModal"
-         :size="modalSize"
-         :close-on-backdrop="false"
-         @portal-after-open="initialize">
-    <template #default>
-        <div class="m-crop-image__container">
-            <div class="m-crop-image__cropper"
-                 ref="croppieContainer"></div>
-            <m-icon class="m-crop-image__icon-small"
-                    name="m-svg__image-square"></m-icon>
-            <m-icon class="m-crop-image__icon-big"
-                    name="m-svg__image-square"
-                    size="28px"></m-icon>
-        </div>
-    </template>
-    <template #footer>
-        <m-button :skin="primaryButton"
-                  :full-size="true"
-                  @click="crop">{{ i18nSave }}</m-button>
-        <m-button class="m-crop-image__cancel"
-                  :skin="secondaryButton"
-                  :full-size="true"
-                  @click="cancel">{{ i18nCancel }}</m-button>
-    </template>
-</m-modal>
+<div class="m-crop-image">
+    <div class="m-crop-image__cropper"
+         ref="croppieContainer"></div>
+    <m-icon class="m-crop-image__icon-small"
+            name="m-svg__image-square"></m-icon>
+    <m-icon class="m-crop-image__icon-big"
+            name="m-svg__image-square"
+            size="28px"></m-icon>
+</div>

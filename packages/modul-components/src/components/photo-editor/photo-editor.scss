@@ -1,1 +1,21 @@
 @import "commons";
+
+.m-photo-editor {
+    position: relative;
+
+    &__delete {
+        position: absolute;
+        right: $m-spacing--l;
+        z-index: 2;
+
+        &.m-icon-button {
+            border-radius: 0;
+            color: $m-color--white;
+            background-color: rgba($m-color--grey-darker, 0.6);
+        }
+    }
+
+    &__cancel {
+        margin-top: $m-spacing;
+    }
+}

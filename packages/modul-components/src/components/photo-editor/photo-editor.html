@@ -1,12 +1,42 @@
-<div>
-    <m-image-selector :url-photo="urlPhoto"
-                      :open="selectImageOpen"
-                      :allowed-extensions="allowedExtensions"
-                      @image-selected="enableCrop"
-                      @cancel="close"></m-image-selector>
-    <m-crop-image v-if="readyToCrop"
-                  :open="cropImageOpen"
+<m-modal class="m-photo-editor"
+         :open="open"
+         :title="i18nTitleModal"
+         :size="modalSize"
+         :close-on-backdrop="false"
+         @close="cancel">
+    <m-icon-button class="m-photo-editor__delete"
+                   icon-name="m-svg__delete"
+                   icon-size="20px"
+                   :title="i18nDelete"
+                   :skin="skinDelete"
+                   @click="deleteImage"
+                   ref="btnDelete"></m-icon-button>
+    <m-image-selector v-if="modeSelect"
+                      :url-photo="urlPhoto"></m-image-selector>
+    <m-crop-image v-else
                   :image="imageToCrop"
                   @image-cropped="saveImage"
-                  @cancel="initialize"></m-crop-image>
-</div>
+                  ref="cropImage"></m-crop-image>
+
+    <template #footer>
+        <m-file-select v-if="modeSelect"
+                       class="m-photo-editor__button"
+                       :store-name="storeName"
+                       :full-size="true"
+                       :multiple="false"
+                       :keep-store="true"
+                       :label="i18nChoosePhoto"
+                       :skin="primaryButton"
+                       :allowed-extensions="allowedExtensions"
+                       @file-selected="replaceImage"></m-file-select>
+        <m-button v-else
+                  :skin="primaryButton"
+                  :full-size="true"
+                  @click="crop">{{ i18nSave }}</m-button>
+        <m-button class="m-photo-editor__cancel"
+                  :skin="secondaryButton"
+                  :full-size="true"
+                  @click="cancel">{{ i18nCancel }}</m-button>
+    </template>
+
+</m-modal>

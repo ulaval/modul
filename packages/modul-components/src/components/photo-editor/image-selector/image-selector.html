@@ -1,40 +1,8 @@
-<m-modal class="m-image-selector"
-         :open="open"
-         :title="i18nTitleModal"
-         :size="modalSize"
-         :close-on-backdrop="false">
-
-    <template #default>
-        <div class="m-image-selector__avatar">
-            <m-avatar :size="avatarSize">
-                <img v-if="urlPhoto"
-                     class="m-image-selector__image"
-                     :src="urlPhoto"
-                     alt="" />
-            </m-avatar>
-            <m-icon-button v-if="urlPhoto"
-                           class="m-image-selector__delete"
-                           icon-name="m-svg__delete"
-                           icon-size="20px"
-                           :title="i18nDelete"
-                           @click="deleteImage"
-                           ref="btnSupprimer"></m-icon-button>
-        </div>
-    </template>
-
-    <template #footer>
-        <m-file-select class="m-image-selector__button"
-                       :store-name="storeName"
-                       :full-size="true"
-                       :multiple="false"
-                       :keep-store="true"
-                       :label="i18nChoosePhoto"
-                       :skin="primaryButton"
-                       :allowed-extensions="allowedExtensions"
-                       @file-selected="replaceImage"></m-file-select>
-        <m-button class="m-image-selector__cancel"
-                  :skin="secondaryButton"
-                  :full-size="true"
-                  @click="cancel">{{ i18nCancel }}</m-button>
-    </template>
-</m-modal>
+<div class="m-image-selector">
+    <m-avatar :size="avatarSize">
+        <img v-if="urlPhoto"
+             class="m-image-selector__avatar"
+             :src="urlPhoto"
+             alt="" />
+    </m-avatar>
+</div>

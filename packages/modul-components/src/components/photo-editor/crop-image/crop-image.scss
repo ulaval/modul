@@ -1,9 +1,7 @@
 @import "commons";
 
 .m-crop-image {
-    &__container {
-        position: relative;
-    }
+    position: relative;
 
     &__cropper {
         min-height: 240px;
@@ -27,9 +25,5 @@
         position: absolute;
         bottom: -1px;
         right: 40px;
-    }
-
-    &__cancel {
-        margin-top: $m-spacing;
     }
 }
