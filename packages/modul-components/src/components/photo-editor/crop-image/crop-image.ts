@@ -1,4 +1,5 @@
 import Croppie from 'croppie';
+import 'croppie/croppie.css';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
@@ -9,8 +10,6 @@ import { MButtonSkin } from '../../button/button';
 import { MModalSize } from '../../modal/modal';
 import { CROP_IMAGE_NAME } from '../component-names';
 import WithRender from './crop-image.html?style=./crop-image.scss';
-
-require('croppie/croppie.css');
 
 enum MExportFormat {
     PNG = 'png',
