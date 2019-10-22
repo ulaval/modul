@@ -5,8 +5,15 @@
          :close-on-backdrop="false"
          @portal-after-open="initialize">
     <template #default>
-        <div class="m-crop-image__cropper"
-             ref="croppieContainer"></div>
+        <div class="m-crop-image__container">
+            <div class="m-crop-image__cropper"
+                 ref="croppieContainer"></div>
+            <m-icon class="m-crop-image__icon-small"
+                    name="m-svg__image-square"></m-icon>
+            <m-icon class="m-crop-image__icon-big"
+                    name="m-svg__image-square"
+                    size="28px"></m-icon>
+        </div>
     </template>
     <template #footer>
         <m-button :skin="primaryButton"

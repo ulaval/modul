@@ -1,8 +1,32 @@
 @import "commons";
 
 .m-crop-image {
+    &__container {
+        position: relative;
+    }
+
     &__cropper {
         min-height: 240px;
+
+        /deep/ .cr-viewport {
+            box-shadow: 0 0 2000px 2000px rgba($m-color--grey-dark, 0.5);
+        }
+
+        /deep/ .cr-slider {
+            width: 180px;
+        }
+    }
+
+    &__icon-small {
+        position: absolute;
+        bottom: 2px;
+        left: 50px;
+    }
+
+    &__icon-big {
+        position: absolute;
+        bottom: -1px;
+        right: 40px;
     }
 
     &__cancel {

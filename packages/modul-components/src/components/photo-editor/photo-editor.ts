@@ -45,10 +45,11 @@ export class MPhotoEditor extends ModulVue {
         this.imageToCrop.file = imageFile;
         this.imageToCrop.url = URL.createObjectURL(this.imageToCrop.file);
         this.$emit('save-image', this.imageToCrop);
-        this.$emit('update:open', false);
+        this.close();
     }
 
     close(): void {
+        this.cropImageOpen = false;
         this.selectImageOpen = false;
         this.$emit('update:open', false);
     }
