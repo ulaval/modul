@@ -17,12 +17,13 @@ pipeline {
 
 
     parameters {
-        string(defaultValue: 'feature/configuration_openshift', description: '', name: 'branch')
+        string(defaultValue: '', description: 'nom de la branche', name: 'branch')
     }
 
 
     environment {
         NAME = branch.toLowerCase().replace('/', '-').replace('_', '-').take(127)
+        DOCKER_REPOSITORY_NAME = 'ulaval/modul'
     }
 
     stages {
@@ -44,6 +45,16 @@ pipeline {
                     sh("oc tag -d --server=https://console-pca.svc.ulaval.ca -n=ul-modul-dv01 modul:${NAME} --token=${TOKEN} --certificate-authority='/ca-comodo.crt'")
                 }
             }
+        }
+    }
+
+    post {
+        success  {
+
+            emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n Openshift application successfully deleted branch name = ${NAME}",
+                recipientProviders: [[$class: 'RequesterRecipientProvider']],
+                subject: "Jenkins Job ${env.JOB_NAME} : Openshift application successfully deleted"
+
         }
     }
 }
