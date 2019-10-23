@@ -11,8 +11,8 @@
                    :skin="skinDelete"
                    @click="deleteImage"
                    ref="btnDelete"></m-icon-button>
-    <m-image-selector v-if="modeSelect"
-                      :url-photo="urlPhoto"></m-image-selector>
+    <m-image-displayer v-if="modeSelect"
+                       :url-photo="urlPhoto"></m-image-displayer>
     <m-crop-image v-else
                   :image="imageToCrop"
                   @image-cropped="saveImage"

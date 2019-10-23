@@ -9,7 +9,7 @@ import { PHOTO_EDITOR_NAME } from '../component-names';
 import { MIconButtonSkin } from '../icon-button/icon-button';
 import { MModalSize } from '../modal/modal';
 import CropImagePlugin, { MCropImage } from './crop-image/crop-image';
-import ImageSelectorPlugin from './image-selector/image-selector';
+import ImageDisplayerPlugin from './image-displayer/image-displayer';
 import WithRender from './photo-editor.html?style=./photo-editor.scss';
 
 // Changer en MPhotoEditorSteps?
@@ -109,7 +109,7 @@ export class MPhotoEditor extends ModulVue {
 const PhotoEditorPlugin: PluginObject<any> = {
     install(v, options): void {
         v.prototype.$log.debug(PHOTO_EDITOR_NAME, 'plugin.install');
-        v.use(ImageSelectorPlugin);
+        v.use(ImageDisplayerPlugin);
         v.use(CropImagePlugin);
         v.component(PHOTO_EDITOR_NAME, MPhotoEditor);
     }
