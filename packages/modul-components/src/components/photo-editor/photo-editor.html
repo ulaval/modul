@@ -15,7 +15,7 @@
                        :url-photo="urlPhoto"></m-image-displayer>
     <m-crop-image v-else
                   :image="imageToCrop"
-                  @image-cropped="saveImage"
+                  @image-cropped="confirmImage"
                   ref="cropImage"></m-crop-image>
 
     <template #footer>

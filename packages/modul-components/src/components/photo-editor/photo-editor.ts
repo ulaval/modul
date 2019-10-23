@@ -1,7 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import { MFile, MFileStatus } from '../../utils/file/file';
+import { MFile } from '../../utils/file/file';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButtonSkin } from '../button/button';
@@ -64,12 +64,28 @@ export class MPhotoEditor extends ModulVue {
         }
     }
 
-    saveImage(imageFile: File): void {
-        this.imageToCrop.file = imageFile;
-        this.imageToCrop.url = URL.createObjectURL(this.imageToCrop.file);
-        this.$emit('save-image', this.imageToCrop);
-        this.close();
+    confirmImage(imageCropped: File): void {
+        if (this.imageSelected) {
+            const imageToSave: MFile = this.imageSelected;
+            imageToSave.url = URL.createObjectURL(imageToSave.file);
+
+            this.$emit('save-image', imageToSave);
+        }
     }
+
+    // createImage(imageCropped: File): void {
+    //     const fileList: FileList = {} as FileList;
+    //     fileList[0] = imageCropped;
+
+    //     this.$file.add(fileList, this.storeName);
+
+    //     if (this.imageSelected) {
+    //         this.$file.upload(
+    //             this.imageSelected.uid,
+    //             { url: URL.createObjectURL(imageCropped) } as MFileUploadOptions,
+    //             this.storeName);
+    //     }
+    // }
 
     deleteImage(): void {
         if (this.modeSelect) {
@@ -100,7 +116,7 @@ export class MPhotoEditor extends ModulVue {
     }
 
     get imageSelected(): MFile | undefined {
-        const images: MFile[] = this.$file.files(this.storeName).filter((f: MFile) => f.status === MFileStatus.READY || f.status === MFileStatus.COMPLETED || f.status === MFileStatus.UPLOADING);
+        const images: MFile[] = this.$file.files(this.storeName);
         return images.length > 0 ? images[images.length - 1] : undefined;
     }
 
