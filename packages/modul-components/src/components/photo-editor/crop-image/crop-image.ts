@@ -1,4 +1,4 @@
-import Croppie from 'croppie';
+import Croppie, { CroppieOptions } from 'croppie';
 import 'croppie/croppie.css';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
@@ -14,22 +14,6 @@ enum MExportFormat {
     JPG = 'jpeg'
 }
 
-interface MCropImageViewport {
-    width: number;
-    height: number;
-    type: string;
-}
-
-interface MCropImageBoundary {
-    height: number;
-}
-
-interface MCropImageOptions {
-    viewport: MCropImageViewport;
-    boundary: MCropImageBoundary;
-    enableOrientation: boolean;
-}
-
 @WithRender
 @Component
 export class MCropImage extends ModulVue {
@@ -37,7 +21,7 @@ export class MCropImage extends ModulVue {
     @Prop({ required: true })
     image: MFile;
 
-    croppie: Croppie = undefined;
+    croppie: Croppie | undefined = undefined;
 
     $refs: {
         croppieContainer: HTMLElement;
@@ -56,26 +40,30 @@ export class MCropImage extends ModulVue {
                     height: 240
                 },
                 enableOrientation: true
-            } as MCropImageOptions);
+            } as CroppieOptions);
 
             this.bind();
         }
     }
 
     bind(): void {
-        this.croppie.bind({
-            url: this.image.url
-        });
+        if (this.image.url) {
+            this.croppie!.bind({
+                url: this.image.url
+            });
+        }
     }
 
     crop(): void {
-        this.croppie.result({
-            format: this.imageWithTransparency ? MExportFormat.PNG : MExportFormat.JPG,
-            type: 'blob',
-            circle: false
-        }).then((imageCropped: File) => {
-            this.$emit('image-cropped', imageCropped);
-        });
+        if (this.croppie) {
+            this.croppie.result({
+                format: this.imageWithTransparency ? MExportFormat.PNG : MExportFormat.JPG,
+                type: 'blob',
+                circle: false
+            }).then((imageCropped: File) => {
+                this.$emit('image-cropped', imageCropped);
+            });
+        }
     }
 
     get imageWithTransparency(): boolean {

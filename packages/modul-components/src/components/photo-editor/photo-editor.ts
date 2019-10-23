@@ -53,6 +53,7 @@ export class MPhotoEditor extends ModulVue {
 
     @Watch('open', { immediate: true })
     initialize(): void {
+        this.imageToCrop = {} as MFile;
         this.photoEditorMode = MPhotoEditorMode.SELECT;
     }
 
@@ -65,12 +66,11 @@ export class MPhotoEditor extends ModulVue {
     }
 
     confirmImage(imageCropped: File): void {
-        if (this.imageSelected) {
-            const imageToSave: MFile = this.imageSelected;
-            imageToSave.url = URL.createObjectURL(imageToSave.file);
+        const imageToSave: MFile = this.imageToCrop;
+        imageToSave.file = imageCropped;
+        imageToSave.url = URL.createObjectURL(imageCropped);
 
-            this.$emit('save-image', imageToSave);
-        }
+        this.$emit('save-image', imageToSave);
     }
 
     // createImage(imageCropped: File): void {
