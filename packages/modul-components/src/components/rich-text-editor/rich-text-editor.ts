@@ -64,13 +64,13 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     public lastHeaderLevel: number;
 
     @Prop({ default: false })
-    public showCharCounter: boolean;
+    public showCharacterCount: boolean;
 
     @Prop()
-    public charCounterMax: number;
+    public characterCountMax: number;
 
     @Prop({ default: false })
-    public showParagraphAlignementButtons: boolean;
+    public showParagraphAlignmentButtons: boolean;
 
     @Prop({ default: false })
     public showUnderlineButton: boolean;
@@ -116,8 +116,8 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
             scrollableContainer: this.getScrollableContainer(),
             imageHideFloatLayout: this.showImageFloatLayout,
-            charCounterCount: this.showCharCounter || !!this.charCounterMax,
-            charCounterMax: !this.charCounterMax ? -1 : this.charCounterMax
+            charCounterCount: this.showCharacterCount || !!this.characterCountMax,
+            charCounterMax: !this.characterCountMax ? -1 : this.characterCountMax
         };
 
         return Object.assign(this.getOptions(), propOptions);
@@ -165,14 +165,14 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'strikeThrough');
         }
 
-        if (this.showParagraphAlignementButtons) {
+        if (this.showParagraphAlignmentButtons) {
             // toolbar for desktop devices
             richTextEditorOptions.toolbarButtons.moreParagraph.buttons.splice(0, 0, 'align');
             // for mobile devices
             richTextEditorOptions.toolbarButtonsXS.moreParagraph.buttons.splice(0, 0, 'align');
         }
 
-        if (this.showCharCounter || this.charCounterMax) {
+        if (this.showCharacterCount || this.characterCountMax) {
             richTextEditorOptions.pluginsEnabled.push('charCounter');
         }
 
