@@ -424,7 +424,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                     </tbody>
                 </m-table>`
     }))
-    .add('colonms custom class', () => ({
+    .add('Custom columns class', () => ({
         props: {
             columns: {
                 default: [
