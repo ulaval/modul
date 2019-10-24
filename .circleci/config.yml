@@ -16,13 +16,13 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      #- run:
-      #    name: lint
-      #    command: yarn run lint:ci
+      - run:
+         name: lint
+         command: yarn run lint:ci
 
-      #- run:
-      #    name:  test
-      #    command: yarn run test:ci
+      - run:
+         name:  test
+         command: yarn run test:ci
 
       - run:
           name: build
