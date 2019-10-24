@@ -30,7 +30,8 @@ module.exports = {
         "<rootDir>../../node_modules/jest-serializer-vue"
     ],
     setupFiles: [
-        "<rootDir>/tests/polyfills.js"
+        "<rootDir>/tests/polyfills.js",
+        "<rootDir>/tests/setup.ts"
     ],
 
     coverageDirectory: "<rootDir>/reports/coverage"
