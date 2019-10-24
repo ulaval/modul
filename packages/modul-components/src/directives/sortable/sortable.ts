@@ -333,10 +333,15 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
             case MSortInsertPositions.In: insertionClass = MSortableClassNames.SortIn; break;
         }
 
-        const isSortingOnPreviousSibling: boolean = !!MDroppable.currentHoverDroppable && !!MDraggable.currentDraggable
-            && MDroppable.currentHoverDroppable.element === MDraggable.currentDraggable.element.previousElementSibling && newInsertPosition === MSortInsertPositions.After;
-        const isSortingOnNextSibling: boolean = !!MDroppable.currentHoverDroppable && !!MDraggable.currentDraggable
-            && MDroppable.currentHoverDroppable.element === MDraggable.currentDraggable.element.nextElementSibling && newInsertPosition === MSortInsertPositions.Before;
+        const isSortingOnPreviousSibling: boolean = !!MDroppable.currentHoverDroppable &&
+            !!MDraggable.currentDraggable &&
+            MDroppable.currentHoverDroppable.element === MDraggable.currentDraggable.element.previousElementSibling &&
+            newInsertPosition === MSortInsertPositions.After;
+
+        const isSortingOnNextSibling: boolean = !!MDroppable.currentHoverDroppable &&
+            !!MDraggable.currentDraggable &&
+            MDroppable.currentHoverDroppable.element === MDraggable.currentDraggable.element.nextElementSibling &&
+            newInsertPosition === MSortInsertPositions.Before;
 
         if (insertionClass) {
             element.classList.add(insertionClass);
@@ -417,9 +422,11 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
         if (mSortBeforeElement) { mSortBeforeElement.classList.remove(MSortableClassNames.SortBefore); }
         this.element.classList.remove(MSortableClassNames.SortBefore);
 
-        const mCantSort: Element | null = this.element.querySelector(`.${MSortableClassNames.CantSort}`);
-        if (mCantSort) { mCantSort.classList.remove(MSortableClassNames.CantSort); }
         this.element.classList.remove(MSortableClassNames.CantSort);
+        const mCantSort: Element | null = this.element.querySelector(`.${MSortableClassNames.CantSort}`);
+        if (mCantSort) {
+            mCantSort.classList.remove(MSortableClassNames.CantSort);
+        }
     }
 }
 
