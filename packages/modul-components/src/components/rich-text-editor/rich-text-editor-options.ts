@@ -6,6 +6,7 @@ export class MRichTextEditorDefaultOptions {
     public immediateVueModelUpdate: boolean = true;
     public iconsTemplate: string = 'font_awesome_5';
     public charCounterCount: boolean = false;
+    public charCounterMax: number = -1;
     public tableInsertHelper: boolean = false;
     public zIndex: number = 5;
     public toolbarSticky: boolean = true;

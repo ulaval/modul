@@ -127,21 +127,101 @@ describe('FromControl', () => {
         });
     });
 
-
-    describe('When value change, initialvalue must not', () => {
-        beforeAll(() => {
+    describe('Given value is a primitive', () => {
+        beforeEach(() => {
             formControl = new FormControl<string>([],
                 {
                     initialValue: 'foo'
                 });
-
-            formControl.value = ['bar'];
         });
+        describe('When value has changed', () => {
+            beforeEach(() => {
+                formControl.value = 'bar';
+            });
+            it('should have a different value than the initial value', () => {
+                expect(formControl.value).toEqual('bar');
+            });
+            it('on reset, should reset to correct the correct initial value', () => {
+                formControl.reset();
 
+                expect(formControl.value).toEqual('foo');
+            });
+        });
+    });
+    describe('Given value is an array', () => {
+        let array: string[];
+        beforeEach(() => {
+            array = ['Alice'];
+            formControl = new FormControl<string[]>([],
+                {
+                    initialValue: array
+                });
+        });
+        describe('When value has changed', () => {
+            beforeEach(() => {
+                array.push('Bob');
+                array.splice(0, 1);
+                formControl.value = array;
+            });
+            it('should have a different value than the initial value', () => {
+                expect(formControl.value).toEqual(['Bob']);
+            });
+            it('on reset, should reset to correct the correct initial value', () => {
+                formControl.reset();
 
-        it('should run validation and set flag', () => {
-            expect((formControl as any)._initialValue).toBe('\"foo\"');
-            expect(formControl.value).toMatchObject(['bar']);
+                expect(formControl.value).toEqual(['Alice']);
+            });
+        });
+    });
+
+    describe('Given value is an object', () => {
+        class MyClass {
+            foo: string;
+            bar: string;
+
+            constructor(foo: string, bar: string) {
+                this.foo = foo;
+                this.bar = bar;
+            }
+        }
+        const vieilleClasse: MyClass = new MyClass('Alice', 'Bob');
+        const nouvelleClasse: MyClass = new MyClass('Charlie', 'David');
+        beforeEach(() => {
+            formControl = new FormControl<MyClass>([],
+                {
+                    initialValue: vieilleClasse
+                });
+        });
+        describe('When value has changed', () => {
+            beforeEach(() => {
+                formControl.value = nouvelleClasse;
+            });
+            it('should have a different value than the initial value', () => {
+                expect(formControl.value).toEqual(nouvelleClasse);
+            });
+            it('on reset, should reset to correct the correct initial value', () => {
+                formControl.reset();
+
+                expect(formControl.value).toEqual(vieilleClasse);
+            });
+            it('should return the object of the same class', () => {
+                formControl.reset();
+
+                expect(formControl.value instanceof MyClass).toBe(true);
+            });
+        });
+        describe('When a property on the value has changed', () => {
+            beforeEach(() => {
+                formControl.value.bar = 'Eve';
+            });
+            it('should have a different value than the initial value', () => {
+                expect(formControl.value).toEqual(new MyClass('Alice', 'Eve'));
+            });
+            it('on reset, should reset to correct the correct initial value', () => {
+                formControl.reset();
+
+                expect(formControl.value).toEqual(new MyClass('Alice', 'Bob'));
+            });
         });
     });
 });

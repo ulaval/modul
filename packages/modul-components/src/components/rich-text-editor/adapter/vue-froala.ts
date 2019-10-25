@@ -64,7 +64,7 @@ export enum FroalaStatus {
 export enum FroalaToolbarButtons {
     moreTextVisible = 6,
     moreTextVisibleXS = 0,
-    moreParagraphVisible = 4,
+    moreParagraphVisible = 5,
     moreParagraphVisibleXS = 0,
     moreRichVisible = 3,
     moreRichVisibleXS = 3,
