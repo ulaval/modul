@@ -1798,7 +1798,7 @@ exports[`Storyshots modul-components|m-form/all fields multi-select 1`] = `
         tabindex="0"
       >
         <div
-          class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+          class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
           style="margin-top: 10px;"
         >
           <div
@@ -1837,7 +1837,49 @@ exports[`Storyshots modul-components|m-form/all fields multi-select 1`] = `
                 >
                   <div
                     class="m-multi-select__chips"
-                  />
+                  >
+                    <div
+                      class="m-chip-delete m-multi-select__chip m--is-small"
+                    >
+                      <div
+                        class="m-chip-delete__body"
+                      >
+                        <span
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
+                        >
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                    Maria Rainer
+                                
+                        </span>
+                         
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                     
                   <!---->
                    

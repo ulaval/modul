@@ -5,7 +5,7 @@ import { ControlValidator } from './validators/control-validator';
 
 export class FormControl<T> extends AbstractControl {
     private _value?: T;
-    private _initialValue?: string; // String instead of T to avoid that _initialValue contains a reference to another object. It's value must not be mutated.
+    private _initialValue?: T;
     private _oldValue?: T;
 
     constructor(
@@ -16,13 +16,33 @@ export class FormControl<T> extends AbstractControl {
 
         if (options) {
             if (options.initialValue !== undefined) {
-                this._initialValue = JSON.stringify(options.initialValue);
-                this._value = options.initialValue;
-                this._oldValue = options.initialValue;
+                this.initialValue = options.initialValue;
             }
         } else {
             // ensure reactivity
             this._value = undefined;
+        }
+    }
+
+    private clone(oldObject: T): T {
+        const newObject: T = { ...oldObject };
+        Object.setPrototypeOf(newObject, Object.getPrototypeOf(oldObject));
+        return newObject;
+    }
+
+    public set initialValue(initialValue: T) {
+        if (Array.isArray(initialValue)) {
+            this._initialValue = [...initialValue] as unknown as T;
+            this._value = [...initialValue] as unknown as T;
+            this._oldValue = [...initialValue] as unknown as T;
+        } else if (initialValue instanceof Object) {
+            this._initialValue = this.clone(initialValue);
+            this._value = this.clone(initialValue);
+            this._oldValue = this.clone(initialValue);
+        } else {
+            this._initialValue = initialValue;
+            this._value = initialValue;
+            this._oldValue = initialValue;
         }
     }
 
@@ -115,11 +135,10 @@ export class FormControl<T> extends AbstractControl {
         this._touched = false;
 
         if (typeof initialValue === 'undefined') {
-            this._value = this._initialValue ? JSON.parse(this._initialValue) : undefined;
-            this._oldValue = this._initialValue ? JSON.parse(this._initialValue) : undefined;
+            this._value = this._initialValue;
+            this._oldValue = this._initialValue;
         } else {
-            this._value = this._oldValue = initialValue;
-            this._initialValue = JSON.stringify(initialValue);
+            this.initialValue = initialValue;
         }
     }
 

@@ -1887,7 +1887,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/all fields`, mod
                     'multi-select': new FormControl<string[]>(
                         [
                             RequiredValidator({ controlLabel: 'multi-select' })
-                        ], { initialValue: [] }
+                        ], { initialValue: ['Maria Rainer'] }
                     )
                 }
             ),
@@ -1896,6 +1896,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/all fields`, mod
         computed: {
             multiSelectField(): void {
                 return (this).$data.formGroup.getControl('multi-select');
+            }
+        },
+        methods: {
+            submit(): void {
+                let submittedValues: string[] = (this as any).multiSelectField.value;
+                (this as any).multiSelectField.reset(submittedValues);
             }
         },
         template: `
@@ -1913,7 +1919,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/all fields`, mod
                             :options="options"
                             :required-marker="true"></m-multi-select>
             <div class="m-u--margin-top--l m-u--margin-bottom--l">
-                <m-button type="submit">Submit</m-button>
+                <m-button type="submit" @click="submit()">Submit</m-button>
                 <m-button type="reset" @reset([])
                           skin="secondary">Reset</m-button>
             </div>
