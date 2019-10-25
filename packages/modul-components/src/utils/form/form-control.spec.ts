@@ -139,14 +139,11 @@ describe('FromControl', () => {
                 formControl.value = 'bar';
             });
             it('should have a different value than the initial value', () => {
-                // expect((formControl as any)._initialValue).toEqual('\"foo\"');
                 expect(formControl.value).toEqual('bar');
             });
             it('on reset, should reset to correct the correct initial value', () => {
-
                 formControl.reset();
 
-                // expect((formControl as any)._initialValue).toEqual('\"foo\"');
                 expect(formControl.value).toEqual('foo');
             });
         });
@@ -164,15 +161,14 @@ describe('FromControl', () => {
             beforeEach(() => {
                 array.push('Bob');
                 array.splice(0, 1);
+                formControl.value = array;
             });
             it('should have a different value than the initial value', () => {
-                expect((formControl as any)._initialValue).toEqual('\[\"Alice\"\]');
                 expect(formControl.value).toEqual(['Bob']);
             });
             it('on reset, should reset to correct the correct initial value', () => {
                 formControl.reset();
 
-                expect((formControl as any)._initialValue).toEqual('\[\"Alice\"\]');
                 expect(formControl.value).toEqual(['Alice']);
             });
         });
@@ -201,13 +197,11 @@ describe('FromControl', () => {
                 formControl.value = nouvelleClasse;
             });
             it('should have a different value than the initial value', () => {
-                // expect((formControl as any)._initialValue).toEqual('\[\"foo\"\]');
                 expect(formControl.value).toEqual(nouvelleClasse);
             });
             it('on reset, should reset to correct the correct initial value', () => {
                 formControl.reset();
 
-                // expect((formControl as any)._initialValue).toEqual('\[\"foo\"\]');
                 expect(formControl.value).toEqual(vieilleClasse);
             });
             it('should return the object of the same class', () => {
@@ -221,14 +215,12 @@ describe('FromControl', () => {
                 formControl.value.bar = 'Eve';
             });
             it('should have a different value than the initial value', () => {
-                // expect((formControl as any)._initialValue).toEqual('\[\"foo\"\]');
                 expect(formControl.value).toEqual(new MyClass('Alice', 'Eve'));
             });
             it('on reset, should reset to correct the correct initial value', () => {
                 formControl.reset();
 
-                // expect((formControl as any)._initialValue).toEqual('\[\"foo\"\]');
-                expect(formControl.value).toEqual(vieilleClasse);
+                expect(formControl.value).toEqual(new MyClass('Alice', 'Bob'));
             });
         });
     });
