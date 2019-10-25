@@ -104,6 +104,9 @@ const SCROLL_TO_OFFSET: number = -50;
     @Prop()
     public customTranslations: { [key: string]: string };
 
+    @Prop({ default: 1 })
+    public minRows: number;
+
     @Emit('fullscreen')
     onFullscreen(fullscreenWasActived: boolean): void { }
 
@@ -569,6 +572,14 @@ const SCROLL_TO_OFFSET: number = -50;
                 this.froalaEditor.undo.saveStep();
             }
         }
+    }
+
+    private get minHeight(): string {
+        const padding: number = 11;
+        const lineHeight: number = 21;
+        const lineMargin: number = 12;
+        const rowHeight: number = lineHeight + lineMargin;
+        return this.minRows > 1 ? this.minRows * rowHeight - lineMargin + 2 * padding + 'px' : 'initial';
     }
 }
 
