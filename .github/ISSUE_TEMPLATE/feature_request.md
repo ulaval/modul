@@ -2,7 +2,7 @@
 name: Proposition de nouvelle fonctionnalité
 about: Soumettre une proposition pour l'ajout d'une fonctionalité dans modUL
 title: 'proposition: '
-labels: ''
+labels: 'need kickoff'
 assignees: ''
 
 ---
