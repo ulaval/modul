@@ -24,18 +24,21 @@ export class FormControl<T> extends AbstractControl {
         }
     }
 
+    private clone(oldObject: T): T {
+        const newObject: T = { ...oldObject };
+        Object.setPrototypeOf(newObject, Object.getPrototypeOf(oldObject));
+        return newObject;
+    }
+
     public set initialValue(initialValue: T) {
         if (Array.isArray(initialValue)) {
-            this._initialValue = ([...initialValue] as unknown as T);
-            this._value = ([...initialValue] as unknown as T);
-            this._oldValue = ([...initialValue] as unknown as T);
+            this._initialValue = [...initialValue] as unknown as T;
+            this._value = [...initialValue] as unknown as T;
+            this._oldValue = [...initialValue] as unknown as T;
         } else if (initialValue instanceof Object) {
-            this._initialValue = { ...initialValue };
-            Object.setPrototypeOf(this._initialValue, Object.getPrototypeOf(initialValue));
-            this._value = { ...initialValue };
-            Object.setPrototypeOf(this._value, Object.getPrototypeOf(initialValue));
-            this._oldValue = { ...initialValue };
-            Object.setPrototypeOf(this._oldValue, Object.getPrototypeOf(initialValue));
+            this._initialValue = this.clone(initialValue);
+            this._value = this.clone(initialValue);
+            this._oldValue = this.clone(initialValue);
         } else {
             this._initialValue = initialValue;
             this._value = initialValue;
