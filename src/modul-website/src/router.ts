@@ -320,29 +320,6 @@ const routerFactory: RouterFactoryFn = (meta: ModulMeta) => {
                     markupFileName: 'standards/editorial-standards/editorial-standards.punctuation.fr.md'
                 }
             },
-            // {
-            //     name: ROUTER_STANDARDS_DEVELOPMENT,
-            //     path: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}`,
-            //     redirect: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}/${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS)}`
-            // },
-            // {
-            //     name: ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS,
-            //     path: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}/${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS)}`,
-            //     component: MWMarkdownPage,
-            //     meta: {
-            //         title: i18n.translate('website:standards-development-css-sass'),
-            //         markupFileName: 'standards/developement-standards/developement-standards.css-sass.fr.md'
-            //     }
-            // },
-            // {
-            //     name: ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT,
-            //     path: `${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT)}/${i18n.translate(ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT)}`,
-            //     component: MWMarkdownPage,
-            //     meta: {
-            //         title: i18n.translate('website:standards-development-typescript'),
-            //         markupFileName: 'standards/developement-standards/developement-standards.typescript.fr.md'
-            //     }
-            // },
             {
                 name: ROUTER_STANDARDS_ACCESSIBILITY,
                 path: `${i18n.translate(ROUTER_STANDARDS_ACCESSIBILITY)}`,
