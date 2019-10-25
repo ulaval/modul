@@ -423,4 +423,23 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                         </tr>
                     </tbody>
                 </m-table>`
+    }))
+    .add('Custom columns class', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name, Username', dataProp: 'name', class: 'm--custom-class' },
+                    { id: 'age', title: 'Age', dataProp: 'age', width: '80px' }
+                ]
+            },
+            rows: {
+                default: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' },
+                    { id: '4', name: 'Vincent', age: '34', username: 'vincent.34' }
+                ]
+            }
+        },
+        template: `<m-table skin="simple" :columns="columns" :rows="rows" width="100%"></m-table>`
     }));

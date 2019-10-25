@@ -703,6 +703,95 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
 </table>
 `;
 
+exports[`Storyshots modul-components|m-table Custom columns class 1`] = `
+<table
+  cellspacing="0"
+  class="m-table m--is-skin-simple m--is-row-highlighted-on-hover"
+  width="100%"
+>
+  <thead>
+    <tr>
+      <th
+        class="m--custom-class"
+        scope="col"
+      >
+        <span
+          class="m-table__header-name"
+        >
+          Name, Username
+        </span>
+      </th>
+      <th
+        class=""
+        scope="col"
+        style="width: 80px;"
+      >
+        <span
+          class="m-table__header-name"
+        >
+          Age
+        </span>
+      </th>
+    </tr>
+  </thead>
+   
+  <tbody>
+    <!---->
+     
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Jonathan
+      </td>
+      <td
+        class=""
+      >
+        25
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Carl
+      </td>
+      <td
+        class=""
+      >
+        30
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Jacob
+      </td>
+      <td
+        class=""
+      >
+        26
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Vincent
+      </td>
+      <td
+        class=""
+      >
+        34
+      </td>
+    </tr>
+  </tbody>
+   
+  <!---->
+</table>
+`;
+
 exports[`Storyshots modul-components|m-table Custom row 1`] = `
 <table
   cellspacing="0"
