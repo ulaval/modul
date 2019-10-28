@@ -41,6 +41,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     @Prop({ default: '' })
     public value: string;
 
+    @Prop({ default: 1 })
+    public minRows: number;
+
     @Prop({ default: '0' })
     public toolbarStickyOffset: string;
 
