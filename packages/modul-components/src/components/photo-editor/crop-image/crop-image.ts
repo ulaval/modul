@@ -60,15 +60,15 @@ export class MCropImage extends ModulVue {
                 format: this.imageWithTransparency ? MExportFormat.PNG : MExportFormat.JPG,
                 type: 'blob',
                 circle: false
-            }).then((imageCropped: File) => {
+            }).then((imageCropped: Blob) => {
                 this.$emit('image-cropped', this.createImageFile(imageCropped));
             });
         }
     }
 
-    createImageFile(imageCropped: File): File {
+    createImageFile(imageCropped: Blob): File {
         return new File(
-            [imageCropped as Blob],
+            [imageCropped],
             this.image.name
         );
     }
