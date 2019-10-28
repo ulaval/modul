@@ -66,26 +66,8 @@ export class MPhotoEditor extends ModulVue {
     }
 
     confirmImage(imageCropped: File): void {
-        const imageToSave: MFile = this.imageToCrop;
-        imageToSave.file = imageCropped;
-        imageToSave.url = URL.createObjectURL(imageCropped);
-
-        this.$emit('save-image', imageToSave);
+        this.$emit('save-image', imageCropped);
     }
-
-    // createImage(imageCropped: File): void {
-    //     const fileList: FileList = {} as FileList;
-    //     fileList[0] = imageCropped;
-
-    //     this.$file.add(fileList, this.storeName);
-
-    //     if (this.imageSelected) {
-    //         this.$file.upload(
-    //             this.imageSelected.uid,
-    //             { url: URL.createObjectURL(imageCropped) } as MFileUploadOptions,
-    //             this.storeName);
-    //     }
-    // }
 
     deleteImage(): void {
         if (this.modeSelect) {
