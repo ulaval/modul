@@ -46,11 +46,11 @@ export class MInplaceEdit extends ModulVue {
     @Emit('click')
     emitClick(event: MouseEvent): void { }
 
-    @Emit('portal-after-open')
-    emitPortalAfterOpen(): void { }
+    @Emit('mobile-after-open')
+    emitMobileAfterOpen(): void { }
 
-    @Emit('portal-after-close')
-    emitPortalAfterClose(): void { }
+    @Emit('mobile-after-close')
+    emitMobileAfterClose(): void { }
 
     @Watch('editMode', { immediate: true })
     onEditModeChange(value: boolean): void {

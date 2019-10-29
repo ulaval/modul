@@ -38,8 +38,8 @@
                    :open="propEditMode"
                    @close="onCancel"
                    @save="onConfirm"
-                   @portal-after-open="emitPortalAfterOpen"
-                   @portal-after-close="emitPortalAfterClose">
+                   @portal-after-open="emitMobileAfterOpen"
+                   @portal-after-close="emitMobileAfterClose">
             <h2 class="m-edit-inplace__title"
                 slot="header">{{ title }}</h2>
             <form>
