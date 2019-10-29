@@ -6,8 +6,8 @@
     "homepage": "https://ulaval.github.io/modul",
     "private": false,
     "scripts": {
-        "build": "tsc --project tsconfig.lib.json && copyfiles -u 1 \"./src/**/*.json\" dist && copyfiles -u 1 \"./src/**/*.html\" dist && copyfiles -u 1 \"./src/**/*.scss\" dist && copyfiles -u 1 \"./src/**/*.css\" dist && yarn run assetsToDist && yarn run metagen",
-        "buildlib": "webpack --config conf/webpack.lib.js --colors --env.lib",
+        "build": "tsc --project tsconfig.lib.json && copyfiles -u 1 \"./src/**/*.json\" dist && copyfiles -u 1 \"./src/**/*.html\" dist && copyfiles -u 1 \"./src/**/*.scss\" dist && copyfiles -u 1 \"./src/**/*.css\" dist && yarn run assetsToDist && yarn run buildlib && yarn run metagen",
+        "buildlib": "webpack --config conf/webpack.lib.js --colors",
         "assetsToDist": "copyfiles -u 1 \"./src/assets/**/*\" dist",
         "start": "webpack --config conf/webpack.config.js --env.openshift && http-server \"./dist\" -p 8080 -a 0.0.0.0",
         "test": "jest --verbose",
@@ -17,12 +17,10 @@
         "test:ci": "jest --ci -w 1 --silent --coverage --testResultsProcessor=./tests/jest/ci-test-processor",
         "lint": "tsc --noEmit && tslint --project tsconfig.json -s ../../node_modules/custom-tslint-formatters/formatters -t grouped ",
         "lint:ci": "tsc --noEmit && tslint --project tsconfig.json -t junit -o reports/junit/js-lint-results.xml ",
-        "prepack": "yarn run buildlib",
         "prepare": "yarn run build",
-        "stats": "webpack --config conf/webpack.config.js --env.lib --env.silent --colors --profile --json > reports/stats.json && webpack-bundle-analyzer reports/stats.json",
+        "stats": "webpack --config conf/webpack.lib.js --env.silent --colors --profile --json > reports/stats.json && webpack-bundle-analyzer reports/stats.json",
         "print_version_win": "echo %npm_package_version%",
-        "print_version_nx": "echo $npm_package_version",
-        "file-gen-cli": "./node_modules/.bin/file-gen-cli"
+        "print_version_nx": "echo $npm_package_version"
     },
     "jest-junit": {
         "output": "reports/junit/js-test-results.xml"
@@ -93,7 +91,7 @@
         "vue-server-renderer": "^2.6.10",
         "vue-template-loader": "^1.0.0",
         "webpack": "^4.29.3",
-        "webpack-bundle-analyzer": "^3.3.2",
+        "webpack-bundle-analyzer": "^3.6.0",
         "webpack-cli": "^3.2.3",
         "webpack-dev-server": "^3.1.14"
     },
@@ -108,7 +106,8 @@
         "src/**/*.ts",
         "dist"
     ],
-    "main": "dist/lib.js",
-    "types": "dist/lib.d.ts",
+    "main": "./dist/modul.esm.js",
+    "module": "./dist/modul.esm.js",
+    "types": "./dist/index.d.ts",
     "license": "Apache-2.0"
 }

@@ -12,9 +12,10 @@ module.exports = {
         lib: resolve('src/lib.ts')
     },
     output: {
-        library: 'modul',
+        filename: 'modul.esm.js',
         libraryTarget: 'umd',
         path: resolve('dist'),
+        library: 'modulComponents'
     },
     externals: {
         vue: {
@@ -100,6 +101,9 @@ module.exports = {
                 }
             }
         ]
+    },
+    performance: {
+        hints: false
     },
     plugins: [
         new ContextReplacementPlugin(

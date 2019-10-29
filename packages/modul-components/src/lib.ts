@@ -1,5 +1,7 @@
 import Vue, { PluginObject } from 'vue';
-import ButtonPlugin from './components/button/button';
+import ComponentsPlugin from './components';
+import DirectivesPlugin from './directives';
+import FiltersPlugin from './filters';
 import FrenchPlugin from './lang';
 import EnglishPlugin from './lang/en';
 import UtilsPlugin, { UtilsPluginOptions } from './utils';
@@ -26,7 +28,9 @@ export const ModulComponentPlugin: PluginObject<ModulComponentPluginOptions | un
         Vue.use(FrenchPlugin);
         Vue.use(EnglishPlugin);
         Vue.use(DefaultSpritesPlugin);
-        Vue.use(ButtonPlugin);
+        Vue.use(ComponentsPlugin);
+        Vue.use(DirectivesPlugin);
+        Vue.use(FiltersPlugin);
     }
 
 };
