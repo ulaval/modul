@@ -1,6 +1,7 @@
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Address, AddressSummary } from '../../../utils/address-lookup/address';
+import { AddressLookupServiceProvider } from '../../../utils/address-lookup/address-lookup';
 import { ModulVue } from '../../../utils/vue/vue';
 import WithRender from './address-lookup-field.html?style=./address-lookup-field.scss';
 
@@ -13,6 +14,8 @@ export interface AddressLookupFieldProps {
 @WithRender
 @Component
 export class MAddressLookupField extends ModulVue {
+    @Prop()
+    value: Address;
 
     // IP address, ISO2 or ISO3 country code for origin
     @Prop()
@@ -30,6 +33,13 @@ export class MAddressLookupField extends ModulVue {
     open: boolean = false;
 
     results: AddressSummary[] = [];
+
+    @Watch('value', { deep: true, immediate: true })
+    private clearValue(): void {
+        if (!this.value) {
+            this.selection = '';
+        }
+    }
 
     async onComplete(value: string): Promise<void> {
         this.fetchData(value);
@@ -62,7 +72,13 @@ export class MAddressLookupField extends ModulVue {
     }
 
     @Emit('address-retrieved')
+    @Emit('input')
     private emitSelection(_currentAddress: Address): void {
+    }
+
+    get googleIsUsed(): boolean {
+        return this.$addressLookup.serviceProvider === AddressLookupServiceProvider.Google ||
+            this.$addressLookup.serviceProvider === AddressLookupServiceProvider.GoogleProxy;
     }
 
     private async fetchData(value: string, id?: string): Promise<void> {

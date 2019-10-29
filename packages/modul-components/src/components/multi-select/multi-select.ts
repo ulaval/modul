@@ -133,7 +133,7 @@ export class MMultiSelect extends ModulVue {
     onSelect(option: any, index: number, $event: Event): void {
         let positionInModel: number = this.model.indexOf(option);
         if (positionInModel === -1) {
-            this.model.push(this.options[index]);
+            this.model = [...this.model, (this.options[index])];
         } else {
             this.onDelete(positionInModel);
         }
@@ -145,12 +145,12 @@ export class MMultiSelect extends ModulVue {
     }
 
     onDelete(index: number): void {
-        this.model.splice(index, 1);
+        this.model = this.model.slice(0, index).concat(this.model.slice(index + 1));
         this.$refs.baseSelect.update();
     }
 
     onDeleteAll(): void {
-        this.model.splice(0);
+        this.model = [];
         this.$refs.baseSelect.update();
     }
 
@@ -201,9 +201,9 @@ export class MMultiSelect extends ModulVue {
 
     onToggleAll(): void {
         if (this.allSelected) {
-            this.model.splice(0, this.model.length);
+            this.model = [];
         } else {
-            this.model.splice(0, this.model.length, ...this.options);
+            this.model = [...this.options];
         }
     }
 
@@ -213,7 +213,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     @Watch('value', { immediate: true })
-    private onValueChange(value: string): void {
+    private onValueChange(value: any[]): void {
         this.internalValue = this.value;
     }
 

@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/vue';
 import { TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MColumnSortDirection, MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
+import { MColumnSortDirection, MColumnTable, MColumnTextAlign } from '@ulaval/modul-components/dist/components/table/table';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 function defaultOnSortApplied(columnTable: MColumnTable): void {
@@ -167,13 +167,118 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                         </template>
                    </m-table>`
     }))
-    .add('Centered', () => ({
+    .add('Text align center', () => ({
         props: {
             columns: {
                 default: [
-                    { id: 'name', title: 'Name', dataProp: 'name', centered: true },
-                    { id: 'age', title: 'Age', dataProp: 'age', centered: true },
-                    { id: 'username', title: 'Username', dataProp: 'username', centered: true }
+                    { id: 'name', title: 'Name', dataProp: 'name', textAlign: MColumnTextAlign.Center },
+                    { id: 'age', title: 'Age', dataProp: 'age', textAlign: MColumnTextAlign.Center },
+                    { id: 'username', title: 'Username', dataProp: 'username', textAlign: MColumnTextAlign.Center }
+                ]
+            },
+            rows: {
+                default: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' },
+                    { id: '4', name: 'Vincent', age: '34', username: 'vincent.34' },
+                    { id: '5', name: 'Manon', age: '28', username: 'manon.28' }
+                ]
+            }
+        },
+        template: '<m-table :columns="columns" :rows="rows" width="100%"></m-table>'
+    }))
+    .add('Text align left', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name', dataProp: 'name', textAlign: MColumnTextAlign.Left },
+                    { id: 'age', title: 'Age', dataProp: 'age', textAlign: MColumnTextAlign.Left },
+                    { id: 'username', title: 'Username', dataProp: 'username', textAlign: MColumnTextAlign.Left }
+                ]
+            },
+            rows: {
+                default: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' },
+                    { id: '4', name: 'Vincent', age: '34', username: 'vincent.34' },
+                    { id: '5', name: 'Manon', age: '28', username: 'manon.28' }
+                ]
+            }
+        },
+        template: '<m-table :columns="columns" :rows="rows" width="100%"></m-table>'
+    }))
+    .add('Text align right', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name', dataProp: 'name', textAlign: MColumnTextAlign.Right },
+                    { id: 'age', title: 'Age', dataProp: 'age', textAlign: MColumnTextAlign.Right },
+                    { id: 'username', title: 'Username', dataProp: 'username', textAlign: MColumnTextAlign.Right }
+                ]
+            },
+            rows: {
+                default: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' },
+                    { id: '4', name: 'Vincent', age: '34', username: 'vincent.34' },
+                    { id: '5', name: 'Manon', age: '28', username: 'manon.28' }
+                ]
+            }
+        },
+        template: '<m-table :columns="columns" :rows="rows" width="100%"></m-table>'
+    }))
+    .add('Text align center - Sortable', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name', dataProp: 'name', textAlign: MColumnTextAlign.Center, sortable: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', textAlign: MColumnTextAlign.Center, sortable: true },
+                    { id: 'username', title: 'Username', dataProp: 'username', textAlign: MColumnTextAlign.Center, sortable: true }
+                ]
+            },
+            rows: {
+                default: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' },
+                    { id: '4', name: 'Vincent', age: '34', username: 'vincent.34' },
+                    { id: '5', name: 'Manon', age: '28', username: 'manon.28' }
+                ]
+            }
+        },
+        template: '<m-table :columns="columns" :rows="rows" width="100%"></m-table>'
+    }))
+    .add('Text align left - Sortable', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name', dataProp: 'name', textAlign: MColumnTextAlign.Left, sortable: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', textAlign: MColumnTextAlign.Left, sortable: true },
+                    { id: 'username', title: 'Username', dataProp: 'username', textAlign: MColumnTextAlign.Left, sortable: true }
+                ]
+            },
+            rows: {
+                default: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' },
+                    { id: '4', name: 'Vincent', age: '34', username: 'vincent.34' },
+                    { id: '5', name: 'Manon', age: '28', username: 'manon.28' }
+                ]
+            }
+        },
+        template: '<m-table :columns="columns" :rows="rows" width="100%"></m-table>'
+    }))
+    .add('Text align right - Sortable', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name', dataProp: 'name', textAlign: MColumnTextAlign.Right, sortable: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', textAlign: MColumnTextAlign.Right, sortable: true },
+                    { id: 'username', title: 'Username', dataProp: 'username', textAlign: MColumnTextAlign.Right, sortable: true }
                 ]
             },
             rows: {
@@ -318,4 +423,23 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                         </tr>
                     </tbody>
                 </m-table>`
+    }))
+    .add('Custom columns class', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name, Username', dataProp: 'name', class: 'm--custom-class' },
+                    { id: 'age', title: 'Age', dataProp: 'age', width: '80px' }
+                ]
+            },
+            rows: {
+                default: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' },
+                    { id: '4', name: 'Vincent', age: '34', username: 'vincent.34' }
+                ]
+            }
+        },
+        template: `<m-table skin="simple" :columns="columns" :rows="rows" width="100%"></m-table>`
     }));

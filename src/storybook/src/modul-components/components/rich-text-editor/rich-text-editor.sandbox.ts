@@ -3,7 +3,7 @@ import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
 import RadioPlugin from '@ulaval/modul-components/dist/components/radio/radio';
-import { MRichTextEditor, MRichTextEditorOption, MRichTextEditorOptions } from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-editor';
+import { MRichTextEditor } from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-editor';
 import RichTextLicensePlugin from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-license-plugin';
 import { MRichText } from '@ulaval/modul-components/dist/components/rich-text/rich-text';
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
@@ -14,6 +14,7 @@ import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
 import WithRender from './rich-text-editor.sandbox.html';
+
 
 
 @WithRender
@@ -37,8 +38,6 @@ export class MRichTextEditorSandBox extends ModulVue {
     public readonly: boolean = false;
     public afficherFormulairePleinePage: boolean = false;
     public fullScreenFormModel: string = '';
-    public imageOptions: MRichTextEditorOptions = [MRichTextEditorOption.IMAGE];
-    public imageNoLayoutOptions: MRichTextEditorOptions = [MRichTextEditorOption.IMAGE, MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT];
 
     public initializedModel: string = '<p>Test text</p><p><strong>I should be bold</strong></p><p><em>I should be italic</em></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;I should be tabulated</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;And me even more</p><ol><li>Ordered list</li><li>Unordered list</li></ol>';
     public linksOpenInNewWindowModel = '<p>Tests de la La case à cocher « Ouvrir dans un nouvel onglet ».</p><ol><li>Elle est <strong>sélectionnée par défaut&nbsp;</strong>à la création d&#39;un <strong>nouveau&nbsp;</strong>lien externe.</li><li>Elle est <strong>sélectionnée&nbsp;</strong>lors de la modification d&#39;un lien existant, si l&#39;utilisateur l&#39;a laissé sélectionnée à la création du <a href="http://google.ca" rel="noopener noreferrer" target="_blank">lien</a>.</li><li>Par contre, elle <strong>n&#39;est pas&nbsp;</strong><strong>sélectionnée&nbsp;</strong>lors de la modification d&#39;un lien existant, si l&#39;utilisateur l&#39;avait désélectionnée à la création du <a href="http://google.ca">lien</a>.</li></ol></div>';

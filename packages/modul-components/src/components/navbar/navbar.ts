@@ -9,7 +9,6 @@ import IconButtonPlugin from '../icon-button/icon-button';
 import { MNavbarItem } from './navbar-item/navbar-item';
 import WithRender from './navbar.html?style=./navbar.scss';
 
-
 const OVERFLOWOFFSET: number = 20;
 
 export abstract class BaseNavbar extends ModulVue { }
@@ -35,7 +34,9 @@ export enum MNavbarSkin {
     NavSub = 'nav-sub',
     NavSoft = 'nav-soft',
     TabLight = 'tab-light',
+    TabLightMain = 'tab-light-main',
     TabDark = 'tab-dark',
+    TabDarkMain = 'tab-dark-main',
     TabArrow = 'tab-arrow',
     TabUnderline = 'tab-underline',
     TabSoft = 'tab-soft',
@@ -66,7 +67,9 @@ export class MNavbar extends BaseNavbar implements Navbar {
             value === MNavbarSkin.NavSub ||
             value === MNavbarSkin.NavSoft ||
             value === MNavbarSkin.TabLight ||
+            value === MNavbarSkin.TabLightMain ||
             value === MNavbarSkin.TabDark ||
+            value === MNavbarSkin.TabDarkMain ||
             value === MNavbarSkin.TabArrow ||
             value === MNavbarSkin.TabUnderline ||
             value === MNavbarSkin.TabSoft ||
@@ -141,6 +144,11 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     protected created(): void {
+        if (this.skin === MNavbarSkin.TabLight) {
+            this.$log.warn('MNavbarSkin.TabLight is deprecated, please use MNavbarSkin.TabLightMain instead.');
+        } else if (this.skin === MNavbarSkin.TabDark) {
+            this.$log.warn('MNavbarSkin.TabDark is deprecated, please use MNavbarSkin.TabDarkMain instead.');
+        }
         this.internalValue = undefined;
     }
 
@@ -205,7 +213,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     public get buttonSkin(): string {
-        return this.skin === MNavbarSkin.NavMain || this.skin === MNavbarSkin.NavSub || this.skin === MNavbarSkin.NavSoft || this.skin === MNavbarSkin.TabDark ? 'dark' : 'light';
+        return this.skin === MNavbarSkin.NavMain || this.skin === MNavbarSkin.NavSub || this.skin === MNavbarSkin.NavSoft || this.skin === MNavbarSkin.TabDark || this.skin === MNavbarSkin.TabDarkMain ? 'dark' : 'light';
     }
 
     public get buttonRipple(): boolean {
@@ -213,7 +221,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     public get isTabLightSkin(): boolean {
-        return this.skin === MNavbarSkin.TabLight;
+        return this.skin === MNavbarSkin.TabLight || this.skin === MNavbarSkin.TabLightMain;
     }
 
     public get isTabUnderlineSkin(): boolean {
@@ -329,7 +337,6 @@ export class MNavbar extends BaseNavbar implements Navbar {
                 this.setSelectedIndicatorPosition(element, this.skin);
             }
         });
-
     }
 
     private async navbarItems(): Promise<NavbarItems> {

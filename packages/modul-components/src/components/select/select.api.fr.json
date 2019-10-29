@@ -1,0 +1,32 @@
+{
+    "props": {
+        "value": {
+            "description": "La valeur sélectionnée dans la liste déroulante."
+        },
+        "options": {
+            "description": "Liste des options proposées par la liste déroulante. Il est possible de définir un libellé différent (généralement plus court) à afficher une fois l'option sélectionnée."
+        },
+        "clearable": {
+            "description": "Permet d'annuler la sélection pour revenir à l'état non sélectionné. Cette propriété doit être activée lorsque la sélection n'est pas obligatoire pour permettre à l'utilisateur d'annuler sa sélection."
+        }
+    },
+    "slots": {
+        "default": {
+            "description": ""
+        },
+        "items": {
+            "description": "Contenu de l'option dans la liste déroulante. Généralement la version longue et complète de l'option."
+        }
+    },
+    "events": {
+        "select-item": {
+            "description": "Lancé lorsqu'une option est sélectionnée dans la liste."
+        },
+        "open": {
+            "description": "Lancé lorsque la liste est ouverte."
+        },
+        "close": {
+            "description": "Lancé lorsque la liste est fermée."
+        }
+    }
+}

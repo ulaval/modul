@@ -154,7 +154,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         document.addEventListener('mouseup', this.onDocumentClick);
 
         this.$on('portal-mounted', this.setPopperMutationObserver);
-
     }
 
     protected beforeDestroy(): void {
@@ -185,8 +184,11 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         if (this.as<PortalMixin>().propOpen) {
             let trigger: HTMLElement | undefined = this.as<PortalMixin>().getTrigger();
             const element: HTMLElement = this.as<PortalMixin>().getPortalElement();
-            if (!(element && element.contains(event.target as Node) || this.$el.contains(event.target as HTMLElement) ||
-                (trigger && trigger.contains(event.target as HTMLElement)))) {
+            if (this.closeOnClickOutside
+                && !(element && element.contains(event.target as Node)
+                    || this.$el.contains(event.target as HTMLElement) ||
+                    (trigger && trigger.contains(event.target as HTMLElement)))
+            ) {
                 this.as<PortalMixin>().propOpen = false;
             }
         }
@@ -262,9 +264,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
             this.leave(el.children[0], done);
         } else {
             this.defaultAnimOpen = false;
-            setTimeout(() => {
-                done();
-            }, 300);
+            setTimeout(done, 300);
         }
     }
 
@@ -272,7 +272,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         if (this.afterLeave) {
             this.afterLeave(el.children[0]);
         }
-
         this.as<PortalMixin>().setFocusToTrigger();
     }
 

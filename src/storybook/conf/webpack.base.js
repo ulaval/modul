@@ -1,6 +1,11 @@
 
 const path = require('path');
 const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
+const DefinePlugin = require("webpack/lib/DefinePlugin");
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const gitRevisionPlugin = new GitRevisionPlugin({
+    branch: true
+});
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
@@ -101,7 +106,15 @@ module.exports = function (isLib) {
             new ContextReplacementPlugin(
                 /moment[\/\\]locale$/,
                 /en-ca|fr-ca/
-            )
+            ),
+            gitRevisionPlugin,
+            new DefinePlugin({
+                'BUILDDATE': JSON.stringify(new Date().toLocaleString('fr-CA', { timeZone: 'America/Montreal' })),
+                'COMMITHASH': JSON.stringify(gitRevisionPlugin.commithash()),
+                'BRANCH': JSON.stringify(gitRevisionPlugin.branch()),
+                'MODULVERSION': JSON.stringify(require('../../../packages/modul-components/package.json').version)
+
+            })
         ]
     };
 };

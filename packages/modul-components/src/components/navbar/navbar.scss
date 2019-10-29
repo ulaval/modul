@@ -17,7 +17,7 @@
         overflow: hidden;
     }
 
-    &:not(.m--is-skin-tab-light):not(.m--is-skin-tab-dark):not(.m--is-skin-plain) {
+    &:not(.m--is-skin-tab-light):not(.m--is-skin-tab-dark):not(.m--is-skin-plain):not(.m--is-skin-tab-light-main):not(.m--is-skin-tab-dark-main) {
         .m-navbar__button {
             &.m--is-right {
                 button {
@@ -116,7 +116,9 @@
     }
 
     &.m--is-skin-tab-light,
-    &.m--is-skin-tab-dark {
+    &.m--is-skin-tab-light-main,
+    &.m--is-skin-tab-dark,
+    &.m--is-skin-tab-dark-main, {
         .m-navbar__button {
             $m-navbar--button-width: 14px;
 
@@ -147,7 +149,8 @@
         }
     }
 
-    &.m--is-skin-tab-dark {
+    &.m--is-skin-tab-dark,
+    &.m--is-skin-tab-dark-main {
         .m-navbar__button {
             background: $m-color--grey-darkest;
 
@@ -161,7 +164,8 @@
         }
     }
 
-    &.m--is-skin-tab-light {
+    &.m--is-skin-tab-light,
+    &.m--is-skin-tab-light-main {
         .m-navbar__button {
             background: $m-color--grey-light;
 

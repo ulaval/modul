@@ -10,21 +10,6 @@ $m-accordion--border-color: $m-color--border !default;
 $m-accordion--color-default: $m-color--interactive !default;
 
 .m-accordion {
-    &.m--is-default {
-        &:not(.m--is-open) + .m-accordion {
-            margin-top: -$m-accordion--border-size;
-        }
-
-        &.m--is-open:not(.m--is-empty-content) + .m-accordion {
-            margin-top: -1px;
-        }
-
-        &.m--is-empty-content + .m-accordion.m--is-open,
-        &.m--is-empty-content + .m-accordion.m--is-closed {
-            margin-top: -2px;
-        }
-    }
-
     &.m--is-dark,
     &.m--is-dark-b {
         transition: padding-top $m-transition-duration ease;
@@ -96,13 +81,16 @@ $m-accordion--color-default: $m-color--interactive !default;
         .m-accordion.m--is-default > & {
             color: $m-color--text;
             background-color: $m-color--white;
-            border-top: $m-accordion--border-size solid $m-accordion--border-color;
             border-bottom: $m-accordion--border-size solid $m-accordion--border-color;
 
             &::after {
                 top: -$m-accordion--border-size;
                 bottom: -$m-accordion--border-size;
             }
+        }
+
+        .m-accordion.m--is-default:first-child > & {
+            border-top: $m-accordion--border-size solid $m-accordion--border-color;
         }
 
         .m-accordion.m--is-dark > &,
@@ -222,7 +210,7 @@ $m-accordion--color-default: $m-color--interactive !default;
         .m-accordion.m--is-default > & {
             color: $m-color--text;
             background-color: $m-color--white;
-            border-bottom: 1px solid $m-color--border;
+            border-bottom: 2px solid $m-color--border;
         }
 
         .m-accordion.m--is-dark > &,
