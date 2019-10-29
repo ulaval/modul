@@ -1,4 +1,4 @@
-@import 'commons';
+@import "commons";
 
 .m-select {
     display: inline-flex;
@@ -22,6 +22,11 @@
 
     &__arrow {
         cursor: pointer;
+        height: $m-touch-size;
+        width: calc(#{$m-touch-size} - #{$m-spacing});
+        display: flex;
+        align-items: center;
+        justify-content: left;
 
         &__icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
@@ -31,6 +36,17 @@
             .m-select__arrow__icon {
                 transform: rotate(-180deg);
             }
+        }
+    }
+
+    &.m--is-disabled,
+    &.m--is-readonly {
+        .m-select__arrow {
+            cursor: default;
+        }
+
+        .m-select__arrow__icon {
+            color: $m-input-style--color-disabled;
         }
     }
 

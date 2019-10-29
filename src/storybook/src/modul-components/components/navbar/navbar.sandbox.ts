@@ -1,9 +1,10 @@
+import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
+import { NAVBAR_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
+import AccordionTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/accordion-transition/accordion-transition';
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import ButtonPlugin from '../button/button';
-import { NAVBAR_NAME } from '../component-names';
-import AccordionTransitionPlugin from '../transitions/accordion-transition/accordion-transition';
-import NavbarPlugin from './navbar';
+
 import WithRender from './navbar.sandbox.html';
 
 @WithRender

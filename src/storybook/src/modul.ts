@@ -32,6 +32,7 @@ import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
 import ListItemPlugin from '@ulaval/modul-components/dist/components/list-item/list-item';
 import MenuPlugin from '@ulaval/modul-components/dist/components/menu/menu';
 import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
+import MoneyFieldPlugin from '@ulaval/modul-components/dist/components/moneyfield/moneyfield';
 import MultiSelectPlugin from '@ulaval/modul-components/dist/components/multi-select/multi-select';
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
 import OptionPlugin from '@ulaval/modul-components/dist/components/option/option';
@@ -154,6 +155,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(MultiSelectPlugin);
         Vue.use(SelectPlugin);
 
+        Vue.use(MoneyFieldPlugin);
         Vue.use(DecimalfieldPlugin);
         Vue.use(IntegerfieldPlugin);
 

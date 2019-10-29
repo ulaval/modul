@@ -21,6 +21,7 @@ exports[`Storyshots modul-components|m-pagination default 1`] = `
       class="m-icon-button m-pagination__previous-button m--is-skin-link m--has-ripple m--is-disabled"
       disabled="disabled"
       style="width: 44px; height: 44px;"
+      title="Page précédente"
       type="button"
     >
       <svg
@@ -146,6 +147,7 @@ exports[`Storyshots modul-components|m-pagination default 1`] = `
     <button
       class="m-icon-button m-pagination__next-button m--is-skin-link m--has-ripple"
       style="width: 44px; height: 44px;"
+      title="Page suivante"
       type="button"
     >
       <svg
@@ -189,6 +191,7 @@ exports[`Storyshots modul-components|m-pagination items-per-page="14" 1`] = `
       class="m-icon-button m-pagination__previous-button m--is-skin-link m--has-ripple m--is-disabled"
       disabled="disabled"
       style="width: 44px; height: 44px;"
+      title="Page précédente"
       type="button"
     >
       <svg
@@ -314,6 +317,7 @@ exports[`Storyshots modul-components|m-pagination items-per-page="14" 1`] = `
     <button
       class="m-icon-button m-pagination__next-button m--is-skin-link m--has-ripple"
       style="width: 44px; height: 44px;"
+      title="Page suivante"
       type="button"
     >
       <svg
@@ -357,6 +361,7 @@ exports[`Storyshots modul-components|m-pagination loading 1`] = `
       class="m-icon-button m-pagination__previous-button m--is-skin-link m--has-ripple m--is-disabled"
       disabled="disabled"
       style="width: 44px; height: 44px;"
+      title="Page précédente"
       type="button"
     >
       <svg
@@ -483,6 +488,7 @@ exports[`Storyshots modul-components|m-pagination loading 1`] = `
       class="m-icon-button m-pagination__next-button m--is-skin-link m--has-ripple m--is-disabled"
       disabled="disabled"
       style="width: 44px; height: 44px;"
+      title="Page suivante"
       type="button"
     >
       <svg
@@ -525,6 +531,7 @@ exports[`Storyshots modul-components|m-pagination value 1`] = `
     <button
       class="m-icon-button m-pagination__previous-button m--is-skin-link m--has-ripple"
       style="width: 44px; height: 44px;"
+      title="Page précédente"
       type="button"
     >
       <svg
@@ -659,6 +666,7 @@ exports[`Storyshots modul-components|m-pagination value 1`] = `
     <button
       class="m-icon-button m-pagination__next-button m--is-skin-link m--has-ripple"
       style="width: 44px; height: 44px;"
+      title="Page suivante"
       type="button"
     >
       <svg

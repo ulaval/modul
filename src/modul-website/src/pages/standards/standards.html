@@ -93,29 +93,6 @@
                 <m-accordion skin="plain"
                              icon-position="right"
                              icon-size="small"
-                             :open="urlMatch('router:development-standards-css-sass','router:development-standards-typescript')">
-                    <div class="mw-expandable-panel__sidemenu-sub-title"
-                         slot="header">
-                        <m-i18n k="website:standards-development"></m-i18n>
-                    </div>
-                    <div>
-                        <div class="mw-expandable-panel__sidemenu-item">
-                            <router-link :to="{name :'router:development-standards-css-sass'}"
-                                         @click.native="onSideMenuSelection()">
-                                <m-i18n k="website:standards-development-css-sass"></m-i18n>
-                            </router-link>
-                        </div>
-                        <div class="mw-expandable-panel__sidemenu-item">
-                            <router-link :to="{name :'router:development-standards-typescript'}"
-                                         @click.native="onSideMenuSelection()">
-                                <m-i18n k="website:standards-development-typescript"></m-i18n>
-                            </router-link>
-                        </div>
-                    </div>
-                </m-accordion>
-                <m-accordion skin="plain"
-                             icon-position="right"
-                             icon-size="small"
                              :open="urlMatch('router:accessibility-standards-why','router:accessibility-standards-implementation', 'router:accessibility-standards-cheatsheet')">
                     <div class="mw-expandable-panel__sidemenu-sub-title"
                          slot="header">

@@ -1,5 +1,5 @@
 import { ModulWebsite } from '@/components/modul-website';
-import { ROUTER_COMPONENTS_UI, ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
+import { ROUTER_COMPONENTS_UI, ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_UI } from '@/router';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { ScrollToDuration } from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import Component from 'vue-class-component';
@@ -68,10 +68,6 @@ export class MWHomePage extends ModulWebsite {
 
     public get uiStandards(): any {
         return { name: ROUTER_STANDARDS_UI };
-    }
-
-    public get devStandards(): any {
-        return { name: ROUTER_STANDARDS_DEVELOPMENT };
     }
 
     public get editorialStandards(): any {

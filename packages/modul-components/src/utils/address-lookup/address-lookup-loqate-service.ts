@@ -1,11 +1,12 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
 import { Address, AddressSummary } from './address';
-import { AddressLookupFindQuery, AddressLookupRetrieveQuery, AddressLookupService } from './address-lookup';
+import { AddressLookupFindQuery, AddressLookupRetrieveQuery, AddressLookupService, AddressLookupServiceProvider } from './address-lookup';
 import { LoqateFindResponseBuilder, LoqateRetrieveResponseBuilder } from './address-lookup-loqate';
 import { AddressLookupToAddressSummary, AddressRetrieveToAddress } from './address-lookup-response-mapper';
 import { LoqateFindItem, LoqateFindRequest, LoqateFindResult, LoqateRetrieveItem, LoqateRetrieveRequest, LoqateRetrieveResult } from './typings-loqate';
 
 export default class AddressLookupLoqateService implements AddressLookupService {
+    serviceProvider = AddressLookupServiceProvider.Loqate;
     private axios: AxiosInstance;
     private key: string;
 
