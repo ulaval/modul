@@ -703,6 +703,95 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
 </table>
 `;
 
+exports[`Storyshots modul-components|m-table Custom columns class 1`] = `
+<table
+  cellspacing="0"
+  class="m-table m--is-skin-simple m--is-row-highlighted-on-hover"
+  width="100%"
+>
+  <thead>
+    <tr>
+      <th
+        class="m--custom-class"
+        scope="col"
+      >
+        <span
+          class="m-table__header-name"
+        >
+          Name, Username
+        </span>
+      </th>
+      <th
+        class=""
+        scope="col"
+        style="width: 80px;"
+      >
+        <span
+          class="m-table__header-name"
+        >
+          Age
+        </span>
+      </th>
+    </tr>
+  </thead>
+   
+  <tbody>
+    <!---->
+     
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Jonathan
+      </td>
+      <td
+        class=""
+      >
+        25
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Carl
+      </td>
+      <td
+        class=""
+      >
+        30
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Jacob
+      </td>
+      <td
+        class=""
+      >
+        26
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--custom-class"
+      >
+        Vincent
+      </td>
+      <td
+        class=""
+      >
+        34
+      </td>
+    </tr>
+  </tbody>
+   
+  <!---->
+</table>
+`;
+
 exports[`Storyshots modul-components|m-table Custom row 1`] = `
 <table
   cellspacing="0"
@@ -1472,33 +1561,37 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
           class="m-table__header-wrap"
         >
           <span
-            class="m-table__header-name"
+            class="m-table__sortable-icon-wrap"
           >
-            Name
-          </span>
-           
-          <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
-            style="width: 14px; height: 14px;"
-            title="Trier la colonne"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <span
+              class="m-table__header-name"
             >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
+              Name
+            </span>
              
-            <!---->
-          </button>
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
         </div>
       </th>
       <th
@@ -1509,33 +1602,37 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
           class="m-table__header-wrap"
         >
           <span
-            class="m-table__header-name"
+            class="m-table__sortable-icon-wrap"
           >
-            Age
-          </span>
-           
-          <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
-            style="width: 14px; height: 14px;"
-            title="Trier la colonne"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <span
+              class="m-table__header-name"
             >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
+              Age
+            </span>
              
-            <!---->
-          </button>
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
         </div>
       </th>
       <th
@@ -1546,33 +1643,37 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
           class="m-table__header-wrap"
         >
           <span
-            class="m-table__header-name"
+            class="m-table__sortable-icon-wrap"
           >
-            Username
-          </span>
-           
-          <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
-            style="width: 14px; height: 14px;"
-            title="Trier la colonne"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <span
+              class="m-table__header-name"
             >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
+              Username
+            </span>
              
-            <!---->
-          </button>
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
         </div>
       </th>
     </tr>
@@ -1583,85 +1684,85 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
      
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Jonathan
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         25
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         jonathan.25
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Carl
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         30
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         carl.30
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Jacob
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         26
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         jacob.26
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Vincent
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         34
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         vincent.34
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Manon
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         28
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         manon.28
       </td>
@@ -1688,33 +1789,37 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
           class="m-table__header-wrap"
         >
           <span
-            class="m-table__header-name"
+            class="m-table__sortable-icon-wrap"
           >
-            Name
-          </span>
-           
-          <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
-            style="width: 14px; height: 14px;"
-            title="Trier la colonne"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <span
+              class="m-table__header-name"
             >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
+              Name
+            </span>
              
-            <!---->
-          </button>
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
         </div>
       </th>
       <th
@@ -1725,33 +1830,37 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
           class="m-table__header-wrap"
         >
           <span
-            class="m-table__header-name"
+            class="m-table__sortable-icon-wrap"
           >
-            Age
-          </span>
-           
-          <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
-            style="width: 14px; height: 14px;"
-            title="Trier la colonne"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <span
+              class="m-table__header-name"
             >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
+              Age
+            </span>
              
-            <!---->
-          </button>
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
         </div>
       </th>
       <th
@@ -1762,33 +1871,37 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
           class="m-table__header-wrap"
         >
           <span
-            class="m-table__header-name"
+            class="m-table__sortable-icon-wrap"
           >
-            Username
-          </span>
-           
-          <button
-            class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
-            style="width: 14px; height: 14px;"
-            title="Trier la colonne"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <span
+              class="m-table__header-name"
             >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
+              Username
+            </span>
              
-            <!---->
-          </button>
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
         </div>
       </th>
     </tr>
@@ -1799,85 +1912,313 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
      
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Jonathan
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         25
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         jonathan.25
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Carl
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         30
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         carl.30
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Jacob
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         26
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         jacob.26
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Vincent
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         34
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         vincent.34
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        class="m--is-sortable"
       >
         Manon
       </td>
       <td
-        class=""
+        class="m--is-sortable"
       >
         28
       </td>
       <td
-        class=""
+        class="m--is-sortable"
+      >
+        manon.28
+      </td>
+    </tr>
+  </tbody>
+   
+  <!---->
+</table>
+`;
+
+exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = `
+<table
+  cellspacing="0"
+  class="m-table m--is-skin-regular m--is-row-highlighted-on-hover"
+  width="100%"
+>
+  <thead>
+    <tr>
+      <th
+        class="m--is-sortable m--is-text-align-center"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Name
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable m--is-text-align-center"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Age
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable m--is-text-align-center"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Username
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+    </tr>
+  </thead>
+   
+  <tbody>
+    <!---->
+     
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        Jonathan
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        25
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        jonathan.25
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        Carl
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        30
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        carl.30
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        Jacob
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        26
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        jacob.26
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        Vincent
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        34
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        vincent.34
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        Manon
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
+      >
+        28
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-center"
       >
         manon.28
       </td>
@@ -2023,6 +2364,234 @@ exports[`Storyshots modul-components|m-table Text align center 1`] = `
 </table>
 `;
 
+exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
+<table
+  cellspacing="0"
+  class="m-table m--is-skin-regular m--is-row-highlighted-on-hover"
+  width="100%"
+>
+  <thead>
+    <tr>
+      <th
+        class="m--is-sortable m--is-text-align-left"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Name
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable m--is-text-align-left"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Age
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable m--is-text-align-left"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Username
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+    </tr>
+  </thead>
+   
+  <tbody>
+    <!---->
+     
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        Jonathan
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        25
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        jonathan.25
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        Carl
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        30
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        carl.30
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        Jacob
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        26
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        jacob.26
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        Vincent
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        34
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        vincent.34
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        Manon
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        28
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-left"
+      >
+        manon.28
+      </td>
+    </tr>
+  </tbody>
+   
+  <!---->
+</table>
+`;
+
 exports[`Storyshots modul-components|m-table Text align left 1`] = `
 <table
   cellspacing="0"
@@ -2148,6 +2717,234 @@ exports[`Storyshots modul-components|m-table Text align left 1`] = `
       </td>
       <td
         class="m--is-text-align-left"
+      >
+        manon.28
+      </td>
+    </tr>
+  </tbody>
+   
+  <!---->
+</table>
+`;
+
+exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
+<table
+  cellspacing="0"
+  class="m-table m--is-skin-regular m--is-row-highlighted-on-hover"
+  width="100%"
+>
+  <thead>
+    <tr>
+      <th
+        class="m--is-sortable m--is-text-align-right"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Name
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable m--is-text-align-right"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Age
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable m--is-text-align-right"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <span
+            class="m-table__sortable-icon-wrap"
+          >
+            <span
+              class="m-table__header-name"
+            >
+              Username
+            </span>
+             
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </span>
+        </div>
+      </th>
+    </tr>
+  </thead>
+   
+  <tbody>
+    <!---->
+     
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        Jonathan
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        25
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        jonathan.25
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        Carl
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        30
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        carl.30
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        Jacob
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        26
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        jacob.26
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        Vincent
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        34
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        vincent.34
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        Manon
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
+      >
+        28
+      </td>
+      <td
+        class="m--is-sortable m--is-text-align-right"
       >
         manon.28
       </td>

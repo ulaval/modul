@@ -16,6 +16,10 @@
         background-color: $m-color--accent-light;
     }
 
+    &__powered-by-google {
+        padding-top: $m-padding--s;
+    }
+
     /deep/ &__results {
         display: flex;
         align-items: center;

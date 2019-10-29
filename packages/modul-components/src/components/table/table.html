@@ -19,18 +19,21 @@
                           :column="column">
                         <div v-if="column.sortable"
                              class="m-table__header-wrap">
-                            <span class="m-table__header-name"
-                                  v-html="column.title"></span>
-                            <m-icon-button v-if="column.sortable"
-                                           class="m-table__sortable-icon"
-                                           :class="[getColumnSortDirectionClass(column)]"
-                                           :disabled="loading"
-                                           :icon-name="getColumnSortIcon(column)"
-                                           skin="bold"
-                                           button-size="14px"
-                                           icon-size="12px"
-                                           :title="i18nSort"
-                                           @click.stop="sort(column)"></m-icon-button>
+                            <span class="m-table__sortable-icon-wrap">
+                                <span class="m-table__header-name"
+                                      v-html="column.title"></span>
+                                <m-icon-button v-if="column.sortable"
+                                               class="m-table__sortable-icon"
+                                               :class="[getColumnSortDirectionClass(column)]"
+                                               :disabled="loading"
+                                               :icon-name="getColumnSortIcon(column)"
+                                               skin="bold"
+                                               button-size="14px"
+                                               icon-size="12px"
+                                               :title="i18nSort"
+                                               @click.stop="sort(column)"></m-icon-button>
+                            </span>
+
                         </div>
                         <template v-else>
                             <span class="m-table__header-name"
@@ -77,9 +80,10 @@
                 <slot name="row"
                       :data="row">
                     <td v-for="column in columnsInternal"
-                        :class="{ 'm--is-text-align-center': isColumnTextAlignCenter(column),
+                        :class="[{ 'm--is-sortable': column.sortable,
+                                  'm--is-text-align-center': isColumnTextAlignCenter(column),
                                   'm--is-text-align-left': isColumnTextAlignLeft(column),
-                                  'm--is-text-align-right': isColumnTextAlignRight(column), }"
+                                  'm--is-text-align-right': isColumnTextAlignRight(column) }, column.class]"
                         :key="'body.' + column.id">
                         <slot :name="'body.' + column.dataProp"
                               :data="row">{{ row[column.dataProp] }}</slot>

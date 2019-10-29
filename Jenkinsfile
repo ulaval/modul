@@ -3,6 +3,11 @@
 pipeline {
     agent any
 
+    environment {
+        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
+        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
+    }
+
     options {
         // Discarter après 10 builds
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -11,29 +16,25 @@ pipeline {
         timestamps()
     }
 
-    environment {
-        // Pour éviter une erreur: EACCES: permission denied, mkdir '/.npm'
-        npm_config_cache = 'npm-cache'
-        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
-        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
-    }
 
     stages {
-        stage('Build & test') {
+
+
+        stage('install, build, lint & test') {
+            agent {
+                docker {
+                    image 'node:10'
+                }
+            }
             when {
                 expression {
                     env.BRANCH_NAME=='master' || env.BRANCH_NAME=='develop'
                 }
             }
 
-            agent {
-                docker {
-                    image 'node:10.15'
-                }
-            }
-
             steps {
-                sh 'yarn install'
+                sh 'yarn install --frozen-lockfile'
+                sh 'yarn build'
                 sh 'yarn lint:ci'
                 sh 'yarn test:ci'
             }
@@ -41,6 +42,11 @@ pipeline {
     }
 
     post {
+
+        always {
+            cleanWs()
+        }
+
         changed {
             echo 'Build status changed'
             step([$class: 'Mailer', recipients: ['charles.maheu@dti.ulaval.ca', emailextrecipients([[$class: 'CulpritsRecipientProvider'], [$class: 'RequesterRecipientProvider']])].join(' ')])
