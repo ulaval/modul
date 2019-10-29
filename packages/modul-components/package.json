@@ -106,8 +106,7 @@
         "src/**/*.ts",
         "dist"
     ],
-    "main": "./dist/modul.esm.js",
-    "module": "./dist/modul.esm.js",
-    "types": "./dist/index.d.ts",
+    "main": "./dist/modul.udm.js",
+    "types": "./dist/lib.d.ts",
     "license": "Apache-2.0"
 }

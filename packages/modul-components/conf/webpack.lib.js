@@ -12,7 +12,7 @@ module.exports = {
         lib: resolve('src/lib.ts')
     },
     output: {
-        filename: 'modul.esm.js',
+        filename: 'modul.udm.js',
         libraryTarget: 'umd',
         path: resolve('dist'),
         library: 'modulComponents'

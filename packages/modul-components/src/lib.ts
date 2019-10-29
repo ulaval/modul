@@ -1,14 +1,14 @@
 import Vue, { PluginObject } from 'vue';
-import ComponentsPlugin from './components';
-import DirectivesPlugin from './directives';
-import FiltersPlugin from './filters';
-import FrenchPlugin from './lang';
-import EnglishPlugin from './lang/en';
-import UtilsPlugin, { UtilsPluginOptions } from './utils';
+import ComponentsPlugin from './components/components-plugin';
+import DirectivesPlugin from './directives/directives-plugin';
+import FiltersPlugin from './filters/filters-plugin';
 import { FRENCH } from './utils/i18n/i18n';
 import './utils/polyfills';
 import DefaultSpritesPlugin from './utils/svg/default-sprites';
+import UtilsPlugin, { UtilsPluginOptions } from './utils/utils-plugin';
 
+export { default as EnglishPlugin } from './lang/en';
+export { default as FrenchPlugin } from './lang/fr';
 
 export interface ModulComponentPluginOptions {
     curLang?: string;
@@ -25,8 +25,7 @@ export const ModulComponentPlugin: PluginObject<ModulComponentPluginOptions | un
         };
 
         Vue.use(UtilsPlugin, utilsPluginOptions);
-        Vue.use(FrenchPlugin);
-        Vue.use(EnglishPlugin);
+
         Vue.use(DefaultSpritesPlugin);
         Vue.use(ComponentsPlugin);
         Vue.use(DirectivesPlugin);

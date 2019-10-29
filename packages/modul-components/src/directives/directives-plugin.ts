@@ -2,7 +2,6 @@ import Vue, { PluginObject } from 'vue';
 import LoggerPlugin from '../utils/logger/logger';
 
 
-
 const DirectivesPlugin: PluginObject<any> = {
     install(v, options): void {
         if (!v.prototype.$log) {
