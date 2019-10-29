@@ -10,6 +10,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOOLTIP_NAME}`, module)
         }),
         template: `<span>Lorem Ipsum<m-tooltip :open="openProp">This is some random text</m-tooltip></span>`
     }))
+    .add('change icon', () => ({
+        data: () => ({
+            openProp: true
+        }),
+        template: `<span>Lorem Ipsum<m-tooltip :open="openProp" icon-name="m-svg__error-filled">This is some random text</m-tooltip></span>`
+    }))
     .add('close-button="false"', () => ({
         data: () => ({
             openProp: true

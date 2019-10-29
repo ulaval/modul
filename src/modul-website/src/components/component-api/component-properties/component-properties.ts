@@ -1,4 +1,4 @@
-import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
+import { MColumnTable, MColumnTextAlign } from '@ulaval/modul-components/dist/components/table/table';
 import * as _ from 'lodash';
 import { MetaComponent, MetaProps } from 'meta-generator/dist';
 import { Component, Prop } from 'vue-property-decorator';
@@ -30,7 +30,7 @@ export class MComponentProperties extends ModulWebsite {
     get columns(): MColumnTable[] {
         return [
             { id: 'name', title: this.$i18n.translate('modul:slots-name'), dataProp: 'name' },
-            { id: 'value', title: this.$i18n.translate('modul:value'), dataProp: 'value', centered: true },
+            { id: 'value', title: this.$i18n.translate('modul:value'), dataProp: 'value', textAlign: MColumnTextAlign.Center },
             { id: 'description', title: this.$i18n.translate('modul:description'), dataProp: 'description' }
         ];
     }

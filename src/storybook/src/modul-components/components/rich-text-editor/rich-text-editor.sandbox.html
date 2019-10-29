@@ -65,17 +65,22 @@
     <div class="m-u--margin-bottom">
         <h5>With IMAGE option</h5>
         <m-rich-text-editor v-model="imageModel"
-                            :options="imageOptions"
+                            :show-image-button="true"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"
                             @image-added="imageAdded"
                             @image-removed="imageRemoved"></m-rich-text-editor>
     </div>
+    <h5>Résultat dans le lecteur</h5>
+    <div>
+        <m-rich-text :value="imageModel"></m-rich-text>
+    </div>
     <div class="m-u--margin-bottom">
         <h5>With IMAGE_HIDE_FLOAT_LAYOUT option</h5>
         <m-rich-text-editor v-model="imageNoLayoutModel"
-                            :options="imageNoLayoutOptions"
+                            :show-image-button="true"
+                            :show-image-float-layout="true"
                             label="rich text"
                             max-width="large"
                             @image-ready="imageReady"
@@ -331,4 +336,100 @@
                             :disabled="radioValue != 1"></m-rich-text-editor>
         <m-radio value="2">Option 2</m-radio>
     </m-radio-group>
+
+    <h5 class="m-u--margin-bottom">Nombre de charactères maximum</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            character-count-max="20"></m-rich-text-editor>
+    </div>
+
+    <h5 class="m-u--margin-bottom">Afficher boutons alignement du texte</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-paragraph-alignment-buttons="true"></m-rich-text-editor>
+    </div>
+
+    <h5 class="m-u--margin-bottom">Afficher bouton soulignement du texte</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-underline-button="true"></m-rich-text-editor>
+    </div>
+
+    <h5 class="m-u--margin-bottom">Afficher bouton texte barré</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-strike-through-button="true"></m-rich-text-editor>
+    </div>
+
+    <h5 class="m-u--margin-bottom">Avec tous les boutons</h5>
+    <div class="m-u--margin-bottom">
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text'"
+                            :max-width="'large'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :show-paragraph-alignment-buttons="true"
+                            :show-underline-button="true"
+                            :show-strike-through-button="true"
+                            :show-image-button="true"
+                            :show-image-float-layout="true"></m-rich-text-editor>
+
+    <div class="m-u--margin-bottom">
+        <h5 class="m-u--margin-bottom">RTE avec une taille par taille minimum de 5</h5>
+        <m-rich-text-editor v-model="model"
+                            :label="'rich text with placeholder'"
+                            :max-width="'large'"
+                            :placeholder="'some placeholder'"
+                            :focus="focus"
+                            :error="error"
+                            :error-message="errorMessage"
+                            :valid-message="validMessage"
+                            :helper-message="helperMessage"
+                            :waiting="waiting"
+                            :disabled="disabled"
+                            :readonly="readonly"
+                            :min-rows="5"></m-rich-text-editor>
+    </div>
+    </div>
 </div>

@@ -59,6 +59,12 @@
             "log",
             "warn",
             "info"
+        ],
+        "import-blacklist": [
+            true,
+            [
+                "^moment"
+            ]
         ]
     }
 }

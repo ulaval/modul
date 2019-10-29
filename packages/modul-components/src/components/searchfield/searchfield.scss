@@ -45,6 +45,8 @@
     }
 
     input {
+        appearance: none;
+
         &[type='search']::-webkit-search-decoration,
         &[type='search']::-webkit-search-cancel-button,
         &[type='search']::-webkit-search-results-button,
@@ -53,7 +55,7 @@
         }
 
         &[type='search']::-webkit-textfield-decoration-container {
-            background-color: $m-searchfield-color;
+            background-color: none;
         }
     }
 
