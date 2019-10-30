@@ -7,8 +7,8 @@ import './utils/polyfills';
 import DefaultSpritesPlugin from './utils/svg/default-sprites';
 import UtilsPlugin, { UtilsPluginOptions } from './utils/utils-plugin';
 
-export { default as EnglishPlugin } from './lang/en';
-export { default as FrenchPlugin } from './lang/fr';
+export * from './components';
+export * from './lang';
 
 export interface ModulComponentPluginOptions {
     curLang?: string;

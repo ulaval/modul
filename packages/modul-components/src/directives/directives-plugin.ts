@@ -1,5 +1,8 @@
 import Vue, { PluginObject } from 'vue';
+import PopupPlugin from '../components/popup/popup';
 import LoggerPlugin from '../utils/logger/logger';
+import I18nDirectivePlugin from './i18n/i18n';
+import TextareaAutoHeightPlugin from './textarea-auto-height/textarea-auto-height';
 
 
 const DirectivesPlugin: PluginObject<any> = {
@@ -11,13 +14,13 @@ const DirectivesPlugin: PluginObject<any> = {
         // Vue.use(BadgePlugin);
         // Vue.use(DragAndDropPlugin);
         // Vue.use(FileDropPlugin);
-        // Vue.use(PopupPlugin);
+        Vue.use(PopupPlugin);
         // Vue.use(RemoveUserSelectPlugin);
         // Vue.use(RippleEffectPlugin);
         // Vue.use(ScrollToPlugin);
         // Vue.use(SortablePlugin);
-        // Vue.use(TextareaAutoHeightPlugin);
-        // Vue.use(I18nDirectivePlugin);
+        Vue.use(TextareaAutoHeightPlugin);
+        Vue.use(I18nDirectivePlugin);
     }
 };
 

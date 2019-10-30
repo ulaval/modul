@@ -1,5 +1,5 @@
-[![Travis Build Status](https://travis-ci.org/ulaval/modul-components.svg?branch=develop)](https://travis-ci.org/ulaval/modul)
-[![CircleCI Build Status](https://circleci.com/gh/ulaval/modul-components/tree/develop.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/ulaval/modul)
+[![Travis Build Status](https://travis-ci.org/ulaval/modul.svg?branch=develop)](https://travis-ci.org/ulaval/modul)
+[![CircleCI Build Status](https://circleci.com/gh/ulaval/modul/tree/develop.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/ulaval/modul)
 [![npm version](https://badge.fury.io/js/%40ulaval%2Fmodul-components.svg)](https://badge.fury.io/js/%40ulaval%2Fmodul-components)
 
 # modul
@@ -10,13 +10,54 @@ A set of VueJS components for MOD**UL** web applications.
 
 [Check out our documentation](https://ulaval.github.io/modul)
 
-## Getting started to use modUL in your project
+## Getting started to use MODUL in your project
 
-### Start a new modul application and webpack configuration
+### Quick start install (using Vue CLI)
 
-Please refer to [this repository](https://github.com/ulaval/modul-typescript-template) for a template of a modul project.
+MODUL can be used in any Vue CLI 3+ project, the first step is to install the dependencies in your project
 
-## Contributing to modUL
+```bash
+npm install @ulaval/modul-components --save
+```
+
+Then in you main.ts file, install the ModulComponentPlugin and the FrenchPlugin
+
+```typescript
+import { ModulComponentPlugin, FrenchPlugin } from '@ulaval/modul-components';
+
+
+Vue.use(ModulComponentPlugin);
+Vue.use(FrenchPlugin);
+```
+
+Then in the App.vue file, import the global scss and add overrides (if any)
+
+```scss
+
+<style lang="scss">
+// modul sass overrides here.
+
+$m-font-path: '~@ulaval/modul-components/dist/assets/fonts/'; //this is required.
+
+@import "~@ulaval/modul-components/dist/styles/main.scss";
+
+</style>
+
+```
+
+MODUL components will now be accessible globaly in all you components template
+
+```html
+    <m-button icon-name="m-svg__close-clear">A MODUL Button</m-button>
+```
+
+
+
+### Complexe usage
+
+If you need a more advanced solution that includes using beta components abd code splitting you can refer to [this repository](https://github.com/ulaval/modul-typescript-template) for a template of a complete modul project.
+
+## Contributing to MODUL
 
 ### Getting your environment set up
 
