@@ -3,14 +3,15 @@
          :title="i18nTitleModal"
          :size="modalSize"
          :close-on-backdrop="false"
-         @close="cancel">
+         @close="close"
+         ref="modal">
     <m-icon-button class="m-photo-editor__delete"
                    icon-name="m-svg__delete"
                    icon-size="20px"
                    :title="i18nDelete"
                    :skin="skinDelete"
                    @click="deleteImage"
-                   ref="btnDelete"></m-icon-button>
+                   ref="deleteButton"></m-icon-button>
     <m-image-displayer v-if="modeSelect"
                        :url-photo="urlPhoto"></m-image-displayer>
     <m-crop-image v-else
@@ -28,17 +29,20 @@
                        :label="i18nChoosePhoto"
                        :skin="primaryButton"
                        :allowed-extensions="allowedExtensions"
-                       @file-selected="replaceImage"></m-file-select>
+                       @file-selected="replaceImage"
+                       ref="fileSelect"></m-file-select>
         <m-button v-else
                   :skin="primaryButton"
                   :full-size="true"
                   :waiting="savingInProgress"
-                  @click="crop">{{ i18nSave }}</m-button>
+                  @click="crop"
+                  ref="cropButton">{{ i18nSave }}</m-button>
         <m-button class="m-photo-editor__cancel"
                   :skin="secondaryButton"
                   :full-size="true"
                   :disabled="savingInProgress"
-                  @click="cancel">{{ i18nCancel }}</m-button>
+                  @click="cancel"
+                  ref="cancelButton">{{ i18nCancel }}</m-button>
     </template>
 
 </m-modal>

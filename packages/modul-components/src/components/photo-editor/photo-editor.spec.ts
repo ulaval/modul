@@ -1,0 +1,162 @@
+import { createLocalVue, mount, RefSelector, Wrapper } from '@vue/test-utils';
+import Vue, { VueConstructor } from 'vue';
+import { createMockFile } from '../../../tests/helpers/file';
+import { addMessages } from '../../../tests/helpers/lang';
+import { BUTTON_NAME, FILE_SELECT_NAME, ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
+import { CROP_IMAGE_NAME } from './component-names';
+import PhotoEditorPlugin, { MPhotoEditor, MPhotoEditorMode } from './photo-editor';
+
+const REF_MODAL: RefSelector = { ref: 'modal' };
+const REF_DELETE_BUTTON: RefSelector = { ref: 'deleteButton' };
+const REF_CROP_IMAGE: RefSelector = { ref: 'cropImage' };
+const REF_CANCEL_BUTTON: RefSelector = { ref: 'cancelButton' };
+const REF_FILE_SELECT: RefSelector = { ref: 'fileSelect' };
+const REF_CROP_BUTTON: RefSelector = { ref: 'cropButton' };
+
+const getStubs: any = () => {
+    return {
+        [BUTTON_NAME]: '<a></a>',
+        [CROP_IMAGE_NAME]: '<div></div>',
+        [FILE_SELECT_NAME]: '<div></div>',
+        [ICON_BUTTON_NAME]: '<a></a>',
+        [MODAL_NAME]: '<div><slot /><slot name="footer"></slot></div>'
+    };
+};
+
+describe('MCropImage', () => {
+    let localVue: VueConstructor<Vue>;
+
+    let wrapper: Wrapper<MPhotoEditor>;
+
+    beforeEach(() => {
+        localVue = createLocalVue();
+        localVue.use(PhotoEditorPlugin);
+        addMessages(localVue, ['components/photo-editor/photo-editor.lang.en.json']);
+
+        wrapper = mount(MPhotoEditor, {
+            localVue,
+            stubs: getStubs()
+        });
+    });
+
+    describe(`when clicking of the close button of the modal`, () => {
+        it('should manage event "close"', async () => {
+            wrapper.setMethods({ close: jest.fn() });
+
+            wrapper.find(REF_MODAL).vm.$emit('close');
+
+            expect(wrapper.vm.close).toHaveBeenCalledWith();
+        });
+
+        it('should emit update:open with the good parameter', () => {
+            wrapper.vm.close();
+
+            expect(wrapper.emitted('update:open')[0]).toEqual([false]);
+        });
+
+    });
+
+    describe(`when deleting`, () => {
+        it('should manage event "deleteImage"', async () => {
+            wrapper.setMethods({ deleteImage: jest.fn() });
+
+            wrapper.find(REF_DELETE_BUTTON).vm.$emit('click');
+
+            expect(wrapper.vm.deleteImage).toHaveBeenCalledWith();
+        });
+
+        describe(`while in selection mode`, () => {
+            it('should emit delete', () => {
+                wrapper.vm.deleteImage();
+
+                expect(wrapper.emitted('delete')).toBeDefined();
+            });
+        });
+
+        describe(`while in crop mode`, () => {
+            it('should not  emit delete', () => {
+                wrapper.vm.photoEditorMode = MPhotoEditorMode.CROP;
+
+                wrapper.vm.deleteImage();
+
+                expect(wrapper.emitted('delete')).toBeUndefined();
+            });
+        });
+
+    });
+
+    describe(`when cropping`, () => {
+
+        beforeEach(() => {
+            wrapper.vm.photoEditorMode = MPhotoEditorMode.CROP;
+        });
+
+        it('should manage the event "image-cropped"', async () => {
+            wrapper.setMethods({ confirmImage: jest.fn() });
+
+            wrapper.find(REF_CROP_IMAGE).vm.$emit('image-cropped');
+
+            expect(wrapper.vm.confirmImage).toHaveBeenCalledWith();
+        });
+
+        it(`should emit "save-image" with the image cropped`, () => {
+            const mockFile: File = createMockFile('test.jpg');
+
+            wrapper.vm.confirmImage(mockFile);
+
+            expect(wrapper.emitted('save-image')[0]).toEqual([mockFile]);
+        });
+
+        it('should manage the click event', async () => {
+            wrapper.vm.photoEditorMode = MPhotoEditorMode.CROP;
+            wrapper.setMethods({ crop: jest.fn() });
+
+            wrapper.find(REF_CROP_BUTTON).vm.$emit('click');
+
+            expect(wrapper.vm.crop).toHaveBeenCalledWith();
+        });
+
+    });
+
+    describe(`when canceling`, () => {
+
+        it('should manage the event "click" to cancel', async () => {
+            wrapper.setMethods({ cancel: jest.fn() });
+
+            wrapper.find(REF_CANCEL_BUTTON).vm.$emit('click');
+
+            expect(wrapper.vm.cancel).toHaveBeenCalledWith();
+        });
+
+        describe(`while selecting a new image`, () => {
+            it('should close', () => {
+                wrapper.vm.cancel();
+
+                expect(wrapper.emitted('update:open')).toBeDefined();
+                expect(wrapper.emitted('update:open')[0]).toEqual([false]);
+            });
+        });
+
+        describe(`while cropping`, () => {
+            it('should not close', () => {
+                wrapper.vm.photoEditorMode = MPhotoEditorMode.CROP;
+
+                wrapper.vm.cancel();
+
+                expect(wrapper.emitted('update:open')).toBeUndefined();
+            });
+        });
+
+    });
+
+    describe(`when selecting a file`, () => {
+        it('should manage the event "file-selected"', async () => {
+            wrapper.setMethods({ replaceImage: jest.fn() });
+
+            wrapper.find(REF_FILE_SELECT).vm.$emit('file-selected');
+
+            expect(wrapper.vm.replaceImage).toHaveBeenCalledWith();
+        });
+    });
+
+});
