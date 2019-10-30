@@ -13,7 +13,7 @@ import ImageDisplayerPlugin from './image-displayer/image-displayer';
 import WithRender from './photo-editor.html?style=./photo-editor.scss';
 
 // Changer en MPhotoEditorSteps?
-enum MPhotoEditorMode {
+export enum MPhotoEditorMode {
     SELECT = 'select',
     CROP = 'crop'
 }
@@ -33,6 +33,9 @@ export class MPhotoEditor extends ModulVue {
 
     @Prop({ default: uuid.generate() })
     storeName: string;
+
+    @Prop({ default: false })
+    savingInProgress: boolean;
 
     $refs: {
         cropImage: MCropImage

@@ -58,7 +58,7 @@ import PageNotFoundPlugin from './page-not-found/page-not-found';
 import PanelPlugin from './panel/panel';
 import PeriodpickerPlugin from './periodpicker/periodpicker';
 import PhoneNumberPlugin from './phone-number/phone-number';
-import CropImagePlugin from './photo-editor/crop-image/crop-image';
+import PhotoEditorPlugin from './photo-editor/photo-editor';
 import PlusPlugin from './plus/plus';
 import PopperPlugin from './popper/popper';
 import PopupPlugin from './popup/popup';
@@ -127,7 +127,6 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ChipPlugin);
         Vue.use(ChipAddPlugin);
         Vue.use(ChipDeletePlugin);
-        Vue.use(CropImagePlugin);
         Vue.use(DatefieldsPlugin);
         Vue.use(DatepickerPlugin);
         Vue.use(DaterangepickerPlugin);
@@ -171,6 +170,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(PanelPlugin);
         Vue.use(PeriodpickerPlugin);
         Vue.use(PhoneNumberPlugin);
+        Vue.use(PhotoEditorPlugin);
         Vue.use(PlusPlugin);
         Vue.use(PopperPlugin);
         Vue.use(PopupPlugin);

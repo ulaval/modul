@@ -32,10 +32,12 @@
         <m-button v-else
                   :skin="primaryButton"
                   :full-size="true"
+                  :waiting="savingInProgress"
                   @click="crop">{{ i18nSave }}</m-button>
         <m-button class="m-photo-editor__cancel"
                   :skin="secondaryButton"
                   :full-size="true"
+                  :disabled="savingInProgress"
                   @click="cancel">{{ i18nCancel }}</m-button>
     </template>
 
