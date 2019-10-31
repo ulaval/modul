@@ -51,7 +51,7 @@ export class MForm extends ModulVue {
 
         return this.$i18n.translate(
             count <= 1 ? 'm-form:multipleErrorsToCorrect' : 'm-form:multipleErrorsToCorrect.p',
-            { totalNbOfErrors: count <= 1 ? 1 : count },
+            { totalNbOfErrors: count },
             undefined, undefined, undefined, FormatMode.Sprintf
         );
     }
@@ -116,6 +116,14 @@ export class MForm extends ModulVue {
     private _formControlsInErrorCount(control: FormGroup | FormArray = this.formGroup): number {
         return control.controls.reduce((a: number, c: AbstractControl): number => {
             if (c instanceof FormGroup || c instanceof FormArray) {
+                if (
+                    c instanceof FormGroup
+                    &&
+                    c.hasError()
+                ) {
+                    a++;
+                }
+
                 if (!c.hasErrorDeep()) {
                     return a;
                 }
