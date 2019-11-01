@@ -96,6 +96,10 @@ export class MPhotoEditor extends ModulVue {
         this.$refs.cropImage.crop();
     }
 
+    get showDeleteButton(): boolean {
+        return !!this.urlPhoto || !this.modeSelect;
+    }
+
     get modeSelect(): boolean {
         return this.photoEditorMode === MPhotoEditorMode.SELECT;
     }
