@@ -58,6 +58,7 @@ describe('MCropImage', () => {
 
     describe(`when deleting`, () => {
         it('should manage event "deleteImage"', async () => {
+            wrapper.setProps({ urlPhoto: 'url' });
             wrapper.setMethods({ deleteImage: jest.fn() });
 
             wrapper.find(REF_DELETE_BUTTON).vm.$emit('click');
@@ -132,8 +133,7 @@ describe('MCropImage', () => {
             it('should close', () => {
                 wrapper.vm.cancel();
 
-                expect(wrapper.emitted('update:open')).toBeDefined();
-                expect(wrapper.emitted('update:open')[0]).toEqual([false]);
+                expect(wrapper.emitted('close')).toBeDefined();
             });
         });
 
