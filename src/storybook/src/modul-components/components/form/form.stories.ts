@@ -1013,7 +1013,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${FORM_NAME}/rules`, module)
                                     message: 'Enter a security answer at least 5 characters long'
                                 },
                                 controlLabel: 'required min5',
-                                validationType: ControlValidatorValidationType.AtExit
+                                validationType: ControlValidatorValidationType.Correction
                             })
                         ]
                     )
