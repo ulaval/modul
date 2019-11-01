@@ -10,20 +10,27 @@
             box-shadow: 0 0 2000px 2000px rgba($m-color--grey-dark, 0.5);
         }
 
+        /deep/ .cr-slider-wrap {
+            height: 30px;
+        }
+
         /deep/ .cr-slider {
             width: 180px;
+            padding: 0;
+            margin: 0;
+            height: 18px;
         }
     }
 
     &__icon-small {
         position: absolute;
-        bottom: 2px;
+        bottom: 12px;
         left: 50px;
     }
 
     &__icon-big {
         position: absolute;
-        bottom: -1px;
+        bottom: 8px;
         right: 40px;
     }
 }
