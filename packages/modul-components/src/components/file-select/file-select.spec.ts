@@ -111,8 +111,6 @@ describe('file-select', () => {
 
     });
 
-
-
     it('it should support optional store name prop', () => {
         const fileSelect: Wrapper<MFileSelect> = mount(MFileSelect, {
             propsData: {

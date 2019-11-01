@@ -73,7 +73,7 @@ export class MPhotoEditor extends ModulVue {
     }
 
     deleteImage(): void {
-        if (this.modeSelect) {
+        if (this.selectMode) {
             this.$emit('delete');
         } else {
             this.initialize();
@@ -81,7 +81,7 @@ export class MPhotoEditor extends ModulVue {
     }
 
     cancel(): void {
-        if (this.modeSelect) {
+        if (this.selectMode) {
             this.close();
         } else {
             this.initialize();
@@ -97,11 +97,15 @@ export class MPhotoEditor extends ModulVue {
     }
 
     get showDeleteButton(): boolean {
-        return !!this.urlPhoto || !this.modeSelect;
+        return !!this.urlPhoto || this.cropMode;
     }
 
-    get modeSelect(): boolean {
+    get selectMode(): boolean {
         return this.photoEditorMode === MPhotoEditorMode.SELECT;
+    }
+
+    get cropMode(): boolean {
+        return this.photoEditorMode === MPhotoEditorMode.CROP;
     }
 
     get imageSelected(): MFile | undefined {

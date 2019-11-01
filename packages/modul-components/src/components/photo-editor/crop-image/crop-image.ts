@@ -57,7 +57,7 @@ export class MCropImage extends ModulVue {
     crop(): void {
         if (this.croppie) {
             this.croppie.result({
-                format: this.imageWithTransparency ? MExportFormat.PNG : MExportFormat.JPG,
+                format: this.imageExtension,
                 type: 'blob',
                 circle: false
             }).then((imageCropped: Blob) => {
@@ -73,8 +73,8 @@ export class MCropImage extends ModulVue {
         );
     }
 
-    get imageWithTransparency(): boolean {
-        return this.image.extension === 'png' || this.image.extension === 'gif';
+    get imageExtension(): MExportFormat {
+        return this.image.extension === 'png' || this.image.extension === 'gif' ? MExportFormat.PNG : MExportFormat.JPG;
     }
 
 }

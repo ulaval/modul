@@ -25,7 +25,6 @@ const getStubs: any = () => {
 
 describe('MCropImage', () => {
     let localVue: VueConstructor<Vue>;
-
     let wrapper: Wrapper<MPhotoEditor>;
 
     beforeEach(() => {
@@ -39,7 +38,7 @@ describe('MCropImage', () => {
         });
     });
 
-    describe(`when clicking of the close button of the modal`, () => {
+    describe(`when closing the modal`, () => {
         it('should manage event "close"', async () => {
             wrapper.setMethods({ close: jest.fn() });
 

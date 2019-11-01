@@ -4,7 +4,6 @@ import { createMockFile } from '../../../../tests/helpers/file';
 import { MFile, MFileStatus } from '../../../utils/file/file';
 import CropImagePlugin, { MCropImage } from './crop-image';
 
-
 describe('MCropImage', () => {
     let localVue: VueConstructor<Vue>;
 
@@ -43,6 +42,5 @@ describe('MCropImage', () => {
             expect(wrapper.emitted('image-cropped')[0]).toEqual([mockFile]);
         });
     });
-
 
 });

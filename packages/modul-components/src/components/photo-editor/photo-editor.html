@@ -13,7 +13,7 @@
                    :skin="skinDelete"
                    @click="deleteImage"
                    ref="deleteButton"></m-icon-button>
-    <m-image-displayer v-if="modeSelect"
+    <m-image-displayer v-if="selectMode"
                        :url-photo="urlPhoto"></m-image-displayer>
     <m-crop-image v-else
                   :image="imageToCrop"
@@ -21,7 +21,7 @@
                   ref="cropImage"></m-crop-image>
 
     <template #footer>
-        <m-file-select v-if="modeSelect"
+        <m-file-select v-if="selectMode"
                        class="m-photo-editor__button"
                        :store-name="storeName"
                        :full-size="true"
