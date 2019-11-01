@@ -48,10 +48,10 @@ describe('MCropImage', () => {
             expect(wrapper.vm.close).toHaveBeenCalledWith();
         });
 
-        it('should emit update:open with the good parameter', () => {
+        it('should emit close', () => {
             wrapper.vm.close();
 
-            expect(wrapper.emitted('update:open')[0]).toEqual([false]);
+            expect(wrapper.emitted('close')).toBeDefined();
         });
 
     });
@@ -92,19 +92,19 @@ describe('MCropImage', () => {
         });
 
         it('should manage the event "image-cropped"', async () => {
-            wrapper.setMethods({ confirmImage: jest.fn() });
+            wrapper.setMethods({ saveImage: jest.fn() });
 
             wrapper.find(REF_CROP_IMAGE).vm.$emit('image-cropped');
 
-            expect(wrapper.vm.confirmImage).toHaveBeenCalledWith();
+            expect(wrapper.vm.saveImage).toHaveBeenCalledWith();
         });
 
-        it(`should emit "save-image" with the image cropped`, () => {
+        it(`should emit "save" with the image cropped`, () => {
             const mockFile: File = createMockFile('test.jpg');
 
-            wrapper.vm.confirmImage(mockFile);
+            wrapper.vm.saveImage(mockFile);
 
-            expect(wrapper.emitted('save-image')[0]).toEqual([mockFile]);
+            expect(wrapper.emitted('save')[0]).toEqual([mockFile]);
         });
 
         it('should manage the click event', async () => {

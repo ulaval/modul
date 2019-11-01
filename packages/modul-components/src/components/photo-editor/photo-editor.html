@@ -5,7 +5,8 @@
          :close-on-backdrop="false"
          @close="close"
          ref="modal">
-    <m-icon-button class="m-photo-editor__delete"
+    <m-icon-button v-if="urlPhoto"
+                   class="m-photo-editor__delete"
                    icon-name="m-svg__delete"
                    icon-size="20px"
                    :title="i18nDelete"
@@ -16,7 +17,7 @@
                        :url-photo="urlPhoto"></m-image-displayer>
     <m-crop-image v-else
                   :image="imageToCrop"
-                  @image-cropped="confirmImage"
+                  @image-cropped="saveImage"
                   ref="cropImage"></m-crop-image>
 
     <template #footer>

@@ -68,8 +68,8 @@ export class MPhotoEditor extends ModulVue {
         }
     }
 
-    confirmImage(imageCropped: File): void {
-        this.$emit('save-image', imageCropped);
+    saveImage(imageCropped: File): void {
+        this.$emit('save', imageCropped);
     }
 
     deleteImage(): void {
@@ -89,7 +89,7 @@ export class MPhotoEditor extends ModulVue {
     }
 
     close(): void {
-        this.$emit('update:open', false);
+        this.$emit('close');
     }
 
     crop(): void {
