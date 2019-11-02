@@ -123,4 +123,8 @@ export const TYPEAHEAD_NAME: string = 'm-typeahead';
 export const VALIDATION_MESSAGE_NAME: string = 'm-validation-message';
 export const INTEGERFIELD_NAME: string = 'm-integerfield';
 export const SELECT_NAME: string = 'm-select';
+export const POWER_FORM_NAME: string = 'm-power-form';
+export const POWER_FORM_GROUP_NAME: string = 'm-power-form-group';
+export const POWER_FORM_ARRAY_NAME: string = 'm-power-form-array';
+export const POWER_FORM_CONTROL_NAME: string = 'm-power-form-control';
 

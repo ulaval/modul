@@ -1,0 +1,12 @@
+<div>
+    <m-form :form-group="formGroup"
+            @submit="submit()"
+            @reset="reset()">
+
+        <template v-for="(control, index) in formGroup.controls"
+                  :key="index">
+
+        </template>
+
+    </m-form>
+</div>
