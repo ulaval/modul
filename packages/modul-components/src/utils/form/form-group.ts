@@ -2,12 +2,9 @@ import Vue from 'vue';
 import { AbstractControl } from './abstract-control';
 import { ControlError } from './control-error';
 import { ControlOptions } from './control-options';
-import { FormArray } from './form-array';
-import { FormControl } from './form-control';
 import { ControlValidator } from './validators/control-validator';
 
 export class FormGroup<T = any> extends AbstractControl {
-
     constructor(
         private _controls: { [name: string]: AbstractControl },
         public readonly validators: ControlValidator[] = [],
@@ -15,48 +12,6 @@ export class FormGroup<T = any> extends AbstractControl {
     ) {
         super(validators, options);
         this.setupControlsParent();
-    }
-
-    public static FromInstance<T>(instance: T): FormGroup<T> {
-        const buildFromPrimitive: Function = <P>(p: P): FormControl<P> => {
-            return new FormControl<typeof p>([], {
-                initialValue: p
-            });
-        };
-
-        const buildFromArray: Function = (a: any[]): FormArray => {
-            return new FormArray(
-                a.map(e => {
-                    if (typeof e === 'object') {
-                        return buildFromObject(e);
-                    } else if (Array.isArray(e)) {
-                        return buildFromArray(e);
-                    } else {
-                        return buildFromPrimitive(e);
-                    }
-                })
-            );
-        };
-
-        const buildFromObject: Function = (o): FormGroup => {
-            const keys: string[] = Object.keys(o);
-            const values: any[] = Object.values(o);
-
-            return new this(
-                values.reduce((acc: T, cur, index) => {
-                    if (typeof cur === 'object') {
-                        acc[keys[index]] = buildFromObject(cur);
-                    } else if (Array.isArray(cur)) {
-                        acc[keys[index]] = buildFromArray(cur);
-                    } else {
-                        acc[keys[index]] = buildFromPrimitive(cur);
-                    }
-                    return acc;
-                }, {})
-            );
-        };
-
-        return buildFromObject(instance);
     }
 
     /**
