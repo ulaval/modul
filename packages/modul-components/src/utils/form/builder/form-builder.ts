@@ -14,17 +14,23 @@ import { ControlValidator } from '../validators/control-validator';
 
 export function FormControlValidators(controlValidators: ControlValidator[]): any {
     return function(target: any, key?: string): any {
-        if (key) {
-            Object.defineProperty(target, `${key}FormControlValidators`, {
-                get: () => {
-                    return controlValidators;
-                }
-            });
+        let prototype: any;
+        let property: string;
 
-            return;
+        if (!key) {
+            prototype = target.prototype;
+            property = `FormControlValidators`;
+        } else {
+            prototype = target;
+            property = `${key}FormControlValidators`;
         }
 
-        (target as Function).prototype['FormControlValidators'] = controlValidators;
+        Object.defineProperty(prototype, property, {
+            get: () => {
+                return controlValidators;
+            },
+            writable: false
+        });
     };
 }
 

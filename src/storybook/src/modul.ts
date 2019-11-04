@@ -39,7 +39,6 @@ import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/over
 import PaginationPlguin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
 import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
-import MPowerFormPlugin from '@ulaval/modul-components/dist/components/power-form/power-form';
 import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/progress';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
 import SearchfieldPlugin from '@ulaval/modul-components/dist/components/searchfield/searchfield';
@@ -159,7 +158,6 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(IntegerfieldPlugin);
 
         Vue.use(FormPlugin);
-        Vue.use(MPowerFormPlugin);
 
         // modul-website
         Vue.use(ComponentExamplesPlugin);

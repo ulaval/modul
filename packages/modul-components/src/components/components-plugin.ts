@@ -61,7 +61,6 @@ import PhoneNumberPlugin from './phone-number/phone-number';
 import PlusPlugin from './plus/plus';
 import PopperPlugin from './popper/popper';
 import PopupPlugin from './popup/popup';
-import MPowerFormPlugin from './power-form/power-form';
 import ProgressPluggin from './progress/progress';
 import RadioGroupPlugin from './radio-group/radio-group';
 import RadioStylePlugin from './radio-style/radio-style';
@@ -207,7 +206,6 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(TypeaheadPlugin);
         Vue.use(ValidationMessagePlugin);
         Vue.use(InplaceEditPlugin);
-        Vue.use(MPowerFormPlugin);
     }
 };
 
