@@ -1,12 +1,3 @@
-// export type FormStructValue = FormStruct | FormStruct[] | ControlValidator[] | undefined | 'skip';
-// export type FormStructParent = { 'parent'?: ControlValidator[] };
-// export type FormStructChildren = { [key: string]: FormStructValue };
-// export type FormStructTree = FormStructParent & FormStructChildren;
-// export interface FormStruct extends FormStructTree { }
-// export interface IFormStruct {
-//     formStruct(): FormStruct;
-// }
-import 'reflect-metadata';
 import { FormArray } from '../form-array';
 import { FormControl } from '../form-control';
 import { FormGroup } from '../form-group';
