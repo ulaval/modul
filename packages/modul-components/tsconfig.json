@@ -1,5 +1,6 @@
 {
     "extends": "../../tsconfig.json",
+    "experimentalDecorators": true,
     "include": [
         "src/**/*.ts",
         "tests/**/*.ts"

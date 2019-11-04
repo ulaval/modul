@@ -1,7 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import FormBuilder from '../../utils/form/form-builder';
+import FormBuilder from '../../utils/form/builder/form-builder';
 import { FormGroup } from '../../utils/form/form-group';
 import { ModulVue } from '../../utils/vue/vue';
 import { POWER_FORM_GROUP_NAME, POWER_FORM_NAME } from '../component-names';
