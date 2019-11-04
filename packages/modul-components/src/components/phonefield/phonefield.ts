@@ -8,13 +8,14 @@ import { InputManagement } from '../../mixins/input-management/input-management'
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { FRENCH } from '../../utils/i18n/i18n';
-import { SpritesPluginOptions, SpritesService } from '../../utils/svg/sprites';
+import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { PHONEFIELD_NAME } from '../component-names';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
 import InputStyle from '../input-style/input-style';
 import { MSelect } from '../select/select';
+import OpacityTransitionPlugin from '../transitions/opacity-transition/opacity-transition';
 import ValidationMesagePlugin from '../validation-message/validation-message';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
@@ -64,6 +65,11 @@ export class MPhonefield extends ModulVue {
     })
     public country: any;
 
+    @Prop({
+        default: false
+    })
+    public externalSprite: boolean;
+
     public $refs: {
         inputMask: MInputMask;
     };
@@ -81,6 +87,21 @@ export class MPhonefield extends ModulVue {
     i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
     i18nExample: string = this.$i18n.translate('m-phonefield:example');
+
+    beforeMount(): void {
+        // sprites-flags.svg is a very big file, this is why sprites should only be added to the DOM before this component is mounted.
+        const sprites: string = require('../../assets/icons/sprites-flags.svg');
+        const svg: SpritesService = this.$svg;
+        if (this.externalSprite) {
+            if (svg.isInExternalSprites('mflag')) {
+                svg.addExternalSprites(sprites, 'mflag');
+            }
+        } else {
+            if (!document.getElementById('mflag-svg__flag-ae')) {
+                svg.addInternalSprites(sprites);
+            }
+        }
+    }
 
     @Emit('input')
     emitNewValue(_newValue: string): void { }
@@ -209,26 +230,10 @@ export class MPhonefield extends ModulVue {
 }
 
 const PhonefieldPlugin: PluginObject<any> = {
-    install(v, options: SpritesPluginOptions = { externalSprites: false }): void {
+    install(v): void {
         v.use(InputStyle);
         v.use(ValidationMesagePlugin);
-
-        const svg: SpritesService = (v.prototype).$svg;
-        if (svg) {
-            const sprites: string = require('../../assets/icons/sprites-flags.svg');
-
-            if (options.externalSprites) {
-                svg.addExternalSprites(sprites, 'mflag');
-            } else {
-                svg.addInternalSprites(sprites);
-            }
-        } else {
-            v.prototype.$log.error(
-                'PhonefieldPlugin.install -> You must use the svg plugin.'
-            );
-        }
-
-
+        v.use(OpacityTransitionPlugin);
         v.component(PHONEFIELD_NAME, MPhonefield);
     }
 };
