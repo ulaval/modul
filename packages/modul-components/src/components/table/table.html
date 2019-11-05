@@ -80,10 +80,10 @@
                 <slot name="row"
                       :data="row">
                     <td v-for="column in columnsInternal"
-                        :class="{ 'm--is-sortable': column.sortable,
+                        :class="[{ 'm--is-sortable': column.sortable,
                                   'm--is-text-align-center': isColumnTextAlignCenter(column),
                                   'm--is-text-align-left': isColumnTextAlignLeft(column),
-                                  'm--is-text-align-right': isColumnTextAlignRight(column), }"
+                                  'm--is-text-align-right': isColumnTextAlignRight(column) }, column.class]"
                         :key="'body.' + column.id">
                         <slot :name="'body.' + column.dataProp"
                               :data="row">{{ row[column.dataProp] }}</slot>

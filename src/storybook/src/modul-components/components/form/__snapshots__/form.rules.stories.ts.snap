@@ -1,0 +1,1741 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
+<div>
+  <h2>
+    Live check username availability (async)
+  </h2>
+   
+  <p>
+    'John', 'Jane' and 'Doe' are reserved
+  </p>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-textfield m--has-label m--is-type-text"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="mTextfield-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Username
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-textfield__validation"
+      >
+        <div
+          class="m-validation-message m-textfield__validation__message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`] = `
+<div>
+  <h2>
+    Checkbox 2 to 5 selections
+  </h2>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <p>
+      <strong>
+        Select 2 to 5 roles :
+      </strong>
+    </p>
+     
+    <ul
+      class="m-u--no-margin"
+    >
+      <div
+        class="m-input-group"
+      >
+        <!---->
+         
+        <div
+          class="m-input-group__body"
+        >
+          <div
+            class="m-validation-message m-input-group__message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-group__content"
+          >
+            <li>
+              <div
+                class="m-checkbox m--is-checkbox-left"
+              >
+                <input
+                  class="m-checkbox__hidden"
+                  id="mCheckbox-fakeId"
+                  type="checkbox"
+                />
+                 
+                <!---->
+                 
+                <label
+                  class="m-checkbox__wrap"
+                  for="mCheckbox-fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-checkbox__input"
+                  >
+                    <span
+                      class="m-checkbox__input__icon"
+                    />
+                  </span>
+                   
+                  <span
+                    class="m-checkbox__label"
+                  >
+                    
+                            Sys admin
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-validation-message m-checkbox__message"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="m-checkbox m--is-checkbox-left"
+              >
+                <input
+                  class="m-checkbox__hidden"
+                  id="mCheckbox-fakeId"
+                  type="checkbox"
+                />
+                 
+                <!---->
+                 
+                <label
+                  class="m-checkbox__wrap"
+                  for="mCheckbox-fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-checkbox__input"
+                  >
+                    <span
+                      class="m-checkbox__input__icon"
+                    />
+                  </span>
+                   
+                  <span
+                    class="m-checkbox__label"
+                  >
+                    
+                            Unit admin
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-validation-message m-checkbox__message"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="m-checkbox m--is-checkbox-left"
+              >
+                <input
+                  class="m-checkbox__hidden"
+                  id="mCheckbox-fakeId"
+                  type="checkbox"
+                />
+                 
+                <!---->
+                 
+                <label
+                  class="m-checkbox__wrap"
+                  for="mCheckbox-fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-checkbox__input"
+                  >
+                    <span
+                      class="m-checkbox__input__icon"
+                    />
+                  </span>
+                   
+                  <span
+                    class="m-checkbox__label"
+                  >
+                    
+                            Conceptor
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-validation-message m-checkbox__message"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="m-checkbox m--is-checkbox-left"
+              >
+                <input
+                  class="m-checkbox__hidden"
+                  id="mCheckbox-fakeId"
+                  type="checkbox"
+                />
+                 
+                <!---->
+                 
+                <label
+                  class="m-checkbox__wrap"
+                  for="mCheckbox-fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-checkbox__input"
+                  >
+                    <span
+                      class="m-checkbox__input__icon"
+                    />
+                  </span>
+                   
+                  <span
+                    class="m-checkbox__label"
+                  >
+                    
+                            Assitant
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-validation-message m-checkbox__message"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="m-checkbox m--is-checkbox-left"
+              >
+                <input
+                  class="m-checkbox__hidden"
+                  id="mCheckbox-fakeId"
+                  type="checkbox"
+                />
+                 
+                <!---->
+                 
+                <label
+                  class="m-checkbox__wrap"
+                  for="mCheckbox-fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-checkbox__input"
+                  >
+                    <span
+                      class="m-checkbox__input__icon"
+                    />
+                  </span>
+                   
+                  <span
+                    class="m-checkbox__label"
+                  >
+                    
+                            Moderator
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-validation-message m-checkbox__message"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="m-checkbox m--is-checkbox-left"
+              >
+                <input
+                  class="m-checkbox__hidden"
+                  id="mCheckbox-fakeId"
+                  type="checkbox"
+                />
+                 
+                <!---->
+                 
+                <label
+                  class="m-checkbox__wrap"
+                  for="mCheckbox-fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-checkbox__input"
+                  >
+                    <span
+                      class="m-checkbox__input__icon"
+                    />
+                  </span>
+                   
+                  <span
+                    class="m-checkbox__label"
+                  >
+                    
+                            Student
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-validation-message m-checkbox__message"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="m-checkbox m--is-checkbox-left"
+              >
+                <input
+                  class="m-checkbox__hidden"
+                  id="mCheckbox-fakeId"
+                  type="checkbox"
+                />
+                 
+                <!---->
+                 
+                <label
+                  class="m-checkbox__wrap"
+                  for="mCheckbox-fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-checkbox__input"
+                  >
+                    <span
+                      class="m-checkbox__input__icon"
+                    />
+                  </span>
+                   
+                  <span
+                    class="m-checkbox__label"
+                  >
+                    
+                            Invited
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-validation-message m-checkbox__message"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+          </div>
+        </div>
+      </div>
+    </ul>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
+<div>
+  <h2>
+    More than one validations (course code)
+  </h2>
+   
+  <p>
+    'MAT-0000' and 'MAT-0001' are reserved
+  </p>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-textfield m--has-label m--is-type-text"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="mTextfield-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Course code (ex. : MAT-1000)
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-textfield__validation"
+      >
+        <div
+          class="m-validation-message m-textfield__validation__message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
+<div>
+  <h2>
+    Email confirmation
+  </h2>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-input-group"
+      legend=""
+    >
+      <!---->
+       
+      <div
+        class="m-input-group__body"
+      >
+        <div
+          class="m-validation-message m-input-group__message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-group__content"
+        >
+          <div
+            class="m-textfield m--has-label m--is-type-text"
+            style="width: 100%; max-width: 288px;"
+          >
+            <div
+              class="m-input-style m--has-label m--is-tag-default"
+              style="margin-top: 10px;"
+            >
+              <div
+                class="m-input-style__main"
+              >
+                <div
+                  class="m-input-style__body"
+                >
+                  <label
+                    class="m-input-style__label"
+                    for="mTextfield-fakeId"
+                    style="margin-right: 0px;"
+                  >
+                    <span
+                      class="m-input-style__text"
+                    >
+                      <span>
+                        Email
+                      </span>
+                       
+                      <!---->
+                    </span>
+                  </label>
+                   
+                  <div
+                    class="m-input-style__input"
+                  >
+                    <!---->
+                     
+                    <div
+                      class="m-input-style__content"
+                    >
+                      <input
+                        class="m-textfield__input"
+                        id="mTextfield-fakeId"
+                        maxlength="Infinity"
+                        type="text"
+                      />
+                         
+                      <!---->
+                       
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="m-input-style__suffix"
+                    >
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+             
+            <div
+              class="m-textfield__validation"
+            >
+              <div
+                class="m-validation-message m-textfield__validation__message"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+           
+          <div
+            class="m-textfield m--has-label m--is-type-text"
+            style="width: 100%; max-width: 288px;"
+          >
+            <div
+              class="m-input-style m--has-label m--is-tag-default"
+              style="margin-top: 10px;"
+            >
+              <div
+                class="m-input-style__main"
+              >
+                <div
+                  class="m-input-style__body"
+                >
+                  <label
+                    class="m-input-style__label"
+                    for="mTextfield-fakeId"
+                    style="margin-right: 0px;"
+                  >
+                    <span
+                      class="m-input-style__text"
+                    >
+                      <span>
+                        Email confirmation
+                      </span>
+                       
+                      <!---->
+                    </span>
+                  </label>
+                   
+                  <div
+                    class="m-input-style__input"
+                  >
+                    <!---->
+                     
+                    <div
+                      class="m-input-style__content"
+                    >
+                      <input
+                        class="m-textfield__input"
+                        id="mTextfield-fakeId"
+                        maxlength="Infinity"
+                        type="text"
+                      />
+                         
+                      <!---->
+                       
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="m-input-style__suffix"
+                    >
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+             
+            <div
+              class="m-textfield__validation"
+            >
+              <div
+                class="m-validation-message m-textfield__validation__message"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
+<div>
+  <h2>
+    Format without fixed max characters (email)
+  </h2>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-textfield m--has-label m--is-type-text"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="mTextfield-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Email
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-textfield__validation"
+      >
+        <div
+          class="m-validation-message m-textfield__validation__message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
+<div>
+  <h2>
+    Format with fixed max characters (postal code)
+  </h2>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-textfield m--has-label m--is-type-text"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="mTextfield-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Postal code
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-textfield__validation"
+      >
+        <div
+          class="m-validation-message m-textfield__validation__message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
+<div>
+  <h2>
+    Radio button required
+  </h2>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-radio-group"
+    >
+      <div
+        class="m-input-group"
+      >
+        <p
+          class="m-input-group__label"
+          id="fakeId"
+        >
+          Select a role :
+          <!---->
+           
+          <!---->
+        </p>
+         
+        <div
+          class="m-input-group__body"
+        >
+          <div
+            class="m-validation-message m-input-group__message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            aria-labelledby="fakeId"
+            class="m-input-group__content"
+          >
+             
+            <ul
+              class="m-radio-group__body"
+              role="radiogroup"
+            >
+              <li
+                class="m-radio"
+              >
+                <input
+                  class="m-radio__hidden"
+                  id="fakeId"
+                  name="fakeId"
+                  type="radio"
+                  value="Sys admin"
+                />
+                 
+                <label
+                  class="m-radio__wrap"
+                  for="fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-radio__input"
+                  />
+                   
+                  <span
+                    class="m-radio__label"
+                  >
+                    Sys admin
+                  </span>
+                </label>
+              </li>
+               
+              <li
+                class="m-radio"
+              >
+                <input
+                  class="m-radio__hidden"
+                  id="fakeId"
+                  name="fakeId"
+                  type="radio"
+                  value="Unit admin"
+                />
+                 
+                <label
+                  class="m-radio__wrap"
+                  for="fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-radio__input"
+                  />
+                   
+                  <span
+                    class="m-radio__label"
+                  >
+                    Unit admin
+                  </span>
+                </label>
+              </li>
+               
+              <li
+                class="m-radio"
+              >
+                <input
+                  class="m-radio__hidden"
+                  id="fakeId"
+                  name="fakeId"
+                  type="radio"
+                  value="Conceptor"
+                />
+                 
+                <label
+                  class="m-radio__wrap"
+                  for="fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-radio__input"
+                  />
+                   
+                  <span
+                    class="m-radio__label"
+                  >
+                    Conceptor
+                  </span>
+                </label>
+              </li>
+               
+              <li
+                class="m-radio"
+              >
+                <input
+                  class="m-radio__hidden"
+                  id="fakeId"
+                  name="fakeId"
+                  type="radio"
+                  value="Assistant"
+                />
+                 
+                <label
+                  class="m-radio__wrap"
+                  for="fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-radio__input"
+                  />
+                   
+                  <span
+                    class="m-radio__label"
+                  >
+                    Assistant
+                  </span>
+                </label>
+              </li>
+               
+              <li
+                class="m-radio"
+              >
+                <input
+                  class="m-radio__hidden"
+                  id="fakeId"
+                  name="fakeId"
+                  type="radio"
+                  value="Student"
+                />
+                 
+                <label
+                  class="m-radio__wrap"
+                  for="fakeId"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="m-radio__input"
+                  />
+                   
+                  <span
+                    class="m-radio__label"
+                  >
+                    Student
+                  </span>
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1`] = `
+<div>
+  <h2>
+    Required and 5 characters min
+  </h2>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-textfield m--has-label m--is-type-text"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="mTextfield-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Security answer
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-textfield__validation"
+      >
+        <div
+          class="m-validation-message m-textfield__validation__message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 1`] = `
+<div>
+  <h2>
+    Required and 20 characters max
+  </h2>
+   
+  <form
+    class="m-form m-u--margin-top"
+    novalidate="novalidate"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-textfield m--has-label m--is-type-text"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="mTextfield-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Title
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-textfield__validation"
+      >
+        <div
+          class="m-validation-message m-textfield__validation__message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-character-count m-textfield__validation__character-count"
+        >
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <p
+      class="m-u--margin-bottom--l"
+    >
+      <button
+        class="m-button m--is-skin-primary"
+        type="submit"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Submit 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <button
+        class="m-button m--is-skin-secondary"
+        type="reset"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Reset 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </p>
+  </form>
+</div>
+`;

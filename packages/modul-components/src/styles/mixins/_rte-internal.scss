@@ -48,3 +48,18 @@ $m-fr-btn-popup-size: 38px;
         }
     }
 }
+
+div[id*="dropdown-menu-align"] .fr-dropdown-wrapper.fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list.fr-dropdown-list {
+    min-width: 0;
+    padding: 0;
+
+    li {
+        a {
+            padding: $m-margin;
+        }
+    }
+}
+
+.fr-box .fr-counter.fr-counter {
+    padding-bottom: 0;
+}
