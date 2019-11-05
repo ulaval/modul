@@ -21,9 +21,8 @@
     }
 
     &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: $m-spacing;
+        display: grid;
+        grid-template-columns: auto auto;
     }
 
     &__country {
@@ -91,7 +90,6 @@
     }
 
     &__example {
-        position: absolute;
         margin-top: $m-spacing--xs;
         color: $m-color--grey-dark;
         font-size: $m-font-size--xs;
