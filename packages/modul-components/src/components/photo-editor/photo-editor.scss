@@ -3,6 +3,15 @@
 .m-photo-editor {
     position: relative;
 
+    &__message {
+        margin-bottom: $m-spacing;
+    }
+
+    &__file-name {
+        margin-top: 0;
+        font-weight: $m-font-weight--regular;
+    }
+
     &__delete {
         position: absolute;
         right: $m-spacing--l;

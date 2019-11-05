@@ -2,17 +2,18 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { MFile } from '../../utils/file/file';
+import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButtonSkin } from '../button/button';
 import { PHOTO_EDITOR_NAME } from '../component-names';
 import { MIconButtonSkin } from '../icon-button/icon-button';
+import MessagePlugin, { MMessageState } from '../message/message';
 import { MModalSize } from '../modal/modal';
 import CropImagePlugin, { MCropImage } from './crop-image/crop-image';
 import ImageDisplayerPlugin from './image-displayer/image-displayer';
 import WithRender from './photo-editor.html?style=./photo-editor.scss';
 
-// Changer en MPhotoEditorSteps?
 export enum MPhotoEditorMode {
     SELECT = 'select',
     CROP = 'crop'
@@ -52,6 +53,7 @@ export class MPhotoEditor extends ModulVue {
     primaryButton: MButtonSkin.Primary = MButtonSkin.Primary;
     secondaryButton: MButtonSkin.Secondary = MButtonSkin.Secondary;
     photoEditorMode: MPhotoEditorMode = MPhotoEditorMode.SELECT;
+    messageState: MMessageState = MMessageState.Error;
     imageToCrop: MFile = {} as MFile;
 
     @Watch('open', { immediate: true })
@@ -61,7 +63,7 @@ export class MPhotoEditor extends ModulVue {
     }
 
     replaceImage(): void {
-        if (this.imageSelected) {
+        if (this.imageSelected && this.validFile) {
             this.imageToCrop = this.imageSelected;
             this.imageToCrop.url = URL.createObjectURL(this.imageSelected.file);
             this.photoEditorMode = MPhotoEditorMode.CROP;
@@ -113,6 +115,17 @@ export class MPhotoEditor extends ModulVue {
         return images.length > 0 ? images[images.length - 1] : undefined;
     }
 
+    get validFile(): boolean {
+        if (this.imageSelected) {
+            return this.allowedExtensions.includes(this.imageSelected.extension);
+        }
+        return true;
+    }
+
+    get i18nFileError(): string {
+        return this.$i18n.translate('m-photo-editor:error-file', { extensions: this.allowedExtensions.join(', ').toUpperCase() }, 1, undefined, undefined, FormatMode.Sprintf);
+    }
+
 }
 
 const PhotoEditorPlugin: PluginObject<any> = {
@@ -120,6 +133,7 @@ const PhotoEditorPlugin: PluginObject<any> = {
         v.prototype.$log.debug(PHOTO_EDITOR_NAME, 'plugin.install');
         v.use(ImageDisplayerPlugin);
         v.use(CropImagePlugin);
+        v.use(MessagePlugin);
         v.component(PHOTO_EDITOR_NAME, MPhotoEditor);
     }
 };
