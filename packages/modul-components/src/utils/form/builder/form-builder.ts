@@ -3,11 +3,11 @@ import { FormControl } from '../form-control';
 import { FormGroup } from '../form-group';
 import { ControlValidator } from '../validators/control-validator';
 
-export function ClassControlValidators(controlValidatators: ControlValidator[] = []): any {
+export function ClassFormControlValidators(controlValidatators: ControlValidator[] = []): any {
     return function(constructor: Function): any {
         Object.defineProperty(
             constructor.prototype,
-            `FormControlValidators`,
+            `form-control-validators`,
             {
                 get: () => controlValidatators
             }
@@ -15,16 +15,26 @@ export function ClassControlValidators(controlValidatators: ControlValidator[] =
     };
 }
 
-export function PropertyControlValidators(controlValidatators: ControlValidator[] = []): any {
+export function PropertyFormControlValidators(controlValidatators: ControlValidator[] = []): any {
     return function(target: any, key: string): any {
         Object.defineProperty(
             target,
-            `${key}FormControlValidators`,
+            `${key}-form-control-validators`,
             {
                 get: () => controlValidatators
             }
         );
     };
+}
+
+export function PropertyControlSkip(target: any, key: string): any {
+    Object.defineProperty(
+        target,
+        `${key}-form-control-skip`,
+        {
+            get: () => true
+        }
+    );
 }
 
 export default class FormBuilder {
@@ -34,22 +44,26 @@ export default class FormBuilder {
 
         return new FormGroup<T>(
             values.reduce((acc: T, cur, index) => {
+                if (object[`${keys[index]}-form-control-skip`]) {
+                    return acc;
+                }
+
                 if (Array.isArray(cur)) {
-                    acc[keys[index]] = this.Array(cur, object[`${keys[index]}FormControlValidators`] || []);
+                    acc[keys[index]] = this.Array(cur, object[`${keys[index]}-form-control-validators`] || []);
                 } else if (typeof cur === 'object') {
                     acc[keys[index]] = this.Group(cur);
                 } else {
-                    acc[keys[index]] = this.Control(cur, object[`${keys[index]}FormControlValidators`] || []);
+                    acc[keys[index]] = this.Control(cur, object[`${keys[index]}-form-control-validators`] || []);
                 }
                 return acc;
             }, {}),
-            object['FormControlValidators'] || []
+            object['form-control-validators'] || []
         );
     }
 
     public static Array(array: any[], controlValidators: ControlValidator[] = []): FormArray {
         return new FormArray(
-            array.map((e: any, index: number) => {
+            array.map(e => {
                 if (Array.isArray(e)) {
                     return this.Array(e);
                 } else if (typeof e === 'object') {

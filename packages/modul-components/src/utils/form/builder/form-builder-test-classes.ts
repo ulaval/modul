@@ -1,23 +1,26 @@
 import { CompareValidator } from '../validators/compare/compare';
 import { MinLengthValidator } from '../validators/min-length/min-length';
 import { RequiredValidator } from '../validators/required/required';
-import { ClassControlValidators, PropertyControlValidators } from './form-builder';
+import { ClassFormControlValidators, PropertyControlSkip, PropertyFormControlValidators } from './form-builder';
 
-@ClassControlValidators([CompareValidator(['name', 'lastname'])])
+@ClassFormControlValidators([CompareValidator(['name', 'lastname'])])
 export class TestFormBuilderUser {
-    @PropertyControlValidators([RequiredValidator(), MinLengthValidator(3)])
+    @PropertyControlSkip
     public id: number = 1;
-    @PropertyControlValidators([RequiredValidator()])
+    @PropertyFormControlValidators([RequiredValidator()])
     public name: string = '';
-    @PropertyControlValidators([RequiredValidator()])
+    @PropertyFormControlValidators([RequiredValidator()])
     public lastName: string = '';
-    @PropertyControlValidators([MinLengthValidator(2)])
+    @PropertyFormControlValidators([MinLengthValidator(2)])
     public favoritesColors: string[] = ['blue'];
     public address: TestFormBuilderAddress = new TestFormBuilderAddress();
 }
 
 export class TestFormBuilderAddress {
+    @PropertyControlSkip
+    public id: number = 1;
+    @PropertyFormControlValidators([RequiredValidator(), MinLengthValidator(3)])
     public street: string = '';
-    @PropertyControlValidators([RequiredValidator()])
+    @PropertyFormControlValidators([RequiredValidator()])
     public civicNumber: number = 1;
 }
