@@ -4,6 +4,8 @@
                :selected-items="selectedItems"
                :open.sync="open"
                :input-max-width="inputMaxWidth"
+               :virtual-scroll="virtualScroll"
+               :virtual-scroll-item-height="virtualScrollItemHeight"
                @open="onOpen"
                @close="onClose"
                @select-item="onSelect">

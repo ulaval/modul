@@ -54,7 +54,8 @@
 
     &__item-wrapper {
         display: flex;
-        align-items: center;
+        align-items: left;
+        width: 300px;
     }
 
     &__flag {
@@ -73,6 +74,7 @@
     &__item-dialCode {
         margin-left: $m-spacing--s;
         color: $m-color--grey;
+        white-space: nowrap;
     }
 
     &__number {
