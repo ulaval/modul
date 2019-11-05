@@ -1,11 +1,11 @@
 import { CompareValidator } from '../validators/compare/compare';
 import { MinLengthValidator } from '../validators/min-length/min-length';
 import { RequiredValidator } from '../validators/required/required';
-import { ClassFormControlValidators, PropertyControlSkip, PropertyFormControlValidators } from './form-builder';
+import { ClassFormControlValidators, PropertyFormControlSkip, PropertyFormControlValidators } from './form-builder';
 
 @ClassFormControlValidators([CompareValidator(['name', 'lastname'])])
 export class TestFormBuilderUser {
-    @PropertyControlSkip
+    @PropertyFormControlSkip
     public id: number = 1;
     @PropertyFormControlValidators([RequiredValidator()])
     public name: string = '';
@@ -17,7 +17,7 @@ export class TestFormBuilderUser {
 }
 
 export class TestFormBuilderAddress {
-    @PropertyControlSkip
+    @PropertyFormControlSkip
     public id: number = 1;
     @PropertyFormControlValidators([RequiredValidator(), MinLengthValidator(3)])
     public street: string = '';

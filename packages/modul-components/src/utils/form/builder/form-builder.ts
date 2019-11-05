@@ -27,7 +27,7 @@ export function PropertyFormControlValidators(controlValidatators: ControlValida
     };
 }
 
-export function PropertyControlSkip(target: any, key: string): any {
+export function PropertyFormControlSkip(target: any, key: string): any {
     Object.defineProperty(
         target,
         `${key}-form-control-skip`,
