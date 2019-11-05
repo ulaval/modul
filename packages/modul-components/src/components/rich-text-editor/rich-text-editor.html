@@ -6,7 +6,7 @@
     'm--is-focus' : isFocus,
     'm--has-label': hasLabel,
     'm--has-validation-message': hasValidationMessage  }"
-     @click.stop="onClick"
+     @click="onClick"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
     <m-input-style :disabled="isDisabled"
                    :waiting="isWaiting"
