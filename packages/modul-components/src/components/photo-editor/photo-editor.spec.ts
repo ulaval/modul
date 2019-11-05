@@ -2,6 +2,7 @@ import { createLocalVue, mount, RefSelector, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import { createMockFile } from '../../../tests/helpers/file';
 import { addMessages } from '../../../tests/helpers/lang';
+import FilePlugin from '../../utils/file/file';
 import { BUTTON_NAME, FILE_SELECT_NAME, ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
 import { CROP_IMAGE_NAME } from './component-names';
 import PhotoEditorPlugin, { MPhotoEditor, MPhotoEditorMode } from './photo-editor';
@@ -30,12 +31,15 @@ describe('MCropImage', () => {
     beforeEach(() => {
         localVue = createLocalVue();
         localVue.use(PhotoEditorPlugin);
+        localVue.use(FilePlugin);
         addMessages(localVue, ['components/photo-editor/photo-editor.lang.en.json']);
 
         wrapper = mount(MPhotoEditor, {
             localVue,
             stubs: getStubs()
         });
+
+        wrapper.vm.$file.files = jest.fn().mockReturnValue([]);
     });
 
     describe(`when closing the modal`, () => {
