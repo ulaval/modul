@@ -92,7 +92,7 @@ export class MPhonefield extends ModulVue {
         const sprites: string = require('../../assets/icons/sprites-flags.svg');
         const svg: SpritesService = this.$svg;
         if (this.externalSprite) {
-            if (svg.isInExternalSprites('mflag')) {
+            if (!svg.isInExternalSprites('mflag')) {
                 svg.addExternalSprites(sprites, 'mflag');
             }
         } else {
