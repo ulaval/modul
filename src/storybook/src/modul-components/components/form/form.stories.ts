@@ -18,6 +18,7 @@ import { RequiredValidator } from '@ulaval/modul-components/dist/utils/form/vali
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
+
 const ROLE_NAMES: string[] = ['Sys admin', 'Unit admin', 'Conceptor', 'Assitant', 'Moderator', 'Student', 'Invited'];
 const TYPE_NAMES: string[] = ['douce', 'blanche', 'sec'];
 const COUPE_NAMES: string[] = ['régulière', 'julienne', 'ondulé'];
