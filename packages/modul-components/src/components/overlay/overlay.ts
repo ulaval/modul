@@ -58,9 +58,13 @@ export class MOverlay extends ModulVue {
     }
 
     private onFocusOut(): void {
-        if (this.isAndroid) {
-            this.hasKeyboard = false;
+        if (!this.isAndroid) {
+            return;
         }
+
+        setTimeout(() => {
+            this.hasKeyboard = false;
+        });
     }
 
     private handlesFocus(): boolean {
