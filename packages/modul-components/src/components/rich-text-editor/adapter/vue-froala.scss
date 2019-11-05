@@ -161,6 +161,10 @@ $m-froala-toolbar-btn-height: 38px !default;
                     background-color: $m-color--success;
                 }
             }
+
+            .vue-froala {
+                overflow: unset;
+            }
         }
 
         .fr-sticky-dummy + .fr-sticky-dummy {

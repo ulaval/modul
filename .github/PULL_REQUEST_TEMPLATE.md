@@ -31,7 +31,7 @@ Content can be written in English or in French
 ## Inclure cette section dans les release notes
 <!-- Pour chaque breaking changes , inscrire la description du changement et les instructions pour la migration -->
 
-## Liens vers les récits Jira
-<!-- Si vous êtes un contributeur interne, ajouter les liens vers vos billets Jira. -->
+## Liens internes
+<!-- Si vous êtes un contributeur interne, ajouter les liens vers vos billets Jira. ou déploiement dans openshift -->
 
 <!--  Merci d'avoir contribué! / Thanks for contributing! -->

@@ -1,6 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ICON_BUTTON_NAME } from '../component-names';
 import IconPlugin from '../icon/icon';
@@ -37,6 +37,9 @@ export class MIconButton extends Vue {
     public title: string;
 
     private hasSlot: boolean = false;
+
+    @Emit('keydown')
+    onKeydown(event: KeyboardEvent): void { }
 
     protected mounted(): void {
         this.hasSlot = !!this.$slots.default;

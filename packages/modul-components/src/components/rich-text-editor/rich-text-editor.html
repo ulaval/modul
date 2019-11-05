@@ -6,7 +6,7 @@
     'm--is-focus' : isFocus,
     'm--has-label': hasLabel,
     'm--has-validation-message': hasValidationMessage  }"
-     @click="onClick"
+     @click.stop="onClick"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
     <m-input-style :disabled="isDisabled"
                    :waiting="isWaiting"
@@ -37,7 +37,8 @@
                 :disabled="disabled || waiting"
                 :custom-translations="customTranslations"
                 ref="input"
-                :readonly="readonly"></froala>
+                :readonly="readonly"
+                :min-rows="minRows"></froala>
     </m-input-style>
 
     <m-validation-message class="m-rich-text__validation-message"
