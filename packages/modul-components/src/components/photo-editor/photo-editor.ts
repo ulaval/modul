@@ -1,4 +1,3 @@
-import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { MFile } from '../../utils/file/file';
@@ -6,12 +5,11 @@ import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButtonSkin } from '../button/button';
-import { PHOTO_EDITOR_NAME } from '../component-names';
 import { MIconButtonSkin } from '../icon-button/icon-button';
-import MessagePlugin, { MMessageState } from '../message/message';
+import { MMessage, MMessageState } from '../message/message';
 import { MModalSize } from '../modal/modal';
-import CropImagePlugin, { MCropImage } from './crop-image/crop-image';
-import ImageDisplayerPlugin from './image-displayer/image-displayer';
+import { MCropImage } from './crop-image/crop-image';
+import { MImageDisplayer } from './image-displayer/image-displayer';
 import WithRender from './photo-editor.html?style=./photo-editor.scss';
 
 export enum MPhotoEditorMode {
@@ -20,7 +18,13 @@ export enum MPhotoEditorMode {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        MMessage,
+        MImageDisplayer,
+        MCropImage
+    }
+})
 export class MPhotoEditor extends ModulVue {
 
     @Prop({ default: '' })
@@ -128,14 +132,3 @@ export class MPhotoEditor extends ModulVue {
 
 }
 
-const PhotoEditorPlugin: PluginObject<any> = {
-    install(v, options): void {
-        v.prototype.$log.debug(PHOTO_EDITOR_NAME, 'plugin.install');
-        v.use(ImageDisplayerPlugin);
-        v.use(CropImagePlugin);
-        v.use(MessagePlugin);
-        v.component(PHOTO_EDITOR_NAME, MPhotoEditor);
-    }
-};
-
-export default PhotoEditorPlugin;

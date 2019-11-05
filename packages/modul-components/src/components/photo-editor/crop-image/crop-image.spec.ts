@@ -2,7 +2,7 @@ import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import { createMockFile } from '../../../../tests/helpers/file';
 import { MFile, MFileStatus } from '../../../utils/file/file';
-import CropImagePlugin, { MCropImage } from './crop-image';
+import { MCropImage } from './crop-image';
 
 describe('MCropImage', () => {
     let localVue: VueConstructor<Vue>;
@@ -20,7 +20,6 @@ describe('MCropImage', () => {
 
     beforeEach(() => {
         localVue = createLocalVue();
-        localVue.use(CropImagePlugin);
     });
 
     describe(`when cropping`, () => {

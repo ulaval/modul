@@ -39,7 +39,6 @@ import OptionPlugin from '@ulaval/modul-components/dist/components/option/option
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import PaginationPlguin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
-import PhotoEditorPlugin from '@ulaval/modul-components/dist/components/photo-editor/photo-editor';
 import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
 import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/progress';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
@@ -155,7 +154,6 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(CopyToClipboardPlugin);
         Vue.use(MultiSelectPlugin);
         Vue.use(SelectPlugin);
-        Vue.use(PhotoEditorPlugin);
 
         Vue.use(MoneyFieldPlugin);
         Vue.use(DecimalfieldPlugin);

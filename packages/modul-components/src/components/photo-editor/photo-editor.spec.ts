@@ -5,7 +5,7 @@ import { addMessages } from '../../../tests/helpers/lang';
 import FilePlugin from '../../utils/file/file';
 import { BUTTON_NAME, FILE_SELECT_NAME, ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
 import { CROP_IMAGE_NAME } from './component-names';
-import PhotoEditorPlugin, { MPhotoEditor, MPhotoEditorMode } from './photo-editor';
+import { MPhotoEditor, MPhotoEditorMode } from './photo-editor';
 
 const REF_MODAL: RefSelector = { ref: 'modal' };
 const REF_DELETE_BUTTON: RefSelector = { ref: 'deleteButton' };
@@ -30,7 +30,6 @@ describe('MCropImage', () => {
 
     beforeEach(() => {
         localVue = createLocalVue();
-        localVue.use(PhotoEditorPlugin);
         localVue.use(FilePlugin);
         addMessages(localVue, ['components/photo-editor/photo-editor.lang.en.json']);
 

@@ -1,12 +1,11 @@
 import Croppie, { CroppieOptions } from 'croppie';
 import 'croppie/croppie.css';
-import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { MFile } from '../../../utils/file/file';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MAvatarSize } from '../../avatar/avatar';
-import { CROP_IMAGE_NAME } from '../component-names';
+import { MIcon } from '../../icon/icon';
 import WithRender from './crop-image.html?style=./crop-image.scss';
 
 enum MExportFormat {
@@ -15,7 +14,9 @@ enum MExportFormat {
 }
 
 @WithRender
-@Component
+@Component({
+    components: { MIcon }
+})
 export class MCropImage extends ModulVue {
 
     @Prop({ required: true })
@@ -78,12 +79,3 @@ export class MCropImage extends ModulVue {
     }
 
 }
-
-const CropImagePlugin: PluginObject<any> = {
-    install(v, options): void {
-        v.prototype.$log.debug(CROP_IMAGE_NAME, 'plugin.install');
-        v.component(CROP_IMAGE_NAME, MCropImage);
-    }
-};
-
-export default CropImagePlugin;
