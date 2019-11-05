@@ -3,28 +3,29 @@ import { FormControl } from '../form-control';
 import { FormGroup } from '../form-group';
 import { ControlValidator } from '../validators/control-validator';
 
-export function FormControlValidators(controlValidators: ControlValidator[]): any {
-    return function(target: any, key?: string): any {
-        let prototype: any;
-        let property: string;
-
-        if (!key) {
-            prototype = target.prototype;
-            property = `FormControlValidators`;
-        } else {
-            prototype = target;
-            property = `${key}FormControlValidators`;
-        }
-
-        Object.defineProperty(prototype, property, {
-            get: () => {
-                return controlValidators;
-            },
-            writable: false
-        });
+export function ClassControlValidators(controlValidatators: ControlValidator[] = []): any {
+    return function(constructor: Function): any {
+        Object.defineProperty(
+            constructor.prototype,
+            `FormControlValidators`,
+            {
+                get: () => controlValidatators
+            }
+        );
     };
 }
 
+export function PropertyControlValidators(controlValidatators: ControlValidator[] = []): any {
+    return function(target: any, key: string): any {
+        Object.defineProperty(
+            target,
+            `${key}FormControlValidators`,
+            {
+                get: () => controlValidatators
+            }
+        );
+    };
+}
 
 export default class FormBuilder {
     public static Group<T>(object: T): FormGroup<T> {
@@ -57,7 +58,7 @@ export default class FormBuilder {
                     return this.Control(e);
                 }
             }),
-            controlValidators || []
+            controlValidators
         );
     }
 

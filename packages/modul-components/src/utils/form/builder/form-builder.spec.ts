@@ -37,8 +37,8 @@ describe('form-builder', () => {
         expect(formGroup.getControl('name').validators.length).toBe(1);
         expect(formGroup.getControl('lastName').validators.length).toBe(1);
         expect(formGroup.getControl('favoritesColors').validators.length).toBe(1);
-        expect(formGroup.getControl('address').validators.length).toBe(1);
-        expect(formGroup.getControl('address').getControl('steet').validators.length).toBe(0);
+        expect(formGroup.getControl('address').validators.length).toBe(0);
+        expect(formGroup.getControl('address').getControl('street').validators.length).toBe(0);
         expect(formGroup.getControl('address').getControl('civicNumber').validators.length).toBe(1);
     });
 });
