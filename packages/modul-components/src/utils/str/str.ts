@@ -477,5 +477,3 @@ export function normalizeString(str: string): string {
 }
 
 export const NBSP: string = '\xa0';
-
-

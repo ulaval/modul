@@ -1,7 +1,6 @@
 import { sprintf, vsprintf } from 'sprintf-js';
 import Vue, { PluginObject } from 'vue';
 
-
 declare module 'vue/types/vue' {
     interface Vue {
         $i18n: Messages;

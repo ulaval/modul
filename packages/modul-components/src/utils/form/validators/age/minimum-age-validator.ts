@@ -6,7 +6,6 @@ import { FormGroup } from '../../form-group';
 import { ControlValidator } from '../control-validator';
 import { ValidatorKeys } from '../validator-error-keys';
 
-
 function validationFunction(minimumAge: number): (formControl: FormGroup<any>) => boolean {
     return (formControl: FormGroup<any>): boolean => {
         const dateFormGroup: BirthdayFieldFormGroup = formControl as any;
