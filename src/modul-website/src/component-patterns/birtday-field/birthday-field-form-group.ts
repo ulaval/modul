@@ -1,4 +1,5 @@
 
+import { AbstractControl } from '@ulaval/modul-components/src/utils/form/abstract-control';
 import { FormControl } from '@ulaval/modul-components/src/utils/form/form-control';
 import { FormGroup } from '@ulaval/modul-components/src/utils/form/form-group';
 import { ControlValidator, ControlValidatorOptions } from '@ulaval/modul-components/src/utils/form/validators/control-validator';
