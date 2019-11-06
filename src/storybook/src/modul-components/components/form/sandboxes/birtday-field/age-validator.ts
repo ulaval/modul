@@ -1,5 +1,6 @@
 import { ControlValidatorValidationType } from '@ulaval/modul-components/dist/utils/form/control-validator-validation-type';
 import { ControlValidator } from '@ulaval/modul-components/dist/utils/form/validators/control-validator';
+// tslint:disable-next-line:import-blacklist
 import moment, { Moment } from 'moment';
 import BirthdayFieldFormGroup from './birthday-field-form-group';
 
