@@ -281,7 +281,6 @@ export class Messages {
         });
     }
 
-
     /**
      * Finds a key in the available messages or returns null.
      *
