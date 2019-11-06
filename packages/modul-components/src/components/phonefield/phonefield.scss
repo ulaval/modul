@@ -21,14 +21,17 @@
     }
 
     &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: $m-spacing;
+        display: grid;
+        grid-template-columns: auto auto;
     }
 
     &__country {
         flex-direction: row;
         margin-right: -1px; // Magic Number
+
+        /deep/ .m-base-select__popup {
+            width: auto !important;
+        }
 
         /deep/ .m-input-style__label {
             visibility: hidden;
@@ -50,7 +53,8 @@
 
     &__item-wrapper {
         display: flex;
-        align-items: center;
+        align-items: left;
+        width: 300px;
     }
 
     &__flag {
@@ -69,6 +73,7 @@
     &__item-dialCode {
         margin-left: $m-spacing--s;
         color: $m-color--grey;
+        white-space: nowrap;
     }
 
     &__number {
@@ -78,10 +83,13 @@
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
+
+        /deep/ .m-input-style__content {
+            height: 18px;
+        }
     }
 
     &__example {
-        position: absolute;
         margin-top: $m-spacing--xs;
         color: $m-color--grey-dark;
         font-size: $m-font-size--xs;

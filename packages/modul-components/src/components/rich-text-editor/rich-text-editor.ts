@@ -16,28 +16,11 @@ import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import FileUploadPlugin from '../file-upload/file-upload';
 import InputStylePlugin from '../input-style/input-style';
 import ValidationMessagePlugin from '../validation-message/validation-message';
-import { ImageLayoutCommands } from './adapter/image-layout-commands';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
 
-
 const RICH_TEXT_LICENSE_KEY: string = 'm-rich-text-license-key';
-
-/**
- * @deprecated use MRichTextEditorOption instead
- */
-export enum MRichTextEditorMode {
-    STANDARD,
-    MEDIA
-}
-
-export enum MRichTextEditorOption {
-    IMAGE,
-    IMAGE_HIDE_FLOAT_LAYOUT
-}
-
-export type MRichTextEditorOptions = MRichTextEditorOption[];
 
 @WithRender
 @Component({
@@ -58,25 +41,8 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     @Prop({ default: '' })
     public value: string;
 
-    /**
-     * @deprecated use options instead
-     */
-    @Prop({
-        default: MRichTextEditorMode.STANDARD,
-        validator: value => {
-            return value === MRichTextEditorMode.STANDARD
-                || value === MRichTextEditorMode.MEDIA;
-        }
-    })
-    public mode: MRichTextEditorMode;
-
-    @Prop({
-        default: () => [],
-        validator: (options: MRichTextEditorOptions) => {
-            return options.filter(option => !MRichTextEditorOption[option]).length === 0;
-        }
-    })
-    public options: MRichTextEditorOptions;
+    @Prop({ default: 1 })
+    public minRows: number;
 
     @Prop({ default: '0' })
     public toolbarStickyOffset: string;
@@ -101,10 +67,28 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     public lastHeaderLevel: number;
 
     @Prop({ default: false })
-    public titleAvailable: boolean; // temporary
+    public showCharacterCount: boolean;
 
-    @Emit('fullscreen')
-    onFullscreen(fullscreenWasActived: boolean): void { }
+    @Prop()
+    public characterCountMax: number;
+
+    @Prop({ default: false })
+    public showParagraphAlignmentButtons: boolean;
+
+    @Prop({ default: false })
+    public showUnderlineButton: boolean;
+
+    @Prop({ default: false })
+    public showStrikeThroughButton: boolean;
+
+    @Prop({ default: false })
+    public showImageButton: boolean;
+
+    @Prop({ default: false })
+    public showImageFloatLayout: boolean;
+
+    @Prop({ default: false })
+    public titleAvailable: boolean; // temporary
 
     public $refs: {
         input: HTMLElement
@@ -129,12 +113,14 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     }
 
     public get internalOptions(): any {
-        const propOptions: any = {
+        let propOptions: any = {
             // Hack to "hide" the default froala placeholder text
             placeholderText: this.as<InputManagement>().placeholder || ' ',
             toolbarStickyOffset: this.calculateToolbarStickyOffset(),
             scrollableContainer: this.getScrollableContainer(),
-            imageHideFloatLayout: this.options.includes(MRichTextEditorOption.IMAGE_HIDE_FLOAT_LAYOUT)
+            imageHideFloatLayout: this.showImageFloatLayout,
+            charCounterCount: this.showCharacterCount || !!this.characterCountMax,
+            charCounterMax: !this.characterCountMax ? -1 : this.characterCountMax
         };
 
         return Object.assign(this.getOptions(), propOptions);
@@ -144,24 +130,56 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         return this.$license.getLicense<string>(RICH_TEXT_LICENSE_KEY) || '';
     }
 
+    private get headerLevelValid(): boolean {
+        return this.firstHeaderLevel <= this.lastHeaderLevel;
+    }
+
     public getOptions(): MRichTextEditorDefaultOptions {
-        const options: MRichTextEditorDefaultOptions = new MRichTextEditorDefaultOptions(this.froalaLicenseKey, this.$i18n.currentLang());
+        const richTextEditorOptions: MRichTextEditorDefaultOptions = new MRichTextEditorDefaultOptions(this.froalaLicenseKey, this.$i18n.currentLang());
 
-        if (this.options.includes(MRichTextEditorOption.IMAGE) || this.mode === MRichTextEditorMode.MEDIA) {
-            options.pluginsEnabled.push('image');
-            options.toolbarButtons.push('insertImage');
-
-            let imageEditButtons: string[] = ['imageReplace', ImageLayoutCommands.IMG_LAYOUT_CMD, 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
-
-            options.imageEditButtons = imageEditButtons;
+        if (this.showImageButton) {
+            richTextEditorOptions.pluginsEnabled.push('image');
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreRich.buttons.push('insertImage');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreRich.buttons.push('insertImage');
         }
 
         if (this.titleAvailable) {
-            options.toolbarButtons.splice(2, 0, 'paragraphStyle');
-            options.paragraphStyles = this.manageHeaderLevels();
+            richTextEditorOptions.paragraphStyles = this.manageHeaderLevels();
+
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreText.buttons.splice(0, 0, 'paragraphStyle');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(0, 0, 'paragraphStyle');
         }
 
-        return options;
+        if (this.showUnderlineButton) {
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'underline');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'underline');
+        }
+
+        if (this.showStrikeThroughButton) {
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'strikeThrough');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreText.buttons.splice(richTextEditorOptions.toolbarButtons.moreText.buttons.length - 2, 0, 'strikeThrough');
+        }
+
+        if (this.showParagraphAlignmentButtons) {
+            // toolbar for desktop devices
+            richTextEditorOptions.toolbarButtons.moreParagraph.buttons.splice(0, 0, 'align');
+            // for mobile devices
+            richTextEditorOptions.toolbarButtonsXS.moreParagraph.buttons.splice(0, 0, 'align');
+        }
+
+        if (this.showCharacterCount || this.characterCountMax) {
+            richTextEditorOptions.pluginsEnabled.push('charCounter');
+        }
+
+        return richTextEditorOptions;
     }
 
     public manageHeaderLevels(): any {
@@ -215,10 +233,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         return /^-*\d+$/.test(this.toolbarStickyOffset);
     }
 
-    protected getScrollableContainer(): string | undefined {
-        if (this.scrollableContainer) {
-            return this.scrollableContainer;
-        }
+    protected getScrollableContainer(): string {
+        // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
+        return this.scrollableContainer || 'body';
     }
 
     protected testSelectorProps(): void {
@@ -240,9 +257,8 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         }
     }
 
-    private get headerLevelValid(): boolean {
-        return this.firstHeaderLevel <= this.lastHeaderLevel;
-    }
+    @Emit('fullscreen')
+    onFullscreen(fullscreenWasActived: boolean): void { }
 
     @Emit('image-ready')
     protected imageReady(file: MFile, storeName: string): void {
@@ -259,6 +275,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
 const RichTextEditorPlugin: PluginObject<any> = {
     install(v, options): void {
+
+        v.prototype.$log.error('RichTextEditorPlugin will be deprecated in modul v.1.0, this components should not be installed  globally for performance reasons');
+
         v.use(FileUploadPlugin);
         v.use(InputStylePlugin);
         v.use(ValidationMessagePlugin);

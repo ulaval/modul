@@ -6,9 +6,7 @@ import { Address, AddressField, Country, Province } from '@ulaval/modul-componen
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-Vue.use(AddressPlugin, { loqateKey: '', googleKey: '' });
-
-
+Vue.use(AddressPlugin);
 
 const countries: Country[] = [
     { countryIso2: 'US', country: 'United-States of America' },

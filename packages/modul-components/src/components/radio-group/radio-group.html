@@ -3,7 +3,9 @@
               'm--is-disabled': isDisabled,
               'm--has-error': hasError,
               'm--is-valid': isValid,
-              'm--has-validation-message': hasValidationMessage }">
+              'm--has-validation-message': hasValidationMessage }"
+     @focusin="onFocus"
+     @focusout="onBlur">
 
     <m-input-group :label="label"
                    :required-marker="requiredMarker"

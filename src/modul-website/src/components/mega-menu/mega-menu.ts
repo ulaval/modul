@@ -1,6 +1,6 @@
 // import MetaAll from '@/meta/meta-all';
 import { ComponentMeta } from '@/content/components.meta.loader';
-import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET, ROUTER_STANDARDS_ACCESSIBILITY_IMPLEMENTATION, ROUTER_STANDARDS_ACCESSIBILITY_WHY, ROUTER_STANDARDS_DEVELOPMENT, ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS, ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_EDITORIAL_FORMAT, ROUTER_STANDARDS_EDITORIAL_GLOSSARY, ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK, ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION, ROUTER_STANDARDS_EDITORIAL_TONE, ROUTER_STANDARDS_UI, ROUTER_STANDARDS_UI_BREAKPOINTS, ROUTER_STANDARDS_UI_COLORS, ROUTER_STANDARDS_UI_ICONOGRAPHY, ROUTER_STANDARDS_UI_TYPOGRAPHY } from '@/router';
+import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET, ROUTER_STANDARDS_ACCESSIBILITY_IMPLEMENTATION, ROUTER_STANDARDS_ACCESSIBILITY_WHY, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_EDITORIAL_FORMAT, ROUTER_STANDARDS_EDITORIAL_GLOSSARY, ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK, ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION, ROUTER_STANDARDS_EDITORIAL_TONE, ROUTER_STANDARDS_UI, ROUTER_STANDARDS_UI_BREAKPOINTS, ROUTER_STANDARDS_UI_COLORS, ROUTER_STANDARDS_UI_ICONOGRAPHY, ROUTER_STANDARDS_UI_TYPOGRAPHY } from '@/router';
 import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import _ from 'lodash';
@@ -93,21 +93,6 @@ export class MWMegaMenu extends ModulWebsite {
                     {
                         id: ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION,
                         text: this.$i18n.translate('website:standards-editorial-punctuation')
-                    }
-                ]
-            }
-            ,
-            {
-                id: ROUTER_STANDARDS_DEVELOPMENT,
-                text: this.$i18n.translate(`website:standards-development`),
-                pages: [
-                    {
-                        id: ROUTER_STANDARDS_DEVELOPMENT_CSS_SASS,
-                        text: this.$i18n.translate('website:standards-development-css-sass')
-                    },
-                    {
-                        id: ROUTER_STANDARDS_DEVELOPMENT_TYPESCRIPT,
-                        text: this.$i18n.translate('website:standards-development-typescript')
                     }
                 ]
             }

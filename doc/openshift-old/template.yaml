@@ -1,0 +1,82 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: ul-modul-template
+  label: ul-modul-template
+  annotations:
+    openshift.io/display-name: "Gabarit pour un environnement modul de l'Université Laval"
+    description: >-
+
+    openshift.io/long-description: >-
+
+    tags: 'java'
+    iconClass: icon-java
+    openshift.io/provider-display-name: Université Laval
+message: ''
+labels:
+  typeService: front-end
+  module: ui
+  template-version: "18.10.05-1"
+objects:
+- kind: Service
+  apiVersion: v1
+  metadata:
+    name: "${NOM_ENVIRONNEMENT}-ui"
+  spec:
+    ports:
+    - name: web
+      port: 5003
+      targetPort: 5003
+    selector:
+      name: "${NOM_ENVIRONNEMENT}-ui"
+- kind: Route
+  apiVersion: v1
+  metadata:
+    name: "${NOM_ENVIRONNEMENT}-ui"
+  spec:
+    host: "${NOM_ENVIRONNEMENT}-www.dev.brioeducation.ca"
+    port:
+      targetPort: web
+    path: /
+    to:
+      kind: Service
+      name: "${NOM_ENVIRONNEMENT}-ui"
+- kind: DeploymentConfig
+  apiVersion: v1
+  metadata:
+    name: "${NOM_ENVIRONNEMENT}-ui"
+  spec:
+    strategy:
+      type: "Rolling"
+      rollingParams:
+        intervalSeconds: 1
+        maxSurge: 50%
+        maxUnavailable: 0
+        timeoutSeconds: 600
+        updatePeriodSeconds: 1
+    replicas: 1
+    selector:
+      app: "${NOM_ENVIRONNEMENT}"
+      name: "${NOM_ENVIRONNEMENT}-ui"
+    template:
+      metadata:
+        labels:
+          app: "${NOM_ENVIRONNEMENT}"
+          name: "${NOM_ENVIRONNEMENT}-ui"
+          module: 'ui'
+          typeService: front-end
+      spec:
+        containers:
+          - name: "container-${NOM_ENVIRONNEMENT}-ui"
+            image: "chocmah/modul"
+            ports:
+              - containerPort: 5003
+            env:
+              - name: TZ
+                value: America/Montreal
+            restartPolicy: Always
+parameters:
+- name: NOM_ENVIRONNEMENT
+  displayName: Nom de l'environnement
+  required: true
+  value: latest

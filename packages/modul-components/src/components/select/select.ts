@@ -10,14 +10,14 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { SELECT_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
+import { MOpacityTransition } from '../transitions/opacity-transition/opacity-transition';
 import { MBaseSelect } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
-
-const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
-        MBaseSelect
+        MBaseSelect,
+        MOpacityTransition
     },
     mixins: [
         InputState,
@@ -29,12 +29,26 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 })
 export class MSelect extends ModulVue {
 
+    public $refs: {
+        baseSelect: MBaseSelect;
+    };
+
+
     @Model('input')
     @Prop()
     public value: any;
 
     @Prop()
     public options: any[];
+
+    @Prop({ default: false })
+    public clearable: boolean;
+
+    @Prop({ default: false })
+    public virtualScroll: boolean;
+
+    @Prop({ default: 52 }) // 208px / 4 -> base-select.scss
+    public virtualScrollItemHeight: string;
 
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
@@ -60,6 +74,10 @@ export class MSelect extends ModulVue {
         return this.as<InputManagement>().hasValue || (this.open) ? false : true;
     }
 
+    get isClearable(): boolean {
+        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue &&
+            this.isSelectable;
+    }
 
     get selectedItems(): any {
         if (this.value) {
@@ -67,6 +85,34 @@ export class MSelect extends ModulVue {
         }
         return [];
     }
+
+    get isSelectable(): boolean {
+        return !this.as<InputState>().isDisabled &&
+            !this.as<InputState>().isReadonly;
+    }
+
+    get internalLabelUp(): boolean {
+        return !this.as<InputState>().isReadonly ? this.as<InputLabel>().labelUp : true;
+    }
+
+    get internalPlaceholder(): string {
+        return !this.as<InputState>().isReadonly ? this.as<InputManagement>().placeholder : '';
+    }
+
+    public onReset(): void {
+        this.as<InputManagement>().model = '';
+    }
+
+    public onKeyDownDelete(event: KeyboardEvent): void {
+        if (event.key === 'Delete' && this.isClearable) {
+            this.onReset();
+        }
+    }
+
+    public toggleSelect(): void {
+        this.$refs.baseSelect.togglePopup();
+    }
+
 
 }
 

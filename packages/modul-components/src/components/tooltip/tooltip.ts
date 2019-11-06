@@ -74,6 +74,8 @@ export class MTooltip extends ModulVue {
             value === MTooltipSize.Small
     })
     public size: MTooltipSize;
+    @Prop({ default: 'm-svg__information' })
+    public iconName: string;
 
     public id: string = `mTooltip-${uuid.generate()}`;
     public ariaControls: string = this.id + '-controls';

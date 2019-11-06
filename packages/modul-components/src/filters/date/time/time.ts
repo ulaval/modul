@@ -1,3 +1,4 @@
+// tslint:disable-next-line: import-blacklist
 import 'moment/locale/fr';
 import Vue, { PluginObject } from 'vue';
 import { FormatMode } from '../../../utils/i18n/i18n';

@@ -16,9 +16,6 @@
             "../../node_modules/@types"
         ],
         "paths": {
-            "*": [
-                "types/*"
-            ],
             "@/*": [
                 "src/*"
             ]
@@ -31,7 +28,6 @@
         ]
     },
     "include": [
-        "../../node_modules/@ulaval/modul-components/dist/**/*.d.ts",
         "../../node_modules/@ulaval/modul-vuex/dist/**/*.d.ts",
         "../../node_modules/meta-generator/dist/**/*.d.ts",
         "src/**/*.ts",
