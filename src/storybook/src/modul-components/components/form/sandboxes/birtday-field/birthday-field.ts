@@ -5,7 +5,6 @@ import BirthdayFieldFirstEditContextDetector from './birthday-field-first-edit-c
 import BirthdayFieldFormGroup from './birthday-field-form-group';
 import WithRender from './birthday-field.html?style=./birthday-field.scss';
 
-
 @WithRender
 @Component({
 

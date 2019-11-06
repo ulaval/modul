@@ -1,4 +1,4 @@
-import { AbstractControl } from '@ulaval/modul-components/dist/utils/form/abstract-control';
+import { AbstractControl } from '@ulaval/modul-components/src/utils/form/abstract-control';
 import Vue from 'vue';
 import { Component, Prop, Watch } from 'vue-property-decorator';
 import BirthdayFieldFirstEditContextDetector from './birthday-field-first-edit-context-detector';

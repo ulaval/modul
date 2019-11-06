@@ -18,7 +18,6 @@ function getErrorMessageOption(message: string): ControlValidatorOptions {
     };
 }
 
-
 export default class BirthdayFieldFormGroup extends FormGroup {
     public hasSubmittedForm: boolean;
 
