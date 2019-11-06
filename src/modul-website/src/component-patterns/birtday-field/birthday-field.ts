@@ -6,9 +6,7 @@ import BirthdayFieldFormGroup from './birthday-field-form-group';
 import WithRender from './birthday-field.html?style=./birthday-field.scss';
 
 @WithRender
-@Component({
-
-})
+@Component({})
 export default class BirthdayField extends Vue {
     @Prop({ required: true })
     public fieldGroup: BirthdayFieldFormGroup;
@@ -17,7 +15,7 @@ export default class BirthdayField extends Vue {
     public label: string;
 
     // Keep month values 1 base index instead of zero as conversion is done in DateSelectorFieldGroup.
-    public monthNames = [
+    public monthValuesAndNames = [
         { 'value': 1, 'name': 'January' },
         { 'value': 2, 'name': 'February' },
         { 'value': 3, 'name': 'March' },
@@ -55,12 +53,10 @@ export default class BirthdayField extends Vue {
     }
 
     public hasDayError(): boolean {
-        // Used to only have error after having edited whole field.
         return this.dayField.hasError() && this.hasMetConditionsToShowError();
     }
 
     public hasYearError(): boolean {
-        // Used to only have error after having edited whole field.
         return this.yearField.hasError() && this.hasMetConditionsToShowError();
     }
 

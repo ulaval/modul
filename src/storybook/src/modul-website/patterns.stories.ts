@@ -5,7 +5,3 @@ export default {
 };
 
 export const birthdayField: any = () => '<m-birthday-field-pattern></m-birthday-field-pattern>';
-
-
-
-

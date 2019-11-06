@@ -1,8 +1,8 @@
 
 import { FormGroup } from '@ulaval/modul-components/dist/utils/form/form-group';
+import { MinimumAgeValidator } from '@ulaval/modul-components/dist/utils/form/validators/age/minimum-age-validator';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { Component } from 'vue-property-decorator';
-import ageValidator from './age-validator';
 import BirthdayField from './birthday-field';
 import BirthdayFieldFormGroup from './birthday-field-form-group';
 import WithRender from './birthday-field.sandbox.html';
@@ -21,7 +21,7 @@ export class BirthdayFieldSandbox extends ModulVue {
     buildFormGroup(): FormGroup {
         return new FormGroup({
             'birthdayGroup': new BirthdayFieldFormGroup([
-                ageValidator.getValidation(18)
+                MinimumAgeValidator(18)
             ])
         });
     }

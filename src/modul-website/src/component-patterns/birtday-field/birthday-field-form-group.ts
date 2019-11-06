@@ -54,7 +54,7 @@ export default class BirthdayFieldFormGroup extends FormGroup {
     }
 
     public get dateValue(): Moment {
-        // Month 0 = January, 1 = Febuary for some great reason and days/years are 1 based index. Thx javascript :).
+        // Month 0 = January, 1 = Febuary for some great reason and days/years are 1 based index.
         const date: Date = new Date(this.yearField.value, this.monthField.value - 1, this.dayField.value);
         return moment(date);
     }

@@ -16,7 +16,7 @@ function validationFunction(formControl: BirthdayFieldFormGroup): boolean {
     const yearParsed: number = Number.parseInt(year.toString(), 10);
 
     const generatedDate: Date = new Date(yearParsed, month - 1, dayParsed);
-    generatedDate.setFullYear(yearParsed); // To support date from biblical times (1 to 100).
+    generatedDate.setFullYear(yearParsed); // To support dates from 1 to 100.
 
     if (generatedDate.getDate() !== dayParsed) { return false; }
     if (generatedDate.getMonth() !== month - 1) { return false; }

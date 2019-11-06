@@ -5,6 +5,7 @@ import { ControlValidator, ControlValidatorOptions } from '@ulaval/modul-compone
 import { MaxValidator } from '@ulaval/modul-components/dist/utils/form/validators/max/max';
 import { MinValidator } from '@ulaval/modul-components/dist/utils/form/validators/min/min';
 import { RequiredValidator } from '@ulaval/modul-components/dist/utils/form/validators/required/required';
+// tslint:disable-next-line:import-blacklist
 import moment, { Moment } from 'moment';
 import birthdayFieldDateValidation from './birthday-field-date-validation';
 
@@ -55,7 +56,7 @@ export default class BirthdayFieldFormGroup extends FormGroup {
     }
 
     public get dateValue(): Moment {
-        // Month 0 = January, 1 = Febuary for some great reason and days/years are 1 based index. Thx javascript :).
+        // Month 0 = January, 1 = Febuary for some great reason and days/years are 1 based index.
         const date: Date = new Date(this.yearField.value, this.monthField.value - 1, this.dayField.value);
         return moment(date);
     }

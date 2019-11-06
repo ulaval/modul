@@ -8,7 +8,7 @@
 
         width: auto;
         max-width: 390px;
-        margin-right: 25px;
+        margin-right: $m-margin--xs;
 
         @media (max-width: $m-mq--max--m) {
             width: 100%;

@@ -5,7 +5,6 @@
     <div class="field-wrapper">
         <div class="p-date-selector__column days">
             <m-textfield max-width="small"
-                         type="number"
                          v-model.trim="dayField.value"
                          :error="hasDayError()"
                          label="Day"
@@ -21,7 +20,7 @@
                         :error="monthField.hasError()"
                         max-width="100%"
                         ref="dropdown">
-                <m-dropdown-item v-for="nameAndValue in monthNames"
+                <m-dropdown-item v-for="nameAndValue in monthValuesAndNames"
                                  :key="nameAndValue.value"
                                  :label="nameAndValue.name"
                                  :value="nameAndValue.value">
@@ -31,7 +30,6 @@
 
         <div class="p-date-selector__column years">
             <m-textfield max-width="small"
-                         type="number"
                          v-model.trim="yearField.value"
                          :error="hasYearError()"
                          label="Year"
