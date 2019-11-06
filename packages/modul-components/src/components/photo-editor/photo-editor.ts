@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MFile } from '../../utils/file/file';
 import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
@@ -75,12 +75,12 @@ export class MPhotoEditor extends ModulVue {
     }
 
     saveImage(imageCropped: File): void {
-        this.$emit('save', imageCropped);
+        this.emitSave(imageCropped);
     }
 
     deleteImage(): void {
         if (this.selectMode) {
-            this.$emit('delete');
+            this.emitDelete();
         } else {
             this.initialize();
         }
@@ -94,13 +94,18 @@ export class MPhotoEditor extends ModulVue {
         }
     }
 
-    close(): void {
-        this.$emit('close');
-    }
-
     crop(): void {
         this.$refs.cropImage.crop();
     }
+
+    @Emit('close')
+    close(): void { }
+
+    @Emit('delete')
+    private emitDelete(): void { }
+
+    @Emit('save')
+    private emitSave(imageCropped: File): void { }
 
     get showDeleteButton(): boolean {
         return !!this.urlPhoto || this.cropMode;

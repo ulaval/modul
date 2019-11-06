@@ -1,12 +1,13 @@
 import Croppie, { CroppieOptions } from 'croppie';
 import 'croppie/croppie.css';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { MFile } from '../../../utils/file/file';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MAvatarSize } from '../../avatar/avatar';
 import { MIcon } from '../../icon/icon';
-import WithRender from './crop-image.html?style=./crop-image.scss';
+import WithRender from './crop-image.html';
+import './crop-image.scss';
 
 enum MExportFormat {
     PNG = 'png',
@@ -47,6 +48,12 @@ export class MCropImage extends ModulVue {
         }
     }
 
+    beforeDestroy(): void {
+        if (this.croppie) {
+            this.croppie.destroy();
+        }
+    }
+
     bind(): void {
         if (this.image.url) {
             this.croppie!.bind({
@@ -62,7 +69,7 @@ export class MCropImage extends ModulVue {
                 type: 'blob',
                 circle: false
             }).then((imageCropped: Blob) => {
-                this.$emit('image-cropped', this.createImageFile(imageCropped));
+                this.emitImageCropped(this.createImageFile(imageCropped));
             });
         }
     }
@@ -73,6 +80,9 @@ export class MCropImage extends ModulVue {
             this.image.name
         );
     }
+
+    @Emit('image-cropped')
+    private emitImageCropped(imageCropped: File): void { }
 
     get imageExtension(): MExportFormat {
         return this.image.extension === 'png' || this.image.extension === 'gif' ? MExportFormat.PNG : MExportFormat.JPG;
