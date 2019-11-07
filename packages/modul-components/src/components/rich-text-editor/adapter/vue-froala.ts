@@ -494,6 +494,14 @@ const SCROLL_TO_OFFSET: number = -50;
         }
     }
 
+    private onClick(event: Event): void {
+        if (this.froalaEditor.popups) {
+            event.stopPropagation();
+        } else {
+            this.$emit('click');
+        }
+    }
+
     private hideToolbar(): void {
         if (this.editorIsAvailable()) {
             this.froalaEditor.toolbar.hide();
