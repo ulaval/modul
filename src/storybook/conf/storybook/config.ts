@@ -8,6 +8,7 @@ import modulTheme from './modul-theme';
 import { getSandboxPlugin } from './sandbox-loader';
 
 
+Vue.config.performance = true;
 
 declare module '@storybook/addon-knobs' {
     export function withKnobs(): any;
