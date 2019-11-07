@@ -3,7 +3,6 @@ import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
 import RadioPlugin from '@ulaval/modul-components/dist/components/radio/radio';
-import { MRichTextEditor } from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-editor';
 import RichTextLicensePlugin from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-license-plugin';
 import { MRichText } from '@ulaval/modul-components/dist/components/rich-text/rich-text';
 import TextfieldPlugin from '@ulaval/modul-components/dist/components/textfield/textfield';
@@ -16,10 +15,16 @@ import { Component } from 'vue-property-decorator';
 import WithRender from './rich-text-editor.sandbox.html';
 
 
+// We should always load the rte as a separe chunk because of its size (> 1Mb)
+
+const rteChunk = (): Promise<any> => import(/* webpackChunkName: "rte" */ '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-editor').then((exports: any) => {
+    return exports.MRichTextEditor;
+});
+
 
 @WithRender
 @Component({
-    components: { MRichTextEditor, MRichText }
+    components: { 'm-rich-text-editor': rteChunk, MRichText }
 })
 export class MRichTextEditorSandBox extends ModulVue {
     public model: string = '';

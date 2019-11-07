@@ -1,6 +1,6 @@
 {
     "name": "@ulaval/modul-components",
-    "version": "1.0.0-beta.134",
+    "version": "1.0.0-beta.135",
     "description": "MODUL vueJS Component library",
     "author": "Martin Simard <martin.simard@dti.ulaval.ca>",
     "homepage": "https://ulaval.github.io/modul",
@@ -47,6 +47,7 @@
         "portal-vue": "~1.1.1",
         "sprintf-js": "^1.1.1",
         "vue-touch": "^2.0.0-beta.4",
+        "vue-virtual-scroll-list": "^1.4.2",
         "zingtouch": "^1.0.6"
     },
     "peerDependencies": {

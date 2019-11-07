@@ -275,6 +275,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
 const RichTextEditorPlugin: PluginObject<any> = {
     install(v, options): void {
+
+        v.prototype.$log.error('RichTextEditorPlugin will be deprecated in modul v.1.0, this components should not be installed  globally for performance reasons');
+
         v.use(FileUploadPlugin);
         v.use(InputStylePlugin);
         v.use(ValidationMessagePlugin);
