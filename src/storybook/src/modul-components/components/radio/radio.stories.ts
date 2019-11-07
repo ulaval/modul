@@ -39,17 +39,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${RADIO_NAME}`, module)
     }))
     .add('valid', () => ({
         template: '<m-radio :valid="true">A Checkbox</m-radio>'
-    }))
-    .add('readonly && focus', () => ({
-        props: {
-            text: {
-                default: text('Text', 'A Radio')
-            }
-        },
-        data: () => ({
-            model: '1'
-        }),
-        template: '<m-radio :readonly="true" v-model="model" value="1" :focus="true">{{ text }}</m-radio>'
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${RADIO_NAME}/radio-position="right"`, module)
