@@ -3,7 +3,8 @@
         "previous": "Page précédente",
         "next": "Page suivante",
         "ellipsis": "...",
-        "status": "Page %(nbVisible)s de %(nbTotal)s - %(nbResultats)s résultat",
-        "status.p": "Page %(nbVisible)s de %(nbTotal)s - %(nbResultats)s résultats"
+        "status-single": "%(nbResults)s résultat",
+        "status-single.p": "%(nbResults)s résultats",
+        "status.p": "%(idxFirst)s à %(idxLast)s de %(nbResults)s résultats"
     }
 }
