@@ -333,3 +333,14 @@ export const disabledTrueAllChildrensDisabledMixed = () => ({
                     <m-radio value="3" :disabled="false">Radio Option 3</m-radio>
                 </m-radio-group>`
 });
+
+export const readonlyAndFocus = () => ({
+    data: () => ({
+        model: '2'
+    }),
+    template: `<m-radio-group v-model="model" :focus="true" :error="true" :readonly="true">
+                    <m-radio value="1">Radio Option 1</m-radio>
+                    <m-radio value="2">Radio Option 2</m-radio>
+                    <m-radio value="3">Radio Option 3</m-radio>
+                </m-radio-group>`
+});

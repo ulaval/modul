@@ -163,6 +163,14 @@ export class MRadio extends ModulVue {
         }
     }
 
+    public get isChecked(): boolean {
+        return this.model === this.value;
+    }
+
+    public get isReadonlyDisabled(): boolean {
+        return this.propReadonly && !this.isChecked;
+    }
+
     private isGroup(): boolean {
         if (this.hasParentGroup === undefined) {
             let parentGroup: BaseRadioGroup | undefined;
