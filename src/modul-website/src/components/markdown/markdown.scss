@@ -18,7 +18,6 @@
     h2:not(.m-u--h2):not([class]) {
         text-transform: uppercase;
         font-weight: $m-font-weight--black;
-        font-size: 24px;
 
         + h2:not(.m-u--h2):not([class]),
         + h3:not(.m-u--h3):not([class]),
@@ -27,6 +26,10 @@
         + h6:not(.m-u--h6):not([class]) {
             margin-top: 12px;
         }
+    }
+
+    h2:not(.m-u--h2):not([class]) {
+        font-size: 24px;
     }
 
     h3:not(.m-u--h3):not([class]) {
@@ -66,5 +69,9 @@
         margin-top: $m-margin;
 
         @include m-table();
+    }
+
+    > :first-child {
+        margin-top: 0;
     }
 }

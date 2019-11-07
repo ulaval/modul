@@ -1,4 +1,4 @@
-## FORMAT
+# Format
 
 Par souci d'uniformité, certaines informations sont toujours présentées selon des formats prédéfinis.
 

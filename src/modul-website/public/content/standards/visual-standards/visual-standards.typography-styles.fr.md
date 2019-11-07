@@ -1,10 +1,10 @@
-# TYPOGRAPHIE ET STYLES
+# Typographie et styles
 
 La typographie influence la lisibilité et l’efficacité d’un message et facilite le processus de compréhension et d’assimilation de l’information. Un texte bien formaté permet de mettre l’accent sur le contenu et non sur l’effort nécessaire pour le lire.
 
 Disponible sur <m-link mode="link" target="_blank" url="https://fonts.google.com/specimen/Source+Sans+Pro">Google fonts</m-link> et libre de droits, la famille de caractères à utiliser dans tout composant est **«&nbsp;Source Sans Pro&nbsp;»**.
 
-Trois polices de caractères peuvent être utilisées&nbsp;:
+**Trois polices de caractères peuvent être utilisées&nbsp;:**
 <m-panel class="m-u--margin-top">
     <p>
         <strong class="m-u--display--block m-u-font-size--l">Source Sans Pro Light 300</strong>
@@ -20,7 +20,7 @@ Trois polices de caractères peuvent être utilisées&nbsp;:
     </p>
 </m-panel>
 
-## STYLES
+## Styles
 
 L’utilisation des styles <abbr title="Cascading Style Sheets">CSS</abbr> permet d’obtenir une mise en forme rapide et automatique du contenu. Ceux-ci sont déjà définis de manière à respecter le design de monPortail. Ainsi lorsque des modifications sont apportées aux styles <abbr title="Cascading Style Sheets">CSS</abbr>, elles se répercutent automatiquement dans l’application.
 
