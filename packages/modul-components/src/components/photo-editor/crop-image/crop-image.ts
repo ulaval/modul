@@ -41,7 +41,7 @@ export class MCropImage extends ModulVue {
                 boundary: {
                     height: 240
                 },
-                enableOrientation: true
+                enableOrientation: false
             } as CroppieOptions);
 
             this.bind();
