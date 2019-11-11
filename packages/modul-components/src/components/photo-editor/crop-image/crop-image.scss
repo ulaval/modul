@@ -20,7 +20,7 @@ $m-crop-image-icon-size--l: 28px;
             box-shadow: 0 0 2000px 2000px rgba($m-color--grey-dark, 0.5);
         }
 
-        .cr-slider-wrap {
+        &.croppie-container .cr-slider-wrap {
             position: absolute;
             height: $m-crop-image-slider-height;
             width: auto;
