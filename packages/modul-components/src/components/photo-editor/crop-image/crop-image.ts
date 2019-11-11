@@ -3,6 +3,7 @@ import 'croppie/croppie.css';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { MFile } from '../../../utils/file/file';
+import UserAgentUtil from '../../../utils/user-agent/user-agent';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MAvatarSize } from '../../avatar/avatar';
 import { MIcon } from '../../icon/icon';
@@ -39,9 +40,8 @@ export class MCropImage extends ModulVue {
                     type: 'circle'
                 },
                 boundary: {
-                    height: 240
-                },
-                enableOrientation: false
+                    height: UserAgentUtil.isMobile() ? 200 : 240
+                }
             } as CroppieOptions);
 
             this.bind();

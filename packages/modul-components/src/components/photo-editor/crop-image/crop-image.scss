@@ -9,8 +9,12 @@ $m-crop-image-icon-size--l: 28px;
     position: relative;
 
     &__cropper {
-        min-height: 240px;
+        min-height: 200px;
         margin-bottom: calc(#{$m-crop-image-slider-height} + (#{$m-spacing} * 2));
+
+        @media (min-width: $m-mq--min--s) {
+            min-height: 240px;
+        }
 
         .cr-viewport {
             box-shadow: 0 0 2000px 2000px rgba($m-color--grey-dark, 0.5);
