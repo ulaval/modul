@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MCropImage when crop should render correctly 1`] = `
+<div title="Edit my profile picture" size="small" class="m-photo-editor">
+  <div class="m-crop-image"></div><a skin="primary" full-size="true"></a> <a skin="secondary" full-size="true" class="m-photo-editor__cancel"></a>
+</div>
+`;
+
+exports[`MCropImage when select should render correctly 1`] = `
+<div title="Edit my profile picture" size="small" class="m-photo-editor">
+  <div class="m-image-displayer"></div>
+  <div store-name="storename" full-size="true" keep-store="true" label="Choose a photo" skin="primary" allowed-extensions="jpg,gif,png,jpeg" class="file-select m-photo-editor__button"></div>
+</div>
+`;

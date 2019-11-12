@@ -14,4 +14,17 @@
     &__avatar {
         width: 100%;
     }
+
+    &__delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+
+        &.m-icon-button {
+            border-radius: 0;
+            color: $m-color--white;
+            background-color: rgba($m-color--grey-darker, 0.6);
+        }
+    }
 }

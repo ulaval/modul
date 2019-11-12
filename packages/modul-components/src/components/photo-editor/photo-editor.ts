@@ -5,7 +5,6 @@ import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButtonSkin } from '../button/button';
-import { MIconButtonSkin } from '../icon-button/icon-button';
 import { MMessage, MMessageState } from '../message/message';
 import { MModalSize } from '../modal/modal';
 import { MCropImage } from './crop-image/crop-image';
@@ -33,7 +32,7 @@ export class MPhotoEditor extends ModulVue {
     @Prop({ default: false })
     open: boolean;
 
-    @Prop({ default: () => ['jpg', 'gif', 'png'] })
+    @Prop({ default: () => ['jpg', 'gif', 'png', 'jpeg'] })
     allowedExtensions: string[];
 
     @Prop({ default: uuid.generate() })
@@ -50,10 +49,8 @@ export class MPhotoEditor extends ModulVue {
     i18nChoosePhoto: string = this.$i18n.translate('m-photo-editor:choose-photo');
     i18nSave: string = this.$i18n.translate('m-photo-editor:save');
     i18nCancel: string = this.$i18n.translate('m-photo-editor:cancel');
-    i18nDelete: string = this.$i18n.translate('m-photo-editor:delete');
 
     modalSize: MModalSize = MModalSize.Small;
-    skinDelete: MIconButtonSkin = MIconButtonSkin.Dark;
     primaryButton: MButtonSkin.Primary = MButtonSkin.Primary;
     secondaryButton: MButtonSkin.Secondary = MButtonSkin.Secondary;
     photoEditorMode: MPhotoEditorMode = MPhotoEditorMode.SELECT;
@@ -74,42 +71,19 @@ export class MPhotoEditor extends ModulVue {
         }
     }
 
-    saveImage(imageCropped: File): void {
-        this.emitSave(imageCropped);
-    }
-
-    deleteImage(): void {
-        if (this.selectMode) {
-            this.emitDelete();
-        } else {
-            this.initialize();
-        }
-    }
-
-    cancel(): void {
-        if (this.selectMode) {
-            this.close();
-        } else {
-            this.initialize();
-        }
-    }
-
     crop(): void {
         this.$refs.cropImage.crop();
     }
 
-    @Emit('close')
-    close(): void { }
+    @Emit('save')
+    saveImage(imageCropped: File): void {
+    }
 
     @Emit('delete')
-    private emitDelete(): void { }
+    deleteImage(): void { }
 
-    @Emit('save')
-    private emitSave(imageCropped: File): void { }
-
-    get showDeleteButton(): boolean {
-        return !!this.urlPhoto || this.cropMode;
-    }
+    @Emit('close')
+    close(): void { }
 
     get selectMode(): boolean {
         return this.photoEditorMode === MPhotoEditorMode.SELECT;

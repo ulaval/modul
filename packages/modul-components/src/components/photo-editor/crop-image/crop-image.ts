@@ -57,7 +57,8 @@ export class MCropImage extends ModulVue {
     bind(): void {
         if (this.image.url) {
             this.croppie!.bind({
-                url: this.image.url
+                url: this.image.url,
+                zoom: 0
             });
         }
     }
