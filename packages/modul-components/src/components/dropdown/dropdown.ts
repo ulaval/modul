@@ -177,7 +177,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (focus && !this.as<InputStateMixin>().isDisabled) {
             this.selectText();
         } else {
-            this.$refs.input.blur();
+            if (!this.isAndroid && this.as<MediaQueriesMixin>().isMqMaxS) {
+                this.$refs.input.blur();
+            }
             this.internalOpen = false;
         }
     }
@@ -206,6 +208,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     public set model(value: any) {
         this.setModel(value, true);
+    }
+
+    private get isAndroid(): boolean {
+        return UserAgentUtil.isAndroid();
     }
 
     private setModel(value: any, emit: boolean): void {
@@ -405,7 +411,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private async selectText(): Promise<void> {
         await this.$nextTick();
-        this.$refs.input.focus();
+        if (!this.isAndroid && this.as<MediaQueriesMixin>().isMqMaxS) {
+            this.$refs.input.focus();
+        } else {
+            this.internalIsFocus = true;
+        }
     }
 
     private focusSelected(): void {
