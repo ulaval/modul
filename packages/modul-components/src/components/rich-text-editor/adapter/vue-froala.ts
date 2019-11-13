@@ -24,6 +24,8 @@ import { ModulVue } from '../../../utils/vue/vue';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
 
+
+
 // import { PopupPlugin } from './popup-plugin';
 // import SubMenuPlugin from './submenu-plugin';
 // Bug placeholder in the version 3.0.5.
@@ -223,8 +225,8 @@ const SCROLL_TO_OFFSET: number = -50;
         this.$emit('image-added', files[0], (file: MFile, id: string) => {
             if (this.selectedImage) {
                 // Bug watch "JQuery dependence isn't fully removed from Froala" https://github.com/froala/angular-froala-wysiwyg/issues/324
-                this.selectedImage.removeAttribute('srcset');
                 this.froalaEditor.image.insert(file.url, false, { id }, $(this.selectedImage)); // We need jquery for that function
+                this.selectedImage.removeAttribute('srcset');
             } else {
                 this.froalaEditor.image.insert(file.url, false, { id });
             }
