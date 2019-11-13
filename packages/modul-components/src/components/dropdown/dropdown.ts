@@ -210,10 +210,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         this.setModel(value, true);
     }
 
-    private get isAndroid(): boolean {
-        return UserAgentUtil.isAndroid();
-    }
-
     private setModel(value: any, emit: boolean): void {
         this.as<InputPopup>().internalValue = value;
         if (emit) {
@@ -567,6 +563,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private get isFirefoxSupport(): boolean {
         return UserAgentUtil.isGecko() && this.as<InputManagement>().placeholder === '' || this.as<InputManagement>().placeholder === undefined;
+    }
+
+    private get isAndroid(): boolean {
+        return UserAgentUtil.isAndroid();
     }
 
 }
