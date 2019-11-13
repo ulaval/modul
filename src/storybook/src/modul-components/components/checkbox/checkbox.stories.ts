@@ -103,3 +103,18 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHECKBOX_NAME}/position=rig
     .add('valid', () => ({
         template: '<m-checkbox :valid="true" position="right">A Checkbox</m-checkbox>'
     }));
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${CHECKBOX_NAME}/perf`, module)
+    .add('perf', () => ({
+        data: () => ({
+            model: {},
+            array: []
+        }),
+        template: `
+    <div>
+        <m-button @click='array = new Array(50)'>Afficher 50</m-button>
+        <m-button @click='array = new Array(200)'>Afficher 200</m-button>
+        <m-button @click='array = new Array(400)'>Afficher 400</m-button>
+        <div v-for="(i, idx) in array" style="margin-bottom: 10px;"><m-checkbox position="right" v-model="model[idx]">A Checkbox</m-checkbox></div>
+    </div>`
+    }));

@@ -333,3 +333,17 @@ export const disabledTrueAllChildrensDisabledMixed = () => ({
                     <m-radio value="3" :disabled="false">Radio Option 3</m-radio>
                 </m-radio-group>`
 });
+
+export const perf = () => ({
+    data: () => ({
+        model: {},
+        array: []
+    }),
+    template: `
+        <div>
+            <m-button @click='array = new Array(50)'>Afficher 50</m-button>
+            <m-button @click='array = new Array(200)'>Afficher 200</m-button>
+            <m-button @click='array = new Array(400)'>Afficher 400</m-button>
+            <m-radio-group v-for="(i, idx) in array" v-model="model[idx]" :inline="true">${RADIOS}</m-radio-group>
+        </div>`
+});

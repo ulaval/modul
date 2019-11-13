@@ -259,3 +259,19 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}/tag-style`,
         },
         template: '<m-textfield :label="tagStyle" :tag-style="tagStyle" :value="tagStyle"></m-textfield>'
     }));
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}/perf`, module)
+
+    .add('perf', () => ({
+        data: () => ({
+            model: {},
+            array: []
+        }),
+        template: `
+        <div>
+            <m-button @click='array = new Array(50)'>Afficher 50</m-button>
+            <m-button @click='array = new Array(200)'>Afficher 200</m-button>
+            <m-button @click='array = new Array(400)'>Afficher 400</m-button>
+            <div v-for="(i, idx) in array" style="margin-bottom: 10px;"><m-textfield  v-model="model[idx]" :key="idx"></m-textfield></div>
+        </div>`
+    }));
