@@ -89,10 +89,6 @@ export class MPhotoEditor extends ModulVue {
         return this.photoEditorMode === MPhotoEditorMode.SELECT;
     }
 
-    get cropMode(): boolean {
-        return this.photoEditorMode === MPhotoEditorMode.CROP;
-    }
-
     get imageSelected(): MFile | undefined {
         const images: MFile[] = this.$file.files(this.storeName);
         return images.length > 0 ? images[images.length - 1] : undefined;
