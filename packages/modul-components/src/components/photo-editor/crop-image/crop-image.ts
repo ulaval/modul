@@ -1,5 +1,6 @@
 import Croppie, { CroppieOptions } from 'croppie';
 import 'croppie/croppie.css';
+import EXIF from 'exif-js';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { MFile } from '../../../utils/file/file';
@@ -14,6 +15,7 @@ enum MExportFormat {
     PNG = 'png',
     JPG = 'jpeg'
 }
+window['EXIF'] = EXIF;
 
 @WithRender
 @Component({
@@ -24,7 +26,7 @@ export class MCropImage extends ModulVue {
     @Prop({ required: true })
     image: MFile;
 
-    croppie: Croppie | undefined = undefined;
+    private croppie: Croppie | undefined = undefined;
 
     $refs: {
         croppieContainer: HTMLElement;
@@ -39,10 +41,10 @@ export class MCropImage extends ModulVue {
                     height: MAvatarSize.LARGE,
                     type: 'circle'
                 },
+                enableExif: true,
                 boundary: {
                     height: UserAgentUtil.isMobile() ? 200 : 240
-                },
-                enableOrientation: false
+                }
             } as CroppieOptions);
 
             this.bind();
@@ -56,8 +58,8 @@ export class MCropImage extends ModulVue {
     }
 
     bind(): void {
-        if (this.image.url) {
-            this.croppie!.bind({
+        if (this.image.url && this.croppie) {
+            this.croppie.bind({
                 url: this.image.url,
                 zoom: 0
             });
