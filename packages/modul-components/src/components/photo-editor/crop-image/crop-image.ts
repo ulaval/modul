@@ -10,12 +10,12 @@ import { MAvatarSize } from '../../avatar/avatar';
 import { MIcon } from '../../icon/icon';
 import WithRender from './crop-image.html';
 import './crop-image.scss';
+window['EXIF'] = EXIF;
 
 enum MExportFormat {
     PNG = 'png',
     JPG = 'jpeg'
 }
-window['EXIF'] = EXIF;
 
 @WithRender
 @Component({
@@ -86,7 +86,7 @@ export class MCropImage extends ModulVue {
     }
 
     @Emit('image-cropped')
-    private emitImageCropped(imageCropped: File): void { }
+    emitImageCropped(imageCropped: File): void { }
 
     get imageExtension(): MExportFormat {
         return this.image.extension === 'png' || this.image.extension === 'gif' ? MExportFormat.PNG : MExportFormat.JPG;

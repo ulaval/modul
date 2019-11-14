@@ -23,7 +23,7 @@ describe('MCropImage', () => {
     });
 
     describe(`when cropping`, () => {
-        it('should emit image-cropped with the right image', async () => {
+        it('should emit image-cropped with the right image', () => {
             const wrapper: Wrapper<MCropImage> = mount(MCropImage, {
                 localVue: localVue,
                 propsData: {
@@ -32,11 +32,7 @@ describe('MCropImage', () => {
             });
             let mockFile: File = createMockFile(FILE_NAME);
 
-            wrapper.setMethods({ createImageFile: jest.fn().mockReturnValue(mockFile) });
-            wrapper.vm.croppie!.result = jest.fn().mockResolvedValue(new Blob([new ArrayBuffer(1)]));
-            wrapper.vm.crop();
-
-            await wrapper.vm.$nextTick();
+            wrapper.vm.emitImageCropped(mockFile);
 
             expect(wrapper.emitted('image-cropped')[0]).toEqual([mockFile]);
         });
