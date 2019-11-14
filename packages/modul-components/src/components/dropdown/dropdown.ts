@@ -177,7 +177,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (focus && !this.as<InputStateMixin>().isDisabled) {
             this.selectText();
         } else {
-            if (!this.isAndroid && this.as<MediaQueriesMixin>().isMqMaxS) {
+            if (!this.isAndroid) {
                 this.$refs.input.blur();
             }
             this.internalOpen = false;
@@ -407,7 +407,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private async selectText(): Promise<void> {
         await this.$nextTick();
-        if (!this.isAndroid && this.as<MediaQueriesMixin>().isMqMaxS) {
+        if (!this.isAndroid) {
             this.$refs.input.focus();
         } else {
             this.internalIsFocus = true;

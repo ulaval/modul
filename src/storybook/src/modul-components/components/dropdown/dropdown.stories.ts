@@ -1,3 +1,4 @@
+import { actions } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/vue';
 import { DROPDOWN_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -41,6 +42,29 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
                         <m-dropdown-item value="james" label="James"></m-dropdown-item>
                         <m-dropdown-item value="yvan" label="Yvan"></m-dropdown-item>
                     </m-dropdown>`
+    }))
+
+    .add('drodown in overlay', () => ({
+        data: () => ({
+            model6: ''
+        }),
+        methods: actions(
+            'save',
+            'cancel'
+        ),
+        template: `<div>
+                    <m-overlay title="Title" @save="save" @cancel="cancel">
+                        <m-button slot="trigger">Open</m-button>
+                        <m-dropdown :filterable="true" :clear-model-on-selected-text="true" label="Vegetable" v-model="model6">
+                            <m-dropdown-item value="1" label="Artichoke"></m-dropdown-item>
+                            <m-dropdown-item value="2" label="Asparagus"></m-dropdown-item>
+                            <m-dropdown-item value="3" label="Broccoli"></m-dropdown-item>
+                            <m-dropdown-item value="4" label="Bok choy"></m-dropdown-item>
+                            <m-dropdown-item value="5" label="Lettuce"></m-dropdown-item>
+                            <m-dropdown-item value="6" label="Tomato"></m-dropdown-item>
+                        </m-dropdown>
+                    </m-overlay>
+                </div>`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/filterable`, module)
