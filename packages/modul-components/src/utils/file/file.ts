@@ -70,6 +70,10 @@ export class FileService {
         this.getStore(storeName).add(files);
     }
 
+    public addSingleFile(file: File, storeName?: string): void {
+        this.getStore(storeName).addSingleFile(file);
+    }
+
     public remove(fileuid: string, storeName?: string): void {
         this.getStore(storeName).remove(fileuid);
     }
@@ -155,25 +159,14 @@ class FileStore {
 
     public add(files: FileList): void {
         for (let i: number = 0; i < files.length; ++i) {
-            const file: File = files[i];
-
-            const mfile: MFile = {
-                uid: uuid.generate(),
-                name: file.name,
-                file: file,
-                status: MFileStatus.READY,
-                progress: 0,
-                get extension(): string {
-                    return extractExtension(file.name);
-                }
-            };
-
-            this.validate(mfile);
-
-            Object.freeze(mfile.file); // disable vuejs reactivity
-            this.filesmap[mfile.uid] = mfile;
+            this.createFile(files[i]);
         }
 
+        this.refreshRx();
+    }
+
+    public addSingleFile(file: File): void {
+        this.createFile(file);
         this.refreshRx();
     }
 
@@ -259,6 +252,24 @@ class FileStore {
     public cancelUpload(fileuid: string): void {
         this.cancelTokens[fileuid].cancel();
         delete this.cancelTokens[fileuid];
+    }
+
+    private createFile(file: File): void {
+        const mfile: MFile = {
+            uid: uuid.generate(),
+            name: file.name,
+            file: file,
+            status: MFileStatus.READY,
+            progress: 0,
+            get extension(): string {
+                return extractExtension(file.name);
+            }
+        };
+
+        this.validate(mfile);
+
+        Object.freeze(mfile.file); // disable vuejs reactivity
+        this.filesmap[mfile.uid] = mfile;
     }
 
     private validate(file: MFile): void {
