@@ -167,7 +167,7 @@ export class Portal extends ModulVue implements PortalMixin {
     }
 
     public set propOpen(value: boolean) {
-        if (value !== this.internalOpen) {
+        if (value !== this.internalOpen && !this.disabled) {
             if (value) {
                 this.ensurePortalTargetEl(() => {
                     if (this.portalTargetEl) {
