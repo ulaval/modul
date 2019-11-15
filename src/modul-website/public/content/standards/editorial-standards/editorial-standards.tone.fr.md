@@ -1,4 +1,4 @@
-## TON RÉDACTIONNEL
+# Ton rédactionnel
 
 Un ton rédactionnel adéquat et un langage clair et simple communiqueront efficacement le message à l’utilisateur. Connaître l’utilisateur permettra d’adopter un style rédactionnel approprié. Avant tout chose, il est important d’assurer l’uniformité des messages et de maintenir un ton cohérent. Cette section présente quelques éléments à prendre en considération pour rédiger des messages efficaces.
 

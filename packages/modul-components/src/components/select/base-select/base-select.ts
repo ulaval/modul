@@ -1,4 +1,5 @@
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import virtualList from 'vue-virtual-scroll-list';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MPopup } from '../../popup/popup';
@@ -10,7 +11,8 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
-        MSelectItem
+        MSelectItem,
+        'virtual-list': virtualList
     },
     mixins: [
         MediaQueries
@@ -51,6 +53,12 @@ export class MBaseSelect extends ModulVue {
 
     @Prop({ default: true })
     public enableAnimation: boolean;
+
+    @Prop({ default: false })
+    public virtualScroll: boolean;
+
+    @Prop({ default: 52 }) // 208px / 4 -> base-select.scss
+    public virtualScrollItemHeight: string;
 
     public $refs: {
         items: HTMLUListElement;

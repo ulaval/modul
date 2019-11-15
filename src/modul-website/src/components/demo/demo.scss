@@ -44,6 +44,9 @@
         }
 
         &__header {
+            position: relative;
+            z-index: 3;
+            display: flex;
             padding: 0;
             margin: 0;
             list-style: none;
@@ -60,24 +63,20 @@
                 cursor: pointer;
                 outline: none;
                 transition: background-color $m-transition-duration ease;
-            }
 
-            li {
-                display: inline-block;
-
-                &::before {
-                    content: none;
-                }
-
-                &.active button,
-                button:hover,
-                button:focus {
+                &.active,
+                &:hover,
+                &:focus {
                     background-color: $modul-color--black-grey;
                 }
 
-                &:not(.active) button:active {
+                &:not(.active):active {
                     background-color: $modul-color--black-grey-dark;
                 }
+            }
+
+            li {
+                flex-shrink: 0;
             }
         }
 

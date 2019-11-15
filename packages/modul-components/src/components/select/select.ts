@@ -10,14 +10,14 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { SELECT_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
-import OpacityTransitionPlugin from '../transitions/opacity-transition/opacity-transition';
+import { MOpacityTransition } from '../transitions/opacity-transition/opacity-transition';
 import { MBaseSelect } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
-
 @WithRender
 @Component({
     components: {
-        MBaseSelect
+        MBaseSelect,
+        MOpacityTransition
     },
     mixins: [
         InputState,
@@ -29,6 +29,11 @@ import WithRender from './select.html?style=./select.scss';
 })
 export class MSelect extends ModulVue {
 
+    public $refs: {
+        baseSelect: MBaseSelect;
+    };
+
+
     @Model('input')
     @Prop()
     public value: any;
@@ -38,6 +43,12 @@ export class MSelect extends ModulVue {
 
     @Prop({ default: false })
     public clearable: boolean;
+
+    @Prop({ default: false })
+    public virtualScroll: boolean;
+
+    @Prop({ default: 52 }) // 208px / 4 -> base-select.scss
+    public virtualScrollItemHeight: string;
 
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
@@ -98,12 +109,16 @@ export class MSelect extends ModulVue {
         }
     }
 
+    public toggleSelect(): void {
+        this.$refs.baseSelect.togglePopup();
+    }
+
+
 }
 
 const SelectPlugin: PluginObject<any> = {
     install(v, options): void {
         Vue.use(I18nPlugin);
-        Vue.use(OpacityTransitionPlugin);
         v.component(SELECT_NAME, MSelect);
     }
 };

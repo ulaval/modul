@@ -42,7 +42,7 @@ export class SpritesService {
         }
     }
 
-    private isInExternalSprites(externalSpriteIdPrefix?: string): boolean {
+    public isInExternalSprites(externalSpriteIdPrefix?: string): boolean {
         return externalSpriteIdPrefix !== undefined && this.externalSpriteIdPrefixes.has(externalSpriteIdPrefix);
     }
 
