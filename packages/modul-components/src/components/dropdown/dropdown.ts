@@ -177,7 +177,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (focus && !this.as<InputStateMixin>().isDisabled) {
             this.selectText();
         } else {
-            this.$refs.input.blur();
+            if (!this.isAndroid) {
+                this.$refs.input.blur();
+            }
             this.internalOpen = false;
         }
     }
@@ -405,7 +407,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private async selectText(): Promise<void> {
         await this.$nextTick();
-        this.$refs.input.focus();
+        if (!this.isAndroid) {
+            this.$refs.input.focus();
+        } else {
+            this.internalIsFocus = true;
+        }
     }
 
     private focusSelected(): void {
@@ -557,6 +563,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private get isFirefoxSupport(): boolean {
         return UserAgentUtil.isGecko() && this.as<InputManagement>().placeholder === '' || this.as<InputManagement>().placeholder === undefined;
+    }
+
+    private get isAndroid(): boolean {
+        return UserAgentUtil.isAndroid();
     }
 
 }
