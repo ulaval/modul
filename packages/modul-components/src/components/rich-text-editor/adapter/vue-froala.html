@@ -1,7 +1,8 @@
 <div class="vue-froala"
-     @click.stop
+     @click="onClick"
      @mousedown.capture="isDirty = !disabled"
      @touchstart.capture="isDirty = !disabled"
+     :style="{ 'min-height': minHeight }"
      :class="{
         'm--is-focus': isFocused,
         'm--is-collapsed': collapsed,

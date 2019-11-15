@@ -21,9 +21,8 @@
     }
 
     &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: $m-spacing;
+        display: grid;
+        grid-template-columns: auto auto;
     }
 
     &__country {
@@ -54,7 +53,8 @@
 
     &__item-wrapper {
         display: flex;
-        align-items: center;
+        align-items: left;
+        width: 300px;
     }
 
     &__flag {
@@ -73,6 +73,7 @@
     &__item-dialCode {
         margin-left: $m-spacing--s;
         color: $m-color--grey;
+        white-space: nowrap;
     }
 
     &__number {
@@ -89,7 +90,6 @@
     }
 
     &__example {
-        position: absolute;
         margin-top: $m-spacing--xs;
         color: $m-color--grey-dark;
         font-size: $m-font-size--xs;

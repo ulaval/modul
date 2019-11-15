@@ -5,18 +5,21 @@ import { Address } from '@ulaval/modul-components/dist/utils/address-lookup/addr
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-Vue.use(AddressPlugin, { loqateKey: '', googleKey: '' });
+Vue.use(AddressPlugin);
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_LOOKUP_FIELD_NAME}`, module)
     .add('default', () => ({
         data: () => ({
             origin: 'CA',
             language: 'fr',
-            retrievedValue: 'nothing'
+            value: undefined
         }),
         methods: {
             onRetrieve(value: Address): void {
                 (this as any).retrievedValue = value;
+            },
+            clear(): void {
+                (this as any).value = undefined;
             }
         },
         template: `<div>
@@ -24,8 +27,10 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_LOOKUP_F
             <${ADDRESS_LOOKUP_FIELD_NAME}
                 :origin="origin"
                 :language="language"
-                @address-retrieved="onRetrieve">
+                v-model="value"
+                ref="lookup">
             </${ADDRESS_LOOKUP_FIELD_NAME}>
-            <div>RETRIEVED VALUE: {{ retrievedValue }}</div>
+            <div>RETRIEVED VALUE: {{ value }}</div>
+            <button @click="clear()">Clear</button>
         </div>`
     }));

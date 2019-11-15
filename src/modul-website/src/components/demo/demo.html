@@ -5,34 +5,49 @@
 
     <div class="modul-demo__block">
         <div class="modul-demo__wrapper">
-            <button @click.prevent="isOpened = !isOpened" class="modul-demo__button">{{ openCloseLabel }}</button>
+            <button @click.prevent="isOpened = !isOpened"
+                    class="modul-demo__button">{{ openCloseLabel }}</button>
         </div>
 
         <m-accordion-transition>
             <div v-if="isOpened">
-                <div class="modul-demo__code" >
+                <div class="modul-demo__code">
                     <div class="modul-demo__code__arrow"></div>
                     <ul class="modul-demo__code__header">
-                        <li :class="{'active': htmlActive}">
-                            <button class="modul-demo__code__header__button" @click="switchTab('html')">HTML</button>
+                        <li>
+                            <button class="modul-demo__code__header__button"
+                                    :class="{'active': htmlActive}"
+                                    @click="switchTab('html')"
+                                    type="button">HTML</button>
                         </li>
-                        <li :class="{'active': jsActive}" v-if="hasJs">
-                            <button class="modul-demo__code__header__button" @click="switchTab('js')">JS</button>
+                        <li v-if="hasJs">
+                            <button class="modul-demo__code__header__button"
+                                    :class="{'active': jsActive}"
+                                    @click="switchTab('js')"
+                                    type="button">JS</button>
                         </li>
-                        <li :class="{'active': cssActive}" v-if="hasCss">
-                            <button class="modul-demo__code__header__button" @click="switchTab('css')">CSS</button>
+                        <li v-if="hasCss">
+                            <button class="modul-demo__code__header__button"
+                                    :class="{'active': cssActive}"
+                                    @click="switchTab('css')"
+                                    type="button">CSS</button>
                         </li>
                     </ul>
 
-                    <pre class="modul-demo__code__content" :class="{'active': htmlActive}">
+                    <pre class="modul-demo__code__content"
+                         :class="{'active': htmlActive}">
                         <code class="modul-demo__code__content__code" v-html="htmlHl"></code>
                     </pre>
 
-                    <pre class="modul-demo__code__content" :class="{'active': jsActive}" v-if="hasJs">
+                    <pre class="modul-demo__code__content"
+                         :class="{'active': jsActive}"
+                         v-if="hasJs">
                         <code class="modul-demo__code__content__code" v-html="jsHl"></code>
                     </pre>
 
-                    <pre class="modul-demo__code__content" :class="{'active': cssActive}" v-if="hasCss">
+                    <pre class="modul-demo__code__content"
+                         :class="{'active': cssActive}"
+                         v-if="hasCss">
                         <code class="modul-demo__code__content__code" v-html="cssHl"></code>
                     </pre>
                 </div>

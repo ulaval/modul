@@ -38,7 +38,7 @@ export class MIcon extends Vue {
         } else if (svg && svg.getExternalSpritesFromSpriteId(this.name)) {
             return svg.getExternalSpritesFromSpriteId(this.name);
         } else if (svg && svg.getExternalSpritesFromSpriteId('m-svg__' + this.name)) {
-            svg.getExternalSpritesFromSpriteId('m-svg__' + this.name);
+            return svg.getExternalSpritesFromSpriteId('m-svg__' + this.name);
         } else if (this.name) {
             Vue.prototype.$log.warn('"' + this.name + '" is not a valid svg id. Make sure that the sprite has been loaded via the $svg instance service.');
         }
