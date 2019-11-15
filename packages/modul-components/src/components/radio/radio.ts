@@ -167,7 +167,7 @@ export class MRadio extends ModulVue {
         return this.model === this.value;
     }
 
-    public get isReadonlyDisabled(): boolean {
+    public get isReadonlyUnchecked(): boolean {
         return this.propReadonly && !this.isChecked;
     }
 
