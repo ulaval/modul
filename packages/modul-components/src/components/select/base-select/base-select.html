@@ -35,22 +35,42 @@
                   :key-space="onKeydownSpace">
             </slot>
         </template>
+
         <ul :id="ariaControls"
+            :class="{ 'm--is-virutalScroll': virtualScroll }"
             class="m-base-select__list"
             ref="items"
             :aria-labelledby="controlId"
             aria-live="polite"
             :style="{ minWidth: inputMaxWidth }">
-            <m-select-item v-for="(item, index) of items"
-                           :key="index"
-                           :focused="index === focusedIndex"
-                           :selected="isSelected(item)"
-                           :hide-radio-button-mobile="hideRadioButtonMobile"
-                           @click="onSelectItem(item, index, $event)">
-                <slot name="items"
-                      :item="item"
-                      :index="index"><span v-html="item"></span></slot>
-            </m-select-item>
+            <template v-if="virtualScroll">
+                <virtual-list :size="virtualScrollItemHeight"
+                              :remain="4"
+                              wclass="m-base-select__virtuallist">
+                    <m-select-item v-for="(item, index) of items"
+                                   :key="index"
+                                   :focused="index === focusedIndex"
+                                   :selected="isSelected(item)"
+                                   :hide-radio-button-mobile="hideRadioButtonMobile"
+                                   @click="onSelectItem(item, index, $event)">
+                        <slot name="items"
+                              :item="item"
+                              :index="index"><span v-html="item"></span></slot>
+                    </m-select-item>
+                </virtual-list>
+            </template>
+            <template v-else>
+                <m-select-item v-for="(item, index) of items"
+                               :key="index"
+                               :focused="index === focusedIndex"
+                               :selected="isSelected(item)"
+                               :hide-radio-button-mobile="hideRadioButtonMobile"
+                               @click="onSelectItem(item, index, $event)">
+                    <slot name="items"
+                          :item="item"
+                          :index="index"><span v-html="item"></span></slot>
+                </m-select-item>
+            </template>
         </ul>
     </m-popup>
 </div>

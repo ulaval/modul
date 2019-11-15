@@ -1,8 +1,6 @@
-## AJOUT D'ICÔNES PERSONNALISÉES
+<p class="m-u--typo--precision">Pour plus d'informations sur l'utilisation des icônes, veuillez vous référer aux composants <modul-go url="icone">icône</modul-go> et <modul-go url="icone-cliquable">icône cliquable</modul-go>.</p>
 
-<p class="m-u--typo--precision m-u--margin-top--l">Pour plus d'informations sur l'utilisation des icônes, veuillez vous référer aux composants <modul-go url="icone">icône</modul-go> et <modul-go url="icone-cliquable">icône cliquable</modul-go>.</p>
-
-## AJOUT D'ICÔNES PERSONNALISÉES
+## Ajout d'icônes personnalisées
 Bien que l'utilisation d'icônes de la librairie existante soit à privilégier, de nouvelles icônes peuvent être créées pour répondre à des besoins spécifiques.
 
 ### Taille

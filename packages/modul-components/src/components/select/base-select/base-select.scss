@@ -5,12 +5,25 @@
         margin: 0;
         padding: 0;
 
-        @include m-scrollbar();
-
         @media (min-width: $m-mq--min--s) {
             max-height: 208px;
             overflow-x: hidden;
+            overflow-y: hidden;
+        }
+    }
+
+    &__list:not(.m--is-virutalScroll) {
+        @include m-scrollbar();
+
+        @media (min-width: $m-mq--min--s) {
+            overflow-x: hidden;
             overflow-y: auto;
+        }
+    }
+
+    &__list.m--is-virutalScroll {
+        > div {
+            @include m-scrollbar();
         }
     }
 

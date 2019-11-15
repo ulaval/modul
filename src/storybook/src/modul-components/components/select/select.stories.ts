@@ -6,6 +6,18 @@ import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 const OPTIONS: string[] = ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc'];
 const LONG_OPTIONS: string[] = ['apple juice', 'bannana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
 
+
+const buildLongList = (): string[] => {
+
+    let items: string[] = [];
+
+    for (let index = 0; index < 1000; index++) {
+        items.push(`items ${index}`);
+    }
+
+    return items;
+};
+
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${SELECT_NAME}`,
     parameters: { fileName: __filename }
@@ -177,4 +189,11 @@ export const disabledItemSelectedWithLabelClearable = () => ({
         options: OPTIONS
     }),
     template: `<m-select :options="options" :disabled="true" label="Fruits" :clearable="true" v-model="model" ></m-select>`
+});
+
+export const virtualScroll = () => ({
+    data: () => ({
+        options: buildLongList()
+    }),
+    template: `<m-select :options="options" label="Longlist" :virtual-scroll="true" ></m-select>`
 });
