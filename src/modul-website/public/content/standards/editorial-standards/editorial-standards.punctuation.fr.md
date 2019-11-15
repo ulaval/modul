@@ -1,9 +1,9 @@
-## RÈGLES DE PONCTUATION
+# Ponctuation
 
 La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.
 
 ### Tableau des espacements avant et après les signes de ponctuation
-<table class="m-u--margin-top">
+<table class="m-u--margin-top m-u--table">
     <thead>
         <tr>
             <th>Nom</th>

@@ -1,4 +1,4 @@
-## POURQUOI L'ACCESSIBILITÉ ?
+# Pourquoi l'accessibilité?
 
 Les normes d'accessibilité Web permettent un accès aux services et aux contenus en ligne, non seulement pour les personnes handicapées et les seniors, mais aussi pour tous les utilisateurs qui ne disposent pas du confort offert par un ordinateur de bureau situé dans une pièce tranquille. En effet, leur application concernent également les utilisateurs non handicapés placés dans des situations moins confortables, par exemple l'utilisation d'un téléphone mobile, d'une tablette, ou placés en situation particulière de bruit, de dimension d'affichage, etc. L'accessibilité du Web repose sur le respect de règles par l'ensemble des acteurs qui travaillent à la réalisation d'outils Web. L'équipe **modUL** a regroupé une liste de recommandations générales qui permettent d'offrir des outils Web accessibles.
 

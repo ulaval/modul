@@ -18,12 +18,16 @@ $w-content-max-width: $mw-max-width;
         height: 100%;
     }
 
+    &__body {
+        position: relative;
+    }
+
     &__page {
         position: relative;
         min-width: $m-min-width;
     }
 
-    &__menu-button.m-icon-button {
+    &__menu-button.mw-expandable-panel__menu-button.mw-expandable-panel__menu-button {
         position: absolute;
         top: 0;
         left: 0;
@@ -36,7 +40,7 @@ $w-content-max-width: $mw-max-width;
 
     &__content {
         margin: 0 auto;
-        padding: $m-spacing--xxxl $m-spacing;
+        padding: $m-spacing--xxxxl $m-spacing;
         max-width: $w-content-max-width;
 
         @media (min-width: $m-mq--min--s) {
