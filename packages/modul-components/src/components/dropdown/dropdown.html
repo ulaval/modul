@@ -112,7 +112,8 @@
                        @input="onInput" />
                 <m-icon-button class="m-dropdown__header__research-button"
                                icon-name="m-svg__search"
-                               @click="focusOnResearchInput">
+                               @click="focusOnResearchInput"
+                               @hook:updated="focusOnResearchInput">
                     <m-i18n k="m-dropdown:research"></m-i18n>
                 </m-icon-button>
             </div>
