@@ -13,6 +13,22 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PAGINATION_NAME}`, module)
         }),
         template: `<m-pagination v-model="model1" :items-total="itemsTotal"></m-pagination>`
     }))
+    .add('single page', () => ({
+        data: () => ({
+            model1: 1,
+            itemsTotal: 15
+
+        }),
+        template: `<m-pagination v-model="model1" :items-total="itemsTotal"></m-pagination>`
+    }))
+    .add('1 result', () => ({
+        data: () => ({
+            model1: 1,
+            itemsTotal: 1
+
+        }),
+        template: `<m-pagination v-model="model1" :items-total="itemsTotal"></m-pagination>`
+    }))
     .add('value', () => ({
         data: () => ({
             model1: 12,

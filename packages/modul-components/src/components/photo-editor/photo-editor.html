@@ -1,0 +1,49 @@
+<m-modal class="m-photo-editor"
+         :open="open"
+         :title="i18nTitleModal"
+         :size="modalSize"
+         :close-on-backdrop="false"
+         @close="close"
+         ref="modal">
+    <m-message v-if="!validFile"
+               class="m-photo-editor__message"
+               :state="messageState">
+        <p>{{ i18nFileError }}</p>
+    </m-message>
+    <m-image-displayer v-if="selectMode"
+                       :url-photo="urlPhoto"
+                       @delete-image="deleteImage"
+                       ref="imageDisplayer"></m-image-displayer>
+    <m-crop-image v-else
+                  :image="imageToCrop"
+                  @image-cropped="saveImage"
+                  ref="cropImage"></m-crop-image>
+
+    <template #footer>
+        <m-file-select v-if="selectMode"
+                       class="m-photo-editor__button"
+                       :store-name="storeName"
+                       :full-size="true"
+                       :multiple="false"
+                       :keep-store="true"
+                       :label="i18nChoosePhoto"
+                       :skin="primaryButton"
+                       :allowed-extensions="allowedExtensions"
+                       @file-selected="replaceImage"
+                       ref="fileSelect"></m-file-select>
+        <template v-else>
+            <m-button :skin="primaryButton"
+                      :full-size="true"
+                      :waiting="savingInProgress"
+                      @click="crop"
+                      ref="cropButton">{{ i18nSave }}</m-button>
+            <m-button class="m-photo-editor__cancel"
+                      :skin="secondaryButton"
+                      :full-size="true"
+                      :disabled="savingInProgress"
+                      @click="initialize"
+                      ref="cancelButton">{{ i18nCancel }}</m-button>
+        </template>
+    </template>
+
+</m-modal>
