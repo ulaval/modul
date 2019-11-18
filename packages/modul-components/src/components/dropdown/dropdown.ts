@@ -112,11 +112,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         this.internalIsFocus = false;
     }
 
-
-    public get filterableMobile(): boolean {
-        return this.filterable && this.as<MediaQueries>().isMqMaxS;
-    }
-
     public get filterableDesktop(): boolean {
         return this.filterable && this.as<MediaQueries>().isMqMinS;
     }
@@ -161,7 +156,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         let inputEl: any = this.$refs.input;
 
         setTimeout(() => { // Need timeout to set focus on input
-            if (this.filterableMobile) {
+            if (this.filterable && this.as<MediaQueries>().isMqMaxS) {
                 this.focusOnResearchInput();
             } else {
                 inputEl.focus();
