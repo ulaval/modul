@@ -160,8 +160,12 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
         }, 200);
 
-        this.focusSelected();
-        this.scrollToFocused();
+        if (!this.filterable) {
+            this.focusSelected();
+            this.scrollToFocused();
+        }
+
+
     }
 
     @Emit('close')
