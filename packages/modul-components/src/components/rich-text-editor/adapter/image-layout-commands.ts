@@ -36,6 +36,14 @@ export namespace ImageLayoutCommands {
                 if (!dropdown.querySelector(`.fr-btn.${ACTIVE_CLASS}`)) {
                     getElementFromDataCmd(dropdown, IMG_BLOCK_LEFT_CMD)!.classList.add(ACTIVE_CLASS);
                 }
+            },
+            refresh: function(): void {
+                const image: HTMLElement[] = this.image.get();
+                const popup: HTMLElement = this.popups.areVisible()[0];
+                if (image && popup) {
+                    const imageClasses: DOMTokenList = image[0].classList;
+                    getElementFromDataCmd(popup, IMG_LAYOUT_CMD)!.innerHTML = getIconFromClasses(imageClasses.value);
+                }
             }
         });
     }
@@ -54,8 +62,8 @@ export namespace ImageLayoutCommands {
                     getElementFromDataCmd(popup, currentCmd)!.classList.remove(ACTIVE_CLASS);
                 });
                 this.image.applyStyle(`${PREFIX}${cmd}`);
-                getElementFromDataCmd(popup, cmd)!.classList.add(ACTIVE_CLASS);
-                getElementFromDataCmd(popup, IMG_LAYOUT_CMD)!.innerHTML = icon;
+                // getElementFromDataCmd(popup, cmd)!.classList.add(ACTIVE_CLASS);
+                // getElementFromDataCmd(popup, IMG_LAYOUT_CMD)!.innerHTML = icon;
             }
         });
     }
@@ -70,5 +78,17 @@ export namespace ImageLayoutCommands {
 
     function getElementFromDataCmd(root: HTMLElement, value: string): Element | null {
         return root.querySelector(`[data-cmd="${value}"]`);
+    }
+
+    function getIconFromClasses(classes: string): any {
+        if (classes.includes(IMG_BLOCK_CENTER_CMD)) {
+            return imageBlockCenterIcon;
+        } else if (classes.includes(IMG_FLOAT_LEFT_CMD)) {
+            return imageFloatLeftIcon;
+        } else if (classes.includes(IMG_FLOAT_RIGHT_CMD)) {
+            return imageFloatRightIcon;
+        } else {
+            return imageBlockLeftIcon;
+        }
     }
 }
