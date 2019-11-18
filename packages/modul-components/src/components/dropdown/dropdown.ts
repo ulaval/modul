@@ -112,6 +112,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         this.internalIsFocus = false;
     }
 
+
+    public get filterableMobile(): boolean {
+        return this.filterable && this.as<MediaQueries>().isMqMaxS;
+    }
+
     public groupHasItems(group: BaseDropdownGroup): boolean {
         return this.internalItems.some(i => {
             return i.group === group;
@@ -152,7 +157,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         let inputEl: any = this.$refs.input;
 
         setTimeout(() => { // Need timeout to set focus on input
-            if (this.filterable && this.as<MediaQueries>().isMqMaxS) {
+            if (this.filterableMobile) {
                 this.focusOnResearchInput();
             } else {
                 inputEl.focus();
@@ -160,12 +165,8 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
         }, 200);
 
-        if (!this.filterable) {
-            this.focusSelected();
-            this.scrollToFocused();
-        }
-
-
+        this.focusSelected();
+        this.scrollToFocused();
     }
 
     @Emit('close')
