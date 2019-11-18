@@ -75,6 +75,13 @@ export class MDroppable extends MElementDomPlugin<MDroppableOptions> {
                 this.addEventListener('drop', (event: DragEvent) => this.onDrop(event));
                 this.allowInputTextSelection();
             });
+        } else {
+            mount(() => {
+                this.element.classList.add(MDroppableClassNames.Droppable);
+                MDOMPlugin.attach(MRemoveUserSelect, this.element, true);
+                this.addEventListener('dragover', (event: DragEvent) => this.onDragOver(event));
+                this.allowInputTextSelection();
+            });
         }
     }
 
@@ -107,6 +114,12 @@ export class MDroppable extends MElementDomPlugin<MDroppableOptions> {
 
         this.cleanupCssClasses();
         this.dispatchEvent(event, MDroppableEventNames.OnDragLeave);
+    }
+
+    private canDropTarget(event: Event): boolean {
+        const canDropAttr: string | null = event && event.currentTarget && (event.currentTarget as HTMLElement).getAttribute('can-drop');
+        let canDropValue: boolean = canDropAttr === 'false' ? false : true;
+        return canDropValue;
     }
 
     public canDrop(draggable: MDraggable | undefined = MDraggable.currentDraggable): boolean {
@@ -198,6 +211,7 @@ export class MDroppable extends MElementDomPlugin<MDroppableOptions> {
         event.preventDefault();
         this.cleanupCssClasses();
         MDroppable.currentHoverDroppable = undefined;
+        this.canDropTarget(event);
         this.dispatchEvent(event, MDroppableEventNames.OnDrop);
     }
 

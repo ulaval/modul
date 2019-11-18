@@ -147,24 +147,46 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
         this._options.acceptedActions = acceptedActions;
     }
 
+    private canDrag(element: HTMLElement): boolean {
+        const childDragValue: null | Attr = element.attributes.getNamedItem('can-drag');
+
+        let canDragValue: boolean;
+        if (!this.options.canSort) {
+            canDragValue = false;
+        } else if (childDragValue && childDragValue.value === 'false') {
+            canDragValue = false;
+        } else if (childDragValue && childDragValue.value === 'true') {
+            canDragValue = true;
+        } else {
+            canDragValue = this.options.canSort;
+        }
+
+        return canDragValue;
+    }
+
+    private canDrop(element: HTMLElement): boolean {
+        const childDropValue: null | Attr = element.attributes.getNamedItem('can-drop');
+
+        let canDropValue: boolean;
+        if (!this.options.canSort) {
+            canDropValue = false;
+        } else if (childDropValue && childDropValue.value === 'false') {
+            canDropValue = false;
+        } else if (childDropValue && childDropValue.value === 'true') {
+            canDropValue = true;
+        } else {
+            canDropValue = this.options.canSort;
+        }
+
+        return canDropValue;
+    }
+
     private attachChilds(): void {
         let itemCounter: number = 0;
         const sortableGroup: MDroppableGroup | undefined = MDOMPlugin.getRecursive(MDroppableGroup, this.element);
 
         for (let i: number = 0; i < this.element.children.length; i++) {
             const currentElement: HTMLElement = this.element.children[i] as HTMLElement;
-            const childDragValue: null | Attr = currentElement.attributes.getNamedItem('can-drag');
-
-            let canDragValue: boolean;
-            if (!this.options.canSort) {
-                canDragValue = false;
-            } else if (childDragValue && childDragValue.value === 'false') {
-                canDragValue = false;
-            } else if (childDragValue && childDragValue.value === 'true') {
-                canDragValue = true;
-            } else {
-                canDragValue = this.options.canSort;
-            }
 
             if (currentElement.classList.contains('emptyPlaceholder')) {
                 this.attachEmptyPlaceholder(currentElement, sortableGroup ? sortableGroup.options : undefined);
@@ -176,7 +198,7 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
                     action: !grouping ? MSortableAction.Move : MSortableAction.MoveGroup,
                     dragData: this.options.items[itemCounter++],
                     grouping,
-                    canDrag: canDragValue
+                    canDrag: this.canDrag(currentElement)
                 });
                 draggablePlugin.removeEventListener(MDraggableEventNames.OnDragEnd);
                 draggablePlugin.removeEventListener(MDraggableEventNames.OnDragStart);
@@ -185,7 +207,7 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
 
                 MDOMPlugin.attach(MDroppable, currentElement, {
                     acceptedActions: this.options.acceptedActions,
-                    canDrop: this.options.canSort
+                    canDrop: this.canDrop(currentElement)
                 });
             }
         }

@@ -27,7 +27,7 @@
 
         <li v-for="(element, index) in elementsSortableWithHandleWithAttribut"
             :key="element.cle"
-            :can-drag="isDraggable(element.cle)">
+            :can-drop="isDraggable(element.cle)">
             <div v-if="peutEtreDrag"
                  class="drag-handle">
                 <m-icon name="m-svg__drag-vertical"
