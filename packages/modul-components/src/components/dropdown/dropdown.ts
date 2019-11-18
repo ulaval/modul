@@ -117,6 +117,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         return this.filterable && this.as<MediaQueries>().isMqMaxS;
     }
 
+    public get filterableDesktop(): boolean {
+        return this.filterable && this.as<MediaQueries>().isMqMinS;
+    }
+
     public groupHasItems(group: BaseDropdownGroup): boolean {
         return this.internalItems.some(i => {
             return i.group === group;

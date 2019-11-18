@@ -867,6 +867,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = 
                 aria-haspopup="true"
                 class="m-dropdown__input"
                 id="mDropdown-fakeId"
+                readonly="readonly"
                 type="text"
               />
                
@@ -979,6 +980,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               placeholder="Type to filter"
+              readonly="readonly"
               type="text"
             />
              
