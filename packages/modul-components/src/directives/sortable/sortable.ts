@@ -188,6 +188,18 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
         for (let i: number = 0; i < this.element.children.length; i++) {
             const currentElement: HTMLElement = this.element.children[i] as HTMLElement;
 
+            let canDropValue: boolean;
+            const childDropValue: null | Attr = currentElement.attributes.getNamedItem('can-drop');
+            if (!this.options.canSort) {
+                canDropValue = false;
+            } else if (childDropValue && childDropValue.value === 'false') {
+                canDropValue = false;
+            } else if (childDropValue && childDropValue.value === 'true') {
+                canDropValue = true;
+            } else {
+                canDropValue = this.options.canSort;
+            }
+
             if (currentElement.classList.contains('emptyPlaceholder')) {
                 this.attachEmptyPlaceholder(currentElement, sortableGroup ? sortableGroup.options : undefined);
             } else {
@@ -205,10 +217,15 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
                 draggablePlugin.addEventListener(MDraggableEventNames.OnDragEnd, (event: MDropEvent) => this.onChildDragEnd(event));
                 draggablePlugin.addEventListener(MDraggableEventNames.OnDragStart, (event: MDropEvent) => this.onChildDragStart(event));
 
+                // tslint:disable-next-line:no-console
+                console.log('A');
                 MDOMPlugin.attach(MDroppable, currentElement, {
                     acceptedActions: this.options.acceptedActions,
-                    canDrop: this.canDrop(currentElement)
+                    canDrop: this.canDrop(currentElement),
+                    alwaysMount: true
                 });
+                // tslint:disable-next-line:no-console
+                console.log('B');
             }
         }
     }

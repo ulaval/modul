@@ -29,6 +29,7 @@ export interface MDropEvent extends CustomEvent {
 export interface MDroppableOptions {
     acceptedActions: string[];
     canDrop?: boolean;
+    alwaysMount?: boolean;
 }
 
 export interface MDropInfo {
@@ -64,16 +65,12 @@ export class MDroppable extends MElementDomPlugin<MDroppableOptions> {
         this.setOptions(this.options);
         if (this.options.canDrop) {
             mount(() => {
+                this.attachAll();
+            });
+        } else if (this.options.alwaysMount) {
+            mount(() => {
                 this.element.classList.add(MDroppableClassNames.Droppable);
-                MDOMPlugin.attach(MRemoveUserSelect, this.element, true);
-                this.addEventListener('dragenter', (event: DragEvent) => this.onDragEnter(event));
-                this.addEventListener('dragleave', (event: DragEvent) => this.onDragLeave(event));
-
-                // Firefox doesn't handle dragLeave correctly.  We have to declare dragexit AND dragleave for that reason.
-                this.addEventListener('dragexit', (event: DragEvent) => this.onDragLeave(event));
-                this.addEventListener('dragover', (event: DragEvent) => this.onDragOver(event));
-                this.addEventListener('drop', (event: DragEvent) => this.onDrop(event));
-                this.allowInputTextSelection();
+                this.attachDragOverOnly();
             });
         } else {
             mount(() => {
@@ -89,6 +86,11 @@ export class MDroppable extends MElementDomPlugin<MDroppableOptions> {
         this.setOptions(this._options = options);
         if (this.options.canDrop) {
             refresh(() => { this.element.classList.add(MDroppableClassNames.Droppable); });
+        } else if (this.options.alwaysMount) {
+            refresh(() => {
+                this.detach();
+                this.attachDragOverOnly();
+            });
         }
     }
 
@@ -132,6 +134,26 @@ export class MDroppable extends MElementDomPlugin<MDroppableOptions> {
         return canDrop && !this.isHoveringOverDraggedElementChild()
             && (acceptAny || isAllowedAction)
             && !this.isDropRestrictedByEncapsuledSortable();
+    }
+
+    private attachAll(): void {
+        this.element.classList.add(MDroppableClassNames.Droppable);
+        MDOMPlugin.attach(MRemoveUserSelect, this.element, true);
+        this.addEventListener('dragenter', (event: DragEvent) => this.onDragEnter(event));
+        this.addEventListener('dragleave', (event: DragEvent) => this.onDragLeave(event));
+
+        // Firefox doesn't handle dragLeave correctly.  We have to declare dragexit AND dragleave for that reason.
+        this.addEventListener('dragexit', (event: DragEvent) => this.onDragLeave(event));
+        this.addEventListener('dragover', (event: DragEvent) => this.onDragOver(event));
+        this.addEventListener('drop', (event: DragEvent) => this.onDrop(event));
+        this.allowInputTextSelection();
+    }
+
+    private attachDragOverOnly(): void {
+        this.element.classList.add(MDroppableClassNames.Droppable);
+        MDOMPlugin.attach(MRemoveUserSelect, this.element, true);
+        this.addEventListener('dragover', (event: DragEvent) => this.onDragOver(event));
+        this.allowInputTextSelection();
     }
 
     private isDropRestrictedByEncapsuledSortable(): boolean {
