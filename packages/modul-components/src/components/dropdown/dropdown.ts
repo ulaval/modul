@@ -148,10 +148,17 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Emit('open')
     private async onOpen(): Promise<void> {
         await this.$nextTick();
+
         let inputEl: any = this.$refs.input;
+
         setTimeout(() => { // Need timeout to set focus on input
-            inputEl.focus();
-        });
+            if (this.filterable && this.as<MediaQueries>().isMqMaxS) {
+                this.focusOnResearchInput();
+            } else {
+                inputEl.focus();
+            }
+
+        }, 200);
 
         this.focusSelected();
         this.scrollToFocused();
