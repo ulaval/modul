@@ -66,8 +66,6 @@ export namespace ImageLayoutCommands {
                     getElementFromDataCmd(popup, currentCmd)!.classList.remove(ACTIVE_CLASS);
                 });
                 this.image.applyStyle(`${PREFIX}${cmd}`);
-                // getElementFromDataCmd(popup, cmd)!.classList.add(ACTIVE_CLASS);
-                // getElementFromDataCmd(popup, IMG_LAYOUT_CMD)!.innerHTML = icon;
             }
         });
     }
