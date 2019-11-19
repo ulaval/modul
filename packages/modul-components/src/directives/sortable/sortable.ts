@@ -188,18 +188,6 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
         for (let i: number = 0; i < this.element.children.length; i++) {
             const currentElement: HTMLElement = this.element.children[i] as HTMLElement;
 
-            let canDropValue: boolean;
-            const childDropValue: null | Attr = currentElement.attributes.getNamedItem('can-drop');
-            if (!this.options.canSort) {
-                canDropValue = false;
-            } else if (childDropValue && childDropValue.value === 'false') {
-                canDropValue = false;
-            } else if (childDropValue && childDropValue.value === 'true') {
-                canDropValue = true;
-            } else {
-                canDropValue = this.options.canSort;
-            }
-
             if (currentElement.classList.contains('emptyPlaceholder')) {
                 this.attachEmptyPlaceholder(currentElement, sortableGroup ? sortableGroup.options : undefined);
             } else {
