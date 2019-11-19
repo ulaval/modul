@@ -33,8 +33,12 @@ export namespace ImageLayoutCommands {
             },
             refreshOnShow: function(_$btn: any, $dropdown: any): void {
                 const dropdown: HTMLElement = $dropdown[0];
-                if (!dropdown.querySelector(`.fr-btn.${ACTIVE_CLASS}`)) {
-                    getElementFromDataCmd(dropdown, IMG_BLOCK_LEFT_CMD)!.classList.add(ACTIVE_CLASS);
+                const image: HTMLElement[] = this.image.get();
+
+                if (image) {
+                    const imageClasses: DOMTokenList = image[0].classList;
+                    removeActiveClass(dropdown);
+                    getElementFromDataCmd(dropdown, getActiveImageLayout(imageClasses.value))!.classList.add(ACTIVE_CLASS);
                 }
             },
             refresh: function(): void {
@@ -90,5 +94,23 @@ export namespace ImageLayoutCommands {
         } else {
             return imageBlockLeftIcon;
         }
+    }
+
+    function getActiveImageLayout(classes: string): string {
+        if (classes.includes(IMG_BLOCK_CENTER_CMD)) {
+            return IMG_BLOCK_CENTER_CMD;
+        } else if (classes.includes(IMG_FLOAT_LEFT_CMD)) {
+            return IMG_FLOAT_LEFT_CMD;
+        } else if (classes.includes(IMG_FLOAT_RIGHT_CMD)) {
+            return IMG_FLOAT_RIGHT_CMD;
+        } else {
+            return IMG_BLOCK_LEFT_CMD;
+        }
+    }
+
+    function removeActiveClass(root: HTMLElement): void {
+        [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD].forEach((currentCmd: string) => {
+            getElementFromDataCmd(root, currentCmd)!.classList.remove(ACTIVE_CLASS);
+        });
     }
 }
