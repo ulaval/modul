@@ -20,6 +20,16 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
                         <m-dropdown-item value="6" label="Tomato"></m-dropdown-item>
                     </m-dropdown>`
     }))
+    .add('with disabled items', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-dropdown label="Vegetable" v-model="model1">
+                        <m-dropdown-item value="1" label="Artichoke"></m-dropdown-item>
+                        <m-dropdown-item value="2" label="Asparagus" :disabled="true"></m-dropdown-item>
+                        <m-dropdown-item value="3" label="Broccoli" :disabled="true"></m-dropdown-item>
+                    </m-dropdown>`
+    }))
     .add('focus', () => ({
         data: () => ({
             model2: ''
