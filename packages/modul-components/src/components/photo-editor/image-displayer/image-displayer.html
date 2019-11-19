@@ -1,0 +1,16 @@
+<div class="m-image-selector">
+    <m-icon-button v-if="showDeleteButton"
+                   class="m-image-selector__delete"
+                   icon-name="m-svg__delete"
+                   icon-size="20px"
+                   :title="i18nDelete"
+                   :skin="skinDelete"
+                   @click="deleteImage"
+                   ref="deleteButton"></m-icon-button>
+    <m-avatar :size="avatarSize">
+        <img v-if="urlPhoto"
+             class="m-image-selector__avatar"
+             :src="urlPhoto"
+             alt="" />
+    </m-avatar>
+</div>

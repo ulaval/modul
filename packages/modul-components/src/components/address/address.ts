@@ -16,7 +16,7 @@ export interface AddressPluginOptions {
 }
 
 const AddressPlugin: PluginObject<any> = {
-    install(v, options: AddressPluginOptions | undefined = { loqateKey: '', googleKey: '', googleProxy: {} }): void {
+    install(v, options: AddressPluginOptions | undefined = { loqateKey: '', googleKey: '', googleProxy: {} as GoogleProxyLookupPluginOptions }): void {
         v.use(AddressLookupPlugin, { loqateKey: options.loqateKey, googleKey: options.googleKey, googleProxy: options.googleProxy } as AddressLookupPluginOptions);
         v.use(AutoCompletePlugin);
         v.use(PoweredByGooglePlugin);

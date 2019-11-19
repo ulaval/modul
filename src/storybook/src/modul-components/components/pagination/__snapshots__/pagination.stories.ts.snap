@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-pagination 1 result 1`] = `
+<div
+  class="m-pagination"
+>
+  <div
+    class="m-pagination__status"
+  >
+    1 résultat
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
 exports[`Storyshots modul-components|m-pagination default 1`] = `
 <div
   class="m-pagination"
@@ -7,7 +23,7 @@ exports[`Storyshots modul-components|m-pagination default 1`] = `
   <div
     class="m-pagination__status"
   >
-    Page 1 de 25 - 500 résultats
+    1 à 20 de 500 résultats
   </div>
    
   <div
@@ -177,7 +193,7 @@ exports[`Storyshots modul-components|m-pagination items-per-page="14" 1`] = `
   <div
     class="m-pagination__status"
   >
-    Page 1 de 36 - 500 résultats
+    1 à 14 de 500 résultats
   </div>
    
   <div
@@ -347,7 +363,7 @@ exports[`Storyshots modul-components|m-pagination loading 1`] = `
   <div
     class="m-pagination__status"
   >
-    Page 1 de 25 - 500 résultats
+    1 à 20 de 500 résultats
   </div>
    
   <div
@@ -511,6 +527,22 @@ exports[`Storyshots modul-components|m-pagination loading 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-pagination single page 1`] = `
+<div
+  class="m-pagination"
+>
+  <div
+    class="m-pagination__status"
+  >
+    15 résultats
+  </div>
+   
+  <!---->
+   
+  <!---->
+</div>
+`;
+
 exports[`Storyshots modul-components|m-pagination value 1`] = `
 <div
   class="m-pagination"
@@ -518,7 +550,7 @@ exports[`Storyshots modul-components|m-pagination value 1`] = `
   <div
     class="m-pagination__status"
   >
-    Page 12 de 25 - 500 résultats
+    221 à 240 de 500 résultats
   </div>
    
   <div
