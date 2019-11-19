@@ -9,7 +9,7 @@ module.exports = {
     mode: 'production',
     devtool: 'source-map',
     entry: {
-        lib: resolve('src/lib.ts')
+        lib: resolve('dist/lib.js')
     },
     output: {
         filename: 'modul.udm.js',
@@ -72,24 +72,6 @@ module.exports = {
                 options: {
                     scoped: true
                 }
-            },
-            {
-                test: /\.ts$/,
-                use: [
-                    {
-                        loader: 'thread-loader',
-                        options: {
-                            workers: require('os').cpus().length - 1
-                        }
-                    },
-                    {
-                        loader: 'ts-loader',
-                        options: {
-                            configFile: resolve('tsconfig.lib.json'),
-                            happyPackMode: true
-                        }
-                    }
-                ]
             },
             {
                 test: /\.svg$/,
