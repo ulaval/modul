@@ -45,6 +45,13 @@
         ],
         "no-empty": false,
         "no-debugger": true,
-        "no-null-keyword": false
+        "no-null-keyword": false,
+        "import-blacklist": [
+            true,
+            [
+                "^@ulaval\/modul-components(?![\/dist])",
+                "^@ulaval\/modul-components\/src"
+            ]
+        ]
     }
 }
