@@ -9,6 +9,7 @@ export namespace ImageLayoutCommands {
     const IMG_BLOCK_CENTER_CMD: string = 'image-block-center';
     const IMG_FLOAT_LEFT_CMD: string = 'image-float-left';
     const IMG_FLOAT_RIGHT_CMD: string = 'image-float-right';
+    const IMG_CMD: string[] = [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD];
     const PREFIX: string = 'm--fr-';
     const ACTIVE_CLASS: string = `${PREFIX}active`;
 
@@ -74,7 +75,7 @@ export namespace ImageLayoutCommands {
         if (this.$oel[0].parentNode.__vue__.config.imageHideFloatLayout) {
             return [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD];
         } else {
-            return [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD];
+            return IMG_CMD;
         }
     }
 
@@ -95,20 +96,18 @@ export namespace ImageLayoutCommands {
     }
 
     function getActiveImageLayout(classes: string): string {
-        if (classes.includes(IMG_BLOCK_CENTER_CMD)) {
-            return IMG_BLOCK_CENTER_CMD;
-        } else if (classes.includes(IMG_FLOAT_LEFT_CMD)) {
-            return IMG_FLOAT_LEFT_CMD;
-        } else if (classes.includes(IMG_FLOAT_RIGHT_CMD)) {
-            return IMG_FLOAT_RIGHT_CMD;
-        } else {
-            return IMG_BLOCK_LEFT_CMD;
-        }
+        let cmd: string | undefined = IMG_CMD.find((currentCmd: string) => {
+            return classes.includes(currentCmd);
+        });
+        return cmd || IMG_BLOCK_LEFT_CMD;
     }
 
     function removeActiveClass(root: HTMLElement): void {
-        [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD].forEach((currentCmd: string) => {
-            getElementFromDataCmd(root, currentCmd)!.classList.remove(ACTIVE_CLASS);
+        IMG_CMD.forEach((currentCmd: string) => {
+            const element: Element | null = getElementFromDataCmd(root, currentCmd);
+            if (element) {
+                getElementFromDataCmd(root, currentCmd)!.classList.remove(ACTIVE_CLASS);
+            }
         });
     }
 }
