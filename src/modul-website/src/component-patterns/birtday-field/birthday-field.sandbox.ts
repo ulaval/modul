@@ -1,6 +1,6 @@
 
+import { MinimumAgeValidator } from '@/component-patterns/birtday-field/age/minimum-age-validator';
 import { FormGroup } from '@ulaval/modul-components/dist/utils/form/form-group';
-import { MinimumAgeValidator } from '@ulaval/modul-components/dist/utils/form/validators/age/minimum-age-validator';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { Component } from 'vue-property-decorator';
 import BirthdayField from './birthday-field';
