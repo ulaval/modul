@@ -3,11 +3,13 @@ import { Enums } from '../../../../utils/enums/enums';
 import uuid from '../../../../utils/uuid/uuid';
 import { MLinkMode } from '../../../link/link';
 import { MCalendarButton } from '../../calendar-button/calendar-button';
+import '../../calendar-button/calendar-button.scss';
 import { RangeDate } from '../../calendar-state/state/abstract-calendar-state';
 import { CalendarType, DayState, MonthState, YearState } from '../../calendar-state/state/calendar-state';
 import ModulDate, { DatePrecision } from './../../../../utils/modul-date/modul-date';
 import { MAbstractCalendarRenderer } from './../abstract-calendar-renderer';
-import WithRender from './base-calendar.html?style=./base-calendar.scss';
+import WithRender from './base-calendar.html';
+import './base-calendar.scss';
 
 const TRANSLATION_ROOT: string = 'm-calendar' + ':';
 const TRANSLATION_MONTHS: string = TRANSLATION_ROOT + 'month';
