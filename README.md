@@ -20,7 +20,7 @@ MODUL can be used in any Vue CLI 3+ project, the first step is to install the de
 npm install @ulaval/modul-components --save
 ```
 
-Then in you main.ts file, install the ModulComponentPlugin and the FrenchPlugin
+- In you main.ts file, install the ModulComponentPlugin and the FrenchPlugin
 
 ```typescript
 import { ModulComponentPlugin, FrenchPlugin } from '@ulaval/modul-components';
@@ -30,7 +30,7 @@ Vue.use(ModulComponentPlugin);
 Vue.use(FrenchPlugin);
 ```
 
-Then in the App.vue file, import the global scss and add overrides (if any)
+- In the App.vue file, import the global scss and add overrides (if any)
 
 ```scss
 
@@ -44,6 +44,17 @@ $m-font-path: '~@ulaval/modul-components/dist/assets/fonts/'; //this is required
 </style>
 
 ```
+- Add the "m-u--app-body" class to the main application div
+```html
+<template>
+  <div id="app" class="m-u--app-body">
+      ...
+  </div>
+</template>
+
+```
+
+
 
 MODUL components will now be accessible globaly in all you components template
 
@@ -55,7 +66,7 @@ MODUL components will now be accessible globaly in all you components template
 
 ### Complexe usage
 
-If you need a more advanced solution that includes using beta components abd code splitting you can refer to [this repository](https://github.com/ulaval/modul-typescript-template) for a template of a complete modul project.
+If you need a more advanced solution that includes using beta components abd code splitting you can refer to [this repository](https://github.com/ulaval/modul-typescript-template) for a template of a complete MODUL project.
 
 ## Contributing to MODUL
 
