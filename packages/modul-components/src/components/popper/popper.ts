@@ -91,7 +91,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     public leaveCancelled: any;
 
     @Prop()
-    public containerSelector: string;
+    public boundariesElement: string;
 
     public $refs: {
         popper: HTMLElement;
@@ -127,7 +127,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
                     },
                     modifiers: {
                         preventOverflow: {
-                            boundariesElement: this.containerSelector ? document.querySelector(this.containerSelector) : 'window'
+                            boundariesElement: this.boundariesElement ? document.querySelector(this.boundariesElement) : 'window'
                         }
                     }
                 };
