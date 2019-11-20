@@ -156,12 +156,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         let inputEl: any = this.$refs.input;
 
         setTimeout(() => { // Need timeout to set focus on input
-            if (this.filterable && this.as<MediaQueries>().isMqMaxS) {
-                this.focusOnResearchInput();
-            } else {
+            if (!(this.filterable && this.as<MediaQueries>().isMqMaxS)) {
                 inputEl.focus();
             }
-
         }, 200);
 
         this.focusSelected();
@@ -225,7 +222,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             this.$emit('change', value);
         }
         this.dirty = false;
-        this.internalOpen = false;
+        if (value !== '') {
+            this.internalOpen = false;
+        }
+
         this.setInputWidth();
     }
 
