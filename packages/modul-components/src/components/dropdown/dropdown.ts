@@ -169,6 +169,8 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     private onClose(): void {
         const hasMatch: boolean = this.matchFilterTextToValue();
         this.internalFilter = '';
+        this.dirty = false;
+        this.internalFilterRegExp = / /;
         if (this.clearInvalidSelectionOnClose && !hasMatch && this.selectedText === '') {
             this.$emit('input', '');
             this.setModel('', true);
@@ -536,8 +538,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
                     if (this.enableAnimation) {
                         el.style.maxHeight = 'none';
                     }
-                    this.dirty = false;
-                    this.internalFilterRegExp = / /;
                     done();
                 }, 300);
             } else {

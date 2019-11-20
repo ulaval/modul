@@ -107,7 +107,7 @@
                        type="text"
                        :placeholder="'m-dropdown:search' | f-m-i18n"
                        ref="researchInput"
-                       v-model="selectedText"
+                       v-model.trim="selectedText"
                        :max-length="maxLength"
                        @input="onInput" />
                 <m-icon-button class="m-dropdown__header__research-button"
