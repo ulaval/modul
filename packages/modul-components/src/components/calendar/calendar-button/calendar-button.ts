@@ -1,6 +1,7 @@
 import { Component, Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import WithRender from './calendar-button.html?style=./calendar-button.scss';
+import WithRender from './calendar-button.html';
+import './calendar-button.scss';
 
 
 @WithRender
