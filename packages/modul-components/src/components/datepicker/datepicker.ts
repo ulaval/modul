@@ -174,7 +174,7 @@ export class MDatepicker extends ModulVue {
     }
 
     private get isLessThanTablet(): boolean {
-        return this.as<MediaQueries>().isMqMaxS
+        return this.as<MediaQueries>().isMqMaxS;
     }
 
     @Emit('open')
