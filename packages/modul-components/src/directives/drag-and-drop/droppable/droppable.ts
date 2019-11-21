@@ -73,13 +73,6 @@ export class MDroppable extends MElementDomPlugin<MDroppableOptions> {
                 this.element.classList.add(MDroppableClassNames.Droppable);
                 this.attachDragOverOnly();
             });
-        } else {
-            mount(() => {
-                this.element.classList.add(MDroppableClassNames.Droppable);
-                MDOMPlugin.attach(MRemoveUserSelect, this.element, true);
-                this.addEventListener('dragover', (event: DragEvent) => this.onDragOver(event));
-                this.allowInputTextSelection();
-            });
         }
     }
 
