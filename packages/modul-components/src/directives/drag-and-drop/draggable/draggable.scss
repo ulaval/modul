@@ -1,0 +1,30 @@
+:root {
+    --m-draggable-opacity: 0.5;
+    --m-draggable-cursor: grab;
+}
+
+.m--is-dragging {
+    opacity: var(--m-draggable-opacity);
+    cursor: no-drop;
+}
+
+.m--is-draggable {
+    &:not(.m--has-drag-handle) {
+        cursor: var(--m-draggable-cursor);
+    }
+
+    .m-drag-handle {
+        display: block;
+    }
+}
+
+.m-drag-handle {
+    display: none;
+    cursor: var(--m-draggable-cursor);
+}
+
+// enforce zero margin on draggable item to avoid hovering interspaces created by margins,
+// lead to weird styling behaviors when parent element being also sortable
+.m--is-droppable .m--is-draggable {
+    margin: 0;
+}

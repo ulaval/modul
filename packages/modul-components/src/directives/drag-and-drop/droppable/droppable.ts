@@ -8,6 +8,7 @@ import { MDOMPlugin, MElementDomPlugin, MountFunction, RefreshFunction } from '.
 import { MSortable, MSortableAction } from '../../sortable/sortable';
 import RemoveUserSelectPlugin, { MRemoveUserSelect } from '../../user-select/remove-user-select';
 import { MDraggable } from '../draggable/draggable';
+import './droppable.scss';
 
 
 export enum MDroppableClassNames {

@@ -9,6 +9,7 @@ import { MDraggable, MDraggableEventNames, MDraggableOptions } from '../drag-and
 import { MDropEvent, MDroppable, MDroppableEventNames, MDroppableOptions } from '../drag-and-drop/droppable/droppable';
 import { MDroppableGroup } from '../drag-and-drop/droppable/droppable-group';
 import { MSortableDefaultInsertionMarkerBehavior, MSortableInsertionMarkerBehavior } from './insertion-behavior';
+import './sortable.scss';
 
 export interface MSortableOptions {
     items: any[];
@@ -39,7 +40,7 @@ export enum MSortableClassNames {
     SortBefore = 'm--is-sortbefore',
     SortIn = 'm--is-sortin',
     SortAfter = 'm--is-sortafter',
-    EmptyPlaceholder = 'emptyPlaceholder'
+    EmptyPlaceholder = 'm--is-sortable-placeholder'
 }
 
 export interface MSortInfo {
@@ -205,15 +206,11 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
                 draggablePlugin.addEventListener(MDraggableEventNames.OnDragEnd, (event: MDropEvent) => this.onChildDragEnd(event));
                 draggablePlugin.addEventListener(MDraggableEventNames.OnDragStart, (event: MDropEvent) => this.onChildDragStart(event));
 
-                // tslint:disable-next-line:no-console
-                console.log('A');
                 MDOMPlugin.attach(MDroppable, currentElement, {
                     acceptedActions: this.options.acceptedActions,
                     canDrop: this.canDrop(currentElement),
                     alwaysMount: true
                 });
-                // tslint:disable-next-line:no-console
-                console.log('B');
             }
         }
     }
