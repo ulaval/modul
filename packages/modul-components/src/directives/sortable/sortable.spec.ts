@@ -127,7 +127,8 @@ describe('sortable', () => {
             expect(droppablePlugin).toBeDefined();
             expect(droppablePlugin.options).toEqual({
                 canDrop: true,
-                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup]
+                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup],
+                alwaysMount: true
             });
         });
 
@@ -169,7 +170,8 @@ describe('sortable', () => {
             expect(droppablePlugin).toBeDefined();
             expect(droppablePlugin.options).toEqual({
                 canDrop: true,
-                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup]
+                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup],
+                alwaysMount: true
             });
         });
 

@@ -189,7 +189,7 @@ export class MSortable extends MElementDomPlugin<MSortableOptions> {
         for (let i: number = 0; i < this.element.children.length; i++) {
             const currentElement: HTMLElement = this.element.children[i] as HTMLElement;
 
-            if (currentElement.classList.contains('emptyPlaceholder')) {
+            if (currentElement.classList.contains(MSortableClassNames.EmptyPlaceholder)) {
                 this.attachEmptyPlaceholder(currentElement, sortableGroup ? sortableGroup.options : undefined);
             } else {
                 const draggableGroup: MDroppableGroup | undefined = MDOMPlugin.get(MDroppableGroup, currentElement);
