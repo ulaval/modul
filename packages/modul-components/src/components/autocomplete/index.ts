@@ -1,0 +1,2 @@
+export { MAutoCompleteResult } from './autocomplete';
+

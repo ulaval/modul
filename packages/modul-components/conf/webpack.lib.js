@@ -5,6 +5,7 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
+
 module.exports = {
     mode: 'production',
     devtool: 'source-map',
@@ -15,7 +16,8 @@ module.exports = {
         filename: 'modul.udm.js',
         libraryTarget: 'umd',
         path: resolve('dist'),
-        library: 'modulComponents'
+        library: 'modulComponents',
+        publicPath: '/dist/'
     },
     externals: {
         vue: {
@@ -81,7 +83,7 @@ module.exports = {
                     removingTags: ['desc', 'defs', 'style'],
                     removeSVGTagAttrs: true
                 }
-            }
+            },
         ]
     },
     performance: {

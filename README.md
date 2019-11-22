@@ -54,19 +54,27 @@ $m-font-path: '~@ulaval/modul-components/dist/assets/fonts/'; //this is required
 
 ```
 
-
-
 MODUL components will now be accessible globaly in all you components template
 
 ```html
     <m-button icon-name="m-svg__close-clear">A MODUL Button</m-button>
 ```
 
+MODUL services are accessible via [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation) of the vue instance
 
+```typescript
+@Component
+export default class HelloWorld extends Vue {
+  public openToast(): void {
+    this.$toast.show({text: 'Hello World'});
+  }
+}
+
+```
 
 ### Complexe usage
 
-If you need a more advanced solution that includes using beta components abd code splitting you can refer to [this repository](https://github.com/ulaval/modul-typescript-template) for a template of a complete MODUL project.
+If you need a more advanced solution you can refer to [this repository](https://github.com/ulaval/modul-typescript-template) for a template of a complete MODUL project.
 
 ## Contributing to MODUL
 
