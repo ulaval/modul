@@ -1,16 +1,21 @@
 :root {
     --m-draggable-opacity: 0.5;
     --m-draggable-cursor: grab;
-}
-
-.m--is-dragging {
-    opacity: var(--m-draggable-opacity);
-    cursor: no-drop;
+    --m-draggable-active-cursor: grabbing;
 }
 
 .m--is-draggable {
     &:not(.m--has-drag-handle) {
         cursor: var(--m-draggable-cursor);
+    }
+
+    &.m--is-dragging {
+        opacity: var(--m-draggable-opacity);
+    }
+
+    &:active,
+    &.m--is-grabbing {
+        cursor: var(--m-draggable-active-cursor);
     }
 
     .m-drag-handle {
