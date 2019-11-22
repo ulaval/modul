@@ -55,9 +55,8 @@
                                        :disabled="d.isDisabled || hideDay(d)"
                                        :selected="d.isSelected"
                                        :today="d.isToday"
-                                       @click.stop="onDaySelect(d)"
-                                       @keyup.enter="onDaySelect(d)"
-                                       @keyup.tab="onDaykeyboardTab(d)"
+                                       @click="onDaySelect(d)"
+                                       @keyup="onKeyUp($event, d)"
                                        @mouseenter="onDayMouseEnter(d)"
                                        @mouseleave="onDayMouseLeave(d)"
                                        :ref="buildRef(mBaseCalendarView.DAYS, currentYear, currentMonth + 1, d.day)">
@@ -77,25 +76,13 @@
                         :class="{'m--is-current': yM.year.isCurrent}"
                         :data-current-year="yM.year.isCurrent">{{yM.year.year}}</h2>
                     <div class="m-base-calendar__month-list">
-                        <!-- Performance issue with a wide range of min <=> max dates
-
                         <m-calendar-button v-for="(m, monthIndex) in yM.months"
                                            :key="monthIndex"
                                            :disabled="m.isDisabled"
-                                           @click.stop="onYearMonthSelect(yM.year, m)"
+                                           @click="onYearMonthSelect(yM.year, m)"
                                            @keyup.enter="onYearMonthSelect(yM.year.year, m)"
                                            :selected="m.isCurrent"
-                                           :ref="buildRef(mBaseCalendarView.YEARS_MONTHS, yM.year.year, m.month + 1)">{{ monthIndexToShortName(m.month) }}</m-calendar-button> -->
-                        <button v-for="(m, monthIndex) in yM.months"
-                                :key="monthIndex"
-                                class="m-calendar-button"
-                                :class="{ 'm--is-selected': m.isCurrent,
-                                        'm--is-disabled': m.isDisabled }"
-                                :disabled="m.isDisabled"
-                                :aria-selected="m.isCurrent"
-                                @click.stop="onYearMonthSelect(yM.year, m)"
-                                @keyup.enter="onYearMonthSelect(yM.year.year, m)"
-                                :ref="buildRef(mBaseCalendarView.YEARS_MONTHS, yM.year.year, m.month + 1)">{{ monthIndexToShortName(m.month) }}</button>
+                                           :ref="buildRef(mBaseCalendarView.YEARS_MONTHS, yM.year.year, m.month + 1)">{{ monthIndexToShortName(m.month) }}</m-calendar-button>
                     </div>
                 </template>
             </div>

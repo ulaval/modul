@@ -1,9 +1,9 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Enums } from '../../../../utils/enums/enums';
+import { KeyCode } from '../../../../utils/keycode/keycode';
 import uuid from '../../../../utils/uuid/uuid';
 import { MLinkMode } from '../../../link/link';
 import { MCalendarButton } from '../../calendar-button/calendar-button';
-import '../../calendar-button/calendar-button.scss';
 import { RangeDate } from '../../calendar-state/state/abstract-calendar-state';
 import { CalendarType, DayState, MonthState, YearState } from '../../calendar-state/state/calendar-state';
 import ModulDate, { DatePrecision } from './../../../../utils/modul-date/modul-date';
@@ -185,8 +185,13 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         super.onDayMouseEnter(day);
     }
 
-    onDaykeyboardTab(day: DayState): void {
-        super.onDayKeyboardTab(day);
+    onKeyUp($event: KeyboardEvent, day: DayState): void {
+        if($event.keyCode === KeyCode.M_ENTER) {
+            super.onDaySelect(day);
+        }
+        if($event.keyCode !== KeyCode.M_TAB) {
+            super.onDayKeyboardTab(day);
+        }
     }
 
     onDayMouseLeave(day: DayState): void {
