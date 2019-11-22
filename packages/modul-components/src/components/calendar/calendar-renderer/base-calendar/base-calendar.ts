@@ -162,6 +162,7 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
     }
 
     onYearMonthSelectKeyup($event: KeyboardEvent, year: YearState, month: MonthState): void {
+        // tslint:disable-next-line: deprecation
         if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
             this.onYearMonthSelect(year, month);
         }
@@ -192,10 +193,12 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
     }
 
     onKeyUp($event: KeyboardEvent, day: DayState): void {
-        if($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
             super.onDaySelect(day);
         }
-        if($event.keyCode === KeyCode.M_TAB) {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_TAB) {
             super.onDayKeyboardTab(day);
         }
     }

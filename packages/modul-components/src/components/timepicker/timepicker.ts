@@ -229,8 +229,9 @@ export class MTimepicker extends ModulVue {
         }
     }
 
-    private onSelectHourKeyup($event: KeyboardEvent, hour: number) {
-        if($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+    private onSelectHourKeyup($event: KeyboardEvent, hour: number): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
             this.onSelectHour(hour);
         }
     }
@@ -243,8 +244,9 @@ export class MTimepicker extends ModulVue {
         }
     }
 
-    private onSelectMinuteKeyup($event: KeyboardEvent, minute: number) {
-        if($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+    private onSelectMinuteKeyup($event: KeyboardEvent, minute: number): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
             this.onSelectMinute(minute);
         }
     }
