@@ -161,6 +161,12 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         }
     }
 
+    onYearMonthSelectKeyup($event: KeyboardEvent, year: YearState, month: MonthState): void {
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            this.onYearMonthSelect(year, month);
+        }
+    }
+
     onYearNext(event: Event): void {
         super.onYearNext(event);
     }
@@ -186,10 +192,10 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
     }
 
     onKeyUp($event: KeyboardEvent, day: DayState): void {
-        if($event.keyCode === KeyCode.M_ENTER) {
+        if($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
             super.onDaySelect(day);
         }
-        if($event.keyCode !== KeyCode.M_TAB) {
+        if($event.keyCode === KeyCode.M_TAB) {
             super.onDayKeyboardTab(day);
         }
     }

@@ -2,8 +2,8 @@ import Vue, { VNode, VNodeData, VueConstructor } from 'vue';
 import './calendar-button.scss';
 
 export const MCalendarButton: VueConstructor<Vue> = Vue.extend({
+    name: 'calendar-button',
     functional: true,
-
     render (createElement, context): VNode {
         let data: VNodeData = {
             class:{
@@ -22,24 +22,25 @@ export const MCalendarButton: VueConstructor<Vue> = Vue.extend({
                 click($event): void {
                     $event.stopPropagation();
                     const emit: any = context.data.on!.click;
-                    emit && emit($event.target.value);
+                    emit($event);
                 },
-                keyup($event): void {
+                keyup($event: KeyboardEvent): void {
                     const emit: any = context.data.on!.keyup;
-                    emit && emit($event.target.value);
+                    emit($event);
                 },
                 mouseenter($event): void {
                     const emit: any = context.data.on!.mouseenter;
-                    emit && emit($event.target.value);
+                    emit($event);
                 },
                 mouseleave($event): void {
                     const emit: any = context.data.on!.mouseleave;
-                    emit && emit($event.target.value);
+                    emit($event);
                 }
             },
             attrs: {
                 'aria-selected': context.data.attrs!.selected
-            }
+            },
+            ref: context.data.ref
         };
 
         return createElement('button', data, context.children);
