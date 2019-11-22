@@ -24,7 +24,7 @@
                       :aria-haspopup="true"
                       :aria-expanded="open"
                       :disabled="isDisabled || isWaiting"
-                      :readonly="isReadonly"
+                      :readonly="isReadonly || isLessThanTablet"
                       :options="inputOptions"
                       :placeholder="propPlaceholder"
                       :raw="false"
