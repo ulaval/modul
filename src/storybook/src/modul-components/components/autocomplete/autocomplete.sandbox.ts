@@ -1,8 +1,8 @@
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import { ModulVue } from '../../utils/vue/vue';
-import { AUTOCOMPLETE_NAME } from '../component-names';
-import AutoCompletePlugin, { MAutoCompleteResult } from './autocomplete';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
+import { AUTOCOMPLETE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import AutoCompletePlugin, { MAutoCompleteResult } from '@ulaval/modul-components/dist/components/autocomplete/autocomplete';
 import WithRender from './autocomplete.sandbox.html';
 
 @WithRender

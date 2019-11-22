@@ -81,7 +81,7 @@
                     class="m-timepicker__hours-item">
                     <m-calendar-button :selected="h == currentHour"
                                        @click="onSelectHour(h)"
-                                       @keyup.enter="onSelectHour(h)"
+                                       @keyup="onSelectHourKeyup($event, h)"
                                        role="option">{{formatNumber(h)}}</m-calendar-button>
                 </li>
             </ul>
@@ -97,7 +97,7 @@
                     class="m-timepicker__minutes-item">
                     <m-calendar-button :selected="m == currentMinute"
                                        @click="onSelectMinute(m)"
-                                       @keyup.enter="onSelectMinute(m)"
+                                       @keyup="onSelectMinuteKeyup($event, m)"
                                        role="option">{{formatNumber(m)}}</m-calendar-button>
                 </li>
             </ul>

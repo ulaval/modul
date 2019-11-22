@@ -21,7 +21,7 @@
             "args": [
                 "${fileBasenameNoExtension}",
                 "--config",
-                "jest.config.js"
+                "${workspaceFolder}/packages/modul-components/jest.config.js"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",

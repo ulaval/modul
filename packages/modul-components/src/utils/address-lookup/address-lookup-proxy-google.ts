@@ -1,9 +1,9 @@
 export type AutocompletePredictionResponse = {
     status: string;
-    predictions: google.maps.places.AutocompletePrediction[];
+    predictions: any;
 };
 
 export type PlaceResultResponse = {
-    result: google.maps.places.PlaceResult;
+    result: any;
     status: string;
 };
