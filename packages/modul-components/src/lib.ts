@@ -10,14 +10,12 @@ import { L10n } from './utils/l10n/l10n';
 import { Logger } from './utils/logger/logger';
 import { MediaQueries } from './utils/media-queries/media-queries';
 import { Modul } from './utils/modul/modul';
-import './utils/polyfills';
 import { ScrollTo } from './utils/scroll-to/scroll-to';
 import DefaultSpritesPlugin from './utils/svg/default-sprites';
 import { SpritesService } from './utils/svg/sprites';
 import ToastService from './utils/toast/toast-service';
 import ToastServicePlugin from './utils/toast/toast-service.plugin';
 import UtilsPlugin, { UtilsPluginOptions } from './utils/utils-plugin';
-
 
 
 /**
