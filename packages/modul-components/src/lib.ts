@@ -18,6 +18,8 @@ import ToastService from './utils/toast/toast-service';
 import ToastServicePlugin from './utils/toast/toast-service.plugin';
 import UtilsPlugin, { UtilsPluginOptions } from './utils/utils-plugin';
 
+
+
 /**
  * we re-export enums, complex components props and others types here..
  */
@@ -26,6 +28,8 @@ export * from './components/table';
 export * from './components/toggle-buttons';
 export * from './components/tree';
 export * from './lang';
+export * from './utils/form';
+
 
 /**
  * Vue instance augmentation.

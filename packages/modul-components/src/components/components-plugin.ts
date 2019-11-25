@@ -1,5 +1,4 @@
 import Vue, { PluginObject } from 'vue';
-import { AddressLookupPluginOptions } from '../utils/address-lookup/address-lookup.plugin';
 import LoggerPlugin from '../utils/logger/logger';
 import AccordionGroupPlugin from './accordion-group/accordion-group';
 import AccordionPlugin from './accordion/accordion';
@@ -16,6 +15,7 @@ import DialogPlugin from './dialog/dialog';
 import DropdownPlugin from './dropdown/dropdown';
 import FileSelectPlugin from './file-select/file-select';
 import FileUploadPlugin from './file-upload/file-upload';
+import FormPlugin, { FormPluginOptions } from './form/form.plugin';
 import I18nPlugin from './i18n/i18n';
 import IconButtonPlugin from './icon-button/icon-button';
 import IconFilePlugin from './icon-file/icon-file';
@@ -40,7 +40,6 @@ import ProgressPlugin from './progress/progress';
 import RadioGroupPlugin from './radio-group/radio-group';
 import RadioStylePlugin from './radio-style/radio-style';
 import RadioPlugin from './radio/radio';
-import { RichTextLicensePluginOptions } from './rich-text-editor/rich-text-license-plugin';
 import ScrollTopPlugin from './scroll-top/scroll-top';
 import SearchfieldPlugin from './searchfield/searchfield';
 import ShowMorePlugin from './show-more/show-more';
@@ -64,8 +63,7 @@ import ValidationMessagePlugin from './validation-message/validation-message';
 
 
 export interface ComponentPluginOptions {
-    richTextOptions?: RichTextLicensePluginOptions;
-    loquateOptions?: AddressLookupPluginOptions;
+    formPluginOptions?: FormPluginOptions;
 }
 
 const ComponentsPlugin: PluginObject<any> = {
@@ -112,7 +110,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(FileSelectPlugin);
         Vue.use(FileUploadPlugin);
         // Vue.use(FlexTemplatePlugin);
-        // Vue.use(FormPlugin);
+        Vue.use(FormPlugin, options.formPluginOptions ? options.formPluginOptions : undefined);
         Vue.use(I18nPlugin);
         Vue.use(IconPlugin);
         Vue.use(IconButtonPlugin);
