@@ -138,10 +138,10 @@ export const SkinTabArrow = () => ({
                 </m-navbar>`
 });
 
-export const SkinTabDark = () => ({
+export const SkinTabDarkMain = () => ({
     data: () => ({
         selected: 1,
-        skin: MNavbarSkin.TabDark
+        skin: MNavbarSkin.TabDarkMain
     }),
     template: `<m-navbar :selected.sync="selected"
                             :skin="skin">
@@ -149,10 +149,10 @@ export const SkinTabDark = () => ({
                 </m-navbar>`
 });
 
-export const SkinTabLight = () => ({
+export const SkinTabLightMain = () => ({
     data: () => ({
         selected: 1,
-        skin: MNavbarSkin.TabLight
+        skin: MNavbarSkin.TabLightMain
     }),
     template: `<m-navbar :selected.sync="selected"
                             :skin="skin">
