@@ -3,6 +3,7 @@ import { MWExpandablePanel } from '@/components/expendable-panel/expandable-pane
 import { ModulWebsite } from '@/components/modul-website';
 import { ComponentMeta } from '@/content/components.meta.loader';
 import _ from 'lodash';
+import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { MWComponent } from './component/component-details';
@@ -19,6 +20,8 @@ export class MWComponentsPage extends ModulWebsite {
 
     $refs: {
         expandablePanel: MWExpandablePanel;
+        prevLink: Vue;
+        nextLink: Vue;
     };
 
     fullPath: string;
@@ -80,6 +83,14 @@ export class MWComponentsPage extends ModulWebsite {
 
     onSideMenuSelection() {
         this.$refs.expandablePanel.onSideMenuSelection();
+    }
+
+    onPrevLinkClick() {
+        (this.$refs.prevLink.$el as HTMLElement).blur();
+    }
+
+    onNextLinkClick() {
+        (this.$refs.nextLink.$el as HTMLElement).blur();
     }
 
     @Watch('$route', { immediate: true })

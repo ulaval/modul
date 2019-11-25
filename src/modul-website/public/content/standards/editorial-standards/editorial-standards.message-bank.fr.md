@@ -1,4 +1,4 @@
-## BANQUE DE MESSAGES
+# Banque de messages
 
 Vous trouverez ici l'ensemble des messages réutilisables actuellement utilisés dans monPortail.
 

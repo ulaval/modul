@@ -1,13 +1,15 @@
 // This code is largery borrowed from https://github.com/froala/vue-froala-wysiwyg.
 // However some changes have been made to "inputify" the froala editor and render is compatible with modUL input-style.
-import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/js/languages/fr.js';
 import 'froala-editor/js/plugins.pkgd.min.js';
+
+import FroalaEditor from 'froala-editor';
 import $ from 'jquery';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
+
 import boldIcon from '../../../assets/icons/svg/Froala-bold.svg';
 import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
@@ -21,6 +23,9 @@ import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
+
+
+
 // import { PopupPlugin } from './popup-plugin';
 // import SubMenuPlugin from './submenu-plugin';
 // Bug placeholder in the version 3.0.5.
@@ -221,6 +226,7 @@ const SCROLL_TO_OFFSET: number = -50;
             if (this.selectedImage) {
                 // Bug watch "JQuery dependence isn't fully removed from Froala" https://github.com/froala/angular-froala-wysiwyg/issues/324
                 this.froalaEditor.image.insert(file.url, false, { id }, $(this.selectedImage)); // We need jquery for that function
+                this.selectedImage.removeAttribute('srcset');
             } else {
                 this.froalaEditor.image.insert(file.url, false, { id });
             }
@@ -491,6 +497,14 @@ const SCROLL_TO_OFFSET: number = -50;
 
         if (!urlField.value) {
             (popup.querySelector(`[name="target"]`) as HTMLInputElement).checked = true;
+        }
+    }
+
+    private onClick(event: Event): void {
+        if (this.froalaEditor.popups) {
+            event.stopPropagation();
+        } else {
+            this.$emit('click');
         }
     }
 

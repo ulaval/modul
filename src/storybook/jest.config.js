@@ -3,7 +3,11 @@ const { defaults: tsjPreset } = require('ts-jest/presets');
 
 module.exports = {
     testURL: 'http://localhost/',
-
+    globals: {
+        'ts-jest': {
+            tsConfig: '<rootDir>/tsconfig.json'
+        }
+    },
     transform: {
         ...tsjPreset.transform,
         "^.+\\.html(\\?style=\\..+)?$": "<rootDir>/tests/jest/vue-template-transformer.js"

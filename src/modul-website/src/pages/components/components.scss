@@ -5,20 +5,47 @@
 
     &__component-navigation {
         display: flex;
-        margin-top: 54px;
+        margin-top: $m-spacing--xxl;
         color: $m-color--interactive-light;
     }
 
-    &__component-navigation-next,
-    &__component-navigation-prev {
-        line-height: 24px;
+    &__component-navigation-prev,
+    &__component-navigation-next {
+        transition: background-color $m-transition-duration ease, border-color $m-transition-duration ease, color $m-transition-duration ease;
         position: relative;
         padding: 1rem;
         flex-grow: 1;
-        border: 1px solid;
+        flex-shrink: 0;
+        width: 50%;
+        border-color: $m-color--interactive;
         text-align: center;
         text-decoration: none;
         font-weight: $m-font-weight--semi-bold;
+        line-height: 24px;
+        background: $m-color--white;
+        outline: none;
+
+        &:hover,
+        &:focus {
+            background: $m-color--interactive-light;
+            border-color: $m-color--interactive-light;
+            color: $m-color--white;
+        }
+
+        &:active {
+            background: $m-color--interactive-dark;
+            border-color: $m-color--interactive-dark;
+        }
+    }
+
+    &__component-navigation-next {
+        border-top: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+    }
+
+    &__component-navigation-prev {
+        border: 1px solid;
     }
 
     &__component-navigation-next--icon {

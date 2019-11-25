@@ -35,6 +35,7 @@
             left: 0;
             content: '';
             background: linear-gradient(to bottom, $modul-color--black-grey-dark 35%, rgba($modul-color--black-grey-dark, 0.4) 100%);
+            background-attachment: fixed;
             z-index: -1;
         }
     }

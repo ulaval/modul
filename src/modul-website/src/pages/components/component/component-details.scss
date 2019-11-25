@@ -7,9 +7,10 @@
     &__title {
         margin: 0;
         text-transform: uppercase;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $modul-color--black-grey-dark;
         padding-bottom: $m-spacing;
         font-weight: $m-font-weight--black;
+        color: $modul-color--black-grey-dark;
     }
 
     &__preview {

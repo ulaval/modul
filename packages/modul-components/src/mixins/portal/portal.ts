@@ -274,7 +274,7 @@ export class Portal extends ModulVue implements PortalMixin {
     }
 
     private toggle(event: MouseEvent): void {
-        if (event.button !== undefined && event.button === MouseButtons.LEFT) {
+        if (!this.disabled && event.button !== undefined && event.button === MouseButtons.LEFT) {
             this.propOpen = !this.propOpen;
             this.$emit('click', event);
         }

@@ -31,6 +31,11 @@ describe('FileService', () => {
             ]),
             'store-b'
         );
+
+        filesvc.addSingleFile(
+            createMockFile('file-store-c'),
+            'store-c'
+        );
     });
 
     describe('add', () => {
@@ -50,6 +55,22 @@ describe('FileService', () => {
         it('should support an unnamed default store', () => {
             filesvc.add(
                 createMockFileList([createMockFile('file-store-default')])
+            );
+
+            expect(filesvc.files().length).toEqual(1);
+            expect(filesvc.files()[0].name).toEqual('file-store-default');
+        });
+    });
+
+    describe('addSingleFile', () => {
+        it('should store file uniquely in store name', () => {
+            expect(filesvc.files('store-c').length).toEqual(1);
+            expect(filesvc.files('store-c')[0].name).toEqual('file-store-c');
+        });
+
+        it('should support an unnamed default store', () => {
+            filesvc.addSingleFile(
+                createMockFile('file-store-default')
             );
 
             expect(filesvc.files().length).toEqual(1);

@@ -8,6 +8,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { FormatMode } from '../../utils/i18n/i18n';
+import { KeyCode } from '../../utils/keycode/keycode';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
@@ -228,11 +229,25 @@ export class MTimepicker extends ModulVue {
         }
     }
 
+    private onSelectHourKeyup($event: KeyboardEvent, hour: number): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            this.onSelectHour(hour);
+        }
+    }
+
     private onSelectMinute(minute: number): void {
         this.internalMinute = minute;
         if (!isNaN(this.internalHour)) {
             this.currentTime = this.formatTimeString();
             this.open = false;
+        }
+    }
+
+    private onSelectMinuteKeyup($event: KeyboardEvent, minute: number): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            this.onSelectMinute(minute);
         }
     }
 

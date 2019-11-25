@@ -19,7 +19,11 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
 
         &__right-wrapper {
             display: flex;
-            align-items: flex-end;
+            align-items: center;
+        }
+
+        &__view-mode-button {
+            margin-top: 8px; // Magic number: align button with dropdown
         }
 
         &__size-field {

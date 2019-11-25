@@ -51,7 +51,7 @@ export class MForm extends ModulVue {
 
         return this.$i18n.translate(
             count <= 1 ? 'm-form:multipleErrorsToCorrect' : 'm-form:multipleErrorsToCorrect.p',
-            { totalNbOfErrors: count <= 1 ? 1 : count },
+            { totalNbOfErrors: count },
             undefined, undefined, undefined, FormatMode.Sprintf
         );
     }
@@ -113,19 +113,28 @@ export class MForm extends ModulVue {
         this.displaySummary = this.displayToast = false;
     }
 
-    private _formControlsInErrorCount(control: FormGroup | FormArray = this.formGroup): number {
+    private _formControlsInErrorCount(control?: FormGroup | FormArray): number {
+        let first: boolean = false;
+
+        if (!control) {
+            control = this.formGroup;
+            first = true;
+        }
+
         return control.controls.reduce((a: number, c: AbstractControl): number => {
             if (c instanceof FormGroup || c instanceof FormArray) {
-                if (!c.hasErrorDeep()) {
-                    return a;
+                if (c.hasError()) {
+                    a++;
                 }
 
-                a += this._formControlsInErrorCount(c);
+                if (c.hasErrorDeep()) {
+                    a += this._formControlsInErrorCount(c);
+                }
             } else if (c instanceof FormControl && c.hasError()) {
                 a++;
             }
 
             return a;
-        }, 0);
+        }, first && this.formGroup.hasError() ? 1 : 0);
     }
 }
