@@ -117,10 +117,5 @@
     ],
     "main": "./dist/modul.udm.js",
     "types": "./dist/lib.d.ts",
-    "license": "Apache-2.0",
-    "sideEffects": [
-        "*.sass",
-        "*.scss",
-        "*.css"
-    ]
+    "license": "Apache-2.0"
 }
