@@ -209,11 +209,10 @@ exports[`Storyshots modul-components|m-radio radio-vertical-align="center" 1`] =
 
 exports[`Storyshots modul-components|m-radio readonly 1`] = `
 <li
-  class="m-radio m--is-read-only m--is-checked"
+  class="m-radio m--is-readonly m--is-checked"
 >
   <input
     class="m-radio__hidden"
-    disabled="disabled"
     id="fakeId"
     type="radio"
     value=""
@@ -504,11 +503,10 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" radio-vertic
 
 exports[`Storyshots modul-components|m-radio/radio-position="right" readonly 1`] = `
 <li
-  class="m-radio m--is-read-only m--is-checked m--is-input-right"
+  class="m-radio m--is-readonly m--is-checked m--is-input-right"
 >
   <input
     class="m-radio__hidden"
-    disabled="disabled"
     id="fakeId"
     type="radio"
     value=""

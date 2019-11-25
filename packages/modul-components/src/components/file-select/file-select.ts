@@ -84,6 +84,7 @@ export class MFileSelect extends ModulVue {
         const file: FileList | null = this.$refs.inputFile.files;
         if (file) {
             this.$file.add(file, this.storeName);
+            this.$emit('file-selected');
         }
         this.$refs.inputFile.value = '';
     }

@@ -1,27 +1,25 @@
-import { AxiosResponse } from 'axios';
-import { HttpService } from '../http/http';
 import uuid from '../uuid/uuid';
 import { Address, AddressSummary } from './address';
 import { AddressLookupFindQuery, AddressLookupRetrieveQuery, AddressLookupService, AddressLookupServiceProvider } from './address-lookup';
 import { GoogleFindResponseBuilder, GoogleRetrieveResponseBuilder } from './address-lookup-google';
+import { AutocompletePredictionResponse, PlaceResultResponse } from './address-lookup-proxy-google';
 import { AddressLookupToAddressSummary, AddressRetrieveToAddress } from './address-lookup-response-mapper';
 
 export default class AddressLookupGoogleProxyService implements AddressLookupService {
     serviceProvider = AddressLookupServiceProvider.GoogleProxy;
     private sessionToken?: string;
-    private httpService: HttpService;
-    private findUrl: string;
-    private retrieveUrl: string;
 
     /**
-     * Use this service if you have your own proxy to google. Such a proxy is useful to keep your googleAPI key secret.
+     * Use this service if you have your own proxy to google. A proxy is useful to keep your googleAPI key secret.
      * @param findUrl https://developers.google.com/places/web-service/autocomplete
      * @param retrieveUrl https://developers.google.com/places/web-service/details
      */
-    constructor(findUrl: string, retrieveUrl: string) {
-        this.httpService = new HttpService();
-        this.findUrl = findUrl;
-        this.retrieveUrl = retrieveUrl;
+    constructor(
+        protected findPromise: (params: any) => Promise<AutocompletePredictionResponse>,
+        protected retrievePromise: (params: any) => Promise<PlaceResultResponse>,
+        protected findErrorCallback: (error: ErrorEvent) => void,
+        protected retrieveErrorCallback: (error: ErrorEvent) => void
+    ) {
     }
 
     async find(query: AddressLookupFindQuery): Promise<AddressSummary[]> {
@@ -30,11 +28,16 @@ export default class AddressLookupGoogleProxyService implements AddressLookupSer
             input: query.input,
             sessionToken: this.sessionToken
         };
-        const results: google.maps.places.AutocompletePrediction[] = await this.httpService.execute({
-            method: 'GET',
-            rawUrl: this.findUrl,
-            params
-        }).then((r: AxiosResponse<unknown>) => ((r.data as any).predictions as google.maps.places.AutocompletePrediction[]));
+
+        const results: google.maps.places.AutocompletePrediction[] = await this.findPromise({
+            input: params.input,
+            sessionToken: params.sessionToken!.toString()
+        })
+            .then((response: AutocompletePredictionResponse) => (response.predictions))
+            .catch((error: ErrorEvent) => {
+                this.findErrorCallback(error);
+                return [];
+            });
 
         return results
             .map((prediction: google.maps.places.AutocompletePrediction) => new GoogleFindResponseBuilder()
@@ -50,21 +53,30 @@ export default class AddressLookupGoogleProxyService implements AddressLookupSer
             sessionToken: this.sessionToken
         };
 
-        const results: google.maps.places.PlaceResult = await this.httpService.execute({
-            method: 'GET',
-            rawUrl: this.retrieveUrl,
-            params
-        }).then((r: AxiosResponse<unknown>) => (r.data as any) as google.maps.places.PlaceResult);
+        const results: google.maps.places.PlaceResult[] = await this.retrievePromise({
+            placeId: params.placeId,
+            sessionToken: params.sessionToken!.toString()
+        })
+            .then((response: PlaceResultResponse) => [response.result])
+            .catch((error: ErrorEvent) => {
+                this.retrieveErrorCallback(error);
+                return [];
+            });
 
         this.discardToken();
 
-        const address: Address = new GoogleRetrieveResponseBuilder()
-            .setRequest(params)
-            .setResult(results)
-            .build()
-            .mapTo(new AddressRetrieveToAddress());
+        let address: Address;
+        if (results.length > 0) {
+            address = new GoogleRetrieveResponseBuilder()
+                .setRequest(params)
+                .setResult(results[0])
+                .build()
+                .mapTo(new AddressRetrieveToAddress());
 
-        return [address];
+            return [address];
+        } else {
+            return [];
+        }
     }
 
     private ensureCreateToken(): void {

@@ -5,7 +5,7 @@ import { LoqateFindResponse, LoqateRetrieveResponse } from './address-lookup-loq
 const KEY_ADDRESS_TYPE: string = 'address';
 
 enum GOOGLE_ADDRESS_COMPONENTS {
-    STREER_NUMBER = 'street_number',
+    STREET_NUMBER = 'street_number',
     ROUTE = 'route',
     LOCALITY = 'locality',
     POSTAL_CODE = 'postal_code',
@@ -116,7 +116,7 @@ export class AddressRetrieveToAddress implements RetrieveResponseMapper<Address>
         if (!response.request || !response.result) { return undefined!; }
 
         const componentsByType: { [key: string]: google.maps.GeocoderAddressComponent } = {
-            [GOOGLE_ADDRESS_COMPONENTS.STREER_NUMBER]: { long_name: '', short_name: '', types: [] },
+            [GOOGLE_ADDRESS_COMPONENTS.STREET_NUMBER]: { long_name: '', short_name: '', types: [] },
             [GOOGLE_ADDRESS_COMPONENTS.ROUTE]: { long_name: '', short_name: '', types: [] },
             [GOOGLE_ADDRESS_COMPONENTS.LOCALITY]: { long_name: '', short_name: '', types: [] },
             [GOOGLE_ADDRESS_COMPONENTS.POSTAL_CODE]: { long_name: '', short_name: '', types: [] },
@@ -130,7 +130,7 @@ export class AddressRetrieveToAddress implements RetrieveResponseMapper<Address>
         });
 
         return {
-            buildingNumber: componentsByType[GOOGLE_ADDRESS_COMPONENTS.STREER_NUMBER].long_name,
+            buildingNumber: componentsByType[GOOGLE_ADDRESS_COMPONENTS.STREET_NUMBER].long_name,
             street: componentsByType[GOOGLE_ADDRESS_COMPONENTS.ROUTE].long_name,
             city: componentsByType[GOOGLE_ADDRESS_COMPONENTS.LOCALITY].long_name,
             postalCode: componentsByType[GOOGLE_ADDRESS_COMPONENTS.POSTAL_CODE].long_name,
