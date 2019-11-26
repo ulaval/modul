@@ -42,37 +42,37 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader'
-                }
+                test: /\.scss$/,
+                use: [{
+                    loader: 'postcss-loader',
+                    options: {
+                        sourceMap: true,
+                        plugins: function () {
+                            return [
+                                require('autoprefixer')
+                            ];
+                        }
+                    }
+                }, {
+                    loader: 'sass-loader',
+                    options: {
+                        sourceMap: true,
+                        includePaths: ['./src/styles']
+                    }
+                }]
             },
             {
                 enforce: 'post',
                 test: /\.scss$/,
                 use: ['style-loader',
-                    'css-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true,
-                            plugins: function () {
-                                return [
-                                    require('autoprefixer')
-                                ];
-                            }
-                        }
-                    }
-                ]
+                    'css-loader']
             },
+
             {
-                enforce: 'pre',
-                test: /\.scss$/,
-                loader: 'sass-loader',
-                options: {
-                    sourceMap: true,
-                    includePaths: ['./src/styles']
+                test: /\.m?js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader'
                 }
             },
             {
