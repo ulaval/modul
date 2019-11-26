@@ -9,6 +9,7 @@ export interface ToastParams {
     position?: MToastPosition;
     timeout?: MToastTimeout;
     icon?: boolean;
+    closeButton?: boolean;
 }
 
 const TIME_BEFORE_ANIMATION_IS_OVER: number = 300;
@@ -51,7 +52,8 @@ export default class ToastService {
                 position: params.position,
                 timeout: params.timeout,
                 actionLabel: params.actionLabel,
-                icon: params.icon
+                icon: params.icon,
+                closeButton: params.closeButton
             }
         });
 
