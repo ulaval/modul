@@ -13,8 +13,8 @@ module.exports = {
         lib: resolve('dist/lib.js')
     },
     output: {
-        filename: 'modul.udm.js',
-        libraryTarget: 'umd',
+        filename: 'modul.cjs.js',
+        libraryTarget: 'commonjs2', // change to 'module' when available https://github.com/webpack/webpack/issues/2933
         path: resolve('dist'),
         library: 'modulComponents',
         publicPath: '/dist/'
