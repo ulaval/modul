@@ -245,26 +245,147 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
       </div>
     </div>
   </div>
-   
-  <button
-    class="m-button m--is-skin-primary"
-    type="button"
+</div>
+`;
+
+exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
+<div>
+  <div
+    class="m-navbar m--is-skin-nav-main"
   >
-    <!---->
-     
-    <!---->
-     
-    <span
-      class="m-button__text"
+    <div
+      class="m-navbar__max-width"
+      style="max-width: 1200px;"
     >
-      Remove multiline 
       <!---->
-    </span>
-     
-    <!---->
-     
-    <!---->
-  </button>
+       
+      <div
+        class="m-navbar__contents"
+      >
+        <div
+          class="m-navbar__wrap"
+        >
+          <ul
+            class="m-navbar__list"
+            role="menubar"
+          >
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                style="white-space: nowrap;"
+                tabindex="0"
+              >
+                <span
+                  class="m-navbar-item__text"
+                >
+                  Very very very long text #1
+                </span>
+              </div>
+            </li>
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                style="white-space: nowrap;"
+                tabindex="0"
+              >
+                <span
+                  class="m-navbar-item__text"
+                >
+                  Very very very long text #2
+                </span>
+              </div>
+            </li>
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                style="white-space: nowrap;"
+                tabindex="0"
+              >
+                <span
+                  class="m-navbar-item__text"
+                >
+                  Very very very long text #3
+                </span>
+              </div>
+            </li>
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                style="white-space: nowrap;"
+                tabindex="0"
+              >
+                <span
+                  class="m-navbar-item__text"
+                >
+                  Very very very long text #4
+                </span>
+              </div>
+            </li>
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                style="white-space: nowrap;"
+                tabindex="0"
+              >
+                <span
+                  class="m-navbar-item__text"
+                >
+                  Very very very long text #5
+                </span>
+              </div>
+            </li>
+             
+            <!---->
+             
+            <!---->
+          </ul>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+    <div
+      class="resize-sensor"
+      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
