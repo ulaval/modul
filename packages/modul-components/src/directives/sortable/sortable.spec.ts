@@ -3,7 +3,7 @@
 import { mount, Wrapper, WrapperArray } from '@vue/test-utils';
 import Vue from 'vue';
 import { resetModulPlugins } from '../../../tests/helpers/component';
-import { polyFillActive } from '../../utils/polyfills';
+import { polyFillActive } from '../../utils/polyfills/drag-and-drop.polyfill';
 import { MDOMPlugin } from '../domPlugin';
 import { MDraggable, MDraggableOptions } from '../drag-and-drop/draggable/draggable';
 import { MDroppable, MDroppableClassNames } from '../drag-and-drop/droppable/droppable';
