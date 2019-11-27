@@ -69,9 +69,9 @@ describe('Component inplace-edit - Element wrapper edition inline set to read mo
 
     describe('when cancelling', () => {
         it(`must not send event to parent`, () => {
-            let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+            let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitCancel');
 
-            inplaceEdit.emitCancel(AN_MOUSE_EVENT);
+            inplaceEdit.onCancel(AN_MOUSE_EVENT);
 
             expect(spy).not.toBeCalled();
         });
@@ -89,21 +89,21 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
 
         describe('when confirming', () => {
             it(`must emit confirmation event to parent`, () => {
-                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitOk');
 
                 inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
-                expect(spy).toHaveBeenCalledWith(CONFIRM_EVENT);
+                expect(spy).toHaveBeenCalledWith(AN_MOUSE_EVENT);
             });
         });
 
         describe('when cancelling', () => {
             it(`must emit cancellation event to parent`, () => {
-                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitCancel');
 
                 inplaceEdit.emitCancel(AN_MOUSE_EVENT);
 
-                expect(spy).toBeCalledWith(CANCEL_EVENT);
+                expect(spy).toBeCalledWith(AN_MOUSE_EVENT);
             });
         });
     });
@@ -118,11 +118,11 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
 
         describe('when confirming', () => {
             it(`must emit confirmation event to parent`, () => {
-                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitOk');
 
                 inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
-                expect(spy).toBeCalledWith(CONFIRM_EVENT);
+                expect(spy).toBeCalledWith(AN_MOUSE_EVENT);
             });
         });
 
@@ -227,25 +227,19 @@ describe('Component inplace-edit - Complete component mobile', () => {
         });
 
         it(`should cancel on overlay close`, () => {
-            // given
-            wrapper.setMethods({ cancel: jest.fn() });
-
             // when
             wrapper.find(REF_OVERLAY).vm.$emit('close');
 
             // then
-            expect(wrapper.vm.emitCancel).toHaveBeenCalledWith();
+            expect(wrapper.emitted().cancel).toBeTruthy();
         });
 
         it(`should confirm on overlay save`, () => {
-            // given
-            wrapper.setMethods({ confirm: jest.fn() });
-
             // when
             wrapper.find(REF_OVERLAY).vm.$emit('save');
 
             // then
-            expect(wrapper.vm.onConfirm).toHaveBeenCalledWith();
+            expect(wrapper.emitted().ok).toBeTruthy();
         });
     });
 });
