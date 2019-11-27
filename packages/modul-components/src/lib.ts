@@ -21,10 +21,10 @@ import UtilsPlugin, { UtilsPluginOptions } from './utils/utils-plugin';
 /**
  * we re-export enums, complex components props and others types here..
  */
-export * from './components/autocomplete';
-export * from './components/table';
-export * from './components/toggle-buttons';
-export * from './components/tree';
+export * from './components/autocomplete/autocomplete';
+export * from './components/table/table';
+export * from './components/toggle-buttons/toggle-buttons';
+export * from './components/tree/tree';
 export * from './lang';
 export * from './utils/form';
 

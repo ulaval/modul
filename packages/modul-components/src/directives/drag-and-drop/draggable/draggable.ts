@@ -1,6 +1,5 @@
 import { DirectiveOptions, PluginObject, VNode, VNodeDirective } from 'vue';
 import { targetIsInput } from '../../../utils/event/event';
-import { dragDropDelay, polyFillActive } from '../../../utils/polyfills';
 import { clearUserSelection } from '../../../utils/selection/selection';
 import { getVNodeAttributeValue } from '../../../utils/vue/directive';
 import { dispatchEvent } from '../../../utils/vue/events';
@@ -8,6 +7,7 @@ import { DRAGGABLE_NAME } from '../../directive-names';
 import { MDOMPlugin, MElementDomPlugin, MountFunction, RefreshFunction } from '../../domPlugin';
 import { MSortable } from '../../sortable/sortable';
 import RemoveUserSelectPlugin, { MRemoveUserSelect } from '../../user-select/remove-user-select';
+import { dragDropDelay, polyFillActive } from '../drag-and-drop-plugin';
 import { MDroppable } from '../droppable/droppable';
 import { MDraggableAllowScroll } from './draggable-allow-scroll';
 

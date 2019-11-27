@@ -1,9 +1,9 @@
 import { DirectiveOptions, PluginObject, VNodeDirective } from 'vue';
 import { mousePositionElement } from '../../../utils/mouse/mouse';
-import { polyFillActive } from '../../../utils/polyfills';
 import { DRAGGABLE_ALLOW_SCROLL_NAME } from '../../directive-names';
 import { MDOMPlugin, MElementDomPlugin, MountFunction, RefreshFunction } from '../../domPlugin';
 import { CancelableScrollTo, ScrollTo, ScrollToDuration } from '../../scroll-to/scroll-to-lib';
+import { polyFillActive } from '../drag-and-drop-plugin';
 
 
 export enum MDraggableAllowScrollDirection {
