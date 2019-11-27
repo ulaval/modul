@@ -1,0 +1,18 @@
+@import "commons";
+
+.m-photo-editor {
+    position: relative;
+
+    &__message {
+        margin-bottom: $m-spacing;
+    }
+
+    &__file-name {
+        margin-top: 0;
+        font-weight: $m-font-weight--regular;
+    }
+
+    &__cancel {
+        margin-top: $m-spacing;
+    }
+}

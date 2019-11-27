@@ -40,6 +40,7 @@ const EnglishPlugin: PluginObject<any> = {
                 require('../components/pagination/pagination.lang.en.json'),
                 require('../components/phone-number/phone-number.lang.en.json'),
                 require('../components/phonefield/phonefield.lang.en.json'),
+                require('../components/photo-editor/photo-editor.lang.en.json'),
                 require('../components/repeater/repeater.lang.en.json'),
                 require('../components/rich-text-editor/rich-text-editor.lang.en.json'),
                 require('../components/table/table.lang.en.json'),

@@ -173,10 +173,17 @@ export class MDatepicker extends ModulVue {
         return this.isTypeYearsMonths ? 7 : 10;
     }
 
+    private get isLessThanTablet(): boolean {
+        return this.as<MediaQueries>().isMqMaxS;
+    }
+
     @Emit('open')
     public async onOpen(): Promise<void> {
-        let inputMask: MInputMask = this.$refs.input;
-        inputMask.focusAndSelectAll();
+        // dont set the focus on less than tablet
+        if (!this.isLessThanTablet) {
+            let inputMask: MInputMask = this.$refs.input;
+            inputMask.focusAndSelectAll();
+        }
     }
 
     @Emit('close')

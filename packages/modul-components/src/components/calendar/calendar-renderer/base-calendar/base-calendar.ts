@@ -1,5 +1,6 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Enums } from '../../../../utils/enums/enums';
+import { KeyCode } from '../../../../utils/keycode/keycode';
 import uuid from '../../../../utils/uuid/uuid';
 import { MLinkMode } from '../../../link/link';
 import { MCalendarButton } from '../../calendar-button/calendar-button';
@@ -7,7 +8,8 @@ import { RangeDate } from '../../calendar-state/state/abstract-calendar-state';
 import { CalendarType, DayState, MonthState, YearState } from '../../calendar-state/state/calendar-state';
 import ModulDate, { DatePrecision } from './../../../../utils/modul-date/modul-date';
 import { MAbstractCalendarRenderer } from './../abstract-calendar-renderer';
-import WithRender from './base-calendar.html?style=./base-calendar.scss';
+import WithRender from './base-calendar.html';
+import './base-calendar.scss';
 
 const TRANSLATION_ROOT: string = 'm-calendar' + ':';
 const TRANSLATION_MONTHS: string = TRANSLATION_ROOT + 'month';
@@ -159,6 +161,13 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         }
     }
 
+    onYearMonthSelectKeyup($event: KeyboardEvent, year: YearState, month: MonthState): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            this.onYearMonthSelect(year, month);
+        }
+    }
+
     onYearNext(event: Event): void {
         super.onYearNext(event);
     }
@@ -183,8 +192,15 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         super.onDayMouseEnter(day);
     }
 
-    onDaykeyboardTab(day: DayState): void {
-        super.onDayKeyboardTab(day);
+    onKeyUp($event: KeyboardEvent, day: DayState): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            super.onDaySelect(day);
+        }
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_TAB) {
+            super.onDayKeyboardTab(day);
+        }
     }
 
     onDayMouseLeave(day: DayState): void {

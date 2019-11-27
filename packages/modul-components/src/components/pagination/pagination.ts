@@ -92,8 +92,23 @@ export class MPagination extends ModulVue {
         return this.value === this.pagesTotal;
     }
 
+    public pageFirstItemIndex(): number {
+        return ((this.value - 1) * this.itemsPerPage) + 1;
+    }
+
+    public pageLastItemIndex(): number {
+        return Math.min(this.value * this.itemsPerPage, this.itemsTotal);
+    }
+
     public get status(): string {
-        return this.$i18n.translate('m-pagination:status', { nbVisible: this.value, nbTotal: this.pagesTotal, nbResultats: this.itemsTotal }, this.itemsTotal, undefined, undefined, FormatMode.Sprintf);
+        const key: string = this.itemsTotal <= this.itemsPerPage ?
+            'm-pagination:status-single' : 'm-pagination:status';
+
+        return this.$i18n.translate(key, {
+            idxFirst: this.pageFirstItemIndex,
+            idxLast: this.pageLastItemIndex,
+            nbResults: this.itemsTotal
+        }, this.itemsTotal, undefined, undefined, FormatMode.Sprintf);
     }
 
     public isPageActive(page: number): boolean {

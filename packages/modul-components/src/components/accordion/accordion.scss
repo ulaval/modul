@@ -81,6 +81,7 @@ $m-accordion--color-default: $m-color--interactive !default;
         .m-accordion.m--is-default > & {
             color: $m-color--text;
             background-color: $m-color--white;
+            border-top: $m-accordion--border-size solid $m-accordion--border-color;
             border-bottom: $m-accordion--border-size solid $m-accordion--border-color;
 
             &::after {
@@ -89,8 +90,8 @@ $m-accordion--color-default: $m-color--interactive !default;
             }
         }
 
-        .m-accordion.m--is-default:first-child > & {
-            border-top: $m-accordion--border-size solid $m-accordion--border-color;
+        .m-accordion.m--is-default + .m-accordion.m--is-default > & {
+            border-top: 0; // hide border-top on the next accordion
         }
 
         .m-accordion.m--is-dark > &,

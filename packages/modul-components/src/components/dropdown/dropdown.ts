@@ -112,6 +112,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         this.internalIsFocus = false;
     }
 
+    public get filterableDesktop(): boolean {
+        return this.filterable && this.as<MediaQueries>().isMqMinS;
+    }
+
     public groupHasItems(group: BaseDropdownGroup): boolean {
         return this.internalItems.some(i => {
             return i.group === group;
@@ -148,10 +152,14 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Emit('open')
     private async onOpen(): Promise<void> {
         await this.$nextTick();
+
         let inputEl: any = this.$refs.input;
+
         setTimeout(() => { // Need timeout to set focus on input
-            inputEl.focus();
-        });
+            if (!(this.filterable && this.as<MediaQueries>().isMqMaxS)) {
+                inputEl.focus();
+            }
+        }, 200);
 
         this.focusSelected();
         this.scrollToFocused();
@@ -161,6 +169,8 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     private onClose(): void {
         const hasMatch: boolean = this.matchFilterTextToValue();
         this.internalFilter = '';
+        this.dirty = false;
+        this.internalFilterRegExp = / /;
         if (this.clearInvalidSelectionOnClose && !hasMatch && this.selectedText === '') {
             this.$emit('input', '');
             this.setModel('', true);
@@ -177,7 +187,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (focus && !this.as<InputStateMixin>().isDisabled) {
             this.selectText();
         } else {
-            this.$refs.input.blur();
+            if (!this.isAndroid) {
+                this.$refs.input.blur();
+            }
             this.internalOpen = false;
         }
     }
@@ -214,7 +226,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             this.$emit('change', value);
         }
         this.dirty = false;
-        this.internalOpen = false;
+        if (value !== '') {
+            this.internalOpen = false;
+        }
+
         this.setInputWidth();
     }
 
@@ -405,7 +420,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private async selectText(): Promise<void> {
         await this.$nextTick();
-        this.$refs.input.focus();
+        if (!this.isAndroid) {
+            this.$refs.input.focus();
+        } else {
+            this.internalIsFocus = true;
+        }
     }
 
     private focusSelected(): void {
@@ -525,8 +544,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
                     if (this.enableAnimation) {
                         el.style.maxHeight = 'none';
                     }
-                    this.dirty = false;
-                    this.internalFilterRegExp = / /;
                     done();
                 }, 300);
             } else {
@@ -557,6 +574,10 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private get isFirefoxSupport(): boolean {
         return UserAgentUtil.isGecko() && this.as<InputManagement>().placeholder === '' || this.as<InputManagement>().placeholder === undefined;
+    }
+
+    private get isAndroid(): boolean {
+        return UserAgentUtil.isAndroid();
     }
 
 }

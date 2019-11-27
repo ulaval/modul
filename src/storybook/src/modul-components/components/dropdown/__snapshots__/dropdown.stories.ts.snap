@@ -110,6 +110,37 @@ exports[`Storyshots modul-components|m-dropdown default 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-dropdown drodown in overlay 1`] = `
+<div>
+  <div
+    class="m-overlay"
+    title="Title"
+  >
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        Open 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-dropdown focus 1`] = `
 <div
   class="m-dropdown"
@@ -267,6 +298,116 @@ exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               placeholder="placeholder"
+              readonly="readonly"
+              type="text"
+            />
+             
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <div
+              class="m-dropdown__arrow"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-dropdown__arrow__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-dropdown__validation-message"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-dropdown with disabled items 1`] = `
+<div
+  class="m-dropdown"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+    style="width: 100%; margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mDropdown-fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              Vegetable
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <!---->
+             
+            <input
+              aria-controls="mDropdown-fakeId-controls"
+              aria-haspopup="true"
+              class="m-dropdown__input"
+              id="mDropdown-fakeId"
               readonly="readonly"
               type="text"
             />
@@ -809,84 +950,50 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, with labe
 `;
 
 exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = `
-<div
-  class="m-dropdown m--has-placeholder-icon"
-  style="width: 100%; max-width: 288px;"
->
+<div>
   <div
-    class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-    style="width: 100%; margin-top: 10px;"
+    class="m-dropdown m--has-placeholder-icon"
+    style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style__body"
+        class="m-input-style__main"
       >
-        <label
-          class="m-input-style__label"
-          for="mDropdown-fakeId"
-          style="margin-right: 0px;"
-        >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Animals
-            </span>
-             
-            <!---->
-          </span>
-        </label>
-         
         <div
-          class="m-input-style__input"
+          class="m-input-style__body"
         >
-          <!---->
-           
-          <div
-            class="m-input-style__content"
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-dropdown__placeholder-icon"
-              height="16px"
-              width="16px"
+            <span
+              class="m-input-style__text"
             >
+              <span>
+                Animals
+              </span>
+               
               <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <input
-              aria-controls="mDropdown-fakeId-controls"
-              aria-haspopup="true"
-              class="m-dropdown__input"
-              id="mDropdown-fakeId"
-              type="text"
-            />
-             
-            <!---->
-              
-            <!---->
-             
-            <!---->
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__suffix"
+            class="m-input-style__input"
           >
+            <!---->
+             
             <div
-              class="m-dropdown__arrow"
+              class="m-input-style__content"
             >
               <svg
                 aria-hidden="true"
-                class="m-icon m-dropdown__arrow__icon"
-                height="12px"
-                width="12px"
+                class="m-icon m-dropdown__placeholder-icon"
+                height="16px"
+                width="16px"
               >
                 <!---->
                  
@@ -895,36 +1002,73 @@ exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = 
                   class=""
                 />
               </svg>
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
             </div>
              
-            <!---->
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
+            </div>
           </div>
         </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-dropdown__validation-message"
-  >
-    <!---->
-     
-    <!---->
-  </div>
-   
-  <div
-    class="m-popup"
-  >
-    <div
-      class="m-popper"
-    >
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
@@ -977,6 +1121,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               placeholder="Type to filter"
+              readonly="readonly"
               type="text"
             />
              
