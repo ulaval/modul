@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import '../../utils/polyfills';
 import FlexTemplatePlugin, { MFlexTemplate, MFlexTemplateOrigin } from './flex-template';
 
 const MENU_OPEN_CSS: string = 'm--is-menu-open';
@@ -39,9 +38,9 @@ describe('flex-template', () => {
                 menuFixe: true,
                 menuOrigin: MFlexTemplateOrigin.Left,
                 menuOpen: false,
-                smallMenu : false,
-                smallMenuWidth : '44px',
-                pageMinHeight : '100vh'
+                smallMenu: false,
+                smallMenuWidth: '44px',
+                pageMinHeight: '100vh'
             }
         }).$mount();
     });
