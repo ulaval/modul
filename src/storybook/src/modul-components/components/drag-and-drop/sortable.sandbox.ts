@@ -1,6 +1,5 @@
 import { SORTABLE_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
 import SortablePlugin, { MSortEvent } from '@ulaval/modul-components/dist/directives/sortable/sortable';
-import '@ulaval/modul-components/dist/directives/sortable/sortable.scss';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
