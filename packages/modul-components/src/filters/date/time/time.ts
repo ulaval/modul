@@ -1,6 +1,6 @@
 // tslint:disable-next-line: import-blacklist
 import 'moment/locale/fr';
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
 import { FormatMode } from '../../../utils/i18n/i18n';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TIME_NAME, TIME_PERIOD_NAME } from '../../filter-names';
@@ -77,7 +77,14 @@ export const timeFilter: (time: SupportedTimeTypes, options?: TimeFilterOptions)
             minute: date.getMinutes() !== 0 ? 'numeric' : undefined
         };
 
-        const formatedTime: string = new Intl.DateTimeFormat(`${(Vue.prototype as ModulVue).$i18n.currentLocale}`, intlOptions).format(date).replace(/ /g, String.fromCharCode(160));
+        let formatedTime: string = new Intl.DateTimeFormat(ModulVue.prototype.$i18n.currentLocale, intlOptions).format(date)
+            .replace(/ /g, String.fromCharCode(160));
+
+        // Remove when https://bugs.chromium.org/p/chromium/issues/detail?id=982778#c3 is fixed.
+        if (ModulVue.prototype.$i18n.currentLocale === 'fr-CA' && formatedTime.match(/(0)[0-9]\sh\s*[0-9]*[0-9]*/g)) {
+            formatedTime = formatedTime.substr(1, formatedTime.length);
+        }
+
         return ModulVue.prototype.$i18n.translate(prepositionToTrad[options.preposition], { time: formatedTime }, 0, '', true, FormatMode.Vsprintf);
     }
     return '';
