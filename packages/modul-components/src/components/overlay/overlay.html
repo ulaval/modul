@@ -19,7 +19,7 @@
                             <slot name="header"></slot>
                         </div>
                         <div class="m-overlay__header__right"
-                             v-if="hasHeaderRightSlot">
+                             v-if="$slots['header-right']">
                             <slot name="header-right"></slot>
                         </div>
                     </header>

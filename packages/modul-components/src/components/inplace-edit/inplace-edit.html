@@ -2,7 +2,7 @@
      :class="{'m--has-erreur': error && propEditMode,
               'm--is-edit-mode': propEditMode && isMqMinS }"
      :style="propPadding"
-     @click="onClick">
+     @click="emitClick">
     <slot name="readMode"
           v-if="!propEditMode || !isMqMinS"></slot>
     <template v-if="isMqMinS">
@@ -18,13 +18,13 @@
                             <m-button :waiting="waiting"
                                       ref="confirm-control"
                                       skin="primary"
-                                      @click.stop="confirm">
+                                      @click.stop="onConfirm">
                                 <m-i18n k="m-inplace-edit:save"></m-i18n>
                             </m-button>
                             <m-button :disabled="waiting"
                                       ref="cancel-control"
                                       skin="secondary"
-                                      @click.stop="cancel">
+                                      @click.stop="onCancel">
                                 <m-i18n k="m-inplace-edit:cancel"></m-i18n>
                             </m-button>
                         </div>
@@ -36,8 +36,10 @@
     <template v-if="!isMqMinS">
         <m-overlay ref="overlay"
                    :open="propEditMode"
-                   @close="cancel"
-                   @save="confirm">
+                   @close="onCancel"
+                   @save="onConfirm"
+                   @portal-after-open="emitMobileAfterOpen"
+                   @portal-after-close="emitMobileAfterClose">velop
             <h2 class="m-edit-inplace__title"
                 slot="header">{{ title }}</h2>
             <form>
