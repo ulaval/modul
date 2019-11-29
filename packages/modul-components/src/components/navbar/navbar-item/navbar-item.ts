@@ -107,7 +107,6 @@ export class MNavbarItem extends ModulVue {
             element.style.width = (element.clientWidth + stepInPixels) + 'px';
 
             if (ratio <= 2) {
-                console.log(stepInPixels);
                 return;
             }
 
