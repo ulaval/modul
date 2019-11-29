@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Location } from 'vue-router';
 import { ModulVue } from '../../../utils/vue/vue';
 import { BaseNavbar, Navbar } from '../navbar';
@@ -31,6 +31,29 @@ export class MNavbarItem extends ModulVue {
     // tslint:disable-next-line:no-null-keyword
     private parentNavbar: Navbar | null = null;
 
+    @Emit('click')
+    private emitClick(event: MouseEvent): void { }
+
+    @Emit('mouseover')
+    private emitMouseover(event: MouseEvent): void { }
+
+    @Emit('mouseleave')
+    private emitMouseleave(event: MouseEvent): void { }
+
+    @Watch('isMultiline')
+    private isMultilineChanged(): void {
+        this.setDimension();
+    }
+
+    @Watch('$route')
+    private routeChanged(): void {
+        this.$nextTick(() => {
+            if (this.parentNavbar && this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
+                this.parentNavbar.updateValue(this.value);
+            }
+        });
+    }
+
     protected mounted(): void {
         let parentNavbar: BaseNavbar | undefined;
         parentNavbar = this.getParent<BaseNavbar>(
@@ -52,26 +75,40 @@ export class MNavbarItem extends ModulVue {
         this.$modul.event.$on('resize', this.setDimension);
     }
 
-    private beforeDestroy(): void {
+    protected beforeDestroy(): void {
         this.$modul.event.$off('resize', this.setDimension);
     }
 
-    private get isMultiline(): boolean {
+    public get isSelected(): boolean {
+        return !!this.parentNavbar && !this.disabled && this.value === this.parentNavbar.model;
+    }
+
+    public get isMultiline(): boolean {
         return this.parentNavbar ? this.parentNavbar.multiline : false;
     }
 
-    @Watch('isMultiline')
-    private isMultilineChanged(): void {
-        this.setDimension();
-    }
-
-    @Watch('$route')
-    private routeChanged(): void {
-        this.$nextTick(() => {
-            if (this.parentNavbar && this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
+    public onClick(event: MouseEvent): void {
+        if (!this.disabled && this.parentNavbar) {
+            this.parentNavbar.onClick(event, this.value);
+            if (this.value !== this.parentNavbar.model) {
                 this.parentNavbar.updateValue(this.value);
             }
-        });
+            this.emitClick(event);
+        }
+    }
+
+    public onMouseover(event: MouseEvent): void {
+        if (!this.disabled && this.parentNavbar) {
+            this.parentNavbar.onMouseover(event, this.value);
+            this.emitMouseover(event);
+        }
+    }
+
+    public onMouseleave(event: MouseEvent): void {
+        if (!this.disabled && this.parentNavbar) {
+            this.parentNavbar.onMouseleave(event, this.value);
+            this.emitMouseleave(event);
+        }
     }
 
     private _computingHeightFontSizeRatio: boolean = false;
@@ -154,44 +191,4 @@ export class MNavbarItem extends ModulVue {
             itemElement.style.whiteSpace = 'nowrap';
         }
     }
-
-    private get isDisabled(): boolean {
-        return this.disabled;
-    }
-
-    public get isSelected(): boolean {
-        return !!this.parentNavbar && !this.disabled && this.value === this.parentNavbar.model;
-    }
-
-    private get hasDefaultSlot(): boolean {
-        return !!this.$slots.default;
-    }
-
-    private onClick(event: Event): void {
-        if (!this.disabled && this.parentNavbar) {
-            this.parentNavbar.onClick(event, this.value);
-            if (this.value !== this.parentNavbar.model) {
-                this.parentNavbar.updateValue(this.value);
-            }
-            this.$emit('click', event);
-        }
-    }
-
-    private onMouseover(event: Event): void {
-        if (!this.disabled && this.parentNavbar) {
-            this.parentNavbar.onMouseover(event, this.value);
-            this.$emit('mouseover', event);
-        }
-
-    }
-
-    private onMouseleave(event: Event): void {
-        if (!this.disabled && this.parentNavbar) {
-            this.parentNavbar.onMouseleave(event, this.value);
-            this.$emit('mouseleave', event);
-        }
-    }
-
 }
-
-
