@@ -35,6 +35,7 @@
                     </div>
                 </div>
                 <m-icon-button class="m-toast__close-button"
+                               v-if="closeButton"
                                :title="'m-toast:close' | f-m-i18n"
                                @click="onClose"
                                icon-name="m-svg__close-clear"

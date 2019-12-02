@@ -15,8 +15,8 @@ export default class AddressLookupGoogleProxyService implements AddressLookupSer
      * @param retrieveUrl https://developers.google.com/places/web-service/details
      */
     constructor(
-        protected findPromise: (params: google.maps.places.AutocompletionRequest) => Promise<AutocompletePredictionResponse>,
-        protected retrievePromise: (params: google.maps.places.PlaceDetailsRequest) => Promise<PlaceResultResponse>,
+        protected findPromise: (params: any) => Promise<AutocompletePredictionResponse>,
+        protected retrievePromise: (params: any) => Promise<PlaceResultResponse>,
         protected findErrorCallback: (error: ErrorEvent) => void,
         protected retrieveErrorCallback: (error: ErrorEvent) => void
     ) {

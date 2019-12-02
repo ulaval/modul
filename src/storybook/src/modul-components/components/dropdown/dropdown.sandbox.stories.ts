@@ -1,13 +1,12 @@
-import { NAVBAR_NAME } from '@ulaval/modul-components/dist/components/component-names';
-
+import { DROPDOWN_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { sandboxDecorator } from '../../../sandbox-decorator';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${NAVBAR_NAME}`
+    title: `${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`
 };
 
-export const sandbox: any = () => '<m-navbar-sandbox></m-navbar-sandbox>';
+export const sandbox: any = () => '<m-dropdown-sandbox></m-dropdown-sandbox>';
 
 sandbox.story = {
     decorators: [sandboxDecorator],

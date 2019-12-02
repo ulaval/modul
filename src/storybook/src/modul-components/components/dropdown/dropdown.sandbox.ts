@@ -1,8 +1,8 @@
+import { DROPDOWN_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import DropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import { ModulVue } from '../../utils/vue/vue';
-import { DROPDOWN_NAME } from '../component-names';
-import DropdownPlugin from './dropdown';
 import WithRender from './dropdown.sandbox.html';
 
 @WithRender

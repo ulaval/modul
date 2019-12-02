@@ -4,11 +4,7 @@ import { MODAL_NAME } from '@ulaval/modul-components/dist/components/component-n
 import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
-
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
-
-
     .add('default', () => ({
         data: () => ({
             openProp: true
