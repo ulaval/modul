@@ -76,7 +76,6 @@ export class MNavbarItem extends ModulVue {
 
     private _computingHeightFontSizeRatio: boolean = false;
     private _resizedWhileComputing: boolean = false;
-
     private _computeHeightFontSizeRatio(): void {
         if (this._computingHeightFontSizeRatio) {
             this._resizedWhileComputing = true;
@@ -102,7 +101,6 @@ export class MNavbarItem extends ModulVue {
             }
 
             stepCount++;
-
             element.style.width = (element.clientWidth + (Math.log(stepCount) / Math.LN2) * direction) + 'px';
 
             const itemElementHeightWithoutPadding: number = element.clientHeight - yPadding;
@@ -139,7 +137,7 @@ export class MNavbarItem extends ModulVue {
     private setDimension(): void {
         let itemElement: HTMLElement = this.$refs.item as HTMLElement;
 
-        if (!itemElement || !itemElement.style) {
+        if (!itemElement || !itemElement.style || !itemElement.clientWidth) {
             return;
         }
 
