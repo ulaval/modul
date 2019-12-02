@@ -95,7 +95,7 @@ export class MNavbarItem extends ModulVue {
 
         const compute: Function = (
             stepCount: number = 2,
-            direction: 1
+            direction: number = 1
         ) => {
             if (stepCount >= RESIZING_ELEMENT_WIDTH_SAFETY_COUNT) {
                 return;
@@ -107,6 +107,14 @@ export class MNavbarItem extends ModulVue {
 
             const itemElementHeightWithoutPadding: number = element.clientHeight - yPadding;
             const ratio: number = (itemElementHeightWithoutPadding / fontSize);
+
+            console.log('-------');
+            console.log('ratio: ' + ratio);
+            console.log('stepCount: ' + stepCount);
+            console.log('log value ' + Math.log(stepCount) / Math.LN2);
+            console.log('direction: ' + direction);
+            console.log('-------');
+
 
             if (Math.floor(ratio) === 2 || Math.round(ratio) === 2) {
                 return;
