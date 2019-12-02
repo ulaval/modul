@@ -94,29 +94,27 @@ export class MNavbarItem extends ModulVue {
         const fontSize: number = parseFloat(itemElementComputedStype.getPropertyValue('font-size'));
 
         const compute: Function = (
-            stepInPixels: number = 1,
-            safetyCount: number = 0
+            stepCount: number = 2,
+            direction: 1
         ) => {
-            if (safetyCount >= RESIZING_ELEMENT_WIDTH_SAFETY_COUNT) {
+            if (stepCount >= RESIZING_ELEMENT_WIDTH_SAFETY_COUNT) {
                 return;
             }
 
+            stepCount++;
+
+            element.style.width = (element.clientWidth + (Math.log(stepCount) / Math.LN2) * direction) + 'px';
+
             const itemElementHeightWithoutPadding: number = element.clientHeight - yPadding;
-            const ratio: number = Math.floor(itemElementHeightWithoutPadding / fontSize);
+            const ratio: number = (itemElementHeightWithoutPadding / fontSize);
 
-            element.style.width = (element.clientWidth + stepInPixels) + 'px';
-
-            if (ratio <= 2) {
+            if (Math.floor(ratio) === 2 || Math.round(ratio) === 2) {
                 return;
             }
 
             compute(
-                ratio > 5
-                    ? stepInPixels * 2
-                    : ratio === 4
-                        ? Math.floor(stepInPixels * 1.5)
-                        : stepInPixels + 5,
-                ++safetyCount
+                stepCount,
+                ratio > 2 ? 1 : -1
             );
         };
 
