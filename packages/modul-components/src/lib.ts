@@ -1,3 +1,4 @@
+import 'core-js';
 import Vue, { PluginObject } from 'vue';
 import ComponentsPlugin from './components/components-plugin';
 import DirectivesPlugin from './directives/directives-plugin';
@@ -16,7 +17,6 @@ import { SpritesService } from './utils/svg/sprites';
 import ToastService from './utils/toast/toast-service';
 import ToastServicePlugin from './utils/toast/toast-service.plugin';
 import UtilsPlugin, { UtilsPluginOptions } from './utils/utils-plugin';
-
 
 /**
  * we re-export enums, complex components props and others types here..
