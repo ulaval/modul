@@ -43,6 +43,9 @@ export class MExpandableLayout extends ModulVue {
     @Prop({ default: '320px' })
     panelWidth: string;
 
+    @Prop({ default: false })
+    overContent: boolean;
+
     $refs: {
         panelContent: HTMLDivElement
     };
@@ -81,8 +84,12 @@ export class MExpandableLayout extends ModulVue {
         }
     }
 
-    get panelPositionClass(): string {
-        return this.$slots.panel ? `m--has-${this.panelPosition}-panel` : '';
+    get styleClasses(): { [key: string]: boolean } {
+        return {
+            'm--has-left-panel': !!this.$slots.panel && this.panelPosition === MExpandableLayoutPanelPosition.Left,
+            'm--has-right-panel': !!this.$slots.panel && this.panelPosition === MExpandableLayoutPanelPosition.Right,
+            'm--is-panel-over-content': this.overContent
+        };
     }
 
     get panelStyle(): { [prop: string]: string } {
