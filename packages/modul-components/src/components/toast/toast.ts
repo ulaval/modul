@@ -99,6 +99,11 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     })
     public offset: string;
 
+    @Prop({
+        default: true
+    })
+    public closeButton: boolean;
+
     public $refs: {
         toast: HTMLElement
     };
