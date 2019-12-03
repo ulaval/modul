@@ -2,7 +2,7 @@
      :class="[ 'm--is-skin-' + skin,
                { 'm--is-open': propOpen,
                  'm--is-disabled': propDisabled }]">
-    <div v-if="hasSlotTrigger"
+    <div v-if="$slots.trigger"
          class="m-menu__trigger"
          :tabindex="propDisabled ? '-1' : '0'"
          :aria-controls="idAriaControls"
@@ -19,7 +19,8 @@
                 skin="current-color"></m-plus>
         <slot name="trigger"></slot>
     </div>
-    <m-accordion-transition ref="transition">
+    <m-accordion-transition ref="transition"
+                            :disabled="!animReady || propDisabled">
         <ul v-show="propOpen"
             :id="idAriaControls"
             class="m-menu__body"

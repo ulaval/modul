@@ -3,9 +3,6 @@ import { storiesOf } from '@storybook/vue';
 import { MULTI_SELECT_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
-
-
 const optionsVonTrapp: string[] = ['Maria Rainer', 'Georg von Trapp', 'Liesl von Trapp', 'Friedrich von Trapp', 'Louisa von Trapp', 'Kurt von Trapp', 'Brigitta von Trapp', 'Marta von Trapp', 'Gretl von Trapp'];
 const optionsLionKing: string[] = ['Simba', 'Mufasa', 'Scar', 'Timon', 'Pumbaa', 'Rafiki', 'Nala', 'Zazu', 'Shenzi', 'Banzaï', 'Ed', 'Sarabi', 'Sarafina'];
 const optionsPawPatrol: string[] = ['Marcus', 'Ruben', 'Chase', 'Rocky', 'Zuma', 'Stella', 'Everest', 'Tracker', 'Ryder', 'Jake', 'Mairesse Goodway', 'Maire Hollinger'];

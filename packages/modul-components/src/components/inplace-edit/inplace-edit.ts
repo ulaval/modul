@@ -16,14 +16,19 @@ export class MInplaceEdit extends ModulVue {
 
     @Prop()
     public editMode: boolean;
+
     @Prop()
     public error: boolean;
+
     @Prop()
     public waiting: boolean;
+
     @Prop()
     public padding: string;
+
     @Prop()
     public editModePadding: string;
+
     @Prop({
         default: () => (Vue.prototype).$i18n.translate('m-inplace-edit:modify')
     })
@@ -33,61 +38,67 @@ export class MInplaceEdit extends ModulVue {
     private mqMounted: boolean;
 
     @Emit('ok')
-    onOk(): void { }
+    emitOk(event: MouseEvent): void { }
 
     @Emit('cancel')
-    onCancel(): void { }
+    emitCancel(event: MouseEvent): void { }
 
     @Emit('click')
-    onClick(event: MouseEvent): void { }
+    emitClick(event: MouseEvent): void { }
 
-    public confirm(event: Event): void {
-        if (this.editMode) {
-            this.onOk();
-        }
-    }
+    @Emit('mobile-after-open')
+    emitMobileAfterOpen(): void { }
 
-    public cancel(event: Event): void {
-        if (this.editMode) {
-            this.propEditMode = false;
-            this.onCancel();
-        }
-    }
+    @Emit('mobile-after-close')
+    emitMobileAfterClose(): void { }
 
-    @Watch('editMode')
-    public onEditMode(value: boolean): void {
+    @Watch('editMode', { immediate: true })
+    onEditModeChange(value: boolean): void {
         this.internalEditMode = value;
     }
 
     @Watch('isMqMaxS')
-    public onMaxS(value: boolean, old: boolean): void {
+    onIsMqMaxSChange(value: boolean, old: boolean): void {
         if (this.mqMounted) {
             this.propEditMode = false;
         }
     }
 
+    protected mounted(): void {
+        // should be in next tick to skip the media query initial trigger on mounted
+        this.$nextTick(() => this.mqMounted = true);
+    }
+
+    get propEditMode(): boolean {
+        return this.internalEditMode;
+    }
+
+    set propEditMode(value: boolean) {
+        this.internalEditMode = value;
+        this.$emit('update:editMode', value);
+    }
+
     get propPadding(): string {
         if (!this.propEditMode && this.padding) {
-            return 'padding:' + this.padding;
+            return `padding: ${this.padding}`;
         } else if (this.propEditMode && this.editModePadding) {
-            return 'padding:' + this.editModePadding;
+            return `padding: ${this.editModePadding}`;
         } else {
             return '';
         }
     }
 
-    private mounted(): void {
-        // should be in next tick to skip the media query initial trigger on mounted
-        this.$nextTick(() => this.mqMounted = true);
+    onConfirm(event: MouseEvent): void {
+        if (this.propEditMode) {
+            this.emitOk(event);
+        }
     }
 
-    private get propEditMode(): boolean {
-        return this.editMode || this.internalEditMode;
-    }
-
-    private set propEditMode(value: boolean) {
-        this.internalEditMode = value;
-        this.$emit('update:editMode', value);
+    onCancel(event: MouseEvent): void {
+        if (this.propEditMode) {
+            this.propEditMode = false;
+            this.emitCancel(event);
+        }
     }
 }
 

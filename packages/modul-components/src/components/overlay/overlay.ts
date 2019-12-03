@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalTransitionDuration } from '../../mixins/portal/portal';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
@@ -38,6 +38,12 @@ export class MOverlay extends ModulVue {
         footer: HTMLElement,
         article: Element
     };
+
+    @Emit('save')
+    emitSave(event: MouseEvent): void { }
+
+    @Emit('cancel')
+    emitCancel(event: MouseEvent): void { }
 
     protected mounted(): void {
         this.as<Portal>().transitionDuration = PortalTransitionDuration.Regular + PortalTransitionDuration.XSlow;
@@ -83,10 +89,6 @@ export class MOverlay extends ModulVue {
         return this.$refs.article as HTMLElement;
     }
 
-    private get hasHeaderRightSlot(): boolean {
-        return !!this.$slots['header-right'];
-    }
-
     private get isSaveButtonDisabled(): boolean {
         return this.disableSaveButton;
     }
@@ -95,12 +97,12 @@ export class MOverlay extends ModulVue {
         return this.waiting;
     }
 
-    private save(e: MouseEvent): void {
-        this.$emit('save', e);
+    private save(event: MouseEvent): void {
+        this.emitSave(event);
     }
 
-    private cancel(e: MouseEvent): void {
-        this.$emit('cancel', e);
+    private cancel(event: MouseEvent): void {
+        this.emitCancel(event);
         this.close();
     }
 
