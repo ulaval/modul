@@ -1,5 +1,9 @@
 @import 'commons';
 
+.dont-wrap {
+    white-space: nowrap;
+}
+
 // Styles while
 .m-navbar {
     &.m--is-multiline {

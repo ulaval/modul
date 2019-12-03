@@ -17,6 +17,8 @@ export class MNavbarItem extends ModulVue {
     @Prop()
     public value: string;
     @Prop()
+    public label: string;
+    @Prop()
     public disabled: boolean;
     @Prop()
     public url: string | Location;
@@ -30,6 +32,8 @@ export class MNavbarItem extends ModulVue {
     // should be initialized to be reactive
     // tslint:disable-next-line:no-null-keyword
     private parentNavbar: Navbar | null = null;
+    private shouldWrap: boolean = false;
+    private isWraped: boolean = false;
 
     protected mounted(): void {
         let parentNavbar: BaseNavbar | undefined;
@@ -40,29 +44,61 @@ export class MNavbarItem extends ModulVue {
 
         if (parentNavbar) {
             this.parentNavbar = (parentNavbar as any) as Navbar;
-            this.setDimension();
-
             if (this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
                 this.parentNavbar.updateValue(this.value);
             }
         } else {
             console.error('m-navbar-item need to be inside m-navbar');
         }
-
-        this.$modul.event.$on('resize', this.setDimension);
+        this.setShouldWrap();
+        this.$modul.event.$on('resize', this.setShouldWrap);
     }
 
     private beforeDestroy(): void {
-        this.$modul.event.$off('resize', this.setDimension);
+        this.$modul.event.$off('resize', this.setShouldWrap);
+    }
+
+    public async setShouldWrap(): Promise<void> {
+        this.shouldWrap = false;
+        await this.$nextTick();
+        if (this.label && this.label.length < 15) {
+            this.shouldWrap = false;
+            return;
+        }
+
+        if (this.label && this.label.length > 30) {
+            this.shouldWrap = true;
+            return;
+        }
+
+        const element: HTMLElement = this.$refs.item as HTMLElement;
+        if (!element) {
+            this.shouldWrap = false;
+            return;
+        }
+
+        const itemElementComputedStyle: CSSStyleDeclaration = window.getComputedStyle(element);
+        const yPadding: number =
+            parseInt(itemElementComputedStyle.getPropertyValue('padding-top'), 10)
+            +
+            parseInt(itemElementComputedStyle.getPropertyValue('padding-bottom'), 10);
+        const fontSize: number = parseFloat(itemElementComputedStyle.getPropertyValue('font-size'));
+
+        this.shouldWrap = (element.clientHeight - yPadding) / fontSize > 3;
+    }
+
+    public get formatedLabel(): string {
+        if (!this.shouldWrap) {
+            this.isWraped = false;
+            return this.label;
+        }
+
+        this.isWraped = true;
+        return '<div style="all: inherit; white-space: nowrap;">' + this.label.slice(0, 10) + '</br>' + this.label.slice(10 + Math.abs(0)) + '<div>';
     }
 
     private get isMultiline(): boolean {
         return this.parentNavbar ? this.parentNavbar.multiline : false;
-    }
-
-    @Watch('isMultiline')
-    private isMultilineChanged(): void {
-        this.setDimension();
     }
 
     @Watch('$route')
@@ -74,89 +110,8 @@ export class MNavbarItem extends ModulVue {
         });
     }
 
-    private _computingHeightFontSizeRatio: boolean = false;
-    private _resizedWhileComputing: boolean = false;
-    private _computeHeightFontSizeRatio(): void {
-        if (this._computingHeightFontSizeRatio) {
-            this._resizedWhileComputing = true;
-            return;
-        }
-
-        this._computingHeightFontSizeRatio = true;
-
-        const element: HTMLElement = this.$refs.item as HTMLElement;
-        const itemElementComputedStype: CSSStyleDeclaration = window.getComputedStyle(element);
-        const yPadding: number =
-            parseInt(itemElementComputedStype.getPropertyValue('padding-top'), 10)
-            +
-            parseInt(itemElementComputedStype.getPropertyValue('padding-bottom'), 10);
-        const fontSize: number = parseFloat(itemElementComputedStype.getPropertyValue('font-size'));
-
-        const compute: Function = (
-            stepCount: number = 2,
-            direction: number = 1
-        ) => {
-            if (stepCount >= RESIZING_ELEMENT_WIDTH_SAFETY_COUNT) {
-                return;
-            }
-
-            stepCount++;
-            element.style.width = (element.clientWidth + (Math.log(stepCount) / Math.LN2) * direction) + 'px';
-
-            const itemElementHeightWithoutPadding: number = element.clientHeight - yPadding;
-            const ratio: number = (itemElementHeightWithoutPadding / fontSize);
-
-            console.log('-------');
-            console.log('ratio: ' + ratio);
-            console.log('stepCount: ' + stepCount);
-            console.log('log value ' + Math.log(stepCount) / Math.LN2);
-            console.log('direction: ' + direction);
-            console.log('-------');
-
-
-            if (Math.floor(ratio) === 2 || Math.round(ratio) === 2) {
-                return;
-            }
-
-            compute(
-                stepCount,
-                ratio > 2 ? 1 : -1
-            );
-        };
-
-        compute();
-
-        this._computingHeightFontSizeRatio = false;
-
-        if (this._resizedWhileComputing) {
-            this._resizedWhileComputing = false;
-            this._computeHeightFontSizeRatio();
-        }
-    }
-
-    private setDimension(): void {
-        let itemElement: HTMLElement = this.$refs.item as HTMLElement;
-
-        if (!itemElement || !itemElement.style || !itemElement.clientWidth) {
-            return;
-        }
-
-        itemElement.style.removeProperty('width');
-        itemElement.style.removeProperty('max-width');
-        itemElement.style.removeProperty('white-space');
-
-        if (
-            this.isMultiline
-            && (
-                !!itemElement.innerText
-                &&
-                itemElement.innerText.trim().length > 15
-            )
-        ) {
-            this._computeHeightFontSizeRatio();
-        } else {
-            itemElement.style.whiteSpace = 'nowrap';
-        }
+    public get smallLabel(): boolean {
+        return this.label.length < 15;
     }
 
     private get isDisabled(): boolean {

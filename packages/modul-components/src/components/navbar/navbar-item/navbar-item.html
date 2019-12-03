@@ -39,6 +39,11 @@
             <slot></slot>
         </span>
         <span class="m-navbar-item__text"
-              v-else>{{ value }}</span>
+              v-else-if="!label">{{ value }}</span>
+        <span class="m-navbar-item__text"
+              :class="[smallLabel ? 'dont-wrap' : '']"
+              ref="test"
+              v-else
+              v-html="formatedLabel"></span>
     </div>
 </li>
