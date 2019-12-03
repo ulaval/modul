@@ -4,27 +4,8 @@
             "@babel/preset-env",
             {
                 "useBuiltIns": "entry",
-                "corejs": 3,
-                "modules": false
-            }
-        ],
-        [
-            "@babel/preset-typescript",
-            {
-                "allowNamespaces": true
+                "corejs": 3
             }
         ]
-    ],
-    "plugins": [
-        [
-            "@babel/plugin-proposal-decorators",
-            {
-                "legacy": true
-            }
-        ],
-        [
-            "@babel/plugin-proposal-class-properties"
-        ],
-        "@babel/proposal-object-rest-spread"
     ]
 }

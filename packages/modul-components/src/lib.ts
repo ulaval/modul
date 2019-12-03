@@ -1,4 +1,3 @@
-import 'core-js';
 import Vue, { PluginObject } from 'vue';
 import ComponentsPlugin from './components/components-plugin';
 import DirectivesPlugin from './directives/directives-plugin';
