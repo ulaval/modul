@@ -8,7 +8,6 @@ import WithRender from './navbar-item.html?style=./navbar-item.scss';
 
 // must be sync with selected css class
 const FAKE_SELECTED_CLASS: string = 'm--is-fake-selected';
-const RESIZING_ELEMENT_WIDTH_SAFETY_COUNT: number = 100;
 
 @WithRender
 @Component
@@ -114,11 +113,14 @@ export class MNavbarItem extends ModulVue {
             return this.label;
         }
 
-        const half: number = Math.floor(this.label.length / 2);
+        const split: string[] = this.label.split(' ');
+
+        split.splice(Math.round(split.length / 2), 0, '</br>');
+
+        const formatedLabel: string = split.join(' ');
+
         return '<span style="all: inherit; white-space: nowrap;">'
-            + this.label.slice(0, half)
-            + '</br>'
-            + this.label.slice(half + Math.abs(0))
+            + formatedLabel
             + '</span>';
     }
 
