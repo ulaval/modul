@@ -19,28 +19,34 @@
                        label="1 souris verte">
         </m-navbar-item>
         <m-navbar-item value="item2"
-                       label="2">
+                       label="2"
+                       :use-new-wrap-strategy="true">
             2
         </m-navbar-item>
         <m-navbar-item value="item8"
-                       label="8 asdasda sd asda sdas dasd asd asd asda dd">
+                       label="8 asdasda asd as dd"
+                       :use-new-wrap-strategy="true">
         </m-navbar-item>
         <m-navbar-item value="item9"
-                       label="9 singes">
+                       label="9 singes"
+                       :use-new-wrap-strategy="true">
+        </m-navbar-item>
+        <m-navbar-item value="item12"
+                       label="12 zaine d oeufs"
+                       :use-new-wrap-strategy="true">
         </m-navbar-item>
         <m-navbar-item value="item10"
                        :disabled="true"
-                       label="10 chevres et 10 moutons">
+                       label="10 chevres et 10 moutons"
+                       :use-new-wrap-strategy="true">
         </m-navbar-item>
         <m-navbar-item value="item11"
-                       label="11 barnacles magestueuses volant vers le lointain">
-        </m-navbar-item>
-        <m-navbar-item value="item12"
-                       label="12 zaine d oeufs">
+                       label="11 barnacles magestueuses volant vers le lointain"
+                       :use-new-wrap-strategy="true">
         </m-navbar-item>
     </m-navbar>
 
-    <!-- <p>Skin nav-soft</p>
+    <p>Skin nav-soft</p>
     <m-navbar skin="nav-soft"
               :selected.sync="selectedItem"
               :multiline="multiline"
@@ -630,7 +636,7 @@
                 12 zaine d'oeufs
             </m-navbar-item>
         </m-navbar>
-    </div> -->
+    </div>
 
     <!-- <h2>Support for vue-router named route (MODUL-616)</h2>
     <m-navbar :selected.sync="selectedItemMod">

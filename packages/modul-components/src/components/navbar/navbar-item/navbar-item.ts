@@ -28,6 +28,8 @@ export class MNavbarItem extends ModulVue {
     public ariaExpanded: boolean;
     @Prop()
     public ariaControls: string;
+    @Prop({ default: false })
+    public useNewWrapStrategy: boolean;
 
     // should be initialized to be reactive
     // tslint:disable-next-line:no-null-keyword
@@ -43,24 +45,44 @@ export class MNavbarItem extends ModulVue {
 
         if (parentNavbar) {
             this.parentNavbar = (parentNavbar as any) as Navbar;
+
+            this.setShouldWrap();
+            this.setDimension();
+
             if (this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
                 this.parentNavbar.updateValue(this.value);
             }
         } else {
             console.error('m-navbar-item need to be inside m-navbar');
         }
-        this.setShouldWrap();
-        this.$modul.event.$on('resize', this.setShouldWrap);
+
+        this.$modul.event.$on('resize', () => {
+            this.setShouldWrap();
+            this.setDimension();
+        });
     }
 
-    private beforeDestroy(): void {
+    protected beforeDestroy(): void {
+        this.$modul.event.$off('resize', this.setDimension);
         this.$modul.event.$off('resize', this.setShouldWrap);
     }
 
+    public get shouldNotWrap(): boolean {
+        return this.label.length < 15;
+    }
+
     public async setShouldWrap(): Promise<void> {
+        if (!this.useNewWrapStrategy || !this.label) {
+            return;
+        }
+
         this.shouldWrap = false;
 
         await this.$nextTick();
+
+        if (!this.isMultiline) {
+            return;
+        }
 
         if (this.label) {
             if (this.label.length < 15) {
@@ -92,7 +114,12 @@ export class MNavbarItem extends ModulVue {
             return this.label;
         }
 
-        return '<div style="all: inherit; white-space: nowrap;">' + this.label.slice(0, Math.floor(this.label.length / 2)) + '</br>' + this.label.slice(Math.floor(this.label.length / 2) + Math.abs(0)) + '<div>';
+        const half: number = Math.floor(this.label.length / 2);
+        return '<span style="all: inherit; white-space: nowrap;">'
+            + this.label.slice(0, half)
+            + '</br>'
+            + this.label.slice(half + Math.abs(0))
+            + '</span>';
     }
 
     private get isMultiline(): boolean {
@@ -108,8 +135,9 @@ export class MNavbarItem extends ModulVue {
         });
     }
 
-    public get smallLabel(): boolean {
-        return this.label.length < 15;
+    @Watch('isMultiline')
+    private isMultilineChanged(): void {
+        this.setDimension();
     }
 
     private get isDisabled(): boolean {
@@ -146,6 +174,49 @@ export class MNavbarItem extends ModulVue {
         if (!this.disabled && this.parentNavbar) {
             this.parentNavbar.onMouseleave(event, this.value);
             this.$emit('mouseleave', event);
+        }
+    }
+
+    private setDimension(): void {
+        if (this.useNewWrapStrategy) {
+            return;
+        }
+
+        let itemEl: HTMLElement = this.$refs.item as HTMLElement;
+        if (itemEl && itemEl.style) {
+            itemEl.style.removeProperty('width');
+            itemEl.style.removeProperty('max-width');
+            itemEl.style.removeProperty('white-space');
+
+            if (this.isMultiline && ((itemEl.innerText === undefined ? '' : itemEl.innerText).trim().length > 15)) {
+                let itemElComputedStyle: any = window.getComputedStyle(itemEl);
+                let fontSize: number = parseFloat(itemElComputedStyle.getPropertyValue('font-size'));
+                let paddingH: number = parseInt(itemElComputedStyle.getPropertyValue('padding-top'), 10) + parseInt(itemElComputedStyle.getPropertyValue('padding-bottom'), 10);
+                // must subtract the padding, create a infinite loop
+                let itemElHeight: number = itemEl.clientHeight - paddingH;
+                let lines: number = Math.floor(itemElHeight / fontSize);
+
+                if (lines > 2) {
+                    // use selected class to reserve space for when selected
+                    this.$el.classList.add(FAKE_SELECTED_CLASS);
+                    // create a infinite loop if the parent has 'align-items: stretch'
+                    (this.$parent.$refs.list as HTMLElement).style.alignItems = 'flex-start';
+
+                    do {
+                        itemEl.style.width = itemEl.clientWidth + 1 + 'px'; // increment width
+
+                        // update values
+                        itemElHeight = itemEl.clientHeight - paddingH;
+                        lines = Math.floor(itemElHeight / fontSize);
+                    } while (lines > 2);
+
+                    // reset styles once completed
+                    this.$el.classList.remove(FAKE_SELECTED_CLASS);
+                    (this.$parent.$refs.list as HTMLElement).style.removeProperty('align-items');
+                }
+            } else {
+                itemEl.style.whiteSpace = 'nowrap';
+            }
         }
     }
 
