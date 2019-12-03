@@ -14,6 +14,21 @@ export default class BirthdayField extends Vue {
     @Prop({ required: true })
     public label: string;
 
+    @Watch('dayField.value')
+    public watchDayValue(): void {
+        this.firstEditContextDetector.setFirstDayValue = true;
+    }
+
+    @Watch('monthField.value')
+    public watchMonthValue(): void {
+        this.firstEditContextDetector.setFirstMonthValue = true;
+    }
+
+    @Watch('yearField.value')
+    public watchYearValue(): void {
+        this.firstEditContextDetector.setFirstYearValue = true;
+    }
+
     // Keep month values 1 base index instead of zero as conversion is done in DateSelectorFieldGroup.
     public monthValuesAndNames = [
         { 'value': 1, 'name': 'January' },
@@ -48,6 +63,13 @@ export default class BirthdayField extends Vue {
         return this.fieldGroup;
     }
 
+    public get monthSelectionName(): string | null {
+        if (!this.monthField.value) {
+            return null;
+        }
+        return this.monthValuesAndNames.find(m => m.value === this.monthField.value)!.name;
+    }
+
     public hasMetConditionsToShowError(): boolean {
         return this.firstEditContextDetector.hasMetAllCondition() || this.formGroup.hasSubmittedForm;
     }
@@ -60,21 +82,6 @@ export default class BirthdayField extends Vue {
         return this.yearField.hasError() && this.hasMetConditionsToShowError();
     }
 
-    @Watch('dayField.value')
-    public watchDayValue(): void {
-        this.firstEditContextDetector.setFirstDayValue = true;
-    }
-
-    @Watch('monthField.value')
-    public watchMonthValue(): void {
-        this.firstEditContextDetector.setFirstMonthValue = true;
-    }
-
-    @Watch('yearField.value')
-    public watchYearValue(): void {
-        this.firstEditContextDetector.setFirstYearValue = true;
-    }
-
     public onBlurDay(): void {
         this.firstEditContextDetector.exitedDayField = true;
     }
@@ -82,4 +89,9 @@ export default class BirthdayField extends Vue {
     public onBlurYear(): void {
         this.firstEditContextDetector.exitedYearField = true;
     }
+
+    public onSelectItem(item: any): void {
+        this.monthField.value = item.value;
+    }
+
 }

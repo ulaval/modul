@@ -1,48 +1,43 @@
 <div class="p-date-selector">
-    <label class="label">{{ ' ' + label }}
-    </label>
+    <m-input-group :label="label"
+                   :error="formGroup.hasError()"
+                   :error-message="formGroup.errorMessageDeep"
+                   validation-message-position="bottom">
+        <div class="field-wrapper">
+            <div class="p-date-selector__column days">
+                <m-textfield max-width="small"
+                             v-model.trim="dayField.value"
+                             :error="dayField.hasError()"
+                             label="Day"
+                             max-length="2"
+                             :length-overflow="false"
+                             @blur="onBlurDay">
+                </m-textfield>
+            </div>
 
-    <div class="field-wrapper">
-        <div class="p-date-selector__column days">
-            <m-textfield max-width="small"
-                         v-model.trim="dayField.value"
-                         :error="hasDayError()"
-                         label="Day"
-                         max-length="2"
-                         :length-overflow="false"
-                         @blur="onBlurDay">
-            </m-textfield>
+            <div class="p-date-selector__column months">
+                <m-select label="Month"
+                          :value="monthSelectionName"
+                          :options="monthValuesAndNames"
+                          :error="monthField.hasError()"
+                          @select-item="onSelectItem($event)"
+                          max-width="100%"
+                          ref="dropdown">
+
+                    <template v-slot:items="{item , index }">{{ item.name }}</template>
+                </m-select>
+            </div>
+
+            <div class="p-date-selector__column years">
+                <m-textfield max-width="small"
+                             v-model.trim="yearField.value"
+                             :error="hasYearError()"
+                             label="Year"
+                             max-length="4"
+                             :length-overflow="false"
+                             @blur="onBlurYear">
+                </m-textfield>
+            </div>
         </div>
-
-        <div class="p-date-selector__column months">
-            <m-dropdown label="Month"
-                        v-model.trim="monthField.value"
-                        :error="monthField.hasError()"
-                        max-width="100%"
-                        ref="dropdown">
-                <m-dropdown-item v-for="nameAndValue in monthValuesAndNames"
-                                 :key="nameAndValue.value"
-                                 :label="nameAndValue.name"
-                                 :value="nameAndValue.value">
-                </m-dropdown-item>
-            </m-dropdown>
-        </div>
-
-        <div class="p-date-selector__column years">
-            <m-textfield max-width="small"
-                         v-model.trim="yearField.value"
-                         :error="hasYearError()"
-                         label="Year"
-                         max-length="4"
-                         :length-overflow="false"
-                         @blur="onBlurYear">
-            </m-textfield>
-        </div>
-    </div>
-
-
-    <m-validation-message v-if="hasMetConditionsToShowError() && formGroup.errorMessageDeep.length > 0"
-                          class="p--error"
-                          :error-message="formGroup.errorMessageDeep">
-    </m-validation-message>
+    </m-input-group>
 </div>
