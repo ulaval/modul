@@ -33,7 +33,6 @@ export class MNavbarItem extends ModulVue {
     // tslint:disable-next-line:no-null-keyword
     private parentNavbar: Navbar | null = null;
     private shouldWrap: boolean = false;
-    private isWraped: boolean = false;
 
     protected mounted(): void {
         let parentNavbar: BaseNavbar | undefined;
@@ -60,20 +59,21 @@ export class MNavbarItem extends ModulVue {
 
     public async setShouldWrap(): Promise<void> {
         this.shouldWrap = false;
-        await this.$nextTick();
-        if (this.label && this.label.length < 15) {
-            this.shouldWrap = false;
-            return;
-        }
 
-        if (this.label && this.label.length > 30) {
-            this.shouldWrap = true;
-            return;
+        await this.$nextTick();
+
+        if (this.label) {
+            if (this.label.length < 15) {
+                return;
+            } else if (this.label.length > 30) {
+                this.shouldWrap = true;
+                return;
+            }
         }
 
         const element: HTMLElement = this.$refs.item as HTMLElement;
+
         if (!element) {
-            this.shouldWrap = false;
             return;
         }
 
@@ -84,17 +84,15 @@ export class MNavbarItem extends ModulVue {
             parseInt(itemElementComputedStyle.getPropertyValue('padding-bottom'), 10);
         const fontSize: number = parseFloat(itemElementComputedStyle.getPropertyValue('font-size'));
 
-        this.shouldWrap = (element.clientHeight - yPadding) / fontSize > 3;
+        this.shouldWrap = (element.clientHeight - yPadding) / fontSize > 2;
     }
 
     public get formatedLabel(): string {
         if (!this.shouldWrap) {
-            this.isWraped = false;
             return this.label;
         }
 
-        this.isWraped = true;
-        return '<div style="all: inherit; white-space: nowrap;">' + this.label.slice(0, 10) + '</br>' + this.label.slice(10 + Math.abs(0)) + '<div>';
+        return '<div style="all: inherit; white-space: nowrap;">' + this.label.slice(0, Math.floor(this.label.length / 2)) + '</br>' + this.label.slice(Math.floor(this.label.length / 2) + Math.abs(0)) + '<div>';
     }
 
     private get isMultiline(): boolean {
