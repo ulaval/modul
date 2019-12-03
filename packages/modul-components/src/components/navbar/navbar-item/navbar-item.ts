@@ -33,9 +33,10 @@ export class MNavbarItem extends ModulVue {
     // should be initialized to be reactive
     // tslint:disable-next-line:no-null-keyword
     private parentNavbar: Navbar | null = null;
-    private shouldWrap: boolean = false;
+    public formatedLabel: string = '';
 
     protected mounted(): void {
+        this.formatedLabel = this.label;
         let parentNavbar: BaseNavbar | undefined;
         parentNavbar = this.getParent<BaseNavbar>(
             p => p instanceof BaseNavbar || // these will fail with Jest, but should pass in prod mode
@@ -45,7 +46,7 @@ export class MNavbarItem extends ModulVue {
         if (parentNavbar) {
             this.parentNavbar = (parentNavbar as any) as Navbar;
 
-            this.setShouldWrap();
+            this.setFormatedLabel();
             this.setDimension();
 
             if (this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
@@ -55,27 +56,25 @@ export class MNavbarItem extends ModulVue {
             console.error('m-navbar-item need to be inside m-navbar');
         }
 
-        this.$modul.event.$on('resize', () => {
-            this.setShouldWrap();
-            this.setDimension();
-        });
+        this.$modul.event.$on('resize', this.setFormatedLabel);
+        this.$modul.event.$on('resize', this.setDimension);
     }
 
     protected beforeDestroy(): void {
         this.$modul.event.$off('resize', this.setDimension);
-        this.$modul.event.$off('resize', this.setShouldWrap);
+        this.$modul.event.$off('resize', this.setFormatedLabel);
     }
 
     public get shouldNotWrap(): boolean {
         return this.label.length < 15;
     }
 
-    public async setShouldWrap(): Promise<void> {
+    public async setFormatedLabel(): Promise<void> {
         if (!this.useNewWrapStrategy || !this.label) {
             return;
         }
 
-        this.shouldWrap = false;
+        this.formatedLabel = this.label;
 
         await this.$nextTick();
 
@@ -87,7 +86,7 @@ export class MNavbarItem extends ModulVue {
             if (this.label.length < 15) {
                 return;
             } else if (this.label.length > 30) {
-                this.shouldWrap = true;
+                this._splitAndWrap();
                 return;
             }
         }
@@ -105,22 +104,21 @@ export class MNavbarItem extends ModulVue {
             parseInt(itemElementComputedStyle.getPropertyValue('padding-bottom'), 10);
         const fontSize: number = parseFloat(itemElementComputedStyle.getPropertyValue('font-size'));
 
-        this.shouldWrap = (element.clientHeight - yPadding) / fontSize > 2;
-    }
-
-    public get formatedLabel(): string {
-        if (!this.shouldWrap) {
-            return this.label;
+        if ((element.clientHeight - yPadding) / fontSize <= 3) {
+            return;
         }
 
+        this._splitAndWrap();
+        return;
+    }
+
+    private _splitAndWrap(): void {
         const split: string[] = this.label.split(' ');
 
         split.splice(Math.round(split.length / 2), 0, '</br>');
 
-        const formatedLabel: string = split.join(' ');
-
-        return '<span style="all: inherit; white-space: nowrap;">'
-            + formatedLabel
+        this.formatedLabel = '<span style="all: inherit; white-space: nowrap;">'
+            + split.join(' ')
             + '</span>';
     }
 
