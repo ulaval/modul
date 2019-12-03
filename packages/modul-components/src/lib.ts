@@ -24,9 +24,9 @@ export * from './components/autocomplete/autocomplete';
 export * from './components/table/table';
 export * from './components/toggle-buttons/toggle-buttons';
 export * from './components/tree/tree';
-export * from './lang';
+export { default as EnglishPlugin } from './lang/en';
+export { default as FrenchPlugin } from './lang/fr';
 export * from './utils/form';
-
 
 /**
  * Vue instance augmentation.
