@@ -134,10 +134,13 @@ export class MNavbarItem extends ModulVue {
         }
     }
 
-    private setDimension(): void {
+    private async setDimension(): Promise<void> {
+        await this.$nextTick();
         let itemElement: HTMLElement = this.$refs.item as HTMLElement;
 
         if (!itemElement || !itemElement.style || !itemElement.clientWidth) {
+            await this.$nextTick();
+            this.setDimension();
             return;
         }
 
