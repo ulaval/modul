@@ -29,8 +29,7 @@ export default class BirthdayFieldFormGroup extends FormGroup {
                 MaxValidator(9999, getErrorMessageOption('Invalid date of birth.'))
             ]),
             monthField: new FormControl<number>([
-                RequiredValidator(getErrorMessageOption('Incomplete date of birth.')),
-                MaxValidator(12, getErrorMessageOption('Invalid date of birth.'))
+                RequiredValidator(getErrorMessageOption('Incomplete date of birth.'))
             ]),
             dayField: new FormControl<number>([
                 RequiredValidator(getErrorMessageOption('Incomplete date of birth.')),
