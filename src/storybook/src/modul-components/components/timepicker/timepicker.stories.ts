@@ -75,4 +75,16 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
             }
         },
         template: `<m-timepicker v-model="model" label="Activity start time" :label-up="true" :max-width="maxWidth"></m-timepicker>`
+    })).add('required', () => ({
+        data(): any {
+            return {
+                model: undefined
+            };
+        },
+        props: {
+            maxWidth: {
+                default: 'medium'
+            }
+        },
+        template: `<m-timepicker v-model="model" label="Time" :required-marker="true"></m-timepicker>`
     }));
