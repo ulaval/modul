@@ -19,8 +19,8 @@ import { MFile } from '../../../utils/file/file';
 import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
+import '../rte-internal.scss';
 import { ImageLayoutCommands } from './image-layout-commands';
-import './rte-internal.scss';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
 
 
