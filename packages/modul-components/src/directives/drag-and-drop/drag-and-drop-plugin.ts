@@ -1,5 +1,4 @@
 import { PluginObject } from 'vue';
-import '../../utils/polyfills/drag-and-drop.polyfill';
 import './drag-and-drop.scss';
 import DraggablePlugin from './draggable/draggable';
 import DraggableAllowScrollPlugin from './draggable/draggable-allow-scroll';
