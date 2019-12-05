@@ -29,7 +29,6 @@ export default class BirthdayField extends Vue {
         this.firstEditContextDetector.setFirstYearValue = true;
     }
 
-    // Keep month values 1 base index instead of zero as conversion is done in DateSelectorFieldGroup.
     public months = [
         'January',
         'February',
