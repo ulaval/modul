@@ -18,19 +18,17 @@
             <div class="p-date-selector__column months">
                 <m-select label="Month"
                           :value="monthSelectionName"
-                          :options="monthValuesAndNames"
+                          :options="months"
                           :error="monthField.hasError()"
                           @select-item="onSelectItem($event)"
                           max-width="100%"
                           ref="dropdown">
-
-                    <template v-slot:items="{item , index }">{{ item.name }}</template>
                 </m-select>
             </div>
 
             <div class="p-date-selector__column years">
                 <m-textfield max-width="small"
-                             v-model.trim="yearField.value"
+                             v-model="yearField.value"
                              :error="hasYearError()"
                              label="Year"
                              max-length="4"

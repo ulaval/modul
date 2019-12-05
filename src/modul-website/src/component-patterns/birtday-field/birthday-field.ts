@@ -30,19 +30,19 @@ export default class BirthdayField extends Vue {
     }
 
     // Keep month values 1 base index instead of zero as conversion is done in DateSelectorFieldGroup.
-    public monthValuesAndNames = [
-        { 'value': 1, 'name': 'January' },
-        { 'value': 2, 'name': 'February' },
-        { 'value': 3, 'name': 'March' },
-        { 'value': 4, 'name': 'April' },
-        { 'value': 5, 'name': 'May' },
-        { 'value': 6, 'name': 'June' },
-        { 'value': 7, 'name': 'July' },
-        { 'value': 8, 'name': 'August' },
-        { 'value': 9, 'name': 'September' },
-        { 'value': 10, 'name': 'October' },
-        { 'value': 11, 'name': 'November' },
-        { 'value': 12, 'name': 'December' }
+    public months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
     ];
 
     public firstEditContextDetector = new BirthdayFieldFirstEditContextDetector();
@@ -67,7 +67,8 @@ export default class BirthdayField extends Vue {
         if (!this.monthField.value) {
             return null;
         }
-        return this.monthValuesAndNames.find(m => m.value === this.monthField.value)!.name;
+
+        return this.months[this.monthField.value - 1];
     }
 
     public hasMetConditionsToShowError(): boolean {
@@ -90,8 +91,8 @@ export default class BirthdayField extends Vue {
         this.firstEditContextDetector.exitedYearField = true;
     }
 
-    public onSelectItem(item: any): void {
-        this.monthField.value = item.value;
+    public onSelectItem(month: string): void {
+        this.monthField.value = this.months.indexOf(month) + 1;
     }
 
 }
