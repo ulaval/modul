@@ -1,15 +1,13 @@
 // This code is largery borrowed from https://github.com/froala/vue-froala-wysiwyg.
 // However some changes have been made to "inputify" the froala editor and render is compatible with modUL input-style.
+import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/js/languages/fr.js';
 import 'froala-editor/js/plugins.pkgd.min.js';
-
-import FroalaEditor from 'froala-editor';
 import $ from 'jquery';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-
 import boldIcon from '../../../assets/icons/svg/Froala-bold.svg';
 import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
@@ -22,7 +20,9 @@ import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ImageLayoutCommands } from './image-layout-commands';
+import './rte-internal.scss';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
+
 
 
 
