@@ -32,6 +32,7 @@ Vue.use(FrenchPlugin);
 
 - In the App.vue file, import the scss framework main file and add overrides for fonts
 
+
 ```scss
 
 <style lang="scss">
