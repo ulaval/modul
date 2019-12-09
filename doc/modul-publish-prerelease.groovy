@@ -16,8 +16,21 @@ pipeline {
         choice(name: 'version', description: 'Incrément de la version.', choices: 'prerelease\npremajor\npreminor\nprepatch')
         string(name: 'prereleaseid', description: 'Indenficatieur de prerelease (eg. 1.0.1-beta.0)', defaultValue: 'beta')
         string(name: 'disttag', description: "Tag spécifique à associer au package sur npm", defaultValue: 'next')
-        booleanParam(name: 'synccdn', description: "Synchroniser website avec le CDN.", defaultValue: true)
+        booleanParam(name: 'synccdn', description: "Synchroniser website avec le CDN.", defaultValue: false)
 	}
+
+    environment {
+        npm_config_cache = 'npm-cache'
+        DOCKER_REPOSITORY = 'docker-local.maven.at.ulaval.ca/modul'
+        DOCKER_REPOSITORY_URL = 'https://docker-local.maven.at.ulaval.ca'
+        REPO_URL = 'github.com/ulaval/modul.git'
+        GIT_CREDS = 'fee1a3fd-5a50-4b17-a26e-0ed54f22b011'
+        BRANCHE_RELEASE = "${params.branchname}"
+        JENKINS_USER = 'Jenkins'
+        JENKINS_EMAIL = 'jenkins@dti.ulaval.com'
+        NPM_CONFIG = 'modul-npmrc-config'
+        POST_RECIPIENTS = 'charles.maheu@dti.ulaval.ca'
+    }
 
     options {
         // Discarter après 10 builds
