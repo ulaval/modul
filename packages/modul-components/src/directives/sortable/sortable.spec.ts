@@ -140,7 +140,8 @@ describe('sortable', () => {
             expect(droppablePlugin).toBeDefined();
             expect(droppablePlugin.options).toEqual({
                 canDrop: true,
-                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup]
+                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup],
+                alwaysMount: true
             });
         });
 
@@ -168,7 +169,8 @@ describe('sortable', () => {
             expect(droppablePlugin).toBeDefined();
             expect(droppablePlugin.options).toEqual({
                 canDrop: true,
-                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup]
+                acceptedActions: [...userDefinedActions, MSortableAction.Move, MSortableAction.MoveGroup],
+                alwaysMount: true
             });
         });
 
@@ -195,7 +197,7 @@ describe('sortable', () => {
 
         expect(MDOMPlugin.get(MDroppable, sortable.element)).toBeUndefined();
         expect(MDOMPlugin.get(MDraggable, sortable.element.children[0] as HTMLElement)).toBeUndefined();
-        expect(MDOMPlugin.get(MDroppable, sortable.element.children[0] as HTMLElement)).toBeUndefined();
+        expect(MDOMPlugin.get(MDroppable, sortable.element.children[0] as HTMLElement)).toBeDefined();
     });
 
     it('should not attach empty placeholder when binding false is provided', () => {
