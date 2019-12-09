@@ -15,7 +15,7 @@ pipeline {
         string(name: 'branchname', description: "Nom de la branche à publier (ex: develop).", defaultValue: 'develop')
         choice(name: 'version', description: 'Incrément de la version des packages', choices: 'patch\nminor\nmajor\nprerelease\npremajor\npreminor\nprepatch')
 		string(name: 'releasename', description: "Nom de la branche release (ex: 1.1).", defaultValue: '')
-		booleanParam(name: 'ffmaster', description: "ff-only merge de la release dans la branche master", defaultValue: true)
+		booleanParam(name: 'ffmaster', description: "ff-only merge de la branche a publier vers master", defaultValue: true)
         booleanParam(name: 'synccdn', description: "Synchroniser website avec le CDN.", defaultValue: true)
     }
 
@@ -105,17 +105,19 @@ pipeline {
 			}
 		}
 
-		stage('Création de la branche release') {
+		stage('Fast-forward merge master') {
+		    when {
+                expression { params.ffmaster == true }
+            }
+
 			steps {
-				script {
-					withCredentials([usernamePassword(credentialsId: GIT_CREDS, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-						sh "git checkout -b ${BRANCHE_RELEASE}"
-						sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${REPO_URL} --all -u"
-					}
+				withCredentials([usernamePassword(credentialsId: GIT_CREDS, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+					sh "git checkout master"
+					sh "git merge --ff-only ${BRANCHE_SOURCE}"
+					sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${REPO_URL}"
 				}
 			}
 		}
-
 
 		stage('NPM publish') {
 			steps {
@@ -129,16 +131,13 @@ pipeline {
 			}
 		}
 
-		stage('Fast-forward master') {
-		    when {
-                expression { params.ffmaster == true }
-            }
-
+		stage('Création de la branche release') {
 			steps {
-				withCredentials([usernamePassword(credentialsId: GIT_CREDS, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-					sh "git checkout master"
-					sh "git merge --ff-only ${BRANCHE_RELEASE}"
-					sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${REPO_URL}"
+				script {
+					withCredentials([usernamePassword(credentialsId: GIT_CREDS, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+						sh "git checkout -b ${BRANCHE_RELEASE}"
+						sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${REPO_URL} --all -u"
+					}
 				}
 			}
 		}
@@ -163,6 +162,8 @@ pipeline {
             }
 
             steps {
+                sleep(time:2,unit:"MINUTES") // Sleep needed because an issues when package still in npmjs cache
+
                 script {
                     build(job: "MonPortail/Mpo-Contenu/sync-npm-ul",
                     parameters: [

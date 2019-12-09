@@ -106,6 +106,8 @@ pipeline {
             }
 
             steps {
+                sleep(time:2,unit:"MINUTES") // Sleep needed because an issues when package still in npmjs cache
+
                 script {
                     build(job: "MonPortail/Mpo-Contenu/sync-npm-ul",
                     parameters: [
