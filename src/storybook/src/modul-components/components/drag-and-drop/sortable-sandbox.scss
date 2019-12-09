@@ -1,0 +1,24 @@
+@import 'commons';
+
+.m-sortable-sandbox {
+    --m-sortable-color: hotpink;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .m-drag-handle {
+        margin-right: $m-margin;
+    }
+
+    &__item {
+        padding: $m-padding;
+        color: #fff;
+        font-weight: $m-font-weight--bold;
+        display: flex;
+        align-items: center;
+        margin: 6px 0;
+        background-color: #7cadf1;
+    }
+}

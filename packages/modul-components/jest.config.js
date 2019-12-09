@@ -1,10 +1,9 @@
 
-const { jsWithBabel: tsjPreset } = require('ts-jest/presets');
+const { defaults: tsjPreset } = require('ts-jest/presets');
 
 
 module.exports = {
     testURL: 'http://localhost/',
-
     roots: [
         '<rootDir>/src/'
     ],

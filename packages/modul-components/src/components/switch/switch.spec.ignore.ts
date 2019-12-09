@@ -1,8 +1,6 @@
-import '../../utils/polyfills';
-
 import Vue from 'vue';
-
 import SwitchPlugin, { MSwitch, MSwitchPosition } from './switch';
+
 
 const SWITCH_LEFT_CSS: string = 'm--is-switch-left';
 const SWITCH_RIGHT_CSS: string = 'm--is-switch-right';

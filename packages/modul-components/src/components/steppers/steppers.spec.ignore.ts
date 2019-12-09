@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import '../../utils/polyfills';
 import SteppersPlugin, { MSteppers } from './steppers';
 
 let step: MSteppers;
