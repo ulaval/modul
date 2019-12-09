@@ -75,4 +75,36 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
             }
         },
         template: `<m-timepicker v-model="model" label="Activity start time" :label-up="true" :max-width="maxWidth"></m-timepicker>`
+    }))
+    .add('Ignore internal validations - min 8:45 / max 15:15', () => ({
+        template: '<m-timepicker v-model="model" label="Enter time" :min="min" :max="max" skip-input-validation="true"></m-timepicker>',
+        props: {
+            max: {
+                default: '15:15'
+            },
+            min: {
+                default: '8:45'
+            }
+        },
+        data(): any {
+            return {
+                model: '12:05'
+            };
+        }
+    }))
+    .add('hide internal validation error messages -  min 8:45 / max 15:15', () => ({
+        template: '<m-timepicker v-model="model" label="Enter time" :min="min" :max="max" hide-internal-error-message="true"></m-timepicker>',
+        props: {
+            max: {
+                default: '15:15'
+            },
+            min: {
+                default: '8:45'
+            }
+        },
+        data(): any {
+            return {
+                model: '12:05'
+            };
+        }
     }));
