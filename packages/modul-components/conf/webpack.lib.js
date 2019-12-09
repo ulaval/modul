@@ -1,5 +1,6 @@
 const path = require('path');
 const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
@@ -37,16 +38,18 @@ module.exports = {
     module: {
         rules: [
             {
-                enforce: 'post',
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
-            {
                 test: /\.m?js$/,
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                enforce: 'post',
+                test: /\.(css|scss)$/,
+                use: [{
+                    loader: MiniCssExtractPlugin.loader
+                }, 'css-loader']
             },
             {
                 test: /\.scss$/,
@@ -67,12 +70,6 @@ module.exports = {
                         includePaths: ['./src/styles']
                     }
                 }]
-            },
-            {
-                enforce: 'post',
-                test: /\.scss$/,
-                use: ['style-loader',
-                    'css-loader']
             },
             {
                 test: /\.html$/,
@@ -96,6 +93,10 @@ module.exports = {
         hints: false
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'modul.min.css',
+            ignoreOrder: false
+        }),
         new ContextReplacementPlugin(
             /moment[\/\\]locale$/,
             /en-ca|fr-ca/

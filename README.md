@@ -12,7 +12,7 @@ A set of VueJS components for MOD**UL** web applications.
 
 ## Getting started to use MODUL in your project
 
-### Quick start install (using Vue CLI)
+### Quick start guide (using Vue CLI)
 
 MODUL can be used in any Vue CLI 3+ project, the first step is to install the dependencies in your project
 
@@ -20,17 +20,17 @@ MODUL can be used in any Vue CLI 3+ project, the first step is to install the de
 npm install @ulaval/modul-components --save
 ```
 
-- In you main.ts file, install the ModulComponentPlugin and the FrenchPlugin
+- In you main.ts file, import the modul.min.css and install the ModulComponentPlugin and the FrenchPlugin
 
 ```typescript
 import { ModulComponentPlugin, FrenchPlugin } from '@ulaval/modul-components';
-
+import '@ulaval/modul-components/dist/modul.min.css';
 
 Vue.use(ModulComponentPlugin);
 Vue.use(FrenchPlugin);
 ```
 
-- In the App.vue file, import the global scss and add overrides (if any)
+- In the App.vue file, import the scss framework main file and add overrides for fonts
 
 ```scss
 
@@ -44,7 +44,7 @@ $m-font-path: '~@ulaval/modul-components/dist/assets/fonts/'; //this is required
 </style>
 
 ```
-- Add the "m-u--app-body" class to the main application div
+- Add the "m-u--app-body" class to the main application container
 ```html
 <template>
   <div id="app" class="m-u--app-body">
@@ -54,7 +54,7 @@ $m-font-path: '~@ulaval/modul-components/dist/assets/fonts/'; //this is required
 
 ```
 
-MODUL components will now be accessible globaly in all you components template
+MODUL components are now accessible globaly in all you VUE template
 
 ```html
     <m-button icon-name="m-svg__close-clear">A MODUL Button</m-button>
