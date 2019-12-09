@@ -69,6 +69,12 @@ export class MTimepicker extends ModulVue {
     @Prop({ default: InputMaxWidth.Small })
     public maxWidth: string;
 
+    @Prop({ default: false })
+    public hideInternalErrorMessage: boolean;
+
+    @Prop({ default: false })
+    public skipInputValidation: boolean;
+
     public $refs: {
         input: MInputMask;
         hours: HTMLElement
@@ -124,12 +130,16 @@ export class MTimepicker extends ModulVue {
 
     private validateTime(value: string): boolean {
         this.internalTimeErrorMessage = '';
-        if (validateTimeString(value)) {
+        if (!this.skipInputValidation && validateTimeString(value)) {
             if (this.validateTimeRange(value)) {
-                this.internalTimeErrorMessage = '';
+                if (!this.hideInternalErrorMessage) {
+                    this.internalTimeErrorMessage = '';
+                }
                 return true;
             } else {
-                this.internalTimeErrorMessage = this.i18nOutOfBoundsError;
+                if (!this.hideInternalErrorMessage) {
+                    this.internalTimeErrorMessage = this.i18nOutOfBoundsError;
+                }
                 return false;
             }
         }
@@ -319,7 +329,9 @@ export class MTimepicker extends ModulVue {
 
         } else {
             this.resetPopupTime();
-            this.$emit('input', undefined);
+            if (!this.skipInputValidation) {
+                this.$emit('input', undefined);
+            }
         }
     }
 
