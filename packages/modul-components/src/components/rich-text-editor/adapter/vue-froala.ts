@@ -23,9 +23,6 @@ import '../rte-internal.scss';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
 
-
-
-
 // import { PopupPlugin } from './popup-plugin';
 // import SubMenuPlugin from './submenu-plugin';
 // Bug placeholder in the version 3.0.5.
@@ -42,6 +39,7 @@ enum froalaEvents {
     Focus = 'focus',
     ImageInserted = 'image.inserted',
     ImageRemoved = 'image.removed',
+    ImageResizeEnd = 'image.resizeEnd',
     Initialized = 'initialized',
     InitializationDelayed = 'initializationDelayed',
     KeyDown = 'keydown',
@@ -372,14 +370,18 @@ const SCROLL_TO_OFFSET: number = -50;
                     if (this.froalaEditor.opts.modulImageUploaded) {
                         $img[0].alt = '';
                         $img[0].classList.add(ImageLayoutCommands.DEFAULT_IMG_LAYOUT_CLASS);
+                        this.setImageSizes($img[0]);
                         this.updateModel();
                     } else {
                         setTimeout(() => {
                             this.froalaEditor.image.remove($img);
                         });
                     }
-
                     this.froalaEditor.opts.modulImageUploaded = false;
+                },
+                [froalaEvents.ImageResizeEnd]: ($img) => {
+                    this.setImageSizes($img[0]);
+                    this.updateModel();
                 }
             }
         });
@@ -390,6 +392,13 @@ const SCROLL_TO_OFFSET: number = -50;
             this.setDisabled();
             this.manageInitialFocus();
         });
+    }
+
+    private setImageSizes(img: HTMLImageElement): void {
+        setTimeout(() => {
+            const viewPortWidth: number = Math.round(img.clientWidth / this.froalaClientWidth * 100);
+            img.sizes = `${viewPortWidth}vw`;
+        }, 0);
     }
 
     private setFroalaToolbarDesktop(): void {
