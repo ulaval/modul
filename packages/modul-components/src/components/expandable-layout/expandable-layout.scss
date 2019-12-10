@@ -1,6 +1,53 @@
 @import 'commons';
 
 .m-expandable-layout {
+    &.m--is-panel-over-content {
+        position: relative;
+
+        &.m--has-left-panel {
+            .m-expandable-layout {
+                &__panel {
+                    left: 0;
+                }
+            }
+        }
+
+        &.m--has-right-panel {
+            .m-expandable-layout {
+                &__panel {
+                    right: 0;
+                }
+            }
+        }
+
+        .m-expandable-layout {
+            &__panel {
+                position: absolute;
+                top: 0;
+                max-height: 100%;
+                overflow-y: auto;
+
+                @include m-scrollbar();
+            }
+        }
+    }
+
+    &:not(.m--is-panel-over-content) {
+        .m-expandable-layout {
+            &__panel {
+                position: relative;
+            }
+
+            &__panel-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
     &.m--has-left-panel {
         display: grid;
         grid-template-areas: 'panel main';
@@ -13,24 +60,21 @@
         grid-template-columns: 1fr auto;
     }
 
-    &__main {
-        grid-area: main;
-    }
+    .m-expandable-layout {
+        &__main {
+            grid-area: main;
+        }
 
-    &__panel {
-        grid-area: panel;
-        overflow: hidden;
-        position: relative;
-        transition: width $m-transition-duration ease;
+        &__panel {
+            grid-area: panel;
+            overflow: hidden;
+            position: relative;
+            transition: width $m-transition-duration ease;
+        }
 
-        &__content {
+        &__panel-content {
             overflow-x: hidden;
             overflow-y: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
 
             @include m-scrollbar();
         }

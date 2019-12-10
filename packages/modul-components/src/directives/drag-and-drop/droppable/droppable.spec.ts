@@ -2,7 +2,7 @@ import { mount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
 import { resetModulPlugins } from '../../../../tests/helpers/component';
 import { isInElement } from '../../../utils/mouse/mouse';
-import { polyFillActive } from '../../../utils/polyfills';
+import { polyFillActive } from '../../../utils/polyfills/drag-and-drop.polyfill';
 import { MDOMPlugin } from '../../domPlugin';
 import { MRemoveUserSelect } from '../../user-select/remove-user-select';
 import DraggablePlugin, { MDraggable, MDraggableOptions } from '../draggable/draggable';

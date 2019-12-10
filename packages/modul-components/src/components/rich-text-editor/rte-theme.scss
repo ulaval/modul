@@ -1,4 +1,6 @@
-@import "../utils/link";
+@import 'commons';
+@import "../../styles/utils/link";
+
 $m-fr-icon-size: 14px !default;
 
 @mixin m-commons-rte-styles() {

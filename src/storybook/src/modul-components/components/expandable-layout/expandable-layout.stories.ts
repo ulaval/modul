@@ -26,12 +26,15 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${EXPANDABLE_LAYOUT_NAME}`, m
             },
             panelContentHeight: {
                 default: text('simulated panel content height', '300vh')
+            },
+            overContent: {
+                default: boolean('over-content', false)
             }
         },
         template: `
-        <m-expandable-layout :open="open" :panel-scroll-mode="panelScrollMode" :panel-position="panelPosition" :panel-width="panelWidth" style="background: yellow;">
+        <m-expandable-layout :open="open" :panel-scroll-mode="panelScrollMode" :panel-position="panelPosition" :panel-width="panelWidth" :over-content="overContent">
             <div :style="{background: 'lightgrey', height: mainContentHeight}">main content</div>
-            <div slot="panel" :style="{height: panelContentHeight}">panel content</div>
+            <div slot="panel" :style="{height: panelContentHeight}" style="background: yellow;">panel content</div>
         </m-expandable-layout>`
     }))
     .add('open', () => ({
