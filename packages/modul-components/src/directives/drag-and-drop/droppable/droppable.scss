@@ -1,0 +1,5 @@
+@import '../../sortable/sortable';
+
+.m--can-drop {
+    @include m-sortable;
+}

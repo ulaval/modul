@@ -107,4 +107,16 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
                 model: '12:05'
             };
         }
+    })).add('required', () => ({
+        data(): any {
+            return {
+                model: undefined
+            };
+        },
+        props: {
+            maxWidth: {
+                default: 'medium'
+            }
+        },
+        template: `<m-timepicker v-model="model" label="Time" :required-marker="true"></m-timepicker>`
     }));
