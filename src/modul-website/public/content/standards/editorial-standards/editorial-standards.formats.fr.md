@@ -3,9 +3,11 @@
 Par souci d'uniformité, certaines informations sont toujours présentées selon des formats prédéfinis.
 
 ## Date et heure
+
 ### Saisie et modification
 
 #### Date
+
 Le format de date retenu pour la saisie et la modification est le suivant&nbsp;: **AAAA-MM-JJ**.
 <m-panel class="m-u--margin-top">
     <p>2015-01-15</p>
@@ -56,6 +58,7 @@ Lorsque l'heure est combinée au format de date long, on utilise la préposition
 </m-panel>
 
 ## Plage horaire
+
 Dans certains cas, il est pertinent de faire afficher une date sous forme de plage horaire, à l'aide de différentes notations, telles que *du ... au ... , de ... à ...*, etc. Une espace insécable doit suivre l'utilisation de chaque article ou préposition afin d'éviter d'afficher l'heure sur une ligne différente.
 <m-panel class="m-u--margin-top">
     <p>Du 12&nbsp;janvier&nbsp;2015 au 25&nbsp;avril&nbsp;2015</p>
@@ -98,6 +101,7 @@ Si la date de début et la date de fin sont précisées et sont le même jour&nb
 À noter, lors de l'affichage d'une plage horaire, il est suggéré d'afficher les jours et les mois au complet, mais il est possible d'utiliser la version abrégée si l'espace est un enjeu. De plus, l'affichage de l'année est facultatif, mais il est fortement suggéré d'en faire mention à au moins un endroit, afin d'éviter toute ambiguïté.
 
 ## Temps écoulé
+
 Dans certaines situations, il est utile d'afficher le temps écoulé depuis la parution d'une publication ou la réception d'un courriel, d'une notification, etc. Lorsque c'est le cas, le temps écoulé doit être présenté de cette façon&nbsp;:
 
 **Moins de 1&nbsp;minute&nbsp;:**
@@ -126,6 +130,7 @@ Dans certaines situations, il est utile d'afficher le temps écoulé depuis la p
 </m-panel>
 
 ## Période de retard
+
 Lorsque le temps de retard écoulé doit être affiché après une date limite, une date de remise de travaux, etc. Lorsque c'est le cas, le temps écoulé doit être présenté de cette façon&nbsp;:
 
 **Moins de 60 minutes&nbsp;:** Affichage en minutes
@@ -188,3 +193,86 @@ Lorsque la durée d'une vidéo est de plus d'une minute, les secondes sont simpl
 </m-panel>
 
 Lorsque la première minute de l'heure n'est pas dépassée, on affiche uniquement le nombre d'heures. Dans l'exemple ci-dessus, la durée initiale de la vidéo aurait pu être 03:00:12 ou 03:00:57.
+
+## Somme d'argent
+
+### Devise et symbole monétaire
+
+Une somme d'argent est exprimée en chiffres, accompagnée du symbole monétaire de la devise qu'elle représente.
+<m-panel class="m-u--margin-top">
+    <p>50 000&nbsp;$</p>
+</m-panel>
+
+Si le bassin d'utilisateurs est composé de canadiens et d'américains par exemple, le symbole de dollar n'est plus suffisant. Il est recommandé d'ajouter l’abréviation ou le code de la devise accepté à l’échelle nationale ou internationale à droite du symbole.
+<m-panel class="m-u--margin-top">
+    <ul>
+        <li>Canadien : 50 000&nbsp;$&nbsp;CA</li>
+        <li>Américain : 50 000&nbsp;$&nbsp;US</li>
+        <li>Australien : 50 000&nbsp;$&nbsp;A</li>
+        <li>etc.</li>
+    </ul>
+</m-panel>
+
+Si les utilisateurs sont en majorité des canadiens, un mention unique affichée à un endroit stratéque dans l'interface peut suffire à clarifier la situation.
+
+#### Place du symbole monétaire
+
+En français, le symbole monétaire est placé à la suite de l'expression numérale, sépraré par une espace insécable. Si le l'abréviation ou le code de la devise est ajouté, le code et le symbole sont également séparés d'une espace insécable.
+
+Dans une colonne de tableau, on peut placer le symbole monétaire dans l'entête de colonne entre parenthèses.
+<m-panel class="m-u--margin-top">
+    <table class="m-u--max-width--xs">
+        <tr><th>Description</th><th>Coût ($)</th></tr>
+        <tr><td>1 CLASSIQUE VIANDE</td><td style="text-align:right">7,15</td></tr>
+        <tr><td>1 OMELET. CLASSIQUE</td><td style="text-align:right">8,50</td></tr>
+    </table>
+</m-panel>
+
+Dans une énumération sans entête, le symbole monétaire est répété sur chaque ligne et peut être placé avant la somme.
+<m-panel class="m-u--margin-top">
+    <table class="m-u--max-width--xs">
+        <tr><td colspan="2" style="text-align:center">TABLE #21<br/><br/></td></tr>
+        <tr><td class="m-u--padding-right">1 CLASSIQUE VIANDE</td><td style="text-align:right">$&nbsp;7,15</td></tr>
+        <tr><td class="m-u--padding-right">1 OMELET. CLASSIQUE</td><td style="text-align:right">$&nbsp;8,50</td></tr>
+    </table>
+</m-panel>
+
+### Affichage des décimales (centimes)
+
+Lorsqu'une somme d'argent comprend des centimes, on utilise la virgule comme séparateur de décimales avec deux chiffres de précision.
+<m-panel class="m-u--margin-top">
+    <p>19,05&nbsp;$</p>
+</m-panel>
+
+#### Quand ajouter « ,00 »?
+Lorsque le nombre de centimes est nul, la partie décimale « ,00 » n’a généralement pas besoin d’être précisée. Par exemple, dans un texte, on écrira :
+<m-panel class="m-u--margin-top">
+    <p>Le coût d'un certificat est de 20 $.</p>
+</m-panel>
+
+On affiche les deux décimales d’un montant d’argent entier lorsqu’il est comparé à d’autres montants décimaux afin de faciliter la lecture. Par exemple, dans une colonne de tableau où les montants sont alignés à droite, afficher systématiquement les deux décimales facilitera la comparaison et confirmera qu’aucun montant n’a été arrondi.
+<m-panel class="m-u--margin-top">
+    <table class="m-u--max-width--xs">
+        <thead>
+            <tr><th>Coût ($)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td style="text-align:right">89.99</td></tr>
+            <tr><td style="text-align:right">9.00</td></tr>
+            <tr><td style="text-align:right">19.59</td></tr>
+            <tr><td style="text-align:right">20.00</td></tr>
+        </tbody>
+    </table>
+</m-panel>
+
+Pour les mêmes raisons, les décimales sont toujours affichées lorsque les montants sont impliqués dans un calcul comme le total d’une facture ou d’un reçu.
+<m-panel class="m-u--margin-top">
+    <table class="m-u--margin-top-l">
+        <tr><td colspan="2" style="text-align:center">TABLE #21<br/><br/></td></tr>
+        <tr><td>1 CLASSIQUE VIANDE</td><td style="text-align:right">$&nbsp;7,15</td></tr>
+        <tr><td>1 OMELET. CLASSIQUE</td><td style="text-align:right">$&nbsp;8,00</td></tr>
+        <tr><td>SOUS-TOTAL :</td><td style="text-align:right">$&nbsp;15,15</td></tr>
+        <tr><td>ESCOMPTE :</td><td style="text-align:right">$&nbsp;-5,00</td></tr>
+        <tr><td><strong>TOTAL :</strong></td><td style="text-align:right"><strong>$&nbsp;10,15</strong></td></tr>
+    </table>
+</m-panel>
