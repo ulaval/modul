@@ -203,7 +203,7 @@ Une somme d'argent est exprimée en chiffres, accompagnée du symbole monétaire
     <p>50 000&nbsp;$</p>
 </m-panel>
 
-Si le bassin d'utilisateurs est composé de canadiens et d'américains par exemple, le symbole de dollar n'est plus suffisant. Il est recommandé d'ajouter l’abréviation ou le code de la devise accepté à l’échelle nationale ou internationale à droite du symbole.
+Si le bassin d'utilisateurs est composé de canadiens et d'américains par exemple, le symbole du dollar n'est plus suffisant pour identifier clairement la devise. Il est recommandé d'ajouter l’abréviation ou le code de la devise accepté à l’échelle nationale ou internationale à droite du symbole. Les <a href="https://fr.wikipedia.org/wiki/ISO_4217" target="_blank">codes ISO</a> sont réservés au monde de la finance.
 <m-panel class="m-u--margin-top">
     <ul>
         <li>Canadien : 50 000&nbsp;$&nbsp;CA</li>
@@ -217,7 +217,10 @@ Si les utilisateurs sont en majorité des canadiens, un mention unique affichée
 
 #### Place du symbole monétaire
 
-En français, le symbole monétaire est placé à la suite de l'expression numérale, sépraré par une espace insécable. Si le l'abréviation ou le code de la devise est ajouté, le code et le symbole sont également séparés d'une espace insécable.
+En français, le symbole monétaire est placé à la suite de la somme, sépraré par une espace insécable. Si le code de la devise est ajouté, le code et le symbole sont également séparés d'une espace insécable.
+<m-panel class="m-u--margin-top">
+    <p>3 500&nbsp;$&nbsp;CA</p>
+</m-panel>
 
 Dans une colonne de tableau, on peut placer le symbole monétaire dans l'entête de colonne entre parenthèses.
 <m-panel class="m-u--margin-top">
@@ -237,12 +240,14 @@ Dans une énumération sans entête, le symbole monétaire est répété sur cha
     </table>
 </m-panel>
 
-### Affichage des décimales (centimes)
+### Centimes
 
 Lorsqu'une somme d'argent comprend des centimes, on utilise la virgule comme séparateur de décimales avec deux chiffres de précision.
 <m-panel class="m-u--margin-top">
     <p>19,05&nbsp;$</p>
 </m-panel>
+
+Lors de la saisie ou modification de la partie décimale, l'utilisateur peut saisir indépendamment le point « . » ou la virgule « , » comme séparateur décimal. La virgule sera le caractère affiché en tout temps.
 
 #### Quand ajouter « ,00 »?
 Lorsque le nombre de centimes est nul, la partie décimale « ,00 » n’a généralement pas besoin d’être précisée. Par exemple, dans un texte, on écrira :
