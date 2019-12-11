@@ -53,11 +53,6 @@ function validateTimeString(value: string): boolean {
 })
 export class MTimepicker extends ModulVue {
 
-    @Prop({
-        validator(value: string): boolean {
-            return validateTimeString(value);
-        }
-    })
     @Model('input')
     public value: string;
     @Prop({ default: '00:00' })
@@ -132,14 +127,10 @@ export class MTimepicker extends ModulVue {
         this.internalTimeErrorMessage = '';
         if (!this.skipInputValidation && validateTimeString(value)) {
             if (this.validateTimeRange(value)) {
-                if (!this.hideInternalErrorMessage) {
-                    this.internalTimeErrorMessage = '';
-                }
+                this.internalTimeErrorMessage = '';
                 return true;
             } else {
-                if (!this.hideInternalErrorMessage) {
-                    this.internalTimeErrorMessage = this.i18nOutOfBoundsError;
-                }
+                this.internalTimeErrorMessage = this.i18nOutOfBoundsError;
                 return false;
             }
         }
@@ -319,19 +310,17 @@ export class MTimepicker extends ModulVue {
 
         // When the user type in something we close de popup.
         this.open = false;
-
-        if (value && this.validateTime(value) && validateTimeString(value)) {
+        if (value && this.skipInputValidation) {
+            this.$emit('input', newValue);
+        } else if (value && this.validateTime(value) && validateTimeString(value)) {
             this.updatePopupTime(newValue);
 
             if (newValue !== oldTime) {
                 this.$emit('input', newValue);
             }
-
         } else {
             this.resetPopupTime();
-            if (!this.skipInputValidation) {
-                this.$emit('input', undefined);
-            }
+            this.$emit('input', undefined);
         }
     }
 
@@ -360,7 +349,11 @@ export class MTimepicker extends ModulVue {
     }
 
     private get timeErrorMessage(): string {
-        return this.internalTimeErrorMessage || this.as<InputState>().errorMessage;
+        if (this.hideInternalErrorMessage) {
+            return '';
+        } else {
+            return this.internalTimeErrorMessage || this.as<InputState>().errorMessage;
+        }
     }
 
     private get open(): boolean {
