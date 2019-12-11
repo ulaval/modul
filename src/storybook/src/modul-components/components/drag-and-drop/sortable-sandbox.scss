@@ -1,8 +1,6 @@
 @import 'commons';
 
 .m-sortable-sandbox {
-    --m-sortable-color: hotpink;
-
     ul {
         display: flex;
         flex-direction: column;
@@ -14,11 +12,8 @@
 
     &__item {
         padding: $m-padding;
-        color: #fff;
-        font-weight: $m-font-weight--bold;
         display: flex;
         align-items: center;
-        margin: 6px 0;
-        background-color: #7cadf1;
+        border-bottom: 2px solid $m-color--grey-light;
     }
 }
