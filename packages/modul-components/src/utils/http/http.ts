@@ -102,6 +102,7 @@ export class HttpService implements RestAdapter {
         axiosConfig.method = config.method as Method;
         axiosConfig.params = config.params;
         axiosConfig.headers = config.headers;
+        axiosConfig.timeout = config.timeout;
 
         if (config.formParams) {
             const CONTENT_TYPE: string = 'Content-Type';
