@@ -4,7 +4,6 @@ import { PluginObject } from 'vue';
 import { FormatMode } from '../../../utils/i18n/i18n';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TIME_NAME, TIME_PERIOD_NAME } from '../../filter-names';
-import { TimeFilterOptions } from './time';
 
 export interface TimeFilterOptions {
     preposition: TimeFilterPrepositions;
