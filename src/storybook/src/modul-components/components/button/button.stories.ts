@@ -3,7 +3,6 @@ import { text } from '@storybook/addon-knobs';
 import { BUTTON_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${BUTTON_NAME}`,
     parameters: { fileName: __filename }

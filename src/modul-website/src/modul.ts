@@ -50,8 +50,8 @@ import TooltipPlugin from '@ulaval/modul-components/dist/components/tooltip/tool
 import AccordionTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/accordion-transition/accordion-transition';
 import SlideTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/slide-transition/slide-transition';
 import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
-import { UtilsPlugin } from '@ulaval/modul-components/dist/utils';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
+import UtilsPlugin from '@ulaval/modul-components/dist/utils/utils-plugin';
 import Vue, { PluginObject } from 'vue';
 
 const ModulPlugin: PluginObject<any> = {
