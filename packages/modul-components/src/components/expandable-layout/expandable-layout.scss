@@ -21,11 +21,16 @@
         }
 
         .m-expandable-layout {
+            &__main {
+                z-index: 1;
+            }
+
             &__panel {
                 position: absolute;
                 top: 0;
                 max-height: 100%;
                 overflow-y: auto;
+                z-index: 2;
 
                 @include m-scrollbar();
             }
