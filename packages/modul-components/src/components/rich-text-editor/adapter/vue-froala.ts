@@ -396,8 +396,8 @@ const SCROLL_TO_OFFSET: number = -50;
 
     private setImageSizes(img: HTMLImageElement): void {
         setTimeout(() => {
-            const viewPortWidth: number = Math.round(img.clientWidth / this.froalaClientWidth * 100);
-            img.sizes = `${viewPortWidth}vw`;
+            const viewportWidth: number = Math.round(img.clientWidth / this.froalaClientWidth * 100);
+            img.sizes = `${viewportWidth}vw`;
         }, 0);
     }
 
