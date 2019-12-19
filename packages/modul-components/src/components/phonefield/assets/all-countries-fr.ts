@@ -33,7 +33,7 @@ const allCountriesFr: any = [
     [
         'Samoa américaines',
         'as',
-        '1684'
+        '1'
     ],
     [
         'Andorre',
@@ -48,12 +48,12 @@ const allCountriesFr: any = [
     [
         'Anguilla',
         'ai',
-        '1264'
+        '1'
     ],
     [
         'Antigua-et-Barbuda',
         'ag',
-        ''
+        '1'
     ],
     [
         'Argentine',
@@ -89,7 +89,7 @@ const allCountriesFr: any = [
     [
         'Bahamas',
         'bs',
-        '1242'
+        '1'
     ],
     [
         'Bahreïn (‫البحرين‬‎)',
@@ -104,7 +104,7 @@ const allCountriesFr: any = [
     [
         'Barbade',
         'bb',
-        '1246'
+        '1'
     ],
     [
         'Biélorussie (Беларусь)',
@@ -129,7 +129,7 @@ const allCountriesFr: any = [
     [
         'Bermudes',
         'bm',
-        '1441'
+        '1'
     ],
     [
         'Bhoutan (འབྲུག)',
@@ -164,7 +164,7 @@ const allCountriesFr: any = [
     [
         'Îles Vierges britanniques',
         'vg',
-        '1284'
+        '1'
     ],
     [
         'Brunei',
@@ -217,7 +217,7 @@ const allCountriesFr: any = [
     [
         'Îles Caïmans',
         'ky',
-        '1345'
+        '1'
     ],
     [
         'République centrafricaine',
@@ -325,7 +325,7 @@ const allCountriesFr: any = [
     [
         'Dominique',
         'dm',
-        '1767'
+        '1'
     ],
     [
         'République dominicaine (República Dominicana)',
@@ -448,7 +448,7 @@ const allCountriesFr: any = [
     [
         'Grenade',
         'gd',
-        '1473'
+        '1'
     ],
     [
         'Guadeloupe',
@@ -459,7 +459,7 @@ const allCountriesFr: any = [
     [
         'Guam',
         'gu',
-        '1671'
+        '1'
     ],
     [
         'Guatémala (Guatemala)',
@@ -557,7 +557,7 @@ const allCountriesFr: any = [
     [
         'Jamaïque (Jamaica)',
         'jm',
-        '1876'
+        '1'
     ],
     [
         'Japon (日本)',
@@ -750,7 +750,7 @@ const allCountriesFr: any = [
     [
         'Montserrat',
         'ms',
-        '1664'
+        '1'
     ],
     [
         'Maroc (‫المغرب‬‎)',
@@ -831,7 +831,7 @@ const allCountriesFr: any = [
     [
         'Îles Mariannes du Nord (Northern Mariana Islands)',
         'mp',
-        '1670'
+        '1'
     ],
     [
         'Norvège (Norge)',
@@ -942,12 +942,12 @@ const allCountriesFr: any = [
     [
         'Saint-Christophe-et-Niévès (Saint Kitts and Nevis)',
         'kn',
-        '1869'
+        '1'
     ],
     [
         'Sainte-Lucie (Saint Lucia)',
         'lc',
-        '1758'
+        '1'
     ],
     [
         'Saint-Martin (partie française)',
@@ -963,7 +963,7 @@ const allCountriesFr: any = [
     [
         'Saint-Vincent-et-les-Grenadines (Saint Vincent and the Grenadines)',
         'vc',
-        '1784'
+        '1'
     ],
     [
         'Samoa',
@@ -1139,7 +1139,7 @@ const allCountriesFr: any = [
     [
         'Trinité-et-Tobago (Trinidad and Tobago)',
         'tt',
-        '1868'
+        '1'
     ],
     [
         'Tunisie (‫تونس‬‎)',
@@ -1159,7 +1159,7 @@ const allCountriesFr: any = [
     [
         'Îles Turques-et-Caïques (Turks and Caicos Islands)',
         'tc',
-        '1649'
+        '1'
     ],
     [
         'Tuvalu',
@@ -1169,7 +1169,7 @@ const allCountriesFr: any = [
     [
         'Îles Vierges des États-Unis (U.S. Virgin Islands)',
         'vi',
-        '1340'
+        '1'
     ],
     [
         'Ouganda (Uganda)',
