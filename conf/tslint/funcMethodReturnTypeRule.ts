@@ -27,8 +27,10 @@ class MustHaveReturnTypeWalker extends Lint.RuleWalker {
 
     private reportMissingReturnType(node: ts.Node, body: ts.FunctionBody | undefined): void {
         if (body) {
-            const fix = Lint.Replacement.appendText(body.pos, ': void');
+            const fix: any = Lint.Replacement.appendText(body.pos, ': void');
+            // tslint:disable-next-line: deprecation
             this.addFailure(
+                // tslint:disable-next-line: deprecation
                 this.createFailure(
                     node.getStart(),
                     node.getWidth(),
