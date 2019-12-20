@@ -11,6 +11,7 @@ export class Rule extends Lint.Rules.AbstractRule {
     }
 }
 
+// tslint:disable-next-line: deprecation
 class MustHaveReturnTypeWalker extends Lint.RuleWalker {
     public visitMethodDeclaration(node: ts.MethodDeclaration): void {
         if (!node.type) {

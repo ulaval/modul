@@ -334,7 +334,7 @@ const SCROLL_TO_OFFSET: number = -50;
                     this.$emit('paste');
                 },
                 // if we use pasteBeforeCleanup, there's an error in froala's code
-                [froalaEvents.PasteAfterCleanup]: (data: string) => {
+                [froalaEvents.PasteAfterCleanup]: (data: any) => {
                     if (data.replace) {
                         data = replaceTags(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'], 'p', data);
                         return this.froalaEditor.clean.html(data, ['table', 'video', 'u', 's', 'blockquote', 'button', 'input', 'img']);
