@@ -370,7 +370,7 @@ const SCROLL_TO_OFFSET: number = -50;
                     if (this.froalaEditor.opts.modulImageUploaded) {
                         $img[0].alt = '';
                         $img[0].classList.add(ImageLayoutCommands.DEFAULT_IMG_LAYOUT_CLASS);
-                        this.setImageSizes($img[0]);
+                        $img[0].sizes = '100vw';
                         this.updateModel();
                     } else {
                         setTimeout(() => {
