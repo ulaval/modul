@@ -14,6 +14,7 @@
         ],
         "module": "es2015",
         "moduleResolution": "node",
+        "importHelpers": true,
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "strictNullChecks": true,
