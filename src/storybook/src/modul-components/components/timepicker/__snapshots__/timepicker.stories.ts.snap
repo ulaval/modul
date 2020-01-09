@@ -1,5 +1,248 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-timepicker Hide internal error messages 1`] = `
+<div>
+  
+        Min time 8:45, Max Time 15:15 
+  <br />
+   
+  <div
+    class="m-timepicker"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mTimepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Enter time
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-controls="mTimepicker-fakeId-controls"
+                aria-haspopup="true"
+                id="mTimepicker-fakeId"
+                inputmode="decimal"
+                max="15:15"
+                min="8:45"
+                placeholder="HH:MM"
+                step="300"
+                type="text"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mTimepicker-fakeId"
+                class="m-icon-button m--is-skin-light m--has-ripple"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-timepicker__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   model value = 12:05
+</div>
+`;
+
+exports[`Storyshots modul-components|m-timepicker Skip internal validations 1`] = `
+<div>
+  
+        Min time 8:45, Max Time 15:15 
+  <br />
+   
+  <div
+    class="m-timepicker"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mTimepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Enter time
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-controls="mTimepicker-fakeId-controls"
+                aria-haspopup="true"
+                id="mTimepicker-fakeId"
+                inputmode="decimal"
+                max="15:15"
+                min="8:45"
+                placeholder="HH:MM"
+                step="300"
+                type="text"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mTimepicker-fakeId"
+                class="m-icon-button m--is-skin-light m--has-ripple"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-timepicker__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+  
+                                model value = 12:05
+</div>
+`;
+
 exports[`Storyshots modul-components|m-timepicker default 1`] = `
 <div
   class="m-timepicker"
