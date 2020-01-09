@@ -54,7 +54,7 @@ export class MAccordionTransition extends ModulVue {
 
     @Emit('before-leave')
     public beforeLeave(el: HTMLElement): void {
-        el.style.height = parseInt((window.getComputedStyle(el).height as string), 10) + 'px';
+        el.style.height = parseInt(window.getComputedStyle(el).height, 10) + 'px';
         this.setClassHasTransition(el);
     }
 
