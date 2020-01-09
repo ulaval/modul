@@ -84,6 +84,7 @@ $m-steppers--badge--size: 14px;
         background-color: $m-color--white;
         font-size: $m-steppers--icon--size;
         color: $m-color--text;
+        padding: 4px; // Magic number
     }
 
     &__icon-completed {
