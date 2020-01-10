@@ -25,6 +25,9 @@ export class MAddressLookupField extends ModulVue {
     @Prop()
     language: string | undefined;
 
+    @Prop()
+    errorMessage: string;
+
     i18nSearch: string = this.$i18n.translate('m-address-lookup-field:search-field');
     i18nPlaceholder: string = this.$i18n.translate('m-address-lookup-field:placeholder');
 

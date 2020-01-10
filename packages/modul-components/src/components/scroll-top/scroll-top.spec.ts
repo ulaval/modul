@@ -1,6 +1,5 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
 import { renderComponent } from '../../../tests/helpers/render';
-import '../../utils/polyfills';
 import { ScrollToDuration } from '../../utils/scroll-to/scroll-to';
 import { SCROLL_TOP_NAME } from '../component-names';
 import { MScrollTop, MScrollTopPosition } from './scroll-top';

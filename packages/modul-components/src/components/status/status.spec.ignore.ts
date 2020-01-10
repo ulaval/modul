@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import '../../utils/polyfills';
 import StatusPlugin, { MStatus, MStatusListStates } from './status';
 
 const COMPLETED_CSS: string = 'm--is-completed';

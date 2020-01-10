@@ -79,10 +79,9 @@ export class MCropImage extends ModulVue {
     }
 
     createImageFile(imageCropped: Blob): File {
-        return new File(
-            [imageCropped],
-            this.image.name
-        );
+        const file: any = imageCropped;
+        file.name = this.image.name;
+        return file as File;
     }
 
     @Emit('image-cropped')

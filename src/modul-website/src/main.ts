@@ -1,7 +1,6 @@
 
 import '@ulaval/modul-components/dist/styles/main.scss';
 import { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
-import '@ulaval/modul-components/dist/utils/polyfills';
 import Vue from 'vue';
 import { VueRouter } from 'vue-router/types/router';
 import Vuex, { Store } from 'vuex';
