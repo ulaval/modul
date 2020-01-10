@@ -88,28 +88,28 @@ export class MFormAllSandbox extends ModulVue {
 
     formGroup: FormGroup = this.buildFormGroup();
 
-    get nameField(): AbstractControl<string> {
-        return this.formGroup.getControl<string>(ID_FORM_NAME);
+    get nameField(): FormControl<string> {
+        return this.formGroup.getControl<FormControl<string>>(ID_FORM_NAME);
     }
 
-    get descriptionField(): AbstractControl<string> {
-        return this.formGroup.getControl<string>(ID_FORM_DESCRIPTION);
+    get descriptionField(): FormControl<string> {
+        return this.formGroup.getControl<FormControl<string>>(ID_FORM_DESCRIPTION);
     }
 
-    get birthdateField(): AbstractControl<string> {
-        return this.formGroup.getControl<string>(ID_FORM_BIRTHDATE);
+    get birthdateField(): FormControl<string> {
+        return this.formGroup.getControl<FormControl<string>>(ID_FORM_BIRTHDATE);
     }
 
-    get typeField(): AbstractControl<string> {
-        return this.formGroup.getControl<string>(ID_FORM_TYPE);
+    get typeField(): FormControl<string> {
+        return this.formGroup.getControl<FormControl<string>>(ID_FORM_TYPE);
     }
 
-    get champSupplActive(): AbstractControl<boolean> {
-        return this.formGroup.getControl<boolean>(ID_FORM_CHAMP_SUPPL_ACTIVE);
+    get champSupplActive(): FormControl<boolean> {
+        return this.formGroup.getControl<FormControl<boolean>>(ID_FORM_CHAMP_SUPPL_ACTIVE);
     }
 
     get supplActiveValue(): boolean {
-        return this.champSupplActive.value;
+        return this.champSupplActive.value!;
     }
 
     set supplActiveValue(value: boolean) {
@@ -120,20 +120,20 @@ export class MFormAllSandbox extends ModulVue {
         return this.formGroup.getControl(ID_FORM_CHAMP_SUPPL_GROUP);
     }
 
-    get supplField1(): AbstractControl<number> {
-        return this.champSupplGroup.getControl<number>(ID_FORM_CHAMP_SUPPL_1);
+    get supplField1(): FormControl<number> {
+        return this.champSupplGroup.getControl<FormControl<number>>(ID_FORM_CHAMP_SUPPL_1);
     }
 
-    get supplField2(): AbstractControl<number> {
-        return this.champSupplGroup.getControl<number>(ID_FORM_CHAMP_SUPPL_2);
+    get supplField2(): FormControl<number> {
+        return this.champSupplGroup.getControl<FormControl<number>>(ID_FORM_CHAMP_SUPPL_2);
     }
 
-    get supplField3(): AbstractControl<number> {
-        return this.champSupplGroup.getControl<number>(ID_FORM_CHAMP_SUPPL_3);
+    get supplField3(): FormControl<number> {
+        return this.champSupplGroup.getControl<FormControl<number>>(ID_FORM_CHAMP_SUPPL_3);
     }
 
     get itemsArray(): FormArray {
-        return this.formGroup.getControl(ID_FORM_ITEMS) as FormArray;
+        return this.formGroup.getControl<FormArray>(ID_FORM_ITEMS);
     }
 
     submit(): void {

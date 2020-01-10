@@ -1,5 +1,6 @@
 import { FormArray } from './form-array';
 import { FormControl } from './form-control';
+import { FormGroup } from './form-group';
 
 describe('FormArray', () => {
 
@@ -37,6 +38,34 @@ describe('FormArray', () => {
         it('when removing a control it should remove the control', () => {
             formArray.removeControl(0);
             expect(formArray.controls.length).toBe(2);
+        });
+    });
+
+    describe('given a formArray with controls', () => {
+        let formArray: FormArray;
+
+        beforeEach(() => {
+            formArray = new FormArray([
+                new FormControl<string>(),
+                new FormArray([new FormControl<string>()]),
+                new FormGroup({
+                    'a': new FormControl<string>()
+                })
+            ]);
+        });
+
+        it('should set the values of controls with an array of values', () => {
+            formArray.value = [
+                'a',
+                ['a'],
+                {
+                    'a': 'a'
+                }
+            ];
+
+            expect(formArray.value[0]).toBe('a');
+            expect(formArray.value[1][0]).toBe('a');
+            expect(formArray.value[2]['a']).toBe('a');
         });
     });
 });

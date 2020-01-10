@@ -2,7 +2,6 @@ import { FORM_NAME } from '@ulaval/modul-components/dist/components/component-na
 import { MForm } from '@ulaval/modul-components/dist/components/form/form';
 import { FormActions } from '@ulaval/modul-components/dist/components/form/form-action-type';
 import FormPlugin from '@ulaval/modul-components/dist/components/form/form.plugin';
-import { AbstractControl } from '@ulaval/modul-components/dist/utils/form/abstract-control';
 import { FormControl } from '@ulaval/modul-components/dist/utils/form/form-control';
 import { FormGroup } from '@ulaval/modul-components/dist/utils/form/form-group';
 import { MaxLengthValidator } from '@ulaval/modul-components/dist/utils/form/validators/max-length/max-length';
@@ -25,12 +24,12 @@ export class MFormExternalValidationSandbox extends ModulVue {
 
     pendingSubmit: boolean = false;
 
-    get nameField(): AbstractControl<string> {
-        return this.formGroup.getControl<string>(ID_FORM_CONTROL_NAME);
+    get nameField(): FormControl<string> {
+        return this.formGroup.getControl<FormControl<string>>(ID_FORM_CONTROL_NAME);
     }
 
-    get descriptionField(): AbstractControl<string> {
-        return this.formGroup.getControl<string>(ID_FORM_CONTROL_DESCRIPTION);
+    get descriptionField(): FormControl<string> {
+        return this.formGroup.getControl<FormControl<string>>(ID_FORM_CONTROL_DESCRIPTION);
     }
 
     get maxNameLength(): number {

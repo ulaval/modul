@@ -3,7 +3,7 @@ import { ControlError } from './control-error';
 import { ControlOptions } from './control-options';
 import { ControlValidator } from './validators/control-validator';
 
-export class FormArray<T = any> extends AbstractControl {
+export class FormArray extends AbstractControl {
     constructor(
         private _controls: AbstractControl[] = [],
         public readonly validators: ControlValidator[] = [],
@@ -21,12 +21,16 @@ export class FormArray<T = any> extends AbstractControl {
     /**
      * Return an agregate values of all enabled controls.
      */
-    public get value(): T[] {
+    public get value(): any[] {
         return this._controls.filter(c => c.enabled).map(c => c.value);
     }
 
-    public set value(value: T[]) {
-        throw Error('Assigning a value to a FormArray is not yet implemented');
+    public set value(value: any[]) {
+        if (value.length !== this.controls.length) {
+            throw Error('Value should be same length than FormArray controls');
+        }
+
+        value.forEach((v, i) => this.getControl(i).value = v);
     }
 
     public get valid(): boolean {
@@ -91,10 +95,6 @@ export class FormArray<T = any> extends AbstractControl {
         return errors;
     }
 
-    public getControl<T = any>(name: string): AbstractControl<T> {
-        throw Error('Getting a control from a FormArray is not yet implemented');
-    }
-
     public async submit(): Promise<void> {
         super.submit();
         await Promise.all(this.controls.map(c => c.submit()));
@@ -124,6 +124,14 @@ export class FormArray<T = any> extends AbstractControl {
 
     public get controls(): AbstractControl[] {
         return this._controls;
+    }
+
+    public getControl<T extends AbstractControl>(index: number): T {
+        if (index - 1 > this.controls.length) {
+            throw Error('Index out of range');
+        }
+
+        return this.controls[index] as T;
     }
 
     public addControl(control: AbstractControl): void {

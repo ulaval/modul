@@ -44,8 +44,8 @@ export abstract class AbstractControl<T = any> {
     public abstract get readonly(): boolean;
     public abstract set readonly(isReadonly: boolean);
     public abstract get touched(): boolean;
-    public abstract get controls(): AbstractControl[];
-    public abstract getControl<T = any>(name: string): AbstractControl<T>;
+    public abstract get controls(): AbstractControl<any>[];
+    public abstract getControl<T extends AbstractControl<any>>(identifier: string | number): T;
     public abstract get errors(): ControlError[];
     public abstract set errors(errors: ControlError[]);
     public abstract get errorsDeep(): ControlError[];
@@ -112,7 +112,7 @@ export abstract class AbstractControl<T = any> {
         this.errors = [];
     }
 
-    public upwardValueChanged(): void {
+    public bubbleValueChanged(): void {
         this._pristine = false;
 
         if (!this._hasAnyControlsInError() && this.enabled && !this.readonly) {
@@ -120,7 +120,7 @@ export abstract class AbstractControl<T = any> {
         }
 
         if (this._parent) {
-            this._parent.upwardValueChanged();
+            this._parent.bubbleValueChanged();
         }
     }
 

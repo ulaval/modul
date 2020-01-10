@@ -54,7 +54,7 @@ export class FormControl<T> extends AbstractControl {
         return [];
     }
 
-    public getControl<T = any>(name: string): AbstractControl<T> {
+    public getControl<T = any>(name: string): T {
         return undefined!;
     }
 
@@ -70,7 +70,7 @@ export class FormControl<T> extends AbstractControl {
         this._oldValue = this._value;
         this._value = value;
 
-        this.upwardValueChanged();
+        this.bubbleValueChanged();
     }
 
     public get valid(): boolean {

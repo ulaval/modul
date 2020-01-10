@@ -4,7 +4,7 @@ import { ControlError } from './control-error';
 import { ControlOptions } from './control-options';
 import { ControlValidator } from './validators/control-validator';
 
-export class FormGroup<T = any> extends AbstractControl {
+export class FormGroup<T = any> extends AbstractControl<T> {
     constructor(
         private _controls: { [name: string]: AbstractControl },
         public readonly validators: ControlValidator[] = [],
@@ -19,7 +19,7 @@ export class FormGroup<T = any> extends AbstractControl {
      */
     public get value(): T {
         const values: any = {};
-        const enabledControls: { [name: string]: AbstractControl } = Object.keys(this._controls)
+        const enabledControls: { [name: string]: AbstractControl<T> } = Object.keys(this._controls)
             .filter(c => this._controls[c].enabled)
             .reduce((obj, key) => {
                 obj[key] = this._controls[key];
@@ -32,7 +32,8 @@ export class FormGroup<T = any> extends AbstractControl {
     }
 
     public set value(value: T) {
-        throw Error('Assigning a value to a FormGroup is not yet implemented');
+        Object.keys(value)
+            .forEach((k, i) => this.getControl(k).value = value[k]);
     }
 
     public get valid(): boolean {
@@ -87,9 +88,11 @@ export class FormGroup<T = any> extends AbstractControl {
             return [];
         }
         let errors: ControlError[] = [...this.errors];
+
         this.controls.forEach((control: AbstractControl) => {
             errors = [...errors, ...control.errorsDeep];
         });
+
         return errors;
     }
 
@@ -123,9 +126,9 @@ export class FormGroup<T = any> extends AbstractControl {
         return Object.values(this._controls);
     }
 
-    public getControl<T = any>(name: string): AbstractControl<T> {
+    public getControl<T extends AbstractControl>(name: string): T {
         if (this._controls[name] !== undefined) {
-            return this._controls[name] as AbstractControl<T>;
+            return this._controls[name] as T;
         } else {
             throw Error(`There is no control with the name ${name} in this group`);
         }
