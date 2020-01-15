@@ -1,9 +1,5 @@
 @import 'commons';
 
-.nowrap {
-    white-space: nowrap;
-}
-
 // Styles while
 .m-navbar {
     &.m--is-multiline {
@@ -21,6 +17,12 @@
 
     &:not(.m--is-multiline) {
         .m-navbar-item__contents {
+            white-space: nowrap;
+        }
+    }
+
+    &__text {
+        &.pp--is-nowrap {
             white-space: nowrap;
         }
     }

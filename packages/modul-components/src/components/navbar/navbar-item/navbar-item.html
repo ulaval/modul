@@ -38,11 +38,11 @@
               v-if="hasDefaultSlot">
             <slot></slot>
         </span>
-        <span class="m-navbar-item__text"
-              v-else-if="!label">{{ value }}</span>
-        <span class="m-navbar-item__text"
-              :class="[shouldNotWrap ? 'nowrap' : '']"
-              v-else
-              v-html="formatedLabel"></span>
+        <span v-else-if="!label"
+              class="m-navbar-item__text">{{ value }}</span>
+        <span v-else
+              v-html="formatedLabel"
+              class="m-navbar-item__text"
+              :class="{ 'pp--is-nowrap': shouldNotWrap }"></span>
     </div>
 </li>
