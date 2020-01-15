@@ -106,7 +106,8 @@ export class MProgress extends ModulVue {
         return this.value >= 100 ? {
             width: this.stringValue,
             borderRadius: this.radiusSize
-        } : {
+        } :
+            {
                 width: this.stringValue,
                 'border-bottom-left-radius': this.radiusSize,
                 'border-top-left-radius': this.radiusSize
