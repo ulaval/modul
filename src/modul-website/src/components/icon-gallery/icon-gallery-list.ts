@@ -21,6 +21,22 @@ export class ModulIconList {
             'nameFr': 'Flèche haut'
         },
         {
+            'name': 'm-svg__arrow-button--down',
+            'nameFr': 'Flèche double bas'
+        },
+        {
+            'name': 'm-svg__arrow-button--left',
+            'nameFr': 'Flèche double gauche'
+        },
+        {
+            'name': 'm-svg__arrow-button--right',
+            'nameFr': 'Flèche double droite'
+        },
+        {
+            'name': 'm-svg__arrow-button--up',
+            'nameFr': 'Flèche double haut'
+        },
+        {
             'name': 'm-svg__arrow-head-filled--down',
             'nameFr': 'Flèche triangle bas'
         },

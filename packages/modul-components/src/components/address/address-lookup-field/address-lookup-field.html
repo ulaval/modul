@@ -3,6 +3,7 @@
                     :label="i18nSearch"
                     :results="results"
                     :open.sync="open"
+                    :error-message="errorMessage"
                     @complete="onComplete"
                     @change="onSelect"
                     v-model="selection">

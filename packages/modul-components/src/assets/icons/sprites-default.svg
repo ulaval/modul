@@ -28,6 +28,12 @@
         <polygon fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="15.5,23.5
             8.5,23.5 8.5,10.5 4.4,10.5 12,0.5 19.6,10.5 15.5,10.5 "/>
     </symbol>
+    <symbol id="m-svg__arrow-button--down" viewBox="0 0 24 24">
+        <g  stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 23.25,12.311L12.53,23.03c-0.292,0.293-0.767,0.293-1.059,0.001c0,0-0.001-0.001-0.001-0.001L0.75,12.311"></path>
+            <path d="M 23.25,1.061L12.53,11.78c-0.292,0.293-0.767,0.293-1.059,0.001c0,0-0.001-0.001-0.001-0.001L0.75,1.061" ></path>
+        </g>
+    </symbol>
     <symbol id="m-svg__arrow-button--left" viewBox="0 0 24 24">
         <g stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M 11.689,23.25L0.97,12.53c-0.293-0.292-0.293-0.767-0.001-1.059c0,0,0.001-0.001,0.001-0.001L11.689,0.75 "></path>
@@ -38,6 +44,12 @@
         <g stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M 12.311,0.75L23.03,11.47c0.293,0.292,0.293,0.767,0.001,1.059c0,0-0.001,0.001-0.001,0.001L12.311,23.25 "></path>
             <path d="M 1.061,0.75L11.78,11.47c0.293,0.292,0.293,0.767,0.001,1.059c0,0-0.001,0.001-0.001,0.001L1.061,23.25"></path>
+        </g>
+    </symbol>
+    <symbol id="m-svg__arrow-button--up" viewBox="0 0 24 24">
+        <g stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 0.75,11.689L11.47,0.97c0.292-0.293,0.767-0.293,1.059-0.001c0,0,0.001,0.001,0.001,0.001l10.72,10.719"></path>
+            <path d="M 0.75,22.939L11.47,12.22c0.292-0.293,0.767-0.293,1.059-0.001c0,0,0.001,0.001,0.001,0.001l10.72,10.719"></path>
         </g>
     </symbol>
     <symbol id="m-svg__arrow-head-filled--down" viewBox="-1 -1 26 26">

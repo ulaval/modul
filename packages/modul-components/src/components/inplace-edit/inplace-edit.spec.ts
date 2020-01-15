@@ -19,7 +19,7 @@ const READ_SLOT: string = '<div class="' + READ_SLOT_CLASS + '">readSlot</div>';
 const EDIT_SLOT_CLASS: string = 'editSlot';
 const EDIT_SLOT: string = '<input class="' + EDIT_SLOT_CLASS + '" type="text" name="inputEditMode" value="myInput">';
 
-const AN_EVENT: Event = new Event('An event');
+const AN_MOUSE_EVENT: MouseEvent = new MouseEvent('An event');
 
 describe('Component inplace-edit - Element wrapper edition inline with default values', () => {
 
@@ -61,7 +61,7 @@ describe('Component inplace-edit - Element wrapper edition inline set to read mo
         test(`must not send events to parent`, () => {
             let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
 
-            inplaceEdit.confirm(AN_EVENT);
+            inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
             expect(spy).not.toBeCalled();
         });
@@ -69,9 +69,9 @@ describe('Component inplace-edit - Element wrapper edition inline set to read mo
 
     describe('when cancelling', () => {
         it(`must not send event to parent`, () => {
-            let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+            let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitCancel');
 
-            inplaceEdit.cancel(AN_EVENT);
+            inplaceEdit.onCancel(AN_MOUSE_EVENT);
 
             expect(spy).not.toBeCalled();
         });
@@ -89,21 +89,21 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
 
         describe('when confirming', () => {
             it(`must emit confirmation event to parent`, () => {
-                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitOk');
 
-                inplaceEdit.confirm(AN_EVENT);
+                inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
-                expect(spy).toHaveBeenCalledWith(CONFIRM_EVENT);
+                expect(spy).toHaveBeenCalledWith(AN_MOUSE_EVENT);
             });
         });
 
         describe('when cancelling', () => {
             it(`must emit cancellation event to parent`, () => {
-                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitCancel');
 
-                inplaceEdit.cancel(AN_EVENT);
+                inplaceEdit.emitCancel(AN_MOUSE_EVENT);
 
-                expect(spy).toBeCalledWith(CANCEL_EVENT);
+                expect(spy).toBeCalledWith(AN_MOUSE_EVENT);
             });
         });
     });
@@ -118,19 +118,19 @@ describe('Component inplace-edit - Element wrapper edition inline set to edit mo
 
         describe('when confirming', () => {
             it(`must emit confirmation event to parent`, () => {
-                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, '$emit');
+                let spy: jest.SpyInstance = jest.spyOn(inplaceEdit, 'emitOk');
 
-                inplaceEdit.confirm(AN_EVENT);
+                inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
-                expect(spy).toBeCalledWith(CONFIRM_EVENT);
+                expect(spy).toBeCalledWith(AN_MOUSE_EVENT);
             });
         });
 
         describe('when cancelling after a failed confirmation', () => {
             it('must not be in error', async () => {
-                await inplaceEdit.confirm(AN_EVENT);
+                await inplaceEdit.onConfirm(AN_MOUSE_EVENT);
 
-                inplaceEdit.cancel(AN_EVENT);
+                inplaceEdit.emitCancel(AN_MOUSE_EVENT);
 
                 expect(inplaceEdit.error).toBeFalsy();
             });
@@ -227,25 +227,19 @@ describe('Component inplace-edit - Complete component mobile', () => {
         });
 
         it(`should cancel on overlay close`, () => {
-            // given
-            wrapper.setMethods({ cancel: jest.fn() });
-
             // when
             wrapper.find(REF_OVERLAY).vm.$emit('close');
 
             // then
-            expect(wrapper.vm.cancel).toHaveBeenCalledWith();
+            expect(wrapper.emitted().cancel).toBeTruthy();
         });
 
         it(`should confirm on overlay save`, () => {
-            // given
-            wrapper.setMethods({ confirm: jest.fn() });
-
             // when
             wrapper.find(REF_OVERLAY).vm.$emit('save');
 
             // then
-            expect(wrapper.vm.confirm).toHaveBeenCalledWith();
+            expect(wrapper.emitted().ok).toBeTruthy();
         });
     });
 });

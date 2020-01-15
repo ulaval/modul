@@ -1,28 +1,66 @@
 @import 'commons';
 
-.m-sortable {
-    ul {
-        display: flex;
-        flex-direction: column;
+$m-sortable-line-height: 3px;
+$m-sortable-dot-height: 9px;
 
-        li {
-            padding: $m-padding;
-            margin-bottom: $m-margin--s;
-            color: #fff;
-            font-weight: $m-font-weight--bold;
-            background-color: #7cadf1;
-            display: flex;
-            align-items: center;
+:root {
+    --m-sortable-color: #{$m-color--success};
+}
 
-            &.noHandle {
-                cursor: grab;
-            }
-
-            .drag-handle {
-                flex: none;
-                cursor: grab;
-                margin-right: $m-margin;
+@mixin m-sortable-line() {
+    &:not(.m--cant-sort):not(.m--is-sortable-placeholder) {
+        &.m--is-sortbefore,
+        &.m--is-sortafter {
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: $m-sortable-line-height;
+                background-color: var(--m-sortable-color);
+                z-index: 100;
             }
         }
+
+        &.m--is-sortbefore::after {
+            top: -#{$m-sortable-line-height / 2};
+        }
+
+        &.m--is-sortafter::after {
+            bottom: -#{$m-sortable-line-height / 2};
+        }
     }
+}
+
+@mixin m-sortable-dot() {
+    &:not(.m--cant-sort):not(.m--is-sortable-placeholder) {
+        &.m--is-sortbefore,
+        &.m--is-sortafter {
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: var(--m-sortable-color);
+                z-index: 100;
+                left: -#{$m-sortable-dot-height / 2};
+                width: $m-sortable-dot-height;
+                height: $m-sortable-dot-height;
+                border-radius: 50%;
+            }
+        }
+
+        &.m--is-sortbefore::before {
+            top: -#{$m-sortable-dot-height / 2};
+        }
+
+        &.m--is-sortafter::before {
+            bottom: -#{$m-sortable-dot-height / 2};
+        }
+    }
+}
+
+@mixin m-sortable() {
+    position: relative;
+
+    @include m-sortable-line;
+    @include m-sortable-dot;
 }

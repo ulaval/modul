@@ -1,0 +1,76 @@
+@import 'commons';
+@import "../../styles/utils/link";
+
+$m-fr-icon-size: 14px !default;
+
+@mixin m-commons-rte-styles() {
+    @include m-titles-styles();
+    @include m-text-styles();
+
+    .rte-h1 {
+        @include m-h1-font-style;
+        @include m-commons-title-styles;
+    }
+
+    .rte-h2 {
+        @include m-h2-font-style;
+        @include m-commons-title-styles;
+    }
+
+    .rte-h3 {
+        @include m-h3-font-style;
+        @include m-commons-title-styles;
+    }
+
+    .rte-h4 {
+        @include m-h4-font-style;
+        @include m-commons-title-styles;
+    }
+
+    .rte-h5 {
+        @include m-h5-font-style;
+        @include m-commons-title-styles;
+    }
+
+    .rte-h6 {
+        @include m-h6-font-style;
+        @include m-commons-title-styles;
+    }
+
+    ul,
+    ol,
+    table {
+        margin-top: $m-margin;
+        margin-bottom: 0;
+    }
+
+    ul {
+        @include m-bullet-list();
+    }
+
+    ol {
+        @include m-number-list();
+    }
+
+    table {
+        @include m-table();
+    }
+
+    a {
+        @extend .m-u--link;
+
+        display: inline;
+
+        &:hover,
+        &:focus {
+            @extend %m-u--link-text--hover-focus;
+        }
+    }
+
+    .fr-btn > svg,
+    .fr-sub-menu > svg {
+        width: $m-fr-icon-size;
+        height: $m-fr-icon-size;
+        margin: $m-margin;
+    }
+}

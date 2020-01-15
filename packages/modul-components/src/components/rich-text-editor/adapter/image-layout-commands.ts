@@ -9,6 +9,7 @@ export namespace ImageLayoutCommands {
     const IMG_BLOCK_CENTER_CMD: string = 'image-block-center';
     const IMG_FLOAT_LEFT_CMD: string = 'image-float-left';
     const IMG_FLOAT_RIGHT_CMD: string = 'image-float-right';
+    const IMG_CMD: string[] = [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD];
     const PREFIX: string = 'm--fr-';
     const ACTIVE_CLASS: string = `${PREFIX}active`;
 
@@ -33,8 +34,20 @@ export namespace ImageLayoutCommands {
             },
             refreshOnShow: function(_$btn: any, $dropdown: any): void {
                 const dropdown: HTMLElement = $dropdown[0];
-                if (!dropdown.querySelector(`.fr-btn.${ACTIVE_CLASS}`)) {
-                    getElementFromDataCmd(dropdown, IMG_BLOCK_LEFT_CMD)!.classList.add(ACTIVE_CLASS);
+                const image: HTMLElement[] = this.image.get();
+
+                if (image) {
+                    const imageClasses: DOMTokenList = image[0].classList;
+                    removeActiveClass(dropdown);
+                    getElementFromDataCmd(dropdown, getActiveImageLayout(imageClasses.value))!.classList.add(ACTIVE_CLASS);
+                }
+            },
+            refresh: function(): void {
+                const image: HTMLElement[] = this.image.get();
+                const popup: HTMLElement = this.popups.areVisible()[0];
+                if (image && popup) {
+                    const imageClasses: DOMTokenList = image[0].classList;
+                    getElementFromDataCmd(popup, IMG_LAYOUT_CMD)!.innerHTML = getIconFromClasses(imageClasses.value);
                 }
             }
         });
@@ -54,8 +67,6 @@ export namespace ImageLayoutCommands {
                     getElementFromDataCmd(popup, currentCmd)!.classList.remove(ACTIVE_CLASS);
                 });
                 this.image.applyStyle(`${PREFIX}${cmd}`);
-                getElementFromDataCmd(popup, cmd)!.classList.add(ACTIVE_CLASS);
-                getElementFromDataCmd(popup, IMG_LAYOUT_CMD)!.innerHTML = icon;
             }
         });
     }
@@ -64,11 +75,39 @@ export namespace ImageLayoutCommands {
         if (this.$oel[0].parentNode.__vue__.config.imageHideFloatLayout) {
             return [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD];
         } else {
-            return [IMG_BLOCK_LEFT_CMD, IMG_BLOCK_CENTER_CMD, IMG_FLOAT_LEFT_CMD, IMG_FLOAT_RIGHT_CMD];
+            return IMG_CMD;
         }
     }
 
     function getElementFromDataCmd(root: HTMLElement, value: string): Element | null {
         return root.querySelector(`[data-cmd="${value}"]`);
+    }
+
+    function getIconFromClasses(classes: string): any {
+        if (classes.includes(IMG_BLOCK_CENTER_CMD)) {
+            return imageBlockCenterIcon;
+        } else if (classes.includes(IMG_FLOAT_LEFT_CMD)) {
+            return imageFloatLeftIcon;
+        } else if (classes.includes(IMG_FLOAT_RIGHT_CMD)) {
+            return imageFloatRightIcon;
+        } else {
+            return imageBlockLeftIcon;
+        }
+    }
+
+    function getActiveImageLayout(classes: string): string {
+        let cmd: string | undefined = IMG_CMD.find((currentCmd: string) => {
+            return classes.includes(currentCmd);
+        });
+        return cmd || IMG_BLOCK_LEFT_CMD;
+    }
+
+    function removeActiveClass(root: HTMLElement): void {
+        IMG_CMD.forEach((currentCmd: string) => {
+            const element: Element | null = getElementFromDataCmd(root, currentCmd);
+            if (element) {
+                getElementFromDataCmd(root, currentCmd)!.classList.remove(ACTIVE_CLASS);
+            }
+        });
     }
 }

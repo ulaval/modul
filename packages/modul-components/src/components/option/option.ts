@@ -1,6 +1,8 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
+import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { OPTION_ITEM_ADD_NAME, OPTION_ITEM_ARCHIVE_NAME, OPTION_ITEM_DELETE_NAME, OPTION_ITEM_EDIT_NAME, OPTION_ITEM_NAME, OPTION_NAME, OPTION_SEPARATOR, OPTION_TITLE } from '../component-names';
@@ -25,6 +27,7 @@ export abstract class BaseOption extends ModulVue {
 export interface MOptionInterface {
     hasIcon: boolean;
     hasItemBorder: boolean;
+    maxWidth: string;
     checkIcon(el: boolean): void;
     checkBorder(): void;
     close(): void;
@@ -37,7 +40,11 @@ export enum MOptionsSkin {
 }
 
 @WithRender
-@Component
+@Component({
+    mixins: [
+        MediaQueries
+    ]
+})
 export class MOption extends BaseOption implements MOptionInterface {
     @Prop({
         default: MPopperPlacement.Bottom,
@@ -76,6 +83,8 @@ export class MOption extends BaseOption implements MOptionInterface {
     public focusManagement: boolean;
     @Prop({ default: true })
     public scroll: boolean;
+    @Prop({ default: '220px' })
+    public maxWidth: string;
 
     public hasIcon: boolean = false;
     public hasItemBorder: boolean = true;
@@ -125,6 +134,10 @@ export class MOption extends BaseOption implements MOptionInterface {
         return this.open ? this.getCloseTitle() : this.getOpenTitle();
     }
 
+    public get optionMaxWidth(): string {
+        return this.as<MediaQueriesMixin>().isMqMinM ? this.maxWidth : 'none';
+    }
+
     public get ariaControls(): string {
         return this.id + '-controls';
     }
@@ -155,6 +168,7 @@ const OptionPlugin: PluginObject<any> = {
         v.use(I18nPlugin);
         v.use(IconButtonPlugin);
         v.use(IconPlugin);
+        v.use(MediaQueriesPlugin);
         v.component(OPTION_ITEM_NAME, MOptionItem);
         v.component(OPTION_ITEM_ARCHIVE_NAME, MOptionItemArchive);
         v.component(OPTION_ITEM_ADD_NAME, MOptionItemAdd);

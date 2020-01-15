@@ -1,6 +1,6 @@
 import { DirectiveOptions, PluginObject, VNode, VNodeDirective } from 'vue';
 import { targetIsInput } from '../../../utils/event/event';
-import { dragDropDelay, polyFillActive } from '../../../utils/polyfills';
+import { dragDropDelay, polyFillActive } from '../../../utils/polyfills/drag-and-drop.polyfill';
 import { clearUserSelection } from '../../../utils/selection/selection';
 import { getVNodeAttributeValue } from '../../../utils/vue/directive';
 import { dispatchEvent } from '../../../utils/vue/events';
@@ -10,12 +10,17 @@ import { MSortable } from '../../sortable/sortable';
 import RemoveUserSelectPlugin, { MRemoveUserSelect } from '../../user-select/remove-user-select';
 import { MDroppable } from '../droppable/droppable';
 import { MDraggableAllowScroll } from './draggable-allow-scroll';
+import './draggable.scss';
+
+
 
 export enum MDraggableClassNames {
-    DragImage = 'dragImage',
     Draggable = 'm--is-draggable',
     Dragging = 'm--is-dragging',
-    Grabbing = 'm--is-grabbing'
+    Grabbing = 'm--is-grabbing',
+    DragImage = 'dragImage',
+    DragHandle = 'm-drag-handle',
+    HasDragHandle = 'm--has-drag-handle'
 }
 
 export interface MDraggableOptions {
@@ -142,6 +147,11 @@ export class MDraggable extends MElementDomPlugin<MDraggableOptions> {
 
     private setupGrabBehavior(): void {
         this.destroyGrabBehavior();
+
+        if (this.draggableHasHandle(this.element)) {
+            this.element.classList.add(MDraggableClassNames.HasDragHandle);
+        }
+
         this.grabEvents.forEach(eventName => this.removeEventListener(eventName));
         this.grabEvents.forEach(eventName => this.addEventListener(eventName, (event: MouseEvent) => {
             if (targetIsInput(this.element, event) || (this.draggableHasHandle(this.element) && !this.isHandleUsedToDrag(event))) {
@@ -277,16 +287,17 @@ export class MDraggable extends MElementDomPlugin<MDraggableOptions> {
     private cleanupCssClasses(): void {
         this.element.classList.remove(MDraggableClassNames.Dragging);
         this.element.classList.remove(MDraggableClassNames.Grabbing);
+        this.element.classList.remove(MDraggableClassNames.HasDragHandle);
     }
 
     private draggableHasHandle(element: HTMLElement): boolean {
-        return element.getElementsByClassName('drag-handle').length > 0;
+        return element.getElementsByClassName(MDraggableClassNames.DragHandle).length > 0;
     }
 
     private isHandleUsedToDrag(event: MouseEvent): boolean {
-        const dragHandle: HTMLElement | null = this.element.querySelector('.drag-handle');
+        const dragHandle: HTMLElement | null = this.element.querySelector('.' + MDraggableClassNames.DragHandle);
         if (dragHandle) {
-            return dragHandle.classList.contains('drag-handle') && dragHandle.contains(event.target as Node);
+            return dragHandle.classList.contains(MDraggableClassNames.DragHandle) && dragHandle.contains(event.target as Node);
         } else {
             return false;
         }

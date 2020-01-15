@@ -8,6 +8,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { FormatMode } from '../../utils/i18n/i18n';
+import { KeyCode } from '../../utils/keycode/keycode';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
@@ -52,11 +53,6 @@ function validateTimeString(value: string): boolean {
 })
 export class MTimepicker extends ModulVue {
 
-    @Prop({
-        validator(value: string): boolean {
-            return validateTimeString(value);
-        }
-    })
     @Model('input')
     public value: string;
     @Prop({ default: '00:00' })
@@ -67,6 +63,12 @@ export class MTimepicker extends ModulVue {
     public step: number;
     @Prop({ default: InputMaxWidth.Small })
     public maxWidth: string;
+
+    @Prop({ default: false })
+    public hideInternalErrorMessage: boolean;
+
+    @Prop({ default: false })
+    public skipInputValidation: boolean;
 
     public $refs: {
         input: MInputMask;
@@ -123,7 +125,7 @@ export class MTimepicker extends ModulVue {
 
     private validateTime(value: string): boolean {
         this.internalTimeErrorMessage = '';
-        if (validateTimeString(value)) {
+        if (!this.skipInputValidation && validateTimeString(value)) {
             if (this.validateTimeRange(value)) {
                 this.internalTimeErrorMessage = '';
                 return true;
@@ -228,11 +230,25 @@ export class MTimepicker extends ModulVue {
         }
     }
 
+    private onSelectHourKeyup($event: KeyboardEvent, hour: number): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            this.onSelectHour(hour);
+        }
+    }
+
     private onSelectMinute(minute: number): void {
         this.internalMinute = minute;
         if (!isNaN(this.internalHour)) {
             this.currentTime = this.formatTimeString();
             this.open = false;
+        }
+    }
+
+    private onSelectMinuteKeyup($event: KeyboardEvent, minute: number): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            this.onSelectMinute(minute);
         }
     }
 
@@ -294,14 +310,14 @@ export class MTimepicker extends ModulVue {
 
         // When the user type in something we close de popup.
         this.open = false;
-
-        if (value && this.validateTime(value) && validateTimeString(value)) {
+        if (value && this.skipInputValidation) {
+            this.$emit('input', newValue);
+        } else if (value && this.validateTime(value) && validateTimeString(value)) {
             this.updatePopupTime(newValue);
 
             if (newValue !== oldTime) {
                 this.$emit('input', newValue);
             }
-
         } else {
             this.resetPopupTime();
             this.$emit('input', undefined);
@@ -333,7 +349,11 @@ export class MTimepicker extends ModulVue {
     }
 
     private get timeErrorMessage(): string {
-        return this.internalTimeErrorMessage || this.as<InputState>().errorMessage;
+        if (this.hideInternalErrorMessage) {
+            return '';
+        } else {
+            return this.internalTimeErrorMessage || this.as<InputState>().errorMessage;
+        }
     }
 
     private get open(): boolean {

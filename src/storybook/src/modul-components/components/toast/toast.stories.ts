@@ -33,6 +33,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOAST}`, module)
     .add('icon="false"', () => ({
         template: '<m-toast :icon="false">A Toast without an icon</m-toast>'
     }))
+    .add('closeButton="false"', () => ({
+        template: '<m-toast :close-button="false">A Toast without close button</m-toast>'
+    }))
     .add('action-label', () => ({
         props: {
             actionLabel: {
