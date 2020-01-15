@@ -1,8 +1,6 @@
-import '../../utils/polyfills';
-
 import Vue from 'vue';
-
 import StepPlugin, { MStep, MStepMode, MStepState } from './step';
+
 
 const STATE_LOCKED_CSS: string = 'm--is-locked';
 const STATE_PROGRESS_CSS: string = 'm--is-in-progress';

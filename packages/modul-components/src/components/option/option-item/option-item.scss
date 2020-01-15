@@ -7,10 +7,6 @@ $m-option-item--color-active: $m-color--grey-lightest !default;
     display: flex;
     text-decoration: none;
 
-    @media (min-width: $m-mq--min--s) {
-        max-width: 220px; // Magic number
-    }
-
     &:not(.m--has-no-border) {
         &:not(:last-child) {
             border-bottom: 1px solid $m-color--border;

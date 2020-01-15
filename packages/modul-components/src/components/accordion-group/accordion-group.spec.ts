@@ -1,7 +1,6 @@
 import { mount, Slots, Wrapper, WrapperArray } from '@vue/test-utils';
 import Vue from 'vue';
 import { addMessages } from '../../../tests/helpers/lang';
-import '../../utils/polyfills';
 import uuid from '../../utils/uuid/uuid';
 import { MAccordion, MAccordionSkin } from '../accordion/accordion';
 import AccordionGroupPlugin, { MAccordionGroup } from './accordion-group';

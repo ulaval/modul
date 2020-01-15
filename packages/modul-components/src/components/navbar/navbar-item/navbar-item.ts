@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Location } from 'vue-router';
 import { ModulVue } from '../../../utils/vue/vue';
 import { BaseNavbar, Navbar } from '../navbar';
@@ -34,6 +34,29 @@ export class MNavbarItem extends ModulVue {
     // tslint:disable-next-line:no-null-keyword
     private parentNavbar: Navbar | null = null;
     public formatedLabel: string = '';
+
+    @Emit('click')
+    private emitClick(event: MouseEvent): void { }
+
+    @Emit('mouseover')
+    private emitMouseover(event: MouseEvent): void { }
+
+    @Emit('mouseleave')
+    private emitMouseleave(event: MouseEvent): void { }
+
+    @Watch('isMultiline')
+    private isMultilineChanged(): void {
+        this.setDimension();
+    }
+
+    @Watch('$route')
+    private routeChanged(): void {
+        this.$nextTick(() => {
+            if (this.parentNavbar && this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
+                this.parentNavbar.updateValue(this.value);
+            }
+        });
+    }
 
     protected mounted(): void {
         this.formatedLabel = this.label;
@@ -122,58 +145,36 @@ export class MNavbarItem extends ModulVue {
             + '</span>';
     }
 
-    private get isMultiline(): boolean {
-        return this.parentNavbar ? this.parentNavbar.multiline : false;
-    }
-
-    @Watch('$route')
-    private routeChanged(): void {
-        this.$nextTick(() => {
-            if (this.parentNavbar && this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
-                this.parentNavbar.updateValue(this.value);
-            }
-        });
-    }
-
-    @Watch('isMultiline')
-    private isMultilineChanged(): void {
-        this.setDimension();
-    }
-
-    private get isDisabled(): boolean {
-        return this.disabled;
-    }
 
     public get isSelected(): boolean {
         return !!this.parentNavbar && !this.disabled && this.value === this.parentNavbar.model;
     }
 
-    private get hasDefaultSlot(): boolean {
-        return !!this.$slots.default;
+    public get isMultiline(): boolean {
+        return this.parentNavbar ? this.parentNavbar.multiline : false;
     }
 
-    private onClick(event: Event): void {
+    public onClick(event: MouseEvent): void {
         if (!this.disabled && this.parentNavbar) {
             this.parentNavbar.onClick(event, this.value);
             if (this.value !== this.parentNavbar.model) {
                 this.parentNavbar.updateValue(this.value);
             }
-            this.$emit('click', event);
+            this.emitClick(event);
         }
     }
 
-    private onMouseover(event: Event): void {
+    public onMouseover(event: MouseEvent): void {
         if (!this.disabled && this.parentNavbar) {
             this.parentNavbar.onMouseover(event, this.value);
-            this.$emit('mouseover', event);
+            this.emitMouseover(event);
         }
-
     }
 
-    private onMouseleave(event: Event): void {
+    public onMouseleave(event: MouseEvent): void {
         if (!this.disabled && this.parentNavbar) {
             this.parentNavbar.onMouseleave(event, this.value);
-            this.$emit('mouseleave', event);
+            this.emitMouseleave(event);
         }
     }
 
@@ -219,7 +220,4 @@ export class MNavbarItem extends ModulVue {
             }
         }
     }
-
 }
-
-

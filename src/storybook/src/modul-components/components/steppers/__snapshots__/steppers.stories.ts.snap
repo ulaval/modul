@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-steppers Default Story 1`] = `
+<div
+  class="m-steppers"
+>
+  <div
+    class="m-steppers__overflow-wrapper"
+  >
+    <ul
+      class="m-steppers__wrap"
+      style="opacity: 1; display: flex; min-width: 48px;"
+    >
+      <li
+        aria-hidden="true"
+        class="m-steppers__default-line"
+        style="left: 0px; right: 0px;"
+      />
+       
+      <li
+        aria-hidden="true"
+        class="m-steppers__selected-line"
+        style="left: 0px;"
+      />
+       
+      <li
+        class="m-steppers-item m--is-visited m--is-completed"
+      >
+        <div
+          class="m-steppers-item__button"
+          role="button"
+          tabindex="0"
+        >
+          <div
+            class="m-steppers-item__icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <svg
+              aria-hidden="true"
+              class="m-icon m-steppers-item__icon-completed"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+          </div>
+           
+          <div
+            class="m-steppers-item__title"
+          >
+            Profil
+          </div>
+        </div>
+      </li>
+       
+      <li
+        class="m-steppers-item m--is-in-progress"
+      >
+        <div
+          aria-selected="true"
+          class="m-steppers-item__button"
+          role="button"
+          tabindex="-1"
+        >
+          <div
+            class="m-steppers-item__icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-steppers-item__title"
+          >
+            Calandrier
+          </div>
+        </div>
+      </li>
+       
+      <li
+        class="m-steppers-item m--is-disabled"
+      >
+        <div
+          class="m-steppers-item__button"
+          tabindex="-1"
+        >
+          <div
+            class="m-steppers-item__icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-steppers-item__title"
+          >
+            Déconnexion
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="resize-sensor"
+    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+    >
+      <div
+        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+      />
+    </div>
+  </div>
+</div>
+`;

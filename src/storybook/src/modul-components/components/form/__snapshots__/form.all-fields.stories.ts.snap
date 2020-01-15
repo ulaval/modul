@@ -2256,7 +2256,11 @@ exports[`Storyshots modul-components|m-form/all fields Timepicker 1`] = `
                 Time
               </span>
                
-              <!---->
+              <sup
+                class="m-input-style__required-marker"
+              >
+                *
+              </sup>
             </span>
           </label>
            

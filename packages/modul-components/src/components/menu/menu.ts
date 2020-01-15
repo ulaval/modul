@@ -59,43 +59,95 @@ export class MMenu extends BaseMenu implements Menu {
 
     public animReady: boolean = false;
     public closeOnSelectionInAction: boolean = false;
+    public titleMenuOpen: string = this.$i18n.translate('m-menu:open');
+    public titleMenuClose: string = this.$i18n.translate('m-menu:close');
+
     private internalValue: string | undefined = '';
     private internalOpen: boolean = false;
     private internalDisabled: boolean = false;
     private internalItems: MMenuItem[] = [];
-    private observer: MutationObserver;
+    private menuObserver: MutationObserver;
 
-    public titleMenuOpen: string = this.$i18n.translate('m-menu:open');
-    public titleMenuClose: string = this.$i18n.translate('m-menu:close');
+    @Emit('click')
+    public onClick(event: Event, value: string): void { }
 
-    @Watch('selected')
+    @Watch('selected', { immediate: true })
     public updateValue(value: string | undefined): void {
         this.model = value;
     }
 
-    @Emit('click')
-    onClick(event: Event, value: string): void { }
+    @Watch('open', { immediate: true })
+    private onOpenChanged(open: boolean): void {
+        this.internalOpen = open;
+    }
+
+    @Watch('disabled', { immediate: true })
+    private onDisabledChanged(disabled: boolean): void {
+        this.propDisabled = disabled;
+    }
 
     protected mounted(): void {
-        this.model = this.selected;
-        this.propOpen = this.open;
-        this.propDisabled = this.disabled;
-
         this.$nextTick(() => {
             this.buildItemsMap();
 
-            this.observer = new MutationObserver(() => {
-                this.buildItemsMap();
-            });
+            this.menuObserver = new MutationObserver(() => this.buildItemsMap());
 
             if (this.$refs.menu) {
-                this.observer.observe(this.$refs.menu, { subtree: true, childList: true });
+                this.menuObserver.observe(this.$refs.menu, { subtree: true, childList: true });
             }
         });
+    }
 
-        setTimeout(() => {
-            this.animReady = true;
-        });
+    protected beforeDestroy(): void {
+        if (this.menuObserver) { this.menuObserver.disconnect(); }
+    }
+
+    public set propDisabled(disabled: boolean) {
+        this.internalDisabled = disabled;
+    }
+
+    public get propDisabled(): boolean {
+        return this.internalDisabled;
+    }
+
+    public set propOpen(open: boolean) {
+        this.animReady = false;
+        this.selectedItem();
+        this.internalOpen = open;
+        this.$emit('update:open', open);
+        this.animReady = true;
+    }
+
+    public get propOpen(): boolean {
+        return this.internalOpen;
+    }
+
+    public toggleMenu(event: Event): void {
+        if (!this.propDisabled) {
+            this.propOpen = !this.propOpen;
+            this.$refs.buttonMenu.blur();
+            this.onClick(event, '');
+        }
+    }
+
+    public get model(): any {
+        return this.internalValue;
+    }
+
+    public set model(value: any) {
+        if (!this.closeOnSelectionInAction) {
+            this.internalValue = value;
+            this.selectedItem();
+            this.$emit('update:selected', value);
+            if (this.closeOnSelection) {
+                this.closeOnSelectionInAction = true;
+                // Add a delay before closing the menu to display the selected item
+                setTimeout(() => {
+                    this.propOpen = false;
+                    this.closeOnSelectionInAction = false;
+                }, 600);
+            }
+        }
     }
 
     private buildItemsMap(): void {
@@ -147,68 +199,6 @@ export class MMenu extends BaseMenu implements Menu {
                 }
             });
         }
-    }
-
-    public get model(): any {
-        return this.internalValue;
-    }
-
-    public set model(value: any) {
-        if (!this.closeOnSelectionInAction) {
-            this.internalValue = value;
-            this.selectedItem();
-            this.$emit('update:selected', value);
-            if (this.closeOnSelection) {
-                this.closeOnSelectionInAction = true;
-                // Add a delay before closing the menu to display the selected item
-                setTimeout(() => {
-                    this.propOpen = false;
-                    this.closeOnSelectionInAction = false;
-                }, 600);
-            }
-        }
-    }
-
-    @Watch('open')
-    private openChanged(open: boolean): void {
-        this.propOpen = open;
-    }
-
-    @Watch('disabled')
-    private disabledChanged(disabled: boolean): void {
-        this.propDisabled = disabled;
-    }
-
-    public set propDisabled(disabled: boolean) {
-        this.internalDisabled = disabled;
-    }
-
-    public get propDisabled(): boolean {
-        return this.internalDisabled;
-    }
-
-    public set propOpen(open: boolean) {
-        this.animReady = false;
-        this.selectedItem();
-        this.internalOpen = open;
-        this.$emit('update:open', open);
-        this.animReady = true;
-    }
-
-    public get propOpen(): boolean {
-        return this.internalOpen;
-    }
-
-    private toggleMenu(event: Event): void {
-        if (!this.propDisabled) {
-            this.propOpen = !this.propOpen;
-            this.$refs.buttonMenu.blur();
-            this.onClick(event, '');
-        }
-    }
-
-    private get hasSlotTrigger(): boolean {
-        return !!this.$slots.trigger;
     }
 
     private isRouterLinkActive(menuItem: MMenuItem): boolean {

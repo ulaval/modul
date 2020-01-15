@@ -1,4 +1,3 @@
-import '../../utils/polyfills';
 import Vue from 'vue';
 import { MDynamicTemplate } from './dynamic-template';
 

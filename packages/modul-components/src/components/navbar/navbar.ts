@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
-
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import ModulPlugin from '../../utils/modul/modul';
 import { ModulVue } from '../../utils/vue/vue';
@@ -60,6 +59,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
     @Prop()
     public selected: string;
+
     @Prop({
         default: MNavbarSkin.NavMain,
         validator: value =>
@@ -76,18 +76,25 @@ export class MNavbar extends BaseNavbar implements Navbar {
             value === MNavbarSkin.Plain
     })
     public skin: string;
+
     @Prop()
     public disabled: boolean;
+
     @Prop({ default: true })
     public navigationArrow: boolean;
+
     @Prop({ default: MNavbarMaxWidth.Large })
     public maxWidth: string;
+
     @Prop({ default: true })
     public multiline: boolean;
+
     @Prop()
     public titleButtonLeft: string;
+
     @Prop()
     public titleButtonRight: string;
+
     @Prop({ default: false })
     public autoSelect: boolean;
 
@@ -99,36 +106,41 @@ export class MNavbar extends BaseNavbar implements Navbar {
         contents: HTMLElement
     };
 
-    private animReady: boolean = false;
+    public animReady: boolean = false;
     private internalValue: any | undefined = '';
     private showArrowLeft: boolean = false;
     private showArrowRight: boolean = false;
     private computedHeight: number = 0;
     private observer: MutationObserver;
 
-    public updateValue(value: any): void {
-        this.model = value;
+    @Emit('click')
+    private emitClick(event: MouseEvent, value: string): void { }
+
+    @Emit('mouseover')
+    private emitMouseover(event: MouseEvent, value: string): void { }
+
+    @Emit('mouseleave')
+    private emitMouseleave(event: MouseEvent, value: string): void { }
+
+    @Watch('model', { immediate: true })
+    private onModelChangement(): void {
+        if (this.isTabUnderlineSkin || this.isTabArrowSkin) {
+            if (this.model.toString()) { this.updateSelectedIndicatorPosition(); }
+        }
     }
 
-    public onMouseover(event: Event, value: string): void {
-        this.$emit('mouseover', event, value);
+    @Watch('multiline')
+    private onMultilineChanged(): void {
+        // Wait for navbar-item height calculation -> setimension()
+        setTimeout(() => {
+            this.setupScrolllH();
+        });
     }
 
-    public onMouseleave(event: Event, value: string): void {
-        this.$emit('mouseleave', event, value);
-    }
-
-    public onClick(event: Event, value: string): void {
-        this.$emit('click', event, value);
-    }
-
-    public get model(): any {
-        return this.selected === undefined ? this.internalValue : this.selected;
-    }
-
-    public set model(value: any) {
-        this.setAndUpdate(value);
-        this.$emit('update:selected', value);
+    @Watch('selected')
+    private setAndUpdate(value): void {
+        this.internalValue = value;
+        this.scrollToSelected();
     }
 
     protected created(): void {
@@ -141,18 +153,22 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     protected mounted(): void {
-        this.setupScrolllH();
-        this.as<ElementQueries>().$on('resize', this.setupScrolllH);
-
-        this.$children.forEach((child: Vue) => {
-            child.$on('resize', this.setupScrolllH);
-        });
+        this.watchResizes();
 
         this.$refs.wrap.addEventListener('scroll', this.setDisplayNavigationButtons);
 
+        this.observer = new MutationObserver((mutations: MutationRecord[]) => {
+            if (mutations.some((mutation: MutationRecord) => mutation.type === 'childList')) {
+                this.watchResizes();
+            }
+
+            if (this.skin === MNavbarSkin.TabUnderline || this.skin === MNavbarSkin.TabArrow) {
+                this.updateSelectedIndicatorPosition();
+            }
+        });
+
+        this.observer.observe(this.$refs.list, { subtree: true, childList: true, characterData: true });
         if (this.skin === MNavbarSkin.TabUnderline || this.skin === MNavbarSkin.TabArrow) {
-            this.observer = new MutationObserver(() => this.updateSelectedIndicatorPosition());
-            this.observer.observe(this.$refs.list, { subtree: true, childList: true, characterData: true });
             if (this.selected) { this.updateSelectedIndicatorPosition(); }
         }
     }
@@ -163,30 +179,71 @@ export class MNavbar extends BaseNavbar implements Navbar {
         if (this.observer) { this.observer.disconnect(); }
     }
 
-    @Watch('multiline')
-    private multilineChanged(): void {
-        // Wait for navbar-item height calculation -> setimension()
-        setTimeout(() => {
-            this.setupScrolllH();
-        });
+    public get model(): any {
+        return this.selected === undefined ? this.internalValue : this.selected;
     }
 
-    private setDisplayNavigationButtons(): void {
-        let spaceBeforeDisplayingButton: number = this.isTabLightSkin ? 5 : 0;
-        let wrapEl: HTMLElement = this.$refs.wrap;
-        if (wrapEl) {
-            const maxScrollLeft: number = Math.round(wrapEl.scrollWidth - wrapEl.clientWidth - spaceBeforeDisplayingButton);
-            this.showArrowRight = Math.round(wrapEl.scrollLeft) < maxScrollLeft;
-            this.showArrowLeft = wrapEl.scrollLeft > spaceBeforeDisplayingButton;
-        }
+    public set model(value: any) {
+        this.setAndUpdate(value);
+        this.$emit('update:selected', value);
     }
 
-    private get hasArrowRight(): boolean {
+    public updateValue(value: any): void {
+        this.model = value;
+    }
+
+    public onMouseover(event: MouseEvent, value: string): void {
+        this.emitMouseover(event, value);
+    }
+
+    public onMouseleave(event: MouseEvent, value: string): void {
+        this.emitMouseleave(event, value);
+    }
+
+    public onClick(event: MouseEvent, value: string): void {
+        this.emitClick(event, value);
+    }
+
+    public get hasArrowRight(): boolean {
         return this.showArrowRight && this.navigationArrow;
     }
 
-    private get hasArrowLeft(): boolean {
+    public get hasArrowLeft(): boolean {
         return this.showArrowLeft && this.navigationArrow;
+    }
+
+    public get buttonSkin(): string {
+        return this.skin === MNavbarSkin.NavMain || this.skin === MNavbarSkin.NavSub || this.skin === MNavbarSkin.NavSoft || this.skin === MNavbarSkin.TabDark || this.skin === MNavbarSkin.TabDarkMain ? 'dark' : 'light';
+    }
+
+    public get buttonRipple(): boolean {
+        return this.skin === MNavbarSkin.TabUnderline || this.skin === MNavbarSkin.TabArrow || this.skin === MNavbarSkin.TabSoft;
+    }
+
+    public get isTabLightSkin(): boolean {
+        return this.skin === MNavbarSkin.TabLight || this.skin === MNavbarSkin.TabLightMain;
+    }
+
+    public get isTabUnderlineSkin(): boolean {
+        return this.skin === MNavbarSkin.TabUnderline;
+    }
+
+    public get isTabArrowSkin(): boolean {
+        return this.skin === MNavbarSkin.TabArrow;
+    }
+
+    private watchResizes(): void {
+        this.as<ElementQueries>().$off('resize', this.setupScrolllH);
+        this.$children.forEach((child: Vue) => {
+            child.$off('resize', this.setupScrolllH);
+        });
+
+        this.setupScrolllH();
+
+        this.as<ElementQueries>().$on('resize', this.setupScrolllH);
+        this.$children.forEach((child: Vue) => {
+            child.$on('resize', this.setupScrolllH);
+        });
     }
 
     private setSelectedIndicatorPosition(element, ref: string): void {
@@ -196,12 +253,6 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
         localRef.style.transform = 'translate3d(' + positionX + 'px, 0, 0)';
         localRef.style.width = width + 'px';
-    }
-
-    @Watch('selected')
-    private setAndUpdate(value): void {
-        this.internalValue = value;
-        this.scrollToSelected();
     }
 
     private setupScrolllH(): void {
@@ -228,9 +279,13 @@ export class MNavbar extends BaseNavbar implements Navbar {
         }
     }
 
-    private scrollToSelected(): void {
+    private async scrollToSelected(): Promise<void> {
+        const navbarItems: NavbarItems = await this.navbarItems();
+        if (!navbarItems) {
+            return;
+        }
 
-        this.navbarItems().elements.forEach(element => {
+        navbarItems.elements.forEach(element => {
             // Allow time to make sure an item is selected
             setTimeout(() => {
                 let wrapEl: HTMLElement = this.$refs.wrap;
@@ -262,59 +317,78 @@ export class MNavbar extends BaseNavbar implements Navbar {
         });
     }
 
-    private updateSelectedIndicatorPosition(): void {
-        this.navbarItems().elements.forEach(element => {
+    private setDisplayNavigationButtons(): void {
+        let spaceBeforeDisplayingButton: number = this.isTabLightSkin ? 5 : 0;
+        let wrapEl: HTMLElement = this.$refs.wrap;
+        if (wrapEl) {
+            const maxScrollLeft: number = Math.round(wrapEl.scrollWidth - wrapEl.clientWidth - spaceBeforeDisplayingButton);
+            this.showArrowRight = Math.round(wrapEl.scrollLeft) < maxScrollLeft;
+            this.showArrowLeft = wrapEl.scrollLeft > spaceBeforeDisplayingButton;
+        }
+    }
+
+    private async updateSelectedIndicatorPosition(): Promise<void> {
+        const navbarItems: NavbarItems = await this.navbarItems();
+        if (!navbarItems) {
+            return;
+        }
+        navbarItems.elements.forEach(element => {
             if (element && element.$props.value === this.model) {
-                setTimeout(() => {
-                    this.setSelectedIndicatorPosition(element, this.skin);
-                });
+                this.setSelectedIndicatorPosition(element, this.skin);
             }
         });
     }
 
-    private get buttonSkin(): string {
-        return this.skin === MNavbarSkin.NavMain || this.skin === MNavbarSkin.NavSub || this.skin === MNavbarSkin.NavSoft || this.skin === MNavbarSkin.TabDark || this.skin === MNavbarSkin.TabDarkMain ? 'dark' : 'light';
-    }
+    private async navbarItems(): Promise<NavbarItems> {
+        let navbarItems: Vue[] = this.$children.filter(element => element instanceof MNavbarItem);
+        let interval: number;
+        let countIntervalIteration: number = 0;
 
-    private get buttonRipple(): boolean {
-        return this.skin === MNavbarSkin.TabUnderline || this.skin === MNavbarSkin.TabArrow || this.skin === MNavbarSkin.TabSoft;
-    }
+        let getNavbarItems: Function = (navbarItems: Vue[]) => {
+            clearInterval(interval);
 
-    private get isTabLightSkin(): boolean {
-        return this.skin === MNavbarSkin.TabLight || this.skin === MNavbarSkin.TabLightMain;
-    }
+            let firstElement: HTMLElement = navbarItems[0].$el as HTMLElement;
+            let lastElement: HTMLElement = navbarItems[navbarItems.length - 1].$el as HTMLElement;
 
-    private get isTabUnderlineSkin(): boolean {
-        return this.skin === MNavbarSkin.TabUnderline;
-    }
-
-    private get isTabArrowSkin(): boolean {
-        return this.skin === MNavbarSkin.TabArrow;
-    }
-
-    private navbarItems(): NavbarItems {
-        let navbarItems: Vue[] = this.$children.filter(element => {
-            return element instanceof MNavbarItem;
-        });
-
-        // find first item
-        let firstElement: HTMLElement = navbarItems[0].$el as HTMLElement;
-        // find last item
-        let lastElement: HTMLElement = navbarItems[navbarItems.length - 1].$el as HTMLElement;
-
-        return {
-            elements: navbarItems,
-            firstElement: firstElement,
-            lastElement: lastElement
+            return {
+                elements: navbarItems,
+                firstElement: firstElement,
+                lastElement: lastElement
+            };
         };
+
+        return new Promise((resolve, reject) => {
+            if (navbarItems.length < 1) {
+                interval = window.setInterval(() => {
+                    navbarItems = this.$children.filter(element => element instanceof MNavbarItem);
+
+                    if (navbarItems.length > 0) {
+                        return resolve(getNavbarItems(navbarItems));
+                    }
+
+                    if (countIntervalIteration > 8) {
+                        clearInterval(interval);
+                    }
+                    countIntervalIteration++;
+                }, 300);
+            } else {
+                return resolve(getNavbarItems(navbarItems));
+            }
+        });
     }
 
-    private scrollLeft(): void {
+    private async scrollLeft(): Promise<void> {
         let wrapEl: HTMLElement = this.$refs.wrap;
         let outbound: Vue | undefined;
 
+        const navbarItems: NavbarItems = await this.navbarItems();
+
+        if (!navbarItems) {
+            return;
+        }
+
         // find the previus element outside visible area
-        this.navbarItems().elements.forEach(element => {
+        navbarItems.elements.forEach(element => {
             if ((element.$el as HTMLElement).offsetLeft < wrapEl.scrollLeft) {
                 outbound = element;
             }
@@ -325,12 +399,17 @@ export class MNavbar extends BaseNavbar implements Navbar {
         }
     }
 
-    private scrollRight(): void {
+    private async scrollRight(): Promise<void> {
         let wrapEl: HTMLElement = this.$refs.wrap;
         let cRight: number = wrapEl.scrollLeft + wrapEl.clientWidth;
 
+        const navbarItems: NavbarItems = await this.navbarItems();
+
+        if (!navbarItems) {
+            return;
+        }
         // find the next element outside visible area
-        let outbound: Vue | undefined = this.navbarItems().elements.find(element => (element.$el as HTMLElement).offsetLeft + element.$el.clientWidth > cRight);
+        let outbound: Vue | undefined = navbarItems.elements.find(element => (element.$el as HTMLElement).offsetLeft + element.$el.clientWidth > cRight);
 
         if (outbound) {
             // get the threshold of visible part of the element

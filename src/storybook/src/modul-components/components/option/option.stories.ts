@@ -65,6 +65,15 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${OPTION_NAME}`, module)
                        <m-option-item-archive></m-option-item-archive>
                        <m-option-item-delete></m-option-item-delete>
                    </m-option>`
+    }))
+    .add('max-width', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option max-width="333px">
+                       <m-option-item>Very very very wide custom option menu</m-option-item>
+                       <m-option-item>Custom option menu</m-option-item>
+                   </m-option>`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${OPTION_NAME}/skin`, module)
