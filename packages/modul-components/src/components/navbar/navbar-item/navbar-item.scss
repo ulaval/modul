@@ -20,12 +20,6 @@
             white-space: nowrap;
         }
     }
-
-    &__text {
-        &.pp--is-nowrap {
-            white-space: nowrap;
-        }
-    }
 }
 
 // Styles share
@@ -58,6 +52,12 @@
         outline: none;
         line-height: 1.2;
         text-decoration: none;
+    }
+
+    &__text {
+        &.pp--is-nowrap {
+            white-space: nowrap;
+        }
     }
 }
 
