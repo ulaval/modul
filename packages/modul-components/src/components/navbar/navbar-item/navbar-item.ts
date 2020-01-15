@@ -47,6 +47,7 @@ export class MNavbarItem extends ModulVue {
     @Watch('isMultiline')
     private isMultilineChanged(): void {
         this.setDimension();
+        this.setFormatedLabel();
     }
 
     @Watch('$route')
@@ -89,7 +90,7 @@ export class MNavbarItem extends ModulVue {
     }
 
     public get shouldNotWrap(): boolean {
-        return this.label.length < 15;
+        return Boolean(this.label) && this.label.length < 15;
     }
 
     public async setFormatedLabel(): Promise<void> {
