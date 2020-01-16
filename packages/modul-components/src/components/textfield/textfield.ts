@@ -73,7 +73,6 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
 
     readonly internalValue: string;
 
-
     private passwordAsText: boolean = false;
     private iconDescriptionShowPassword: string = this.$i18n.translate('m-textfield:show-password');
     private iconDescriptionHidePassword: string = this.$i18n.translate('m-textfield:hide-password');

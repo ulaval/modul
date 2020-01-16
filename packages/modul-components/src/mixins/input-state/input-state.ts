@@ -85,23 +85,23 @@ export class InputState extends ModulVue implements InputStateMixin {
     }
 
     public get isDisabled(): boolean {
-        return this.state === InputStateValue.Disabled;
+        return this.disabled;
     }
 
     public get isReadonly(): boolean {
-        return this.state === InputStateValue.Readonly;
+        return this.readonly;
     }
 
     public get isWaiting(): boolean {
-        return this.state === InputStateValue.Waiting;
+        return this.waiting;
     }
 
     public get hasError(): boolean {
-        return this.state === InputStateValue.Error;
+        return this.hasErrorMessage || this.error;
     }
 
     public get isValid(): boolean {
-        return this.state === InputStateValue.Valid;
+        return (this.hasValidMessage || this.valid) && !this.hasError;
     }
 
     public get state(): InputStateValue {
