@@ -1,5 +1,12 @@
 <div class="m-rich-text-editor-sandbox">
     <!-- Sandbox template -->
+
+    <m-rich-text-editor v-model="model"
+                        :label="'rich text with placeholder'"
+                        :waiting="true"
+                        :disabled="false"
+                        :readonly="false"></m-rich-text-editor>
+
     <h3>Froala Text Editor</h3>
     <h5 class="m-u--margin-bottom">fonctionne sans option spécifiée</h5>
     <div class="m-u--margin-bottom">
@@ -415,21 +422,21 @@
                             :show-image-button="true"
                             :show-image-float-layout="true"></m-rich-text-editor>
 
-    <div class="m-u--margin-bottom">
-        <h5 class="m-u--margin-bottom">RTE avec une taille par taille minimum de 5</h5>
-        <m-rich-text-editor v-model="model"
-                            :label="'rich text with placeholder'"
-                            :max-width="'large'"
-                            :placeholder="'some placeholder'"
-                            :focus="focus"
-                            :error="error"
-                            :error-message="errorMessage"
-                            :valid-message="validMessage"
-                            :helper-message="helperMessage"
-                            :waiting="waiting"
-                            :disabled="disabled"
-                            :readonly="readonly"
-                            :min-rows="5"></m-rich-text-editor>
-    </div>
+        <div class="m-u--margin-bottom">
+            <h5 class="m-u--margin-bottom">RTE avec une taille par taille minimum de 5</h5>
+            <m-rich-text-editor v-model="model"
+                                :label="'rich text with placeholder'"
+                                :max-width="'large'"
+                                :placeholder="'some placeholder'"
+                                :focus="focus"
+                                :error="error"
+                                :error-message="errorMessage"
+                                :valid-message="validMessage"
+                                :helper-message="helperMessage"
+                                :waiting="waiting"
+                                :disabled="disabled"
+                                :readonly="readonly"
+                                :min-rows="5"></m-rich-text-editor>
+        </div>
     </div>
 </div>

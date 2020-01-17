@@ -44,14 +44,19 @@ export class MButton extends Vue {
 
     @Prop()
     public precision: string;
+
     @Prop()
     public disabled: boolean;
+
     @Prop()
     public waiting: boolean;
+
     @Prop()
     public fullSize: boolean;
+
     @Prop()
     public iconName: string;
+
     @Prop({
         default: MButtonIconPosition.Left,
         validator: value =>
@@ -59,6 +64,7 @@ export class MButton extends Vue {
             value === MButtonIconPosition.Right
     })
     public iconPosition: MButtonIconPosition;
+
     @Prop({ default: '12px' })
     public iconSize: string;
 
@@ -88,10 +94,6 @@ export class MButton extends Vue {
 
     private get isSkinSecondary(): boolean {
         return this.skin === MButtonSkin.Secondary;
-    }
-
-    private get isWaiting(): boolean {
-        return !this.disabled ? this.waiting : false;
     }
 
     private get hasIcone(): boolean {

@@ -52,18 +52,25 @@ export interface InputStateInputSelector {
 export class InputState extends ModulVue implements InputStateMixin {
     @Prop()
     public disabled: boolean;
+
     @Prop()
     public waiting: boolean;
+
     @Prop()
     public error: boolean;
+
     @Prop()
     public valid: boolean;
+
     @Prop()
     public errorMessage: string;
+
     @Prop()
     public validMessage: string;
+
     @Prop()
     public helperMessage: string;
+
     @Prop({
         default: InputStateTagStyle.Default,
         validator: value =>
@@ -77,6 +84,7 @@ export class InputState extends ModulVue implements InputStateMixin {
             value === InputStateTagStyle.P
     })
     public tagStyle: string;
+
     @Prop()
     public readonly: boolean;
 

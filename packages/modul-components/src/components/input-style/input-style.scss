@@ -44,7 +44,11 @@ $m-input-style-border-radius: 3px;
         justify-content: flex-end;
     }
 
-    &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus):not(.m--is-readonly) {
+    &:hover:not(.m--is-disabled):not(.m--has-error):not(.m--is-valid):not(.m--is-focus) {
+        .m-input-style__main {
+            border-color: $m-color--grey;
+        }
+
         .m-input-style__label {
             color: $m-color--text;
         }
@@ -129,7 +133,6 @@ $m-input-style-border-radius: 3px;
     }
 
     &.m--is-disabled,
-    &.m--is-waiting,
     &.m--is-readonly {
         .m-input-style__main {
             border-style: dashed;
@@ -139,11 +142,8 @@ $m-input-style-border-radius: 3px;
     &.m--is-disabled,
     &.m--is-waiting {
         .m-input-style__label,
-        .m-input-style__input,
         .m-icon-button.m-icon-button,
-        .m-icon.m-icon,
-        input,
-        textarea {
+        .m-icon.m-icon {
             color: $m-input-style--color-disabled;
         }
     }
@@ -152,6 +152,12 @@ $m-input-style-border-radius: 3px;
         @include input-style-cursor() {
             color: $m-input-style--color-disabled;
             user-select: none;
+        }
+
+        .m-input-style__input,
+        input,
+        textarea {
+            color: $m-input-style--color-disabled;
         }
     }
 

@@ -23,7 +23,7 @@
                       :id="id"
                       :aria-haspopup="true"
                       :aria-expanded="open"
-                      :disabled="isDisabled || isWaiting"
+                      :disabled="isDisabled"
                       :readonly="isReadonly || isLessThanTablet"
                       :options="inputOptions"
                       :placeholder="propPlaceholder"
@@ -40,7 +40,7 @@
                        slot="suffix"
                        :aria-controls="id"
                        button-size="22px"
-                       :disabled="!active"
+                       :disabled="isDisabled || isReadonly"
                        icon-name="m-svg__calendar"
                        @click="togglePopup($event)">
             <m-i18n k="m-datepicker:open"
@@ -62,7 +62,7 @@
 
     <m-popup ref="popup"
              :open.sync="open"
-             :disabled="!active"
+             :disabled="isDisabled || isReadonly"
              :close-on-backdrop="true"
              :focus-management="isMqMaxS"
              open-trigger="manual"

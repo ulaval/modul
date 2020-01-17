@@ -34,10 +34,10 @@
                 @image-added="imageAdded"
                 @image-removed="imageRemoved"
                 @fullscreen="onFullscreen"
-                :disabled="disabled || waiting"
+                :disabled="isDisabled"
                 :custom-translations="customTranslations"
                 ref="input"
-                :readonly="readonly"
+                :readonly="isReadonly"
                 :min-rows="minRows"></froala>
     </m-input-style>
 

@@ -1,10 +1,10 @@
 <button class="m-button"
         :class="{ 'm--is-skin-primary': isSkinPrimary,
                'm--is-skin-secondary': isSkinSecondary,
-               'm--is-waiting': isWaiting,
+               'm--is-waiting': waiting,
                'm--is-disabled': disabled,
                'm--is-full-size': fullSize }"
-        :disabled="disabled || isWaiting"
+        :disabled="disabled"
         :type="type"
         @click="onClick"
         @mousedown="onMousedown"

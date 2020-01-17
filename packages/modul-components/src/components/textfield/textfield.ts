@@ -117,7 +117,7 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
     }
 
     private get passwordIcon(): boolean {
-        return this.icon && this.type === MTextfieldType.Password && this.as<InputState>().active;
+        return this.icon && this.type === MTextfieldType.Password && !this.as<InputState>().isDisabled;
     }
 
     private get passwordIconName(): string {

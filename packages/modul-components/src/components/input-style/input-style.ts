@@ -126,7 +126,7 @@ export class MInputStyle extends ModulVue {
     }
 
     public get isFocus(): boolean {
-        let focus: boolean = this.focus && this.as<InputState>().active;
+        let focus: boolean = this.focus && !this.as<InputState>().isDisabled;
         this.$emit('focus', focus);
         return focus;
     }

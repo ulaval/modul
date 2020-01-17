@@ -29,10 +29,13 @@ import WithRender from './textarea.html?style=./textarea.scss';
 export class MTextarea extends ModulVue implements InputManagementData {
     @Prop()
     public characterCount: boolean;
+
     @Prop({ default: 0 })
     public maxLength: number;
+
     @Prop({ default: true })
     public lengthOverflow: boolean;
+
     @Prop({ default: 0 })
     public characterCountThreshold: number;
 
