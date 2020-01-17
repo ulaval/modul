@@ -55,9 +55,18 @@
     }
 
     &__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         &.pp--is-nowrap {
             white-space: nowrap;
         }
+    }
+
+    &__text-left-contain,
+    &__text-right-contain {
+        flex-shrink: 0;
     }
 }
 

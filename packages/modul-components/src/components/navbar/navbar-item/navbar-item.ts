@@ -15,20 +15,27 @@ export class MNavbarItem extends ModulVue {
 
     @Prop()
     public value: string;
+
     @Prop()
     public label: string;
+
     @Prop()
     public disabled: boolean;
+
     @Prop()
     public url: string | Location;
+
     @Prop()
     public ariaHaspopup: boolean;
+
     @Prop()
     public ariaExpanded: boolean;
+
     @Prop()
     public ariaControls: string;
-    @Prop({ default: false })
-    public useNewWrapStrategy: boolean;
+
+    @Prop()
+    public multiline: boolean;
 
     // should be initialized to be reactive
     // tslint:disable-next-line:no-null-keyword
@@ -43,6 +50,11 @@ export class MNavbarItem extends ModulVue {
 
     @Emit('mouseleave')
     private emitMouseleave(event: MouseEvent): void { }
+
+    @Watch('label')
+    private labelChanged(): void {
+        this.setFormatedLabel();
+    }
 
     @Watch('isMultiline')
     private isMultilineChanged(): void {
@@ -70,8 +82,8 @@ export class MNavbarItem extends ModulVue {
         if (parentNavbar) {
             this.parentNavbar = (parentNavbar as any) as Navbar;
 
-            this.setFormatedLabel();
             this.setDimension();
+            this.setFormatedLabel();
 
             if (this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
                 this.parentNavbar.updateValue(this.value);
@@ -94,11 +106,11 @@ export class MNavbarItem extends ModulVue {
     }
 
     public async setFormatedLabel(): Promise<void> {
-        if (!this.useNewWrapStrategy || !this.label) {
+        this.formatedLabel = this.label;
+
+        if (!this.isMultiline && !this.label) {
             return;
         }
-
-        this.formatedLabel = this.label;
 
         await this.$nextTick();
 
@@ -115,20 +127,16 @@ export class MNavbarItem extends ModulVue {
             }
         }
 
-        const element: HTMLElement = this.$refs.item as HTMLElement;
+        const itemValue: HTMLElement = this.$refs.itemValue as HTMLElement;
 
-        if (!element) {
+        if (!itemValue) {
             return;
         }
 
-        const itemElementComputedStyle: CSSStyleDeclaration = window.getComputedStyle(element);
-        const yPadding: number =
-            parseInt(itemElementComputedStyle.getPropertyValue('padding-top'), 10)
-            +
-            parseInt(itemElementComputedStyle.getPropertyValue('padding-bottom'), 10);
-        const fontSize: number = parseFloat(itemElementComputedStyle.getPropertyValue('font-size'));
+        const itemComputedStyle: CSSStyleDeclaration = window.getComputedStyle(itemValue);
+        const fontSize: number = parseFloat(itemComputedStyle.getPropertyValue('font-size'));
 
-        if ((element.clientHeight - yPadding) / fontSize <= 3) {
+        if (itemValue.clientHeight / fontSize <= 3) {
             return;
         }
 
@@ -146,13 +154,12 @@ export class MNavbarItem extends ModulVue {
             + '</span>';
     }
 
-
     public get isSelected(): boolean {
         return !!this.parentNavbar && !this.disabled && this.value === this.parentNavbar.model;
     }
 
     public get isMultiline(): boolean {
-        return this.parentNavbar ? this.parentNavbar.multiline : false;
+        return !this.multiline && this.parentNavbar ? this.parentNavbar.multiline : this.multiline;
     }
 
     public onClick(event: MouseEvent): void {
@@ -180,11 +187,11 @@ export class MNavbarItem extends ModulVue {
     }
 
     private setDimension(): void {
-        if (this.useNewWrapStrategy) {
+        if (this.label && !this.isMultiline) {
             return;
         }
 
-        let itemEl: HTMLElement = this.$refs.item as HTMLElement;
+        let itemEl: HTMLElement = this.$refs.itemValue as HTMLElement;
         if (itemEl && itemEl.style) {
             itemEl.style.removeProperty('width');
             itemEl.style.removeProperty('max-width');
@@ -211,6 +218,8 @@ export class MNavbarItem extends ModulVue {
                         itemElHeight = itemEl.clientHeight - paddingH;
                         lines = Math.floor(itemElHeight / fontSize);
                     } while (lines > 2);
+
+                    itemEl.style.width = itemEl.clientWidth + 1 + 'px'; // Add 1px for never to fall on more than two lines
 
                     // reset styles once completed
                     this.$el.classList.remove(FAKE_SELECTED_CLASS);
