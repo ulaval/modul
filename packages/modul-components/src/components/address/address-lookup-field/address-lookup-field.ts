@@ -10,8 +10,8 @@ const KEY_ADDRESS_TYPE: string = 'address';
 export interface AddressLookupFieldProps {
     origin: string | undefined;
     language: string | undefined;
-    label: string | undefined;
-    placeholder: string | undefined;
+    label?: string | undefined;
+    placeholder?: string | undefined;
 }
 @WithRender
 @Component
