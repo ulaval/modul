@@ -10,6 +10,8 @@ const KEY_ADDRESS_TYPE: string = 'address';
 export interface AddressLookupFieldProps {
     origin: string | undefined;
     language: string | undefined;
+    label: string | undefined;
+    placeholder: string | undefined;
 }
 @WithRender
 @Component
@@ -29,23 +31,13 @@ export class MAddressLookupField extends ModulVue {
     errorMessage: string;
 
     @Prop()
-    label: string;
+    label: string | undefined;
 
     @Prop()
-    placeholder: string;
-
-    get i18nSearch(): string {
-        return this.label || this.$i18n.translate('m-address-lookup-field:search-field');
-    }
-
-    get i18nPlaceholder(): string {
-        return this.placeholder || this.$i18n.translate('m-address-lookup-field:placeholder');
-    }
+    placeholder: string | undefined;
 
     selection: string = '';
-
     open: boolean = false;
-
     results: AddressSummary[] = [];
 
     @Watch('value', { deep: true, immediate: true })
@@ -76,6 +68,14 @@ export class MAddressLookupField extends ModulVue {
                 }
             }
         }
+    }
+
+    get i18nSearch(): string {
+        return this.label || this.$i18n.translate('m-address-lookup-field:search-field');
+    }
+
+    get i18nPlaceholder(): string {
+        return this.placeholder || this.$i18n.translate('m-address-lookup-field:placeholder');
     }
 
     getClassToggles(address: AddressSummary): { [className: string]: boolean } {
