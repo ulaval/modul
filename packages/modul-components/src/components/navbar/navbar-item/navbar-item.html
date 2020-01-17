@@ -26,8 +26,7 @@
             <span v-if="formatedLabel"
                   v-html="formatedLabel"
                   ref="itemValue"></span>
-            <div v-else-if="$slots.default"
-                 ref="itemValue">
+            <div v-else-if="$slots.default">
                 <slot>{{ value }}</slot>
             </div>
             <div v-if="$slots.rightContain"

@@ -108,15 +108,11 @@ export class MNavbarItem extends ModulVue {
     public async setFormatedLabel(): Promise<void> {
         this.formatedLabel = this.label;
 
-        if (!this.isMultiline && !this.label) {
+        if (!this.label || !this.isMultiline) {
             return;
         }
 
         await this.$nextTick();
-
-        if (!this.isMultiline) {
-            return;
-        }
 
         if (this.label) {
             if (this.label.length < 15) {
@@ -187,11 +183,11 @@ export class MNavbarItem extends ModulVue {
     }
 
     private setDimension(): void {
-        if (this.label && !this.isMultiline) {
+        if (this.label || !this.isMultiline) {
             return;
         }
 
-        let itemEl: HTMLElement = this.$refs.itemValue as HTMLElement;
+        let itemEl: HTMLElement = this.$refs.item as HTMLElement;
         if (itemEl && itemEl.style) {
             itemEl.style.removeProperty('width');
             itemEl.style.removeProperty('max-width');
@@ -219,7 +215,7 @@ export class MNavbarItem extends ModulVue {
                         lines = Math.floor(itemElHeight / fontSize);
                     } while (lines > 2);
 
-                    itemEl.style.width = itemEl.clientWidth + 1 + 'px'; // Add 1px for never to fall on more than two lines
+                    itemEl.style.width = itemEl.clientWidth + 2 + 'px'; // Add 2px for never to fall on more than two lines
 
                     // reset styles once completed
                     this.$el.classList.remove(FAKE_SELECTED_CLASS);
