@@ -28,8 +28,19 @@ export class MAddressLookupField extends ModulVue {
     @Prop()
     errorMessage: string;
 
-    i18nSearch: string = this.$i18n.translate('m-address-lookup-field:search-field');
-    i18nPlaceholder: string = this.$i18n.translate('m-address-lookup-field:placeholder');
+    @Prop()
+    label: string;
+
+    @Prop()
+    placeholder: string;
+
+    get i18nSearch(): string {
+        return this.label || this.$i18n.translate('m-address-lookup-field:search-field');
+    }
+
+    get i18nPlaceholder(): string {
+        return this.placeholder || this.$i18n.translate('m-address-lookup-field:placeholder');
+    }
 
     selection: string = '';
 
