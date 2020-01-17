@@ -10,8 +10,8 @@ const KEY_ADDRESS_TYPE: string = 'address';
 export interface AddressLookupFieldProps {
     origin: string | undefined;
     language: string | undefined;
-    label?: string | undefined;
-    placeholder?: string | undefined;
+    label?: string;
+    placeholder?: string;
 }
 @WithRender
 @Component
@@ -31,10 +31,10 @@ export class MAddressLookupField extends ModulVue {
     errorMessage: string;
 
     @Prop()
-    label: string | undefined;
+    label?: string;
 
     @Prop()
-    placeholder: string | undefined;
+    placeholder?: string;
 
     selection: string = '';
     open: boolean = false;
