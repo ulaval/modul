@@ -7,9 +7,9 @@
          :close-on-backdrop="false"
          :padding-body="false">
 
-    <template #trigger>
+    <span slot="trigger">
         <slot></slot>
-    </template>
+    </span>
 
     <div class="m-file-upload"
          v-m-file-drop.keep-store="storeName">
@@ -180,19 +180,19 @@
         </div>
 
     </div>
-    <template #footer>
+    <template slot="footer">
         <div :style="buttonCompletedStyle">
             <m-button @click="onAddClick"
                       :disabled="!isAddBtnEnabled"
                       class="m-file-upload__footer-add"
                       ref="modalConfirmButton">{{ buttonAdd }}
-                <template #precision
-                          v-show="completedFiles.length > 0">
+                <span slot="precision"
+                      v-show="completedFiles.length > 0">
                     <span>{{completedFiles.length}}
                         <m-i18n :nb="completedFiles.length"
                                 k="m-file-upload:file"></m-i18n>
                     </span>
-                </template>
+                </span>
 
             </m-button>
             <m-button @click="onCancelClick"
