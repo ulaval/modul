@@ -105,7 +105,7 @@ export class InputState extends ModulVue implements InputStateMixin {
     }
 
     public get hasError(): boolean {
-        return this.hasErrorMessage || this.error;
+        return (this.hasErrorMessage || this.error) && !this.disabled;
     }
 
     public get isValid(): boolean {
@@ -137,19 +137,19 @@ export class InputState extends ModulVue implements InputStateMixin {
     }
 
     public get hasErrorMessage(): boolean {
-        return (!!this.errorMessage || this.errorMessage === ' ') && !this.disabled && !this.waiting;
+        return (!!this.errorMessage || this.errorMessage === ' ') && !this.disabled;
     }
 
     public get hasValidMessage(): boolean {
-        return (!!this.validMessage || this.validMessage === ' ') && !this.disabled && !this.waiting && !this.hasErrorMessage;
+        return (!!this.validMessage || this.validMessage === ' ') && !this.disabled && !this.hasErrorMessage;
     }
 
     public get hasHelperMessage(): boolean {
-        return (!!this.helperMessage || this.helperMessage === ' ') && !this.disabled && !this.waiting;
+        return (!!this.helperMessage || this.helperMessage === ' ') && !this.disabled;
     }
 
     public get hasValidationMessage(): boolean {
-        return (this.hasErrorMessage || this.hasValidMessage || this.hasHelperMessage) && this.active;
+        return (this.hasErrorMessage || this.hasValidMessage || this.hasHelperMessage) && !this.disabled;
     }
 
     public getInput(): HTMLElement | undefined {

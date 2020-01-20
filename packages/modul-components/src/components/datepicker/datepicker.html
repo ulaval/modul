@@ -8,14 +8,14 @@
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
      @click="onClick">
     <m-input-style v-m-popup:popup
-                   :disabled="isDisabled"
                    :label="label"
                    :label-for="id"
+                   :label-up="labelUp"
+                   :disabled="isDisabled"
+                   :waiting="isWaiting"
                    :readonly="isReadonly"
                    :required-marker="requiredMarker"
-                   :waiting="isWaiting"
                    :focus="isFocus"
-                   :label-up="labelUp"
                    :empty="isEmpty"
                    :error="hasCalandarError"
                    :valid="isValid">

@@ -137,11 +137,7 @@ $m-input-style-border-radius: 3px;
         .m-input-style__main {
             border-style: dashed;
         }
-    }
 
-    &.m--is-disabled,
-    &.m--is-waiting {
-        .m-input-style__label,
         .m-icon-button.m-icon-button,
         .m-icon.m-icon {
             color: $m-input-style--color-disabled;
@@ -154,6 +150,7 @@ $m-input-style-border-radius: 3px;
             user-select: none;
         }
 
+        .m-input-style__label,
         .m-input-style__input,
         input,
         textarea {

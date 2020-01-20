@@ -80,6 +80,48 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
     .add('readonly', () => ({
         template: '<m-textfield :readonly="true" value="Lorem Ipsum"></m-textfield>'
     }))
+    .add('state', () => ({
+        template: `<div>
+            <m-textfield label="Disabled"
+                         value="Lorem Ipsum"
+                         :disabled="true"></m-textfield>
+            <m-textfield label="Readonly"
+                         value="Lorem Ipsum"
+                         :readonly="true"></m-textfield>
+            <m-textfield label="Waiting"
+                         value="Lorem Ipsum"
+                         :waiting="true"></m-textfield><br>
+            <m-textfield label="Disabled and error"
+                         value="Lorem Ipsum"
+                         :disabled="true"
+                         error-message="Error"></m-textfield>
+            <m-textfield label="Readonly"
+                         value="Lorem Ipsum"
+                         :readonly="true"
+                         error-message="Error"></m-textfield>
+            <m-textfield label="Waiting and error"
+                         value="Lorem Ipsum"
+                         :waiting="true"
+                         error-message="Error"></m-textfield><br>
+            <m-textfield label="Disabled and readonly"
+                         :disabled="true"
+                         :readonly="true"
+                         value="Lorem Ipsum"></m-textfield>
+            <m-textfield label="Disabled and waiting"
+                         :disabled="true"
+                         :waiting="true"
+                         value="Lorem Ipsum"></m-textfield>
+            <m-textfield label="Readonly and waiting"
+                         :readonly="true"
+                         :waiting="true"
+                         value="Lorem Ipsum"></m-textfield>
+            <m-textfield label="Disabled, readonly and waiting"
+                         :disabled="true"
+                         :readonly="true"
+                         :waiting="true"
+                         value="Lorem Ipsum"></m-textfield><br>
+        </div>`
+    }))
     .add('error', () => ({
         template: '<m-textfield :error="true" type="tel" value="12345"></m-textfield>'
     }))
