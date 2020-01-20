@@ -19,7 +19,7 @@
                       aria-haspopup="true"
                       :aria-controls="ariaControls"
                       :aria-expanded="open"
-                      :disabled="isDisabled || isWaiting"
+                      :disabled="isDisabled"
                       :id="id"
                       inputmode="decimal"
                       :options="inputMaskOptions"
@@ -35,7 +35,7 @@
                       @focus="onFocus"></m-input-mask>
         <m-icon-button slot="suffix"
                        icon-name="m-svg__clock"
-                       :disabled="!active"
+                       :disabled="isDisabled || isReadonly"
                        button-size="22px"
                        :aria-controls="id"
                        v-m-popup:popup>
@@ -54,7 +54,7 @@
                           :helper-message="helperMessage"></m-validation-message>
     <m-popup ref="popup"
              :open.sync="open"
-             :disabled="!active"
+             :disabled="isDisabled || isReadonly"
              :padding="false"
              :focus-management="isMqMaxS"
              @open="onPopupOpen"

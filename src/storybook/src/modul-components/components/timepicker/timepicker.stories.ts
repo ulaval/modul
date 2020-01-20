@@ -120,7 +120,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
                 model: '12:05'
             };
         }
-    })).add('required', () => ({
+    }))
+
+    .add('required', () => ({
         data(): any {
             return {
                 model: undefined
@@ -132,4 +134,53 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
             }
         },
         template: `<m-timepicker v-model="model" label="Time" :required-marker="true"></m-timepicker>`
+    }))
+
+    .add('state', () => ({
+        data(): any {
+            return {
+                model: '12:04'
+            };
+        },
+        template: `<div>
+            <m-timepicker v-model="model"
+                          label="Disabled"
+                          :disabled="true"></m-timepicker>
+            <m-timepicker v-model="model"
+                          label="Readonly"
+                          :readonly="true"></m-timepicker>
+            <m-timepicker v-model="model"
+                          label="Waiting"
+                          :waiting="true"></m-timepicker><br>
+            <m-timepicker v-model="model"
+                          label="Disabled"
+                          :disabled="true"
+                          error-message="Error"></m-timepicker>
+            <m-timepicker v-model="model"
+                          label="Readonly"
+                          :readonly="true"
+                          error-message="Error"></m-timepicker>
+            <m-timepicker v-model="model"
+                          label="Waiting"
+                          :waiting="true"
+                          error-message="Error"></m-timepicker><br>
+            <m-timepicker v-model="model"
+                          label="Disabled and readonly"
+                          :disabled="true"
+                          :readonly="true"></m-timepicker>
+            <m-timepicker v-model="model"
+                          label="Disabled and waiting"
+                          :disabled="true"
+                          :waiting="true"></m-timepicker>
+            <m-timepicker v-model="model"
+                          label="Readonly and waiting"
+                          :readonly="true"
+                          :waiting="true"></m-timepicker>
+            <m-timepicker v-model="model"
+                          label="Disabled, readonly and waiting"
+                          :disabled="true"
+                          :readonly="true"
+                          :waiting="true"></m-timepicker>
+        </div>`
     }));
+;
