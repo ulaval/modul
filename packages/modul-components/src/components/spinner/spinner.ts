@@ -8,8 +8,6 @@ import { SPINNER_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
 import WithRender from './spinner.html?style=./spinner.scss';
 
-
-
 export enum MSpinnerStyle {
     Dark = 'dark',
     Regular = 'regular',

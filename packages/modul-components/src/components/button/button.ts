@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { BUTTON_NAME } from '../component-names';
 import IconPlugin from '../icon/icon';
-import SpinnerPlugin from '../spinner/spinner';
+import SpinnerPlugin, { MSpinnerSize, MSpinnerStyle } from '../spinner/spinner';
 import WithRender from './button.html?style=./button.scss';
 
 export enum MButtonType {
@@ -68,6 +68,8 @@ export class MButton extends Vue {
     @Prop({ default: '12px' })
     public iconSize: string;
 
+    public spinnerSize: MSpinnerSize = MSpinnerSize.Small;
+
     @Emit('click')
     onClick(event: Event): void {
         (this.$el as HTMLElement).blur();
@@ -88,35 +90,39 @@ export class MButton extends Vue {
     @Emit('blur')
     onBlur(event: FocusEvent): void { }
 
-    private get isSkinPrimary(): boolean {
+    get isSkinPrimary(): boolean {
         return this.skin === MButtonSkin.Primary;
     }
 
-    private get isSkinSecondary(): boolean {
+    get isSkinSecondary(): boolean {
         return this.skin === MButtonSkin.Secondary;
     }
 
-    private get hasIcone(): boolean {
+    get spinnerSkin(): MSpinnerStyle {
+        return this.waiting && this.disabled ? MSpinnerStyle.Regular : MSpinnerStyle.Lighter;
+    }
+
+    get hasIcone(): boolean {
         return !!this.iconName;
     }
 
-    private get hasIconLeft(): boolean {
+    get hasIconLeft(): boolean {
         return this.iconPosition === MButtonIconPosition.Left && this.hasIcone && !this.waiting;
     }
 
-    private get hasIconRight(): boolean {
+    get hasIconRight(): boolean {
         return this.iconPosition === MButtonIconPosition.Right && this.hasIcone && !this.waiting;
     }
 
-    private get hasWaitingIconLeft(): boolean {
+    get hasWaitingIconLeft(): boolean {
         return this.iconPosition === MButtonIconPosition.Left && this.waiting;
     }
 
-    private get hasWaitingIconRight(): boolean {
+    get hasWaitingIconRight(): boolean {
         return this.iconPosition === MButtonIconPosition.Right && this.waiting;
     }
 
-    private get hasPrecision(): boolean {
+    get hasPrecision(): boolean {
         return !!this.precision || !!this.$slots.precision;
     }
 }
