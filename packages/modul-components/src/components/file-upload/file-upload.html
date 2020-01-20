@@ -7,9 +7,9 @@
          :close-on-backdrop="false"
          :padding-body="false">
 
-    <span slot="trigger">
+    <template #trigger>
         <slot></slot>
-    </span>
+    </template>
 
     <div class="m-file-upload"
          v-m-file-drop.keep-store="storeName">
@@ -70,7 +70,8 @@
                         k="m-file-upload:format"
                         :nb="allowedExtensions.length"></m-i18n>: {{fileAllowedExtensions}}
             </p>
-            <p class="m-file-upload__drop-zone__format" v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
+            <p class="m-file-upload__drop-zone__format"
+               v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
         </div>
         <div class="m-file-upload__no-drop-zone"
              v-else>
@@ -90,7 +91,8 @@
                         k="m-file-upload:format"
                         :nb="allowedExtensions.length"></m-i18n>: {{fileAllowedExtensions}}
             </p>
-            <p class="m-file-upload__drop-zone__format" v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
+            <p class="m-file-upload__drop-zone__format"
+               v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
         </div>
 
         <h3 class="m-file-upload__title"
@@ -178,17 +180,20 @@
         </div>
 
     </div>
-    <template slot="footer">
+    <template #footer>
         <div :style="buttonCompletedStyle">
             <m-button @click="onAddClick"
                       :disabled="!isAddBtnEnabled"
                       class="m-file-upload__footer-add"
                       ref="modalConfirmButton">{{ buttonAdd }}
-                <span slot="precision"
-                      v-show="completedFiles.length > 0">{{completedFiles.length}}
-                    <m-i18n :nb="completedFiles.length"
-                            k="m-file-upload:file"></m-i18n>
-                </span>
+                <template #precision
+                          v-show="completedFiles.length > 0">
+                    <span>{{completedFiles.length}}
+                        <m-i18n :nb="completedFiles.length"
+                                k="m-file-upload:file"></m-i18n>
+                    </span>
+                </template>
+
             </m-button>
             <m-button @click="onCancelClick"
                       skin="secondary"
