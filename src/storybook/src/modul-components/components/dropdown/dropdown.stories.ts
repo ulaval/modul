@@ -75,6 +75,91 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
                         </m-dropdown>
                     </m-overlay>
                 </div>`
+    }))
+    .add('state', () => ({
+        data: () => ({
+            model: 1
+        }),
+        template: `<div>
+            <m-dropdown v-model="model"
+                        label="Disabled"
+                        :disabled="true">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+            <m-dropdown v-model="model"
+                        label="Readonly"
+                        :readonly="true">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+            <m-dropdown v-model="model"
+                        label="Waiting"
+                        :waiting="true">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown><br>
+            <m-dropdown v-model="model"
+                        label="Disabled"
+                        :disabled="true"
+                        error-message="Error">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+            <m-dropdown v-model="model"
+                        label="Readonly"
+                        :readonly="true"
+                        error-message="Error">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+            <m-dropdown v-model="model"
+                        label="Waiting"
+                        :waiting="true"
+                        error-message="Error">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown><br>
+            <m-dropdown v-model="model"
+                        label="Disabled and readonly"
+                        :disabled="true"
+                        :readonly="true">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+            <m-dropdown v-model="model"
+                        label="Disabled and readonly"
+                        :readonly="true"
+                        :waiting="true">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+            <m-dropdown v-model="model"
+                        label="Disabled and waiting"
+                        :disabled="true"
+                        :waiting="true">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+            <m-dropdown v-model="model"
+                        label="Disabled, readonly and waiting"
+                        :disabled="true"
+                        :readonly="true"
+                        :waiting="true">
+                <m-dropdown-item v-for="i in 4"
+                                 :value="i"
+                                 :label="'Value ' + i"></m-dropdown-item>
+            </m-dropdown>
+        </div>`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/filterable`, module)
