@@ -11,6 +11,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import boldIcon from '../../../assets/icons/svg/Froala-bold.svg';
 import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
+import specialCharsIcon from '../../../assets/icons/svg/Froala-special-charracters.svg';
 import stylesIcon from '../../../assets/icons/svg/Froala-styles.svg';
 import titleIcon from '../../../assets/icons/svg/Froala-title.svg';
 import { ElementQueries } from '../../../mixins/element-queries/element-queries';
@@ -156,7 +157,6 @@ const SCROLL_TO_OFFSET: number = -50;
     protected addCustomIcons(): void {
         FroalaEditor.DefineIconTemplate('custom-icons', '[SVG]');
         FroalaEditor.DefineIconTemplate('custom-icons-sub-menu', '<div class="fr-sub-menu">[SVG]</div>');
-        FroalaEditor.DefineIconTemplate('custom-icons-span', '[SPAN]');
 
         if (this.$i18n.currentLang() === 'fr') {
             FroalaEditor.DefineIcon('bold', { SVG: (boldIcon as string), template: 'custom-icons' });
@@ -169,7 +169,7 @@ const SCROLL_TO_OFFSET: number = -50;
         FroalaEditor.DefineIcon('paragraphStyle', { SVG: (titleIcon as string), template: 'custom-icons' });
         FroalaEditor.DefineIcon('moreText', { SVG: (stylesIcon as string), template: 'custom-icons-sub-menu' });
         FroalaEditor.DefineIcon('moreParagraph', { SVG: (listsIcon as string), template: 'custom-icons-sub-menu' });
-        FroalaEditor.DefineIcon('specialCharacters', { SPAN: '<span class="fr-icon-special-characters" >Ω</span>', template: 'custom-icons-span' });
+        FroalaEditor.DefineIcon('specialCharacters', { SVG: (specialCharsIcon as string), template: 'custom-icons' });
     }
 
     protected addImageButton(): void {
