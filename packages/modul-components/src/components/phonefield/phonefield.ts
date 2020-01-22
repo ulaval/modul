@@ -1,6 +1,5 @@
 import 'cleave.js/dist/addons/cleave-phone.i18n.js';
 import { CountryCode, getExampleNumber, ParsedNumber, parseNumber, PhoneNumber } from 'libphonenumber-js';
-import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -11,11 +10,8 @@ import { FRENCH } from '../../utils/i18n/i18n';
 import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { PHONEFIELD_NAME } from '../component-names';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
-import InputStyle from '../input-style/input-style';
 import { MSelect } from '../select/select';
-import ValidationMesagePlugin from '../validation-message/validation-message';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
 import WithRender from './phonefield.html?style=./phonefield.scss';
@@ -227,15 +223,3 @@ export class MPhonefield extends ModulVue {
     }
 
 }
-
-const PhonefieldPlugin: PluginObject<any> = {
-    install(v): void {
-        v.prototype.$log.error('PhonefieldPlugin will be deprecated in modul v.1.0, this components should not be installed  globally for performance reasons');
-
-        v.use(InputStyle);
-        v.use(ValidationMesagePlugin);
-        v.component(PHONEFIELD_NAME, MPhonefield);
-    }
-};
-
-export default PhonefieldPlugin;

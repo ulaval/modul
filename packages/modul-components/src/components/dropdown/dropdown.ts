@@ -13,7 +13,6 @@ import UserAgentUtil from '../../utils/user-agent/user-agent';
 import uuid from '../../utils/uuid/uuid';
 import ButtonPlugin from '../button/button';
 import { DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
-import { MDropdownGroup } from '../dropdown-group/dropdown-group';
 import InputStylePlugin, { MInputStyle } from '../input-style/input-style';
 import PopupPlugin, { MPopup } from '../popup/popup';
 import RadioStylePlugin from '../radio-style/radio-style';
@@ -329,15 +328,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
                 if (!item.disabled) {
                     navigation.push(item);
                 }
-            } else if (item instanceof MDropdownGroup) {
-                (item as Vue).$children.forEach(groupItem => {
-                    if (groupItem instanceof MDropdownItem && !groupItem.inactive && !groupItem.filtered) {
-                        items.push(groupItem);
-                        if (!groupItem.disabled) {
-                            navigation.push(groupItem);
-                        }
-                    }
-                });
             }
         });
         this.internalItems = items;
