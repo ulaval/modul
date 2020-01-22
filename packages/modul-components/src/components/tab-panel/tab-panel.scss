@@ -1,9 +1,0 @@
-@import 'commons';
-
-.m-tab-panel {
-    display: block;
-
-    &__hidden {
-        @include m-visually-hidden;
-    }
-}

@@ -30,11 +30,17 @@ exports[`Storyshots modul-components|m-navbar Default Story 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Home
-              </span>
+                <!---->
+                 
+                <div>
+                  Home
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -48,11 +54,17 @@ exports[`Storyshots modul-components|m-navbar Default Story 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                About
-              </span>
+                <!---->
+                 
+                <div>
+                  About
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -66,11 +78,17 @@ exports[`Storyshots modul-components|m-navbar Default Story 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Contact
-              </span>
+                <!---->
+                 
+                <div>
+                  Contact
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -135,14 +153,17 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #1
-                </span>
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -152,14 +173,17 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #2
-                </span>
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -169,14 +193,17 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #3
-                </span>
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -186,14 +213,17 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #4
-                </span>
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -203,14 +233,17 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #5
-                </span>
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
               </div>
             </li>
              
@@ -276,14 +309,19 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #1
-                </span>
+                  <!---->
+                   
+                  <div>
+                    Very very very long text #1
+                  </div>
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -293,14 +331,19 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #2
-                </span>
+                  <!---->
+                   
+                  <div>
+                    Very very very long text #2
+                  </div>
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -310,14 +353,19 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #3
-                </span>
+                  <!---->
+                   
+                  <div>
+                    Very very very long text #3
+                  </div>
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -327,14 +375,19 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #4
-                </span>
+                  <!---->
+                   
+                  <div>
+                    Very very very long text #4
+                  </div>
+                   
+                  <!---->
+                </div>
               </div>
             </li>
             <li
@@ -344,14 +397,19 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
               <div
                 class="m-navbar-item__contents"
                 role="button"
-                style="white-space: nowrap;"
                 tabindex="0"
               >
-                <span
+                <div
                   class="m-navbar-item__text"
                 >
-                  Very very very long text #5
-                </span>
+                  <!---->
+                   
+                  <div>
+                    Very very very long text #5
+                  </div>
+                   
+                  <!---->
+                </div>
               </div>
             </li>
              
@@ -419,11 +477,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -436,11 +500,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -453,11 +523,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -470,11 +546,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -487,11 +569,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -504,11 +592,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -521,11 +615,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -538,11 +638,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -555,11 +661,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -572,11 +684,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -589,11 +707,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #11
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #11
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -606,11 +730,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #12
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #12
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -623,11 +753,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #13
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #13
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -640,11 +776,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #14
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #14
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -657,11 +799,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #15
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #15
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -674,11 +822,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #16
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #16
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -691,11 +845,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #17
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #17
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -708,11 +868,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #18
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #18
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -725,11 +891,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #19
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #19
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -742,11 +914,17 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #20
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #20
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -813,11 +991,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -830,11 +1014,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -847,11 +1037,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -864,11 +1060,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -881,11 +1083,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -898,11 +1106,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -915,11 +1129,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -932,11 +1152,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -949,11 +1175,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -966,11 +1198,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -1038,11 +1276,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1055,11 +1299,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1072,11 +1322,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1089,11 +1345,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1106,11 +1368,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1123,11 +1391,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1140,11 +1414,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1157,11 +1437,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1174,11 +1460,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1191,11 +1483,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -1262,11 +1560,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1279,11 +1583,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1296,11 +1606,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1313,11 +1629,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1330,11 +1652,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1347,11 +1675,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1364,11 +1698,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1381,11 +1721,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1398,11 +1744,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1415,11 +1767,17 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -1486,11 +1844,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1503,11 +1867,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1520,11 +1890,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1537,11 +1913,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1554,11 +1936,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1571,11 +1959,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1588,11 +1982,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1605,11 +2005,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1622,11 +2028,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1639,11 +2051,17 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -1710,11 +2128,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1727,11 +2151,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1744,11 +2174,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1761,11 +2197,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1778,11 +2220,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1795,11 +2243,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1812,11 +2266,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1829,11 +2289,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1846,11 +2312,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1863,11 +2335,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -1937,11 +2415,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1954,11 +2438,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1971,11 +2461,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -1988,11 +2484,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2005,11 +2507,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2022,11 +2530,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2039,11 +2553,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2056,11 +2576,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2073,11 +2599,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2090,11 +2622,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -2161,11 +2699,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2178,11 +2722,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2195,11 +2745,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2212,11 +2768,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2229,11 +2791,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2246,11 +2814,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2263,11 +2837,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2280,11 +2860,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2297,11 +2883,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2314,11 +2906,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -2385,11 +2983,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2402,11 +3006,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2419,11 +3029,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2436,11 +3052,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2453,11 +3075,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2470,11 +3098,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2487,11 +3121,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2504,11 +3144,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2521,11 +3167,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2538,11 +3190,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -2609,11 +3267,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #1
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #1
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2626,11 +3290,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #2
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #2
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2643,11 +3313,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #3
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #3
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2660,11 +3336,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #4
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #4
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2677,11 +3359,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #5
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #5
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2694,11 +3382,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #6
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #6
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2711,11 +3405,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #7
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #7
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2728,11 +3428,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #8
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #8
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2745,11 +3451,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #9
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #9
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
           <li
@@ -2762,11 +3474,17 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
               style="white-space: nowrap;"
               tabindex="0"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Item navbar #10
-              </span>
+                <!---->
+                 
+                <div>
+                  Item navbar #10
+                </div>
+                 
+                <!---->
+              </div>
             </div>
           </li>
            
@@ -2806,6 +3524,264 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
+<div>
+  <div
+    class="m-navbar m--is-skin-nav-main m--is-multiline"
+  >
+    <div
+      class="m-navbar__max-width"
+      style="max-width: 1200px;"
+    >
+      <!---->
+       
+      <div
+        class="m-navbar__contents"
+      >
+        <div
+          class="m-navbar__wrap"
+        >
+          <ul
+            class="m-navbar__list"
+            role="menubar"
+          >
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                tabindex="0"
+              >
+                <div
+                  class="m-navbar-item__text pp--is-nowrap"
+                >
+                  <div
+                    class="m-navbar-item__text-left-contain"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-u--margin-right--s"
+                      height="20px"
+                      width="20px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+             
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                tabindex="0"
+              >
+                <div
+                  class="m-navbar-item__text pp--is-nowrap"
+                >
+                  <div
+                    class="m-navbar-item__text-left-contain"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-u--margin-right--s"
+                      height="20px"
+                      width="20px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </li>
+             
+            <!---->
+             
+            <!---->
+          </ul>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+    <div
+      class="resize-sensor"
+      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
+<div>
+  <div
+    class="m-navbar m--is-skin-nav-main m--is-multiline"
+  >
+    <div
+      class="m-navbar__max-width"
+      style="max-width: 1200px;"
+    >
+      <!---->
+       
+      <div
+        class="m-navbar__contents"
+      >
+        <div
+          class="m-navbar__wrap"
+        >
+          <ul
+            class="m-navbar__list"
+            role="menubar"
+          >
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                tabindex="0"
+              >
+                <div
+                  class="m-navbar-item__text pp--is-nowrap"
+                >
+                  <!---->
+                   
+                  <!---->
+                   
+                  <div
+                    class="m-navbar-item__text-right-contain"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-u--margin-left--s"
+                      height="20px"
+                      width="20px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </li>
+             
+            <li
+              class="m-navbar-item"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__contents"
+                role="button"
+                tabindex="0"
+              >
+                <div
+                  class="m-navbar-item__text pp--is-nowrap"
+                >
+                  <!---->
+                   
+                  <!---->
+                   
+                  <div
+                    class="m-navbar-item__text-right-contain"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-u--margin-left--s"
+                      height="20px"
+                      width="20px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </li>
+             
+            <!---->
+             
+            <!---->
+          </ul>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+    <div
+      class="resize-sensor"
+      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-navbar Url 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
@@ -2834,11 +3810,17 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
               class="m-navbar-item__contents"
               href="#/story/components-m-navbar--url"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Home
-              </span>
+                <!---->
+                 
+                <div>
+                  Home
+                </div>
+                 
+                <!---->
+              </div>
             </a>
           </li>
            
@@ -2850,11 +3832,17 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
               class="m-navbar-item__contents router-link-exact-active router-link-active"
               href="#/"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                About
-              </span>
+                <!---->
+                 
+                <div>
+                  About
+                </div>
+                 
+                <!---->
+              </div>
             </a>
           </li>
            
@@ -2866,11 +3854,17 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
               class="m-navbar-item__contents router-link-exact-active router-link-active"
               href="#/"
             >
-              <span
+              <div
                 class="m-navbar-item__text"
               >
-                Contact
-              </span>
+                <!---->
+                 
+                <div>
+                  Contact
+                </div>
+                 
+                <!---->
+              </div>
             </a>
           </li>
            

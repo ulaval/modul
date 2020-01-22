@@ -19,6 +19,14 @@ $m-tree-node--child-indentation: 20px;
         margin-top: 1px;
         margin-bottom: 1px;
         padding-left: $m-tree-node--child-indentation;
+        list-style: none;
+
+        /deep/ .m-tree-node {
+            &__children {
+                padding: 0;
+                list-style: none;
+            }
+        }
 
         > .m-tree-node:only-child {
             margin-left: 0;

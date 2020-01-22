@@ -15,20 +15,32 @@ export class MNavbarItem extends ModulVue {
 
     @Prop()
     public value: string;
+
+    @Prop()
+    public label: string;
+
     @Prop()
     public disabled: boolean;
+
     @Prop()
     public url: string | Location;
+
     @Prop()
     public ariaHaspopup: boolean;
+
     @Prop()
     public ariaExpanded: boolean;
+
     @Prop()
     public ariaControls: string;
+
+    @Prop()
+    public multiline: boolean;
 
     // should be initialized to be reactive
     // tslint:disable-next-line:no-null-keyword
     private parentNavbar: Navbar | null = null;
+    public formatedLabel: string = '';
 
     @Emit('click')
     private emitClick(event: MouseEvent): void { }
@@ -39,9 +51,15 @@ export class MNavbarItem extends ModulVue {
     @Emit('mouseleave')
     private emitMouseleave(event: MouseEvent): void { }
 
+    @Watch('label')
+    private labelChanged(): void {
+        this.setFormatedLabel();
+    }
+
     @Watch('isMultiline')
     private isMultilineChanged(): void {
         this.setDimension();
+        this.setFormatedLabel();
     }
 
     @Watch('$route')
@@ -54,6 +72,7 @@ export class MNavbarItem extends ModulVue {
     }
 
     protected mounted(): void {
+        this.formatedLabel = this.label;
         let parentNavbar: BaseNavbar | undefined;
         parentNavbar = this.getParent<BaseNavbar>(
             p => p instanceof BaseNavbar || // these will fail with Jest, but should pass in prod mode
@@ -62,7 +81,9 @@ export class MNavbarItem extends ModulVue {
 
         if (parentNavbar) {
             this.parentNavbar = (parentNavbar as any) as Navbar;
+
             this.setDimension();
+            this.setFormatedLabel();
 
             if (this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
                 this.parentNavbar.updateValue(this.value);
@@ -71,11 +92,62 @@ export class MNavbarItem extends ModulVue {
             console.error('m-navbar-item need to be inside m-navbar');
         }
 
+        this.$modul.event.$on('resize', this.setFormatedLabel);
         this.$modul.event.$on('resize', this.setDimension);
     }
 
     protected beforeDestroy(): void {
         this.$modul.event.$off('resize', this.setDimension);
+        this.$modul.event.$off('resize', this.setFormatedLabel);
+    }
+
+    public get shouldNotWrap(): boolean {
+        return Boolean(this.label) && this.label.length < 15;
+    }
+
+    public async setFormatedLabel(): Promise<void> {
+        this.formatedLabel = this.label;
+
+        if (!this.label || !this.isMultiline) {
+            return;
+        }
+
+        await this.$nextTick();
+
+        if (this.label) {
+            if (this.label.length < 15) {
+                return;
+            } else if (this.label.length > 30) {
+                this._splitAndWrap();
+                return;
+            }
+        }
+
+        const itemValue: HTMLElement = this.$refs.itemValue as HTMLElement;
+
+        if (!itemValue) {
+            return;
+        }
+
+        const itemComputedStyle: CSSStyleDeclaration = window.getComputedStyle(itemValue);
+        const fontSize: number = parseFloat(itemComputedStyle.getPropertyValue('font-size'));
+
+        if (itemValue.clientHeight / fontSize <= 3) {
+            return;
+        }
+
+        this._splitAndWrap();
+        return;
+    }
+
+    private _splitAndWrap(): void {
+        const split: string[] = this.label.split(' ');
+
+        split.splice(Math.round(split.length / 2), 0, '</br>');
+
+        this.formatedLabel = '<span style="all: inherit; white-space: nowrap;">'
+            + split.join(' ')
+            + '</span>';
     }
 
     public get isSelected(): boolean {
@@ -83,7 +155,7 @@ export class MNavbarItem extends ModulVue {
     }
 
     public get isMultiline(): boolean {
-        return this.parentNavbar ? this.parentNavbar.multiline : false;
+        return !this.multiline && this.parentNavbar ? this.parentNavbar.multiline : this.multiline;
     }
 
     public onClick(event: MouseEvent): void {
@@ -111,6 +183,10 @@ export class MNavbarItem extends ModulVue {
     }
 
     private setDimension(): void {
+        if (this.label || !this.isMultiline) {
+            return;
+        }
+
         let itemEl: HTMLElement = this.$refs.item as HTMLElement;
         if (itemEl && itemEl.style) {
             itemEl.style.removeProperty('width');
@@ -138,6 +214,8 @@ export class MNavbarItem extends ModulVue {
                         itemElHeight = itemEl.clientHeight - paddingH;
                         lines = Math.floor(itemElHeight / fontSize);
                     } while (lines > 2);
+
+                    itemEl.style.width = itemEl.clientWidth + 2 + 'px'; // Add 2px for never to fall on more than two lines
 
                     // reset styles once completed
                     this.$el.classList.remove(FAKE_SELECTED_CLASS);
