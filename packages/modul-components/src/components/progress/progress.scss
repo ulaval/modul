@@ -2,6 +2,11 @@
 $m-loading-speed-indeterminate: 2s;
 $m-circle-transition-speed: cubic-bezier(0.25, 0.8, 0.25, 1);
 
+@include indeterminate();
+@include indeterminate-short();
+@include m-progress-spinner-rotate();
+@include m-progress-spinner-initial-rotate();
+
 .m-progress {
     &:not(.m--is-circle) {
         position: relative;

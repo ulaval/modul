@@ -1,10 +1,9 @@
-import Vue, { PluginObject } from 'vue';
+import { PROGRESS_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/progress';
+import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
+import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-
-import { ModulVue } from '../../utils/vue/vue';
-import { PROGRESS_NAME } from '../component-names';
 import WithRender from './progress.sandbox.html';
-import ProgressPlugin from './progress';
 
 const DEFAULT_COUNT: number = 5 * 1000;
 
