@@ -60,13 +60,20 @@ export class MMultiSelect extends ModulVue {
 
     public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
     public internalValue: any[] = [];
-    public internalIsFocus: boolean = false;
+    public isFocus: boolean = false;
     public selectAllFocused: boolean = false;
     public open: boolean = false;
 
     public $refs: {
         baseSelect: MBaseSelect;
+        input: HTMLElement;
     };
+
+    @Emit('focus')
+    private emitFocus(event: FocusEvent): void { }
+
+    @Emit('blur')
+    private emitBlur(event: FocusEvent): void { }
 
     created(): void {
         if (!Array.isArray(this.value)) {
@@ -124,6 +131,10 @@ export class MMultiSelect extends ModulVue {
         return -1;
     }
 
+    get iconArrowTitle(): string {
+        return this.open ? this.$i18n.translate('m-multi-select:close') : this.$i18n.translate('m-multi-select:open');
+    }
+
     public toggle(): void {
         this.selectAllFocused = false;
         this.$refs.baseSelect.togglePopup();
@@ -154,19 +165,42 @@ export class MMultiSelect extends ModulVue {
         this.$refs.baseSelect.update();
     }
 
-    onFocus($event: FocusEvent): void {
-        this.internalIsFocus = this.as<InputStateMixin>().active;
-        if (this.internalIsFocus) {
-            this.$emit('focus', $event);
+    onFocus(event: FocusEvent): void {
+        if (this.as<InputStateMixin>().disabled) {
+            return;
+        }
+        this.isFocus = true;
+        if (this.isFocus) {
+            this.emitFocus(event);
+            this.mettreAJourFocus();
         }
     }
 
-    @Emit('blur')
-    onBlur($event: FocusEvent): void {
-        this.internalIsFocus = false;
+    onBlur(event: FocusEvent): void {
+        this.emitBlur(event);
+        if (this.open) {
+            return;
+        }
+        this.isFocus = this.open;
+        this.mettreAJourFocus();
+    }
+
+    onClose(): void {
+        this.isFocus = false;
+        this.mettreAJourFocus();
+    }
+
+    mettreAJourFocus(): void {
+        if (this.focus === this.isFocus) {
+            return;
+        }
+        this.$emit('update:focus', this.isFocus);
     }
 
     onKeydownDown($event: KeyboardEvent): void {
+        if (!this.open) {
+            this.open = true;
+        }
         if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
             this.$refs.baseSelect.focusedIndex = -1;
             this.selectAllFocused = true;
@@ -177,6 +211,9 @@ export class MMultiSelect extends ModulVue {
     }
 
     onKeydownUp($event: KeyboardEvent): void {
+        if (!this.open) {
+            this.open = true;
+        }
         if (this.$refs.baseSelect.focusedIndex === 0 && this.linkSelectAll) {
             this.$refs.baseSelect.focusedIndex = -1;
             this.selectAllFocused = true;
@@ -217,16 +254,16 @@ export class MMultiSelect extends ModulVue {
         this.internalValue = this.value;
     }
 
-    @Watch('focus')
+    @Watch('focus', { immediate: true })
     private focusChanged(focus: boolean): void {
-        this.internalIsFocus = focus && this.as<InputStateMixin>().active;
-        let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (inputEl) {
-            if (this.internalIsFocus) {
-                inputEl.focus();
-            } else {
-                inputEl.blur();
-            }
+        let inputEl: HTMLElement | undefined = this.$refs.input;
+        if (this.as<InputStateMixin>().disabled || !inputEl) {
+            return;
+        }
+        if (focus) {
+            inputEl.focus();
+        } else if (this.isFocus) {
+            inputEl.blur();
         }
     }
 }

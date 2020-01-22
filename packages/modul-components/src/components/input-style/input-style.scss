@@ -158,12 +158,12 @@ $m-input-style-border-radius: 3px;
         }
     }
 
-    &.m--is-waiting {
-        @include input-style-cursor(wait);
+    &.m--is-readonly:not(.m--is-waiting) {
+        @include input-style-cursor(pointer);
     }
 
-    &.m--is-readonly {
-        @include input-style-cursor();
+    &.m--is-waiting:not(.m--is-readonly) {
+        @include input-style-cursor(wait);
     }
 
     &.m--is-anim-ready {

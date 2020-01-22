@@ -80,8 +80,45 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
             options: optionsVonTrapp
         }),
         template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" label="La famille Von Trapp" :options="options" v-model="model1"></m-multi-select>`
-    })
-    );
+    }))
+    .add('state', () => ({
+        data: () => ({
+            model: [optionsVonTrapp[0]],
+            options: optionsVonTrapp,
+            focus: false
+        }),
+        template: `<div>
+            <m-multi-select v-model="model"
+                            label="Disabled"
+                            :options="options"
+                            :disabled="true"></m-multi-select>
+            <m-multi-select v-model="model"
+                            label="Readonly"
+                            :options="options"
+                            :readonly="true"></m-multi-select>
+            <m-multi-select v-model="model"
+                            label="Waiting"
+                            :options="options"
+                            :waiting="true"
+                            :focus.sync="focus"></m-multi-select><br>
+            <m-multi-select v-model="model"
+                            label="Disabled and error"
+                            :options="options"
+                            :disabled="true"
+                            error-message="Error"></m-multi-select>
+            <m-multi-select v-model="model"
+                            label="Readonly  and error"
+                            :options="options"
+                            :readonly="true"
+                            error-message="Error"></m-multi-select>
+            <m-multi-select v-model="model"
+                            label="Waiting and error"
+                            :options="options"
+                            :waiting="true"
+                            error-message="Error"></m-multi-select>
+            <m-button @click="focus = !focus">focus: {{focus}}</m-button>
+        </div>`
+    }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
     .add('custom select-item', () => ({

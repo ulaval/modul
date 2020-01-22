@@ -1,6 +1,7 @@
 <transition :css="false">
     <m-chip-add v-if="isModeAdd"
                 :disabled="disabled"
+                :readonly="readonly"
                 :size="size"
                 @click="emitClick"
                 @add="emitAdd">
@@ -8,6 +9,7 @@
     </m-chip-add>
     <m-chip-delete v-if="isModeDelete"
                    :disabled="disabled"
+                   :readonly="readonly"
                    :size="size"
                    @click="emitClick"
                    @delete="emitDelete">

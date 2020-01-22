@@ -11,6 +11,9 @@ export class MChipAdd extends Vue {
     @Prop()
     disabled: boolean;
 
+    @Prop()
+    readonly: boolean;
+
     @Prop({ default: true })
     icon: boolean;
 
@@ -33,7 +36,7 @@ export class MChipAdd extends Vue {
     }
 
     public onClick(event: Event): void {
-        if (this.disabled) {
+        if (this.disabled || this.readonly) {
             return;
         }
         this.emitClick();

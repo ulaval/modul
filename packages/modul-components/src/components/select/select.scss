@@ -1,12 +1,10 @@
 @import "commons";
 
 .m-select {
-    display: inline-flex;
-    flex-direction: column;
-
-    &:focus {
-        outline: 0 solid transparent;
-    }
+    // .test {
+    // display: inline-flex;
+    // flex-direction: column;
+    // }
 
     &.m--has-validation-message {
         .m-select__validation-message {
@@ -15,37 +13,45 @@
     }
 
     &:not(.m--is-disabled) {
-        .m-select__arrow {
+        .m-select__icon {
             cursor: pointer;
         }
     }
 
-    &__arrow {
+    &__icon {
         cursor: pointer;
-        height: $m-touch-size;
-        width: calc(#{$m-touch-size} - #{$m-spacing});
+        width: #{$m-touch-size} - #{$m-spacing--l};
         display: flex;
         align-items: center;
         justify-content: left;
 
-        &__icon {
-            transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
-        }
-
         &.m--is-open {
-            .m-select__arrow__icon {
+            .m-select__icon-arrow {
                 transform: rotate(-180deg);
             }
         }
     }
 
+    &__icon-clear {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        width: $m-touch-size;
+    }
+
+    &__icon-arrow {
+        transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
+    }
+
     &.m--is-disabled,
     &.m--is-readonly {
-        .m-select__arrow {
+        .m-select__icon,
+        .m-select__icon-clear {
             cursor: default;
         }
 
-        .m-select__arrow__icon {
+        .m-select__icon-clear,
+        .m-select__icon-arrow {
             color: $m-input-style--color-disabled;
         }
     }

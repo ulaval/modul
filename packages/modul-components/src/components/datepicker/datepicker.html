@@ -1,7 +1,7 @@
 <div class="m-datepicker"
-     :class="{ 'm--is-disabled': isDisabled,
-            'm--is-readonly': isReadonly,
-            'm--is-waiting': isWaiting,
+     :class="{ 'm--is-disabled': disabled,
+            'm--is-readonly': readonly,
+            'm--is-waiting': waiting,
             'm--has-error': hasCalandarError,
             'm--is-valid': isValid,
             'm--has-validation-message': hasValidationMessage }"
@@ -11,9 +11,9 @@
                    :label="label"
                    :label-for="id"
                    :label-up="labelUp"
-                   :disabled="isDisabled"
-                   :waiting="isWaiting"
-                   :readonly="isReadonly"
+                   :disabled="disabled"
+                   :waiting="waiting"
+                   :readonly="readonly"
                    :required-marker="requiredMarker"
                    :focus="isFocus"
                    :empty="isEmpty"
@@ -23,8 +23,8 @@
                       :id="id"
                       :aria-haspopup="true"
                       :aria-expanded="open"
-                      :disabled="isDisabled"
-                      :readonly="isReadonly || isLessThanTablet"
+                      :disabled="disabled"
+                      :readonly="readonly || isLessThanTablet"
                       :options="inputOptions"
                       :placeholder="propPlaceholder"
                       :raw="false"
@@ -40,7 +40,7 @@
                        slot="suffix"
                        :aria-controls="id"
                        button-size="22px"
-                       :disabled="isDisabled || isReadonly"
+                       :disabled="disabled || readonly"
                        icon-name="m-svg__calendar"
                        @click="togglePopup($event)">
             <m-i18n k="m-datepicker:open"
@@ -52,8 +52,8 @@
 
     <div class="m-datepicker__validation">
         <m-validation-message class="m-datepicker__validation__message"
-                              :disabled="isDisabled"
-                              :waiting="isWaiting"
+                              :disabled="disabled"
+                              :waiting="waiting"
                               :error="hasCalandarError"
                               :error-message="calandarErrorMessage"
                               :valid-message="validMessage"
@@ -62,7 +62,7 @@
 
     <m-popup ref="popup"
              :open.sync="open"
-             :disabled="isDisabled || isReadonly"
+             :disabled="disabled || readonly"
              :close-on-backdrop="true"
              :focus-management="isMqMaxS"
              open-trigger="manual"

@@ -15,7 +15,7 @@
         font-size: 0.75em;
     }
 
-    &:not(.m--is-disabled) {
+    &:not(.m--is-disabled):not(.m--is-readonly) {
         @include m-button--hover();
 
         &:hover,
@@ -27,7 +27,8 @@
         }
     }
 
-    &.m--is-disabled {
+    &.m--is-disabled,
+    &.m--is-readonly {
         border: 1px solid $m-color--disabled;
 
         &,

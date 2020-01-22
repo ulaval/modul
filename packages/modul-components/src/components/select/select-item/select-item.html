@@ -11,15 +11,13 @@
 
     <slot v-if="isMqMinS || readonly || hideRadioButtonMobile"><span class="m-select-item__element-text">{{ label }}</span></slot>
 
-    <m-radio-style :full-width="true"
+    <m-radio-style v-else
+                   :full-width="true"
                    radio-position="right"
                    :focus="focused"
                    :checked="selected"
                    :disabled="disabled"
-                   tabindex="0"
-                   v-else>
-
+                   :tabindex="disabled ? -1 : 0">
         <slot><span class="m-select-item__element-text">{{ label }}</span></slot>
-
     </m-radio-style>
 </li>

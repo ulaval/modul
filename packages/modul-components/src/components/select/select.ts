@@ -28,12 +28,6 @@ import WithRender from './select.html?style=./select.scss';
     ]
 })
 export class MSelect extends ModulVue {
-
-    public $refs: {
-        baseSelect: MBaseSelect;
-    };
-
-
     @Model('input')
     @Prop()
     public value: any;
@@ -53,21 +47,28 @@ export class MSelect extends ModulVue {
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
+    public $refs: {
+        baseSelect: MBaseSelect;
+        input: HTMLElement;
+    };
+
     @Emit('select-item')
     onSelect(option: any, index: number): void {
         this.as<InputManagement>().model = this.options[index];
     }
 
     @Emit('open')
-    onOpen(): void {
-    }
+    onOpen(): void { }
 
     @Emit('close')
-    onClose(): void {
-    }
+    onClose(): void { }
 
     get hasItems(): boolean {
         return this.options && this.options.length > 0;
+    }
+
+    get iconArrowTitle(): string {
+        return this.open ? this.$i18n.translate('m-select:close') : this.$i18n.translate('m-select:open');
     }
 
     get isEmpty(): boolean {
@@ -75,8 +76,11 @@ export class MSelect extends ModulVue {
     }
 
     get isClearable(): boolean {
-        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue &&
-            this.isSelectable;
+        return this.hasItems
+            && this.clearable
+            && this.as<InputManagement>().hasValue
+            && this.isSelectable
+            && !this.as<InputState>().disabled;
     }
 
     get selectedItems(): any {
@@ -87,16 +91,8 @@ export class MSelect extends ModulVue {
     }
 
     get isSelectable(): boolean {
-        return !this.as<InputState>().isDisabled &&
+        return !this.as<InputState>().disabled &&
             !this.as<InputState>().isReadonly;
-    }
-
-    get internalLabelUp(): boolean {
-        return !this.as<InputState>().isReadonly ? this.as<InputLabel>().labelUp : true;
-    }
-
-    get internalPlaceholder(): string {
-        return !this.as<InputState>().isReadonly ? this.as<InputManagement>().placeholder : '';
     }
 
     public onReset(): void {
@@ -109,11 +105,12 @@ export class MSelect extends ModulVue {
         }
     }
 
-    public toggleSelect(): void {
+    public toggleOpen(): void {
         this.$refs.baseSelect.togglePopup();
+        if (!this.as<InputManagement>().internalIsFocus) {
+            this.$refs.input.focus();
+        }
     }
-
-
 }
 
 const SelectPlugin: PluginObject<any> = {

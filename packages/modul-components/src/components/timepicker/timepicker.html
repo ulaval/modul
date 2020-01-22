@@ -1,11 +1,11 @@
 <div class="m-timepicker"
-     :class="{ 'm--is-disabled': isDisabled,
-               'm--is-readonly': isReadonly,
+     :class="{ 'm--is-disabled': disabled,
+               'm--is-readonly': readonly,
                'm--has-validation-message': hasValidationMessage }"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
-    <m-input-style :disabled="isDisabled"
-                   :readonly="isReadonly"
-                   :waiting="isWaiting"
+    <m-input-style :disabled="disabled"
+                   :readonly="readonly"
+                   :waiting="waiting"
                    :focus="isFocus"
                    :required-marker="requiredMarker"
                    :label-up="labelUp"
@@ -19,14 +19,14 @@
                       aria-haspopup="true"
                       :aria-controls="ariaControls"
                       :aria-expanded="open"
-                      :disabled="isDisabled"
+                      :disabled="disabled"
                       :id="id"
                       inputmode="decimal"
                       :options="inputMaskOptions"
                       :placeholder="i18nPlaceHolder"
                       :min="min"
                       :max="max"
-                      :readonly="isReadonly"
+                      :readonly="readonly"
                       :step="currentStep"
                       type="text"
                       :raw="false"
@@ -35,7 +35,7 @@
                       @focus="onFocus"></m-input-mask>
         <m-icon-button slot="suffix"
                        icon-name="m-svg__clock"
-                       :disabled="isDisabled || isReadonly"
+                       :disabled="disabled || readonly"
                        button-size="22px"
                        :aria-controls="id"
                        v-m-popup:popup>
@@ -46,15 +46,15 @@
         </m-icon-button>
     </m-input-style>
     <m-validation-message class="m-timepicker__validation-message"
-                          :disabled="isDisabled"
-                          :waiting="isWaiting"
+                          :disabled="disabled"
+                          :waiting="waiting"
                           :error="timeError"
                           :error-message="timeErrorMessage"
                           :valid-message="validMessage"
                           :helper-message="helperMessage"></m-validation-message>
     <m-popup ref="popup"
              :open.sync="open"
-             :disabled="isDisabled || isReadonly"
+             :disabled="disabled || readonly"
              :padding="false"
              :focus-management="isMqMaxS"
              @open="onPopupOpen"

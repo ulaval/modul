@@ -89,7 +89,7 @@ export class InputManagement extends ModulVue
     }
 
     onFocus(event: FocusEvent): void {
-        this.internalIsFocus = !this.as<InputStateMixin>().isDisabled;
+        this.internalIsFocus = !this.as<InputStateMixin>().disabled;
         if (this.internalIsFocus) {
             this.emitFocus(event);
         }

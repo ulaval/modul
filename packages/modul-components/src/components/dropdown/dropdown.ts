@@ -144,9 +144,15 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (value && value !== this.internalOpen) {
             this.focusedIndex = -1;
         }
-        if (this.as<InputState>().active) {
-            this.internalOpen = value;
+
+        if (this.as<InputState>().disabled || this.as<InputState>().readonly) {
+            if (this.internalOpen) {
+                this.internalOpen = false;
+            }
+            return;
         }
+
+        this.internalOpen = value;
     }
 
     @Emit('open')
@@ -184,7 +190,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     @Watch('focus')
     private focusChanged(focus: boolean): void {
-        if (focus && !this.as<InputStateMixin>().isDisabled) {
+        if (focus && !this.as<InputStateMixin>().disabled) {
             this.selectText();
         } else {
             if (!this.isAndroid) {
@@ -231,22 +237,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         }
 
         this.setInputWidth();
-    }
-
-    private get internalPlaceholder(): string {
-        if (this.as<InputState>().isReadonly) {
-            return '';
-        } else {
-            return this.as<InputManagement>().placeholder;
-        }
-    }
-
-    private get internallLabelUp(): boolean {
-        if (this.as<InputState>().isReadonly) {
-            return true;
-        } else {
-            return this.as<InputLabel>().labelUp;
-        }
     }
 
     private portalMounted(): void {
@@ -362,7 +352,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     public get inactive(): boolean {
-        return this.as<InputState>().isDisabled || this.as<InputState>().isReadonly || this.as<InputState>().isWaiting;
+        return this.as<InputState>().disabled;
     }
 
     private get hasFooterSlot(): boolean {
@@ -553,18 +543,18 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private get hasPointer(): boolean {
-        return !this.as<InputState>().isDisabled &&
-            !this.as<InputState>().isReadonly &&
+        return !this.as<InputState>().disabled &&
+            !this.as<InputState>().readonly &&
             (!this.filterable || (this.filterable && !this.open));
     }
 
     private get hasPlaceholderIcon(): boolean {
         if (UserAgentUtil.isEdge() && !UserAgentUtil.isBlink()) {
-            return this.filterable && this.selectedText === '' && !this.as<InputState>().isReadonly && this.isEdgeSupport;
+            return this.filterable && this.selectedText === '' && !this.as<InputState>().readonly && this.isEdgeSupport;
         } else if (UserAgentUtil.isGecko() && !UserAgentUtil.isBlink()) {
-            return this.filterable && this.selectedText === '' && !this.as<InputState>().isReadonly && this.isFirefoxSupport;
+            return this.filterable && this.selectedText === '' && !this.as<InputState>().readonly && this.isFirefoxSupport;
         } else {
-            return this.filterable && this.selectedText === '' && !this.as<InputState>().isReadonly;
+            return this.filterable && this.selectedText === '' && !this.as<InputState>().readonly;
         }
     }
 

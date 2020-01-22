@@ -103,7 +103,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
                                  :label="'Value ' + i"></m-dropdown-item>
             </m-dropdown><br>
             <m-dropdown v-model="model"
-                        label="Disabled"
+                        label="Disabled and error"
                         :disabled="true"
                         error-message="Error">
                 <m-dropdown-item v-for="i in 4"
@@ -111,7 +111,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
                                  :label="'Value ' + i"></m-dropdown-item>
             </m-dropdown>
             <m-dropdown v-model="model"
-                        label="Readonly"
+                        label="Readonly and error"
                         :readonly="true"
                         error-message="Error">
                 <m-dropdown-item v-for="i in 4"
@@ -119,7 +119,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
                                  :label="'Value ' + i"></m-dropdown-item>
             </m-dropdown>
             <m-dropdown v-model="model"
-                        label="Waiting"
+                        label="Waiting and error"
                         :waiting="true"
                         error-message="Error">
                 <m-dropdown-item v-for="i in 4"

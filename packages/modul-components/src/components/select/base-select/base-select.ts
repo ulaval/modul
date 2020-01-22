@@ -239,11 +239,17 @@ export class MBaseSelect extends ModulVue {
     // enter : select the focused option and close popup
     // space : open the popup
     onKeydownDown($event: KeyboardEvent): void {
+        if (!this.internalOpen) {
+            this.internalOpen = true;
+        }
         this.focusNextItem();
         this.selectFocusedItem($event);
     }
 
     onKeydownUp($event: KeyboardEvent): void {
+        if (!this.internalOpen) {
+            this.internalOpen = true;
+        }
         this.focusPreviousItem();
         this.selectFocusedItem($event);
     }

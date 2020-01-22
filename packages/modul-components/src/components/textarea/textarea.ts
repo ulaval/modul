@@ -44,23 +44,15 @@ export class MTextarea extends ModulVue implements InputManagementData {
     };
 
     readonly internalValue: string;
-    private internalTextareaHeight: string = '0';
-    private id: string = `mTextarea-${uuid.generate()}`;
 
-    private get valueLength(): number {
+    public id: string = `mTextarea-${uuid.generate()}`;
+
+    public get valueLength(): number {
         return this.internalValue.length;
     }
 
-    private get maxLengthNumber(): number {
+    public get maxLengthNumber(): number {
         return !this.lengthOverflow && this.maxLength > 0 ? this.maxLength : Infinity;
-    }
-
-    private get hasTextareaError(): boolean {
-        return this.as<InputState>().hasError;
-    }
-
-    private get isTextareaValid(): boolean {
-        return this.as<InputState>().isValid;
     }
 }
 

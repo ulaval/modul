@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import TextareaAutoHeightPlugin from '../../directives/textarea-auto-height/textarea-auto-height';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement, InputManagementData } from '../../mixins/input-management/input-management';
@@ -15,7 +15,6 @@ import IconButtonPlugin from '../icon-button/icon-button';
 import InputStyle from '../input-style/input-style';
 import ValidationMesagePlugin from '../validation-message/validation-message';
 import WithRender from './textfield.html?style=./textfield.scss';
-
 
 export enum MTextfieldType {
     Text = 'text',
@@ -103,7 +102,10 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
         this.as<InputManagement>().trimWordWrap = this.hasWordWrap;
     }
 
-    private togglePasswordVisibility(event): void {
+    @Emit('input')
+    private emitInput(value: string): void { }
+
+    public togglePasswordVisibility(event): void {
         this.passwordAsText = !this.passwordAsText;
     }
 
@@ -116,19 +118,19 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
         }
     }
 
-    private get passwordIcon(): boolean {
-        return this.icon && this.type === MTextfieldType.Password && !this.as<InputState>().isDisabled;
+    public get passwordIcon(): boolean {
+        return this.icon && this.type === MTextfieldType.Password && !this.as<InputState>().disabled;
     }
 
-    private get passwordIconName(): string {
+    public get passwordIconName(): string {
         return this.passwordAsText ? ICON_NAME_PASSWORD_HIDDEN : ICON_NAME_PASSWORD_VISIBLE;
     }
 
-    private get passwordIconDescription(): string {
+    public get passwordIconDescription(): string {
         return this.passwordAsText ? this.iconDescriptionHidePassword : this.iconDescriptionShowPassword;
     }
 
-    private get hasWordWrap(): boolean {
+    public get hasWordWrap(): boolean {
         let hasWordWrap: boolean = this.inputType === MTextfieldType.Text && this.wordWrap;
         if (this.inputType !== MTextfieldType.Text && this.wordWrap) {
             this.$log.warn(TEXTFIELD_NAME + ': If you want to use word-wrap prop, you need to set type prop at "text"');
@@ -140,24 +142,24 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
         return (this.internalValue || '').length;
     }
 
-    private get maxLengthNumber(): number {
+    public get maxLengthNumber(): number {
         return !this.lengthOverflow && this.maxLength > 0 ? this.maxLength : Infinity;
     }
 
-    private get hasTextfieldError(): boolean {
+    public get hasTextfieldError(): boolean {
         return this.as<InputState>().hasError;
     }
 
-    private get isTextfieldValid(): boolean {
+    public get isTextfieldValid(): boolean {
         return this.as<InputState>().isValid;
     }
 
-    private get hasCounterTransition(): boolean {
+    public get hasCounterTransition(): boolean {
         return !this.as<InputState>().hasErrorMessage;
     }
 
-    private resetModel(): void {
-        this.$emit('input', '');
+    public resetModel(): void {
+        this.emitInput('');
     }
 
     @Watch('selection')

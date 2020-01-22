@@ -1,31 +1,31 @@
 <div class="m-textarea"
-     :class="{ 'm--is-disabled' : isDisabled,
-               'm--is-waiting' : isWaiting,
-               'm--is-readonly' : isReadonly,
-               'm--has-error' : hasTextareaError,
-               'm--is-valid' : isTextareaValid,
+     :class="{ 'm--is-disabled' : disabled,
+               'm--is-waiting' : waiting,
+               'm--is-readonly' : readonly,
+               'm--has-error' : hasError,
+               'm--is-valid' : isValid,
                'm--is-focus' : isFocus,
                'm--has-label': hasLabel,
                'm--has-validation-message': hasValidationMessage }"
      @click="onClick"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
-    <m-input-style :disabled="isDisabled"
-                   :waiting="isWaiting"
-                   :error="hasTextareaError"
-                   :valid="isTextareaValid"
+    <m-input-style :disabled="disabled"
+                   :waiting="waiting"
+                   :error="hasError"
+                   :valid="isValid"
                    :label="label"
                    :label-for="id"
                    :focus="isFocus"
                    :label-up="labelUp"
                    :empty="isEmpty"
-                   :readonly="isReadonly"
+                   :readonly="readonly"
                    :required-marker="requiredMarker"
                    :tag-style="tagStyle">
         <textarea ref="input"
                   :id="id"
                   class="m-textarea__input"
-                  :disabled="isDisabled"
-                  :readonly="isReadonly"
+                  :disabled="disabled"
+                  :readonly="readonly"
                   :placeholder="placeholder"
                   :maxlength="maxLengthNumber"
                   :autocomplete="autocomplete"
@@ -42,11 +42,11 @@
     </m-input-style>
     <div class="m-textarea__validation">
         <m-validation-message class="m-textarea__validation__message"
-                              :disabled="isDisabled"
-                              :waiting="isWaiting"
-                              :error="hasTextareaError"
+                              :disabled="disabled"
+                              :waiting="waiting"
+                              :error="hasError"
                               :error-message="errorMessage"
-                              :valid="isTextareaValid"
+                              :valid="isValid"
                               :valid-message="validMessage"
                               :helper-message="helperMessage"></m-validation-message>
         <m-character-count class="m-textarea__validation__character-count"

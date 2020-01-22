@@ -1,6 +1,9 @@
 <button class="m-chip-add"
-        :class="{'m--is-disabled': disabled, 'm--is-small' : size === 'small'}"
+        :class="{'m--is-disabled': disabled,
+                 'm--is-readonly': readonly,
+                 'm--is-small' : size === 'small'}"
         :disabled="disabled"
+        :readonly="readonly"
         @click="onClick"
         type="button">
     <div class="m-chip-add__body">

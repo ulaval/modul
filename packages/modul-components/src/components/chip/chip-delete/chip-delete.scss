@@ -34,8 +34,9 @@
             transform: none;
         }
 
-        &:not(.m--is-disabled) {
-            &.m--is-hover {
+        &:not(.m--is-disabled):not(.m--is-readonly) {
+            &.m--is-hover,
+            &.m--is-focus {
                 @include m-button--hover();
 
                 &:hover,
@@ -49,7 +50,7 @@
         }
     }
 
-    &:not(.m--is-disabled) {
+    &:not(.m--is-disabled):not(.m--is-readonly) {
         .m-chip-delete__button {
             cursor: pointer;
 
@@ -64,7 +65,8 @@
         }
     }
 
-    &.m--is-disabled {
+    &.m--is-disabled,
+    &.m--is-readonly {
         border: 1px solid $m-color--disabled;
         background: $m-color--grey-lightest;
 
