@@ -46,6 +46,8 @@
             </ul>
         </m-message>
 
+        <slot name="header"></slot>
+
         <div class="m-file-upload__drop-zone"
              v-if="isDropZoneEnabled">
             <div class="m-file-upload__drop-zone__instructions">
@@ -185,10 +187,13 @@
                       class="m-file-upload__footer-add"
                       ref="modalConfirmButton">{{ buttonAdd }}
                 <span slot="precision"
-                      v-show="completedFiles.length > 0">{{completedFiles.length}}
-                    <m-i18n :nb="completedFiles.length"
-                            k="m-file-upload:file"></m-i18n>
+                      v-show="completedFiles.length > 0">
+                    <span>{{completedFiles.length}}
+                        <m-i18n :nb="completedFiles.length"
+                                k="m-file-upload:file"></m-i18n>
+                    </span>
                 </span>
+
             </m-button>
             <m-button @click="onCancelClick"
                       skin="secondary"
