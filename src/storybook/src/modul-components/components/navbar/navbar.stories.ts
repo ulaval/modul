@@ -58,9 +58,13 @@ export const multiline = () => ({
     }),
     template: `<div>
                     <m-navbar :selected.sync="selectedItem"
-                            skin="nav-main"
-                            :multiline="true">
-                        <m-navbar-item v-for="i in 5" :key="i" :value="i">Very very very long text #{{i}}</m-navbar-item>
+                            skin="nav-main">
+                        <m-navbar-item v-for="i in 5"
+                                       :key="i"
+                                       :value="i"
+                                       :label="'Very very very very very very long text #' + i"
+                                       :multiline="true">
+                        </m-navbar-item>
                     </m-navbar>
                 </div>`
 });
@@ -188,3 +192,50 @@ export const SkinTabUnderline = () => ({
                     <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
                 </m-navbar>`
 });
+
+export const slotLeftContain = () => ({
+    data: () => ({
+        selectedItem: 1
+    }),
+    template: `<div>
+                    <m-navbar :selected.sync="selectedItem"
+                            skin="nav-main">
+                        <m-navbar-item :value="1"
+                                       label="Clock">
+                            <m-icon class="m-u--margin-right--s"
+                                    slot="leftContain"
+                                    name="m-svg__clock"></m-icon>
+                        </m-navbar-item>
+                        <m-navbar-item :value="2"
+                                       label="Logout">
+                            <m-icon class="m-u--margin-right--s"
+                                    slot="leftContain"
+                                    name="m-svg__logout"></m-icon>
+                        </m-navbar-item>
+                    </m-navbar>
+                </div>`
+});
+
+export const slotRightContain = () => ({
+    data: () => ({
+        selectedItem: 1
+    }),
+    template: `<div>
+                    <m-navbar :selected.sync="selectedItem"
+                            skin="nav-main">
+                        <m-navbar-item :value="1"
+                                       label="Clock">
+                            <m-icon class="m-u--margin-left--s"
+                                    slot="rightContain"
+                                    name="m-svg__clock"></m-icon>
+                        </m-navbar-item>
+                        <m-navbar-item :value="2"
+                                       label="Logout">
+                            <m-icon class="m-u--margin-left--s"
+                                    slot="rightContain"
+                                    name="m-svg__logout"></m-icon>
+                        </m-navbar-item>
+                    </m-navbar>
+                </div>`
+});
+
