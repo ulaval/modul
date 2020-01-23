@@ -7,11 +7,11 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
       class="m-copy-to-clipboard"
     >
       <div
-        class="m-textfield m--is-readonly m--is-type-text"
+        class="m-textfield m--is-disabled m--is-readonly m--is-type-text"
         style="width: 100%;"
       >
         <div
-          class="m-input-style m--is-readonly m--is-tag-default"
+          class="m-input-style m--is-readonly m--is-disabled m--is-tag-default"
           style="margin-top: 10px;"
         >
           <div
@@ -41,6 +41,7 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
                 >
                   <input
                     class="m-textfield__input"
+                    disabled="disabled"
                     id="mTextfield-fakeId"
                     maxlength="Infinity"
                     placeholder="Disabled"
@@ -183,11 +184,11 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
       class="m-copy-to-clipboard"
     >
       <div
-        class="m-textfield m--is-waiting m--is-type-text"
+        class="m-textfield m--is-readonly m--is-waiting m--is-type-text"
         style="width: 100%;"
       >
         <div
-          class="m-input-style m--is-waiting m--is-tag-default"
+          class="m-input-style m--is-readonly m--is-waiting m--is-tag-default"
           style="margin-top: 10px;"
         >
           <div
@@ -217,10 +218,10 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
                 >
                   <input
                     class="m-textfield__input"
-                    disabled="disabled"
                     id="mTextfield-fakeId"
                     maxlength="Infinity"
                     placeholder="Waiting"
+                    readonly="readonly"
                     type="text"
                   />
                      

@@ -224,6 +224,10 @@ export class MMultiSelect extends ModulVue {
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
+        if (!this.open) {
+            $event.preventDefault();
+            return;
+        }
         if (this.$refs.baseSelect.focusedIndex > -1) {
             this.$refs.baseSelect.select(this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex], this.$refs.baseSelect.focusedIndex, $event);
         } else if (this.selectAllFocused) {

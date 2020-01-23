@@ -1,13 +1,13 @@
 @import 'commons';
 $m-line-height-rich-text: 21px !default;
 
-.m-rich-text {
+.m-rich-text-editor {
     position: relative;
     display: inline-flex;
     flex-direction: column;
 
     &.m--has-validation-message {
-        .m-rich-text__validation-message {
+        .m-rich-text-editor__validation-message {
             margin-top: $m-spacing--xs;
         }
     }

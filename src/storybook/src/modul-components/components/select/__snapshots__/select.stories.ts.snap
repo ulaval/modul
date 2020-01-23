@@ -2,105 +2,100 @@
 
 exports[`Storyshots modul-components|m-select Clearable 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -120,106 +115,101 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
 
 exports[`Storyshots modul-components|m-select Default Story 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a fruit"
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -239,106 +229,102 @@ exports[`Storyshots modul-components|m-select Default Story 1`] = `
 
 exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-disabled"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  disabled="disabled"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  disabled="disabled"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -358,106 +344,102 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Disabled Item Selected With Label Clearable 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-disabled"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  disabled="disabled"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  disabled="disabled"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -477,101 +459,97 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-disabled"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-disabled m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-disabled m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  disabled="disabled"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  disabled="disabled"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -591,102 +569,98 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
 
 exports[`Storyshots modul-components|m-select Disabled No Selection No Label With Placeholder 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-disabled"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-disabled m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-disabled m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a fruit"
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  disabled="disabled"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  disabled="disabled"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -706,106 +680,102 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
 
 exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-disabled"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-disabled m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-disabled m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  disabled="disabled"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  disabled="disabled"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -825,107 +795,103 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
 
 exports[`Storyshots modul-components|m-select Disabled No Selection With Label With Placeholder 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-disabled"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-disabled m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-disabled m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a fruit"
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  disabled="disabled"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  disabled="disabled"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -945,100 +911,95 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
 
 exports[`Storyshots modul-components|m-select Focus 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--has-cursor-pointer m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1058,105 +1019,100 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
 
 exports[`Storyshots modul-components|m-select Label 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1176,105 +1132,100 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
 
 exports[`Storyshots modul-components|m-select Label Up 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1294,105 +1245,100 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
 
 exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1412,101 +1358,96 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
 
 exports[`Storyshots modul-components|m-select Placeholder 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--has-cursor-pointer m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a Fruit"
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  placeholder="Choose a Fruit"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1526,107 +1467,100 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
 
 exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-readonly"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1646,107 +1580,100 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Readonly Item Selected With Label Clearable 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-readonly"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1766,102 +1693,95 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-readonly"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-readonly m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1881,102 +1801,96 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
 
 exports[`Storyshots modul-components|m-select Readonly No Selection No Label With Placeholder 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-readonly"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-readonly m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1996,107 +1910,100 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
 
 exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-readonly"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-readonly m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -2116,107 +2023,101 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
 
 exports[`Storyshots modul-components|m-select Readonly No Selection With Label With Placeholder 1`] = `
 <div
-  class="m-base-select"
+  class="m-base-select m-select m--is-readonly"
 >
   <div
     class="m-base-select__popup"
     style="width: 288px;"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-input-style m--is-readonly m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -2234,22 +2135,19 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
 </div>
 `;
 
-exports[`Storyshots modul-components|m-select Virtual Scroll 1`] = `
-<div
-  class="m-base-select"
->
+exports[`Storyshots modul-components|m-select State 1`] = `
+<div>
   <div
-    class="m-base-select__popup"
-    style="width: 288px;"
+    class="m-base-select m-select m--is-disabled"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 288px;"
-      tabindex="0"
+      class="m-base-select__popup"
+      style="width: 288px;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style m--is-disabled m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
@@ -2266,7 +2164,120 @@ exports[`Storyshots modul-components|m-select Virtual Scroll 1`] = `
                 class="m-input-style__text"
               >
                 <span>
-                  Longlist
+                  Disabled
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    disabled="disabled"
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    disabled="disabled"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-base-select m-select m--is-readonly"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-readonly m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Readonly
                 </span>
                  
                 <!---->
@@ -2295,6 +2306,26 @@ exports[`Storyshots modul-components|m-select Virtual Scroll 1`] = `
               <div
                 class="m-input-style__suffix"
               >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
                  
                 <!---->
               </div>
@@ -2303,38 +2334,1105 @@ exports[`Storyshots modul-components|m-select Virtual Scroll 1`] = `
            
           <div
             class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-base-select m-select m--is-waiting"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-waiting m--has-cursor-pointer m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Waiting
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <div
+                  class="m-spinner m-input-style__spinner"
+                >
+                  <!---->
+                   
+                  <div />
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+  <br />
+   
+  <div
+    class="m-base-select m-select m--is-disabled"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-disabled m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Disabled and error
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    disabled="disabled"
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    disabled="disabled"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-base-select m-select m--is-readonly m--has-validation-message"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-readonly m--has-error m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Readonly and error
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <p
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-icon m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Error
+        </span>
+      </p>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-base-select m-select m--is-waiting m--has-validation-message"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-waiting m--has-cursor-pointer m--has-error m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Waiting and error
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <div
+                  class="m-spinner m-input-style__spinner"
+                >
+                  <!---->
+                   
+                  <div />
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <p
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-icon m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Error
+        </span>
+      </p>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+  <br />
+   
+  <div
+    class="m-base-select m-select m--is-disabled m--is-readonly"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-readonly m--is-disabled m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Disabled and readonly
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    disabled="disabled"
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    disabled="disabled"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-base-select m-select m--is-disabled m--is-waiting"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-disabled m--is-waiting m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Disabled and waiting
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    disabled="disabled"
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    disabled="disabled"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <div
+                  class="m-spinner m-input-style__spinner"
+                >
+                  <!---->
+                   
+                  <div />
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-base-select m-select m--is-readonly m--is-waiting"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-readonly m--is-waiting m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Readonly and waiting
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <div
+                  class="m-spinner m-input-style__spinner"
+                >
+                  <!---->
+                   
+                  <div />
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-base-select m-select m--is-disabled m--is-readonly m--is-waiting"
+  >
+    <div
+      class="m-base-select__popup"
+      style="width: 288px;"
+    >
+      <div
+        class="m-input-style m--is-readonly m--is-disabled m--is-waiting m--has-label m--is-tag-default"
+        max-width="288px"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Disabled readonly and waiting
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    disabled="disabled"
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                 
+                <div
+                  class="m-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-select__icon-arrow"
+                    disabled="disabled"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <div
+                  class="m-spinner m-input-style__spinner"
+                >
+                  <!---->
+                   
+                  <div />
+                </div>
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          />
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select Virtual Scroll 1`] = `
+<div
+  class="m-base-select m-select"
+>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
+    <div
+      class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+      max-width="288px"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Longlist
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
+              <div>
+                <input
+                  readonly="readonly"
                 />
-              </svg>
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+               
+              <div
+                class="m-select__icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-select__icon-arrow"
+                  height="12px"
+                  title="Ouvrir la liste déroulante"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
             </div>
           </div>
         </div>
-      </div>
-       
-      <div
-        class="m-validation-message m-select__validation-message"
-      >
-        <!---->
          
-        <!---->
+        <div
+          class="m-input-style__append"
+        />
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div

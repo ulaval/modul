@@ -46,8 +46,7 @@
                 <m-chip-delete v-if="chipsDisplayMode === 1"
                                class="m-multi-select__chip"
                                size="small"
-                               :disabled="disabled"
-                               :readonly="readonly"
+                               :disabled="disabled || readonly"
                                @delete="onDeleteAll()">
                     <template v-slot:default>
                         <slot name="chips-all">
@@ -61,8 +60,7 @@
                                    :key="index"
                                    class="m-multi-select__chip"
                                    size="small"
-                                   :disabled="disabled"
-                                   :readonly="readonly"
+                                   :disabled="disabled || readonly"
                                    @delete="onDelete(index)">
                         <template v-slot:default>
                             <slot name="chips"
@@ -84,8 +82,7 @@
                                :key="index"
                                class="m-multi-select__chip"
                                size="small"
-                               :disabled="disabled"
-                               :readonly="readonly"
+                               :disabled="disabled || readonly"
                                @delete="onDelete(index)">
                     <template v-slot:default>
                         <slot name="chips"
@@ -134,6 +131,8 @@
     <template v-slot:items="{item , index}">
         <slot name="items"
               :item="item"
-              :index="index"><span v-html="item"></span></slot>
+              :index="index">
+            <span v-html="item"></span>
+        </slot>
     </template>
 </m-base-select>

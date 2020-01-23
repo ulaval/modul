@@ -1276,86 +1276,81 @@ exports[`Storyshots modul-components|m-form/all fields Moneyfield 1`] = `
   />
    
   <div
-    class="m-moneyfield"
+    class="m-decimalfield m-moneyfield m--has-label"
     style="width: 100%; max-width: 136px;"
   >
     <div
-      class="m-decimalfield m--has-label"
-      style="width: 100%; max-width: 136px;"
+      class="m-input-style m--has-label m--is-tag-default"
+      style="margin-top: 10px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="mDecimalfield-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="mDecimalfield-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Price
-                </span>
-                 
-                <sup
-                  class="m-input-style__required-marker"
-                >
-                  *
-                </sup>
+              <span>
+                Price
               </span>
-            </label>
+               
+              <sup
+                class="m-input-style__required-marker"
+              >
+                *
+              </sup>
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+               
+              <input
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+              />
+                
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
                
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
           </div>
-           
-          <!---->
         </div>
+         
+        <!---->
       </div>
-       
+    </div>
+     
+    <div
+      class="m-decimalfield__validation"
+    >
       <div
-        class="m-decimalfield__validation"
+        class="m-validation-message m-decimalfield__validation__message"
       >
-        <div
-          class="m-validation-message m-decimalfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
+        <!---->
+         
+        <!---->
       </div>
     </div>
   </div>
@@ -1428,20 +1423,19 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
   />
    
   <div
-    class="m-base-select"
+    class="m-base-select m-multi-select"
   >
     <div
       class="m-base-select__popup"
       style="width: 288px;"
     >
       <div
-        class="m-multi-select"
-        style="width: 100%; max-width: 288px;"
+        class="m-multi-select__input"
         tabindex="0"
       >
         <div
           class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-          style="margin-top: 10px;"
+          style="width: 100%; margin-top: 10px; max-width: 288px;"
         >
           <div
             class="m-input-style__main"
@@ -1477,11 +1471,13 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
                 <div
                   class="m-input-style__content"
                 >
-                  <div
-                    class="m-multi-select__chips"
-                  />
-                    
-                  <!---->
+                   
+                  <span
+                    aria-hidden="true"
+                    class="m-i18n m-input-style__transparent-text"
+                  >
+                    Aucune valeur
+                  </span>
                    
                   <!---->
                 </div>
@@ -1490,12 +1486,13 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
                   class="m-input-style__suffix"
                 >
                   <div
-                    class="m-multi-select__arrow"
+                    class="m-multi-select__icon"
                   >
                     <svg
                       aria-hidden="true"
-                      class="m-icon m-multi-select__arrow__icon"
+                      class="m-icon m-multi-select__icon-arrow"
                       height="16px"
+                      title="Ouvrir la liste déroulante"
                       width="16px"
                     >
                       <!---->
@@ -1515,15 +1512,15 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
             <!---->
           </div>
         </div>
-         
-        <div
-          class="m-validation-message m-multi-select__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
       </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-multi-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
     </div>
      
     <div

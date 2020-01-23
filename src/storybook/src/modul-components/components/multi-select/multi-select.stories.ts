@@ -84,8 +84,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
     .add('state', () => ({
         data: () => ({
             model: [optionsVonTrapp[0]],
-            options: optionsVonTrapp,
-            focus: false
+            options: optionsVonTrapp
         }),
         template: `<div>
             <m-multi-select v-model="model"
@@ -99,15 +98,14 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
             <m-multi-select v-model="model"
                             label="Waiting"
                             :options="options"
-                            :waiting="true"
-                            :focus.sync="focus"></m-multi-select><br>
+                            :waiting="true"></m-multi-select><br>
             <m-multi-select v-model="model"
                             label="Disabled and error"
                             :options="options"
                             :disabled="true"
                             error-message="Error"></m-multi-select>
             <m-multi-select v-model="model"
-                            label="Readonly  and error"
+                            label="Readonly and error"
                             :options="options"
                             :readonly="true"
                             error-message="Error"></m-multi-select>
@@ -115,8 +113,28 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
                             label="Waiting and error"
                             :options="options"
                             :waiting="true"
-                            error-message="Error"></m-multi-select>
-            <m-button @click="focus = !focus">focus: {{focus}}</m-button>
+                            error-message="Error"></m-multi-select><br>
+            <m-multi-select v-model="model"
+                            label="Disabled and readonly"
+                            :options="options"
+                            :disabled="true"
+                            :readonly="true"></m-multi-select>
+            <m-multi-select v-model="model"
+                            label="Disabled and waiting"
+                            :options="options"
+                            :disabled="true"
+                            :waiting="true"></m-multi-select>
+            <m-multi-select v-model="model"
+                            label="Readonly and waiting"
+                            :options="options"
+                            :readonly="true"
+                            :waiting="true"></m-multi-select>
+            <m-multi-select v-model="model"
+                            label="Disabled, readonly and waiting"
+                            :options="options"
+                            :disabled="true"
+                            :readonly="true"
+                            :waiting="true"></m-multi-select>
         </div>`
     }));
 

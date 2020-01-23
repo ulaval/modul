@@ -362,6 +362,1178 @@ exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-dropdown state 1`] = `
+<div>
+  <div
+    class="m-dropdown m--is-disabled"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                disabled="disabled"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-dropdown m--is-readonly"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Readonly
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-dropdown m--is-waiting"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-waiting m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Waiting
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+  <br />
+   
+  <div
+    class="m-dropdown m--is-disabled"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled and error
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                disabled="disabled"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-dropdown m--is-readonly m--has-validation-message"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Readonly and error
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <p
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-icon m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Error
+        </span>
+      </p>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-dropdown m--is-waiting m--has-validation-message"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-waiting m--has-cursor-pointer m--has-error m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Waiting and error
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <p
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-icon m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Error
+        </span>
+      </p>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+  <br />
+   
+  <div
+    class="m-dropdown m--is-disabled m--is-readonly"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled and readonly
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                disabled="disabled"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-dropdown m--is-readonly m--is-waiting"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--is-waiting m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled and readonly
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-dropdown m--is-disabled m--is-waiting"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-disabled m--is-waiting m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled and waiting
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                disabled="disabled"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-dropdown m--is-disabled m--is-readonly m--is-waiting"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--is-disabled m--is-waiting m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled, readonly and waiting
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-controls="mDropdown-fakeId-controls"
+                aria-haspopup="true"
+                class="m-dropdown__input"
+                disabled="disabled"
+                id="mDropdown-fakeId"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-dropdown__arrow__icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-dropdown with disabled items 1`] = `
 <div
   class="m-dropdown"
@@ -1237,9 +2409,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly Item selected, with lab
                 aria-controls="mDropdown-fakeId-controls"
                 aria-haspopup="true"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
-                placeholder=""
                 readonly="readonly"
                 type="text"
               />
@@ -1260,7 +2430,6 @@ exports[`Storyshots modul-components|m-dropdown/readonly Item selected, with lab
                 <svg
                   aria-hidden="true"
                   class="m-icon m-dropdown__arrow__icon"
-                  disabled="disabled"
                   height="12px"
                   width="12px"
                 >
@@ -1353,9 +2522,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label 
                 aria-controls="mDropdown-fakeId-controls"
                 aria-haspopup="true"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
-                placeholder=""
                 readonly="readonly"
                 type="text"
               />
@@ -1376,7 +2543,6 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label 
                 <svg
                   aria-hidden="true"
                   class="m-icon m-dropdown__arrow__icon"
-                  disabled="disabled"
                   height="12px"
                   width="12px"
                 >
@@ -1469,9 +2635,8 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label,
                 aria-controls="mDropdown-fakeId-controls"
                 aria-haspopup="true"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
-                placeholder=""
+                placeholder="Select your avenger"
                 readonly="readonly"
                 type="text"
               />
@@ -1492,7 +2657,6 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label,
                 <svg
                   aria-hidden="true"
                   class="m-icon m-dropdown__arrow__icon"
-                  disabled="disabled"
                   height="12px"
                   width="12px"
                 >
@@ -1551,7 +2715,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
+      class="m-input-style m--is-readonly m--has-label m--is-tag-default"
       style="width: 100%; margin-top: 10px;"
     >
       <div
@@ -1590,9 +2754,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
                 aria-controls="mDropdown-fakeId-controls"
                 aria-haspopup="true"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
-                placeholder=""
                 readonly="readonly"
                 type="text"
               />
@@ -1613,7 +2775,6 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
                 <svg
                   aria-hidden="true"
                   class="m-icon m-dropdown__arrow__icon"
-                  disabled="disabled"
                   height="12px"
                   width="12px"
                 >
@@ -1672,7 +2833,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
+      class="m-input-style m--is-readonly m--has-label m--is-tag-default"
       style="width: 100%; margin-top: 10px;"
     >
       <div
@@ -1711,9 +2872,8 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
                 aria-controls="mDropdown-fakeId-controls"
                 aria-haspopup="true"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
-                placeholder=""
+                placeholder="Select your avenger"
                 readonly="readonly"
                 type="text"
               />
@@ -1734,7 +2894,6 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
                 <svg
                   aria-hidden="true"
                   class="m-icon m-dropdown__arrow__icon"
-                  disabled="disabled"
                   height="12px"
                   width="12px"
                 >

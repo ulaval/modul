@@ -13,12 +13,30 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MONEYFIELD_NAME}`, module)
         components: { MMoneyfield },
         template: `
             <div>
-                <div><${MONEYFIELD_NAME} v-model="value"></${MONEYFIELD_NAME}></div>
-                <div><${MONEYFIELD_NAME} v-model="value" :label="'Label'"></${MONEYFIELD_NAME}></div>
-                <div><${MONEYFIELD_NAME} v-model="value" :label="'Required label'" :required-marker="true"></${MONEYFIELD_NAME}></div>
-                <div><${MONEYFIELD_NAME} v-model="value" :valid-message="'Valid message'"></${MONEYFIELD_NAME}></div>
-                <div><${MONEYFIELD_NAME} v-model="value" :helper-message="'Helper message'"></${MONEYFIELD_NAME}></div>
-                <div><${MONEYFIELD_NAME} v-model="value" :error-message="'Error message'"></${MONEYFIELD_NAME}></div>
+                <${MONEYFIELD_NAME} v-model="value"></${MONEYFIELD_NAME}>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Label"></${MONEYFIELD_NAME}>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Required label"
+                                    :required-marker="true"></${MONEYFIELD_NAME}><br>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Valid message"
+                                    valid-message="Valid message"></${MONEYFIELD_NAME}>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Helper message"
+                                    helper-message="Helper message"></${MONEYFIELD_NAME}>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Error message"
+                                    error-message="Error message"></${MONEYFIELD_NAME}><br>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Disabled"
+                                    :disabled="true"></${MONEYFIELD_NAME}>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Readonly"
+                                    :readonly="true"></${MONEYFIELD_NAME}>
+                <${MONEYFIELD_NAME} v-model="value"
+                                    label="Waiting"
+                                    :waiting="true"></${MONEYFIELD_NAME}>
             </div>
         `,
         data: () => ({

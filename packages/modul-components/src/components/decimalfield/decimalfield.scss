@@ -13,18 +13,6 @@
         }
     }
 
-    &.m--has-error {
-        .m-decimalfield__validation {
-            color: $m-color--error;
-        }
-    }
-
-    &.m--is-valid {
-        .m-decimalfield__validation {
-            color: $m-color--success;
-        }
-    }
-
     &__validation {
         transition: margin-top $m-transition-duration ease;
         display: flex;

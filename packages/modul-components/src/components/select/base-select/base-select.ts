@@ -267,6 +267,10 @@ export class MBaseSelect extends ModulVue {
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
+        if (!this.open) {
+            $event.preventDefault();
+            return;
+        }
         if (this.focusedIndex > -1) {
             this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
         }

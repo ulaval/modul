@@ -45,6 +45,36 @@ exports[`Storyshots modul-components|m-button Disabled 1`] = `
 </button>
 `;
 
+exports[`Storyshots modul-components|m-button Disabled And Waiting 1`] = `
+<button
+  class="m-button m--is-skin-primary m--is-waiting m--is-disabled"
+  disabled="disabled"
+  type="button"
+>
+  <!---->
+   
+  <div
+    aria-hidden="true"
+    class="m-spinner m-button__icon m--is-left"
+  >
+    <!---->
+     
+    <div />
+  </div>
+   
+  <span
+    class="m-button__text"
+  >
+    A Button 
+    <!---->
+  </span>
+   
+  <!---->
+   
+  <!---->
+</button>
+`;
+
 exports[`Storyshots modul-components|m-button Fullsize 1`] = `
 <button
   class="m-button m--is-skin-primary m--is-full-size"
@@ -282,7 +312,6 @@ exports[`Storyshots modul-components|m-button Icon Precision 1`] = `
 exports[`Storyshots modul-components|m-button Icon Waiting 1`] = `
 <button
   class="m-button m--is-skin-primary m--is-waiting"
-  disabled="disabled"
   type="button"
 >
   <!---->
@@ -527,7 +556,6 @@ exports[`Storyshots modul-components|m-button Secondary Precision 1`] = `
 exports[`Storyshots modul-components|m-button Secondary Waiting 1`] = `
 <button
   class="m-button m--is-skin-secondary m--is-waiting"
-  disabled="disabled"
   type="button"
 >
   <!---->
@@ -579,7 +607,6 @@ exports[`Storyshots modul-components|m-button Submit 1`] = `
 exports[`Storyshots modul-components|m-button Waiting 1`] = `
 <button
   class="m-button m--is-skin-primary m--is-waiting"
-  disabled="disabled"
   type="button"
 >
   <!---->

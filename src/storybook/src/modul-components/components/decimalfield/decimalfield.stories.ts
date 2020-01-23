@@ -15,13 +15,33 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DECIMALFIELD_NAME}`, module
         components: { MDecimalfield },
         template: `
             <div>
-                <div><${DECIMALFIELD_NAME} v-model="value"></${DECIMALFIELD_NAME}></div>
-                <div><${DECIMALFIELD_NAME} v-model="value" :label="'Label'"></${DECIMALFIELD_NAME}></div>
-                <div><${DECIMALFIELD_NAME} v-model="value" :label="'Required label'" :required-marker="true"></${DECIMALFIELD_NAME}></div>
-                <div><${DECIMALFIELD_NAME} v-model="value" :valid-message="'Valid message'"></${DECIMALFIELD_NAME}></div>
-                <div><${DECIMALFIELD_NAME} v-model="value" :helper-message="'Helper message'"></${DECIMALFIELD_NAME}></div>
-                <div><${DECIMALFIELD_NAME} v-model="value" :error-message="'Error message'"></${DECIMALFIELD_NAME}></div>
-                <div><${DECIMALFIELD_NAME} v-model="value" :label="'Label'" :placeholder="'Enter a decimal number'" :label-up="true"></${DECIMALFIELD_NAME}></div>
+                <${DECIMALFIELD_NAME} v-model="value"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Label"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Required label"
+                                      :required-marker="true"></${DECIMALFIELD_NAME}><br>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Valid message"
+                                      valid-message="Valid message"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Helper message"
+                                      helper-message="Helper message"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      error-message="Error message"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Placeholder"
+                                      placeholder="Enter a decimal number"
+                                      :label-up="true"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Disabled"
+                                      :disabled="true"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Readonly"
+                                      :readonly="true"></${DECIMALFIELD_NAME}>
+                <${DECIMALFIELD_NAME} v-model="value"
+                                      label="Waiting"
+                                      :waiting="true"></${DECIMALFIELD_NAME}>
             </div>
         `,
         data: () => ({
