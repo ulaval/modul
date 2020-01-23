@@ -1,6 +1,5 @@
 <div class="m-chip-delete"
      :class="{'m--is-disabled': disabled,
-             'm--is-readonly': readonly,
              'm--is-small' : size === 'small',
              'm--is-hover': iconHover,
              'm--is-focus': focus}">
@@ -13,7 +12,6 @@
         <button class="m-chip-delete__button"
                 :aria-labelledby="textId"
                 :disabled="disabled"
-                :readonly="readonly"
                 @click.stop="onClick"
                 @focus="onFocus"
                 @blur="onBlur"

@@ -21,9 +21,6 @@ export class MChip extends Vue {
     @Prop()
     disabled: boolean;
 
-    @Prop()
-    readonly: boolean;
-
     @Prop({
         default: MChipMode.Add,
         validator: value =>

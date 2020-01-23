@@ -15,7 +15,7 @@
         font-size: 0.75em;
     }
 
-    &:not(.m--is-disabled):not(.m--is-readonly) {
+    &:not(.m--is-disabled) {
         @include m-button--hover();
 
         &:hover,

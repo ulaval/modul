@@ -12,9 +12,6 @@ export class MChipDelete extends Vue {
     @Prop()
     disabled: boolean;
 
-    @Prop()
-    readonly: boolean;
-
     @Prop({
         default: MChipSize.Large,
         validator: value =>
@@ -44,7 +41,7 @@ export class MChipDelete extends Vue {
     }
 
     public onClick(event: Event): void {
-        if (this.disabled || this.readonly) {
+        if (this.disabled) {
             return;
         }
         this.emitClick();

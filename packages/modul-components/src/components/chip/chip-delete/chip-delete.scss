@@ -7,75 +7,6 @@
     border: 1px solid $m-color--grey;
     background: $m-color--grey-lighter;
 
-    &.m--is-small {
-        @include m-chip-small-style();
-
-        border-color: $m-color--grey-light;
-        background: $m-color--grey-lighter;
-        font-size: 0.75em;
-        font-weight: $m-font-weight--semi-bold;
-
-        .m-chip-delete__button {
-            $m-chip-delete--button-width: 20px;
-
-            width: $m-chip-delete--button-width;
-            height: $m-chip-delete--button-width;
-            margin: 0;
-        }
-
-        .m-chip-delete__icon {
-            $m-chip-delete--icon-width: 20px;
-
-            width: $m-chip-delete--icon-width;
-            height: $m-chip-delete--icon-width;
-            left: 0;
-            top: 0;
-            padding: 5px; // Magic number: perfect icon size
-            transform: none;
-        }
-
-        &:not(.m--is-disabled):not(.m--is-readonly) {
-            &.m--is-hover,
-            &.m--is-focus {
-                @include m-button--hover();
-
-                &:hover,
-                &:focus,
-                &:active {
-                    .m-chip-delete__icon {
-                        color: $m-color--white;
-                    }
-                }
-            }
-        }
-    }
-
-    &:not(.m--is-disabled):not(.m--is-readonly) {
-        .m-chip-delete__button {
-            cursor: pointer;
-
-            &:hover,
-            &:focus {
-                color: $m-color--interactive-light;
-            }
-
-            &:active {
-                color: $m-color--interactive-dark;
-            }
-        }
-    }
-
-    &.m--is-disabled,
-    &.m--is-readonly {
-        border: 1px solid $m-color--disabled;
-        background: $m-color--grey-lightest;
-
-        &,
-        .m-chip-delete__button {
-            color: $m-color--disabled;
-        }
-    }
-
     &__body {
         @include m-chip-body-style();
     }
@@ -104,18 +35,80 @@
     &__icon {
         $m-chip-delete--icon-width: 32px;
 
+        transition: color $m-transition-duration ease;
         position: absolute;
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         padding: 10px 0 10px 10px; // Magic number: perfect icon size
         width: $m-chip-delete--icon-width;
         height: $m-chip-delete--icon-width;
-        transform: translate(-50%, -50%);
         stroke-width: 3;
-        transition: color $m-transition-duration ease;
     }
 
     &__hidden-text {
         @include m-visually-hidden();
+    }
+
+    &:not(.m--is-disabled) {
+        .m-chip-delete__icon.m-chip-delete__icon {
+            color: $m-color--text;
+        }
+
+        &.m--is-hover,
+        &.m--is-focus.m--is-focus {
+            color: $m-color--white;
+            background: $m-color--interactive-light;
+            border-color: $m-color--interactive-light;
+
+            .m-chip-delete__icon.m-chip-delete__icon {
+                color: $m-color--white;
+            }
+        }
+    }
+
+    &.m--is-disabled {
+        border: 1px solid $m-color--disabled;
+        background: $m-color--grey-lightest;
+        cursor: default;
+
+        &,
+        .m-chip-delete__button {
+            color: $m-color--disabled;
+        }
+
+        .m-chip-delete__icon.m-chip-delete__icon.m-chip-delete__icon {
+            color: $m-color--disabled-light;
+        }
+    }
+}
+
+.m-chip-delete.m--is-small {
+    @include m-chip-small-style();
+
+    border-color: $m-color--grey-light;
+    background: $m-color--grey-lighter;
+    font-size: 0.75em;
+    font-weight: $m-font-weight--semi-bold;
+
+    .m-chip-delete {
+        &__button {
+            $m-chip-delete--button-width: 20px;
+
+            width: $m-chip-delete--button-width;
+            height: $m-chip-delete--button-width;
+            margin: 0;
+        }
+
+        &__icon {
+            $m-chip-delete--icon-width: 20px;
+
+            width: $m-chip-delete--icon-width;
+            height: $m-chip-delete--icon-width;
+            left: 0;
+            top: 0;
+            padding: 5px; // Magic number: perfect icon size
+            transform: none;
+        }
     }
 }
