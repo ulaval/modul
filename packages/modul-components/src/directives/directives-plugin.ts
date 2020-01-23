@@ -11,14 +11,7 @@ const DirectivesPlugin: PluginObject<any> = {
             Vue.use(LoggerPlugin);
         }
 
-        // Vue.use(BadgePlugin);
-        // Vue.use(DragAndDropPlugin);
-        // Vue.use(FileDropPlugin);
         Vue.use(PopupPlugin);
-        // Vue.use(RemoveUserSelectPlugin);
-        // Vue.use(RippleEffectPlugin);
-        // Vue.use(ScrollToPlugin);
-        // Vue.use(SortablePlugin);
         Vue.use(TextareaAutoHeightPlugin);
         Vue.use(I18nDirectivePlugin);
     }

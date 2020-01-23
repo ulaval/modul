@@ -17,8 +17,22 @@
                @mouseover="onMouseover"
                @mouseleave="onMouseleave"
                ref="item">
-        <span class="m-navbar-item__text">
-            <slot>{{ value }}</slot>
-        </span>
+        <div class="m-navbar-item__text"
+             :class="{ 'pp--is-nowrap': shouldNotWrap }">
+            <div v-if="$slots.leftContain"
+                 class="m-navbar-item__text-left-contain">
+                <slot name="leftContain"></slot>
+            </div>
+            <span v-if="formatedLabel"
+                  v-html="formatedLabel"
+                  ref="itemValue"></span>
+            <div v-else-if="$slots.default">
+                <slot>{{ value }}</slot>
+            </div>
+            <div v-if="$slots.rightContain"
+                 class="m-navbar-item__text-right-contain">
+                <slot name="rightContain"></slot>
+            </div>
+        </div>
     </component>
 </li>

@@ -1,6 +1,5 @@
-import { createLocalVue, mount, shallowMount, Wrapper } from '@vue/test-utils';
+import { createLocalVue, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
-import { renderComponent } from '../../../../tests/helpers/render';
 import ModulPlugin from '../../../utils/modul/modul';
 import { MNavbar } from '../../navbar/navbar';
 import { MNavbarItem } from './navbar-item';
@@ -41,27 +40,6 @@ describe('MNavbarItem', () => {
     const defaultSlot: any = {
         default: `navbar item content`
     };
-
-    it('should render correctly', () => {
-        const wrapper: Wrapper<MNavbarItem> = mount(MNavbarItem, {
-            localVue: localVue,
-            slots: defaultSlot
-        });
-
-        expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-    });
-
-    it('should render correctly when disabled', () => {
-        const wrapper: Wrapper<MNavbarItem> = mount(MNavbarItem, {
-            localVue: localVue,
-            slots: defaultSlot,
-            propsData: {
-                disabled: true
-            }
-        });
-        expect(wrapper.classes()).toContain('m--is-disabled');
-        expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-    });
 
     describe('given parent Navbar has autoselect set to true', () => {
         beforeEach(() => {
