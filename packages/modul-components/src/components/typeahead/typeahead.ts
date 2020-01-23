@@ -126,7 +126,7 @@ export class MTypeahead extends ModulVue {
     }
 
     get resultsCouldBeDisplay(): boolean {
-        return this.hasFilteredResults && this.hasTextfieldValue && this.as<InputState>().active;
+        return this.hasFilteredResults && this.hasTextfieldValue && !this.as<InputState>().disabled && !this.as<InputState>().readonly;
     }
 
     get hasSomeAResultSelected(): boolean {
@@ -134,11 +134,11 @@ export class MTypeahead extends ModulVue {
     }
 
     get sortedResult(): any[] {
-        return this.results.sort();
+        return this.hasResults ? this.results.sort() : [];
     }
 
     openResultsPopup(): void {
-        if (this.isResultsPopupOpen) {
+        if (this.isResultsPopupOpen || !this.resultsCouldBeDisplay) {
             return;
         }
 
@@ -163,8 +163,11 @@ export class MTypeahead extends ModulVue {
     }
 
     onFilterResults(): void {
+        if (!this.resultsCouldBeDisplay) {
+            return;
+        }
         if (this.filterResultsManually) {
-            this.filteredResults = this.results.slice(0, this.maxResults);
+            this.filteredResults = this.hasResults ? this.results.slice(0, this.maxResults) : [];
         } else {
             this.filteredResults = this.sortedResult
                 .filter(r =>
@@ -207,6 +210,11 @@ export class MTypeahead extends ModulVue {
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
+        if (!this.isResultsPopupOpen) {
+            $event.preventDefault();
+            return;
+        }
+
         if (this.resultsCouldBeDisplay && this.as<MediaQueries>().isMqMinS) {
             this.$refs.mBaseSelect.selectFocusedItem($event);
         }
@@ -214,13 +222,20 @@ export class MTypeahead extends ModulVue {
     }
 
     onKeydownDown($event: KeyboardEvent): void {
+
         if (this.resultsCouldBeDisplay) {
+            if (!this.isResultsPopupOpen) {
+                this.isResultsPopupOpen = true;
+            }
             this.$refs.mBaseSelect.onKeydownDown($event);
         }
     }
 
     onKeydownUp($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
+            if (!this.isResultsPopupOpen) {
+                this.isResultsPopupOpen = true;
+            }
             this.$refs.mBaseSelect.onKeydownUp($event);
         }
     }
