@@ -1,5 +1,6 @@
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { InputWidth } from '../../../mixins/input-width/input-width';
 import { Address, AddressSummary } from '../../../utils/address-lookup/address';
 import { AddressLookupServiceProvider } from '../../../utils/address-lookup/address-lookup';
 import { ModulVue } from '../../../utils/vue/vue';
@@ -14,7 +15,11 @@ export interface AddressLookupFieldProps {
     placeholder?: string;
 }
 @WithRender
-@Component
+@Component({
+    mixins: [
+        InputWidth
+    ]
+})
 export class MAddressLookupField extends ModulVue {
     @Prop()
     value: Address;
