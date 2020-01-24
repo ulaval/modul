@@ -183,4 +183,3 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
                           :waiting="true"></m-timepicker>
         </div>`
     }));
-;
