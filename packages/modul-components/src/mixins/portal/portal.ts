@@ -169,9 +169,15 @@ export class Portal extends ModulVue implements PortalMixin {
     public set propOpen(value: boolean) {
         if (value !== this.internalOpen) {
             if (value) {
+                // the ensurePortalTargetEl will alway return in a $nextTick (async)
                 this.ensurePortalTargetEl(() => {
                     if (this.portalTargetEl) {
-                        this.stackId = this.$modul.pushElement(this.portalTargetEl, this.as<PortalMixinImpl>().getBackdropMode(), this.as<MediaQueriesMixin>().isMqMaxS);
+
+                        // This condition was added to prevent a case when the screen is resized and the m-popup try to open
+                        // a sidebar (or a pop-up) before it's was previously closed. This cause a state the display the backdrop and the user must refresh
+                        if (this.internalOpen) {
+                            this.stackId = this.$modul.pushElement(this.portalTargetEl, this.as<PortalMixinImpl>().getBackdropMode(), this.as<MediaQueriesMixin>().isMqMaxS);
+                        }
 
                         if (!this.as<PortalMixinImpl>().doCustomPropOpen(value, this.portalTargetEl)) {
                             this.portalTargetEl.style.position = 'absolute';
@@ -194,7 +200,6 @@ export class Portal extends ModulVue implements PortalMixin {
             } else {
                 if (this.portalTargetEl) {
                     this.$modul.popElement(this.stackId);
-
                     if (!this.as<PortalMixinImpl>().doCustomPropOpen(value, this.portalTargetEl)) {
                         this.setFocusToTrigger();
 
@@ -301,7 +306,9 @@ export class Portal extends ModulVue implements PortalMixin {
                 onPortalReady();
             });
         } else {
-            onPortalReady();
+            this.$nextTick(() => {
+                onPortalReady();
+            });
         }
     }
 
