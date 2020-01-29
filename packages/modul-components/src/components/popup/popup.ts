@@ -118,6 +118,39 @@ export class MPopup extends ModulVue {
         return !!this.$slots.trigger;
     }
 
+    public onSideBarOpen(value: boolean): void {
+
+        if (!this.disabled && this.as<MediaQueries>().isMqMaxS) {
+            this.internalOpen = value;
+            this.$emit('update:open', value);
+        }
+    }
+
+    public onPopperOpen(value: boolean): void {
+        if (!this.disabled && !this.as<MediaQueries>().isMqMaxS) {
+            this.internalOpen = value;
+            this.$emit('update:open', value);
+        }
+    }
+
+    public get sideBarOpen(): boolean {
+        if (this.as<MediaQueries>().isMqMaxS) {
+            return this.open === undefined ? this.internalOpen : this.open;
+        } else {
+            return false;
+        }
+
+    }
+
+    public get popperOpen(): boolean {
+        if (!this.as<MediaQueries>().isMqMaxS) {
+            return (this.open === undefined ? this.internalOpen : this.open);
+        } else {
+            return false;
+        }
+
+    }
+
     public update(): void {
         if (!this.as<MediaQueries>().isMqMaxS) { // Pas de popper en mobile
             this.$refs.popper.update();
