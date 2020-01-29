@@ -193,7 +193,6 @@ export class Portal extends ModulVue implements PortalMixin {
                 });
             } else {
                 if (this.portalTargetEl) {
-                    console.log(`pushElement stackId=${this.stackId} getBackdropMode = ${this.as<PortalMixinImpl>().getBackdropMode()}`);
                     this.$modul.popElement(this.stackId);
 
                     if (!this.as<PortalMixinImpl>().doCustomPropOpen(value, this.portalTargetEl)) {
