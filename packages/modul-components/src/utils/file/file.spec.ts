@@ -9,22 +9,26 @@ import { extractExtension, FileService, MFile, MFileRejectionCause, MFileStatus 
 
 jest.mock('../http/http');
 
-const FILENAME_POSITION_1: string = 'file.jpg';
-const FILENAME_POSITION_2: string = 'file.mov';
-const FILENAME_POSITION_3: string = 'file';
+const FILENAME_JPG: string = 'file.jpg';
+const FILENAME_MOV: string = 'file.mov';
+const FILENAME_NOEXTENSION: string = 'file';
+
+let filesvc: FileService;
+
+beforeEach(async () => {
+    filesvc = new FileService();
+});
 
 describe('FileService', () => {
-    let filesvc: FileService;
 
-    beforeEach(() => {
-        filesvc = new FileService();
+    beforeEach(async () => {
 
-        filesvc.add(
+        await filesvc.add(
             createMockFileList([createMockFile('file-store-a')]),
             'store-a'
         );
 
-        filesvc.add(
+        await filesvc.add(
             createMockFileList([
                 createMockFile('file-store-b-1'),
                 createMockFile('file-store-b-1')
@@ -32,7 +36,7 @@ describe('FileService', () => {
             'store-b'
         );
 
-        filesvc.addSingleFile(
+        await filesvc.addSingleFile(
             createMockFile('file-store-c'),
             'store-c'
         );
@@ -52,8 +56,8 @@ describe('FileService', () => {
             );
         });
 
-        it('should support an unnamed default store', () => {
-            filesvc.add(
+        it('should support an unnamed default store', async () => {
+            await filesvc.add(
                 createMockFileList([createMockFile('file-store-default')])
             );
 
@@ -68,8 +72,8 @@ describe('FileService', () => {
             expect(filesvc.files('store-c')[0].name).toEqual('file-store-c');
         });
 
-        it('should support an unnamed default store', () => {
-            filesvc.addSingleFile(
+        it('should support an unnamed default store', async () => {
+            await filesvc.addSingleFile(
                 createMockFile('file-store-default')
             );
 
@@ -79,9 +83,9 @@ describe('FileService', () => {
     });
 
     describe('remove', () => {
-        it('should remove the file identified by the unique id', () => {
+        it('should remove the file identified by the unique id', async () => {
             let mockFile: File = createMockFile('to be removed');
-            filesvc.add(createMockFileList([mockFile]), 'unique store');
+            await filesvc.add(createMockFileList([mockFile]), 'unique store');
 
             filesvc.remove(
                 filesvc.files('unique store')[0].uid,
@@ -106,125 +110,125 @@ describe('FileService', () => {
     describe('validations', () => {
 
         describe(`No mather what`, () => {
-            it(`should not accept a file without an extension`, () => {
+            it(`should not accept a file without an extension`, async () => {
 
-                filesvc.add(
+                await filesvc.add(
                     createMockFileList([
-                        createMockFile(FILENAME_POSITION_3)
+                        createMockFile(FILENAME_NOEXTENSION)
                     ])
                 );
 
                 expect(readyFiles().length).toEqual(0);
                 expect(rejectedFiles().length).toEqual(1);
-                expect(rejectedFiles()[0].name).toEqual(FILENAME_POSITION_3);
+                expect(rejectedFiles()[0].name).toEqual(FILENAME_NOEXTENSION);
                 expect(rejectedFiles()[0].status).toEqual(MFileStatus.REJECTED);
                 expect(rejectedFiles()[0].rejection).toEqual(MFileRejectionCause.FILE_TYPE);
             });
         });
 
         describe(`When there is only accepted extensions`, () => {
-            it(`should accept the right file`, () => {
+            it(`should accept the right file`, async () => {
                 filesvc.setValidationOptions({
                     allowedExtensions: ['jpg', 'mov']
                 });
 
-                mockFiles();
+                await addJpgAndMovFile();
 
                 expect(readyFiles().length).toEqual(2);
                 expect(rejectedFiles().length).toEqual(0);
-                expect(readyFiles()[0].name).toEqual(FILENAME_POSITION_1);
-                expect(readyFiles()[1].name).toEqual(FILENAME_POSITION_2);
+                expect(readyFiles()[0].name).toEqual(FILENAME_JPG);
+                expect(readyFiles()[1].name).toEqual(FILENAME_MOV);
             });
         });
 
         describe(`When there is no accepted extensions`, () => {
-            it(`should accept every files`, () => {
+            it(`should accept every files`, async () => {
                 filesvc.setValidationOptions({
                     allowedExtensions: []
                 });
 
-                mockFiles();
+                await addJpgAndMovFile();
 
                 expect(readyFiles().length).toEqual(2);
                 expect(rejectedFiles().length).toEqual(0);
-                expect(readyFiles()[0].name).toEqual(FILENAME_POSITION_1);
-                expect(readyFiles()[1].name).toEqual(FILENAME_POSITION_2);
+                expect(readyFiles()[0].name).toEqual(FILENAME_JPG);
+                expect(readyFiles()[1].name).toEqual(FILENAME_MOV);
             });
         });
 
         describe(`When there is only rejected extensions`, () => {
-            it(`should reject the right files`, () => {
+            it(`should reject the right files`, async () => {
                 filesvc.setValidationOptions({
                     rejectedExtensions: ['jpg', 'mov']
                 });
 
-                mockFiles();
+                await addJpgAndMovFile();
 
                 expect(readyFiles().length).toEqual(0);
                 expect(rejectedFiles().length).toEqual(2);
-                expect(rejectedFiles()[0].name).toEqual(FILENAME_POSITION_1);
-                expect(rejectedFiles()[1].name).toEqual(FILENAME_POSITION_2);
+                expect(rejectedFiles()[0].name).toEqual(FILENAME_JPG);
+                expect(rejectedFiles()[1].name).toEqual(FILENAME_MOV);
                 expect(rejectedFiles()[0].status).toEqual(MFileStatus.REJECTED);
                 expect(rejectedFiles()[0].rejection).toEqual(MFileRejectionCause.FILE_TYPE);
             });
 
-            it(`should accept every other files`, () => {
+            it(`should accept every other files`, async () => {
                 filesvc.setValidationOptions({
                     rejectedExtensions: ['mp4', 'mp3']
                 });
 
-                mockFiles();
+                await addJpgAndMovFile();
 
                 expect(readyFiles().length).toEqual(2);
                 expect(rejectedFiles().length).toEqual(0);
-                expect(readyFiles()[0].name).toEqual(FILENAME_POSITION_1);
-                expect(readyFiles()[1].name).toEqual(FILENAME_POSITION_2);
+                expect(readyFiles()[0].name).toEqual(FILENAME_JPG);
+                expect(readyFiles()[1].name).toEqual(FILENAME_MOV);
 
             });
         });
 
         describe(`When there is a mix of accepted and rejected extensions`, () => {
-            it(`should only accept the file with the right extension`, () => {
+            it(`should only accept the file with the right extension`, async () => {
                 filesvc.setValidationOptions({
                     allowedExtensions: ['jpg'],
                     rejectedExtensions: ['mov']
                 });
 
-                mockFiles();
+                await addJpgAndMovFile();
 
                 expect(readyFiles().length).toEqual(1);
                 expect(rejectedFiles().length).toEqual(1);
-                expect(readyFiles()[0].name).toEqual(FILENAME_POSITION_1);
-                expect(rejectedFiles()[0].name).toEqual(FILENAME_POSITION_2);
+                expect(readyFiles()[0].name).toEqual(FILENAME_JPG);
+                expect(rejectedFiles()[0].name).toEqual(FILENAME_MOV);
                 expect(rejectedFiles()[0].status).toEqual(MFileStatus.REJECTED);
                 expect(rejectedFiles()[0].rejection).toEqual(MFileRejectionCause.FILE_TYPE);
             });
         });
 
         describe(`When there is accepted extensions in the rejected extensions`, () => {
-            it(`should only accept the file with the right extension`, () => {
+            it(`should only accept the file with the right extension`, async () => {
                 filesvc.setValidationOptions({
                     allowedExtensions: ['jpg', 'mov'],
                     rejectedExtensions: ['mov']
                 });
 
-                mockFiles();
+                await addJpgAndMovFile();
 
                 expect(readyFiles().length).toEqual(1);
                 expect(rejectedFiles().length).toEqual(1);
-                expect(readyFiles()[0].name).toEqual(FILENAME_POSITION_1);
-                expect(rejectedFiles()[0].name).toEqual(FILENAME_POSITION_2);
+                expect(readyFiles()[0].name).toEqual(FILENAME_JPG);
+                expect(rejectedFiles()[0].name).toEqual(FILENAME_MOV);
                 expect(rejectedFiles()[0].status).toEqual(MFileStatus.REJECTED);
                 expect(rejectedFiles()[0].rejection).toEqual(MFileRejectionCause.FILE_TYPE);
             });
         });
 
-        it('should reject files too big', () => {
+        it('should reject files too big', async () => {
             filesvc.setValidationOptions({
                 maxSizeKb: 2
             });
 
-            filesvc.add(
+            await filesvc.add(
                 createMockFileList([
                     createMockFile('invalid.mov', 4096),
                     createMockFile('valid.jpg', 1024)
@@ -234,12 +238,12 @@ describe('FileService', () => {
             expectValidationResults(1, MFileRejectionCause.FILE_SIZE);
         });
 
-        it('should reject files after exceeding maximum', () => {
+        it('should reject files after exceeding maximum', async () => {
             filesvc.setValidationOptions({
                 maxFiles: 1
             });
 
-            filesvc.add(
+            await filesvc.add(
                 createMockFileList([
                     createMockFile('valid.jpg'),
                     createMockFile('invalid.mov')
@@ -247,6 +251,50 @@ describe('FileService', () => {
             );
 
             expectValidationResults(1, MFileRejectionCause.MAX_FILES);
+        });
+
+        describe('When custom validation function present', () => {
+
+            let customValidationFunctionAcceptingFileNameJohn: (file: MFile) => Promise<boolean>;
+
+            beforeEach(() => {
+                customValidationFunctionAcceptingFileNameJohn = (file: MFile): Promise<boolean> => {
+                    return new Promise((resolve: any, reject: any): void => {
+                        if (file.name.includes('John')) {
+                            resolve(true);
+                        } else {
+                            resolve(false);
+                        }
+                    });
+                };
+                filesvc.setValidationOptions({ customValidationFunction: customValidationFunctionAcceptingFileNameJohn });
+            });
+
+            describe('and resolves false', () => {
+                it('then the file is invalid', async () => {
+                    const nonJohnFileName: string = 'Jane.doe';
+                    await filesvc.addSingleFile(createMockFile(nonJohnFileName));
+
+                    expect(readyFiles().length).toEqual(0);
+                    expect(rejectedFiles().length).toEqual(1);
+                    expect(rejectedFiles()[0].name).toEqual(nonJohnFileName);
+                    expect(rejectedFiles()[0].status).toEqual(MFileStatus.REJECTED);
+                    expect(rejectedFiles()[0].rejection).toEqual(MFileRejectionCause.CUSTOM_VALIDATION);
+                });
+            });
+
+            describe('and resolves true', async () => {
+                it('then the file is valid and ready', async () => {
+                    await filesvc.addSingleFile(createMockFile('John.ext'));
+
+                    expect(readyFiles().length).toEqual(1);
+                    expect(rejectedFiles().length).toEqual(0);
+                });
+            });
+        });
+
+        describe('When custom validation function resolves without error', () => {
+
         });
 
         const expectValidationResults: (
@@ -270,19 +318,11 @@ describe('FileService', () => {
             return filesvc.files().filter(f => f.status === MFileStatus.REJECTED);
         };
 
-        const mockFiles: () => void = () => {
-            filesvc.add(
-                createMockFileList([
-                    createMockFile(FILENAME_POSITION_1),
-                    createMockFile(FILENAME_POSITION_2)
-                ])
-            );
-        };
     });
 
     describe('get', () => {
-        it('should return correct file extension', () => {
-            filesvc.add(
+        it('should return correct file extension', async () => {
+            await filesvc.add(
                 createMockFileList([
                     createMockFile('file.jpg'),
                     createMockFile('file.jpeg'),
@@ -295,8 +335,8 @@ describe('FileService', () => {
             expect(filesvc.files()[2].extension).toEqual('mp4');
         });
 
-        it('should return empty string when there is no extension', () => {
-            filesvc.add(createMockFileList([createMockFile('noextension')]));
+        it('should return empty string when there is no extension', async () => {
+            await filesvc.add(createMockFileList([createMockFile('noextension')]));
 
             expect(filesvc.files()[0].extension).toEqual('');
         });
@@ -305,7 +345,6 @@ describe('FileService', () => {
     describe('upload spec', () => {
         let fileToUpload: MFile;
         let httpSvcMock: jest.Mocked<HttpService>;
-        let originalHttpSvc: HttpService;
 
         const mockHttpService: () => jest.Mocked<HttpService> = () => {
             httpSvcMock = new HttpService() as jest.Mocked<HttpService>;
@@ -315,10 +354,10 @@ describe('FileService', () => {
             return httpSvcMock;
         };
 
-        beforeEach(() => {
+        beforeEach(async () => {
             httpSvcMock = mockHttpService();
 
-            filesvc.add(createMockFileList([createMockFile('file-upload')]));
+            await filesvc.add(createMockFileList([createMockFile('file-upload')]));
             fileToUpload = filesvc.files()[0];
         });
 
@@ -481,3 +520,10 @@ describe(`Given a non valid filename`, () => {
         expect(extension).toEqual('');
     });
 });
+
+async function addJpgAndMovFile(): Promise<void> {
+    await filesvc.add(createMockFileList([
+        createMockFile(FILENAME_JPG),
+        createMockFile(FILENAME_MOV)
+    ]));
+}

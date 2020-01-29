@@ -59,6 +59,10 @@ export class MFileUpload extends ModulVue {
     public open: boolean;
     @Prop({ default: false })
     public fileReplacement: boolean;
+    @Prop()
+    public customValidationFunction?: (files: MFile) => Promise<boolean>;
+    @Prop({ default: '' })
+    public customValidationMessage: string;
 
     $refs: {
         modal: MModal;
@@ -84,13 +88,15 @@ export class MFileUpload extends ModulVue {
     @Watch('rejectedExtensions')
     @Watch('maxSizeKb')
     @Watch('maxFiles')
+    @Watch('customValidationFunction')
     private updateValidationOptions(): void {
         this.$file.setValidationOptions(
             {
                 allowedExtensions: this.allowedExtensions,
                 rejectedExtensions: this.rejectedExtensions,
                 maxSizeKb: this.maxSizeKb,
-                maxFiles: this.propMaxFiles
+                maxFiles: this.propMaxFiles,
+                customValidationFunction: this.customValidationFunction
             },
             this.storeName
         );
