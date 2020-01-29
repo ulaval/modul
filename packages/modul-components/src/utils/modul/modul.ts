@@ -99,35 +99,31 @@ export class Modul {
         return stackId;
     }
 
-    public popElement(stackId: string | undefined): void {
-        if (stackId && this.windowStack) {
-            if (this.peekElement() === stackId) {
-                this.windowZIndex--;
-                this.windowStack.pop();
-            } else {
-                let stackElement: StackElement = this.windowStackMap[stackId];
-                if (stackElement && stackElement.stackIndex) {
-                    this.windowStack[stackElement.stackIndex] = undefined;
-                }
-            }
-
-            while (this.windowStack.length > 0 && this.windowStack[this.windowStack.length - 1] === undefined) {
-                this.windowZIndex--;
-                this.windowStack.pop();
-            }
-            let stackElement: StackElement = this.windowStackMap[stackId];
-
-            if (stackElement && (stackElement.backdropIndex || stackElement.scrollId)) {
-                this.removeBackdrop(!stackElement.backdropIsFast);
-            }
-
-            if (this.windowZIndex < Z_INDEZ_DEFAULT) {
-                Vue.prototype.$log.warn('$modul: Invalid window ref count');
-                this.windowZIndex = Z_INDEZ_DEFAULT;
-            }
-
-            delete this.windowStackMap[stackId];
+    public popElement(stackId: string): void {
+        if (this.peekElement() === stackId) {
+            this.windowZIndex--;
+            this.windowStack.pop();
+        } else {
+            this.windowStack[this.windowStackMap[stackId].stackIndex] = undefined;
         }
+
+        while (this.windowStack.length > 0 && this.windowStack[this.windowStack.length - 1] === undefined) {
+            this.windowZIndex--;
+            this.windowStack.pop();
+        }
+
+        let stackElement: StackElement = this.windowStackMap[stackId];
+
+        if (stackElement.backdropIndex || stackElement.scrollId) {
+            this.removeBackdrop(!stackElement.backdropIsFast);
+        }
+
+        if (this.windowZIndex < Z_INDEZ_DEFAULT) {
+            Vue.prototype.$log.warn('$modul: Invalid window ref count');
+            this.windowZIndex = Z_INDEZ_DEFAULT;
+        }
+
+        delete this.windowStackMap[stackId];
     }
 
     public peekElement(): string | undefined {
