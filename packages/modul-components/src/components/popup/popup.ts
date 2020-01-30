@@ -156,6 +156,8 @@ export class MPopup extends ModulVue {
             this.$refs.popper.update();
         }
     }
+
+
 }
 
 const PopupPlugin: PluginObject<any> = {
