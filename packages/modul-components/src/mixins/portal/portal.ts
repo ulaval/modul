@@ -84,6 +84,9 @@ export class Portal extends ModulVue implements PortalMixin {
     private opening: boolean = false;
     private portalTargetCreated: boolean = false;
     private portalTargetMounted: boolean = false;
+    private clickEventListener: EventListener;
+    private mouseenterEventListener: EventListener;
+    private mousedownEventListener: EventListener;
 
     public setFocusToPortal(): void {
         if (this.as<PortalMixinImpl>().handlesFocus()) {
@@ -146,9 +149,18 @@ export class Portal extends ModulVue implements PortalMixin {
 
     protected beforeDestroy(): void {
         this.propOpen = false;
+
         if (this.internalTrigger) {
-            this.internalTrigger.removeEventListener('click', this.toggle);
-            this.internalTrigger.removeEventListener('mouseenter', this.handleMouseEnter);
+            if (this.clickEventListener) {
+                this.internalTrigger.removeEventListener('click', this.clickEventListener);
+            }
+            if (this.mouseenterEventListener) {
+                this.internalTrigger.removeEventListener('mouseenter', this.mouseenterEventListener);
+            }
+            if (this.mousedownEventListener) {
+                this.internalTrigger.removeEventListener('mousedown', this.mousedownEventListener);
+            }
+
         }
 
         if (this.portalTargetEl && this.portalTargetEl.parentNode) {
@@ -172,7 +184,6 @@ export class Portal extends ModulVue implements PortalMixin {
                 this.ensurePortalTargetEl(() => {
                     if (this.portalTargetEl) {
                         this.stackId = this.$modul.pushElement(this.portalTargetEl, this.as<PortalMixinImpl>().getBackdropMode(), this.as<MediaQueriesMixin>().isMqMaxS);
-
                         if (!this.as<PortalMixinImpl>().doCustomPropOpen(value, this.portalTargetEl)) {
                             this.portalTargetEl.style.position = 'absolute';
                             this.portalTargetEl.style.top = '0';
@@ -260,13 +271,16 @@ export class Portal extends ModulVue implements PortalMixin {
         if (this.internalTrigger) {
             switch (this.openTrigger) {
                 case MOpenTrigger.Click:
-                    this.internalTrigger.addEventListener('click', this.toggle);
+                    this.clickEventListener = this.toggle.bind(this);
+                    this.internalTrigger.addEventListener('click', this.clickEventListener);
                     break;
                 case MOpenTrigger.MouseDown:
-                    this.internalTrigger.addEventListener('mousedown', this.toggle);
+                    this.mousedownEventListener = this.toggle.bind(this);
+                    this.internalTrigger.addEventListener('mousedown', this.mousedownEventListener);
                     break;
                 case MOpenTrigger.Hover:
-                    this.internalTrigger.addEventListener('mouseenter', this.handleMouseEnter);
+                    this.mouseenterEventListener = this.handleMouseEnter.bind(this);
+                    this.internalTrigger.addEventListener('mouseenter', this.mouseenterEventListener);
                     // Closing not supported for the moment, check source code history for how was handled mouse leave
                     break;
             }
