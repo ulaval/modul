@@ -95,17 +95,6 @@ export class MPopup extends ModulVue {
         return (this.$children[0] as any).popupBody;
     }
 
-    public get propOpen(): boolean {
-        return this.open === undefined ? this.internalOpen : this.open;
-    }
-
-    public set propOpen(value: boolean) {
-        if (!this.disabled) {
-            this.internalOpen = value;
-            this.$emit('update:open', value);
-        }
-    }
-
     public get propOpenTrigger(): MOpenTrigger {
         return this.openTrigger; // todo: mobile + hover ??
     }
@@ -120,21 +109,21 @@ export class MPopup extends ModulVue {
 
     public onSideBarOpen(value: boolean): void {
 
-        if (!this.disabled && this.as<MediaQueries>().isMqMaxS) {
+        if (!this.disabled && this.isSidebarUsed) {
             this.internalOpen = value;
             this.$emit('update:open', value);
         }
     }
 
     public onPopperOpen(value: boolean): void {
-        if (!this.disabled && !this.as<MediaQueries>().isMqMaxS) {
+        if (!this.disabled && !this.isSidebarUsed) {
             this.internalOpen = value;
             this.$emit('update:open', value);
         }
     }
 
     public get sideBarOpen(): boolean {
-        if (this.as<MediaQueries>().isMqMaxS) {
+        if (this.isSidebarUsed) {
             return this.open === undefined ? this.internalOpen : this.open;
         } else {
             return false;
@@ -143,7 +132,8 @@ export class MPopup extends ModulVue {
     }
 
     public get popperOpen(): boolean {
-        if (!this.as<MediaQueries>().isMqMaxS) {
+
+        if (!this.isSidebarUsed) {
             return (this.open === undefined ? this.internalOpen : this.open);
         } else {
             return false;
@@ -152,11 +142,16 @@ export class MPopup extends ModulVue {
     }
 
     public update(): void {
-        if (!this.as<MediaQueries>().isMqMaxS) { // Pas de popper en mobile
+        if (!this.isSidebarUsed) { // Pas de popper en mobile
             this.$refs.popper.update();
         }
     }
 
+
+    public get isSidebarUsed(): boolean {
+        // Use a sidebar instead when in mobile
+        return this.as<MediaQueries>().isMqMaxS;
+    }
 
 }
 
