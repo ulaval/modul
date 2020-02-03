@@ -51,6 +51,18 @@ $m-fr-btn-popup-size: 38px;
     }
 }
 
+/*
+    Overriding the z-index, in order to match our default value in utils\modul\modul.ts file
+*/
+
+.fr-box.fr-fullscreen {
+    z-index: 80 !important;
+}
+
+.fr-fullscreen-wrapper {
+    z-index: 90 !important;
+}
+
 div[id*="dropdown-menu-align"] .fr-dropdown-wrapper.fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list.fr-dropdown-list {
     min-width: 0;
     padding: 0;
