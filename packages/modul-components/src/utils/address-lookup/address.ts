@@ -12,6 +12,7 @@ export interface AddressSummary {
 }
 
 export interface Address {
+    id: string;
     name: string;
     buildingNumber: string;
     street: string;
