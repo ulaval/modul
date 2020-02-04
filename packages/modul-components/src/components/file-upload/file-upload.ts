@@ -60,7 +60,7 @@ export class MFileUpload extends ModulVue {
     @Prop({ default: false })
     public fileReplacement: boolean;
     @Prop()
-    public customValidationFunction?: (files: MFile) => Promise<boolean>;
+    public customValidationFunction?: (file: MFile) => Promise<boolean>;
     @Prop({ default: '' })
     public customValidationMessage: string;
 
@@ -235,6 +235,10 @@ export class MFileUpload extends ModulVue {
 
     private hasMaxFilesRejection(file): boolean {
         return file.rejection === MFileRejectionCause.MAX_FILES;
+    }
+
+    public hasCustomValidationRejection(file: MFile): boolean {
+        return file.rejection === MFileRejectionCause.CUSTOM_VALIDATION;
     }
 
     public get title(): string {

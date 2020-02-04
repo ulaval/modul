@@ -288,7 +288,9 @@ class FileStore {
             this.validateMaxFiles(file);
         }
 
-        if (this.options.customValidationFunction && !(await this.options.customValidationFunction(file))) {
+        const fileValid: boolean | undefined = this.options.customValidationFunction && !(await this.options.customValidationFunction(file));
+
+        if (fileValid) {
             file.status = MFileStatus.REJECTED;
             file.rejection = MFileRejectionCause.CUSTOM_VALIDATION;
         }
