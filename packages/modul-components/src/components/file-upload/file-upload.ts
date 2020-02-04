@@ -59,8 +59,16 @@ export class MFileUpload extends ModulVue {
     public open: boolean;
     @Prop({ default: false })
     public fileReplacement: boolean;
+
+    /**
+     * This function will be ran on every file added during their validation. Must return a Promise.resolved with a boolean stating if the file respects
+     * the custom criterias or not.
+     */
     @Prop()
     public customValidationFunction?: (file: MFile) => Promise<boolean>;
+    /**
+     * Custom validation message displayed when {@link MFileUpload#customValidationFunction} return false.
+     */
     @Prop({ default: '' })
     public customValidationMessage: string;
 
