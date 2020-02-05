@@ -2,7 +2,7 @@
 [![CircleCI Build Status](https://circleci.com/gh/ulaval/modul/tree/develop.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/ulaval/modul)
 [![npm version](https://badge.fury.io/js/%40ulaval%2Fmodul-components.svg)](https://badge.fury.io/js/%40ulaval%2Fmodul-components)
 
-# modul
+![MODUL](https://ulaval.github.io/public/modul_logo_350.png "MODUL")
 
 A set of VueJS components for MOD**UL** web applications.
 
