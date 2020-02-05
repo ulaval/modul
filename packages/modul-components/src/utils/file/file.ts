@@ -288,9 +288,8 @@ class FileStore {
             this.validateMaxFiles(file);
         }
 
-        if (this.options.customValidationFunction && !(await this.options.customValidationFunction(file))) {
+        if (this.options.customValidationFunction) {
             this.executeCustomValidation(file);
-
         }
     }
 
