@@ -143,7 +143,7 @@ describe('MFileUpload', () => {
             );
         });
 
-        it('should pass validation options to $file service when customValidationFunction property is modified', async () => {
+        it('should pass validation options to $file service when customValidation property is modified', async () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
             const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
@@ -156,7 +156,12 @@ describe('MFileUpload', () => {
                 customValidationFunction: newValidationFunction
             };
 
-            fupd.setProps({ customValidationFunction: newValidationFunction });
+            fupd.setProps({
+                customValidation: {
+                    validationFunction: newValidationFunction,
+                    message: 'Custom message'
+                }
+            });
             await Vue.nextTick();
 
             expect(filesvc.setValidationOptions).toHaveBeenCalledWith(

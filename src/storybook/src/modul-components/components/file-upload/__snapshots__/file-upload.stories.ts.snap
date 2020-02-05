@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|m-file-upload allowedExtensionsHelpMessage 1`] = `
+exports[`Storyshots modul-components|m-file-upload Allowed Extensions Help Message 1`] = `
 <div>
   <div
     class="m-modal"
@@ -32,7 +32,7 @@ exports[`Storyshots modul-components|m-file-upload allowedExtensionsHelpMessage 
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload allowedExtensionsOnly 1`] = `
+exports[`Storyshots modul-components|m-file-upload Allowed Extensions Only 1`] = `
 <div>
   <h5>
     Allowed extensions only
@@ -72,14 +72,14 @@ exports[`Storyshots modul-components|m-file-upload allowedExtensionsOnly 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload customValidationFunction 1`] = `
+exports[`Storyshots modul-components|m-file-upload Custom Validation Function 1`] = `
 <div>
   <h5>
     Allowed files based on custom validation function
   </h5>
    
   <span>
-    Allowed filenames that contains the string "John" only - else displays custom message
+    Allowed filenames that contains the string "John" - else displays custom message
   </span>
    
   <div
@@ -112,7 +112,7 @@ exports[`Storyshots modul-components|m-file-upload customValidationFunction 1`] 
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload default 1`] = `
+exports[`Storyshots modul-components|m-file-upload Default Story 1`] = `
 <div
   class="m-modal"
 >
@@ -142,7 +142,7 @@ exports[`Storyshots modul-components|m-file-upload default 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload headerSlot 1`] = `
+exports[`Storyshots modul-components|m-file-upload Header Slot 1`] = `
 <div>
   <div
     class="m-modal"
@@ -174,7 +174,39 @@ exports[`Storyshots modul-components|m-file-upload headerSlot 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload rejectedExtensionsOnly 1`] = `
+exports[`Storyshots modul-components|m-file-upload Multiple Files Uploads 1`] = `
+<div>
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Rejected Extensions Only 1`] = `
 <div>
   <h5>
     Allowed and rejected extensions
@@ -214,7 +246,7 @@ exports[`Storyshots modul-components|m-file-upload rejectedExtensionsOnly 1`] = 
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload replacementFile 1`] = `
+exports[`Storyshots modul-components|m-file-upload Replacement File 1`] = `
 <div>
   <h5>
     Replacement file
@@ -254,7 +286,7 @@ exports[`Storyshots modul-components|m-file-upload replacementFile 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload replacementFileMax10 1`] = `
+exports[`Storyshots modul-components|m-file-upload Replacement File Max 10 1`] = `
 <div>
   <h5>
     Replacement file
@@ -294,7 +326,7 @@ exports[`Storyshots modul-components|m-file-upload replacementFileMax10 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload replacementFileUndefined 1`] = `
+exports[`Storyshots modul-components|m-file-upload Replacement File Undefined 1`] = `
 <div>
   <h5>
     Replacement file
@@ -334,7 +366,7 @@ exports[`Storyshots modul-components|m-file-upload replacementFileUndefined 1`] 
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload singleFileUpload 1`] = `
+exports[`Storyshots modul-components|m-file-upload Single File Upload 1`] = `
 <div>
   <div
     class="m-modal"

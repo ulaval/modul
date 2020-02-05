@@ -32,15 +32,13 @@ export const rejectedExtensionsOnly = () => `
 
 export const customValidationFunction = () => ({
     data: () => ({
-        customValidationFunction: (file: MFile) => { return Promise.resolve(file.name.includes('John')); },
-        customValidationMessage: `Le nom du fichier doit contenir le mot 'John'.`
+        customValidation: { validationFunction: (file: MFile) => { return Promise.resolve(file.name.includes('John')); }, message: `Le nom du fichier doit contenir le mot 'John'.` }
     }),
     template: `
     <div>
 <h5>Allowed files based on custom validation function</h5>
 <span>Allowed filenames that contains the string "John" - else displays custom message</span>
-<m-file-upload :custom-validation-message="customValidationMessage"
-:custom-validation-function="customValidationFunction" ><m-button>File upload</m-button></m-file-upload>
+<m-file-upload :custom-validation="customValidation" ><m-button>File upload</m-button></m-file-upload>
 </div>`
 });
 

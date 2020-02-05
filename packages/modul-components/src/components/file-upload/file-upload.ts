@@ -28,6 +28,18 @@ export interface MFileExt extends MFile {
     isOldRejection: boolean;
 }
 
+export interface FileUploadCustomValidation {
+    /**
+     * This function will be ran on every file added during their validation. Must return a Promise.resolved with a boolean stating if the file respects
+     * the custom criterias or not.
+     */
+    validationFunction: (file: MFile) => Promise<boolean>;
+    /**
+     * Custom validation message displayed when {@link MFileUpload#customValidationFunction} return false.
+     */
+    message: string;
+}
+
 const defaultDragEvent: (e: DragEvent) => void = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -60,17 +72,8 @@ export class MFileUpload extends ModulVue {
     @Prop({ default: false })
     public fileReplacement: boolean;
 
-    /**
-     * This function will be ran on every file added during their validation. Must return a Promise.resolved with a boolean stating if the file respects
-     * the custom criterias or not.
-     */
     @Prop()
-    public customValidationFunction?: (file: MFile) => Promise<boolean>;
-    /**
-     * Custom validation message displayed when {@link MFileUpload#customValidationFunction} return false.
-     */
-    @Prop({ default: '' })
-    public customValidationMessage: string;
+    public customValidation?: FileUploadCustomValidation;
 
     $refs: {
         modal: MModal;
@@ -96,7 +99,7 @@ export class MFileUpload extends ModulVue {
     @Watch('rejectedExtensions')
     @Watch('maxSizeKb')
     @Watch('maxFiles')
-    @Watch('customValidationFunction')
+    @Watch('customValidation')
     private updateValidationOptions(): void {
         this.$file.setValidationOptions(
             {
@@ -104,7 +107,7 @@ export class MFileUpload extends ModulVue {
                 rejectedExtensions: this.rejectedExtensions,
                 maxSizeKb: this.maxSizeKb,
                 maxFiles: this.propMaxFiles,
-                customValidationFunction: this.customValidationFunction
+                customValidationFunction: this.customValidation ? this.customValidation.validationFunction : undefined
             },
             this.storeName
         );

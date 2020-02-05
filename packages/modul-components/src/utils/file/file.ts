@@ -288,11 +288,9 @@ class FileStore {
             this.validateMaxFiles(file);
         }
 
-        const fileValid: boolean | undefined = this.options.customValidationFunction && !(await this.options.customValidationFunction(file));
+        if (this.options.customValidationFunction && !(await this.options.customValidationFunction(file))) {
+            this.executeCustomValidation(file);
 
-        if (fileValid) {
-            file.status = MFileStatus.REJECTED;
-            file.rejection = MFileRejectionCause.CUSTOM_VALIDATION;
         }
     }
 
@@ -340,6 +338,13 @@ class FileStore {
         if (nbValidFiles >= this.options!.maxFiles!) {
             file.status = MFileStatus.REJECTED;
             file.rejection = MFileRejectionCause.MAX_FILES;
+        }
+    }
+
+    private async executeCustomValidation(file: MFile): Promise<void> {
+        if (!(await this.options!.customValidationFunction!(file))) {
+            file.status = MFileStatus.REJECTED;
+            file.rejection = MFileRejectionCause.CUSTOM_VALIDATION;
         }
     }
 
