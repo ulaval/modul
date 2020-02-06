@@ -291,7 +291,6 @@ class FileStore {
         if (this.options.maxFiles) {
             this.validateMaxFiles(file);
         }
-
         if (this.isExtensionSupported(file) && this.options.customValidationFunction) {
             await this.executeCustomValidation(file);
         }
@@ -304,7 +303,7 @@ class FileStore {
      * If the extension is a part of the accepted and rejected extensions, it'll be rejected.
      */
     private validateExtension(file: MFile): void {
-        if (this.isExtensionSupported(file)) {
+        if (!this.isExtensionSupported(file)) {
             file.status = MFileStatus.REJECTED;
             file.rejection = MFileRejectionCause.FILE_TYPE;
         }
@@ -312,7 +311,7 @@ class FileStore {
 
     private isExtensionSupported(file: MFile): boolean {
         const ext: string = extractExtension(file.file.name);
-        return ext !== '' && this.extensionInRejectedExtensions(ext) || !this.extensionInAcceptedExtensions(ext);
+        return ext !== '' && !this.extensionInRejectedExtensions(ext) && this.extensionInAcceptedExtensions(ext);
     }
 
     private extensionInAcceptedExtensions(extension: string): boolean {
