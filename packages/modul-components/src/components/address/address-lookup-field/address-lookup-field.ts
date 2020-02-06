@@ -1,5 +1,6 @@
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { InputWidth } from '../../../mixins/input-width/input-width';
 import { Address, AddressSummary } from '../../../utils/address-lookup/address';
 import { AddressLookupServiceProvider } from '../../../utils/address-lookup/address-lookup';
 import { ModulVue } from '../../../utils/vue/vue';
@@ -10,9 +11,15 @@ const KEY_ADDRESS_TYPE: string = 'address';
 export interface AddressLookupFieldProps {
     origin: string | undefined;
     language: string | undefined;
+    label?: string;
+    placeholder?: string;
 }
 @WithRender
-@Component
+@Component({
+    mixins: [
+        InputWidth
+    ]
+})
 export class MAddressLookupField extends ModulVue {
     @Prop()
     value: Address;
@@ -28,13 +35,14 @@ export class MAddressLookupField extends ModulVue {
     @Prop()
     errorMessage: string;
 
-    i18nSearch: string = this.$i18n.translate('m-address-lookup-field:search-field');
-    i18nPlaceholder: string = this.$i18n.translate('m-address-lookup-field:placeholder');
+    @Prop()
+    label?: string;
+
+    @Prop()
+    placeholder?: string;
 
     selection: string = '';
-
     open: boolean = false;
-
     results: AddressSummary[] = [];
 
     @Watch('value', { deep: true, immediate: true })
@@ -65,6 +73,14 @@ export class MAddressLookupField extends ModulVue {
                 }
             }
         }
+    }
+
+    get i18nSearch(): string {
+        return this.label || this.$i18n.translate('m-address-lookup-field:search-field');
+    }
+
+    get i18nPlaceholder(): string {
+        return this.placeholder || this.$i18n.translate('m-address-lookup-field:placeholder');
     }
 
     getClassToggles(address: AddressSummary): { [className: string]: boolean } {
