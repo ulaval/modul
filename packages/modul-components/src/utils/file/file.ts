@@ -51,6 +51,10 @@ export interface MFileValidationOptions {
     maxSizeKb?: number;
     allowedExtensions?: string[];
     rejectedExtensions?: string[];
+    /**
+     * Function that validates custom criteria on a MFile.
+     * @returns true if the file respects the criterias, false otherwise (therefore the file is in error)
+     */
     customValidationFunction?: (file: MFile) => Promise<boolean>;
 }
 
@@ -288,8 +292,8 @@ class FileStore {
             this.validateMaxFiles(file);
         }
 
-        if (this.options.customValidationFunction) {
-            this.executeCustomValidation(file);
+        if (this.isExtensionSupported(file) && this.options.customValidationFunction) {
+            await this.executeCustomValidation(file);
         }
     }
 
@@ -300,12 +304,15 @@ class FileStore {
      * If the extension is a part of the accepted and rejected extensions, it'll be rejected.
      */
     private validateExtension(file: MFile): void {
-        const ext: string = extractExtension(file.file.name);
-
-        if (ext === '' || this.extensionInRejectedExtensions(ext) || !this.extensionInAcceptedExtensions(ext)) {
+        if (this.isExtensionSupported(file)) {
             file.status = MFileStatus.REJECTED;
             file.rejection = MFileRejectionCause.FILE_TYPE;
         }
+    }
+
+    private isExtensionSupported(file: MFile): boolean {
+        const ext: string = extractExtension(file.file.name);
+        return ext !== '' && this.extensionInRejectedExtensions(ext) || !this.extensionInAcceptedExtensions(ext);
     }
 
     private extensionInAcceptedExtensions(extension: string): boolean {
