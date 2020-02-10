@@ -242,7 +242,7 @@ describe('i18n plugin', () => {
         });
 
         it(`calling translate with negative plural modifiers should return the modified string`, () => {
-            expect(Vue.prototype.$i18n.translate('exemples-avec-nombre-genre:medaille-olympique', {}, -2, 'f')).toEqual('Les médaillés olympiques');
+            expect(Vue.prototype.$i18n.translate('exemples-avec-nombre-genre:medaille-olympique', {}, -2, 'f')).toEqual('Les médaillées olympiques');
         });
     });
 });
