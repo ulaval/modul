@@ -20,6 +20,7 @@ import { MFile } from '../../../utils/file/file';
 import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
+import { FileUploadCustomValidation } from '../../file-upload/file-upload';
 import '../rte-internal.scss';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
@@ -110,6 +111,12 @@ const SCROLL_TO_OFFSET: number = -50;
 
     @Prop({ default: 1 })
     public minRows: number;
+
+    /**
+     * Prop required to enable custom validation on images uploaded into the rich text.
+     */
+    @Prop()
+    public customValidation?: FileUploadCustomValidation;
 
     @Emit('fullscreen')
     onFullscreen(fullscreenWasActived: boolean): void { }
