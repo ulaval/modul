@@ -36,6 +36,9 @@ export interface MColumnTable {
     class?: string;
     sortDirection?: MColumnSortDirection;
     defaultSortDirection?: MColumnSortDirection;
+    visible?: boolean;
+    fixed?: boolean;
+    ignored?: boolean;
 }
 
 interface MColumnTableInternal extends MColumnTable {
@@ -165,7 +168,7 @@ export class MTable extends ModulVue {
     }
 
     get columnsInternal(): MColumnTableInternal[] {
-        return this.columns.map((c: MColumnTable) => ({ ...c }));
+        return this.columns.filter((c: MColumnTable) => c.visible === undefined || c.visible).map((c: MColumnTable) => ({ ...c }));
     }
 }
 
