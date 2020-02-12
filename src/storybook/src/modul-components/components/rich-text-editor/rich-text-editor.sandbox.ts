@@ -101,7 +101,7 @@ export class MRichTextEditorSandBox extends ModulVue {
     }
 
     public get customValidationFileNameContainingJohn(): FileUploadCustomValidation {
-        return { validationFunction: (file: MFile): Promise<boolean> => Promise.resolve(file.name.includes('John')), message: 'The file name must contain the word "John' };
+        return { validationFunction: (file: MFile): Promise<boolean> => Promise.resolve(file.name.includes('John')), message: 'The file name must contain the word "John"' };
     }
 }
 const RichTextEditorSandBoxPlugin: PluginObject<any> = {
