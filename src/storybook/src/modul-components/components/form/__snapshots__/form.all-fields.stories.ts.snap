@@ -1479,7 +1479,13 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
                 >
                   <div
                     class="m-multi-select__chips"
-                  />
+                  >
+                    <input
+                      readonly="readonly"
+                      type="text"
+                    />
+                     
+                  </div>
                     
                   <!---->
                    

@@ -41,6 +41,11 @@
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle">
                 <div class="m-multi-select__chips">
+                    <template v-if="numberOfItemsSelected === 0">
+                        <input :placeholder="placeholder"
+                               type="text"
+                               readonly />
+                    </template>
                     <template v-if="chipsDisplayMode === 1">
                         <m-chip-delete class="m-multi-select__chip"
                                        size="small"
