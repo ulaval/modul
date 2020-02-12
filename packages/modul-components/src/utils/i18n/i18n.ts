@@ -214,7 +214,7 @@ export class Messages {
             }
 
             // key.p.modifier
-            if (nb > 1) {
+            if (nb < -1 || nb > 1) {
                 val = this.findKey(lang, `${key}.p.${modifier}`);
 
                 if (val) {
@@ -232,7 +232,7 @@ export class Messages {
             }
 
             // key.p
-            if (nb > 1) {
+            if (nb < -1 || nb > 1) {
                 val = this.findKey(lang, `${key}.p`);
 
                 if (val) {
