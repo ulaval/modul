@@ -17,7 +17,7 @@
                    :max-files="1"
                    :store-name="fileUploadStoreName"
                    :allowed-extensions="imageExtensions"
-                   :custom-validation="customValidation"
+                   :custom-validation="imageUploadCustomValidation"
                    @files-ready="filesReady"
                    @done="filesAdded"
                    @close="onCloseFileUpload"></m-file-upload>

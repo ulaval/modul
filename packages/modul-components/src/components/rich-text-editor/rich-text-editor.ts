@@ -91,7 +91,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
      * Prop required to enable custom validation on images uploaded into the rich text.
      */
     @Prop()
-    public customValidation?: FileUploadCustomValidation;
+    public imageUploadCustomValidation?: FileUploadCustomValidation;
 
     public $refs: {
         input: HTMLElement

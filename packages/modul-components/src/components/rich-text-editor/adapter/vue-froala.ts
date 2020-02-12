@@ -116,7 +116,7 @@ const SCROLL_TO_OFFSET: number = -50;
      * Prop required to enable custom validation on images uploaded into the rich text.
      */
     @Prop()
-    public customValidation?: FileUploadCustomValidation;
+    public imageUploadCustomValidation?: FileUploadCustomValidation;
 
     @Emit('fullscreen')
     onFullscreen(fullscreenWasActived: boolean): void { }
