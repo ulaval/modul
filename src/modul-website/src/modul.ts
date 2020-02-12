@@ -28,6 +28,7 @@ import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import MultiSelectPlugin from '@ulaval/modul-components/dist/components/multi-select/multi-select';
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
 import OptionPlugin from '@ulaval/modul-components/dist/components/option/option';
+import OrganizeTableColumnsPlugin from '@ulaval/modul-components/dist/components/organize-table-columns/organize-table-columns';
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import PaginationPlugin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
@@ -50,6 +51,7 @@ import TooltipPlugin from '@ulaval/modul-components/dist/components/tooltip/tool
 import AccordionTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/accordion-transition/accordion-transition';
 import SlideTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/slide-transition/slide-transition';
 import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
+import SortablePlugin from '@ulaval/modul-components/dist/directives/sortable/sortable';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import UtilsPlugin from '@ulaval/modul-components/dist/utils/utils-plugin';
 import Vue, { PluginObject } from 'vue';
@@ -115,6 +117,8 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(ToastPlugin);
         Vue.use(PaginationPlugin);
         Vue.use(ChipDeletePlugin);
+        Vue.use(OrganizeTableColumnsPlugin);
+        Vue.use(SortablePlugin);
     }
 };
 

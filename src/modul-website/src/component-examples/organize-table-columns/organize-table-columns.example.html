@@ -1,0 +1,13 @@
+<div>
+    <m-modal size="small"
+             title="Organize columns"
+             :open.sync="open">
+        <m-button slot="trigger">Organize columns</m-button>
+        <m-organize-table-columns :columns="columns"
+                                  @reorganize="reorganize"
+                                  @reset="reset"></m-organize-table-columns>
+    </m-modal>
+
+    <m-table :columns="columns"
+             :rows="rows"></m-table>
+</div>
