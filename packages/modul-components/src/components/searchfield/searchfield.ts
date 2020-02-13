@@ -30,6 +30,7 @@ export class MSearchfield extends ModulVue {
         input: HTMLElement
     };
 
+    @Emit('emptyField')
     public onReset(): void {
         this.as<InputManagement>().model = '';
     }
