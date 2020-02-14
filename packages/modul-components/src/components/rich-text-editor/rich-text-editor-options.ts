@@ -8,7 +8,6 @@ export class MRichTextEditorDefaultOptions {
     public charCounterCount: boolean = false;
     public charCounterMax: number = -1;
     public tableInsertHelper: boolean = false;
-    public zIndex: number = 5;
     public toolbarSticky: boolean = true;
     public scrollableContainer: string = 'body'; // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
     public toolbarStickyOffset: number = 0;
@@ -26,7 +25,6 @@ export class MRichTextEditorDefaultOptions {
     public pasteDeniedAttrs: string[] = ['class', 'style'];
     public linkEditButtons: string[] = ['linkOpen', 'linkEdit', 'linkRemove'];
     public linkInsertButtons: string[] = [];
-    public imageResizeWithPercent: boolean = true;
     public imageDefaultWidth: number = 0;// Sets the default with of the image. Setting it to 0 will not set any width.
     public imageEditButtons: string[] = ['imageReplace', ImageLayoutCommands.IMG_LAYOUT_CMD, 'imageRemove', '|', 'imageLink', 'linkOpen', 'linkEdit', 'linkRemove', '|', 'imageAlt'];
     public shortcutsEnabled: string[] = ['paragraphStyle', 'bold', 'italic', 'subscript', 'superscript', 'formatUL', 'formatOL', 'outdent', 'indent', 'insertLink', 'specialCharacters', 'insertImage', 'fullscreen', 'undo', 'redo'];

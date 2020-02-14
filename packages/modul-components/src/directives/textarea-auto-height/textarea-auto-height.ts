@@ -1,6 +1,6 @@
 import { DirectiveOptions, PluginObject, VNode, VNodeDirective } from 'vue';
-
 import { TEXTAREA_AUTO_HEIGHT } from '../directive-names';
+
 
 interface TextareaAutoHeightElement extends HTMLElement {
     disabledUpdate: boolean;
@@ -10,7 +10,7 @@ interface TextareaAutoHeightElement extends HTMLElement {
 
 const ajustHeight: Function = (element: HTMLElement): void => {
     if (element.tagName === 'TEXTAREA') {
-        let outerHeight: number = parseInt((window.getComputedStyle(element).height as string), 10);
+        let outerHeight: number = parseInt(window.getComputedStyle(element).height as string, 10);
         let diff: number = outerHeight - element.clientHeight;
         element.style.height = '0';
         if (element.scrollHeight + diff > 0) {

@@ -1,18 +1,17 @@
 // This code is largery borrowed from https://github.com/froala/vue-froala-wysiwyg.
 // However some changes have been made to "inputify" the froala editor and render is compatible with modUL input-style.
+import FroalaEditor from 'froala-editor';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/js/languages/fr.js';
 import 'froala-editor/js/plugins.pkgd.min.js';
-
-import FroalaEditor from 'froala-editor';
 import $ from 'jquery';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-
 import boldIcon from '../../../assets/icons/svg/Froala-bold.svg';
 import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
+import specialCharsIcon from '../../../assets/icons/svg/Froala-special-charracters.svg';
 import stylesIcon from '../../../assets/icons/svg/Froala-styles.svg';
 import titleIcon from '../../../assets/icons/svg/Froala-title.svg';
 import { ElementQueries } from '../../../mixins/element-queries/element-queries';
@@ -21,10 +20,10 @@ import { MFile } from '../../../utils/file/file';
 import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
+import { FileUploadCustomValidation } from '../../file-upload/file-upload';
+import '../rte-internal.scss';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
-
-
 
 // import { PopupPlugin } from './popup-plugin';
 // import SubMenuPlugin from './submenu-plugin';
@@ -42,6 +41,7 @@ enum froalaEvents {
     Focus = 'focus',
     ImageInserted = 'image.inserted',
     ImageRemoved = 'image.removed',
+    ImageResizeEnd = 'image.resizeEnd',
     Initialized = 'initialized',
     InitializationDelayed = 'initializationDelayed',
     KeyDown = 'keydown',
@@ -112,6 +112,12 @@ const SCROLL_TO_OFFSET: number = -50;
     @Prop({ default: 1 })
     public minRows: number;
 
+    /**
+     * Prop required to enable custom validation on images uploaded into the rich text.
+     */
+    @Prop()
+    public imageUploadCustomValidation?: FileUploadCustomValidation;
+
     @Emit('fullscreen')
     onFullscreen(fullscreenWasActived: boolean): void { }
 
@@ -158,7 +164,6 @@ const SCROLL_TO_OFFSET: number = -50;
     protected addCustomIcons(): void {
         FroalaEditor.DefineIconTemplate('custom-icons', '[SVG]');
         FroalaEditor.DefineIconTemplate('custom-icons-sub-menu', '<div class="fr-sub-menu">[SVG]</div>');
-        FroalaEditor.DefineIconTemplate('custom-icons-span', '[SPAN]');
 
         if (this.$i18n.currentLang() === 'fr') {
             FroalaEditor.DefineIcon('bold', { SVG: (boldIcon as string), template: 'custom-icons' });
@@ -171,7 +176,7 @@ const SCROLL_TO_OFFSET: number = -50;
         FroalaEditor.DefineIcon('paragraphStyle', { SVG: (titleIcon as string), template: 'custom-icons' });
         FroalaEditor.DefineIcon('moreText', { SVG: (stylesIcon as string), template: 'custom-icons-sub-menu' });
         FroalaEditor.DefineIcon('moreParagraph', { SVG: (listsIcon as string), template: 'custom-icons-sub-menu' });
-        FroalaEditor.DefineIcon('specialCharacters', { SPAN: '<span class="fr-icon-special-characters" >Ω</span>', template: 'custom-icons-span' });
+        FroalaEditor.DefineIcon('specialCharacters', { SVG: (specialCharsIcon as string), template: 'custom-icons' });
     }
 
     protected addImageButton(): void {
@@ -334,7 +339,7 @@ const SCROLL_TO_OFFSET: number = -50;
                     this.$emit('paste');
                 },
                 // if we use pasteBeforeCleanup, there's an error in froala's code
-                [froalaEvents.PasteAfterCleanup]: (data: string) => {
+                [froalaEvents.PasteAfterCleanup]: (data: any) => {
                     if (data.replace) {
                         data = replaceTags(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'], 'p', data);
                         return this.froalaEditor.clean.html(data, ['table', 'video', 'u', 's', 'blockquote', 'button', 'input', 'img']);
@@ -372,14 +377,18 @@ const SCROLL_TO_OFFSET: number = -50;
                     if (this.froalaEditor.opts.modulImageUploaded) {
                         $img[0].alt = '';
                         $img[0].classList.add(ImageLayoutCommands.DEFAULT_IMG_LAYOUT_CLASS);
+                        $img[0].sizes = '100vw';
                         this.updateModel();
                     } else {
                         setTimeout(() => {
                             this.froalaEditor.image.remove($img);
                         });
                     }
-
                     this.froalaEditor.opts.modulImageUploaded = false;
+                },
+                [froalaEvents.ImageResizeEnd]: ($img) => {
+                    this.setImageSizes($img[0]);
+                    this.updateModel();
                 }
             }
         });
@@ -390,6 +399,13 @@ const SCROLL_TO_OFFSET: number = -50;
             this.setDisabled();
             this.manageInitialFocus();
         });
+    }
+
+    private setImageSizes(img: HTMLImageElement): void {
+        setTimeout(() => {
+            const viewportWidth: number = Math.round(img.clientWidth / this.froalaClientWidth * 100);
+            img.sizes = `${viewportWidth}vw`;
+        }, 0);
     }
 
     private setFroalaToolbarDesktop(): void {

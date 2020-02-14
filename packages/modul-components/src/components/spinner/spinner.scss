@@ -1,4 +1,7 @@
 @import 'commons';
+
+@include m-infinity-rotation();
+
 $m-loading-speed: 0.7s;
 
 .m-spinner {

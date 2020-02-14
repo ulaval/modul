@@ -1,9 +1,8 @@
-import { mount, shallowMount, Wrapper } from '@vue/test-utils';
+import { mount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
 import { resetModulPlugins } from '../../../tests/helpers/component';
 import { createMockFile, createMockFileList } from '../../../tests/helpers/file';
 import { addMessages } from '../../../tests/helpers/lang';
-import { renderComponent, WrapChildrenStub } from '../../../tests/helpers/render';
 import I18nPlugin from '../../components/i18n/i18n';
 import FileSizeFilterPlugin from '../../filters/filesize/filesize';
 import FilePlugin, { DEFAULT_STORE_NAME, FileService, MFile, MFileStatus, MFileValidationOptions } from '../../utils/file/file';
@@ -28,9 +27,9 @@ jest.mock('../../utils/user-agent/user-agent', () => ({
 }));
 
 let mockIsDesktopValue: boolean = true;
-(UserAgentUtil.isDesktop as jest.Mock).mockImplementation(() => mockIsDesktopValue);
-
-
+(UserAgentUtil.isDesktop as jest.Mock).mockImplementation(
+    () => mockIsDesktopValue
+);
 
 describe('MFileUpload', () => {
     beforeEach(() => {
@@ -40,29 +39,13 @@ describe('MFileUpload', () => {
         Vue.use(FilePlugin);
         Vue.use(I18nPlugin);
         Vue.use(MediaQueriesPlugin);
-
+        Vue.use(ButtonPlugin);
         addMessages(Vue, ['components/file-upload/file-upload.lang.en.json']);
         addMessages(Vue, ['filters/filesize/filesize.lang.en.json']);
     });
 
-    it('should render correctly', () => {
-        const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-            mocks: { $mq: { state: { isMqMinS: true } } }
-        });
-
-        return expect(renderComponent(fupd.vm)).resolves.toMatchSnapshot();
-    });
-
-    it('should render correctly in mobile', () => {
-        const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-            mocks: { $mq: { state: { isMqMinS: true } } }
-        });
-
-        return expect(renderComponent(fupd.vm)).resolves.toMatchSnapshot();
-    });
-
     it('should support optional $file store name', async () => {
-        const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
+        const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
             propsData: {
                 storeName: 'unique-name'
             }
@@ -78,10 +61,10 @@ describe('MFileUpload', () => {
     });
 
     describe('validation', () => {
-        let validationOpts: MFileValidationOptions;
+        let initialValidationOpts: MFileValidationOptions;
 
         beforeEach(() => {
-            validationOpts = {
+            initialValidationOpts = {
                 allowedExtensions: ['jpg', 'png', 'mp4'],
                 rejectedExtensions: ['mov'],
                 maxSizeKb: 1,
@@ -93,13 +76,13 @@ describe('MFileUpload', () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
             const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
-                propsData: { ...validationOpts },
+                propsData: { ...initialValidationOpts },
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
             const newAcceptedExtensions: string[] = ['avi', 'mp3'];
             const newRejectedExtensions: string[] = ['css', 'js'];
-            const newValidationOpts: MFileValidationOptions = { ...validationOpts };
+            const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
             newValidationOpts.allowedExtensions = newAcceptedExtensions;
             newValidationOpts.rejectedExtensions = newRejectedExtensions;
 
@@ -121,13 +104,13 @@ describe('MFileUpload', () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
 
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-                propsData: validationOpts,
+            const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
+                propsData: initialValidationOpts,
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
             const newMaxSizeKb: number = 100;
-            const newValidationOpts: MFileValidationOptions = { ...validationOpts };
+            const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
             newValidationOpts.maxSizeKb = newMaxSizeKb;
             fupd.setProps({ maxSizeKb: newValidationOpts.maxSizeKb });
 
@@ -142,15 +125,15 @@ describe('MFileUpload', () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
 
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-                propsData: validationOpts,
+            const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
+                propsData: initialValidationOpts,
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
             const newMaxFiles: number = 25;
             fupd.setProps({ maxFiles: newMaxFiles });
 
-            const newValidationOpts: MFileValidationOptions = { ...validationOpts };
+            const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
             newValidationOpts.maxFiles = newMaxFiles;
 
             await Vue.nextTick();
@@ -160,31 +143,47 @@ describe('MFileUpload', () => {
             );
         });
 
-        it('should pass validation options to $file service', () => {
+        it('should pass validation options to $file service when customValidation property is modified', async () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
-
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-                propsData: validationOpts,
+            const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
+                propsData: initialValidationOpts,
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
+            const newValidationFunction: () => Promise<boolean> = () => Promise.resolve(false);
+            const expectedNewValidationOptions: MFileValidationOptions = {
+                ...initialValidationOpts,
+                customValidationFunction: newValidationFunction
+            };
+
+            fupd.setProps({
+                customValidation: {
+                    validationFunction: newValidationFunction,
+                    message: 'Custom message'
+                }
+            });
+            await Vue.nextTick();
 
             expect(filesvc.setValidationOptions).toHaveBeenCalledWith(
-                validationOpts,
+                expectedNewValidationOptions,
                 DEFAULT_STORE_NAME
             );
         });
 
-        it('should render accepted file extensions', () => {
+
+        it('should pass validation options to $file service', () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
 
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-                propsData: validationOpts,
+            const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
+                propsData: initialValidationOpts,
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
-            return expect(renderComponent(fupd.vm)).resolves.toMatchSnapshot();
+            expect(filesvc.setValidationOptions).toHaveBeenCalledWith(
+                initialValidationOpts,
+                DEFAULT_STORE_NAME
+            );
         });
 
         describe('validation messages', () => {
@@ -203,30 +202,12 @@ describe('MFileUpload', () => {
                 Vue.component(MESSAGE_NAME, MMessage);
                 addMessages(Vue, ['components/message/message.lang.en.json']);
 
-                fupd = shallowMount(MFileUpload, {
-                    propsData: validationOpts,
+                fupd = mount(MFileUpload, {
+                    propsData: initialValidationOpts,
                     mocks: { $mq: { state: { isMqMinS: true } } }
                 });
 
                 stubMModalRefs(fupd.vm);
-            });
-
-            it('should render rejected files in dialog', async () => {
-                fupd.vm.$file.add(
-                    createMockFileList([
-                        createMockFile('invalid-extensions'),
-                        createMockFile('invalid-size.jpg', 2000),
-                        createMockFile('valid1.jpg'),
-                        createMockFile('valid2.jpg'),
-                        createMockFile('valid3.jpg'),
-                        createMockFile('valid4.jpg'),
-                        createMockFile('valid5.jpg'),
-                        createMockFile('max-files.jpg')
-                    ])
-                );
-
-                await Vue.nextTick();
-                expect(await renderComponent(fupd.vm)).toMatchSnapshot();
             });
 
             it('should clear rejected files when validation message is closed', async () => {
@@ -242,12 +223,11 @@ describe('MFileUpload', () => {
         });
 
         describe('when fileReplacement is false', () => {
-
             let fupd: Wrapper<MFileUpload>;
 
             beforeEach(() => {
-                fupd = shallowMount(MFileUpload, {
-                    propsData: validationOpts
+                fupd = mount(MFileUpload, {
+                    propsData: initialValidationOpts
                 });
             });
 
@@ -261,7 +241,6 @@ describe('MFileUpload', () => {
         });
 
         describe('when fileReplacement is true', () => {
-
             let filesvc: FileService;
             let fupd: Wrapper<MFileUpload>;
 
@@ -269,12 +248,12 @@ describe('MFileUpload', () => {
                 filesvc = (Vue.prototype as ModulVue).$file;
                 jest.spyOn(filesvc, 'setValidationOptions');
 
-                fupd = shallowMount(MFileUpload, {
+                fupd = mount(MFileUpload, {
                     propsData: {
-                        allowedExtensions: validationOpts.allowedExtensions,
-                        rejectedExtensions: validationOpts.rejectedExtensions,
-                        maxSizeKb: validationOpts.maxSizeKb,
-                        maxFiles: validationOpts.maxFiles,
+                        allowedExtensions: initialValidationOpts.allowedExtensions,
+                        rejectedExtensions: initialValidationOpts.rejectedExtensions,
+                        maxSizeKb: initialValidationOpts.maxSizeKb,
+                        maxFiles: initialValidationOpts.maxFiles,
                         fileReplacement: true
                     }
                 });
@@ -283,8 +262,7 @@ describe('MFileUpload', () => {
             });
 
             it('should allowed only 1 file', async () => {
-
-                const newValidationOpts: MFileValidationOptions = { ...validationOpts };
+                const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
                 newValidationOpts.maxFiles = 1;
 
                 await Vue.nextTick();
@@ -301,21 +279,20 @@ describe('MFileUpload', () => {
             it('should be the right button', () => {
                 expect(fupd.vm.buttonAdd).toEqual(BTN_REPLACE_FILE);
             });
-
         });
     });
 
     describe('files selection / drop', () => {
-        beforeEach(() => {
+        beforeEach(async () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
-            filesvc.add(createMockFileList([createMockFile('uploading')]));
+            await filesvc.add(createMockFileList([createMockFile('uploading')]));
             filesvc.files()[0].status = MFileStatus.UPLOADING;
         });
 
         it('should emit files-ready event when $file managed files change', async () => {
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload);
+            const fupd: Wrapper<MFileUpload> = mount(MFileUpload);
 
-            fupd.vm.$file.add(createMockFileList([createMockFile('new-file.jpg')]));
+            await fupd.vm.$file.add(createMockFileList([createMockFile('new-file.jpg')]));
             await Vue.nextTick();
 
             expect(fupd.emitted('files-ready')[0][0]).toEqual([
@@ -325,7 +302,6 @@ describe('MFileUpload', () => {
 
         describe('the drop zone', () => {
             it('should be available on desktop with small screen size or larger', () => {
-
                 const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
                     mocks: { $mq: { state: { isMqMinS: true } } }
                 });
@@ -333,7 +309,7 @@ describe('MFileUpload', () => {
                 expect(fupd.vm.isDropZoneEnabled).toBeTruthy();
             });
             it('should not be available on desktop with small screen size or lower', () => {
-                const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
+                const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
                     mocks: { $mq: { state: { isMqMinS: false } } }
                 });
 
@@ -341,21 +317,19 @@ describe('MFileUpload', () => {
             });
             it('should not be available on mobile', () => {
                 mockIsDesktopValue = false;
-                const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
+                const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
                     mocks: { $mq: { state: { isMqMinS: true } } }
                 });
 
                 expect(fupd.vm.isDropZoneEnabled).toBeFalsy();
-
             });
             it('should not be available on mobile with small screen size or larger', () => {
                 mockIsDesktopValue = false;
-                const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
+                const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
                     mocks: { $mq: { state: { isMqMinS: true } } }
                 });
 
                 expect(fupd.vm.isDropZoneEnabled).toBeFalsy();
-
             });
         });
     });
@@ -364,11 +338,11 @@ describe('MFileUpload', () => {
         let fupd: Wrapper<MFileUpload>;
         let completedFile: MFile;
 
-        beforeEach(() => {
+        beforeEach(async () => {
             Vue.use(ButtonPlugin);
 
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
-            filesvc.add(
+            await filesvc.add(
                 createMockFileList([
                     createMockFile('ready'),
                     createMockFile('completed')
@@ -381,7 +355,7 @@ describe('MFileUpload', () => {
                 completeHinted: true
             });
 
-            fupd = shallowMount(MFileUpload);
+            fupd = mount(MFileUpload);
             fupd.vm.$refs.modal = { closeModal: jest.fn() } as any;
         });
 
@@ -411,9 +385,7 @@ describe('MFileUpload', () => {
         });
 
         it('should emit file-upload-cancel event for each file being uploaded when cancel button is clicked', async () => {
-            fupd.vm.$file.add(
-                createMockFileList([createMockFile('uploading')])
-            );
+            await fupd.vm.$file.add(createMockFileList([createMockFile('uploading')]));
 
             jest.spyOn(fupd.vm.$refs.modal, 'closeModal');
             const uploadingFile: MFile = fupd.vm.$file.files()[2];
@@ -428,29 +400,16 @@ describe('MFileUpload', () => {
     describe('uploading', () => {
         let uploadingFileMock: File;
 
-        beforeEach(() => {
+        beforeEach(async () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             uploadingFileMock = createMockFile('uploading-file');
-            filesvc.add(createMockFileList([uploadingFileMock]));
+            await filesvc.add(createMockFileList([uploadingFileMock]));
             filesvc.files()[0].status = MFileStatus.UPLOADING;
-        });
-
-        it('should render uploading files', () => {
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-                stubs: {
-                    'transition-group': WrapChildrenStub('ul')
-                },
-                mocks: { $mq: { state: { isMqMinS: true } } }
-            });
-
-            fupd.vm.$file.files()[0].progress = 33;
-
-            return expect(renderComponent(fupd.vm)).resolves.toMatchSnapshot();
         });
 
         it('should emit file-upload-cancel when an uploading file cancel button is clicked', () => {
             Vue.use(IconButtonPlugin);
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload);
+            const fupd: Wrapper<MFileUpload> = mount(MFileUpload);
 
             fupd.find({ ref: 'cancelUploadButton' }).vm.$emit('click');
 
@@ -463,10 +422,10 @@ describe('MFileUpload', () => {
     describe('completed', () => {
         let completedFileMock: File;
 
-        beforeEach(() => {
+        beforeEach(async () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             completedFileMock = createMockFile('completed-file');
-            filesvc.add(createMockFileList([completedFileMock]));
+            await filesvc.add(createMockFileList([completedFileMock]));
             Object.assign(filesvc.files()[0], {
                 status: MFileStatus.COMPLETED,
                 progress: 100,
@@ -474,20 +433,9 @@ describe('MFileUpload', () => {
             });
         });
 
-        it('should render completed files', () => {
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload, {
-                stubs: {
-                    'transition-group': WrapChildrenStub('ul')
-                },
-                mocks: { $mq: { state: { isMqMinS: true } } }
-            });
-
-            return expect(renderComponent(fupd.vm)).resolves.toMatchSnapshot();
-        });
-
         it('should emit file-remove when a completed file is deleted', () => {
             Vue.use(IconButtonPlugin);
-            const fupd: Wrapper<MFileUpload> = shallowMount(MFileUpload);
+            const fupd: Wrapper<MFileUpload> = mount(MFileUpload);
             const deletingFile: MFile = fupd.vm.$file.files()[0];
 
             fupd.find({ ref: 'removeButton' }).vm.$emit('click');

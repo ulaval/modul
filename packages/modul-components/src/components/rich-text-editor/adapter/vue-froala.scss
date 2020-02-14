@@ -1,4 +1,5 @@
 @import 'commons';
+@import '../rte-theme.scss';
 @import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css'); /* FA CSS import */
 $m-collapsed-input-style--margin: 16px !default;
 $m-froala-toolbar-btn-width: 38px !default;
@@ -359,12 +360,6 @@ $m-froala-toolbar-btn-height: 38px !default;
                     -o-transition: all 0.3s;
                     content: "";
                 }
-            }
-
-            .fr-icon-special-characters {
-                text-align: center;
-                padding: 0;
-                width: $m-froala-toolbar-btn-width;
             }
         }
 

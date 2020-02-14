@@ -14,7 +14,7 @@ import WithRender from './validation-message.html?style=./validation-message.scs
 })
 export class MValidationMessage extends ModulVue {
     @Prop({ default: true })
-    public transition: boolean = true;
+    public transition: boolean;
 
     public svgTitle: string;
     public iconName: string;

@@ -1479,7 +1479,13 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
                 >
                   <div
                     class="m-multi-select__chips"
-                  />
+                  >
+                    <input
+                      readonly="readonly"
+                      type="text"
+                    />
+                     
+                  </div>
                     
                   <!---->
                    
@@ -2256,7 +2262,11 @@ exports[`Storyshots modul-components|m-form/all fields Timepicker 1`] = `
                 Time
               </span>
                
-              <!---->
+              <sup
+                class="m-input-style__required-marker"
+              >
+                *
+              </sup>
             </span>
           </label>
            

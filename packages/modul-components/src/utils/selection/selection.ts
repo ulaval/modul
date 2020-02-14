@@ -3,7 +3,7 @@ export const clearUserSelection: () => void = () => {
     if (document.getSelection) { // for all new browsers (IE9+, Chrome, Firefox)
         document.getSelection()!.removeAllRanges();
         document.getSelection()!.addRange(document.createRange());
-    } else if (window.getSelection) { // equals with the document.getSelection (MSDN info)
+    } else if ((window as any).getSelection) { // equals with the document.getSelection (MSDN info)
         if ((window as any).getSelection().removeAllRanges) { // for all new browsers (IE9+, Chrome, Firefox)
             (window as any).getSelection().removeAllRanges();
             (window as any).getSelection().addRange(document.createRange());

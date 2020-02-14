@@ -58,6 +58,9 @@ export class MMultiSelect extends ModulVue {
     })
     public defaultChipCharsTrunk: number;
 
+    @Prop()
+    public placeholder: string;
+
     public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
     public internalValue: any[] = [];
     public internalIsFocus: boolean = false;

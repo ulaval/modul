@@ -62,7 +62,6 @@ import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
 import FrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
 import '@ulaval/modul-components/dist/styles/main.scss';
 import MessagePlugin, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
-import '@ulaval/modul-components/dist/utils/polyfills';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils/utils-plugin';

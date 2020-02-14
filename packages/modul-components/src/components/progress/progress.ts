@@ -106,11 +106,12 @@ export class MProgress extends ModulVue {
         return this.value >= 100 ? {
             width: this.stringValue,
             borderRadius: this.radiusSize
-        } : {
-            width: this.stringValue,
-            'border-bottom-left-radius': this.radiusSize,
-            'border-top-left-radius': this.radiusSize
-        };
+        } :
+            {
+                width: this.stringValue,
+                'border-bottom-left-radius': this.radiusSize,
+                'border-top-left-radius': this.radiusSize
+            };
     }
 
     private get stringValue(): string {
@@ -157,20 +158,8 @@ export class MProgress extends ModulVue {
         return this.circle === true;
     }
 
-    // Todo Not working
-    // private get isIE(): boolean {
-    //     if (!this.$isServer) {
-    //         return (navigator.userAgent.toLowerCase() as any).includes('trident');
-    //     }
-    //     return false;
-    // }
-
     private get progressClasses(): { [name: string]: boolean } {
         let animationClass: string = 'm-progress-spinner-indeterminate';
-
-        // if (this.isIE) {
-        //     animationClass += '-fallback';
-        // }
 
         return {
             [animationClass]: true,

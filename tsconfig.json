@@ -9,10 +9,10 @@
         ],
         "module": "es2015",
         "moduleResolution": "node",
-        "sourceMap": true,
-        "experimentalDecorators": true,
-        "allowSyntheticDefaultImports": true,
-        "strictNullChecks": true,
+        "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
+        "allowSyntheticDefaultImports": true, /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+        "strictNullChecks": true, /* Enable strict null checks. */
+        "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
         "typeRoots": [
             "node_modules/@types"
         ],

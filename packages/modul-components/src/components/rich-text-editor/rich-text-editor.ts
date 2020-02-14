@@ -1,6 +1,5 @@
 // tslint:disable:deprecation
 
-import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
@@ -13,9 +12,7 @@ import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { RICH_TEXT_EDITOR_NAME } from '../component-names';
-import FileUploadPlugin from '../file-upload/file-upload';
-import InputStylePlugin from '../input-style/input-style';
-import ValidationMessagePlugin from '../validation-message/validation-message';
+import { FileUploadCustomValidation } from '../file-upload/file-upload';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
@@ -89,6 +86,12 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
     @Prop({ default: false })
     public titleAvailable: boolean; // temporary
+
+    /**
+     * Prop required to enable custom validation on images uploaded into the rich text.
+     */
+    @Prop()
+    public imageUploadCustomValidation?: FileUploadCustomValidation;
 
     public $refs: {
         input: HTMLElement
@@ -273,16 +276,3 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     }
 }
 
-const RichTextEditorPlugin: PluginObject<any> = {
-    install(v, options): void {
-
-        v.prototype.$log.error('RichTextEditorPlugin will be deprecated in modul v.1.0, this components should not be installed  globally for performance reasons');
-
-        v.use(FileUploadPlugin);
-        v.use(InputStylePlugin);
-        v.use(ValidationMessagePlugin);
-        v.component(RICH_TEXT_EDITOR_NAME, MRichTextEditor);
-    }
-};
-
-export default RichTextEditorPlugin;

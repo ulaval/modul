@@ -1,43 +1,33 @@
-<div class="m-sortable">
-    <h3>Sort with switch</h3>
-    <h4>Sortable - with handle and no attribut can-drag</h4>
-    <m-switch :value="peutEtreDrag"
-              @change="basculePeutEtreDrag($event)">Enable/disable sort</m-switch>
-    <ul v-m-sortable="peutEtreDrag"
-        :items="elementsSortableWithHandleNoAttribut"
-        @sortable:move="deplacerElementsWithHandleNoAttribut">
+<div class="m-sortable-sandbox">
 
-        <li v-for="(element, index) in elementsSortableWithHandleNoAttribut"
-            :key="element.cle">
-            <div v-if="peutEtreDrag"
-                 class="drag-handle">
-                <m-icon name="m-svg__drag-vertical"
-                        size="28px"></m-icon>
-            </div>
-            {{ element.titre }}
-        </li>
-    </ul>
+    <h4>Sortable - can-drag attribute</h4>
+    <ul v-m-sortable="true"
+        :items="elementsSortableCanDrag"
+        @sortable:move="deplacerElementsCanDrag">
 
-    <h4>Sortable - with handle and attribut can-drag</h4>
-    <m-switch :value="peutEtreDrag"
-              @change="basculePeutEtreDrag($event)">Enable/disable sort</m-switch>
-    <ul v-m-sortable="peutEtreDrag"
-        :items="elementsSortableWithHandleWithAttribut"
-        @sortable:move="deplacerElementsWithHandleWithAttribut">
-
-        <li v-for="(element, index) in elementsSortableWithHandleWithAttribut"
+        <li v-for="(element, index) in elementsSortableCanDrag"
             :key="element.cle"
             :can-drag="isDraggable(element.cle)">
-            <div v-if="peutEtreDrag"
-                 class="drag-handle">
-                <m-icon name="m-svg__drag-vertical"
-                        size="28px"></m-icon>
+            <div class="m-sortable-sandbox__item">
+                {{ element.titre }}
             </div>
-            {{ element.titre }}
         </li>
     </ul>
 
-    <h3>Sort without switch</h3>
+    <h4>Sortable - can-drop attribute</h4>
+    <ul v-m-sortable="true"
+        :items="elementsSortableCanDrop"
+        @sortable:move="deplacerElementsCanDrop">
+
+        <li v-for="(element, index) in elementsSortableCanDrop"
+            :key="element.cle"
+            :can-drop="isDroppable(element.cle)">
+            <div class="m-sortable-sandbox__item">
+                {{ element.titre }}
+            </div>
+        </li>
+    </ul>
+
     <h4>Sortable - with handle</h4>
     <ul v-m-sortable="true"
         :items="elementsSortableWithHandle"
@@ -46,26 +36,32 @@
         <li v-for="(element, index) in elementsSortableWithHandle"
             :key="element.cle"
             :can-drag="isDraggable(element.cle)">
-            <div class="drag-handle">
-                <m-icon name="m-svg__drag-vertical"
-                        size="28px"></m-icon>
+            <div class="m-sortable-sandbox__item">
+                <div class="m-drag-handle">
+                    <m-icon name="m-svg__drag-vertical"
+                            size="28px"></m-icon>
+                </div>
+                {{ element.titre }}
             </div>
-            {{ element.titre }}
         </li>
     </ul>
 
+    <h4>Sortable - with switch</h4>
+    <m-switch :value="peutEtreDrag"
+              @change="basculePeutEtreDrag($event)">Enable/disable sort</m-switch>
+    <ul v-m-sortable="peutEtreDrag"
+        :items="elementsSortable"
+        @sortable:move="deplacerElements">
 
-    <h4>Sortable - without handle</h4>
-    <ul v-m-sortable="true"
-        :items="elementsSortableWithoutHandle"
-        @sortable:move="deplacerElementsWithoutHandle">
-
-        <li v-for="(element, index) in elementsSortableWithoutHandle"
-            class="noHandle"
-            :key="element.cle"
-            :can-drag="isDraggable(element.cle)">
-            {{ element.titre }}
+        <li v-for="(element, index) in elementsSortable"
+            :key="element.cle">
+            <div class="m-sortable-sandbox__item">
+                <div class="m-drag-handle">
+                    <m-icon name="m-svg__drag-vertical"
+                            size="28px"></m-icon>
+                </div>
+                {{ element.titre }}
+            </div>
         </li>
     </ul>
-
 </div>

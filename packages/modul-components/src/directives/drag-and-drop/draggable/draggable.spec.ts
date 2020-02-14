@@ -1,7 +1,7 @@
 import { mount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
+import { polyFillActive } from '../../../utils/polyfills/drag-and-drop.polyfill';
 import { resetModulPlugins } from './../../../../tests/helpers/component';
-import { polyFillActive } from './../../../utils/polyfills';
 import { MDOMPlugin } from './../../domPlugin';
 import { MRemoveUserSelect } from './../../user-select/remove-user-select';
 import DraggablePlugin, { MDraggable, MDraggableClassNames, MDraggableEventNames, MDraggableOptions } from './draggable';
@@ -187,7 +187,7 @@ describe('draggable', () => {
         describe(`Given a draggable element with handle`, () => {
             describe(`When ${eventName} and the handle is not used`, () => {
                 it(`Then it should not apply grabbing class to parent draggable`, () => {
-                    const draggable: Wrapper<Vue> = getDraggableDirective(undefined, undefined, '<div class="drag-handle">Handle</div><div class="draggableContent">draggable content</div>');
+                    const draggable: Wrapper<Vue> = getDraggableDirective(undefined, undefined, '<div class="m-drag-handle">Handle</div><div class="draggableContent">draggable content</div>');
                     const draggableContent: Wrapper<Vue> = draggable.find('.draggableContent');
 
                     draggableContent.trigger(eventName);

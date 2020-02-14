@@ -1,0 +1,399 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-file-upload Allowed Extensions Help Message 1`] = `
+<div>
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Allowed Extensions Only 1`] = `
+<div>
+  <h5>
+    Allowed extensions only
+  </h5>
+   
+  <span>
+    Allowed extensions: jpg, jpeg, png
+  </span>
+   
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Custom Validation Function 1`] = `
+<div>
+  <h5>
+    Allowed files based on custom validation function
+  </h5>
+   
+  <span>
+    Allowed filenames that contains the string "John" - else displays custom message
+  </span>
+   
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Default Story 1`] = `
+<div
+  class="m-modal"
+>
+  <span>
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        File upload 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+  </span>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Header Slot 1`] = `
+<div>
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Multiple Files Uploads 1`] = `
+<div>
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Rejected Extensions Only 1`] = `
+<div>
+  <h5>
+    Allowed and rejected extensions
+  </h5>
+   
+  <span>
+    Allowed extensions: jpg, jpeg, png, mp4
+  </span>
+   
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Replacement File 1`] = `
+<div>
+  <h5>
+    Replacement file
+  </h5>
+   
+  <span>
+    Prop max-files: 1
+  </span>
+   
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Replacement File Max 10 1`] = `
+<div>
+  <h5>
+    Replacement file
+  </h5>
+   
+  <span>
+    Prop max-files: 10 - should allowed only one
+  </span>
+   
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Replacement File Undefined 1`] = `
+<div>
+  <h5>
+    Replacement file
+  </h5>
+   
+  <span>
+    Prop max-files: undefined
+  </span>
+   
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-file-upload Single File Upload 1`] = `
+<div>
+  <div
+    class="m-modal"
+  >
+    <span>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          File upload 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </span>
+     
+    <!---->
+  </div>
+</div>
+`;
