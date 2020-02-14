@@ -12,7 +12,6 @@ import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { RICH_TEXT_EDITOR_NAME } from '../component-names';
-import { FileUploadCustomValidation } from '../file-upload/file-upload';
 import VueFroala from './adapter/vue-froala';
 import { MRichTextEditorDefaultOptions } from './rich-text-editor-options';
 import WithRender from './rich-text-editor.html?style=./rich-text-editor.scss';
@@ -86,12 +85,6 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
     @Prop({ default: false })
     public titleAvailable: boolean; // temporary
-
-    /**
-     * Prop required to enable custom validation on images uploaded into the rich text.
-     */
-    @Prop()
-    public imageUploadCustomValidation?: FileUploadCustomValidation;
 
     public $refs: {
         input: HTMLElement

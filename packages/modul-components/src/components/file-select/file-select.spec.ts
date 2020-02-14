@@ -119,7 +119,7 @@ describe('file-select', () => {
             localVue: Vue
         });
 
-        const addMock: jest.Mock<Promise<void>> = jest.fn(() => Promise.resolve());
+        const addMock: jest.Mock<{}> = jest.fn();
         fileSelect.vm.$file.add = addMock;
 
         fileSelect.find('input').trigger('change');

@@ -106,7 +106,7 @@ export class Modul {
                 this.windowStack.pop();
             } else {
                 let stackElement: StackElement = this.windowStackMap[stackId];
-                if (stackElement && stackElement.stackIndex !== undefined) {
+                if (stackElement && stackElement.stackIndex) {
                     this.windowStack[stackElement.stackIndex] = undefined;
                 }
             }

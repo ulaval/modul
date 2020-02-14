@@ -43,23 +43,16 @@
                            :required-marker="requiredMarker"
                            :tag-style="tagStyle"
                            :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
-                <div class="m-multi-select__chips">
-                    <template v-if="numberOfItemsSelected === 0">
-                        <input :placeholder="placeholder"
-                               type="text"
-                               readonly />
-                    </template>
-                    <template v-if="chipsDisplayMode === 1">
-                        <m-chip-delete class="m-multi-select__chip"
-                                       size="small"
-                                       @delete="onDeleteAll()">
-                            <template v-slot:default>
-                                <slot name="chips-all">
-                                    <m-i18n k="m-multi-select:all-selected"
-                                            :params="[numberOfItemsSelected]"></m-i18n>
-                                </slot>
-                            </template>
-                        </m-chip-delete>
+                <m-chip-delete v-if="chipsDisplayMode === 1"
+                               class="m-multi-select__chip"
+                               size="small"
+                               :disabled="disabled || readonly"
+                               @delete="onDeleteAll()">
+                    <template v-slot:default>
+                        <slot name="chips-all">
+                            <m-i18n k="m-multi-select:all-selected"
+                                    :params="[numberOfItemsSelected]"></m-i18n>
+                        </slot>
                     </template>
                 </m-chip-delete>
                 <template v-else-if="chipsDisplayMode === 0">

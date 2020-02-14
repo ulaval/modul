@@ -42,10 +42,6 @@
                         <m-i18n :nb="propMaxFiles"
                                 k="m-file-upload:file"></m-i18n>)
                     </p>
-                    <p class="m-file-upload__error-message__error"
-                       v-else-if="hasCustomValidationRejection(file)">
-                        {{customValidation.message}}
-                    </p>
                 </li>
             </ul>
         </m-message>

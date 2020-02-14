@@ -8,7 +8,6 @@ export const FIRST_MONTH_INDEX: number = 0;
 export const LAST_MONTH_INDEX: number = 11;
 
 export const LAST_DAY_OF_WEEK_INDEX: number = 6;
-export const FIRST_DAY_OF_MONTH_INDEX: number = 1;
 
 export type SingleDate = string;
 export interface RangeDate {
@@ -91,11 +90,11 @@ export default abstract class AbstractCalendarState implements CalendarState {
     }
 
     protected nextMonth(): void {
-        this.updateCurrentlyDisplayedDate(this.currentlyDisplayedYear(), this.currentlyDisplayedMonth() + 1, FIRST_DAY_OF_MONTH_INDEX);
+        this.updateCurrentlyDisplayedDate(this.currentlyDisplayedYear(), this.currentlyDisplayedMonth() + 1, this.currentlyDisplayedDay());
     }
 
     protected previousMonth(): void {
-        this.updateCurrentlyDisplayedDate(this.currentlyDisplayedYear(), this.currentlyDisplayedMonth() - 1, FIRST_DAY_OF_MONTH_INDEX);
+        this.updateCurrentlyDisplayedDate(this.currentlyDisplayedYear(), this.currentlyDisplayedMonth() - 1, this.currentlyDisplayedDay());
     }
 
     protected nextYear(): void {
@@ -115,7 +114,7 @@ export default abstract class AbstractCalendarState implements CalendarState {
     }
 
     protected selectMonth(month: MonthState): void {
-        this.updateCurrentlyDisplayedDate(this.currentlyDisplayedYear(), month.month, FIRST_DAY_OF_MONTH_INDEX);
+        this.updateCurrentlyDisplayedDate(this.currentlyDisplayedYear(), month.month, this.currentlyDisplayedDay());
     }
 
     protected initDates(value?: SingleDate | RangeDate, minDate?: string, maxDate?: string): void {

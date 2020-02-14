@@ -159,12 +159,10 @@ export default class ModulDate {
     }
 
     /**
-     * format date string as YYYY-MM-DD
+     * format date following the date part of the standard ISO-8601
      */
     public toString(): string {
-        let month: string = this.padString((this.innerDate.getMonth() + 1).toString());
-        let day: string = this.padString(this.innerDate.getDate().toString());
-        return `${this.fullYear()}-${month}-${day}`;
+        return this.innerDate.toISOString().split('T')[0];
     }
 
     /**

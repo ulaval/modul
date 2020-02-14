@@ -86,7 +86,6 @@ export class AddressRetrieveToAddress implements RetrieveResponseMapper<Address>
         if (!response.request || !response.result) { return undefined!; }
 
         return {
-            id: response.request.Id,
             name: '',
             buildingNumber: response.result.BuildingNumber,
             street: response.result.Street,
@@ -131,7 +130,6 @@ export class AddressRetrieveToAddress implements RetrieveResponseMapper<Address>
         });
 
         return {
-            id: response.request.placeId,
             buildingNumber: componentsByType[GOOGLE_ADDRESS_COMPONENTS.STREET_NUMBER].long_name,
             street: componentsByType[GOOGLE_ADDRESS_COMPONENTS.ROUTE].long_name,
             city: componentsByType[GOOGLE_ADDRESS_COMPONENTS.LOCALITY].long_name,

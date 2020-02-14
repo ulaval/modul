@@ -232,17 +232,5 @@ describe('i18n plugin', () => {
         it(`calling translate with modifiers should return the modified string`, () => {
             expect(Vue.prototype.$i18n.translate('exemples-avec-nombre-genre:medaille-olympique', {}, 1, 'f')).toEqual('La seule médaillée olympique');
         });
-
-        it(`calling translate with negative sigular modifiers should return the modified string`, () => {
-            expect(Vue.prototype.$i18n.translate('exemples-avec-nombre-genre:medaille-olympique', {}, -1, 'f')).toEqual('La médaillée olympique');
-        });
-
-        it(`calling translate with plural modifiers should return the modified string`, () => {
-            expect(Vue.prototype.$i18n.translate('exemples-avec-nombre-genre:medaille-olympique', {}, 2, 'f')).toEqual('Les deux seules médaillées olympiques');
-        });
-
-        it(`calling translate with negative plural modifiers should return the modified string`, () => {
-            expect(Vue.prototype.$i18n.translate('exemples-avec-nombre-genre:medaille-olympique', {}, -2, 'f')).toEqual('Les médaillées olympiques');
-        });
     });
 });

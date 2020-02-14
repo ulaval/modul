@@ -9,7 +9,6 @@ Il est possible de limiter les fichiers acceptés en spécifiant une ou plusieur
 * **extensions**: Limite les fichiers ayant seulement les extensions spécifiées (ex: jpg, png, mp4, etc.)
 * **max-size-kb**: Limite les fichiers ne dépassant pas la taille spécifiée en kb. (ex: 1000kb)
 * **max-files**: Limite le nombre de fichiers total pouvant être téléversés (ex: maximum 5 fichiers)
-* **custom-validation-function**: Fonction fournie par l'appelant permettant de spécifier une validation personnalisée, associée au "custom-validation-message".
 
 <modul-demo>
 

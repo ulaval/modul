@@ -72,46 +72,6 @@ exports[`Storyshots modul-components|m-file-upload Allowed Extensions Only 1`] =
 </div>
 `;
 
-exports[`Storyshots modul-components|m-file-upload Custom Validation Function 1`] = `
-<div>
-  <h5>
-    Allowed files based on custom validation function
-  </h5>
-   
-  <span>
-    Allowed filenames that contains the string "John" - else displays custom message
-  </span>
-   
-  <div
-    class="m-modal"
-  >
-    <span>
-      <button
-        class="m-button m--is-skin-primary"
-        type="button"
-      >
-        <!---->
-         
-        <!---->
-         
-        <span
-          class="m-button__text"
-        >
-          File upload 
-          <!---->
-        </span>
-         
-        <!---->
-         
-        <!---->
-      </button>
-    </span>
-     
-    <!---->
-  </div>
-</div>
-`;
-
 exports[`Storyshots modul-components|m-file-upload Default Story 1`] = `
 <div
   class="m-modal"

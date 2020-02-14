@@ -61,10 +61,10 @@ describe('MFileUpload', () => {
     });
 
     describe('validation', () => {
-        let initialValidationOpts: MFileValidationOptions;
+        let validationOpts: MFileValidationOptions;
 
         beforeEach(() => {
-            initialValidationOpts = {
+            validationOpts = {
                 allowedExtensions: ['jpg', 'png', 'mp4'],
                 rejectedExtensions: ['mov'],
                 maxSizeKb: 1,
@@ -76,13 +76,13 @@ describe('MFileUpload', () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
             const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
-                propsData: { ...initialValidationOpts },
+                propsData: { ...validationOpts },
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
             const newAcceptedExtensions: string[] = ['avi', 'mp3'];
             const newRejectedExtensions: string[] = ['css', 'js'];
-            const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
+            const newValidationOpts: MFileValidationOptions = { ...validationOpts };
             newValidationOpts.allowedExtensions = newAcceptedExtensions;
             newValidationOpts.rejectedExtensions = newRejectedExtensions;
 
@@ -105,12 +105,12 @@ describe('MFileUpload', () => {
             jest.spyOn(filesvc, 'setValidationOptions');
 
             const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
-                propsData: initialValidationOpts,
+                propsData: validationOpts,
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
             const newMaxSizeKb: number = 100;
-            const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
+            const newValidationOpts: MFileValidationOptions = { ...validationOpts };
             newValidationOpts.maxSizeKb = newMaxSizeKb;
             fupd.setProps({ maxSizeKb: newValidationOpts.maxSizeKb });
 
@@ -126,14 +126,14 @@ describe('MFileUpload', () => {
             jest.spyOn(filesvc, 'setValidationOptions');
 
             const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
-                propsData: initialValidationOpts,
+                propsData: validationOpts,
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
             const newMaxFiles: number = 25;
             fupd.setProps({ maxFiles: newMaxFiles });
 
-            const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
+            const newValidationOpts: MFileValidationOptions = { ...validationOpts };
             newValidationOpts.maxFiles = newMaxFiles;
 
             await Vue.nextTick();
@@ -143,45 +143,17 @@ describe('MFileUpload', () => {
             );
         });
 
-        it('should pass validation options to $file service when customValidation property is modified', async () => {
-            const filesvc: FileService = (Vue.prototype as ModulVue).$file;
-            jest.spyOn(filesvc, 'setValidationOptions');
-            const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
-                propsData: initialValidationOpts,
-                mocks: { $mq: { state: { isMqMinS: true } } }
-            });
-            const newValidationFunction: () => Promise<boolean> = () => Promise.resolve(false);
-            const expectedNewValidationOptions: MFileValidationOptions = {
-                ...initialValidationOpts,
-                customValidationFunction: newValidationFunction
-            };
-
-            fupd.setProps({
-                customValidation: {
-                    validationFunction: newValidationFunction,
-                    message: 'Custom message'
-                }
-            });
-            await Vue.nextTick();
-
-            expect(filesvc.setValidationOptions).toHaveBeenCalledWith(
-                expectedNewValidationOptions,
-                DEFAULT_STORE_NAME
-            );
-        });
-
-
         it('should pass validation options to $file service', () => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             jest.spyOn(filesvc, 'setValidationOptions');
 
             const fupd: Wrapper<MFileUpload> = mount(MFileUpload, {
-                propsData: initialValidationOpts,
+                propsData: validationOpts,
                 mocks: { $mq: { state: { isMqMinS: true } } }
             });
 
             expect(filesvc.setValidationOptions).toHaveBeenCalledWith(
-                initialValidationOpts,
+                validationOpts,
                 DEFAULT_STORE_NAME
             );
         });
@@ -203,7 +175,7 @@ describe('MFileUpload', () => {
                 addMessages(Vue, ['components/message/message.lang.en.json']);
 
                 fupd = mount(MFileUpload, {
-                    propsData: initialValidationOpts,
+                    propsData: validationOpts,
                     mocks: { $mq: { state: { isMqMinS: true } } }
                 });
 
@@ -227,7 +199,7 @@ describe('MFileUpload', () => {
 
             beforeEach(() => {
                 fupd = mount(MFileUpload, {
-                    propsData: initialValidationOpts
+                    propsData: validationOpts
                 });
             });
 
@@ -250,10 +222,10 @@ describe('MFileUpload', () => {
 
                 fupd = mount(MFileUpload, {
                     propsData: {
-                        allowedExtensions: initialValidationOpts.allowedExtensions,
-                        rejectedExtensions: initialValidationOpts.rejectedExtensions,
-                        maxSizeKb: initialValidationOpts.maxSizeKb,
-                        maxFiles: initialValidationOpts.maxFiles,
+                        allowedExtensions: validationOpts.allowedExtensions,
+                        rejectedExtensions: validationOpts.rejectedExtensions,
+                        maxSizeKb: validationOpts.maxSizeKb,
+                        maxFiles: validationOpts.maxFiles,
                         fileReplacement: true
                     }
                 });
@@ -262,7 +234,7 @@ describe('MFileUpload', () => {
             });
 
             it('should allowed only 1 file', async () => {
-                const newValidationOpts: MFileValidationOptions = { ...initialValidationOpts };
+                const newValidationOpts: MFileValidationOptions = { ...validationOpts };
                 newValidationOpts.maxFiles = 1;
 
                 await Vue.nextTick();
@@ -283,16 +255,16 @@ describe('MFileUpload', () => {
     });
 
     describe('files selection / drop', () => {
-        beforeEach(async () => {
+        beforeEach(() => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
-            await filesvc.add(createMockFileList([createMockFile('uploading')]));
+            filesvc.add(createMockFileList([createMockFile('uploading')]));
             filesvc.files()[0].status = MFileStatus.UPLOADING;
         });
 
         it('should emit files-ready event when $file managed files change', async () => {
             const fupd: Wrapper<MFileUpload> = mount(MFileUpload);
 
-            await fupd.vm.$file.add(createMockFileList([createMockFile('new-file.jpg')]));
+            fupd.vm.$file.add(createMockFileList([createMockFile('new-file.jpg')]));
             await Vue.nextTick();
 
             expect(fupd.emitted('files-ready')[0][0]).toEqual([
@@ -338,11 +310,11 @@ describe('MFileUpload', () => {
         let fupd: Wrapper<MFileUpload>;
         let completedFile: MFile;
 
-        beforeEach(async () => {
+        beforeEach(() => {
             Vue.use(ButtonPlugin);
 
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
-            await filesvc.add(
+            filesvc.add(
                 createMockFileList([
                     createMockFile('ready'),
                     createMockFile('completed')
@@ -385,7 +357,7 @@ describe('MFileUpload', () => {
         });
 
         it('should emit file-upload-cancel event for each file being uploaded when cancel button is clicked', async () => {
-            await fupd.vm.$file.add(createMockFileList([createMockFile('uploading')]));
+            fupd.vm.$file.add(createMockFileList([createMockFile('uploading')]));
 
             jest.spyOn(fupd.vm.$refs.modal, 'closeModal');
             const uploadingFile: MFile = fupd.vm.$file.files()[2];
@@ -400,10 +372,10 @@ describe('MFileUpload', () => {
     describe('uploading', () => {
         let uploadingFileMock: File;
 
-        beforeEach(async () => {
+        beforeEach(() => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             uploadingFileMock = createMockFile('uploading-file');
-            await filesvc.add(createMockFileList([uploadingFileMock]));
+            filesvc.add(createMockFileList([uploadingFileMock]));
             filesvc.files()[0].status = MFileStatus.UPLOADING;
         });
 
@@ -422,10 +394,10 @@ describe('MFileUpload', () => {
     describe('completed', () => {
         let completedFileMock: File;
 
-        beforeEach(async () => {
+        beforeEach(() => {
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             completedFileMock = createMockFile('completed-file');
-            await filesvc.add(createMockFileList([completedFileMock]));
+            filesvc.add(createMockFileList([completedFileMock]));
             Object.assign(filesvc.files()[0], {
                 status: MFileStatus.COMPLETED,
                 progress: 100,

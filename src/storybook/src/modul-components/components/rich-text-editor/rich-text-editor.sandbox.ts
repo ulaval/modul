@@ -1,5 +1,4 @@
 import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
-import { FileUploadCustomValidation } from '@ulaval/modul-components/dist/components/file-upload/file-upload';
 import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal';
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
@@ -98,10 +97,6 @@ export class MRichTextEditorSandBox extends ModulVue {
 
     public get modalSize(): string {
         return this.fullscreen ? MModalSize.FullScreen : MModalSize.Regular;
-    }
-
-    public get customValidationFileNameContainingJohn(): FileUploadCustomValidation {
-        return { validationFunction: (file: MFile): Promise<boolean> => Promise.resolve(file.name.includes('John')), message: 'The file name must contain the word "John"' };
     }
 }
 const RichTextEditorSandBoxPlugin: PluginObject<any> = {

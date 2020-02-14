@@ -190,20 +190,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/filterable`,
                         <m-dropdown-item value="1e" label="Cow"></m-dropdown-item>
                         <m-dropdown-item value="1f" label="Pig"></m-dropdown-item>
                     </m-dropdown>`
-    }))
-
-    .add('Clear-model-on-selected-text = true', () => ({
-        data: () => ({
-            model44: ''
-        }),
-        template: `<div><m-dropdown label="Animals" v-model="model44" filterable="true" :clear-model-on-selected-text="true">
-                        <m-dropdown-item value="1a" label="Steer"></m-dropdown-item>
-                        <m-dropdown-item value="1b" label="Chameleon"></m-dropdown-item>
-                        <m-dropdown-item value="1c" label="Alpaca"></m-dropdown-item>
-                        <m-dropdown-item value="1d" label="Monkey"></m-dropdown-item>
-                        <m-dropdown-item value="1e" label="Cow"></m-dropdown-item>
-                        <m-dropdown-item value="1f" label="Pig"></m-dropdown-item>
-                    </m-dropdown></div>`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/readonly`, module)

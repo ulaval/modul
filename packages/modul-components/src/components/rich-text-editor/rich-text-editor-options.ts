@@ -8,6 +8,7 @@ export class MRichTextEditorDefaultOptions {
     public charCounterCount: boolean = false;
     public charCounterMax: number = -1;
     public tableInsertHelper: boolean = false;
+    public zIndex: number = 5;
     public toolbarSticky: boolean = true;
     public scrollableContainer: string = 'body'; // The froala version 3 don't support 'scrollableContainer' with undefined value. By default is 'body'.
     public toolbarStickyOffset: number = 0;

@@ -28,18 +28,6 @@ export interface MFileExt extends MFile {
     isOldRejection: boolean;
 }
 
-export interface FileUploadCustomValidation {
-    /**
-     * This function will be ran on every file added during their validation. Must return a Promise.resolved with a boolean stating if the file respects
-     * the custom criterias or not.
-     */
-    validationFunction: (file: MFile) => Promise<boolean>;
-    /**
-     * Custom validation message displayed when {@link MFileUpload#customValidationFunction} return false.
-     */
-    message: string;
-}
-
 const defaultDragEvent: (e: DragEvent) => void = (e: DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -72,9 +60,6 @@ export class MFileUpload extends ModulVue {
     @Prop({ default: false })
     public fileReplacement: boolean;
 
-    @Prop()
-    public customValidation?: FileUploadCustomValidation;
-
     $refs: {
         modal: MModal;
     };
@@ -99,15 +84,13 @@ export class MFileUpload extends ModulVue {
     @Watch('rejectedExtensions')
     @Watch('maxSizeKb')
     @Watch('maxFiles')
-    @Watch('customValidation')
     private updateValidationOptions(): void {
         this.$file.setValidationOptions(
             {
                 allowedExtensions: this.allowedExtensions,
                 rejectedExtensions: this.rejectedExtensions,
                 maxSizeKb: this.maxSizeKb,
-                maxFiles: this.propMaxFiles,
-                customValidationFunction: this.customValidation ? this.customValidation.validationFunction : undefined
+                maxFiles: this.propMaxFiles
             },
             this.storeName
         );
@@ -246,10 +229,6 @@ export class MFileUpload extends ModulVue {
 
     private hasMaxFilesRejection(file): boolean {
         return file.rejection === MFileRejectionCause.MAX_FILES;
-    }
-
-    public hasCustomValidationRejection(file: MFile): boolean {
-        return file.rejection === MFileRejectionCause.CUSTOM_VALIDATION;
     }
 
     public get title(): string {

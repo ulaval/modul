@@ -80,10 +80,10 @@ export class MFileSelect extends ModulVue {
         this.$emit('blur');
     }
 
-    private async processFile(event: Event): Promise<void> {
+    private processFile(event: Event): void {
         const file: FileList | null = this.$refs.inputFile.files;
         if (file) {
-            await this.$file.add(file, this.storeName);
+            this.$file.add(file, this.storeName);
             this.$emit('file-selected');
         }
         this.$refs.inputFile.value = '';

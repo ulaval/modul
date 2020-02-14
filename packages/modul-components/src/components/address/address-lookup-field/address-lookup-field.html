@@ -4,8 +4,6 @@
                     :results="results"
                     :open.sync="open"
                     :error-message="errorMessage"
-                    :max-width="maxWidth"
-                    :width="width"
                     @complete="onComplete"
                     @change="onSelect"
                     v-model="selection">
@@ -18,6 +16,5 @@
         </template>
     </m-autocomplete>
     <m-powered-by-google class="m-address-lookup-field__powered-by-google"
-                         :style="{ maxWidth: maxWidth }"
                          v-if="googleIsUsed"></m-powered-by-google>
 </div>

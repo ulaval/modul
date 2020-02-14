@@ -1,9 +1,8 @@
 <div class="m-popup"
      :class="{ 'm--is-inline': hasTriggerSlot }">
-    <m-popper v-if="!isSidebarUsed"
+    <m-popper v-if="!isMqMaxS"
               :id="id"
-              :open="popperOpen"
-              @update:open="onPopperOpen"
+              :open.sync="propOpen"
               :disabled="disabled"
               :class-name="className"
               :placement="placement"
@@ -42,10 +41,9 @@
         <slot name="footer"
               slot="footer"></slot>
     </m-popper>
-    <m-sidebar v-if="isSidebarUsed"
+    <m-sidebar v-if="isMqMaxS"
                :id="id"
-               :open="sideBarOpen"
-               @update:open="onSideBarOpen"
+               :open.sync="propOpen"
                :disabled="disabled"
                :class-name="className"
                :focus-management="focusManagement"

@@ -6,9 +6,6 @@ const CURRENT_VALUE: string = '2019-12-14';
 const CURRENT_VALUE_NEAR_MIN_DATE: string = '2017-06-20';
 const CURRENT_VALUE_NEAR_MAX_DATE: string = '21-08-01';
 
-const LAST_DAY_OF_JANUARY: string = '2020-01-31';
-const LAST_DAY_OF_MARCH: string = '2020-03-31';
-
 const CURRENT_VALUE_ONE_MONTH: string = '2019-02-14';
 const MIN_DATE_ONE_MONTH: string = '2019-02-04';
 const MAX_DATE_ONE_MONTH: string = '2019-02-20';
@@ -85,19 +82,6 @@ const abstractCalendarStateTests: Function = (stateBuilder: (currentValue: strin
                     const calendar: Calendar = calendarState.buildCurrentCalendar().calendar;
                     expect(calendar.dates.current.month()).toEqual(7);
                 });
-
-                it(`when selecting a month with less days than the current day value, the current month will be updated`, () => {
-                    calendarState = stateBuilder(LAST_DAY_OF_JANUARY, MIN_DATE, MAX_DATE);
-
-                    let selectedMonth: MonthState = {
-                        month: 1,
-                        isDisabled: false,
-                        isCurrent: false
-                    };
-                    calendarState.buildCurrentCalendar().calendarEvents[CalendarEvent.MONTH_SELECT](selectedMonth);
-
-                    expect(calendarState.buildCurrentCalendar().calendar.dates.current.month()).toBe(selectedMonth.month);
-                });
             });
 
             describe(`${CalendarEvent.MONTH_NEXT}`, () => {
@@ -120,15 +104,6 @@ const abstractCalendarStateTests: Function = (stateBuilder: (currentValue: strin
                     const calendar: Calendar = calendarState.buildCurrentCalendar().calendar;
 
                     expect(calendar.dates.current.month()).toEqual(currentMonth);
-                });
-
-                it(`current day is higher than number of days in next month, next month event, next month is selected`, () => {
-                    const initialCalendar: CalendarState = stateBuilder(LAST_DAY_OF_MARCH, '2019/01/31', '2021/01/31');
-                    const initialMonth: number = initialCalendar.buildCurrentCalendar().calendar.dates.current.month();
-                    initialCalendar.buildCurrentCalendar().calendarEvents[CalendarEvent.MONTH_PREVIOUS]({} as Event);
-                    const calendar: Calendar = initialCalendar.buildCurrentCalendar().calendar;
-                    const currentMonth: number = calendar.dates.current.month();
-                    expect(currentMonth).toEqual(initialMonth - 1);
                 });
             });
 
@@ -153,17 +128,6 @@ const abstractCalendarStateTests: Function = (stateBuilder: (currentValue: strin
 
                     expect(calendar.dates.current.month()).toEqual(currentMonth);
                 });
-
-
-                it(`current day is higher than number of days in previous month, previous month event, previous month is selected`, () => {
-                    const initialCalendar: CalendarState = stateBuilder(LAST_DAY_OF_JANUARY, '2019/01/31', '2021/01/31');
-                    const initialMonth: number = initialCalendar.buildCurrentCalendar().calendar.dates.current.month();
-                    initialCalendar.buildCurrentCalendar().calendarEvents[CalendarEvent.MONTH_NEXT]({} as Event);
-                    const calendar: Calendar = initialCalendar.buildCurrentCalendar().calendar;
-                    const currentMonth: number = calendar.dates.current.month();
-                    expect(currentMonth).toEqual(initialMonth + 1);
-                });
-
             });
         });
 
