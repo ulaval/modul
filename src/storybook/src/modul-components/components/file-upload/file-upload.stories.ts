@@ -1,4 +1,5 @@
 import { FILE_UPLOAD_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MFile } from '@ulaval/modul-components/dist/utils/file/file';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {
@@ -28,6 +29,18 @@ export const rejectedExtensionsOnly = () => `
 <m-file-upload :rejected-extensions="['jpg', 'jpeg']" :allowed-extensions="['jpg', 'jpeg', 'png', 'mp4']"><m-button>File upload</m-button></m-file-upload>
 </div>`;
 
+
+export const customValidationFunction = () => ({
+    data: () => ({
+        customValidation: { validationFunction: (file: MFile) => { return Promise.resolve(file.name.includes('John')); }, message: `Le nom du fichier doit contenir le mot 'John'.` }
+    }),
+    template: `
+    <div>
+<h5>Allowed files based on custom validation function</h5>
+<span>Allowed filenames that contains the string "John" - else displays custom message</span>
+<m-file-upload :custom-validation="customValidation" ><m-button>File upload</m-button></m-file-upload>
+</div>`
+});
 
 export const allowedExtensionsHelpMessage = () => `
 <div>

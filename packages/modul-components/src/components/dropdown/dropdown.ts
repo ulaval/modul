@@ -60,7 +60,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     public includeFilterableStatusItems: boolean;
     @Prop({ default: false })
     public clearInvalidSelectionOnClose: boolean;
-    @Prop({ default: true })
+    @Prop({ default: false })
     public clearModelOnSelectedText: boolean;
 
     public $refs: {

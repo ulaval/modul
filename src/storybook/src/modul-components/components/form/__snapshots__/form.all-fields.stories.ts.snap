@@ -1471,13 +1471,18 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
                 <div
                   class="m-input-style__content"
                 >
-                   
-                  <span
-                    aria-hidden="true"
-                    class="m-i18n m-input-style__transparent-text"
+
+                  <div
+                    class="m-multi-select__chips"
                   >
-                    Aucune valeur
-                  </span>
+                    <input
+                      readonly="readonly"
+                      type="text"
+                    />
+                     
+                  </div>
+                    
+                  <!---->
                    
                   <!---->
                 </div>

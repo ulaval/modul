@@ -27,7 +27,8 @@ export interface MFile {
 export enum MFileRejectionCause {
     FILE_SIZE = 'file-size',
     FILE_TYPE = 'file-type',
-    MAX_FILES = 'max-files'
+    MAX_FILES = 'max-files',
+    CUSTOM_VALIDATION = 'custom-validation'
 }
 
 export enum MFileStatus {
@@ -50,6 +51,11 @@ export interface MFileValidationOptions {
     maxSizeKb?: number;
     allowedExtensions?: string[];
     rejectedExtensions?: string[];
+    /**
+     * Function that validates custom criteria on a MFile.
+     * @returns true if the file respects the criterias, false otherwise (therefore the file is in error)
+     */
+    customValidationFunction?: (file: MFile) => Promise<boolean>;
 }
 
 export class FileService {
@@ -66,12 +72,12 @@ export class FileService {
         this.getStore(storeName).validationOptions = options;
     }
 
-    public add(files: FileList, storeName?: string): void {
-        this.getStore(storeName).add(files);
+    public async add(files: FileList, storeName?: string): Promise<void> {
+        await this.getStore(storeName).add(files);
     }
 
-    public addSingleFile(file: File, storeName?: string): void {
-        this.getStore(storeName).addSingleFile(file);
+    public async addSingleFile(file: File, storeName?: string): Promise<void> {
+        await this.getStore(storeName).addSingleFile(file);
     }
 
     public remove(fileuid: string, storeName?: string): void {
@@ -157,16 +163,15 @@ class FileStore {
         return this.filesmap[uid];
     }
 
-    public add(files: FileList): void {
+    public async add(files: FileList): Promise<void> {
         for (let i: number = 0; i < files.length; ++i) {
-            this.createFile(files[i]);
+            await this.addSingleFile(files[i]);
         }
 
-        this.refreshRx();
     }
 
-    public addSingleFile(file: File): void {
-        this.createFile(file);
+    public async addSingleFile(file: File): Promise<void> {
+        await this.createFile(file);
         this.refreshRx();
     }
 
@@ -254,7 +259,7 @@ class FileStore {
         delete this.cancelTokens[fileuid];
     }
 
-    private createFile(file: File): void {
+    private async createFile(file: File): Promise<void> {
         const mfile: MFile = {
             uid: uuid.generate(),
             name: file.name,
@@ -266,13 +271,13 @@ class FileStore {
             }
         };
 
-        this.validate(mfile);
+        await this.validate(mfile);
 
         Object.freeze(mfile.file); // disable vuejs reactivity
         this.filesmap[mfile.uid] = mfile;
     }
 
-    private validate(file: MFile): void {
+    private async validate(file: MFile): Promise<void> {
         this.validateExtension(file);
 
         if (!this.options) {
@@ -286,6 +291,9 @@ class FileStore {
         if (this.options.maxFiles) {
             this.validateMaxFiles(file);
         }
+        if (this.isExtensionSupported(file) && this.options.customValidationFunction) {
+            await this.executeCustomValidation(file);
+        }
     }
 
     /**
@@ -295,12 +303,15 @@ class FileStore {
      * If the extension is a part of the accepted and rejected extensions, it'll be rejected.
      */
     private validateExtension(file: MFile): void {
-        const ext: string = extractExtension(file.file.name);
-
-        if (ext === '' || this.extensionInRejectedExtensions(ext) || !this.extensionInAcceptedExtensions(ext)) {
+        if (!this.isExtensionSupported(file)) {
             file.status = MFileStatus.REJECTED;
             file.rejection = MFileRejectionCause.FILE_TYPE;
         }
+    }
+
+    private isExtensionSupported(file: MFile): boolean {
+        const ext: string = extractExtension(file.file.name);
+        return ext !== '' && !this.extensionInRejectedExtensions(ext) && this.extensionInAcceptedExtensions(ext);
     }
 
     private extensionInAcceptedExtensions(extension: string): boolean {
@@ -332,6 +343,13 @@ class FileStore {
         if (nbValidFiles >= this.options!.maxFiles!) {
             file.status = MFileStatus.REJECTED;
             file.rejection = MFileRejectionCause.MAX_FILES;
+        }
+    }
+
+    private async executeCustomValidation(file: MFile): Promise<void> {
+        if (!(await this.options!.customValidationFunction!(file))) {
+            file.status = MFileStatus.REJECTED;
+            file.rejection = MFileRejectionCause.CUSTOM_VALIDATION;
         }
     }
 
