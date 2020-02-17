@@ -22,8 +22,7 @@ export class MRichTextEditorDefaultOptions {
     public paragraphStyles: any = {};
     public paragraphMultipleStyles: boolean = false;
     public pasteDeniedTags: string[] = ['font'];
-    public pasteDeniedAttrs: string[] = ['class'];
-    public pasteAllowedStyleProps: string[] = ['text-decoration'];
+    public pasteDeniedAttrs: string[] = ['class', 'style'];
     public linkEditButtons: string[] = ['linkOpen', 'linkEdit', 'linkRemove'];
     public linkInsertButtons: string[] = [];
     public imageDefaultWidth: number = 0;// Sets the default with of the image. Setting it to 0 will not set any width.
