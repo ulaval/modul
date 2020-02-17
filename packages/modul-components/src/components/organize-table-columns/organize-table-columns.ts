@@ -1,10 +1,15 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { MSortEvent } from '../../directives/sortable/sortable';
+import SortablePlugin, { MSortEvent } from '../../directives/sortable/sortable';
 import { MColumnTable } from '../../lib';
 import { ModulVue } from '../../utils/vue/vue';
+import ButtonPlugin from '../button/button';
 import { ORGANIZE_TABLE_COLUMNS_NAME } from '../component-names';
+import IconButtonPlugin from '../icon-button/icon-button';
+import IconPlugin from '../icon/icon';
+import ListItemPlugin from '../list-item/list-item';
+import SpinnerPlugin from '../spinner/spinner';
 import WithRender from './organize-table-columns.html?style=./organize-table-columns.scss';
 
 @WithRender
@@ -101,6 +106,12 @@ export class MOrganizeTableColumns extends ModulVue {
 const OrganizeTableColumnsPlugin: PluginObject<any> = {
     install(v, options): void {
         v.component(ORGANIZE_TABLE_COLUMNS_NAME, MOrganizeTableColumns);
+        v.use(SortablePlugin);
+        v.use(SpinnerPlugin);
+        v.use(ListItemPlugin);
+        v.use(IconPlugin);
+        v.use(IconButtonPlugin);
+        v.use(ButtonPlugin);
     }
 };
 
