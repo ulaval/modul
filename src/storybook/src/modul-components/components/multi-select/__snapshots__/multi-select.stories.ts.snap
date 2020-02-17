@@ -46,13 +46,17 @@ exports[`Storyshots modul-components|m-multi-select complete 1`] = `
               <div
                 class="m-input-style__content"
               >
-                 
-                <span
-                  aria-hidden="true"
-                  class="m-i18n m-input-style__transparent-text"
+                <div
+                  class="m-multi-select__chips"
                 >
-                  Aucune valeur
-                </span>
+                  <input
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                </div>
+                  
+                <!---->
                  
                 <!---->
               </div>
@@ -155,42 +159,48 @@ exports[`Storyshots modul-components|m-multi-select custom chip info 1`] = `
                 class="m-input-style__content"
               >
                 <div
-                  class="m-chip-delete m-multi-select__chip m--is-small"
+                  class="m-multi-select__chips"
                 >
+                  <!---->
+                   
                   <div
-                    class="m-chip-delete__body"
+                    class="m-chip-delete m-multi-select__chip m--is-small"
                   >
-                    <span
-                      class="m-chip-delete__text"
-                      id="mChipDeleteText-fakeId"
+                    <div
+                      class="m-chip-delete__body"
                     >
                       <span
-                        class="m-chip-delete__hidden-text"
+                        class="m-chip-delete__text"
+                        id="mChipDeleteText-fakeId"
                       >
-                        Supprimer : 
+                        <span
+                          class="m-chip-delete__hidden-text"
+                        >
+                          Supprimer : 
+                        </span>
+                          0 - Simba 
                       </span>
-                        0 - Simba 
-                    </span>
-                     
-                    <button
-                      aria-labelledby="mChipDeleteText-fakeId"
-                      class="m-chip-delete__button"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-chip-delete__icon"
-                        height="8px"
-                        width="8px"
+                       
+                      <button
+                        aria-labelledby="mChipDeleteText-fakeId"
+                        class="m-chip-delete__button"
+                        type="button"
                       >
-                        <!---->
-                         
-                        <use
+                        <svg
                           aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </button>
+                          class="m-icon m-chip-delete__icon"
+                          height="8px"
+                          width="8px"
+                        >
+                          <!---->
+                           
+                          <use
+                            aria-hidden="true"
+                            class=""
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
                   
@@ -297,44 +307,50 @@ exports[`Storyshots modul-components|m-multi-select custom select-item 1`] = `
                 class="m-input-style__content"
               >
                 <div
-                  class="m-chip-delete m-multi-select__chip m--is-small"
+                  class="m-multi-select__chips"
                 >
+                  <!---->
+                   
                   <div
-                    class="m-chip-delete__body"
+                    class="m-chip-delete m-multi-select__chip m--is-small"
                   >
-                    <span
-                      class="m-chip-delete__text"
-                      id="mChipDeleteText-fakeId"
+                    <div
+                      class="m-chip-delete__body"
                     >
                       <span
-                        class="m-chip-delete__hidden-text"
+                        class="m-chip-delete__text"
+                        id="mChipDeleteText-fakeId"
                       >
-                        Supprimer : 
+                        <span
+                          class="m-chip-delete__hidden-text"
+                        >
+                          Supprimer : 
+                        </span>
+                         
+                                Simba
+                            
                       </span>
                        
-                            Simba
-                        
-                    </span>
-                     
-                    <button
-                      aria-labelledby="mChipDeleteText-fakeId"
-                      class="m-chip-delete__button"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-chip-delete__icon"
-                        height="8px"
-                        width="8px"
+                      <button
+                        aria-labelledby="mChipDeleteText-fakeId"
+                        class="m-chip-delete__button"
+                        type="button"
                       >
-                        <!---->
-                         
-                        <use
+                        <svg
                           aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </button>
+                          class="m-icon m-chip-delete__icon"
+                          height="8px"
+                          width="8px"
+                        >
+                          <!---->
+                           
+                          <use
+                            aria-hidden="true"
+                            class=""
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
                   
@@ -441,44 +457,50 @@ exports[`Storyshots modul-components|m-multi-select default 1`] = `
                 class="m-input-style__content"
               >
                 <div
-                  class="m-chip-delete m-multi-select__chip m--is-small"
+                  class="m-multi-select__chips"
                 >
+                  <!---->
+                   
                   <div
-                    class="m-chip-delete__body"
+                    class="m-chip-delete m-multi-select__chip m--is-small"
                   >
-                    <span
-                      class="m-chip-delete__text"
-                      id="mChipDeleteText-fakeId"
+                    <div
+                      class="m-chip-delete__body"
                     >
                       <span
-                        class="m-chip-delete__hidden-text"
+                        class="m-chip-delete__text"
+                        id="mChipDeleteText-fakeId"
                       >
-                        Supprimer : 
+                        <span
+                          class="m-chip-delete__hidden-text"
+                        >
+                          Supprimer : 
+                        </span>
+                         
+                                Maria Rainer
+                            
                       </span>
                        
-                            Maria Rainer
-                        
-                    </span>
-                     
-                    <button
-                      aria-labelledby="mChipDeleteText-fakeId"
-                      class="m-chip-delete__button"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-chip-delete__icon"
-                        height="8px"
-                        width="8px"
+                      <button
+                        aria-labelledby="mChipDeleteText-fakeId"
+                        class="m-chip-delete__button"
+                        type="button"
                       >
-                        <!---->
-                         
-                        <use
+                        <svg
                           aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </button>
+                          class="m-icon m-chip-delete__icon"
+                          height="8px"
+                          width="8px"
+                        >
+                          <!---->
+                           
+                          <use
+                            aria-hidden="true"
+                            class=""
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
                   
@@ -590,44 +612,50 @@ exports[`Storyshots modul-components|m-multi-select label 1`] = `
                 class="m-input-style__content"
               >
                 <div
-                  class="m-chip-delete m-multi-select__chip m--is-small"
+                  class="m-multi-select__chips"
                 >
+                  <!---->
+                   
                   <div
-                    class="m-chip-delete__body"
+                    class="m-chip-delete m-multi-select__chip m--is-small"
                   >
-                    <span
-                      class="m-chip-delete__text"
-                      id="mChipDeleteText-fakeId"
+                    <div
+                      class="m-chip-delete__body"
                     >
                       <span
-                        class="m-chip-delete__hidden-text"
+                        class="m-chip-delete__text"
+                        id="mChipDeleteText-fakeId"
                       >
-                        Supprimer : 
+                        <span
+                          class="m-chip-delete__hidden-text"
+                        >
+                          Supprimer : 
+                        </span>
+                         
+                                Maria Rainer
+                            
                       </span>
                        
-                            Maria Rainer
-                        
-                    </span>
-                     
-                    <button
-                      aria-labelledby="mChipDeleteText-fakeId"
-                      class="m-chip-delete__button"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-chip-delete__icon"
-                        height="8px"
-                        width="8px"
+                      <button
+                        aria-labelledby="mChipDeleteText-fakeId"
+                        class="m-chip-delete__button"
+                        type="button"
                       >
-                        <!---->
-                         
-                        <use
+                        <svg
                           aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </button>
+                          class="m-icon m-chip-delete__icon"
+                          height="8px"
+                          width="8px"
+                        >
+                          <!---->
+                           
+                          <use
+                            aria-hidden="true"
+                            class=""
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
                   
@@ -739,13 +767,17 @@ exports[`Storyshots modul-components|m-multi-select object as options 1`] = `
                 <div
                   class="m-input-style__content"
                 >
-                   
-                  <span
-                    aria-hidden="true"
-                    class="m-i18n m-input-style__transparent-text"
+                  <div
+                    class="m-multi-select__chips"
                   >
-                    Aucune valeur
-                  </span>
+                    <input
+                      readonly="readonly"
+                      type="text"
+                    />
+                     
+                  </div>
+                    
+                  <!---->
                    
                   <!---->
                 </div>
@@ -815,6 +847,119 @@ exports[`Storyshots modul-components|m-multi-select object as options 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-multi-select placeholder 1`] = `
+<div
+  class="m-base-select m-multi-select"
+>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
+    <div
+      class="m-multi-select__input"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--is-tag-default"
+        style="width: 100%; margin-top: 10px; max-width: 288px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <span
+              class="m-input-style__label"
+              style="z-index: -1;"
+            >
+              <span
+                class="m-input-style__text"
+              />
+            </span>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <div
+                class="m-input-style__prefix"
+              />
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div
+                  class="m-multi-select__chips"
+                >
+                  <input
+                    placeholder="A very very very very very very looooong"
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                </div>
+                  
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <div
+                  class="m-multi-select__icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-multi-select__icon-arrow"
+                    height="16px"
+                    title="Ouvrir la liste déroulante"
+                    width="16px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-multi-select select all link 1`] = `
 <div
   class="m-base-select m-multi-select"
@@ -857,44 +1002,50 @@ exports[`Storyshots modul-components|m-multi-select select all link 1`] = `
                 class="m-input-style__content"
               >
                 <div
-                  class="m-chip-delete m-multi-select__chip m--is-small"
+                  class="m-multi-select__chips"
                 >
+                  <!---->
+                   
                   <div
-                    class="m-chip-delete__body"
+                    class="m-chip-delete m-multi-select__chip m--is-small"
                   >
-                    <span
-                      class="m-chip-delete__text"
-                      id="mChipDeleteText-fakeId"
+                    <div
+                      class="m-chip-delete__body"
                     >
                       <span
-                        class="m-chip-delete__hidden-text"
+                        class="m-chip-delete__text"
+                        id="mChipDeleteText-fakeId"
                       >
-                        Supprimer : 
+                        <span
+                          class="m-chip-delete__hidden-text"
+                        >
+                          Supprimer : 
+                        </span>
+                         
+                                Maria Rainer
+                            
                       </span>
                        
-                            Maria Rainer
-                        
-                    </span>
-                     
-                    <button
-                      aria-labelledby="mChipDeleteText-fakeId"
-                      class="m-chip-delete__button"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-chip-delete__icon"
-                        height="8px"
-                        width="8px"
+                      <button
+                        aria-labelledby="mChipDeleteText-fakeId"
+                        class="m-chip-delete__button"
+                        type="button"
                       >
-                        <!---->
-                         
-                        <use
+                        <svg
                           aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </button>
+                          class="m-icon m-chip-delete__icon"
+                          height="8px"
+                          width="8px"
+                        >
+                          <!---->
+                           
+                          <use
+                            aria-hidden="true"
+                            class=""
+                          />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
                   
@@ -1007,45 +1158,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -1155,45 +1312,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -1303,44 +1466,50 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -1457,45 +1626,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -1605,45 +1780,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -1776,44 +1957,50 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -1953,45 +2140,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -2101,45 +2294,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -2255,45 +2454,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -2409,45 +2614,51 @@ exports[`Storyshots modul-components|m-multi-select state 1`] = `
                   class="m-input-style__content"
                 >
                   <div
-                    class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
+                    class="m-multi-select__chips"
                   >
+                    <!---->
+                     
                     <div
-                      class="m-chip-delete__body"
+                      class="m-chip-delete m-multi-select__chip m--is-disabled m--is-small"
                     >
-                      <span
-                        class="m-chip-delete__text"
-                        id="mChipDeleteText-fakeId"
+                      <div
+                        class="m-chip-delete__body"
                       >
                         <span
-                          class="m-chip-delete__hidden-text"
+                          class="m-chip-delete__text"
+                          id="mChipDeleteText-fakeId"
                         >
-                          Supprimer : 
+                          <span
+                            class="m-chip-delete__hidden-text"
+                          >
+                            Supprimer : 
+                          </span>
+                           
+                                Maria Rainer
+                            
                         </span>
                          
-                            Maria Rainer
-                        
-                      </span>
-                       
-                      <button
-                        aria-labelledby="mChipDeleteText-fakeId"
-                        class="m-chip-delete__button"
-                        disabled="disabled"
-                        type="button"
-                      >
-                        <svg
-                          aria-hidden="true"
-                          class="m-icon m-chip-delete__icon"
-                          height="8px"
-                          width="8px"
+                        <button
+                          aria-labelledby="mChipDeleteText-fakeId"
+                          class="m-chip-delete__button"
+                          disabled="disabled"
+                          type="button"
                         >
-                          <!---->
-                           
-                          <use
+                          <svg
                             aria-hidden="true"
-                            class=""
-                          />
-                        </svg>
-                      </button>
+                            class="m-icon m-chip-delete__icon"
+                            height="8px"
+                            width="8px"
+                          >
+                            <!---->
+                             
+                            <use
+                              aria-hidden="true"
+                              class=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                     
@@ -2560,13 +2771,17 @@ exports[`Storyshots modul-components|m-multi-select/mobile iphone6 - select all 
               <div
                 class="m-input-style__content"
               >
-                 
-                <span
-                  aria-hidden="true"
-                  class="m-i18n m-input-style__transparent-text"
+                <div
+                  class="m-multi-select__chips"
                 >
-                  Aucune valeur
-                </span>
+                  <input
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                </div>
+                  
+                <!---->
                  
                 <!---->
               </div>
@@ -2668,13 +2883,17 @@ exports[`Storyshots modul-components|m-multi-select/mobile iphone6 1`] = `
               <div
                 class="m-input-style__content"
               >
-                 
-                <span
-                  aria-hidden="true"
-                  class="m-i18n m-input-style__transparent-text"
+                <div
+                  class="m-multi-select__chips"
                 >
-                  Aucune valeur
-                </span>
+                  <input
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                </div>
+                  
+                <!---->
                  
                 <!---->
               </div>

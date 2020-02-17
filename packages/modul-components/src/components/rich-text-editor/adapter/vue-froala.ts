@@ -11,6 +11,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import boldIcon from '../../../assets/icons/svg/Froala-bold.svg';
 import listsIcon from '../../../assets/icons/svg/Froala-lists.svg';
 import replaceIcon from '../../../assets/icons/svg/Froala-replace.svg';
+import specialCharsIcon from '../../../assets/icons/svg/Froala-special-charracters.svg';
 import stylesIcon from '../../../assets/icons/svg/Froala-styles.svg';
 import titleIcon from '../../../assets/icons/svg/Froala-title.svg';
 import { ElementQueries } from '../../../mixins/element-queries/element-queries';
@@ -19,6 +20,7 @@ import { MFile } from '../../../utils/file/file';
 import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
+import { FileUploadCustomValidation } from '../../file-upload/file-upload';
 import '../rte-internal.scss';
 import { ImageLayoutCommands } from './image-layout-commands';
 import WithRender from './vue-froala.html?style=./vue-froala.scss';
@@ -110,6 +112,12 @@ const SCROLL_TO_OFFSET: number = -50;
     @Prop({ default: 1 })
     public minRows: number;
 
+    /**
+     * Prop required to enable custom validation on images uploaded into the rich text.
+     */
+    @Prop()
+    public imageUploadCustomValidation?: FileUploadCustomValidation;
+
     @Emit('fullscreen')
     onFullscreen(fullscreenWasActived: boolean): void { }
 
@@ -156,7 +164,6 @@ const SCROLL_TO_OFFSET: number = -50;
     protected addCustomIcons(): void {
         FroalaEditor.DefineIconTemplate('custom-icons', '[SVG]');
         FroalaEditor.DefineIconTemplate('custom-icons-sub-menu', '<div class="fr-sub-menu">[SVG]</div>');
-        FroalaEditor.DefineIconTemplate('custom-icons-span', '[SPAN]');
 
         if (this.$i18n.currentLang() === 'fr') {
             FroalaEditor.DefineIcon('bold', { SVG: (boldIcon as string), template: 'custom-icons' });
@@ -169,7 +176,7 @@ const SCROLL_TO_OFFSET: number = -50;
         FroalaEditor.DefineIcon('paragraphStyle', { SVG: (titleIcon as string), template: 'custom-icons' });
         FroalaEditor.DefineIcon('moreText', { SVG: (stylesIcon as string), template: 'custom-icons-sub-menu' });
         FroalaEditor.DefineIcon('moreParagraph', { SVG: (listsIcon as string), template: 'custom-icons-sub-menu' });
-        FroalaEditor.DefineIcon('specialCharacters', { SPAN: '<span class="fr-icon-special-characters" >Ω</span>', template: 'custom-icons-span' });
+        FroalaEditor.DefineIcon('specialCharacters', { SVG: (specialCharsIcon as string), template: 'custom-icons' });
     }
 
     protected addImageButton(): void {
