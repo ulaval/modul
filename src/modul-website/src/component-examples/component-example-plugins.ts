@@ -1,7 +1,7 @@
 import { PluginObject } from 'vue';
 import { MWAutocompleteExample } from './autocomplete/autocomplete.example';
 import { MWMultiSelectExample } from './multi-select/multi-select.example';
-import { MWOrganizeTableColumnsExample } from './organize-table-columns/organize-table-columns';
+import { MWOrganizeTableColumnsExample } from './organize-table-columns/organize-table-columns.example';
 import { MWShowmoreExample } from './show-more/show-more.example';
 import { MWToastExample } from './toast/toast.example';
 import { MWToggleButtonsExample } from './toggle-buttons/toggle-buttons.example';
