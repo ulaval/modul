@@ -36,7 +36,8 @@ import MoneyFieldPlugin from '@ulaval/modul-components/dist/components/moneyfiel
 import MultiSelectPlugin from '@ulaval/modul-components/dist/components/multi-select/multi-select';
 import NavbarPlugin from '@ulaval/modul-components/dist/components/navbar/navbar';
 import OptionPlugin from '@ulaval/modul-components/dist/components/option/option';
-import OrganizeTableColumnsPlugin from '@ulaval/modul-components/dist/components/organize-table-columns/organize-table-columns';
+import OrganizeTableColumnsModalPlugin from '@ulaval/modul-components/dist/components/organize-table-columns-modal/organize-table-columns-modal';
+import OrganizeTableColumnsPlugin from '@ulaval/modul-components/dist/components/organize-table-columns-modal/organize-table-columns/organize-table-columns';
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import PaginationPlguin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
@@ -123,6 +124,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(NavbarPlugin);
         Vue.use(OptionPlugin);
         Vue.use(OrganizeTableColumnsPlugin);
+        Vue.use(OrganizeTableColumnsModalPlugin);
         Vue.use(OverlayPlugin);
         Vue.use(AddPlugin);
         Vue.use(PopupPlugin);

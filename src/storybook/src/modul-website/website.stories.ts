@@ -16,6 +16,6 @@ export const autocomplete: any = () => '<mw-autocomplete-example></mw-autocomple
 
 export const showMore: any = () => '<mw-show-more-example></mw-show-more-example>';
 
-export const organizeTableColumns: any = () => '<mw-organize-table-columns-example></mw-organize-table-columns-example>';
+export const organizeTableColumnsModal: any = () => '<mw-organize-table-columns-modal-example></mw-organize-table-columns-modal-example>';
 
 

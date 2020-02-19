@@ -1,15 +1,14 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import SortablePlugin, { MSortEvent } from '../../directives/sortable/sortable';
-import { MColumnTable } from '../../lib';
-import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { ORGANIZE_TABLE_COLUMNS_NAME } from '../component-names';
-import IconButtonPlugin from '../icon-button/icon-button';
-import IconPlugin from '../icon/icon';
-import ListItemPlugin from '../list-item/list-item';
-import SpinnerPlugin from '../spinner/spinner';
+import SortablePlugin, { MSortEvent } from '../../../directives/sortable/sortable';
+import { MColumnTable } from '../../../lib';
+import { ModulVue } from '../../../utils/vue/vue';
+import ButtonPlugin from '../../button/button';
+import { ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
+import IconButtonPlugin from '../../icon-button/icon-button';
+import IconPlugin from '../../icon/icon';
+import ListItemPlugin from '../../list-item/list-item';
 import WithRender from './organize-table-columns.html?style=./organize-table-columns.scss';
 
 @WithRender
@@ -20,10 +19,6 @@ export class MOrganizeTableColumns extends ModulVue {
     })
     public columns!: MColumnTable[];
 
-    @Prop({ default: 10 })
-    public maxColumn: number;
-
-    public loading: boolean = true;
     public displayedColumns: MColumnTable[] = [];
     public hiddenColumns: MColumnTable[] = [];
 
@@ -34,15 +29,13 @@ export class MOrganizeTableColumns extends ModulVue {
 
         for (let i: number = 0; i < internalColumns.length; i++) {
             if (internalColumns[i].fixed && !(internalColumns[i].visible === undefined || internalColumns[i].visible)) {
-                this.$log.error(this.$i18n.translate('m-organize-table-columns:error.fixed1'));
-                internalColumns = [];
-                return;
+                // Une colonne ne peut pas être fixed et non visible
+                throw new Error(this.$i18n.translate('m-organize-table-columns:error.fixed1'));
             }
 
             if (!canBeFixed && internalColumns[i].fixed) {
-                this.$log.error(this.$i18n.translate('m-organize-table-columns:error.fixed2'));
-                internalColumns = [];
-                return;
+                // Une colonne ne peut pas être fixed et après une colonne non fixed
+                throw new Error(this.$i18n.translate('m-organize-table-columns:error.fixed2'));
             }
 
             if (internalColumns[i].fixed === undefined || !internalColumns[i].fixed) {
@@ -52,7 +45,6 @@ export class MOrganizeTableColumns extends ModulVue {
 
         this.displayedColumns = internalColumns.filter(c => c.visible === undefined || c.visible);
         this.hiddenColumns = internalColumns.filter(c => (c.fixed === undefined || c.fixed === false) && c.visible === false);
-        this.loading = false;
     }
 
     get numberDisplayedColumns(): number {
@@ -67,16 +59,19 @@ export class MOrganizeTableColumns extends ModulVue {
         this.displayedColumns.splice(this.displayedColumns.findIndex(c => c.id === column.id), 1);
         column.visible = false;
         this.hiddenColumns.push(column);
+        this.emitReorganize([...this.displayedColumns, ...this.hiddenColumns]);
     }
 
     public addColumn(column: MColumnTable): void {
         this.hiddenColumns.splice(this.hiddenColumns.findIndex(c => c.id === column.id), 1);
         column.visible = true;
         this.displayedColumns.push(column);
+        this.emitReorganize([...this.displayedColumns, ...this.hiddenColumns]);
     }
 
     public moveColumn(event: MSortEvent): void {
         this.moveItemInList(this.displayedColumns, event.sortInfo.oldPosition, event.sortInfo.newPosition);
+        this.emitReorganize([...this.displayedColumns, ...this.hiddenColumns]);
     }
 
     public isDraggable(column: MColumnTable): string {
@@ -87,13 +82,8 @@ export class MOrganizeTableColumns extends ModulVue {
         return column.fixed !== undefined && column.fixed ? 'false' : 'true';
     }
 
-    public reorganize(): void {
-        this.$emit('reorganize', [...this.displayedColumns, ...this.hiddenColumns]);
-    }
-
-    @Emit('reset')
-    public reset(): void {
-        this.setInternalsColumns();
+    @Emit('reorganize')
+    public emitReorganize(columns: MColumnTable[]): void {
     }
 
     private moveItemInList(arr, oldIndex, newIndex): void {
@@ -107,7 +97,6 @@ const OrganizeTableColumnsPlugin: PluginObject<any> = {
     install(v, options): void {
         v.component(ORGANIZE_TABLE_COLUMNS_NAME, MOrganizeTableColumns);
         v.use(SortablePlugin);
-        v.use(SpinnerPlugin);
         v.use(ListItemPlugin);
         v.use(IconPlugin);
         v.use(IconButtonPlugin);

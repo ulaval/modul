@@ -1,11 +1,11 @@
 import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import WithRender from './organize-table-columns.example.html';
+import WithRender from './organize-table-columns-modal.example.html';
 
 @WithRender
 @Component
-export class MWOrganizeTableColumnsExample extends Vue {
+export class MWOrganizeTableColumnsModalExample extends Vue {
     public columnsOriginal: MColumnTable[] = [
         { id: 'A', title: 'Colonne A', dataProp: 'A', fixed: true },
         { id: 'B', title: 'Colonne B', dataProp: 'B' },

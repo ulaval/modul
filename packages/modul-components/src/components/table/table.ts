@@ -36,6 +36,7 @@ export interface MColumnTable {
     class?: string;
     sortDirection?: MColumnSortDirection;
     defaultSortDirection?: MColumnSortDirection;
+    // Visible, fixed et ignored servent à l'organizateur de colonnes
     visible?: boolean;
     fixed?: boolean;
     ignored?: boolean;

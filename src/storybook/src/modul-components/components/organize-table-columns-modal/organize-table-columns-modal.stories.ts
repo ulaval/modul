@@ -1,6 +1,6 @@
 import { actions } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/vue';
-import { ORGANIZE_TABLE_COLUMNS_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { ORGANIZE_TABLE_COLUMNS_MODAL_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MColumnSortDirection, MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
@@ -20,7 +20,7 @@ function defaultOnSortApplied(columnTable: MColumnTable): void {
     });
 }
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_NAME}`, module)
+storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_MODAL_NAME}`, module)
     .add('Default', () => ({
         props: {
             columns: {
@@ -38,7 +38,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_NAME
             'reorganize',
             'reset'
         ),
-        template: `<m-organize-table-columns @reorganize="reorganize" :columns="columns"></m-organize-table-columns>`
+        template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns"></m-organize-table-columns-modal>`
     }))
     .add('Fixed columns', () => ({
         props: {
@@ -56,7 +56,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_NAME
             'reorganize',
             'reset'
         ),
-        template: `<m-organize-table-columns @reorganize="reorganize" :columns="columns"></m-organize-table-columns>`
+        template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns"></m-organize-table-columns-modal>`
     }))
     .add('Hidden columns', () => ({
         props: {
@@ -74,7 +74,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_NAME
             'reorganize',
             'reset'
         ),
-        template: `<m-organize-table-columns @reorganize="reorganize" :columns="columns"></m-organize-table-columns>`
+        template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns"></m-organize-table-columns-modal>`
     }))
     .add('Ignore columns', () => ({
         props: {
@@ -92,5 +92,5 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_NAME
             'reorganize',
             'reset'
         ),
-        template: `<m-organize-table-columns @reorganize="reorganize" :columns="columns"></m-organize-table-columns>`
+        template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns"></m-organize-table-columns-modal>`
     }));
