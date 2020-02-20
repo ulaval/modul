@@ -10,6 +10,15 @@ import DatepickerPlugin from '@ulaval/modul-components/dist/components/datepicke
 import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/daterangepicker/daterangepicker';
 import DialogPlugin from '@ulaval/modul-components/dist/components/dialog/dialog';
 import DropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
+import ErrorPagesAccessDeniedPlugin from '@ulaval/modul-components/dist/components/error-pages/error-access-denied/error-access-denied';
+import ErrorPagesBrowserNoteSupportedPlugin from '@ulaval/modul-components/dist/components/error-pages/error-browser-not-supported/error-browser-not-supported';
+import ErrorPagesConfigNotSupportedPlugin from '@ulaval/modul-components/dist/components/error-pages/error-config-not-supported/error-config-not-supported';
+import ErrorPagesConflictPlugin from '@ulaval/modul-components/dist/components/error-pages/error-conflict/error-conflict';
+import ErrorPagesCookiePlugin from '@ulaval/modul-components/dist/components/error-pages/error-cookies-not-supported/error-cookies-not-supported';
+import ErrorPagesPageNotFoundPlugin from '@ulaval/modul-components/dist/components/error-pages/error-page-not-found/error-page-not-found';
+import ErrorPagesRessourceUnavailablePlugin from '@ulaval/modul-components/dist/components/error-pages/error-resource-unavailable/error-resource-unavailable';
+import ErrorPagesSessionExpiredPlugin from '@ulaval/modul-components/dist/components/error-pages/error-session-expired/error-session-expired';
+import ErrorPagesTechnicalDifficultyPlugin from '@ulaval/modul-components/dist/components/error-pages/error-technical-difficulty/error-technical-difficulty';
 import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
 import FileSelectPlugin from '@ulaval/modul-components/dist/components/file-select/file-select';
 import FileUploadPlugin from '@ulaval/modul-components/dist/components/file-upload/file-upload';
@@ -115,6 +124,15 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(ToastPlugin);
         Vue.use(PaginationPlugin);
         Vue.use(ChipDeletePlugin);
+        Vue.use(ErrorPagesAccessDeniedPlugin);
+        Vue.use(ErrorPagesBrowserNoteSupportedPlugin);
+        Vue.use(ErrorPagesConfigNotSupportedPlugin);
+        Vue.use(ErrorPagesConflictPlugin);
+        Vue.use(ErrorPagesCookiePlugin);
+        Vue.use(ErrorPagesPageNotFoundPlugin);
+        Vue.use(ErrorPagesRessourceUnavailablePlugin);
+        Vue.use(ErrorPagesSessionExpiredPlugin);
+        Vue.use(ErrorPagesTechnicalDifficultyPlugin);
     }
 };
 

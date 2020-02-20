@@ -1,0 +1,21 @@
+{
+    "name": "Page d'erreur",
+    "url": "page-erreur",
+    "category": "content",
+    "type": "components",
+    "beta": true,
+    "visible": true,
+    "overview": "components/error-page/error-page.overview.fr.md",
+    "preview": "components/error-page/error-page.preview.fr.md",
+    "components": [
+        "m-error-access-denied",
+        "m-error-browser-not-supported",
+        "m-error-config-not-supported",
+        "m-error-conflict",
+        "m-error-cookies-not-supported",
+        "m-error-page-not-found",
+        "m-error-resource-unavailable",
+        "m-error-technical-difficulty",
+        "m-error-session-expired"
+    ]
+}
