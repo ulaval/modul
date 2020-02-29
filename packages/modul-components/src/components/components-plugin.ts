@@ -65,82 +65,82 @@ import TypeaheadPlugin from "./typeahead/typeahead";
 import ValidationMessagePlugin from "./validation-message/validation-message";
 
 export interface ComponentPluginOptions {
-  formPluginOptions?: FormPluginOptions;
+    formPluginOptions?: FormPluginOptions;
 }
 
 const ComponentsPlugin: PluginObject<any> = {
-  install(v, options: ComponentPluginOptions = {}): void {
-    if (!v.prototype.$log) {
-      Vue.use(LoggerPlugin);
-    }
+    install(v, options: ComponentPluginOptions = {}): void {
+        if (!v.prototype.$log) {
+            Vue.use(LoggerPlugin);
+        }
 
-    Vue.use(AccordionGroupPlugin);
-    Vue.use(AccordionPlugin);
-    Vue.use(AccordionTransitionPlugin);
-    Vue.use(AddPlugin);
-    Vue.use(ButtonPlugin);
-    Vue.use(CalendarPlugin);
-    Vue.use(CarouselPlugin);
-    Vue.use(CharacterCountPlugin);
-    Vue.use(CheckboxPlugin);
-    Vue.use(DatepickerPlugin);
-    Vue.use(DaterangepickerPlugin);
-    Vue.use(ModalPlugin);
-    Vue.use(DropdownPlugin);
-    Vue.use(AutoCompletePlugin);
-    Vue.use(OverlayPlugin);
-    Vue.use(FileSelectPlugin);
-    Vue.use(FileUploadPlugin);
-    Vue.use(
-      FormPlugin,
-      options.formPluginOptions ? options.formPluginOptions : undefined
-    );
-    Vue.use(I18nPlugin);
-    Vue.use(IconPlugin);
-    Vue.use(IconButtonPlugin);
-    Vue.use(IconFilePlugin);
-    Vue.use(InputGroupPlugin);
-    Vue.use(LimitTextPlugin);
-    Vue.use(LinkPlugin);
-    Vue.use(ListItemPlugin);
-    Vue.use(MessagePlugin);
-    Vue.use(DialogPlugin);
-    Vue.use(NavbarPlugin);
-    Vue.use(OpacityTransitionPlugin);
-    Vue.use(OptionPlugin);
-    Vue.use(MenuPlugin);
-    Vue.use(PanelPlugin);
-    Vue.use(PeriodpickerPlugin);
-    Vue.use(PopupPlugin);
-    Vue.use(ProgressPlugin);
-    Vue.use(RadioPlugin);
-    Vue.use(RadioGroupPlugin);
-    Vue.use(RadioStylePlugin);
-    Vue.use(ScrollTopPlugin);
-    Vue.use(ShowMorePlugin);
-    Vue.use(SpinnerPlugin);
-    Vue.use(SlideTransitionPlugin);
-    Vue.use(SteppersPlugin);
-    Vue.use(SwitchPlugin);
-    Vue.use(TablePlugin);
-    Vue.use(MultiSelectPlugin);
-    Vue.use(TableHeaderPlugin);
-    Vue.use(TextareaPlugin);
-    Vue.use(TextfieldPlugin);
-    Vue.use(SearchfieldPlugin);
-    Vue.use(TimepickerPlugin);
-    Vue.use(ToastPlugin);
-    Vue.use(ToggleButtonsPlugin);
-    Vue.use(TooltipPlugin);
-    Vue.use(TreePlugin);
-    Vue.use(TypeaheadPlugin);
-    Vue.use(ValidationMessagePlugin);
-    Vue.use(InplaceEditPlugin);
-    Vue.use(PaginationPlugin);
-    Vue.use(MChipPlugin);
-    Vue.use(MChipAddPlugin);
-    Vue.use(MChipDeletePlugin);
-  }
+        Vue.use(AccordionGroupPlugin);
+        Vue.use(AccordionPlugin);
+        Vue.use(AccordionTransitionPlugin);
+        Vue.use(AddPlugin);
+        Vue.use(ButtonPlugin);
+        Vue.use(CalendarPlugin);
+        Vue.use(CarouselPlugin);
+        Vue.use(CharacterCountPlugin);
+        Vue.use(CheckboxPlugin);
+        Vue.use(DatepickerPlugin);
+        Vue.use(DaterangepickerPlugin);
+        Vue.use(ModalPlugin);
+        Vue.use(DropdownPlugin);
+        Vue.use(AutoCompletePlugin);
+        Vue.use(OverlayPlugin);
+        Vue.use(FileSelectPlugin);
+        Vue.use(FileUploadPlugin);
+        Vue.use(
+            FormPlugin,
+            options.formPluginOptions ? options.formPluginOptions : undefined
+        );
+        Vue.use(I18nPlugin);
+        Vue.use(IconPlugin);
+        Vue.use(IconButtonPlugin);
+        Vue.use(IconFilePlugin);
+        Vue.use(InputGroupPlugin);
+        Vue.use(LimitTextPlugin);
+        Vue.use(LinkPlugin);
+        Vue.use(ListItemPlugin);
+        Vue.use(MessagePlugin);
+        Vue.use(DialogPlugin);
+        Vue.use(NavbarPlugin);
+        Vue.use(OpacityTransitionPlugin);
+        Vue.use(OptionPlugin);
+        Vue.use(MenuPlugin);
+        Vue.use(PanelPlugin);
+        Vue.use(PeriodpickerPlugin);
+        Vue.use(PopupPlugin);
+        Vue.use(ProgressPlugin);
+        Vue.use(RadioPlugin);
+        Vue.use(RadioGroupPlugin);
+        Vue.use(RadioStylePlugin);
+        Vue.use(ScrollTopPlugin);
+        Vue.use(ShowMorePlugin);
+        Vue.use(SpinnerPlugin);
+        Vue.use(SlideTransitionPlugin);
+        Vue.use(SteppersPlugin);
+        Vue.use(SwitchPlugin);
+        Vue.use(TablePlugin);
+        Vue.use(MultiSelectPlugin);
+        Vue.use(TableHeaderPlugin);
+        Vue.use(TextareaPlugin);
+        Vue.use(TextfieldPlugin);
+        Vue.use(SearchfieldPlugin);
+        Vue.use(TimepickerPlugin);
+        Vue.use(ToastPlugin);
+        Vue.use(ToggleButtonsPlugin);
+        Vue.use(TooltipPlugin);
+        Vue.use(TreePlugin);
+        Vue.use(TypeaheadPlugin);
+        Vue.use(ValidationMessagePlugin);
+        Vue.use(InplaceEditPlugin);
+        Vue.use(PaginationPlugin);
+        Vue.use(MChipPlugin);
+        Vue.use(MChipAddPlugin);
+        Vue.use(MChipDeletePlugin);
+    }
 };
 
 export default ComponentsPlugin;
