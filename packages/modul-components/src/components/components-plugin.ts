@@ -91,10 +91,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(OverlayPlugin);
         Vue.use(FileSelectPlugin);
         Vue.use(FileUploadPlugin);
-        Vue.use(
-            FormPlugin,
-            options.formPluginOptions ? options.formPluginOptions : undefined
-        );
+        Vue.use(FormPlugin, options.formPluginOptions ? options.formPluginOptions : undefined);
         Vue.use(I18nPlugin);
         Vue.use(IconPlugin);
         Vue.use(IconButtonPlugin);
