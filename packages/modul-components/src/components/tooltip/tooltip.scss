@@ -3,6 +3,10 @@ $m-tooltip--width: 320px !default;
 $m-tooltip--width--l: 540px !default;
 $m-tooltip--max-height: 280px !default;
 
+:root {
+    --m-tooltip--max-height: #{$m-tooltip--max-height};
+}
+
 .m-tooltip {
     > :first-child {
         display: inline;
@@ -50,7 +54,7 @@ $m-tooltip--max-height: 280px !default;
         }
     }
 
-    &__close-button {
+    &__close-button.m-tooltip__close-button {
         position: absolute;
         top: 1px;
         right: 1px;
@@ -63,16 +67,17 @@ $m-tooltip--max-height: 280px !default;
         user-select: text;
 
         @media (min-width: $m-mq--min--s) {
+            max-height: var(--m-tooltip--max-height);
             width: $m-tooltip--width;
-            max-height: $m-tooltip--max-height;
             overflow-x: hidden;
             overflow-y: auto;
             border-radius: $m-border-radius--s;
         }
 
         @media (max-height: $m-tooltip--max-height) {
+            --m-tooltip--max-height: calc(100vh - #{ $m-margin--l });
+
             min-height: $m-touch-size;
-            max-height: calc(100vh - #{ $m-margin--l });
         }
 
         @include m-scrollbar();

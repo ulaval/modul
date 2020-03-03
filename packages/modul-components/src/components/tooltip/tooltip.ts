@@ -12,7 +12,8 @@ import IconPlugin from '../icon/icon';
 import LinkPlugin from '../link/link';
 import { MPopperPlacement } from '../popper/popper';
 import PopupPlugin from '../popup/popup';
-import WithRender from './tooltip.html?style=./tooltip.scss';
+import WithRender from './tooltip.html';
+import './tooltip.scss';
 
 export enum MTooltipMode {
     Icon = 'icon',
