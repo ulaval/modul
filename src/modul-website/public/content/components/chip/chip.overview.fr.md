@@ -3,13 +3,13 @@ Représente une valeur sélectionnable sous la forme d'une pastille
 
 <modul-do>
     <ul>
-        <li>A utiliser pour étaler une brève liste de valeur à un utilisateur.</li>
+        <li>A utiliser pour étaler de brèves listes de valeur à un utilisateur.</li>
     </ul>
 </modul-do>
 
 <modul-dont>
     <ul>
-        <li>A éviter pour les longues liste de valeur.</li>
+        <li>A éviter pour les longues listes de valeur.</li>
     </ul>
 </modul-dont>
 
