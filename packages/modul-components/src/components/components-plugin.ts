@@ -10,8 +10,6 @@ import CarouselPlugin from './carousel/carousel';
 import CharacterCountPlugin from './character-count/character-count';
 import CheckboxPlugin from './checkbox/checkbox';
 import MChipPlugin from './chip/chip';
-import MChipAddPlugin from './chip/chip-add/chip-add';
-import MChipDeletePlugin from './chip/chip-delete/chip-delete';
 import DatepickerPlugin from './datepicker/datepicker';
 import DaterangepickerPlugin from './daterangepicker/daterangepicker';
 import DialogPlugin from './dialog/dialog';
@@ -135,8 +133,6 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(InplaceEditPlugin);
         Vue.use(PaginationPlugin);
         Vue.use(MChipPlugin);
-        Vue.use(MChipAddPlugin);
-        Vue.use(MChipDeletePlugin);
     }
 };
 

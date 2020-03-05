@@ -1,13 +1,16 @@
-import Vue, { PluginObject } from 'vue';
+import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { CHIP_ADD_NAME } from '../../component-names';
-import { MChipSize } from '../chip';
 import WithRender from './chip-add.html?style=./chip-add.scss';
+
+enum MChipSize {
+    Small = 'small',
+    Large = 'large'
+}
 
 @WithRender
 @Component
-export class MChipAdd extends Vue {
+export default class MChipAdd extends Vue {
     @Prop()
     disabled: boolean;
 
@@ -41,12 +44,3 @@ export class MChipAdd extends Vue {
         (this.$el as HTMLElement).blur();
     }
 }
-
-const MChipAddPlugin: PluginObject<any> = {
-    install(v, options): void {
-        v.prototype.$log.debug(CHIP_ADD_NAME, 'plugin.install');
-        v.component(CHIP_ADD_NAME, MChipAdd);
-    }
-};
-
-export default MChipAddPlugin;

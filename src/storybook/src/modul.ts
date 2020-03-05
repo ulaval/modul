@@ -8,8 +8,6 @@ import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button
 import CarouselPlugin from '@ulaval/modul-components/dist/components/carousel/carousel';
 import CheckboxPlugin from '@ulaval/modul-components/dist/components/checkbox/checkbox';
 import ChipPlugin from '@ulaval/modul-components/dist/components/chip/chip';
-import MChipAddPlugin from '@ulaval/modul-components/dist/components/chip/chip-add/chip-add';
-import MChipDeletePlugin from '@ulaval/modul-components/dist/components/chip/chip-delete/chip-delete';
 import CopyToClipboardPlugin from '@ulaval/modul-components/dist/components/copy-to-clipboard/copy-to-clipboard';
 import DatepickerPlugin from '@ulaval/modul-components/dist/components/datepicker/datepicker';
 import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/daterangepicker/daterangepicker';
@@ -148,8 +146,6 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(AvatarPlugin);
         Vue.use(BreadcrumbsPlugin);
         Vue.use(ChipPlugin);
-        Vue.use(MChipDeletePlugin);
-        Vue.use(MChipAddPlugin);
         Vue.use(CopyToClipboardPlugin);
         Vue.use(MultiSelectPlugin);
         Vue.use(SelectPlugin);
