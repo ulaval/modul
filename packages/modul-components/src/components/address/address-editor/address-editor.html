@@ -1,41 +1,53 @@
 <div class="m-address-editor">
 
     <template v-if="isDetailAdressFormat">
-        <m-textfield :label="i18nBuildingNumber"
+        <m-textfield class="m-address-editor__building-number"
+                     :label="i18nBuildingNumber"
                      :value="buildingNumber"
                      :error="buildingNumberHasError"
                      :error-message="buildingNumberNextError"
+                     max-width="100%"
                      @input="onBuildingNumberChange"></m-textfield>
-        <m-textfield :label="i18nSubBuilding"
+        <m-textfield class="m-address-editor__sub-building"
+                     :label="i18nSubBuilding"
                      :value="subBuilding"
                      :error="subBuildingHasError"
                      :error-message="subBuildingNextError"
+                     max-width="100%"
                      @input="onSubBuildingChange"></m-textfield>
-        <m-textfield :label="i18nStreet"
+        <m-textfield class="m-address-editor__street"
+                     :label="i18nStreet"
                      :value="street"
                      :error="streetHasError"
                      :error-message="streetNextError"
+                     max-width="100%"
                      @input="onStreetChange"></m-textfield>
     </template>
 
     <template v-else>
-        <m-textfield :label="i18nLine1"
+        <m-textfield class="m-address-editor__line-1"
+                     :label="i18nLine1"
                      :value="Line1"
                      :error="Line1HasError"
                      :error-message="Line1NextError"
+                     max-width="100%"
                      @input="onLine1Change"></m-textfield>
     </template>
 
-    <m-textfield :label="i18nCity"
+    <m-textfield class="m-address-editor__city"
+                 :label="i18nCity"
                  :value="city"
                  :error="cityHasError"
                  :error-message="cityNextError"
+                 max-width="100%"
                  @input="onCityChange"></m-textfield>
 
-    <m-dropdown :label="i18nCountry"
+    <m-dropdown class="m-address-editor__country"
+                :label="i18nCountry"
                 :value="country"
                 :error="countryHasError"
                 :error-message="countryNextError"
+                max-width="100%"
                 @change="onCountryChange">
         <m-dropdown-item v-for="country in countries"
                          :key="country.countryIso2"
@@ -44,10 +56,12 @@
     </m-dropdown>
 
     <m-dropdown v-if="provinces.length > 0"
+                class="m-address-editor__province"
                 :label="i18nProvince"
                 :value="province"
                 :error="provinceHasError"
                 :error-message="provinceNextError"
+                max-width="100%"
                 @change="onProvinceChange">
         <m-dropdown-item v-for="province in provinces"
                          :key="province.provinceCode"
@@ -55,9 +69,11 @@
                          :label="province.province"></m-dropdown-item>
     </m-dropdown>
 
-    <m-textfield :label="i18nPostalCode"
+    <m-textfield class="m-address-editor__postal-code"
+                 :label="i18nPostalCode"
                  :value="postalCode"
                  :error="postalCodeHasError"
                  :error-message="postalCodeNextError"
+                 max-width="100%"
                  @input="onPostalCodeChange"></m-textfield>
 </div>

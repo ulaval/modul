@@ -7,8 +7,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Default 1`] = `
       class="m-address-editor"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__building-number m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
@@ -88,8 +88,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Default 1`] = `
       </div>
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__sub-building m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -169,8 +169,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Default 1`] = `
       </div>
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__street m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
@@ -250,8 +250,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Default 1`] = `
       </div>
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__city m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
@@ -331,8 +331,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Default 1`] = `
       </div>
        
       <div
-        class="m-dropdown"
-        style="width: 100%; max-width: 288px;"
+        class="m-dropdown m-address-editor__country"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
@@ -441,8 +441,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Default 1`] = `
       <!---->
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__postal-code m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
@@ -558,8 +558,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Empty address 1
       class="m-address-editor"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__building-number m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -639,8 +639,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Empty address 1
       </div>
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__sub-building m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -720,8 +720,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Empty address 1
       </div>
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__street m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -801,8 +801,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Empty address 1
       </div>
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__city m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -882,8 +882,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Empty address 1
       </div>
        
       <div
-        class="m-dropdown"
-        style="width: 100%; max-width: 288px;"
+        class="m-dropdown m-address-editor__country"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
@@ -992,8 +992,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Empty address 1
       <!---->
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__postal-code m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -1099,8 +1099,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Formated adress
       class="m-address-editor"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__line-1 m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -1180,8 +1180,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Formated adress
       </div>
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__city m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--has-label m--is-tag-default"
@@ -1261,8 +1261,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Formated adress
       </div>
        
       <div
-        class="m-dropdown"
-        style="width: 100%; max-width: 288px;"
+        class="m-dropdown m-address-editor__country"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
@@ -1371,8 +1371,8 @@ exports[`Storyshots modul-components|/m-address/m-address-editor Formated adress
       <!---->
        
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        style="width: 100%; max-width: 288px;"
+        class="m-textfield m-address-editor__postal-code m--has-label m--is-type-text"
+        style="width: 100%; max-width: 100%;"
       >
         <div
           class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
