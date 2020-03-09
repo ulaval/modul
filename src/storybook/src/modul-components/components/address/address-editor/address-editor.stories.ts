@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/vue';
 import AddressPlugin from '@ulaval/modul-components/dist/components/address/address';
 import MAddressEditor, { AddressEditorValidator } from '@ulaval/modul-components/dist/components/address/address-editor/address-editor';
 import { ADDRESS_EDITOR_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { Address, AddressField, Country, Province } from '@ulaval/modul-components/dist/utils/address-lookup/address';
+import { Address, AddressField, AddressFormat, Country, Province } from '@ulaval/modul-components/dist/utils/address-lookup/address';
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
@@ -116,11 +116,14 @@ const validations: { [field: string]: AddressEditorValidator[] } = {
     ],
     [AddressField.PROVINCE]: [
         (_value: string, context: Address, provinces: Province[]) => (context[AddressField.PROVINCE] === undefined && provinces.length > 0) ? 'Province is required' : ''
+    ],
+    [AddressField.LINE_1]: [
+        (value: string, _context: Address) => (value === '') ? 'Adress is required.' : ''
     ]
 };
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_EDITOR_NAME}`, module)
-    .add('default', () => ({
+    .add('Default', () => ({
         components: { MAddressEditor },
         data: () => ({
             address: {
@@ -174,7 +177,52 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_EDITOR_N
             </div>
         </div>`
     }))
-    .add('empty address', () => ({
+    .add('Formated adress type', () => ({
+        components: { MAddressEditor },
+        data: () => ({
+            address: {
+                line1: '',
+                city: '',
+                country: {
+                    country: 'Canada',
+                    countryIso2: 'CA'
+                },
+                province: undefined,
+                postalCode: 'G1V 0A6'
+            },
+            countries: countries,
+            provincesList: provinces,
+            currentProvinces: [],
+            validations,
+            adressFormat: AddressFormat.FORMATED_FIELDS
+        }),
+        mounted(): void {
+            this.onCountryChange(this.address.country.countryIso2);
+        },
+        methods: {
+            onCountryChange(code: string): void {
+                (this as any).currentProvinces = (this as any).provincesList[code];
+            }
+        },
+        template: `
+        <div>
+            <div>
+                <${ADDRESS_EDITOR_NAME} v-model='address'
+                                        :countries='countries'
+                                        :provinces='currentProvinces'
+                                        :validations='validations'
+                                        :adress-format='adressFormat'
+                                        @country-change='onCountryChange'
+                >
+                </${ADDRESS_EDITOR_NAME}>
+            </div>
+
+            <div style='border-top: 1px solid #000; margin-top: 50px;'>
+                <div>Address from editor : {{ address }}</div>
+            </div>
+        </div>`
+    }))
+    .add('Empty address', () => ({
         components: { MAddressEditor },
         data: () => ({
             address: {

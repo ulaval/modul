@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
+exports[`Storyshots modul-components|/m-address/m-address-editor Default 1`] = `
 <div>
   <div>
     <div
@@ -86,7 +86,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-textfield m--has-label m--is-type-text"
@@ -168,7 +167,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-textfield m--has-label m--is-type-text"
@@ -250,7 +248,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-textfield m--has-label m--is-type-text"
@@ -332,7 +329,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-dropdown"
@@ -441,7 +437,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
           <!---->
         </div>
       </div>
-      <br />
        
       <!---->
        
@@ -525,7 +520,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
           <!---->
         </div>
       </div>
-      <br />
     </div>
   </div>
    
@@ -557,7 +551,7 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1`] = `
+exports[`Storyshots modul-components|/m-address/m-address-editor Empty address 1`] = `
 <div>
   <div>
     <div
@@ -643,7 +637,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-textfield m--has-label m--is-type-text"
@@ -725,7 +718,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-textfield m--has-label m--is-type-text"
@@ -807,7 +799,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-textfield m--has-label m--is-type-text"
@@ -889,7 +880,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
           <!---->
         </div>
       </div>
-      <br />
        
       <div
         class="m-dropdown"
@@ -998,7 +988,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
           <!---->
         </div>
       </div>
-      <br />
        
       <!---->
        
@@ -1082,7 +1071,6 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
           <!---->
         </div>
       </div>
-      <br />
     </div>
   </div>
    
@@ -1100,6 +1088,385 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
   "postalCode": "",
   "subBuilding": ""
 }
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|/m-address/m-address-editor Formated adress type 1`] = `
+<div>
+  <div>
+    <div
+      class="m-address-editor"
+    >
+      <div
+        class="m-textfield m--has-label m--is-type-text"
+        style="width: 100%; max-width: 288px;"
+      >
+        <div
+          class="m-input-style m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="mTextfield-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Adresse
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <input
+                    class="m-textfield__input"
+                    id="mTextfield-fakeId"
+                    maxlength="Infinity"
+                    type="text"
+                  />
+                     
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-textfield__validation"
+        >
+          <div
+            class="m-validation-message m-textfield__validation__message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-textfield m--has-label m--is-type-text"
+        style="width: 100%; max-width: 288px;"
+      >
+        <div
+          class="m-input-style m--has-label m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="mTextfield-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Ville
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <input
+                    class="m-textfield__input"
+                    id="mTextfield-fakeId"
+                    maxlength="Infinity"
+                    type="text"
+                  />
+                     
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-textfield__validation"
+        >
+          <div
+            class="m-validation-message m-textfield__validation__message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-dropdown"
+        style="width: 100%; max-width: 288px;"
+      >
+        <div
+          class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="mDropdown-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <!---->
+                   
+                  <input
+                    aria-controls="mDropdown-fakeId-controls"
+                    aria-haspopup="true"
+                    class="m-dropdown__input"
+                    id="mDropdown-fakeId"
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                  <!---->
+                    
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <div
+                    class="m-dropdown__arrow"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-dropdown__arrow__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-validation-message m-dropdown__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-popup"
+        >
+          <div
+            class="m-popper"
+          >
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <!---->
+       
+      <div
+        class="m-textfield m--has-label m--is-type-text"
+        style="width: 100%; max-width: 288px;"
+      >
+        <div
+          class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__main"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="mTextfield-fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Code Postal
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <input
+                    class="m-textfield__input"
+                    id="mTextfield-fakeId"
+                    maxlength="Infinity"
+                    type="text"
+                  />
+                     
+                  <!---->
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                  <!---->
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+         
+        <div
+          class="m-textfield__validation"
+        >
+          <div
+            class="m-validation-message m-textfield__validation__message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    style="border-top: 1px solid #000; margin-top: 50px;"
+  >
+    <div>
+      Address from editor : {
+  "line1": "",
+  "city": "",
+  "country": {
+    "country": "Canada",
+    "countryIso2": "CA"
+  },
+  "postalCode": "G1V 0A6"
+}
+    </div>
   </div>
 </div>
 `;

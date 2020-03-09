@@ -14,13 +14,14 @@ export interface AddressSummary {
 export interface Address {
     id: string;
     name: string;
-    buildingNumber: string;
-    street: string;
+    buildingNumber?: string;
+    street?: string;
+    line1?: string;
     city: string;
     province?: Province;
     postalCode: string;
     country: Country;
-    subBuilding: string;
+    subBuilding?: string;
     formattedAddress: string;
     adrFormattedAddress: string;
     attributions: string[];
@@ -38,10 +39,16 @@ export interface Country {
     countryIso2: string;
 }
 
+export enum AddressFormat {
+    DETAILS_FIELDS = 'detailsFields',
+    FORMATED_FIELDS = 'formatedFields'
+}
+
 export enum AddressField {
     BUILDING_NUMBER = 'buildingNumber',
     STREET = 'street',
     CITY = 'city',
+    LINE_1 = 'line1',
     POSTAL_CODE = 'postalCode',
     SUB_BUILDING = 'subBuilding',
     COUNTRY = 'country',

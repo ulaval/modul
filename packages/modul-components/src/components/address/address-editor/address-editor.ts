@@ -1,6 +1,6 @@
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
-import { Address, AddressField, copyAddress, Country, CountryKey, Province } from '../../../utils/address-lookup/address';
+import { Address, AddressField, AddressFormat, copyAddress, Country, CountryKey, Province } from '../../../utils/address-lookup/address';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MDropdown } from '../../dropdown/dropdown';
 import { MTextfield } from '../../textfield/textfield';
@@ -33,17 +33,23 @@ export default class MAddressEditor extends ModulVue {
     @Prop({ default: () => ({}) })
     validations: { [field: string]: AddressEditorValidator[] };
 
+    @Prop({
+        default: AddressFormat.DETAILS_FIELDS
+    })
+    adressFormat: AddressFormat;
+
     i18nBuildingNumber: string = this.$i18n.translate('m-address-editor:building-number');
-    i18nSubBuilding: string = this.$i18n.translate('m-address-editor:sub-building');
-    i18nStreet: string = this.$i18n.translate('m-address-editor:street');
     i18nCity: string = this.$i18n.translate('m-address-editor:city');
     i18nCountry: string = this.$i18n.translate('m-address-editor:country');
-    i18nProvince: string = this.$i18n.translate('m-address-editor:province');
+    i18nLine1: string = this.$i18n.translate('m-address-editor:line-1');
     i18nPostalCode: string = this.$i18n.translate('m-address-editor:postal-code');
+    i18nProvince: string = this.$i18n.translate('m-address-editor:province');
+    i18nStreet: string = this.$i18n.translate('m-address-editor:street');
+    i18nSubBuilding: string = this.$i18n.translate('m-address-editor:sub-building');
 
 
     currentAddress: Address = copyAddress(this.address);
-    private errors: { [field: string]: string[] } = {
+    private errorsDeteilsFields: { [field: string]: string[] } = {
         [AddressField.BUILDING_NUMBER]: [],
         [AddressField.STREET]: [],
         [AddressField.SUB_BUILDING]: [],
@@ -53,10 +59,26 @@ export default class MAddressEditor extends ModulVue {
         [AddressField.POSTAL_CODE]: []
     };
 
-    private touched: { [field: string]: boolean } = {
+    private errorsFormatedFields: { [field: string]: string[] } = {
+        [AddressField.LINE_1]: [],
+        [AddressField.CITY]: [],
+        [AddressField.PROVINCE]: [],
+        [AddressField.COUNTRY]: [],
+        [AddressField.POSTAL_CODE]: []
+    };
+
+    private touchedDeteilsFields: { [field: string]: boolean } = {
         [AddressField.BUILDING_NUMBER]: false,
         [AddressField.STREET]: false,
         [AddressField.SUB_BUILDING]: false,
+        [AddressField.CITY]: false,
+        [AddressField.PROVINCE]: false,
+        [AddressField.COUNTRY]: false,
+        [AddressField.POSTAL_CODE]: false
+    };
+
+    private touchedFormatedFields: { [field: string]: boolean } = {
+        [AddressField.LINE_1]: false,
         [AddressField.CITY]: false,
         [AddressField.PROVINCE]: false,
         [AddressField.COUNTRY]: false,
@@ -78,6 +100,18 @@ export default class MAddressEditor extends ModulVue {
         this.validate(AddressField.PROVINCE);
     }
 
+    get isDetailAdressFormat(): boolean {
+        return this.adressFormat === AddressFormat.DETAILS_FIELDS;
+    }
+
+    get errors(): { [field: string]: string[] } {
+        return this.isDetailAdressFormat ? this.errorsDeteilsFields : this.errorsFormatedFields;
+    }
+
+    get touched(): { [field: string]: boolean } {
+        return this.isDetailAdressFormat ? this.touchedDeteilsFields : this.touchedFormatedFields;
+    }
+
     onBuildingNumberChange(value: string): void {
         this.touched[AddressField.BUILDING_NUMBER] = true;
         this.validate(AddressField.BUILDING_NUMBER, value);
@@ -85,7 +119,7 @@ export default class MAddressEditor extends ModulVue {
     }
 
     get buildingNumber(): string {
-        return this.currentAddress.buildingNumber;
+        return this.currentAddress.buildingNumber ? this.currentAddress.buildingNumber : '';
     }
 
     get buildingNumberHasError(): boolean {
@@ -106,7 +140,7 @@ export default class MAddressEditor extends ModulVue {
     }
 
     get street(): string {
-        return this.currentAddress.street;
+        return this.currentAddress.street ? this.currentAddress.street : '';
     }
 
     get streetHasError(): boolean {
@@ -127,7 +161,7 @@ export default class MAddressEditor extends ModulVue {
     }
 
     get subBuilding(): string {
-        return this.currentAddress.subBuilding;
+        return this.currentAddress.subBuilding ? this.currentAddress.subBuilding : '';
     }
 
     get subBuildingHasError(): boolean {
@@ -230,6 +264,27 @@ export default class MAddressEditor extends ModulVue {
     get cityNextError(): string {
         if (this.cityHasError) {
             return this.errors[AddressField.CITY][0];
+        }
+        return '';
+    }
+
+    onLine1Change(value: string): void {
+        this.touched[AddressField.LINE_1] = true;
+        this.validate(AddressField.LINE_1, value);
+        this.updateValue(AddressField.LINE_1, value);
+    }
+
+    get Line1(): string {
+        return this.currentAddress.buildingNumber ? this.currentAddress.buildingNumber : '';
+    }
+
+    get Line1HasError(): boolean {
+        return !!this.errors[AddressField.LINE_1] && this.errors[AddressField.LINE_1].length > 0;
+    }
+
+    get Line1NextError(): string {
+        if (this.Line1HasError) {
+            return this.errors[AddressField.LINE_1][0];
         }
         return '';
     }
