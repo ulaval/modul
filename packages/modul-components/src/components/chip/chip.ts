@@ -21,7 +21,7 @@ export enum MChipSize {
 @Component({
     components: {
         [CHIP_ADD_NAME]: MChipAdd,
-        [CHIP_DELETE_NAME]: MChipDelete,
+        [CHIP_DELETE_NAME]: MChipDelete
     }
 })
 export class MChip extends Vue {
