@@ -30,6 +30,7 @@ import IntegerfieldPlugin from '@ulaval/modul-components/dist/components/integer
 import LimitTextPlugin from '@ulaval/modul-components/dist/components/limit-text/limit-text';
 import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
 import ListItemPlugin from '@ulaval/modul-components/dist/components/list-item/list-item';
+import MaskedfieldPlugin from '@ulaval/modul-components/dist/components/maskedfield/maskedfield';
 import MenuPlugin from '@ulaval/modul-components/dist/components/menu/menu';
 import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import MoneyFieldPlugin from '@ulaval/modul-components/dist/components/moneyfield/moneyfield';
@@ -157,6 +158,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(MoneyFieldPlugin);
         Vue.use(DecimalfieldPlugin);
         Vue.use(IntegerfieldPlugin);
+        Vue.use(MaskedfieldPlugin);
 
         Vue.use(FormPlugin);
 
