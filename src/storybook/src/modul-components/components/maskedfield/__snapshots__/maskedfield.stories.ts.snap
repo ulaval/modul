@@ -144,6 +144,83 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label 1`] = `
+<div
+  class="m-maskedlfield m--has-label"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mMaskedfield-fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              Postal code
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+             
+            <input
+              class="m-maskedfield__input"
+              id="mMaskedfield-fakeId"
+            />
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-maskedfield__validation"
+  >
+    <div
+      class="m-validation-message m-maskedfield__validation__message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-maskedfield Telephone Mask 1`] = `
 <div
   class="m-maskedlfield"
