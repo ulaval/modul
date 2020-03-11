@@ -25,6 +25,14 @@ export const postalCodeMask = () => ({
     template: `<${MASKEDFIELD_NAME} v-model="model" :blocks="blocks"></${MASKEDFIELD_NAME}>`
 });
 
+export const postalCodeMaskWithLabel = () => ({
+    data: () => ({
+        model: 'G1V0A6',
+        blocks: [3, 3]
+    }),
+    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks"></${MASKEDFIELD_NAME}>`
+});
+
 export const telephoneMask = () => ({
     data: () => ({
         model: '+14186562131',
