@@ -20,17 +20,19 @@ defaultStory.story = {
 export const postalCodeMask = () => ({
     data: () => ({
         model: 'G1V0A6',
-        blocks: [3, 3]
+        blocks: [3, 3],
+        uppercase: true
     }),
-    template: `<${MASKEDFIELD_NAME} v-model="model" :blocks="blocks"></${MASKEDFIELD_NAME}>`
+    template: `<${MASKEDFIELD_NAME} v-model="model" :blocks="blocks" :uppercase="uppercase"></${MASKEDFIELD_NAME}>`
 });
 
 export const postalCodeMaskWithLabel = () => ({
     data: () => ({
         model: 'G1V0A6',
-        blocks: [3, 3]
+        blocks: [3, 3],
+        uppercase: true
     }),
-    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks"></${MASKEDFIELD_NAME}>`
+    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks" :uppercase="uppercase"></${MASKEDFIELD_NAME}>`
 });
 
 export const postalCodeMaskWithLabelInError = () => ({

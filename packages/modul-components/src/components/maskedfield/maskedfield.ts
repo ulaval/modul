@@ -44,6 +44,9 @@ export class MMaskedfield extends ModulVue {
     @Prop({ default: '' })
     public prefix: string;
 
+    @Prop({ default: false })
+    public uppercase: boolean;
+
     protected id: string = `mMaskedfield-${uuid.generate()}`;
 
     get hasMaskedfieldError(): boolean {
@@ -60,7 +63,8 @@ export class MMaskedfield extends ModulVue {
             delimiter: this.delimiter,
             delimiters: this.delimiters,
             numericOnly: this.numericOnly,
-            prefix: this.prefix
+            prefix: this.prefix,
+            uppercase: this.uppercase
         };
     }
 }
