@@ -33,12 +33,20 @@ export const postalCodeMaskWithLabel = () => ({
     template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks"></${MASKEDFIELD_NAME}>`
 });
 
+export const postalCodeMaskWithLabelInError = () => ({
+    data: () => ({
+        model: 'G1V0A6',
+        blocks: [3, 3]
+    }),
+    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks" :error="true" error-message="Invalid postal code with a long long long long long message error"></${MASKEDFIELD_NAME}>`
+});
+
 export const telephoneMask = () => ({
     data: () => ({
         model: '+14186562131',
         blocks: [2, 3, 3, 4],
         prefix: '+1',
-        delemiters: [' ', ' ', '-']
+        delimiters: [' ', ' ', '-']
     }),
-    template: `<${MASKEDFIELD_NAME} v-model="model" :blocks="blocks" :prefix="prefix" :delimiters="delemiters" :numericOnly="true"></${MASKEDFIELD_NAME}>`
+    template: `<${MASKEDFIELD_NAME} v-model="model" :blocks="blocks" :prefix="prefix" :delimiters="delimiters" :numericOnly="true"></${MASKEDFIELD_NAME}>`
 });

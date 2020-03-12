@@ -6,7 +6,7 @@ exports[`Storyshots modul-components|m-maskedfield Default Story 1`] = `
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
     style="margin-top: 10px;"
   >
     <div
@@ -36,7 +36,6 @@ exports[`Storyshots modul-components|m-maskedfield Default Story 1`] = `
           >
              
             <input
-              class="m-maskedfield__input"
               id="mMaskedfield-fakeId"
             />
               
@@ -62,7 +61,7 @@ exports[`Storyshots modul-components|m-maskedfield Default Story 1`] = `
     class="m-maskedfield__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation__message"
+      class="m-validation-message m-maskedfield__validation-message"
     >
       <!---->
        
@@ -78,7 +77,7 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
     style="margin-top: 10px;"
   >
     <div
@@ -108,7 +107,6 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
           >
              
             <input
-              class="m-maskedfield__input"
               id="mMaskedfield-fakeId"
             />
               
@@ -134,7 +132,7 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
     class="m-maskedfield__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation__message"
+      class="m-validation-message m-maskedfield__validation-message"
     >
       <!---->
        
@@ -150,7 +148,7 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label 1
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
+    class="m-input-style m-maskedfield__input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
     style="margin-top: 10px;"
   >
     <div
@@ -185,7 +183,6 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label 1
           >
              
             <input
-              class="m-maskedfield__input"
               id="mMaskedfield-fakeId"
             />
               
@@ -211,9 +208,108 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label 1
     class="m-maskedfield__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation__message"
+      class="m-validation-message m-maskedfield__validation-message"
     >
       <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label In Error 1`] = `
+<div
+  class="m-maskedlfield m--has-error m--has-label m--has-validation-message"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style m-maskedfield__input-style m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mMaskedfield-fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              Postal code
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+             
+            <input
+              id="mMaskedfield-fakeId"
+            />
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-maskedfield__validation"
+  >
+    <div
+      class="m-validation-message m-maskedfield__validation-message"
+    >
+      <p
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-icon m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Invalid postal code with a long long long long long message error
+        </span>
+      </p>
        
       <!---->
     </div>
@@ -227,7 +323,7 @@ exports[`Storyshots modul-components|m-maskedfield Telephone Mask 1`] = `
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
     style="margin-top: 10px;"
   >
     <div
@@ -257,7 +353,6 @@ exports[`Storyshots modul-components|m-maskedfield Telephone Mask 1`] = `
           >
              
             <input
-              class="m-maskedfield__input"
               id="mMaskedfield-fakeId"
             />
               
@@ -283,7 +378,7 @@ exports[`Storyshots modul-components|m-maskedfield Telephone Mask 1`] = `
     class="m-maskedfield__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation__message"
+      class="m-validation-message m-maskedfield__validation-message"
     >
       <!---->
        

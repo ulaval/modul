@@ -7,40 +7,17 @@
 
     @include m-input-inline-spacing();
 
-    &.m--has-validation-message {
-        .m-maskedfield__validation {
-            margin-top: $m-spacing--xs;
-        }
-    }
-
-    &.m--has-error {
-        .m-maskedfield__validation {
-            color: $m-color--error;
-        }
-    }
-
-    &.m--is-valid {
-        .m-maskedfield__validation {
-            color: $m-color--success;
-        }
-    }
-
     &__validation {
         transition: margin-top $m-transition-duration ease;
         display: flex;
         justify-content: flex-end;
-
-        &__message {
-            flex: 1 1 auto;
-        }
     }
 
-    &__input {
-        appearance: textfield;
+    &__validation-message {
+        flex: 1 1 auto;
+    }
 
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            appearance: textfield;
-        }
+    &__input-style {
+        width: 100%;
     }
 }

@@ -28,7 +28,7 @@ import WithRender from './maskedfield.html?style=./maskedfield.scss';
 })
 export class MMaskedfield extends ModulVue {
 
-    // Valeur infini pour faire afficher les valeurs par default si aucun block n'est spécifié!
+    // Infinite value to display normaly the default values ​​if no blocks is specified!
     @Prop({ default: [1e+23] })
     public blocks: number[];
 
@@ -46,15 +46,15 @@ export class MMaskedfield extends ModulVue {
 
     protected id: string = `mMaskedfield-${uuid.generate()}`;
 
-    private get hasMaskedfieldError(): boolean {
+    get hasMaskedfieldError(): boolean {
         return this.as<InputState>().hasError;
     }
 
-    private get isMaskedfieldValid(): boolean {
+    get isMaskedfieldValid(): boolean {
         return this.as<InputState>().isValid;
     }
 
-    private get inputMaskOptions(): InputMaskOptions {
+    get inputMaskOptions(): InputMaskOptions {
         return {
             blocks: this.blocks,
             delimiter: this.delimiter,

@@ -8,7 +8,8 @@
                 'm--has-validation-message': hasValidationMessage } ]"
      @click="onClick"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
-    <m-input-style :disabled="isDisabled"
+    <m-input-style class="m-maskedfield__input-style"
+                   :disabled="isDisabled"
                    :waiting="isWaiting"
                    :error="hasMaskedfieldError"
                    :valid="isMaskedfieldValid"
@@ -23,8 +24,7 @@
         <template slot="prefix">
             <slot name="prefix"></slot>
         </template>
-        <m-input-mask class="m-maskedfield__input"
-                      v-model="model"
+        <m-input-mask v-model="model"
                       :id="id"
                       :disabled="isDisabled || isWaiting"
                       :readonly="isReadonly"
@@ -43,7 +43,7 @@
         </template>
     </m-input-style>
     <div class="m-maskedfield__validation">
-        <m-validation-message class="m-maskedfield__validation__message"
+        <m-validation-message class="m-maskedfield__validation-message"
                               :disabled="isDisabled"
                               :waiting="isWaiting"
                               :error="hasMaskedfieldError"
