@@ -28,7 +28,7 @@ import WithRender from './maskedfield.html?style=./maskedfield.scss';
 })
 export class MMaskedfield extends ModulVue {
 
-    // Infinite value to display normaly the default values ​​if no blocks is specified!
+    // Infinite value to display normaly the default values if no blocks is specified!
     @Prop({ default: [1e+23] })
     public blocks: number[];
 
