@@ -35,7 +35,7 @@ export const postalCodeMaskWithLabel = () => ({
 
 export const postalCodeMaskWithLabelInError = () => ({
     data: () => ({
-        model: 'G1V0A6',
+        model: '123456',
         blocks: [3, 3]
     }),
     template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks" :error="true" error-message="Invalid postal code with a long long long long long message error"></${MASKEDFIELD_NAME}>`
