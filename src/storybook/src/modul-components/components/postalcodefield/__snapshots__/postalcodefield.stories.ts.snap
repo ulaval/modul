@@ -4,10 +4,230 @@ exports[`Storyshots modul-components|m-postalcodefield Default Story 1`] = `
 <div
   class="m-maskedlfield m-postalcodefield"
   id="mPostalcodefield-fakeId"
+  postalcodeformat="canada"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--is-tag-default"
+    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
+        >
+          <span
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
+          >
+             
+            <input
+              id="mMaskedfield-fakeId"
+            />
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-maskedfield__validation"
+  >
+    <div
+      class="m-validation-message m-maskedfield__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-postalcodefield France 1`] = `
+<div
+  class="m-maskedlfield m-postalcodefield"
+  id="mPostalcodefield-fakeId"
+  postalcodeformat="france"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
+        >
+          <span
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
+          >
+             
+            <input
+              id="mMaskedfield-fakeId"
+            />
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-maskedfield__validation"
+  >
+    <div
+      class="m-validation-message m-maskedfield__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-postalcodefield Other 1`] = `
+<div
+  class="m-maskedlfield m-postalcodefield"
+  id="mPostalcodefield-fakeId"
+  postalcodeformat="other"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
+        >
+          <span
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
+          >
+             
+            <input
+              id="mMaskedfield-fakeId"
+            />
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-maskedfield__validation"
+  >
+    <div
+      class="m-validation-message m-maskedfield__validation-message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-postalcodefield United States 1`] = `
+<div
+  class="m-maskedlfield m-postalcodefield"
+  id="mPostalcodefield-fakeId"
+  postalcodeformat="united-states"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
     style="margin-top: 10px;"
   >
     <div
@@ -76,6 +296,7 @@ exports[`Storyshots modul-components|m-postalcodefield With Label And Error 1`] 
 <div
   class="m-maskedlfield m-postalcodefield m--has-error m--has-label m--has-validation-message"
   id="mPostalcodefield-fakeId"
+  postalcodeformat="canada"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -176,6 +397,7 @@ exports[`Storyshots modul-components|m-postalcodefield With Label Up And Full Wi
 <div
   class="m-maskedlfield m-postalcodefield m--has-label"
   id="mPostalcodefield-fakeId"
+  postalcodeformat="canada"
   style="width: 100%; max-width: 100%;"
 >
   <div
@@ -253,6 +475,7 @@ exports[`Storyshots modul-components|m-postalcodefield With Not Postal Code Defa
 <div
   class="m-maskedlfield m-postalcodefield"
   id="mPostalcodefield-fakeId"
+  postalcodeformat="canada"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -325,6 +548,7 @@ exports[`Storyshots modul-components|m-postalcodefield With Value 1`] = `
 <div
   class="m-maskedlfield m-postalcodefield"
   id="mPostalcodefield-fakeId"
+  postalcodeformat="canada"
   style="width: 100%; max-width: 288px;"
 >
   <div
