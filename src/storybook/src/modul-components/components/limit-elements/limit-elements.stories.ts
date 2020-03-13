@@ -128,5 +128,5 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${LIMIT_ELEMENTS}/closeLabel=
                 default: ['Element 1', 'Element 2', 'Element 3', 'Element 4', 'Element 5']
             }
         },
-        template: '<m-limit-elements :elements="elements" :limit="2" close-label="Custom close"></m-limit-elements>'
+        template: '<m-limit-elements :elements="elements" :open="true" :limit="2" close-label="Custom close"></m-limit-elements>'
     }));

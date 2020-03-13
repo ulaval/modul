@@ -29,7 +29,7 @@ export class MLimitElements extends ModulVue {
     internalOpen: boolean = this.open;
 
     readonly mLinkModeButton: MLinkMode = MLinkMode.Button;
-    readonly i18nShowLessLabel: string = this.$i18n.translate('m-limit-elements:show-less-label');
+    readonly i18nCloseLabelDefault: string = this.$i18n.translate('m-limit-elements:show-less-label');
 
     @Emit('list-opened')
     onListOpened(): void { }
@@ -38,11 +38,11 @@ export class MLimitElements extends ModulVue {
     onListClosed(): void { }
 
     get i18nOpenLabel(): string {
-        return this.openLabel ? this.openLabel : this.$i18n.translate('m-limit-elements:show-more-label', { nbElements: this.numberOfExtraElements }, undefined, undefined, undefined, FormatMode.Sprintf);
+        return this.openLabel || this.$i18n.translate('m-limit-elements:show-more-label', { nbElements: this.numberOfExtraElements }, undefined, undefined, undefined, FormatMode.Sprintf);
     }
 
     get i18nCloseLabel(): string {
-        return this.closeLabel ? this.closeLabel : this.i18nShowLessLabel;
+        return this.closeLabel || this.i18nCloseLabelDefault;
     }
 
     get i18nLinkLabel(): string {
