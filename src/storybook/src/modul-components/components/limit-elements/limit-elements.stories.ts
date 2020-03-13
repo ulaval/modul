@@ -110,3 +110,23 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${LIMIT_ELEMENTS}/limit="2"`,
         },
         template: '<m-limit-elements :elements="elements" :limit="4"></m-limit-elements>'
     }));
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${LIMIT_ELEMENTS}/openLabel="Custom show more"`, module)
+    .add('default', () => ({
+        props: {
+            elements: {
+                default: ['Element 1', 'Element 2', 'Element 3', 'Element 4', 'Element 5']
+            }
+        },
+        template: '<m-limit-elements :elements="elements" :limit="2" open-label="Custom show more"></m-limit-elements>'
+    }));
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${LIMIT_ELEMENTS}/closeLabel="Custom close"`, module)
+    .add('default', () => ({
+        props: {
+            elements: {
+                default: ['Element 1', 'Element 2', 'Element 3', 'Element 4', 'Element 5']
+            }
+        },
+        template: '<m-limit-elements :elements="elements" :limit="2" close-label="Custom close"></m-limit-elements>'
+    }));
