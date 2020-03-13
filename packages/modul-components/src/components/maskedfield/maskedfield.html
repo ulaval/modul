@@ -26,17 +26,18 @@
         </template>
         <m-input-mask v-model="model"
                       :id="id"
+                      :autocomplete="autocomplete"
                       :disabled="isDisabled || isWaiting"
                       :readonly="isReadonly"
                       :placeholder="placeholder"
-                      :raw="false"
-                      :options="inputMaskOptions"
-                      :autocomplete="autocomplete"
-                      @focus="onFocus"
+                      :raw="raw"
+                      :options="maskOptions"
                       @blur="onBlur"
                       @change="onChange"
+                      @focus="onFocus"
                       @keyup="onKeyup"
                       @keydown="onKeydown"
+                      @paste="onPaste"
                       ref="inputMask"></m-input-mask>
         <template slot="suffix">
             <slot name="suffix"></slot>

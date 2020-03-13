@@ -8,7 +8,7 @@ export default {
 
 export const defaultStory = () => ({
     data: () => ({
-        model: 'ABCDEFGHIJQLMNOPQRSTUVWXYZ'
+        model: ''
     }),
     template: `<${MASKEDFIELD_NAME} v-model="model"></${MASKEDFIELD_NAME}>`
 });
@@ -20,35 +20,44 @@ defaultStory.story = {
 export const postalCodeMask = () => ({
     data: () => ({
         model: 'G1V0A6',
-        blocks: [3, 3],
-        uppercase: true
+        options: {
+            blocks: [3, 3],
+            uppercase: true
+        }
     }),
-    template: `<${MASKEDFIELD_NAME} v-model="model" :blocks="blocks" :uppercase="uppercase"></${MASKEDFIELD_NAME}>`
+    template: `<${MASKEDFIELD_NAME} v-model="model" :mask-options="options"></${MASKEDFIELD_NAME}>`
 });
 
 export const postalCodeMaskWithLabel = () => ({
     data: () => ({
         model: 'G1V0A6',
-        blocks: [3, 3],
-        uppercase: true
+        options: {
+            blocks: [3, 3],
+            uppercase: true
+        }
     }),
-    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks" :uppercase="uppercase"></${MASKEDFIELD_NAME}>`
+    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :mask-options="options"></${MASKEDFIELD_NAME}>`
 });
 
 export const postalCodeMaskWithLabelInError = () => ({
     data: () => ({
         model: '123456',
-        blocks: [3, 3]
+        options: {
+            blocks: [3, 3]
+        }
     }),
-    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :blocks="blocks" :error="true" error-message="Invalid postal code with a long long long long long message error"></${MASKEDFIELD_NAME}>`
+    template: `<${MASKEDFIELD_NAME} v-model="model" label="Postal code" :mask-options="options" :error="true" error-message="Invalid postal code with a long long long long long message error"></${MASKEDFIELD_NAME}>`
 });
 
 export const telephoneMask = () => ({
     data: () => ({
         model: '+14186562131',
-        blocks: [2, 3, 3, 4],
-        prefix: '+1',
-        delimiters: [' ', ' ', '-']
+        options: {
+            blocks: [2, 3, 3, 4],
+            prefix: '+1',
+            delimiters: [' ', ' ', '-'],
+            numericOnly: true
+        }
     }),
-    template: `<${MASKEDFIELD_NAME} v-model="model" :blocks="blocks" :prefix="prefix" :delimiters="delimiters" :numericOnly="true"></${MASKEDFIELD_NAME}>`
+    template: `<${MASKEDFIELD_NAME} v-model="model" :mask-options="options"></${MASKEDFIELD_NAME}>`
 });

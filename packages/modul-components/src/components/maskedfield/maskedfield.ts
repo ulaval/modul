@@ -28,24 +28,11 @@ import WithRender from './maskedfield.html?style=./maskedfield.scss';
 })
 export class MMaskedfield extends ModulVue {
 
-    // Infinite value to display normaly the default values if no blocks is specified!
-    @Prop({ default: [1e+23] })
-    public blocks: number[];
+    @Prop({ default: {} })
+    public maskOptions: InputMaskOptions;
 
-    @Prop({ default: ' ' })
-    public delimiter: string;
-
-    @Prop({ default: [] })
-    public delimiters: string[];
-
-    @Prop({ default: false })
-    public numericOnly: boolean;
-
-    @Prop({ default: '' })
-    public prefix: string;
-
-    @Prop({ default: false })
-    public uppercase: boolean;
+    @Prop({ default: true })
+    public raw: boolean;
 
     protected id: string = `mMaskedfield-${uuid.generate()}`;
 
@@ -57,16 +44,6 @@ export class MMaskedfield extends ModulVue {
         return this.as<InputState>().isValid;
     }
 
-    get inputMaskOptions(): InputMaskOptions {
-        return {
-            blocks: this.blocks,
-            delimiter: this.delimiter,
-            delimiters: this.delimiters,
-            numericOnly: this.numericOnly,
-            prefix: this.prefix,
-            uppercase: this.uppercase
-        };
-    }
 }
 
 const MaskedfieldPlugin: PluginObject<any> = {
