@@ -55,7 +55,7 @@ export class MPostalcodefield extends ModulVue {
                 };
             case MPostalCodeFormat.Other:
             default:
-                // Infinite value to display normaly with no space the default values if no blocks is specified!
+                // Infinite value to display normaly with no space the default values if value is orther or invalid!
                 return {
                     blocks: [1e+23],
                     uppercase: true
