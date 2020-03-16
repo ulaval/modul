@@ -1,5 +1,5 @@
 import { POSTALCODEFIELD_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MPostalCodeFormat } from '@ulaval/modul-components/dist/components/postalcodefield/postalcodefield';
+import { MPostalCodeCountry } from '@ulaval/modul-components/dist/components/postalcodefield/postalcodefield';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {
@@ -28,7 +28,7 @@ export const withValue = () => ({
 export const other = () => ({
     data: () => ({
         model: 'G1V0A6',
-        postalCodeFormat: MPostalCodeFormat.Other
+        postalCodeFormat: MPostalCodeCountry.Other
     }),
     template: `<${POSTALCODEFIELD_NAME} v-model="model" :postal-code-format="postalCodeFormat"></${POSTALCODEFIELD_NAME}>`
 });
@@ -36,7 +36,7 @@ export const other = () => ({
 export const UnitedStates = () => ({
     data: () => ({
         model: '10001',
-        postalCodeFormat: MPostalCodeFormat.UnitedStates
+        postalCodeFormat: MPostalCodeCountry.US
     }),
     template: `<${POSTALCODEFIELD_NAME} v-model="model" :postal-code-format="postalCodeFormat"></${POSTALCODEFIELD_NAME}>`
 });
@@ -44,7 +44,7 @@ export const UnitedStates = () => ({
 export const France = () => ({
     data: () => ({
         model: '75012',
-        postalCodeFormat: MPostalCodeFormat.France
+        postalCodeFormat: MPostalCodeCountry.FR
     }),
     template: `<${POSTALCODEFIELD_NAME} v-model="model" :postal-code-format="postalCodeFormat"></${POSTALCODEFIELD_NAME}>`
 });

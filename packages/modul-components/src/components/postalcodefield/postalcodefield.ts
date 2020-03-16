@@ -13,11 +13,11 @@ import { InputMaskOptions } from '../input-mask/input-mask';
 import MaskedfieldPlugin from '../maskedfield/maskedfield';
 import WithRender from './postalcodefield.html';
 
-export enum MPostalCodeFormat {
-    Canada = 'canada',
-    France = 'france',
+export enum MPostalCodeCountry {
+    CA = 'CA',
+    FR = 'FR',
     Other = 'other',
-    UnitedStates = 'united-states'
+    US = 'US'
 }
 
 @WithRender
@@ -31,29 +31,37 @@ export enum MPostalCodeFormat {
 })
 export class MPostalcodefield extends ModulVue {
 
-    @Prop({ default: MPostalCodeFormat.Canada })
-    public postalCodeFormat: MPostalCodeFormat;
+    @Prop({ default: MPostalCodeCountry.CA })
+    public postalCodeFormat: MPostalCodeCountry;
 
     protected id: string = `mPostalcodefield-${uuid.generate()}`;
 
     get maskOptions(): InputMaskOptions {
         switch (this.postalCodeFormat) {
-            case MPostalCodeFormat.Canada:
+            case MPostalCodeCountry.CA:
                 return {
                     blocks: [3, 3],
+                    delimiter: ' ',
+                    delimiterLazyShow: true,
                     uppercase: true
                 };
-            case MPostalCodeFormat.France:
+            case MPostalCodeCountry.FR:
                 return {
                     blocks: [2, 3],
+                    delimiter: ' ',
+                    delimiterLazyShow: true,
+                    numericOnly: true,
                     uppercase: true
                 };
-            case MPostalCodeFormat.UnitedStates:
+            case MPostalCodeCountry.US:
                 return {
                     blocks: [5],
+                    delimiter: ' ',
+                    delimiterLazyShow: true,
+                    numericOnly: true,
                     uppercase: true
                 };
-            case MPostalCodeFormat.Other:
+            case MPostalCodeCountry.Other:
             default:
                 // Infinite value to display normaly with no space the default values if value is orther or invalid!
                 return {
