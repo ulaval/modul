@@ -55,6 +55,22 @@
         display: flex;
         align-items: left;
         width: 300px;
+        position: relative;
+
+        &.m--is-last-priority-country {
+            margin-bottom: $m-spacing;
+
+            &::after {
+                content: "";
+                display: block;
+                width: calc(100% - #{$m-spacing});
+                position: absolute;
+                left: 0;
+                background-color: $m-color--grey-lighter;
+                height: 2px;
+                bottom: -17px;
+            }
+        }
     }
 
     &__flag {

@@ -33,7 +33,8 @@
 
             <template slot="items"
                       slot-scope="{item, index}">
-                <div class="m-phonefield__item-wrapper">
+                <div class="m-phonefield__item-wrapper"
+                     :class="{'m--is-last-priority-country': isLastPriorityCountry(index)}">
                     <div class="m-phonefield__item-flag-wrapper">
                         <svg width="27px"
                              height="20px">
@@ -41,8 +42,8 @@
                                  aria-hidden="true"></use>
                         </svg>
                     </div>
-                    <span class="m-phonefield__item-name">{{ countries[index].name }}</span>
-                    <span class="m-phonefield__item-dialCode">+{{ countries[index].dialCode }}</span>
+                    <span class="m-phonefield__item-name">{{ countriesSorted[index].name }}</span>
+                    <span class="m-phonefield__item-dialCode">+{{ countriesSorted[index].dialCode }}</span>
                 </div>
             </template>
 

@@ -65,6 +65,11 @@ export class MPhonefield extends ModulVue {
     })
     public externalSprite: boolean;
 
+    @Prop({
+        default: ['ca']
+    })
+    public priorityIsoCountries: string[];
+
     public $refs: {
         inputMask: MInputMask;
     };
@@ -105,7 +110,29 @@ export class MPhonefield extends ModulVue {
     emitContrySelected(country: Country): void { }
 
     get isoCountries(): string[] {
-        return this.countries.map(contry => contry.iso2);
+        return this.countriesSorted.map(contry => contry.iso2);
+    }
+
+    get countriesSorted(): CountryOptions[] {
+        let finalCountriesListe: CountryOptions[] = [];
+        const priorityCountries: CountryOptions[] = this.countries.filter((country: CountryOptions) => {
+            if (this.priorityIsoCountries.includes(country.iso2)) {
+                return country;
+            }
+        });
+
+        const allOtherCountries: CountryOptions[] = this.countries.filter((country: CountryOptions) => {
+            if (!this.priorityIsoCountries.includes(country.iso2)) {
+                return country;
+            }
+        });
+
+        finalCountriesListe = [
+            ...priorityCountries,
+            ...allOtherCountries
+        ];
+
+        return finalCountriesListe;
     }
 
     get propLabel(): string {
@@ -148,6 +175,10 @@ export class MPhonefield extends ModulVue {
         this.internalCountry = this.countries.find((country: CountryOptions) => country.iso2 === value)!;
         this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
         this.countryModelInternal = value;
+    }
+
+    isLastPriorityCountry(index: number): boolean {
+        return this.priorityIsoCountries.length - 1 === index;
     }
 
     inputChanged(value): void {
