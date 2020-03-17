@@ -12,6 +12,7 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
 import { MSelect } from '../select/select';
+import { MSelectItem } from '../select/select-item/select-item';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
 import WithRender from './phonefield.html?style=./phonefield.scss';
@@ -41,7 +42,8 @@ export interface Country {
     ],
     components: {
         MInputMask,
-        MSelect
+        MSelect,
+        MSelectItem
     }
 })
 export class MPhonefield extends ModulVue {
@@ -66,7 +68,7 @@ export class MPhonefield extends ModulVue {
     public externalSprite: boolean;
 
     @Prop({
-        default: ['ca']
+        default: () => ['ca']
     })
     public priorityIsoCountries: string[];
 
@@ -114,7 +116,14 @@ export class MPhonefield extends ModulVue {
     }
 
     get countriesSorted(): CountryOptions[] {
+        // tslint:disable-next-line: no-console
+        console.log(this.priorityIsoCountries);
         let finalCountriesListe: CountryOptions[] = [];
+        const separatorCountry: CountryOptions[] = this.priorityIsoCountries.length > 0 ? [{
+            name: '',
+            iso2: '',
+            dialCode: ''
+        }] : [];
         const priorityCountries: CountryOptions[] = this.countries.filter((country: CountryOptions) => {
             if (this.priorityIsoCountries.includes(country.iso2)) {
                 return country;
@@ -129,6 +138,7 @@ export class MPhonefield extends ModulVue {
 
         finalCountriesListe = [
             ...priorityCountries,
+            ...separatorCountry,
             ...allOtherCountries
         ];
 
@@ -177,10 +187,6 @@ export class MPhonefield extends ModulVue {
         this.countryModelInternal = value;
     }
 
-    isLastPriorityCountry(index: number): boolean {
-        return this.priorityIsoCountries.length - 1 === index;
-    }
-
     inputChanged(value): void {
         this.emitNewValue(value);
     }
@@ -201,7 +207,7 @@ export class MPhonefield extends ModulVue {
         return name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    spriteId(iso: string): string | undefined {
+    spriteId(iso: any): string | undefined {
         const svg: SpritesService = this.$svg;
         const spriteId: string = 'mflag-svg__flag-' + iso;
 

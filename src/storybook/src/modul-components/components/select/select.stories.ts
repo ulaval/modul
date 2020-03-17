@@ -1,6 +1,7 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { SELECT_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MSelectItem } from '@ulaval/modul-components/dist/components/select/select-item/select-item';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 const OPTIONS: string[] = ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc'];
@@ -136,7 +137,7 @@ export const readonlyItemSelectedWithLabel = () => ({
         model: 'banana',
         options: OPTIONS
     }),
-    template: `<m-select :options="options" :readonly="true" label="Fruits" v-model="patate" v-model="model" ></m-select>`
+    template: `<m-select :options="options" :readonly="true" label="Fruits" v-model="model" ></m-select>`
 });
 
 export const readonlyItemSelectedWithLabelClearable = () => ({
@@ -196,4 +197,25 @@ export const virtualScroll = () => ({
         options: buildLongList()
     }),
     template: `<m-select :options="options" label="Longlist" :virtual-scroll="true" ></m-select>`
+});
+
+export const withOuterItemsSlot = () => ({
+    data: () => ({
+        model: 'banane',
+        options: OPTIONS
+    }),
+    components: {
+        MSelectItem: MSelectItem
+    },
+    template: `<m-select :options="options" v-model="model">
+                <template #outer-items="{item, index, props, handlers}">
+                    <m-select-item v-if="item !== 'patate'" v-bind="props" v-on="handlers">
+                        {{ item  }}
+                    </m-select-item>
+                    <m-select-item v-else
+                                    :disabled="true">
+                        {{ item  }}
+                    </m-select-item>
+                </template>
+            </m-select>`
 });

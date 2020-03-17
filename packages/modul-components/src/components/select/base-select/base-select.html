@@ -46,30 +46,37 @@
             <template v-if="virtualScroll">
                 <virtual-list :size="virtualScrollItemHeight"
                               :remain="4"
-                              wclass="m-base-select__virtuallist">
-                    <m-select-item v-for="(item, index) of items"
-                                   :key="index"
-                                   :focused="index === focusedIndex"
-                                   :selected="isSelected(item)"
-                                   :hide-radio-button-mobile="hideRadioButtonMobile"
-                                   @click="onSelectItem(item, index, $event)">
-                        <slot name="items"
+                              class="m-base-select__virtuallist">
+                    <template v-for="(item, index) of items">
+                        <slot name="outer-items"
                               :item="item"
-                              :index="index"><span v-html="item"></span></slot>
-                    </m-select-item>
+                              :index="index"
+                              :props="getItemProps(item, index)"
+                              :handlers="getItemHandlers(item, index)">
+                            <m-select-item v-bind="getItemProps(item, index)"
+                                           v-on="getItemHandlers(item, index)">
+                                <slot name="items"
+                                      :item="item"
+                                      :index="index"><span v-html="item"></span></slot>
+                            </m-select-item>
+                        </slot>
+                    </template>
                 </virtual-list>
             </template>
             <template v-else>
-                <m-select-item v-for="(item, index) of items"
-                               :key="index"
-                               :focused="index === focusedIndex"
-                               :selected="isSelected(item)"
-                               :hide-radio-button-mobile="hideRadioButtonMobile"
-                               @click="onSelectItem(item, index, $event)">
-                    <slot name="items"
+                <template v-for="(item, index) of items">
+                    <slot name="outer-items"
                           :item="item"
-                          :index="index"><span v-html="item"></span></slot>
-                </m-select-item>
+                          :props="getItemProps(item, index)"
+                          :handlers="getItemHandlers(item, index)">
+                        <m-select-item v-bind="getItemProps(item, index)"
+                                       v-on="getItemHandlers(item, index)">
+                            <slot name="items"
+                                  :item="item"
+                                  :index="index"><span v-html="item"></span></slot>
+                        </m-select-item>
+                    </slot>
+                </template>
             </template>
         </ul>
     </m-popup>
