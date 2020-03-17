@@ -53,7 +53,8 @@
                               :index="index"
                               :props="getItemProps(item, index)"
                               :handlers="getItemHandlers(item, index)">
-                            <m-select-item v-bind="getItemProps(item, index)"
+                            <m-select-item :key="index"
+                                           v-bind="getItemProps(item, index)"
                                            v-on="getItemHandlers(item, index)">
                                 <slot name="items"
                                       :item="item"
