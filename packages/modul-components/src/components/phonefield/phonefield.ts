@@ -116,17 +116,18 @@ export class MPhonefield extends ModulVue {
     }
 
     get countriesSorted(): CountryOptions[] {
-        // tslint:disable-next-line: no-console
-        console.log(this.priorityIsoCountries);
         let finalCountriesListe: CountryOptions[] = [];
         const separatorCountry: CountryOptions[] = this.priorityIsoCountries.length > 0 ? [{
             name: '',
             iso2: '',
             dialCode: ''
         }] : [];
-        const priorityCountries: CountryOptions[] = this.countries.filter((country: CountryOptions) => {
-            if (this.priorityIsoCountries.includes(country.iso2)) {
-                return country;
+
+        const priorityCountries: CountryOptions[] = [];
+        this.priorityIsoCountries.forEach((isoPriorityCountry: string) => {
+            const currentCountry: CountryOptions | undefined = this.countries.find((isoCountry: CountryOptions) => isoCountry.iso2 === isoPriorityCountry);
+            if (currentCountry) {
+                priorityCountries.push(currentCountry);
             }
         });
 

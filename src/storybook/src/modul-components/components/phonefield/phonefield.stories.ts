@@ -98,7 +98,7 @@ export const priorityCountriesEmpty = () => ({
 
 export const priorityCountriesDefined = () => ({
     data: () => ({
-        priorityIsoCountries: ['ca', 'fr', 'us']
+        priorityIsoCountries: ['fr', 'us', 'ca']
     }),
     components: {
         'm-phonefield': phoneFieldChunk
