@@ -207,7 +207,7 @@ export class MPhonefield extends ModulVue {
         return name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    spriteId(iso: any): string | undefined {
+    spriteId(iso: string): string | undefined {
         const svg: SpritesService = this.$svg;
         const spriteId: string = 'mflag-svg__flag-' + iso;
 
