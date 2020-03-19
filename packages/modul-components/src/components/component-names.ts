@@ -71,7 +71,8 @@ export const OPTION_ITEM_DELETE_NAME: string = 'm-option-item-delete';
 export const OPTION_ITEM_EDIT_NAME: string = 'm-option-item-edit';
 export const OPTION_TITLE: string = 'm-option-title';
 export const OPTION_SEPARATOR: string = 'm-option-separator';
-
+export const ORGANIZE_TABLE_COLUMNS_NAME: string = 'm-organize-table-columns';
+export const ORGANIZE_TABLE_COLUMNS_MODAL_NAME: string = 'm-organize-table-columns-modal';
 export const PANEL_NAME: string = 'm-panel';
 export const PAGINATION_NAME: string = 'm-pagination';
 export const PERIODPICKER_NAME: string = 'm-periodpicker';

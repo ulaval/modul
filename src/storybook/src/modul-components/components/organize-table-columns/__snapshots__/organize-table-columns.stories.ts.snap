@@ -1,0 +1,1452 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
+<div
+  class="organize-table-columns"
+>
+  <div
+    class="organize-table-columns__title"
+  >
+    <h4>
+      Ajouter des colonnes au tableau, puis organisez-les
+    </h4>
+     
+    <span>
+      Colonnes sélectionnées (5) 
+    </span>
+  </div>
+   
+  <ul
+    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    items="[object Object],[object Object],[object Object],[object Object],[object Object]"
+    style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+  >
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Action
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Name
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Age
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Username
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Menu
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+  </ul>
+   
+  <!---->
+   
+  <ul
+    class="organize-table-columns__hidden-columns"
+  />
+</div>
+`;
+
+exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] = `
+<div
+  class="organize-table-columns"
+>
+  <div
+    class="organize-table-columns__title"
+  >
+    <h4>
+      Ajouter des colonnes au tableau, puis organisez-les
+    </h4>
+     
+    <span>
+      Colonnes sélectionnées (5) 
+    </span>
+  </div>
+   
+  <ul
+    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    items="[object Object],[object Object],[object Object],[object Object],[object Object]"
+    style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+  >
+    <li
+      can-drag="false"
+      can-drop="false"
+      class="m-list-item m--is-disabled m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Action
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </li>
+    <li
+      can-drag="false"
+      can-drop="false"
+      class="m-list-item m--is-disabled m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Name
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Age
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Username
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Menu
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+  </ul>
+   
+  <!---->
+   
+  <ul
+    class="organize-table-columns__hidden-columns"
+  />
+</div>
+`;
+
+exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`] = `
+<div
+  class="organize-table-columns"
+>
+  <div
+    class="organize-table-columns__title"
+  >
+    <h4>
+      Ajouter des colonnes au tableau, puis organisez-les
+    </h4>
+     
+    <span>
+      Colonnes sélectionnées (4) 
+    </span>
+  </div>
+   
+  <ul
+    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    items="[object Object],[object Object],[object Object],[object Object]"
+    style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+  >
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Action
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Name
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Username
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Menu
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+  </ul>
+   
+  <div
+    class="organize-table-columns__title"
+  >
+    <span>
+      Colonnes disponibles
+    </span>
+  </div>
+   
+  <ul
+    class="organize-table-columns__hidden-columns"
+  >
+    <li
+      class="m-list-item"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Age
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-primary m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`] = `
+<div
+  class="organize-table-columns"
+>
+  <div
+    class="organize-table-columns__title"
+  >
+    <h4>
+      Ajouter des colonnes au tableau, puis organisez-les
+    </h4>
+     
+    <span>
+      Colonnes sélectionnées (4) 
+    </span>
+  </div>
+   
+  <ul
+    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    items="[object Object],[object Object],[object Object],[object Object]"
+    style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+  >
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Action
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Name
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Username
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+    <li
+      can-drag="true"
+      can-drop="true"
+      class="m-list-item m--is-draggable m--is-droppable"
+      style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
+    >
+      <div
+        class="m-list-item__content"
+      >
+        <div
+          class="organize-table-columns__item"
+        >
+          <div
+            class="organize-table-columns__item-title"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="organize-table-columns__item-title-text"
+            >
+              
+                        Menu
+                    
+            </span>
+          </div>
+           
+          <div
+            class="organize-table-columns__item-button"
+          >
+            <button
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </li>
+  </ul>
+   
+  <!---->
+   
+  <ul
+    class="organize-table-columns__hidden-columns"
+  />
+</div>
+`;
