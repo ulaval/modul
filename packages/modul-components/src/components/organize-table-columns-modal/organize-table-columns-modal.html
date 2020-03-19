@@ -1,0 +1,20 @@
+<div class="organize-table-columns-modal">
+    <m-modal :open.sync="open"
+             size="small"
+             :title="'m-organize-table-columns-modal:title' | f-m-i18n">
+        <m-button slot="trigger">{{'m-organize-table-columns-modal:title' | f-m-i18n}}</m-button>
+        <m-organize-table-columns :columns="internalColumns"
+                                  @reorganize="reorganize">
+        </m-organize-table-columns>
+
+        <div slot="footer">
+            <m-button @click="saveReorganize()">
+                {{'m-organize-table-columns-modal:action.reorganize' | f-m-i18n}}
+            </m-button>
+            <m-button @click="reset()"
+                      skin="secondary">
+                {{'m-organize-table-columns-modal:action.reset' | f-m-i18n}}
+            </m-button>
+        </div>
+    </m-modal>
+</div>
