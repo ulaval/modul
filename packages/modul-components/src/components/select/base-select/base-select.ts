@@ -103,10 +103,11 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
-    getItemProps(_item: any, index: number): any {
+    getItemProps(item: any, index: number): any {
         return {
+            value: item,
             focused: index === this.focusedIndex,
-            selected: this.isSelected(index),
+            selected: this.isSelected(item),
             hideRadioButtonMobile: this.hideRadioButtonMobile
         };
     }

@@ -4,8 +4,8 @@ import { SELECT_NAME } from '@ulaval/modul-components/dist/components/component-
 import { MSelectItem } from '@ulaval/modul-components/dist/components/select/select-item/select-item';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-const OPTIONS: string[] = ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc'];
-const LONG_OPTIONS: string[] = ['apple juice', 'bannana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
+const OPTIONS: string[] = ['apple', 'banana', 'patate', 'tomato', 'avocados', 'etc'];
+const LONG_OPTIONS: string[] = ['apple juice', 'banana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
 
 
 const buildLongList = (): string[] => {
@@ -67,6 +67,14 @@ export const focus = () => ({
         options: OPTIONS
     }),
     template: `<m-select :options="options" :focus="true" ></m-select>`
+});
+
+export const selectedItem = () => ({
+    data: () => ({
+        model: 'banana',
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" v-model="model" ></m-select>`
 });
 
 export const label = () => ({
