@@ -1,6 +1,6 @@
 <div class="m-overlay"
      ref="baseWindow">
-    <slot name="trigger"></slot>
+    <slot name="trigger" />
     <portal :target-el="portalTargetSelector"
             v-if="portalCreated">
         <transition name="m--is"
@@ -15,12 +15,12 @@
                          ref="article">
                     <header class="m-overlay__header"
                             :class="{'m--no-padding': !padding || !paddingHeader}">
-                        <div class="m-overlay__header__left">
-                            <slot name="header"></slot>
+                        <div class="m-overlay__header-left">
+                            <slot name="header" />
                         </div>
-                        <div class="m-overlay__header__right"
+                        <div class="m-overlay__header-right"
                              v-if="$slots['header-right']">
-                            <slot name="header-right"></slot>
+                            <slot name="header-right" />
                         </div>
                     </header>
                     <div class="m-overlay__body"
@@ -30,47 +30,45 @@
                              @focusin="onFocusIn"
                              @focusout="onFocusOut"
                              :class="{ 'm--no-padding': !padding || !paddingBody }">
-                            <slot></slot>
+                            <slot />
                         </div>
                         <footer v-if="hasKeyboard"
                                 class="m-overlay__footer"
                                 ref="footer"
                                 :class="{ 'm--no-padding': !padding || !paddingFooter }">
                             <slot name="footer">
-                                <div>
-                                    <m-button @click="save()"
-                                              :disabled="isSaveButtonDisabled"
-                                              :waiting="isWaiting"
-                                              class="m-overlay__footer__save-button">
-                                        <m-i18n k="m-overlay:save"></m-i18n>
-                                    </m-button>
-                                    <m-button @click="cancel()"
-                                              skin="secondary"
-                                              :disabled="isWaiting">
-                                        <m-i18n k="m-overlay:cancel"></m-i18n>
-                                    </m-button>
-                                </div>
-                            </slot>
-                        </footer>
-                    </div>
-                    <footer v-if="!hasKeyboard"
-                            class="m-overlay__footer"
-                            ref="footer"
-                            :class="{ 'm--no-padding': !padding || !paddingFooter }">
-                        <slot name="footer">
-                            <div>
                                 <m-button @click="save()"
                                           :disabled="isSaveButtonDisabled"
                                           :waiting="isWaiting"
-                                          class="m-overlay__footer__save-button">
-                                    <m-i18n k="m-overlay:save"></m-i18n>
+                                          class="m-overlay__save-button">
+                                    {{ 'm-overlay:save' | f-m-i18n }}
                                 </m-button>
                                 <m-button @click="cancel()"
                                           skin="secondary"
                                           :disabled="isWaiting">
-                                    <m-i18n k="m-overlay:cancel"></m-i18n>
+                                    {{ 'm-overlay:cancel' | f-m-i18n }}
                                 </m-button>
-                            </div>
+                            </slot>
+                        </footer>
+                    </div>
+                    <footer v-if="!hasKeyboard"
+                            class="m-overlay__footer m--no-keyboard"
+                            ref="footer"
+                            :class="{
+                                'm--no-padding': !padding || !paddingFooter,
+                             }">
+                        <slot name="footer">
+                            <m-button @click="save()"
+                                      :disabled="isSaveButtonDisabled"
+                                      :waiting="isWaiting"
+                                      class="m-overlay__save-button">
+                                {{ 'm-overlay:save' | f-m-i18n }}
+                            </m-button>
+                            <m-button @click="cancel()"
+                                      skin="secondary"
+                                      :disabled="isWaiting">
+                                {{ 'm-overlay:cancel' | f-m-i18n }}
+                            </m-button>
                         </slot>
                     </footer>
                 </section>

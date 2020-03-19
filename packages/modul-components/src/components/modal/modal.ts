@@ -1,19 +1,19 @@
-import { PluginObject } from 'vue';
-import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
-import { MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
-import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
-import UserAgentUtil from '../../utils/user-agent/user-agent';
-import { ModulVue } from '../../utils/vue/vue';
-import { MODAL_NAME } from '../component-names';
-import IconButtonPlugin from '../icon-button/icon-button';
-import WithRender from './modal.html?style=./modal.scss';
+import { PluginObject } from "vue";
+import Component from "vue-class-component";
+import { Prop } from "vue-property-decorator";
+import { MediaQueriesMixin } from "../../mixins/media-queries/media-queries";
+import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from "../../mixins/portal/portal";
+import UserAgentUtil from "../../utils/user-agent/user-agent";
+import { ModulVue } from "../../utils/vue/vue";
+import { MODAL_NAME } from "../component-names";
+import IconButtonPlugin from "../icon-button/icon-button";
+import WithRender from "./modal.html?style=./modal.scss";
 
 export enum MModalSize {
-    FullScreen = 'full-screen',
-    Large = 'large',
-    Regular = 'regular',
-    Small = 'small'
+    FullScreen = "full-screen",
+    Large = "large",
+    Regular = "regular",
+    Small = "small"
 }
 
 @WithRender
@@ -58,7 +58,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         article: HTMLElement;
     };
 
-    private closeTitle: string = this.$i18n.translate('m-modal:close');
+    private closeTitle: string = this.$i18n.translate("m-modal:close");
 
     public closeModal(): void {
         this.as<PortalMixin>().tryClose();
@@ -73,21 +73,33 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     }
 
     public getBackdropMode(): BackdropMode {
-        return this.sizeFullSceen ? BackdropMode.ScrollOnly : BackdropMode.BackdropFast;
+        return this.sizeFullSceen
+            ? BackdropMode.ScrollOnly
+            : BackdropMode.BackdropFast;
     }
 
     public get sizeFullSceen(): boolean {
-        let fullScreen: boolean = !this.as<MediaQueriesMixin>().isMqMinS ? true : this.size === MModalSize.FullScreen ? true : false;
-        this.as<Portal>().transitionDuration = fullScreen ? PortalTransitionDuration.XSlow : PortalTransitionDuration.Regular;
+        let fullScreen: boolean = !this.as<MediaQueriesMixin>().isMqMinS
+            ? true
+            : this.size === MModalSize.FullScreen
+                ? true
+                : false;
+        this.as<Portal>().transitionDuration = fullScreen
+            ? PortalTransitionDuration.XSlow
+            : PortalTransitionDuration.Regular;
         return fullScreen;
     }
 
     public get sizeLarge(): boolean {
-        return this.as<MediaQueriesMixin>().isMqMinS && this.size === MModalSize.Large;
+        return (
+            this.as<MediaQueriesMixin>().isMqMinS && this.size === MModalSize.Large
+        );
     }
 
     public get sizeSmall(): boolean {
-        return this.as<MediaQueriesMixin>().isMqMinS && this.size === MModalSize.Small;
+        return (
+            this.as<MediaQueriesMixin>().isMqMinS && this.size === MModalSize.Small
+        );
     }
 
     public getPortalElement(): HTMLElement {
@@ -95,25 +107,9 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     }
 
     protected mounted(): void {
-        if (!this.hasHeader) {
-            this.$log.warn('<' + MODAL_NAME + '> needs a header slot or title prop.');
+        if (!this.title || !!this.$slots.header) {
+            this.$log.warn(`<${MODAL_NAME}> needs a header slot or title prop.`);
         }
-    }
-
-    private get hasDefaultSlot(): boolean {
-        return !!this.$slots.default;
-    }
-
-    private get hasHeader(): boolean {
-        return this.hasTitle || !!this.$slots.header;
-    }
-
-    private get hasTitle(): boolean {
-        return !!this.title;
-    }
-
-    private get hasFooterSlot(): boolean {
-        return !!this.$slots.footer;
     }
 
     private backdropClick(): void {
