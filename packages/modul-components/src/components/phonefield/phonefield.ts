@@ -132,9 +132,7 @@ export class MPhonefield extends ModulVue {
         });
 
         const allOtherCountries: CountryOptions[] = this.countries.filter((country: CountryOptions) => {
-            if (!this.priorityIsoCountries.includes(country.iso2)) {
-                return country;
-            }
+            return !this.priorityIsoCountries.includes(country.iso2);
         });
 
         finalCountriesListe = [
