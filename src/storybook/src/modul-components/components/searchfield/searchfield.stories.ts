@@ -1,55 +1,31 @@
-import { storiesOf } from '@storybook/vue';
+import { actions } from '@storybook/addon-actions';
 import { SEARCHFIELD_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-storiesOf(`${modulComponentsHierarchyRootSeparator}${SEARCHFIELD_NAME}`, module)
-    .add('default', () => ({
-        template: `
-            <div>
-                <div><${SEARCHFIELD_NAME} v-model="value"></${SEARCHFIELD_NAME}></div>
-            </div>
-        `,
-        data: () => ({
-            value: undefined
-        })
-    }))
-    .add('placeholder', () => ({
-        template: `
-            <div>
-                <div><${SEARCHFIELD_NAME} v-model="value" placeholder="placeholder"></${SEARCHFIELD_NAME}></div>
-            </div>
-        `,
-        data: () => ({
-            value: undefined
-        })
-    }))
-    .add('with label', () => ({
-        template: `
-            <div>
-                <div><${SEARCHFIELD_NAME} v-model="value" label="What are you look for today ?"></${SEARCHFIELD_NAME}></div>
-            </div>
-        `,
-        data: () => ({
-            value: undefined
-        })
-    }))
-    .add('error state', () => ({
-        template: `
-            <div>
-                <div><${SEARCHFIELD_NAME} v-model="value" :error="true" max-width="medium" error-message="these kinds of weird searches are not permitted..." label="What are you look for today ?"></${SEARCHFIELD_NAME}></div>
-            </div>
-        `,
-        data: () => ({
-            value: 'Something not work safe'
-        })
-    }))
-    .add('valid state', () => ({
-        template: `
-            <div>
-                <div><${SEARCHFIELD_NAME} v-model="value" :valid="true" max-width="medium" valid-message="370 billions results found" label="What are you look for today ?"></${SEARCHFIELD_NAME}></div>
-            </div>
-        `,
-        data: () => ({
-            value: 'Cats'
-        })
-    }));
+export default {
+    title: `${modulComponentsHierarchyRootSeparator}${SEARCHFIELD_NAME}`,
+    parameters: { fileName: __filename }
+};
+
+export const defaultStory = () => ({
+    data: () => ({
+        value: undefined
+    }),
+    methods: actions(
+        'search',
+        'emptyField'
+    ),
+    template: `<${SEARCHFIELD_NAME} v-model="value" @search="search" @empty-field="emptyField"></${SEARCHFIELD_NAME}>`
+});
+
+defaultStory.story = {
+    name: 'default'
+};
+
+export const placeholder = () => `<${SEARCHFIELD_NAME} placeholder="placeholder"></${SEARCHFIELD_NAME}>`;
+
+export const label = () => `<${SEARCHFIELD_NAME} label="Search"n></${SEARCHFIELD_NAME}>`;
+
+export const error = () => `<${SEARCHFIELD_NAME} :error="true" error-message="Error message" label="Search"></${SEARCHFIELD_NAME}>`;
+
+export const valid = () => `<${SEARCHFIELD_NAME} :valid="true" valid-message="Valid message" label="Search"></${SEARCHFIELD_NAME}>`;
