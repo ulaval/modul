@@ -31,7 +31,7 @@ export default class GoogleAPI {
                 const resultsAsArray: TResult[] = results && resultIsArray ? [...(results as unknown as TResult[])] : results ? [results] : [];
 
                 switch (status) {
-                    case google.maps.places.PlacesServiceStatus.ERROR:
+                    case google.maps.places.PlacesServiceStatus.UNKNOWN_ERROR:
                     case google.maps.places.PlacesServiceStatus.INVALID_REQUEST:
                     case google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT:
                     case google.maps.places.PlacesServiceStatus.NOT_FOUND:

@@ -397,3 +397,33 @@ exports[`Storyshots modul-components|m-file-upload Single File Upload 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots modul-components|m-file-upload default 1`] = `
+<div
+  class="m-modal"
+>
+  <span>
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        File upload 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+  </span>
+   
+  <!---->
+</div>
+`;
