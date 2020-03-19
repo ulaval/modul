@@ -58,9 +58,11 @@ export class MetaService {
         let component: any = this._meta.components.find((metaComponent: MetaComponent) => {
             return this.camelToKebab(metaComponent.componentName) === tagName;
         });
+
         if (component) {
             return component as MetaComponent;
         }
+
         throw new Error(`Unable to find component with tagName ${tagName} in meta`);
     }
 

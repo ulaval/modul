@@ -5,7 +5,7 @@ import AutoCompletePlugin from '@ulaval/modul-components/dist/components/autocom
 import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import CarouselPlugin from '@ulaval/modul-components/dist/components/carousel/carousel';
 import CheckboxPlugin from '@ulaval/modul-components/dist/components/checkbox/checkbox';
-import ChipDeletePlugin from '@ulaval/modul-components/dist/components/chip/chip-delete/chip-delete';
+import ChipPlugin from '@ulaval/modul-components/dist/components/chip/chip';
 import DatepickerPlugin from '@ulaval/modul-components/dist/components/datepicker/datepicker';
 import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/daterangepicker/daterangepicker';
 import DialogPlugin from '@ulaval/modul-components/dist/components/dialog/dialog';
@@ -125,7 +125,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(TreePlugin);
         Vue.use(ToastPlugin);
         Vue.use(PaginationPlugin);
-        Vue.use(ChipDeletePlugin);
+        Vue.use(ChipPlugin);
         Vue.use(OrganizeTableColumnsPlugin);
         Vue.use(OrganizeTableColumnsModalPlugin);
         Vue.use(ErrorPagesAccessDeniedPlugin);
@@ -137,6 +137,7 @@ const ModulPlugin: PluginObject<any> = {
         Vue.use(ErrorPagesRessourceUnavailablePlugin);
         Vue.use(ErrorPagesSessionExpiredPlugin);
         Vue.use(ErrorPagesTechnicalDifficultyPlugin);
+
     }
 };
 
