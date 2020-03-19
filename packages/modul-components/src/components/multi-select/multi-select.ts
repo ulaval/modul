@@ -9,7 +9,7 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MULTI_SELECT_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
-import { MChipDelete } from './../chip/chip-delete/chip-delete';
+import MChipDelete from './../chip/chip-delete/chip-delete';
 import { MBaseSelect } from './../select/base-select/base-select';
 import { MSelectItem } from './../select/select-item/select-item';
 import WithRender from './multi-select.html?style=./multi-select.scss';
