@@ -1,19 +1,19 @@
-import { PluginObject } from "vue";
-import Component from "vue-class-component";
-import { Prop } from "vue-property-decorator";
-import { MediaQueriesMixin } from "../../mixins/media-queries/media-queries";
-import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from "../../mixins/portal/portal";
-import UserAgentUtil from "../../utils/user-agent/user-agent";
-import { ModulVue } from "../../utils/vue/vue";
-import { MODAL_NAME } from "../component-names";
-import IconButtonPlugin from "../icon-button/icon-button";
-import WithRender from "./modal.html?style=./modal.scss";
+import { PluginObject } from 'vue';
+import Component from 'vue-class-component';
+import { Prop } from 'vue-property-decorator';
+import { MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
+import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
+import UserAgentUtil from '../../utils/user-agent/user-agent';
+import { ModulVue } from '../../utils/vue/vue';
+import { MODAL_NAME } from '../component-names';
+import IconButtonPlugin from '../icon-button/icon-button';
+import WithRender from './modal.html?style=./modal.scss';
 
 export enum MModalSize {
-    FullScreen = "full-screen",
-    Large = "large",
-    Regular = "regular",
-    Small = "small"
+    FullScreen = 'full-screen',
+    Large = 'large',
+    Regular = 'regular',
+    Small = 'small'
 }
 
 @WithRender
@@ -58,7 +58,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         article: HTMLElement;
     };
 
-    private closeTitle: string = this.$i18n.translate("m-modal:close");
+    private closeTitle: string = this.$i18n.translate('m-modal:close');
 
     public closeModal(): void {
         this.as<PortalMixin>().tryClose();
@@ -108,7 +108,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
 
     protected mounted(): void {
         if (!this.title || !!this.$slots.header) {
-            this.$log.warn(`<${MODAL_NAME}> needs a header slot or title prop.`);
+            this.$log.warn('<m-modal> needs a header slot or title prop.');
         }
     }
 
