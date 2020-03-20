@@ -89,10 +89,20 @@
                                   :helper-message="helperMessage"></m-validation-message>
         </div>
     </template>
-    <template v-slot:items="{item , index }">
 
-        <slot name="items"
+    <template v-slot:outer-items="{item, index, props, handlers}">
+        <slot name="outer-items"
+              :index="index"
               :item="item"
-              :index="index"><span v-html="item"></span></slot>
+              :props="props"
+              :handlers="handlers">
+            <template v-slot:items="{item , index }">
+
+                <slot name="items"
+                      :item="item"
+                      :index="index"><span v-html="item"></span></slot>
+            </template>
+        </slot>
     </template>
+
 </m-base-select>
