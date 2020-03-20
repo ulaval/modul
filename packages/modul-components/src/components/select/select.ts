@@ -107,7 +107,7 @@ export class MSelect extends ModulVue {
 
     public toggleOpen(): void {
         this.$refs.baseSelect.togglePopup();
-        if (!this.as<InputManagement>().internalIsFocus) {
+        if (!this.as<InputManagement>().internalIsFocus && this.$refs.input) {
             this.$refs.input.focus();
         }
     }

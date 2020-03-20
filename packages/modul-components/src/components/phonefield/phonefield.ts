@@ -24,7 +24,6 @@ interface CountryOptions {
     areaCodes?: string[];
 }
 
-
 export interface Country {
     iso: string;
     prefix: string;
@@ -67,6 +66,7 @@ export class MPhonefield extends ModulVue {
 
     public $refs: {
         inputMask: MInputMask;
+        flag: HTMLElement;
     };
 
     protected id: string = `mIntegerfield-${uuid.generate()}`;
@@ -181,6 +181,10 @@ export class MPhonefield extends ModulVue {
         } else if (iso) {
             this.$log.warn('"' + iso + '" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.');
         }
+    }
+
+    onContrySelectOpen(): void {
+        this.$refs.flag.focus();
     }
 
     onContryChanged(contryIso: string): void {

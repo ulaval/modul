@@ -22,7 +22,7 @@
                        :disabled="disabled"
                        :readonly="readonly"
                        :waiting="waiting"
-                       :focus="internalIsFocus"
+                       :focus="internalIsFocus || open"
                        :label-up="labelUp"
                        :empty="isEmpty"
                        :error="hasError"
@@ -35,7 +35,14 @@
                        :max-width="inputMaxWidth"
                        @click="toggleOpen()">
             <div>
-                <slot>
+                <slot :key-up="scope.keyUp"
+                      :key-down="scope.keyDown"
+                      :key-tab="scope.keyTab"
+                      :key-esc="scope.keyEsc"
+                      :key-enter="scope.keyEnter"
+                      :key-space="scope.keySpace"
+                      :focus="onFocus"
+                      :blur="onBlur">
                     <input v-model="internalValue"
                            :placeholder="placeholder"
                            :disabled="disabled"

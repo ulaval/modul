@@ -165,11 +165,9 @@ export class MBaseSelect extends ModulVue {
 
     private scrollToFocused(): void {
         if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
-
             let container: HTMLElement = this.$refs.items;
             if (container) {
                 let element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
-
                 if (element) {
                     let top: number = element.offsetTop;
                     let bottom: number = element.offsetTop + element.offsetHeight;
