@@ -1,8 +1,10 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { CHIP_NAME } from '../component-names';
+import { CHIP_ADD_NAME, CHIP_DELETE_NAME, CHIP_NAME } from '../component-names';
 import IconButtonPlugin from '../icon-button/icon-button';
+import MChipAdd from './chip-add/chip-add';
+import MChipDelete from './chip-delete/chip-delete';
 import WithRender from './chip.html';
 
 export enum MChipMode {
@@ -16,7 +18,12 @@ export enum MChipSize {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [CHIP_ADD_NAME]: MChipAdd,
+        [CHIP_DELETE_NAME]: MChipDelete
+    }
+})
 export class MChip extends Vue {
     @Prop()
     disabled: boolean;

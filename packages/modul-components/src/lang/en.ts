@@ -34,6 +34,8 @@ const EnglishPlugin: PluginObject<any> = {
                 require('../components/multi-select/multi-select.lang.en.json'),
                 require('../components/option/option.lang.en.json'),
                 require('../components/dialog/dialog.lang.en.json'),
+                require('../components/organize-table-columns-modal/organize-table-columns-modal.lang.en.json'),
+                require('../components/organize-table-columns-modal/organize-table-columns/organize-table-columns.lang.en.json'),
                 require('../components/pagination/pagination.lang.en.json'),
                 require('../components/phonefield/phonefield.lang.en.json'),
                 require('../components/photo-editor/photo-editor.lang.en.json'),
@@ -58,7 +60,6 @@ const EnglishPlugin: PluginObject<any> = {
                 require('../filters/date/period/period.lang.en.json'),
                 require('../filters/date/time/time.lang.en.json'),
                 require('../filters/date/date-time/date-time.lang.en.json')
-
             ];
 
             msgs.forEach(msgs => i18n.addMessages(ENGLISH, msgs));

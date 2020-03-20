@@ -1,0 +1,9 @@
+<div>
+    <m-organize-table-columns-modal :columns="columns"
+                                    @reorganize="reorganize"
+                                    @reset="reset"></m-organize-table-columns-modal>
+
+
+    <m-table :columns="columns"
+             :rows="rows"></m-table>
+</div>

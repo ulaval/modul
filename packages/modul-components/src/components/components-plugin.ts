@@ -9,6 +9,7 @@ import CalendarPlugin from './calendar/calendar';
 import CarouselPlugin from './carousel/carousel';
 import CharacterCountPlugin from './character-count/character-count';
 import CheckboxPlugin from './checkbox/checkbox';
+import MChipPlugin from './chip/chip';
 import DatepickerPlugin from './datepicker/datepicker';
 import DaterangepickerPlugin from './daterangepicker/daterangepicker';
 import DialogPlugin from './dialog/dialog';
@@ -60,7 +61,6 @@ import SlideTransitionPlugin from './transitions/slide-transition/slide-transiti
 import TreePlugin from './tree/tree';
 import TypeaheadPlugin from './typeahead/typeahead';
 import ValidationMessagePlugin from './validation-message/validation-message';
-
 
 export interface ComponentPluginOptions {
     formPluginOptions?: FormPluginOptions;
@@ -132,6 +132,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ValidationMessagePlugin);
         Vue.use(InplaceEditPlugin);
         Vue.use(PaginationPlugin);
+        Vue.use(MChipPlugin);
     }
 };
 

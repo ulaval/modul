@@ -1,0 +1,12 @@
+{
+    "props": {
+        "columns": {
+            "description": "Liste des colonnes à trier"
+        }
+    },
+    "events": {
+        "reorganize": {
+            "description": "La liste dans laquelle un élément a été réorganizé"
+        }
+    }
+}
