@@ -1,107 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|m-textarea Default Story 1`] = `
-<div>
-  <div
-    class="m-textarea"
-    style="width: 100%; max-width: 288px;"
-  >
-    <div
-      class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <div
-              class="m-input-style__prefix"
-            />
-             
-            <div
-              class="m-input-style__content"
-            >
-              <textarea
-                class="m-textarea__input"
-                id="mTextarea-fakeId"
-                maxlength="Infinity"
-                rows="1"
-              />
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textarea__validation"
-    >
-      <div
-        class="m-validation-message m-textarea__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-    <div
-      class="resize-sensor"
-      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
-    >
-      <div
-        class="resize-sensor-expand"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
-      >
-        <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
-        />
-      </div>
-      <div
-        class="resize-sensor-shrink"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
-      >
-        <div
-          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
-        />
-      </div>
-    </div>
-  </div>
-   
-  <br />
-  model value = 
-    
-</div>
-`;
-
 exports[`Storyshots modul-components|m-textarea State 1`] = `
 <div>
   <div
@@ -1181,5 +1079,107 @@ exports[`Storyshots modul-components|m-textarea State 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-textarea default 1`] = `
+<div>
+  <div
+    class="m-textarea"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+              <textarea
+                class="m-textarea__input"
+                id="mTextarea-fakeId"
+                maxlength="Infinity"
+                rows="1"
+              />
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-textarea__validation"
+    >
+      <div
+        class="m-validation-message m-textarea__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+    <div
+      class="resize-sensor"
+      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      >
+        <div
+          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        />
+      </div>
+    </div>
+  </div>
+   
+  <br />
+  model value = 
+    
 </div>
 `;
