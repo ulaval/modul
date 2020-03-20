@@ -44,6 +44,7 @@
             aria-live="polite"
             :class="{ 'm--is-virutalScroll': virtualScroll }"
             :style="{ minWidth: inputMaxWidth }">
+
             <slot name="outer-items"
                   :items="items"
                   :get-item-props="getItemProps"
@@ -58,6 +59,7 @@
 
                 </template>
             </slot>
+
         </ul>
     </m-popup>
 </div>

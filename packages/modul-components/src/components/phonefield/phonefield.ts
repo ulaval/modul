@@ -116,32 +116,27 @@ export class MPhonefield extends ModulVue {
     }
 
     get countriesSorted(): CountryOptions[] {
-        let finalCountriesListe: CountryOptions[] = [];
-        const separatorCountry: CountryOptions[] = this.priorityIsoCountries.length > 0 ? [{
-            name: '',
-            iso2: '',
-            dialCode: ''
-        }] : [];
 
-        const priorityCountries: CountryOptions[] = [];
+        let finalCountriesList: CountryOptions[] = [];
+
         this.priorityIsoCountries.forEach((isoPriorityCountry: string) => {
             const currentCountry: CountryOptions | undefined = this.countries.find((isoCountry: CountryOptions) => isoCountry.iso2 === isoPriorityCountry);
             if (currentCountry) {
-                priorityCountries.push(currentCountry);
+                finalCountriesList.push(currentCountry);
             }
         });
 
-        const allOtherCountries: CountryOptions[] = this.countries.filter((country: CountryOptions) => {
-            return !this.priorityIsoCountries.includes(country.iso2);
+        if (this.priorityIsoCountries.length > 0) {
+            finalCountriesList.push({ name: '', iso2: '', dialCode: '' });
+        }
+
+        this.countries.filter((country: CountryOptions) => {
+            if (!this.priorityIsoCountries.includes(country.iso2)) {
+                finalCountriesList.push(country);
+            }
         });
 
-        finalCountriesListe = [
-            ...priorityCountries,
-            ...separatorCountry,
-            ...allOtherCountries
-        ];
-
-        return finalCountriesListe;
+        return finalCountriesList;
     }
 
     get propLabel(): string {

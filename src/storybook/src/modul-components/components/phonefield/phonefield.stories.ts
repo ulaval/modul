@@ -96,7 +96,9 @@ export const priorityCountriesEmpty = () => ({
     template: '<m-phonefield :priority-iso-countries="priorityIsoCountries"></m-phonefield>'
 });
 
-export const priorityCountriesDefined = () => ({
+
+export const priorityCountriesDefinedFrUsCa = () => ({
+
     data: () => ({
         priorityIsoCountries: ['fr', 'us', 'ca']
     }),
