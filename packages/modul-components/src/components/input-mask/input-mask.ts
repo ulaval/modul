@@ -24,6 +24,7 @@ export interface InternalCleaveOptions {
     time?: boolean;
     timePattern?: ReadonlyArray<string>;
     delimiter?: string;
+    uppercase?: boolean;
 }
 
 export interface InputMaskOptions extends InternalCleaveOptions {
