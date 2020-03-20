@@ -11,7 +11,7 @@ import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
-import { MSelect } from '../select/select';
+import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-scroll';
 import { MSelectItem } from '../select/select-item/select-item';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
@@ -42,7 +42,7 @@ export interface Country {
     ],
     components: {
         MInputMask,
-        MSelect,
+        MSelectVirtualScroll,
         MSelectItem
     }
 })

@@ -1,6 +1,6 @@
-import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
+import virtualList from 'vue-virtual-scroll-list';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -9,15 +9,18 @@ import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { SELECT_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
+import { MBaseSelect } from '../select/base-select/base-select';
+import { MSelectItem } from '../select/select-item/select-item';
 import { MOpacityTransition } from '../transitions/opacity-transition/opacity-transition';
-import { MBaseSelect } from './base-select/base-select';
-import WithRender from './select.html?style=./select.scss';
+import WithRender from './select-virtual-scroll.html?style=./select-virtual-scroll.scss';
+
 @WithRender
 @Component({
     components: {
         MBaseSelect,
-        MOpacityTransition
+        MOpacityTransition,
+        MSelectItem,
+        'virtual-list': virtualList
     },
     mixins: [
         InputState,
@@ -27,7 +30,7 @@ import WithRender from './select.html?style=./select.scss';
         InputLabel
     ]
 })
-export class MSelect extends ModulVue {
+export class MSelectVirtualScroll extends ModulVue {
 
     public $refs: {
         baseSelect: MBaseSelect;
@@ -44,8 +47,8 @@ export class MSelect extends ModulVue {
     @Prop({ default: false })
     public clearable: boolean;
 
-    @Prop({ default: false })
-    public virtualScroll: boolean;
+    @Prop({ default: 52 }) // 208px / 4 -> base-select.scss
+    public virtualScrollItemHeight: string;
 
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
@@ -113,11 +116,3 @@ export class MSelect extends ModulVue {
 
 }
 
-const SelectPlugin: PluginObject<any> = {
-    install(v, options): void {
-        Vue.use(I18nPlugin);
-        v.component(SELECT_NAME, MSelect);
-    }
-};
-
-export default SelectPlugin;
