@@ -75,7 +75,7 @@ export const loading = () => ({
         }
     },
     template: `<div>
-                    <m-overlay title="Titre"
+                    <m-overlay title="Title"
                     :waiting="waiting">
                 <m-button slot="trigger">Open</m-button>
                 <h2 slot="header"
