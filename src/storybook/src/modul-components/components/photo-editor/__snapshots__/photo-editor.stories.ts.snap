@@ -23,3 +23,15 @@ exports[`Storyshots modul-components|m-photo-editor With A Photo 1`] = `
   />
 </div>
 `;
+
+exports[`Storyshots modul-components|m-photo-editor default 1`] = `
+<div
+  class="m-modal m-photo-editor"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
+</div>
+`;
