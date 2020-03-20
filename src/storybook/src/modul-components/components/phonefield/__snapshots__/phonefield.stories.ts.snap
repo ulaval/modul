@@ -178,6 +178,7 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
                       <div>
                         <div
                           class="m-phonefield__flag-wrapper"
+                          tabindex="0"
                         >
                           <svg
                             class="m-phonefield__flag"
@@ -396,6 +397,7 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
                   <div>
                     <div
                       class="m-phonefield__flag-wrapper"
+                      tabindex="-1"
                     >
                       <svg
                         class="m-phonefield__flag"
@@ -556,7 +558,7 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
 
 exports[`Storyshots modul-components|m-phonefield Error 1`] = `
 <div
-  class="m-phonefield m--has-error"
+  class="m-phonefield"
 >
   <div
     class="m-phonefield__wrapper"
@@ -606,6 +608,7 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
                   <div>
                     <div
                       class="m-phonefield__flag-wrapper"
+                      tabindex="0"
                     >
                       <svg
                         class="m-phonefield__flag"
@@ -764,7 +767,7 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
 
 exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
 <div
-  class="m-phonefield m--has-error m--has-validation-message"
+  class="m-phonefield"
 >
   <div
     class="m-phonefield__wrapper"
@@ -814,6 +817,7 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
                   <div>
                     <div
                       class="m-phonefield__flag-wrapper"
+                      tabindex="0"
                     >
                       <svg
                         class="m-phonefield__flag"
@@ -1001,14 +1005,14 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
     class="m-phonefield__wrapper"
   >
     <div
-      class="m-base-select m-select m-phonefield__country m--is-disabled"
+      class="m-base-select m-select m-phonefield__country"
     >
       <div
         class="m-base-select__popup"
         style="width: 288px;"
       >
         <div
-          class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+          class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
           max-width="288px"
           style="width: auto; margin-top: 10px;"
         >
@@ -1045,6 +1049,7 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
                   <div>
                     <div
                       class="m-phonefield__flag-wrapper"
+                      tabindex="0"
                     >
                       <svg
                         class="m-phonefield__flag"
@@ -1074,7 +1079,6 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
                     <svg
                       aria-hidden="true"
                       class="m-icon m-select__icon-arrow"
-                      disabled="disabled"
                       height="12px"
                       title="Ouvrir la liste déroulante"
                       width="12px"
@@ -1157,7 +1161,6 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
               class="m-input-style__content"
             >
               <input
-                disabled="disabled"
                 id="mIntegerfield-fakeId"
               />
                
