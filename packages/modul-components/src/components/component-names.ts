@@ -53,6 +53,7 @@ export const LIMIT_ELEMENTS: string = 'm-limit-elements';
 export const LIMIT_TEXT_NAME: string = 'm-limit-text';
 export const LINK_NAME: string = 'm-link';
 export const LIST_ITEM_NAME: string = 'm-list-item';
+export const MASKEDFIELD_NAME: string = 'm-maskedfield';
 export const MESSAGE_NAME: string = 'm-message';
 export const MENU_NAME: string = 'm-menu';
 export const MENU_ITEM_NAME: string = 'm-menu-item';

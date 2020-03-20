@@ -1,0 +1,23 @@
+@import "commons";
+
+.m-maskedfield {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+
+    @include m-input-inline-spacing();
+
+    &__validation {
+        transition: margin-top $m-transition-duration ease;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__validation-message {
+        flex: 1 1 auto;
+    }
+
+    &__input-style {
+        width: 100%;
+    }
+}
