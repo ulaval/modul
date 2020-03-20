@@ -27,7 +27,10 @@
 
     &__country {
         flex-direction: row;
-        margin-right: -1px; // Magic Number
+
+        &.m-phonefield__country {
+            margin-right: -1px; // Magic Number
+        }
 
         /deep/ .m-base-select__popup {
             width: auto !important;

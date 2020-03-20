@@ -1,11 +1,6 @@
 @import "commons";
 
 .m-select {
-    // .test {
-    // display: inline-flex;
-    // flex-direction: column;
-    // }
-
     &.m--has-validation-message {
         .m-select__validation-message {
             margin-top: $m-spacing--xs;

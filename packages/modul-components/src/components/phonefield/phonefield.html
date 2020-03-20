@@ -7,7 +7,6 @@
                 'm--is-country-focus': internalFocus,
                 'm--has-validation-message': hasValidationMessage } ]">
     <div class="m-phonefield__wrapper">
-
         <m-select class="m-phonefield__country"
                   :value="countryModel"
                   :options="isoCountries"
@@ -30,7 +29,6 @@
                          aria-hidden="true"></use>
                 </svg>
             </div>
-
             <template slot="items"
                       slot-scope="{item, index}">
                 <div class="m-phonefield__item-wrapper">
@@ -45,9 +43,7 @@
                     <span class="m-phonefield__item-dialCode">+{{ countries[index].dialCode }}</span>
                 </div>
             </template>
-
         </m-select>
-
         <m-input-style class="m-phonefield__number"
                        :disabled="isDisabled"
                        :waiting="isWaiting"
