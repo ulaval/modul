@@ -89,12 +89,11 @@
         </div>
     </template>
 
-    <template v-slot:outer-items="{item, index, props, handlers}">
+    <template #outer-items="{items, getItemProps, getItemHandlers}">
         <slot name="outer-items"
-              :index="index"
-              :item="item"
-              :props="props"
-              :handlers="handlers">
+              :items="items"
+              :get-item-props="getItemProps"
+              :get-item-handlers="getItemHandlers">
             <template v-slot:items="{item , index }">
 
                 <slot name="items"
