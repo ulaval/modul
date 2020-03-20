@@ -10,6 +10,7 @@
               :key-enter="onKeydownEnter"
               :key-space="onKeydownSpace"></slot>
     </div>
+    <slot name="validation-message"></slot>
     <m-popup ref="popup"
              placement="bottom-start"
              :open.sync="internalOpen"

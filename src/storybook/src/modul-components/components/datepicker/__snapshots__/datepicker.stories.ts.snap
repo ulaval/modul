@@ -114,7 +114,7 @@ exports[`Storyshots modul-components|m-datepicker date big min and max limit 1`]
 exports[`Storyshots modul-components|m-datepicker date format invalid 1`] = `
 <div>
   <div
-    class="m-datepicker m--has-error m--has-validation-message"
+    class="m-datepicker m--has-error"
     style="width: 100%; max-width: 136px;"
   >
     <div
@@ -248,7 +248,7 @@ exports[`Storyshots modul-components|m-datepicker date format invalid 1`] = `
 exports[`Storyshots modul-components|m-datepicker date off limit  max 1`] = `
 <div>
   <div
-    class="m-datepicker m--has-error m--has-validation-message"
+    class="m-datepicker m--has-error"
     style="width: 100%; max-width: 136px;"
   >
     <div
@@ -382,7 +382,7 @@ exports[`Storyshots modul-components|m-datepicker date off limit  max 1`] = `
 exports[`Storyshots modul-components|m-datepicker date off limit min 1`] = `
 <div>
   <div
-    class="m-datepicker m--has-error m--has-validation-message"
+    class="m-datepicker m--has-error"
     style="width: 100%; max-width: 136px;"
   >
     <div
@@ -627,7 +627,7 @@ exports[`Storyshots modul-components|m-datepicker disabled 1`] = `
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--is-disabled m--is-tag-default"
+    class="m-input-style m--is-disabled m--has-value m--is-tag-default"
     style="margin-top: 10px;"
   >
     <div
@@ -696,6 +696,233 @@ exports[`Storyshots modul-components|m-datepicker disabled 1`] = `
             </button>
              
             <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker__validation"
+  >
+    <div
+      class="m-validation-message m-datepicker__validation__message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-datepicker disabled and readonly 1`] = `
+<div
+  class="m-datepicker m--is-disabled m--is-readonly"
+  style="width: 100%; max-width: 136px;"
+>
+  <div
+    class="m-input-style m--is-readonly m--is-disabled m--has-value m--is-tag-default"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
+        >
+          <span
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-haspopup="true"
+              autocomplete="off"
+              disabled="disabled"
+              id="mDatepicker-fakeId"
+              placeholder="AAAA-MM-JJ"
+              readonly="readonly"
+            />
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <button
+              aria-controls="mDatepicker-fakeId"
+              class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+              disabled="disabled"
+              style="width: 22px; height: 22px;"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker__validation"
+  >
+    <div
+      class="m-validation-message m-datepicker__validation__message"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-datepicker disabled and waiting 1`] = `
+<div
+  class="m-datepicker m--is-disabled m--is-waiting"
+  style="width: 100%; max-width: 136px;"
+>
+  <div
+    class="m-input-style m--is-disabled m--is-waiting m--is-tag-default"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__main"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
+        >
+          <span
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-haspopup="true"
+              autocomplete="off"
+              disabled="disabled"
+              id="mDatepicker-fakeId"
+              placeholder="AAAA-MM-JJ"
+            />
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <button
+              aria-controls="mDatepicker-fakeId"
+              class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+              disabled="disabled"
+              style="width: 22px; height: 22px;"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="20px"
+                width="20px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+             
+            <div
+              class="m-spinner m-input-style__spinner"
+            >
+              <!---->
+               
+              <div />
+            </div>
           </div>
         </div>
       </div>
@@ -1155,7 +1382,7 @@ exports[`Storyshots modul-components|m-datepicker helper-message 1`] = `
 
 exports[`Storyshots modul-components|m-datepicker hide-internal-error-message 1`] = `
 <div
-  class="m-datepicker m--has-error m--has-validation-message"
+  class="m-datepicker m--has-error"
   style="width: 100%; max-width: 136px;"
 >
   <div
@@ -2128,6 +2355,1216 @@ exports[`Storyshots modul-components|m-datepicker skip-input-validation=true 1`]
 </div>
 `;
 
+exports[`Storyshots modul-components|m-datepicker state 1`] = `
+<div>
+  <div
+    class="m-datepicker m--is-disabled"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                disabled="disabled"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker m--is-readonly"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Readonly
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+                readonly="readonly"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker m--is-waiting"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-waiting m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Waiting
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+  <br />
+   
+  <div
+    class="m-datepicker m--is-disabled"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled and error
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                disabled="disabled"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker m--is-readonly m--has-error m--has-validation-message"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Readonly and error
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+                readonly="readonly"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <p
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-icon m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            Error
+          </span>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker m--is-waiting m--has-error m--has-validation-message"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-waiting m--has-error m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Waiting and error
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <p
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-icon m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            Error
+          </span>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+  <br />
+   
+  <div
+    class="m-datepicker m--is-disabled m--is-readonly"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled and readonly
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                disabled="disabled"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+                readonly="readonly"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker m--is-disabled m--is-waiting"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-label-up m--is-disabled m--is-waiting m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled and waiting
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                disabled="disabled"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker m--is-readonly m--is-waiting"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--is-waiting m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Readonly and waiting
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+                readonly="readonly"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-datepicker m--is-disabled m--is-readonly m--is-waiting"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style m--is-readonly m--is-label-up m--is-disabled m--is-waiting m--has-label m--has-value m--is-tag-default"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__main"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDatepicker-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Disabled, readonly and waiting
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-haspopup="true"
+                autocomplete="off"
+                disabled="disabled"
+                id="mDatepicker-fakeId"
+                placeholder="AAAA-MM-JJ"
+                readonly="readonly"
+              />
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <button
+                aria-controls="mDatepicker-fakeId"
+                class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
+                disabled="disabled"
+                style="width: 22px; height: 22px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="20px"
+                  width="20px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-spinner m-input-style__spinner"
+              >
+                <!---->
+                 
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-datepicker__validation"
+    >
+      <div
+        class="m-validation-message m-datepicker__validation__message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-popup"
+    >
+      <div
+        class="m-popper"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-datepicker valid 1`] = `
 <div
   class="m-datepicker m--is-valid"
@@ -2273,7 +3710,6 @@ exports[`Storyshots modul-components|m-datepicker waiting 1`] = `
             <input
               aria-haspopup="true"
               autocomplete="off"
-              disabled="disabled"
               id="mDatepicker-fakeId"
               placeholder="AAAA-MM-JJ"
             />
@@ -2288,8 +3724,7 @@ exports[`Storyshots modul-components|m-datepicker waiting 1`] = `
           >
             <button
               aria-controls="mDatepicker-fakeId"
-              class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple m--is-disabled"
-              disabled="disabled"
+              class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
               type="button"
             >

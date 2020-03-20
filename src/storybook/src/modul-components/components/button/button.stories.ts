@@ -30,6 +30,8 @@ export const disabled = () => '<m-button :disabled="true">A Button</m-button>';
 
 export const waiting = () => '<m-button :waiting="true">A Button</m-button>';
 
+export const disabledAndWaiting = () => '<m-button :disabled="true" :waiting="true">A Button</m-button>';
+
 export const fullsize = () => '<m-button fullSize="true">A Button</m-button>';
 
 export const precision = () => '<m-button >A Button <template slot="precision">Button precision</template></m-button>';

@@ -1,21 +1,21 @@
-<div class="m-moneyfield"
-     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
-    <m-decimalfield v-bind="bindData"
-                    v-on="$listeners"
-                    :force-rounding-format="true"
-                    :precision="precision">
-        <!-- content should stay inline to avoid adding useless white space -->
-        <template v-if="currencyDetail.symbolPosition === 'before'"
-                  slot="prefix">
-            <span class="m-moneyfield__currency-symbol">
-                {{ currencyDetail.localizedSymbol }}
-            </span>
-        </template>
-        <template v-if="currencyDetail.symbolPosition === 'after'"
-                  slot="suffix">
-            <span class="m-moneyfield__currency-symbol">
-                {{ currencyDetail.localizedSymbol }}
-            </span>
-        </template>
-    </m-decimalfield>
-</div>
+<m-decimalfield v-bind="bindData"
+                v-on="$listeners"
+                class="m-moneyfield"
+                :force-rounding-format="true"
+                :precision="precision"
+                :disabled="disabled"
+                :readonly="readonly"
+                :waiting="waiting"
+                :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+    <!-- content should stay inline to avoid adding useless white space -->
+    <span v-if="currencyDetail.symbolPosition === 'before'"
+          class="m-moneyfield__currency-symbol"
+          slot="prefix">
+        {{ currencyDetail.localizedSymbol }}
+    </span>
+    <span v-if="currencyDetail.symbolPosition === 'after'"
+          class="m-moneyfield__currency-symbol"
+          slot="suffix">
+        {{ currencyDetail.localizedSymbol }}
+    </span>
+</m-decimalfield>

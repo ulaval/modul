@@ -49,6 +49,9 @@ export class MInputMask extends ModulVue {
     @Prop({ default: true })
     public raw: boolean;
 
+    @Prop()
+    public disabled: boolean;
+
     // https://github.com/nosir/cleave.js/blob/master/doc/options.md
     @Prop()
     public options: InputMaskOptions;
@@ -120,19 +123,31 @@ export class MInputMask extends ModulVue {
     }
 
     onFocus($event: any): void {
+        if (this.disabled) {
+            return;
+        }
         this.$emit('focus', $event);
     }
 
     onBlur($event: any): void {
+        if (this.disabled) {
+            return;
+        }
         this.updateRawValue();
         this.$emit('blur', $event);
     }
 
     onKeyup($event: KeyboardEvent): void {
+        if (this.disabled) {
+            return;
+        }
         this.$emit('keyup', $event);
     }
 
     onKeydownTextfield($event: KeyboardEvent): void {
+        if (this.disabled) {
+            return;
+        }
         const rawValue: string = this.cleave.getRawValue();
         if (($event.key === '.' || $event.key === ',') && !rawValue.endsWith('.')) {
             this.cleave.setRawValue(`${rawValue}.`);
@@ -143,6 +158,9 @@ export class MInputMask extends ModulVue {
 
     // Hack pour android qui lève toujours le key code 229.
     onTextInput($event: KeyboardEvent): void {
+        if (this.disabled) {
+            return;
+        }
         const key: string = ($event as any).data;
         const rawValue: string = this.cleave.getRawValue();
         if (key === '.' && !rawValue.endsWith('.')) {
@@ -153,18 +171,30 @@ export class MInputMask extends ModulVue {
     }
 
     onEnter($event: any): void {
+        if (this.disabled) {
+            return;
+        }
         this.$emit('keydown.enter', $event);
     }
 
     onPasteTextfield($event: any): void {
+        if (this.disabled) {
+            return;
+        }
         this.$emit('paste', $event);
     }
 
     onDropTextfield($event: any): void {
+        if (this.disabled) {
+            return;
+        }
         this.$emit('drop', $event);
     }
 
     onChange($event: any): void {
+        if (this.disabled) {
+            return;
+        }
         this.$emit('change', $event);
     }
 

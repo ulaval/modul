@@ -1,6 +1,11 @@
 @import 'commons';
 
 .m-base-select {
+    display: inline-flex;
+    flex-direction: column;
+
+    @include m-input-inline-spacing();
+
     &__list {
         margin: 0;
         padding: 0;

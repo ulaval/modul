@@ -27,7 +27,8 @@
         }
     }
 
-    &.m--is-disabled {
+    &.m--is-disabled,
+    &.m--is-readonly {
         border: 1px solid $m-color--disabled;
 
         &,

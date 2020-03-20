@@ -8,6 +8,11 @@ $m-froala-toolbar-btn-height: 38px !default;
 .vue-froala {
     overflow: hidden;
 
+    ::selection {
+        background: $m-color--ul-yellow;
+        color: $m-color--text;
+    }
+
     // to overcome input-style base padding.
     .m-input-style & {
         margin: -#{$m-input-style--padding};
@@ -92,10 +97,11 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-box.fr-basic .fr-element {
-            padding: unset;
+            // padding: unset;
             font-weight: $m-font-weight--light;
             word-wrap: break-word;
-            -moz-user-select: text; // Dirty fix for text selection in firefox if the rich-text is in a draggable container.
+            // -moz-user-select: text; // Dirty fix for text selection in firefox if the rich-text is in a draggable container.
+            user-select: text; // Dirty fix for text selection in firefox if the rich-text is in a draggable container.
             border-left: 0 transparent;
             border-right: 0 transparent;
         }

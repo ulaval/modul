@@ -6,8 +6,6 @@ import { InputStateTagStyle } from '@ulaval/modul-components/dist/mixins/input-s
 import { InputMaxWidth } from '@ulaval/modul-components/dist/mixins/input-width/input-width';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
-
 storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
 
     .add('default', () => ({
@@ -31,7 +29,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
 
             }
         },
-        template: '<div><m-textfield v-model="model" @input="model = onInputChange($event)" @focus="onFocus" @blur="onBlur"></m-textfield><br/>model value = {{model}}</div>'
+        template: '<div><m-textfield v-model="model" type="password" @input="model = onInputChange($event)" @focus="onFocus" @blur="onBlur"></m-textfield><br/>model value = {{model}}</div>'
     }))
     .add('placeholder', () => ({
         props: {
@@ -61,7 +59,20 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
         template: '<m-textfield label="Label" :required-marker="true"></m-textfield>'
     }))
     .add('waiting', () => ({
-        template: '<m-textfield :waiting="true"></m-textfield>'
+        template: `<div>
+            <m-textfield :disabled="true"
+                         :waiting="true"
+                         :readonly="true"
+                         value="dd"></m-textfield>
+            <m-textfield :waiting="true"
+                         :readonly="true"
+                         value="dd"></m-textfield>
+            <m-textfield :waiting="true"></m-textfield>
+            <m-textfield label="monPortail"
+                         :disabled="true"
+                         :readonly="true"
+                         value="dd"></m-textfield>
+        </div>`
     }))
     .add('disabled', () => ({
         template: '<m-textfield :disabled="true" value="Lorem Ipsum"></m-textfield>'
@@ -69,11 +80,62 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
     .add('readonly', () => ({
         template: '<m-textfield :readonly="true" value="Lorem Ipsum"></m-textfield>'
     }))
+    .add('state', () => ({
+        template: `<div>
+            <m-textfield label="Disabled"
+                         value="Lorem Ipsum"
+                         :disabled="true"></m-textfield>
+            <m-textfield label="Readonly"
+                         value="Lorem Ipsum"
+                         :readonly="true"></m-textfield>
+            <m-textfield label="Waiting"
+                         value="Lorem Ipsum"
+                         :waiting="true"></m-textfield><br>
+            <m-textfield label="Disabled and error"
+                         value="Lorem Ipsum"
+                         :disabled="true"
+                         error-message="Error"></m-textfield>
+            <m-textfield label="Readonly"
+                         value="Lorem Ipsum"
+                         :readonly="true"
+                         error-message="Error"></m-textfield>
+            <m-textfield label="Waiting and error"
+                         value="Lorem Ipsum"
+                         :waiting="true"
+                         error-message="Error"></m-textfield><br>
+            <m-textfield label="Disabled and readonly"
+                         :disabled="true"
+                         :readonly="true"
+                         value="Lorem Ipsum"></m-textfield>
+            <m-textfield label="Disabled and waiting"
+                         :disabled="true"
+                         :waiting="true"
+                         value="Lorem Ipsum"></m-textfield>
+            <m-textfield label="Readonly and waiting"
+                         :readonly="true"
+                         :waiting="true"
+                         value="Lorem Ipsum"></m-textfield>
+            <m-textfield label="Disabled, readonly and waiting"
+                         :disabled="true"
+                         :readonly="true"
+                         :waiting="true"
+                         value="Lorem Ipsum"></m-textfield><br>
+        </div>`
+    }))
     .add('error', () => ({
         template: '<m-textfield :error="true" type="tel" value="12345"></m-textfield>'
     }))
     .add('valid', () => ({
-        template: '<m-textfield :valid="true" type="tel" value="12345"></m-textfield>'
+        template: `<div>
+            <m-textfield :valid="true"
+                         type="tel" value="12345"></m-textfield>
+            <m-textfield :valid="true"
+                         :error="true"
+                         :waiting="true"
+                         :readonly="true"
+                         type="tel"
+                         value="12345"></m-textfield>
+        </div>`
     }))
     .add('error-message', () => ({
         template: '<m-textfield error-message="This is an Error" type="tel" value="12345"></m-textfield>'

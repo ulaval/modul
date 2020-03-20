@@ -43,6 +43,10 @@ export class MAutocomplete extends ModulVue {
     @Prop()
     disabled: boolean;
     @Prop()
+    waiting: boolean;
+    @Prop()
+    readonly: boolean;
+    @Prop()
     errorMessage: string;
     @Prop()
     validMessage: string;

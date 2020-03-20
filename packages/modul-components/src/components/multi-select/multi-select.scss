@@ -1,38 +1,22 @@
 @import 'commons';
 
 .m-multi-select {
-    display: inline-flex;
-    flex-direction: column;
-
-    &:focus {
-        outline: 0 solid transparent;
-    }
-
-    &.m--has-validation-message {
-        .m-multi-select__validation-message {
-            margin-top: $m-spacing--xs;
-        }
-    }
-
-    &:not(.m--is-disabled) {
-        .m-multi-select__arrow {
-            cursor: pointer;
-        }
-    }
-
-    &__arrow {
+    &__icon {
         display: flex;
-        cursor: pointer;
-
-        &__icon {
-            transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
-        }
 
         &.m--is-open {
-            .m-multi-select__arrow__icon {
+            .m-multi-select__icon-arrow {
                 transform: rotate(-180deg);
             }
         }
+    }
+
+    &__input {
+        outline: none;
+    }
+
+    &__icon-arrow {
+        transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
     }
 
     &__validation-message {
@@ -71,5 +55,17 @@
     /deep/ .m-input-style__body {
         padding-top: 10px; // Magic number pour avoir la même hauteur que le m-select
         padding-bottom: 9px; // Magic number pour avoir la même hauteur que le m-select
+    }
+
+    &.m--has-validation-message {
+        .m-multi-select__validation-message {
+            margin-top: $m-spacing--xs;
+        }
+    }
+
+    &:not(.m--is-disabled):not(.m--is-readonly) {
+        .m-multi-select__icon {
+            cursor: pointer;
+        }
     }
 }

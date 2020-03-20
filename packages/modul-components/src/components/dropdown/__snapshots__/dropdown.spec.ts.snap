@@ -2,7 +2,7 @@
 
 exports[`MDropdown should render correctly 1`] = `
 <div class="m-dropdown" style="width: 100%; max-width: 288px;">
-  <m-input-style label-for="mDropdown-uuid" empty="true" cursor-pointer="true" width="100%" tag-style="default">
+  <m-input-style label-for="mDropdown-uuid" empty="true" width="100%" cursor-pointer="true" tag-style="default">
     <!----> <input type="text" id="mDropdown-uuid" aria-haspopup="true" aria-controls="mDropdown-uuid-controls" readonly="readonly" class="m-dropdown__input">
     <!---->
     <div slot="suffix" class="m-dropdown__arrow">
@@ -25,7 +25,7 @@ exports[`MDropdown should render correctly 1`] = `
 
 exports[`MDropdown should render correctly when placeholder is set 1`] = `
 <div class="m-dropdown" style="width: 100%; max-width: 288px;">
-  <m-input-style label-for="mDropdown-uuid" empty="true" cursor-pointer="true" width="100%" tag-style="default">
+  <m-input-style label-for="mDropdown-uuid" empty="true" width="100%" cursor-pointer="true" tag-style="default">
     <!----> <input type="text" id="mDropdown-uuid" aria-haspopup="true" aria-controls="mDropdown-uuid-controls" readonly="readonly" placeholder="placeholder test" class="m-dropdown__input">
     <!---->
     <div slot="suffix" class="m-dropdown__arrow">

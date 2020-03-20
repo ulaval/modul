@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { BUTTON_NAME } from '../component-names';
 import IconPlugin from '../icon/icon';
-import SpinnerPlugin from '../spinner/spinner';
+import SpinnerPlugin, { MSpinnerSize, MSpinnerStyle } from '../spinner/spinner';
 import WithRender from './button.html?style=./button.scss';
 
 export enum MButtonType {
@@ -44,14 +44,19 @@ export class MButton extends Vue {
 
     @Prop()
     public precision: string;
+
     @Prop()
     public disabled: boolean;
+
     @Prop()
     public waiting: boolean;
+
     @Prop()
     public fullSize: boolean;
+
     @Prop()
     public iconName: string;
+
     @Prop({
         default: MButtonIconPosition.Left,
         validator: value =>
@@ -59,8 +64,11 @@ export class MButton extends Vue {
             value === MButtonIconPosition.Right
     })
     public iconPosition: MButtonIconPosition;
+
     @Prop({ default: '12px' })
     public iconSize: string;
+
+    public spinnerSize: MSpinnerSize = MSpinnerSize.Small;
 
     @Emit('click')
     onClick(event: Event): void {
@@ -82,39 +90,39 @@ export class MButton extends Vue {
     @Emit('blur')
     onBlur(event: FocusEvent): void { }
 
-    private get isSkinPrimary(): boolean {
+    get isSkinPrimary(): boolean {
         return this.skin === MButtonSkin.Primary;
     }
 
-    private get isSkinSecondary(): boolean {
+    get isSkinSecondary(): boolean {
         return this.skin === MButtonSkin.Secondary;
     }
 
-    private get isWaiting(): boolean {
-        return !this.disabled ? this.waiting : false;
+    get spinnerSkin(): MSpinnerStyle {
+        return this.waiting && this.disabled ? MSpinnerStyle.Regular : MSpinnerStyle.Lighter;
     }
 
-    private get hasIcone(): boolean {
+    get hasIcone(): boolean {
         return !!this.iconName;
     }
 
-    private get hasIconLeft(): boolean {
+    get hasIconLeft(): boolean {
         return this.iconPosition === MButtonIconPosition.Left && this.hasIcone && !this.waiting;
     }
 
-    private get hasIconRight(): boolean {
+    get hasIconRight(): boolean {
         return this.iconPosition === MButtonIconPosition.Right && this.hasIcone && !this.waiting;
     }
 
-    private get hasWaitingIconLeft(): boolean {
+    get hasWaitingIconLeft(): boolean {
         return this.iconPosition === MButtonIconPosition.Left && this.waiting;
     }
 
-    private get hasWaitingIconRight(): boolean {
+    get hasWaitingIconRight(): boolean {
         return this.iconPosition === MButtonIconPosition.Right && this.waiting;
     }
 
-    private get hasPrecision(): boolean {
+    get hasPrecision(): boolean {
         return !!this.precision || !!this.$slots.precision;
     }
 }

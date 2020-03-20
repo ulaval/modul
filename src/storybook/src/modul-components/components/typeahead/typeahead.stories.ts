@@ -91,6 +91,62 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             <h2 class="m-u--h5">Results</h2>
             <p v-html="results"></p>
         </div>`
+    }))
+    .add('state', () => ({
+        data: () => ({
+            results: RESULTS,
+            value: 'Apple'
+        }),
+        template: `<div>
+            <m-typeahead v-model="value"
+                         label="Disabled"
+                         :results="results"
+                         :disabled="true"></m-typeahead>
+            <m-typeahead v-model="value"
+                         label="Readonly"
+                         :results="results"
+                         :readonly="true"></m-typeahead>
+            <m-typeahead v-model="value"
+                         label="Waiting"
+                         :results="results"
+                         :waiting="true"></m-typeahead><br>
+            <m-typeahead v-model="value"
+                         label="Disabled and error"
+                         :results="results"
+                         :disabled="true"
+                         error-message="Error"></m-typeahead>
+            <m-typeahead v-model="value"
+                         label="Readonly and error"
+                         :results="results"
+                         :readonly="true"
+                         error-message="Error"></m-typeahead>
+            <m-typeahead v-model="value"
+                         label="Waiting and error"
+                         :results="results"
+                         :waiting="true"
+                         error-message="Error"></m-typeahead><br>
+            <m-typeahead v-model="value"
+                         label="Disabled and readonly"
+                         :results="results"
+                         :disabled="true"
+                         :readonly="true"></m-typeahead>
+            <m-typeahead v-model="value"
+                         label="Disabled and waiting"
+                         :results="results"
+                         :disabled="true"
+                         :waiting="true"></m-typeahead>
+            <m-typeahead v-model="value"
+                         label="Readonly and waiting"
+                         :results="results"
+                         :readonly="true"
+                         :waiting="true"></m-typeahead>
+            <m-typeahead v-model="value"
+                         label="Disabled, readonly and waiting"
+                         :results="results"
+                         :disabled="true"
+                         :readonly="true"
+                         :waiting="true"></m-typeahead>
+        </div>`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}/mobile`, module)

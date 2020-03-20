@@ -65,4 +65,28 @@
                     v-model="selection2"></m-autocomplete>
     Selection: {{selection2}}
 
+    <h4>Disabled</h4>
+    <m-autocomplete placeholder="Type something"
+                    :results="results2"
+                    label="Label"
+                    :disabled="true"
+                    @complete="onComplete2"
+                    v-model="selection2"></m-autocomplete>
+
+    <h4>Readonly</h4>
+    <m-autocomplete placeholder="Type something"
+                    :results="results2"
+                    label="Label"
+                    :readonly="true"
+                    @complete="onComplete2"
+                    v-model="selection2"></m-autocomplete>
+
+    <h4>Waiting</h4>
+    <m-autocomplete placeholder="Type something"
+                    :results="results2"
+                    label="Label"
+                    :waiting="true"
+                    @complete="onComplete2"
+                    v-model="selection2"></m-autocomplete>
+
 </div>

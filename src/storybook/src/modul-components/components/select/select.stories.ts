@@ -197,3 +197,49 @@ export const virtualScroll = () => ({
     }),
     template: `<m-select :options="options" label="Longlist" :virtual-scroll="true" ></m-select>`
 });
+
+export const state = () => ({
+    data: () => ({
+        options: OPTIONS
+    }),
+    template: `<div>
+        <m-select label="Disabled"
+                  :options="options"
+                  :disabled="true"></m-select>
+        <m-select label="Readonly"
+                  :options="options"
+                  :readonly="true"></m-select>
+        <m-select label="Waiting"
+                  :options="options"
+                  :waiting="true"></m-select><br>
+        <m-select label="Disabled and error"
+                  :options="options"
+                  :disabled="true"
+                  error-message="Error"></m-select>
+        <m-select label="Readonly and error"
+                  :options="options"
+                  :readonly="true"
+                  error-message="Error"></m-select>
+        <m-select label="Waiting and error"
+                  :options="options"
+                  :waiting="true"
+                  error-message="Error"></m-select><br>
+         <m-select label="Disabled and readonly"
+                  :options="options"
+                  :disabled="true"
+                  :readonly="true"></m-select>
+         <m-select label="Disabled and waiting"
+                  :options="options"
+                  :disabled="true"
+                  :waiting="true"></m-select>
+         <m-select label="Readonly and waiting"
+                  :options="options"
+                  :readonly="true"
+                  :waiting="true"></m-select>
+         <m-select label="Disabled readonly and waiting"
+                  :options="options"
+                  :disabled="true"
+                  :readonly="true"
+                  :waiting="true"></m-select>
+    </div>`
+});

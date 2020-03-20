@@ -148,7 +148,7 @@ export class MDatepicker extends ModulVue {
     }
 
     public set open(open: boolean) {
-        if (this.as<InputState>().active) {
+        if (!this.as<InputState>().disabled && !this.as<InputState>().readonly) {
             this.internalOpen = open;
         }
     }
@@ -275,7 +275,10 @@ export class MDatepicker extends ModulVue {
     }
 
     public togglePopup(event: Event): void {
-        this.open = !this.open;
+        if (!this.as<InputState>().disabled && !this.as<InputState>().readonly) {
+            this.open = !this.open;
+        }
+
         // stop event propagation to parent.
         event.stopPropagation();
     }
@@ -285,7 +288,7 @@ export class MDatepicker extends ModulVue {
     }
 
     public onKeydown(event: KeyboardEvent): void {
-        if (this.as<InputStateMixin>().active) {
+        if (!this.as<InputStateMixin>().disabled && !this.as<InputStateMixin>().readonly) {
             if (event.key === 'Tab') {
                 // close popop if open and tab key is pressed (accessibility)
                 if (this.open) {
@@ -296,21 +299,15 @@ export class MDatepicker extends ModulVue {
         }
     }
 
-    public get hasErrorMessage(): boolean {
-        return (!!this.as<InputState>().errorMessage || this.as<InputState>().errorMessage === ' '
-            || !!(this.internalCalendarErrorMessage || '').trim()) &&
-            !this.as<InputState>().disabled && !this.as<InputState>().waiting;
-    }
-
     // Focus management.
 
     // override from InputManagement
     public onFocus(event: FocusEvent): void {
-        if (!this.open) { // open on focus
+        if (!this.open && !this.as<InputState>().disabled && !this.as<InputState>().readonly) { // open on focus
             this.open = true;
         }
 
-        this.as<InputManagement>().internalIsFocus = this.as<InputStateMixin>().active;
+        this.as<InputManagement>().internalIsFocus = !this.as<InputStateMixin>().disabled;
         if (this.as<InputManagement>().internalIsFocus) {
             this.$emit('focus', event);
         }
@@ -318,7 +315,7 @@ export class MDatepicker extends ModulVue {
 
     // override from InputManagement
     public onClick(event: MouseEvent): void {
-        this.as<InputManagement>().internalIsFocus = this.as<InputStateMixin>().active;
+        this.as<InputManagement>().internalIsFocus = !this.as<InputStateMixin>().disabled;
         let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
         if (this.as<InputManagement>().internalIsFocus && inputEl) {
             inputEl.focus();

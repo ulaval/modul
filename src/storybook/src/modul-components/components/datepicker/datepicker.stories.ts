@@ -106,8 +106,69 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DATEPICKER_NAME}`, module)
     }))
 
     .add('disabled', () => ({
-        template: `<m-datepicker :disabled="true"></m-datepicker>`
+        data: () => ({
+            model: '2015-01-01'
+        }),
+        template: `<m-datepicker :disabled="true" v-model="model"></m-datepicker>`
     }))
+
+    .add('disabled and readonly', () => ({
+        data: () => ({
+            model: '2015-01-01'
+        }),
+        template: `<m-datepicker :disabled="true" :readonly="true" v-model="model"></m-datepicker>`
+    }))
+
+    .add('disabled and waiting', () => ({
+        template: `<m-datepicker :disabled="true" :waiting="true"></m-datepicker>`
+    }))
+
+    .add('state', () => ({
+        data: () => ({
+            model: '2015-01-01'
+        }),
+        template: `<div>
+            <m-datepicker v-model="model"
+                          label="Disabled"
+                          :disabled="true"></m-datepicker>
+            <m-datepicker v-model="model"
+                          label="Readonly"
+                          :readonly="true"></m-datepicker>
+            <m-datepicker v-model="model"
+                          label="Waiting"
+                          :waiting="true"></m-datepicker><br>
+            <m-datepicker v-model="model"
+                          label="Disabled and error"
+                          :disabled="true"
+                          error-message="Error"></m-datepicker>
+            <m-datepicker v-model="model"
+                          label="Readonly and error"
+                          :readonly="true"
+                          error-message="Error"></m-datepicker>
+            <m-datepicker v-model="model"
+                          label="Waiting and error"
+                          :waiting="true"
+                          error-message="Error"></m-datepicker><br>
+            <m-datepicker v-model="model"
+                          label="Disabled and readonly"
+                          :disabled="true"
+                          :readonly="true"></m-datepicker>
+            <m-datepicker v-model="model"
+                          label="Disabled and waiting"
+                          :disabled="true"
+                          :waiting="true"></m-datepicker>
+            <m-datepicker v-model="model"
+                          label="Readonly and waiting"
+                          :readonly="true"
+                          :waiting="true"></m-datepicker>
+            <m-datepicker v-model="model"
+                          label="Disabled, readonly and waiting"
+                          :disabled="true"
+                          :readonly="true"
+                          :waiting="true"></m-datepicker>
+        </div>`
+    }))
+
     .add('readonly', () => ({
         template: `<m-datepicker :readonly="true"></m-datepicker>`
     }))

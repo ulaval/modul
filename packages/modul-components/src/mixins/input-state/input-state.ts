@@ -52,18 +52,25 @@ export interface InputStateInputSelector {
 export class InputState extends ModulVue implements InputStateMixin {
     @Prop()
     public disabled: boolean;
+
     @Prop()
     public waiting: boolean;
+
     @Prop()
     public error: boolean;
+
     @Prop()
     public valid: boolean;
+
     @Prop()
     public errorMessage: string;
+
     @Prop()
     public validMessage: string;
+
     @Prop()
     public helperMessage: string;
+
     @Prop({
         default: InputStateTagStyle.Default,
         validator: value =>
@@ -77,6 +84,7 @@ export class InputState extends ModulVue implements InputStateMixin {
             value === InputStateTagStyle.P
     })
     public tagStyle: string;
+
     @Prop()
     public readonly: boolean;
 
@@ -85,23 +93,23 @@ export class InputState extends ModulVue implements InputStateMixin {
     }
 
     public get isDisabled(): boolean {
-        return this.state === InputStateValue.Disabled;
+        return this.disabled;
     }
 
     public get isReadonly(): boolean {
-        return this.state === InputStateValue.Readonly;
+        return this.readonly;
     }
 
     public get isWaiting(): boolean {
-        return this.state === InputStateValue.Waiting;
+        return this.waiting;
     }
 
     public get hasError(): boolean {
-        return this.state === InputStateValue.Error;
+        return (this.hasErrorMessage || this.error) && !this.disabled;
     }
 
     public get isValid(): boolean {
-        return this.state === InputStateValue.Valid;
+        return (this.hasValidMessage || this.valid) && !this.hasError;
     }
 
     public get state(): InputStateValue {
@@ -129,19 +137,19 @@ export class InputState extends ModulVue implements InputStateMixin {
     }
 
     public get hasErrorMessage(): boolean {
-        return (!!this.errorMessage || this.errorMessage === ' ') && !this.disabled && !this.waiting;
+        return (!!this.errorMessage || this.errorMessage === ' ') && !this.disabled;
     }
 
     public get hasValidMessage(): boolean {
-        return (!!this.validMessage || this.validMessage === ' ') && !this.disabled && !this.waiting && !this.hasErrorMessage;
+        return (!!this.validMessage || this.validMessage === ' ') && !this.disabled && !this.hasErrorMessage;
     }
 
     public get hasHelperMessage(): boolean {
-        return (!!this.helperMessage || this.helperMessage === ' ') && !this.disabled && !this.waiting;
+        return (!!this.helperMessage || this.helperMessage === ' ') && !this.disabled;
     }
 
     public get hasValidationMessage(): boolean {
-        return (this.hasErrorMessage || this.hasValidMessage || this.hasHelperMessage) && this.active;
+        return (this.hasErrorMessage || this.hasValidMessage || this.hasHelperMessage) && !this.disabled;
     }
 
     public getInput(): HTMLElement | undefined {

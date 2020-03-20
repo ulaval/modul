@@ -165,11 +165,9 @@ export class MBaseSelect extends ModulVue {
 
     private scrollToFocused(): void {
         if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
-
             let container: HTMLElement = this.$refs.items;
             if (container) {
                 let element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
-
                 if (element) {
                     let top: number = element.offsetTop;
                     let bottom: number = element.offsetTop + element.offsetHeight;
@@ -239,11 +237,17 @@ export class MBaseSelect extends ModulVue {
     // enter : select the focused option and close popup
     // space : open the popup
     onKeydownDown($event: KeyboardEvent): void {
+        if (!this.internalOpen) {
+            this.internalOpen = true;
+        }
         this.focusNextItem();
         this.selectFocusedItem($event);
     }
 
     onKeydownUp($event: KeyboardEvent): void {
+        if (!this.internalOpen) {
+            this.internalOpen = true;
+        }
         this.focusPreviousItem();
         this.selectFocusedItem($event);
     }
@@ -261,6 +265,10 @@ export class MBaseSelect extends ModulVue {
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
+        if (!this.open) {
+            $event.preventDefault();
+            return;
+        }
         if (this.focusedIndex > -1) {
             this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
         }

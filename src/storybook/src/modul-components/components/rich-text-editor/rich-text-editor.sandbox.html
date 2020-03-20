@@ -1,5 +1,12 @@
 <div class="m-rich-text-editor-sandbox">
     <!-- Sandbox template -->
+
+    <m-rich-text-editor v-model="model"
+                        :label="'rich text with placeholder'"
+                        :waiting="true"
+                        :disabled="false"
+                        :readonly="false"></m-rich-text-editor>
+
     <h3>Froala Text Editor</h3>
     <h5 class="m-u--margin-bottom">fonctionne sans option spécifiée</h5>
     <div class="m-u--margin-bottom">
