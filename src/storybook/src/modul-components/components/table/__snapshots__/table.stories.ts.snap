@@ -138,8 +138,6 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class=""
@@ -736,8 +734,6 @@ exports[`Storyshots modul-components|m-table Custom columns class 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--custom-class"
@@ -852,8 +848,6 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td />
        
@@ -1244,8 +1238,6 @@ exports[`Storyshots modul-components|m-table Default 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class=""
@@ -1380,18 +1372,30 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
    
   <tbody>
     <tr
-      class="m-table__message"
+      class="m-table__placeholder"
     >
-      <td
-        class="m-table-sandbox__empty__cell"
-        colspan="3"
+      <div
+        class="m-table__placeholder-container"
+        style="position: absolute; width: 100%;"
       >
-        
+        <!---->
+         
+        <div
+          class="m-table__placeholder-message"
+        >
+          <td
+            class="m-table-sandbox__empty__cell"
+            colspan="3"
+          >
+            
                                 Empty table
                             
-      </td>
+          </td>
+           
+          <!---->
+        </div>
+      </div>
     </tr>
-     
   </tbody>
    
   <!---->
@@ -1441,17 +1445,25 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
    
   <tbody>
     <tr
-      class="m-table__message"
+      class="m-table__placeholder"
     >
-      <td
-        colspan="3"
+      <div
+        class="m-table__placeholder-container"
+        style="position: absolute; width: 100%;"
       >
-        <p>
-          Aucune donnée à afficher
-        </p>
-      </td>
+        <!---->
+         
+        <div
+          class="m-table__placeholder-message"
+        >
+          <p>
+            Aucune donnée à afficher
+          </p>
+           
+          <!---->
+        </div>
+      </div>
     </tr>
-     
   </tbody>
    
   <!---->
@@ -1500,13 +1512,12 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr
-      class="m-table__loading"
+      class="m-table__placeholder"
     >
-      <td
-        colspan="3"
+      <div
+        class="m-table__placeholder-container"
+        style="position: absolute; width: 100%;"
       >
         <div
           class="m-progress m--is-indeterminate m--is-in-progress"
@@ -1519,25 +1530,23 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
            
           <!---->
         </div>
-      </td>
-    </tr>
-     
-    <tr
-      class="m-table__message"
-    >
-      <td
-        colspan="3"
-      >
-        <p>
-          Chargement en cours
-        </p>
          
-        <p
-          class="m-table__message__precision"
+        <div
+          class="m-table__placeholder-message"
         >
-          Veuillez patienter svp.
-        </p>
-      </td>
+          <!---->
+           
+          <p>
+            Chargement en cours
+          </p>
+           
+          <p
+            class="m-table__placeholder-precision"
+          >
+            Veuillez patienter svp.
+          </p>
+        </div>
+      </div>
     </tr>
   </tbody>
    
@@ -1680,8 +1689,6 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-sortable"
@@ -1908,8 +1915,6 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-sortable"
@@ -2136,8 +2141,6 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-sortable m--is-text-align-center"
@@ -2271,8 +2274,6 @@ exports[`Storyshots modul-components|m-table Text align center 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-text-align-center"
@@ -2499,8 +2500,6 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-sortable m--is-text-align-left"
@@ -2634,8 +2633,6 @@ exports[`Storyshots modul-components|m-table Text align left 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-text-align-left"
@@ -2862,8 +2859,6 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-sortable m--is-text-align-right"
@@ -2997,8 +2992,6 @@ exports[`Storyshots modul-components|m-table Text align right 1`] = `
   </thead>
    
   <tbody>
-    <!---->
-     
     <tr>
       <td
         class="m--is-text-align-right"
@@ -3088,6 +3081,78 @@ exports[`Storyshots modul-components|m-table Text align right 1`] = `
    
   <!---->
 </table>
+`;
+
+exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
+<div
+  style="overflow: auto; width: 500px;"
+>
+  <table
+    cellspacing="0"
+    class="m-table m--is-skin-regular m--is-row-highlighted-on-hover"
+    style="width: 1000px;"
+  >
+    <thead>
+      <tr>
+        <th
+          class=""
+          scope="col"
+        >
+          <span
+            class="m-table__header-name"
+          >
+            Name
+          </span>
+        </th>
+        <th
+          class=""
+          scope="col"
+        >
+          <span
+            class="m-table__header-name"
+          >
+            Age
+          </span>
+        </th>
+        <th
+          class=""
+          scope="col"
+        >
+          <span
+            class="m-table__header-name"
+          >
+            Username
+          </span>
+        </th>
+      </tr>
+    </thead>
+     
+    <tbody>
+      <tr
+        class="m-table__placeholder"
+      >
+        <div
+          class="m-table__placeholder-container"
+          style="position: sticky; width: 500px;"
+        >
+          <!---->
+           
+          <div
+            class="m-table__placeholder-message"
+          >
+            <p>
+              Aucune donnée à afficher
+            </p>
+             
+            <!---->
+          </div>
+        </div>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-table skin="simple" 1`] = `

@@ -35,6 +35,7 @@ exports[`Storyshots modul-components|m-overlay Loading 1`] = `
 <div>
   <div
     class="m-overlay"
+    develop=""
     title="Titre"
   >
     <button
@@ -90,6 +91,18 @@ exports[`Storyshots modul-components|m-overlay Overflow Content 1`] = `
      
     <!---->
   </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-overlay Sandbox 1`] = `
+<div
+  class="m-overlay"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
 </div>
 `;
 
