@@ -186,6 +186,18 @@ exports[`Storyshots modul-components|m-modal padding-header="false" 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-modal sandbox 1`] = `
+<div
+  class="m-modal"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
+</div>
+`;
+
 exports[`Storyshots modul-components|m-modal title 1`] = `
 <div
   class="m-modal"
