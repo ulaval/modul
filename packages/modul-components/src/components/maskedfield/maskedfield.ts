@@ -5,6 +5,7 @@ import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
+import L10nPlugin from '../../utils/l10n/l10n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MASKEDFIELD_NAME } from '../component-names';
@@ -47,6 +48,7 @@ export class MMaskedfield extends ModulVue {
 
 const MaskedfieldPlugin: PluginObject<any> = {
     install(v): void {
+        v.use(L10nPlugin);
         v.use(InputStyle);
         v.use(ValidationMesagePlugin);
         v.component(MASKEDFIELD_NAME, MMaskedfield);

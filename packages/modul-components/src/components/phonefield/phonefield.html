@@ -31,19 +31,33 @@
                 </svg>
             </div>
 
-            <template slot="items"
-                      slot-scope="{item, index}">
-                <div class="m-phonefield__item-wrapper">
-                    <div class="m-phonefield__item-flag-wrapper">
-                        <svg width="27px"
-                             height="20px">
-                            <use :xlink:href="spriteId(item)"
-                                 aria-hidden="true"></use>
-                        </svg>
-                    </div>
-                    <span class="m-phonefield__item-name">{{ countries[index].name }}</span>
-                    <span class="m-phonefield__item-dialCode">+{{ countries[index].dialCode }}</span>
-                </div>
+            <template #outer-items="{item, index, props, handlers}">
+                <m-select-item v-if="item"
+                               :key="index"
+                               v-bind="props"
+                               v-on="handlers">
+                    <template>
+                        <div class="m-phonefield__item-wrapper">
+                            <div class="m-phonefield__item-flag-wrapper">
+                                <svg width="27px"
+                                     height="20px">
+                                    <use :xlink:href="spriteId(item)"
+                                         aria-hidden="true"></use>
+                                </svg>
+                            </div>
+                            <span class="m-phonefield__item-name">{{ countriesSorted[index].name }}</span>
+                            <span class="m-phonefield__item-dialCode">+{{ countriesSorted[index].dialCode }}</span>
+                        </div>
+                    </template>
+                </m-select-item>
+                <m-select-item v-else
+                               class="m-phonefield__item-separator"
+                               :key="index"
+                               :disabled="true">
+                    <template>
+                        <div></div>
+                    </template>
+                </m-select-item>
             </template>
 
         </m-select>

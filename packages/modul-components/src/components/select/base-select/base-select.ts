@@ -103,6 +103,21 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
+    getItemProps(item: any, index: number): any {
+        return {
+            value: item,
+            focused: index === this.focusedIndex,
+            selected: this.isSelected(item),
+            hideRadioButtonMobile: this.hideRadioButtonMobile
+        };
+    }
+
+    getItemHandlers(item: any, index: number): any {
+        return {
+            click: (event: Event): void => this.onSelectItem(item, index, event)
+        };
+    }
+
     public togglePopup(): void {
         if (this.active) {
             this.internalOpen = !this.internalOpen;
