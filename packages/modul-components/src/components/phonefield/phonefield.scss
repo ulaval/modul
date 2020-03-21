@@ -55,6 +55,18 @@
         display: flex;
         align-items: left;
         width: 300px;
+        position: relative;
+    }
+
+    &__item-separator {
+        content: "";
+        display: block;
+        width: calc(100% - #{$m-spacing--xxl});
+        position: relative;
+        background-color: $m-color--grey-lighter;
+        height: 2px;
+        padding: 0;
+        margin: 0 0 0 $m-spacing--m;
     }
 
     &__flag {
