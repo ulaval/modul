@@ -4,7 +4,7 @@ import { renderComponent } from '../../../tests/helpers/render';
 import { MColumnSortDirection, MColumnTable, MTable } from './table';
 
 let slots: any = {};
-const SLOT_EMPTY: string = '<td>EMPTY</td>';
+const SLOT_EMPTY: string = '<p>EMPTY</p>';
 const SLOT_HEADER: string = '<thead><tr><th>SLOT THEAD</th></tr></thead>';
 const SLOT_TH: string = 'SLOT TH';
 const SLOT_BODY: string = '<tbody><tr><td>SLOT BODY</td></tr></tbody>';

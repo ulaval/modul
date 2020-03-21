@@ -12,12 +12,14 @@ export const defaultStory = () => ({
             this.$log.log('$emit(\'close\') popper');
         }
     },
-    template: `<m-popper @close="onClose">
+    template: `<div><m-popper @close="onClose">
         <m-button slot="trigger">Open popper</m-button>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore neque aut enim adipisci laudantium atque, perferendis quisquam possimus suscipit, nulla debitis temporibus. Sit nulla corrupti facere amet, reiciendis minus natus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore neque aut enim adipisci laudantium atque, perferendis quisquam possimus suscipit, nulla debitis temporibus. Sit nulla corrupti facere amet, reiciendis minus natus.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore neque aut enim adipisci laudantium atque, perferendis quisquam possimus suscipit, nulla debitis temporibus. Sit nulla corrupti facere amet, reiciendis minus natus.</p>
-    </m-popper>`
+    </m-popper>
+    <m-popup> <m-button slot="trigger">Open popper</m-button>dddd</m-popup>
+    </div>`
 });
 
 
