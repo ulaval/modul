@@ -11,21 +11,21 @@ exports[`Storyshots modul-components|m-overlay Custom Footer 1`] = `
       type="button"
     >
       <!---->
-
+       
       <!---->
-
+       
       <span
         class="m-button__text"
       >
-        Open
+        Open 
         <!---->
       </span>
-
+       
       <!---->
-
+       
       <!---->
     </button>
-
+     
     <!---->
   </div>
 </div>
@@ -42,21 +42,52 @@ exports[`Storyshots modul-components|m-overlay Loading 1`] = `
       type="button"
     >
       <!---->
-
+       
       <!---->
-
+       
       <span
         class="m-button__text"
       >
-        Open
+        Open 
         <!---->
       </span>
-
+       
       <!---->
-
+       
       <!---->
     </button>
+     
+    <!---->
+  </div>
+</div>
+`;
 
+exports[`Storyshots modul-components|m-overlay Overflow Content 1`] = `
+<div>
+  <div
+    class="m-overlay"
+    title="Title"
+  >
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        Open 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+     
     <!---->
   </div>
 </div>
@@ -73,52 +104,21 @@ exports[`Storyshots modul-components|m-overlay default 1`] = `
       type="button"
     >
       <!---->
-
+       
       <!---->
-
+       
       <span
         class="m-button__text"
       >
-        Open
+        Open 
         <!---->
       </span>
-
+       
       <!---->
-
-      <!---->
-    </button>
-
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-overlay default 1`] = `
-<div>
-  <div
-    class="m-overlay"
-    title="Title"
-  >
-    <button
-      class="m-button m--is-skin-primary"
-      type="button"
-    >
-      <!---->
-
-      <!---->
-
-      <span
-        class="m-button__text"
-      >
-        Open
-        <!---->
-      </span>
-
-      <!---->
-
+       
       <!---->
     </button>
-
+     
     <!---->
   </div>
 </div>

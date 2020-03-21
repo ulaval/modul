@@ -8,11 +8,11 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
     class="m-accordion-group__header m--no-title"
   >
     <!---->
-
+     
     <div
       class="m-accordion-group__secondary-content"
     >
-
+       
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -23,7 +23,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -33,10 +33,10 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
               Tout ouvrir
             </span>
           </span>
-
+           
           <!---->
         </a>
-           |  
+           |   
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -44,7 +44,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -54,13 +54,13 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
               Tout fermer
             </span>
           </span>
-
+           
           <!---->
         </a>
       </div>
     </div>
   </div>
-
+   
   <div
     class="m-accordion-group__body"
   >
@@ -81,23 +81,23 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           <h3>
             An Accordion Title
           </h3>
-
+           
           <!---->
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour cacher le contenu
           </span>
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
           title="Cliquer pour cacher le contenu"
         />
       </div>
-
+       
       <div
         aria-labelledby="1"
         class="m-accordion__body-wrap"
@@ -111,7 +111,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
         </div>
       </div>
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
@@ -129,23 +129,23 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           <h3>
             An Accordion Title
           </h3>
-
+           
           <!---->
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour cacher le contenu
           </span>
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
           title="Cliquer pour cacher le contenu"
         />
       </div>
-
+       
       <div
         aria-labelledby="2"
         class="m-accordion__body-wrap"
@@ -159,7 +159,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
         </div>
       </div>
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
@@ -177,23 +177,23 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           <h3>
             An Accordion Title
           </h3>
-
+           
           <!---->
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour cacher le contenu
           </span>
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
           title="Cliquer pour cacher le contenu"
         />
       </div>
-
+       
       <div
         aria-labelledby="3"
         class="m-accordion__body-wrap"
@@ -225,7 +225,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
         An Accordion Group Title
       </h2>
     </div>
-
+     
     <div
       class="m-accordion-group__secondary-content"
     >
@@ -242,22 +242,22 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
           width="22px"
         >
           <!---->
-
+           
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-
+         
         <span
           class="m-link__text"
         >
           Add content
         </span>
-
+         
         <!---->
       </a>
-
+       
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -268,7 +268,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -278,10 +278,10 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
               Tout ouvrir
             </span>
           </span>
-
+           
           <!---->
         </a>
-           |  
+           |   
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -289,7 +289,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -299,17 +299,17 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
               Tout fermer
             </span>
           </span>
-
+           
           <!---->
         </a>
       </div>
     </div>
   </div>
-
+   
   <div
     class="m-accordion-group__body"
   >
-
+      
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -326,26 +326,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -362,26 +362,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -398,23 +398,23 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
   </div>
@@ -429,14 +429,14 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
     class="m-accordion-group__header m--no-title m--has-secondary-content"
   >
     <!---->
-
+     
     <div
       class="m-accordion-group__secondary-content"
     >
       <h3>
         An Accordion Group Title
       </h3>
-
+       
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -447,7 +447,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -457,10 +457,10 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
               Tout ouvrir
             </span>
           </span>
-
+           
           <!---->
         </a>
-           |  
+           |   
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -468,7 +468,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -478,17 +478,17 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
               Tout fermer
             </span>
           </span>
-
+           
           <!---->
         </a>
       </div>
     </div>
   </div>
-
+   
   <div
     class="m-accordion-group__body"
   >
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -505,26 +505,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -541,26 +541,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -577,23 +577,23 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
   </div>
@@ -608,14 +608,14 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
     class="m-accordion-group__header m--no-title m--has-secondary-content m--is-toggle-link-left"
   >
     <!---->
-
+     
     <div
       class="m-accordion-group__secondary-content"
     >
       <h3>
         An Accordion Group Title
       </h3>
-
+       
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -626,7 +626,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -636,10 +636,10 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
               Tout ouvrir
             </span>
           </span>
-
+           
           <!---->
         </a>
-           |  
+           |   
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -647,7 +647,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -657,17 +657,17 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
               Tout fermer
             </span>
           </span>
-
+           
           <!---->
         </a>
       </div>
     </div>
   </div>
-
+   
   <div
     class="m-accordion-group__body"
   >
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -684,26 +684,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -720,26 +720,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -756,23 +756,23 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
   </div>
@@ -793,14 +793,14 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
         An Accordion Group Title
       </h2>
     </div>
-
+     
     <div
       class="m-accordion-group__secondary-content"
     >
       <h3>
         An Accordion Group Title
       </h3>
-
+       
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -811,7 +811,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -821,10 +821,10 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
               Tout ouvrir
             </span>
           </span>
-
+           
           <!---->
         </a>
-           |  
+           |   
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -832,7 +832,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
           tabindex="0"
         >
           <!---->
-
+           
           <span
             class="m-link__text"
           >
@@ -842,17 +842,17 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
               Tout fermer
             </span>
           </span>
-
+           
           <!---->
         </a>
       </div>
     </div>
   </div>
-
+   
   <div
     class="m-accordion-group__body"
   >
-
+      
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -869,26 +869,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -905,26 +905,26 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
-
+     
     <article
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -941,23 +941,23 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
           <h3>
             An Accordion Title
           </h3>
-
+           
           <span
             class="m-i18n m-accordion__hidden"
           >
             Cliquer pour afficher le contenu
           </span>
-
+           
           <!---->
         </div>
-
+         
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
           title="Cliquer pour afficher le contenu"
         />
       </div>
-
+       
       <!---->
     </article>
   </div>
