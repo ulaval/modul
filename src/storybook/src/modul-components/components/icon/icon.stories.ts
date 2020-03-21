@@ -3,8 +3,6 @@ import { storiesOf } from '@storybook/vue';
 import { ICON_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
-
 const ICONLIST_SHORTHAND: {} = {
     'profile': 'profile',
     'information': 'information',
@@ -13,7 +11,8 @@ const ICONLIST_SHORTHAND: {} = {
     'error': 'error',
     'calendar': 'calendar',
     'hint': 'hint',
-    'clock': 'clock'
+    'clock': 'clock',
+    'lock': 'lock'
 };
 
 const ICONLIST_LONGHAND: {} = {
@@ -24,7 +23,8 @@ const ICONLIST_LONGHAND: {} = {
     'm-svg__error': 'm-svg__error',
     'm-svg__calendar': 'm-svg__calendar',
     'm-svg__hint': 'm-svg__hint',
-    'm-svg__clock': 'm-svg__clock'
+    'm-svg__clock': 'm-svg__clock',
+    'm-svg__lock': 'm-svg__lock'
 };
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
