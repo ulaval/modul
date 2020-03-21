@@ -116,7 +116,7 @@ export const sandbox = () => ({
 
 export const overflowContent = () => ({
     template: `<div>
-            <${OVERLAY_NAME} title="Title" @save="save" @cancel="cancel">
+            <${OVERLAY_NAME} title="Title" >
                 <m-button slot="trigger">Open</m-button>
                 <h2 slot="header"
                 style="margin:0;">Title</h2>
@@ -181,7 +181,7 @@ export const customFooter = () => ({
         }
     },
     template: `<div>
-    <${OVERLAY_NAME} title="Title" @save="save" @cancel="cancel">
+    <${OVERLAY_NAME} title="Title" >
         <m-button slot="trigger">Open</m-button>
         <h2 slot="header" style="margin:0;">Custom footer</h2>
         <p>
