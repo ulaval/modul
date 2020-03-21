@@ -82,6 +82,7 @@ export const PHOTO_EDITOR_NAME: string = 'm-photo-editor';
 export const PLUS_NAME: string = 'm-plus';
 export const POPPER_NAME: string = 'm-popper';
 export const POPUP_NAME: string = 'm-popup';
+export const POSTALCODEFIELD_NAME: string = 'm-postalcodefield';
 export const POWERED_BY_GOOGLE: string = 'm-powered-by-google';
 export const PROGRESS_NAME: string = 'm-progress';
 export const RADIO_NAME: string = 'm-radio';

@@ -24,6 +24,7 @@ export interface InternalCleaveOptions {
     time?: boolean;
     timePattern?: ReadonlyArray<string>;
     delimiter?: string;
+    delimiterLazyShow?: boolean;
     uppercase?: boolean;
 }
 
