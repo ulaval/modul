@@ -44,6 +44,8 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../components/multi-select/multi-select.lang.fr.json'),
                 require('../components/overlay/overlay.lang.fr.json'),
                 require('../components/option/option.lang.fr.json'),
+                require('../components/organize-table-columns-modal/organize-table-columns-modal.lang.fr.json'),
+                require('../components/organize-table-columns-modal/organize-table-columns/organize-table-columns.lang.fr.json'),
                 require('../components/pagination/pagination.lang.fr.json'),
                 require('../components/phonefield/phonefield.lang.fr.json'),
                 require('../components/photo-editor/photo-editor.lang.fr.json'),
