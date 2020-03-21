@@ -162,13 +162,13 @@ export const loading = () => ({
         }
     },
     template: `<div>
-                    <${OVERLAY_NAME} title="Titre"
+                <${OVERLAY_NAME} title="Titre"develop
                     :waiting="waiting">
-                <m-button slot="trigger">Open</m-button>
-                <h2 slot="header"
-                style="margin: 0;">Title</h2>
+                    <m-button slot="trigger">Open</m-button>
+                    <h2 slot="header"
+                    style="margin: 0;">Title</h2>
 
-                <m-button @click="toggleWaiting">Put waiting mode</m-button>
+                    <m-button @click="toggleWaiting">Put waiting mode</m-button>
 
                 </${OVERLAY_NAME}>
         </div>`

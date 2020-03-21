@@ -1,3 +1,4 @@
+import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import { TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MColumnSortDirection, MColumnTable, MColumnTextAlign } from '@ulaval/modul-components/dist/components/table/table';
@@ -321,7 +322,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                 default: []
             }
         },
-        template: `<m-table :columns="columns" :rows="emptyRows" width="100%">
+        template: `<m-table :columns="columns" :rows="rows" width="100%">
                         <template slot="empty">
                             <td class="m-table-sandbox__empty__cell"
                                 :colspan="columns.length">
@@ -343,7 +344,38 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                 default: []
             }
         },
-        template: `<m-table :columns="columns" :rows="emptyRows" :loading="true" width="100%"></m-table>`
+        template: `<m-table :columns="columns" :rows="rows" :loading="true" width="100%"></m-table>`
+    }))
+    .add('Width placeholer', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name', dataProp: 'name' },
+                    { id: 'age', title: 'Age', dataProp: 'age' },
+                    { id: 'username', title: 'Username', dataProp: 'username' }
+                ]
+            },
+            rows: {
+                default: []
+            },
+            widthPlaceholder: {
+                default: text('Prop width-placeholder', '500px')
+            },
+            divWidth: {
+                default: text('Parent div width', '500px')
+            },
+            tableWidth: {
+                default: text('Table width', '1000px')
+            }
+        },
+        template: `<div style="overflow: auto;"
+        :style="{ width: divWidth }"
+        >
+            <m-table :columns="columns"
+                :rows="rows"
+                :style="{ width: tableWidth }"
+                :width-placeholder="widthPlaceholder"></m-table>
+        </div>`
     }))
     .add('Sortable', () => ({
         data: function(): any {

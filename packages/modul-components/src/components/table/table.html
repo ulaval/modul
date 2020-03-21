@@ -46,34 +46,28 @@
             </tr>
         </thead>
     </slot>
-
     <slot name="body">
         <tbody>
-            <tr v-if="isEmpty"
-                class="m-table__message">
-                <slot name="empty">
-                    <td :colspan="columnsInternal.length">
-                        <p>{{ i18nEmptyTable }}</p>
-                    </td>
-                </slot>
-            </tr>
-            <template v-if="loading">
-                <tr class="m-table__loading">
-                    <td :colspan="columnsInternal.length">
-                        <m-progress v-if="loading"
-                                    :indeterminate="true"
-                                    :border-radius="false"></m-progress>
-                    </td>
-                </tr>
-                <tr class="m-table__message">
-                    <slot name="loading">
-                        <td :colspan="columnsInternal.length">
+            <tr class="m-table__placeholder"
+                v-if="isEmpty || loading">
+                <div class="m-table__placeholder-container"
+                     :style="{position: placeholderPositionType, width: widthPlaceholder}">
+                    <m-progress v-if="loading"
+                                :indeterminate="true"
+                                :border-radius="false"></m-progress>
+                    <div class="m-table__placeholder-message">
+                        <slot name="empty"
+                              v-if="isEmpty">
+                            <p>{{ i18nEmptyTable }}</p>
+                        </slot>
+                        <slot name="loading"
+                              v-if="loading">
                             <p>{{ i18nLoading }}</p>
-                            <p class="m-table__message__precision">{{ i18nPleaseWait }}</p>
-                        </td>
-                    </slot>
-                </tr>
-            </template>
+                            <p class="m-table__placeholder-precision">{{ i18nPleaseWait }}</p>
+                        </slot>
+                    </div>
+                </div>
+            </tr>
             <tr v-else
                 v-for="(row, index) in rows"
                 :key="index">
