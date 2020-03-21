@@ -127,7 +127,8 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
         class="m-phonefield__wrapper"
       >
         <div
-          class="m-base-select m-phonefield__country"
+          class="m-base-select m-select-virtual-scroll m-phonefield__country"
+          virtualscrollitemheight="52"
         >
           <div
             class="m-base-select__popup"
@@ -350,7 +351,8 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
     class="m-phonefield__wrapper"
   >
     <div
-      class="m-base-select m-phonefield__country"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
@@ -565,7 +567,8 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
     class="m-phonefield__wrapper"
   >
     <div
-      class="m-base-select m-phonefield__country"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
@@ -778,7 +781,8 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
     class="m-phonefield__wrapper"
   >
     <div
-      class="m-base-select m-phonefield__country"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
@@ -1014,7 +1018,8 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
     class="m-phonefield__wrapper"
   >
     <div
-      class="m-base-select m-phonefield__country"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
@@ -1227,7 +1232,8 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
     class="m-phonefield__wrapper"
   >
     <div
-      class="m-base-select m-phonefield__country"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
@@ -1440,7 +1446,8 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
     class="m-phonefield__wrapper"
   >
     <div
-      class="m-base-select m-phonefield__country"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"

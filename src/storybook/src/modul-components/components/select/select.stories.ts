@@ -55,7 +55,7 @@ export const defaultStory = () => ({
     data: () => ({
         options: OPTIONS
     }),
-    template: `<m-select :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly" ></m-select>`
+    template: `<m-select :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly"  @open="open" @close="close" @focus="focus" @select-item="select" @blur="blur"></m-select>`
 });
 
 defaultStory.story = {
@@ -200,13 +200,6 @@ export const disabledItemSelectedWithLabelClearable = () => ({
     template: `<m-select :options="options" :disabled="true" label="Fruits" :clearable="true" v-model="model" ></m-select>`
 });
 
-export const virtualScroll = () => ({
-    data: () => ({
-        options: buildLongList()
-    }),
-    template: `<m-select :options="options" label="Longlist" :virtual-scroll="true" ></m-select>`
-});
-
 export const withOuterItemsSlot = () => ({
     data: () => ({
         model: 'banane',
@@ -216,14 +209,16 @@ export const withOuterItemsSlot = () => ({
         MSelectItem: MSelectItem
     },
     template: `<m-select :options="options" v-model="model">
-                <template #outer-items="{item, index, props, handlers}">
-                    <m-select-item v-if="item !== 'patate'" v-bind="props" v-on="handlers">
-                        {{ item  }}
-                    </m-select-item>
-                    <m-select-item v-else
-                                    :disabled="true">
-                        {{ item  }}
-                    </m-select-item>
+                <template #outer-items="{items, getItemProps, getItemHandlers}">
+                    <template v-for="(item, index) of items">
+                        <m-select-item v-if="item !== 'patate'" v-bind="getItemProps(item, index)" v-on="getItemHandlers(item, index)">
+                            {{ item  }}
+                        </m-select-item>
+                        <m-select-item v-else
+                                        :disabled="true">
+                            {{ item  }}
+                        </m-select-item>
+                    </template>
                 </template>
             </m-select>`
 });

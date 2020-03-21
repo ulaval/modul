@@ -117,4 +117,5 @@ export const TYPEAHEAD_NAME: string = 'm-typeahead';
 export const VALIDATION_MESSAGE_NAME: string = 'm-validation-message';
 export const INTEGERFIELD_NAME: string = 'm-integerfield';
 export const SELECT_NAME: string = 'm-select';
+export const SELECT_VIRTUAL_SCROLL_NAME: string = 'm-select-virtual-scroll';
 

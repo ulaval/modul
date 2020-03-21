@@ -5,7 +5,6 @@
                :open.sync="open"
                :input-max-width="inputMaxWidth"
                :virtual-scroll="virtualScroll"
-               :virtual-scroll-item-height="virtualScrollItemHeight"
                @open="onOpen"
                @close="onClose"
                @select-item="onSelect">
@@ -90,12 +89,14 @@
         </div>
     </template>
 
-    <template v-slot:outer-items="{item, index, props, handlers}">
+
+    <template #outer-items="{items, getItemProps, getItemHandlers}">
         <slot name="outer-items"
-              :index="index"
-              :item="item"
-              :props="props"
-              :handlers="handlers">
+              :items="items"
+              :get-item-props="getItemProps"
+              :get-item-handlers="getItemHandlers">
+
+
             <template v-slot:items="{item , index }">
 
                 <slot name="items"

@@ -36,49 +36,30 @@
             </slot>
         </template>
 
+
         <ul :id="ariaControls"
-            :class="{ 'm--is-virutalScroll': virtualScroll }"
             class="m-base-select__list"
             ref="items"
             :aria-labelledby="controlId"
             aria-live="polite"
+            :class="{ 'm--is-virutalScroll': virtualScroll }"
             :style="{ minWidth: inputMaxWidth }">
-            <template v-if="virtualScroll">
-                <virtual-list :size="virtualScrollItemHeight"
-                              :remain="4"
-                              class="m-base-select__virtuallist">
-                    <template v-for="(item, index) of items">
-                        <slot name="outer-items"
-                              :item="item"
-                              :index="index"
-                              :props="getItemProps(item, index)"
-                              :handlers="getItemHandlers(item, index)">
-                            <m-select-item :key="index"
-                                           v-bind="getItemProps(item, index)"
-                                           v-on="getItemHandlers(item, index)">
-                                <slot name="items"
-                                      :item="item"
-                                      :index="index"><span v-html="item"></span></slot>
-                            </m-select-item>
-                        </slot>
-                    </template>
-                </virtual-list>
-            </template>
-            <template v-else>
+
+            <slot name="outer-items"
+                  :items="items"
+                  :get-item-props="getItemProps"
+                  :get-item-handlers="getItemHandlers">
                 <template v-for="(item, index) of items">
-                    <slot name="outer-items"
-                          :item="item"
-                          :props="getItemProps(item, index)"
-                          :handlers="getItemHandlers(item, index)">
-                        <m-select-item v-bind="getItemProps(item, index)"
-                                       v-on="getItemHandlers(item, index)">
-                            <slot name="items"
-                                  :item="item"
-                                  :index="index"><span v-html="item"></span></slot>
-                        </m-select-item>
-                    </slot>
+                    <m-select-item v-bind="getItemProps(item, index)"
+                                   v-on="getItemHandlers(item, index)">
+                        <slot name="items"
+                              :item="item"
+                              :index="index"><span v-html="item"></span></slot>
+                    </m-select-item>
+
                 </template>
-            </template>
+            </slot>
+
         </ul>
     </m-popup>
 </div>

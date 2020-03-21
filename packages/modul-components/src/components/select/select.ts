@@ -47,9 +47,6 @@ export class MSelect extends ModulVue {
     @Prop({ default: false })
     public virtualScroll: boolean;
 
-    @Prop({ default: 52 }) // 208px / 4 -> base-select.scss
-    public virtualScrollItemHeight: string;
-
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
