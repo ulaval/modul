@@ -7,7 +7,6 @@ import { TABLE_NAME } from '../component-names';
 import ProgressPlugin from '../progress/progress';
 import WithRender from './table.html?style=./table.scss';
 
-
 export enum MTableSkin {
     Regular = 'regular',
     Simple = 'simple'

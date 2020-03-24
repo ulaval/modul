@@ -95,7 +95,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
         scope="col"
         style="width: 16px;"
       >
-        <span
+        <div
           class="m-table__header-name"
         />
       </th>
@@ -103,11 +103,11 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class=""
@@ -119,18 +119,18 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
         style="width: 33px;"
       >
-        <span
+        <div
           class="m-table__header-name"
         />
       </th>
@@ -713,22 +713,22 @@ exports[`Storyshots modul-components|m-table Custom columns class 1`] = `
         class="m--custom-class"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name, Username
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
         style="width: 80px;"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -801,7 +801,7 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
         scope="col"
         style="width: 16px;"
       >
-        <span
+        <div
           class="m-table__header-name"
         />
       </th>
@@ -809,38 +809,38 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
         style="width: 33px;"
       >
-        <span
+        <div
           class="m-table__header-name"
         />
       </th>
@@ -1208,31 +1208,31 @@ exports[`Storyshots modul-components|m-table Default 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -1341,31 +1341,31 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -1414,31 +1414,31 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -1482,31 +1482,31 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -1569,14 +1569,14 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Name
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -1600,7 +1600,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -1610,14 +1610,14 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Age
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
@@ -1641,7 +1641,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -1651,14 +1651,14 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Username
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -1682,7 +1682,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
     </tr>
@@ -1780,6 +1780,183 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
 </table>
 `;
 
+exports[`Storyshots modul-components|m-table Sortable width custom header cell 1`] = `
+<table
+  cellspacing="0"
+  class="m-table m--is-skin-regular m--is-row-highlighted-on-hover"
+  width="100%"
+>
+  <thead>
+    <tr>
+      <th
+        class="m--is-sortable"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <div
+            class="m-table__sortable-icon-wrap"
+          >
+            NAME (custom) 
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <div
+            class="m-table__sortable-icon-wrap"
+          >
+            AGE (custom) 
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </th>
+      <th
+        class="m--is-sortable"
+        scope="col"
+      >
+        <div
+          class="m-table__header-wrap"
+        >
+          <div
+            class="m-table__sortable-icon-wrap"
+          >
+            USERNAME (custom) 
+            <button
+              class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
+              style="width: 14px; height: 14px;"
+              title="Trier la colonne"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+               
+              <!---->
+            </button>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+   
+  <tbody>
+    <tr>
+      <td
+        class="m--is-sortable"
+      >
+        Jonathan
+      </td>
+      <td
+        class="m--is-sortable"
+      >
+        25
+      </td>
+      <td
+        class="m--is-sortable"
+      >
+        jonathan.25
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable"
+      >
+        Carl
+      </td>
+      <td
+        class="m--is-sortable"
+      >
+        30
+      </td>
+      <td
+        class="m--is-sortable"
+      >
+        carl.30
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="m--is-sortable"
+      >
+        Jacob
+      </td>
+      <td
+        class="m--is-sortable"
+      >
+        26
+      </td>
+      <td
+        class="m--is-sortable"
+      >
+        jacob.26
+      </td>
+    </tr>
+  </tbody>
+   
+  <!---->
+</table>
+`;
+
 exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
 <table
   cellspacing="0"
@@ -1795,14 +1972,14 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Name
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -1826,7 +2003,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -1836,14 +2013,14 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Age
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
@@ -1867,7 +2044,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -1877,14 +2054,14 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Username
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -1908,7 +2085,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
     </tr>
@@ -2021,14 +2198,14 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Name
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2052,7 +2229,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -2062,14 +2239,14 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Age
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2093,7 +2270,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -2103,14 +2280,14 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Username
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2134,7 +2311,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
     </tr>
@@ -2244,31 +2421,31 @@ exports[`Storyshots modul-components|m-table Text align center 1`] = `
         class="m--is-text-align-center"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class="m--is-text-align-center"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class="m--is-text-align-center"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -2380,14 +2557,14 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Name
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2411,7 +2588,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -2421,14 +2598,14 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Age
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2452,7 +2629,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -2462,14 +2639,14 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Username
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2493,7 +2670,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
     </tr>
@@ -2603,31 +2780,31 @@ exports[`Storyshots modul-components|m-table Text align left 1`] = `
         class="m--is-text-align-left"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class="m--is-text-align-left"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class="m--is-text-align-left"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -2739,14 +2916,14 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Name
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2770,7 +2947,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -2780,14 +2957,14 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Age
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2811,7 +2988,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
       <th
@@ -2821,14 +2998,14 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
         <div
           class="m-table__header-wrap"
         >
-          <span
+          <div
             class="m-table__sortable-icon-wrap"
           >
-            <span
+            <div
               class="m-table__header-name"
             >
               Username
-            </span>
+            </div>
              
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
@@ -2852,7 +3029,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
                
               <!---->
             </button>
-          </span>
+          </div>
         </div>
       </th>
     </tr>
@@ -2962,31 +3139,31 @@ exports[`Storyshots modul-components|m-table Text align right 1`] = `
         class="m--is-text-align-right"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name
-        </span>
+        </div>
       </th>
       <th
         class="m--is-text-align-right"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
       <th
         class="m--is-text-align-right"
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Username
-        </span>
+        </div>
       </th>
     </tr>
   </thead>
@@ -3098,31 +3275,31 @@ exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
           class=""
           scope="col"
         >
-          <span
+          <div
             class="m-table__header-name"
           >
             Name
-          </span>
+          </div>
         </th>
         <th
           class=""
           scope="col"
         >
-          <span
+          <div
             class="m-table__header-name"
           >
             Age
-          </span>
+          </div>
         </th>
         <th
           class=""
           scope="col"
         >
-          <span
+          <div
             class="m-table__header-name"
           >
             Username
-          </span>
+          </div>
         </th>
       </tr>
     </thead>
@@ -3167,22 +3344,22 @@ exports[`Storyshots modul-components|m-table skin="simple" 1`] = `
         class=""
         scope="col"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Name, Username
-        </span>
+        </div>
       </th>
       <th
         class=""
         scope="col"
         style="width: 80px;"
       >
-        <span
+        <div
           class="m-table__header-name"
         >
           Age
-        </span>
+        </div>
       </th>
     </tr>
   </thead>

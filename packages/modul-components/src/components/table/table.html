@@ -15,34 +15,33 @@
                     :key="column.id"
                     @click="sort(column)"
                     scope="col">
-                    <slot :name="'header.' + column.dataProp"
-                          :column="column">
-                        <div v-if="column.sortable"
-                             class="m-table__header-wrap">
-                            <span class="m-table__sortable-icon-wrap">
-                                <span class="m-table__header-name"
-                                      v-html="column.title"></span>
-                                <m-icon-button v-if="column.sortable"
-                                               class="m-table__sortable-icon"
-                                               :class="[getColumnSortDirectionClass(column)]"
-                                               :disabled="loading"
-                                               :icon-name="getColumnSortIcon(column)"
-                                               skin="bold"
-                                               button-size="14px"
-                                               icon-size="12px"
-                                               :title="i18nSort"
-                                               @click.stop="sort(column)"></m-icon-button>
-                            </span>
-
+                    <div v-if="column.sortable"
+                         class="m-table__header-wrap">
+                        <div class="m-table__sortable-icon-wrap">
+                            <slot :name="'header.' + column.dataProp"
+                                  :column="column">
+                                <div class="m-table__header-name"
+                                     v-html="column.title"></div>
+                            </slot>
+                            <m-icon-button v-if="column.sortable"
+                                           class="m-table__sortable-icon"
+                                           :class="[getColumnSortDirectionClass(column)]"
+                                           :disabled="loading"
+                                           :icon-name="getColumnSortIcon(column)"
+                                           skin="bold"
+                                           button-size="14px"
+                                           icon-size="12px"
+                                           :title="i18nSort"
+                                           @click.stop="sort(column)" />
                         </div>
-                        <template v-else>
-                            <span class="m-table__header-name"
-                                  v-html="column.title"></span>
-                        </template>
+                    </div>
+                    <slot v-else
+                          :name="'header.' + column.dataProp"
+                          :column="column">
+                        <div class="m-table__header-name"
+                             v-html="column.title"></div>
                     </slot>
-
                 </th>
-
             </tr>
         </thead>
     </slot>
@@ -54,7 +53,7 @@
                      :style="{position: placeholderPositionType, width: widthPlaceholder}">
                     <m-progress v-if="loading"
                                 :indeterminate="true"
-                                :border-radius="false"></m-progress>
+                                :border-radius="false" />
                     <div class="m-table__placeholder-message">
                         <slot name="empty"
                               v-if="isEmpty">
