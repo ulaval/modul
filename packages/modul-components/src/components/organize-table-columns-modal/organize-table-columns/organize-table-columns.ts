@@ -2,14 +2,15 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import SortablePlugin, { MSortEvent } from '../../../directives/sortable/sortable';
-import { MColumnTable } from '../../../lib';
 import { ModulVue } from '../../../utils/vue/vue';
 import ButtonPlugin from '../../button/button';
 import { ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
 import IconButtonPlugin from '../../icon-button/icon-button';
 import IconPlugin from '../../icon/icon';
 import ListItemPlugin from '../../list-item/list-item';
+import { MColumnTable } from '../../table/table';
 import WithRender from './organize-table-columns.html?style=./organize-table-columns.scss';
+
 
 @WithRender
 @Component
