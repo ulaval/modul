@@ -21,7 +21,7 @@ pipeline {
     }
 
     environment {
-        NAME = branch.toLowerCase().replace('/', '-').replace('_', '-').take(127)
+        NAME = branch.toLowerCase().replace('/', '-').replace('_', '-').take(57)
         DOCKER_REPOSITORY_NAME = 'ulaval/modul'
     }
 
