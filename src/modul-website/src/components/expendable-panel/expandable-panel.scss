@@ -95,7 +95,8 @@ $w-content-max-width: $mw-max-width;
         }
     }
 
-    &__beta {
+    &__beta,
+    &__new {
         display: inline;
         vertical-align: middle;
     }

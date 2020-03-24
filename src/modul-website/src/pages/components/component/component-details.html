@@ -7,6 +7,10 @@
                   class="modul-logo__beta mw-component-details__beta">
                 <m-i18n k="website:beta"></m-i18n>
             </span>
+            <span v-if="component.new"
+                  class="modul-logo__new mw-component-details__new">
+                <m-i18n k="website:new"></m-i18n>
+            </span>
         </h1>
         <!-- <button @click="toggleOpenCodePreview" v-if="component.preview" class="modul-component-details__title__button">{{openCloseLabel}}
         </button> -->
