@@ -2,7 +2,9 @@
 import { MWExpandablePanel } from '@/components/expendable-panel/expandable-panel';
 import { ModulWebsite } from '@/components/modul-website';
 import { ComponentMeta } from '@/content/components.meta.loader';
-import _ from 'lodash';
+import deburr from 'lodash/deburr';
+import findIndex from 'lodash/findIndex';
+import sortBy from 'lodash/sortBy';
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
@@ -27,7 +29,7 @@ export class MWComponentsPage extends ModulWebsite {
     fullPath: string;
 
     get componentCategoryIds(): string[] {
-        return _.sortBy(this.$meta.categories, name => _.deburr(this.$i18n.translate(`categories:${name}`)));
+        return sortBy(this.$meta.categories, name => deburr(this.$i18n.translate(`categories:${name}`)));
     }
 
     get componentsNavigationOrder(): ComponentMeta[] {
@@ -41,7 +43,7 @@ export class MWComponentsPage extends ModulWebsite {
     }
 
     get currentComponentNavigationIndex(): number {
-        return _.findIndex(this.componentsNavigationOrder, (c: ComponentMeta) => {
+        return findIndex(this.componentsNavigationOrder, (c: ComponentMeta) => {
             return this.component.name === c.name;
         });
     }

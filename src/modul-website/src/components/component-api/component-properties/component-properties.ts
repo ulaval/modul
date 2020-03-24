@@ -1,5 +1,7 @@
 import { MColumnTable, MColumnTextAlign } from '@ulaval/modul-components/dist/components/table/table';
-import * as _ from 'lodash';
+import kebabCase from 'lodash/kebabCase';
+import replace from 'lodash/replace';
+import sortBy from 'lodash/sortBy';
 import { MetaComponent, MetaProps } from 'meta-generator/dist';
 import { Component, Prop } from 'vue-property-decorator';
 import { ModulWebsite } from '../../modul-website';
@@ -40,7 +42,7 @@ export class MComponentProperties extends ModulWebsite {
 
         if (this.componentMeta.mixins && this.componentMeta.mixins.length > 0) {
             this.componentMeta.mixins.forEach(mixinName => {
-                const mixinMetaComponent: MetaComponent = this.$meta.metaService.findMetaComponentByTagName(_.kebabCase(mixinName));
+                const mixinMetaComponent: MetaComponent = this.$meta.metaService.findMetaComponentByTagName(kebabCase(mixinName));
                 if (mixinMetaComponent.props && Object.keys(mixinMetaComponent.props).length > 0) {
                     properties = properties.concat(this.mapMetaComponentProps(mixinMetaComponent, true));
 
@@ -52,15 +54,15 @@ export class MComponentProperties extends ModulWebsite {
 
     private mapMetaComponentProps(mixinMetaComponent: MetaComponent, inheritFrom = false): ComponentProperties[] {
         let props: ComponentProperties[] = Object.keys(mixinMetaComponent.props).map((propName) => ({
-            name: _.replace(_.kebabCase(propName), /-/g, '&#8209;'),
-            inheritFrom: inheritFrom ? _.kebabCase(mixinMetaComponent.componentName) : undefined,
+            name: replace(kebabCase(propName), /-/g, '&#8209;'),
+            inheritFrom: inheritFrom ? kebabCase(mixinMetaComponent.componentName) : undefined,
             type: mixinMetaComponent.props[propName].type ? mixinMetaComponent.props[propName].type : 'string',
             values: this.getValues(mixinMetaComponent.props[propName]),
             defaultValue: mixinMetaComponent.props[propName].default ? mixinMetaComponent.props[propName].default : undefined,
             description: mixinMetaComponent.props[propName].description ? mixinMetaComponent.props[propName].description : undefined
         }));
 
-        return _.sortBy(props, (prop: ComponentProperties) => prop.name);
+        return sortBy(props, (prop: ComponentProperties) => prop.name);
     }
 
     private getValues(attribute: MetaProps): string {

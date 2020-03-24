@@ -1,5 +1,6 @@
 import { MColumnTable, MColumnTextAlign } from '@ulaval/modul-components/dist/components/table/table';
-import * as _ from 'lodash';
+import kebabCase from 'lodash/kebabCase';
+import sortBy from 'lodash/sortBy';
 import { MetaArgument, MetaComponent, MetaEvent } from 'meta-generator/dist';
 import { Component, Prop } from 'vue-property-decorator';
 import { ModulWebsite } from '../../modul-website';
@@ -36,7 +37,7 @@ export class MComponentEvents extends ModulWebsite {
 
         if (this.componentMeta.mixins && this.componentMeta.mixins.length > 0) {
             this.componentMeta.mixins.forEach(mixinName => {
-                const mixinMetaComponent: MetaComponent = this.$meta.metaService.findMetaComponentByTagName(_.kebabCase(mixinName));
+                const mixinMetaComponent: MetaComponent = this.$meta.metaService.findMetaComponentByTagName(kebabCase(mixinName));
                 if (mixinMetaComponent.events && Object.keys(mixinMetaComponent.events).length > 0) {
                     events = events.concat(this.mapMetaComponentEvent(mixinMetaComponent, true));
 
@@ -48,13 +49,13 @@ export class MComponentEvents extends ModulWebsite {
 
     private mapMetaComponentEvent(metaComponent: MetaComponent, inheritFrom = false): ComponentEvents[] {
         let events: ComponentEvents[] = Object.keys(metaComponent.events).map((eventName) => ({
-            name: _.kebabCase(eventName),
-            inheritFrom: inheritFrom ? _.kebabCase(metaComponent.componentName) : undefined,
+            name: kebabCase(eventName),
+            inheritFrom: inheritFrom ? kebabCase(metaComponent.componentName) : undefined,
             arguments: this.getArguments(metaComponent.events[eventName]),
             description: metaComponent.events[eventName].description ? metaComponent.events[eventName].description : undefined
         }));
 
-        return _.sortBy(events, (event: ComponentEvents) => event.name);
+        return sortBy(events, (event: ComponentEvents) => event.name);
     }
 
     private getArguments(event: MetaEvent): string {
