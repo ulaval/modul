@@ -76,7 +76,6 @@ export class MTable extends ModulVue {
                 ModulVue.prototype.$log.warn(`width-placeholder value needs to respect this RegEx: ${pixelOrPercentageNumberRegExp}`);
             }
             return isPixelOrPercentageNumber;
-
         }
     })
     public widthPlaceholder: string;
