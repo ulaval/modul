@@ -1374,7 +1374,7 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
     <tr
       class="m-table__placeholder"
     >
-      <div
+      <td
         class="m-table__placeholder-container"
         style="position: absolute; width: 100%;"
       >
@@ -1394,7 +1394,7 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
            
           <!---->
         </div>
-      </div>
+      </td>
     </tr>
   </tbody>
    
@@ -1447,7 +1447,7 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
     <tr
       class="m-table__placeholder"
     >
-      <div
+      <td
         class="m-table__placeholder-container"
         style="position: absolute; width: 100%;"
       >
@@ -1462,7 +1462,7 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
            
           <!---->
         </div>
-      </div>
+      </td>
     </tr>
   </tbody>
    
@@ -1515,7 +1515,7 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
     <tr
       class="m-table__placeholder"
     >
-      <div
+      <td
         class="m-table__placeholder-container"
         style="position: absolute; width: 100%;"
       >
@@ -1546,7 +1546,7 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
             Veuillez patienter svp.
           </p>
         </div>
-      </div>
+      </td>
     </tr>
   </tbody>
    
@@ -3308,7 +3308,7 @@ exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
       <tr
         class="m-table__placeholder"
       >
-        <div
+        <td
           class="m-table__placeholder-container"
           style="position: sticky; width: 500px;"
         >
@@ -3323,7 +3323,7 @@ exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
              
             <!---->
           </div>
-        </div>
+        </td>
       </tr>
     </tbody>
      
