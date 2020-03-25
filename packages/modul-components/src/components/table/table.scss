@@ -247,7 +247,10 @@ $m-sortable-icon-size: 14px;
         background-color: $m-color--grey-lightest;
 
         &.m-table__placeholder-container {
-            box-sizing: border-box;
+            .m-table & {
+                box-sizing: border-box;
+                padding: 0;
+            }
         }
     }
 
@@ -257,6 +260,7 @@ $m-sortable-icon-size: 14px;
         justify-content: center;
         align-items: center;
         height: 100%;
+        padding: $m-spacing;
         min-width: 200px;
         color: $m-color--grey;
         font-weight: $m-font-weight--semi-bold;
