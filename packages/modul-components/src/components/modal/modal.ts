@@ -107,7 +107,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     }
 
     protected mounted(): void {
-        if (!this.title && Boolean(this.$slots.header)) {
+        if (!this.title && !Boolean(this.$slots.header)) {
             this.$log.warn('<m-modal> needs a header slot or title prop.');
         }
     }
