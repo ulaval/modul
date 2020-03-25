@@ -245,6 +245,13 @@ $m-sortable-icon-size: 14px;
         display: flex;
         flex-direction: column;
         background-color: $m-color--grey-lightest;
+
+        &.m-table__placeholder-container {
+            .m-table & {
+                box-sizing: border-box;
+                padding: 0;
+            }
+        }
     }
 
     &__placeholder-message {
@@ -253,8 +260,8 @@ $m-sortable-icon-size: 14px;
         justify-content: center;
         align-items: center;
         height: 100%;
-        min-width: 200px;
         padding: $m-spacing;
+        min-width: 200px;
         color: $m-color--grey;
         font-weight: $m-font-weight--semi-bold;
         font-size: $m-font-size--l;
