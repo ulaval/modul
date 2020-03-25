@@ -49,8 +49,8 @@
         <tbody>
             <tr class="m-table__placeholder"
                 v-if="isEmpty || loading">
-                <div class="m-table__placeholder-container"
-                     :style="{position: placeholderPositionType, width: widthPlaceholder}">
+                <td class="m-table__placeholder-container"
+                    :style="{position: placeholderPositionType, width: widthPlaceholder}">
                     <m-progress v-if="loading"
                                 :indeterminate="true"
                                 :border-radius="false" />
@@ -65,7 +65,7 @@
                             <p class="m-table__placeholder-precision">{{ i18nPleaseWait }}</p>
                         </slot>
                     </div>
-                </div>
+                </td>
             </tr>
             <tr v-else
                 v-for="(row, index) in rows"
