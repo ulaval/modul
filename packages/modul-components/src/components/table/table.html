@@ -50,7 +50,7 @@
             <tr class="m-table__placeholder"
                 v-if="isEmpty || loading">
                 <td class="m-table__placeholder-container"
-                    :style="{position: placeholderPositionType, width: widthPlaceholder}">
+                    :style="{ position: placeholderPositionType, width: widthPlaceholder }">
                     <m-progress v-if="loading"
                                 :indeterminate="true"
                                 :border-radius="false" />

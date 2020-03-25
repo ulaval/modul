@@ -8,20 +8,19 @@
                 'm--has-validation-message': hasValidationMessage } ]">
     <div class="m-phonefield__wrapper">
 
-        <m-select class="m-phonefield__country"
-                  :value="countryModel"
-                  :options="isoCountries"
-                  :disabled="isDisabled || isWaiting"
-                  :readonly="isReadonly"
-                  :error="hasPhonefieldError"
-                  :valid="isPhonefieldValid"
-                  :label-up="true"
-                  :label="i18nCountryLabel"
-                  width="auto"
-                  :virtual-scroll="true"
-                  @input="onContryChanged($event)"
-                  @focus="onSelectFocus"
-                  @blur="onSelectBlur">
+        <m-select-virtual-scroll class="m-phonefield__country"
+                                 :value="countryModel"
+                                 :options="isoCountries"
+                                 :disabled="isDisabled || isWaiting"
+                                 :readonly="isReadonly"
+                                 :error="hasPhonefieldError"
+                                 :valid="isPhonefieldValid"
+                                 :label-up="true"
+                                 :label="i18nCountryLabel"
+                                 width="auto"
+                                 @input="onContryChanged($event)"
+                                 @focus="onSelectFocus"
+                                 @blur="onSelectBlur">
             <div class="m-phonefield__flag-wrapper">
                 <svg class="m-phonefield__flag"
                      width="27px"
@@ -31,22 +30,36 @@
                 </svg>
             </div>
 
-            <template slot="items"
-                      slot-scope="{item, index}">
-                <div class="m-phonefield__item-wrapper">
-                    <div class="m-phonefield__item-flag-wrapper">
-                        <svg width="27px"
-                             height="20px">
-                            <use :xlink:href="spriteId(item)"
-                                 aria-hidden="true"></use>
-                        </svg>
-                    </div>
-                    <span class="m-phonefield__item-name">{{ countries[index].name }}</span>
-                    <span class="m-phonefield__item-dialCode">+{{ countries[index].dialCode }}</span>
-                </div>
+            <template #outer-items="{item, index, props, handlers}">
+                <m-select-item v-if="item"
+                               :key="index"
+                               v-bind="props"
+                               v-on="handlers">
+                    <template>
+                        <div class="m-phonefield__item-wrapper">
+                            <div class="m-phonefield__item-flag-wrapper">
+                                <svg width="27px"
+                                     height="20px">
+                                    <use :xlink:href="spriteId(item)"
+                                         aria-hidden="true"></use>
+                                </svg>
+                            </div>
+                            <span class="m-phonefield__item-name">{{ countriesSorted[index].name }}</span>
+                            <span class="m-phonefield__item-dialCode">+{{ countriesSorted[index].dialCode }}</span>
+                        </div>
+                    </template>
+                </m-select-item>
+                <m-select-item v-else
+                               class="m-phonefield__item-separator"
+                               :key="index"
+                               :disabled="true">
+                    <template>
+                        <div></div>
+                    </template>
+                </m-select-item>
             </template>
 
-        </m-select>
+        </m-select-virtual-scroll>
 
         <m-input-style class="m-phonefield__number"
                        :disabled="isDisabled"

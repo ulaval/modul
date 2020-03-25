@@ -18,15 +18,15 @@
                 <article class="m-modal__article"
                          ref="article">
                     <header class="m-modal__header"
-                            :class="{ 'm--has-title': hasTitle,
-                                    'm--has-content': hasHeader,
+                            :class="{ 'm--has-title': title,
+                                    'm--has-content': title || $slots.header,
                                     'm--no-padding': !padding || !paddingHeader }">
-                        <h2 v-if="hasTitle">{{ title }}</h2>
-                        <slot name="header"></slot>
+                        <h2 v-if="title">{{ title }}</h2>
+                        <slot name="header" />
                         <m-icon-button @click="closeModal()"
                                        icon-name="m-svg__close-clear"
                                        skin="dark"
-                                       class="m-modal__header__close-button"
+                                       class="m-modal__close-button"
                                        :title="closeTitle"></m-icon-button>
                     </header>
                     <div class="m-modal__body"
@@ -36,26 +36,21 @@
                              @focusin="onFocusIn"
                              @focusout="onFocusOut"
                              :class="{ 'm--no-padding': !padding || !paddingBody }"
-                             v-if="hasDefaultSlot">
-                            <slot></slot>
+                             v-if="$slots.default">
+                            <slot />
                         </div>
-                        <footer class="m-modal__footer"
-                                :class="{ 'm--no-padding': !padding || !paddingFooter }"
-                                v-if="hasFooterSlot && hasKeyboard">
-                            <div>
-                                <slot name="footer"></slot>
-                            </div>
+                        <footer v-if="hasKeyboard && $slots.footer"
+                                class="m-modal__footer"
+                                :class="{ 'm--no-padding': !padding || !paddingFooter }">
+                            <slot name="footer" />
                         </footer>
                     </div>
 
-                    <footer v-if="!hasKeyboard && hasFooterSlot"
+                    <footer v-if="!hasKeyboard && $slots.footer"
                             class="m-modal__footer"
                             :class="{ 'm--no-padding': !padding || !paddingFooter }">
-                        <div>
-                            <slot name="footer"></slot>
-                        </div>
+                        <slot name="footer" />
                     </footer>
-
                 </article>
             </div>
         </transition>

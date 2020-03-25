@@ -15,7 +15,7 @@ La dimension de la fenêtre doit varier en fonction du contenu qui est affiché 
 
 ```html
 <p>
-    <m-modal title="Titre" size="large">
+    <m-modal title="Title" size="large">
         <m-button slot="trigger">Large</m-button>
         <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
         <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
@@ -23,14 +23,14 @@ La dimension de la fenêtre doit varier en fonction du contenu qui est affiché 
 </p>
 
 <p>
-    <m-modal title="Titre" size="regular">
+    <m-modal title="Title" size="regular">
         <m-button slot="trigger">Régulier</m-button>
         <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
         <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>
     </m-modal>
 </p>
 <p>
-    <m-modal title="Titre" size="small">
+    <m-modal title="Title" size="small">
         <m-button slot="trigger">Petit</m-button>
         <p>Consectetur dolore commodo voluptate est laborum ex nulla. Amet nisi quis minim dolor voluptate est nisi anim elit duis enim. Sint veniam tempor occaecat irure nostrud eiusmod. Fugiat nostrud laborum pariatur dolor tempor in in nostrud reprehenderit minim culpa incididunt.</p>
         <span slot="footer">Consectetur dolore commodo voluptate est laborum ex nulla.</span>

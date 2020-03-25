@@ -187,6 +187,7 @@ export class MTable extends ModulVue {
     public columnWidth(col: MColumnTable): { width: string } | '' {
         return col.width ? { width: col.width } : '';
     }
+
 }
 
 const TablePlugin: PluginObject<any> = {

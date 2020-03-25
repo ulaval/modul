@@ -1,10 +1,11 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { SELECT_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MSelectItem } from '@ulaval/modul-components/dist/components/select/select-item/select-item';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-const OPTIONS: string[] = ['apple', 'bannana', 'patate', 'tomato', 'avocados', 'etc'];
-const LONG_OPTIONS: string[] = ['apple juice', 'bannana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
+const OPTIONS: string[] = ['apple', 'banana', 'patate', 'tomato', 'avocados', 'etc'];
+const LONG_OPTIONS: string[] = ['apple juice', 'banana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
 
 
 const buildLongList = (): string[] => {
@@ -54,7 +55,7 @@ export const defaultStory = () => ({
     data: () => ({
         options: OPTIONS
     }),
-    template: `<m-select :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly" ></m-select>`
+    template: `<m-select :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly"  @open="open" @close="close" @focus="focus" @select-item="select" @blur="blur"></m-select>`
 });
 
 defaultStory.story = {
@@ -66,6 +67,14 @@ export const focus = () => ({
         options: OPTIONS
     }),
     template: `<m-select :options="options" :focus="true" ></m-select>`
+});
+
+export const selectedItem = () => ({
+    data: () => ({
+        model: 'banana',
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" v-model="model" ></m-select>`
 });
 
 export const label = () => ({
@@ -136,7 +145,7 @@ export const readonlyItemSelectedWithLabel = () => ({
         model: 'banana',
         options: OPTIONS
     }),
-    template: `<m-select :options="options" :readonly="true" label="Fruits" v-model="patate" v-model="model" ></m-select>`
+    template: `<m-select :options="options" :readonly="true" label="Fruits" v-model="model" ></m-select>`
 });
 
 export const readonlyItemSelectedWithLabelClearable = () => ({
@@ -191,9 +200,25 @@ export const disabledItemSelectedWithLabelClearable = () => ({
     template: `<m-select :options="options" :disabled="true" label="Fruits" :clearable="true" v-model="model" ></m-select>`
 });
 
-export const virtualScroll = () => ({
+export const withOuterItemsSlot = () => ({
     data: () => ({
-        options: buildLongList()
+        model: 'banane',
+        options: OPTIONS
     }),
-    template: `<m-select :options="options" label="Longlist" :virtual-scroll="true" ></m-select>`
+    components: {
+        MSelectItem: MSelectItem
+    },
+    template: `<m-select :options="options" v-model="model">
+                <template #outer-items="{items, getItemProps, getItemHandlers}">
+                    <template v-for="(item, index) of items">
+                        <m-select-item v-if="item !== 'patate'" v-bind="getItemProps(item, index)" v-on="getItemHandlers(item, index)">
+                            {{ item  }}
+                        </m-select-item>
+                        <m-select-item v-else
+                                        :disabled="true">
+                            {{ item  }}
+                        </m-select-item>
+                    </template>
+                </template>
+            </m-select>`
 });

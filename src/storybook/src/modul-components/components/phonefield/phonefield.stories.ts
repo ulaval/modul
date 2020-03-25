@@ -86,4 +86,26 @@ export const errorMessage = () => ({
     template: '<m-phonefield :error="true" error-message="Error message"></m-phonefield>'
 });
 
+export const priorityCountriesEmpty = () => ({
+    data: () => ({
+        priorityIsoCountries: []
+    }),
+    components: {
+        'm-phonefield': phoneFieldChunk
+    },
+    template: '<m-phonefield :priority-iso-countries="priorityIsoCountries"></m-phonefield>'
+});
+
+
+export const priorityCountriesDefinedFrUsCa = () => ({
+
+    data: () => ({
+        priorityIsoCountries: ['fr', 'us', 'ca']
+    }),
+    components: {
+        'm-phonefield': phoneFieldChunk
+    },
+    template: '<m-phonefield :priority-iso-countries="priorityIsoCountries"></m-phonefield>'
+});
+
 

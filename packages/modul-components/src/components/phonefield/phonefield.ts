@@ -11,7 +11,8 @@ import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
-import { MSelect } from '../select/select';
+import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-scroll';
+import { MSelectItem } from '../select/select-item/select-item';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
 import WithRender from './phonefield.html?style=./phonefield.scss';
@@ -41,7 +42,8 @@ export interface Country {
     ],
     components: {
         MInputMask,
-        MSelect
+        MSelectVirtualScroll,
+        MSelectItem
     }
 })
 export class MPhonefield extends ModulVue {
@@ -64,6 +66,11 @@ export class MPhonefield extends ModulVue {
         default: false
     })
     public externalSprite: boolean;
+
+    @Prop({
+        default: () => ['ca']
+    })
+    public priorityIsoCountries: string[];
 
     public $refs: {
         inputMask: MInputMask;
@@ -105,7 +112,31 @@ export class MPhonefield extends ModulVue {
     emitContrySelected(country: Country): void { }
 
     get isoCountries(): string[] {
-        return this.countries.map(contry => contry.iso2);
+        return this.countriesSorted.map(contry => contry.iso2);
+    }
+
+    get countriesSorted(): CountryOptions[] {
+
+        let finalCountriesList: CountryOptions[] = [];
+
+        this.priorityIsoCountries.forEach((isoPriorityCountry: string) => {
+            const currentCountry: CountryOptions | undefined = this.countries.find((isoCountry: CountryOptions) => isoCountry.iso2 === isoPriorityCountry);
+            if (currentCountry) {
+                finalCountriesList.push(currentCountry);
+            }
+        });
+
+        if (this.priorityIsoCountries.length > 0) {
+            finalCountriesList.push({ name: '', iso2: '', dialCode: '' });
+        }
+
+        this.countries.filter((country: CountryOptions) => {
+            if (!this.priorityIsoCountries.includes(country.iso2)) {
+                finalCountriesList.push(country);
+            }
+        });
+
+        return finalCountriesList;
     }
 
     get propLabel(): string {
@@ -155,7 +186,7 @@ export class MPhonefield extends ModulVue {
     }
 
     parsePhoneNumber(value: string): void {
-        const parsedNumber: ParsedNumber = parseNumber(value, { extended: true });
+        const parsedNumber: ParsedNumber = parseNumber(value, { extended: true }) as ParsedNumber;
         if (parsedNumber.country && parsedNumber.valid) {
             this.countryModelInternal = parsedNumber.country.toLowerCase();
             this.internalCountry = this.countries.find((country: CountryOptions) => country.iso2 === this.countryModelInternal)!;
