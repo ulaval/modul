@@ -7,7 +7,6 @@ import { TABLE_NAME } from '../component-names';
 import ProgressPlugin from '../progress/progress';
 import WithRender from './table.html?style=./table.scss';
 
-
 export enum MTableSkin {
     Regular = 'regular',
     Simple = 'simple'
@@ -36,6 +35,10 @@ export interface MColumnTable {
     class?: string;
     sortDirection?: MColumnSortDirection;
     defaultSortDirection?: MColumnSortDirection;
+    // Visible, fixed et ignored servent à l'organizateur de colonnes
+    visible?: boolean;
+    fixed?: boolean;
+    ignored?: boolean;
 }
 
 interface MColumnTableInternal extends MColumnTable {
@@ -64,6 +67,19 @@ export class MTable extends ModulVue {
     @Prop({ default: true })
     public rowHighlightedOnHover: boolean;
 
+    @Prop({
+        default: '100%',
+        validator: value => {
+            const pixelOrPercentageNumberRegExp: RegExp = /^\d+(\.[0-9]{1,4})?(px|%)$/;
+            if (!value.search(pixelOrPercentageNumberRegExp)) {
+                // tslint:disable-next-line: no-console
+                console.warn(`width-placeholder value needs to respect this RegEx: ${pixelOrPercentageNumberRegExp}`);
+            }
+            return !value.search(pixelOrPercentageNumberRegExp);
+        }
+    })
+    public widthPlaceholder: string;
+
     public i18nEmptyTable: string = this.$i18n.translate('m-table:no-data');
     public i18nLoading: string = this.$i18n.translate('m-table:loading');
     public i18nPleaseWait: string = this.$i18n.translate('m-table:please-wait');
@@ -78,6 +94,14 @@ export class MTable extends ModulVue {
 
     public get isEmpty(): boolean {
         return this.rows.length === 0 && !this.loading;
+    }
+
+    public get placeholderPositionType(): string {
+        return this.widthPlaceholder.search(/^\d+(\.[0-9]{1,4})?px$/) ? 'absolute' : 'sticky';
+    }
+
+    public get columnsInternal(): MColumnTableInternal[] {
+        return this.columns.filter((c: MColumnTable) => c.visible === undefined || c.visible).map((c: MColumnTable) => ({ ...c }));
     }
 
     public sort(columnTable: MColumnTableInternal): void {
@@ -162,10 +186,6 @@ export class MTable extends ModulVue {
 
     public columnWidth(col: MColumnTable): { width: string } | '' {
         return col.width ? { width: col.width } : '';
-    }
-
-    get columnsInternal(): MColumnTableInternal[] {
-        return this.columns.map((c: MColumnTable) => ({ ...c }));
     }
 }
 
