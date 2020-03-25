@@ -187,11 +187,11 @@ exports[`MTable Given an empty table When a custom slot is given Then should ren
   </thead>
   <tbody>
     <tr class="m-table__placeholder">
-      <div class="m-table__placeholder-container" style="position:absolute;width:100%;">
+      <td class="m-table__placeholder-container" style="position:absolute;width:100%;">
         <div class="m-table__placeholder-message">
           <p>EMPTY</p>
         </div>
-      </div>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -216,13 +216,13 @@ exports[`MTable Given an empty table When loading Then should render correctly 1
   </thead>
   <tbody>
     <tr class="m-table__placeholder">
-      <div class="m-table__placeholder-container" style="position:absolute;width:100%;">
+      <td class="m-table__placeholder-container" style="position:absolute;width:100%;">
         <m-progress indeterminate="indeterminate"></m-progress>
         <div class="m-table__placeholder-message">
           <p>m-table:loading</p>
           <p class="m-table__placeholder-precision">m-table:please-wait</p>
         </div>
-      </div>
+      </td>
     </tr>
   </tbody>
 </table>
@@ -247,11 +247,11 @@ exports[`MTable Given an empty table When we use the default template Then shoul
   </thead>
   <tbody>
     <tr class="m-table__placeholder">
-      <div class="m-table__placeholder-container" style="position:absolute;width:100%;">
+      <td class="m-table__placeholder-container" style="position:absolute;width:100%;">
         <div class="m-table__placeholder-message">
           <p>m-table:no-data</p>
         </div>
-      </div>
+      </td>
     </tr>
   </tbody>
 </table>
