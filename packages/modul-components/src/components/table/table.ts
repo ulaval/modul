@@ -71,11 +71,12 @@ export class MTable extends ModulVue {
         default: '100%',
         validator: value => {
             const pixelOrPercentageNumberRegExp: RegExp = /^\d+(\.[0-9]{1,4})?(px|%)$/;
-            if (!value.search(pixelOrPercentageNumberRegExp)) {
-                // tslint:disable-next-line: no-console
-                console.warn(`width-placeholder value needs to respect this RegEx: ${pixelOrPercentageNumberRegExp}`);
+            const isPixelOrPercentageNumber: boolean = pixelOrPercentageNumberRegExp.test(value);
+            if (!isPixelOrPercentageNumber) {
+                ModulVue.prototype.$log.warn(`width-placeholder value needs to respect this RegEx: ${pixelOrPercentageNumberRegExp}`);
             }
-            return !value.search(pixelOrPercentageNumberRegExp);
+            return isPixelOrPercentageNumber;
+
         }
     })
     public widthPlaceholder: string;
