@@ -1,11 +1,11 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { MColumnTable } from '../../lib';
 import { ModulVue } from '../../utils/vue/vue';
 import ButtonPlugin from '../button/button';
 import { ORGANIZE_TABLE_COLUMNS_MODAL_NAME } from '../component-names';
 import ModalPlugin from '../modal/modal';
+import { MColumnTable } from '../table/table';
 import WithRender from './organize-table-columns-modal.html';
 import OrganizeTableColumnsPlugin from './organize-table-columns/organize-table-columns';
 

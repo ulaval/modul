@@ -398,7 +398,35 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                 ]
             }
         },
-        template: '<m-table :columns="columns" :rows="rows" width="100%" @sort-applied="onSortApplied($event)"></m-table>',
+        template: `<m-table :columns="columns" :rows="rows" width="100%" @sort-applied="onSortApplied($event)" />`,
+        methods: {
+            onSortApplied: defaultOnSortApplied
+        }
+    }))
+    .add('Sortable width custom header cell', () => ({
+        data: function(): any {
+            return {
+                rows: [
+                    { id: '1', name: 'Jonathan', age: '25', username: 'jonathan.25' },
+                    { id: '2', name: 'Carl', age: '30', username: 'carl.30' },
+                    { id: '3', name: 'Jacob', age: '26', username: 'jacob.26' }
+                ]
+            };
+        },
+        props: {
+            columns: {
+                default: [
+                    { id: 'name', title: 'Name', dataProp: 'name', sortable: true },
+                    { id: 'age', title: 'Age', dataProp: 'age', sortable: true, defaultSortDirection: MColumnSortDirection.Dsc },
+                    { id: 'username', title: 'Username', dataProp: 'username', sortable: true }
+                ]
+            }
+        },
+        template: `<m-table :columns="columns" :rows="rows" width="100%" @sort-applied="onSortApplied($event)">
+            <template slot="header.name">NAME (custom)</template>
+            <template slot="header.age">AGE (custom)</template>
+            <template slot="header.username">USERNAME (custom)</template>
+        </m-table>`,
         methods: {
             onSortApplied: defaultOnSortApplied
         }
@@ -424,7 +452,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                 ]
             }
         },
-        template: '<m-table :columns="columns" :rows="rows" width="100%" @sort-applied="onSortApplied($event)"></m-table>',
+        template: '<m-table :columns="columns" :rows="rows" width="100%" @sort-applied="onSortApplied($event)" />',
         methods: {
             onSortApplied: defaultOnSortApplied
         }

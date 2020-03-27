@@ -59,7 +59,8 @@
         "import-blacklist": [
             true,
             [
-                "^moment"
+                "^moment",
+                "\/lib$"
             ]
         ]
     }
