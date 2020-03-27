@@ -126,9 +126,14 @@ export class FormArray<T = any> extends AbstractControl {
         return this._controls;
     }
 
-    public addControl(control: AbstractControl): void {
+    public addControl(control: AbstractControl, indexInsertion: number | undefined = undefined): void {
         control.parent = this;
-        this._controls = this._controls.concat(control);
+
+        if (indexInsertion === undefined) {
+            this._controls = this._controls.concat(control);
+        } else {
+            this._controls.splice(indexInsertion, 0, control);
+        }
     }
 
     public removeControl(index: number): AbstractControl {

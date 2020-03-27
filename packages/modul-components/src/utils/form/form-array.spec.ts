@@ -7,7 +7,7 @@ describe('FormArray', () => {
     describe('given a FormArray with no controls', () => {
         let formArray: FormArray;
 
-        beforeAll(() => {
+        beforeEach(() => {
             formArray = new FormArray([]);
         });
 
@@ -24,6 +24,16 @@ describe('FormArray', () => {
 
             expect(formArray.controls.length).toBe(1);
             expect(formArray.controls[0]).toBeDefined();
+        });
+
+        it('when adding control at specified index it should add the control at the specified index', () => {
+            const control: FormControl<any> = new FormControl();
+            formArray.addControl(new FormControl());
+
+            formArray.addControl(control, 0);
+
+            expect(formArray.controls.length).toBe(2);
+            expect(formArray.controls[0]).toBe(control);
         });
     });
 
