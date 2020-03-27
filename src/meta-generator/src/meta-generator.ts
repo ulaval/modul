@@ -1,8 +1,11 @@
 import * as fs from 'fs';
-import * as _ from 'lodash';
+import { kebabCase, merge } from 'lodash';
 import * as parser from 'node-html-parser';
 import Project, { ClassDeclaration, ClassInstanceMemberTypes, ClassInstancePropertyTypes, Decorator, Expression, LanguageService, MethodDeclaration, ObjectLiteralExpression, ParameterDeclaration, PropertyAssignment, SourceFile, StringLiteral, SyntaxKind, Type, TypeChecker } from 'ts-morph';
 import { Meta, MetaComponent, MetaEvent, MetaProps, MetaSlot } from './index';
+
+
+
 
 
 const MIXINS_PROPERTY_NAME: string = 'mixins';
@@ -75,7 +78,7 @@ export class MetaGenerator {
     private applyMetaOverrides(meta: MetaComponent, metaOverrides: MetaComponent): void {
 
         // merge object using https://lodash.com/docs/4.17.11#merge
-        _.merge(meta, metaOverrides);
+        merge(meta, metaOverrides);
     }
 
     private readFileAsString(filePath: string): string {
@@ -96,7 +99,7 @@ export class MetaGenerator {
     private generateComponentMeta(classDeclaration: ClassDeclaration, template: string, apiOverrideString: string): MetaComponent {
         // extract component name
         let output: MetaComponent = {
-            componentName: _.kebabCase(classDeclaration.getName())
+            componentName: kebabCase(classDeclaration.getName())
         };
 
         let componentDecorator: Decorator = classDeclaration.getDecorator(COMPONENT_DECORATOR_NAME)!;

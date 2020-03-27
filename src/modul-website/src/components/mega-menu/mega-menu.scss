@@ -78,6 +78,10 @@ $modul-menu-transition-duration: 0.7s;
             .mw-mega-menu__beta-tag {
                 background: $m-color--ul-yellow;
             }
+
+            .mw-mega-menu__new-tag {
+                background: $m-color--hint;
+            }
         }
     }
 
@@ -103,7 +107,8 @@ $modul-menu-transition-duration: 0.7s;
         display: block;
     }
 
-    &__beta-tag {
+    &__beta-tag,
+    &__new-tag {
         display: inline;
         background: $modul-color--grey-darker;
         transition: background $modul-menu-transition-duration ease;
@@ -186,6 +191,10 @@ $modul-menu-transition-duration: 0.7s;
 
     .mw-mega-menu__beta-tag {
         background: $modul-color--yellow;
+    }
+
+    .mw-mega-menu__new-tag {
+        background: $m-color--hint;
     }
 
     &__elem {

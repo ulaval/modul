@@ -1,4 +1,5 @@
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
 const CompressionPlugin = require('compression-webpack-plugin');
 const path = require("path");
 
@@ -26,6 +27,10 @@ module.exports = {
                 configFile: '.stylelintrc',
                 emitErrors: true
             }),
+            new ContextReplacementPlugin(
+                /moment[\/\\]locale$/,
+                /en-ca|fr-ca/
+            ),
             new CompressionPlugin()
         ],
         module: {

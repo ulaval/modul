@@ -24,6 +24,10 @@
                                       class="modul-logo__beta mw-mega-menu__beta-tag">
                                     {{'website:beta' | f-m-i18n}}
                                 </span>
+                                <span v-if="component.new"
+                                      class="modul-logo__new mw-mega-menu__new-tag">
+                                    {{'website:new' | f-m-i18n}}
+                                </span>
                             </span>
                         </router-link>
                     </li>

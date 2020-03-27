@@ -1,4 +1,6 @@
-import _ from 'lodash';
+
+import deburr from 'lodash/deburr';
+import sortBy from 'lodash/sortBy';
 import { Meta, MetaService } from 'meta-generator/dist';
 import { ComponentMeta } from './content/components.meta.loader';
 export interface ComponentState {
@@ -37,7 +39,7 @@ export class ModulMeta {
             if (componentMeta.visible) {
                 if (result[componentMeta.category] && result[componentMeta.category].length > 0) {
                     result[componentMeta.category].push(componentMeta);
-                    result[componentMeta.category] = _.sortBy(result[componentMeta.category], componentMeta => _.deburr(componentMeta.name));
+                    result[componentMeta.category] = sortBy(result[componentMeta.category], componentMeta => deburr(componentMeta.name));
                 } else {
                     result[componentMeta.category] = [componentMeta];
                 }

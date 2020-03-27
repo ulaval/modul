@@ -3,7 +3,8 @@ import { ComponentMeta } from '@/content/components.meta.loader';
 import { ROUTER_PHILOSOPHY, ROUTER_STANDARDS_ACCESSIBILITY, ROUTER_STANDARDS_ACCESSIBILITY_CHEATSHEET, ROUTER_STANDARDS_ACCESSIBILITY_IMPLEMENTATION, ROUTER_STANDARDS_ACCESSIBILITY_WHY, ROUTER_STANDARDS_EDITORIAL, ROUTER_STANDARDS_EDITORIAL_FORMAT, ROUTER_STANDARDS_EDITORIAL_GLOSSARY, ROUTER_STANDARDS_EDITORIAL_MESSAGE_BANK, ROUTER_STANDARDS_EDITORIAL_MESSAGE_PUNCTUATION, ROUTER_STANDARDS_EDITORIAL_TONE, ROUTER_STANDARDS_UI, ROUTER_STANDARDS_UI_BREAKPOINTS, ROUTER_STANDARDS_UI_COLORS, ROUTER_STANDARDS_UI_ICONOGRAPHY, ROUTER_STANDARDS_UI_TYPOGRAPHY } from '@/router';
 import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import _ from 'lodash';
+import deburr from 'lodash/deburr';
+import sortBy from 'lodash/sortBy';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
@@ -40,7 +41,7 @@ export class MWMegaMenu extends ModulWebsite {
 
     beforeMount(): void {
 
-        _.sortBy(this.$meta.categories, name => _.deburr(this.$i18n.translate(`categories:${name}`))).forEach(category => {
+        sortBy(this.$meta.categories, name => deburr(this.$i18n.translate(`categories:${name}`))).forEach(category => {
             this.categoriesComponent.push({
                 id: category,
                 text: this.$i18n.translate(`categories:${category}`)

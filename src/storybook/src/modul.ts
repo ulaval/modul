@@ -77,7 +77,7 @@ export const ModulPlugin: PluginObject<any> = {
     install(v, options): void {
 
         Vue.use(VueRouter);
-        Vue.config.productionTip = false;
+
 
         let utilsOptions: UtilsPluginOptions = {
             propagateVueParserErrors: false,

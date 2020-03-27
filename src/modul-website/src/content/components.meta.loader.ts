@@ -10,7 +10,8 @@ export interface ComponentMeta {
     category: string;
     url: string;
     type: string;
-    beta: boolean;
+    beta?: boolean;
+    new?: boolean;
     visible: boolean;
     components?: any[];
 }
@@ -37,7 +38,8 @@ const componentMetaDecoder: Decoder<ComponentMeta> = object({
     url: string(),
     category: catogoryDecoder,
     type: typeDecoder,
-    beta: boolean(),
+    beta: optional(boolean()),
+    new: optional(boolean()),
     visible: boolean(),
     components: optional(array())
 });

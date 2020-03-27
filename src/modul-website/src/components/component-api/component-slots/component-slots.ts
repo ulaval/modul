@@ -1,5 +1,6 @@
 import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
-import * as _ from 'lodash';
+import kebabCase from 'lodash/kebabCase';
+import sortBy from 'lodash/sortBy';
 import { MetaComponent } from 'meta-generator/dist';
 import { Component, Prop } from 'vue-property-decorator';
 import { ModulWebsite } from '../../modul-website';
@@ -33,7 +34,7 @@ export class MComponentSlots extends ModulWebsite {
 
         if (this.componentMeta.mixins && this.componentMeta.mixins.length > 0) {
             this.componentMeta.mixins.forEach(mixinName => {
-                const mixinMetaComponent: MetaComponent = this.$meta.metaService.findMetaComponentByTagName(_.kebabCase(mixinName));
+                const mixinMetaComponent: MetaComponent = this.$meta.metaService.findMetaComponentByTagName(kebabCase(mixinName));
                 if (mixinMetaComponent.slots && Object.keys(mixinMetaComponent.slots).length > 0) {
                     slots = slots.concat(this.mapMetaComponentSlot(mixinMetaComponent, true));
 
@@ -45,11 +46,11 @@ export class MComponentSlots extends ModulWebsite {
 
     private mapMetaComponentSlot(metaComponent: MetaComponent, inheritFrom = false): ComponentSlot[] {
         let slots: ComponentSlot[] = Object.keys(metaComponent.slots).map((slotName) => ({
-            name: _.kebabCase(slotName),
-            inheritFrom: inheritFrom ? _.kebabCase(metaComponent.componentName) : undefined,
+            name: kebabCase(slotName),
+            inheritFrom: inheritFrom ? kebabCase(metaComponent.componentName) : undefined,
             description: metaComponent.slots[slotName].description ? metaComponent.slots[slotName].description : undefined
         }));
 
-        return _.sortBy(slots, (slot: ComponentSlot) => slot.name);
+        return sortBy(slots, (slot: ComponentSlot) => slot.name);
     }
 }
