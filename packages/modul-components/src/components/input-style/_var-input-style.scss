@@ -1,0 +1,19 @@
+$m-input-style--padding: 11px;
+$m-input-style--icon-button-size: 22px;
+
+// colors states
+$m-input-style--color-label-up: $m-color--grey-dark;
+$m-input-style--color-hover: $m-color--grey-darkest;
+$m-input-style--color-focus: $m-color--interactive;
+$m-input-style--color-error: $m-color--error;
+$m-input-style--color-valid: $m-color--success;
+$m-input-style--color-disabled: $m-color--disabled;
+$m-input-style--color-waiting: $m-color--active;
+
+:root {
+    // core
+    --m-input-style--color-label: #{ $m-color--grey };
+    --m-input-style--color-input: #{ $m-color--text};
+    --m-input-style--color-border: #{ $m-color--grey };
+    --m-input-style--color-buttons: #{ $m-color--grey };
+}

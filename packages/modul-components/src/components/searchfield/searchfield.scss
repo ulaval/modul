@@ -76,13 +76,13 @@
             }
         }
 
-        &:not(.m--has-error):not(.m--is-valid) {
-            .m-input-style__main {
-                &:hover {
-                    border-color: $m-input-style--color-hover;
-                }
-            }
-        }
+        // &:not(.m--has-error):not(.m--is-valid) {
+        //     .m-input-style__main {
+        //         &:hover {
+        //             border-color: $m-input-style--color-hover;
+        //         }
+        //     }
+        // }
 
         &:not(.m--is-label-up):not(.m--has-error):not(.m--is-valid):not(:hover) {
             .m-input-style__main {
