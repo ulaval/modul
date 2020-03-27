@@ -1,3 +1,4 @@
+import { AbstractControl } from './abstract-control';
 import { FormArray } from './form-array';
 import { FormControl } from './form-control';
 
@@ -26,17 +27,19 @@ describe('FormArray', () => {
         });
     });
 
-
     describe('given an FormGroup with a control', () => {
         let formArray: FormArray;
+        const control: FormControl<any> = new FormControl();
 
-        beforeAll(() => {
-            formArray = new FormArray([new FormControl(), new FormControl(), new FormControl()]);
+        beforeEach(() => {
+            formArray = new FormArray([control, new FormControl(), new FormControl()]);
         });
 
-        it('when removing a control it should remove the control', () => {
-            formArray.removeControl(0);
+        it('when removing a control it should remove the control and return it', () => {
+            const removedControl: AbstractControl = formArray.removeControl(0);
+
             expect(formArray.controls.length).toBe(2);
+            expect(removedControl).toBe(control);
         });
     });
 });
