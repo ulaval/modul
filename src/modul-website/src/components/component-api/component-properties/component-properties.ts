@@ -76,6 +76,6 @@ export class MComponentProperties extends ModulWebsite {
                 values = ['-'];
             }
         }
-        return values.map((value) => value.replace('-', '&#8209;')).join('&nbsp;/ ');
+        return values.map((value) => (value instanceof String ? value.replace('-', '&#8209;') : value)).join('&nbsp;/ ');
     }
 }
