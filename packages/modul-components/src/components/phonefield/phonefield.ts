@@ -34,6 +34,12 @@ export interface Country {
 
 @WithRender
 @Component({
+    modul: {
+        i18n: {
+            'fr': require('./phonefield.lang.fr.json'),
+            'en': require('./phonefield.lang.en.json')
+        }
+    },
     mixins: [
         InputState,
         InputWidth,
@@ -89,6 +95,15 @@ export class MPhonefield extends ModulVue {
     i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
     i18nExample: string = this.$i18n.translate('m-phonefield:example');
+
+    beforeCreate(): void {
+
+        if (this.$i18n) {
+            // this.$i18n.addMessages(ENGLISH, require('./phonefield.lang.en.json'));
+            // this.$i18n.addMessages(FRENCH, require('./phonefield.lang.fr.json'));
+        }
+    }
+
 
     beforeMount(): void {
         // sprites-flags.svg is a very big file, this is why sprites should only be added to the DOM before this component is mounted.
