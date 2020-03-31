@@ -37,22 +37,6 @@
         }
     }
 
-    &:not(.m--is-panel-over-content) {
-        .m-expandable-layout {
-            &__panel {
-                position: relative;
-            }
-
-            &__panel-content {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-        }
-    }
-
     &.m--has-left-panel {
         display: grid;
         grid-template-areas: 'panel main';
