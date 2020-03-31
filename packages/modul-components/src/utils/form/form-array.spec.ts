@@ -1,3 +1,4 @@
+import { AbstractControl } from './abstract-control';
 import { FormArray } from './form-array';
 import { FormControl } from './form-control';
 
@@ -6,7 +7,7 @@ describe('FormArray', () => {
     describe('given a FormArray with no controls', () => {
         let formArray: FormArray;
 
-        beforeAll(() => {
+        beforeEach(() => {
             formArray = new FormArray([]);
         });
 
@@ -24,19 +25,31 @@ describe('FormArray', () => {
             expect(formArray.controls.length).toBe(1);
             expect(formArray.controls[0]).toBeDefined();
         });
-    });
 
+        it('when adding control at specified index it should add the control at the specified index', () => {
+            const control: FormControl<any> = new FormControl();
+            formArray.addControl(new FormControl());
+
+            formArray.addControl(control, 0);
+
+            expect(formArray.controls.length).toBe(2);
+            expect(formArray.controls[0]).toBe(control);
+        });
+    });
 
     describe('given an FormGroup with a control', () => {
         let formArray: FormArray;
+        const control: FormControl<any> = new FormControl();
 
-        beforeAll(() => {
-            formArray = new FormArray([new FormControl(), new FormControl(), new FormControl()]);
+        beforeEach(() => {
+            formArray = new FormArray([control, new FormControl(), new FormControl()]);
         });
 
-        it('when removing a control it should remove the control', () => {
-            formArray.removeControl(0);
+        it('when removing a control it should remove the control and return it', () => {
+            const removedControl: AbstractControl = formArray.removeControl(0);
+
             expect(formArray.controls.length).toBe(2);
+            expect(removedControl).toBe(control);
         });
     });
 });
