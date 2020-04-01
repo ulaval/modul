@@ -1,26 +1,60 @@
 @import 'commons';
 @import '../input-style/input-style';
 
+:root {
+    --m-searchfield--color-icon: #{ $m-color--interactive-light };
+    --m-searchfield--color-icon-hover: white;
+    //
+    --m-searchfield--color-button: transparent;
+    --m-searchfield--color-button-hover: #{ $m-color--interactive-light };
+    --m-searchfield--color-button-active: #{ darken($m-color--interactive-light, 15%) };
+}
+
 .m-searchfield {
-    $m-searchfield-color: $m-color--grey-lightest;
+    --m-input-style--color-hover: #{ $m-color--interactive-light };
+    --m-input-style--color-border: #{ $m-color--grey-lightest };
+    --m-input-style--color-background: #{ $m-color--grey-lightest };
 
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
 
     @include m-input-inline-spacing();
+
+    // dirty hack for ghost pixel glitch >_<
+    .m--has-label:not(.m--is-label-up) .m-input-style__append {
+        margin-bottom: -1px;
+    }
 
     &__search-button {
         @include m-button;
 
-        border: unset;
-        background-color: inherit;
-        border-radius: 0 $m-input-style-border-radius $m-input-style-border-radius 0;
+        flex: 1;
         width: 100%;
-        color: $m-color--interactive;
+        display: flex;
+        cursor: pointer;
         padding: 0 $m-input-style--padding;
+        color: var(--m-searchfield--color-icon);
+        border: 1px solid var(--m-searchfield--color-button);
+        background-color: var(--m-searchfield--color-button);
 
-        @include m-button--hover();
+        &:hover,
+        &:focus {
+            --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
+            --m-searchfield--color-button: var(--m-searchfield--color-button-hover);
+        }
+
+        &:active {
+            --m-searchfield--color-button: var(--m-searchfield--color-button-active);
+        }
+
+        .m--has-error & {
+            --m-searchfield--color-button: var(--m-input-style--color-error);
+            --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
+        }
+
+        .m--is-valid & {
+            --m-searchfield--color-button: var(--m-input-style--color-valid);
+            --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
+        }
     }
 
     &__reset {
@@ -33,14 +67,6 @@
 
         .m--has-validation-message & {
             margin-top: $m-spacing--xs;
-        }
-
-        .m--has-error & {
-            color: $m-color--error;
-        }
-
-        .m--is-valid & {
-            color: $m-color--success;
         }
     }
 
@@ -58,36 +84,9 @@
             background-color: none;
         }
     }
+}
 
-    // overrides :-(
-    .m-input-style {
-        input::placeholder {
-            color: $m-color--text-light;
-            font-weight: $m-font-weight--light;
-        }
-
-        .m-input-style__main {
-            background-color: $m-searchfield-color;
-        }
-
-        &.m--is-label-up {
-            .m-input-style__text {
-                background: $m-searchfield-color;
-            }
-        }
-
-        // &:not(.m--has-error):not(.m--is-valid) {
-        //     .m-input-style__main {
-        //         &:hover {
-        //             border-color: $m-input-style--color-hover;
-        //         }
-        //     }
-        // }
-
-        &:not(.m--is-label-up):not(.m--has-error):not(.m--is-valid):not(:hover) {
-            .m-input-style__main {
-                border-color: $m-color--white;
-            }
-        }
-    }
+// override stupid .m-u--app-body specificity issue
+.m-searchfield__search-button.m-searchfield__search-button {
+    border-radius: 0 $m-input-style--border-radius $m-input-style--border-radius 0;
 }

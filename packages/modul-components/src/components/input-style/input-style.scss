@@ -1,9 +1,6 @@
 @import 'commons';
 @import '_var-input-style';
 
-$m-input-style-base-height: $m-line-height + em;
-$m-input-style-border-radius: 3px;
-
 @mixin input-style-cursor($cursor: default) {
     &,
     .m-input-style__label,
@@ -20,37 +17,45 @@ $m-input-style-border-radius: 3px;
     @include input-style-cursor(text);
 
     position: relative;
+    width: 100%;
     display: inline-flex;
     outline: none;
+    line-height: $m-input-style--base-height;
 
     ::placeholder {
-        color: $m-color--disabled;
+        color: var(--m-input-style--color-placeholder);
     }
 
     &__main {
-        border: 1px solid var(--m-input-style--color-border);
-        border-radius: $m-input-style-border-radius;
-        transition: border-color $m-transition-duration--l ease-in-out, margin-top $m-transition-duration ease;
-        display: inline-flex;
         width: 100%;
+        display: inherit;
+        box-shadow: var(--m-input-style--box-shadow);
+        border-radius: $m-input-style--border-radius;
+        border: 1px solid var(--m-input-style--color-border);
+        background-color: var(--m-input-style--color-background);
+        transition: border-color $m-transition-duration--l ease-in-out;
+    }
+
+    &__append {
+        display: inherit;
+        overflow: hidden;
+        position: relative;
     }
 
     &__body {
-        position: relative;
-        display: inline-flex;
+        flex: 1;
+        display: inherit;
         flex-direction: column;
-        width: 100%;
         padding: $m-input-style--padding;
-        transition: border-color $m-transition-duration--l ease-in-out, margin-top $m-transition-duration ease;
+        transition: margin-top $m-transition-duration ease;
     }
 
     &__label {
+        z-index: 1;
         position: relative;
         transform-origin: 0 0;
-        z-index: 1;
-        transform: translate3d(0, 0, 0);
-        align-items: center;
         font-size: $m-font-size;
+        transform: translate3d(0, 0, 0);
         color: var(--m-input-style--color-label);
         font-weight: $m-font-weight--light;
 
@@ -61,23 +66,22 @@ $m-input-style-border-radius: 3px;
     }
 
     &__text {
-        position: relative;
-        transition: background $m-transition-duration ease, padding $m-transition-duration ease, left $m-transition-duration ease;
         left: 0;
+        position: relative;
         display: inline-block;
+        background-color: var(--m-input-style--color-background);
+        transition: background $m-transition-duration ease, padding $m-transition-duration ease, left $m-transition-duration ease;
     }
 
     &__input {
-        display: flex;
+        display: inherit;
         position: relative;
         align-items: center;
         flex: 1 1 auto;
         width: 100%;
         font-weight: $m-font-weight--light;
-        text-decoration: none;
-        background-color: $m-color--white;
-        min-height: $m-input-style-base-height;
-        margin-top: -$m-input-style-base-height;
+        min-height: $m-input-style--base-height;
+        margin-top: -$m-input-style--base-height;
 
         .m-icon-button.m-icon-button,
         .m-icon.m-icon {
@@ -116,7 +120,7 @@ $m-input-style-border-radius: 3px;
         padding: 0;
         font-size: $m-font-size;
         font-weight: $m-font-weight--light;
-        line-height: $m-line-height;
+        line-height: inherit;
         vertical-align: middle;
 
         &::-ms-clear,
@@ -142,18 +146,13 @@ $m-input-style-border-radius: 3px;
     }
 
     &__content {
-        position: relative;
-        flex: 1 1 auto;
+        flex: 1;
         max-width: 100%;
-    }
-
-    &__append {
-        display: flex;
-        justify-content: flex-end;
+        position: relative;
     }
 
     &__suffix {
-        display: inline-flex;
+        display: inherit;
         align-items: center;
     }
 
@@ -178,14 +177,14 @@ $m-input-style-border-radius: 3px;
     // modifiers
 
     &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus):not(.m--is-readonly) {
-        --m-input-style--color-label: #{ $m-input-style--color-hover };
-        --m-input-style--color-border: #{ $m-input-style--color-hover };
+        --m-input-style--color-label: var(--m-input-style--color-hover);
+        --m-input-style--color-border: var(--m-input-style--color-hover);
     }
 
     &.m--is-focus:not(.m--has-error):not(.m--is-valid) {
-        --m-input-style--color-label: #{ $m-input-style--color-focus };
-        --m-input-style--color-border: #{ $m-input-style--color-focus };
-        --m-input-style--color-buttons: #{ $m-input-style--color-focus };
+        --m-input-style--color-label: var(--m-input-style--color-focus);
+        --m-input-style--color-border: var(--m-input-style--color-focus);
+        --m-input-style--color-buttons: var(--m-input-style--color-focus);
     }
 
     &.m--has-cursor-pointer {
@@ -199,15 +198,15 @@ $m-input-style-border-radius: 3px;
     }
 
     &.m--is-label-up {
-        --m-input-style--color-label: #{ $m-input-style--color-label-up };
-        --m-input-style--color-border: #{ $m-input-style--color-label-up };
+        --m-input-style--color-label: var(--m-input-style--color-label-up);
+        --m-input-style--color-border: var(--m-input-style--color-label-up);
 
         .m-input-style__label {
+            // transform: translate3d(0, calc(-50% * 0.8), 0) scale(0.8);
             transform: translate3d(0, calc((-50% * 0.8) - #{$m-input-style--padding}), 0) scale(0.8);
         }
 
         .m-input-style__text {
-            background: $m-color--white;
             left: -$m-spacing--xs; // Magic number: align label with text zone
             padding-left: $m-spacing--xs;
 
@@ -218,23 +217,23 @@ $m-input-style-border-radius: 3px;
     }
 
     &.m--has-error {
-        --m-input-style--color-label: #{ $m-input-style--color-error };
-        --m-input-style--color-border: #{ $m-input-style--color-error };
-        --m-input-style--color-buttons: #{ $m-input-style--color-error };
+        --m-input-style--color-label: var(--m-input-style--color-error);
+        --m-input-style--color-border: var(--m-input-style--color-error);
+        --m-input-style--color-buttons: var(--m-input-style--color-error);
     }
 
     &.m--is-valid {
-        --m-input-style--color-label: #{ $m-input-style--color-valid };
-        --m-input-style--color-border: #{ $m-input-style--color-valid };
-        --m-input-style--color-buttons: #{ $m-input-style--color-valid };
+        --m-input-style--color-label: var(--m-input-style--color-valid);
+        --m-input-style--color-border: var(--m-input-style--color-valid);
+        --m-input-style--color-buttons: var(--m-input-style--color-valid);
     }
 
     &.m--is-disabled,
     &.m--is-waiting {
-        --m-input-style--color-label: #{ $m-input-style--color-disabled };
-        --m-input-style--color-border: #{ $m-input-style--color-disabled };
-        --m-input-style--color-buttons: #{ $m-input-style--color-disabled };
-        --m-input-style--color-input: #{ $m-input-style--color-disabled };
+        --m-input-style--color-label: var(--m-input-style--color-disabled);
+        --m-input-style--color-border: var(--m-input-style--color-disabled);
+        --m-input-style--color-buttons: var(--m-input-style--color-disabled);
+        --m-input-style--color-input: var(--m-input-style--color-disabled);
     }
 
     &.m--is-disabled,
@@ -247,7 +246,6 @@ $m-input-style-border-radius: 3px;
 
     &.m--is-disabled {
         @include input-style-cursor() {
-            color: $m-input-style--color-disabled;
             user-select: none;
         }
     }

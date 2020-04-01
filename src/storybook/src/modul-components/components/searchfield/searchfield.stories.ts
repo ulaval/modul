@@ -1,6 +1,7 @@
 import { actions } from '@storybook/addon-actions';
 import { SEARCHFIELD_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import './searchfield.stories.scss';
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${SEARCHFIELD_NAME}`,
@@ -15,7 +16,7 @@ export const defaultStory = () => ({
         'search',
         'emptyField'
     ),
-    template: `<${SEARCHFIELD_NAME} v-model="value" @search="search" @empty-field="emptyField"></${SEARCHFIELD_NAME}>`
+    template: `<div class="dfgdf"><${SEARCHFIELD_NAME} v-model="value" @search="search" @empty-field="emptyField"></${SEARCHFIELD_NAME}></div>`
 });
 
 defaultStory.story = {
@@ -29,3 +30,5 @@ export const label = () => `<${SEARCHFIELD_NAME} label="Search"n></${SEARCHFIELD
 export const error = () => `<${SEARCHFIELD_NAME} :error="true" error-message="Error message" label="Search"></${SEARCHFIELD_NAME}>`;
 
 export const valid = () => `<${SEARCHFIELD_NAME} :valid="true" valid-message="Valid message" label="Search"></${SEARCHFIELD_NAME}>`;
+
+export const customVisual = () => `<${SEARCHFIELD_NAME} class="m-searchfield-stories" label="Search"></${SEARCHFIELD_NAME}>`;
