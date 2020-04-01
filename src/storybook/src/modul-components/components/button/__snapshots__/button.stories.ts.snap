@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-button Default Story 1`] = `
+<button
+  class="m-button m--is-skin-primary"
+  type="button"
+>
+  <!---->
+   
+  <!---->
+   
+  <span
+    class="m-button__text"
+  >
+    A Button 
+    <!---->
+  </span>
+   
+  <!---->
+   
+  <!---->
+</button>
+`;
+
 exports[`Storyshots modul-components|m-button Disabled 1`] = `
 <button
   class="m-button m--is-skin-primary m--is-disabled"
@@ -570,28 +592,6 @@ exports[`Storyshots modul-components|m-button Waiting 1`] = `
      
     <div />
   </div>
-   
-  <span
-    class="m-button__text"
-  >
-    A Button 
-    <!---->
-  </span>
-   
-  <!---->
-   
-  <!---->
-</button>
-`;
-
-exports[`Storyshots modul-components|m-button default 1`] = `
-<button
-  class="m-button m--is-skin-primary"
-  type="button"
->
-  <!---->
-   
-  <!---->
    
   <span
     class="m-button__text"

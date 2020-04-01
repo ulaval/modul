@@ -31,6 +31,37 @@ exports[`Storyshots modul-components|m-overlay Custom Footer 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-overlay Default Story 1`] = `
+<div>
+  <div
+    class="m-overlay"
+    title="Title"
+  >
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        Open 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-overlay Loading 1`] = `
 <div>
   <div
@@ -103,36 +134,5 @@ exports[`Storyshots modul-components|m-overlay Sandbox 1`] = `
     class="v-portal"
     style="display: none;"
   />
-</div>
-`;
-
-exports[`Storyshots modul-components|m-overlay default 1`] = `
-<div>
-  <div
-    class="m-overlay"
-    title="Title"
-  >
-    <button
-      class="m-button m--is-skin-primary"
-      type="button"
-    >
-      <!---->
-       
-      <!---->
-       
-      <span
-        class="m-button__text"
-      >
-        Open 
-        <!---->
-      </span>
-       
-      <!---->
-       
-      <!---->
-    </button>
-     
-    <!---->
-  </div>
 </div>
 `;

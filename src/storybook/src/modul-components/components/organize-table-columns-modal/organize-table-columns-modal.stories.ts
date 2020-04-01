@@ -40,6 +40,25 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_MODA
         ),
         template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns"></m-organize-table-columns-modal>`
     }))
+    .add('Trigger button secondary skin', () => ({
+        props: {
+            columns: {
+                default: [
+                    { id: 'check', title: 'Action', dataProp: 'check', width: '16px' },
+                    { id: 'name', title: 'Name', dataProp: 'name' },
+                    { id: 'age', title: 'Age', dataProp: 'age' },
+                    { id: 'username', title: 'Username', dataProp: 'username' },
+                    { id: 'menu', title: 'Menu', dataProp: 'menu', width: '33px' }
+                ]
+            }
+
+        },
+        methods: actions(
+            'reorganize',
+            'reset'
+        ),
+        template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns" button-skin="secondary"></m-organize-table-columns-modal>`
+    }))
     .add('Fixed columns', () => ({
         props: {
             columns: {
