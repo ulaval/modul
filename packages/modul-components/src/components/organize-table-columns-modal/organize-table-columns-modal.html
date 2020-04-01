@@ -2,7 +2,8 @@
     <m-modal :open.sync="open"
              size="small"
              :title="'m-organize-table-columns-modal:title' | f-m-i18n">
-        <m-button slot="trigger">{{'m-organize-table-columns-modal:title' | f-m-i18n}}</m-button>
+        <m-button slot="trigger"
+                  :skin="buttonSkin">{{'m-organize-table-columns-modal:title' | f-m-i18n}}</m-button>
         <m-organize-table-columns :columns="internalColumns"
                                   @reorganize="reorganize">
         </m-organize-table-columns>
