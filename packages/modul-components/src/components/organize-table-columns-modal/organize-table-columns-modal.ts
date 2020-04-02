@@ -18,7 +18,10 @@ export class MOrganizeTableColumnsModal extends ModulVue {
     public columns!: MColumnTable[];
 
     @Prop({
-        default: MButtonSkin.Primary
+        default: MButtonSkin.Primary,
+        validator: value =>
+            value === MButtonSkin.Primary ||
+            value === MButtonSkin.Secondary
     })
     public buttonSkin!: MButtonSkin;
 
