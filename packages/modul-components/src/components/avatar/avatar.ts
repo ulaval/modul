@@ -22,10 +22,10 @@ export class MAvatar extends Vue {
             value === MAvatarSize.MEDIUM ||
             value === MAvatarSize.LARGE
     })
-    size: MAvatarSize;
+    public size: MAvatarSize;
 
     @Prop({ default: false })
-    clickable: boolean;
+    public clickable: boolean;
 
     isFocusVisible: boolean = false;
     isHovered: boolean = false;

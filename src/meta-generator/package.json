@@ -1,6 +1,6 @@
 {
     "name": "meta-generator",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "Vue typescript component documentation generator",
     "private": true,
     "author": "Charles Maheu <charles.maheu@dti.ulaval.ca>",
@@ -18,10 +18,8 @@
         "dev": "tsc --watch"
     },
     "devDependencies": {
-        "@types/jest": "^23.3.14",
-        "@types/lodash": "^4.14.136",
-        "@types/node": "^10.12.20",
-        "@types/webpack-env": "^1.13.6",
+        "@types/lodash": "^4.14.149",
+        "@types/webpack-env": "^1.15.1",
         "@types/yargs": "^13.0.2",
         "copyfiles": "^1.2.0",
         "node-html-parser": "^1.1.10",

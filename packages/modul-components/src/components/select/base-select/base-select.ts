@@ -1,5 +1,4 @@
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
-import virtualList from 'vue-virtual-scroll-list';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MPopup } from '../../popup/popup';
@@ -7,12 +6,12 @@ import { MSelectItem } from '../../select/select-item/select-item';
 import WithRender from './base-select.html';
 import './base-select.scss';
 
+
 const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
-        MSelectItem,
-        'virtual-list': virtualList
+        MSelectItem
     },
     mixins: [
         MediaQueries
@@ -57,9 +56,6 @@ export class MBaseSelect extends ModulVue {
     @Prop({ default: false })
     public virtualScroll: boolean;
 
-    @Prop({ default: 52 }) // 208px / 4 -> base-select.scss
-    public virtualScrollItemHeight: string;
-
     public $refs: {
         items: HTMLUListElement;
         popup: MPopup;
@@ -101,6 +97,21 @@ export class MBaseSelect extends ModulVue {
         if (this.closeOnSelect) {
             this.closePopup();
         }
+    }
+
+    getItemProps(item: any, index: number): any {
+        return {
+            value: item,
+            focused: index === this.focusedIndex,
+            selected: this.isSelected(item),
+            hideRadioButtonMobile: this.hideRadioButtonMobile
+        };
+    }
+
+    getItemHandlers(item: any, index: number): any {
+        return {
+            click: (event: Event): void => this.onSelectItem(item, index, event)
+        };
     }
 
     public togglePopup(): void {

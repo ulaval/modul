@@ -91,10 +91,10 @@
             font-size: $m-font-size--h2;
             font-weight: $m-font-weight--semi-bold;
         }
+    }
 
-        &__left {
-            flex: 1 1 auto;
-        }
+    &__header-left {
+        flex: 1 1 auto;
     }
 
     &__body {
@@ -110,16 +110,22 @@
     }
 
     &__content {
-        @include m-fixed-box-padding();
+        position: relative;
+
+        @include m-box-padding();
+
+        &.m--no-keyboard {
+            height: 100%;
+        }
     }
 
     &__footer {
         border-top: $m-border-width--s solid $m-color--border;
         animation: fadeIn 0.5s linear forwards;
+    }
 
-        &__save-button {
-            margin-right: $m-margin;
-        }
+    &__save-button {
+        margin-right: $m-spacing;
     }
 
     @keyframes fadeIn {

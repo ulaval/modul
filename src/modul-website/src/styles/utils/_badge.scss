@@ -10,3 +10,16 @@
     background: $m-color--ul-yellow;
     padding: 2px 3px;
 }
+
+.modul-logo__new {
+    display: inline-flex;
+    align-items: center;
+    height: 12px; // Magic number
+    margin-left: $m-margin--s;
+    text-transform: uppercase;
+    font-size: 8px; // Mafic number
+    font-weight: $m-font-weight--black;
+    color: $modul-color--black-grey-dark;
+    background: $m-color--hint;
+    padding: 2px 3px;
+}

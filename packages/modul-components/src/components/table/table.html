@@ -15,65 +15,58 @@
                     :key="column.id"
                     @click="sort(column)"
                     scope="col">
-                    <slot :name="'header.' + column.dataProp"
-                          :column="column">
-                        <div v-if="column.sortable"
-                             class="m-table__header-wrap">
-                            <span class="m-table__sortable-icon-wrap">
-                                <span class="m-table__header-name"
-                                      v-html="column.title"></span>
-                                <m-icon-button v-if="column.sortable"
-                                               class="m-table__sortable-icon"
-                                               :class="[getColumnSortDirectionClass(column)]"
-                                               :disabled="loading"
-                                               :icon-name="getColumnSortIcon(column)"
-                                               skin="bold"
-                                               button-size="14px"
-                                               icon-size="12px"
-                                               :title="i18nSort"
-                                               @click.stop="sort(column)"></m-icon-button>
-                            </span>
-
+                    <div v-if="column.sortable"
+                         class="m-table__header-wrap">
+                        <div class="m-table__sortable-icon-wrap">
+                            <slot :name="'header.' + column.dataProp"
+                                  :column="column">
+                                <div class="m-table__header-name"
+                                     v-html="column.title"></div>
+                            </slot>
+                            <m-icon-button v-if="column.sortable"
+                                           class="m-table__sortable-icon"
+                                           :class="[getColumnSortDirectionClass(column)]"
+                                           :disabled="loading"
+                                           :icon-name="getColumnSortIcon(column)"
+                                           skin="bold"
+                                           button-size="14px"
+                                           icon-size="12px"
+                                           :title="i18nSort"
+                                           @click.stop="sort(column)" />
                         </div>
-                        <template v-else>
-                            <span class="m-table__header-name"
-                                  v-html="column.title"></span>
-                        </template>
+                    </div>
+                    <slot v-else
+                          :name="'header.' + column.dataProp"
+                          :column="column">
+                        <div class="m-table__header-name"
+                             v-html="column.title"></div>
                     </slot>
-
                 </th>
-
             </tr>
         </thead>
     </slot>
-
     <slot name="body">
         <tbody>
-            <tr v-if="isEmpty"
-                class="m-table__message">
-                <slot name="empty">
-                    <td :colspan="columnsInternal.length">
-                        <p>{{ i18nEmptyTable }}</p>
-                    </td>
-                </slot>
-            </tr>
-            <template v-if="loading">
-                <tr class="m-table__loading">
-                    <td :colspan="columnsInternal.length">
-                        <m-progress v-if="loading"
-                                    :indeterminate="true"
-                                    :border-radius="false"></m-progress>
-                    </td>
-                </tr>
-                <tr class="m-table__message">
-                    <slot name="loading">
-                        <td :colspan="columnsInternal.length">
+            <tr class="m-table__placeholder"
+                v-if="isEmpty || loading">
+                <td class="m-table__placeholder-container"
+                    :style="{ position: placeholderPositionType, width: widthPlaceholder }">
+                    <m-progress v-if="loading"
+                                :indeterminate="true"
+                                :border-radius="false" />
+                    <div class="m-table__placeholder-message">
+                        <slot name="empty"
+                              v-if="isEmpty">
+                            <p>{{ i18nEmptyTable }}</p>
+                        </slot>
+                        <slot name="loading"
+                              v-if="loading">
                             <p>{{ i18nLoading }}</p>
-                            <p class="m-table__message__precision">{{ i18nPleaseWait }}</p>
-                        </td>
-                    </slot>
-                </tr>
-            </template>
+                            <p class="m-table__placeholder-precision">{{ i18nPleaseWait }}</p>
+                        </slot>
+                    </div>
+                </td>
+            </tr>
             <tr v-else
                 v-for="(row, index) in rows"
                 :key="index">

@@ -28,34 +28,6 @@ exports[`Storyshots modul-components|m-popper Click Outside Disabled 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-popper Default Story 1`] = `
-<div
-  class="m-popper"
->
-  <button
-    class="m-button m--is-skin-primary"
-    type="button"
-  >
-    <!---->
-     
-    <!---->
-     
-    <span
-      class="m-button__text"
-    >
-      Open popper 
-      <!---->
-    </span>
-     
-    <!---->
-     
-    <!---->
-  </button>
-   
-  <!---->
-</div>
-`;
-
 exports[`Storyshots modul-components|m-popper On Tab Change Restore Transition 1`] = `
 <div>
   <div
@@ -92,5 +64,69 @@ exports[`Storyshots modul-components|m-popper On Tab Change Restore Transition 1
       Go to twitter
     </a>
   </p>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-popper default 1`] = `
+<div>
+  <div
+    class="m-popper"
+  >
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        Open popper 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popup m--is-inline"
+  >
+    <div
+      class="m-popper"
+    >
+      <div>
+        <button
+          class="m-button m--is-skin-primary"
+          type="button"
+        >
+          <!---->
+           
+          <!---->
+           
+          <span
+            class="m-button__text"
+          >
+            Open popper 
+            <!---->
+          </span>
+           
+          <!---->
+           
+          <!---->
+        </button>
+      </div>
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
 </div>
 `;

@@ -11,6 +11,7 @@ $m-sortable-icon-size: 14px;
 }
 
 .m-table {
+    position: relative;
     border-collapse: collapse;
 
     &.m--is-loading {
@@ -232,22 +233,49 @@ $m-sortable-icon-size: 14px;
         height: auto;
     }
 
-    &__message {
+    &__placeholder,
+    &__placeholder-container {
+        height: 260px;
+    }
+
+    &__placeholder-container {
+        position: sticky;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
         background-color: $m-color--grey-lightest;
-        text-align: center;
-        height: 260px; // magic number
-        color: $m-color--grey;
-        font-size: $m-font-size--l;
-        font-weight: $m-font-weight--semi-bold;
 
-        &__precision {
-            font-size: $m-font-size;
-            font-weight: $m-font-weight--light;
+        &.m-table__placeholder-container {
+            .m-table & {
+                box-sizing: border-box;
+                padding: 0;
+            }
         }
+    }
 
-        p {
+    &__placeholder-message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: $m-spacing;
+        min-width: 200px;
+        color: $m-color--grey;
+        font-weight: $m-font-weight--semi-bold;
+        font-size: $m-font-size--l;
+        text-align: center;
+
+        > :first-child {
             margin-top: 0;
         }
+    }
+
+    &__placeholder-precision {
+        margin: $m-spacing--xs 0 0 0;
+        font-size: $m-font-size;
+        font-weight: $m-font-weight--light;
     }
 }
 

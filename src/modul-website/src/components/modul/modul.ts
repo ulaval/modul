@@ -2,7 +2,8 @@ import { ComponentMeta } from '@/content/components.meta.loader';
 import { ROUTER_PHILOSOPHY } from '@/router';
 import { InputManagement } from '@ulaval/modul-components/dist/mixins/input-management/input-management';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
+import deburr from 'lodash/deburr';
 import Component from 'vue-class-component';
 import { Watch } from 'vue-property-decorator';
 import { ModulWebsite } from '../modul-website';
@@ -94,12 +95,12 @@ export default class Modul extends ModulWebsite {
         if (this.searchModel != '' && this.searchModel.length > 2) {
             this.searchResult = this.searchData.filter((searchResultComponent: SearchResultComponent) => {
                 let textToSearch = searchResultComponent.category + ' ' + searchResultComponent.text + ' ' + searchResultComponent.tag;
-                return _.deburr(textToSearch.toLowerCase()).match(_.deburr(this.searchModel.toLowerCase()));
+                return deburr(textToSearch.toLowerCase()).match(deburr(this.searchModel.toLowerCase()));
             });
         }
     }
 
-    debouncedSearchFunction = _.debounce(() => {
+    debouncedSearchFunction = debounce(() => {
         this.onSearch();
     }, 300);
 
