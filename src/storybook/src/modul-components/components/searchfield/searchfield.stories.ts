@@ -16,7 +16,7 @@ export const defaultStory = () => ({
         'search',
         'emptyField'
     ),
-    template: `<div class="dfgdf"><${SEARCHFIELD_NAME} v-model="value" @search="search" @empty-field="emptyField"></${SEARCHFIELD_NAME}></div>`
+    template: `<${SEARCHFIELD_NAME} v-model="value" @search="search" @empty-field="emptyField"></${SEARCHFIELD_NAME}>`
 });
 
 defaultStory.story = {
