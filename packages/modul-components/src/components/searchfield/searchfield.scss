@@ -14,6 +14,8 @@
     --m-input-style--color-background: #{ $m-color--grey-lightest };
 
     position: relative;
+    display: inline-flex;
+    flex-direction: column;
 
     @include m-input-inline-spacing();
 
