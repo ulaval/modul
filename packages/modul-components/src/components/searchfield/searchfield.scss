@@ -18,7 +18,7 @@
     @include m-input-inline-spacing();
 
     // dirty hack for ghost pixel glitch >_<
-    .m--has-label:not(.m--is-label-up) .m-input-style__append {
+    .m-input-style.m--has-label:not(.m--is-label-up) .m-input-style__append {
         margin-bottom: -1px;
     }
 
@@ -44,12 +44,12 @@
             --m-searchfield--color-button: var(--m-searchfield--color-button-active);
         }
 
-        .m--has-error & {
+        .m-input-style.m--has-error & {
             --m-searchfield--color-button: var(--m-input-style--color-error);
             --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
         }
 
-        .m--is-valid & {
+        .m-input-style.m--is-valid & {
             --m-searchfield--color-button: var(--m-input-style--color-valid);
             --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
         }
@@ -63,7 +63,7 @@
         transition: margin-top $m-transition-duration ease;
         display: flex;
 
-        .m--has-validation-message & {
+        .m-searchfield.m--has-validation-message & {
             margin-top: $m-spacing--xs;
         }
     }
