@@ -230,3 +230,67 @@ export const customFooter = () => ({
     </${OVERLAY_NAME}>
 </div>`
 });
+
+export const disableFooter = () => ({
+    methods: {
+        fermerFenetre(): void {
+            console.log('fermer');
+        }
+    },
+    template: `<div>
+    <${OVERLAY_NAME} title="Title" :disable-footer="true" >
+        <m-button slot="trigger">Open</m-button>
+        <h2 slot="header" style="margin:0;">Disable footer</h2>
+        <div slot="header-right">
+            <m-link mode="button"
+                    @click="fermerFenetre()"
+                    ref="boutonFermer">
+                fermer
+            </m-link>
+        </div>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+        </p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis magni reiciendis iste nulla eum velit error
+            nihil corrupti. At culpa accusamus autem dignissimos aliquid quae ratione ipsa, reiciendis quod vero?
+        </p>
+        <div slot="footer">
+            <m-link mode="button"
+                    @click="fermerFenetre()"
+                    ref="boutonFermer">
+                fermer
+            </m-link>
+        </div>
+    </${OVERLAY_NAME}>
+</div>`
+});

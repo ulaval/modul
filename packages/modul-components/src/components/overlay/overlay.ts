@@ -29,6 +29,8 @@ export class MOverlay extends ModulVue {
     public disableSaveButton: boolean;
     @Prop({ default: false })
     public waiting: boolean;
+    @Prop({ default: false })
+    public disableFooter: boolean;
 
     public hasKeyboard: boolean = false;
 
