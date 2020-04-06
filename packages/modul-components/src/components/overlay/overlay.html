@@ -32,7 +32,7 @@
                              :class="{ 'm--no-padding': !padding || !paddingBody }">
                             <slot />
                         </div>
-                        <footer v-if="hasKeyboard && !disableFooter"
+                        <footer v-if="hasKeyboard && !hideFooter"
                                 class="m-overlay__footer"
                                 ref="footer"
                                 :class="{ 'm--no-padding': !padding || !paddingFooter }">
@@ -51,7 +51,7 @@
                             </slot>
                         </footer>
                     </div>
-                    <footer v-if="!hasKeyboard && !disableFooter"
+                    <footer v-if="!hasKeyboard && !hideFooter"
                             class="m-overlay__footer m--no-keyboard"
                             ref="footer"
                             :class="{

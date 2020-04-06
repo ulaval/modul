@@ -30,7 +30,7 @@ export class MOverlay extends ModulVue {
     @Prop({ default: false })
     public waiting: boolean;
     @Prop({ default: false })
-    public disableFooter: boolean;
+    public hideFooter: boolean;
 
     public hasKeyboard: boolean = false;
 

@@ -231,16 +231,16 @@ export const customFooter = () => ({
 </div>`
 });
 
-export const disableFooter = () => ({
+export const hideFooter = () => ({
     methods: {
         fermerFenetre(): void {
             console.log('fermer');
         }
     },
     template: `<div>
-    <${OVERLAY_NAME} title="Title" :disable-footer="true" >
+    <${OVERLAY_NAME} title="Title" :hide-footer="true" >
         <m-button slot="trigger">Open</m-button>
-        <h2 slot="header" style="margin:0;">Disable footer</h2>
+        <h2 slot="header" style="margin:0;">Hide footer</h2>
         <div slot="header-right">
             <m-link mode="button"
                     @click="fermerFenetre()"
