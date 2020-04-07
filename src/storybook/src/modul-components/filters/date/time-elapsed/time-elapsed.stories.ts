@@ -25,7 +25,7 @@ function getBaseVueWithLocale(template: string): any {
                 }, ModulVue.prototype.$i18n.currentLang())
             },
             date: {
-                default: date('Date', new Date())
+                default: date('Date', new Date('2020-04-05T14:15:00Z'))
             },
             firstLetterUppercase: {
                 default: boolean('First letter uppercase?', false)
