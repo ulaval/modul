@@ -2,16 +2,17 @@ import Vue from 'vue';
 import { FormatMode } from '../../../utils/i18n/i18n';
 import { dateFilter, DateFilterParams } from '../date/date';
 
-const oneMinuteInMillisecond: number = 60000;
-const sixtyMinutesInMillisecond: number = 3600000;
-const oneDayInMillisecond: number = 86400000;
-const thirtyDaysInMillisecond: number = 2592000000;
+const oneMinuteInMillisecond: number = 60 * 1000;
+const oneHourInMillisecond: number = 60 * oneMinuteInMillisecond;
+const oneDayInMillisecond: number = 24 * oneHourInMillisecond;
+const thirtyDaysInMillisecond: number = 30 * oneDayInMillisecond;
 
 export class TimeElapsedFilter {
 
     static format(date: Date, firstLetterUppercase: boolean = false): string {
         let timeElapsed: string;
-        let shortModeParams: DateFilterParams = { shortMode: true };
+        const shortModeParams: DateFilterParams = { shortMode: true };
+        const i18nStartKey: string = firstLetterUppercase ? 'f-m-time-elapsed-start-sentence:' : 'f-m-time-elapsed:';
 
         const calculateTimeElapsed: number = new Date().getTime() - date.getTime();
 
@@ -20,41 +21,33 @@ export class TimeElapsedFilter {
         }
 
         if (calculateTimeElapsed < oneMinuteInMillisecond) {
-            timeElapsed = TimeElapsedFilter.translateDate('f-m-time-elapsed:now', {});
-        } else if (calculateTimeElapsed < sixtyMinutesInMillisecond) {
-            timeElapsed = TimeElapsedFilter.defineLessThanSixtyMinutesMessage(calculateTimeElapsed);
+            timeElapsed = TimeElapsedFilter.translateDate(i18nStartKey + 'now', {});
+        } else if (calculateTimeElapsed < oneHourInMillisecond) {
+            timeElapsed = TimeElapsedFilter.defineLessThanOneHourMessage(calculateTimeElapsed, i18nStartKey);
         } else if (calculateTimeElapsed < oneDayInMillisecond) {
-            timeElapsed = TimeElapsedFilter.defineLessThanOneDayMessage(calculateTimeElapsed);
+            timeElapsed = TimeElapsedFilter.defineLessThanOneDayMessage(calculateTimeElapsed, i18nStartKey);
         } else if (calculateTimeElapsed < thirtyDaysInMillisecond) {
-            timeElapsed = TimeElapsedFilter.defineLessThanThirtyDaysMessage(calculateTimeElapsed);
+            timeElapsed = TimeElapsedFilter.defineLessThanThirtyDaysMessage(calculateTimeElapsed, i18nStartKey);
         } else {
             timeElapsed = dateFilter(date, shortModeParams);
-        }
-
-        if (firstLetterUppercase) {
-            timeElapsed = TimeElapsedFilter.uppercaseFirstLetter(timeElapsed);
         }
 
         return timeElapsed;
     }
 
-    private static defineLessThanSixtyMinutesMessage(calculateTimeElapsed: number): string {
+    private static defineLessThanOneHourMessage(calculateTimeElapsed: number, i18nStartKey: string): string {
         const minute: number = Math.floor(calculateTimeElapsed / oneMinuteInMillisecond);
-        return TimeElapsedFilter.translateDate('f-m-time-elapsed:minute', { minute: minute }, minute);
+        return TimeElapsedFilter.translateDate(i18nStartKey + 'minute', { minute: minute }, minute);
     }
 
-    private static defineLessThanOneDayMessage(calculateTimeElapsed: number): string {
-        const hour: number = Math.floor(calculateTimeElapsed / sixtyMinutesInMillisecond);
-        return TimeElapsedFilter.translateDate('f-m-time-elapsed:hour', { hour: hour }, hour);
+    private static defineLessThanOneDayMessage(calculateTimeElapsed: number, i18nStartKey: string): string {
+        const hour: number = Math.floor(calculateTimeElapsed / oneHourInMillisecond);
+        return TimeElapsedFilter.translateDate(i18nStartKey + 'hour', { hour: hour }, hour);
     }
 
-    private static defineLessThanThirtyDaysMessage(calculateTimeElapsed: number): string {
+    private static defineLessThanThirtyDaysMessage(calculateTimeElapsed: number, i18nStartKey: string): string {
         const day: number = Math.floor(calculateTimeElapsed / oneDayInMillisecond);
-        return TimeElapsedFilter.translateDate('f-m-time-elapsed:day', { day: day }, day);
-    }
-
-    private static uppercaseFirstLetter(timeElapsed: string): string {
-        return timeElapsed.charAt(0).toUpperCase() + timeElapsed.slice(1);
+        return TimeElapsedFilter.translateDate(i18nStartKey + 'day', { day: day }, day);
     }
 
     private static translateDate(key: string, params: any, timeNumber?: number): string {
