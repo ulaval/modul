@@ -22,7 +22,7 @@ function getBaseVueWithLocale(template: string): any {
                 default: select('Language', {
                     [FRENCH]: FRENCH,
                     [ENGLISH]: ENGLISH
-                }, ModulVue.prototype.$i18n.currentLang())
+                }, FRENCH)
             },
             date: {
                 default: date('Date', new Date('2020-04-05T14:15:00Z'))
