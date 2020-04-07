@@ -45,7 +45,7 @@ function getBaseVueWithLocale(template: string): any {
             }
         },
         data: () => ({
-            originalLang: (Vue.prototype as ModulVue).$i18n.currentLang(),
+            originalLang: FRENCH,
             i18n: Vue.prototype.$i18n
         }),
         methods: {
@@ -54,8 +54,9 @@ function getBaseVueWithLocale(template: string): any {
                 return dateTimeFilter(dateFormat);
             },
             formatedDateTimestampToDate(stringTimestamp: number): Date {
-                // Moins 59000 puisque le date picker mets toujours 59 secondes sur les minutes choisi
-                return new Date(stringTimestamp - 59000);
+                // Plus currentSec puisque le date picker mets toujours :00 secondes sur les minutes choisi
+                const currentSec: number = new Date().getSeconds();
+                return new Date(stringTimestamp + (currentSec * 1000));
             },
             firstLetterBoolean(firstLetterUppercase: any): boolean {
                 return firstLetterUppercase;
