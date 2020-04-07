@@ -4,7 +4,8 @@
     // states
     --m-input-style--color-hover: #{ $m-color--grey-darkest };
     --m-input-style--color-focus: #{ $m-color--interactive };
-    --m-input-style--color-label-up: #{ $m-color--grey-dark };
+    --m-input-style--color-label-up: #{ $m-color--grey };
+    --m-input-style--color-border-up: #{ $m-color--grey-light };
     --m-input-style--color-error: #{ $m-color--error };
     --m-input-style--color-valid: #{ $m-color--success };
     --m-input-style--color-disabled: #{ $m-color--disabled };
@@ -14,7 +15,7 @@
     --m-input-style--color-background: white;
     --m-input-style--color-input: #{ $m-color--text};
     --m-input-style--color-label: #{ $m-color--grey };
-    --m-input-style--color-border: #{ $m-color--grey };
+    --m-input-style--color-border: #{ $m-color--grey-light };
     --m-input-style--color-buttons: #{ $m-color--grey };
     --m-input-style--color-placeholder: #{ $m-input-style--color-disabled };
 }
@@ -217,10 +218,9 @@
 
     &.m--is-label-up {
         --m-input-style--color-label: var(--m-input-style--color-label-up);
-        --m-input-style--color-border: var(--m-input-style--color-label-up);
+        --m-input-style--color-border: var(--m-input-style--color-border-up);
 
         .m-input-style__label {
-            // transform: translate3d(0, calc(-50% * 0.8), 0) scale(0.8);
             transform: translate3d(0, calc((-50% * 0.8) - #{$m-input-style--padding}), 0) scale(0.8);
         }
 
