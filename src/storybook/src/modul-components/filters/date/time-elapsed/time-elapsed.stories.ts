@@ -75,7 +75,7 @@ function getBaseSimpleVue(template: string): any {
 storiesOf(`${modulComponentsHierarchyRootSeparator}${TIME_ELAPSED_NAME}`, module)
     .add('Default', () => getBaseSimpleVue(`
         <div>
-            <div>Date choisi : {{ formatedDateTimestampToDate(date) | f-m-date-time }}
+            <div>Date choisi : {{ formatedDateTimestampToDate(date) | f-m-date-time }}</div>
             <div>Resultat : {{ formatedDateTimestampToDate(date) | f-m-time-elapsed( firstLetterBoolean(firstLetterUppercase) ) }}</div>
         </div>`)
     );
