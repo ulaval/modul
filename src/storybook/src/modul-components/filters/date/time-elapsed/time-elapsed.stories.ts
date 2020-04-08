@@ -25,7 +25,7 @@ function getBaseVueWithLocale(template: string): any {
                 }, FRENCH)
             },
             date: {
-                default: date('Date', new Date('2020-04-05T14:15:00Z'))
+                default: date('Date', new Date())
             },
             firstLetterUppercase: {
                 default: boolean('First letter uppercase?', false)
