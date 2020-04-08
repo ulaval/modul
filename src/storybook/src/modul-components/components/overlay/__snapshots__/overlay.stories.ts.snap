@@ -31,6 +31,20 @@ exports[`Storyshots modul-components|m-overlay Custom Footer 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-overlay Hide Footer 1`] = `
+<div>
+  <div
+    class="m-overlay"
+  >
+     
+    <div
+      class="v-portal"
+      style="display: none;"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-overlay Loading 1`] = `
 <div>
   <div
