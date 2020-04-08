@@ -12,6 +12,7 @@
     --m-input-style--color-waiting: #{ $m-color--active };
     // core
     --m-input-style--box-shadow: none;
+    --m-input-style--font-weight: #{ $m-font-weight--light };
     --m-input-style--color-background: white;
     --m-input-style--color-input: #{ $m-color--text};
     --m-input-style--color-label: #{ $m-color--grey };
@@ -76,7 +77,7 @@
         font-size: $m-font-size;
         transform: translate3d(0, 0, 0);
         color: var(--m-input-style--color-label);
-        font-weight: $m-font-weight--light;
+        font-weight: var(--m-input-style--font-weight);
 
         .m-icon {
             font-size: 85%;

@@ -5,6 +5,7 @@ import { MTextfieldType } from '@ulaval/modul-components/dist/components/textfie
 import { InputStateTagStyle } from '@ulaval/modul-components/dist/mixins/input-state/input-state';
 import { InputMaxWidth } from '@ulaval/modul-components/dist/mixins/input-width/input-width';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import './textfield.stories.scss';
 
 
 
@@ -93,6 +94,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
     }))
     .add('label-up', () => ({
         template: '<m-textfield label="label" label-up="true" placeholder="placeholder"></m-textfield>'
+    }))
+    .add('custom styles', () => ({
+        template: '<m-textfield class="m-textfield-stories" label="label" label-up="true" placeholder="placeholder"></m-textfield>'
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}/type`, module)
