@@ -6,7 +6,8 @@ import { ModulVue } from '../../utils/vue/vue';
 import { INPUT_STYLE_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
 import SpinnerPlugin from '../spinner/spinner';
-import WithRender from './input-style.html?style=./input-style.scss';
+import WithRender from './input-style.html';
+import './input-style.scss';
 
 export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
 
