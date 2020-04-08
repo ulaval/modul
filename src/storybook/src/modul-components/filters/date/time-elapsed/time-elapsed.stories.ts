@@ -2,6 +2,7 @@ import { boolean, date, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import DateFilterPlugin from '@ulaval/modul-components/dist/filters/date/date';
 import { dateTimeFilter } from '@ulaval/modul-components/dist/filters/date/date-time/date-time';
+import { TimeElapsedFilter } from '@ulaval/modul-components/dist/filters/date/time-elapsed/time-elapsed';
 import { TIME_ELAPSED_NAME } from '@ulaval/modul-components/dist/filters/filter-names';
 import EnglishPlugin from '@ulaval/modul-components/dist/lang/en';
 import FrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
@@ -68,6 +69,9 @@ function getBaseVueWithLocale(template: string): any {
             },
             firstLetterBoolean(firstLetterUppercase: any): boolean {
                 return firstLetterUppercase;
+            },
+            formatedDateTimeElapsed(date: Date, firstLetterUppercase: boolean): string {
+                return TimeElapsedFilter.format(date, firstLetterUppercase);
             }
         },
         destroyed(): void {
@@ -84,6 +88,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIME_ELAPSED_NAME}`, module
     .add('Default', () => getBaseSimpleVue(`
         <div>
             <div>Date choisi : <span v-html="formatedDateTimestampToString(date)"></span></div>
-            <div>Resultat : {{ formatedDateTimestampToDate(date) | f-m-time-elapsed( firstLetterBoolean(firstLetterUppercase) ) }}</div>
+            <div>Resultat : <span v-html="formatedDateTimeElapsed(formatedDateTimestampToDate(date), firstLetterUppercase)"></span></div>
         </div>`)
     );
