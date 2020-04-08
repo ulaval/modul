@@ -1,4 +1,5 @@
 import Vue, { PluginObject } from 'vue';
+import ComponentMixinPlugin from './component/component-mixin';
 import { WindowErrorHandler } from './errors/window-error-handler';
 import HttpPlugin, { HttpPluginOptions, HttpService } from './http/http';
 import I18nPlugin, { I18nPluginOptions, Messages } from './i18n/i18n';
@@ -21,6 +22,7 @@ declare module 'vue/types/vue' {
         $scrollTo: ScrollTo;
     }
 }
+
 export interface UtilsPluginOptions {
     httpPluginOptions?: HttpPluginOptions;
     consoleOptions?: ConsoleOptions;
@@ -51,6 +53,7 @@ const UtilsPlugin: PluginObject<any> = {
         Vue.use(SpritesPlugin);
         Vue.use(ModulPlugin);
         Vue.use(ScrollToPlugin);
+        Vue.use(ComponentMixinPlugin);
     }
 };
 

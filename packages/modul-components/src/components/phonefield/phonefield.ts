@@ -34,6 +34,12 @@ export interface Country {
 
 @WithRender
 @Component({
+    modul: {
+        i18n: {
+            'fr': require('./phonefield.lang.fr.json'),
+            'en': require('./phonefield.lang.en.json')
+        }
+    },
     mixins: [
         InputState,
         InputWidth,
