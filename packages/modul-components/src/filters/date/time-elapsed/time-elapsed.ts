@@ -5,7 +5,7 @@ import { dateFilter, DateFilterParams } from '../date/date';
 const oneMinuteInMillisecond: number = 60 * 1000;
 const oneHourInMillisecond: number = 60 * oneMinuteInMillisecond;
 const oneDayInMillisecond: number = 24 * oneHourInMillisecond;
-const thirtyDaysInMillisecond: number = 30 * oneDayInMillisecond;
+const thirtyOneDaysInMillisecond: number = 31 * oneDayInMillisecond;
 const averageExecutionMillisecondTime: number = 900;
 
 export class TimeElapsedFilter {
@@ -27,8 +27,8 @@ export class TimeElapsedFilter {
             timeElapsed = TimeElapsedFilter.defineLessThanOneHourMessage(calculateTimeElapsed, i18nStartKey);
         } else if (calculateTimeElapsed < oneDayInMillisecond) {
             timeElapsed = TimeElapsedFilter.defineLessThanOneDayMessage(calculateTimeElapsed, i18nStartKey);
-        } else if (calculateTimeElapsed < thirtyDaysInMillisecond) {
-            timeElapsed = TimeElapsedFilter.defineLessThanThirtyDaysMessage(calculateTimeElapsed, i18nStartKey);
+        } else if (calculateTimeElapsed < thirtyOneDaysInMillisecond) {
+            timeElapsed = TimeElapsedFilter.defineLessThanThirtyOneDaysMessage(calculateTimeElapsed, i18nStartKey);
         } else {
             timeElapsed = dateFilter(date, shortModeParams);
         }
@@ -46,7 +46,7 @@ export class TimeElapsedFilter {
         return TimeElapsedFilter.translateDate(i18nStartKey + 'hour', { hour: hour }, hour);
     }
 
-    private static defineLessThanThirtyDaysMessage(calculateTimeElapsed: number, i18nStartKey: string): string {
+    private static defineLessThanThirtyOneDaysMessage(calculateTimeElapsed: number, i18nStartKey: string): string {
         const day: number = Math.floor(calculateTimeElapsed / oneDayInMillisecond);
         return TimeElapsedFilter.translateDate(i18nStartKey + 'day', { day: day }, day);
     }
