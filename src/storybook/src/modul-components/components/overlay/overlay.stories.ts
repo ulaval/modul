@@ -230,3 +230,11 @@ export const customFooter = () => ({
     </${OVERLAY_NAME}>
 </div>`
 });
+
+export const hideFooter = () => ({
+    template: `<div>
+    <${OVERLAY_NAME} :hide-footer="true" :open="true" >
+        <h2 slot="header">Title</h2>
+    </${OVERLAY_NAME}>
+</div>`
+});

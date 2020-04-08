@@ -3,14 +3,14 @@ window.matchMedia =
     (() => {
         return {
             matches: false,
-            addListener: () => {},
-            removeListener: () => {}
+            addListener: () => { },
+            removeListener: () => { }
         };
     });
 
 window.MutationObserver = window.MutationObserver || class {
-    observe() {}
-    disconnect() {}
+    observe() { }
+    disconnect() { }
 };
 
 // jsdom doesn't support closest at the moment --> https://github.com/jsdom/jsdom/issues/1555
@@ -56,7 +56,11 @@ Intl.DateTimeFormat = class {
     }
 }
 
+Date.prototype.toLocaleDateString = function (_locale, options) {
+    return `mock-date-prototype-toLocaleDateString-${JSON.stringify(options)}`;
+}
+
 document.createRange = () => ({
-    setStart() {},
-    setEnd() {}
+    setStart() { },
+    setEnd() { }
 });
