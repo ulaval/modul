@@ -6,6 +6,7 @@ const oneMinuteInMillisecond: number = 60 * 1000;
 const oneHourInMillisecond: number = 60 * oneMinuteInMillisecond;
 const oneDayInMillisecond: number = 24 * oneHourInMillisecond;
 const thirtyDaysInMillisecond: number = 30 * oneDayInMillisecond;
+const averageExecutionMillisecondTime: number = 900;
 
 export class TimeElapsedFilter {
 
@@ -14,7 +15,7 @@ export class TimeElapsedFilter {
         const shortModeParams: DateFilterParams = { shortMode: true };
         const i18nStartKey: string = firstLetterUppercase ? 'f-m-time-elapsed-start-sentence:' : 'f-m-time-elapsed:';
 
-        const calculateTimeElapsed: number = new Date().getTime() - date.getTime();
+        const calculateTimeElapsed: number = (new Date().getTime() + averageExecutionMillisecondTime) - date.getTime();
 
         if (Math.sign(calculateTimeElapsed) !== 1) {
             throw new Error('Date is in the future');

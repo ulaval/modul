@@ -13,6 +13,9 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(DateFilterPlugin);
 
+let currentDate: Date = new Date();
+let originalSecondes: number = currentDate.getSeconds();
+let firstCharging: boolean = true;
 
 function getBaseVueWithLocale(template: string): any {
     return {
@@ -25,7 +28,7 @@ function getBaseVueWithLocale(template: string): any {
                 }, FRENCH)
             },
             date: {
-                default: date('Date', new Date())
+                default: date('Date', currentDate)
             },
             firstLetterUppercase: {
                 default: boolean('First letter uppercase?', false)
@@ -54,9 +57,14 @@ function getBaseVueWithLocale(template: string): any {
                 return dateTimeFilter(dateFormat);
             },
             formatedDateTimestampToDate(stringTimestamp: number): Date {
-                // Plus currentSec puisque le date picker mets toujours :00 secondes sur les minutes choisi
-                const currentSec: number = new Date().getSeconds();
-                return new Date(stringTimestamp + (currentSec * 1000));
+                if (firstCharging) {
+                    firstCharging = false;
+                    return new Date(stringTimestamp);
+                } else {
+                    // Plus currentSec puisque le date picker mets toujours les secondes de la valeur original
+                    const currentSec: number = new Date().getSeconds();
+                    return new Date((stringTimestamp - (originalSecondes * 1000)) + (currentSec * 1000));
+                }
             },
             firstLetterBoolean(firstLetterUppercase: any): boolean {
                 return firstLetterUppercase;
