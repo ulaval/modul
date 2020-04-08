@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-organize-table-columns-modal Custom trigger button 1`] = `
+<div
+  class="organize-table-columns-modal"
+>
+  <div
+    class="m-modal"
+  >
+    <button
+      class="m-button m--is-skin-secondary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        test 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-organize-table-columns-modal Default 1`] = `
 <div
   class="organize-table-columns-modal"
