@@ -40,7 +40,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_MODA
         ),
         template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns"></m-organize-table-columns-modal>`
     }))
-    .add('Bouton trigger secondary skin', () => ({
+    .add('Custom trigger button', () => ({
         props: {
             columns: {
                 default: [
@@ -57,7 +57,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ORGANIZE_TABLE_COLUMNS_MODA
             'reorganize',
             'reset'
         ),
-        template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset button-skin="secondary" :columns="columns"></m-organize-table-columns-modal>`
+        template: `<m-organize-table-columns-modal @reorganize="reorganize" @reset=reset :columns="columns">
+            <m-button slot="trigger" skin="secondary">test</m-button>
+        </m-organize-table-columns-modal>`
     }))
     .add('Fixed columns', () => ({
         props: {

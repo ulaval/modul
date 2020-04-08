@@ -2,7 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin, { MButtonSkin } from '../button/button';
+import ButtonPlugin from '../button/button';
 import { ORGANIZE_TABLE_COLUMNS_MODAL_NAME } from '../component-names';
 import ModalPlugin from '../modal/modal';
 import { MColumnTable } from '../table/table';
@@ -16,14 +16,6 @@ export class MOrganizeTableColumnsModal extends ModulVue {
         required: true
     })
     public columns!: MColumnTable[];
-
-    @Prop({
-        default: MButtonSkin.Primary,
-        validator: value =>
-            value === MButtonSkin.Primary ||
-            value === MButtonSkin.Secondary
-    })
-    public buttonSkin!: MButtonSkin;
 
     public internalColumns: MColumnTable[] = [];
     public open: boolean = false;
