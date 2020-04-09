@@ -1,6 +1,5 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
-import { renderComponent } from '../../../tests/helpers/render';
 import InputStylePlugin, { MInputStyle } from './input-style';
 
 const ROOT: RefSelector = { ref: 'root' };
@@ -17,10 +16,6 @@ describe('MInputStyle', () => {
                 default: '<input ref="input" type="text"/>'
             }
         });
-    });
-
-    it('should render correctly', () => {
-        expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
     });
 
     describe('In ready only Mode', () => {

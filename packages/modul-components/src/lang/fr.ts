@@ -68,7 +68,8 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../filters/date/date-time/date-time.lang.fr.json'),
                 require('../filters/date/period/period.lang.fr.json'),
                 require('../filters/date/time/time.lang.fr.json'),
-                require('../filters/filesize/filesize.lang.fr.json')
+                require('../filters/filesize/filesize.lang.fr.json'),
+                require('../filters/date/time-elapsed/time-elapsed.lang.fr.json')
             ];
 
             msgs.forEach(msgs => i18n.addMessages(FRENCH, msgs));

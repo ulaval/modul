@@ -1,5 +1,4 @@
 @import 'commons';
-@import '../input-style/input-style';
 
 $m-searchfield-color: $m-color--grey-lightest;
 
@@ -9,7 +8,7 @@ $m-searchfield-color: $m-color--grey-lightest;
 
         border: unset;
         background-color: inherit;
-        border-radius: 0 $m-input-style-border-radius $m-input-style-border-radius 0;
+        border-radius: 0 $m-input-style--border-radius $m-input-style--border-radius 0;
         width: 100%;
         color: $m-color--interactive;
         padding: 0 $m-input-style--padding;

@@ -205,7 +205,7 @@ export class Messages {
     ): string {
         let val: string | undefined = undefined;
 
-        if (nb && modifier) {
+        if (nb !== undefined && modifier) {
             // key.nb.modifier
             val = this.findKey(lang, `${key}.${nb}.${modifier}`);
 
@@ -223,7 +223,7 @@ export class Messages {
             }
         }
 
-        if (nb) {
+        if (nb !== undefined) {
             // key.nb
             val = this.findKey(lang, `${key}.${nb}`);
 

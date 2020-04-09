@@ -18,7 +18,7 @@
                                  :label-up="true"
                                  :label="i18nCountryLabel"
                                  width="auto"
-                                 @input="onContryChanged($event)"
+                                 @select-item="onContryChanged($event[0])"
                                  @focus="onSelectFocus"
                                  @blur="onSelectBlur">
             <div class="m-phonefield__flag-wrapper">
