@@ -20,6 +20,9 @@ type SpritesComponentOptions = { internalSprites: string | string[] };
 @Component
 export class MComponentMixin extends Vue {
 
+
+    componentMixinsInternalSpriteIds: string[];
+
     beforeCreate(): void {
         if (this.$options.modul) {
 
@@ -51,19 +54,29 @@ export class MComponentMixin extends Vue {
                 const svgComponentOptions: SpritesComponentOptions = this.$options.modul.sprites;
 
                 if (svgComponentOptions.internalSprites) {
+                    this.componentMixinsInternalSpriteIds = [];
                     if (Array.isArray(svgComponentOptions.internalSprites)) {
                         svgComponentOptions.internalSprites.forEach(sprite => {
-                            this.$svg.addInternalSprites(sprite);
+                            this.componentMixinsInternalSpriteIds.push(this.$svg.addInternalSprites(sprite));
                         });
                     } else {
-                        this.$svg.addInternalSprites(svgComponentOptions.internalSprites);
+
+                        this.componentMixinsInternalSpriteIds.push(this.$svg.addInternalSprites(svgComponentOptions.internalSprites));
                     }
                 } else {
                     throw new Error(`You must provide an internalSprites option`);
                 }
             }
         }
+    }
 
+    destroyed(): void {
+
+        if (this.componentMixinsInternalSpriteIds && this.componentMixinsInternalSpriteIds.length > 0) {
+            this.componentMixinsInternalSpriteIds.forEach(componentMixinsInternalSpriteId => {
+                this.$svg.removeInternalSprite(componentMixinsInternalSpriteId);
+            });
+        }
     }
 }
 
