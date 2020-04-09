@@ -14,7 +14,7 @@ export enum PhoneNumberFormat {
 
 export class PhoneFilter {
     static format(text: string, format: PhoneNumberFormat = PhoneNumberFormat.NATIONAL): string {
-        if (text) {
+        if (text.length > 0) {
             const phoneNumber: PhoneNumber | undefined = parsePhoneNumberFromString(text, 'CA');
             return phoneNumber ? phoneNumber.format(format) : '';
         } else {
