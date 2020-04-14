@@ -610,16 +610,38 @@ describe(`ModulDate`, () => {
                 const date: Date = new Date(1900, 1, 1);
                 const modulDate: ModulDate = new ModulDate(date);
 
-                const newDate: Date = modulDate.add(10, 'year');
+                const newDate: Date = modulDate.add(10, DatePrecision.YEAR);
 
                 expect(newDate.getFullYear()).toBe(date.getFullYear() + 10);
+            });
+
+            it(`should return a new date with added month with kind month`, () => {
+                const date: Date = new Date(1899, 11, 1);
+                const modulDate: ModulDate = new ModulDate(date);
+
+                const newDate: Date = modulDate.add(10, DatePrecision.MONTH);
+
+                expect(newDate.getFullYear()).toBe(1900);
+                expect(newDate.getMonth()).toBe(9);
+                expect(newDate.getDate()).toBe(1);
+            });
+
+            it(`should return a new date with added day with kind day`, () => {
+                const date: Date = new Date(1899, 11, 30);
+                const modulDate: ModulDate = new ModulDate(date);
+
+                const newDate: Date = modulDate.add(2, DatePrecision.DAY);
+
+                expect(newDate.getFullYear()).toBe(1900);
+                expect(newDate.getMonth()).toBe(0);
+                expect(newDate.getDate()).toBe(1);
             });
 
             it(`should not change the current date`, () => {
                 const date: Date = new Date(1900, 1, 1);
                 const modulDate: ModulDate = new ModulDate(date);
 
-                modulDate.add(10, 'year');
+                modulDate.add(10, DatePrecision.YEAR);
 
                 expect(modulDate.fullYear()).toBe(1900);
                 expect(modulDate.month()).toBe(1);
@@ -628,20 +650,42 @@ describe(`ModulDate`, () => {
         });
 
         describe(`subtract`, () => {
-            it(`should return a new date with added years with kind year`, () => {
+            it(`should return a new date with subtracted years with kind year`, () => {
                 const date: Date = new Date(1900, 1, 1);
                 const modulDate: ModulDate = new ModulDate(date);
 
-                const newDate: Date = modulDate.subtract(10, 'year');
+                const newDate: Date = modulDate.subtract(10, DatePrecision.YEAR);
 
                 expect(newDate.getFullYear()).toBe(1890);
+            });
+
+            it(`should return a new date with subtracted month with kind month`, () => {
+                const date: Date = new Date(1900, 0, 1);
+                const modulDate: ModulDate = new ModulDate(date);
+
+                const newDate: Date = modulDate.subtract(10, DatePrecision.MONTH);
+
+                expect(newDate.getFullYear()).toBe(1899);
+                expect(newDate.getMonth()).toBe(2);
+                expect(newDate.getDate()).toBe(1);
+            });
+
+            it(`should return a new date with subtracted day with kind day`, () => {
+                const date: Date = new Date(1900, 0, 1);
+                const modulDate: ModulDate = new ModulDate(date);
+
+                const newDate: Date = modulDate.subtract(2, DatePrecision.DAY);
+
+                expect(newDate.getFullYear()).toBe(1899);
+                expect(newDate.getMonth()).toBe(11);
+                expect(newDate.getDate()).toBe(30);
             });
 
             it(`should not change the current date`, () => {
                 const date: Date = new Date(1900, 1, 1);
                 const modulDate: ModulDate = new ModulDate(date);
 
-                modulDate.subtract(10, 'year');
+                modulDate.subtract(10, DatePrecision.YEAR);
 
                 expect(modulDate.fullYear()).toBe(1900);
                 expect(modulDate.month()).toBe(1);
