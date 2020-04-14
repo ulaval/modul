@@ -18,7 +18,7 @@ function getBaseVueWithLocale(template: string): any {
                 default: select('Format', {
                     [PhoneNumberFormat.NATIONAL]: PhoneNumberFormat.NATIONAL,
                     [PhoneNumberFormat.INTERNATIONAL]: PhoneNumberFormat.INTERNATIONAL
-                }, PhoneNumberFormat.NATIONAL)
+                }, PhoneNumberFormat.INTERNATIONAL)
             }
         },
         methods: {

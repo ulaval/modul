@@ -6,6 +6,9 @@ import { PHONE_NAME } from '../filter-names';
  * Available formats:
  * NATIONAL — Example: "(213) 373-4253"
  * INTERNATIONAL — Example: "+1 213 373 4253"
+ *
+ * A ticket has been opened for Google in order to fix the National format. It shouldn't have parenthesis.
+ * https://issuetracker.google.com/issues/153616208)
  */
 export enum PhoneNumberFormat {
     INTERNATIONAL = 'INTERNATIONAL',
