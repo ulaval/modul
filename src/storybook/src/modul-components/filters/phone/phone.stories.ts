@@ -2,7 +2,6 @@ import { select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import { PHONE_NAME } from '@ulaval/modul-components/dist/filters/filter-names';
 import PhoneFilterPlugin, { PhoneFilter, PhoneNumberFormat } from '@ulaval/modul-components/dist/filters/phone/phone';
-import { CountryCode } from 'libphonenumber-js';
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
@@ -23,7 +22,7 @@ function getBaseVueWithLocale(template: string): any {
             }
         },
         methods: {
-            formatedPhoneNumber(text: string, defaultCountry: CountryCode, format: PhoneNumberFormat): string {
+            formatedPhoneNumber(text: string, format: PhoneNumberFormat): string {
                 return PhoneFilter.format(text, format);
             }
         }
