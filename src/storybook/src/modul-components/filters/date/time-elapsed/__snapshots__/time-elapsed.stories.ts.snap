@@ -5,14 +5,14 @@ exports[`Storyshots modul-components|f-m-time-elapsed Default 1`] = `
   <div>
     Date choisi : 
     <span>
-      mock-date-prototype-toLocaleDateString-{"year":"numeric","month":"long","day":"numeric"} à mock-intl-dateTimeFormat-{"hour":"numeric","minute":"numeric"}}
+      mock-date-prototype-toLocaleDateString-{"year":"numeric","month":"long","day":"numeric"} à mock-intl-dateTimeFormat-{"hour":"numeric"}}
     </span>
   </div>
    
   <div>
     Resultat : 
     <span>
-      à l'instant
+      mock-date-prototype-toLocaleDateString-{"year":"numeric","month":"short","day":"numeric"}
     </span>
   </div>
 </div>
