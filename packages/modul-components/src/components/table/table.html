@@ -50,11 +50,13 @@
             <tr class="m-table__placeholder"
                 v-if="isEmpty || loading">
                 <td class="m-table__placeholder-container"
-                    :style="{ position: placeholderPositionType, width: widthPlaceholder }">
+                    :style="{ position: placeholderPositionType }"
+                    colspan="100%">
                     <m-progress v-if="loading"
                                 :indeterminate="true"
                                 :border-radius="false" />
-                    <div class="m-table__placeholder-message">
+                    <div class="m-table__placeholder-message"
+                         :style="{ width: widthPlaceholder }">
                         <slot name="empty"
                               v-if="isEmpty">
                             <p>{{ i18nEmptyTable }}</p>
