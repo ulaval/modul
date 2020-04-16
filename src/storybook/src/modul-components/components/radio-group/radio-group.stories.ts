@@ -333,3 +333,31 @@ export const disabledTrueAllChildrensDisabledMixed = () => ({
                     <m-radio value="3" :disabled="false">Radio Option 3</m-radio>
                 </m-radio-group>`
 });
+
+export const validationMessagePositionBottom = () => ({
+    data: () => ({
+        model: ''
+    }),
+    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" validation-message-position="bottom">` + RADIOS
+});
+
+export const validationMessagePositionTop = () => ({
+    data: () => ({
+        model: ''
+    }),
+    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" validation-message-position="top">` + RADIOS
+});
+
+export const validationMessagePositionBottomInline = () => ({
+    data: () => ({
+        model: ''
+    }),
+    template: `<m-radio-group v-model="model" :inline="true" error-message="This is an error message" label="This is a label" validation-message-position="bottom">` + RADIOS
+});
+
+export const validationMessagePositionTopInline = () => ({
+    data: () => ({
+        model: ''
+    }),
+    template: `<m-radio-group v-model="model" :inline="true" error-message="This is an error message" label="This is a label" validation-message-position="top">` + RADIOS
+});
