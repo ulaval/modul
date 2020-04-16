@@ -251,9 +251,8 @@ export default class ModulDate {
      * @param unitOfTime The kind of time unit to be added.
      * @return A new Date
      */
-    public subtract(valueToSubtract: number, unitOfTime?: string): Date {
+    public subtract(valueToSubtract: number, unitOfTime: string = DatePrecision.YEAR): Date {
         const newDate: Date = new Date(this.innerDate);
-        unitOfTime = unitOfTime ? unitOfTime : DatePrecision.YEAR;
         switch (unitOfTime) {
             case DatePrecision.YEAR:
                 newDate.setFullYear(newDate.getFullYear() - valueToSubtract);
