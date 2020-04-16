@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-popup Close On Backdrop Disabled 1`] = `
+<div
+  class="m-popup m--is-inline"
+>
+  <div
+    class="m-popper"
+  >
+    <div>
+      <button
+        class="m-button m--is-skin-primary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          Open popper 
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+    </div>
+     
+    <!---->
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots modul-components|m-popup default 1`] = `
+<div>
+  <div
+    class="m-popup m--is-inline"
+  >
+    <div
+      class="m-popper"
+    >
+      <div>
+        <button
+          class="m-button m--is-skin-primary"
+          type="button"
+        >
+          <!---->
+           
+          <!---->
+           
+          <span
+            class="m-button__text"
+          >
+            Open popper 
+            <!---->
+          </span>
+           
+          <!---->
+           
+          <!---->
+        </button>
+      </div>
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
