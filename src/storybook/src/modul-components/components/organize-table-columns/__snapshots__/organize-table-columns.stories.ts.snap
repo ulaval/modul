@@ -2,39 +2,41 @@
 
 exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
 <div
-  class="organize-table-columns"
+  class="m-organize-table-columns"
 >
   <div
-    class="organize-table-columns__title"
+    class="m-organize-table-columns__header"
   >
-    <h4>
-      Ajouter des colonnes au tableau, puis organisez-les
-    </h4>
+    <h2
+      class="m-organize-table-columns__title"
+    >
+      Ajouter des%(_NBSP_)scolonnes au%(_NBSP_)stableau, puis%(_NBSP_)sorganisez-les
+    </h2>
      
-    <span>
-      Colonnes sélectionnées (5) 
-    </span>
+    <p>
+      Colonnes sélectionnées (5)
+    </p>
   </div>
    
   <ul
-    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    class="m-organize-table-columns__visible-columns m--is-sortable m--is-droppable"
     items="[object Object],[object Object],[object Object],[object Object],[object Object]"
     style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
   >
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -51,7 +53,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Action
@@ -59,30 +61,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -97,17 +96,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -124,7 +123,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Name
@@ -132,30 +131,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -170,17 +166,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -197,7 +193,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Age
@@ -205,30 +201,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -243,17 +236,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -270,7 +263,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Username
@@ -278,30 +271,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -316,17 +306,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -343,7 +333,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Menu
@@ -351,30 +341,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -389,48 +376,46 @@ exports[`Storyshots modul-components|m-organize-table-columns Default 1`] = `
   </ul>
    
   <!---->
-   
-  <ul
-    class="organize-table-columns__hidden-columns"
-  />
 </div>
 `;
 
 exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] = `
 <div
-  class="organize-table-columns"
+  class="m-organize-table-columns"
 >
   <div
-    class="organize-table-columns__title"
+    class="m-organize-table-columns__header"
   >
-    <h4>
-      Ajouter des colonnes au tableau, puis organisez-les
-    </h4>
+    <h2
+      class="m-organize-table-columns__title"
+    >
+      Ajouter des%(_NBSP_)scolonnes au%(_NBSP_)stableau, puis%(_NBSP_)sorganisez-les
+    </h2>
      
-    <span>
-      Colonnes sélectionnées (5) 
-    </span>
+    <p>
+      Colonnes sélectionnées (5)
+    </p>
   </div>
    
   <ul
-    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    class="m-organize-table-columns__visible-columns m--is-sortable m--is-droppable"
     items="[object Object],[object Object],[object Object],[object Object],[object Object]"
     style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
   >
     <li
       can-drag="false"
       can-drop="false"
-      class="m-list-item m--is-disabled m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-disabled m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -447,7 +432,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Action
@@ -455,11 +440,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
-          >
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -468,17 +449,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
     <li
       can-drag="false"
       can-drop="false"
-      class="m-list-item m--is-disabled m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-disabled m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -495,7 +476,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Name
@@ -503,11 +484,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
-          >
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -516,17 +493,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -543,7 +520,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Age
@@ -551,30 +528,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -589,17 +563,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -616,7 +590,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Username
@@ -624,30 +598,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -662,17 +633,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -689,7 +660,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Menu
@@ -697,30 +668,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -735,48 +703,46 @@ exports[`Storyshots modul-components|m-organize-table-columns Fixed columns 1`] 
   </ul>
    
   <!---->
-   
-  <ul
-    class="organize-table-columns__hidden-columns"
-  />
 </div>
 `;
 
 exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`] = `
 <div
-  class="organize-table-columns"
+  class="m-organize-table-columns"
 >
   <div
-    class="organize-table-columns__title"
+    class="m-organize-table-columns__header"
   >
-    <h4>
-      Ajouter des colonnes au tableau, puis organisez-les
-    </h4>
+    <h2
+      class="m-organize-table-columns__title"
+    >
+      Ajouter des%(_NBSP_)scolonnes au%(_NBSP_)stableau, puis%(_NBSP_)sorganisez-les
+    </h2>
      
-    <span>
-      Colonnes sélectionnées (4) 
-    </span>
+    <p>
+      Colonnes sélectionnées (4)
+    </p>
   </div>
    
   <ul
-    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    class="m-organize-table-columns__visible-columns m--is-sortable m--is-droppable"
     items="[object Object],[object Object],[object Object],[object Object]"
     style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
   >
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -793,7 +759,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Action
@@ -801,30 +767,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -839,17 +802,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -866,7 +829,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Name
@@ -874,30 +837,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -912,17 +872,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -939,7 +899,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Username
@@ -947,30 +907,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -985,17 +942,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -1012,7 +969,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Menu
@@ -1020,30 +977,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -1058,61 +1012,64 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
   </ul>
    
   <div
-    class="organize-table-columns__title"
+    class="m-organize-table-columns__header"
   >
-    <span>
+    <p>
       Colonnes disponibles
-    </span>
+    </p>
   </div>
    
   <ul
-    class="organize-table-columns__hidden-columns"
+    class="m-organize-table-columns__hidden-columns"
   >
     <li
-      class="m-list-item"
+      class="m-list-item m-organize-table-columns__list-item"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
-                        Age
-                    
+                            Age
+                        
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <a
+            class="m-link m-add m--is-unvisited m--is-button m--has-left-icon"
+            href="#"
+            role="button"
+            tabindex="0"
+            title="Ajouter la%(_NBSP_)scolonne"
           >
-            <button
-              class="m-icon-button m--is-skin-primary m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-link__icon"
+              height="24px"
+              width="24px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="m-link__text"
+            />
+             
+            <!---->
+          </a>
         </div>
       </div>
        
@@ -1130,39 +1087,41 @@ exports[`Storyshots modul-components|m-organize-table-columns Hidden columns 1`]
 
 exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`] = `
 <div
-  class="organize-table-columns"
+  class="m-organize-table-columns"
 >
   <div
-    class="organize-table-columns__title"
+    class="m-organize-table-columns__header"
   >
-    <h4>
-      Ajouter des colonnes au tableau, puis organisez-les
-    </h4>
+    <h2
+      class="m-organize-table-columns__title"
+    >
+      Ajouter des%(_NBSP_)scolonnes au%(_NBSP_)stableau, puis%(_NBSP_)sorganisez-les
+    </h2>
      
-    <span>
-      Colonnes sélectionnées (4) 
-    </span>
+    <p>
+      Colonnes sélectionnées (4)
+    </p>
   </div>
    
   <ul
-    class="organize-table-columns__visible-columns__list m--is-sortable m--is-droppable"
+    class="m-organize-table-columns__visible-columns m--is-sortable m--is-droppable"
     items="[object Object],[object Object],[object Object],[object Object]"
     style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
   >
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -1179,7 +1138,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Action
@@ -1187,30 +1146,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -1225,17 +1181,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -1252,7 +1208,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Name
@@ -1260,30 +1216,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -1298,17 +1251,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -1325,7 +1278,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Username
@@ -1333,30 +1286,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -1371,17 +1321,17 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
     <li
       can-drag="true"
       can-drop="true"
-      class="m-list-item m--is-draggable m--is-droppable"
+      class="m-list-item m-organize-table-columns__list-item m--is-draggable m--is-droppable"
       style="webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"
     >
       <div
         class="m-list-item__content"
       >
         <div
-          class="organize-table-columns__item"
+          class="m-organize-table-columns__item"
         >
           <div
-            class="organize-table-columns__item-title"
+            class="m-organize-table-columns__item-title"
           >
             <svg
               aria-hidden="true"
@@ -1398,7 +1348,7 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </svg>
              
             <span
-              class="organize-table-columns__item-title-text"
+              class="m-organize-table-columns__item-title-text"
             >
               
                         Menu
@@ -1406,30 +1356,27 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
             </span>
           </div>
            
-          <div
-            class="organize-table-columns__item-button"
+          <button
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 20px; height: 20px;"
+            type="button"
           >
-            <button
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              type="button"
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
               <!---->
-            </button>
-          </div>
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
         </div>
       </div>
        
@@ -1444,9 +1391,5 @@ exports[`Storyshots modul-components|m-organize-table-columns Ignore columns 1`]
   </ul>
    
   <!---->
-   
-  <ul
-    class="organize-table-columns__hidden-columns"
-  />
 </div>
 `;

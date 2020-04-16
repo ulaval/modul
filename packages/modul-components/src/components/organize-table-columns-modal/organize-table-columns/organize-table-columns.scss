@@ -1,33 +1,29 @@
 @import 'commons';
 
-.organize-table-columns {
+.m-organize-table-columns {
     &__loading {
         margin-top: $m-margin--l;
     }
 
-    &__visible-columns__list {
-        margin: 0;
+    &__header {
+        padding: $m-spacing--m $m-spacing $m-spacing;
+        background-color: $m-color--grey-lighter;
+
+        p {
+            margin: $m-spacing 0 0 0;
+        }
     }
 
     &__title {
-        background-color: $m-color--grey-lighter;
-        padding: $m-padding--l  $m-padding--s $m-padding--s;
+        @include m-h4-font-style();
 
-        h4 {
-            padding: 0 $m-padding--l  $m-padding--l;
-            margin: 0;
-            text-align: center;
-        }
-
-        span {
-            margin-left: $m-margin--l;
-        }
+        margin: 0;
+        text-align: center;
     }
 
     &__item {
         display: flex;
         justify-content: space-between;
-        padding: 0 $m-padding;
         position: relative;
     }
 
@@ -36,19 +32,17 @@
         align-items: center;
     }
 
+    &__visible-columns,
+    &__hidden-columns {
+        margin: 0;
+        list-style: none;
+    }
+
     &__item-title-text {
         margin-left: $m-margin--s;
     }
 
-    &__item-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0;
-        width: 38px;
-    }
-
-    .m-list-item {
+    &__list-item {
         padding-top: $m-padding;
         padding-bottom: $m-padding;
     }

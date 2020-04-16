@@ -1,23 +1,22 @@
-<div class="organize-table-columns-modal">
-    <m-modal :open.sync="open"
-             size="small"
-             :title="'m-organize-table-columns-modal:title' | f-m-i18n">
-        <slot slot="trigger"
-              name="trigger">
-            <m-button>{{'m-organize-table-columns-modal:title' | f-m-i18n}}</m-button>
-        </slot>
-        <m-organize-table-columns :columns="internalColumns"
-                                  @reorganize="reorganize">
-        </m-organize-table-columns>
-
-        <div slot="footer">
-            <m-button @click="saveReorganize()">
-                {{'m-organize-table-columns-modal:action.reorganize' | f-m-i18n}}
-            </m-button>
-            <m-button @click="reset()"
-                      skin="secondary">
-                {{'m-organize-table-columns-modal:action.reset' | f-m-i18n}}
-            </m-button>
-        </div>
-    </m-modal>
-</div>
+<m-modal :open.sync="open"
+         class="m-organize-table-columns-modal"
+         size="small"
+         :title="'m-organize-table-columns-modal:title' | f-m-i18n">
+    <slot slot="trigger"
+          name="trigger">
+        <m-button>{{'m-organize-table-columns-modal:title' | f-m-i18n}}</m-button>
+    </slot>
+    <m-organize-table-columns :columns="internalColumns"
+                              @reorganize="reorganize">
+    </m-organize-table-columns>
+    <template #footer>
+        <m-button class="m-organize-table-columns-modal__reorganize-button"
+                  @click="saveReorganize()">
+            {{'m-organize-table-columns-modal:action.reorganize' | f-m-i18n}}
+        </m-button>
+        <m-button @click="reset()"
+                  skin="secondary">
+            {{'m-organize-table-columns-modal:action.reset' | f-m-i18n}}
+        </m-button>
+    </template>
+</m-modal>
