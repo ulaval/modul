@@ -4,7 +4,7 @@ import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
 import uuid from '../../utils/uuid/uuid';
 import { RADIO_GROUP_NAME } from '../component-names';
-import InputGroupPlugin from '../input-group/input-group';
+import InputGroupPlugin, { MMInputGroupValidationMessagePosition } from '../input-group/input-group';
 import RadioPlugin, { BaseRadioGroup, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
 import WithRender from './radio-group.html?style=./radio-group.scss';
 
@@ -43,6 +43,13 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     public radiosMarginTop: string;
     @Prop()
     public focus: boolean;
+    @Prop({
+        default: MMInputGroupValidationMessagePosition.Top,
+        validator: value =>
+            value === MMInputGroupValidationMessagePosition.Top ||
+            value === MMInputGroupValidationMessagePosition.Bottom
+    })
+    public validationMessagePosition: MMInputGroupValidationMessagePosition;
 
     public name: string = uuid.generate();
     private internalValue: any | undefined = '';
