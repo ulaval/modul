@@ -9,7 +9,7 @@ import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width'
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { Enums } from '../../utils/enums/enums';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
-import ModulDate from '../../utils/modul-date/modul-date';
+import ModulDate, { DatePrecision } from '../../utils/modul-date/modul-date';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import ButtonPlugin from '../button/button';
@@ -65,10 +65,10 @@ export class MDatepicker extends ModulVue {
     })
     public type: MBaseCalendarType;
 
-    @Prop({ default: () => { return new ModulDate().subtract(10, 'year'); } })
+    @Prop({ default: () => { return new ModulDate().subtract(10, DatePrecision.YEAR); } })
     public min: DatePickerSupportedTypes;
 
-    @Prop({ default: () => { return new ModulDate().add(10, 'year'); } })
+    @Prop({ default: () => { return new ModulDate().add(10, DatePrecision.YEAR); } })
     public max: DatePickerSupportedTypes;
 
     @Prop()

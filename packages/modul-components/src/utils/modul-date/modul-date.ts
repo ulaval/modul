@@ -240,7 +240,7 @@ export default class ModulDate {
      * @param unitOfTime The kind of time unit to be added.
      * @return A new Date
      */
-    public add(valueToAdd: number, unitOfTime: 'year'): Date {
+    public add(valueToAdd: number, unitOfTime?: string): Date {
         return this.subtract(-valueToAdd, unitOfTime);
     }
 
@@ -251,15 +251,21 @@ export default class ModulDate {
      * @param unitOfTime The kind of time unit to be added.
      * @return A new Date
      */
-    public subtract(valueToSubtract: number, unitOfTime: 'year'): Date {
+    public subtract(valueToSubtract: number, unitOfTime: string = DatePrecision.YEAR): Date {
         const newDate: Date = new Date(this.innerDate);
         switch (unitOfTime) {
-            case 'year':
+            case DatePrecision.YEAR:
                 newDate.setFullYear(newDate.getFullYear() - valueToSubtract);
+                break;
+            case DatePrecision.MONTH:
+                newDate.setMonth(newDate.getMonth() - valueToSubtract);
+                break;
+            case DatePrecision.DAY:
+                const dateOffset: number = (24 * 60 * 60 * 1000) * valueToSubtract;
+                newDate.setTime(newDate.getTime() - dateOffset);
                 break;
             default: throw new Error(`modul-date: Unknown substract unitOfTime: ${unitOfTime}`);
         }
-
         return newDate;
     }
 
