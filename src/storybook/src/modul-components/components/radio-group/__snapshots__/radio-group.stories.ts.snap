@@ -4500,6 +4500,614 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
 </div>
 `;
 
+exports[`Storyshots modul-components|m-radio-group Validation Message Position Bottom 1`] = `
+<div
+  class="m-radio-group m--has-error m--has-validation-message"
+>
+  <div
+    class="m-input-group m--has-error m--has-validation-message m--is-validation-message-position-bottom"
+  >
+    <p
+      class="m-input-group__label"
+      id="fakeId"
+    >
+      This is a label
+      <!---->
+       
+      <!---->
+    </p>
+     
+    <div
+      class="m-input-group__body"
+    >
+      <div
+        class="m-validation-message m-input-group__message"
+        id="fakeId"
+      >
+        <p
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-icon m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            This is an error message
+          </span>
+        </p>
+         
+        <!---->
+      </div>
+       
+      <div
+        aria-describedby="fakeId"
+        aria-labelledby="fakeId"
+        class="m-input-group__content"
+      >
+         
+        <ul
+          class="m-radio-group__body"
+          role="radiogroup"
+        >
+          <li
+            class="m-radio m--is-error"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="1"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 1
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="2"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 2
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="3"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 3
+              </span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-radio-group Validation Message Position Bottom Inline 1`] = `
+<div
+  class="m-radio-group m--is-inline m--has-error m--has-validation-message"
+>
+  <div
+    class="m-input-group m--has-error m--has-validation-message m--is-validation-message-position-bottom"
+  >
+    <p
+      class="m-input-group__label"
+      id="fakeId"
+    >
+      This is a label
+      <!---->
+       
+      <!---->
+    </p>
+     
+    <div
+      class="m-input-group__body"
+    >
+      <div
+        class="m-validation-message m-input-group__message"
+        id="fakeId"
+      >
+        <p
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-icon m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            This is an error message
+          </span>
+        </p>
+         
+        <!---->
+      </div>
+       
+      <div
+        aria-describedby="fakeId"
+        aria-labelledby="fakeId"
+        class="m-input-group__content"
+      >
+         
+        <ul
+          class="m-radio-group__body"
+          role="radiogroup"
+        >
+          <li
+            class="m-radio m--is-error m--is-inline"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="1"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 1
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error m--is-inline"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="2"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 2
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error m--is-inline"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="3"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 3
+              </span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-radio-group Validation Message Position Top 1`] = `
+<div
+  class="m-radio-group m--has-error m--has-validation-message"
+>
+  <div
+    class="m-input-group m--has-error m--has-validation-message"
+  >
+    <p
+      class="m-input-group__label"
+      id="fakeId"
+    >
+      This is a label
+      <!---->
+       
+      <!---->
+    </p>
+     
+    <div
+      class="m-input-group__body"
+    >
+      <div
+        class="m-validation-message m-input-group__message"
+        id="fakeId"
+      >
+        <p
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-icon m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            This is an error message
+          </span>
+        </p>
+         
+        <!---->
+      </div>
+       
+      <div
+        aria-describedby="fakeId"
+        aria-labelledby="fakeId"
+        class="m-input-group__content"
+      >
+         
+        <ul
+          class="m-radio-group__body"
+          role="radiogroup"
+        >
+          <li
+            class="m-radio m--is-error"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="1"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 1
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="2"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 2
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="3"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 3
+              </span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-radio-group Validation Message Position Top Inline 1`] = `
+<div
+  class="m-radio-group m--is-inline m--has-error m--has-validation-message"
+>
+  <div
+    class="m-input-group m--has-error m--has-validation-message"
+  >
+    <p
+      class="m-input-group__label"
+      id="fakeId"
+    >
+      This is a label
+      <!---->
+       
+      <!---->
+    </p>
+     
+    <div
+      class="m-input-group__body"
+    >
+      <div
+        class="m-validation-message m-input-group__message"
+        id="fakeId"
+      >
+        <p
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-icon m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            This is an error message
+          </span>
+        </p>
+         
+        <!---->
+      </div>
+       
+      <div
+        aria-describedby="fakeId"
+        aria-labelledby="fakeId"
+        class="m-input-group__content"
+      >
+         
+        <ul
+          class="m-radio-group__body"
+          role="radiogroup"
+        >
+          <li
+            class="m-radio m--is-error m--is-inline"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="1"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 1
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error m--is-inline"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="2"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 2
+              </span>
+            </label>
+          </li>
+           
+          <li
+            class="m-radio m--is-error m--is-inline"
+          >
+            <input
+              class="m-radio__hidden"
+              id="fakeId"
+              name="fakeId"
+              type="radio"
+              value="3"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="fakeId"
+            >
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
+              />
+               
+              <span
+                class="m-radio__label"
+              >
+                Radio 3
+              </span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-radio-group default 1`] = `
 <div
   class="m-radio-group"

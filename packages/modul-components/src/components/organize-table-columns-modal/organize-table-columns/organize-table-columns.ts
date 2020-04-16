@@ -11,7 +11,6 @@ import ListItemPlugin from '../../list-item/list-item';
 import { MColumnTable } from '../../table/table';
 import WithRender from './organize-table-columns.html?style=./organize-table-columns.scss';
 
-
 @WithRender
 @Component
 export class MOrganizeTableColumns extends ModulVue {
