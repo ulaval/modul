@@ -10,8 +10,8 @@ import IconPlugin from '../icon/icon';
 import PlusPlugin from '../plus/plus';
 import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import { MMenuItem } from './menu-item/menu-item';
-import WithRender from './menu.html?style=./menu.scss';
-
+import WithRender from './menu.html';
+import './menu.scss';
 export abstract class BaseMenu extends ModulVue {
 }
 

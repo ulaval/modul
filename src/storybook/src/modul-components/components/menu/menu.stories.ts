@@ -21,9 +21,9 @@ const storyRouterDecorator: any = (links = {}, routerProps = {}): any => {
 const DEFAULT_MENU_ITEMS: string = `<m-menu-item value="item1" label="Item 1" icon-name="m-svg__profile"></m-menu-item>
                                   <m-menu-item value="item2" label="Item 2"></m-menu-item>
                                   <m-menu-item value="item3" label="Item 3"></m-menu-item>
-                                  <m-menu-item label="Item group 1">
+                                  <m-menu-item label="Item group 1" icon-name="m-svg__profile">
                                       <m-menu-item value="subitem1" label="Subitem 1"></m-menu-item>
-                                      <m-menu-item value="subitem2" label="Subitem 2"></m-menu-item>
+                                      <m-menu-item value="subitem2" label="Subitem 2" icon-name="m-svg__profile"></m-menu-item>
                                       <m-menu-item value="subitem3" label="Subitem 3"></m-menu-item>
                                   </m-menu-item>
                                   <m-menu-item label="Item group 2">

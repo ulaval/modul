@@ -5,7 +5,8 @@ import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MAccordionTransition } from '../../transitions/accordion-transition/accordion-transition';
 import { BaseMenu, Menu } from '../menu';
-import WithRender from './menu-item.html?style=./menu-item.scss';
+import WithRender from './menu-item.html';
+import './menu-item.scss';
 
 export abstract class BaseMenuItem extends ModulVue {
 }

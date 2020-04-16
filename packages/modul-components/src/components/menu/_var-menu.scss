@@ -1,0 +1,37 @@
+:root {
+    --m-menu--hover: white;
+
+    // core
+    --m-menu--box-shadow: none;
+    --m-menu--min-height: #{ $m-touch-size };
+    --m-menu--font-weight: #{ $m-font-weight--light };
+    --m-menu--padding: #{ $m-spacing--s $m-spacing };
+    --m-menu--color: #{ $m-color--grey-light };
+    --m-menu--border-color: var(--m-menu--background-color);
+    --m-menu--background-color: #{ $m-color--grey-darkest };
+    --m-menu--text-transform: uppercase;
+    --m-menu--indicator: var(--m-menu--background-color);
+    --m-menu--indicator-width: 0;
+    --m-menu--trigger-color: var(--m-menu--color);
+    --m-menu--trigger-font-weight: var(--m-menu--font-weight);
+    --m-menu--trigger-box-shadow: 0 1px 2px  #{ rgba($m-color--black, 0.5) };
+
+    // core states
+    --m-menu--selected-color: var(--m-menu--hover);
+    --m-menu--selected-indicator: var(--m-menu--indicator);
+    --m-menu--selected-indicator-width: #{ $m-border-width--l };
+    --m-menu--selected-font-weight: #{ $m-font-weight--bold };
+
+    // group
+    --m-menu--group-color: var(--m-menu--color);
+    --m-menu--group-indicator: var(--m-menu--group-background-color);
+    --m-menu--group-font-weight: var(--m-menu--font-weight);
+    --m-menu--group-border-color: var(--m-menu--group-background-color);
+    --m-menu--group-text-transform: lowercase;
+    --m-menu--group-background-color: #{ $m-color--grey-black };
+
+    // group states
+    --m-menu--group-selected-color: var(--m-menu--selected-color);
+    --m-menu--group-selected-indicator: #{ $m-color--ul-yellow };
+    --m-menu--group-selected-font-weight: #{ $m-font-weight--bold };
+}

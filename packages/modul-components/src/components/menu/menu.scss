@@ -1,53 +1,54 @@
 @import 'commons';
-@import 'menu-skins';
+@import 'var-menu';
 
 .m-menu {
     overflow: hidden;
     user-select: none;
 
+    &:not(.m--is-disabled) {
+        cursor: pointer;
+    }
+
+    &.m--is-open:not(.m--is-disabled) {
+        --m-menu--trigger-color: var(--m-menu--selected-color);
+        --m-menu--trigger-font-weight: var(--m-menu--selected-font-weight);
+    }
+
+    &.m--is-disabled {
+        --m-menu--hover: var(--m-menu--trigger-color);
+    }
+
     &__trigger {
         transition: color $m-transition-duration ease, font-weight $m-transition-duration ease;
-        position: relative;
         z-index: 1;
+        cursor: inherit;
         outline: none;
-        padding: $m-spacing;
-        font-weight: $m-font-weight--bold;
         display: flex;
+        position: relative;
         align-items: center;
-        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--m-menu--trigger-color);
+        padding: var(--m-menu--padding);
+        min-height: var(--m-menu--min-height);
+        font-weight: var(--m-menu--trigger-font-weight);
+        text-transform: var(--m-menu--text-transform);
+        background-color: var(--m-menu--background-color);
+        box-shadow: var(--m-menu--trigger-box-shadow);
+
+        &:hover,
+        &:focus {
+            --m-menu--trigger-color: var(--m-menu--hover);
+        }
 
         &__plus {
             margin-right: $m-spacing--s;
         }
 
-        .m-menu.m--is-skin-light & {
-            color: rgba($m-color--white, 0.7);
-            background: $m-menu-color--skin-light-bg-light;
-            box-shadow: 0 1px 2px rgba($m-color--black, 0.1);
-        }
-
-        .m-menu.m--is-skin-dark & {
-            color: $m-color--grey-light;
-            background: $m-menu-color--skin-dark-bg-light;
-            box-shadow: 0 1px 2px rgba($m-color--black, 0.5);
-        }
-
-        .m-menu.m--is-open & {
-            color: $m-color--white;
-        }
-
-        .m-menu:not(.m--is-disabled) & {
-            cursor: pointer;
-
-            &:hover,
-            &:focus {
-                color: $m-color--white;
-            }
-        }
-
-        .m-menu.m--is-disabled & {
-            cursor: default;
-        }
+        // .m-menu.m--is-skin-light & {
+        //     color: rgba($m-color--white, 0.7);
+        //     background: $m-menu-color--skin-light-bg-light;
+        //     box-shadow: 0 1px 2px rgba($m-color--black, 0.1);
+        // }
     }
 
     &__body {
