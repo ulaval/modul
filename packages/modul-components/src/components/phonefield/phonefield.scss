@@ -21,8 +21,10 @@
     }
 
     &__wrapper {
+        $m-phonefiled--width-flag-dropdown: 88px;
+
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: #{$m-phonefiled--width-flag-dropdown} auto;
     }
 
     &__country {
