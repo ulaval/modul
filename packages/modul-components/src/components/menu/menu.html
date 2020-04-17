@@ -4,6 +4,7 @@
                  'm--is-disabled': propDisabled }]">
     <div v-if="$slots.trigger"
          class="m-menu__trigger"
+         :class="{'m--is-disabled': propDisabled }"
          :tabindex="propDisabled ? '-1' : '0'"
          :aria-controls="idAriaControls"
          :aria-expanded="propOpen"

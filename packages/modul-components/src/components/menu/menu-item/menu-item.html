@@ -7,6 +7,7 @@
              'm--is-anim-ready': isAnimReady}"
     role="none">
     <router-link class="m-menu-item__link"
+                 :class="{'m--is-disabled': isDisabled}"
                  :to="url"
                  @click="onClick"
                  :aria-selected="selected"
@@ -20,6 +21,7 @@
         <span class="m-menu-item__label">{{ label }}</span>
     </router-link>
     <span class="m-menu-item__link"
+          :class="{'m--is-disabled': isDisabled}"
           @click="onClick"
           @keypress.enter="onClick"
           :tabindex="isDisabled ? '-1' : '0'"

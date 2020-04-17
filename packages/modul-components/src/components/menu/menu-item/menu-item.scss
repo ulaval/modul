@@ -12,42 +12,35 @@
         }
     }
 
-    &:not(.m--is-disabled) {
-        cursor: pointer;
-    }
-
-    &.m--is-disabled {
-        --m-menu--hover: var(--m-menu--color);
-    }
-
     &.m--is-selected {
-        --m-menu--color: var(--m-menu--selected-color);
-        --m-menu--indicator: var(--m-menu--selected-indicator);
         --m-menu--font-weight: var(--m-menu--selected-font-weight);
-        --m-menu--indicator-width: var(--m-menu--selected-indicator-width);
 
-        stroke-width: 1.5px;
+        &:not(.m--is-group) {
+            --m-menu--color: var(--m-menu--selected-color);
+            --m-menu--indicator: var(--m-menu--selected-indicator);
+            --m-menu--indicator-width: var(--m-menu--selected-indicator-width);
+
+            stroke-width: 1.5px;
+        }
     }
 
     &.m--is-inside-group {
         --m-menu--color: var(--m-menu--group-color);
-        --m-menu--border-color: var(--m-menu--group-border);
+        --m-menu--border: var(--m-menu--group-border);
         --m-menu--background-color: var(--m-menu--group-background-color);
         --m-menu--text-transform: var(--m-menu--group-text-transform);
         --m-menu--font-weight: var(--m-menu--group-font-weight);
         --m-menu--indicator: var(--m-menu--group-indicator);
-        --m-menu--indicator-width: 0;
+        --m-menu--hover-indicator: var(--m-menu--group-hover-indicator);
 
         &.m--is-selected {
             --m-menu--color: var(--m-menu--group-selected-color);
             --m-menu--indicator: var(--m-menu--group-selected-indicator);
             --m-menu--font-weight: var(--m-menu--group-selected-font-weight);
-            --m-menu--indicator-width: var(--m-menu--selected-indicator-width);
         }
     }
 
     &__link {
-        cursor: inherit;
         outline: none;
         display: flex;
         position: relative;
@@ -61,12 +54,14 @@
         text-transform: var(--m-menu--text-transform);
         background-color: var(--m-menu--background-color);
 
-        &:hover,
-        &:focus {
-            --m-menu--color: var(--m-menu--hover);
+        &:not(.m--is-disabled) {
+            &:hover,
+            &:focus {
+                --m-menu--color: var(--m-menu--hover);
 
-            &::before {
-                background-color: var(--m-menu--group-hover-indicator);
+                &::before {
+                    background-color: var(--m-menu--hover-indicator);
+                }
             }
         }
 

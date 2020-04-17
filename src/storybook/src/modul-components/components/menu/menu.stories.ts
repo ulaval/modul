@@ -4,6 +4,7 @@ import { MENU_NAME } from '@ulaval/modul-components/dist/components/component-na
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import './menu.stories.scss';
 
 
 const storyRouterDecorator: any = (links = {}, routerProps = {}): any => {
@@ -21,9 +22,9 @@ const storyRouterDecorator: any = (links = {}, routerProps = {}): any => {
 const DEFAULT_MENU_ITEMS: string = `<m-menu-item value="item1" label="Item 1" icon-name="m-svg__profile"></m-menu-item>
                                   <m-menu-item value="item2" label="Item 2"></m-menu-item>
                                   <m-menu-item value="item3" label="Item 3"></m-menu-item>
-                                  <m-menu-item label="Item group 1" icon-name="m-svg__profile">
+                                  <m-menu-item label="Item group 1">
                                       <m-menu-item value="subitem1" label="Subitem 1"></m-menu-item>
-                                      <m-menu-item value="subitem2" label="Subitem 2" icon-name="m-svg__profile"></m-menu-item>
+                                      <m-menu-item value="subitem2" label="Subitem 2"></m-menu-item>
                                       <m-menu-item value="subitem3" label="Subitem 3"></m-menu-item>
                                   </m-menu-item>
                                   <m-menu-item label="Item group 2">
@@ -81,6 +82,16 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}`, module)
             selectedItem: 'item1'
         }),
         template: `<m-menu :closeOnSelection="false" :open.sync="menuIsOpened" :selected.sync="selectedItem" skin="light">
+                        <div slot="trigger">Menu</div>
+                        ${DEFAULT_MENU_ITEMS}
+                 </m-menu>`
+    }))
+    .add('css custom properties', () => ({
+        data: () => ({
+            menuIsOpened: true,
+            selectedItem: 'item1'
+        }),
+        template: `<m-menu :closeOnSelection="false" :disabled="true" :open.sync="menuIsOpened" :selected.sync="selectedItem" class="m-menu-stories">
                         <div slot="trigger">Menu</div>
                         ${DEFAULT_MENU_ITEMS}
                  </m-menu>`
