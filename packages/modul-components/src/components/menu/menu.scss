@@ -1,5 +1,40 @@
 @import 'commons';
-@import 'var-menu';
+
+:root {
+    // core
+    --m-menu--background-color: #{ $m-color--grey-darkest };
+    --m-menu--box-shadow: none;
+    --m-menu--min-height: #{ $m-touch-size };
+    --m-menu--font-weight: #{ $m-font-weight--light };
+    --m-menu--padding: #{ $m-spacing--s $m-spacing };
+    --m-menu--color: #{ $m-color--grey-light };
+    --m-menu--border: none;
+    --m-menu--indicator: transparent;
+    --m-menu--text-transform: uppercase;
+    --m-menu--trigger-color: var(--m-menu--color);
+    --m-menu--trigger-font-weight: var(--m-menu--font-weight);
+    --m-menu--trigger-box-shadow: 0 1px 2px  #{ rgba($m-color--black, 0.5) };
+
+    // core states
+    --m-menu--hover: white;
+    --m-menu--selected-color: var(--m-menu--hover);
+    --m-menu--selected-indicator: transparent;
+    --m-menu--selected-font-weight: #{ $m-font-weight--bold };
+
+    // group
+    --m-menu--group-color: var(--m-menu--color);
+    --m-menu--group-border: none;
+    --m-menu--group-indicator: var(--m-menu--background-color);
+    --m-menu--group-font-weight: var(--m-menu--font-weight);
+    --m-menu--group-text-transform: lowercase;
+    --m-menu--group-background-color: #{ $m-color--grey-black };
+
+    // group states
+    --m-menu--group-selected-color: var(--m-menu--selected-color);
+    --m-menu--group-selected-indicator: #{ $m-color--ul-yellow };
+    --m-menu--group-selected-font-weight: #{ $m-font-weight--bold };
+    --m-menu--group-hover-indicator: #{ $m-color--grey-darker };
+}
 
 .m-menu {
     overflow: hidden;
@@ -43,12 +78,6 @@
         &__plus {
             margin-right: $m-spacing--s;
         }
-
-        // .m-menu.m--is-skin-light & {
-        //     color: rgba($m-color--white, 0.7);
-        //     background: $m-menu-color--skin-light-bg-light;
-        //     box-shadow: 0 1px 2px rgba($m-color--black, 0.1);
-        // }
     }
 
     &__body {
@@ -57,5 +86,15 @@
         margin: 0;
         padding: 0;
         list-style: none;
+    }
+
+    &.m--is-skin-light {
+        --m-menu--color: #{ rgba($m-color--white, 0.7) };
+        --m-menu--background-color: #{ $m-color--ul-blue };
+        --m-menu--trigger-box-shadow: 0 1px 2px  #{ rgba($m-color--black, 0.1) };
+        // group
+        --m-menu--group-indicator: var(--m-menu--background-color);
+        --m-menu--group-hover-indicator: #{ $m-color--interactive-light };
+        --m-menu--group-background-color: #{ $m-color--interactive-dark };
     }
 }
