@@ -15,7 +15,6 @@ export interface MenuItem {
     group: boolean;
     propOpen: boolean;
     selected: boolean;
-    groupSelected: boolean;
     insideGroup: boolean;
 }
 
@@ -42,7 +41,6 @@ export class MMenuItem extends BaseMenuItem implements MenuItem {
 
     public group: boolean = false;
     public selected: boolean = false;
-    public groupSelected: boolean = false;
     public insideGroup = false;
     public animReady: boolean = false;
     public ariaControls: string = `mMenuItem-${uuid.generate()}-controls`;

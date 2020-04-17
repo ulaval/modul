@@ -181,7 +181,6 @@ export class MMenu extends BaseMenu implements Menu {
             this.internalItems.forEach((item) => {
                 item.propOpen = false;
                 if (!item.isDisabled && item.group) {
-                    let groupSelected: boolean = false;
                     item.$children.forEach(itemGroup => {
                         itemGroup.$children.forEach((subItem: MMenuItem) => {
                             if (subItem.isUrl) {
@@ -191,11 +190,9 @@ export class MMenu extends BaseMenu implements Menu {
                             if (subItem.selected) {
                                 item.propOpen = true;
                                 item.selected = true;
-                                groupSelected = true;
                             }
                         });
                     });
-                    item.groupSelected = groupSelected;
                 }
             });
         }

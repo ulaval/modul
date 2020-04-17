@@ -1,6 +1,5 @@
 <li class="m-menu-item"
     :class="{'m--is-selected': selected,
-             'm--is-group-selected': groupSelected,
              'm--is-disabled': isDisabled,
              'm--is-group': group,
              'm--is-open': propOpen,
@@ -38,7 +37,7 @@
         <m-plus class="m-menu-item__plus"
                 skin="current-color"
                 :open="propOpen"
-                :large="groupSelected"
+                :large="selected"
                 ref="plus"
                 v-if="group"></m-plus>
     </span>
