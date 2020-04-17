@@ -2,7 +2,6 @@ import { FormControl } from './form-control';
 import { FormGroup } from './form-group';
 
 const TEST_CONTROL_NAME: string = 'test';
-const ERROR_MESSAGE: string = 'error';
 
 describe('FormGroup', () => {
     let formGroup: FormGroup;
@@ -29,6 +28,10 @@ describe('FormGroup', () => {
                 expect(formGroup.controls.length).toBe(1);
                 expect(formGroup.getControl(TEST_CONTROL_NAME)).toBeDefined();
             });
+
+            it('containsControl should return true', () => {
+                expect(formGroup.containsControl(TEST_CONTROL_NAME)).toBe(true);
+            });
         });
     });
 
@@ -47,11 +50,23 @@ describe('FormGroup', () => {
             expect(formGroup.enabled).toBe(true);
         });
 
+        it('when use setControl it should replace the control properly', () => {
+            formGroup.setControl(TEST_CONTROL_NAME, new FormControl<string>([], { initialValue: 'Test value' }));
+
+            expect(formGroup.getControl(TEST_CONTROL_NAME).value).toBe('Test value');
+        });
+
         it('when removing it should removing the control properly', () => {
-            formGroup.removeControl('test');
+            formGroup.removeControl(TEST_CONTROL_NAME);
 
             expect(() => formGroup.getControl(TEST_CONTROL_NAME)).toThrow(Error);
             expect(formGroup.controls.length).toBe(0);
+        });
+
+        it('when removing containsControl should return false', () => {
+            formGroup.removeControl(TEST_CONTROL_NAME);
+
+            expect(formGroup.containsControl(TEST_CONTROL_NAME)).toBe(false);
         });
     });
 });
