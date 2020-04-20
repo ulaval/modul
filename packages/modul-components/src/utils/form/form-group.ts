@@ -124,7 +124,7 @@ export class FormGroup<T = any> extends AbstractControl {
     }
 
     public containsControl(name: string): boolean {
-        return this._controls[name] !== undefined;
+        return typeof this._controls[name] !== 'undefined';
     }
 
     public getControl<T = any>(name: string): AbstractControl<T> {
