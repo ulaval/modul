@@ -123,7 +123,7 @@ export class FormGroup<T = any> extends AbstractControl {
         return Object.values(this._controls);
     }
 
-    public containsControl<T = any>(name: string): boolean {
+    public containsControl(name: string): boolean {
         return this._controls[name] !== undefined;
     }
 
