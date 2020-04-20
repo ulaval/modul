@@ -312,16 +312,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-menu css custom properties 1`] = `
+exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
 <div
-  class="m-menu m-menu-stories m--is-skin-dark m--is-open m--is-disabled"
+  class="m-menu m-menu-stories m--is-skin-dark m--is-open"
 >
   <div
     aria-controls="mMenu-fakeId-controls"
     aria-expanded="true"
     aria-haspopup="true"
-    class="m-menu__trigger m--is-disabled"
-    tabindex="-1"
+    class="m-menu__trigger"
+    tabindex="0"
   >
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
@@ -340,34 +340,32 @@ exports[`Storyshots modul-components|m-menu css custom properties 1`] = `
   >
      
     <li
-      class="m-menu-item"
+      class="m-menu-item m--is-custom-content"
       role="none"
     >
       <span
-        class="m-menu-item__link"
+        class="m-menu-item__link m--is-custom-content"
         tabindex="0"
       >
-        <svg
-          aria-hidden="true"
-          class="m-icon m-menu-item__icon"
-          height="1em"
-          width="1em"
+        <button
+          class="m-button m--is-skin-primary"
+          type="button"
         >
           <!---->
            
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
-        <span
-          class="m-menu-item__label"
-        >
-          Item 1
-        </span>
-         
-        <!---->
+          <!---->
+           
+          <span
+            class="m-button__text"
+          >
+            custom content 
+            <!---->
+          </span>
+           
+          <!---->
+           
+          <!---->
+        </button>
       </span>
        
       <ul
@@ -430,195 +428,6 @@ exports[`Storyshots modul-components|m-menu css custom properties 1`] = `
         id="mMenuItem-fakeId-controls"
         style="display: none;"
       />
-    </li>
-     
-    <li
-      class="m-menu-item"
-      role="none"
-    >
-      <span
-        class="m-menu-item__link"
-        tabindex="0"
-      >
-        <!---->
-         
-        <span
-          class="m-menu-item__label"
-        >
-          Item group 1
-        </span>
-         
-        <!---->
-      </span>
-       
-      <ul
-        aria-hidden="true"
-        class="m-menu-item__group"
-        id="mMenuItem-fakeId-controls"
-        style="display: none;"
-      >
-        <li
-          class="m-menu-item"
-          role="none"
-        >
-          <span
-            class="m-menu-item__link"
-            tabindex="0"
-          >
-            <!---->
-             
-            <span
-              class="m-menu-item__label"
-            >
-              Subitem 1
-            </span>
-             
-            <!---->
-          </span>
-           
-          <ul
-            aria-hidden="true"
-            class="m-menu-item__group"
-            id="mMenuItem-fakeId-controls"
-            style="display: none;"
-          />
-        </li>
-         
-        <li
-          class="m-menu-item"
-          role="none"
-        >
-          <span
-            class="m-menu-item__link"
-            tabindex="0"
-          >
-            <!---->
-             
-            <span
-              class="m-menu-item__label"
-            >
-              Subitem 2
-            </span>
-             
-            <!---->
-          </span>
-           
-          <ul
-            aria-hidden="true"
-            class="m-menu-item__group"
-            id="mMenuItem-fakeId-controls"
-            style="display: none;"
-          />
-        </li>
-         
-        <li
-          class="m-menu-item"
-          role="none"
-        >
-          <span
-            class="m-menu-item__link"
-            tabindex="0"
-          >
-            <!---->
-             
-            <span
-              class="m-menu-item__label"
-            >
-              Subitem 3
-            </span>
-             
-            <!---->
-          </span>
-           
-          <ul
-            aria-hidden="true"
-            class="m-menu-item__group"
-            id="mMenuItem-fakeId-controls"
-            style="display: none;"
-          />
-        </li>
-      </ul>
-    </li>
-     
-    <li
-      class="m-menu-item"
-      role="none"
-    >
-      <span
-        class="m-menu-item__link"
-        tabindex="0"
-      >
-        <!---->
-         
-        <span
-          class="m-menu-item__label"
-        >
-          Item group 2
-        </span>
-         
-        <!---->
-      </span>
-       
-      <ul
-        aria-hidden="true"
-        class="m-menu-item__group"
-        id="mMenuItem-fakeId-controls"
-        style="display: none;"
-      >
-        <li
-          class="m-menu-item"
-          role="none"
-        >
-          <span
-            class="m-menu-item__link"
-            tabindex="0"
-          >
-            <!---->
-             
-            <span
-              class="m-menu-item__label"
-            >
-              Subitem 4
-            </span>
-             
-            <!---->
-          </span>
-           
-          <ul
-            aria-hidden="true"
-            class="m-menu-item__group"
-            id="mMenuItem-fakeId-controls"
-            style="display: none;"
-          />
-        </li>
-         
-        <li
-          class="m-menu-item"
-          role="none"
-        >
-          <span
-            class="m-menu-item__link"
-            tabindex="0"
-          >
-            <!---->
-             
-            <span
-              class="m-menu-item__label"
-            >
-              Subitem 5
-            </span>
-             
-            <!---->
-          </span>
-           
-          <ul
-            aria-hidden="true"
-            class="m-menu-item__group"
-            id="mMenuItem-fakeId-controls"
-            style="display: none;"
-          />
-        </li>
-      </ul>
     </li>
   </ul>
 </div>
