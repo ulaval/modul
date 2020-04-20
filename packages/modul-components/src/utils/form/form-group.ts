@@ -146,9 +146,7 @@ export class FormGroup<T = any> extends AbstractControl {
     }
 
     public setControl(name: string, control: AbstractControl): void {
-        if (this._controls[name] !== undefined) {
-            Vue.prototype.$delete(this._controls, name);
-        }
+        this.removeControl(name);
 
         control.parent = this;
 
@@ -156,9 +154,7 @@ export class FormGroup<T = any> extends AbstractControl {
     }
 
     public removeControl(name: string): void {
-        if (this._controls[name] !== undefined) {
-            Vue.prototype.$delete(this._controls, name);
-        }
+        Vue.prototype.$delete(this._controls, name);
     }
 
     private setupControlsParent(): void {
