@@ -86,14 +86,25 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}`, module)
                         ${DEFAULT_MENU_ITEMS}
                  </m-menu>`
     }))
-    .add('css custom properties', () => ({
+    .add('custom visual and content', () => ({
         data: () => ({
             menuIsOpened: true,
-            selectedItem: 'item1'
+            selectedItem: 'item2'
         }),
-        template: `<m-menu :closeOnSelection="false" :disabled="true" :open.sync="menuIsOpened" :selected.sync="selectedItem" class="m-menu-stories">
+        methods: {
+            test(): void {
+                console.log('do something crazy');
+            }
+        },
+        template: `<m-menu :closeOnSelection="false" :open.sync="menuIsOpened" :selected.sync="selectedItem" class="m-menu-stories">
                         <div slot="trigger">Menu</div>
-                        ${DEFAULT_MENU_ITEMS}
+                        <m-menu-item value="item1" label="Item 1" @click="test()" icon-name="m-svg__profile">
+                            <template slot="content">
+                                <m-button>custom content</m-button>
+                            </template>
+                        </m-menu-item>
+                        <m-menu-item value="item2" label="Item 2"></m-menu-item>
+                        <m-menu-item value="item3" label="Item 3"></m-menu-item>
                  </m-menu>`
     }))
     .add('disabled', () => ({
@@ -152,7 +163,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}/menuItem`, modul
         }),
         template: `<m-menu :open.sync="menuIsOpened" :selected.sync="selectedItem" :closeOnSelection="false">
                         <div slot="trigger">Menu</div>
-                        <m-menu-item label="Item 1" value="item1" :url="routerLink"></m-menu-item>
+                        <m-menu-item label="Item 1" value="item1" :url="routerLink">
+
+                        </m-menu-item>
                    </m-menu>`
     }))
     .add('default', () => ({
