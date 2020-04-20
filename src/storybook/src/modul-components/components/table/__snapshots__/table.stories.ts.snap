@@ -1376,12 +1376,14 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
     >
       <td
         class="m-table__placeholder-container"
-        style="position: absolute; width: 100%;"
+        colspan="100%"
+        style="position: absolute;"
       >
         <!---->
          
         <div
           class="m-table__placeholder-message"
+          style="width: 100%;"
         >
           <td
             class="m-table-sandbox__empty__cell"
@@ -1449,12 +1451,14 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
     >
       <td
         class="m-table__placeholder-container"
-        style="position: absolute; width: 100%;"
+        colspan="100%"
+        style="position: absolute;"
       >
         <!---->
          
         <div
           class="m-table__placeholder-message"
+          style="width: 100%;"
         >
           <p>
             Aucune donnée à afficher
@@ -1517,7 +1521,8 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
     >
       <td
         class="m-table__placeholder-container"
-        style="position: absolute; width: 100%;"
+        colspan="100%"
+        style="position: absolute;"
       >
         <div
           class="m-progress m--is-indeterminate m--is-in-progress"
@@ -1533,6 +1538,7 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
          
         <div
           class="m-table__placeholder-message"
+          style="width: 100%;"
         >
           <!---->
            
@@ -3310,12 +3316,14 @@ exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
       >
         <td
           class="m-table__placeholder-container"
-          style="position: sticky; width: 500px;"
+          colspan="100%"
+          style="position: sticky;"
         >
           <!---->
            
           <div
             class="m-table__placeholder-message"
+            style="width: 500px;"
           >
             <p>
               Aucune donnée à afficher

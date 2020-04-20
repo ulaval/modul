@@ -14,7 +14,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
 Vue.use(DateFilterPlugin);
 
-let currentDate: Date = new Date();
+let currentDate: Date = new Date(2020, 1, 28);
 let originalSecondes: number = currentDate.getSeconds();
 let firstCharging: boolean = true;
 

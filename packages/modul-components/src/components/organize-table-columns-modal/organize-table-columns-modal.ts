@@ -6,7 +6,7 @@ import ButtonPlugin from '../button/button';
 import { ORGANIZE_TABLE_COLUMNS_MODAL_NAME } from '../component-names';
 import ModalPlugin from '../modal/modal';
 import { MColumnTable } from '../table/table';
-import WithRender from './organize-table-columns-modal.html';
+import WithRender from './organize-table-columns-modal.html?style=./organize-table-columns-modal.scss';
 import OrganizeTableColumnsPlugin from './organize-table-columns/organize-table-columns';
 
 @WithRender
