@@ -108,4 +108,11 @@ export const priorityCountriesDefinedFrUsCa = () => ({
     template: '<m-phonefield :priority-iso-countries="priorityIsoCountries"></m-phonefield>'
 });
 
+export const autocompleteWorkPhone = () => ({
+    components: {
+        'm-phonefield': phoneFieldChunk
+    },
+    template: '<m-phonefield autocomplete="work tel"></m-phonefield>'
+});
+
 
