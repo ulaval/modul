@@ -40,7 +40,7 @@
         }
     }
 
-    &__link {
+    &__link.m-menu-item__link { // must double specificity to compensate the stupid issue with m-u--app-body
         outline: none;
         display: flex;
         position: relative;

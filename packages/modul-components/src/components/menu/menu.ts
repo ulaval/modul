@@ -23,6 +23,14 @@ export interface Menu {
     closeOnSelectionInAction: boolean;
     updateValue(value: string | undefined): void;
     onClick(event: Event, value: string): void;
+    beforeEnter(event: Event, value: string): void;
+    enter(event: Event, value: string): void;
+    afterEnter(event: Event, value: string): void;
+    enterCancelled(event: Event, value: string): void;
+    beforeLeave(event: Event, value: string): void;
+    leave(event: Event, value: string): void;
+    afterLeave(event: Event, value: string): void;
+    leaveCancelled(event: Event, value: string): void;
 }
 
 export enum MMenuSkin {
@@ -37,8 +45,10 @@ export class MMenu extends BaseMenu implements Menu {
     public selected: string;
     @Prop()
     public open: boolean;
+
     @Prop({ default: true })
     public closeOnSelection: boolean;
+
     @Prop({
         default: MMenuSkin.Dark,
         validator: value =>
@@ -70,6 +80,30 @@ export class MMenu extends BaseMenu implements Menu {
 
     @Emit('click')
     public onClick(event: Event, value: string): void { }
+
+    @Emit('before-enter')
+    public beforeEnter(event: Event, value: string): void { }
+
+    @Emit('enter')
+    public enter(event: Event, value: string): void { }
+
+    @Emit('after-enter')
+    public afterEnter(event: Event, value: string): void { }
+
+    @Emit('enter-cancelled')
+    public enterCancelled(event: Event, value: string): void { }
+
+    @Emit('before-leave')
+    public beforeLeave(event: Event, value: string): void { }
+
+    @Emit('leave')
+    public leave(event: Event, value: string): void { }
+
+    @Emit('after-leave')
+    public afterLeave(event: Event, value: string): void { }
+
+    @Emit('leave-cancelled')
+    public leaveCancelled(event: Event, value: string): void { }
 
     @Watch('selected', { immediate: true })
     public updateValue(value: string | undefined): void {

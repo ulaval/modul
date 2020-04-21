@@ -21,6 +21,14 @@
         <slot name="trigger"></slot>
     </div>
     <m-accordion-transition ref="transition"
+                            @before-enter="beforeEnter"
+                            @enter="enter"
+                            @after-enter="afterEnter"
+                            @enter-cancelled="enterCancelled"
+                            @before-leave="beforeLeave"
+                            @leave="leave"
+                            @after-leave="afterLeave"
+                            @leave-cancelled="leaveCancelled"
                             :disabled="!animReady || propDisabled">
         <ul v-show="propOpen"
             :id="idAriaControls"

@@ -93,12 +93,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}`, module)
         }),
         methods: {
             test(): void {
-                console.log('do something crazy');
+                console.log('afterLeave');
             }
         },
-        template: `<m-menu :closeOnSelection="false" :open.sync="menuIsOpened" :selected.sync="selectedItem" class="m-menu-stories">
+        template: `<m-menu :open.sync="menuIsOpened" @after-leave="test()" @open-animation-end="test()" :selected.sync="selectedItem" class="m-menu-stories">
                         <div slot="trigger">Menu</div>
-                        <m-menu-item value="item1" label="Item 1" @click="test()" icon-name="m-svg__profile">
+                        <m-menu-item value="item1" label="Item 1" icon-name="m-svg__profile">
                             <template slot="content">
                                 <m-button>custom content</m-button>
                             </template>
