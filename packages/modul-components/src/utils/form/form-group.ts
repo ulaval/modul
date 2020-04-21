@@ -146,8 +146,6 @@ export class FormGroup<T = any> extends AbstractControl {
     }
 
     public setControl(name: string, control: AbstractControl): void {
-        this.removeControl(name);
-
         control.parent = this;
 
         Vue.prototype.$set(this._controls, name, control);

@@ -38,7 +38,7 @@ describe('FormGroup', () => {
     describe('given an FormGroup with a control', () => {
         beforeEach(() => {
             formGroup = new FormGroup({
-                [TEST_CONTROL_NAME]: new FormControl()
+                [TEST_CONTROL_NAME]: new FormControl<string>([], { initialValue: 'Test value before' })
             });
         });
 
@@ -51,9 +51,19 @@ describe('FormGroup', () => {
         });
 
         it('when use setControl it should replace the control properly', () => {
-            formGroup.setControl(TEST_CONTROL_NAME, new FormControl<string>([], { initialValue: 'Test value' }));
+            expect(formGroup.getControl(TEST_CONTROL_NAME).value).toBe('Test value before');
 
-            expect(formGroup.getControl(TEST_CONTROL_NAME).value).toBe('Test value');
+            formGroup.setControl(TEST_CONTROL_NAME, new FormControl<string>([], { initialValue: 'Test value after' }));
+
+            expect(formGroup.getControl(TEST_CONTROL_NAME).value).toBe('Test value after');
+        });
+
+        it('when use setControl it should add the control properly', () => {
+            const NEW_CONTROL_NAME: string = 'new-controle-name';
+
+            formGroup.setControl(NEW_CONTROL_NAME, new FormControl<string>([], { initialValue: 'value' }));
+
+            expect(formGroup.getControl(NEW_CONTROL_NAME).value).toBe('value');
         });
 
         it('when removing it should removing the control properly', () => {
