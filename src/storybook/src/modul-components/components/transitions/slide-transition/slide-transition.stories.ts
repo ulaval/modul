@@ -112,7 +112,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, mo
             direction: MSlideTransitionDirection.LeftToRight,
             nbParagraphe: 20,
             nbTab: 3,
-            skinNavbar: MNavbarSkin.TabLight,
+            skinNavbar: MNavbarSkin.TabLight
         }),
         methods: {
             showTab(newIndex): void {
@@ -120,7 +120,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, mo
                 _this.direction = (newIndex < _this.selectedTabIndex) ? MSlideTransitionDirection.LeftToRight : MSlideTransitionDirection.RightToLeft;
                 _this.selectedTabIndex = newIndex;
                 _this.nbParagraphe = (_this.selectedTabIndex % 2) === 0 ? 30 : newIndex * 40;
-            },
+            }
         },
         template: `
         <div>
