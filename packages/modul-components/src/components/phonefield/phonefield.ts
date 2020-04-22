@@ -170,10 +170,6 @@ export class MPhonefield extends ModulVue {
         return '+' + this.internalCountry.dialCode;
     }
 
-    get maxLengthCurentPhone(): number {
-        return this.example ? this.example.length : 15;
-    }
-
     get example(): string {
         const phoneNumber: PhoneNumber | undefined = getExampleNumber(this.phoneRegionCode as CountryCode, this.examples);
         return phoneNumber ? phoneNumber.formatInternational() : '';
