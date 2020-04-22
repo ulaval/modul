@@ -171,7 +171,7 @@ export class MPhonefield extends ModulVue {
     }
 
     get maxLengthCurentPhone(): number {
-        return this.example.length;
+        return this.example ? this.example.length : 15;
     }
 
     get example(): string {
