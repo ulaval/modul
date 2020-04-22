@@ -11,6 +11,7 @@ import { MaxLengthValidator } from '@ulaval/modul-components/dist/utils/form/val
 import { MaxValidator } from '@ulaval/modul-components/dist/utils/form/validators/max/max';
 import { MinLengthValidator } from '@ulaval/modul-components/dist/utils/form/validators/min-length/min-length';
 import { MinValidator } from '@ulaval/modul-components/dist/utils/form/validators/min/min';
+import { PhoneValidator } from '@ulaval/modul-components/dist/utils/form/validators/phone/phone';
 import { RequiredValidator } from '@ulaval/modul-components/dist/utils/form/validators/required/required';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { FormBuilder } from './helpers/form-builder';
@@ -264,4 +265,30 @@ export const compareFields = () => ({
             </p>
         </m-form>
         `
+});
+
+export const phoneValidator = () => ({
+    components: { FormBuilder },
+    data: () => ({
+        formGroup: new FormGroup(
+            {
+                'phone': new FormControl<string>([
+                    PhoneValidator({ controlLabel: 'phone' })]
+                )
+            }
+        )
+    }),
+    template: `
+    <form-builder :form-group="formGroup">
+        <template v-slot="{ control }">
+            <m-textfield v-model="control.value"
+                          :skip-input-validation="true"
+                          :error="control.hasError()"
+                          :error-message="control.errorMessage"
+                          :label="control.name"
+                          :valid="control.valid"
+                           v-m-control="control">
+                </m-textfield>
+        </template>
+    </form-builder>`
 });

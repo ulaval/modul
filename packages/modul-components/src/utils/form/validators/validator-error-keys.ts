@@ -7,5 +7,6 @@ export enum ValidatorKeys {
     Between = 'between',
     Email = 'email',
     Compare = 'compare',
-    Date = 'Date'
+    Date = 'Date',
+    Phone = 'Phone'
 }
