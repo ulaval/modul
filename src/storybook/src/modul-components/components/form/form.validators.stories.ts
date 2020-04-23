@@ -287,6 +287,7 @@ export const phoneValidator = () => ({
                           :error-message="control.errorMessage"
                           :label="control.name"
                           :valid="control.valid"
+                          placeholder="+14186562131"
                            v-m-control="control">
                 </m-textfield>
         </template>
