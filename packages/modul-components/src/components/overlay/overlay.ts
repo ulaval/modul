@@ -4,12 +4,15 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalTransitionDuration } from '../../mixins/portal/portal';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { OVERLAY_NAME } from '../component-names';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, OVERLAY_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
 import WithRender from './overlay.html?style=./overlay.scss';
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton
+    },
     mixins: [Portal]
 })
 export class MOverlay extends ModulVue {
@@ -115,7 +118,6 @@ export class MOverlay extends ModulVue {
 
 const OverlayPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(ButtonPlugin);
         v.use(I18nPlugin);
         v.component(OVERLAY_NAME, MOverlay);
     }

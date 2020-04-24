@@ -2,14 +2,17 @@ import Vue, { PluginObject } from 'vue';
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { INPLACE_EDIT_NAME } from '../component-names';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, INPLACE_EDIT_NAME } from '../component-names';
 import OverlayPlugin from '../overlay/overlay';
 import AccordionTransitionPlugin from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './inplace-edit.html?style=./inplace-edit.scss';
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton
+    },
     mixins: [MediaQueries]
 })
 export class MInplaceEdit extends ModulVue {
@@ -106,7 +109,6 @@ const InplaceEditPlugin: PluginObject<any> = {
     install(v, options): void {
         v.use(AccordionTransitionPlugin);
         v.use(OverlayPlugin);
-        v.use(ButtonPlugin);
         v.component(INPLACE_EDIT_NAME, MInplaceEdit);
     }
 };

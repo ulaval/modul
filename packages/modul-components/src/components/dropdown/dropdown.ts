@@ -11,8 +11,8 @@ import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import { normalizeString } from '../../utils/str/str';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import uuid from '../../utils/uuid/uuid';
-import ButtonPlugin from '../button/button';
-import { DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
 import InputStylePlugin, { MInputStyle } from '../input-style/input-style';
 import PopupPlugin, { MPopup } from '../popup/popup';
 import RadioStylePlugin from '../radio-style/radio-style';
@@ -25,6 +25,9 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton
+    },
     mixins: [
         InputState,
         InputPopup,
@@ -576,7 +579,6 @@ const DropdownPlugin: PluginObject<any> = {
     install(v, options): void {
         Vue.use(RadioStylePlugin);
         Vue.use(InputStylePlugin);
-        Vue.use(ButtonPlugin);
         Vue.use(PopupPlugin);
         Vue.use(PopupPluginDirective);
         Vue.use(ValidationMessagePlugin);

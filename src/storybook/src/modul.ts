@@ -104,7 +104,6 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(PanelPlugin);
         Vue.use(MessagePlugin);
         Vue.use(SearchfieldPlugin);
-        Vue.use(ButtonPlugin);
         Vue.use(ExpandableLayoutPlugin);
         Vue.use(CarouselPlugin);
         Vue.use(CheckboxPlugin);

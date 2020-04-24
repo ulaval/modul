@@ -9,7 +9,6 @@ import FilePlugin, { DEFAULT_STORE_NAME, FileService, MFile, MFileStatus, MFileV
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
 import { MESSAGE_NAME } from '../component-names';
 import IconButtonPlugin from '../icon-button/icon-button';
 import { MMessage } from '../message/message';
@@ -39,7 +38,6 @@ describe('MFileUpload', () => {
         Vue.use(FilePlugin);
         Vue.use(I18nPlugin);
         Vue.use(MediaQueriesPlugin);
-        Vue.use(ButtonPlugin);
         addMessages(Vue, ['components/file-upload/file-upload.lang.en.json']);
         addMessages(Vue, ['filters/filesize/filesize.lang.en.json']);
     });
@@ -339,7 +337,6 @@ describe('MFileUpload', () => {
         let completedFile: MFile;
 
         beforeEach(async () => {
-            Vue.use(ButtonPlugin);
 
             const filesvc: FileService = (Vue.prototype as ModulVue).$file;
             await filesvc.add(

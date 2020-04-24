@@ -4,8 +4,8 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import DialogServicePlugin from '../../utils/dialog/dialog-service';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { DIALOG_NAME } from '../component-names';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, DIALOG_NAME } from '../component-names';
 import I18nPlugin from '../i18n/i18n';
 import IconPlugin from '../icon/icon';
 import LinkPlugin from '../link/link';
@@ -26,6 +26,9 @@ export enum MDialogState {
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton
+    },
     mixins: [Portal]
 })
 export class MDialog extends ModulVue implements PortalMixinImpl {
@@ -180,7 +183,6 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
 
 const DialogPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(ButtonPlugin);
         v.use(IconPlugin);
         v.use(I18nPlugin);
         v.use(LinkPlugin);

@@ -12,10 +12,10 @@ import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import ModulDate, { DatePrecision } from '../../utils/modul-date/modul-date';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
+import { MButton } from '../button/button';
 import CalendarPlugin from '../calendar/calendar';
 import { MBaseCalendarType, MBaseCalendarView } from '../calendar/calendar-renderer/base-calendar/base-calendar';
-import { DATEPICKER_NAME } from '../component-names';
+import { BUTTON_NAME, DATEPICKER_NAME } from '../component-names';
 import IconButtonPlugin from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
 import InputStylePlugin from '../input-style/input-style';
@@ -34,7 +34,8 @@ export enum MDatepickerDefaultView {
 @WithRender
 @Component({
     components: {
-        MInputMask
+        'm-input-mask': MInputMask,
+        [BUTTON_NAME]: MButton
     },
     mixins: [
         InputState,
@@ -402,7 +403,6 @@ export class MDatepicker extends ModulVue {
 const DatepickerPlugin: PluginObject<any> = {
     install(v): void {
         v.use(InputStylePlugin);
-        v.use(ButtonPlugin);
         v.use(IconButtonPlugin);
         v.use(PopupPlugin);
         v.use(ValidationMessagePlugin);

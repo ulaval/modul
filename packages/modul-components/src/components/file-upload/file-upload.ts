@@ -9,8 +9,8 @@ import FilePlugin, { DEFAULT_STORE_NAME, MFile, MFileRejectionCause, MFileStatus
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { FILE_UPLOAD_NAME } from '../component-names';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, FILE_UPLOAD_NAME } from '../component-names';
 import FileSelectPlugin from '../file-select/file-select';
 import I18nPlugin from '../i18n/i18n';
 import IconButtonPlugin from '../icon-button/icon-button';
@@ -48,6 +48,9 @@ const defaultDragEvent: (e: DragEvent) => void = (e: DragEvent) => {
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton
+    },
     mixins: [
         MediaQueries
     ]
@@ -365,7 +368,6 @@ const FileUploadPlugin: PluginObject<any> = {
         v.use(IconPlugin);
         v.use(I18nPlugin);
         v.use(IconButtonPlugin);
-        v.use(ButtonPlugin);
         v.use(MessagePlugin);
         v.use(LinkPlugin);
         v.use(MediaQueriesPlugin);

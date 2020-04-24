@@ -2,15 +2,19 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { ORGANIZE_TABLE_COLUMNS_MODAL_NAME } from '../component-names';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, ORGANIZE_TABLE_COLUMNS_MODAL_NAME } from '../component-names';
 import ModalPlugin from '../modal/modal';
 import { MColumnTable } from '../table/table';
 import WithRender from './organize-table-columns-modal.html?style=./organize-table-columns-modal.scss';
 import OrganizeTableColumnsPlugin from './organize-table-columns/organize-table-columns';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [BUTTON_NAME]: MButton
+    }
+})
 export class MOrganizeTableColumnsModal extends ModulVue {
     @Prop({
         required: true
@@ -48,7 +52,6 @@ export class MOrganizeTableColumnsModal extends ModulVue {
 const OrganizeTableColumnsModalPlugin: PluginObject<any> = {
     install(v, options): void {
         v.component(ORGANIZE_TABLE_COLUMNS_MODAL_NAME, MOrganizeTableColumnsModal);
-        v.use(ButtonPlugin);
         v.use(ModalPlugin);
         v.use(OrganizeTableColumnsPlugin);
     }

@@ -1,9 +1,9 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { BUTTON_NAME } from '../component-names';
-import IconPlugin from '../icon/icon';
-import SpinnerPlugin from '../spinner/spinner';
+import { BUTTON_NAME, ICON_NAME, SPINNER_NAME } from '../component-names';
+import IconPlugin, { MIcon } from '../icon/icon';
+import SpinnerPlugin, { MSpinner } from '../spinner/spinner';
 import WithRender from './button.html?style=./button.scss';
 
 export enum MButtonType {
@@ -23,7 +23,13 @@ export enum MButtonIconPosition {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [SPINNER_NAME]: MSpinner,
+        [ICON_NAME]: MIcon
+    }
+}
+)
 export class MButton extends Vue {
 
     @Prop({

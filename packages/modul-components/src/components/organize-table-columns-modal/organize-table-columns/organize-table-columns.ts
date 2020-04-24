@@ -3,8 +3,8 @@ import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import SortablePlugin, { MSortEvent } from '../../../directives/sortable/sortable';
 import { ModulVue } from '../../../utils/vue/vue';
-import ButtonPlugin from '../../button/button';
-import { ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
+import { MButton } from '../../button/button';
+import { BUTTON_NAME, ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
 import IconButtonPlugin from '../../icon-button/icon-button';
 import IconPlugin from '../../icon/icon';
 import ListItemPlugin from '../../list-item/list-item';
@@ -12,7 +12,11 @@ import { MColumnTable } from '../../table/table';
 import WithRender from './organize-table-columns.html?style=./organize-table-columns.scss';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [BUTTON_NAME]: MButton
+    }
+})
 export class MOrganizeTableColumns extends ModulVue {
     @Prop({
         required: true
@@ -100,7 +104,6 @@ const OrganizeTableColumnsPlugin: PluginObject<any> = {
         v.use(ListItemPlugin);
         v.use(IconPlugin);
         v.use(IconButtonPlugin);
-        v.use(ButtonPlugin);
     }
 };
 
