@@ -1,8 +1,9 @@
+import CarouselPlugin from '@ulaval/modul-components/dist/components/carousel/carousel';
+import { CAROUSEL_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import { CAROUSEL_NAME } from '../component-names';
-import CarouselPlugin from './carousel';
 import WithRender from './carousel.sandbox.html';
+
 
 
 @WithRender
