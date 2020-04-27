@@ -3,9 +3,9 @@ import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
 import { ModulVue } from '../../utils/vue/vue';
-import { INPUT_STYLE_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import SpinnerPlugin from '../spinner/spinner';
+import { I18N_NAME, INPUT_STYLE_NAME, SPINNER_NAME } from '../component-names';
+import I18nPlugin, { MI18n } from '../i18n/i18n';
+import SpinnerPlugin, { MSpinner } from '../spinner/spinner';
 import WithRender from './input-style.html';
 import './input-style.scss';
 
@@ -13,6 +13,10 @@ export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
 
 @WithRender
 @Component({
+    components: {
+        [I18N_NAME]: MI18n,
+        [SPINNER_NAME]: MSpinner
+    },
     mixins: [InputState]
 })
 export class MInputStyle extends ModulVue {

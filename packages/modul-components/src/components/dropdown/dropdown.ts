@@ -12,11 +12,14 @@ import { normalizeString } from '../../utils/str/str';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import uuid from '../../utils/uuid/uuid';
 import { MButton } from '../button/button';
-import { BUTTON_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
+import { BUTTON_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MIconButton } from '../icon-button/icon-button';
+import { MIcon } from '../icon/icon';
 import InputStylePlugin, { MInputStyle } from '../input-style/input-style';
 import PopupPlugin, { MPopup } from '../popup/popup';
 import RadioStylePlugin from '../radio-style/radio-style';
-import ValidationMessagePlugin from '../validation-message/validation-message';
+import ValidationMessagePlugin, { MValidationMessage } from '../validation-message/validation-message';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import { BaseDropdown, BaseDropdownGroup, MDropdownInterface, MDropdownItem } from './dropdown-item/dropdown-item';
 import WithRender from './dropdown.html?style=./dropdown.scss';
@@ -26,7 +29,14 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton
+        [BUTTON_NAME]: MButton,
+        [INPUT_STYLE_NAME]: MInputStyle,
+        [ICON_NAME]: MIcon,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [I18N_NAME]: MI18n,
+        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
+        [POPUP_NAME]: MPopup,
+        [DROPDOWN_ITEM_NAME]: MDropdownItem
     },
     mixins: [
         InputState,
