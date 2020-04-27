@@ -4,8 +4,8 @@ import { Prop, Watch } from 'vue-property-decorator';
 import { BackdropMode } from '../../mixins/portal/portal';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { SPINNER_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
+import { I18N_NAME, SPINNER_NAME } from '../component-names';
+import I18nPlugin, { MI18n } from '../i18n/i18n';
 import WithRender from './spinner.html?style=./spinner.scss';
 
 
@@ -26,7 +26,11 @@ export const PROCESSING_WARN: string = 'Change of property "processing" is not s
 const SPINNER_ID: string = 'MSpinner';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [I18N_NAME]: MI18n
+    }
+})
 export class MSpinner extends ModulVue {
     @Prop()
     public title: boolean;
