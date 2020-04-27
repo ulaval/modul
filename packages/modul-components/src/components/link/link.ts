@@ -4,9 +4,9 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { Location } from 'vue-router';
 import { KeyCode } from '../../utils/keycode/keycode';
 import { ModulVue } from '../../utils/vue/vue';
-import { LINK_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconPlugin from '../icon/icon';
+import { I18N_NAME, ICON_NAME, LINK_NAME } from '../component-names';
+import I18nPlugin, { MI18n } from '../i18n/i18n';
+import IconPlugin, { MIcon } from '../icon/icon';
 import WithRender from './link.html?style=./link.scss';
 
 export enum MLinkMode {
@@ -29,7 +29,12 @@ export enum MLinkSkin {
 const ICON_NAME_CHEVRON: string = 'm-svg__chevron--right';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon,
+        [I18N_NAME]: MI18n
+    }
+})
 export class MLink extends ModulVue {
     @Prop({ default: '/' })
     public url: string | Location;

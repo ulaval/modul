@@ -1,8 +1,8 @@
+import { ICON_FILE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import IconFilePlugin from '@ulaval/modul-components/dist/components/icon-file/icon-file';
+import BadgePlugin from '@ulaval/modul-components/dist/directives/badge/badge';
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import BadgePlugin from '../../directives/badge/badge';
-import { ICON_FILE_NAME } from '../component-names';
-import IconFilePlugin from './icon-file';
 import WithRender from './icon-file.sandbox.html';
 
 
