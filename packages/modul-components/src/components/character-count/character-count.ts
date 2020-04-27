@@ -1,13 +1,17 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { CHARACTER_COUNT_NAME } from '../component-names';
-import AccordionTransitionPlugin from '../transitions/accordion-transition/accordion-transition';
+import { ACCORDION_TRANSITION_NAME, CHARACTER_COUNT_NAME } from '../component-names';
+import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './character-count.html?style=./character-count.scss';
 
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ACCORDION_TRANSITION_NAME]: MAccordionTransition
+    }
+})
 export class MCharacterCount extends Vue {
 
     @Prop()
