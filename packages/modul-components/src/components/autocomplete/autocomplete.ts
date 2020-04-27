@@ -6,7 +6,7 @@ import { InputMaxWidth } from '../../mixins/input-width/input-width';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 import { AUTOCOMPLETE_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
-import DropdownPlugin, { MDropdown } from '../dropdown/dropdown';
+import { MDropdown } from '../dropdown/dropdown';
 import { MDropdownItem } from '../dropdown/dropdown-item/dropdown-item';
 import WithRender from './autocomplete.html?style=./autocomplete.scss';
 
@@ -149,7 +149,6 @@ export class MAutocomplete extends ModulVue {
 const AutoCompletePlugin: PluginObject<any> = {
     install(v, options): void {
         v.prototype.$log.debug(AUTOCOMPLETE_NAME, 'plugin.install');
-        v.use(DropdownPlugin);
         v.component(AUTOCOMPLETE_NAME, MAutocomplete);
     }
 };
