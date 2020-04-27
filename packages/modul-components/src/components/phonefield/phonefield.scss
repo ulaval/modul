@@ -12,7 +12,7 @@
 
     &.m--is-country-focus {
         .m-phonefield {
-            &__number {
+            &__number:not(.m--has-error) {
                 /deep/ .m-input-style__main {
                     border-left-color: $m-color--interactive;
                 }
@@ -63,12 +63,12 @@
     &__item-separator {
         content: "";
         display: block;
-        width: calc(100% - #{$m-spacing--xxl});
+        width: calc(100% - #{$m-spacing});
         position: relative;
         background-color: $m-color--grey-lighter;
         height: 2px;
         padding: 0;
-        margin: 0 0 0 $m-spacing--m;
+        margin: 0 0 0 $m-spacing--s;
     }
 
     &__flag {

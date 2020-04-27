@@ -18,7 +18,7 @@
                                  :label-up="true"
                                  :label="i18nCountryLabel"
                                  width="auto"
-                                 @select-item="onContryChanged($event[0])"
+                                 @select-item="onContryChanged"
                                  @focus="onSelectFocus"
                                  @blur="onSelectBlur">
             <div class="m-phonefield__flag-wrapper">
@@ -52,7 +52,8 @@
                 <m-select-item v-else
                                class="m-phonefield__item-separator"
                                :key="index"
-                               :disabled="true">
+                               :disabled="true"
+                               :readonly="true">
                     <template>
                         <div></div>
                     </template>
@@ -80,6 +81,7 @@
                           :disabled="isDisabled || isWaiting"
                           :placeholder="placeholder"
                           :readonly="isReadonly"
+                          :autocomplete="autocomplete"
                           :options="inputMaskOptions"
                           @input="inputChanged($event)"
                           @focus="onFocus"

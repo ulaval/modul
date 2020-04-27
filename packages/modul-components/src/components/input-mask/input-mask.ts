@@ -44,6 +44,9 @@ export class MInputMask extends ModulVue {
     };
 
     @Prop()
+    public maxLength: number;
+
+    @Prop()
     @Model('input')
     value: string;
 

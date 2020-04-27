@@ -1,4 +1,4 @@
-import 'cleave.js/dist/addons/cleave-phone.i18n.js';
+
 import { CountryCode, getExampleNumber, ParsedNumber, parseNumber, PhoneNumber } from 'libphonenumber-js';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
@@ -15,7 +15,11 @@ import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-sc
 import { MSelectItem } from '../select/select-item/select-item';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
+import { CustomAsYouType } from './formatter/custom-asyoutype';
 import WithRender from './phonefield.html?style=./phonefield.scss';
+
+(window as any).Cleave = (window as any).Cleave || {};
+(window as any).Cleave.AsYouTypeFormatter = CustomAsYouType;
 
 interface CountryOptions {
     name: string;
@@ -214,8 +218,8 @@ export class MPhonefield extends ModulVue {
         }
     }
 
-    onContryChanged(contryIso: string): void {
-        this.countryModel = contryIso;
+    onContryChanged(countryIso: any): void {
+        this.countryModel = Array.isArray(countryIso) ? countryIso[0] : countryIso;
         this.emitContrySelected({
             iso: this.internalCountry.iso2,
             prefix: this.internalCountry.dialCode
