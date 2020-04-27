@@ -123,6 +123,10 @@ export class FormGroup<T = any> extends AbstractControl {
         return Object.values(this._controls);
     }
 
+    public containsControl(name: string): boolean {
+        return typeof this._controls[name] !== 'undefined';
+    }
+
     public getControl<T = any>(name: string): AbstractControl<T> {
         if (this._controls[name] !== undefined) {
             return this._controls[name] as AbstractControl<T>;
@@ -141,11 +145,13 @@ export class FormGroup<T = any> extends AbstractControl {
         Vue.prototype.$set(this._controls, name, control);
     }
 
-    public removeControl(name: string): void {
-        if (this._controls[name] === undefined) {
-            throw Error(`There is no control with name ${name} in this group`);
-        }
+    public setControl(name: string, control: AbstractControl): void {
+        control.parent = this;
 
+        Vue.prototype.$set(this._controls, name, control);
+    }
+
+    public removeControl(name: string): void {
         Vue.prototype.$delete(this._controls, name);
     }
 

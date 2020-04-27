@@ -22,6 +22,8 @@
         "dateFormatValidatorErrorMessage": "Entrez une date avec un format AAAA-MM-JJ",
         "dateFormValidatorErrorSummaryMessage": "Le format de la date est AAAA-MM-JJ pour %(controlLabel)s",
         "dateBetweenValidatorErrorMessage": "Entrez une date comprise entre le %(start)s et le %(end)s",
-        "dateBetweenValidatorErrorSummaryMessage": "La date doit être comprise entre le %(start)s et le %(end)s pour %(controlLabel)s"
+        "dateBetweenValidatorErrorSummaryMessage": "La date doit être comprise entre le %(start)s et le %(end)s pour %(controlLabel)s",
+        "phoneValidatorErrorMessage": "Le numéro de téléphone est invalide.",
+        "phoneValidatorErrorSummaryMessage": "Le numéro de téléphone pour %(controlLabel)s est invalide."
     }
 }
