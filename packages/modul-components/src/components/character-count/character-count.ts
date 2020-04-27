@@ -2,7 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ACCORDION_TRANSITION_NAME, CHARACTER_COUNT_NAME } from '../component-names';
-import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
+import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './character-count.html?style=./character-count.scss';
 
 
@@ -38,7 +38,6 @@ export class MCharacterCount extends Vue {
 
 const CharacterCountPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(AccordionTransitionPlugin);
         v.component(CHARACTER_COUNT_NAME, MCharacterCount);
     }
 };
