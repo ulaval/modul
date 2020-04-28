@@ -1,8 +1,8 @@
+import { DATERANGEPICKER_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/daterangepicker/daterangepicker';
+import { MDateRange } from '@ulaval/modul-components/dist/components/periodpicker/periodpicker';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { DATERANGEPICKER_NAME } from '../component-names';
-import { MDateRange } from '../periodpicker/periodpicker';
-import DaterangepickerPlugin from './daterangepicker';
 import WithRender from './daterangepicker.sandbox.html';
 
 @WithRender

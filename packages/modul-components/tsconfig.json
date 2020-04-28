@@ -2,7 +2,6 @@
     "extends": "../../tsconfig.json",
     "include": [
         "src/**/*.ts",
-        "tests/**/*.ts",
-        "../../src/storybook/src/modul-components/components/calendar/calendar.sandbox.ts"
+        "tests/**/*.ts"
     ]
 }
