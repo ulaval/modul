@@ -6,12 +6,6 @@
 
     position: relative;
 
-    &.m--is-anim-ready {
-        .m-menu-item__link {
-            transition: color $m-transition-duration ease, font-weight $m-transition-duration ease;
-        }
-    }
-
     &.m--is-selected:not(.m--is-custom-content) {
         --m-menu--font-weight: var(--m-menu--selected-font-weight);
 
@@ -31,7 +25,7 @@
         --m-menu--text-transform: var(--m-menu--group-text-transform);
         --m-menu--font-weight: var(--m-menu--group-font-weight);
         --m-menu--indicator: var(--m-menu--group-indicator);
-        --m-menu--hover-indicator: var(--m-menu--group-hover-indicator);
+        --m-menu--hover-indicator-color: var(--m-menu--group-hover-indicator-color);
 
         &.m--is-selected:not(.m--is-custom-content) {
             --m-menu--color: var(--m-menu--group-selected-color);
@@ -53,14 +47,15 @@
         font-weight: var(--m-menu--font-weight);
         text-transform: var(--m-menu--text-transform);
         background-color: var(--m-menu--background-color);
+        transition: color $m-transition-duration ease, font-weight $m-transition-duration ease;
 
         &:not(.m--is-disabled):not(.m--is-custom-content) {
             &:hover,
             &:focus {
-                --m-menu--color: var(--m-menu--hover);
+                --m-menu--color: var(--m-menu--hover-color);
 
                 &::before {
-                    background-color: var(--m-menu--hover-indicator);
+                    background-color: var(--m-menu--hover-indicator-color);
                 }
             }
         }

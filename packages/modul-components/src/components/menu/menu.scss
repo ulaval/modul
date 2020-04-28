@@ -11,8 +11,8 @@
     --m-menu--background-color: #{ $m-color--grey-darkest };
     --m-menu--text-transform: uppercase;
     //
-    --m-menu--hover: white;
-    --m-menu--hover-indicator: transparent;
+    --m-menu--hover-color: white;
+    --m-menu--hover-indicator-color: transparent;
     //
     --m-menu--selected-color: inherit;
     --m-menu--selected-indicator: transparent;
@@ -29,7 +29,7 @@
     --m-menu--group-selected-indicator: #{ $m-color--ul-yellow };
     --m-menu--group-selected-font-weight: #{ $m-font-weight--bold };
     //
-    --m-menu--group-hover-indicator: #{ $m-color--grey-darker };
+    --m-menu--group-hover-indicator-color: #{ $m-color--grey-darker };
 }
 
 .m-menu {
@@ -62,7 +62,7 @@
         &:not(.m--is-disabled) {
             &:hover,
             &:focus {
-                color: var(--m-menu--hover);
+                color: var(--m-menu--hover-color);
             }
         }
 
@@ -85,7 +85,7 @@
         --m-menu--box-shadow: 0 1px 2px  #{ rgba($m-color--black, 0.1) };
         // group
         --m-menu--group-indicator: var(--m-menu--background-color);
-        --m-menu--group-hover-indicator: #{ $m-color--interactive-light };
+        --m-menu--group-hover-indicator-color: #{ $m-color--interactive-light };
         --m-menu--group-background-color: #{ $m-color--interactive-dark };
     }
 }
