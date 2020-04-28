@@ -1,7 +1,5 @@
-import { mount, shallowMount, Wrapper, WrapperArray } from '@vue/test-utils';
+import { shallowMount, Wrapper, WrapperArray } from '@vue/test-utils';
 import Vue from 'vue';
-import { renderComponent } from '../../../tests/helpers/render';
-import { ICON_NAME, LINK_NAME } from '../component-names';
 import { MMessageState } from '../message/message';
 import { Link, MMessagePage } from './message-page';
 
@@ -27,16 +25,9 @@ let links: Link[];
 let slots: {};
 let state: string;
 
-const getStubs: any = () => {
-    return {
-        [LINK_NAME]: '<a @click="$emit(\'click\')"><slot /></a>',
-        [ICON_NAME]: '<span>Icone : {{ $attrs["name"] }}</span>'
-    };
-};
 
 const initializeShallowWrapper: any = () => {
     wrapper = shallowMount(MMessagePage, {
-        stubs: getStubs(),
         propsData: {
             state: state,
             iconName: A_VALID_ICON_NAME,
@@ -154,24 +145,3 @@ describe(`message-page fonctionnality tests`, () => {
     });
 });
 
-describe(`message-page integration tests`, () => {
-    describe(`Given an error with all props and slots initialized`, () => {
-        it(`Then should render properly`, async () => {
-            wrapper = mount(MMessagePage, {
-                stubs: getStubs(),
-                propsData: {
-                    state: MMessageState.Warning,
-                    iconName: A_VALID_ICON_NAME,
-                    title: A_VALID_TITLE,
-                    hints: MANY_HINTS_LIST,
-                    links: MANY_LINKS_LIST
-                },
-                slots: {
-                    default: '<div id="' + DEFAULT_SLOT_ID + '">The slot content</div>'
-                }
-            });
-
-            await expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-    });
-});

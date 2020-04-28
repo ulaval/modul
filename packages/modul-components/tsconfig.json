@@ -2,6 +2,7 @@
     "extends": "../../tsconfig.json",
     "include": [
         "src/**/*.ts",
-        "tests/**/*.ts"
+        "tests/**/*.ts",
+        "../../src/storybook/src/modul-components/components/message-page/message-page.sandbox.ts"
     ]
 }

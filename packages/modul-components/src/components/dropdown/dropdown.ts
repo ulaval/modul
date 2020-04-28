@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
-import PopupPluginDirective from '../../directives/popup/popup';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputPopup } from '../../mixins/input-popup/input-popup';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
@@ -16,10 +15,9 @@ import { BUTTON_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, I18N_NAME, ICON_BUTTON_
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
-import InputStylePlugin, { MInputStyle } from '../input-style/input-style';
-import PopupPlugin, { MPopup } from '../popup/popup';
-import RadioStylePlugin from '../radio-style/radio-style';
-import ValidationMessagePlugin, { MValidationMessage } from '../validation-message/validation-message';
+import { MInputStyle } from '../input-style/input-style';
+import { MPopup } from '../popup/popup';
+import { MValidationMessage } from '../validation-message/validation-message';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import { BaseDropdown, BaseDropdownGroup, MDropdownInterface, MDropdownItem } from './dropdown-item/dropdown-item';
 import WithRender from './dropdown.html?style=./dropdown.scss';
@@ -587,11 +585,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
 const DropdownPlugin: PluginObject<any> = {
     install(v, options): void {
-        Vue.use(RadioStylePlugin);
-        Vue.use(InputStylePlugin);
-        Vue.use(PopupPlugin);
-        Vue.use(PopupPluginDirective);
-        Vue.use(ValidationMessagePlugin);
         Vue.use(MediaQueriesPlugin);
         v.component(DROPDOWN_ITEM_NAME, MDropdownItem);
         v.component(DROPDOWN_NAME, MDropdown);

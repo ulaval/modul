@@ -1,12 +1,12 @@
 // tslint:disable-next-line: import-blacklist
+import { MButton } from '@ulaval/modul-components/dist/components/button/button';
+import { BUTTON_NAME, MESSAGE_PAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import MessagePagePlugin, { Link } from '@ulaval/modul-components/dist/components/message-page/message-page';
+import { MMessageState } from '@ulaval/modul-components/dist/components/message/message';
+import PopupDirectivePlugin from '@ulaval/modul-components/dist/directives/popup/popup';
 import moment from 'moment';
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import PopupDirectivePlugin from '../../directives/popup/popup';
-import { MButton } from '../button/button';
-import { BUTTON_NAME, MESSAGE_PAGE_NAME } from '../component-names';
-import { MMessageState } from '../message/message';
-import MessagePagePlugin, { Link } from './message-page';
 import WithRender from './message-page.sandbox.html';
 
 @WithRender

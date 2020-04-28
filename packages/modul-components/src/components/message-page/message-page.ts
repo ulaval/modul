@@ -2,9 +2,9 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
-import { MESSAGE_PAGE_NAME } from '../component-names';
-import IconPlugin from '../icon/icon';
-import LinkPlugin from '../link/link';
+import { ICON_NAME, LINK_NAME, MESSAGE_PAGE_NAME } from '../component-names';
+import IconPlugin, { MIcon } from '../icon/icon';
+import LinkPlugin, { MLink } from '../link/link';
 import { MMessageState } from '../message/message';
 import ModalPlugin from '../modal/modal';
 import WithRender from './message-page.html?style=./message-page.scss';
@@ -35,7 +35,12 @@ export enum MMessagePageImageSize {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon,
+        [LINK_NAME]: MLink
+    }
+})
 export class MMessagePage extends ModulVue {
 
     @Prop({
