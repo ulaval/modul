@@ -5,8 +5,8 @@ import { MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
-import { MODAL_NAME } from '../component-names';
-import IconButtonPlugin from '../icon-button/icon-button';
+import { ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
+import { MIconButton } from '../icon-button/icon-button';
 import WithRender from './modal.html?style=./modal.scss';
 
 export enum MModalSize {
@@ -18,6 +18,9 @@ export enum MModalSize {
 
 @WithRender
 @Component({
+    components: {
+        [ICON_BUTTON_NAME]: MIconButton
+    },
     mixins: [Portal]
 })
 export class MModal extends ModulVue implements PortalMixinImpl {
@@ -141,7 +144,6 @@ export class MModal extends ModulVue implements PortalMixinImpl {
 
 const ModalPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconButtonPlugin);
         v.component(MODAL_NAME, MModal);
     }
 };

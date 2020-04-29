@@ -4,6 +4,7 @@ import { BUTTON_NAME, MESSAGE_PAGE_NAME } from '@ulaval/modul-components/dist/co
 import MessagePagePlugin, { Link } from '@ulaval/modul-components/dist/components/message-page/message-page';
 import { MMessageState } from '@ulaval/modul-components/dist/components/message/message';
 import PopupDirectivePlugin from '@ulaval/modul-components/dist/directives/popup/popup';
+// tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
