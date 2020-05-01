@@ -19,8 +19,7 @@
                          ref="article">
                     <header class="m-modal__header"
                             :class="{ 'm--has-title': title,
-                                    'm--has-content': title || $slots.header,
-                                    'm--no-padding': !padding || !paddingHeader }">
+                                    'm--has-content': title || $slots.header}">
                         <h2 v-if="title">{{ title }}</h2>
                         <slot name="header" />
                         <m-icon-button @click="closeModal()"
@@ -35,20 +34,17 @@
                         <div class="m-modal__content"
                              @focusin="onFocusIn"
                              @focusout="onFocusOut"
-                             :class="{ 'm--no-padding': !padding || !paddingBody }"
                              v-if="$slots.default">
                             <slot />
                         </div>
                         <footer v-if="hasKeyboard && $slots.footer"
-                                class="m-modal__footer"
-                                :class="{ 'm--no-padding': !padding || !paddingFooter }">
+                                class="m-modal__footer">
                             <slot name="footer" />
                         </footer>
                     </div>
 
                     <footer v-if="!hasKeyboard && $slots.footer"
-                            class="m-modal__footer"
-                            :class="{ 'm--no-padding': !padding || !paddingFooter }">
+                            class="m-modal__footer">
                         <slot name="footer" />
                     </footer>
                 </article>
