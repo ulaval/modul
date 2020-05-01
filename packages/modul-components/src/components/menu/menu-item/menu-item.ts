@@ -3,6 +3,9 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Location } from 'vue-router';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
+import { ACCORDION_TRANSITION_NAME, ICON_NAME, PLUS_NAME } from '../../component-names';
+import { MIcon } from '../../icon/icon';
+import { MPlus } from '../../plus/plus';
 import { MAccordionTransition } from '../../transitions/accordion-transition/accordion-transition';
 import { BaseMenu, Menu } from '../menu';
 import WithRender from './menu-item.html?style=./menu-item.scss';
@@ -19,7 +22,13 @@ export interface MenuItem {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon,
+        [PLUS_NAME]: MPlus,
+        [ACCORDION_TRANSITION_NAME]: MAccordionTransition
+    }
+})
 export class MMenuItem extends BaseMenuItem implements MenuItem {
     @Prop()
     public open: boolean;

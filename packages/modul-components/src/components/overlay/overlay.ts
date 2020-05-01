@@ -14,7 +14,7 @@ import WithRender from './overlay.html?style=./overlay.scss';
 @Component({
     components: {
         [BUTTON_NAME]: MButton,
-        [I18N_NAME]: MI18n,
+        [I18N_NAME]: MI18n
     },
     filters: {
         [I18N_FILTER_NAME]: i18nFilter
