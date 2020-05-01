@@ -5,8 +5,8 @@ import { Location } from 'vue-router';
 import { KeyCode } from '../../utils/keycode/keycode';
 import { ModulVue } from '../../utils/vue/vue';
 import { I18N_NAME, ICON_NAME, LINK_NAME } from '../component-names';
-import I18nPlugin, { MI18n } from '../i18n/i18n';
-import IconPlugin, { MIcon } from '../icon/icon';
+import { MI18n } from '../i18n/i18n';
+import { MIcon } from '../icon/icon';
 import WithRender from './link.html?style=./link.scss';
 
 export enum MLinkMode {
@@ -219,8 +219,6 @@ export class MLink extends ModulVue {
 
 const LinkPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconPlugin);
-        v.use(I18nPlugin);
         v.component(LINK_NAME, MLink);
     }
 };
