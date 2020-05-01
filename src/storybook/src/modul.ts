@@ -40,6 +40,7 @@ import OrganizeTableColumnsPlugin from '@ulaval/modul-components/dist/components
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import PaginationPlguin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
+import PopperPlugin from '@ulaval/modul-components/dist/components/popper/popper';
 import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
 import PostalcodefieldPlugin from '@ulaval/modul-components/dist/components/postalcodefield/postalcodefield';
 import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/progress';
@@ -161,7 +162,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(MaskedfieldPlugin);
         Vue.use(PostalcodefieldPlugin);
         Vue.use(FormPlugin);
-
+        Vue.use(PopperPlugin);
         // modul-website
         Vue.use(ComponentExamplesPlugin);
     }

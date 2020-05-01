@@ -1,13 +1,16 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
+import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { FormatMode } from '../../utils/i18n/i18n';
 import { ModulVue } from '../../utils/vue/vue';
-import { PAGINATION_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin from '../icon-button/icon-button';
-import LinkPlugin from '../link/link';
+import { I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, LINK_NAME, PAGINATION_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MIconButton } from '../icon-button/icon-button';
+import { MIcon } from '../icon/icon';
+import { MLink } from '../link/link';
 import WithRender from './pagination.html?style=./pagination.scss';
 
 
@@ -23,6 +26,15 @@ interface PaginationItem {
 
 @WithRender
 @Component({
+    components: {
+        [ICON_NAME]: MIcon,
+        [LINK_NAME]: MLink,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [I18N_NAME]: MI18n
+    },
+    filters: {
+        [I18N_FILTER_NAME]: i18nFilter
+    },
     mixins: [MediaQueries]
 })
 export class MPagination extends ModulVue {
@@ -118,9 +130,6 @@ export class MPagination extends ModulVue {
 
 const PaginationPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconButtonPlugin);
-        v.use(LinkPlugin);
-        v.use(I18nPlugin);
         v.component(PAGINATION_NAME, MPagination);
     }
 };

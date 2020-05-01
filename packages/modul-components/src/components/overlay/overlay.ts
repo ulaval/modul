@@ -1,17 +1,23 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import { BackdropMode, Portal, PortalMixin, PortalTransitionDuration } from '../../mixins/portal/portal';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
-import { BUTTON_NAME, OVERLAY_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
+import { BUTTON_NAME, I18N_NAME, OVERLAY_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
 import WithRender from './overlay.html?style=./overlay.scss';
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton
+        [BUTTON_NAME]: MButton,
+        [I18N_NAME]: MI18n,
+    },
+    filters: {
+        [I18N_FILTER_NAME]: i18nFilter
     },
     mixins: [Portal]
 })
@@ -118,7 +124,6 @@ export class MOverlay extends ModulVue {
 
 const OverlayPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nPlugin);
         v.component(OVERLAY_NAME, MOverlay);
     }
 };

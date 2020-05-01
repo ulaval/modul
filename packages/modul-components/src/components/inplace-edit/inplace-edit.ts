@@ -3,15 +3,19 @@ import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
-import { BUTTON_NAME, INPLACE_EDIT_NAME } from '../component-names';
-import OverlayPlugin from '../overlay/overlay';
-import AccordionTransitionPlugin from '../transitions/accordion-transition/accordion-transition';
+import { ACCORDION_TRANSITION_NAME, BUTTON_NAME, I18N_NAME, INPLACE_EDIT_NAME, OVERLAY_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MOverlay } from '../overlay/overlay';
+import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './inplace-edit.html?style=./inplace-edit.scss';
 
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton
+        [ACCORDION_TRANSITION_NAME]: MAccordionTransition,
+        [BUTTON_NAME]: MButton,
+        [I18N_NAME]: MI18n,
+        [OVERLAY_NAME]: MOverlay
     },
     mixins: [MediaQueries]
 })
@@ -107,8 +111,6 @@ export class MInplaceEdit extends ModulVue {
 
 const InplaceEditPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(AccordionTransitionPlugin);
-        v.use(OverlayPlugin);
         v.component(INPLACE_EDIT_NAME, MInplaceEdit);
     }
 };
