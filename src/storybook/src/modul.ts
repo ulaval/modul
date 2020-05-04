@@ -6,6 +6,7 @@ import AvatarPlugin from '@ulaval/modul-components/dist/components/avatar/avatar
 import BreadcrumbsPlugin from '@ulaval/modul-components/dist/components/breadcrumbs/breadcrumbs';
 import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import CarouselPlugin from '@ulaval/modul-components/dist/components/carousel/carousel';
+import CharacterCountPlugin from '@ulaval/modul-components/dist/components/character-count/character-count';
 import CheckboxPlugin from '@ulaval/modul-components/dist/components/checkbox/checkbox';
 import ChipPlugin from '@ulaval/modul-components/dist/components/chip/chip';
 import CopyToClipboardPlugin from '@ulaval/modul-components/dist/components/copy-to-clipboard/copy-to-clipboard';
@@ -163,6 +164,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(PostalcodefieldPlugin);
         Vue.use(FormPlugin);
         Vue.use(PopperPlugin);
+        Vue.use(CharacterCountPlugin);
         // modul-website
         Vue.use(ComponentExamplesPlugin);
     }
