@@ -5,7 +5,7 @@ import { BackdropMode } from '../../mixins/portal/portal';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { I18N_NAME, SPINNER_NAME } from '../component-names';
-import I18nPlugin, { MI18n } from '../i18n/i18n';
+import { MI18n } from '../i18n/i18n';
 import WithRender from './spinner.html?style=./spinner.scss';
 
 
@@ -144,7 +144,6 @@ export class MSpinner extends ModulVue {
 
 const SpinnerPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nPlugin);
         v.component(SPINNER_NAME, MSpinner);
     }
 };
