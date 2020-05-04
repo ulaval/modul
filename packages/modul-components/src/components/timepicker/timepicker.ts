@@ -2,7 +2,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Model, Prop, Watch } from 'vue-property-decorator';
-import PopupDirectivePlugin from '../../directives/popup/popup';
+import { MPopupDirective } from '../../directives/popup/popup';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width';
@@ -14,11 +14,15 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
 import { MCalendarButton } from '../calendar/calendar-button/calendar-button';
-import { BUTTON_NAME, TIMEPICKER_NAME } from '../component-names';
+import { BUTTON_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, LINK_NAME, POPPER_NAME, TIMEPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
-import InputStylePlugin from '../input-style/input-style';
-import PopupPlugin from '../popup/popup';
-import ValidationMessagePlugin from '../validation-message/validation-message';
+import { MInputStyle } from '../input-style/input-style';
+import { MLink } from '../link/link';
+import { MPopup } from '../popup/popup';
+import { MValidationMessage } from '../validation-message/validation-message';
+import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from './../../directives/directive-names';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import WithRender from './timepicker.html?style=./timepicker.scss';
 
@@ -39,18 +43,28 @@ function validateTimeString(value: string): boolean {
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton,
+        [POPPER_NAME]: MPopup,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
+        [LINK_NAME]: MLink,
+        [INPUT_STYLE_NAME]: MInputStyle,
+        [I18N_NAME]: MI18n,
+        MInputMask,
+        MCalendarButton
+    },
+    directives: {
+        [DIRECTIVE_POPUP_NAME]: MPopupDirective
+    },
     mixins: [
         InputState,
         InputManagement,
         InputWidth,
         MediaQueries,
         InputLabel
-    ],
-    components: {
-        [BUTTON_NAME]: MButton,
-        MInputMask,
-        MCalendarButton
-    }
+    ]
+
 })
 export class MTimepicker extends ModulVue {
 
@@ -388,11 +402,7 @@ export class MTimepicker extends ModulVue {
 
 const TimepickerPlugin: PluginObject<any> = {
     install(v): void {
-        v.use(InputStylePlugin);
-        v.use(PopupPlugin);
-        v.use(ValidationMessagePlugin);
         v.use(MediaQueriesPlugin);
-        v.use(PopupDirectivePlugin);
         v.component(TIMEPICKER_NAME, MTimepicker);
     }
 };

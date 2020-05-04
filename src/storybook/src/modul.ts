@@ -25,6 +25,7 @@ import IconFilePlugin from '@ulaval/modul-components/dist/components/icon-file/i
 import IconPlugin from '@ulaval/modul-components/dist/components/icon/icon';
 import InplaceEditPlugin from '@ulaval/modul-components/dist/components/inplace-edit/inplace-edit';
 import InputGroupPlugin from '@ulaval/modul-components/dist/components/input-group/input-group';
+import InputStylePlugin from '@ulaval/modul-components/dist/components/input-style/input-style';
 import IntegerfieldPlugin from '@ulaval/modul-components/dist/components/integerfield/integerfield';
 import LimitTextPlugin from '@ulaval/modul-components/dist/components/limit-text/limit-text';
 import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
@@ -165,6 +166,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(FormPlugin);
         Vue.use(PopperPlugin);
         Vue.use(CharacterCountPlugin);
+        Vue.use(InputStylePlugin);
         // modul-website
         Vue.use(ComponentExamplesPlugin);
     }

@@ -204,13 +204,9 @@ exports[`Storyshots modul-components|m-phonefield Autocomplete Work Phone 1`] = 
   <div
     class="m-phonefield__validation"
   >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <m-validation-message
+      class="m-phonefield__validation-message"
+    />
   </div>
 </div>
 `;
@@ -537,13 +533,9 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
       <div
         class="m-phonefield__validation"
       >
-        <div
-          class="m-validation-message m-phonefield__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
+        <m-validation-message
+          class="m-phonefield__validation-message"
+        />
       </div>
     </div>
      
@@ -763,13 +755,10 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
   <div
     class="m-phonefield__validation"
   >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <m-validation-message
+      class="m-phonefield__validation-message"
+      disabled="true"
+    />
   </div>
 </div>
 `;
@@ -977,13 +966,10 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
   <div
     class="m-phonefield__validation"
   >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <m-validation-message
+      class="m-phonefield__validation-message"
+      error="true"
+    />
   </div>
 </div>
 `;
@@ -1191,36 +1177,11 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
   <div
     class="m-phonefield__validation"
   >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <p
-        class="m-validation-message__error"
-      >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
-        >
-          <title>
-            Erreur
-          </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
-        <span
-          class="m-validation-message__text"
-        >
-          Error message
-        </span>
-      </p>
-       
-      <!---->
-    </div>
+    <m-validation-message
+      class="m-phonefield__validation-message"
+      error="true"
+      error-message="Error message"
+    />
   </div>
 </div>
 `;
@@ -1428,13 +1389,9 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
   <div
     class="m-phonefield__validation"
   >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <m-validation-message
+      class="m-phonefield__validation-message"
+    />
   </div>
 </div>
 `;
@@ -1642,13 +1599,9 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
   <div
     class="m-phonefield__validation"
   >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <m-validation-message
+      class="m-phonefield__validation-message"
+    />
   </div>
 </div>
 `;
@@ -1864,13 +1817,10 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
   <div
     class="m-phonefield__validation"
   >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <m-validation-message
+      class="m-phonefield__validation-message"
+      waiting="true"
+    />
   </div>
 </div>
 `;
