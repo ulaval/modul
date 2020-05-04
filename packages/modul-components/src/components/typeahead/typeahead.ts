@@ -23,7 +23,7 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
         MBaseSelect,
         [TEXTFIELD_NAME]: MTextfield,
         [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [ICON_BUTTON_NAME]: MIconButton,
+        [ICON_BUTTON_NAME]: MIconButton
     },
     filters: {
         [FILTER_I18N_NAME]: i18nFilter
