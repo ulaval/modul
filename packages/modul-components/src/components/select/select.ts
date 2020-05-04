@@ -1,4 +1,4 @@
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -8,16 +8,25 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { SELECT_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
+import { I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, SELECT_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MIconButton } from '../icon-button/icon-button';
+import { MIcon } from '../icon/icon';
+import { MInputStyle } from '../input-style/input-style';
 import { MOpacityTransition } from '../transitions/opacity-transition/opacity-transition';
+import { MValidationMessage } from '../validation-message/validation-message';
 import { MBaseSelect } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
 @WithRender
 @Component({
     components: {
         MBaseSelect,
-        MOpacityTransition
+        MOpacityTransition,
+        [INPUT_STYLE_NAME]: MInputStyle,
+        [ICON_NAME]: MIcon,
+        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
+        [I18N_NAME]: MI18n,
+        [ICON_BUTTON_NAME]: MIconButton
     },
     mixins: [
         InputState,
@@ -115,7 +124,6 @@ export class MSelect extends ModulVue {
 
 const SelectPlugin: PluginObject<any> = {
     install(v, options): void {
-        Vue.use(I18nPlugin);
         v.component(SELECT_NAME, MSelect);
     }
 };

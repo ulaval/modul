@@ -1,6 +1,9 @@
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../../directives/directive-names';
+import { MPopupDirective } from '../../../directives/popup/popup';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
+import { POPUP_NAME } from '../../component-names';
 import { MPopup } from '../../popup/popup';
 import { MSelectItem } from '../../select/select-item/select-item';
 import WithRender from './base-select.html';
@@ -11,7 +14,12 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
-        MSelectItem
+        MSelectItem,
+        [POPUP_NAME]: MPopup
+
+    },
+    directives: {
+        [DIRECTIVE_POPUP_NAME]: MPopupDirective
     },
     mixins: [
         MediaQueries
