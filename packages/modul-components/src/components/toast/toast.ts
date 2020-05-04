@@ -1,16 +1,16 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import I18nFilterPlugin from '../../filters/i18n/i18n';
+import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import { ModulVue } from '../../utils/vue/vue';
-import { TOAST } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin from '../icon-button/icon-button';
-import IconPlugin from '../icon/icon';
-import LinkPlugin, { MLinkMode } from '../link/link';
+import { ICON_BUTTON_NAME, ICON_NAME, LINK_NAME, TOAST } from '../component-names';
+import { MIconButton } from '../icon-button/icon-button';
+import { MIcon } from '../icon/icon';
+import { MLink, MLinkMode } from '../link/link';
 import WithRender from './toast.html?style=./toast.scss';
 
 export enum MToastTimeout {
@@ -48,6 +48,14 @@ export enum MToastDuration {
 
 @WithRender
 @Component({
+    components: {
+        [ICON_NAME]: MIcon,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [LINK_NAME]: MLink
+    },
+    filters: {
+        [FILTER_I18N_NAME]: i18nFilter
+    },
     mixins: [MediaQueries, Portal]
 })
 export class MToast extends ModulVue implements PortalMixinImpl {
@@ -263,11 +271,7 @@ export class MToast extends ModulVue implements PortalMixinImpl {
 
 const ToastPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nFilterPlugin);
-        v.use(IconPlugin);
-        v.use(LinkPlugin);
-        v.use(IconButtonPlugin);
-        v.use(I18nPlugin);
+
         v.use(MediaQueriesPlugin);
         v.component(TOAST, MToast);
     }
