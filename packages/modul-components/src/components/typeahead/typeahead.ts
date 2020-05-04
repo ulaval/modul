@@ -1,6 +1,8 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
+import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -8,17 +10,23 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { TYPEAHEAD_NAME } from '../component-names';
-import PopupPlugin from '../popup/popup';
+import { ICON_BUTTON_NAME, TEXTFIELD_NAME, TYPEAHEAD_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MIconButton } from '../icon-button/icon-button';
 import { MBaseSelect } from '../select/base-select/base-select';
-import SpinnerPlugin from '../spinner/spinner';
-import TextfieldPlugin, { MTextfield } from '../textfield/textfield';
+import { MTextfield } from '../textfield/textfield';
+import { MValidationMessage } from '../validation-message/validation-message';
 import WithRender from './typeahead.html?style=./typeahead.scss';
 
 @WithRender
 @Component({
     components: {
-        MBaseSelect
+        MBaseSelect,
+        [TEXTFIELD_NAME]: MTextfield,
+        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
+        [ICON_BUTTON_NAME]: MIconButton,
+    },
+    filters: {
+        [FILTER_I18N_NAME]: i18nFilter
     },
     mixins: [
         InputLabel,
@@ -241,10 +249,6 @@ export class MTypeahead extends ModulVue {
 
 const TypeaheadPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.prototype.$log.debug(TYPEAHEAD_NAME, 'plugin.install');
-        v.use(TextfieldPlugin);
-        v.use(PopupPlugin);
-        v.use(SpinnerPlugin);
         v.component(TYPEAHEAD_NAME, MTypeahead);
     }
 };
