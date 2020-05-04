@@ -1,5 +1,4 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
-import { renderComponent } from '../../../../tests/helpers/render';
 import { MCheckboxes, TreeNode } from '../tree';
 import { MTreeNode } from './tree-node';
 
@@ -177,10 +176,6 @@ describe('MTreeNode', () => {
             initializeShallowWrapper();
         });
 
-        it(`Should render correctly`, () => {
-            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-
         it(`Should have current node internally opened`, () => {
             expect(wrapper.vm.internalOpen).toBe(true);
         });
@@ -214,9 +209,7 @@ describe('MTreeNode', () => {
                 initializeShallowWrapper();
             });
 
-            it(`Should render properly`, () => {
-                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-            });
+
 
             it(`Should emit click on checkbox click`, () => {
                 wrapper.find(CHECKBOX).trigger('click');
@@ -311,10 +304,6 @@ describe('MTreeNode', () => {
                             expect(wrapper.vm.isIndeterminate).toBeFalsy();
                         });
 
-                        it(`Should render properly`, () => {
-                            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-                        });
-
                         it(`Should select every children and self on button click`, () => {
                             wrapper.find(AUTOSELECTBUTTON).trigger('click');
                             expect(wrapper.emitted('click').length).toBe(3);
@@ -357,10 +346,6 @@ describe('MTreeNode', () => {
                     initializeShallowWrapper();
                 });
 
-                it(`Should render correctly`, () => {
-                    expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-                });
-
                 it(`The node label should be "Node 1"`, () => {
                     expect(wrapper.vm.label).toEqual(NODE_ELEMENT_LABEL);
                 });
@@ -387,9 +372,7 @@ describe('MTreeNode', () => {
                 initializeShallowWrapper();
             });
 
-            it(`Should render correctly`, () => {
-                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-            });
+
 
         });
 
@@ -416,9 +399,7 @@ describe('MTreeNode', () => {
                     initializeShallowWrapper();
                 });
 
-                it(`Should render correctly`, () => {
-                    expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-                });
+
 
                 it(`Should have children`, () => {
                     expect(wrapper.vm.hasChildren).toBeTruthy();
@@ -566,16 +547,5 @@ describe('MTreeNode', () => {
             });
         });
 
-        describe(`When readonly = true`, () => {
-
-            beforeEach(() => {
-                readonly = true;
-                initializeShallowWrapper();
-            });
-
-            it(`Should render correctly`, () => {
-                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-            });
-        });
     });
 });

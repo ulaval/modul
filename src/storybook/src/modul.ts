@@ -32,6 +32,7 @@ import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
 import ListItemPlugin from '@ulaval/modul-components/dist/components/list-item/list-item';
 import MaskedfieldPlugin from '@ulaval/modul-components/dist/components/maskedfield/maskedfield';
 import MenuPlugin from '@ulaval/modul-components/dist/components/menu/menu';
+import MMessagePlugin from '@ulaval/modul-components/dist/components/message/message';
 import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import MoneyFieldPlugin from '@ulaval/modul-components/dist/components/moneyfield/moneyfield';
 import MultiSelectPlugin from '@ulaval/modul-components/dist/components/multi-select/multi-select';
@@ -42,6 +43,7 @@ import OrganizeTableColumnsPlugin from '@ulaval/modul-components/dist/components
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
 import PaginationPlguin from '@ulaval/modul-components/dist/components/pagination/pagination';
 import PanelPlugin from '@ulaval/modul-components/dist/components/panel/panel';
+import PlusPlugin from '@ulaval/modul-components/dist/components/plus/plus';
 import PopperPlugin from '@ulaval/modul-components/dist/components/popper/popper';
 import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
 import PostalcodefieldPlugin from '@ulaval/modul-components/dist/components/postalcodefield/postalcodefield';
@@ -167,6 +169,8 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(PopperPlugin);
         Vue.use(CharacterCountPlugin);
         Vue.use(InputStylePlugin);
+        Vue.use(PlusPlugin);
+        Vue.use(MMessagePlugin);
         // modul-website
         Vue.use(ComponentExamplesPlugin);
     }

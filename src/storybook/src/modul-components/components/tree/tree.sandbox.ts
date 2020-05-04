@@ -1,7 +1,7 @@
+import { TREE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import TreePlugin, { TreeNode } from '@ulaval/modul-components/dist/components/tree/tree';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { TREE_NAME } from '../component-names';
-import TreePlugin, { TreeNode } from './tree';
 import WithRender from './tree.sandbox.html';
 
 export class Tree {
