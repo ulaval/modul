@@ -271,7 +271,6 @@ export class MToast extends ModulVue implements PortalMixinImpl {
 
 const ToastPlugin: PluginObject<any> = {
     install(v, options): void {
-
         v.use(MediaQueriesPlugin);
         v.component(TOAST, MToast);
     }

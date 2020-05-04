@@ -5,13 +5,11 @@ import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/medi
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { TOOLTIP_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin from '../icon-button/icon-button';
-import IconPlugin from '../icon/icon';
-import LinkPlugin from '../link/link';
+import { ICON_BUTTON_NAME, LINK_NAME, POPUP_NAME, TOOLTIP_NAME } from '../component-names';
+import { MIconButton } from '../icon-button/icon-button';
+import { MLink } from '../link/link';
 import { MPopperPlacement } from '../popper/popper';
-import PopupPlugin from '../popup/popup';
+import { MPopup } from '../popup/popup';
 import WithRender from './tooltip.html';
 import './tooltip.scss';
 
@@ -28,6 +26,11 @@ export enum MTooltipSize {
 
 @WithRender
 @Component({
+    components: {
+        [POPUP_NAME]: MPopup,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [LINK_NAME]: MLink
+    },
     mixins: [MediaQueries]
 })
 export class MTooltip extends ModulVue {
@@ -147,11 +150,7 @@ export class MTooltip extends ModulVue {
 
 const TooltipPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(PopupPlugin);
-        v.use(IconPlugin);
-        v.use(IconButtonPlugin);
-        v.use(LinkPlugin);
-        v.use(I18nPlugin);
+
         v.use(MediaQueriesPlugin);
         v.component(TOOLTIP_NAME, MTooltip);
     }
