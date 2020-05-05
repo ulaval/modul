@@ -38,6 +38,12 @@ export interface Country {
 
 @WithRender
 @Component({
+    modul: {
+        i18n: {
+            'fr': require('./phonefield.lang.fr.json'),
+            'en': require('./phonefield.lang.en.json')
+        }
+    },
     mixins: [
         InputState,
         InputWidth,
@@ -94,6 +100,9 @@ export class MPhonefield extends ModulVue {
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
     i18nExample: string = this.$i18n.translate('m-phonefield:example');
 
+
+    internalSpriteId: string;
+
     beforeMount(): void {
         // sprites-flags.svg is a very big file, this is why sprites should only be added to the DOM before this component is mounted.
         const sprites: string = require('../../assets/icons/sprites-flags.svg');
@@ -103,9 +112,13 @@ export class MPhonefield extends ModulVue {
                 svg.addExternalSprites(sprites, 'mflag');
             }
         } else {
-            if (!document.getElementById('mflag-svg__flag-ae')) {
-                svg.addInternalSprites(sprites);
-            }
+            this.internalSpriteId = svg.addInternalSprites(sprites);
+        }
+    }
+
+    destroyed(): void {
+        if (this.internalSpriteId) {
+            this.$svg.removeInternalSprite(this.internalSpriteId);
         }
     }
 

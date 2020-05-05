@@ -2,6 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import ComponentsPlugin from './components/components-plugin';
 import DirectivesPlugin from './directives/directives-plugin';
 import FiltersPlugin from './filters/filters-plugin';
+import { ModulComponentOptions } from './utils/component/component-mixin';
 import { DialogService } from './utils/dialog/dialog-service';
 import { FileService } from './utils/file/file';
 import { HttpService } from './utils/http/http';
@@ -44,6 +45,12 @@ declare module 'vue/types/vue' {
         $file: FileService;
         $toast: ToastService;
         $dialog: DialogService;
+    }
+}
+
+declare module 'vue/types/options' {
+    interface ComponentOptions<V extends Vue> {
+        modul?: ModulComponentOptions;
     }
 }
 
