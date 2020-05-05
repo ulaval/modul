@@ -1,0 +1,13 @@
+@import 'commons';
+
+.m-modal-stories--padding {
+    --m-modal--header-padding: #{ 0 100px 0  10px };
+    --m-modal--body-padding: #{ 20px 100px };
+    --m-modal--footer-padding: #{ 100px 10px };
+}
+
+.m-modal-stories--offset {
+    @media (max-width: $m-mq--min--s) {
+        --m-modal--top: 44px;
+    }
+}

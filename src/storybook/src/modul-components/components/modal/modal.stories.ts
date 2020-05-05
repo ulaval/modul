@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/vue';
 import { MODAL_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import './modal-stories.scss';
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
     .add('default', () => ({
@@ -41,18 +42,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
             lazy: {
                 default: boolean('Prop lazy', true)
             },
-            padding: {
-                default: boolean('Prop padding', true)
-            },
-            paddingHeader: {
-                default: boolean('Prop padding-header', true)
-            },
-            paddingBody: {
-                default: boolean('Prop padding-body', true)
-            },
-            paddingFooter: {
-                default: boolean('Prop padding-footer', true)
-            },
             focusManagement: {
                 default: boolean('Prop focus-management', true)
             },
@@ -81,16 +70,11 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
             :class-name="className"
             :preload="preload"
             :lazy="lazy"
-            :padding="padding"
-            :padding-header="paddingHeader"
-            :padding-body="paddingBody"
-            :padding-footer="paddingFooter"
             :focus-management="focusManagement"
             @open="emitOpen"
             @close="emitClose"
             @portal-after-open="emitPortalAfterOpen"
-            @portal-after-close="emitPortalAfterClose"
-        >
+            @portal-after-close="emitPortalAfterClose">
             <p v-if="slotDefault" class="m-u--no-margin">Slot default</p>
             <div v-if="slotHeader" slot="header">(Slot header)</div>
             <div v-if="slotFooter" slot="footer">(Slot footer)</div>
@@ -123,68 +107,24 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
                         <m-button slot="footer">Here goes nothing</m-button>
                    </${MODAL_NAME}>`
     }))
-    .add('padding="false"', () => ({
+    .add('custom padding by css var', () => ({
         data: () => ({
             openProp: true
         }),
-        props: {
-            padding: {
-                default: boolean('padding', true)
-            }
-        },
-        template: `<${MODAL_NAME} :open.sync="openProp" :padding="false" title="A modal title without padding">
+        template: `<${MODAL_NAME} class-name="m-modal-stories--padding" :open.sync="openProp" title="A modal header with custom padding">
                         <m-button slot="trigger">Open the modal</m-button>
-                        Some body text without padding
-                        <p slot="footer">Some footer slot content without padding</p>
-                        <m-button slot="footer">Here goes nothing</m-button>
+                        Some body text with custom padding
+                        <p slot="footer">Some footer with custom padding</p>
                    </${MODAL_NAME}>`
     }))
-    .add('padding-header="false"', () => ({
+    .add('custom top offset by css var', () => ({
         data: () => ({
             openProp: true
         }),
-        props: {
-            paddingHeader: {
-                default: boolean('paddingHeader', true)
-            }
-        },
-        template: `<${MODAL_NAME} :open.sync="openProp" :padding-header="false" title="A modal title without padding">
+        template: `<${MODAL_NAME} class-name="m-modal-stories--offset" :open.sync="openProp" title="Header">
                         <m-button slot="trigger">Open the modal</m-button>
-                        Some body text
-                        <p slot="footer">Some footer slot content</p>
-                        <m-button slot="footer">Here goes nothing</m-button>
-                   </${MODAL_NAME}>`
-    }))
-    .add('padding-body="false"', () => ({
-        props: {
-            paddingBody: {
-                default: boolean('padding-body', true)
-            }
-        },
-        data: () => ({
-            openProp: true
-        }),
-        template: `<${MODAL_NAME} :open.sync="openProp" :padding-body="false" title="A modal title">
-                        <m-button slot="trigger">Open the modal</m-button>
-                        Some body text without padding
-                        <p slot="footer">Some footer slot content</p>
-                        <m-button slot="footer">Here goes nothing</m-button>
-                   </${MODAL_NAME}>`
-    }))
-    .add('padding-footer', () => ({
-        props: {
-            paddingFooter: {
-                default: boolean('padding-footer', true)
-            }
-        },
-        data: () => ({
-            openProp: true
-        }),
-        template: `<${MODAL_NAME} :open.sync="openProp" :padding-footer="false" title="A modal title">
-                        <m-button slot="trigger">Open the modal</m-button>
-                        Some body text
-                        <p slot="footer">Some footer slot content without padding</p>
-                        <m-button slot="footer">Here goes nothing</m-button>
+                        This modal is offset by 44px on mobile (--m-modal--top). Can be used to offset fixed content like sticky header and such.
+                        <p slot="footer">Footer</p>
                    </${MODAL_NAME}>`
     }));
 
@@ -241,8 +181,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}/slots`, module)
         data: () => ({
             openProp: false
         }),
-        template: `<${MODAL_NAME} size="size">
+        template: `<${MODAL_NAME}>
                         <m-button slot="trigger">Open the modal (trigger)</m-button>
+                        Some body text
                    </${MODAL_NAME}>`
     }))
     .add('footer', () => ({
@@ -269,25 +210,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}/all props`, mod
             title: {
                 default: text('title', 'This is a custom title')
             },
-            padding: {
-                default: boolean('padding', true)
-            },
-            paddingHeader: {
-                default: boolean('padding-header | (no effect if padding === false)', true)
-            },
-            paddingBody: {
-                default: boolean('padding-body | (no effect if padding === false)', true)
-            },
-            paddingFooter: {
-                default: boolean('padding-footer | (no effect if padding === false)', true)
-            },
             size: {
                 default: select('size', Object.values(MModalSize), MModalSize.Regular)
             }
         },
         template: `<${MODAL_NAME} :open.sync="openProp" :close-on-backdrop="closeOnBackdrop"
-                    :padding="padding" :padding-header="paddingHeader" :padding-body="paddingBody"
-                    :padding-footer="paddingFooter" :size="size" :title="title">
+                    :size="size" :title="title">
                         <m-button slot="trigger">Open the modal (trigger)</m-button>
                         Some body text
                         <p slot="footer">Some footer slot content</p>
