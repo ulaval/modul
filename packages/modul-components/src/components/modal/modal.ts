@@ -43,6 +43,10 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     @Prop({ default: true })
     public bodyMaxWidth: boolean;
 
+    /** @deprecated will be removed in v2, please use css variables to customize visuals. */
+    @Prop({ default: true })
+    public paddingBody: boolean;
+
     public hasKeyboard: boolean = false;
 
     $refs: {

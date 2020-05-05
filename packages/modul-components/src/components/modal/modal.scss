@@ -192,6 +192,11 @@ $m-modal--max-width--s: 420px !default;
         @include m-is-ie() {
             flex: none;
         }
+
+        // deprecated
+        &.m--has-no-padding {
+            --m-modal--body-padding: 0;
+        }
     }
 
     &__footer {

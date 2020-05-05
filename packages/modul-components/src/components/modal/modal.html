@@ -32,6 +32,7 @@
                          ref="body"
                          :class="{'m--is-android': hasKeyboard}">
                         <div class="m-modal__content"
+                             :class="{ 'm--has-no-padding': !paddingBody }"
                              @focusin="onFocusIn"
                              @focusout="onFocusOut"
                              v-if="$slots.default">
