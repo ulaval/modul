@@ -9,9 +9,9 @@
 }
 
 .m-searchfield {
-    --m-input-style--color-hover: #{ $m-color--interactive-light };
-    --m-input-style--color-border: #{ $m-color--grey-lightest };
-    --m-input-style--color-background: #{ $m-color--grey-lightest };
+    --m-input-style--hover-color: #{ $m-color--interactive-light };
+    --m-input-style--border-color: #{ $m-color--grey-lightest };
+    --m-input-style--background-color: #{ $m-color--grey-lightest };
 
     position: relative;
     display: inline-flex;
@@ -47,12 +47,12 @@
         }
 
         .m-input-style.m--has-error & {
-            --m-searchfield--color-button: var(--m-input-style--color-error);
+            --m-searchfield--color-button: var(--m-input-style--error-color);
             --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
         }
 
         .m-input-style.m--is-valid & {
-            --m-searchfield--color-button: var(--m-input-style--color-valid);
+            --m-searchfield--color-button: var(--m-input-style--valid-color);
             --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
         }
     }
