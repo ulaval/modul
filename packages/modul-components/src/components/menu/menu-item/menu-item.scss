@@ -1,171 +1,90 @@
 @import 'commons';
-@import '../menu-skins';
-
-.m-menu.m--is-skin-light {
-    .m-menu-item {
-        &.m--is-inside-group {
-            > .m-menu-item__link {
-                background: $m-menu-color--skin-light-bg-dark;
-
-                &::before {
-                    background: $m-menu-color--skin-light-bg-light;
-                }
-            }
-
-            &:not(.m--is-disabled) {
-                > .m-menu-item__link {
-                    &:hover::before,
-                    &:focus::before {
-                        background: $m-color--interactive-light;
-                    }
-                }
-            }
-        }
-
-        &__link {
-            color: rgba($m-color--white, 0.7);
-            background: $m-menu-color--skin-light-bg-light;
-        }
-    }
-}
-
-.m-menu.m--is-skin-dark {
-    .m-menu-item {
-        &.m--is-inside-group {
-            > .m-menu-item__link {
-                background: $m-menu-color--skin-dark-bg-dark;
-
-                &::before {
-                    background: $m-menu-color--skin-dark-bg-light;
-                }
-            }
-
-            &:not(.m--is-disabled) {
-                > .m-menu-item__link {
-                    &:hover::before,
-                    &:focus::before {
-                        background: $m-color--grey-darker;
-                    }
-                }
-            }
-        }
-
-        &__link {
-            color: $m-color--grey-light;
-            background: $m-menu-color--skin-dark-bg-light;
-        }
-    }
-}
 
 .m-menu-item {
+    --m-menu--indicator-width: 0;
+    --m-menu--selected-indicator-width: #{ $m-border-width--l };
+
     position: relative;
 
-    &.m--is-anim-ready {
-        .m-menu-item__link {
-            transition: color $m-transition-duration ease, font-weight $m-transition-duration ease;
-        }
+    &.m--is-selected:not(.m--is-custom-content) {
+        --m-menu--font-weight: var(--m-menu--selected-font-weight);
 
-        &.m--is-inside-group {
-            > .m-menu-item__link {
-                &::before {
-                    transition: background $m-transition-duration ease;
-                }
+        &:not(.m--is-group) {
+            --m-menu--color: var(--m-menu--selected-color);
+            --m-menu--indicator: var(--m-menu--selected-indicator);
+            --m-menu--indicator-width: var(--m-menu--selected-indicator-width);
 
-                &::after {
-                    transition: width $m-transition-duration ease;
-                }
-            }
-        }
-    }
-
-    &.m--is-selected,
-    &.m--is-group-selected {
-        > .m-menu-item__link {
-            color: $m-color--white;
-            font-weight: $m-font-weight--bold;
-
-            > .m-menu-item__icon {
-                stroke-width: 1.5px;
-            }
-        }
-    }
-
-    &.m--is-group {
-        > .m-menu-item__link {
-            justify-content: space-between;
-        }
-    }
-
-    &:not(.m--is-disabled) {
-        > .m-menu-item__link {
-            cursor: pointer;
-
-            &.router-link-active {
-                color: $m-color--white;
-                font-weight: 575;
-            }
-
-            &:hover,
-            &:focus {
-                color: $m-color--white;
-            }
-        }
-    }
-
-    &.m--is-disabled {
-        > .m-menu-item__link {
-            cursor: default;
+            stroke-width: 1.5px;
         }
     }
 
     &.m--is-inside-group {
-        > .m-menu-item__link {
-            &::before,
-            &::after {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                content: '';
-            }
+        --m-menu--color: var(--m-menu--group-color);
+        --m-menu--border: var(--m-menu--group-border);
+        --m-menu--background-color: var(--m-menu--group-background-color);
+        --m-menu--text-transform: var(--m-menu--group-text-transform);
+        --m-menu--font-weight: var(--m-menu--group-font-weight);
+        --m-menu--indicator: var(--m-menu--group-indicator);
+        --m-menu--hover-indicator-color: var(--m-menu--group-hover-indicator-color);
 
-            &::before {
-                width: $m-border-width--l;
-            }
-
-            &::after {
-                background: $m-color--ul-yellow;
-                width: 0;
-            }
-        }
-
-        &.m--is-selected {
-            .m-menu-item__link::after {
-                width: $m-border-width--l;
-            }
+        &.m--is-selected:not(.m--is-custom-content) {
+            --m-menu--color: var(--m-menu--group-selected-color);
+            --m-menu--indicator: var(--m-menu--group-selected-indicator);
+            --m-menu--font-weight: var(--m-menu--group-selected-font-weight);
         }
     }
 
-    &:not(.m--is-inside-group) {
-        > .m-menu-item__link {
-            text-transform: uppercase;
+    &__link.m-menu-item__link { // must double specificity to compensate the stupid issue with m-u--app-body
+        outline: none;
+        display: flex;
+        position: relative;
+        align-items: center;
+        text-decoration: none;
+        color: var(--m-menu--color);
+        padding: var(--m-menu--padding);
+        min-height: var(--m-menu--min-height);
+        border-top: var(--m-menu--border);
+        font-weight: var(--m-menu--font-weight);
+        text-transform: var(--m-menu--text-transform);
+        background-color: var(--m-menu--background-color);
+        transition: color $m-transition-duration ease, font-weight $m-transition-duration ease;
+
+        &:not(.m--is-disabled):not(.m--is-custom-content) {
+            &:hover,
+            &:focus {
+                --m-menu--color: var(--m-menu--hover-color);
+
+                &::before {
+                    background-color: var(--m-menu--hover-indicator-color);
+                }
+            }
+        }
+
+        &::before,
+        &::after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+            background: var(--m-menu--indicator);
+            transition: width $m-transition-duration ease, background-color $m-transition-duration ease;
+            background-color: var(--m-menu--indicator);
+        }
+
+        &::before {
+            width: var(--m-menu--selected-indicator-width);
+        }
+
+        &::after {
+            width: var(--m-menu--indicator-width);
         }
     }
 
     &__icon {
-        margin-right: $m-spacing--s;
         font-size: 20px; // Magic number
-    }
-
-    &__link {
-        position: relative;
-        display: flex;
-        font-weight: $m-font-weight--light;
-        align-items: center;
-        text-decoration: none;
-        padding: $m-spacing--s $m-spacing;
-        min-height: $m-touch-size;
-        outline: none;
+        stroke-width: inherit;
+        margin-right: $m-spacing--s;
     }
 
     &__label {
