@@ -31,14 +31,10 @@ export class MBaseSelect extends ModulVue {
     @Prop()
     public inputMaxWidth: string;
 
-    @Prop({
-        required: true
-    })
+    @Prop({ required: true })
     public controlId: string;
 
-    @Prop({
-        default: false
-    })
+    @Prop({ default: false })
     public open: boolean;
 
     @Prop({ default: true })
@@ -135,6 +131,8 @@ export class MBaseSelect extends ModulVue {
     public focusFirstSelected(): void {
         if (this.selectedItems && this.selectedItems.length > 0) {
             this.focusedIndex = this.items.indexOf(this.selectedItems[0]);
+        } else {
+            this.focusedIndex = -1;
         }
     }
 
@@ -146,7 +144,6 @@ export class MBaseSelect extends ModulVue {
             }
         } else {
             this.focusedIndex = this.items.length === 0 ? -1 : 0;
-
         }
         this.scrollToFocused();
     }
@@ -251,12 +248,10 @@ export class MBaseSelect extends ModulVue {
     // space : open the popup
     onKeydownDown($event: KeyboardEvent): void {
         this.focusNextItem();
-        this.selectFocusedItem($event);
     }
 
     onKeydownUp($event: KeyboardEvent): void {
         this.focusPreviousItem();
-        this.selectFocusedItem($event);
     }
 
     onKeydownSpace($event: KeyboardEvent): void {

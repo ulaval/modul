@@ -53,9 +53,10 @@ export const defaultStory = () => ({
         'select'
     ),
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly"  @open="open" @close="close" @focus="focus" @select-item="select" @blur="blur"></m-select>`
+    template: `<m-select v-model="model" :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly"  @open="open" @close="close" @focus="focus" @select-item="select" @blur="blur"></m-select>`
 });
 
 defaultStory.story = {
@@ -64,9 +65,10 @@ defaultStory.story = {
 
 export const focus = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :focus="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" :focus="true" ></m-select>`
 });
 
 export const selectedItem = () => ({
@@ -79,86 +81,97 @@ export const selectedItem = () => ({
 
 export const label = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" label="Fruits" ></m-select>`
+    template: `<m-select v-model="model" :options="options" label="Fruits" ></m-select>`
 });
 
 export const placeholder = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" placeholder="Choose a Fruit" ></m-select>`
+    template: `<m-select v-model="model" :options="options" placeholder="Choose a Fruit" ></m-select>`
 });
 
 export const labelUp = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" label="Fruits" :label-up="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" label="Fruits" :label-up="true" ></m-select>`
 });
 
 export const clearable = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" label="Fruits" :clearable="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" label="Fruits" :clearable="true" ></m-select>`
 });
 
 export const clearableAndRequiredMarker = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" label="Fruits" :clearable="true" :required-marker="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" label="Fruits" :clearable="true" :required-marker="true" ></m-select>`
 });
 
 export const clearableFalseAndRequiredMarker = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" label="Fruits" :clearable="false" :required-marker="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" label="Fruits" :clearable="false" :required-marker="true" ></m-select>`
 });
 
 export const requiredMarker = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" label="Fruits" :required-marker="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" label="Fruits" :required-marker="true" ></m-select>`
 });
 
 export const longOptionMenu = () => ({
     data: () => ({
         options: LONG_OPTIONS
     }),
-    template: `<m-select :options="options" label="Fruits" ></m-select>`
+    template: `<m-select v-model="model" :options="options" label="Fruits" ></m-select>`
 });
 
 export const readonlyNoSelectionNoLabel = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :readonly="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" :readonly="true" ></m-select>`
 });
 
 export const readonlyNoSelectionWithLabel = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :readonly="true" label="Fruits" ></m-select>`
+    template: `<m-select v-model="model" :options="options" :readonly="true" label="Fruits" ></m-select>`
 });
 
 export const readonlyNoSelectionNoLabelWithPlaceholder = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :readonly="true" placeholder="Choose a fruit"></m-select>`
+    template: `<m-select v-model="model" :options="options" :readonly="true" placeholder="Choose a fruit"></m-select>`
 });
 
 export const readonlyNoSelectionWithLabelWithPlaceholder = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :readonly="true" label="Fruits" placeholder="Choose a fruit"></m-select>`
+    template: `<m-select v-model="model" :options="options" :readonly="true" label="Fruits" placeholder="Choose a fruit"></m-select>`
 });
 
 export const readonlyItemSelectedWithLabel = () => ({
@@ -179,30 +192,34 @@ export const readonlyItemSelectedWithLabelClearable = () => ({
 
 export const disabledNoSelectionNoLabel = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :disabled="true" ></m-select>`
+    template: `<m-select v-model="model" :options="options" :disabled="true" ></m-select>`
 });
 
 export const disabledNoSelectionWithLabel = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :disabled="true" label="Fruits" ></m-select>`
+    template: `<m-select v-model="model" :options="options" :disabled="true" label="Fruits" ></m-select>`
 });
 
 export const disabledNoSelectionNoLabelWithPlaceholder = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :disabled="true" placeholder="Choose a fruit"></m-select>`
+    template: `<m-select v-model="model" :options="options" :disabled="true" placeholder="Choose a fruit"></m-select>`
 });
 
 export const disabledNoSelectionWithLabelWithPlaceholder = () => ({
     data: () => ({
-        options: OPTIONS
+        options: OPTIONS,
+        model: ''
     }),
-    template: `<m-select :options="options" :disabled="true" label="Fruits" placeholder="Choose a fruit"></m-select>`
+    template: `<m-select v-model="model" :options="options" :disabled="true" label="Fruits" placeholder="Choose a fruit"></m-select>`
 });
 
 export const disabledItemSelectedWithLabel = () => ({

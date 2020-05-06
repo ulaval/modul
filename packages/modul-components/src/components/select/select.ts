@@ -29,11 +29,6 @@ import WithRender from './select.html?style=./select.scss';
 })
 export class MSelect extends ModulVue {
 
-    public $refs: {
-        baseSelect: MBaseSelect;
-    };
-
-
     @Model('input')
     @Prop()
     public value: any;
@@ -56,12 +51,10 @@ export class MSelect extends ModulVue {
     }
 
     @Emit('open')
-    onOpen(): void {
-    }
+    onOpen(): void { }
 
     @Emit('close')
-    onClose(): void {
-    }
+    onClose(): void { }
 
     get hasItems(): boolean {
         return this.options && this.options.length > 0;
@@ -104,12 +97,6 @@ export class MSelect extends ModulVue {
             this.onReset();
         }
     }
-
-    public toggleSelect(): void {
-        this.$refs.baseSelect.togglePopup();
-    }
-
-
 }
 
 const SelectPlugin: PluginObject<any> = {
