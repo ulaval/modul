@@ -5,7 +5,8 @@ import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MAccordionTransition } from '../../transitions/accordion-transition/accordion-transition';
 import { BaseMenu, Menu } from '../menu';
-import WithRender from './menu-item.html?style=./menu-item.scss';
+import WithRender from './menu-item.html';
+import './menu-item.scss';
 
 export abstract class BaseMenuItem extends ModulVue {
 }
@@ -14,7 +15,6 @@ export interface MenuItem {
     group: boolean;
     propOpen: boolean;
     selected: boolean;
-    groupSelected: boolean;
     insideGroup: boolean;
 }
 
@@ -41,7 +41,6 @@ export class MMenuItem extends BaseMenuItem implements MenuItem {
 
     public group: boolean = false;
     public selected: boolean = false;
-    public groupSelected: boolean = false;
     public insideGroup = false;
     public animReady: boolean = false;
     public ariaControls: string = `mMenuItem-${uuid.generate()}-controls`;

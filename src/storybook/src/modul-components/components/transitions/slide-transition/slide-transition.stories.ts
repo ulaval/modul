@@ -15,7 +15,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, mo
         data: () => ({
             selectedTabIndex: 1,
             direction: MSlideTransitionDirection.LeftToRight,
-            nbParagraphe: 1,
+            nbParagraphe: 20,
             nbTab: 7,
             skinNavbar: MNavbarSkin.TabLight,
             disabledTransition: false,
@@ -27,7 +27,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, mo
                 let _this: any = this as any;
                 _this.direction = (newIndex < _this.selectedTabIndex) ? MSlideTransitionDirection.LeftToRight : MSlideTransitionDirection.RightToLeft;
                 _this.selectedTabIndex = newIndex;
-                _this.nbParagraphe = (_this.selectedTabIndex % 2) === 0 ? 4 : newIndex;
+                _this.nbParagraphe = (_this.selectedTabIndex % 2) === 0 ? 10 : newIndex * 10;
             },
             beforeEnter(): void {
                 (this as any).transitionEmit = 'before-enter';
@@ -104,5 +104,45 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, mo
                           @click="disabledTransition = !disabledTransition">{{disabledTransition ? 'Enabled' : 'Disabled'}} transition</m-button>
             </div>
             <p v-if="transitionEmit">Last transition emit: {{transitionEmit}}</p>
+        </div>`
+    }))
+    .add('automatic-scroll=false', () => ({
+        data: () => ({
+            selectedTabIndex: 1,
+            direction: MSlideTransitionDirection.LeftToRight,
+            nbParagraphe: 20,
+            nbTab: 3,
+            skinNavbar: MNavbarSkin.TabLight
+        }),
+        methods: {
+            showTab(newIndex): void {
+                let _this: any = this as any;
+                _this.direction = (newIndex < _this.selectedTabIndex) ? MSlideTransitionDirection.LeftToRight : MSlideTransitionDirection.RightToLeft;
+                _this.selectedTabIndex = newIndex;
+                _this.nbParagraphe = (_this.selectedTabIndex % 2) === 0 ? 30 : newIndex * 40;
+            }
+        },
+        template: `
+        <div>
+            <m-navbar :selected="selectedTabIndex"
+                      :skin="skinNavbar">
+                <m-navbar-item v-for="index in nbTab"
+                               :key="index"
+                               :value="index"
+                               @click="showTab(index)">
+                    Tab {{index}}
+                </m-navbar-item>
+            </m-navbar>
+            <m-slide-transition :direction="direction"
+                                :automatic-scroll="false">
+                <div v-for="index in nbTab"
+                     :key="index"
+                     v-if="selectedTabIndex === index"
+                     class="m-u--margin-top">
+                    <h3 class="m-u--no-margin">Tab {{index}}</h3>
+                    <p v-for="index in nbParagraphe"
+                       :key="index">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A laudantium odio ipsum, quae quos cum dolor, omnis perferendis, veritatis deleniti iusto consectetur? Impedit tempora quam ab laborum maiores sapiente earum?</p>
+                </div>
+            </m-slide-transition>
         </div>`
     }));

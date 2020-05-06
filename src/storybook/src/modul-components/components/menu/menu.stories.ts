@@ -4,6 +4,7 @@ import { MENU_NAME } from '@ulaval/modul-components/dist/components/component-na
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import './menu.stories.scss';
 
 
 const storyRouterDecorator: any = (links = {}, routerProps = {}): any => {
@@ -85,6 +86,27 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}`, module)
                         ${DEFAULT_MENU_ITEMS}
                  </m-menu>`
     }))
+    .add('custom visual and content', () => ({
+        data: () => ({
+            menuIsOpened: true,
+            selectedItem: 'item2'
+        }),
+        methods: {
+            test(): void {
+                console.log('afterLeave');
+            }
+        },
+        template: `<m-menu :open.sync="menuIsOpened" @after-leave="test()" @open-animation-end="test()" :selected.sync="selectedItem" class="m-menu-stories">
+                        <div slot="trigger">Menu</div>
+                        <m-menu-item value="item1" label="Item 1" icon-name="m-svg__profile">
+                            <template slot="content">
+                                <m-button>custom content</m-button>
+                            </template>
+                        </m-menu-item>
+                        <m-menu-item value="item2" label="Item 2"></m-menu-item>
+                        <m-menu-item value="item3" label="Item 3"></m-menu-item>
+                 </m-menu>`
+    }))
     .add('disabled', () => ({
         data: () => ({
             menuIsOpened: true,
@@ -141,7 +163,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}/menuItem`, modul
         }),
         template: `<m-menu :open.sync="menuIsOpened" :selected.sync="selectedItem" :closeOnSelection="false">
                         <div slot="trigger">Menu</div>
-                        <m-menu-item label="Item 1" value="item1" :url="routerLink"></m-menu-item>
+                        <m-menu-item label="Item 1" value="item1" :url="routerLink">
+
+                        </m-menu-item>
                    </m-menu>`
     }))
     .add('default', () => ({
