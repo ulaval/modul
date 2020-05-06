@@ -12,7 +12,7 @@
                 'm--has-validation-message': hasValidationMessage }">
     <input v-if="!readonly"
            :id="id"
-           class="m-checkbox__visually-hidden"
+           class="m-checkbox__hidden"
            :indeterminate.prop="propIndeterminate"
            :disabled="isDisabled"
            v-model="propValue"
@@ -27,17 +27,17 @@
            type="hidden" />
     <label class="m-checkbox__wrap"
            :for="id"
-           :aria-hidden="!$slots.default || !hiddenLabel">
+           :aria-hidden="!$slots.default && !hiddenLabel">
         <span class="m-checkbox__input"
               aria-hidden="true">
             <span class="m-checkbox__input__icon"></span>
         </span>
-        <span v-if="$slots.default"
-              class="m-checkbox__label">
+        <div v-if="$slots.default"
+             class="m-checkbox__label">
             <slot></slot>
-        </span>
+        </div>
         <div v-if="hiddenLabel"
-             class="m-checkbox__visually-hidden">{{ hiddenLabel }}</div>
+             class="m-checkbox__hidden">{{ hiddenLabel }}</div>
     </label>
     <m-validation-message class="m-checkbox__message"
                           :disabled="isDisabled"

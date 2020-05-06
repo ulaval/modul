@@ -332,7 +332,7 @@ $m-checkbox--width: 16px;
         color: $m-color--text;
     }
 
-    &__visually-hidden {
+    &__hidden {
         @include m-visually-hidden;
     }
 }

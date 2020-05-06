@@ -222,11 +222,13 @@ exports[`Storyshots modul-components|m-form/all fields Checkbox 1`] = `
         />
       </span>
        
-      <span
+      <div
         class="m-checkbox__label"
       >
         Is active ?
-      </span>
+      </div>
+       
+      <!---->
     </label>
      
     <div
