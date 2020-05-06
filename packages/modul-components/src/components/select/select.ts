@@ -41,7 +41,7 @@ export class MSelect extends ModulVue {
     @Prop()
     public options: any[];
 
-    @Prop({ default: false })
+    @Prop()
     public clearable: boolean;
 
     @Prop({ default: false })
@@ -72,8 +72,7 @@ export class MSelect extends ModulVue {
     }
 
     get isClearable(): boolean {
-        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue &&
-            this.isSelectable;
+        return this.clearable !== undefined ? this.clearable && this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable : this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable && !this.as<InputLabel>().requiredMarker;
     }
 
     get selectedItems(): any {

@@ -105,6 +105,27 @@ export const clearable = () => ({
     template: `<m-select :options="options" label="Fruits" :clearable="true" ></m-select>`
 });
 
+export const clearableAndRequiredMarker = () => ({
+    data: () => ({
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" :clearable="true" :required-marker="true" ></m-select>`
+});
+
+export const clearableFalseAndRequiredMarker = () => ({
+    data: () => ({
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" :clearable="false" :required-marker="true" ></m-select>`
+});
+
+export const requiredMarker = () => ({
+    data: () => ({
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" :required-marker="true" ></m-select>`
+});
+
 export const longOptionMenu = () => ({
     data: () => ({
         options: LONG_OPTIONS
