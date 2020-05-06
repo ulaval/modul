@@ -2,7 +2,6 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
 
-
 export enum InputMaxWidth {
     None = 'none',
     XSmall = 'x-small',
