@@ -1,6 +1,8 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
+import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../directives/directive-names';
+import { MPopupDirective } from '../../directives/popup/popup';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputPopup } from '../../mixins/input-popup/input-popup';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
@@ -35,6 +37,9 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
         [VALIDATION_MESSAGE_NAME]: MValidationMessage,
         [POPUP_NAME]: MPopup,
         [DROPDOWN_ITEM_NAME]: MDropdownItem
+    },
+    directives: {
+        [DIRECTIVE_POPUP_NAME]: MPopupDirective
     },
     mixins: [
         InputState,

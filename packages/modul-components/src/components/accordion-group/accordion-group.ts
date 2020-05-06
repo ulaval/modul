@@ -1,7 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import { AccordionGateway, AccordionGroupGateway, MAccordionSkin } from '../accordion/accordion';
+import AccordionPlugin, { AccordionGateway, AccordionGroupGateway, MAccordionSkin } from '../accordion/accordion';
 import { ACCORDION_GROUP_NAME, I18N_NAME, LINK_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MLink } from '../link/link';
@@ -160,6 +160,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
 
 const AccordionGroupPlugin: PluginObject<any> = {
     install(v): void {
+        v.use(AccordionPlugin);
         v.component(ACCORDION_GROUP_NAME, MAccordionGroup);
     }
 };
