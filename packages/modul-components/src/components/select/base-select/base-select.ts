@@ -81,8 +81,8 @@ export class MBaseSelect extends ModulVue {
         this.$emit('update:open', false);
     }
 
-    @Emit('select-item')
     select(option: any, index: number, $event: Event): void {
+        this.$emit('select-item', option, index, $event);
     }
 
     @Watch('open', { immediate: true })

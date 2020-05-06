@@ -50,8 +50,8 @@ export class MSelect extends ModulVue {
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
-    @Emit('select-item')
-    onSelect(option: any, index: number): void {
+    onSelect(option: any, index: number, $event: Event): void {
+        this.$emit('select-item', option, index, $event);
         this.as<InputManagement>().model = this.options[index];
     }
 

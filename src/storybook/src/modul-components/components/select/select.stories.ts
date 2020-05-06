@@ -200,6 +200,21 @@ export const disabledItemSelectedWithLabelClearable = () => ({
     template: `<m-select :options="options" :disabled="true" label="Fruits" :clearable="true" v-model="model" ></m-select>`
 });
 
+export const withItemsSlot = () => ({
+    data: () => ({
+        model: 'banane',
+        options: OPTIONS
+    }),
+    components: {
+        MSelectItem: MSelectItem
+    },
+    template: `<m-select :options="options" v-model="model">
+                <template #items="{item, index}">
+                    {{ item  }} ABC
+                </template>
+            </m-select>`
+});
+
 export const withOuterItemsSlot = () => ({
     data: () => ({
         model: 'banane',
@@ -212,11 +227,11 @@ export const withOuterItemsSlot = () => ({
                 <template #outer-items="{items, getItemProps, getItemHandlers}">
                     <template v-for="(item, index) of items">
                         <m-select-item v-if="item !== 'patate'" v-bind="getItemProps(item, index)" v-on="getItemHandlers(item, index)">
-                            {{ item  }}
+                            {{ item  }} 123
                         </m-select-item>
                         <m-select-item v-else
                                         :disabled="true">
-                            {{ item  }}
+                            {{ item  }}123
                         </m-select-item>
                     </template>
                 </template>
