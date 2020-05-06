@@ -312,6 +312,127 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
+<div
+  class="m-menu m-menu-stories m--is-skin-dark m--is-open"
+>
+  <div
+    aria-controls="mMenu-fakeId-controls"
+    aria-expanded="true"
+    aria-haspopup="true"
+    class="m-menu__trigger"
+    tabindex="0"
+  >
+    <span
+      class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
+      title="Fermer le menu"
+    />
+     
+    <div>
+      Menu
+    </div>
+  </div>
+   
+  <ul
+    class="m-menu__body"
+    id="mMenu-fakeId-controls"
+    role="menu"
+  >
+     
+    <li
+      class="m-menu-item m--is-custom-content"
+      role="none"
+    >
+      <span
+        class="m-menu-item__link m--is-custom-content"
+        tabindex="0"
+      >
+        <button
+          class="m-button m--is-skin-primary"
+          type="button"
+        >
+          <!---->
+           
+          <!---->
+           
+          <span
+            class="m-button__text"
+          >
+            custom content 
+            <!---->
+          </span>
+           
+          <!---->
+           
+          <!---->
+        </button>
+      </span>
+       
+      <ul
+        aria-hidden="true"
+        class="m-menu-item__group"
+        id="mMenuItem-fakeId-controls"
+        style="display: none;"
+      />
+    </li>
+     
+    <li
+      class="m-menu-item"
+      role="none"
+    >
+      <span
+        class="m-menu-item__link"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-menu-item__label"
+        >
+          Item 2
+        </span>
+         
+        <!---->
+      </span>
+       
+      <ul
+        aria-hidden="true"
+        class="m-menu-item__group"
+        id="mMenuItem-fakeId-controls"
+        style="display: none;"
+      />
+    </li>
+     
+    <li
+      class="m-menu-item"
+      role="none"
+    >
+      <span
+        class="m-menu-item__link"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-menu-item__label"
+        >
+          Item 3
+        </span>
+         
+        <!---->
+      </span>
+       
+      <ul
+        aria-hidden="true"
+        class="m-menu-item__group"
+        id="mMenuItem-fakeId-controls"
+        style="display: none;"
+      />
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-menu default 1`] = `
 <div
   class="m-menu m--is-skin-dark"
@@ -633,7 +754,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
     aria-controls="mMenu-fakeId-controls"
     aria-expanded="true"
     aria-haspopup="true"
-    class="m-menu__trigger"
+    class="m-menu__trigger m--is-disabled"
     tabindex="-1"
   >
     <span
@@ -2609,7 +2730,7 @@ exports[`Storyshots modul-components|m-menu/menuItem disabled 1`] = `
       role="none"
     >
       <span
-        class="m-menu-item__link"
+        class="m-menu-item__link m--is-disabled"
         tabindex="-1"
       >
         <!---->

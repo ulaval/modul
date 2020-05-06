@@ -1,13 +1,13 @@
 <li class="m-menu-item"
     :class="{'m--is-selected': selected,
-             'm--is-group-selected': groupSelected,
              'm--is-disabled': isDisabled,
              'm--is-group': group,
              'm--is-open': propOpen,
-             'm--is-inside-group': insideGroup,
-             'm--is-anim-ready': isAnimReady}"
+             'm--is-custom-content': $slots['content'],
+             'm--is-inside-group': insideGroup}"
     role="none">
     <router-link class="m-menu-item__link"
+                 :class="{'m--is-disabled': isDisabled}"
                  :to="url"
                  @click="onClick"
                  :aria-selected="selected"
@@ -21,6 +21,8 @@
         <span class="m-menu-item__label">{{ label }}</span>
     </router-link>
     <span class="m-menu-item__link"
+          :class="{ 'm--is-disabled': isDisabled,
+                    'm--is-custom-content': $slots['content']}"
           @click="onClick"
           @keypress.enter="onClick"
           :tabindex="isDisabled ? '-1' : '0'"
@@ -29,18 +31,20 @@
           :aria-controls="group ? ariaControls : undefined"
           :aria-expanded="group ? propOpen : undefined"
           v-else>
-        <m-icon class="m-menu-item__icon"
-                v-if="iconName"
-                :name="iconName"
-                ref="icon"
-                size="1em"></m-icon>
-        <span class="m-menu-item__label">{{ label }}</span>
-        <m-plus class="m-menu-item__plus"
-                skin="current-color"
-                :open="propOpen"
-                :large="groupSelected"
-                ref="plus"
-                v-if="group"></m-plus>
+        <slot name="content">
+            <m-icon class="m-menu-item__icon"
+                    v-if="iconName"
+                    :name="iconName"
+                    ref="icon"
+                    size="1em"></m-icon>
+            <span class="m-menu-item__label">{{ label }}</span>
+            <m-plus class="m-menu-item__plus"
+                    skin="current-color"
+                    :open="propOpen"
+                    :large="selected"
+                    ref="plus"
+                    v-if="group"></m-plus>
+        </slot>
     </span>
     <m-accordion-transition :disabled="!animReady || isDisabled"
                             ref="transition">

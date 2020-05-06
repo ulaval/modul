@@ -16,17 +16,17 @@
 // ]
 const allCountriesEn: any = [
     [
-        'Afghanistan (‫افغانستان‬‎)',
+        'Afghanistan',
         'af',
         '93'
     ],
     [
-        'Albania (Shqipëri)',
+        'Albania',
         'al',
         '355'
     ],
     [
-        'Algeria (‫الجزائر‬‎)',
+        'Algeria',
         'dz',
         '213'
     ],
@@ -61,7 +61,7 @@ const allCountriesEn: any = [
         '54'
     ],
     [
-        'Armenia (Հայաստան)',
+        'Armenia',
         'am',
         '374'
     ],
@@ -77,12 +77,12 @@ const allCountriesEn: any = [
         0
     ],
     [
-        'Austria (Österreich)',
+        'Austria',
         'at',
         '43'
     ],
     [
-        'Azerbaijan (Azərbaycan)',
+        'Azerbaijan',
         'az',
         '994'
     ],
@@ -92,12 +92,12 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Bahrain (‫البحرين‬‎)',
+        'Bahrain',
         'bh',
         '973'
     ],
     [
-        'Bangladesh (বাংলাদেশ)',
+        'Bangladesh',
         'bd',
         '880'
     ],
@@ -107,12 +107,12 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Belarus (Беларусь)',
+        'Belarus',
         'by',
         '375'
     ],
     [
-        'Belgium (België)',
+        'Belgium',
         'be',
         '32'
     ],
@@ -122,7 +122,7 @@ const allCountriesEn: any = [
         '501'
     ],
     [
-        'Benin (Bénin)',
+        'Benin',
         'bj',
         '229'
     ],
@@ -132,7 +132,7 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Bhutan (འབྲུག)',
+        'Bhutan',
         'bt',
         '975'
     ],
@@ -142,7 +142,7 @@ const allCountriesEn: any = [
         '591'
     ],
     [
-        'Bosnia and Herzegovina (Босна и Херцеговина)',
+        'Bosnia and Herzegovina',
         'ba',
         '387'
     ],
@@ -152,7 +152,7 @@ const allCountriesEn: any = [
         '267'
     ],
     [
-        'Brazil (Brasil)',
+        'Brazil',
         'br',
         '55'
     ],
@@ -172,7 +172,7 @@ const allCountriesEn: any = [
         '673'
     ],
     [
-        'Bulgaria (България)',
+        'Bulgaria',
         'bg',
         '359'
     ],
@@ -182,17 +182,17 @@ const allCountriesEn: any = [
         '226'
     ],
     [
-        'Burundi (Uburundi)',
+        'Burundi',
         'bi',
         '257'
     ],
     [
-        'Cambodia (កម្ពុជា)',
+        'Cambodia',
         'kh',
         '855'
     ],
     [
-        'Cameroon (Cameroun)',
+        'Cameroon',
         'cm',
         '237'
     ],
@@ -204,7 +204,7 @@ const allCountriesEn: any = [
         ['204', '226', '236', '249', '250', '289', '306', '343', '365', '387', '403', '416', '418', '431', '437', '438', '450', '506', '514', '519', '548', '579', '581', '587', '604', '613', '639', '647', '672', '705', '709', '742', '778', '780', '782', '807', '819', '825', '867', '873', '902', '905']
     ],
     [
-        'Cape Verde (Kabu Verdi)',
+        'Cape Verde',
         'cv',
         '238'
     ],
@@ -220,12 +220,12 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Central African Republic (République centrafricaine)',
+        'Central African Republic',
         'cf',
         '236'
     ],
     [
-        'Chad (Tchad)',
+        'Chad',
         'td',
         '235'
     ],
@@ -235,7 +235,7 @@ const allCountriesEn: any = [
         '56'
     ],
     [
-        'China (中国)',
+        'China',
         'cn',
         '86'
     ],
@@ -257,17 +257,17 @@ const allCountriesEn: any = [
         '57'
     ],
     [
-        'Comoros (‫جزر القمر‬‎)',
+        'Comoros',
         'km',
         '269'
     ],
     [
-        'Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)',
+        'Congo',
         'cd',
         '243'
     ],
     [
-        'Congo (Republic) (Congo-Brazzaville)',
+        'Congo',
         'cg',
         '242'
     ],
@@ -287,7 +287,7 @@ const allCountriesEn: any = [
         '225'
     ],
     [
-        'Croatia (Hrvatska)',
+        'Croatia',
         'hr',
         '385'
     ],
@@ -303,17 +303,17 @@ const allCountriesEn: any = [
         0
     ],
     [
-        'Cyprus (Κύπρος)',
+        'Cyprus',
         'cy',
         '357'
     ],
     [
-        'Czech Republic (Česká republika)',
+        'Czech Republic',
         'cz',
         '420'
     ],
     [
-        'Denmark (Danmark)',
+        'Denmark',
         'dk',
         '45'
     ],
@@ -328,7 +328,7 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Dominican Republic (República Dominicana)',
+        'Dominican Republic',
         'do',
         '1',
         2,
@@ -340,7 +340,7 @@ const allCountriesEn: any = [
         '593'
     ],
     [
-        'Egypt (‫مصر‬‎)',
+        'Egypt',
         'eg',
         '20'
     ],
@@ -350,17 +350,17 @@ const allCountriesEn: any = [
         '503'
     ],
     [
-        'Equatorial Guinea (Guinea Ecuatorial)',
+        'Equatorial Guinea',
         'gq',
         '240'
     ],
     [
-        'Eritrea (ኤርትራ)',
+        'Eritrea',
         'er',
         '291'
     ],
     [
-        'Estonia (Eesti)',
+        'Estonia',
         'ee',
         '372'
     ],
@@ -370,12 +370,12 @@ const allCountriesEn: any = [
         '251'
     ],
     [
-        'Falkland Islands (Islas Malvinas)',
+        'Falkland Islands',
         'fk',
         '500'
     ],
     [
-        'Faroe Islands (Føroyar)',
+        'Faroe Islands',
         'fo',
         '298'
     ],
@@ -385,7 +385,7 @@ const allCountriesEn: any = [
         '679'
     ],
     [
-        'Finland (Suomi)',
+        'Finland',
         'fi',
         '358',
         0
@@ -396,12 +396,12 @@ const allCountriesEn: any = [
         '33'
     ],
     [
-        'French Guiana (Guyane française)',
+        'French Guiana',
         'gf',
         '594'
     ],
     [
-        'French Polynesia (Polynésie française)',
+        'French Polynesia',
         'pf',
         '689'
     ],
@@ -416,17 +416,17 @@ const allCountriesEn: any = [
         '220'
     ],
     [
-        'Georgia (საქართველო)',
+        'Georgia',
         'ge',
         '995'
     ],
     [
-        'Germany (Deutschland)',
+        'Germany',
         'de',
         '49'
     ],
     [
-        'Ghana (Gaana)',
+        'Ghana',
         'gh',
         '233'
     ],
@@ -436,12 +436,12 @@ const allCountriesEn: any = [
         '350'
     ],
     [
-        'Greece (Ελλάδα)',
+        'Greece',
         'gr',
         '30'
     ],
     [
-        'Greenland (Kalaallit Nunaat)',
+        'Greenland',
         'gl',
         '299'
     ],
@@ -473,12 +473,12 @@ const allCountriesEn: any = [
         1
     ],
     [
-        'Guinea (Guinée)',
+        'Guinea',
         'gn',
         '224'
     ],
     [
-        'Guinea-Bissau (Guiné Bissau)',
+        'Guinea-Bissau',
         'gw',
         '245'
     ],
@@ -498,22 +498,22 @@ const allCountriesEn: any = [
         '504'
     ],
     [
-        'Hong Kong (香港)',
+        'Hong Kong',
         'hk',
         '852'
     ],
     [
-        'Hungary (Magyarország)',
+        'Hungary',
         'hu',
         '36'
     ],
     [
-        'Iceland (Ísland)',
+        'Iceland',
         'is',
         '354'
     ],
     [
-        'India (भारत)',
+        'India',
         'in',
         '91'
     ],
@@ -523,12 +523,12 @@ const allCountriesEn: any = [
         '62'
     ],
     [
-        'Iran (‫ایران‬‎)',
+        'Iran',
         'ir',
         '98'
     ],
     [
-        'Iraq (‫العراق‬‎)',
+        'Iraq',
         'iq',
         '964'
     ],
@@ -544,12 +544,12 @@ const allCountriesEn: any = [
         2
     ],
     [
-        'Israel (‫ישראל‬‎)',
+        'Israel',
         'il',
         '972'
     ],
     [
-        'Italy (Italia)',
+        'Italy',
         'it',
         '39',
         0
@@ -560,7 +560,7 @@ const allCountriesEn: any = [
         '876'
     ],
     [
-        'Japan (日本)',
+        'Japan',
         'jp',
         '81'
     ],
@@ -571,12 +571,12 @@ const allCountriesEn: any = [
         3
     ],
     [
-        'Jordan (‫الأردن‬‎)',
+        'Jordan',
         'jo',
         '962'
     ],
     [
-        'Kazakhstan (Казахстан)',
+        'Kazakhstan',
         'kz',
         '7',
         1
@@ -597,27 +597,27 @@ const allCountriesEn: any = [
         '383'
     ],
     [
-        'Kuwait (‫الكويت‬‎)',
+        'Kuwait',
         'kw',
         '965'
     ],
     [
-        'Kyrgyzstan (Кыргызстан)',
+        'Kyrgyzstan',
         'kg',
         '996'
     ],
     [
-        'Laos (ລາວ)',
+        'Laos',
         'la',
         '856'
     ],
     [
-        'Latvia (Latvija)',
+        'Latvia',
         'lv',
         '371'
     ],
     [
-        'Lebanon (‫لبنان‬‎)',
+        'Lebanon',
         'lb',
         '961'
     ],
@@ -632,7 +632,7 @@ const allCountriesEn: any = [
         '231'
     ],
     [
-        'Libya (‫ليبيا‬‎)',
+        'Libya',
         'ly',
         '218'
     ],
@@ -642,7 +642,7 @@ const allCountriesEn: any = [
         '423'
     ],
     [
-        'Lithuania (Lietuva)',
+        'Lithuania',
         'lt',
         '370'
     ],
@@ -652,17 +652,17 @@ const allCountriesEn: any = [
         '352'
     ],
     [
-        'Macau (澳門)',
+        'Macau',
         'mo',
         '853'
     ],
     [
-        'Macedonia (FYROM) (Македонија)',
+        'Macedonia',
         'mk',
         '389'
     ],
     [
-        'Madagascar (Madagasikara)',
+        'Madagascar',
         'mg',
         '261'
     ],
@@ -702,12 +702,12 @@ const allCountriesEn: any = [
         '596'
     ],
     [
-        'Mauritania (‫موريتانيا‬‎)',
+        'Mauritania',
         'mr',
         '222'
     ],
     [
-        'Mauritius (Moris)',
+        'Mauritius',
         'mu',
         '230'
     ],
@@ -718,7 +718,7 @@ const allCountriesEn: any = [
         1
     ],
     [
-        'Mexico (México)',
+        'Mexico',
         'mx',
         '52'
     ],
@@ -728,7 +728,7 @@ const allCountriesEn: any = [
         '691'
     ],
     [
-        'Moldova (Republica Moldova)',
+        'Moldova',
         'md',
         '373'
     ],
@@ -738,12 +738,12 @@ const allCountriesEn: any = [
         '377'
     ],
     [
-        'Mongolia (Монгол)',
+        'Mongolia',
         'mn',
         '976'
     ],
     [
-        'Montenegro (Crna Gora)',
+        'Montenegro',
         'me',
         '382'
     ],
@@ -753,23 +753,23 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Morocco (‫المغرب‬‎)',
+        'Morocco',
         'ma',
         '212',
         0
     ],
     [
-        'Mozambique (Moçambique)',
+        'Mozambique',
         'mz',
         '258'
     ],
     [
-        'Myanmar (Burma) (မြန်မာ)',
+        'Myanmar',
         'mm',
         '95'
     ],
     [
-        'Namibia (Namibië)',
+        'Namibia',
         'na',
         '264'
     ],
@@ -779,17 +779,17 @@ const allCountriesEn: any = [
         '674'
     ],
     [
-        'Nepal (नेपाल)',
+        'Nepal',
         'np',
         '977'
     ],
     [
-        'Netherlands (Nederland)',
+        'Netherlands',
         'nl',
         '31'
     ],
     [
-        'New Caledonia (Nouvelle-Calédonie)',
+        'New Caledonia',
         'nc',
         '687'
     ],
@@ -804,7 +804,7 @@ const allCountriesEn: any = [
         '505'
     ],
     [
-        'Niger (Nijar)',
+        'Niger',
         'ne',
         '227'
     ],
@@ -824,7 +824,7 @@ const allCountriesEn: any = [
         '672'
     ],
     [
-        'North Korea (조선 민주주의 인민 공화국)',
+        'North Korea',
         'kp',
         '850'
     ],
@@ -834,33 +834,33 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Norway (Norge)',
+        'Norway',
         'no',
         '47',
         0
     ],
     [
-        'Oman (‫عُمان‬‎)',
+        'Oman',
         'om',
         '968'
     ],
     [
-        'Pakistan (‫پاکستان‬‎)',
+        'Pakistan',
         'pk',
         '92'
     ],
     [
-        'Palau (Belau)',
+        'Palau',
         'pw',
         '680'
     ],
     [
-        'Palestine (‫فلسطين‬‎)',
+        'Palestine',
         'ps',
         '970'
     ],
     [
-        'Panama (Panamá)',
+        'Panama',
         'pa',
         '507'
     ],
@@ -875,7 +875,7 @@ const allCountriesEn: any = [
         '595'
     ],
     [
-        'Peru (Perú)',
+        'Peru',
         'pe',
         '51'
     ],
@@ -885,7 +885,7 @@ const allCountriesEn: any = [
         '63'
     ],
     [
-        'Poland (Polska)',
+        'Poland',
         'pl',
         '48'
     ],
@@ -902,23 +902,23 @@ const allCountriesEn: any = [
         ['787', '939']
     ],
     [
-        'Qatar (‫قطر‬‎)',
+        'Qatar',
         'qa',
         '974'
     ],
     [
-        'Réunion (La Réunion)',
+        'Réunion',
         're',
         '262',
         0
     ],
     [
-        'Romania (România)',
+        'Romania',
         'ro',
         '40'
     ],
     [
-        'Russia (Россия)',
+        'Russia',
         'ru',
         '7',
         0
@@ -950,13 +950,13 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Saint Martin (Saint-Martin (partie française))',
+        'Saint Martin',
         'mf',
         '590',
         2
     ],
     [
-        'Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)',
+        'Saint Pierre and Miquelon',
         'pm',
         '508'
     ],
@@ -976,22 +976,22 @@ const allCountriesEn: any = [
         '378'
     ],
     [
-        'São Tomé and Príncipe (São Tomé e Príncipe)',
+        'São Tomé and Príncipe',
         'st',
         '239'
     ],
     [
-        'Saudi Arabia (‫المملكة العربية السعودية‬‎)',
+        'Saudi Arabia',
         'sa',
         '966'
     ],
     [
-        'Senegal (Sénégal)',
+        'Senegal',
         'sn',
         '221'
     ],
     [
-        'Serbia (Србија)',
+        'Serbia',
         'rs',
         '381'
     ],
@@ -1016,12 +1016,12 @@ const allCountriesEn: any = [
         '1721'
     ],
     [
-        'Slovakia (Slovensko)',
+        'Slovakia',
         'sk',
         '421'
     ],
     [
-        'Slovenia (Slovenija)',
+        'Slovenia',
         'si',
         '386'
     ],
@@ -1031,7 +1031,7 @@ const allCountriesEn: any = [
         '677'
     ],
     [
-        'Somalia (Soomaaliya)',
+        'Somalia',
         'so',
         '252'
     ],
@@ -1041,27 +1041,27 @@ const allCountriesEn: any = [
         '27'
     ],
     [
-        'South Korea (대한민국)',
+        'South Korea',
         'kr',
         '82'
     ],
     [
-        'South Sudan (‫جنوب السودان‬‎)',
+        'South Sudan',
         'ss',
         '211'
     ],
     [
-        'Spain (España)',
+        'Spain',
         'es',
         '34'
     ],
     [
-        'Sri Lanka (ශ්‍රී ලංකාව)',
+        'Sri Lanka',
         'lk',
         '94'
     ],
     [
-        'Sudan (‫السودان‬‎)',
+        'Sudan',
         'sd',
         '249'
     ],
@@ -1082,27 +1082,27 @@ const allCountriesEn: any = [
         '268'
     ],
     [
-        'Sweden (Sverige)',
+        'Sweden',
         'se',
         '46'
     ],
     [
-        'Switzerland (Schweiz)',
+        'Switzerland',
         'ch',
         '41'
     ],
     [
-        'Syria (‫سوريا‬‎)',
+        'Syria',
         'sy',
         '963'
     ],
     [
-        'Taiwan (台灣)',
+        'Taiwan',
         'tw',
         '886'
     ],
     [
-        'Tajikistan (Tojikiston)',
+        'Tajikistan',
         'tj',
         '992'
     ],
@@ -1112,7 +1112,7 @@ const allCountriesEn: any = [
         '255'
     ],
     [
-        'Thailand (ไทย)',
+        'Thailand',
         'th',
         '66'
     ],
@@ -1142,12 +1142,12 @@ const allCountriesEn: any = [
         '1'
     ],
     [
-        'Tunisia (‫تونس‬‎)',
+        'Tunisia',
         'tn',
         '216'
     ],
     [
-        'Turkey (Türkiye)',
+        'Turkey',
         'tr',
         '90'
     ],
@@ -1177,12 +1177,12 @@ const allCountriesEn: any = [
         '256'
     ],
     [
-        'Ukraine (Україна)',
+        'Ukraine',
         'ua',
         '380'
     ],
     [
-        'United Arab Emirates (‫الإمارات العربية المتحدة‬‎)',
+        'United Arab Emirates',
         'ae',
         '971'
     ],
@@ -1204,7 +1204,7 @@ const allCountriesEn: any = [
         '598'
     ],
     [
-        'Uzbekistan (Oʻzbekiston)',
+        'Uzbekistan',
         'uz',
         '998'
     ],
@@ -1214,7 +1214,7 @@ const allCountriesEn: any = [
         '678'
     ],
     [
-        'Vatican City (Città del Vaticano)',
+        'Vatican City',
         'va',
         '379'
     ],
@@ -1224,23 +1224,23 @@ const allCountriesEn: any = [
         '58'
     ],
     [
-        'Vietnam (Việt Nam)',
+        'Vietnam',
         'vn',
         '84'
     ],
     [
-        'Wallis and Futuna (Wallis-et-Futuna)',
+        'Wallis and Futuna',
         'wf',
         '681'
     ],
     [
-        'Western Sahara (‫الصحراء الغربية‬‎)',
+        'Western Sahara',
         'eh',
         '212',
         1
     ],
     [
-        'Yemen (‫اليمن‬‎)',
+        'Yemen',
         'ye',
         '967'
     ],
@@ -1255,7 +1255,7 @@ const allCountriesEn: any = [
         '263'
     ],
     [
-        'Åland Islands (Ahvenanmaa)',
+        'Åland Islands',
         'ax',
         '358',
         1

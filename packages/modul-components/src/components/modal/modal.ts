@@ -7,7 +7,8 @@ import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
 import { ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
-import WithRender from './modal.html?style=./modal.scss';
+import WithRender from './modal.html';
+import './modal.scss';
 
 export enum MModalSize {
     FullScreen = 'full-screen',
@@ -44,14 +45,10 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     public title: string;
     @Prop({ default: true })
     public bodyMaxWidth: boolean;
-    @Prop({ default: true })
-    public padding: boolean;
-    @Prop({ default: true })
-    public paddingHeader: boolean;
+
+    /** @deprecated will be removed in v2, please use css variables to customize visuals. */
     @Prop({ default: true })
     public paddingBody: boolean;
-    @Prop({ default: true })
-    public paddingFooter: boolean;
 
     public hasKeyboard: boolean = false;
 

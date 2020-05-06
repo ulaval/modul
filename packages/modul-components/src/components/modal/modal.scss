@@ -4,10 +4,24 @@ $m-modal--max-width--l: $m-max-width !default;
 $m-modal--max-width: 672px !default; // padding + input + margin + input + padding
 $m-modal--max-width--s: 420px !default;
 
+:root {
+    --m-modal--top: 0;
+    --m-modal--min-height: 120px;
+    --m-modal--header-padding: #{ $m-spacing };
+    --m-modal--body-padding: #{ $m-spacing--xl  $m-spacing };
+    --m-modal--footer-padding: #{ $m-spacing };
+
+    @media (min-width: $m-mq--min--s) {
+        --m-modal--header-padding: #{ $m-spacing $m-spacing--l };
+        --m-modal--body-padding: #{ $m-spacing--xl  $m-spacing--l };
+        --m-modal--footer-padding: #{ $m-spacing $m-spacing--l };
+    }
+}
+
 .m-modal {
     &__wrap {
         position: fixed;
-        top: 0;
+        top: var(--m-modal--top, 0);
         right: 0;
         bottom: 0;
         left: 0;
@@ -140,8 +154,6 @@ $m-modal--max-width--s: 420px !default;
     &__footer {
         flex-shrink: 0;
         min-height: $m-box--min-height;
-
-        @include m-box-padding($m-spacing, $m-spacing--l, $m-spacing, $m-spacing);
     }
 
     &__header {
@@ -151,6 +163,7 @@ $m-modal--max-width--s: 420px !default;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: var(--m-modal--header-padding);
 
         &:not(.m--has-content) {
             justify-content: flex-end;
@@ -173,12 +186,16 @@ $m-modal--max-width--s: 420px !default;
     }
 
     &__content {
-        min-height: 120px;
-
-        @include m-box-padding();
+        min-height: var(--m-modal--min-height);
+        padding: var(--m-modal--body-padding);
 
         @include m-is-ie() {
             flex: none;
+        }
+
+        // deprecated
+        &.m--has-no-padding {
+            --m-modal--body-padding: 0;
         }
     }
 
@@ -186,6 +203,7 @@ $m-modal--max-width--s: 420px !default;
         position: relative;
         border-top: 1px solid $m-color--border;
         animation: fadeIn 0.5s linear forwards;
+        padding: var(--m-modal--footer-padding);
     }
 
     @keyframes fadeIn {

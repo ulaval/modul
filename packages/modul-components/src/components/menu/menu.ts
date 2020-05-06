@@ -7,8 +7,8 @@ import { ACCORDION_TRANSITION_NAME, MENU_ITEM_NAME, MENU_NAME, PLUS_NAME } from 
 import { MPlus } from '../plus/plus';
 import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import { MMenuItem } from './menu-item/menu-item';
-import WithRender from './menu.html?style=./menu.scss';
-
+import WithRender from './menu.html';
+import './menu.scss';
 export abstract class BaseMenu extends ModulVue {
 }
 
@@ -20,6 +20,14 @@ export interface Menu {
     closeOnSelectionInAction: boolean;
     updateValue(value: string | undefined): void;
     onClick(event: Event, value: string): void;
+    beforeEnter(event: Event, value: string): void;
+    enter(event: Event, value: string): void;
+    afterEnter(event: Event, value: string): void;
+    enterCancelled(event: Event, value: string): void;
+    beforeLeave(event: Event, value: string): void;
+    leave(event: Event, value: string): void;
+    afterLeave(event: Event, value: string): void;
+    leaveCancelled(event: Event, value: string): void;
 }
 
 export enum MMenuSkin {
@@ -39,8 +47,10 @@ export class MMenu extends BaseMenu implements Menu {
     public selected: string;
     @Prop()
     public open: boolean;
+
     @Prop({ default: true })
     public closeOnSelection: boolean;
+
     @Prop({
         default: MMenuSkin.Dark,
         validator: value =>
@@ -72,6 +82,30 @@ export class MMenu extends BaseMenu implements Menu {
 
     @Emit('click')
     public onClick(event: Event, value: string): void { }
+
+    @Emit('before-enter')
+    public beforeEnter(event: Event, value: string): void { }
+
+    @Emit('enter')
+    public enter(event: Event, value: string): void { }
+
+    @Emit('after-enter')
+    public afterEnter(event: Event, value: string): void { }
+
+    @Emit('enter-cancelled')
+    public enterCancelled(event: Event, value: string): void { }
+
+    @Emit('before-leave')
+    public beforeLeave(event: Event, value: string): void { }
+
+    @Emit('leave')
+    public leave(event: Event, value: string): void { }
+
+    @Emit('after-leave')
+    public afterLeave(event: Event, value: string): void { }
+
+    @Emit('leave-cancelled')
+    public leaveCancelled(event: Event, value: string): void { }
 
     @Watch('selected', { immediate: true })
     public updateValue(value: string | undefined): void {
@@ -183,7 +217,6 @@ export class MMenu extends BaseMenu implements Menu {
             this.internalItems.forEach((item) => {
                 item.propOpen = false;
                 if (!item.isDisabled && item.group) {
-                    let groupSelected: boolean = false;
                     item.$children.forEach(itemGroup => {
                         itemGroup.$children.forEach((subItem: MMenuItem) => {
                             if (subItem.isUrl) {
@@ -193,11 +226,9 @@ export class MMenu extends BaseMenu implements Menu {
                             if (subItem.selected) {
                                 item.propOpen = true;
                                 item.selected = true;
-                                groupSelected = true;
                             }
                         });
                     });
-                    item.groupSelected = groupSelected;
                 }
             });
         }
