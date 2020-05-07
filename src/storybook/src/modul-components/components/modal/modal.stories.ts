@@ -126,6 +126,25 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
                         This modal is offset by 44px on mobile (--m-modal--top). Can be used to offset fixed content like sticky header and such.
                         <p slot="footer">Footer</p>
                    </${MODAL_NAME}>`
+    }))
+    .add('custom header', () => ({
+        data: () => ({
+            openProp: true
+        }),
+        methods: {
+            alert(): void {
+                alert('Custon action');
+            }
+        },
+        template: `<${MODAL_NAME} :open.sync="openProp">
+                        <m-button slot="trigger">Open the modal</m-button>
+                        <template slot="header">
+                            <span>custom slot content</span>
+                            <m-button @click="alert()">Custom button action</m-button>
+                        </template>
+                        Body content
+                        <p slot="footer">Footer</p>
+                   </${MODAL_NAME}>`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}/size`, module)

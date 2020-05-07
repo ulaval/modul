@@ -17,16 +17,15 @@
                  ref="modalWrap">
                 <article class="m-modal__article"
                          ref="article">
-                    <header class="m-modal__header"
-                            :class="{ 'm--has-title': title,
-                                    'm--has-content': title || $slots.header}">
-                        <h2 v-if="title">{{ title }}</h2>
-                        <slot name="header" />
-                        <m-icon-button @click="closeModal()"
-                                       icon-name="m-svg__close-clear"
-                                       skin="dark"
-                                       class="m-modal__close-button"
-                                       :title="closeTitle"></m-icon-button>
+                    <header class="m-modal__header">
+                        <slot name="header">
+                            <h2 v-if="title">{{ title }}</h2>
+                            <m-icon-button @click="closeModal()"
+                                           icon-name="m-svg__close-clear"
+                                           skin="dark"
+                                           class="m-modal__close-button"
+                                           :title="closeTitle"></m-icon-button>
+                        </slot>
                     </header>
                     <div class="m-modal__body"
                          ref="body"
