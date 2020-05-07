@@ -5,12 +5,14 @@ import { MCheckbox } from '../../checkbox/checkbox';
 import { ACCORDION_TRANSITION_NAME, CHECKBOX_NAME, ICON_NAME, TREE_ICON_NAME } from '../../component-names';
 import { MIcon } from '../../icon/icon';
 import { MAccordionTransition } from '../../transitions/accordion-transition/accordion-transition';
+import { TREE_NODE_NAME } from '../component-names';
 import { MCheckboxes, TreeNode } from '../tree';
 import { MTreeIcon } from '../tree-icon/tree-icon';
 import WithRender from './tree-node.html?style=./tree-node.scss';
 
 @WithRender
 @Component({
+    name: TREE_NODE_NAME,
     components: {
         [TREE_ICON_NAME]: MTreeIcon,
         [ACCORDION_TRANSITION_NAME]: MAccordionTransition,
