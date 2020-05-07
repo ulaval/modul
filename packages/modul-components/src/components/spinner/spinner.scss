@@ -60,14 +60,18 @@ $m-loading-speed: 0.7s;
     }
 
     &__title {
-        margin: $m-margin 0 $m-margin--xs 0;
+        margin: 0;
         font-size: $m-font-size--l;
         font-weight: $m-font-weight--semi-bold;
         white-space: pre-line;
+
+        + .m-spinner__description {
+            margin-top: $m-spacing--xs;
+        }
     }
 
     &__description {
-        margin-top: 0;
+        margin: 0;
         font-size: $m-font-size--s;
     }
 
@@ -85,6 +89,11 @@ $m-loading-speed: 0.7s;
             width: 16px;
             height: 16px;
             border-width: $m-border-width;
+        }
+
+        + .m-spinner__description,
+        + .m-spinner__title {
+            margin-top: $m-spacing;
         }
     }
 }
