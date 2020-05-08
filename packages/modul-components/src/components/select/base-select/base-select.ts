@@ -195,6 +195,14 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
+    private findFirstItemWithLetter(key: string): void {
+        if (this.as<MediaQueriesMixin>().isMqMinS) {
+            const index: number = this.items.indexOf(this.items.find((item: any) => item.startsWith(key)));
+            this.focusedIndex = index;
+            this.scrollToFocused();
+        }
+    }
+
     transitionEnter(el: HTMLElement, done: any): void {
         if (this.enableAnimation) {
             this.$nextTick(() => {
@@ -299,6 +307,12 @@ export class MBaseSelect extends ModulVue {
         if (this.internalOpen) {
             this.focusedIndex = this.items.length - 1;
             this.scrollToFocused();
+        }
+    }
+
+    onKeydownLetter($event: KeyboardEvent): void {
+        if (/^[a-z0-9]$/i.test($event.key)) {
+            this.findFirstItemWithLetter($event.key);
         }
     }
 }

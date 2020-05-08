@@ -10,7 +10,8 @@
               :key-enter="onKeydownEnter"
               :key-space="onKeydownSpace"
               :key-home="onKeydownHome"
-              :key-end="onKeydownEnd"></slot>
+              :key-end="onKeydownEnd"
+              :key-letter="onKeydownLetter"></slot>
     </div>
     <m-popup ref="popup"
              placement="bottom-start"
@@ -36,7 +37,8 @@
                   :key-enter="onKeydownEnter"
                   :key-space="onKeydownSpace"
                   :key-home="onKeydownHome"
-                  :key-end="onKeydownEnd">
+                  :key-end="onKeydownEnd"
+                  :key-letter="onKeydownLetter">
             </slot>
         </template>
 
