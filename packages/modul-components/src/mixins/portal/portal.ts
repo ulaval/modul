@@ -121,15 +121,19 @@ export class Portal extends ModulVue implements PortalMixin {
     }
 
     public async tryClose(): Promise<void> {
-        if (this.$modul.peekElement() === this.stackId) {
-            if (this.$listeners && this.$listeners.beforeClose) {
-                this.$emit('portal-before-close', (close: boolean) => {
-                    this.propOpen = !close;
-                });
-            } else {
-                this.propOpen = false;
-            }
+        // if ((this as any).$toast) {
+        //     await (this as any).$toast.clear(); // @todo Portal should not know toast
+        // }
+        // if (this.$modul.peekElement() === this.stackId) {
+        if (this.$listeners && this.$listeners.beforeClose) {
+            this.$emit('portal-before-close', (close: boolean) => {
+                this.propOpen = !close;
+            });
+        } else {
+            this.propOpen = false;
         }
+        // }
+
     }
 
     protected created(): void {

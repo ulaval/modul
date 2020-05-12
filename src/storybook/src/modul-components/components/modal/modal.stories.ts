@@ -231,6 +231,15 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}/bug_ENA26809`, 
         data: () => ({
             openModalProp: true
         }),
+        methods: {
+            showToast: () => {
+                const toastParam: ToastParams = {
+                    text: 'Toasty inside modal'
+                };
+
+                Vue.prototype.$toast.show(toastParam);
+            }
+        },
         created: () => {
             const toastParam: ToastParams = {
                 text: 'Toasty'
@@ -240,7 +249,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}/bug_ENA26809`, 
         },
         template: `<div><p>The toast should not be cleared when modal is closed</p><${MODAL_NAME} title="title">
         <m-button slot="trigger">Open the modal (trigger)</m-button>
-        Some body text
+        <span>Lorem Ipsum<m-tooltip>This is some random text</m-tooltip></span>
+        <${MODAL_NAME} title="title">
+        <m-button slot="trigger">Open the modal inside Modal</m-button>
+
+                  </${MODAL_NAME}>
+        <m-button slot="footer" @click="showToast" >Show Toast Inside Modal</m-button>
                   </${MODAL_NAME}></div>`
     }));
 
