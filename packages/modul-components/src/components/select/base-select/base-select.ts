@@ -198,8 +198,10 @@ export class MBaseSelect extends ModulVue {
     private findFirstItemWithLetter(key: string): void {
         if (this.as<MediaQueriesMixin>().isMqMinS) {
             const index: number = this.items.indexOf(this.items.find((item: any) => item.startsWith(key)));
-            this.focusedIndex = index;
-            this.scrollToFocused();
+            if (index !== -1) {
+                this.focusedIndex = index;
+                this.scrollToFocused();
+            }
         }
     }
 
