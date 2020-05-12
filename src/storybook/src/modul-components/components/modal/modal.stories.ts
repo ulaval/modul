@@ -3,6 +3,8 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import { MODAL_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal';
+import { ToastParams } from '@ulaval/modul-components/dist/utils/toast/toast-service';
+import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import './modal-stories.scss';
 
@@ -222,3 +224,23 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}/all props`, mod
                         <m-button slot="footer">Here goes nothing</m-button>
                     </${MODAL_NAME}>`
     }));
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}/bug_ENA26809`, module)
+
+    .add('toast are cleared on close', () => ({
+        data: () => ({
+            openModalProp: true
+        }),
+        created: () => {
+            const toastParam: ToastParams = {
+                text: 'Toasty'
+            };
+
+            Vue.prototype.$toast.show(toastParam);
+        },
+        template: `<div><p>The toast should not be cleared when modal is closed</p><${MODAL_NAME} title="title">
+        <m-button slot="trigger">Open the modal (trigger)</m-button>
+        Some body text
+                  </${MODAL_NAME}></div>`
+    }));
+

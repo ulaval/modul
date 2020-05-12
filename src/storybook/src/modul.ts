@@ -66,6 +66,7 @@ import '@ulaval/modul-components/dist/styles/main.scss';
 import MessagePlugin, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
+import ToastServicePlugin from '@ulaval/modul-components/dist/utils/toast/toast-service.plugin';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils/utils-plugin';
 import ComponentExamplesPlugin from '@ulaval/modul-website/src/component-examples/component-example-plugins';
 import Vue, { PluginObject } from 'vue';
@@ -89,7 +90,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(UtilsPlugin, utilsOptions);
         Vue.use(FrenchPlugin);
         Vue.use(DefaultSpritesPlugin);
-
+        Vue.use(ToastServicePlugin);
         // modul-components
         Vue.use(ButtonPlugin);
         Vue.use(I18nPlugin);

@@ -198,6 +198,39 @@ exports[`Storyshots modul-components|m-modal/all props make your own 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-modal/bug_ENA26809 toast are cleared on close 1`] = `
+<div>
+  <p>
+    The toast should not be cleared when modal is closed
+  </p>
+  <div
+    class="m-modal"
+  >
+    <button
+      class="m-button m--is-skin-primary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        Open the modal (trigger) 
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-modal/size size="full-screen" 1`] = `
 <div
   class="m-modal"
