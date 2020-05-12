@@ -27,6 +27,9 @@
              @keydown.tab="scope.keyTab"
              @keydown.space="scope.keySpace"
              @keydown.delete="onKeyDownDelete"
+             @keydown.home="scope.keyHome"
+             @keydown.end="scope.keyEnd"
+             @keydown="scope.keyLetter"
              tabindex="0">
             <m-input-style :label="label"
                            :label-for="id"
@@ -89,21 +92,17 @@
         </div>
     </template>
 
-
     <template #outer-items="{items, getItemProps, getItemHandlers}">
         <slot name="outer-items"
               :items="items"
               :get-item-props="getItemProps"
-              :get-item-handlers="getItemHandlers">
+              :get-item-handlers="getItemHandlers"></slot>
+    </template>
 
-
-            <template v-slot:items="{item , index }">
-
-                <slot name="items"
-                      :item="item"
-                      :index="index"><span v-html="item"></span></slot>
-            </template>
-        </slot>
+    <template v-slot:items="{item , index }">
+        <slot name="items"
+              :item="item"
+              :index="index"><span v-html="item"></span></slot>
     </template>
 
 </m-base-select>

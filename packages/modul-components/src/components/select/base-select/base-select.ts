@@ -31,14 +31,10 @@ export class MBaseSelect extends ModulVue {
     @Prop()
     public inputMaxWidth: string;
 
-    @Prop({
-        required: true
-    })
+    @Prop({ required: true })
     public controlId: string;
 
-    @Prop({
-        default: false
-    })
+    @Prop({ default: false })
     public open: boolean;
 
     @Prop({ default: true })
@@ -79,10 +75,11 @@ export class MBaseSelect extends ModulVue {
     @Emit('close')
     onClose(): void {
         this.$emit('update:open', false);
+        this.focusedIndex = -1;
     }
 
-    @Emit('select-item')
     select(option: any, index: number, $event: Event): void {
+        this.$emit('select-item', option, index, $event);
     }
 
     @Watch('open', { immediate: true })
@@ -135,6 +132,8 @@ export class MBaseSelect extends ModulVue {
     public focusFirstSelected(): void {
         if (this.selectedItems && this.selectedItems.length > 0) {
             this.focusedIndex = this.items.indexOf(this.selectedItems[0]);
+        } else {
+            this.focusedIndex = 0;
         }
     }
 
@@ -146,7 +145,6 @@ export class MBaseSelect extends ModulVue {
             }
         } else {
             this.focusedIndex = this.items.length === 0 ? -1 : 0;
-
         }
         this.scrollToFocused();
     }
@@ -194,6 +192,16 @@ export class MBaseSelect extends ModulVue {
                 }
             }
 
+        }
+    }
+
+    private findFirstItemWithLetter(key: string): void {
+        if (this.as<MediaQueriesMixin>().isMqMinS) {
+            const index: number = this.items.indexOf(this.items.find((item: any) => item.startsWith(key)));
+            if (index !== -1) {
+                this.focusedIndex = index;
+                this.scrollToFocused();
+            }
         }
     }
 
@@ -250,17 +258,27 @@ export class MBaseSelect extends ModulVue {
     // enter : select the focused option and close popup
     // space : open the popup
     onKeydownDown($event: KeyboardEvent): void {
-        this.focusNextItem();
-        this.selectFocusedItem($event);
+        if (!this.internalOpen) {
+            this.togglePopup();
+        } else {
+            this.focusNextItem();
+        }
     }
 
     onKeydownUp($event: KeyboardEvent): void {
+        if (!this.internalOpen) {
+            this.togglePopup();
+        }
         this.focusPreviousItem();
-        this.selectFocusedItem($event);
     }
 
     onKeydownSpace($event: KeyboardEvent): void {
-        this.togglePopup();
+        if (this.focusedIndex > -1) {
+            this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+            this.closePopup();
+        } else {
+            this.togglePopup();
+        }
     }
 
     onKeydownTab($event: KeyboardEvent): void {
@@ -274,7 +292,29 @@ export class MBaseSelect extends ModulVue {
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.focusedIndex > -1) {
             this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+            this.closePopup();
+        } else {
+            this.togglePopup();
         }
-        this.closePopup();
+    }
+
+    onKeydownHome($event: KeyboardEvent): void {
+        if (this.internalOpen) {
+            this.focusedIndex = 0;
+            this.scrollToFocused();
+        }
+    }
+
+    onKeydownEnd($event: KeyboardEvent): void {
+        if (this.internalOpen) {
+            this.focusedIndex = this.items.length - 1;
+            this.scrollToFocused();
+        }
+    }
+
+    onKeydownLetter($event: KeyboardEvent): void {
+        if (/^[a-z0-9]$/i.test($event.key)) {
+            this.findFirstItemWithLetter($event.key);
+        }
     }
 }

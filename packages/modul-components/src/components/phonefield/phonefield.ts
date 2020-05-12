@@ -218,8 +218,8 @@ export class MPhonefield extends ModulVue {
         }
     }
 
-    onContryChanged(countryIso: any): void {
-        this.countryModel = Array.isArray(countryIso) ? countryIso[0] : countryIso;
+    onContryChanged(countryIso: any, _index: number, _$event: Event): void {
+        this.countryModel = countryIso;
         this.emitContrySelected({
             iso: this.internalCountry.iso2,
             prefix: this.internalCountry.dialCode
