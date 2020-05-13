@@ -35,7 +35,7 @@ export const other = () => ({
 
 export const UnitedStates = () => ({
     data: () => ({
-        model: '10001',
+        model: '100013222',
         postalCodeFormat: MPostalCodeCountry.US
     }),
     template: `<${POSTALCODEFIELD_NAME} v-model="model" :postal-code-format="postalCodeFormat"></${POSTALCODEFIELD_NAME}>`

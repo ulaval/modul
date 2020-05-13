@@ -38,11 +38,6 @@ import WithRender from './select.html?style=./select.scss';
 })
 export class MSelect extends ModulVue {
 
-    public $refs: {
-        baseSelect: MBaseSelect;
-    };
-
-
     @Model('input')
     @Prop()
     public value: any;
@@ -50,7 +45,7 @@ export class MSelect extends ModulVue {
     @Prop()
     public options: any[];
 
-    @Prop({ default: false })
+    @Prop()
     public clearable: boolean;
 
     @Prop({ default: false })
@@ -59,18 +54,16 @@ export class MSelect extends ModulVue {
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
-    @Emit('select-item')
-    onSelect(option: any, index: number): void {
+    onSelect(option: any, index: number, $event: Event): void {
+        this.$emit('select-item', option, index, $event);
         this.as<InputManagement>().model = this.options[index];
     }
 
     @Emit('open')
-    onOpen(): void {
-    }
+    onOpen(): void { }
 
     @Emit('close')
-    onClose(): void {
-    }
+    onClose(): void { }
 
     get hasItems(): boolean {
         return this.options && this.options.length > 0;
@@ -81,8 +74,7 @@ export class MSelect extends ModulVue {
     }
 
     get isClearable(): boolean {
-        return this.hasItems && this.clearable && this.as<InputManagement>().hasValue &&
-            this.isSelectable;
+        return this.clearable !== undefined ? this.clearable && this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable : this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable && !this.as<InputLabel>().requiredMarker;
     }
 
     get selectedItems(): any {
@@ -114,12 +106,6 @@ export class MSelect extends ModulVue {
             this.onReset();
         }
     }
-
-    public toggleSelect(): void {
-        this.$refs.baseSelect.togglePopup();
-    }
-
-
 }
 
 const SelectPlugin: PluginObject<any> = {
