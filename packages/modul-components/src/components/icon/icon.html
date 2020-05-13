@@ -1,13 +1,26 @@
-<svg class="m-icon"
-     @click="onClick"
-     @keydown="onKeydown"
-     :aria-hidden="!hasSvgTitle"
+<svg v-if="useSvgSprite"
+     class="m-icon"
+     :aria-hidden="!svgTitle"
      :width="size"
      :height="size"
-     @mouseover="onMouseOver"
-     @mouseleave="onMouseLeave">
-    <title v-if="hasSvgTitle">{{svgTitle}}</title>
+     @click="emitClick"
+     @keydown="emitKeydown"
+     @mouseover="emitMouseOver"
+     @mouseleave="emitMouseLeave">
+    <title v-if="svgTitle">{{svgTitle}}</title>
     <use :xlink:href="spriteId"
          aria-hidden="true"
          :class="showNameAsClassInHtml"></use>
 </svg>
+<m-svg v-else
+       class="m-icon"
+       :class="showNameAsClassInHtml"
+       :name="name"
+       :custom-svg="customSvg"
+       :width="size"
+       :height="size"
+       :svg-title="svgTitle"
+       @click="emitClick"
+       @keydown="emitKeydown"
+       @mouseover="emitMouseOver"
+       @mouseleave="emitMouseLeave" />
