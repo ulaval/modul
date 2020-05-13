@@ -9,6 +9,7 @@ import CarouselPlugin from '@ulaval/modul-components/dist/components/carousel/ca
 import CheckboxPlugin from '@ulaval/modul-components/dist/components/checkbox/checkbox';
 import ChipPlugin from '@ulaval/modul-components/dist/components/chip/chip';
 import CopyToClipboardPlugin from '@ulaval/modul-components/dist/components/copy-to-clipboard/copy-to-clipboard';
+// import CountryFlagPlugin from '@ulaval/modul-components/dist/components/country-flag/country-flag';
 import DatepickerPlugin from '@ulaval/modul-components/dist/components/datepicker/datepicker';
 import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/daterangepicker/daterangepicker';
 import DecimalfieldPlugin from '@ulaval/modul-components/dist/components/decimalfield/decimalfield';
@@ -49,6 +50,7 @@ import SelectPlugin from '@ulaval/modul-components/dist/components/select/select
 import ShowMorePlugin from '@ulaval/modul-components/dist/components/show-more/show-more';
 import SpinnerPlugin from '@ulaval/modul-components/dist/components/spinner/spinner';
 import SteppersPlugin from '@ulaval/modul-components/dist/components/steppers/steppers';
+import SvgPlugin from '@ulaval/modul-components/dist/components/svg/svg';
 import SwitchPlugin from '@ulaval/modul-components/dist/components/switch/switch';
 import TableHeaderPlugin from '@ulaval/modul-components/dist/components/table-header/table-header';
 import TablePlugin from '@ulaval/modul-components/dist/components/table/table';
@@ -155,6 +157,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(CopyToClipboardPlugin);
         Vue.use(MultiSelectPlugin);
         Vue.use(SelectPlugin);
+        Vue.use(SvgPlugin);
 
         Vue.use(MoneyFieldPlugin);
         Vue.use(DecimalfieldPlugin);
@@ -162,6 +165,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(MaskedfieldPlugin);
         Vue.use(PostalcodefieldPlugin);
         Vue.use(FormPlugin);
+        // Vue.use(CountryFlagPlugin);
 
         // modul-website
         Vue.use(ComponentExamplesPlugin);

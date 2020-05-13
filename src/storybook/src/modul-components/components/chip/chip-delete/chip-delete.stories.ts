@@ -3,10 +3,7 @@ import { storiesOf } from '@storybook/vue';
 import { CHIP_DELETE_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-
-
 storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_DELETE_NAME}`, module)
-
     .add('default', () => ({
         props: {
             text: {

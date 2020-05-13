@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { PluginObject } from 'vue/types/plugin';
 import { MDialog, MDialogState } from '../../components/dialog/dialog';
 
-
 declare module 'vue/types/vue' {
     interface Vue {
         $dialog: DialogService;
@@ -10,7 +9,6 @@ declare module 'vue/types/vue' {
 }
 
 export class DialogService {
-
     /**
      *
      * @param message the message of the confirmation dialog
@@ -33,7 +31,6 @@ export class DialogService {
             return result;
         });
     }
-
 
     /**
      *
@@ -60,7 +57,6 @@ export class DialogService {
         });
     }
 
-
     /**
      *
      * @param mDialogInstance the MDialog instance
@@ -68,7 +64,6 @@ export class DialogService {
      */
     public show(mDialogInstance: MDialog, rejectOnCancel?: boolean): Promise<boolean> {
         return new Promise((resolve, reject) => {
-
             let onOk: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
@@ -78,7 +73,6 @@ export class DialogService {
                     resolve(true);
                 });
             };
-
             let onCancel: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
@@ -88,7 +82,6 @@ export class DialogService {
                     resolve(false);
                 });
             };
-
             let hook: () => void = () => {
                 if (mDialogInstance) {
                     mDialogInstance.$on('ok', onOk);
@@ -97,14 +90,12 @@ export class DialogService {
 
                 }
             };
-
             let unhook: () => void = () => {
                 if (mDialogInstance) {
                     mDialogInstance.$off('ok', onOk);
                     mDialogInstance.$off('cancel', onCancel);
                 }
             };
-
             if (mDialogInstance) {
                 mDialogInstance.$nextTick(() => {
                     hook();
@@ -113,10 +104,8 @@ export class DialogService {
                 console.error('No instance of dialog');
                 reject();
             }
-
         });
     }
-
 }
 
 const DialogServicePlugin: PluginObject<any> = {

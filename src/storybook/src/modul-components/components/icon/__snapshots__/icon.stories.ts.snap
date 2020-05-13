@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-icon Custom svg 1`] = `
+<div>
+  <!---->
+   
+  <p>
+    Prop use-svg-sprite needs to be false if you want to see custom-svg
+  </p>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-icon name (long) 1`] = `
 <div>
   <svg
@@ -12,7 +22,6 @@ exports[`Storyshots modul-components|m-icon name (long) 1`] = `
      
     <use
       aria-hidden="true"
-      class=""
     />
   </svg>
    
@@ -41,7 +50,6 @@ exports[`Storyshots modul-components|m-icon name (short) 1`] = `
      
     <use
       aria-hidden="true"
-      class=""
     />
   </svg>
    
@@ -56,6 +64,22 @@ exports[`Storyshots modul-components|m-icon name (short) 1`] = `
     </span>
   </span>
 </div>
+`;
+
+exports[`Storyshots modul-components|m-icon sandbox 1`] = `
+<svg
+  aria-hidden="true"
+  class="m-icon"
+  height="30px"
+  width="30px"
+>
+  <!---->
+   
+  <use
+    aria-hidden="true"
+    class="error"
+  />
+</svg>
 `;
 
 exports[`Storyshots modul-components|m-icon showNameAsClass 1`] = `
@@ -99,7 +123,6 @@ exports[`Storyshots modul-components|m-icon size 1`] = `
      
     <use
       aria-hidden="true"
-      class=""
     />
   </svg>
    
@@ -129,7 +152,6 @@ exports[`Storyshots modul-components|m-icon svgTitle 1`] = `
      
     <use
       aria-hidden="true"
-      class=""
     />
   </svg>
    
@@ -146,22 +168,7 @@ exports[`Storyshots modul-components|m-icon svgTitle 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-icon/badge offsetX 1`] = `
-<svg
-  aria-hidden="true"
-  class="m-icon"
-  height="30px"
-  style="overflow: visible;"
-  width="30px"
->
-  <!---->
-   
-  <use
-    aria-hidden="true"
-    class=""
-  />
-</svg>
-`;
+exports[`Storyshots modul-components|m-icon/badge offsetX 1`] = `<div />`;
 
 exports[`Storyshots modul-components|m-icon/badge offsetY 1`] = `
 <svg
@@ -175,7 +182,6 @@ exports[`Storyshots modul-components|m-icon/badge offsetY 1`] = `
    
   <use
     aria-hidden="true"
-    class=""
   />
 </svg>
 `;
@@ -192,7 +198,6 @@ exports[`Storyshots modul-components|m-icon/badge state 1`] = `
    
   <use
     aria-hidden="true"
-    class=""
   />
 </svg>
 `;
@@ -209,7 +214,6 @@ exports[`Storyshots modul-components|m-icon/badge state, offsetY, offsetX 1`] = 
    
   <use
     aria-hidden="true"
-    class=""
   />
 </svg>
 `;

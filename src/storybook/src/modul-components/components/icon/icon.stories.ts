@@ -1,4 +1,5 @@
-import { object, select, text } from '@storybook/addon-knobs';
+import { actions } from '@storybook/addon-actions';
+import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import { ICON_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -28,8 +29,47 @@ const ICONLIST_LONGHAND: {} = {
 };
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
-
-
+    .add('sandbox', () => ({
+        props: {
+            name: {
+                default: select('name', ICONLIST_SHORTHAND, 'error')
+            },
+            svgTitle: {
+                default: text('Prop svg-title', '')
+            },
+            showNameAsClass: {
+                default: boolean('Prop show-name-as-class', true)
+            },
+            size: {
+                default: text('Prop size', '30px')
+            },
+            useSvgSprite: {
+                default: boolean('Prop use-svg-sprite', true)
+            },
+            showCustomSvg: {
+                default: boolean('Show custom svg', false)
+            }
+        },
+        computed: {
+            customSvg(): string {
+                const _this: any = this;
+                return _this.showCustomSvg ? require('./custom-icon.svg') : '';
+            }
+        },
+        methods: actions('emitClick', 'emitKeydown', 'emitMouseover', 'emitMouseleave'),
+        template: `<${ICON_NAME}
+            :name="name"
+            :svg-title="svgTitle"
+            :show-name-as-class="showNameAsClass"
+            :size="size"
+            :use-svg-sprite="useSvgSprite"
+            :custom-svg="customSvg"
+            @click="emitClick"
+            @keydown="emitKeydown"
+            @mouseover="emitMouseover"
+            @mouseleave="emitMouseleave"
+        />`
+    }))
     .add('name (short)', () => ({
         props: {
             name: {
@@ -37,7 +77,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
             }
         },
         template: `<div>
-                       <m-icon :name="name"></m-icon>
+                       <${ICON_NAME} :name="name" />
                        <span style="margin-left: 15px">Current name: <span style="color:red">{{ name }}</span></span>
                    </div>`
     }))
@@ -48,7 +88,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
             }
         },
         template: `<div>
-                       <m-icon :name="name"></m-icon>
+                       <${ICON_NAME} :name="name" />
                        <span style="margin-left: 15px">Current name: <span style="color:red">{{ name }}</span></span>
                    </div>`
     }))
@@ -59,7 +99,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
             }
         },
         template: `<div>
-                       <m-icon :svgTitle="svgTitle" name="profile"></m-icon>
+                       <${ICON_NAME} :svgTitle="svgTitle" name="profile" />
                        <span style="margin-left: 15px">Current svgTitle: <span style="color:red">{{ svgTitle }}</span></span>
                    </div>`
     }))
@@ -70,7 +110,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
             }
         },
         template: `<div>
-                       <m-icon :size="size" name="profile"></m-icon>
+                       <${ICON_NAME} :size="size" name="profile" />
                        <span style="margin-left: 15px">Current icon size: <span style="color:red">{{ size }}</span></span>
                    </div>`
     }))
@@ -81,14 +121,40 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
             }
         },
         template: `<div>
-                       <m-icon :name="name" :showNameAsClass="true"></m-icon>
+                       <${ICON_NAME} :name="name" :showNameAsClass="true" />
                        <span style="margin-left: 15px">Current className on svg Icon: <span style="color:red">{{ name }}</span></span>
                    </div>`
+    }))
+    .add('Custom svg', () => ({
+        props: {
+            name: {
+                default: select('name', ICONLIST_SHORTHAND, 'error')
+            },
+            useSvgSprite: {
+                default: boolean('Prop use-svg-sprite', false)
+            },
+            showCustomSvg: {
+                default: boolean('Show custom svg', true)
+            }
+        },
+        computed: {
+            customSvg(): string {
+                const _this: any = this;
+                return _this.showCustomSvg ? require('./custom-icon.svg') : '';
+            }
+        },
+        template: `<div>
+            <${ICON_NAME}
+                :name="name"
+                :use-svg-sprite="useSvgSprite"
+                :custom-svg="customSvg"
+                size="4em"
+            />
+            <p>Prop use-svg-sprite needs to be false if you want to see custom-svg</p>
+        </div>`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
-
-
     .add('state', () => ({
         props: {
             badge: {
@@ -98,7 +164,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
                 default: text('size (px)', '30')
             }
         },
-        template: '<m-icon :size="size" v-m-badge="badge" name="profile"></m-icon>'
+        template: `<${ICON_NAME} :size="size" v-m-badge="badge" name="profile" />`
     }))
     .add('offsetX', () => ({
         props: {
@@ -109,7 +175,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
                 })
             }
         },
-        template: '<m-icon size="30px" v-m-badge="badge" name="profile"></m-icon>'
+        template: `<${ICON_NAME}size="30px" v-m-badge="badge" name="profile"/>`
     }))
     .add('offsetY', () => ({
         props: {
@@ -120,7 +186,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
                 })
             }
         },
-        template: '<m-icon size="30px" v-m-badge="badge" name="profile"></m-icon>'
+        template: `<${ICON_NAME} size="30px" v-m-badge="badge" name="profile" />`
     }))
     .add('state, offsetY, offsetX', () => ({
         props: {
@@ -132,5 +198,5 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
                 default: text('size (px)', '30')
             }
         },
-        template: '<m-icon :size="size" v-m-badge="badge" name="profile"></m-icon>'
+        template: `<${ICON_NAME} :size="size" v-m-badge="badge" name="profile" />`
     }));
