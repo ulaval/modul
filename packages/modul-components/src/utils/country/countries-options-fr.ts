@@ -1,5 +1,7 @@
 // Array of country objects for the flag dropdown.
 
+import { MCountryOptions } from './country';
+
 // Here is the criteria for the plugin to support a given country/territory
 // - It has an iso2 code: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 // - It has it's own country calling code (it is not a sub-region of another country): https://en.wikipedia.org/wiki/List_of_country_calling_codes
@@ -14,7 +16,7 @@
 //    Order (if >1 country with same dial code),
 //    Area codes
 // ]
-const allCountriesFr: any = [
+const allCountriesFr: any[][] = [
     [
         'Afghanistan',
         'af',
@@ -1262,10 +1264,13 @@ const allCountriesFr: any = [
     ]
 ];
 
-export default allCountriesFr.map(country => ({
+export const allCountriesOptionsFr: MCountryOptions[] = allCountriesFr.map(country => ({
     name: country[0],
     iso2: country[1],
     dialCode: country[2],
     priority: country[3] || 0,
     areaCodes: country[4] || undefined
 }));
+
+
+export default allCountriesOptionsFr;

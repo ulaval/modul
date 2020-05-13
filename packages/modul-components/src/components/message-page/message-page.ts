@@ -9,7 +9,6 @@ import { MMessageState } from '../message/message';
 import ModalPlugin from '../modal/modal';
 import WithRender from './message-page.html?style=./message-page.scss';
 
-
 /**
  * Utility class to manage the properties related to the link displayed in the error pages.
  */

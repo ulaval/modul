@@ -10,7 +10,6 @@ export class CustomAsYouType {
         return this.asYouType.input(digit);
     }
 
-
     public clear(): void {
         return this.asYouType.reset();
     }

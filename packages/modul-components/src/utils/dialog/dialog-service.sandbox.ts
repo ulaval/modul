@@ -3,17 +3,12 @@ import { Component } from 'vue-property-decorator';
 import DialogPlugin, { MDialog } from '../../components/dialog/dialog';
 import WithRender from './dialog-service.sandbox.html';
 
-
-
-
 @WithRender
 @Component
 export class MDialogServiceSandbox extends Vue {
-
     $refs: {
         customDialog: MDialog;
     };
-
     onAlertService(): void {
         this.$dialog.alert('This is an alert').then((result) => {
             if (result) {
@@ -23,9 +18,7 @@ export class MDialogServiceSandbox extends Vue {
             }
         });
     }
-
     onConfirmService(): void {
-
         this.$dialog.confirm('Please Confirm Me').then((result) => {
             if (result) {
                 this.$log.info('confirmed!');
@@ -35,9 +28,7 @@ export class MDialogServiceSandbox extends Vue {
 
         });
     }
-
     onCustomConfirmService(): void {
-
         this.$dialog.show(this.$refs.customDialog).then((result) => {
             this.$log.info('onCustomConfirmService confirmed!');
         });
