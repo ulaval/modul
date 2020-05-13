@@ -1,8 +1,8 @@
-import imageBlockCenterIcon from '../../../assets/icons/svg/Froala-image-block-center.svg';
-import imageBlockLeftIcon from '../../../assets/icons/svg/Froala-image-block-left.svg';
-import imageFloatLeftIcon from '../../../assets/icons/svg/Froala-image-float-left.svg';
-import imageFloatRightIcon from '../../../assets/icons/svg/Froala-image-float-right.svg';
 import { ModulVue } from '../../../utils/vue/vue';
+import imageBlockCenterIcon from '../svg/Froala-image-block-center.svg';
+import imageBlockLeftIcon from '../svg/Froala-image-block-left.svg';
+import imageFloatLeftIcon from '../svg/Froala-image-float-left.svg';
+import imageFloatRightIcon from '../svg/Froala-image-float-right.svg';
 
 export namespace ImageLayoutCommands {
     const IMG_BLOCK_LEFT_CMD: string = 'image-block-left';
