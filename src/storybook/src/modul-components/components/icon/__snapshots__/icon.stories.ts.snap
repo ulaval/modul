@@ -2,12 +2,41 @@
 
 exports[`Storyshots modul-components|m-icon Custom svg 1`] = `
 <div>
-  <!---->
+  <svg
+    aria-hidden="true"
+    class="m-icon"
+    custom-svg="[object Object]"
+    height="4em"
+    width="4em"
+  >
+    <!---->
+     
+    <use
+      aria-hidden="true"
+      class=""
+    />
+  </svg>
    
   <p>
     Prop use-svg-sprite needs to be false if you want to see custom-svg
   </p>
 </div>
+`;
+
+exports[`Storyshots modul-components|m-icon UseSvgSprite (false) 1`] = `
+<svg
+  aria-hidden="true"
+  class="m-icon"
+  height="28px"
+  width="28px"
+>
+  <!---->
+   
+  <use
+    aria-hidden="true"
+    class=""
+  />
+</svg>
 `;
 
 exports[`Storyshots modul-components|m-icon name (long) 1`] = `
@@ -22,6 +51,7 @@ exports[`Storyshots modul-components|m-icon name (long) 1`] = `
      
     <use
       aria-hidden="true"
+      class=""
     />
   </svg>
    
@@ -50,6 +80,7 @@ exports[`Storyshots modul-components|m-icon name (short) 1`] = `
      
     <use
       aria-hidden="true"
+      class=""
     />
   </svg>
    
@@ -70,7 +101,9 @@ exports[`Storyshots modul-components|m-icon sandbox 1`] = `
 <svg
   aria-hidden="true"
   class="m-icon"
+  custom-svg=""
   height="30px"
+  use-svg-sprite="true"
   width="30px"
 >
   <!---->
@@ -123,6 +156,7 @@ exports[`Storyshots modul-components|m-icon size 1`] = `
      
     <use
       aria-hidden="true"
+      class=""
     />
   </svg>
    
@@ -152,6 +186,7 @@ exports[`Storyshots modul-components|m-icon svgTitle 1`] = `
      
     <use
       aria-hidden="true"
+      class=""
     />
   </svg>
    
@@ -182,6 +217,7 @@ exports[`Storyshots modul-components|m-icon/badge offsetY 1`] = `
    
   <use
     aria-hidden="true"
+    class=""
   />
 </svg>
 `;
@@ -198,6 +234,7 @@ exports[`Storyshots modul-components|m-icon/badge state 1`] = `
    
   <use
     aria-hidden="true"
+    class=""
   />
 </svg>
 `;
@@ -214,6 +251,7 @@ exports[`Storyshots modul-components|m-icon/badge state, offsetY, offsetX 1`] = 
    
   <use
     aria-hidden="true"
+    class=""
   />
 </svg>
 `;
