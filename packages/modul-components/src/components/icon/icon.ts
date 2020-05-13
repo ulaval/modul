@@ -1,34 +1,61 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { SpritesService } from '../../utils/svg/sprites';
 import { ICON_NAME } from '../component-names';
+import { MSvg } from '../svg/svg';
 import WithRender from './icon.html?style=./icon.scss';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        MSvg
+    }
+})
 export class MIcon extends Vue {
     @Prop({ required: true })
     public name: string;
+
     @Prop()
     public svgTitle: string;
-    @Prop({ default: '20px' })
+
+    @Prop({
+        default: '20px',
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
     public size: string;
+
+    @Prop({ default: true })
+    public useSvgSprite: boolean;
 
     @Prop({ default: false })
     public showNameAsClass: boolean;
 
+    @Prop({ default: '' })
+    public customSvg: string;
+
     @Emit('click')
-    onClick(event: MouseEvent): void { }
+    public emitClick(event: MouseEvent): void { }
 
     @Emit('keydown')
-    onKeydown(event: KeyboardEvent): void { }
+    public emitKeydown(event: KeyboardEvent): void { }
 
-    private get hasSvgTitle(): boolean {
-        return !!this.svgTitle;
+    @Emit('mouseover')
+    public emitMouseOver(event: MouseEvent): void { }
+
+    @Emit('mouseleave')
+    public emitMouseLeave(event: MouseEvent): void { }
+
+    @Watch('customSvg', { immediate: true })
+    public onCustomSvgChange(): void {
+        if (this.customSvg && this.useSvgSprite) {
+            this.$log.warn('Prop use-svg-sprite needs to be false if you want to see custom-svg');
+        }
     }
 
-    private get spriteId(): string | undefined {
+    public get spriteId(): string | undefined {
         const svg: SpritesService = this.$svg;
 
         if (document.getElementById(this.name)) {
@@ -44,15 +71,9 @@ export class MIcon extends Vue {
         }
     }
 
-    private get showNameAsClassInHtml(): string {
-        return this.showNameAsClass ? this.name : '';
+    public get showNameAsClassInHtml(): string | undefined {
+        return this.showNameAsClass ? this.name : undefined;
     }
-
-    @Emit('mouseover')
-    public onMouseOver(event: Event): void { }
-
-    @Emit('mouseleave')
-    public onMouseLeave(event: Event): void { }
 }
 
 const IconPlugin: PluginObject<any> = {
