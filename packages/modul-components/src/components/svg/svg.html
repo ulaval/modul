@@ -1,0 +1,16 @@
+<svg class="m-svg"
+     :class="classAttribute"
+     :width="width"
+     :height="height"
+     :version="version"
+     :xmlns="xmlns"
+     :viewBox="viewBox"
+     :data-id="dataId"
+     :data-badge-origin="badgeOrigin"
+     :aria-hidden="!svgTitle"
+     v-html="svgChildrenContent"
+     @click="emitClick"
+     @keydown="emitKeydown"
+     @mouseover="emitMouseOver"
+     @mouseleave="emitMouseLeave">
+</svg>

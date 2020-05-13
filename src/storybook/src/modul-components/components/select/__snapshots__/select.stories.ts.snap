@@ -117,6 +117,248 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] = `
+<div
+  class="m-base-select"
+>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
+    <div
+      class="m-select"
+      style="width: 100%; max-width: 288px;"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Fruits
+                </span>
+                 
+                <sup
+                  class="m-input-style__required-marker"
+                >
+                  *
+                </sup>
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          >
+            <!---->
+             
+            <div
+              class="m-select__arrow"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-select__arrow__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select Clearable False And Required Marker 1`] = `
+<div
+  class="m-base-select"
+>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
+    <div
+      class="m-select"
+      style="width: 100%; max-width: 288px;"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Fruits
+                </span>
+                 
+                <sup
+                  class="m-input-style__required-marker"
+                >
+                  *
+                </sup>
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          >
+            <!---->
+             
+            <div
+              class="m-select__arrow"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-select__arrow__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-select Default 1`] = `
 <div
   class="m-base-select"
@@ -2215,6 +2457,127 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
 </div>
 `;
 
+exports[`Storyshots modul-components|m-select Required Marker 1`] = `
+<div
+  class="m-base-select"
+>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
+    <div
+      class="m-select"
+      style="width: 100%; max-width: 288px;"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  Fruits
+                </span>
+                 
+                <sup
+                  class="m-input-style__required-marker"
+                >
+                  *
+                </sup>
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          >
+            <!---->
+             
+            <div
+              class="m-select__arrow"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-select__arrow__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-select Selected Item 1`] = `
 <div
   class="m-base-select"
@@ -2285,7 +2648,161 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
           <div
             class="m-input-style__append"
           >
-            <!---->
+            <button
+              aria-controls="m-select-fakeId"
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              style="width: 44px; height: 44px;"
+              tabindex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="11px"
+                width="11px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                />
+              </svg>
+               
+              <!---->
+            </button>
+             
+            <div
+              class="m-select__arrow"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-select__arrow__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
+<div
+  class="m-base-select"
+>
+  <div
+    class="m-base-select__popup"
+    style="width: 288px;"
+  >
+    <div
+      class="m-select"
+      style="width: 100%; max-width: 288px;"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <span
+              class="m-input-style__label"
+              style="z-index: -1;"
+            >
+              <span
+                class="m-input-style__text"
+              />
+            </span>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <div
+                class="m-input-style__prefix"
+              />
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          >
+            <button
+              aria-controls="m-select-fakeId"
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              style="width: 44px; height: 44px;"
+              tabindex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="11px"
+                width="11px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                />
+              </svg>
+               
+              <!---->
+            </button>
              
             <div
               class="m-select__arrow"
@@ -2397,7 +2914,28 @@ exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
           <div
             class="m-input-style__append"
           >
-            <!---->
+            <button
+              aria-controls="m-select-fakeId"
+              class="m-icon-button m--is-skin-light m--has-ripple"
+              style="width: 44px; height: 44px;"
+              tabindex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-icon-button__icon"
+                height="11px"
+                width="11px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                />
+              </svg>
+               
+              <!---->
+            </button>
              
             <div
               class="m-select__arrow"

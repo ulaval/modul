@@ -41,5 +41,3 @@ export const defaultStory = () => ({
 defaultStory.story = {
     name: 'default'
 };
-
-// export const disabled = () => '<m-button :disabled="true">A Button</m-button>';

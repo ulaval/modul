@@ -12,7 +12,7 @@ import CarouselPlugin from './carousel/carousel';
 import CharacterCountPlugin from './character-count/character-count';
 import CheckboxPlugin from './checkbox/checkbox';
 import MChipPlugin from './chip/chip';
-// import CountryFlagPlugin from './country-flag/country-flag';
+import CountryFlagPlugin from './country-flag/country-flag';
 import DatepickerPlugin from './datepicker/datepicker';
 import DaterangepickerPlugin from './daterangepicker/daterangepicker';
 import DecimalfieldPlugin from './decimalfield/decimalfield';
@@ -100,7 +100,6 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(CarouselPlugin);
         Vue.use(CharacterCountPlugin);
         Vue.use(CheckboxPlugin);
-        // Vue.use(CountryFlagPlugin);
         Vue.use(DatepickerPlugin);
         Vue.use(DaterangepickerPlugin);
         Vue.use(ModalPlugin);
@@ -171,6 +170,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ExpandableLayoutPlugin);
         Vue.use(AvatarPlugin);
         Vue.use(SvgPlugin);
+        Vue.use(CountryFlagPlugin);
     }
 };
 

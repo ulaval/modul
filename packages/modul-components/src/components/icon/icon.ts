@@ -4,10 +4,15 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { SpritesService } from '../../utils/svg/sprites';
 import { ICON_NAME } from '../component-names';
+import { MSvg } from '../svg/svg';
 import WithRender from './icon.html?style=./icon.scss';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        MSvg
+    }
+})
 export class MIcon extends Vue {
     @Prop({ required: true })
     public name: string;

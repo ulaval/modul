@@ -192,8 +192,21 @@ export class MPhonefield extends ModulVue {
         return name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    onContryChanged(countryIso: any): void {
-        this.countryModel = Array.isArray(countryIso) ? countryIso[0] : countryIso;
+    spriteId(iso: string): string | undefined {
+        const svg: SpritesService = this.$svg;
+        const spriteId: string = 'mflag-svg__flag-' + iso;
+
+        if (document.getElementById(spriteId)) {
+            return '#' + spriteId;
+        } else if (svg && svg.getExternalSpritesFromSpriteId(spriteId)) {
+            return svg.getExternalSpritesFromSpriteId(spriteId);
+        } else if (iso) {
+            this.$log.warn('"' + iso + '" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.');
+        }
+    }
+
+    onContryChanged(countryIso: any, _index: number, _$event: Event): void {
+        this.countryModel = countryIso;
         this.emitContrySelected({
             iso: this.internalCountry.iso2,
             prefix: this.internalCountry.dialCode

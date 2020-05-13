@@ -8,7 +8,10 @@
               :key-tab="onKeydownTab"
               :key-esc="onKeydownEsc"
               :key-enter="onKeydownEnter"
-              :key-space="onKeydownSpace"></slot>
+              :key-space="onKeydownSpace"
+              :key-home="onKeydownHome"
+              :key-end="onKeydownEnd"
+              :key-letter="onKeydownLetter"></slot>
     </div>
     <m-popup ref="popup"
              placement="bottom-start"
@@ -32,10 +35,12 @@
                   :key-tab="onKeydownTab"
                   :key-esc="onKeydownEsc"
                   :key-enter="onKeydownEnter"
-                  :key-space="onKeydownSpace">
+                  :key-space="onKeydownSpace"
+                  :key-home="onKeydownHome"
+                  :key-end="onKeydownEnd"
+                  :key-letter="onKeydownLetter">
             </slot>
         </template>
-
 
         <ul :id="ariaControls"
             class="m-base-select__list"
@@ -56,7 +61,6 @@
                               :item="item"
                               :index="index"><span v-html="item"></span></slot>
                     </m-select-item>
-
                 </template>
             </slot>
 

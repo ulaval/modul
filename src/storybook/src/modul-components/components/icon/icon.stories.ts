@@ -152,6 +152,21 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
             />
             <p>Prop use-svg-sprite needs to be false if you want to see custom-svg</p>
         </div>`
+    }))
+    .add('UseSvgSprite (false)', () => ({
+        props: {
+            name: {
+                default: select('name', ICONLIST_SHORTHAND, 'profile')
+            },
+            useSvgSprite: {
+                default: boolean('Prop use-svg-sprite', false)
+            }
+        },
+        template: `<${ICON_NAME}
+            :name="name"
+            size="28px"
+            :use-svg-sprite="useSvgSprite"
+        />`
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
