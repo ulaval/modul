@@ -3,8 +3,6 @@ import { storiesOf } from '@storybook/vue';
 import { ICON_BUTTON_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
-
 const ICON_BUTTON_SKINS: {} = {
     'light': 'light',
     'dark': 'dark',
