@@ -10,7 +10,7 @@
         "build": "yarn run copyfiles && yarn run assetsToDist && yarn run build:ts && yarn run build:lib && yarn run metagen",
         "build:ts": "tsc --project tsconfig.lib.json",
         "build:lib": "webpack --config conf/webpack.lib.js --colors",
-        "copyfiles": "cpx \"./src/**/*.{json,html,scss,css}\" dist",
+        "copyfiles": "cpx \"./src/**/*.{json,html,scss,css,svg}\" dist",
         "assetsToDist": "cpx \"./src/assets/**/*\" dist/assets",
         "start": "webpack --config conf/webpack.config.js --env.openshift && http-server \"./dist\" -p 8080 -a 0.0.0.0",
         "test": "jest --verbose",
