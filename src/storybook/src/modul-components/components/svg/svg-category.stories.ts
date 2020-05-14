@@ -37,7 +37,7 @@ export const defaultStory = () => ({
         })
     }),
     methods: actions('emitClick', 'emitKeydown', 'emitMouseover', 'emitMouseleave'),
-    template: TEMPLATE_CATEGORY;
+    template: TEMPLATE_CATEGORY
 });
 
 defaultStory.story = {
