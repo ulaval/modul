@@ -45,7 +45,7 @@ export class SpritesService {
     }
 
     public getExternalSpritesFromSpriteId(spriteId: string): string | undefined {
-        if (this.isInExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId))) {
+        if (spriteId && this.isInExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId))) {
             return this.getExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId)!) + '#' + spriteId;
         }
     }

@@ -83,7 +83,21 @@ exports[`Storyshots modul-components|m-repeater With items (Custom item template
                 
       </div>
        
-      <!---->
+      <svg
+        aria-hidden="true"
+        class="m-icon m-repeater__delete"
+        height="20px"
+        icon-name="m-svg__delete"
+        title="Supprimer"
+        width="20px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
     </li>
     <li
       class="m-repeater__row"
@@ -96,7 +110,21 @@ exports[`Storyshots modul-components|m-repeater With items (Custom item template
                 
       </div>
        
-      <!---->
+      <svg
+        aria-hidden="true"
+        class="m-icon m-repeater__delete"
+        height="20px"
+        icon-name="m-svg__delete"
+        title="Supprimer"
+        width="20px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
     </li>
     <li
       class="m-repeater__footer"

@@ -2,7 +2,8 @@ import { CHARACTER_COUNT_NAME } from '@ulaval/modul-components/dist/components/c
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${CHARACTER_COUNT_NAME}`
+    title: `${modulComponentsHierarchyRootSeparator}${CHARACTER_COUNT_NAME}`,
+    parameters: { fileName: __filename }
 };
 
 export const defaultStory = () => '<m-character-count value-length="200" max-length="2000"></m-character-count>';

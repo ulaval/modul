@@ -2,7 +2,8 @@ import { PLUS_NAME } from '@ulaval/modul-components/dist/components/component-na
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${PLUS_NAME}`
+    title: `${modulComponentsHierarchyRootSeparator}${PLUS_NAME}`,
+    parameters: { fileName: __filename }
 };
 
 export const defaultStory = () => '<m-plus></m-plus>';
