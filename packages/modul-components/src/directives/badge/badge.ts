@@ -1,8 +1,7 @@
 import Vue, { DirectiveOptions, PluginObject, VNode, VNodeDirective, VueConstructor } from 'vue';
-import { MIconFile } from '../../components/icon-file/icon-file';
+import { ICON_NAME, SVG_NAME } from '../../components/component-names';
 import { MIcon } from '../../components/icon/icon';
 import { BADGE_NAME } from '../directive-names';
-
 
 // Icon state
 export enum MBadgeState {
@@ -15,9 +14,9 @@ type BadgeIcon = {
     [key: string]: string
 };
 
-const ICON_COMPLETED: string = 'm-svg__completed-filled';
-const ICON_ERROR: string = 'm-svg__error-filled';
-const ICON_WARNING: string = 'm-svg__warning-filled';
+const ICON_COMPLETED: string = 'completed-filled';
+const ICON_ERROR: string = 'error-filled';
+const ICON_WARNING: string = 'warning-filled';
 const COLOR_COMPLETED: string = '#00c77f';
 const COLOR_ERROR: string = '#e30513';
 const COLOR_WARNING: string = '#ffc103';
@@ -41,15 +40,17 @@ const BADGE_COLOR: BadgeIcon = {
 const getBadgeOrigin: (vnode: VNode) => String[] = (vnode: VNode) => {
     let elTag: string = vnode.componentOptions!.tag!;
     let elID: string = '';
-    if (elTag === 'm-icon') {
-        elID = (vnode.componentInstance as MIcon).name;
-    } else if (elTag === 'm-icon-file') {
-        elID = (vnode.componentInstance as MIconFile).spriteId;
+    let useSvgSprite: boolean = false;
+    const componentInstance: Vue = vnode.componentInstance!;
+
+    if (elTag === ICON_NAME) {
+        elID = `m-svg__${(componentInstance as MIcon).name}`;
+        useSvgSprite = (componentInstance as MIcon).useSvgSprite;
     }
 
-    const element: HTMLElement = document.getElementById(elID) as HTMLElement;
+    const element: HTMLElement = useSvgSprite ? document.getElementById(elID) as HTMLElement : componentInstance.$el as HTMLElement;
     if (element && element.dataset && element.dataset.badgeOrigin) {
-        return (((document.getElementById(elID) as HTMLElement).dataset.badgeOrigin) as string).split(',');
+        return element.dataset.badgeOrigin.split(',');
     } else {
         return DEFAULT_ORIGIN;
     }
@@ -77,8 +78,11 @@ const getBadgePosition: (element: HTMLElement, binding: VNodeDirective, vnode: V
     let badgeOrigin: String[] = getBadgeOrigin(vnode);
     let badgeOffset: BadgeOffset = getBadgeOffset(binding);
 
-    let elSize: number = (vnode.componentOptions)!['propsData']!['size'] ? parseInt((vnode.componentOptions)!['propsData']!['size'], 10) : (vnode.elm as HTMLElement).clientWidth;
+    const componentInstance: MIcon = vnode.componentInstance! as MIcon;
+
+    let elSize: number = element.clientWidth;
     let badgeSize: number = elSize * BADGE_SIZE_RATIO;
+
     let elLeftOrigin: number = Number(parseFloat(badgeOrigin[0].replace(/,/g, '.')).toFixed(2));
     let elTopOrigin: number = Number(parseFloat(badgeOrigin[1].replace(/,/g, '.')).toFixed(2));
 
@@ -89,17 +93,17 @@ const getBadgePosition: (element: HTMLElement, binding: VNodeDirective, vnode: V
 };
 
 const buildBadge: (element, binding, vnode) => void = (element, binding, vnode) => {
-
     element.style.overflow = 'visible';
 
     let badge: BadgePosition = getBadgePosition(element, binding, vnode);
+
     const MyComponent: VueConstructor<Vue> = Vue.extend({
-        template: `<m-icon
+        template: `<${SVG_NAME}
                         :name="'${BADGE_ICON[binding.value.state]}'"
-                        :size="'${badge.size}'"
+                        width="${badge.size}px"
+                        height="${badge.size}px"
                         :x="${badge.leftDistance}"
-                        :y="${badge.topDistance}">
-                    </m-icon>`
+                        :y="${badge.topDistance}" />`
     });
 
     Vue.nextTick(() => {

@@ -49,7 +49,17 @@ export class MSvg extends ModulVue {
         if (this.customSvg) {
             return this.customSvg;
         }
-        return this.name ? require(`./../../assets/icons/svg/${this.name}.svg`) : '';
+
+        if (!this.name) {
+            return '';
+        }
+
+        try {
+            return require(`./../../assets/icons/svg/${this.name}.svg`);
+        } catch (e) {
+            this.$log.warn(`The file ${e}could not be loaded.`);
+            return '';
+        }
     }
 
     public get svgChildrenContent(): string {
@@ -86,7 +96,7 @@ export class MSvg extends ModulVue {
     }
 
     public get badgeOrigin(): string | undefined {
-        return this.getSvgAttibute('badgeOrigin');
+        return this.getSvgAttibute('data-badge-origin');
     }
 
     public getSvgAttibute(attribute: string): string | undefined {

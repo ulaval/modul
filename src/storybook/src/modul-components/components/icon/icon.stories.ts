@@ -176,10 +176,13 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
                 default: object("{ state: 'completed|error|warning' }", { state: 'completed' })
             },
             size: {
-                default: text('size (px)', '30')
+                default: text('size (px)', '30px')
+            },
+            useSvgSprite: {
+                default: boolean('Prop use-svg-sprite', true)
             }
         },
-        template: `<${ICON_NAME} :size="size" v-m-badge="badge" name="profile" />`
+        template: `<${ICON_NAME} :size="size" v-m-badge="badge" name="file-pdf" :use-svg-sprite="useSvgSprite" />`
     }))
     .add('offsetX', () => ({
         props: {

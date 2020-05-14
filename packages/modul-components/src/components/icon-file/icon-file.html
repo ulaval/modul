@@ -1,6 +1,7 @@
-<m-icon class="m-icon-file"
-        :name="spriteId"
-        :svgTitle="svgTitle"
-        :size="size"
-        @click="onClick"
-        @keydown="onKeydown"></m-icon>
+<m-svg class="m-icon-file"
+       :name="spriteId"
+       :svg-title="svgTitle"
+       :width="size"
+       :height="size"
+       @click="emitClick"
+       @keydown="emitKeydown" />
