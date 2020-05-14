@@ -47,4 +47,4 @@ const loadJestStories: any = () => {
 };
 
 // configure(() => loadJestStories(), module);
-configure(requireContext('../../src', true, /\.stories\.ts$/), module);
+configure(requireContext('../../src', true, /(^((?!sandbox).)*)\.stories\.ts$/), module);
