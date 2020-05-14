@@ -9,20 +9,20 @@ exports[`Storyshots modul-components|m-phonefield Autocomplete Work Phone 1`] = 
   >
     <div
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      style="width: auto; max-width: 288px;"
       virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select"
-          style="width: auto; max-width: 288px;"
+          style="width: auto; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: auto; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -224,19 +224,19 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
      
     <div
       class="m-base-select"
+      style="width: 100%; max-width: 288px;"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select"
-          style="width: 100%; max-width: 288px;"
+          style="width: 100%; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: 100%; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -365,20 +365,20 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
       >
         <div
           class="m-base-select m-select-virtual-scroll m-phonefield__country"
+          style="width: auto; max-width: 288px;"
           virtualscrollitemheight="52"
         >
           <div
             class="m-base-select__popup"
-            style="width: 288px;"
           >
             <div
               class="m-select"
-              style="width: auto; max-width: 288px;"
+              style="width: auto; max-width: regular;"
               tabindex="0"
             >
               <div
                 class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
-                style="margin-top: 10px;"
+                style="width: auto; margin-top: 10px;"
               >
                 <div
                   class="m-input-style__main"
@@ -589,20 +589,20 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
   >
     <div
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      style="width: auto; max-width: 288px;"
       virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select m--is-disabled"
-          style="width: auto; max-width: 288px;"
+          style="width: auto; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: auto; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -805,20 +805,20 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
   >
     <div
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      style="width: auto; max-width: 288px;"
       virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select"
-          style="width: auto; max-width: 288px;"
+          style="width: auto; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--is-label-up m--has-cursor-pointer m--has-error m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: auto; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -1019,20 +1019,20 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
   >
     <div
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      style="width: auto; max-width: 288px;"
       virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select"
-          style="width: auto; max-width: 288px;"
+          style="width: auto; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--is-label-up m--has-cursor-pointer m--has-error m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: auto; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -1256,20 +1256,20 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
   >
     <div
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      style="width: auto; max-width: 288px;"
       virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select"
-          style="width: auto; max-width: 288px;"
+          style="width: auto; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: auto; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -1470,20 +1470,20 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
   >
     <div
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      style="width: auto; max-width: 288px;"
       virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select"
-          style="width: auto; max-width: 288px;"
+          style="width: auto; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: auto; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
@@ -1684,20 +1684,20 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
   >
     <div
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      style="width: auto; max-width: 288px;"
       virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           class="m-select m--is-disabled"
-          style="width: auto; max-width: 288px;"
+          style="width: auto; max-width: regular;"
           tabindex="0"
         >
           <div
             class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-            style="margin-top: 10px;"
+            style="width: auto; margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
