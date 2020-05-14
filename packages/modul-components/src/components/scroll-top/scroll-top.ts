@@ -1,11 +1,12 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { I18N_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import ScrollToPlugin, { ScrollToDuration } from '../../utils/scroll-to/scroll-to';
 import { ModulVue } from '../../utils/vue/vue';
-import { SCROLL_TOP_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconPlugin from '../icon/icon';
+import { ICON_NAME, SCROLL_TOP_NAME } from '../component-names';
+import { MIcon } from '../icon/icon';
 import WithRender from './scroll-top.html?style=./scroll-top.scss';
 
 export enum MScrollTopPosition {
@@ -14,7 +15,14 @@ export enum MScrollTopPosition {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon
+    },
+    filters: {
+        [I18N_NAME]: i18nFilter
+    }
+})
 export class MScrollTop extends ModulVue {
     @Prop({
         default: MScrollTopPosition.Fixed,
@@ -61,8 +69,6 @@ export class MScrollTop extends ModulVue {
 
 const ScrollTopPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconPlugin);
-        v.use(I18nPlugin);
         v.use(ScrollToPlugin);
         v.component(SCROLL_TOP_NAME, MScrollTop);
     }

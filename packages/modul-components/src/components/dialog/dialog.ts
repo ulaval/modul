@@ -4,11 +4,12 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import DialogServicePlugin from '../../utils/dialog/dialog-service';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { DIALOG_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconPlugin from '../icon/icon';
-import LinkPlugin from '../link/link';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, DIALOG_NAME, I18N_NAME, ICON_NAME, LINK_NAME, MESSAGE_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MIcon } from '../icon/icon';
+import { MLink } from '../link/link';
+import { MMessage } from '../message/message';
 import WithRender from './dialog.html?style=./dialog.scss';
 
 export enum MDialogWidth {
@@ -26,6 +27,13 @@ export enum MDialogState {
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton,
+        [LINK_NAME]: MLink,
+        [MESSAGE_NAME]: MMessage,
+        [ICON_NAME]: MIcon,
+        [I18N_NAME]: MI18n
+    },
     mixins: [Portal]
 })
 export class MDialog extends ModulVue implements PortalMixinImpl {
@@ -180,10 +188,6 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
 
 const DialogPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(ButtonPlugin);
-        v.use(IconPlugin);
-        v.use(I18nPlugin);
-        v.use(LinkPlugin);
         v.use(DialogServicePlugin);
         v.component(DIALOG_NAME, MDialog);
     }

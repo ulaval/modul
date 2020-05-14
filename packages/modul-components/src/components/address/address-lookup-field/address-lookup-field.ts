@@ -4,6 +4,9 @@ import { InputWidth } from '../../../mixins/input-width/input-width';
 import { Address, AddressSummary } from '../../../utils/address-lookup/address';
 import { AddressLookupServiceProvider } from '../../../utils/address-lookup/address-lookup';
 import { ModulVue } from '../../../utils/vue/vue';
+import { MAutocomplete } from '../../autocomplete/autocomplete';
+import { AUTOCOMPLETE_NAME, POWERED_BY_GOOGLE } from '../../component-names';
+import { MPoweredByGoogle } from '../powered-by-google/powered-by-google';
 import WithRender from './address-lookup-field.html?style=./address-lookup-field.scss';
 
 const KEY_ADDRESS_TYPE: string = 'address';
@@ -16,6 +19,10 @@ export interface AddressLookupFieldProps {
 }
 @WithRender
 @Component({
+    components: {
+        [AUTOCOMPLETE_NAME]: MAutocomplete,
+        [POWERED_BY_GOOGLE]: MPoweredByGoogle
+    },
     mixins: [
         InputWidth
     ]

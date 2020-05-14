@@ -13,6 +13,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
 import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-scroll';
 import { MSelectItem } from '../select/select-item/select-item';
+import { MValidationMessage } from '../validation-message/validation-message';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
 import { CustomAsYouType } from './formatter/custom-asyoutype';
@@ -53,7 +54,8 @@ export interface Country {
     components: {
         MInputMask,
         MSelectVirtualScroll,
-        MSelectItem
+        MSelectItem,
+        MValidationMessage
     }
 })
 export class MPhonefield extends ModulVue {

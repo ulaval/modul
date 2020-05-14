@@ -2,13 +2,17 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_CONFLICT_NAME } from '../../component-names';
-import MessagePagePlugin, { Link } from '../../message-page/message-page';
+import { ERROR_CONFLICT_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
+import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-conflict.html';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [MESSAGE_PAGE_NAME]: MMessagePage
+    }
+})
 export class MErrorOperationFailed extends ModulVue {
 
     @Prop({
@@ -32,7 +36,6 @@ export class MErrorOperationFailed extends ModulVue {
 
 const ErrorOperationFailedPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(MessagePagePlugin);
         v.component(ERROR_CONFLICT_NAME, MErrorOperationFailed);
     }
 };
