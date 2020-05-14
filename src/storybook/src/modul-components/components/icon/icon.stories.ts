@@ -1,20 +1,13 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
+import { ModulIcon, ModulIcons } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { ICON_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-const ICONLIST_SHORTHAND: {} = {
-    'profile': 'profile',
-    'information': 'information',
-    'confirmation': 'confirmation',
-    'warning': 'warning',
-    'error': 'error',
-    'calendar': 'calendar',
-    'hint': 'hint',
-    'clock': 'clock',
-    'lock': 'lock'
-};
+const ICONLIST_SHORTHAND: string[] = ModulIcons.map((m: ModulIcon) => {
+    return m.name;
+});
 
 const ICONLIST_LONGHAND: {} = {
     'm-svg__profile': 'm-svg__profile',
