@@ -27,6 +27,8 @@ export class MBaseSelect extends ModulVue {
 
     @Prop()
     public active: boolean;
+    @Prop()
+    public inputWidth: string;
 
     @Prop()
     public inputMaxWidth: string;

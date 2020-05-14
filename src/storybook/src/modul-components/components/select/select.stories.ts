@@ -275,3 +275,19 @@ export const withOuterItemsSlot = () => ({
                 </template>
             </m-select>`
 });
+
+export const fullWidth = () => ({
+    data: () => ({
+        model: 'banana',
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" v-model="model" width="100%" max-width="none"></m-select>`
+});
+
+export const maxWidth500 = () => ({
+    data: () => ({
+        model: 'banana',
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" v-model="model" width="100%" max-width="500px"></m-select>`
+});
