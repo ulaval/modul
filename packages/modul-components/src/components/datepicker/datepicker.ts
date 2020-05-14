@@ -15,7 +15,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
 import { MCalendar } from '../calendar/calendar';
 import { MBaseCalendarType, MBaseCalendarView } from '../calendar/calendar-renderer/base-calendar/base-calendar';
-import { BUTTON_NAME, CALENDAR_NAME, DATEPICKER_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { BUTTON_NAME, CALENDAR_NAME, DATEPICKER_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_MASK_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
@@ -35,7 +35,7 @@ export enum MDatepickerDefaultView {
 @WithRender
 @Component({
     components: {
-        'm-input-mask': MInputMask,
+        [INPUT_MASK_NAME]: MInputMask,
         [BUTTON_NAME]: MButton,
         [INPUT_STYLE_NAME]: MInputStyle,
         [ICON_BUTTON_NAME]: MIconButton,
