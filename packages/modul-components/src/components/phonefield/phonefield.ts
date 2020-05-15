@@ -72,7 +72,7 @@ export class MPhonefield extends ModulVue {
     private examples: any = require('libphonenumber-js/examples.mobile.json');
 
     countryModelInternal: MCountryCodeISO2 = MCountryCodeISO2.Empty;
-    internalCountry: MCountryOptions = { name: '', iso2: '', dialCode: '' };
+    internalCountry: MCountryOptions = { name: '', iso2: MCountryCodeISO2.Empty, dialCode: '' };
     selectedCountries: MCountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesOptionsFr : allCountriesOptionsEn;
     countries: MCountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
     internalFocus: boolean = false;
@@ -101,6 +101,23 @@ export class MPhonefield extends ModulVue {
 
     @Emit('update:country')
     emitContrySelected(country: MCountry): void { }
+
+    @Watch('country', { immediate: true })
+    onContryChange(country: MCountry): void {
+        this.countryModelInternal = country.iso;
+        this.internalCountry = this.countries.find((country: MCountryOptions) => country.iso2 === this.countryModelInternal)!;
+        if (!this.as<InputManagement>().internalValue) {
+            this.as<InputManagement>().internalValue = `+${this.internalCountry.dialCode}`;
+        }
+
+    }
+
+    @Watch('value', { immediate: true })
+    onValueChanged(value: string): void {
+        if (value) {
+            this.parsePhoneNumber(value);
+        }
+    }
 
     get isoCountries(): string[] {
         return this.countriesSorted.map(contry => contry.iso2);
@@ -192,19 +209,6 @@ export class MPhonefield extends ModulVue {
         return name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    spriteId(iso: string): string | undefined {
-        const svg: SpritesService = this.$svg;
-        const spriteId: string = 'mflag-svg__flag-' + iso;
-
-        if (document.getElementById(spriteId)) {
-            return '#' + spriteId;
-        } else if (svg && svg.getExternalSpritesFromSpriteId(spriteId)) {
-            return svg.getExternalSpritesFromSpriteId(spriteId);
-        } else if (iso) {
-            this.$log.warn('"' + iso + '" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.');
-        }
-    }
-
     onContryChanged(countryIso: any, _index: number, _$event: Event): void {
         this.countryModel = countryIso;
         this.emitContrySelected({
@@ -226,22 +230,4 @@ export class MPhonefield extends ModulVue {
         await this.$nextTick();
         this.$refs.inputMask.focus();
     }
-
-    @Watch('country', { immediate: true })
-    onContryChange(country: MCountry): void {
-        this.countryModelInternal = country.iso;
-        this.internalCountry = this.countries.find((country: MCountryOptions) => country.iso2 === this.countryModelInternal)!;
-        if (!this.as<InputManagement>().internalValue) {
-            this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
-        }
-
-    }
-
-    @Watch('value', { immediate: true })
-    onValueChanged(value: string): void {
-        if (value) {
-            this.parsePhoneNumber(value);
-        }
-    }
-
 }
