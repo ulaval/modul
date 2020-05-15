@@ -6,7 +6,7 @@
                 'm--is-valid': isPhonefieldValid,
                 'm--is-country-focus': internalFocus,
                 'm--has-validation-message': hasValidationMessage } ]"
-     :style="{ width: width, maxWidth: maxWidth }">
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
     <div class="m-phonefield__wrapper">
 
         <m-select-virtual-scroll class="m-phonefield__country"
@@ -78,7 +78,7 @@
                        :readonly="isReadonly"
                        :required-marker="requiredMarker"
                        :tag-style="tagStyle"
-                       :width="inputWidth">
+                       width="100%">
             <m-input-mask ref="inputMask"
                           :value="internalValue"
                           :id="id"
