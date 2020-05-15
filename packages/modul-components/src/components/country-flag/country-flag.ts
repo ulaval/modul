@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { MCountryCodeISO2 } from '../../utils/country/country';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
@@ -36,8 +36,25 @@ export class MCountryFlag extends ModulVue {
     })
     public readonly height: string;
 
+    @Emit('click')
+    public emitClick(event: MouseEvent): void { }
+
+    @Emit('keydown')
+    public emitKeydown(event: KeyboardEvent): void { }
+
+    @Emit('mouseover')
+    public emitMouseOver(event: MouseEvent): void { }
+
+    @Emit('mouseleave')
+    public emitMouseLeave(event: MouseEvent): void { }
+
     public get svg(): string {
-        return this.codeIso2 ? require(`./assets/svg/${this.codeIso2}.svg`) : '';
+        try {
+            return this.codeIso2 ? require(`./assets/svg/${this.codeIso2}.svg`) : '';
+        } catch (e) {
+            this.$log.warn(`The file ${e} could not be loaded.`);
+            return '';
+        }
     }
 }
 

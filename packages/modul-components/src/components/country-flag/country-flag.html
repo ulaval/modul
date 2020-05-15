@@ -2,4 +2,8 @@
        :class="['m--is-code-iso2-'+ codeIso2]"
        :width="width"
        :height="height"
-       :custom-svg="svg" />
+       :custom-svg="svg"
+       @click="emitClick"
+       @keydown="emitKeydown"
+       @mouseover="emitMouseOver"
+       @mouseleave="emitMouseLeave" />
