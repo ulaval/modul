@@ -7,8 +7,9 @@ export enum ModulIconsCategory {
     File = 'file',
     Form = 'form',
     Image = 'image',
-    Video = 'video',
-    Sate = 'state'
+    State = 'state',
+    Text = 'text',
+    Video = 'video'
 }
 
 export interface ModulIcon {
@@ -212,24 +213,27 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'code-tag'
+        name: 'code-tag',
+        category: [
+            ModulIconsCategory.Text
+        ]
     },
     {
         name: 'completed-filled',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'confirmation-white-filled',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'confirmation',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
@@ -277,14 +281,14 @@ export const ModulIcons: ModulIcon[] = [
         name: 'error-filled',
         category: [
             ModulIconsCategory.Form,
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'error',
         category: [
             ModulIconsCategory.Form,
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
@@ -307,7 +311,8 @@ export const ModulIcons: ModulIcon[] = [
     {
         name: 'file-code',
         category: [
-            ModulIconsCategory.File
+            ModulIconsCategory.File,
+            ModulIconsCategory.Text
         ]
     },
     {
@@ -353,7 +358,8 @@ export const ModulIcons: ModulIcon[] = [
         name: 'file-markup',
         category: [
             ModulIconsCategory.File,
-            ModulIconsCategory.Document
+            ModulIconsCategory.Document,
+            ModulIconsCategory.Text
         ]
     },
     {
@@ -412,7 +418,8 @@ export const ModulIcons: ModulIcon[] = [
         name: 'file-openoffice-writter',
         category: [
             ModulIconsCategory.File,
-            ModulIconsCategory.Document
+            ModulIconsCategory.Document,
+            ModulIconsCategory.Text
         ]
     },
     {
@@ -420,7 +427,8 @@ export const ModulIcons: ModulIcon[] = [
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
-            ModulIconsCategory.Image
+            ModulIconsCategory.Image,
+            ModulIconsCategory.Text
         ]
     },
     {
@@ -454,7 +462,8 @@ export const ModulIcons: ModulIcon[] = [
         name: 'file-text',
         category: [
             ModulIconsCategory.File,
-            ModulIconsCategory.Document
+            ModulIconsCategory.Document,
+            ModulIconsCategory.Text
         ]
     },
     {
@@ -477,7 +486,8 @@ export const ModulIcons: ModulIcon[] = [
         name: 'file-word',
         category: [
             ModulIconsCategory.File,
-            ModulIconsCategory.Document
+            ModulIconsCategory.Document,
+            ModulIconsCategory.Text
         ]
     },
     {
@@ -559,19 +569,19 @@ export const ModulIcons: ModulIcon[] = [
     {
         name: 'information-filled',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'information-white-filled',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'information',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
@@ -672,7 +682,7 @@ export const ModulIcons: ModulIcon[] = [
     {
         name: 'right-answer',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
@@ -695,13 +705,22 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'subtitle'
+        name: 'subtitle',
+        category: [
+            ModulIconsCategory.Text
+        ]
     },
     {
-        name: 'text1'
+        name: 'text1',
+        category: [
+            ModulIconsCategory.Text
+        ]
     },
     {
-        name: 'text2'
+        name: 'text2',
+        category: [
+            ModulIconsCategory.Text
+        ]
     },
     {
         name: 'video-filled',
@@ -727,25 +746,25 @@ export const ModulIcons: ModulIcon[] = [
     {
         name: 'warning-filled',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'warning-white-filled',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'warning',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     },
     {
         name: 'wrong-answer',
         category: [
-            ModulIconsCategory.Sate
+            ModulIconsCategory.State
         ]
     }
-]
+];

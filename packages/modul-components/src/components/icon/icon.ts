@@ -1,8 +1,9 @@
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { SpritesService } from '../../utils/svg/sprites';
+import { ModulVue } from '../../utils/vue/vue';
 import { ICON_NAME } from '../component-names';
 import { MSvg } from '../svg/svg';
 import WithRender from './icon.html?style=./icon.scss';
@@ -13,7 +14,7 @@ import WithRender from './icon.html?style=./icon.scss';
         MSvg
     }
 })
-export class MIcon extends Vue {
+export class MIcon extends ModulVue {
     @Prop({ required: true })
     public name: string;
 
@@ -55,25 +56,43 @@ export class MIcon extends Vue {
         }
     }
 
+    private svgIdInternal: string = '';
+
     public get spriteId(): string | undefined {
         const svg: SpritesService = this.$svg;
+        const svgNameWithModulPrefix: string = `m-svg__${this.name}`;
+
+        this.svgIdInternal = '';
 
         if (document.getElementById(this.name)) {
-            return '#' + this.name;
-        } else if (document.getElementById('m-svg__' + this.name)) {
-            return '#m-svg__' + this.name;
+            return `#${this.name}`;
+        } else if (document.getElementById(svgNameWithModulPrefix)) {
+            return `#${svgNameWithModulPrefix}`;
         } else if (svg && svg.getExternalSpritesFromSpriteId(this.name)) {
             return svg.getExternalSpritesFromSpriteId(this.name);
-        } else if (svg && svg.getExternalSpritesFromSpriteId('m-svg__' + this.name)) {
-            return svg.getExternalSpritesFromSpriteId('m-svg__' + this.name);
+        } else if (svg && svg.getExternalSpritesFromSpriteId(svgNameWithModulPrefix)) {
+            return svg.getExternalSpritesFromSpriteId(svgNameWithModulPrefix);
         } else if (this.name) {
-            Vue.prototype.$log.warn('"' + this.name + '" is not a valid svg id. Make sure that the sprite has been loaded via the $svg instance service.');
+            this.$log.warn(`'"${this.name}" is not a valid svg id. Make sure that the sprite has been loaded via the $svg instance service.`);
         }
     }
 
     public get showNameAsClassInHtml(): string | undefined {
-        return this.showNameAsClass ? this.name : undefined;
+        return this.showNameAsClass && this.svgId ? this.svgId : undefined;
     }
+
+    public get svgId(): string | undefined {
+        if (this.useSvgSprite && this.spriteId) {
+            return this.spriteId.replace('#', '');
+        } else if (this.svgIdInternal) {
+            return this.svgIdInternal;
+        }
+    }
+
+    public onSvgIdChange(newSvgId: string): void {
+        this.svgIdInternal = newSvgId;
+    }
+
 }
 
 const IconPlugin: PluginObject<any> = {

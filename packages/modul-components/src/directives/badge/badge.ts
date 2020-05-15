@@ -1,6 +1,5 @@
 import Vue, { DirectiveOptions, PluginObject, VNode, VNodeDirective, VueConstructor } from 'vue';
-import { ICON_NAME, SVG_NAME } from '../../components/component-names';
-import { MIcon } from '../../components/icon/icon';
+import { SVG_NAME } from '../../components/component-names';
 import { BADGE_NAME } from '../directive-names';
 
 // Icon state
@@ -37,18 +36,7 @@ const BADGE_COLOR: BadgeIcon = {
     [MBadgeState.Warning]: COLOR_WARNING
 };
 
-const getBadgeOrigin: (vnode: VNode) => String[] = (vnode: VNode) => {
-    let elTag: string = vnode.componentOptions!.tag!;
-    let elID: string = '';
-    let useSvgSprite: boolean = false;
-    const componentInstance: Vue = vnode.componentInstance!;
-
-    if (elTag === ICON_NAME) {
-        elID = `m-svg__${(componentInstance as MIcon).name}`;
-        useSvgSprite = (componentInstance as MIcon).useSvgSprite;
-    }
-
-    const element: HTMLElement = useSvgSprite ? document.getElementById(elID) as HTMLElement : componentInstance.$el as HTMLElement;
+const getBadgeOrigin: (element: HTMLElement) => String[] = (element: HTMLElement) => {
     if (element && element.dataset && element.dataset.badgeOrigin) {
         return element.dataset.badgeOrigin.split(',');
     } else {
@@ -73,21 +61,23 @@ interface BadgePosition {
     topDistance: number;
 }
 const getBadgePosition: (element: HTMLElement, binding: VNodeDirective, vnode: VNode) => BadgePosition = (element: HTMLElement, binding: VNodeDirective, vnode: VNode) => {
-    let leftDistance: number;
-    let topDistance: number;
-    let badgeOrigin: String[] = getBadgeOrigin(vnode);
-    let badgeOffset: BadgeOffset = getBadgeOffset(binding);
+    const badgeOrigin: String[] = getBadgeOrigin(element);
+    const badgeOffset: BadgeOffset = getBadgeOffset(binding);
 
-    const componentInstance: MIcon = vnode.componentInstance! as MIcon;
+    const elSize: number = element.clientWidth;
+    let badgeSize: number = elSize * (1 / 3);
 
-    let elSize: number = element.clientWidth;
-    let badgeSize: number = elSize * BADGE_SIZE_RATIO;
+    if (badgeSize >= 16) {
+        badgeSize = 16;
+    } else if (badgeSize <= 14) {
+        badgeSize = 14;
+    }
 
-    let elLeftOrigin: number = Number(parseFloat(badgeOrigin[0].replace(/,/g, '.')).toFixed(2));
-    let elTopOrigin: number = Number(parseFloat(badgeOrigin[1].replace(/,/g, '.')).toFixed(2));
+    const elLeftOrigin: number = Number(parseFloat(badgeOrigin[0].replace(/,/g, '.')).toFixed(2));
+    const elTopOrigin: number = Number(parseFloat(badgeOrigin[1].replace(/,/g, '.')).toFixed(2));
 
-    leftDistance = ((elLeftOrigin / 24) * elSize) - (badgeSize * 0.5) + badgeOffset.x;
-    topDistance = ((elTopOrigin / 24) * elSize) - (badgeSize * (2 / 3)) + badgeOffset.y;
+    const leftDistance: number = elLeftOrigin - (badgeSize * 0.5) + badgeOffset.x;
+    const topDistance: number = elTopOrigin - (badgeSize * (2 / 3)) + badgeOffset.y;
 
     return { size: badgeSize, leftDistance, topDistance };
 };
@@ -117,8 +107,7 @@ const MBadgeDirective: DirectiveOptions = {
     inserted(
         element: HTMLElement,
         binding: VNodeDirective,
-        vnode: VNode,
-        oldVnode: VNode
+        vnode: VNode
     ): void {
         if (binding.value.state !== undefined && binding.value.state !== '') {
             buildBadge(element, binding, vnode);
@@ -127,8 +116,7 @@ const MBadgeDirective: DirectiveOptions = {
     update(
         element: HTMLElement,
         binding: VNodeDirective,
-        vnode: VNode,
-        oldVnode: VNode
+        vnode: VNode
     ): void {
         if (element
             && element.children
@@ -141,10 +129,7 @@ const MBadgeDirective: DirectiveOptions = {
         }
     },
     unbind(
-        element: HTMLElement,
-        binding: VNodeDirective,
-        vnode: VNode,
-        oldVnode: VNode
+        element: HTMLElement
     ): void {
         if (element
             && element.children

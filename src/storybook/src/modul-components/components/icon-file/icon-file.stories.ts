@@ -17,40 +17,35 @@ defaultStory.story = {
     name: 'default'
 };
 
-const getBadgeState: (state: MBadgeState) => string = (state: MBadgeState) => {
-    return `<div>
-        <${ICON_FILE_NAME} extension=".bmp"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".txt"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".doc"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".ppt"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".xls"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".ods"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".pdf"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".mpeg"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".mp3"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".zip"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension="xyz"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".rm"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".mov"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".wma"
-        v-m-badge="{ state: '${state}'}" />
-        <${ICON_FILE_NAME} extension=".swf"
-        v-m-badge="{ state: '${state}'}" />
-    </div>`;
-}
+const TEMPLATE_ICON_BADGE: (extension: string, state: MBadgeState) => string = (extension: string, state: MBadgeState) => `<${ICON_FILE_NAME}
+    :size="size"
+    extension="${extension}"
+    v-m-badge="{ state: '${state}'}" />`;
+
+const getBadgeState = (state: MBadgeState) => ({
+    props: {
+        size: {
+            default: text('Prop size', '28px')
+        }
+    },
+    template: `<div>
+        ${TEMPLATE_ICON_BADGE('.bmp', state)}
+        ${TEMPLATE_ICON_BADGE('.txt', state)}
+        ${TEMPLATE_ICON_BADGE('.doc', state)}
+        ${TEMPLATE_ICON_BADGE('.ppt', state)}
+        ${TEMPLATE_ICON_BADGE('.xls', state)}
+        ${TEMPLATE_ICON_BADGE('.ods', state)}
+        ${TEMPLATE_ICON_BADGE('.pdf', state)}
+        ${TEMPLATE_ICON_BADGE('.mpeg', state)}
+        ${TEMPLATE_ICON_BADGE('.mp3', state)}
+        ${TEMPLATE_ICON_BADGE('.zip', state)}
+        ${TEMPLATE_ICON_BADGE('xyz', state)}
+        ${TEMPLATE_ICON_BADGE('.rm', state)}
+        ${TEMPLATE_ICON_BADGE('.mov', state)}
+        ${TEMPLATE_ICON_BADGE('.wma', state)}
+        ${TEMPLATE_ICON_BADGE('.swf', state)}
+    </div>`
+});
 
 export const Sandbox = () => ({
     props: {

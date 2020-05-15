@@ -35,7 +35,7 @@ export const defaultStory = () => ({
             return _this.showCustomSvg ? require('./custom-icon.svg') : '';
         }
     },
-    methods: actions('emitClick', 'emitKeydown', 'emitMouseover', 'emitMouseleave'),
+    methods: actions('emitClick', 'emitKeydown', 'emitMouseover', 'emitMouseleave', 'emitSvgId'),
     template: `<${SVG_NAME}
         :name="name"
         :svg-title="svgTitle"
@@ -46,6 +46,7 @@ export const defaultStory = () => ({
         @keydown="emitKeydown"
         @mouseover="emitMouseover"
         @mouseleave="emitMouseleave"
+        @svg-id="emitSvgId"
     />`
 });
 
