@@ -2,8 +2,10 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Messages } from '../../utils/i18n/i18n';
+import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ICON_FILE_NAME } from '../component-names';
 import IconPluggin from '../icon/icon';
+import { MSvg } from '../svg/svg';
 import WithRender from './icon-file.html';
 
 // Extensions list
@@ -37,32 +39,32 @@ const EXT_CODE_JSON: string = 'json';
 const EXT_CODE_SCRIPT: string = 'js,ts';
 
 // Extensions Groups
-const GROUP_IMAGE: string = 'm-svg__file-image';
-const GROUP_TEXT: string = 'm-svg__file-text';
-const GROUP_WORD: string = 'm-svg__file-word';
-const GROUP_VISIO: string = 'm-svg__file-visio';
-const GROUP_POWERPOINT: string = 'm-svg__file-powerpoint';
-const GROUP_EXCEL: string = 'm-svg__file-excel';
-const GROUP_ACCESS: string = 'm-svg__file-access';
-const GROUP_PDF: string = 'm-svg__file-pdf';
-const GROUP_REALPLAYER: string = 'm-svg__file-realplayer';
-const GROUP_QUICKTIME: string = 'm-svg__file-quicktime';
-const GROUP_MEDIAPLAYER: string = 'm-svg__file-mediaplayer';
-const GROUP_FLASH: string = 'm-svg__file-flash';
-const GROUP_VIDEO: string = 'm-svg__file-video';
-const GROUP_AUDIO: string = 'm-svg__file-audio';
-const GROUP_ZIP: string = 'm-svg__file-zip';
-const GROUP_OPENOFFICE_DEFAULT: string = 'm-svg__file-openoffice-default';
-const GROUP_OPENOFFICE_WRITTER: string = 'm-svg__file-openoffice-writter';
-const GROUP_OPENOFFICE_IMPRESS: string = 'm-svg__file-openoffice-impress';
-const GROUP_OPENOFFICE_DRAW: string = 'm-svg__file-openoffice-draw';
-const GROUP_OPENOFFICE_CALC: string = 'm-svg__file-openoffice-calc';
-const GROUP_OPENOFFICE_MATH: string = 'm-svg__file-openoffice-math';
-const GROUP_OPENOFFICE_BASE: string = 'm-svg__file-openoffice-base';
-const GROUP_DWG: string = 'm-svg__file-dwg';
-const GROUP_CODE: string = 'm-svg__file-code';
-const GROUP_MARKUP: string = 'm-svg__file-markup';
-const GROUP_OTHER: string = 'm-svg__file-default';
+const GROUP_IMAGE: string = 'file-image';
+const GROUP_TEXT: string = 'file-text';
+const GROUP_WORD: string = 'file-word';
+const GROUP_VISIO: string = 'file-visio';
+const GROUP_POWERPOINT: string = 'file-powerpoint';
+const GROUP_EXCEL: string = 'file-excel';
+const GROUP_ACCESS: string = 'file-access';
+const GROUP_PDF: string = 'file-pdf';
+const GROUP_REALPLAYER: string = 'file-realplayer';
+const GROUP_QUICKTIME: string = 'file-quicktime';
+const GROUP_MEDIAPLAYER: string = 'file-mediaplayer';
+const GROUP_FLASH: string = 'file-flash';
+const GROUP_VIDEO: string = 'file-video';
+const GROUP_AUDIO: string = 'file-audio';
+const GROUP_ZIP: string = 'file-zip';
+const GROUP_OPENOFFICE_DEFAULT: string = 'file-openoffice-default';
+const GROUP_OPENOFFICE_WRITTER: string = 'file-openoffice-writter';
+const GROUP_OPENOFFICE_IMPRESS: string = 'file-openoffice-impress';
+const GROUP_OPENOFFICE_DRAW: string = 'file-openoffice-draw';
+const GROUP_OPENOFFICE_CALC: string = 'file-openoffice-calc';
+const GROUP_OPENOFFICE_MATH: string = 'file-openoffice-math';
+const GROUP_OPENOFFICE_BASE: string = 'file-openoffice-base';
+const GROUP_DWG: string = 'file-dwg';
+const GROUP_CODE: string = 'file-code';
+const GROUP_MARKUP: string = 'file-markup';
+const GROUP_OTHER: string = 'file-default';
 
 // Extensions Tooltips
 const TOOLTIP_IMAGE: string = 'image';
@@ -100,22 +102,30 @@ type FileGroup = {
 };
 
 @WithRender
-@Component
+@Component({
+    components: {
+        MSvg
+    }
+})
 export class MIconFile extends Vue {
     @Prop()
     public extension: string;
 
-    @Prop({ default: '24px' })
+    @Prop({
+        default: '24px',
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
     public size: string;
 
     private tooltipGroup: FileGroup = {};
     private fileMap: FileGroup = {};
 
     @Emit('click')
-    onClick(event: MouseEvent): void { }
+    emitClick(event: MouseEvent): void { }
 
     @Emit('keydown')
-    onKeydown(event: KeyboardEvent): void { }
+    emitKeydown(event: KeyboardEvent): void { }
 
     public get spriteId(): string {
         let cleanExtension: string = this.extension ? this.extension.replace('.', '').toLowerCase() : '';
@@ -165,7 +175,6 @@ export class MIconFile extends Vue {
     private mapExtensionsGroup(extensions, category: string, tooltip: string): void {
         extensions.split(',').forEach(ex => this.fileMap[ex] = category);
         extensions.split(',').forEach(ex => this.tooltipGroup[ex] = tooltip);
-
     }
 }
 

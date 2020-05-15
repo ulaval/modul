@@ -13,7 +13,9 @@ exports[`Storyshots modul-components|m-icon Custom svg 1`] = `
 exports[`Storyshots modul-components|m-icon UseSvgSprite (false) 1`] = `<!---->`;
 
 exports[`Storyshots modul-components|m-icon name (long) 1`] = `
-<div>
+<div
+  style="display: flex; align-items: center;"
+>
   <svg
     aria-hidden="true"
     class="m-icon"
@@ -28,20 +30,22 @@ exports[`Storyshots modul-components|m-icon name (long) 1`] = `
   </svg>
    
   <span
-    style="margin-left: 15px;"
+    style="margin-left: 8px;"
   >
-    Current name: 
-    <span
-      style="color: red;"
+    Prop name: 
+    <strong
+      style="color: blue;"
     >
       m-svg__profile
-    </span>
+    </strong>
   </span>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-icon name (short) 1`] = `
-<div>
+<div
+  style="display: flex; align-items: center;"
+>
   <svg
     aria-hidden="true"
     class="m-icon"
@@ -56,14 +60,14 @@ exports[`Storyshots modul-components|m-icon name (short) 1`] = `
   </svg>
    
   <span
-    style="margin-left: 15px;"
+    style="margin-left: 8px;"
   >
-    Current name: 
-    <span
-      style="color: red;"
+    Prop name: 
+    <strong
+      style="color: blue;"
     >
       profile
-    </span>
+    </strong>
   </span>
 </div>
 `;
@@ -79,13 +83,14 @@ exports[`Storyshots modul-components|m-icon sandbox 1`] = `
    
   <use
     aria-hidden="true"
-    class="error"
   />
 </svg>
 `;
 
 exports[`Storyshots modul-components|m-icon showNameAsClass 1`] = `
-<div>
+<div
+  style="display: flex; align-items: center;"
+>
   <svg
     aria-hidden="true"
     class="m-icon"
@@ -96,30 +101,31 @@ exports[`Storyshots modul-components|m-icon showNameAsClass 1`] = `
      
     <use
       aria-hidden="true"
-      class="profile"
     />
   </svg>
    
   <span
-    style="margin-left: 15px;"
+    style="margin-left: 8px;"
   >
-    Current className on svg Icon: 
-    <span
-      style="color: red;"
+    Prop name: 
+    <strong
+      style="color: blue;"
     >
       profile
-    </span>
+    </strong>
   </span>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-icon size 1`] = `
-<div>
+<div
+  style="display: flex; align-items: center;"
+>
   <svg
     aria-hidden="true"
     class="m-icon"
-    height="30"
-    width="30"
+    height="30px"
+    width="30px"
   >
     <!---->
      
@@ -129,20 +135,22 @@ exports[`Storyshots modul-components|m-icon size 1`] = `
   </svg>
    
   <span
-    style="margin-left: 15px;"
+    style="margin-left: 8px;"
   >
-    Current icon size: 
-    <span
-      style="color: red;"
+    Prop size: 
+    <strong
+      style="color: blue;"
     >
-      30
-    </span>
+      30px
+    </strong>
   </span>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-icon svgTitle 1`] = `
-<div>
+<div
+  style="display: flex; align-items: center;"
+>
   <svg
     class="m-icon"
     height="20px"
@@ -158,19 +166,33 @@ exports[`Storyshots modul-components|m-icon svgTitle 1`] = `
   </svg>
    
   <span
-    style="margin-left: 15px;"
+    style="margin-left: 8px;"
   >
-    Current svgTitle: 
-    <span
-      style="color: red;"
+    Prop svgTitle: 
+    <strong
+      style="color: blue;"
     >
       Title1
-    </span>
+    </strong>
   </span>
 </div>
 `;
 
-exports[`Storyshots modul-components|m-icon/badge offsetX 1`] = `<div />`;
+exports[`Storyshots modul-components|m-icon/badge offsetX 1`] = `
+<svg
+  aria-hidden="true"
+  class="m-icon"
+  height="30px"
+  style="overflow: visible;"
+  width="30px"
+>
+  <!---->
+   
+  <use
+    aria-hidden="true"
+  />
+</svg>
+`;
 
 exports[`Storyshots modul-components|m-icon/badge offsetY 1`] = `
 <svg
@@ -192,9 +214,9 @@ exports[`Storyshots modul-components|m-icon/badge state 1`] = `
 <svg
   aria-hidden="true"
   class="m-icon"
-  height="30"
+  height="30px"
   style="overflow: visible;"
-  width="30"
+  width="30px"
 >
   <!---->
    

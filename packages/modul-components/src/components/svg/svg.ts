@@ -45,11 +45,32 @@ export class MSvg extends ModulVue {
     @Emit('mouseleave')
     public emitMouseLeave(event: MouseEvent): void { }
 
+    @Emit('svg-id')
+    public emitSvgId(svgId: string): void { }
+
+    public async onDataSvgIdChange(svgId: string | undefined): Promise<void> {
+        if (!svgId) {
+            return;
+        }
+        await this.$nextTick();
+        this.emitSvgId(svgId);
+    }
+
     public get svg(): string {
         if (this.customSvg) {
             return this.customSvg;
         }
-        return this.name ? require(`./../../assets/icons/svg/${this.name}.svg`) : '';
+
+        if (!this.name) {
+            return '';
+        }
+
+        try {
+            return require(`./../../assets/icons/svg/${this.name}.svg`);
+        } catch (e) {
+            this.$log.warn(`The file ${e} could not be loaded.`);
+            return '';
+        }
     }
 
     public get svgChildrenContent(): string {
@@ -81,12 +102,14 @@ export class MSvg extends ModulVue {
         return this.getSvgAttibute('viewBox');
     }
 
-    public get dataId(): string | undefined {
-        return this.getSvgAttibute('id');
+    public get dataSvgId(): string | undefined {
+        const svgId: string | undefined = this.getSvgAttibute('id');
+        this.onDataSvgIdChange(svgId);
+        return svgId;
     }
 
     public get badgeOrigin(): string | undefined {
-        return this.getSvgAttibute('badgeOrigin');
+        return this.getSvgAttibute('data-badge-origin');
     }
 
     public getSvgAttibute(attribute: string): string | undefined {

@@ -1,5 +1,6 @@
 import { actions } from '@storybook/addon-actions';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
+import { ModulIcon, ModulIcons } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
@@ -11,7 +12,9 @@ export default {
 export const defaultStory = () => ({
     props: {
         name: {
-            default: text('Prop name', 'error')
+            default: select<string>('Prop name', ModulIcons.map((m: ModulIcon) => {
+                return m.name;
+            }), 'profile')
         },
         width: {
             default: text('Prop width', '1em')
@@ -32,15 +35,18 @@ export const defaultStory = () => ({
             return _this.showCustomSvg ? require('./custom-icon.svg') : '';
         }
     },
-    methods: actions('emitClick', 'emitKeydown', 'emitMouseover', 'emitMouseleave'),
+    methods: actions('emitClick', 'emitKeydown', 'emitMouseover', 'emitMouseleave', 'emitSvgId'),
     template: `<${SVG_NAME}
         :name="name"
         :svg-title="svgTitle"
         :custom-svg="customSvg"
+        :width="width"
+        :height="height"
         @click="emitClick"
         @keydown="emitKeydown"
         @mouseover="emitMouseover"
         @mouseleave="emitMouseleave"
+        @svg-id="emitSvgId"
     />`
 });
 

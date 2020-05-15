@@ -1,38 +1,28 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
+import { ModulIcon, ModulIcons } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { ICON_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-const ICONLIST_SHORTHAND: {} = {
-    'profile': 'profile',
-    'information': 'information',
-    'confirmation': 'confirmation',
-    'warning': 'warning',
-    'error': 'error',
-    'calendar': 'calendar',
-    'hint': 'hint',
-    'clock': 'clock',
-    'lock': 'lock'
-};
+const ICONLIST_SHORTHAND: string[] = ModulIcons.map((m: ModulIcon) => {
+    return m.name;
+});
 
-const ICONLIST_LONGHAND: {} = {
-    'm-svg__profile': 'm-svg__profile',
-    'm-svg__information': 'm-svg__information',
-    'm-svg__confirmation': 'm-svg__confirmation',
-    'm-svg__warning': 'm-svg__warning',
-    'm-svg__error': 'm-svg__error',
-    'm-svg__calendar': 'm-svg__calendar',
-    'm-svg__hint': 'm-svg__hint',
-    'm-svg__clock': 'm-svg__clock',
-    'm-svg__lock': 'm-svg__lock'
-};
+const ICONLIST_LONGHAND: string[] = ModulIcons.map((m: ModulIcon) => {
+    return `m-svg__${m.name}`;
+});
+
+const getPropExampleTemplate: (html: string, propName: string) => string = (html: string, propName: string) => `<div style="display: flex; align-items: center;">
+    ${html}
+    <span style="margin-left: 8px">Prop ${propName}: <strong style="color:blue">{{ ${propName} }}</span></strong>
+</div>`;
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('sandbox', () => ({
         props: {
             name: {
-                default: select('name', ICONLIST_SHORTHAND, 'error')
+                default: select('Prop name', ICONLIST_SHORTHAND, 'error')
             },
             svgTitle: {
                 default: text('Prop svg-title', '')
@@ -73,46 +63,34 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('name (short)', () => ({
         props: {
             name: {
-                default: select('name', ICONLIST_SHORTHAND, 'profile')
+                default: select('Prop name', ICONLIST_SHORTHAND, 'profile')
             }
         },
-        template: `<div>
-                       <${ICON_NAME} :name="name" />
-                       <span style="margin-left: 15px">Current name: <span style="color:red">{{ name }}</span></span>
-                   </div>`
+        template: getPropExampleTemplate(`<${ICON_NAME} :name="name" />`, 'name')
     }))
     .add('name (long)', () => ({
         props: {
             name: {
-                default: select('name', ICONLIST_LONGHAND, 'm-svg__profile')
+                default: select('Prop name', ICONLIST_LONGHAND, 'm-svg__profile')
             }
         },
-        template: `<div>
-                       <${ICON_NAME} :name="name" />
-                       <span style="margin-left: 15px">Current name: <span style="color:red">{{ name }}</span></span>
-                   </div>`
+        template: getPropExampleTemplate(`<${ICON_NAME} :name="name" />`, 'name')
     }))
     .add('svgTitle', () => ({
         props: {
             svgTitle: {
-                default: text('svgTitle', 'Title1')
+                default: text('Prop svg-title', 'Title1')
             }
         },
-        template: `<div>
-                       <${ICON_NAME} :svgTitle="svgTitle" name="profile" />
-                       <span style="margin-left: 15px">Current svgTitle: <span style="color:red">{{ svgTitle }}</span></span>
-                   </div>`
+        template: getPropExampleTemplate(`<${ICON_NAME} :svg-title="svgTitle" name="profile" />`, 'svgTitle')
     }))
     .add('size', () => ({
         props: {
             size: {
-                default: text('size (px)', '30')
+                default: text('Prop size', '30px')
             }
         },
-        template: `<div>
-                       <${ICON_NAME} :size="size" name="profile" />
-                       <span style="margin-left: 15px">Current icon size: <span style="color:red">{{ size }}</span></span>
-                   </div>`
+        template: getPropExampleTemplate(`<${ICON_NAME} :size="size" name="profile" />`, 'size')
     }))
     .add('showNameAsClass', () => ({
         props: {
@@ -120,15 +98,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
                 default: select('icon name as class', ICONLIST_SHORTHAND, 'profile')
             }
         },
-        template: `<div>
-                       <${ICON_NAME} :name="name" :showNameAsClass="true" />
-                       <span style="margin-left: 15px">Current className on svg Icon: <span style="color:red">{{ name }}</span></span>
-                   </div>`
+        template: getPropExampleTemplate(`<${ICON_NAME} :show-name-as-class="true" name="profile" />`, 'name')
     }))
     .add('Custom svg', () => ({
         props: {
             name: {
-                default: select('name', ICONLIST_SHORTHAND, 'error')
+                default: select('Prop name', ICONLIST_SHORTHAND, 'error')
             },
             useSvgSprite: {
                 default: boolean('Prop use-svg-sprite', false)
@@ -156,7 +131,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('UseSvgSprite (false)', () => ({
         props: {
             name: {
-                default: select('name', ICONLIST_SHORTHAND, 'profile')
+                default: select('Prop name', ICONLIST_SHORTHAND, 'profile')
             },
             useSvgSprite: {
                 default: boolean('Prop use-svg-sprite', false)
@@ -176,10 +151,13 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
                 default: object("{ state: 'completed|error|warning' }", { state: 'completed' })
             },
             size: {
-                default: text('size (px)', '30')
+                default: text('Prop size (px)', '30px')
+            },
+            useSvgSprite: {
+                default: boolean('Prop use-svg-sprite', true)
             }
         },
-        template: `<${ICON_NAME} :size="size" v-m-badge="badge" name="profile" />`
+        template: `<${ICON_NAME} :size="size" v-m-badge="badge" name="file-pdf" :use-svg-sprite="useSvgSprite" />`
     }))
     .add('offsetX', () => ({
         props: {
@@ -190,7 +168,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}/badge`, module)
                 })
             }
         },
-        template: `<${ICON_NAME}size="30px" v-m-badge="badge" name="profile"/>`
+        template: `<${ICON_NAME} size="30px" v-m-badge="badge" name="profile"/>`
     }))
     .add('offsetY', () => ({
         props: {
