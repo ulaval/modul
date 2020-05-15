@@ -68,7 +68,7 @@ export class MSvg extends ModulVue {
         try {
             return require(`./../../assets/icons/svg/${this.name}.svg`);
         } catch (e) {
-            this.$log.warn(`The file ${e}could not be loaded.`);
+            this.$log.warn(`The file ${e} could not be loaded.`);
             return '';
         }
     }
