@@ -115,4 +115,16 @@ export const autocompleteWorkPhone = () => ({
     template: '<m-phonefield autocomplete="work tel"></m-phonefield>'
 });
 
+export const otherDefaultCountry = () => ({
+    data: () => ({
+        country: {
+            iso: 'fr',
+            prefix: '33'
+        }
+    }),
+    components: {
+        'm-phonefield': phoneFieldChunk
+    },
+    template: '<m-phonefield :country="country"></m-phonefield>'
+});
 
