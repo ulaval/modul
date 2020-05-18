@@ -62,7 +62,6 @@
             </template>
 
         </m-select-virtual-scroll>
-
         <m-input-style class="m-phonefield__number"
                        :disabled="isDisabled"
                        :waiting="isWaiting"
@@ -76,6 +75,9 @@
                        :readonly="isReadonly"
                        :required-marker="requiredMarker"
                        :tag-style="tagStyle">
+            <template slot="prefix">
+                <span>+1</span>
+            </template>
             <m-input-mask ref="inputMask"
                           :value="internalValue"
                           :id="id"

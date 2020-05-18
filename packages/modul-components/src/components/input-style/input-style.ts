@@ -115,7 +115,7 @@ export class MInputStyle extends ModulVue {
     }
 
     public get showPrefix(): boolean {
-        return this.hasLabel ? this.isFocus : true;
+        return this.hasLabel ? this.labelUp || this.isFocus : true;
     }
 
     private get hasValue(): boolean {
