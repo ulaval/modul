@@ -88,6 +88,10 @@ export class MButton extends Vue {
     @Emit('blur')
     onBlur(event: FocusEvent): void { }
 
+    mounted(): void {
+        throw new Error('boom!');
+    }
+
     private get isSkinPrimary(): boolean {
         return this.skin === MButtonSkin.Primary;
     }

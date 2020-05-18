@@ -8,15 +8,15 @@ function resolve(dir) {
 
 
 module.exports = {
-    mode: 'production',
     devtool: 'source-map',
+    mode: 'development',
     entry: {
-        lib: resolve('dist/lib.js')
+        lib: resolve('src/lib.ts')
     },
     output: {
-        filename: 'modul.cjs.js',
+        path: resolve('lib'),
+        filename: 'modul.js',
         libraryTarget: 'commonjs2', // change to 'module' when available https://github.com/webpack/webpack/issues/2933
-        path: resolve('dist'),
         library: 'modulComponents',
         publicPath: '/dist/'
     },
@@ -28,6 +28,17 @@ module.exports = {
             root: 'Vue'
         }
     },
+    // optimization: {
+    //     splitChunks: {
+    //         cacheGroups: {
+    //             polyfills: {
+    //                 filename: 'polyfills.js',  // Extract polyfills from distribution
+    //                 test: /core-js-pure/,
+    //                 chunks: 'initial',
+    //             },
+    //         },
+    //     },
+    // },
     resolve: {
         extensions: ['.js', '.ts', '.html'],
         alias: {
@@ -37,12 +48,20 @@ module.exports = {
     },
     module: {
         rules: [
+            // {
+            //     test: /\.m?js$/,
+            //     exclude: /(node_modules)/,
+            //     use: {
+            //         loader: 'babel-loader'
+            //     }
+            // },
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader'
-                }
+                test: /\.ts$/,
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true,
+                    configFile: resolve('tsconfig.lib.json')
+                },
             },
             {
                 enforce: 'post',
@@ -89,6 +108,9 @@ module.exports = {
             },
         ]
     },
+    // experiments: {
+    //     outputModule: true,
+    // },
     performance: {
         hints: false
     },
