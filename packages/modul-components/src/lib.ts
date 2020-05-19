@@ -41,8 +41,6 @@ export { default as FiltersPlugin } from './filters/filters-plugin';
 /**
  * Services
  */
-export { default as EnglishPlugin } from './lang/en';
-export { default as FrenchPlugin } from './lang/fr';
 export { default as DialogServicePlugin } from './utils/dialog/dialog-service';
 export * from './utils/form';
 export { ENGLISH, FRENCH } from './utils/i18n/i18n';

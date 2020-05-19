@@ -11,8 +11,13 @@ module.exports = {
     mode: 'development',
     entry: {
         modul: resolve('src/lib.ts'),
+        fr: resolve('src/lang/fr.ts'),
+        en: resolve('src/lang/en.ts'),
+        sprites: resolve('src/utils/svg/default-sprites.ts'),
         rte: resolve('src/components/rich-text-editor/rich-text-editor.ts'),
-        phonefield: resolve('src/components/phonefield/phonefield.ts')
+        phonefield: resolve('src/components/phonefield/phonefield.ts'),
+
+
     },
     output: {
         path: resolve('lib'),
