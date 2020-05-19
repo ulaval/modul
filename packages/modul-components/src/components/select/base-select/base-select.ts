@@ -217,7 +217,9 @@ export class MBaseSelect extends ModulVue {
                     el.style.overflowY = 'hidden';
                     el.style.maxHeight = '0';
                     el.style.width = this.$el.clientWidth + 'px';
-                    el.style.minWidth = this.listMinWidth;
+                    if (this.listMinWidth) {
+                        el.style.minWidth = this.listMinWidth;
+                    }
                     requestAnimationFrame(() => {
                         el.style.maxHeight = height + 'px';
                         done();
