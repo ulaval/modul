@@ -6,18 +6,19 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
-
 module.exports = {
     devtool: 'source-map',
     mode: 'development',
     entry: {
-        lib: resolve('src/lib.ts')
+        modul: resolve('src/lib.ts'),
+        rte: resolve('src/components/rich-text-editor/rich-text-editor.ts'),
+        phonefield: resolve('src/components/phonefield/phonefield.ts')
     },
     output: {
         path: resolve('lib'),
-        filename: 'modul.js',
+        filename: '[name].js',
         libraryTarget: 'commonjs2', // change to 'module' when available https://github.com/webpack/webpack/issues/2933
-        library: 'modulComponents',
+        library: ['modulComponents', '[name]'],
         publicPath: '/dist/'
     },
     externals: [
@@ -27,14 +28,23 @@ module.exports = {
         })],
     // optimization: {
     //     splitChunks: {
-    //         cacheGroups: {
-    //             polyfills: {
-    //                 filename: 'moment.js',  // Extract polyfills from distribution
-    //                 test: /moment/,
-    //                 chunks: 'all',
-    //             },
-    //         },
-    //     },
+    //         name: 'modul',
+    //         chunks: 'all',
+    //         // cacheGroups: {
+    //         //     styles: {
+    //         //         name: 'styles',
+    //         //         test(module, chunks) {
+    //         //             //console.log('module = ' + module.resource);
+    //         //             return module.constructor.name === 'CssModule';
+    //         //         },
+    //         //         chunks: 'all',
+    //         //         priority: 1,
+    //         //         minChunks: 1,
+    //         //         reuseExistingChunk: true,
+    //         //         enforce: true,
+    //         //     },
+    //         // },
+    //     }
     // },
     resolve: {
         extensions: ['.js', '.ts', '.html'],
@@ -105,20 +115,14 @@ module.exports = {
             },
         ]
     },
-    // experiments: {
-    //     outputModule: true,
-    // },
     performance: {
         hints: false
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'modul.min.css',
+            filename: '[name].min.css',
+            chunkFilename: '[name].min.css',
             ignoreOrder: false
-        }),
-        new ContextReplacementPlugin(
-            /moment[\/\\]locale$/,
-            /en-ca|fr-ca/
-        )
+        })
     ]
 };
