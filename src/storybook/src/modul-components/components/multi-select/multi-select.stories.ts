@@ -47,7 +47,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
     );
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
-    .add('completeFullWidth', () => ({
+    .add('Full width', () => ({
         methods: actions(
             'open',
             'close',
@@ -60,6 +60,46 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
             options: optionsColor
         }),
         template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="CSS Colors" max-width="none" max-visible-chips="20">
+            <template v-slot:chips="{item , index }"><div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
+            <template v-slot:items="{item , index }">{{ index }} - <div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
+        </m-multi-select>`
+    })
+    );
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('Large width', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: [],
+            options: optionsColor
+        }),
+        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="CSS Colors" max-width="large" max-visible-chips="20">
+            <template v-slot:chips="{item , index }"><div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
+            <template v-slot:items="{item , index }">{{ index }} - <div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
+        </m-multi-select>`
+    })
+    );
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('500px width', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: [],
+            options: optionsColor
+        }),
+        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="CSS Colors" max-width="500px" max-visible-chips="20">
             <template v-slot:chips="{item , index }"><div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
             <template v-slot:items="{item , index }">{{ index }} - <div style="display: inline-block; width: 8px; height: 8px; margin-right: 4px;" :style="{ background: item }"></div> {{ item }}</template>
         </m-multi-select>`

@@ -1,6 +1,241 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|m-multi-select complete 1`] = `
+exports[`Storyshots modul-components|m-multi-select 500px width 1`] = `
+<div
+  class="m-base-select"
+  input-max-width="500px"
+  style="width: 100%; max-width: 500px;"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-multi-select"
+      style="width: 100%; max-width: 500px;"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-multi-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  CSS Colors
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div
+                  class="m-multi-select__chips"
+                >
+                  <input
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                </div>
+                  
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <div
+                  class="m-multi-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-multi-select__arrow__icon"
+                    height="16px"
+                    width="16px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-multi-select__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-multi-select Full width 1`] = `
+<div
+  class="m-base-select"
+  style="width: 100%;"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-multi-select"
+      style="width: 100%;"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <label
+              class="m-input-style__label"
+              for="m-multi-select-fakeId"
+              style="margin-right: 0px;"
+            >
+              <span
+                class="m-input-style__text"
+              >
+                <span>
+                  CSS Colors
+                </span>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div
+                  class="m-multi-select__chips"
+                >
+                  <input
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                </div>
+                  
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <div
+                  class="m-multi-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-multi-select__arrow__icon"
+                    height="16px"
+                    width="16px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-multi-select__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-multi-select Large width 1`] = `
 <div
   class="m-base-select"
   input-max-width="896px"
@@ -118,17 +353,18 @@ exports[`Storyshots modul-components|m-multi-select complete 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-multi-select completeFullWidth 1`] = `
+exports[`Storyshots modul-components|m-multi-select complete 1`] = `
 <div
   class="m-base-select"
-  style="width: 100%;"
+  input-max-width="896px"
+  style="width: 100%; max-width: 896px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
       class="m-multi-select"
-      style="width: 100%;"
+      style="width: 100%; max-width: 896px;"
       tabindex="0"
     >
       <div
