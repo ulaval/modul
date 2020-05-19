@@ -48,7 +48,7 @@ export enum ModulIconName {
     Confirmation = 'confirmation',
     Delete = 'delete',
     Download = 'download',
-    DragVeryical = 'drag-veryical',
+    DragVertical = 'drag-vertical',
     Dragndrop = 'dragndrop',
     Edit = 'edit',
     EmailSend = 'email-send',
@@ -370,7 +370,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: ModulIconName.DragVeryical,
+        name: ModulIconName.DragVertical,
         category: [
             ModulIconsCategory.Control
         ]

@@ -6,7 +6,7 @@ import { ICON_NAME } from '@ulaval/modul-components/dist/components/component-na
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-const ICONLIST_SHORTHAND: ModulIconName[] = Enums.toValueArray(ModulIconName) as ModulIconName[]
+const ICONLIST_SHORTHAND: ModulIconName[] = Enums.toValueArray(ModulIconName) as ModulIconName[];
 
 const ICONLIST_LONGHAND: string[] = ICONLIST_SHORTHAND.map((name: ModulIconName) => {
     return `m-svg__${name}`;
