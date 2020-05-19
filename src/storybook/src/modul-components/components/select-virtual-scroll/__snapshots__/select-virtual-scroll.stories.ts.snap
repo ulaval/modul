@@ -52,6 +52,7 @@ exports[`Storyshots modul-components|m-select-virtual-scroll Default 1`] = `
                   <input
                     placeholder="Choose a fruit"
                     readonly="readonly"
+                    tabindex="-1"
                   />
                 </div>
                  
@@ -172,6 +173,7 @@ exports[`Storyshots modul-components|m-select-virtual-scroll Virtual Scroll 1`] 
                 <div>
                   <input
                     readonly="readonly"
+                    tabindex="-1"
                   />
                 </div>
                  
