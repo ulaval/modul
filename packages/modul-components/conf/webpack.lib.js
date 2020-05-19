@@ -1,5 +1,4 @@
 const path = require('path');
-const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const nodeExternals = require('webpack-node-externals');
 function resolve(dir) {
@@ -31,6 +30,11 @@ module.exports = {
         nodeExternals({
             modulesDir: resolve('../../node_modules') // taken from https://github.com/liady/webpack-node-externals/issues/39
         })],
+
+
+    // there a bug in mini-css-exptract plugin that make chunck not working well using a common chunks
+    // https://github.com/webpack-contrib/mini-css-extract-plugin/pull/305
+    // hopefully this will be fixed in webpack 5
     // optimization: {
     //     splitChunks: {
     //         name: 'modul',
@@ -60,6 +64,7 @@ module.exports = {
     },
     module: {
         rules: [
+            // Uncomment to include babel polyfills
             // {
             //     test: /\.m?js$/,
             //     exclude: /(node_modules)/,
