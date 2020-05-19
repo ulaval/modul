@@ -25,7 +25,7 @@
              @keydown.return.prevent="onKeydownEnter"
              @keydown.esc="scope.keyEsc"
              @keydown.tab="scope.keyTab"
-             @keydown.space="onKeydownSpace"
+             @keydown.space.prevent="onKeydownSpace"
              tabindex="0">
 
             <m-input-style :label="label"
