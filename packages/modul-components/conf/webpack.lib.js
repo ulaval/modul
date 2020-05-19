@@ -1,7 +1,7 @@
 const path = require('path');
 const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const nodeExternals = require('webpack-node-externals');
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
@@ -20,21 +20,18 @@ module.exports = {
         library: 'modulComponents',
         publicPath: '/dist/'
     },
-    externals: {
-        vue: {
-            commonjs: 'vue',
-            commonjs2: 'vue',
-            amd: 'vue',
-            root: 'Vue'
-        }
-    },
+    externals: [
+        nodeExternals(),
+        nodeExternals({
+            modulesDir: resolve('../../node_modules') // taken from https://github.com/liady/webpack-node-externals/issues/39
+        })],
     // optimization: {
     //     splitChunks: {
     //         cacheGroups: {
     //             polyfills: {
-    //                 filename: 'polyfills.js',  // Extract polyfills from distribution
-    //                 test: /core-js-pure/,
-    //                 chunks: 'initial',
+    //                 filename: 'moment.js',  // Extract polyfills from distribution
+    //                 test: /moment/,
+    //                 chunks: 'all',
     //             },
     //         },
     //     },
