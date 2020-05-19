@@ -1,4 +1,5 @@
 import Vue, { DirectiveOptions, PluginObject, VNode, VNodeDirective, VueConstructor } from 'vue';
+import { ModulIconName } from '../../assets/icons/modul-icons';
 import { SVG_NAME } from '../../components/component-names';
 import { BADGE_NAME } from '../directive-names';
 
@@ -13,21 +14,16 @@ type BadgeIcon = {
     [key: string]: string
 };
 
-const ICON_COMPLETED: string = 'completed-filled';
-const ICON_ERROR: string = 'error-filled';
-const ICON_WARNING: string = 'warning-filled';
 const COLOR_COMPLETED: string = '#00c77f';
 const COLOR_ERROR: string = '#e30513';
 const COLOR_WARNING: string = '#ffc103';
 
 const DEFAULT_ORIGIN: string[] = ['23.5', '23.5'];
 
-const BADGE_SIZE_RATIO: number = 16 / 30;
-
 const BADGE_ICON: BadgeIcon = {
-    [MBadgeState.Completed]: ICON_COMPLETED,
-    [MBadgeState.Error]: ICON_ERROR,
-    [MBadgeState.Warning]: ICON_WARNING
+    [MBadgeState.Completed]: ModulIconName.CompletedFilled,
+    [MBadgeState.Error]: ModulIconName.ErrorFilled,
+    [MBadgeState.Warning]: ModulIconName.WarningFilled
 };
 
 const BADGE_COLOR: BadgeIcon = {

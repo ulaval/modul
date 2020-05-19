@@ -12,6 +12,126 @@ export enum ModulIconsCategory {
     Video = 'video'
 }
 
+export enum ModulIconName {
+    AddCircleFilled = 'add-circle-filled',
+    AddCircle = 'add-circle',
+    ArrowDown = 'arrow--down',
+    ArrowLeft = 'arrow--left',
+    ArrowRight = 'arrow--right',
+    ArrowUp = 'arrow--up',
+    ArrowButtonDown = 'arrow-button--down',
+    ArrowButtonLeft = 'arrow-button--left',
+    ArrowButtonRight = 'arrow-button--right',
+    ArrowButtonUp = 'arrow-button--up',
+    ArrowHeadCircleRight = 'arrow-head-circle--right',
+    ArrowHeadFilledDown = 'arrow-head-filled--down',
+    ArrowHeadFilledLeft = 'arrow-head-filled--left',
+    ArrowHeadFilledRight = 'arrow-head-filled--right',
+    ArrowHeadFilledUp = 'arrow-head-filled--up',
+    ArrowReturn = 'arrow-return',
+    ArrowThinDown = 'arrow-thin--down',
+    ArrowThinLeft = 'arrow-thin--left',
+    ArrowThinRight = 'arrow-thin--right',
+    ArrowThinUp = 'arrow-thin--up',
+    Attachment = 'attachment',
+    Avatar = 'avatar',
+    Calendar = 'calendar',
+    ChevronDown = 'chevron--down',
+    ChevronLeft = 'chevron--left',
+    ChevronRight = 'chevron--right',
+    ChevronUp = 'chevron--up',
+    Clock = 'clock',
+    CloseClear = 'close-clear',
+    CodeTag = 'code-tag',
+    CompletedFilled = 'completed-filled',
+    ConfirmationWhiteFilled = 'confirmation-white-filled',
+    Confirmation = 'confirmation',
+    Delete = 'delete',
+    Download = 'download',
+    DragVeryical = 'drag-veryical',
+    Dragndrop = 'dragndrop',
+    Edit = 'edit',
+    EmailSend = 'email-send',
+    Email = 'email',
+    ErrorFilled = 'error-filled',
+    Error = 'error',
+    Evaluation = 'evaluation',
+    FileAccess = 'file-access',
+    FileAudio = 'file-audio',
+    FileCode = 'file-code',
+    FileDefault = 'file-default',
+    FileDwg = 'file-dwg',
+    FileExcel = 'file-excel',
+    FileFlash = 'file-flash',
+    FileImage = 'file-image',
+    FileMarkup = 'file-markup',
+    FileMediaplayer = 'file-mediaplayer',
+    FileOpenofficeBase = 'file-openoffice-base',
+    FileOpenofficeCalc = 'file-openoffice-calc',
+    FileOpenofficeDefault = 'file-openoffice-default',
+    FileOpenofficeDraw = 'file-openoffice-draw',
+    FileOpenofficeImpress = 'file-openoffice-impress',
+    FileOpenofficeMath = 'file-openoffice-math',
+    FileOpenofficeWritter = 'file-openoffice-writter',
+    FilePdf = 'file-pdf',
+    FilePowerpoint = 'file-powerpoint',
+    FileQuicktime = 'file-quicktime',
+    FileRealplayer = 'file-realplayer',
+    FileText = 'file-text',
+    FileVideo = 'file-video',
+    FileVisio = 'file-visio',
+    FileWord = 'file-word',
+    FileZip = 'file-zip',
+    FolderOpen = 'folder-open',
+    Folder = 'folder',
+    FullScreen = 'fullScreen',
+    Grid = 'grid',
+    Grouping = 'Grouping',
+    Heraldry = 'heraldry',
+    Hide = 'hide',
+    Hint = 'hint',
+    Home = 'Home',
+    ImageSlideshow = 'image-slideshow',
+    ImageSquare = 'image-square',
+    Image1Filled = 'image1-filled',
+    Image2Filled = 'image2-filled',
+    InformationFilled = 'information-filled',
+    InformationWhiteFilled = 'information-white-filled',
+    Information = 'information',
+    LeaveFullScreen = 'leave-full-screen',
+    ListFilled = 'list-filled',
+    List = 'list',
+    Lock = 'lock',
+    Logout = 'logout',
+    MultimediaExternal = 'multimedia-external',
+    MultimediaFilled = 'multimedia-filled',
+    Multimedia = 'multimedia',
+    NotAllowed = 'not-allowed',
+    Notification = 'notification',
+    Options = 'options',
+    Panel = 'panel',
+    Profile = 'profile',
+    RemoveAssignation = 'remove-assignation',
+    RemoveCircleFilled = 'remove-circle-filled',
+    RemoveCircle = 'remove-circle',
+    Replace = 'replace',
+    RightAnswer = 'right-answer',
+    RoleAssignation = 'role-assignation',
+    Search = 'search',
+    Show = 'show',
+    Subtitle = 'subtitle',
+    Text1 = 'text1',
+    Text2 = 'text2',
+    VideoFilled = 'video-filled',
+    VideoSlideshow = 'video-slideshow',
+    Video = 'video',
+    WarningFilled = 'warning-filled',
+    WarningWhiteFilled = 'warning-white-filled',
+    Warning = 'warning',
+    WrongAnswer = 'wrong-answer'
+}
+
+
 export interface ModulIcon {
     name: string;
     category?: ModulIconsCategory[];
@@ -20,324 +140,324 @@ export interface ModulIcon {
 
 export const ModulIcons: ModulIcon[] = [
     {
-        name: 'add-circle-filled',
+        name: ModulIconName.AddCircleFilled,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'add-circle',
+        name: ModulIconName.AddCircle,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow--down',
-        category: [
-            ModulIconsCategory.Arrow,
-            ModulIconsCategory.Control
-        ]
-    },
-    {
-        name: 'arrow--left',
+        name: ModulIconName.ArrowDown,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow--right',
+        name: ModulIconName.ArrowLeft,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow--up',
+        name: ModulIconName.ArrowRight,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-button--down',
+        name: ModulIconName.ArrowUp,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-button--left',
+        name: ModulIconName.ArrowButtonDown,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-button--right',
+        name: ModulIconName.ArrowButtonLeft,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-button--up',
+        name: ModulIconName.ArrowButtonRight,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-head-circle--right',
+        name: ModulIconName.ArrowButtonUp,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-head-filled--down',
+        name: ModulIconName.ArrowHeadCircleRight,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-head-filled--left',
+        name: ModulIconName.ArrowHeadFilledDown,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-head-filled--right',
+        name: ModulIconName.ArrowHeadFilledLeft,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-head-filled--up',
+        name: ModulIconName.ArrowHeadFilledRight,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-return',
+        name: ModulIconName.ArrowHeadFilledUp,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-thin--down',
+        name: ModulIconName.ArrowReturn,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-thin--left',
+        name: ModulIconName.ArrowThinDown,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-thin--right',
+        name: ModulIconName.ArrowThinLeft,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'arrow-thin--up',
+        name: ModulIconName.ArrowThinRight,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'attachment',
+        name: ModulIconName.ArrowThinUp,
+        category: [
+            ModulIconsCategory.Arrow,
+            ModulIconsCategory.Control
+        ]
+    },
+    {
+        name: ModulIconName.Attachment,
         category: [
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'avatar'
+        name: ModulIconName.Avatar
     },
     {
-        name: 'calendar',
+        name: ModulIconName.Calendar,
         category: [
             ModulIconsCategory.Form
         ]
     },
     {
-        name: 'chevron--down',
+        name: ModulIconName.ChevronDown,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'chevron--left',
+        name: ModulIconName.ChevronLeft,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'chevron--right',
+        name: ModulIconName.ChevronRight,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'chevron--up',
+        name: ModulIconName.ChevronUp,
         category: [
             ModulIconsCategory.Arrow,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'clock',
+        name: ModulIconName.Clock,
         category: [
             ModulIconsCategory.Form
         ]
     },
     {
-        name: 'close-clear',
+        name: ModulIconName.CloseClear,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'code-tag',
+        name: ModulIconName.CodeTag,
         category: [
             ModulIconsCategory.Text
         ]
     },
     {
-        name: 'completed-filled',
+        name: ModulIconName.CompletedFilled,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'confirmation-white-filled',
+        name: ModulIconName.ConfirmationWhiteFilled,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'confirmation',
+        name: ModulIconName.Confirmation,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'delete',
+        name: ModulIconName.Delete,
         category: [
             ModulIconsCategory.Form,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'download',
+        name: ModulIconName.Download,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'drag-veryical',
+        name: ModulIconName.DragVeryical,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'dragndrop',
+        name: ModulIconName.Dragndrop,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'edit',
+        name: ModulIconName.Edit,
         category: [
             ModulIconsCategory.Form,
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'email-send',
+        name: ModulIconName.EmailSend,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'email'
+        name: ModulIconName.Email
     },
     {
-        name: 'error-filled',
+        name: ModulIconName.ErrorFilled,
         category: [
             ModulIconsCategory.Form,
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'error',
+        name: ModulIconName.Error,
         category: [
             ModulIconsCategory.Form,
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'evaluation'
+        name: ModulIconName.Evaluation
     },
     {
-        name: 'file-access',
+        name: ModulIconName.FileAccess,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-audio',
+        name: ModulIconName.FileAudio,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Audio
         ]
     },
     {
-        name: 'file-code',
+        name: ModulIconName.FileCode,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Text
         ]
     },
     {
-        name: 'file-default',
+        name: ModulIconName.FileDefault,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-dwg',
+        name: ModulIconName.FileDwg,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-excel',
+        name: ModulIconName.FileExcel,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-flash',
+        name: ModulIconName.FileFlash,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -347,7 +467,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-image',
+        name: ModulIconName.FileImage,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -355,7 +475,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-markup',
+        name: ModulIconName.FileMarkup,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -363,7 +483,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-mediaplayer',
+        name: ModulIconName.FileMediaplayer,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -373,49 +493,49 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-openoffice-base',
+        name: ModulIconName.FileOpenofficeBase,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-openoffice-calc',
+        name: ModulIconName.FileOpenofficeCalc,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-openoffice-default',
+        name: ModulIconName.FileOpenofficeDefault,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-openoffice-draw',
+        name: ModulIconName.FileOpenofficeDraw,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-openoffice-impress',
+        name: ModulIconName.FileOpenofficeImpress,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-openoffice-math',
+        name: ModulIconName.FileOpenofficeMath,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-openoffice-writter',
+        name: ModulIconName.FileOpenofficeWritter,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -423,7 +543,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-pdf',
+        name: ModulIconName.FilePdf,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -432,7 +552,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-powerpoint',
+        name: ModulIconName.FilePowerpoint,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -441,7 +561,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-quicktime',
+        name: ModulIconName.FileQuicktime,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -450,7 +570,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-realplayer',
+        name: ModulIconName.FileRealplayer,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -459,7 +579,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-text',
+        name: ModulIconName.FileText,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -467,7 +587,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-video',
+        name: ModulIconName.FileVideo,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -476,14 +596,14 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-visio',
+        name: ModulIconName.FileVisio,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'file-word',
+        name: ModulIconName.FileWord,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document,
@@ -491,122 +611,122 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'file-zip',
+        name: ModulIconName.FileZip,
         category: [
             ModulIconsCategory.File,
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'folder-open',
+        name: ModulIconName.FolderOpen,
         category: [
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'folder',
+        name: ModulIconName.Folder,
         category: [
             ModulIconsCategory.Document
         ]
     },
     {
-        name: 'full-screen',
+        name: ModulIconName.FullScreen,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'grid'
+        name: ModulIconName.Grid
     },
     {
-        name: 'grouping',
+        name: ModulIconName.Grouping,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'heraldry'
+        name: ModulIconName.Heraldry
     },
     {
-        name: 'hide',
+        name: ModulIconName.Hide,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'hint'
+        name: ModulIconName.Hint
     },
     {
-        name: 'home',
+        name: ModulIconName.Home,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'image-slideshow',
+        name: ModulIconName.ImageSlideshow,
         category: [
             ModulIconsCategory.Image
         ]
     },
     {
-        name: 'image-square',
+        name: ModulIconName.ImageSquare,
         category: [
             ModulIconsCategory.Image
         ]
     },
     {
-        name: 'image1-filled',
+        name: ModulIconName.Image1Filled,
         category: [
             ModulIconsCategory.Image
         ]
     },
     {
-        name: 'image2-filled',
+        name: ModulIconName.Image2Filled,
         category: [
             ModulIconsCategory.Image
         ]
     },
     {
-        name: 'information-filled',
+        name: ModulIconName.InformationFilled,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'information-white-filled',
+        name: ModulIconName.InformationWhiteFilled,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'information',
+        name: ModulIconName.Information,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'leave-full-screen',
+        name: ModulIconName.LeaveFullScreen,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'list-filled'
+        name: ModulIconName.ListFilled
     },
     {
-        name: 'list'
+        name: ModulIconName.List
     },
     {
-        name: 'lock'
+        name: ModulIconName.Lock
     },
     {
-        name: 'logout',
+        name: ModulIconName.Logout,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'multimedia-external',
+        name: ModulIconName.MultimediaExternal,
         category: [
             ModulIconsCategory.Image,
             ModulIconsCategory.Video,
@@ -614,7 +734,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'multimedia-filled',
+        name: ModulIconName.MultimediaFilled,
         category: [
             ModulIconsCategory.Image,
             ModulIconsCategory.Video,
@@ -622,7 +742,7 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'multimedia',
+        name: ModulIconName.Multimedia,
         category: [
             ModulIconsCategory.Image,
             ModulIconsCategory.Video,
@@ -630,139 +750,139 @@ export const ModulIcons: ModulIcon[] = [
         ]
     },
     {
-        name: 'not-allowed',
+        name: ModulIconName.NotAllowed,
         category: [
             ModulIconsCategory.Control,
             ModulIconsCategory.Form
         ]
     },
     {
-        name: 'notification'
+        name: ModulIconName.Notification
     },
     {
-        name: 'options',
+        name: ModulIconName.Options,
         category: [
             ModulIconsCategory.Control,
             ModulIconsCategory.Form
         ]
     },
     {
-        name: 'panel',
+        name: ModulIconName.Panel,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'profile'
+        name: ModulIconName.Profile
     },
     {
-        name: 'remove-assignation',
+        name: ModulIconName.RemoveAssignation,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'remove-circle-filled',
+        name: ModulIconName.RemoveCircleFilled,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'remove-circle',
+        name: ModulIconName.RemoveCircle,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'replace',
+        name: ModulIconName.Replace,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'right-answer',
+        name: ModulIconName.RightAnswer,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'role-assignation',
+        name: ModulIconName.RoleAssignation,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'search',
+        name: ModulIconName.Search,
         category: [
             ModulIconsCategory.Control,
             ModulIconsCategory.Form
         ]
     },
     {
-        name: 'show',
+        name: ModulIconName.Show,
         category: [
             ModulIconsCategory.Control
         ]
     },
     {
-        name: 'subtitle',
+        name: ModulIconName.Subtitle,
         category: [
             ModulIconsCategory.Text
         ]
     },
     {
-        name: 'text1',
+        name: ModulIconName.Text1,
         category: [
             ModulIconsCategory.Text
         ]
     },
     {
-        name: 'text2',
+        name: ModulIconName.Text2,
         category: [
             ModulIconsCategory.Text
         ]
     },
     {
-        name: 'video-filled',
+        name: ModulIconName.VideoFilled,
         category: [
             ModulIconsCategory.Video,
             ModulIconsCategory.Audio
         ]
     },
     {
-        name: 'video-slideshow',
+        name: ModulIconName.VideoSlideshow,
         category: [
             ModulIconsCategory.Video,
             ModulIconsCategory.Audio
         ]
     },
     {
-        name: 'video',
+        name: ModulIconName.Video,
         category: [
             ModulIconsCategory.Video,
             ModulIconsCategory.Audio
         ]
     },
     {
-        name: 'warning-filled',
+        name: ModulIconName.WarningFilled,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'warning-white-filled',
+        name: ModulIconName.WarningWhiteFilled,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'warning',
+        name: ModulIconName.Warning,
         category: [
             ModulIconsCategory.State
         ]
     },
     {
-        name: 'wrong-answer',
+        name: ModulIconName.WrongAnswer,
         category: [
             ModulIconsCategory.State
         ]

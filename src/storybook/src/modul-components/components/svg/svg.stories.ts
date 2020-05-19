@@ -1,7 +1,8 @@
 import { actions } from '@storybook/addon-actions';
-import { boolean, select, text } from '@storybook/addon-knobs';
-import { ModulIcon, ModulIcons } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
+import { boolean, color, select, text } from '@storybook/addon-knobs';
+import { ModulIconName } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {
@@ -12,21 +13,29 @@ export default {
 export const defaultStory = () => ({
     props: {
         name: {
-            default: select<string>('Prop name', ModulIcons.map((m: ModulIcon) => {
-                return m.name;
-            }), 'profile')
+            default: select<ModulIconName>(
+                'Prop name',
+                Enums.toValueArray(ModulIconName) as ModulIconName[],
+                ModulIconName.Profile
+            )
         },
         width: {
-            default: text('Prop width', '1em')
+            default: text('Prop width', '3em')
         },
         height: {
-            default: text('Prop height', '1em')
+            default: text('Prop height', '3em')
         },
         svgTitle: {
-            default: text('Prop svg-title', 'Inspect the HTML to see title tag inside the SVG.')
+            default: text(
+                'Prop svg-title',
+                'Inspect the HTML to see title tag inside the SVG.'
+            )
         },
         showCustomSvg: {
             default: boolean('Show custom svg', false)
+        },
+        svgColor: {
+            default: color('SVG color', '#000')
         }
     },
     computed: {
@@ -47,6 +56,7 @@ export const defaultStory = () => ({
         @mouseover="emitMouseover"
         @mouseleave="emitMouseleave"
         @svg-id="emitSvgId"
+        :style="{ color: svgColor }"
     />`
 });
 
