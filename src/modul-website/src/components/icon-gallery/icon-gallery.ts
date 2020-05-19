@@ -1,9 +1,8 @@
+import { ModulIcon, ModulIcons } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { MediaQueries, MediaQueriesMixin } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { normalizeString } from '@ulaval/modul-components/dist/utils/str/str';
 import Component from 'vue-class-component';
-
 import { ModulWebsite } from '../modul-website';
-import { ModulIconList } from './icon-gallery-list';
 import WithRender from './icon-gallery.html?style=./icon-gallery.scss';
 
 export enum MIconGalleryViewMode {
@@ -25,7 +24,8 @@ export class MIconGallery extends ModulWebsite {
     private dialogOpen: boolean = false;
     private previewIconSize: number = 32;
     private previewName: string = 'title';
-    private previewTag: string = '';
+    private previewModulIcon: ModulIcon = {} as ModulIcon;
+    private previewCategories: string = '';
     private maxWidth: string = 'regular';
 
     private toggleViewMode(): void {
@@ -71,24 +71,29 @@ export class MIconGallery extends ModulWebsite {
     }
 
     private get searchResult(): any[] {
-        let filtereComponents: any[] = ModulIconList.iconList;
+        let modulIcons: ModulIcon[] = ModulIcons;
         if (this.searchModel != '') {
-            filtereComponents = ModulIconList.iconList.filter((element) => {
-                let textToSearch = element.name + ' ' + element.nameFr;
+            modulIcons = modulIcons.filter((modulIcon: ModulIcon) => {
+                let textToSearch: string = modulIcon.category ? modulIcon.category.reduce((acc: string, cur: string) => {
+                    return `${acc} ${cur}`;
+                }, '') : '';
+                textToSearch = modulIcon.name + ' ' + textToSearch;
                 return normalizeString(textToSearch).match(normalizeString(this.searchModel));
             });
         }
-        return filtereComponents;
+        return modulIcons;
     }
 
     private get hasSearchResult(): boolean {
         return this.searchResult.length > 0;
     }
 
-    private openDialog(name, nameFr) {
+    private openDialog(modulIcon: ModulIcon): void {
+        this.previewModulIcon = modulIcon;
+        this.previewCategories = modulIcon.category ? modulIcon.category.reduce((acc: string, cur: string, index: number) => {
+            return index === 0 ? cur : `${acc}, ${cur}`;
+        }, '') : '';
         this.dialogOpen = true;
-        this.previewName = nameFr;
-        this.previewTag = name;
     }
 
 }
