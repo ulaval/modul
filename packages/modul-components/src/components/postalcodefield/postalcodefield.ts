@@ -46,9 +46,7 @@ export class MPostalcodefield extends ModulVue {
                 };
             case MPostalCodeCountry.FR:
                 return {
-                    blocks: [2, 3],
-                    delimiter: ' ',
-                    delimiterLazyShow: true,
+                    blocks: [5],
                     numericOnly: true,
                     uppercase: true
                 };

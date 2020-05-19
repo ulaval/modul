@@ -3,6 +3,15 @@ import { MPostalCodeCountry } from '../../components/postalcodefield/postalcodef
 import { POSTAL_CODE_NAME } from '../filter-names';
 
 export class PostalCodeFilter {
+
+    /**
+     * Available formats:
+     * CA (6 characters) — Example: "X1X 1X1"
+     * US (5 or less characters) — Example: "11111" (Only 5 first characters are kept)
+     * US (more than 5 characters, up to 9) — Example: "11111-1111" (Only 9 first characters are kept)
+     * FR (5 characters) — Example: "11111" (Only 5 first characters are kept)
+     * Other — Example: "11111-1111" (string stays the same)
+     */
     static format(text: string, isoCountry: string): string {
         switch (isoCountry) {
             case MPostalCodeCountry.CA: {
@@ -16,7 +25,7 @@ export class PostalCodeFilter {
                 }
             }
             case MPostalCodeCountry.FR: {
-                return [text.slice(0, 2), text.slice(2, 5)].join(' ');
+                return text.substring(0, 5);
             }
             default: {
                 return text;
