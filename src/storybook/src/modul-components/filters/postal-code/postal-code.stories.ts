@@ -1,4 +1,5 @@
 import { select, text } from '@storybook/addon-knobs';
+import { SelectTypeOptionsProp } from '@storybook/addon-knobs/dist/components/types/Select';
 import { storiesOf } from '@storybook/vue';
 import { MPostalCodeCountry } from '@ulaval/modul-components/dist/components/postalcodefield/postalcodefield';
 import { POSTAL_CODE_NAME } from '@ulaval/modul-components/dist/filters/filter-names';
@@ -13,13 +14,10 @@ function getBaseVueWithLocale(template: string): any {
         template,
         props: {
             text: {
-                default: text('G2B0B9', MPostalCodeCountry.CA)
+                default: text('Postal Code', 'G2B0B9')
             },
             isoCountry: {
-                default: select('ISO Country', {
-                    [MPostalCodeCountry.CA]: MPostalCodeCountry.CA,
-                    ['Other country']: ''
-                }, MPostalCodeCountry.CA)
+                default: select('ISO Country', getAllCountryOptions(), MPostalCodeCountry.CA)
             }
         },
         methods: {
@@ -32,6 +30,10 @@ function getBaseVueWithLocale(template: string): any {
 
 function getBaseSimpleVue(template: string): any {
     return getBaseVueWithLocale(template);
+}
+
+function getAllCountryOptions(): SelectTypeOptionsProp<MPostalCodeCountry> {
+    return MPostalCodeCountry;
 }
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${POSTAL_CODE_NAME}`, module)
