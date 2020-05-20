@@ -75,7 +75,6 @@ export class MSpinner extends ModulVue {
 
     @Watch('processing')
     private onProcessingChange(value: boolean): void {
-        this.$log.warn(`<${SPINNER_NAME}>: ${PROCESSING_WARN}`);
         if (value) {
             this.openProcessingPortal();
         } else {
@@ -106,7 +105,7 @@ export class MSpinner extends ModulVue {
             this.portalTargetEl = undefined;
         }
 
-        let el: HTMLElement = document.getElementById(this.spinnerId) as HTMLElement;
+        const el: HTMLElement = document.getElementById(this.spinnerId) as HTMLElement;
         if (el) {
             document.body.removeChild(el);
         }
