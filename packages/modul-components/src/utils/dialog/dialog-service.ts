@@ -1,13 +1,5 @@
 import Vue from 'vue';
-import { PluginObject } from 'vue/types/plugin';
 import { MDialog, MDialogState } from '../../components/dialog/dialog';
-
-
-declare module 'vue/types/vue' {
-    interface Vue {
-        $dialog: DialogService;
-    }
-}
 
 export class DialogService {
 
@@ -118,12 +110,3 @@ export class DialogService {
     }
 
 }
-
-const DialogServicePlugin: PluginObject<any> = {
-    install(v): void {
-        let dialog: DialogService = new DialogService();
-        (v.prototype).$dialog = dialog;
-    }
-};
-
-export default DialogServicePlugin;
