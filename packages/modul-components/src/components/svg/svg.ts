@@ -1,9 +1,9 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { ModulIconName } from '../../assets/icons/modul-icons';
 import { eraseTag, eraseTagAndAllIsContent } from '../../utils/clean/htmlClean';
 import { Enums } from '../../utils/enums/enums';
+import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
 import { SVG_NAME } from '../component-names';

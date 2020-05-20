@@ -1,7 +1,7 @@
 import { actions } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
-import { ModulIcon, ModulIcons, ModulIconsCategory } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { ModulIcon, ModulIcons, ModulIconsCategory } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {

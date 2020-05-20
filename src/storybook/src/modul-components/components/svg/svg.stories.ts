@@ -1,8 +1,8 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, color, select, text } from '@storybook/addon-knobs';
-import { ModulIconName } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
+import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 export default {
