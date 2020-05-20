@@ -58,15 +58,13 @@ exports[`Storyshots modul-components|m-phonefield Autocomplete Work Phone 1`] = 
                       <div
                         class="m-phonefield__flag-wrapper"
                       >
-                        <svg
-                          class="m-phonefield__flag"
+                        <span
+                          class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                           height="20px"
                           width="27px"
                         >
-                          <use
-                            aria-hidden="true"
-                          />
-                        </svg>
+                          {}
+                        </span>
                       </div>
                     </div>
                      
@@ -414,15 +412,13 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
                           <div
                             class="m-phonefield__flag-wrapper"
                           >
-                            <svg
-                              class="m-phonefield__flag"
+                            <span
+                              class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                               height="20px"
                               width="27px"
                             >
-                              <use
-                                aria-hidden="true"
-                              />
-                            </svg>
+                              {}
+                            </span>
                           </div>
                         </div>
                          
@@ -638,15 +634,13 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
                       <div
                         class="m-phonefield__flag-wrapper"
                       >
-                        <svg
-                          class="m-phonefield__flag"
+                        <span
+                          class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                           height="20px"
                           width="27px"
                         >
-                          <use
-                            aria-hidden="true"
-                          />
-                        </svg>
+                          {}
+                        </span>
                       </div>
                     </div>
                      
@@ -854,15 +848,13 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
                       <div
                         class="m-phonefield__flag-wrapper"
                       >
-                        <svg
-                          class="m-phonefield__flag"
+                        <span
+                          class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                           height="20px"
                           width="27px"
                         >
-                          <use
-                            aria-hidden="true"
-                          />
-                        </svg>
+                          {}
+                        </span>
                       </div>
                     </div>
                      
@@ -1068,15 +1060,13 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
                       <div
                         class="m-phonefield__flag-wrapper"
                       >
-                        <svg
-                          class="m-phonefield__flag"
+                        <span
+                          class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                           height="20px"
                           width="27px"
                         >
-                          <use
-                            aria-hidden="true"
-                          />
-                        </svg>
+                          {}
+                        </span>
                       </div>
                     </div>
                      
@@ -1305,15 +1295,13 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
                       <div
                         class="m-phonefield__flag-wrapper"
                       >
-                        <svg
-                          class="m-phonefield__flag"
+                        <span
+                          class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                           height="20px"
                           width="27px"
                         >
-                          <use
-                            aria-hidden="true"
-                          />
-                        </svg>
+                          {}
+                        </span>
                       </div>
                     </div>
                      
@@ -1519,15 +1507,13 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
                       <div
                         class="m-phonefield__flag-wrapper"
                       >
-                        <svg
-                          class="m-phonefield__flag"
+                        <span
+                          class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                           height="20px"
                           width="27px"
                         >
-                          <use
-                            aria-hidden="true"
-                          />
-                        </svg>
+                          {}
+                        </span>
                       </div>
                     </div>
                      
@@ -1733,15 +1719,13 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
                       <div
                         class="m-phonefield__flag-wrapper"
                       >
-                        <svg
-                          class="m-phonefield__flag"
+                        <span
+                          class="m-country-flag m-phonefield__flag m--is-code-iso2-ca"
                           height="20px"
                           width="27px"
                         >
-                          <use
-                            aria-hidden="true"
-                          />
-                        </svg>
+                          {}
+                        </span>
                       </div>
                     </div>
                      

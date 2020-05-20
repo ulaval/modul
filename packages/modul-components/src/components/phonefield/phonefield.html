@@ -23,12 +23,10 @@
                                  @focus="onSelectFocus"
                                  @blur="onSelectBlur">
             <div class="m-phonefield__flag-wrapper">
-                <svg class="m-phonefield__flag"
-                     width="27px"
-                     height="20px">
-                    <use :xlink:href="spriteId(countryModel)"
-                         aria-hidden="true"></use>
-                </svg>
+                <m-country-flag class="m-phonefield__flag"
+                                width="27px"
+                                height="20px"
+                                :code-iso2="countryModel" />
             </div>
 
             <template #outer-items="{item, index, props, handlers}">
@@ -39,11 +37,10 @@
                     <template>
                         <div class="m-phonefield__item-wrapper">
                             <div class="m-phonefield__item-flag-wrapper">
-                                <svg width="27px"
-                                     height="20px">
-                                    <use :xlink:href="spriteId(item)"
-                                         aria-hidden="true"></use>
-                                </svg>
+                                <m-country-flag class="m-phonefield__flag"
+                                                width="27px"
+                                                height="20px"
+                                                :code-iso2="item" />
                             </div>
                             <span class="m-phonefield__item-name">{{ countriesSorted[index].name }}</span>
                             <span class="m-phonefield__item-dialCode">+{{ countriesSorted[index].dialCode }}</span>
