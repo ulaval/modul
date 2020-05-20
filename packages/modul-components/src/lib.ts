@@ -85,6 +85,7 @@ export * from './components/radio/radio';
 export * from './components/scroll-top/scroll-top';
 export * from './components/searchfield/searchfield';
 export * from './components/show-more/show-more';
+export * from './components/sidebar/sidebar';
 export * from './components/spinner/spinner';
 export * from './components/steppers/steppers';
 export * from './components/switch/switch';
@@ -102,6 +103,7 @@ export * from './components/transitions/slide-transition/slide-transition';
 export * from './components/tree/tree';
 export * from './components/typeahead/typeahead';
 export * from './components/validation-message/validation-message';
+export * from './directives/badge/badge';
 /**
  * directives
  */
@@ -179,7 +181,7 @@ export const ModulComponentPlugin: PluginObject<ModulComponentPluginOptions | un
     install(v, options: ModulComponentPluginOptions | undefined = { curLang: FRENCH }): void {
 
         // tslint:disable-next-line: no-console
-        console.error('@deprecated  ModulComponentPlugin will be removed in v2 , please use individual plugins instead');
+        console.warn('@deprecated ModulComponentPlugin will be removed in v2 , please use individual plugins instead');
 
         const utilsPluginOptions: UtilsPluginOptions = {
             i18PluginOptions: {
