@@ -136,10 +136,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
                 alert('Custon action');
             }
         },
-        template: `<${MODAL_NAME} :open.sync="openProp">
+        template: `<${MODAL_NAME} :open.sync="openProp" title="title">
                         <m-button slot="trigger">Open the modal</m-button>
-                        <template slot="header">
-                            <span>custom slot content</span>
+                        <template slot="header-bouton">
                             <m-button @click="alert()">Custom button action</m-button>
                         </template>
                         Body content

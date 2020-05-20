@@ -18,8 +18,9 @@
                 <article class="m-modal__article"
                          ref="article">
                     <header class="m-modal__header">
-                        <slot name="header">
-                            <h2 v-if="title">{{ title }}</h2>
+                        <h2 v-if="title">{{ title }}</h2>
+                        <slot name="header" />
+                        <slot name="header-bouton">
                             <m-icon-button @click="closeModal()"
                                            icon-name="m-svg__close-clear"
                                            skin="dark"
