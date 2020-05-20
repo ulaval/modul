@@ -109,8 +109,7 @@ export class DialogService {
 
         });
     }
-
 }
 
-/* @depecrated will be removed in v2. */
+/** @deprecated will be removed in v2. */
 export default DialogServicePlugin;
