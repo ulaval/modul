@@ -51,7 +51,7 @@ export class MCheckbox extends ModulVue {
     public verticalAlign: MCheckboxVerticalAlignement;
 
     @Prop()
-    public hiddenLabel: string;
+    public ariaLabel: string;
 
     public isFocus = false;
     public internalValue: boolean = false;

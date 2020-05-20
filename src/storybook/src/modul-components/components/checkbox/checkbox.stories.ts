@@ -51,8 +51,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHECKBOX_NAME}`, module)
     .add('valid', () => ({
         template: '<m-checkbox :valid="true"> Checkbox</m-checkbox>'
     }))
-    .add('hidden-label', () => ({
-        template: '<m-checkbox hidden-label="Text prop hidden-label"></m-checkbox>'
+    .add('aria-label', () => ({
+        template: '<m-checkbox aria-label="Text prop aria-label" />'
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${CHECKBOX_NAME}/value`, module)
