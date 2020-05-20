@@ -49,6 +49,7 @@ import SelectPlugin from '@ulaval/modul-components/dist/components/select/select
 import ShowMorePlugin from '@ulaval/modul-components/dist/components/show-more/show-more';
 import SpinnerPlugin from '@ulaval/modul-components/dist/components/spinner/spinner';
 import SteppersPlugin from '@ulaval/modul-components/dist/components/steppers/steppers';
+import SvgPlugin from '@ulaval/modul-components/dist/components/svg/svg';
 import SwitchPlugin from '@ulaval/modul-components/dist/components/switch/switch';
 import TableHeaderPlugin from '@ulaval/modul-components/dist/components/table-header/table-header';
 import TablePlugin from '@ulaval/modul-components/dist/components/table/table';
@@ -162,6 +163,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(MaskedfieldPlugin);
         Vue.use(PostalcodefieldPlugin);
         Vue.use(FormPlugin);
+        Vue.use(SvgPlugin);
 
         // modul-website
         Vue.use(ComponentExamplesPlugin);

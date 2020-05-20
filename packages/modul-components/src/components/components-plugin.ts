@@ -63,6 +63,7 @@ import SearchfieldPlugin from './searchfield/searchfield';
 import ShowMorePlugin from './show-more/show-more';
 import SpinnerPlugin from './spinner/spinner';
 import SteppersPlugin from './steppers/steppers';
+import SvgPlugin from './svg/svg';
 import SwitchPlugin from './switch/switch';
 import TableHeaderPlugin from './table-header/table-header';
 import TablePlugin from './table/table';
@@ -167,6 +168,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ScrollToPlugin);
         Vue.use(ExpandableLayoutPlugin);
         Vue.use(AvatarPlugin);
+        Vue.use(SvgPlugin);
     }
 };
 
