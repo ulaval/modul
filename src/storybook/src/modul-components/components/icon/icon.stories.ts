@@ -1,16 +1,15 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
-import { ModulIcon, ModulIcons } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
+import { ModulIconName } from '@ulaval/modul-components/dist/assets/icons/modul-icons';
 import { ICON_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-const ICONLIST_SHORTHAND: string[] = ModulIcons.map((m: ModulIcon) => {
-    return m.name;
-});
+const ICONLIST_SHORTHAND: ModulIconName[] = Enums.toValueArray(ModulIconName) as ModulIconName[];
 
-const ICONLIST_LONGHAND: string[] = ModulIcons.map((m: ModulIcon) => {
-    return `m-svg__${m.name}`;
+const ICONLIST_LONGHAND: string[] = ICONLIST_SHORTHAND.map((name: ModulIconName) => {
+    return `m-svg__${name}`;
 });
 
 const getPropExampleTemplate: (html: string, propName: string) => string = (html: string, propName: string) => `<div style="display: flex; align-items: center;">
@@ -22,7 +21,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('sandbox', () => ({
         props: {
             name: {
-                default: select('Prop name', ICONLIST_SHORTHAND, 'error')
+                default: select<ModulIconName>('Prop name', ICONLIST_SHORTHAND, ModulIconName.Error)
             },
             svgTitle: {
                 default: text('Prop svg-title', '')
@@ -63,7 +62,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('name (short)', () => ({
         props: {
             name: {
-                default: select('Prop name', ICONLIST_SHORTHAND, 'profile')
+                default: select<ModulIconName>('Prop name', ICONLIST_SHORTHAND, ModulIconName.Profile)
             }
         },
         template: getPropExampleTemplate(`<${ICON_NAME} :name="name" />`, 'name')
@@ -71,7 +70,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('name (long)', () => ({
         props: {
             name: {
-                default: select('Prop name', ICONLIST_LONGHAND, 'm-svg__profile')
+                default: select<string>('Prop name', ICONLIST_LONGHAND, `m-svg__${ModulIconName.Profile}`)
             }
         },
         template: getPropExampleTemplate(`<${ICON_NAME} :name="name" />`, 'name')
@@ -95,7 +94,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('showNameAsClass', () => ({
         props: {
             name: {
-                default: select('icon name as class', ICONLIST_SHORTHAND, 'profile')
+                default: select<ModulIconName>('icon name as class', ICONLIST_SHORTHAND, ModulIconName.Profile)
             }
         },
         template: getPropExampleTemplate(`<${ICON_NAME} :show-name-as-class="true" name="profile" />`, 'name')
@@ -103,7 +102,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('Custom svg', () => ({
         props: {
             name: {
-                default: select('Prop name', ICONLIST_SHORTHAND, 'error')
+                default: select<ModulIconName>('Prop name', ICONLIST_SHORTHAND, ModulIconName.Error)
             },
             useSvgSprite: {
                 default: boolean('Prop use-svg-sprite', false)
@@ -131,7 +130,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ICON_NAME}`, module)
     .add('UseSvgSprite (false)', () => ({
         props: {
             name: {
-                default: select('Prop name', ICONLIST_SHORTHAND, 'profile')
+                default: select<ModulIconName>('Prop name', ICONLIST_SHORTHAND, ModulIconName.Profile)
             },
             useSvgSprite: {
                 default: boolean('Prop use-svg-sprite', false)

@@ -1,6 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { ModulIconName } from '../../assets/icons/modul-icons';
 import { Messages } from '../../utils/i18n/i18n';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ICON_FILE_NAME } from '../component-names';
@@ -37,34 +38,6 @@ const EXT_MARKUP_HTML: string = 'html,htm';
 const EXT_CODE_CSS: string = 'css,scss';
 const EXT_CODE_JSON: string = 'json';
 const EXT_CODE_SCRIPT: string = 'js,ts';
-
-// Extensions Groups
-const GROUP_IMAGE: string = 'file-image';
-const GROUP_TEXT: string = 'file-text';
-const GROUP_WORD: string = 'file-word';
-const GROUP_VISIO: string = 'file-visio';
-const GROUP_POWERPOINT: string = 'file-powerpoint';
-const GROUP_EXCEL: string = 'file-excel';
-const GROUP_ACCESS: string = 'file-access';
-const GROUP_PDF: string = 'file-pdf';
-const GROUP_REALPLAYER: string = 'file-realplayer';
-const GROUP_QUICKTIME: string = 'file-quicktime';
-const GROUP_MEDIAPLAYER: string = 'file-mediaplayer';
-const GROUP_FLASH: string = 'file-flash';
-const GROUP_VIDEO: string = 'file-video';
-const GROUP_AUDIO: string = 'file-audio';
-const GROUP_ZIP: string = 'file-zip';
-const GROUP_OPENOFFICE_DEFAULT: string = 'file-openoffice-default';
-const GROUP_OPENOFFICE_WRITTER: string = 'file-openoffice-writter';
-const GROUP_OPENOFFICE_IMPRESS: string = 'file-openoffice-impress';
-const GROUP_OPENOFFICE_DRAW: string = 'file-openoffice-draw';
-const GROUP_OPENOFFICE_CALC: string = 'file-openoffice-calc';
-const GROUP_OPENOFFICE_MATH: string = 'file-openoffice-math';
-const GROUP_OPENOFFICE_BASE: string = 'file-openoffice-base';
-const GROUP_DWG: string = 'file-dwg';
-const GROUP_CODE: string = 'file-code';
-const GROUP_MARKUP: string = 'file-markup';
-const GROUP_OTHER: string = 'file-default';
 
 // Extensions Tooltips
 const TOOLTIP_IMAGE: string = 'image';
@@ -129,38 +102,38 @@ export class MIconFile extends Vue {
 
     public get spriteId(): string {
         let cleanExtension: string = this.extension ? this.extension.replace('.', '').toLowerCase() : '';
-        return this.fileMap[cleanExtension] || GROUP_OTHER;
+        return this.fileMap[cleanExtension] || ModulIconName.FileDefault;
     }
 
     public beforeMount(): void {
-        this.mapExtensionsGroup(EXT_IMAGE, GROUP_IMAGE, TOOLTIP_IMAGE);
-        this.mapExtensionsGroup(EXT_TEXT, GROUP_TEXT, TOOLTIP_TEXT);
-        this.mapExtensionsGroup(EXT_DOC, GROUP_WORD, TOOLTIP_WORD);
-        this.mapExtensionsGroup(EXT_VSD, GROUP_VISIO, TOOLTIP_VISIO);
-        this.mapExtensionsGroup(EXT_PPT, GROUP_POWERPOINT, TOOLTIP_POWERPOINT);
-        this.mapExtensionsGroup(EXT_XLS, GROUP_EXCEL, TOOLTIP_EXCEL);
-        this.mapExtensionsGroup(EXT_ACCDB, GROUP_ACCESS, TOOLTIP_ACCESS);
-        this.mapExtensionsGroup(EXT_PDF, GROUP_PDF, TOOLTIP_PDF);
-        this.mapExtensionsGroup(EXT_RM, GROUP_REALPLAYER, TOOLTIP_REALPLAYER);
-        this.mapExtensionsGroup(EXT_MOV, GROUP_QUICKTIME, TOOLTIP_QUICKTIME);
-        this.mapExtensionsGroup(EXT_WMA, GROUP_MEDIAPLAYER, TOOLTIP_MEDIAPLAYER);
-        this.mapExtensionsGroup(EXT_SWF, GROUP_FLASH, TOOLTIP_FLASH);
-        this.mapExtensionsGroup(EXT_VIDEO, GROUP_VIDEO, TOOLTIP_VIDEO);
-        this.mapExtensionsGroup(EXT_MUSIC, GROUP_AUDIO, TOOLTIP_AUDIO);
-        this.mapExtensionsGroup(EXT_ARCHIVE, GROUP_ZIP, TOOLTIP_ZIP);
-        this.mapExtensionsGroup(EXT_OPEN_OFFICE, GROUP_OPENOFFICE_DEFAULT, TOOLTIP_OPENOFFICE_DEFAULT);
-        this.mapExtensionsGroup(EXT_ODT, GROUP_OPENOFFICE_WRITTER, TOOLTIP_OPENOFFICE_WRITTER);
-        this.mapExtensionsGroup(EXT_ODP, GROUP_OPENOFFICE_IMPRESS, TOOLTIP_OPENOFFICE_IMPRESS);
-        this.mapExtensionsGroup(EXT_ODG, GROUP_OPENOFFICE_DRAW, TOOLTIP_OPENOFFICE_DRAW);
-        this.mapExtensionsGroup(EXT_ODS, GROUP_OPENOFFICE_CALC, TOOLTIP_OPENOFFICE_CALC);
-        this.mapExtensionsGroup(EXT_ODF, GROUP_OPENOFFICE_MATH, TOOLTIP_OPENOFFICE_MATH);
-        this.mapExtensionsGroup(EXT_ODB, GROUP_OPENOFFICE_BASE, TOOLTIP_OPENOFFICE_BASE);
-        this.mapExtensionsGroup(EXT_DWG, GROUP_DWG, TOOLTIP_DWG);
-        this.mapExtensionsGroup(EXT_CODE_CSS, GROUP_CODE, TOOLTIP_CODE_CSS);
-        this.mapExtensionsGroup(EXT_CODE_JSON, GROUP_CODE, TOOLTIP_CODE_JSON);
-        this.mapExtensionsGroup(EXT_CODE_SCRIPT, GROUP_CODE, TOOLTIP_CODE_SCRIPT);
-        this.mapExtensionsGroup(EXT_MARKUP_XML, GROUP_MARKUP, TOOLTIP_MARKUP_XML);
-        this.mapExtensionsGroup(EXT_MARKUP_HTML, GROUP_MARKUP, TOOLTIP_MARKUP_HTML);
+        this.mapExtensionsGroup(EXT_IMAGE, ModulIconName.FileImage, TOOLTIP_IMAGE);
+        this.mapExtensionsGroup(EXT_TEXT, ModulIconName.FileText, TOOLTIP_TEXT);
+        this.mapExtensionsGroup(EXT_DOC, ModulIconName.FileWord, TOOLTIP_WORD);
+        this.mapExtensionsGroup(EXT_VSD, ModulIconName.FileVisio, TOOLTIP_VISIO);
+        this.mapExtensionsGroup(EXT_PPT, ModulIconName.FilePowerpoint, TOOLTIP_POWERPOINT);
+        this.mapExtensionsGroup(EXT_XLS, ModulIconName.FileExcel, TOOLTIP_EXCEL);
+        this.mapExtensionsGroup(EXT_ACCDB, ModulIconName.FileAccess, TOOLTIP_ACCESS);
+        this.mapExtensionsGroup(EXT_PDF, ModulIconName.FilePdf, TOOLTIP_PDF);
+        this.mapExtensionsGroup(EXT_RM, ModulIconName.FileRealplayer, TOOLTIP_REALPLAYER);
+        this.mapExtensionsGroup(EXT_MOV, ModulIconName.FileQuicktime, TOOLTIP_QUICKTIME);
+        this.mapExtensionsGroup(EXT_WMA, ModulIconName.FileMediaplayer, TOOLTIP_MEDIAPLAYER);
+        this.mapExtensionsGroup(EXT_SWF, ModulIconName.FileFlash, TOOLTIP_FLASH);
+        this.mapExtensionsGroup(EXT_VIDEO, ModulIconName.FileVideo, TOOLTIP_VIDEO);
+        this.mapExtensionsGroup(EXT_MUSIC, ModulIconName.FileAudio, TOOLTIP_AUDIO);
+        this.mapExtensionsGroup(EXT_ARCHIVE, ModulIconName.FileZip, TOOLTIP_ZIP);
+        this.mapExtensionsGroup(EXT_OPEN_OFFICE, ModulIconName.FileOpenofficeDefault, TOOLTIP_OPENOFFICE_DEFAULT);
+        this.mapExtensionsGroup(EXT_ODT, ModulIconName.FileOpenofficeWritter, TOOLTIP_OPENOFFICE_WRITTER);
+        this.mapExtensionsGroup(EXT_ODP, ModulIconName.FileOpenofficeImpress, TOOLTIP_OPENOFFICE_IMPRESS);
+        this.mapExtensionsGroup(EXT_ODG, ModulIconName.FileOpenofficeDraw, TOOLTIP_OPENOFFICE_DRAW);
+        this.mapExtensionsGroup(EXT_ODS, ModulIconName.FileOpenofficeCalc, TOOLTIP_OPENOFFICE_CALC);
+        this.mapExtensionsGroup(EXT_ODF, ModulIconName.FileOpenofficeMath, TOOLTIP_OPENOFFICE_MATH);
+        this.mapExtensionsGroup(EXT_ODB, ModulIconName.FileOpenofficeBase, TOOLTIP_OPENOFFICE_BASE);
+        this.mapExtensionsGroup(EXT_DWG, ModulIconName.FileDwg, TOOLTIP_DWG);
+        this.mapExtensionsGroup(EXT_CODE_CSS, ModulIconName.FileCode, TOOLTIP_CODE_CSS);
+        this.mapExtensionsGroup(EXT_CODE_JSON, ModulIconName.FileCode, TOOLTIP_CODE_JSON);
+        this.mapExtensionsGroup(EXT_CODE_SCRIPT, ModulIconName.FileCode, TOOLTIP_CODE_SCRIPT);
+        this.mapExtensionsGroup(EXT_MARKUP_XML, ModulIconName.FileMarkup, TOOLTIP_MARKUP_XML);
+        this.mapExtensionsGroup(EXT_MARKUP_HTML, ModulIconName.FileMarkup, TOOLTIP_MARKUP_HTML);
     }
 
     public get svgTitle(): string {

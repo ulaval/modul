@@ -224,6 +224,14 @@ $modul-icon-gallery--color-active: $m-color--grey-lightest !default;
             padding: $m-padding;
             background: $m-color--grey-lighter;
             width: 100%;
+
+            p {
+                margin: 0;
+
+                &:not(:first-child) {
+                    margin-top: $m-spacing--s;
+                }
+            }
         }
 
         &__footer {
