@@ -15,7 +15,7 @@ const DirectivesPlugin: PluginObject<any> = {
         Vue.use(PopupPlugin);
         Vue.use(TextareaAutoHeightPlugin);
         Vue.use(I18nDirectivePlugin);
-        Vue.use(BadgePlugin)
+        Vue.use(BadgePlugin);
     }
 };
 
