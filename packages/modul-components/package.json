@@ -6,10 +6,10 @@
     "homepage": "https://ulaval.github.io/modul",
     "private": false,
     "scripts": {
-        "clean": "rimraf dist",
+        "clean": "rimraf dist lib",
         "build": "yarn run copyfiles && yarn run assetsToDist && yarn run build:ts && yarn run build:lib && yarn run metagen",
         "build:ts": "tsc --project tsconfig.lib.json",
-        "build:lib": "webpack --config conf/webpack.lib.js --colors",
+        "build:lib": "webpack --config conf/webpack.lib.js --colors --hide-modules --display-entrypoints=false",
         "copyfiles": "cpx \"./src/**/*.{json,html,scss,css,svg}\" dist",
         "assetsToDist": "cpx \"./src/assets/**/*\" dist/assets",
         "start": "webpack --config conf/webpack.config.js --env.openshift && http-server \"./dist\" -p 8080 -a 0.0.0.0",
@@ -91,6 +91,7 @@
         "stylelint-scss": "^3.15.0",
         "svg-inline-loader": "^0.8.2",
         "ts-jest": "^24.1.0",
+        "ts-loader": "^7.0.4",
         "vue": "^2.6.10",
         "vue-class-component": "^7.2.3",
         "vue-property-decorator": "^8.4.1",
@@ -100,6 +101,7 @@
         "vue-template-loader": "^1.0.0",
         "webpack": "^4.42.0",
         "webpack-bundle-analyzer": "^3.6.1",
+        "webpack-node-externals": "^1.7.2",
         "webpack-cli": "^3.3.11"
     },
     "repository": {
@@ -111,9 +113,11 @@
     },
     "files": [
         "src/**/*.ts",
-        "dist"
+        "dist",
+        "lib"
     ],
-    "main": "./dist/modul.cjs.js",
+    "main": "./lib/modul.js",
+    "module": "./lib/modul.js",
     "types": "./dist/lib.d.ts",
     "license": "Apache-2.0"
 }

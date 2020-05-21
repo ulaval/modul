@@ -61,6 +61,7 @@ import RadioPlugin from './radio/radio';
 import ScrollTopPlugin from './scroll-top/scroll-top';
 import SearchfieldPlugin from './searchfield/searchfield';
 import ShowMorePlugin from './show-more/show-more';
+import SidebarPlugin from './sidebar/sidebar';
 import SpinnerPlugin from './spinner/spinner';
 import SteppersPlugin from './steppers/steppers';
 import SwitchPlugin from './switch/switch';
@@ -131,6 +132,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ScrollTopPlugin);
         Vue.use(ShowMorePlugin);
         Vue.use(SpinnerPlugin);
+        Vue.use(SidebarPlugin);
         Vue.use(SlideTransitionPlugin);
         Vue.use(SteppersPlugin);
         Vue.use(SwitchPlugin);

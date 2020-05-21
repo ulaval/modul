@@ -10,6 +10,7 @@ import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
+import { MInputStyle } from '../input-style/input-style';
 import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-scroll';
 import { MSelectItem } from '../select/select-item/select-item';
 import { MValidationMessage } from '../validation-message/validation-message';
@@ -51,6 +52,7 @@ export interface Country {
         InputManagement
     ],
     components: {
+        MInputStyle,
         MInputMask,
         MSelectVirtualScroll,
         MSelectItem,
