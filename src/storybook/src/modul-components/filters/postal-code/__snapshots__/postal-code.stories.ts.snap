@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|f-m-postal-code Ca 1`] = `
+<div>
+  G2B 0B9
+</div>
+`;
+
+exports[`Storyshots modul-components|f-m-postal-code Default 1`] = `
+<div>
+  9999999
+</div>
+`;
+
+exports[`Storyshots modul-components|f-m-postal-code Fr 5 Characters 1`] = `
+<div>
+  99999
+</div>
+`;
+
+exports[`Storyshots modul-components|f-m-postal-code Us 5 Characters 1`] = `
+<div>
+  99999
+</div>
+`;
+
+exports[`Storyshots modul-components|f-m-postal-code Us 9 Characters 1`] = `
+<div>
+  99999-9999
+</div>
+`;

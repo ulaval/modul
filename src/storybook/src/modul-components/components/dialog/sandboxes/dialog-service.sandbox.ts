@@ -1,6 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import DialogPlugin, { MDialog } from '../../components/dialog/dialog';
+import DialogPlugin, { MDialog } from '../../../../../../../packages/modul-components/src/components/dialog/dialog';
 import WithRender from './dialog-service.sandbox.html';
 
 

@@ -8,10 +8,11 @@ exports[`Storyshots modul-components|m-typeahead Default 1`] = `
   >
     <div
       class="m-base-select"
+      input-max-width="288px"
+      style="width: 100%; max-width: 288px;"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           aria-controls="m-typeahead-fakeId-controls"
@@ -159,10 +160,11 @@ exports[`Storyshots modul-components|m-typeahead custom results 1`] = `
   >
     <div
       class="m-base-select"
+      input-max-width="288px"
+      style="width: 100%; max-width: 288px;"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           aria-controls="m-typeahead-fakeId-controls"
@@ -282,10 +284,11 @@ exports[`Storyshots modul-components|m-typeahead filter-results-manually 1`] = `
   >
     <div
       class="m-base-select"
+      input-max-width="288px"
+      style="width: 100%; max-width: 288px;"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           aria-controls="m-typeahead-fakeId-controls"
@@ -425,10 +428,11 @@ exports[`Storyshots modul-components|m-typeahead max-results 1`] = `
   >
     <div
       class="m-base-select"
+      input-max-width="288px"
+      style="width: 100%; max-width: 288px;"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           aria-controls="m-typeahead-fakeId-controls"
@@ -576,10 +580,11 @@ exports[`Storyshots modul-components|m-typeahead/mobile iphone6 1`] = `
   >
     <div
       class="m-base-select"
+      input-max-width="288px"
+      style="width: 100%; max-width: 288px;"
     >
       <div
         class="m-base-select__popup"
-        style="width: 288px;"
       >
         <div
           aria-controls="m-typeahead-fakeId-controls"

@@ -222,11 +222,11 @@ exports[`Storyshots modul-components|m-form/all fields Checkbox 1`] = `
         />
       </span>
        
-      <span
+      <div
         class="m-checkbox__label"
       >
         Is active ?
-      </span>
+      </div>
     </label>
      
     <div
@@ -1414,10 +1414,11 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
    
   <div
     class="m-base-select"
+    input-max-width="288px"
+    style="width: 100%; max-width: 288px;"
   >
     <div
       class="m-base-select__popup"
-      style="width: 288px;"
     >
       <div
         class="m-multi-select"

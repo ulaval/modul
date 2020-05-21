@@ -5,9 +5,9 @@
                 'm--has-error': hasPhonefieldError,
                 'm--is-valid': isPhonefieldValid,
                 'm--is-country-focus': internalFocus,
-                'm--has-validation-message': hasValidationMessage } ]">
+                'm--has-validation-message': hasValidationMessage } ]"
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
     <div class="m-phonefield__wrapper">
-
         <m-select-virtual-scroll class="m-phonefield__country"
                                  :value="countryModel"
                                  :options="isoCountries"
@@ -19,6 +19,7 @@
                                  :label="i18nCountryLabel"
                                  :clearable="false"
                                  width="auto"
+                                 :list-min-width="listMinWidth"
                                  @select-item="onContryChanged"
                                  @focus="onSelectFocus"
                                  @blur="onSelectBlur">
@@ -62,7 +63,6 @@
             </template>
 
         </m-select-virtual-scroll>
-
         <m-input-style class="m-phonefield__number"
                        :disabled="isDisabled"
                        :waiting="isWaiting"
@@ -75,7 +75,8 @@
                        :empty="isEmpty"
                        :readonly="isReadonly"
                        :required-marker="requiredMarker"
-                       :tag-style="tagStyle">
+                       :tag-style="tagStyle"
+                       width="100%">
             <m-input-mask ref="inputMask"
                           :value="internalValue"
                           :id="id"

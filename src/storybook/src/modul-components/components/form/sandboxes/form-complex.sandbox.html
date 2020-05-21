@@ -48,6 +48,14 @@
                              :label="type"></m-dropdown-item>
         </m-dropdown> <br />
 
+        <m-select v-m-control="selectField"
+                  v-model="selectField.value"
+                  :options="selectOptions"
+                  label="Fruits"
+                  :required-marker="true"
+                  :error="selectField.hasError()"
+                  :error-message="selectField.errorMessage"></m-select>
+
 
         <h4 class="m-u--h6">Nested formgroup</h4>
 

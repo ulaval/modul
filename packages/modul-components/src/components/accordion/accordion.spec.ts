@@ -4,8 +4,6 @@ import { addMessages } from '../../../tests/helpers/lang';
 import uuid from '../../utils/uuid/uuid';
 import AccordionPlugin, { MAccordion } from './accordion';
 
-
-
 jest.mock('../../utils/uuid/uuid');
 (uuid.generate as jest.Mock).mockReturnValue('uuid');
 
@@ -14,7 +12,6 @@ describe('MAcordion', () => {
         Vue.use(AccordionPlugin);
         addMessages(Vue, ['components/accordion/accordion.lang.en.json']);
     });
-
 
     it('should emit click event when it is opened or closed', () => {
         const acn: Wrapper<MAccordion> = mount(MAccordion, {

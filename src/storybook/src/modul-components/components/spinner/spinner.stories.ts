@@ -100,11 +100,15 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SPINNER_NAME}/knobs`, modul
                 default: select('size', Object.values(MSpinnerSize), MSpinnerSize.Small)
             }
         },
-        template: `<div>
-                        <m-spinner :description="description" :description-message="descriptionMessage"
-                        :processing="processing" :skin="skin" :size="size" :title="title"
-                        :title-message="titleMessage"></m-spinner>
-                   </div>`
+        template: `<m-spinner
+            :title="title"
+            :title-message="titleMessage"
+            :description="description"
+            :description-message="descriptionMessage"
+            :processing="processing"
+            :skin="skin"
+            :size="size"
+        />`
     }));
 
 

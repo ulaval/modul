@@ -8,8 +8,6 @@ import { I18N_NAME, SPINNER_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import WithRender from './spinner.html?style=./spinner.scss';
 
-
-
 export enum MSpinnerStyle {
     Dark = 'dark',
     Regular = 'regular',
@@ -69,7 +67,6 @@ export class MSpinner extends ModulVue {
     private portalTargetEl: HTMLElement | undefined = {} as HTMLElement; // initialized to be responsive
 
     private initialized: boolean = false; // seems to be necessary since $refs are not responsive
-    private visible: boolean = false;
     private stackId: string;
 
     protected created(): void {
@@ -77,27 +74,23 @@ export class MSpinner extends ModulVue {
     }
 
     protected beforeDestroy(): void {
-        if (this.processing) {
-            let el: HTMLElement = document.getElementById(this.spinnerId) as HTMLElement;
-            if (el) {
-                document.body.removeChild(el);
-            }
-        }
+        this.removeBackdrop();
     }
 
     @Watch('processing')
     private onProcessingChange(value: boolean): void {
-        this.$log.warn(`<${SPINNER_NAME}>: ${PROCESSING_WARN}`);
-        if (!value) {
+        if (value) {
+            this.openProcessingPortal();
+        } else {
             this.removeBackdrop();
         }
     }
 
-    private get spinnerElement(): HTMLElement | undefined {
+    public get spinnerElement(): HTMLElement | undefined {
         return this.processing ? this.portalTargetEl : this.$refs.spinnerContainer as HTMLElement;
     }
 
-    private onEnter(): void {
+    public openProcessingPortal(): void {
         if (!this.portalTargetEl && this.processing) {
             let element: HTMLElement = document.createElement('div');
             element.setAttribute('id', this.spinnerId);
@@ -107,14 +100,6 @@ export class MSpinner extends ModulVue {
             this.portalTargetEl.style.position = 'absolute';
         }
         this.initialized = true;
-        this.visible = true;
-    }
-
-    private onLeave(): void {
-        this.visible = false;
-        if (this.processing) {
-            this.removeBackdrop();
-        }
     }
 
     private removeBackdrop(): void {
@@ -123,22 +108,11 @@ export class MSpinner extends ModulVue {
             this.portalTargetEl.style.position = '';
             this.portalTargetEl = undefined;
         }
-    }
 
-    private get hasTitleMessage(): boolean {
-        return this.titleMessage !== '' && this.titleMessage !== undefined;
-    }
-
-    private get hasDescriptionMessage(): boolean {
-        return this.descriptionMessage !== '' && this.descriptionMessage !== undefined;
-    }
-
-    private get hasTitle(): boolean {
-        return this.title || this.hasTitleMessage;
-    }
-
-    private get hasDescription(): boolean {
-        return this.description || this.hasDescriptionMessage;
+        const el: HTMLElement = document.getElementById(this.spinnerId) as HTMLElement;
+        if (el) {
+            document.body.removeChild(el);
+        }
     }
 }
 
