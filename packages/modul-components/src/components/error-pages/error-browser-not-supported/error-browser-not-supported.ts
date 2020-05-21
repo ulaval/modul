@@ -2,7 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
-import { FRENCH, Messages } from '../../../utils/i18n/i18n';
+import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ERROR_BROWSER_NOT_SUPPORTED_NAME } from '../../component-names';
 import MessagePagePlugin, { Link } from '../../message-page/message-page';
@@ -41,7 +41,7 @@ export class MErrorBrowserNotSupported extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = 'm-svg__error-browser-not-supported';
+    readonly svgName: string = ModulIconName.MessageErrorBrowserNotSupported;
 }
 
 const ErrorBrowserNotSupported: PluginObject<any> = {

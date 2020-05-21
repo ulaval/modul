@@ -62,6 +62,7 @@ export const Document = () => getSvgCategoryStory(ModulIconsCategory.Document);
 export const File = () => getSvgCategoryStory(ModulIconsCategory.File);
 export const Form = () => getSvgCategoryStory(ModulIconsCategory.Form);
 export const Image = () => getSvgCategoryStory(ModulIconsCategory.Image);
+export const Message = () => getSvgCategoryStory(ModulIconsCategory.Message);
 export const State = () => getSvgCategoryStory(ModulIconsCategory.State);
 export const Text = () => getSvgCategoryStory(ModulIconsCategory.Text);
 export const Video = () => getSvgCategoryStory(ModulIconsCategory.Video);

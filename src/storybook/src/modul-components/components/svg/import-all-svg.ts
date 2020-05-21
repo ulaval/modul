@@ -11,6 +11,14 @@ import MSvgArrowButtonRight from '@ulaval/modul-components/dist/assets/icons/svg
 import MSvgArrowButtonUp from '@ulaval/modul-components/dist/assets/icons/svg/arrow-button--up.svg';
 import MSvgClock from '@ulaval/modul-components/dist/assets/icons/svg/clock.svg';
 import MSvgLock from '@ulaval/modul-components/dist/assets/icons/svg/lock.svg';
+import MSvgMessageErrorAccessDenied from '@ulaval/modul-components/dist/assets/icons/svg/message-error-access-denied.svg';
+import MSvgMessageErrorBrowserNotSupported from '@ulaval/modul-components/dist/assets/icons/svg/message-error-browser-not-supported.svg';
+import MSvgMessageErrorConfigNotSupported from '@ulaval/modul-components/dist/assets/icons/svg/message-error-config-not-supported.svg';
+import MSvgMessageErrorConflict from '@ulaval/modul-components/dist/assets/icons/svg/message-error-conflict.svg';
+import MSvgMessageErrorCookiesDisabled from '@ulaval/modul-components/dist/assets/icons/svg/message-error-cookies-disabled.svg';
+import MSvgMessageErrorPageNotFound from '@ulaval/modul-components/dist/assets/icons/svg/message-error-page-not-found.svg';
+import MSvgMessageErrorResourceUnavailable from '@ulaval/modul-components/dist/assets/icons/svg/message-error-resource-unavailable.svg';
+import MSvgMessageErrorTechnicalDifficulty from '@ulaval/modul-components/dist/assets/icons/svg/message-error-technical-difficulty.svg';
 import MSvgProfile from '@ulaval/modul-components/dist/assets/icons/svg/profile.svg';
 import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { SvgSpriteService } from '@ulaval/modul-components/dist/utils/svg/svg-sprite';
@@ -30,5 +38,13 @@ export const importAllSvg: () => void = () => {
     svg.addSvg(ModulIconName.ArrowButtonUp, MSvgArrowButtonUp);
     svg.addSvg(ModulIconName.Clock, MSvgClock);
     svg.addSvg(ModulIconName.Lock, MSvgLock);
+    svg.addSvg(ModulIconName.MessageErrorAccessDenied, MSvgMessageErrorAccessDenied);
+    svg.addSvg(ModulIconName.MessageErrorBrowserNotSupported, MSvgMessageErrorBrowserNotSupported);
+    svg.addSvg(ModulIconName.MessageErrorConfigNotSupported, MSvgMessageErrorConfigNotSupported);
+    svg.addSvg(ModulIconName.MessageErrorConflict, MSvgMessageErrorConflict);
+    svg.addSvg(ModulIconName.MessageErrorCookiesDisabled, MSvgMessageErrorCookiesDisabled);
+    svg.addSvg(ModulIconName.MessageErrorPageNotFound, MSvgMessageErrorPageNotFound);
+    svg.addSvg(ModulIconName.MessageErrorResourceUnavailable, MSvgMessageErrorResourceUnavailable);
+    svg.addSvg(ModulIconName.MessageErrorTechnicalDifficulty, MSvgMessageErrorTechnicalDifficulty);
     svg.addSvg(ModulIconName.Profile, MSvgProfile);
 };

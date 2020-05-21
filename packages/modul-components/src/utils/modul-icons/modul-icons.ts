@@ -7,6 +7,7 @@ export enum ModulIconsCategory {
     File = 'file',
     Form = 'form',
     Image = 'image',
+    Message = 'message',
     State = 'state',
     Text = 'text',
     Video = 'video'
@@ -54,6 +55,7 @@ export enum ModulIconName {
     EmailSend = 'email-send',
     Email = 'email',
     ErrorFilled = 'error-filled',
+    ErrorWhiteFilled = 'error-white-filled',
     Error = 'error',
     Evaluation = 'evaluation',
     FileAccess = 'file-access',
@@ -103,6 +105,15 @@ export enum ModulIconName {
     List = 'list',
     Lock = 'lock',
     Logout = 'logout',
+    MessageErrorAccessDenied = 'message-error-access-denied',
+    MessageErrorBrowserNotSupported = 'message-error-browser-not-supported',
+    MessageErrorConfigNotSupported = 'message-error-config-not-supported',
+    MessageErrorConflict = 'message-error-conflict',
+    MessageErrorCookiesDisabled = 'message-error-cookies-disabled',
+    MessageErrorPageNotFound = 'message-error-page-not-found',
+    MessageErrorResourceUnavailable = 'message-error-resource-unavailable',
+    MessageErrorTechnicalDifficulty = 'message-error-technical-difficulty',
+    MessageRocket = 'message-rocket',
     MultimediaExternal = 'multimedia-external',
     MultimediaFilled = 'multimedia-filled',
     Multimedia = 'multimedia',
@@ -341,19 +352,22 @@ export const ModulIcons: ModulIcon[] = [
     {
         name: ModulIconName.CompletedFilled,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
         name: ModulIconName.ConfirmationWhiteFilled,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
         name: ModulIconName.Confirmation,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
@@ -401,14 +415,24 @@ export const ModulIcons: ModulIcon[] = [
         name: ModulIconName.ErrorFilled,
         category: [
             ModulIconsCategory.Form,
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.ErrorWhiteFilled,
+        category: [
+            ModulIconsCategory.Form,
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
         name: ModulIconName.Error,
         category: [
             ModulIconsCategory.Form,
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
@@ -689,19 +713,22 @@ export const ModulIcons: ModulIcon[] = [
     {
         name: ModulIconName.InformationFilled,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
         name: ModulIconName.InformationWhiteFilled,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
         name: ModulIconName.Information,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
@@ -723,6 +750,60 @@ export const ModulIcons: ModulIcon[] = [
         name: ModulIconName.Logout,
         category: [
             ModulIconsCategory.Control
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorAccessDenied,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorBrowserNotSupported,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorConfigNotSupported,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorConflict,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorCookiesDisabled,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorPageNotFound,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorResourceUnavailable,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageErrorTechnicalDifficulty,
+        category: [
+            ModulIconsCategory.Message
+        ]
+    },
+    {
+        name: ModulIconName.MessageRocket,
+        category: [
+            ModulIconsCategory.Message
         ]
     },
     {
@@ -866,19 +947,22 @@ export const ModulIcons: ModulIcon[] = [
     {
         name: ModulIconName.WarningFilled,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
         name: ModulIconName.WarningWhiteFilled,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
         name: ModulIconName.Warning,
         category: [
-            ModulIconsCategory.State
+            ModulIconsCategory.State,
+            ModulIconsCategory.Message
         ]
     },
     {
