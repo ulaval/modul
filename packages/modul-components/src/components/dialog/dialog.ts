@@ -2,7 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
-import DialogServicePlugin from '../../utils/dialog/dialog-service';
+import DialogServicePlugin from '../../utils/dialog/dialog-service.plugin';
 import { ModulVue } from '../../utils/vue/vue';
 import ButtonPlugin from '../button/button';
 import { DIALOG_NAME } from '../component-names';
