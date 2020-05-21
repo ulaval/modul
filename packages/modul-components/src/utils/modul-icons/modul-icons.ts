@@ -1,4 +1,3 @@
-
 export enum ModulIconsCategory {
     Arrow = 'arrow',
     Audio = 'audio',
@@ -976,3 +975,4 @@ export const ModulIcons: ModulIcon[] = [
         ]
     }
 ];
+
