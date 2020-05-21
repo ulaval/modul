@@ -46,9 +46,7 @@ export class MPostalcodefield extends ModulVue {
                 };
             case MPostalCodeCountry.FR:
                 return {
-                    blocks: [2, 3],
-                    delimiter: ' ',
-                    delimiterLazyShow: true,
+                    blocks: [5],
                     numericOnly: true,
                     uppercase: true
                 };
@@ -62,7 +60,7 @@ export class MPostalcodefield extends ModulVue {
                 };
             case MPostalCodeCountry.Other:
             default:
-                // Infinite value to display normaly with no space the default values if value is orther or invalid!
+                // Infinite value to display normally with no space the default values, if value is other or invalid!
                 return {
                     blocks: [1e+23],
                     uppercase: true
