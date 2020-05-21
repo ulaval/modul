@@ -1,5 +1,6 @@
 import { mount, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
+import '../../../tests/helpers/mock-resizeSensor';
 import { renderComponent } from '../../../tests/helpers/render';
 import uuid from '../../utils/uuid/uuid';
 import { MRichTextEditor } from './rich-text-editor';
@@ -17,16 +18,6 @@ let headerNormalOption: any = { '': 'm-rich-text-editor:normal-level' };
 let i18nTitle: string = 'm-rich-text-editor:title';
 let i18nSubtitle: string = 'm-rich-text-editor:subtitle';
 let i18nTitleLevel: string = 'm-rich-text-editor:title-level';
-
-// Pour mocker la valeur de offsetWidth pour s'échapper de la condition infinie du ResizeSensor invisible dans la fonction reset
-beforeAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 500 });
-});
-
-// Pour revenir à la valeur initiale 0
-afterAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 0 });
-});
 
 describe('MRichTextEditor', () => {
     beforeEach(() => {

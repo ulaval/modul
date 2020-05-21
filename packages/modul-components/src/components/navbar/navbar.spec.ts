@@ -1,18 +1,9 @@
 import { createLocalVue, mount, Wrapper, WrapperArray } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
+import '../../../tests/helpers/mock-resizeSensor';
 import ModulPlugin from '../../utils/modul/modul';
 import NavbarPlugin from './navbar';
 import { MNavbarItem } from './navbar-item/navbar-item';
-
-// Pour mocker la valeur de offsetWidth pour s'échapper de la condition infinie du ResizeSensor invisible dans la fonction reset
-beforeAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 500 });
-});
-
-// Pour revenir à la valeur initiale 0
-afterAll(() => {
-    Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 0 });
-});
 
 describe('MNavbar', () => {
     let localVue: VueConstructor<Vue>;
