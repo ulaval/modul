@@ -1,4 +1,3 @@
-
 import { CountryCode, getExampleNumber, ParsedNumber, parseNumber, PhoneNumber } from 'libphonenumber-js';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
@@ -97,6 +96,7 @@ export class MPhonefield extends ModulVue {
     selectedCountries: CountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesFr : allCountriesEn;
     countries: CountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
     internalFocus: boolean = false;
+    listMinWidth: string = '325px';
 
     i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
@@ -173,7 +173,8 @@ export class MPhonefield extends ModulVue {
     get inputMaskOptions(): InputMaskOptions {
         return {
             phone: true,
-            phoneRegionCode: this.phoneRegionCode
+            phoneRegionCode: this.phoneRegionCode,
+            prefix: this.prefix
         };
     }
 
@@ -257,12 +258,13 @@ export class MPhonefield extends ModulVue {
 
     @Watch('country', { immediate: true })
     onContryChange(country: Country): void {
-        this.countryModelInternal = country.iso;
-        this.internalCountry = this.countries.find((country: CountryOptions) => country.iso2 === this.countryModelInternal)!;
-        if (!this.as<InputManagement>().internalValue) {
-            this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
+        if (country.iso) {
+            this.countryModelInternal = country.iso;
+            this.internalCountry = this.countries.find((country: CountryOptions) => country.iso2 === this.countryModelInternal)!;
+            if (!this.as<InputManagement>().internalValue) {
+                this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
+            }
         }
-
     }
 
     @Watch('value', { immediate: true })

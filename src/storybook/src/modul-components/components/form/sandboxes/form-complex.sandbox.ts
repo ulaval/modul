@@ -18,6 +18,7 @@ const ID_FORM_NAME: string = 'name';
 const ID_FORM_DESCRIPTION: string = 'description';
 const ID_FORM_BIRTHDATE: string = 'birthdate';
 const ID_FORM_TYPE: string = 'type';
+const ID_FORM_SELECT: string = 'select';
 const ID_FORM_CHAMP_SUPPL_ACTIVE: string = 'champSupplActive';
 const ID_FORM_CHAMP_SUPPL_GROUP: string = 'champSuppl';
 const ID_FORM_CHAMP_SUPPL_1: string = 'champSuppl1';
@@ -75,6 +76,7 @@ export class MFormAllSandbox extends ModulVue {
         [ID_FORM_DESCRIPTION]: 'La patate est\nun légume vraiment...',
         [ID_FORM_BIRTHDATE]: '1970-01-01',
         [ID_FORM_TYPE]: 'sec',
+        [ID_FORM_SELECT]: 'apple',
         [ID_FORM_CHAMP_SUPPL_ACTIVE]: true,
         [ID_FORM_CHAMP_SUPPL_GROUP]: {
             [ID_FORM_CHAMP_SUPPL_1]: 'suppl field 1',
@@ -102,6 +104,10 @@ export class MFormAllSandbox extends ModulVue {
 
     get typeField(): AbstractControl<string> {
         return this.formGroup.getControl<string>(ID_FORM_TYPE);
+    }
+
+    get selectField(): AbstractControl<string> {
+        return this.formGroup.getControl<string>(ID_FORM_SELECT);
     }
 
     get champSupplActive(): AbstractControl<boolean> {
@@ -134,6 +140,10 @@ export class MFormAllSandbox extends ModulVue {
 
     get itemsArray(): FormArray {
         return this.formGroup.getControl(ID_FORM_ITEMS) as FormArray;
+    }
+
+    get selectOptions(): string[] {
+        return ['apple', 'banana', 'patate', 'tomato', 'avocados', 'strawberry'];
     }
 
     submit(): void {
@@ -225,6 +235,14 @@ export class MFormAllSandbox extends ModulVue {
                 ],
                 {
                     initialValue: data[ID_FORM_TYPE] ? data[ID_FORM_TYPE] : ''
+                }
+            ),
+            [ID_FORM_SELECT]: new FormControl<string>(
+                [
+                    RequiredValidator()
+                ],
+                {
+                    initialValue: data[ID_FORM_SELECT] ? data[ID_FORM_SELECT] : ''
                 }
             ),
             [ID_FORM_CHAMP_SUPPL_ACTIVE]: new FormControl<boolean>([],

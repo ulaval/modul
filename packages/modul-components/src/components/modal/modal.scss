@@ -8,6 +8,7 @@ $m-modal--max-width--s: 420px !default;
     --m-modal--top: 0;
     --m-modal--min-height: 120px;
     --m-modal--header-padding: #{ $m-spacing };
+    --m-modal--header-justify-content: space-between;
     --m-modal--body-padding: #{ $m-spacing--xl  $m-spacing };
     --m-modal--footer-padding: #{ $m-spacing };
 
@@ -162,12 +163,8 @@ $m-modal--max-width--s: 420px !default;
         color: $m-color--white;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: var(--m-modal--header-justify-content);
         padding: var(--m-modal--header-padding);
-
-        &:not(.m--has-content) {
-            justify-content: flex-end;
-        }
     }
 
     &__close-button {

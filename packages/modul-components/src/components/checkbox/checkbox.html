@@ -8,7 +8,8 @@
                 'm--is-readonly': readonly,
                 'm--is-focus': isFocus,
                 'm--has-error': hasError,
-                'm--is-valid': isValid }">
+                'm--is-valid': isValid,
+                'm--has-validation-message': hasValidationMessage }">
     <input v-if="!readonly"
            :id="id"
            class="m-checkbox__hidden"
@@ -26,15 +27,15 @@
            type="hidden" />
     <label class="m-checkbox__wrap"
            :for="id"
-           :aria-hidden="!hasLabelSlot()">
+           :aria-label="ariaLabel">
         <span class="m-checkbox__input"
               aria-hidden="true">
             <span class="m-checkbox__input__icon"></span>
         </span>
-        <span v-if="hasLabelSlot()"
-              class="m-checkbox__label">
+        <div v-if="$slots.default"
+             class="m-checkbox__label">
             <slot></slot>
-        </span>
+        </div>
     </label>
     <m-validation-message class="m-checkbox__message"
                           :disabled="isDisabled"

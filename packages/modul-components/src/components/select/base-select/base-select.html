@@ -1,7 +1,7 @@
-<div class="m-base-select">
+<div class="m-base-select"
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
     <div v-m-popup:popup
-         class="m-base-select__popup"
-         :style="{ width: inputMaxWidth }">
+         class="m-base-select__popup">
         <slot :toggle="togglePopup"
               :key-up="onKeydownUp"
               :key-down="onKeydownDown"
@@ -26,6 +26,7 @@
              :close-on-backdrop="true"
              :open-trigger="'manual'"
              :sidebar-full-height="sidebarFullHeight"
+             width="100%"
              @open="onOpen"
              @close="onClose">
         <template slot="header">
