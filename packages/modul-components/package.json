@@ -1,6 +1,6 @@
 {
     "name": "@ulaval/modul-components",
-    "version": "1.2.0-beta.5",
+    "version": "1.2.0-RC.0",
     "description": "MODUL vueJS Component library",
     "author": "Martin Simard <martin.simard@dti.ulaval.ca>",
     "homepage": "https://ulaval.github.io/modul",
@@ -101,8 +101,8 @@
         "vue-template-loader": "^1.0.0",
         "webpack": "^4.42.0",
         "webpack-bundle-analyzer": "^3.6.1",
-        "webpack-node-externals": "^1.7.2",
-        "webpack-cli": "^3.3.11"
+        "webpack-cli": "^3.3.11",
+        "webpack-node-externals": "^1.7.2"
     },
     "repository": {
         "type": "git",
