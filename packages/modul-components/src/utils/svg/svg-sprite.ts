@@ -16,6 +16,7 @@ export class SvgSpriteService {
     public addSvg(svgName: string, svgString: string): void {
         if (this.svgList[svgName]) {
             if (this.svgList[svgName] !== svgString) {
+                // tslint:disable-next-line: no-console
                 console.warn(`The '${svgName}' SVG name is already used to display another SVG. Choose a new name to save the SVG in this sprite.`);
             }
             return;
@@ -34,6 +35,7 @@ export class SvgSpriteService {
 
     public getSvgString(svgName: string): string | undefined {
         if (!this.svgList[svgName]) {
+            // tslint:disable-next-line: no-console
             console.warn(this.getErrorMessage(svgName));
             return;
         }
@@ -43,6 +45,7 @@ export class SvgSpriteService {
 
     public getSvg(svgName: string): SVGElement | undefined {
         if (!this.svgList[svgName]) {
+            // tslint:disable-next-line: no-console
             console.warn(this.getErrorMessage(svgName));
             return;
         }
