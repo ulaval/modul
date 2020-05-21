@@ -13,6 +13,7 @@ import { Modul } from './utils/modul/modul';
 import { ScrollTo } from './utils/scroll-to/scroll-to';
 import DefaultSpritesPlugin from './utils/svg/default-sprites';
 import { SpritesService } from './utils/svg/sprites';
+import { SvgSpriteService } from './utils/svg/svg-sprite';
 import ToastService from './utils/toast/toast-service';
 import ToastServicePlugin from './utils/toast/toast-service.plugin';
 import UtilsPlugin, { UtilsPluginOptions } from './utils/utils-plugin';
@@ -40,6 +41,7 @@ declare module 'vue/types/vue' {
         $http: HttpService;
         $mq: MediaQueries;
         $svg: SpritesService;
+        $svgSprite: SvgSpriteService;
         $scrollTo: ScrollTo;
         $file: FileService;
         $toast: ToastService;

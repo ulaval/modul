@@ -1,6 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import SvgAddCircleFilled from '../../assets/icons/svg/profile.svg';
 import { eraseTag, eraseTagAndAllIsContent } from '../../utils/clean/htmlClean';
 import { Enums } from '../../utils/enums/enums';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
@@ -61,6 +62,10 @@ export class MSvg extends ModulVue {
         this.emitSvgId(svgId);
     }
 
+    public get testSvg(): string {
+        return SvgAddCircleFilled;
+    }
+
     public get svg(): string {
         if (this.customSvg) {
             return this.customSvg;
@@ -70,12 +75,8 @@ export class MSvg extends ModulVue {
             return '';
         }
 
-        try {
-            return require(`./../../assets/icons/svg/${this.name}.svg`);
-        } catch (e) {
-            this.$log.warn(`The file ${e} could not be loaded.`);
-            return '';
-        }
+        const svgString: string | undefined = this.$svgSprite.getSvgString(this.name);
+        return svgString ? svgString : '';
     }
 
     public get svgChildrenContent(): string {
@@ -87,7 +88,7 @@ export class MSvg extends ModulVue {
     }
 
     public get svgHTML(): SVGElement | undefined {
-        const domParser: Document | undefined = new DOMParser().parseFromString(this.svg, 'text/xml');
+        const domParser: Document | undefined = new DOMParser().parseFromString(this.svg, 'text/html');
         return domParser && domParser.querySelector('svg') ? domParser.querySelector('svg') as SVGElement : undefined;
     }
 

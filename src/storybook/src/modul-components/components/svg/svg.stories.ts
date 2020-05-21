@@ -4,6 +4,7 @@ import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-nam
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import { importAllSvg } from './import-all-svg';
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${SVG_NAME}`,
@@ -37,6 +38,9 @@ export const defaultStory = () => ({
         svgColor: {
             default: color('SVG color', '#000')
         }
+    },
+    beforeCreate() {
+        importAllSvg();
     },
     computed: {
         customSvg(): string {
@@ -76,6 +80,9 @@ export const PropCustomSvg = () => ({
             return _this.showCustomSvg ? require('./custom-icon.svg') : '';
         }
     },
+    beforeCreate() {
+        importAllSvg();
+    },
     template: `<${SVG_NAME}
         name="warning"
         :custom-svg="customSvg"
@@ -90,6 +97,9 @@ export const PropWidth = () => ({
             default: text('Prop width', '50px')
         }
     },
+    beforeCreate() {
+        importAllSvg();
+    },
     template: `<${SVG_NAME}
         name="lock"
         :width="width"
@@ -103,6 +113,9 @@ export const PropHeight = () => ({
             default: text('Prop height', '120px')
         }
     },
+    beforeCreate() {
+        importAllSvg();
+    },
     template: `<${SVG_NAME}
         name="profile"
         :width="height"
@@ -115,6 +128,9 @@ export const PropSvgTitle = () => ({
         svgTitle: {
             default: text('Prop svg-title', 'Inspect the HTML to see title tag inside the SVG.')
         }
+    },
+    beforeCreate() {
+        importAllSvg();
     },
     template: `<${SVG_NAME}
         name="clock"
