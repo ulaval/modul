@@ -12,6 +12,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
 import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-scroll';
 import { MSelectItem } from '../select/select-item/select-item';
+import { MValidationMessage } from '../validation-message/validation-message';
 import allCountriesEn from './assets/all-countries-en';
 import allCountriesFr from './assets/all-countries-fr';
 import { CustomAsYouType } from './formatter/custom-asyoutype';
@@ -37,6 +38,12 @@ export interface Country {
 
 @WithRender
 @Component({
+    modul: {
+        i18n: {
+            'fr': require('./phonefield.lang.fr.json'),
+            'en': require('./phonefield.lang.en.json')
+        }
+    },
     mixins: [
         InputState,
         InputWidth,
@@ -46,7 +53,8 @@ export interface Country {
     components: {
         MInputMask,
         MSelectVirtualScroll,
-        MSelectItem
+        MSelectItem,
+        MValidationMessage
     }
 })
 export class MPhonefield extends ModulVue {
@@ -94,6 +102,9 @@ export class MPhonefield extends ModulVue {
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
     i18nExample: string = this.$i18n.translate('m-phonefield:example');
 
+
+    internalSpriteId: string;
+
     beforeMount(): void {
         // sprites-flags.svg is a very big file, this is why sprites should only be added to the DOM before this component is mounted.
         const sprites: string = require('../../assets/icons/sprites-flags.svg');
@@ -103,9 +114,13 @@ export class MPhonefield extends ModulVue {
                 svg.addExternalSprites(sprites, 'mflag');
             }
         } else {
-            if (!document.getElementById('mflag-svg__flag-ae')) {
-                svg.addInternalSprites(sprites);
-            }
+            this.internalSpriteId = svg.addInternalSprites(sprites);
+        }
+    }
+
+    destroyed(): void {
+        if (this.internalSpriteId) {
+            this.$svg.removeInternalSprite(this.internalSpriteId);
         }
     }
 

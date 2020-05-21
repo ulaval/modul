@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { I18N_NAME } from '../../../filters/filter-names';
+import { i18nFilter } from '../../../filters/i18n/i18n';
+import { ICON_NAME } from '../../component-names';
+import { MIcon } from '../../icon/icon';
 import WithRender from './chip-add.html?style=./chip-add.scss';
 
 enum MChipSize {
@@ -9,7 +13,14 @@ enum MChipSize {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon
+    },
+    filters: {
+        [I18N_NAME]: i18nFilter
+    }
+})
 export default class MChipAdd extends Vue {
     @Prop()
     disabled: boolean;
