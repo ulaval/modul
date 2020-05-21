@@ -99,7 +99,8 @@
         }
 
         /deep/ .m-input-style__content {
-            height: 18px;
+            display: flex;
+            align-items: center;
         }
     }
 
