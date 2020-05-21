@@ -3,7 +3,7 @@ import { text } from '@storybook/addon-knobs';
 import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { ModulIcon, ModulIcons, ModulIconsCategory } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
-import { importAllSvg } from './import-all-svg';
+import { importAllSvg } from './svg-importation';
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${SVG_NAME}/categories`,
@@ -52,7 +52,7 @@ const getSvgCategoryStory = (modulIconsCategory: ModulIconsCategory, customIconN
 export const defaultStory = () => getSvgCategoryStory(ModulIconsCategory.Arrow, ModulIcons.map(m => m.name));
 
 defaultStory.story = {
-    name: 'All icons'
+    name: 'All svg'
 };
 
 export const Arrow = () => getSvgCategoryStory(ModulIconsCategory.Arrow);

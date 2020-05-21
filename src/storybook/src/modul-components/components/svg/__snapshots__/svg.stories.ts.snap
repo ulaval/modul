@@ -4,7 +4,17 @@ exports[`Storyshots modul-components|m-svg Prop Custom Svg 1`] = `<!---->`;
 
 exports[`Storyshots modul-components|m-svg Prop Height 1`] = `<!---->`;
 
-exports[`Storyshots modul-components|m-svg Prop Svg Title 1`] = `<!---->`;
+exports[`Storyshots modul-components|m-svg Prop Svg Title 1`] = `
+<svg
+  class="m-svg"
+  height="3em"
+  width="3em"
+>
+  <title>
+    Inspect the HTML to see title tag inside the SVG.
+  </title>
+</svg>
+`;
 
 exports[`Storyshots modul-components|m-svg Prop Width 1`] = `<!---->`;
 

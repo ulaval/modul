@@ -4,7 +4,7 @@ import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-nam
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
-import { importAllSvg } from './import-all-svg';
+import { importAllSvg } from './svg-importation';
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${SVG_NAME}`,
