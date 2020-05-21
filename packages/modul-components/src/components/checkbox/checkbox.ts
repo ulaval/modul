@@ -22,10 +22,14 @@ export enum MCheckboxVerticalAlignement {
     mixins: [InputState]
 })
 export class MCheckbox extends ModulVue {
-
     @Model('change')
     @Prop()
     public value: boolean;
+
+    @Prop({
+        default: () => `mCheckbox-${uuid.generate()}`
+    })
+    public id: string;
 
     @Prop({ default: false })
     public indeterminate: boolean;
@@ -46,15 +50,17 @@ export class MCheckbox extends ModulVue {
     })
     public verticalAlign: MCheckboxVerticalAlignement;
 
-    private isFocus = false;
-    private id: string = `mCheckbox-${uuid.generate()}`;
-    private internalValue: boolean = false;
+    @Prop()
+    public ariaLabel: string;
+
+    public isFocus = false;
+    public internalValue: boolean = false;
 
     @Emit('change')
-    onChange(value: boolean): void { }
+    public onChange(value: boolean): void { }
 
     @Emit('click')
-    onClick(event: MouseEvent): void {
+    public onClick(event: MouseEvent): void {
         // NOTE: this.$refs.checkbox is undefined when using Edge
         if (this.$refs.checkbox) {
             (this.$refs.checkbox as HTMLInputElement).blur();
@@ -67,20 +73,20 @@ export class MCheckbox extends ModulVue {
     }
 
     @Watch('value')
-    private onValueChange(value: boolean): void {
+    public onValueChange(value: boolean): void {
         this.internalValue = value;
     }
 
-    private get propValue(): boolean {
+    public get propValue(): boolean {
         return this.value !== undefined ? this.value : this.internalValue;
     }
 
-    private set propValue(value: boolean) {
+    public set propValue(value: boolean) {
         this.onChange(value);
         this.internalValue = value;
     }
 
-    private setFocus(value: boolean): void {
+    public setFocus(value: boolean): void {
         this.isFocus = value;
     }
 
@@ -92,19 +98,15 @@ export class MCheckbox extends ModulVue {
         this.indeterminate = newValue;
     }
 
-    private get hasCheckboxLeft(): boolean {
+    public get hasCheckboxLeft(): boolean {
         return this.position === MCheckboxPosition.Left;
     }
 
-    private get isAlignTop(): boolean {
+    public get isAlignTop(): boolean {
         return this.verticalAlign === MCheckboxVerticalAlignement.Top;
     }
 
-    private hasLabelSlot(): boolean {
-        return !!this.$slots.default;
-    }
-
-    private get forId(): string | undefined {
+    public get forId(): string | undefined {
         if (this.as<InputStateMixin>().readonly) {
             return undefined;
         } else {
