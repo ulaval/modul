@@ -115,4 +115,24 @@ export const autocompleteWorkPhone = () => ({
     template: '<m-phonefield autocomplete="work tel"></m-phonefield>'
 });
 
+export const fullWidth = () => ({
+    components: {
+        'm-phonefield': phoneFieldChunk
+    },
+    template: '<m-phonefield width="100%" max-width="none"></m-phonefield>'
+});
+
+export const maxWidthLarge = () => ({
+    components: {
+        'm-phonefield': phoneFieldChunk
+    },
+    template: '<m-phonefield width="100%" max-width="large"></m-phonefield>'
+});
+
+export const maxWidth500px = () => ({
+    components: {
+        'm-phonefield': phoneFieldChunk
+    },
+    template: '<m-phonefield width="100%" max-width="500px"></m-phonefield>'
+});
 

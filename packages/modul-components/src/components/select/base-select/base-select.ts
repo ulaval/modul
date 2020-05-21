@@ -1,4 +1,5 @@
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import { InputWidth } from '../../../mixins/input-width/input-width';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MPopup } from '../../popup/popup';
@@ -14,6 +15,7 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
         MSelectItem
     },
     mixins: [
+        InputWidth,
         MediaQueries
     ]
 })
@@ -27,9 +29,6 @@ export class MBaseSelect extends ModulVue {
 
     @Prop()
     public active: boolean;
-
-    @Prop()
-    public inputMaxWidth: string;
 
     @Prop({ required: true })
     public controlId: string;
@@ -51,6 +50,9 @@ export class MBaseSelect extends ModulVue {
 
     @Prop({ default: false })
     public virtualScroll: boolean;
+
+    @Prop()
+    public listMinWidth: string;
 
     public $refs: {
         items: HTMLUListElement;
@@ -208,14 +210,16 @@ export class MBaseSelect extends ModulVue {
     transitionEnter(el: HTMLElement, done: any): void {
         if (this.enableAnimation) {
             this.$nextTick(() => {
-
                 if (this.as<MediaQueriesMixin>().isMqMinS) {
                     let height: number = el.clientHeight;
 
                     el.style.transition = DROPDOWN_STYLE_TRANSITION;
                     el.style.overflowY = 'hidden';
                     el.style.maxHeight = '0';
-
+                    el.style.width = this.$el.clientWidth + 'px';
+                    if (this.listMinWidth) {
+                        el.style.minWidth = this.listMinWidth;
+                    }
                     requestAnimationFrame(() => {
                         el.style.maxHeight = height + 'px';
                         done();

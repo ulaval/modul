@@ -2,6 +2,7 @@ import { actions } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { SELECT_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MSelectItem } from '@ulaval/modul-components/dist/components/select/select-item/select-item';
+import { InputMaxWidth } from '@ulaval/modul-components/dist/mixins/input-width/input-width';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 const OPTIONS: string[] = ['apple', 'banana', 'patate', 'tomato', 'avocados', 'etc'];
@@ -274,4 +275,29 @@ export const withOuterItemsSlot = () => ({
                     </template>
                 </template>
             </m-select>`
+});
+
+export const fullWidth = () => ({
+    data: () => ({
+        model: 'banana',
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" v-model="model" width="100%" max-width="none"></m-select>`
+});
+
+export const maxWidth500px = () => ({
+    data: () => ({
+        model: 'banana',
+        options: OPTIONS
+    }),
+    template: `<m-select :options="options" label="Fruits" v-model="model" width="100%" max-width="500px"></m-select>`
+});
+
+export const maxWidthLarge = () => ({
+    data: () => ({
+        model: 'banana',
+        options: OPTIONS,
+        maxWidthLarge: InputMaxWidth.Large
+    }),
+    template: `<m-select :options="options" label="Fruits" v-model="model" width="100%" :max-width="maxWidthLarge"></m-select>`
 });
