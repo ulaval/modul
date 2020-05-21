@@ -7,6 +7,8 @@
                :close-on-select="false"
                :hide-radio-button-mobile="true"
                :enable-animation="!linkSelectAll"
+               :width="width"
+               :max-width="maxWidth"
                @select-item="onSelect"
                ref="baseSelect">
     <template v-slot:default="scope">

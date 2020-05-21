@@ -88,6 +88,7 @@ export class MPhonefield extends ModulVue {
     selectedCountries: CountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesFr : allCountriesEn;
     countries: CountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
     internalFocus: boolean = false;
+    listMinWidth: string = '325px';
 
     i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
     i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');

@@ -3,7 +3,9 @@
                :items="options"
                :selected-items="selectedItems"
                :open.sync="open"
-               :input-max-width="inputMaxWidth"
+               :width="width"
+               :max-width="maxWidth"
+               :list-min-width="listMinWidth"
                :virtual-scroll="virtualScroll"
                @open="onOpen"
                @close="onClose"
@@ -15,7 +17,7 @@
                 'm--is-readonly': isReadonly,
                 'm--is-waiting': isWaiting,
                 'm--has-validation-message': hasValidationMessage }"
-             :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+             :style="{ width: width, maxWidth: maxWidth }"
              @focus="onFocus"
              @blur="onBlur"
              @click="scope.toggle"
@@ -29,7 +31,7 @@
              @keydown.delete.prevent="onKeyDownDelete"
              @keydown.home.prevent="scope.keyHome"
              @keydown.end.prevent="scope.keyEnd"
-             @keydown.prevent="scope.keyLetter"
+             @keydown="scope.keyLetter"
              tabindex="0">
             <m-input-style :label="label"
                            :label-for="id"
@@ -44,12 +46,14 @@
                            :append="true"
                            :valid="isValid"
                            :required-marker="requiredMarker"
-                           :tag-style="tagStyle">
+                           :tag-style="tagStyle"
+                           :width="inputWidth">
                 <div>
                     <slot>
                         <input v-model="internalValue"
                                :placeholder="internalPlaceholder"
-                               :readonly="true" />
+                               :readonly="true"
+                               tabindex="-1" />
                     </slot>
                 </div>
 
