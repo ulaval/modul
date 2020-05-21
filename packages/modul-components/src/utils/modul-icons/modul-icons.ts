@@ -87,6 +87,7 @@ export enum ModulIconName {
     FolderOpen = 'folder-open',
     Folder = 'folder',
     FullScreen = 'fullScreen',
+    GridFilled = 'grid-filled',
     Grid = 'grid',
     Grouping = 'Grouping',
     Heraldry = 'heraldry',
@@ -658,6 +659,9 @@ export const ModulIcons: ModulIcon[] = [
         category: [
             ModulIconsCategory.Control
         ]
+    },
+    {
+        name: ModulIconName.GridFilled
     },
     {
         name: ModulIconName.Grid
