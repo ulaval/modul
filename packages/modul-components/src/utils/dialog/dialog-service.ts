@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import { MDialog, MDialogState } from '../../components/dialog/dialog';
-import DialogServicePlugin from './dialog-service.plugin';
 
 export class DialogService {
 
@@ -111,5 +110,3 @@ export class DialogService {
     }
 }
 
-/** @deprecated will be removed in v2. */
-export default DialogServicePlugin;

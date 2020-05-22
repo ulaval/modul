@@ -9,7 +9,6 @@ import { ModulVue } from '../../utils/vue/vue';
 import { I18N_NAME, SPINNER_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import WithRender from './spinner.html?style=./spinner.scss';
-\
 
 export enum MSpinnerStyle {
     Dark = 'dark',
