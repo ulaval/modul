@@ -13,10 +13,10 @@ import MaskedfieldPlugin from '../maskedfield/maskedfield';
 import WithRender from './postalcodefield.html';
 
 export enum MPostalCodeCountry {
-    CA = 'CA',
-    FR = 'FR',
+    CA = 'ca',
+    FR = 'fr',
     Other = 'other',
-    US = 'US'
+    US = 'us'
 }
 
 @WithRender
