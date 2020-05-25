@@ -67,6 +67,9 @@ export class MProgress extends ModulVue {
             this.styleTag = document.createElement('style');
 
             this.styleTag.id = 'm-progress-spinner-styles';
+            if (typeof (window as any)._webpack_nonce_ !== 'undefined') {
+                this.styleTag.nonce = (window as any)._webpack_nonce_;
+            }
             document.head.appendChild(this.styleTag);
         }
 
