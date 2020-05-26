@@ -13,7 +13,7 @@ export class PostalCodeFilter {
      * Other — Example: "11111-1111" (string stays the same)
      */
     static format(text: string, isoCountry: string): string {
-        switch (isoCountry) {
+        switch (isoCountry.toLowerCase()) {
             case MPostalCodeCountry.CA: {
                 return [text.slice(0, 3), text.slice(3, 6)].join(' ');
             }

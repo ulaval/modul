@@ -36,7 +36,7 @@ export class MPostalcodefield extends ModulVue {
     protected id: string = `mPostalcodefield-${uuid.generate()}`;
 
     get maskOptions(): InputMaskOptions {
-        switch (this.postalCodeFormat) {
+        switch (this.postalCodeFormat.toLowerCase()) {
             case MPostalCodeCountry.CA:
                 return {
                     blocks: [3, 3],
