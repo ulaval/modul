@@ -4,7 +4,6 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import I18nFilterPlugin from '../../../filters/i18n/i18n';
-import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../../utils/vue/vue';
 import AccordionPlugin from '../../accordion/accordion';
 import { ERROR_TECHNICAL_DIFFICULTY_NAME } from '../../component-names';
@@ -61,7 +60,11 @@ export class MErrorTechnicalDifficulty extends ModulVue {
 
     public state: string = MMessageState.Error;
 
-    public svgName: string = ModulIconName.MessageErrorTechnicalDifficulty;
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-technical-difficulty', require('./message-error-technical-difficulty.svg'));
+    }
+
+    readonly svgName: string = 'message-error-technical-difficulty';
 
     /**
      * Returns the formatted date for the value received as props (format = YYYY-MM-DD). Used to display the date when the error was generated.

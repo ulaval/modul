@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ERROR_CONFLICT_NAME } from '../../component-names';
 import MessagePagePlugin, { Link } from '../../message-page/message-page';
@@ -28,7 +27,11 @@ export class MErrorOperationFailed extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = ModulIconName.MessageErrorConflict;
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-conflict', require('./message-error-conflict.svg'));
+    }
+
+    readonly svgName: string = 'message-error-conflict';
 }
 
 const ErrorOperationFailedPlugin: PluginObject<any> = {

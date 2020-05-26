@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ERROR_CONFIG_NOT_SUPPORTED_NAME } from '../../component-names';
 import MessagePagePlugin, { Link } from '../../message-page/message-page';
@@ -29,7 +28,11 @@ export class MErrorConfigNotSupported extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = ModulIconName.MessageErrorConfigNotSupported;
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-config-not-supported', require('./message-error-config-not-supported.svg'));
+    }
+
+    readonly svgName: string = 'message-error-config-not-supported';
 }
 
 const ErrorConfigNotSupportedPlugin: PluginObject<any> = {

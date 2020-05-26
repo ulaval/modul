@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ERROR_COOKIES_NOT_SUPPORTED_NAME } from '../../component-names';
 import MessagePagePlugin, { Link } from '../../message-page/message-page';
@@ -32,7 +31,11 @@ export class MErrorCookiesNotSupported extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = ModulIconName.MessageErrorCookiesDisabled;
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-cookies-disabled', require('./message-error-cookies-disabled.svg'));
+    }
+
+    readonly svgName: string = 'message-error-cookies-disabled';
 }
 
 const ErrorCookiesNotSupportedPlugin: PluginObject<any> = {

@@ -1,10 +1,17 @@
 import { actions } from '@storybook/addon-actions';
-import { boolean, color, select, text } from '@storybook/addon-knobs';
+import { color, select, text } from '@storybook/addon-knobs';
 import { SVG_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
+import { SvgSpriteService } from '@ulaval/modul-components/dist/utils/svg/svg-sprite';
+import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { importAllSvg } from './svg-importation';
+
+/**  @TODO  Ne fonctionne pas pour l'instant, il faudra trouver un moyen de chunker les svg */
+// export const importAllSvg = (): Promise<any> => import(/* webpackChunkName: "svgimportation" */ './svg-importation').then((exports: any) => {
+//     return exports.importAllSvg;
+// });
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${SVG_NAME}`,
@@ -32,9 +39,6 @@ export const defaultStory = () => ({
                 'Inspect the HTML to see title tag inside the SVG.'
             )
         },
-        showCustomSvg: {
-            default: boolean('Show custom svg', false)
-        },
         svgColor: {
             default: color('SVG color', '#000')
         }
@@ -42,17 +46,10 @@ export const defaultStory = () => ({
     beforeCreate() {
         importAllSvg();
     },
-    computed: {
-        customSvg(): string {
-            const _this: any = this;
-            return _this.showCustomSvg ? require('./custom-icon.svg') : '';
-        }
-    },
     methods: actions('emitClick', 'emitKeydown', 'emitMouseover', 'emitMouseleave', 'emitSvgId'),
     template: `<${SVG_NAME}
         :name="name"
         :svg-title="svgTitle"
-        :custom-svg="customSvg"
         :width="width"
         :height="height"
         @click="emitClick"
@@ -69,23 +66,12 @@ defaultStory.story = {
 };
 
 export const PropCustomSvg = () => ({
-    props: {
-        showCustomSvg: {
-            default: boolean('Show custom svg', true)
-        }
-    },
-    computed: {
-        customSvg(): string {
-            const _this: any = this;
-            return _this.showCustomSvg ? require('./custom-icon.svg') : '';
-        }
-    },
     beforeCreate() {
-        importAllSvg();
+        const svg: SvgSpriteService = Vue.prototype.$svgSprite;
+        svg.addSvg('custom-icon', require('./custom-icon.svg'));
     },
     template: `<${SVG_NAME}
-        name="warning"
-        :custom-svg="customSvg"
+        name="custom-icon"
         width="5em"
         height="5em"
     />`

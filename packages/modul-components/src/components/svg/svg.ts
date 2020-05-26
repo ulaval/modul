@@ -3,8 +3,6 @@ import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import SvgAddCircleFilled from '../../assets/icons/svg/profile.svg';
 import { eraseTag, eraseTagAndAllIsContent } from '../../utils/clean/htmlClean';
-import { Enums } from '../../utils/enums/enums';
-import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
 import { SVG_NAME } from '../component-names';
@@ -13,14 +11,11 @@ import WithRender from './svg.html';
 @WithRender
 @Component
 export class MSvg extends ModulVue {
-    @Prop({
-        default: ModulIconName.Error,
-        validator: value => Enums.toValueArray(ModulIconName).includes(value)
-    })
-    public readonly name: ModulIconName;
 
-    @Prop({ default: '' })
-    public readonly customSvg: string;
+    @Prop({
+        required: true
+    })
+    public readonly name!: string;
 
     @Prop({
         default: '1em',
@@ -54,6 +49,13 @@ export class MSvg extends ModulVue {
     @Emit('svg-id')
     public emitSvgId(svgId: string): void { }
 
+
+    protected beforeCreated(): void {
+        if (!this.$svgSprite) {
+            throw new Error('$svgSprite not installed , install SvgSpritesPlugin to use this component');
+        }
+    }
+
     public async onDataSvgIdChange(svgId: string | undefined): Promise<void> {
         if (!svgId) {
             return;
@@ -67,10 +69,6 @@ export class MSvg extends ModulVue {
     }
 
     public get svg(): string {
-        if (this.customSvg) {
-            return this.customSvg;
-        }
-
         if (!this.name) {
             return '';
         }

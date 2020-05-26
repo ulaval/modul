@@ -8,14 +8,6 @@ import IconPlugin from '../icon/icon';
 import LinkPlugin from '../link/link';
 import { MMessageState } from '../message/message';
 import ModalPlugin from '../modal/modal';
-import MSvgMessageErrorAccessDenied from './../../assets/icons/svg/message-error-access-denied.svg';
-import MSvgMessageErrorBrowserNotSupported from './../../assets/icons/svg/message-error-browser-not-supported.svg';
-import MSvgMessageErrorConfigNotSupported from './../../assets/icons/svg/message-error-config-not-supported.svg';
-import MSvgMessageErrorConflict from './../../assets/icons/svg/message-error-conflict.svg';
-import MSvgMessageErrorCookiesDisabled from './../../assets/icons/svg/message-error-cookies-disabled.svg';
-import MSvgMessageErrorPageNotFound from './../../assets/icons/svg/message-error-page-not-found.svg';
-import MSvgMessageErrorResourceUnavailable from './../../assets/icons/svg/message-error-resource-unavailable.svg';
-import MSvgMessageErrorTechnicalDifficulty from './../../assets/icons/svg/message-error-technical-difficulty.svg';
 import { MSvg } from './../svg/svg';
 import WithRender from './message-page.html?style=./message-page.scss';
 
@@ -70,18 +62,7 @@ export class MMessagePage extends ModulVue {
     @Prop()
     public iconName: string;
 
-    @Prop({
-        validator: value =>
-            value === ModulIconName.MessageErrorAccessDenied ||
-            value === ModulIconName.MessageErrorBrowserNotSupported ||
-            value === ModulIconName.MessageErrorConfigNotSupported ||
-            value === ModulIconName.MessageErrorConflict ||
-            value === ModulIconName.MessageErrorCookiesDisabled ||
-            value === ModulIconName.MessageErrorPageNotFound ||
-            value === ModulIconName.MessageErrorResourceUnavailable ||
-            value === ModulIconName.MessageErrorTechnicalDifficulty ||
-            value === ''
-    })
+    @Prop({})
     public svgName: string;
 
     @Prop()
@@ -95,17 +76,6 @@ export class MMessagePage extends ModulVue {
 
     @Prop({ default: () => [] })
     public links: Link[];
-
-    protected beforeCreate(): void {
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorAccessDenied, MSvgMessageErrorAccessDenied);
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorBrowserNotSupported, MSvgMessageErrorBrowserNotSupported);
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorConfigNotSupported, MSvgMessageErrorConfigNotSupported);
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorConflict, MSvgMessageErrorConflict);
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorCookiesDisabled, MSvgMessageErrorCookiesDisabled);
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorPageNotFound, MSvgMessageErrorPageNotFound);
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorResourceUnavailable, MSvgMessageErrorResourceUnavailable);
-        this.$svgSprite.addSvg(ModulIconName.MessageErrorTechnicalDifficulty, MSvgMessageErrorTechnicalDifficulty);
-    }
 
     public get hasHints(): boolean {
         return this.hints.length > 0;

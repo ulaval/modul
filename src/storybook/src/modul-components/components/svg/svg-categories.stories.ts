@@ -5,6 +5,7 @@ import { ModulIcon, ModulIcons, ModulIconsCategory } from '@ulaval/modul-compone
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { importAllSvg } from './svg-importation';
 
+
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${SVG_NAME}/categories`,
     parameters: { fileName: __filename }

@@ -253,7 +253,19 @@ exports[`Storyshots modul-components|m-message-page Sandbox 1`] = `
       aria-hidden="true"
       class="m-message-page__icon-container"
     >
-      <!---->
+      <svg
+        aria-hidden="true"
+        class="m-icon m-message-page__icon"
+        height="130px"
+        width="130px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
     </div>
   </header>
    
@@ -490,25 +502,4 @@ exports[`Storyshots modul-components|m-message-page State 1`] = `
     <!---->
   </article>
 </div>
-`;
-
-exports[`Storyshots modul-components|m-message-page Svg Name 1`] = `
-<article
-  class="m-message-page m--is-state-warning m--is-skin-default"
->
-  <header
-    class="m-message-page__header"
-  >
-    <!---->
-     
-    <div
-      aria-hidden="true"
-      class="m-message-page__icon-container"
-    >
-      <!---->
-    </div>
-  </header>
-   
-  <!---->
-</article>
 `;

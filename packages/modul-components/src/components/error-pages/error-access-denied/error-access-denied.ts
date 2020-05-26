@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ERROR_ACCESS_DENIED_NAME } from '../../component-names';
 import MessagePagePlugin, { Link } from '../../message-page/message-page';
@@ -29,7 +28,11 @@ export class MErrorAccessDenied extends ModulVue {
 
     readonly state: string = MMessageState.Information;
 
-    readonly svgName: string = ModulIconName.MessageErrorAccessDenied;
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-access-denied', require('./message-error-access-denied.svg'));
+    }
+
+    readonly svgName: string = 'message-error-access-denied';
 }
 
 const ErrorAccessDeniedPlugin: PluginObject<any> = {

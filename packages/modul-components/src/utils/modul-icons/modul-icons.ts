@@ -105,15 +105,6 @@ export enum ModulIconName {
     List = 'list',
     Lock = 'lock',
     Logout = 'logout',
-    MessageErrorAccessDenied = 'message-error-access-denied',
-    MessageErrorBrowserNotSupported = 'message-error-browser-not-supported',
-    MessageErrorConfigNotSupported = 'message-error-config-not-supported',
-    MessageErrorConflict = 'message-error-conflict',
-    MessageErrorCookiesDisabled = 'message-error-cookies-disabled',
-    MessageErrorPageNotFound = 'message-error-page-not-found',
-    MessageErrorResourceUnavailable = 'message-error-resource-unavailable',
-    MessageErrorTechnicalDifficulty = 'message-error-technical-difficulty',
-    MessageRocket = 'message-rocket',
     MultimediaExternal = 'multimedia-external',
     MultimediaFilled = 'multimedia-filled',
     Multimedia = 'multimedia',
@@ -753,60 +744,6 @@ export const ModulIcons: ModulIcon[] = [
         name: ModulIconName.Logout,
         category: [
             ModulIconsCategory.Control
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorAccessDenied,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorBrowserNotSupported,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorConfigNotSupported,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorConflict,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorCookiesDisabled,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorPageNotFound,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorResourceUnavailable,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageErrorTechnicalDifficulty,
-        category: [
-            ModulIconsCategory.Message
-        ]
-    },
-    {
-        name: ModulIconName.MessageRocket,
-        category: [
-            ModulIconsCategory.Message
         ]
     },
     {

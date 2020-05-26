@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ERROR_RESOURCE_UNAVAILABLE_NAME } from '../../component-names';
 import MessagePagePlugin, { Link } from '../../message-page/message-page';
@@ -32,7 +31,11 @@ export class MErrorResourceUnavailable extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = ModulIconName.MessageErrorResourceUnavailable;
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-resource-unavailable', require('./message-error-resource-unavailable.svg'));
+    }
+
+    readonly svgName: string = 'message-error-resource-unavailable';
 }
 
 const ErrorResourceUnavailablePlugin: PluginObject<any> = {

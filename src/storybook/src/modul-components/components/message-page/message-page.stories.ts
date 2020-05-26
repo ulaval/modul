@@ -13,23 +13,6 @@ export default {
 
 export const defaultStory = () => ({
     props: {
-        svgName: {
-            default: select<string>(
-                'Prop svg-name',
-                [
-                    ModulIconName.MessageErrorAccessDenied,
-                    ModulIconName.MessageErrorBrowserNotSupported,
-                    ModulIconName.MessageErrorConfigNotSupported,
-                    ModulIconName.MessageErrorConflict,
-                    ModulIconName.MessageErrorCookiesDisabled,
-                    ModulIconName.MessageErrorPageNotFound,
-                    ModulIconName.MessageErrorResourceUnavailable,
-                    ModulIconName.MessageErrorTechnicalDifficulty,
-                    ''
-                ],
-                ModulIconName.MessageErrorTechnicalDifficulty
-            )
-        },
         iconName: {
             default: text(
                 'Prop icon-name',
@@ -66,7 +49,6 @@ export const defaultStory = () => ({
         }
     },
     template: `<${MESSAGE_PAGE_NAME}
-        :svg-name="svgName"
         :icon-name="iconName"
         :state="state"
         :skin="skin"
@@ -125,31 +107,6 @@ export const IconName = () => ({
     />`
 });
 
-export const SvgName = () => ({
-    props: {
-        svgName: {
-            default: select<string>(
-                'Prop svg-name',
-                [
-                    ModulIconName.MessageErrorAccessDenied,
-                    ModulIconName.MessageErrorBrowserNotSupported,
-                    ModulIconName.MessageErrorConfigNotSupported,
-                    ModulIconName.MessageErrorConflict,
-                    ModulIconName.MessageErrorCookiesDisabled,
-                    ModulIconName.MessageErrorPageNotFound,
-                    ModulIconName.MessageErrorResourceUnavailable,
-                    ModulIconName.MessageErrorTechnicalDifficulty,
-                    ''
-                ],
-                ModulIconName.MessageErrorTechnicalDifficulty
-            )
-        }
-    },
-    template: `<${MESSAGE_PAGE_NAME}
-        :svg-name="svgName"
-        state="${MMessageState.Warning}"
-    />`
-});
 
 export const Hints = () => ({
     props: {
