@@ -13,6 +13,10 @@ declare module 'vue/types/vue' {
     }
 }
 
+export interface ModulPluginOptions {
+    CSPNonce?: string;
+}
+
 const BACKDROP_ID: string = 'mBackdropID';
 const BACKDROP_CLASS_NAME: string = 'm-backdrop';
 const BACKDROP_STYLE_TRANSITION: string = 'opacity ease';
@@ -58,7 +62,7 @@ export class Modul {
     private doneResizeEvent: any;
     private internalScrollActive: boolean = true;
 
-    constructor() {
+    constructor(private options?: ModulPluginOptions) {
         this.scrollPosition = window.pageYOffset;
         window.addEventListener('click', (e: MouseEvent) => this.onClick(e));
         window.addEventListener('scroll', (e) => this.onScroll(e));
@@ -297,12 +301,16 @@ export class Modul {
     private get scrollActive(): boolean {
         return this.internalScrollActive;
     }
+
+    public get CSPNonce(): string | undefined {
+        return this.options?.CSPNonce;
+    }
 }
 
 const ModulPlugin: PluginObject<any> = {
     install(v, options): void {
         Vue.use(PortalPlugin);
-        let modul: Modul = new Modul();
+        let modul: Modul = new Modul(options);
         (v.prototype).$modul = modul;
     }
 };
