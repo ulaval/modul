@@ -303,7 +303,7 @@ export class Modul {
     }
 
     public get CSPNonce(): string | undefined {
-        return this.options?.CSPNonce;
+        return this.options !== undefined ? this.options.CSPNonce : undefined;
     }
 }
 
