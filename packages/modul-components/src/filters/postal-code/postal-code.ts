@@ -6,13 +6,14 @@ export class PostalCodeFilter {
 
     /**
      * Available formats:
+     * No country code specified: Canadian format by default
      * CA (6 characters) — Example: "X1X 1X1"
      * US (5 or less characters) — Example: "11111" (Only 5 first characters are kept)
      * US (more than 5 characters, up to 9) — Example: "11111-1111" (Only 9 first characters are kept)
      * FR (5 characters) — Example: "11111" (Only 5 first characters are kept)
-     * Other — Example: "11111-1111" (string stays the same)
+     * Other specified — Example: "11111-1111" (string stays the same)
      */
-    static format(text: string, isoCountry: string): string {
+    static format(text: string, isoCountry: string = MPostalCodeCountry.CA): string {
         switch (isoCountry.toLowerCase()) {
             case MPostalCodeCountry.CA: {
                 return [text.slice(0, 3), text.slice(3, 6)].join(' ');
