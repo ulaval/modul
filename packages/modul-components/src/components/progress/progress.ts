@@ -68,7 +68,7 @@ export class MProgress extends ModulVue {
 
             this.styleTag.id = 'm-progress-spinner-styles';
             if (this.$modul.CSPNonce) {
-                this.styleTag.nonce = this.$modul.CSPNonce;
+                this.styleTag.setAttribute('nonce', this.$modul.CSPNonce);
             }
             document.head.appendChild(this.styleTag);
         }
