@@ -31,7 +31,6 @@
                          aria-hidden="true"></use>
                 </svg>
             </div>
-
             <template #outer-items="{item, index, props, handlers}">
                 <m-select-item v-if="item"
                                class="m-phonefield__item-country-list"
@@ -54,7 +53,6 @@
                     </template>
                 </m-select-item>
             </template>
-
         </m-select-virtual-scroll>
         <m-input-style class="m-phonefield__number"
                        :disabled="isDisabled"

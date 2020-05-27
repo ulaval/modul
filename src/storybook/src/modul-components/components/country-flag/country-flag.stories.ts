@@ -10,7 +10,14 @@ export default {
     parameters: { fileName: __filename }
 };
 
+const countryFlagChunk = (): Promise<any> => import(/* webpackChunkName: "phonefield" */ '@ulaval/modul-components/dist/components/country-flag/country-flag').then((exports: any) => {
+    return exports.MCountryFlag;
+});
+
 export const defaultStory = () => ({
+    components: {
+        'm-country-flag': countryFlagChunk
+    },
     props: {
         codeIso2: {
             default: select(
@@ -50,6 +57,9 @@ defaultStory.story = {
 
 
 export const AllCountries = () => ({
+    components: {
+        'm-country-flag': countryFlagChunk
+    },
     props: {
         width: {
             default: text(
