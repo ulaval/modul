@@ -9,6 +9,7 @@ import { allCountriesOptionsEn } from '../../utils/country/countries-options-en'
 import { allCountriesOptionsFr } from '../../utils/country/countries-options-fr';
 import { MCountry, MCountryCodeISO2, MCountryOptions } from '../../utils/country/country';
 import { FRENCH } from '../../utils/i18n/i18n';
+import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MCountryFlag } from '../country-flag/country-flag';
@@ -57,6 +58,11 @@ export class MPhonefield extends ModulVue {
     })
     public priorityIsoCountries: string[];
 
+    @Prop({
+        default: false
+    })
+    public externalSprite: boolean;
+
     public $refs: {
         inputMask: MInputMask;
     };
@@ -64,24 +70,45 @@ export class MPhonefield extends ModulVue {
     protected id: string = `mIntegerfield-${uuid.generate()}`;
     private examples: any = require('libphonenumber-js/examples.mobile.json');
 
-    countryModelInternal: MCountryCodeISO2 = MCountryCodeISO2.Empty;
-    internalCountry: MCountryOptions = { name: '', iso2: MCountryCodeISO2.Empty, dialCode: '' };
-    selectedCountries: MCountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesOptionsFr : allCountriesOptionsEn;
-    countries: MCountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
-    internalFocus: boolean = false;
+    public countryModelInternal: MCountryCodeISO2 = MCountryCodeISO2.Empty;
+    public internalCountry: MCountryOptions = { name: '', iso2: MCountryCodeISO2.Empty, dialCode: '' };
+    public selectedCountries: MCountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesOptionsFr : allCountriesOptionsEn;
+    public countries: MCountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
+    public internalFocus: boolean = false;
 
-    i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
-    i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
-    i18nExample: string = this.$i18n.translate('m-phonefield:example');
+    public i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
+    public i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
+    public i18nExample: string = this.$i18n.translate('m-phonefield:example');
+
+    public internalSpriteId: string;
+
+    protected beforeMount(): void {
+        // sprites-flags.svg is a very big file, this is why sprites should only be added to the DOM before this component is mounted.
+        const sprites: string = require('../../assets/icons/sprites-flags.svg');
+        const svg: SpritesService = this.$svg;
+        if (this.externalSprite) {
+            if (!svg.isInExternalSprites('mflag')) {
+                svg.addExternalSprites(sprites, 'mflag');
+            }
+        } else {
+            this.internalSpriteId = svg.addInternalSprites(sprites);
+        }
+    }
+
+    protected destroyed(): void {
+        if (this.internalSpriteId) {
+            // this.$svg.removeInternalSprite(this.internalSpriteId);
+        }
+    }
 
     @Emit('input')
-    emitNewValue(_newValue: string): void { }
+    public emitNewValue(_newValue: string): void { }
 
     @Emit('update:country')
-    emitContrySelected(country: MCountry): void { }
+    public emitContrySelected(country: MCountry): void { }
 
     @Watch('country', { immediate: true })
-    onContryChange(country: MCountry): void {
+    public onContryChange(country: MCountry): void {
         this.countryModelInternal = country.iso;
         this.internalCountry = this.countries.find((country: MCountryOptions) => country.iso2 === this.countryModelInternal)!;
         if (!this.as<InputManagement>().internalValue) {
@@ -91,17 +118,30 @@ export class MPhonefield extends ModulVue {
     }
 
     @Watch('value', { immediate: true })
-    onValueChanged(value: string): void {
+    public onValueChanged(value: string): void {
         if (value) {
             this.parsePhoneNumber(value);
         }
     }
 
-    get isoCountries(): string[] {
+    public spriteId(iso: string): string | undefined {
+        const svg: SpritesService = this.$svg;
+        const spriteId: string = 'mflag-svg__flag-' + iso;
+
+        if (document.getElementById(spriteId)) {
+            return '#' + spriteId;
+        } else if (svg && svg.getExternalSpritesFromSpriteId(spriteId)) {
+            return svg.getExternalSpritesFromSpriteId(spriteId);
+        } else if (iso) {
+            this.$log.warn('"' + iso + '" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.');
+        }
+    }
+
+    public get isoCountries(): string[] {
         return this.countriesSorted.map(contry => contry.iso2);
     }
 
-    get countriesSorted(): MCountryOptions[] {
+    public get countriesSorted(): MCountryOptions[] {
 
         let finalCountriesList: MCountryOptions[] = [];
 
@@ -125,53 +165,53 @@ export class MPhonefield extends ModulVue {
         return finalCountriesList;
     }
 
-    get propLabel(): string {
+    public get propLabel(): string {
         return this.label ? this.label : this.i18nInternalLabel;
     }
 
-    get hasPhonefieldError(): boolean {
+    public get hasPhonefieldError(): boolean {
         return this.as<InputState>().hasError;
     }
 
-    get isPhonefieldValid(): boolean {
+    public get isPhonefieldValid(): boolean {
         return this.as<InputState>().isValid;
     }
 
-    get inputMaskOptions(): InputMaskOptions {
+    public get inputMaskOptions(): InputMaskOptions {
         return {
             phone: true,
             phoneRegionCode: this.phoneRegionCode
         };
     }
 
-    get phoneRegionCode(): string {
+    public get phoneRegionCode(): string {
         return this.internalCountry ? this.internalCountry.iso2.toUpperCase() : '';
     }
 
-    get prefix(): string {
+    public get prefix(): string {
         return '+' + this.internalCountry.dialCode;
     }
 
-    get example(): string {
+    public get example(): string {
         const phoneNumber: PhoneNumber | undefined = getExampleNumber(this.phoneRegionCode as CountryCode, this.examples);
         return phoneNumber ? phoneNumber.formatInternational() : '';
     }
 
-    get countryModel(): MCountryCodeISO2 {
+    public get countryModel(): MCountryCodeISO2 {
         return this.countryModelInternal;
     }
 
-    set countryModel(value: MCountryCodeISO2) {
+    public set countryModel(value: MCountryCodeISO2) {
         this.internalCountry = this.countries.find((country: MCountryOptions) => country.iso2 === value)!;
         this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
         this.countryModelInternal = value;
     }
 
-    inputChanged(value): void {
+    public inputChanged(value): void {
         this.emitNewValue(value);
     }
 
-    parsePhoneNumber(value: string): void {
+    public parsePhoneNumber(value: string): void {
         const parsedNumber: ParsedNumber = parseNumber(value, { extended: true }) as ParsedNumber;
         if (parsedNumber.country && parsedNumber.valid) {
             this.countryModelInternal = parsedNumber.country.toLowerCase() as MCountryCodeISO2;
@@ -183,11 +223,11 @@ export class MPhonefield extends ModulVue {
         }
     }
 
-    nameNormalize(name: string): string {
+    public nameNormalize(name: string): string {
         return name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
-    onContryChanged(countryIso: any, _index: number, _$event: Event): void {
+    public onContryChanged(countryIso: any, _index: number, _$event: Event): void {
         this.countryModel = countryIso;
         this.emitContrySelected({
             iso: this.internalCountry.iso2,
@@ -195,11 +235,11 @@ export class MPhonefield extends ModulVue {
         });
     }
 
-    onSelectFocus(): void {
+    public onSelectFocus(): void {
         this.internalFocus = true;
     }
 
-    onSelectBlur(): void {
+    public onSelectBlur(): void {
         this.internalFocus = false;
         this.focusInput();
     }
