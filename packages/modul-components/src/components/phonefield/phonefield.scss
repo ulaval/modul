@@ -1,4 +1,5 @@
 @import 'commons';
+$m-phonefiled--width-flag-dropdown: 88px;
 
 .m-phonefield {
     display: inline-flex;
@@ -23,8 +24,6 @@
     }
 
     &__wrapper {
-        $m-phonefiled--width-flag-dropdown: 88px;
-
         display: grid;
         grid-template-columns: #{$m-phonefiled--width-flag-dropdown} auto;
     }
@@ -113,9 +112,9 @@
 
     &__example {
         margin-top: $m-spacing--xs;
+        margin-left: calc(#{$m-phonefiled--width-flag-dropdown} + #{$m-input-style--padding} + #{$m-border-width--s});
         color: $m-color--grey-dark;
         font-size: $m-font-size--xs;
-        padding-left: calc(#{$m-input-style--padding} + #{$m-border-width--s});
     }
 
     &__validation {
