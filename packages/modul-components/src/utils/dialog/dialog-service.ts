@@ -54,8 +54,9 @@ export class DialogService {
     }
 
     /**
-     * @param state the dialog state
+     *
      * @param message the message of the confirmation dialog
+     * @param state the dialog state
      * @param title a title label if any
      * @param okLabel a ok label if any
      * @param secBtn secBtn if any
