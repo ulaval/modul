@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { MDialog, MDialogState } from '../../components/dialog/dialog';
+import { MDialog, MDialogState, MDialogWidth } from '../../components/dialog/dialog';
 import DialogServicePlugin from './dialog-service.plugin';
 
 export class DialogService {
@@ -49,6 +49,42 @@ export class DialogService {
 
         return this.show(confirmInstance).then((result) => {
             confirmInstance.$destroy();
+            return result;
+        });
+    }
+
+    /**
+     * @param state the dialog state
+     * @param message the message of the confirmation dialog
+     * @param title a title label if any
+     * @param okLabel a ok label if any
+     * @param secBtn secBtn if any
+     * @param secBtnLabel a secBtnLabel label if any
+     * @param btnWidth a btnWidth if any
+     * @param negativeLink negativeLink if any
+     * @param cancelLabel a cancel label if any
+     * @param width the width of the dialog if any
+     */
+    public generic(message: string, state?: MDialogState, title?: string, okLabel?: string, secBtn?: boolean, secBtnLabel?: string, btnWidth?: string, negativeLink?: boolean, cancelLabel?: string, width?: MDialogWidth): Promise<boolean> {
+        let genericInstance: MDialog = new MDialog({
+            el: document.createElement('div')
+        });
+
+        document.body.appendChild(genericInstance.$el);
+        genericInstance.message = message;
+        genericInstance.state = state ? state : MDialogState.Default;
+        genericInstance.title = title ? title : '';
+        genericInstance.okLabel = okLabel ? okLabel : undefined;
+        genericInstance.secBtn = secBtn ? secBtn : false;
+        genericInstance.secBtnLabel = secBtnLabel ? secBtnLabel : undefined;
+        genericInstance.btnWidth = btnWidth ? btnWidth : '100%';
+        genericInstance.negativeLink = negativeLink ? negativeLink : true;
+        genericInstance.cancelLabel = cancelLabel ? cancelLabel : undefined;
+        genericInstance.width = width ? width : MDialogWidth.Default;
+
+
+        return this.show(genericInstance).then((result) => {
+            genericInstance.$destroy();
             return result;
         });
     }
