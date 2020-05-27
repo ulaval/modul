@@ -82,10 +82,21 @@ export class DialogService {
                 });
             };
 
+            let onSecondaryBtn: () => void = () => {
+                if (mDialogInstance) {
+                    unhook();
+                }
+
+                Vue.nextTick(() => {
+                    resolve(false);
+                });
+            };
+
             let hook: () => void = () => {
                 if (mDialogInstance) {
                     mDialogInstance.$on('ok', onOk);
                     mDialogInstance.$on('cancel', onCancel);
+                    mDialogInstance.$on('secondaryBtn', onSecondaryBtn);
                     mDialogInstance.openDialog();
 
                 }
@@ -95,6 +106,7 @@ export class DialogService {
                 if (mDialogInstance) {
                     mDialogInstance.$off('ok', onOk);
                     mDialogInstance.$off('cancel', onCancel);
+                    mDialogInstance.$off('secondaryBtn', onSecondaryBtn);
                 }
             };
 
