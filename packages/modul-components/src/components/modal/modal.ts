@@ -40,6 +40,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
 
     @Prop()
     public title: string;
+
     @Prop({ default: true })
     public bodyMaxWidth: boolean;
 

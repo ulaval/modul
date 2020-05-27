@@ -1,24 +1,34 @@
-<transition :appear="true" :css="false" @enter="onEnter()" @leave="onLeave()">
+<transition :appear="true"
+            :css="false"
+            @enter="openProcessingPortal()"
+            @leave="removeBackdrop()">
     <div class="m-spinner">
-        <portal :target-el="spinnerElement" v-if="initialized">
-            <div ref="spinnerWrap" class="m-spinner__wrap" :class="{'m--is-processing': processing,
-                 'm--is-dark': skin === 'dark',
-                 'm--is-light': skin === 'light',
-                 'm--is-lighter': skin === 'lighter'}">
-                <div aria-hidden="true" class="m-spinner__icon" :class="{ 'm--is-small' : size === 'small'}"></div>
-                <h2 class="m-spinner__title" v-if="hasTitle">
-                    <template v-if="hasTitleMessage">{{ titleMessage }}</template>
-                    <template v-else>
-                        <m-i18n v-if="processing" k="m-spinner:processing"></m-i18n>
-                        <m-i18n v-if="!processing" k="m-spinner:loading"></m-i18n>
-                    </template>
+        <portal :target-el="spinnerElement"
+                v-if="initialized">
+            <div ref="spinnerWrap"
+                 class="m-spinner__wrap"
+                 :class="{
+                    'm--is-processing': processing,
+                    'm--is-dark': skin === 'dark',
+                    'm--is-light': skin === 'light',
+                    'm--is-lighter': skin === 'lighter' }">
+                <div aria-hidden="true"
+                     class="m-spinner__icon"
+                     :class="{ 'm--is-small' : size === 'small'}"></div>
+                <h2 class="m-spinner__title"
+                    v-if="titleMessage || (title && processing) || title">
+                    <template v-if="titleMessage">{{ titleMessage }}</template>
+                    <template v-else-if="title && processing">{{'m-spinner:processing' | f-m-i18n }}</template>
+                    <template v-else-if="title">{{'m-spinner:loading' | f-m-i18n }}</template>
                 </h2>
-                <p class="m-spinner__description" v-if="hasDescription">
-                    <template v-if="hasDescriptionMessage">{{ descriptionMessage }}</template>
-                    <m-i18n v-else k="m-spinner:description"></m-i18n>
+                <p class="m-spinner__description"
+                   v-if="description || descriptionMessage">
+                    <template v-if="descriptionMessage">{{ descriptionMessage }}</template>
+                    <template v-else>{{ 'm-spinner:description' | f-m-i18n }}</template>
                 </p>
             </div>
         </portal>
-        <div ref="spinnerContainer" v-if="!processing"></div>
+        <div ref="spinnerContainer"
+             v-if="!processing"></div>
     </div>
 </transition>

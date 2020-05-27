@@ -1013,7 +1013,7 @@ const allCountriesFr: any = [
     [
         'Saint-Martin',
         'sx',
-        '1721'
+        '1'
     ],
     [
         'Slovaquie',

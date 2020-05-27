@@ -1,4 +1,4 @@
-@import 'commons';
+@import "commons";
 
 .m-base-select {
     &__list {
@@ -29,5 +29,6 @@
 
     &__popup {
         display: inline-block;
+        width: 100%;
     }
 }

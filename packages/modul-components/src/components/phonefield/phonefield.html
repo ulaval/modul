@@ -5,9 +5,9 @@
                 'm--has-error': hasPhonefieldError,
                 'm--is-valid': isPhonefieldValid,
                 'm--is-country-focus': internalFocus,
-                'm--has-validation-message': hasValidationMessage } ]">
+                'm--has-validation-message': hasValidationMessage } ]"
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
     <div class="m-phonefield__wrapper">
-
         <m-select-virtual-scroll class="m-phonefield__country"
                                  :value="countryModel"
                                  :options="isoCountries"
@@ -19,6 +19,7 @@
                                  :label="i18nCountryLabel"
                                  :clearable="false"
                                  width="auto"
+                                 :list-min-width="listMinWidth"
                                  @select-item="onContryChanged"
                                  @focus="onSelectFocus"
                                  @blur="onSelectBlur">
@@ -33,6 +34,8 @@
 
             <template #outer-items="{item, index, props, handlers}">
                 <m-select-item v-if="item"
+                               class="m-phonefield__item-country-list"
+                               :class="{'m--is-last-priority-iso-countrie': isLastPriorityIsoCountrie(item)}"
                                :key="index"
                                v-bind="props"
                                v-on="handlers">
@@ -50,19 +53,9 @@
                         </div>
                     </template>
                 </m-select-item>
-                <m-select-item v-else
-                               class="m-phonefield__item-separator"
-                               :key="index"
-                               :disabled="true"
-                               :readonly="true">
-                    <template>
-                        <div></div>
-                    </template>
-                </m-select-item>
             </template>
 
         </m-select-virtual-scroll>
-
         <m-input-style class="m-phonefield__number"
                        :disabled="isDisabled"
                        :waiting="isWaiting"
@@ -75,7 +68,8 @@
                        :empty="isEmpty"
                        :readonly="isReadonly"
                        :required-marker="requiredMarker"
-                       :tag-style="tagStyle">
+                       :tag-style="tagStyle"
+                       width="100%">
             <m-input-mask ref="inputMask"
                           :value="internalValue"
                           :id="id"
@@ -90,10 +84,8 @@
                           @keyup="onKeyup"
                           @change="onChange"></m-input-mask>
         </m-input-style>
-        <div></div>
         <p class="m-phonefield__example"
            x-ms-format-detection="none">{{ i18nExample }}{{ example }}</p>
-
     </div>
     <div class="m-phonefield__validation">
         <m-validation-message class="m-phonefield__validation-message"

@@ -62,15 +62,20 @@
         position: relative;
     }
 
-    &__item-separator {
-        content: "";
-        display: block;
-        width: calc(100% - #{$m-spacing});
-        position: relative;
-        background-color: $m-color--grey-lighter;
-        height: 2px;
-        padding: 0;
-        margin: 0 0 0 $m-spacing--s;
+    &__item-country-list {
+        &.m--is-last-priority-iso-countrie {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: $m-spacing--s;
+                bottom: -1px;
+                left: $m-spacing--s;
+                height: 2px;
+                background: $m-color--grey-lighter;
+            }
+        }
     }
 
     &__flag {
@@ -101,7 +106,8 @@
         }
 
         /deep/ .m-input-style__content {
-            height: 18px;
+            display: flex;
+            align-items: center;
         }
     }
 

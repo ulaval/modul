@@ -47,16 +47,16 @@ export class MPhonefield extends ModulVue {
 
     @Prop({
         default: () => ({
-            iso: 'ca',
+            iso: MCountryCodeISO2.Canada,
             prefix: '1'
         })
     })
     public country: MCountry;
 
     @Prop({
-        default: () => ['ca']
+        default: () => [MCountryCodeISO2.Canada]
     })
-    public priorityIsoCountries: string[];
+    public priorityIsoCountries: MCountryCodeISO2[];
 
     @Prop({
         default: false
@@ -75,6 +75,7 @@ export class MPhonefield extends ModulVue {
     public selectedCountries: MCountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesOptionsFr : allCountriesOptionsEn;
     public countries: MCountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
     public internalFocus: boolean = false;
+    public listMinWidth: string = '325px';
 
     public i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
     public i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
@@ -91,13 +92,9 @@ export class MPhonefield extends ModulVue {
                 svg.addExternalSprites(sprites, 'mflag');
             }
         } else {
-            this.internalSpriteId = svg.addInternalSprites(sprites);
-        }
-    }
-
-    protected destroyed(): void {
-        if (this.internalSpriteId) {
-            // this.$svg.removeInternalSprite(this.internalSpriteId);
+            if (!document.getElementById('mflag-svg__flag-ae')) {
+                svg.addInternalSprites(sprites);
+            }
         }
     }
 
@@ -109,12 +106,13 @@ export class MPhonefield extends ModulVue {
 
     @Watch('country', { immediate: true })
     public onContryChange(country: MCountry): void {
-        this.countryModelInternal = country.iso;
-        this.internalCountry = this.countries.find((country: MCountryOptions) => country.iso2 === this.countryModelInternal)!;
-        if (!this.as<InputManagement>().internalValue) {
-            this.as<InputManagement>().internalValue = `+${this.internalCountry.dialCode}`;
+        if (country.iso) {
+            this.countryModelInternal = country.iso;
+            this.internalCountry = this.countries.find((country: MCountryOptions) => country.iso2 === this.countryModelInternal)!;
+            if (!this.as<InputManagement>().internalValue) {
+                this.as<InputManagement>().internalValue = '+' + this.internalCountry.dialCode;
+            }
         }
-
     }
 
     @Watch('value', { immediate: true })
@@ -126,15 +124,19 @@ export class MPhonefield extends ModulVue {
 
     public spriteId(iso: string): string | undefined {
         const svg: SpritesService = this.$svg;
-        const spriteId: string = 'mflag-svg__flag-' + iso;
+        const spriteId: string = `mflag-svg__flag-${iso}`;
 
         if (document.getElementById(spriteId)) {
-            return '#' + spriteId;
+            return `#${spriteId}`;
         } else if (svg && svg.getExternalSpritesFromSpriteId(spriteId)) {
             return svg.getExternalSpritesFromSpriteId(spriteId);
         } else if (iso) {
-            this.$log.warn('"' + iso + '" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.');
+            this.$log.warn(`"${iso}" is not a valid iso country. Make sure that the sprite has been loaded via the $svg instance service.`);
         }
+    }
+
+    public isLastPriorityIsoCountrie(iso: MCountryCodeISO2): boolean {
+        return this.priorityIsoCountries[this.priorityIsoCountries.length - 1] === iso;
     }
 
     public get isoCountries(): string[] {
@@ -151,10 +153,6 @@ export class MPhonefield extends ModulVue {
                 finalCountriesList.push(currentCountry);
             }
         });
-
-        if (this.priorityIsoCountries.length > 0) {
-            finalCountriesList.push({ name: '', iso2: MCountryCodeISO2.Empty, dialCode: '' });
-        }
 
         this.countries.filter((country: MCountryOptions) => {
             if (!this.priorityIsoCountries.includes(country.iso2)) {
@@ -180,7 +178,8 @@ export class MPhonefield extends ModulVue {
     public get inputMaskOptions(): InputMaskOptions {
         return {
             phone: true,
-            phoneRegionCode: this.phoneRegionCode
+            phoneRegionCode: this.phoneRegionCode,
+            prefix: this.prefix
         };
     }
 

@@ -42,6 +42,9 @@ export class MSelect extends ModulVue {
     @Prop({ default: false })
     public virtualScroll: boolean;
 
+    @Prop()
+    public listMinWidth: string;
+
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
