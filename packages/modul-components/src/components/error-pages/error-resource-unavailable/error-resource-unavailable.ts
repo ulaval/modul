@@ -31,7 +31,11 @@ export class MErrorResourceUnavailable extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = 'm-svg__error-resource-unavailable';
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-resource-unavailable', require('./message-error-resource-unavailable.svg'));
+    }
+
+    readonly svgName: string = 'message-error-resource-unavailable';
 }
 
 const ErrorResourceUnavailablePlugin: PluginObject<any> = {

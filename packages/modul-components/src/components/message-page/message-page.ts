@@ -1,14 +1,15 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../utils/vue/vue';
 import { MESSAGE_PAGE_NAME } from '../component-names';
 import IconPlugin from '../icon/icon';
 import LinkPlugin from '../link/link';
 import { MMessageState } from '../message/message';
 import ModalPlugin from '../modal/modal';
+import { MSvg } from './../svg/svg';
 import WithRender from './message-page.html?style=./message-page.scss';
-
 
 /**
  * Utility class to manage the properties related to the link displayed in the error pages.
@@ -35,7 +36,9 @@ export enum MMessagePageImageSize {
 }
 
 @WithRender
-@Component
+@Component({
+    components: { MSvg }
+})
 export class MMessagePage extends ModulVue {
 
     @Prop({
@@ -59,7 +62,7 @@ export class MMessagePage extends ModulVue {
     @Prop()
     public iconName: string;
 
-    @Prop()
+    @Prop({})
     public svgName: string;
 
     @Prop()
@@ -74,24 +77,12 @@ export class MMessagePage extends ModulVue {
     @Prop({ default: () => [] })
     public links: Link[];
 
-    public svg: string;
-
-    public get isSvg(): boolean {
-        return (this.svgName !== undefined) && (this.svgName.trim().length > 0);
-    }
-
     public get hasHints(): boolean {
         return this.hints.length > 0;
     }
 
     public get hasLinks(): boolean {
         return this.links.length > 0;
-    }
-
-    public get styleObject(): { [name: string]: string } {
-        return {
-            width: this.propImageSize
-        };
     }
 
     public get propImageSize(): string {
@@ -105,64 +96,58 @@ export class MMessagePage extends ModulVue {
         return isExternal ? '_blank' : '';
     }
 
-    protected created(): void {
-        if (this.svgName) {
-            this.svg = require(`../../assets/icons/svg/${this.svgName}.svg`);
-        }
-    }
-
-    private get hasLinksAndSlot(): boolean {
+    public get hasLinksAndSlot(): boolean {
         return this.hasLinks || !!this.$slots.default;
     }
 
-    private get hasBody(): boolean {
+    public get hasBody(): boolean {
         return this.hasHints || this.hasLinks || !!this.$slots.default;
     }
 
-    private get isSkinDefault(): boolean {
+    public get isSkinDefault(): boolean {
         return this.skin === MMessagePageSkin.Default;
     }
 
-    private get isSkinLight(): boolean {
+    public get isSkinLight(): boolean {
         return this.skin === MMessagePageSkin.Light;
     }
 
-    private get isStateInformation(): boolean {
+    public get isStateInformation(): boolean {
         return this.state === MMessageState.Information;
     }
 
-    private get isStateWarning(): boolean {
+    public get isStateWarning(): boolean {
         return this.state === MMessageState.Warning;
     }
 
-    private get isStateError(): boolean {
+    public get isStateError(): boolean {
         return this.state === MMessageState.Error;
     }
 
-    private get isStateConfirmation(): boolean {
+    public get isStateConfirmation(): boolean {
         return this.state === MMessageState.Confirmation;
     }
 
-    private get iconNameProp(): string {
+    public get iconNameProp(): string {
         if (this.iconName) {
             return this.iconName;
         } else {
             switch (this.state) {
                 case MMessageState.Confirmation:
-                    return 'm-svg__confirmation-white-filled';
+                    return ModulIconName.ConfirmationWhiteFilled;
                 case MMessageState.Information:
-                    return 'm-svg__information-white-filled';
+                    return ModulIconName.InformationWhiteFilled;
                 case MMessageState.Warning:
-                    return 'm-svg__warning-white-filled';
+                    return ModulIconName.WarningWhiteFilled;
                 default:
-                    return 'm-svg__error-white-filled';
+                    return ModulIconName.ErrorWhiteFilled;
             }
         }
     }
 }
 
 const MessagePagePlugin: PluginObject<any> = {
-    install(v, options): void {
+    install(v): void {
         v.prototype.$log.debug(MESSAGE_PAGE_NAME, 'plugin.install');
         v.use(LinkPlugin);
         v.use(IconPlugin);

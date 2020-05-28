@@ -2,14 +2,7 @@ import { storiesOf } from '@storybook/vue';
 import { MESSAGE_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
-
-
-
-
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MESSAGE_NAME}`, module)
-
-
     .add('default', () => ({
         template: '<m-message>A message for testing purposes</m-message>'
     }))
@@ -25,7 +18,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MESSAGE_NAME}`, module)
     .add('visible="false"', () => ({
         template: '<m-message :visible="false">A Button</m-message>'
     }));
-
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MESSAGE_NAME}/state`, module)
 

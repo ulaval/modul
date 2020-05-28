@@ -60,7 +60,11 @@ export class MErrorTechnicalDifficulty extends ModulVue {
 
     public state: string = MMessageState.Error;
 
-    public svgName: string = 'm-svg__error-technical-difficulty';
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-technical-difficulty', require('./message-error-technical-difficulty.svg'));
+    }
+
+    readonly svgName: string = 'message-error-technical-difficulty';
 
     /**
      * Returns the formatted date for the value received as props (format = YYYY-MM-DD). Used to display the date when the error was generated.
