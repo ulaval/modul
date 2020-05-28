@@ -136,22 +136,13 @@ export * from './filters/i18n/i18n';
 export { default as DialogServicePlugin } from './utils/dialog/dialog-service.plugin';
 export { FileService } from './utils/file/file';
 export * from './utils/form';
-export { ENGLISH, FRENCH } from './utils/i18n/i18n';
+export { default as HttpPlugin, HttpPluginOptions } from './utils/http/http';
+export { DebugMode, default as I18nPlugin, ENGLISH, FRENCH, I18nPluginOptions } from './utils/i18n/i18n';
+export { default as L10nPlugin, L10nPluginOptions } from './utils/l10n/l10n';
+export { ConsoleOptions, default as LoggerPlugin } from './utils/logger/logger';
 export { SpritesService } from './utils/svg/sprites';
 export { default as ToastServicePlugin } from './utils/toast/toast-service.plugin';
 export { default as UtilsPlugin, UtilsPluginOptions } from './utils/utils-plugin';
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
