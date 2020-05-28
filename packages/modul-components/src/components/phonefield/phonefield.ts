@@ -12,7 +12,6 @@ import { FRENCH } from '../../utils/i18n/i18n';
 import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MCountryFlag } from '../country-flag/country-flag';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
 import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-scroll';
 import { MSelectItem } from '../select/select-item/select-item';
@@ -33,8 +32,7 @@ import WithRender from './phonefield.html?style=./phonefield.scss';
     components: {
         MInputMask,
         MSelectVirtualScroll,
-        MSelectItem,
-        MCountryFlag
+        MSelectItem
     }
 })
 export class MPhonefield extends ModulVue {
@@ -248,3 +246,6 @@ export class MPhonefield extends ModulVue {
         this.$refs.inputMask.focus();
     }
 }
+
+export { MCountry as Country, MCountryCodeISO2, MCountryOptions } from '../../utils/country/country';
+
