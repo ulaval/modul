@@ -1,6 +1,6 @@
 import { mount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
-
+import '../../../tests/helpers/mock-resizeSensor';
 import { renderComponent } from '../../../tests/helpers/render';
 import TextareaPlugin from '../../components/textarea/textarea';
 import uuid from '../../utils/uuid/uuid';

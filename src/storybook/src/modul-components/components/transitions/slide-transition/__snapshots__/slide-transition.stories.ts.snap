@@ -4,6 +4,7 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-tab-light m--is-multiline"
+    style="position: relative;"
   >
     <div
       class="m-navbar__max-width"
@@ -208,22 +209,23 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
     </div>
     <div
       class="resize-sensor"
-      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
         class="resize-sensor-expand"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
         />
       </div>
       <div
         class="resize-sensor-shrink"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
         />
       </div>
     </div>
@@ -376,6 +378,7 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
 <div>
   <div
     class="m-navbar m--is-skin-tab-light m--is-multiline"
+    style="position: relative;"
   >
     <div
       class="m-navbar__max-width"
@@ -480,22 +483,23 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
     </div>
     <div
       class="resize-sensor"
-      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
         class="resize-sensor-expand"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
         />
       </div>
       <div
         class="resize-sensor-shrink"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
         />
       </div>
     </div>

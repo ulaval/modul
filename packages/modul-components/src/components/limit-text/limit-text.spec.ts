@@ -1,9 +1,9 @@
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import { getDefaultMock } from '../../../tests/helpers/mock';
+import '../../../tests/helpers/mock-resizeSensor';
 import { renderComponent } from '../../../tests/helpers/render';
 import LimitTextPlugin, { MLimitText } from './limit-text';
-
 
 describe('limit-text', () => {
     let localVue: VueConstructor<Vue>;
