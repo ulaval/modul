@@ -1,5 +1,6 @@
 import { createLocalVue, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
+import '../../../../tests/helpers/mock-resizeSensor';
 import ModulPlugin from '../../../utils/modul/modul';
 import { MNavbar } from '../../navbar/navbar';
 import { MNavbarItem } from './navbar-item';

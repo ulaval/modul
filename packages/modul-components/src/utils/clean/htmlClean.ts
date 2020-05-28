@@ -35,3 +35,9 @@ export function eraseTag(tag: string, html: string): string {
 export function eraseTags(tags: string[], html: string): string {
     return eraseTag(createMultiTagsRegexString(tags), html);
 }
+
+export function eraseTagAndAllIsContent(tag: string, html: string): string {
+    const regex: RegExp = new RegExp(`(<${tag}([^>]*)>)[^>]*(</${tag}>)`, 'gmi');
+
+    return html.replace(regex, '');
+}

@@ -2,6 +2,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 // tslint:disable-next-line: import-blacklist
 import moment from 'moment';
 import Vue from 'vue';
+import SvgSpritesPlugin from '../../../utils/svg/svg-sprite';
 import { ACCORDION_NAME, I18N_NAME, MESSAGE_PAGE_NAME, PANEL_NAME } from '../../component-names';
 import { Link } from '../../message-page/message-page';
 import { MErrorTechnicalDifficulty } from './error-technical-difficulty';
@@ -72,7 +73,7 @@ describe(`MErrorTechnicalDifficulty - test`, () => {
     beforeEach(() => {
         showStack = false;
         error = new Error();
-
+        Vue.use(SvgSpritesPlugin);
         initializeShallowWrapperNoProps();
     });
 

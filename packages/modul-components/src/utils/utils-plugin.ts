@@ -8,6 +8,7 @@ import MediaQueriesPlugin, { MediaQueries } from './media-queries/media-queries'
 import ModulPlugin, { Modul, ModulPluginOptions } from './modul/modul';
 import ScrollToPlugin, { ScrollTo } from './scroll-to/scroll-to';
 import SpritesPlugin, { SpritesService } from './svg/sprites';
+import SvgSpritePlugin, { SvgSpriteService } from './svg/svg-sprite';
 
 declare module 'vue/types/vue' {
     interface Vue {
@@ -18,6 +19,7 @@ declare module 'vue/types/vue' {
         $http: HttpService;
         $mq: MediaQueries;
         $svg: SpritesService;
+        $svgSprite: SvgSpriteService;
         $scrollTo: ScrollTo;
     }
 }
@@ -51,6 +53,7 @@ const UtilsPlugin: PluginObject<any> = {
         Vue.use(MediaQueriesPlugin);
         Vue.use(SpritesPlugin);
         Vue.use(ModulPlugin, options.modulPluginOptions);
+        Vue.use(SvgSpritePlugin);
         Vue.use(ScrollToPlugin);
     }
 };

@@ -4,10 +4,6 @@ import * as parser from 'node-html-parser';
 import Project, { ClassDeclaration, ClassInstanceMemberTypes, ClassInstancePropertyTypes, Decorator, Expression, LanguageService, MethodDeclaration, ObjectLiteralExpression, ParameterDeclaration, PropertyAssignment, SourceFile, StringLiteral, SyntaxKind, Type, TypeChecker } from 'ts-morph';
 import { Meta, MetaComponent, MetaEvent, MetaProps, MetaSlot } from './index';
 
-
-
-
-
 const MIXINS_PROPERTY_NAME: string = 'mixins';
 const COMPONENT_DECORATOR_NAME: string = 'Component';
 const PROP_DECORATOR_NAME: string = 'Prop';
