@@ -1,17 +1,22 @@
 <div>
-    <h2 class="m-u--h4 m-u--no-margin">Service confirm</h2>
-    <br />
+    <h2 class="m-u--h4 m-u--no-margin">Confirm service</h2>
     <m-button @click="onAlertService()">Trigger a confirm dialog with the $dialog service</m-button>
     <br />
-
-    <h2 class="m-u--h4 m-u--no-margin">Service alert</h2>
     <br />
+
+    <h2 class="m-u--h4 m-u--no-margin">Alert service</h2>
     <m-button @click="onConfirmService()">Trigger a alert dialog with the $dialog service</m-button>
+    <br />
+    <br />
+
+    <h2 class="m-u--h4 m-u--no-margin">Generic service</h2>
+    <m-button @click="onConfirmServiceSecondaryButton()">Trigger a alert dialog with the $dialog service</m-button>
+    <br />
     <br />
 
     <h2 class="m-u--h4 m-u--no-margin">Service custom dialog</h2>
-    <br />
     <m-button @click="onCustomConfirmService()">Trigger a custom dialog with the $dialog service</m-button>
+    <br />
     <br />
     <m-dialog title="Dialog State #3"
               state="confirmation"

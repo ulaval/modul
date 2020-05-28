@@ -1,0 +1,505 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-message-page Default Slot 1`] = `
+<article
+  class="m-message-page m--is-state-information m--is-skin-default"
+>
+  <header
+    class="m-message-page__header"
+  >
+    <!---->
+     
+    <div
+      aria-hidden="true"
+      class="m-message-page__icon-container"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-message-page__icon"
+        height="130px"
+        width="130px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+    </div>
+  </header>
+   
+  <div
+    class="m-message-page__body"
+  >
+     
+    <div
+      class="m-message-page__details"
+    >
+      
+        Default slot
+    
+    </div>
+     
+    <!---->
+  </div>
+</article>
+`;
+
+exports[`Storyshots modul-components|m-message-page Hints 1`] = `
+<article
+  class="m-message-page m--is-state-confirmation m--is-skin-default"
+>
+  <header
+    class="m-message-page__header"
+  >
+    <!---->
+     
+    <div
+      aria-hidden="true"
+      class="m-message-page__icon-container"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-message-page__icon"
+        height="130px"
+        width="130px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+    </div>
+  </header>
+   
+  <div
+    class="m-message-page__body"
+  >
+    <p
+      class="m-message-page__hints m--no-content"
+    >
+      Lorem ipsum dolor sit amet.
+    </p>
+    <p
+      class="m-message-page__hints m--no-content"
+    >
+      Excepteur sint occaecat cupidatat non.
+    </p>
+     
+    <!---->
+     
+    <!---->
+  </div>
+</article>
+`;
+
+exports[`Storyshots modul-components|m-message-page Icon Name 1`] = `
+<article
+  class="m-message-page m--is-state-confirmation m--is-skin-default"
+>
+  <header
+    class="m-message-page__header"
+  >
+    <!---->
+     
+    <div
+      aria-hidden="true"
+      class="m-message-page__icon-container"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-message-page__icon"
+        height="130px"
+        width="130px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+    </div>
+  </header>
+   
+  <!---->
+</article>
+`;
+
+exports[`Storyshots modul-components|m-message-page Links 1`] = `
+<article
+  class="m-message-page m--is-state-confirmation m--is-skin-default"
+>
+  <header
+    class="m-message-page__header"
+  >
+    <!---->
+     
+    <div
+      aria-hidden="true"
+      class="m-message-page__icon-container"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-message-page__icon"
+        height="130px"
+        width="130px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+    </div>
+  </header>
+   
+  <div
+    class="m-message-page__body"
+  >
+     
+    <!---->
+     
+    <ul
+      class="m-message-page__links"
+    >
+      <li>
+        <a
+          class="m-link m-message-page__link m--has-left-icon m--has-content"
+          href="www.google.ca"
+          tabindex="0"
+          target="_blank"
+        >
+          <svg
+            aria-hidden="true"
+            class="m-icon m-link__icon m--has-large-stroke"
+            height="12px"
+            width="12px"
+          >
+            <!---->
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-link__text"
+          >
+            Google
+          </span>
+           
+          <span
+            class="m-i18n m-link__hidden"
+          >
+            Cet hyperlien s'ouvrira dans un nouvel onglet.
+          </span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="m-link m-message-page__link m--has-left-icon m--has-content"
+          href="www.facebook.com"
+          tabindex="0"
+          target="_blank"
+        >
+          <svg
+            aria-hidden="true"
+            class="m-icon m-link__icon m--has-large-stroke"
+            height="12px"
+            width="12px"
+          >
+            <!---->
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-link__text"
+          >
+            FaceBook
+          </span>
+           
+          <span
+            class="m-i18n m-link__hidden"
+          >
+            Cet hyperlien s'ouvrira dans un nouvel onglet.
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</article>
+`;
+
+exports[`Storyshots modul-components|m-message-page Sandbox 1`] = `
+<article
+  class="m-message-page m--is-state-error m--is-skin-default"
+>
+  <header
+    class="m-message-page__header"
+  >
+    <!---->
+     
+    <div
+      aria-hidden="true"
+      class="m-message-page__icon-container"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-message-page__icon"
+        height="130px"
+        width="130px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+    </div>
+  </header>
+   
+  <div
+    class="m-message-page__body"
+  >
+    <p
+      class="m-message-page__hints m--no-content"
+    >
+      Lorem ipsum dolor sit amet.
+    </p>
+    <p
+      class="m-message-page__hints m--no-content"
+    >
+      Excepteur sint occaecat cupidatat non.
+    </p>
+     
+    <!---->
+     
+    <!---->
+  </div>
+</article>
+`;
+
+exports[`Storyshots modul-components|m-message-page Skin 1`] = `
+<div>
+  <article
+    class="m-message-page m--is-state-error m--is-skin-default"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Prop skin = default
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-message-page__icon"
+          height="130px"
+          width="130px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </div>
+    </header>
+     
+    <!---->
+  </article>
+  <article
+    class="m-message-page m--is-state-error m--is-skin-light m-u--margin-top--l"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Prop skin = light
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-message-page__icon"
+          height="76px"
+          width="76px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </div>
+    </header>
+     
+    <!---->
+  </article>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-message-page State 1`] = `
+<div>
+  <article
+    class="m-message-page m--is-state-confirmation m--is-skin-default"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Prop state = confirmation
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-message-page__icon"
+          height="130px"
+          width="130px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </div>
+    </header>
+     
+    <!---->
+  </article>
+  <article
+    class="m-message-page m--is-state-information m--is-skin-default m-u--margin-top--xl"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Prop state = information
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-message-page__icon"
+          height="130px"
+          width="130px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </div>
+    </header>
+     
+    <!---->
+  </article>
+  <article
+    class="m-message-page m--is-state-warning m--is-skin-default m-u--margin-top--xl"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Prop state = warning
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-message-page__icon"
+          height="130px"
+          width="130px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </div>
+    </header>
+     
+    <!---->
+  </article>
+  <article
+    class="m-message-page m--is-state-error m--is-skin-default m-u--margin-top--xl"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Prop state = error
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-message-page__icon"
+          height="130px"
+          width="130px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </div>
+    </header>
+     
+    <!---->
+  </article>
+</div>
+`;

@@ -32,6 +32,7 @@ import LinkPlugin from '@ulaval/modul-components/dist/components/link/link';
 import ListItemPlugin from '@ulaval/modul-components/dist/components/list-item/list-item';
 import MaskedfieldPlugin from '@ulaval/modul-components/dist/components/maskedfield/maskedfield';
 import MenuPlugin from '@ulaval/modul-components/dist/components/menu/menu';
+import MessagePagePlugin from '@ulaval/modul-components/dist/components/message-page/message-page';
 import MMessagePlugin from '@ulaval/modul-components/dist/components/message/message';
 import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import MoneyFieldPlugin from '@ulaval/modul-components/dist/components/moneyfield/moneyfield';
@@ -54,6 +55,7 @@ import SelectPlugin from '@ulaval/modul-components/dist/components/select/select
 import ShowMorePlugin from '@ulaval/modul-components/dist/components/show-more/show-more';
 import SpinnerPlugin from '@ulaval/modul-components/dist/components/spinner/spinner';
 import SteppersPlugin from '@ulaval/modul-components/dist/components/steppers/steppers';
+import SvgPlugin from '@ulaval/modul-components/dist/components/svg/svg';
 import SwitchPlugin from '@ulaval/modul-components/dist/components/switch/switch';
 import TableHeaderPlugin from '@ulaval/modul-components/dist/components/table-header/table-header';
 import TablePlugin from '@ulaval/modul-components/dist/components/table/table';
@@ -181,6 +183,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(MultiSelectPlugin);
             Vue.use(SelectPlugin);
 
+
             Vue.use(MoneyFieldPlugin);
             Vue.use(DecimalfieldPlugin);
             Vue.use(IntegerfieldPlugin);
@@ -192,8 +195,10 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(InputStylePlugin);
             Vue.use(PlusPlugin);
             Vue.use(MMessagePlugin);
+            Vue.use(MessagePagePlugin);
             // modul-website
             Vue.use(ComponentExamplesPlugin);
+            Vue.use(SvgPlugin);
         }
     };
 };

@@ -57,7 +57,7 @@ export class ElementQueries extends ModulVue implements ElementQueriesMixin {
 
     public eqActive: boolean = true;
 
-    private resizeSensor: ResizeSensor;
+    private resizeSensor: ResizeSensor | undefined;
     private doneResizeEvent: any;
 
     protected mounted(): void {

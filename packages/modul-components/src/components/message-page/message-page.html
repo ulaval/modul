@@ -11,14 +11,15 @@
             v-html="title"></h2>
         <div class="m-message-page__icon-container"
              aria-hidden="true">
-            <div class="m-message-page__icon"
-                 :style="styleObject"
-                 v-html="svg"
-                 v-if="isSvg"></div>
-            <m-icon class="m-message-page__icon"
+            <m-svg v-if="svgName"
+                   class="m-message-page__icon"
+                   :width="propImageSize"
+                   :height="propImageSize"
+                   :name="svgName" />
+            <m-icon v-else
+                    class="m-message-page__icon"
                     :name="iconNameProp"
-                    :size="propImageSize"
-                    v-else></m-icon>
+                    :size="propImageSize" />
         </div>
     </header>
     <div class="m-message-page__body"
@@ -30,7 +31,7 @@
            ref="hint">{{hint}}</p>
         <div class="m-message-page__details"
              v-if="$slots.default">
-            <slot></slot>
+            <slot />
         </div>
         <ul class="m-message-page__links"
             v-if="hasLinks">

@@ -31,7 +31,11 @@ export class MErrorOperationFailed extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = 'm-svg__error-conflict';
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-conflict', require('./message-error-conflict.svg'));
+    }
+
+    readonly svgName: string = 'message-error-conflict';
 }
 
 const ErrorOperationFailedPlugin: PluginObject<any> = {

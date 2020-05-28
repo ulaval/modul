@@ -35,7 +35,11 @@ export class MErrorPageNotFound extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = 'm-svg__error-page-not-found';
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-page-not-found', require('./message-error-page-not-found.svg'));
+    }
+
+    readonly svgName: string = 'message-error-page-not-found';
 }
 
 const ErrorPageNotFoundPlugin: PluginObject<any> = {

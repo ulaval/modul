@@ -32,7 +32,11 @@ export class MErrorAccessDenied extends ModulVue {
 
     readonly state: string = MMessageState.Information;
 
-    readonly svgName: string = 'm-svg__error-access-denied';
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-access-denied', require('./message-error-access-denied.svg'));
+    }
+
+    readonly svgName: string = 'message-error-access-denied';
 }
 
 const ErrorAccessDeniedPlugin: PluginObject<any> = {

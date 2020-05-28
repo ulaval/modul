@@ -13,10 +13,10 @@ import { MMaskedfield } from '../maskedfield/maskedfield';
 import WithRender from './postalcodefield.html';
 
 export enum MPostalCodeCountry {
-    CA = 'CA',
-    FR = 'FR',
+    CA = 'ca',
+    FR = 'fr',
     Other = 'other',
-    US = 'US'
+    US = 'us'
 }
 
 @WithRender
@@ -39,7 +39,7 @@ export class MPostalcodefield extends ModulVue {
     protected id: string = `mPostalcodefield-${uuid.generate()}`;
 
     get maskOptions(): InputMaskOptions {
-        switch (this.postalCodeFormat) {
+        switch (this.postalCodeFormat.toLowerCase()) {
             case MPostalCodeCountry.CA:
                 return {
                     blocks: [3, 3],

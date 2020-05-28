@@ -35,7 +35,11 @@ export class MErrorCookiesNotSupported extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = 'm-svg__error-cookies-disabled';
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-cookies-disabled', require('./message-error-cookies-disabled.svg'));
+    }
+
+    readonly svgName: string = 'message-error-cookies-disabled';
 }
 
 const ErrorCookiesNotSupportedPlugin: PluginObject<any> = {

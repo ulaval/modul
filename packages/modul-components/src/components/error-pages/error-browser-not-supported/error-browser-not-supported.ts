@@ -43,7 +43,11 @@ export class MErrorBrowserNotSupported extends ModulVue {
 
     readonly state: string = MMessageState.Warning;
 
-    readonly svgName: string = 'm-svg__error-browser-not-supported';
+    beforeCreate(): void {
+        this.$svgSprite.addSvg('message-error-browser-not-supported', require('./message-error-browser-not-supported.svg'));
+    }
+
+    readonly svgName: string = 'message-error-browser-not-supported';
 }
 
 const ErrorBrowserNotSupported: PluginObject<any> = {
