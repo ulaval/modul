@@ -118,10 +118,23 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOAST}/toast-service`, modu
         methods: {
             onClick(): void {
                 (this as any).$toast.show({
-                    text: `Texte <strong>strong</strong`,
+                    text: `Texte <strong>strong</strong>`,
                     state: MToastState.Confirmation,
                     position: MToastPosition.BottomRight,
-                    timeout: MToastTimeout.xshort
+                    timeout: MToastTimeout.long
+                });
+            }
+        },
+        template: `<m-button @click="onClick">Open toast</m-button>`
+    }))
+    .add('Text starts and ends with the same HTML tag', () => ({
+        methods: {
+            onClick(): void {
+                (this as any).$toast.show({
+                    text: `<em><strong>Texte strong</strong> and other text</em>`,
+                    state: MToastState.Confirmation,
+                    position: MToastPosition.BottomRight,
+                    timeout: MToastTimeout.long
                 });
             }
         },
