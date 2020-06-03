@@ -103,6 +103,7 @@ export * from './components/show-more/show-more';
 export * from './components/sidebar/sidebar';
 export * from './components/spinner/spinner';
 export * from './components/steppers/steppers';
+export * from './components/steppers/steppers-item/steppers-item';
 export * from './components/switch/switch';
 export * from './components/table-header/table-header';
 export * from './components/table/table';
