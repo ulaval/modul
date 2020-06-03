@@ -69,7 +69,7 @@ export default class ToastService {
         if (params.text.charAt(0) === '<') {
             toast.$slots.default = [toast.$createElement(Vue.compile(params.text))];
         } else {
-            toast.$slots.default = [toast.$createElement('p', params.text)];
+            toast.$slots.default = [toast.$createElement(Vue.compile(`<p>${params.text}</p>`))];
         }
 
         return toast;
