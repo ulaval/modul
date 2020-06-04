@@ -1,5 +1,7 @@
 import { FORM_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import FormPlugin from '@ulaval/modul-components/dist/components/form/form.plugin';
+import RichTextLicensePlugin from '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-license-plugin';
+import { MRichText } from '@ulaval/modul-components/dist/components/rich-text/rich-text';
 import { AbstractControl } from '@ulaval/modul-components/dist/utils/form/abstract-control';
 import { ControlValidatorValidationType } from '@ulaval/modul-components/dist/utils/form/control-validator-validation-type';
 import { FormArray } from '@ulaval/modul-components/dist/utils/form/form-array';
@@ -13,6 +15,12 @@ import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component, Watch } from 'vue-property-decorator';
 import WithRender from './form-complex.sandbox.html';
+
+// We should always load the rte as a separe chunk because of its size (> 1Mb)
+
+const rteChunk = (): Promise<any> => import(/* webpackChunkName: "rte" */ '@ulaval/modul-components/dist/components/rich-text-editor/rich-text-editor').then((exports: any) => {
+    return exports.MRichTextEditor;
+});
 
 const ID_FORM_NAME: string = 'name';
 const ID_FORM_DESCRIPTION: string = 'description';
@@ -29,6 +37,7 @@ const ID_FORM_CLIENT: string = 'client';
 const ID_FORM_APPLES: string = 'apples';
 const ID_FORM_BANANAS: string = 'bananas';
 const ID_FORM_FRUITS: string = 'fruits';
+const ID_FORM_RICH_TEXT: string = 'rich-text';
 
 class Validations {
     static validatePickingLessThen24Bananas: (options?: ControlValidatorOptions) => ControlValidator = (options?: ControlValidatorOptions): ControlValidator => {
@@ -65,7 +74,9 @@ class Validations {
 }
 
 @WithRender
-@Component
+@Component({
+    components: { 'm-rich-text-editor': rteChunk, MRichText }
+})
 export class MFormAllSandbox extends ModulVue {
     types: string[] = ['douce', 'blanche', 'sec'];
 
@@ -85,7 +96,8 @@ export class MFormAllSandbox extends ModulVue {
         [ID_FORM_ITEMS]: [
             { [ID_FORM_CLIENT]: 'Joe', [ID_FORM_APPLES]: 4, [ID_FORM_BANANAS]: 10 },
             { [ID_FORM_CLIENT]: 'John', [ID_FORM_APPLES]: 3, [ID_FORM_BANANAS]: 11 }
-        ]
+        ],
+        [ID_FORM_RICH_TEXT]: '<p>Bla Bla Bla</p>'
     };
 
     formGroup: FormGroup = this.buildFormGroup();
@@ -108,6 +120,10 @@ export class MFormAllSandbox extends ModulVue {
 
     get selectField(): AbstractControl<string> {
         return this.formGroup.getControl<string>(ID_FORM_SELECT);
+    }
+
+    get richTextField(): AbstractControl<string> {
+        return this.formGroup.getControl<string>(ID_FORM_RICH_TEXT);
     }
 
     get champSupplActive(): AbstractControl<boolean> {
@@ -245,6 +261,14 @@ export class MFormAllSandbox extends ModulVue {
                     initialValue: data[ID_FORM_SELECT] ? data[ID_FORM_SELECT] : ''
                 }
             ),
+            [ID_FORM_RICH_TEXT]: new FormControl<string>(
+                [
+                    RequiredValidator()
+                ],
+                {
+                    initialValue: data[ID_FORM_RICH_TEXT] ? data[ID_FORM_RICH_TEXT] : ''
+                }
+            ),
             [ID_FORM_CHAMP_SUPPL_ACTIVE]: new FormControl<boolean>([],
                 {
                     initialValue: data[ID_FORM_CHAMP_SUPPL_ACTIVE] ? data[ID_FORM_CHAMP_SUPPL_ACTIVE] : false
@@ -319,6 +343,7 @@ export class MFormAllSandbox extends ModulVue {
 const FormAllSandboxPlugin: PluginObject<any> = {
     install(v, options): void {
         v.use(FormPlugin);
+        v.use(RichTextLicensePlugin, { key: `test` });
         v.component(`${FORM_NAME}-complex-sandbox`, MFormAllSandbox);
     }
 };
