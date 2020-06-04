@@ -54,14 +54,7 @@
                   label="Fruits"
                   :required-marker="true"
                   :error="selectField.hasError()"
-                  :error-message="selectField.errorMessage"></m-select> <br />
-
-        <m-rich-text-editor v-m-control="richTextField"
-                            v-model="richTextField.value"
-                            label="Directives"
-                            :required-marker="true"
-                            :error="richTextField.hasError()"
-                            :error-message="richTextField.errorMessage"></m-rich-text-editor>
+                  :error-message="selectField.errorMessage"></m-select>
 
         <h4 class="m-u--h6">Nested formgroup</h4>
 
