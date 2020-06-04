@@ -232,3 +232,20 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
         template: `<m-multi-select placeholder="A very very very very very very looooong" @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select>`
     })
     );
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('error-message', () => ({
+        methods: actions(
+            'open',
+            'close',
+            'focus',
+            'blur',
+            'select'
+        ),
+        data: () => ({
+            model1: [],
+            options: optionsVonTrapp
+        }),
+        template: `<m-multi-select error-message="Error message" @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select>`
+    })
+    );
