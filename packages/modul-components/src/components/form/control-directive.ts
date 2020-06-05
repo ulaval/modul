@@ -16,7 +16,7 @@ export const AbstractControlDirective: DirectiveOptions = {
         // https://github.com/vuejs/vue/issues/7788
         control.htmlElementAccessor = () => el.querySelector(INPUT_SELECTOR) as HTMLElement;
 
-        if (control instanceof FormControl) {
+        if (control instanceof FormControl && el['ControlDirectiveListeners'] !== undefined) {
             Object.defineProperty(el, 'ControlDirectiveListeners', {
                 value: {
                     focusListener: () => control.initEdition(),
@@ -34,7 +34,7 @@ export const AbstractControlDirective: DirectiveOptions = {
     ): void {
         const control: AbstractControl = binding.value;
         control.htmlElementAccessor = () => { return undefined! as HTMLElement; };
-        if (control instanceof FormControl) {
+        if (control instanceof FormControl && el['ControlDirectiveListeners'] !== undefined) {
             (vnode.componentInstance as Vue).$off('focus', el['ControlDirectiveListeners'].focusListener);
             (vnode.componentInstance as Vue).$off('blur', el['ControlDirectiveListeners'].blurListener);
         }
