@@ -66,6 +66,29 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${LIMIT_ELEMENTS}`, module)
                         <m-button @click="onClick">Toggle open</m-button>
                         <m-limit-elements :elements="elements" :open.sync="openProp"></m-limit-elements>
                    </div>`
+    }))
+    .add('Slot element', () => ({
+        data: () => ({
+            openProp: false
+        }),
+        props: {
+            elements: {
+                default: [{ id: 'id1', texte: 'texte1' }, { id: 'id2', texte: 'texte2' }, { id: 'id3', texte: 'texte3' }, { id: 'id4', texte: 'texte4' }, { id: 'id5', texte: 'texte5' }]
+            }
+        },
+        methods: {
+            onClick(): void {
+                (this as any).$data.openProp = !(this as any).$data.openProp;
+            }
+        },
+        template: `<m-limit-elements :elements="elements">
+                        <template #limited-element="{item, index}">
+                            <m-message style="margin-top: 4px;">id: {{ item.id }} ­~ texte: {{ item.texte }} ­~ index: {{ index }}</m-message>
+                        </template>
+                        <template #element="{item, index}">
+                            <m-message style="margin-top: 4px;">id: {{ item.id }} ­~ texte: {{ item.texte }} ­­~ index: {{ index }}</m-message>
+                        </template>
+                    </m-limit-elements>`
     }));
 storiesOf(`${modulComponentsHierarchyRootSeparator}${LIMIT_ELEMENTS}/open="false"`, module)
     .add('default', () => ({
