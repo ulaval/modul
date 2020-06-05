@@ -16,7 +16,7 @@ export const AbstractControlDirective: DirectiveOptions = {
         // https://github.com/vuejs/vue/issues/7788
         control.htmlElementAccessor = () => el.querySelector(INPUT_SELECTOR) as HTMLElement;
 
-        if (control instanceof FormControl && el['ControlDirectiveListeners'] !== undefined) {
+        if (control instanceof FormControl) {
             Object.defineProperty(el, 'ControlDirectiveListeners', {
                 value: {
                     focusListener: () => control.initEdition(),
