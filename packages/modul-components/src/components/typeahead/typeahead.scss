@@ -1,4 +1,4 @@
-@import 'commons';
+@import "commons";
 
 .m-typeahead {
     @include m-input-inline-spacing();
@@ -35,10 +35,8 @@
 
     &__validation-message {
         transition: margin-top $m-transition-duration ease;
-    }
 
-    &.m--has-validation-message {
-        .m-typeahead__validation-message {
+        &.m--has-validation-message {
             margin-top: $m-spacing--xs;
         }
     }

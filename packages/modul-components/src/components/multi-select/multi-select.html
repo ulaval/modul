@@ -15,8 +15,7 @@
         <div class="m-multi-select"
              :class="{ 'm--is-open': open,
                 'm--is-disabled': isDisabled,
-                'm--is-waiting': isWaiting,
-                'm--has-validation-message': hasValidationMessage }"
+                'm--is-waiting': isWaiting }"
              :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
              @focus="onFocus"
              @blur="onBlur"
@@ -115,16 +114,22 @@
                     </m-icon>
                 </div>
             </m-input-style>
-            <m-validation-message class="m-multi-select__validation-message"
-                                  :disabled="isDisabled"
-                                  :waiting="isWaiting"
-                                  :error="hasError"
-                                  :valid="isValid"
-                                  :error-message="errorMessage"
-                                  :valid-message="validMessage"
-                                  :helper-message="helperMessage"></m-validation-message>
         </div>
     </template>
+
+    <template #validation-message>
+        <m-validation-message class="m-multi-select__validation-message"
+                              :class="{ 'm--has-validation-message': hasValidationMessage }"
+                              :disabled="isDisabled"
+                              :waiting="isWaiting"
+                              :error="hasError"
+                              :valid="isValid"
+                              :error-message="errorMessage"
+                              :valid-message="validMessage"
+                              :helper-message="helperMessage"></m-validation-message>
+    </template>
+
+
     <template v-if="linkSelectAll"
               v-slot:popup-header>
         <m-select-item @click="onToggleAll"

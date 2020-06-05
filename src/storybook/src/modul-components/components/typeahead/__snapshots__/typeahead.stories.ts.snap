@@ -97,14 +97,14 @@ exports[`Storyshots modul-components|m-typeahead Default 1`] = `
             <!---->
           </div>
         </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-typeahead__validation-message"
+      >
+        <!---->
          
-        <div
-          class="m-validation-message m-typeahead__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
+        <!---->
       </div>
        
       <div
@@ -249,14 +249,14 @@ exports[`Storyshots modul-components|m-typeahead custom results 1`] = `
             <!---->
           </div>
         </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-typeahead__validation-message"
+      >
+        <!---->
          
-        <div
-          class="m-validation-message m-typeahead__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
+        <!---->
       </div>
        
       <div
@@ -273,6 +273,181 @@ exports[`Storyshots modul-components|m-typeahead custom results 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-typeahead error-message 1`] = `
+<div>
+  <div
+    class="m-typeahead"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-base-select"
+      input-max-width="288px"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          aria-controls="m-typeahead-fakeId-controls"
+          aria-haspopup="true"
+          class="m-textfield m--has-error m--has-label m--is-type-text"
+          cursor-pointer="true"
+          style="width: 100%; max-width: 288px;"
+        >
+          <div
+            class="m-input-style m--has-error m--has-label m--is-tag-default"
+            style="margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__main"
+            >
+              <div
+                class="m-input-style__body"
+              >
+                <label
+                  class="m-input-style__label"
+                  for="mTextfield-fakeId"
+                  style="margin-right: 0px;"
+                >
+                  <span
+                    class="m-input-style__text"
+                  >
+                    <span>
+                      Fruits and vegetables
+                    </span>
+                     
+                    <!---->
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-input-style__input"
+                >
+                  <!---->
+                   
+                  <div
+                    class="m-input-style__content"
+                  >
+                    <input
+                      class="m-textfield__input"
+                      id="mTextfield-fakeId"
+                      maxlength="Infinity"
+                      type="text"
+                    />
+                       
+                    <!---->
+                     
+                    <!---->
+                     
+                    <!---->
+                  </div>
+                   
+                  <div
+                    class="m-input-style__suffix"
+                  >
+                    <!---->
+                     
+                    <!---->
+                  </div>
+                </div>
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+           
+          <div
+            class="m-textfield__validation"
+          >
+            <div
+              class="m-validation-message m-textfield__validation__message"
+            >
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-typeahead__validation-message m--has-validation-message"
+      >
+        <p
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-icon m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+             
+            <use
+              aria-hidden="true"
+              class=""
+            />
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            Error message
+          </span>
+        </p>
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popup"
+      >
+        <div
+          class="m-popper"
+        >
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <p>
+    maxResult = 5
+  </p>
+   
+  <h2
+    class="m-u--h5"
+  >
+    Values
+  </h2>
+   
+  <p>
+    [
+  "Apple",
+  "Avocados",
+  "Bannana",
+  "Beet",
+  "Carrot",
+  "Celery",
+  "Eggplant",
+  "Kiwi",
+  "Lemon",
+  "Patate",
+  "Pineapple",
+  "Pumpkin",
+  "Tomato"
+]
+  </p>
 </div>
 `;
 
@@ -369,14 +544,14 @@ exports[`Storyshots modul-components|m-typeahead filter-results-manually 1`] = `
             <!---->
           </div>
         </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-typeahead__validation-message"
+      >
+        <!---->
          
-        <div
-          class="m-validation-message m-typeahead__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
+        <!---->
       </div>
        
       <div
@@ -517,14 +692,14 @@ exports[`Storyshots modul-components|m-typeahead max-results 1`] = `
             <!---->
           </div>
         </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-typeahead__validation-message"
+      >
+        <!---->
          
-        <div
-          class="m-validation-message m-typeahead__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
+        <!---->
       </div>
        
       <div
@@ -669,14 +844,14 @@ exports[`Storyshots modul-components|m-typeahead/mobile iphone6 1`] = `
             <!---->
           </div>
         </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-typeahead__validation-message"
+      >
+        <!---->
          
-        <div
-          class="m-validation-message m-typeahead__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
+        <!---->
       </div>
        
       <div
