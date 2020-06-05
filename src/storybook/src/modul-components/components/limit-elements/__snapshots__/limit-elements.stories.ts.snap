@@ -125,6 +125,118 @@ exports[`Storyshots modul-components|m-limit-elements 5 elements, limit of 2 1`]
 </div>
 `;
 
+exports[`Storyshots modul-components|m-limit-elements Slot element 1`] = `
+<div
+  class="m-limit-elements"
+>
+  <ul
+    class="m-limit-elements__list"
+  >
+    <li>
+      <div
+        class="m-message m--is-state-confirmation m--is-skin-default"
+        style="margin-top: 4px;"
+      >
+        <div
+          class="m-message__wrap"
+        >
+          <div
+            class="m-message__icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="1em"
+              width="1em"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+          </div>
+           
+          <div
+            class="m-message__body"
+          >
+            <!---->
+             
+            <div
+              class="m-message__text"
+            >
+              id: id1 ­~ texte: texte1 ­~ index: 0
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </li>
+    <li>
+      <div
+        class="m-message m--is-state-confirmation m--is-skin-default"
+        style="margin-top: 4px;"
+      >
+        <div
+          class="m-message__wrap"
+        >
+          <div
+            class="m-message__icon"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon"
+              height="1em"
+              width="1em"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+          </div>
+           
+          <div
+            class="m-message__body"
+          >
+            <!---->
+             
+            <div
+              class="m-message__text"
+            >
+              id: id2 ­~ texte: texte2 ­~ index: 1
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </li>
+  </ul>
+   
+  <a
+    class="m-link m--is-unvisited m--is-button m--has-content"
+    href="#"
+    role="button"
+    tabindex="0"
+  >
+    <!---->
+     
+    <span
+      class="m-link__text"
+    >
+      Afficher 3 de plus
+    </span>
+     
+    <!---->
+  </a>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-limit-elements open sync 1`] = `
 <div>
   <button

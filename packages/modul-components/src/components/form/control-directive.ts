@@ -34,7 +34,7 @@ export const AbstractControlDirective: DirectiveOptions = {
     ): void {
         const control: AbstractControl = binding.value;
         control.htmlElementAccessor = () => { return undefined! as HTMLElement; };
-        if (control instanceof FormControl) {
+        if (control instanceof FormControl && el['ControlDirectiveListeners'] !== undefined) {
             (vnode.componentInstance as Vue).$off('focus', el['ControlDirectiveListeners'].focusListener);
             (vnode.componentInstance as Vue).$off('blur', el['ControlDirectiveListeners'].blurListener);
         }

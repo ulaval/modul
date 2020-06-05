@@ -1,7 +1,7 @@
 import { select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import { TOAST } from '@ulaval/modul-components/dist/components/component-names';
-import { MToastPosition, MToastState } from '@ulaval/modul-components/dist/components/toast/toast';
+import { MToastPosition, MToastState, MToastTimeout } from '@ulaval/modul-components/dist/components/toast/toast';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 
@@ -110,4 +110,33 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOAST}/position`, module)
     }))
     .add('position="bottom-right"', () => ({
         template: '<m-toast position="bottom-right">A toast with a bottom-right position</m-toast>'
+    }));
+
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${TOAST}/toast-service`, module)
+    .add('Text with HTML', () => ({
+        methods: {
+            onClick(): void {
+                (this as any).$toast.show({
+                    text: `Texte <strong>strong</strong>`,
+                    state: MToastState.Confirmation,
+                    position: MToastPosition.BottomRight,
+                    timeout: MToastTimeout.long
+                });
+            }
+        },
+        template: `<m-button @click="onClick">Open toast</m-button>`
+    }))
+    .add('Text starts and ends with the same HTML tag', () => ({
+        methods: {
+            onClick(): void {
+                (this as any).$toast.show({
+                    text: `<em><strong>Texte strong</strong> and other text</em>`,
+                    state: MToastState.Confirmation,
+                    position: MToastPosition.BottomRight,
+                    timeout: MToastTimeout.long
+                });
+            }
+        },
+        template: `<m-button @click="onClick">Open toast</m-button>`
     }));

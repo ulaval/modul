@@ -1,4 +1,4 @@
-@import 'commons';
+@import "commons";
 
 .m-multi-select {
     display: inline-flex;
@@ -6,12 +6,6 @@
 
     &:focus {
         outline: 0 solid transparent;
-    }
-
-    &.m--has-validation-message {
-        .m-multi-select__validation-message {
-            margin-top: $m-spacing--xs;
-        }
     }
 
     &:not(.m--is-disabled) {
@@ -37,10 +31,14 @@
 
     &__validation-message {
         transition: margin-top $m-transition-duration ease;
+
+        &.m--has-validation-message {
+            margin-top: $m-spacing--xs;
+        }
     }
 
     &__chips {
-        min-height: 24px;  // Magic number
+        min-height: 24px; // Magic number
     }
 
     &__chip {

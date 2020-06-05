@@ -68,3 +68,47 @@ exports[`Storyshots modul-components|m-toast/timeout timeout="long" 1`] = `<!---
 exports[`Storyshots modul-components|m-toast/timeout timeout="none" 1`] = `<!---->`;
 
 exports[`Storyshots modul-components|m-toast/timeout timeout="short" 1`] = `<!---->`;
+
+exports[`Storyshots modul-components|m-toast/toast-service Text starts and ends with the same HTML tag 1`] = `
+<button
+  class="m-button m--is-skin-primary"
+  type="button"
+>
+  <!---->
+   
+  <!---->
+   
+  <span
+    class="m-button__text"
+  >
+    Open toast 
+    <!---->
+  </span>
+   
+  <!---->
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots modul-components|m-toast/toast-service Text with HTML 1`] = `
+<button
+  class="m-button m--is-skin-primary"
+  type="button"
+>
+  <!---->
+   
+  <!---->
+   
+  <span
+    class="m-button__text"
+  >
+    Open toast 
+    <!---->
+  </span>
+   
+  <!---->
+   
+  <!---->
+</button>
+`;

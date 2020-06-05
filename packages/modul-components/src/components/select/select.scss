@@ -8,12 +8,6 @@
         outline: 0 solid transparent;
     }
 
-    &.m--has-validation-message {
-        .m-select__validation-message {
-            margin-top: $m-spacing--xs;
-        }
-    }
-
     &:not(.m--is-disabled) {
         .m-select__arrow {
             cursor: pointer;
@@ -52,5 +46,9 @@
 
     &__validation-message {
         transition: margin-top $m-transition-duration ease;
+
+        &.m--has-validation-message {
+            margin-top: $m-spacing--xs;
+        }
     }
 }
