@@ -1,14 +1,19 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import { CAROUSEL_ITEM_NAME, CAROUSEL_NAME } from '../component-names';
-import TouchPlugin from '../touch/touch';
+import { CAROUSEL_ITEM_NAME, CAROUSEL_NAME, TOUCH_NAME } from '../component-names';
+import TouchPlugin, { MTouch } from '../touch/touch';
 import { MCarouselItem } from './carousel-item/carousel-item';
 import WithRender from './carousel.html?style=./carousel.scss';
 
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [TOUCH_NAME]: MTouch,
+        [CAROUSEL_ITEM_NAME]: MCarouselItem
+    }
+})
 export class MCarousel extends Vue {
     @Prop()
     public index: number;

@@ -2,14 +2,18 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_COOKIES_NOT_SUPPORTED_NAME } from '../../component-names';
-import MessagePagePlugin, { Link } from '../../message-page/message-page';
+import { ERROR_COOKIES_NOT_SUPPORTED_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
+import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-cookies-not-supported.html';
 
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [MESSAGE_PAGE_NAME]: MMessagePage
+    }
+})
 export class MErrorCookiesNotSupported extends ModulVue {
 
     @Prop({
@@ -40,7 +44,7 @@ export class MErrorCookiesNotSupported extends ModulVue {
 
 const ErrorCookiesNotSupportedPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(MessagePagePlugin);
+
         v.component(ERROR_COOKIES_NOT_SUPPORTED_NAME, MErrorCookiesNotSupported);
     }
 };

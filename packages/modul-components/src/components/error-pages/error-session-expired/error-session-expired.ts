@@ -1,14 +1,20 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { ERROR_SESSION_EXPIRED_NAME } from '../../component-names';
-import I18nPlugin from '../../i18n/i18n';
-import LinkPlugin from '../../link/link';
-import MessagePlugin from '../../message/message';
+import { ERROR_SESSION_EXPIRED_NAME, I18N_NAME, LINK_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
+import { MI18n } from '../../i18n/i18n';
+import { MLink } from '../../link/link';
+import { MMessagePage } from '../../message-page/message-page';
 import WithRender from './error-session-expired.html';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [MESSAGE_PAGE_NAME]: MMessagePage,
+        [I18N_NAME]: MI18n,
+        [LINK_NAME]: MLink
+    }
+})
 export class MErrorSessionExpired extends Vue {
     @Prop({
         default: () => Vue.prototype.$i18n.translate('m-session-expired:back-to-portal')
@@ -27,9 +33,6 @@ export class MErrorSessionExpired extends Vue {
 
 const SessionExpiredPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nPlugin);
-        v.use(LinkPlugin);
-        v.use(MessagePlugin);
         v.component(ERROR_SESSION_EXPIRED_NAME, MErrorSessionExpired);
     }
 };
