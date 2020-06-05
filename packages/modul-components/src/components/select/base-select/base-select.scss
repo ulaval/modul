@@ -1,6 +1,9 @@
 @import "commons";
 
 .m-base-select {
+    display: inline-flex;
+    flex-direction: column;
+
     &__list {
         margin: 0;
         padding: 0;

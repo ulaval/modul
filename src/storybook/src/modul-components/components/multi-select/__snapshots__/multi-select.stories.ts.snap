@@ -92,15 +92,15 @@ exports[`Storyshots modul-components|m-multi-select 500px width 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -209,15 +209,15 @@ exports[`Storyshots modul-components|m-multi-select Full width 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -327,15 +327,15 @@ exports[`Storyshots modul-components|m-multi-select Large width 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -445,15 +445,15 @@ exports[`Storyshots modul-components|m-multi-select complete 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -594,15 +594,15 @@ exports[`Storyshots modul-components|m-multi-select custom chip info 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -745,15 +745,15 @@ exports[`Storyshots modul-components|m-multi-select custom select-item 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -896,15 +896,151 @@ exports[`Storyshots modul-components|m-multi-select default 1`] = `
           <!---->
         </div>
       </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
        
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-multi-select error-message 1`] = `
+<div
+  class="m-base-select"
+  input-max-width="288px"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-multi-select"
+      style="width: 100%; max-width: 288px;"
+      tabindex="0"
+    >
       <div
-        class="m-validation-message m-multi-select__validation-message"
+        class="m-input-style m--has-cursor-pointer m--has-error m--is-tag-default"
+        style="margin-top: 10px;"
       >
-        <!---->
-         
-        <!---->
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <span
+              class="m-input-style__label"
+              style="z-index: -1;"
+            >
+              <span
+                class="m-input-style__text"
+              />
+            </span>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <div
+                class="m-input-style__prefix"
+              />
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div
+                  class="m-multi-select__chips"
+                >
+                  <input
+                    readonly="readonly"
+                    type="text"
+                  />
+                   
+                </div>
+                  
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <div
+                  class="m-multi-select__arrow"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-multi-select__arrow__icon"
+                    height="16px"
+                    width="16px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message m--has-validation-message"
+  >
+    <p
+      class="m-validation-message__error"
+    >
+      <svg
+        class="m-icon m-validation-message__icon"
+        height="1em"
+        width="1em"
+      >
+        <title>
+          Erreur
+        </title>
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+       
+      <span
+        class="m-validation-message__text"
+      >
+        Error message
+      </span>
+    </p>
+     
+    <!---->
   </div>
    
   <div
@@ -1052,15 +1188,15 @@ exports[`Storyshots modul-components|m-multi-select label 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1171,15 +1307,15 @@ exports[`Storyshots modul-components|m-multi-select object as options 1`] = `
             <!---->
           </div>
         </div>
-         
-        <div
-          class="m-validation-message m-multi-select__validation-message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
       </div>
+    </div>
+     
+    <div
+      class="m-validation-message m-multi-select__validation-message"
+    >
+      <!---->
+       
+      <!---->
     </div>
      
     <div
@@ -1294,15 +1430,15 @@ exports[`Storyshots modul-components|m-multi-select placeholder 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1445,15 +1581,15 @@ exports[`Storyshots modul-components|m-multi-select select all link 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1558,15 +1694,15 @@ exports[`Storyshots modul-components|m-multi-select/mobile iphone6 - select all 
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div
@@ -1671,15 +1807,15 @@ exports[`Storyshots modul-components|m-multi-select/mobile iphone6 1`] = `
           <!---->
         </div>
       </div>
-       
-      <div
-        class="m-validation-message m-multi-select__validation-message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-multi-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
   </div>
    
   <div

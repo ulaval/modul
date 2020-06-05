@@ -47,6 +47,20 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             <p v-html="results"></p>
         </div>`
     }))
+    .add('error-message', () => ({
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: '',
+            maxResults: 5
+        }),
+        template: `<div>
+            <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results" error-message="Error message"></m-typeahead>
+            <p>maxResult = {{ maxResults}}</p>
+            <h2 class="m-u--h5">Values</h2>
+            <p v-html="results"></p>
+        </div>`
+    }))
     .add('custom results', () => ({
         data: () => ({
             label: 'Fruits and vegetables',

@@ -96,6 +96,14 @@ export const placeholder = () => ({
     template: `<m-select v-model="model" :options="options" placeholder="Choose a Fruit" ></m-select>`
 });
 
+export const errorMessage = () => ({
+    data: () => ({
+        options: OPTIONS,
+        model: ''
+    }),
+    template: `<m-select v-model="model" :options="options" error-message="Error message" ></m-select>`
+});
+
 export const labelUp = () => ({
     data: () => ({
         options: OPTIONS,
