@@ -43,7 +43,7 @@ export interface AccordionGroupGateway {
     closeAllAccordions(): any;
 }
 
-const COMPONENT_IN_CLOSEST: string = '.' + BUTTON_GROUP_NAME + ', .' + INPUT_STYLE_NAME + ', .' + CHECKBOX_NAME + ', .' + RADIO_GROUP_NAME + ', .' + RADIO_NAME + ', .' + LINK_NAME + ', .' + INPLACE_EDIT_NAME;
+const COMPONENT_IN_CLOSEST: string = `.${BUTTON_GROUP_NAME}, .${INPUT_STYLE_NAME}, .${CHECKBOX_NAME}, .${RADIO_GROUP_NAME}, .${RADIO_NAME}, .${LINK_NAME}, .${INPLACE_EDIT_NAME}`;
 
 function isAccordionGroup(parent: any): parent is AccordionGroupGateway {
     return parent && 'addAccordion' in parent;
@@ -201,7 +201,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
             return;
         }
 
-        let target: Element | null = (event.target as HTMLElement).closest('[href], [onclick], a, button, input, textarea, radio, ' + COMPONENT_IN_CLOSEST);
+        let target: Element | null = (event.target as HTMLElement).closest(`[href], [onclick], a, button, input, textarea, radio, ${COMPONENT_IN_CLOSEST}`);
 
         if (!this.propDisabled && !target) {
             const initialState: boolean = this.internalPropOpen;
