@@ -1,7 +1,7 @@
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ICONE_NAME } from '../component-names';
+import { ICON_NAME } from '../../component-names';
 import { BaseOption, MOptionInterface } from '../option';
 import { MIcon } from './../../icon/icon';
 import WithRender from './option-item.html?style=./option-item.scss';
@@ -9,7 +9,7 @@ import WithRender from './option-item.html?style=./option-item.scss';
 @WithRender
 @Component({
     components: {
-        [ICONE_NAME]: MIcon
+        [ICON_NAME]: MIcon
     }
 })
 export class MOptionItem extends ModulVue {
