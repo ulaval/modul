@@ -3,9 +3,6 @@ import { ABSTRACT_CONTROL_NAME } from '../../directives/directive-names';
 import ScrollToPlugin from '../../utils/scroll-to/scroll-to';
 import ToastServicePlugin from '../../utils/toast/toast-service.plugin';
 import { FORM_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import MessagePlugin from '../message/message';
-import ToastPlugin from '../toast/toast';
 import { AbstractControlDirective } from './control-directive';
 import { ClearErrorToast, ErrorToast, FocusOnFirstError } from './fallouts/built-in-form-action-fallouts';
 import { MForm } from './form';
@@ -26,9 +23,6 @@ export const FormPlugin: PluginObject<any> = {
     install(v, options?: FormPluginOptions): void {
         v.prototype.$log.debug(FORM_NAME, 'plugin.install');
 
-        v.use(I18nPlugin);
-        v.use(MessagePlugin);
-        v.use(ToastPlugin);
         v.use(ToastServicePlugin);
         v.use(ScrollToPlugin);
         v.directive(ABSTRACT_CONTROL_NAME, AbstractControlDirective);

@@ -1,14 +1,20 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { LIST_ITEM_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin from '../icon-button/icon-button';
-import SpinnerPlugin from '../spinner/spinner';
+import { I18N_NAME, ICON_BUTTON_NAME, LIST_ITEM_NAME, SPINNER_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MIconButton } from '../icon-button/icon-button';
+import { MSpinner } from '../spinner/spinner';
 import WithRender from './list-item.html?style=./list-item.scss';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [I18N_NAME]: MI18n,
+        [SPINNER_NAME]: MSpinner,
+        [ICON_BUTTON_NAME]: MIconButton
+    }
+})
 export class MListItem extends Vue {
 
     @Prop()
@@ -43,9 +49,6 @@ export class MListItem extends Vue {
 
 const ListItemPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconButtonPlugin);
-        v.use(SpinnerPlugin);
-        v.use(I18nPlugin);
         v.component(LIST_ITEM_NAME, MListItem);
     }
 };

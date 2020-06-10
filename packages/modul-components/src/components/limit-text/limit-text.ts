@@ -1,17 +1,21 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../utils/vue/vue';
-import { LIMIT_TEXT_NAME } from '../component-names';
-import DynamicTemplatePlugin from '../dynamic-template/dynamic-template';
-import I18nPlugin from '../i18n/i18n';
+import { DYNAMIC_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME } from '../component-names';
+import { MDynamicTemplate } from '../dynamic-template/dynamic-template';
+import { MI18n } from '../i18n/i18n';
 import WithRender from './limit-text.html?style=./limit-text.scss';
+
 
 @WithRender
 @Component({
+    components: {
+        [I18N_NAME]: MI18n,
+        [DYNAMIC_TEMPLATE_NAME]: MDynamicTemplate
+    },
     mixins: [MediaQueries, ElementQueries]
 })
 export class MLimitText extends ModulVue {
@@ -239,8 +243,6 @@ export class MLimitText extends ModulVue {
 
 const LimitTextPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nPlugin);
-        v.use(DynamicTemplatePlugin);
         v.component(LIMIT_TEXT_NAME, MLimitText);
     }
 };

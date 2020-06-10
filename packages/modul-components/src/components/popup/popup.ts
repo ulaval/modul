@@ -4,14 +4,18 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { MOpenTrigger, OpenTrigger, OpenTriggerMixin } from '../../mixins/open-trigger/open-trigger';
 import { ModulVue } from '../../utils/vue/vue';
-import { POPUP_NAME } from '../component-names';
-import PopperPlugin, { MPopper, MPopperPlacement } from '../popper/popper';
-import SidebarPlugin from '../sidebar/sidebar';
+import { POPPER_NAME, POPUP_NAME, SIDEBAR_NAME } from '../component-names';
+import { MPopper, MPopperPlacement } from '../popper/popper';
+import { MSidebar } from '../sidebar/sidebar';
 import WithRender from './popup.html?style=./popup.scss';
 
 
 @WithRender
 @Component({
+    components: {
+        [POPPER_NAME]: MPopper,
+        [SIDEBAR_NAME]: MSidebar
+    },
     mixins: [MediaQueries, OpenTrigger]
 })
 export class MPopup extends ModulVue {
@@ -157,9 +161,6 @@ export class MPopup extends ModulVue {
 
 const PopupPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(PopperPlugin);
-        v.use(SidebarPlugin);
-
         v.component(POPUP_NAME, MPopup);
     }
 };
