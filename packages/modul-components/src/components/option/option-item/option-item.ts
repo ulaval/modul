@@ -1,12 +1,16 @@
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { BaseOption, MOptionInterface } from '../option';
+import { MIcon } from './../../icon/icon';
 import WithRender from './option-item.html?style=./option-item.scss';
 
-
 @WithRender
-@Component
+@Component({
+    components: {
+        MIcon
+    }
+})
 export class MOptionItem extends ModulVue {
 
     @Prop()
@@ -28,22 +32,25 @@ export class MOptionItem extends ModulVue {
         }
     }
 
-    private onClick(event: MouseEvent): void {
+    @Emit('click')
+    public emitClick(_event: MouseEvent): void { }
+
+    public onClick(event: MouseEvent): void {
         if (!this.disabled) {
             if (this.hasRoot) {
                 (this.root).close();
-                this.$emit('click', event);
+                this.emitClick(event);
             }
         } else {
             event.stopPropagation();
         }
     }
 
-    private get hasIconNameProp(): boolean {
+    public get hasIconNameProp(): boolean {
         return !!this.iconName;
     }
 
-    private get hasIcon(): boolean {
+    public get hasIcon(): boolean {
         if (this.hasRoot) {
             (this.root).checkIcon(this.hasIconNameProp);
             return (this.root).hasIcon;
@@ -51,7 +58,7 @@ export class MOptionItem extends ModulVue {
         return false;
     }
 
-    private get hasBorder(): boolean {
+    public get hasBorder(): boolean {
         if (this.hasRoot) {
             (this.root).checkBorder();
             return (this.root).hasItemBorder;
@@ -59,7 +66,7 @@ export class MOptionItem extends ModulVue {
         return true;
     }
 
-    private get hasDefaultSlot(): boolean {
+    public get hasDefaultSlot(): boolean {
         return !!this.$slots.default;
     }
 }
