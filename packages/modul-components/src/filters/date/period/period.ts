@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { FormatMode } from '../../../utils/i18n/i18n';
 import ModulDate, { DatePrecision } from '../../../utils/modul-date/modul-date';
 import { dateFilter, DateFilterParams } from '../date/date';
+import { MTimeRange, timePeriodFilter } from '../time/time';
 
 export type ModulPeriod = {
     start?: Date,
@@ -10,7 +11,8 @@ export type ModulPeriod = {
 
 export enum MFormatMode {
     LongMonth = 'long-month',
-    ShortMonth = 'short-month'
+    ShortMonth = 'short-month',
+    ShortMonthShowHour = 'short-month-show-hour'
 }
 
 export class PeriodFilter {
@@ -21,6 +23,8 @@ export class PeriodFilter {
 
         if (formatMode === MFormatMode.ShortMonth) {
             shortModeParams = { shortMode: true };
+        } else if (formatMode === MFormatMode.ShortMonthShowHour) {
+            shortModeParams = { shortMode: true, showTime: true };
         }
 
         if (period.start && period.end) {
@@ -42,8 +46,7 @@ export class PeriodFilter {
         let formattedPeriod: string;
 
         if (startDate.isSame(endDate, DatePrecision.DAY)) {
-            const startFormatted: string = dateFilter(start, shortModeParams);
-            formattedPeriod = this.translateDate('f-m-period:sameDay', { date: startFormatted });
+            formattedPeriod = this.sameDay(start, end, shortModeParams);
         } else if (startDate.isSame(endDate, DatePrecision.MONTH)) {
             formattedPeriod = this.startAndEndDateSameMonth(start, end, shortModeParams);
         } else if (startDate.isSame(endDate, DatePrecision.YEAR)) {
@@ -102,6 +105,24 @@ export class PeriodFilter {
         };
 
         return this.translateDate('f-m-period:dates', params);
+    }
+
+    private static sameDay(start: Date, end: Date, shortModeParams?: DateFilterParams): string {
+        let timeRange: MTimeRange<Date> = {
+            from: start,
+            to: end
+        };
+        let time: string = timePeriodFilter(timeRange, { preposition: true });
+        const params: any = {
+            date: dateFilter(start, shortModeParams),
+            time: (time.length > 1) ? time.charAt(0).toLowerCase() + time.slice(1) : ''
+        };
+
+        if (shortModeParams && shortModeParams.showTime) {
+            return this.translateDate('f-m-period:sameDayShowTime', params);
+        } else {
+            return this.translateDate('f-m-period:sameDay', params);
+        }
     }
 
     private static translateDate(key: string, params: any): string {

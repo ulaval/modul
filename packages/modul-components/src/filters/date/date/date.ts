@@ -5,13 +5,15 @@ export interface DateFilterParams {
     showMonth?: boolean;
     showYear?: boolean;
     showDay?: boolean;
+    showTime?: boolean;
 }
 export let dateFilter: (date: Date, params?: DateFilterParams) => string = (date, params) => {
     const defaultParams: DateFilterParams = {
         shortMode: false,
         showMonth: true,
         showYear: true,
-        showDay: true
+        showDay: true,
+        showTime: false
     };
     const appliedParams: DateFilterParams = Object.assign(defaultParams, params);
     const options: Intl.DateTimeFormatOptions = {
