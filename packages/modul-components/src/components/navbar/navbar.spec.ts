@@ -1,9 +1,9 @@
 import { createLocalVue, mount, Wrapper, WrapperArray } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
+import '../../../tests/helpers/mock-resizeSensor';
 import ModulPlugin from '../../utils/modul/modul';
 import NavbarPlugin from './navbar';
 import { MNavbarItem } from './navbar-item/navbar-item';
-
 
 describe('MNavbar', () => {
     let localVue: VueConstructor<Vue>;

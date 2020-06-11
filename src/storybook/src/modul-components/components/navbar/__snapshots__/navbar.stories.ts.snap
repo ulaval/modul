@@ -4,6 +4,7 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main m--is-multiline"
+    style="position: relative;"
   >
     <div
       class="m-navbar__max-width"
@@ -133,22 +134,23 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
     </div>
     <div
       class="resize-sensor"
-      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
         class="resize-sensor-expand"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
         />
       </div>
       <div
         class="resize-sensor-shrink"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
         />
       </div>
     </div>
@@ -160,6 +162,7 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main"
+    style="position: relative;"
   >
     <div
       class="m-navbar__max-width"
@@ -299,22 +302,23 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
     </div>
     <div
       class="resize-sensor"
-      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
         class="resize-sensor-expand"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
         />
       </div>
       <div
         class="resize-sensor-shrink"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
         />
       </div>
     </div>
@@ -325,6 +329,7 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
 exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -814,22 +819,23 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -839,6 +845,7 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -1098,22 +1105,23 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -1123,7 +1131,7 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
 <div
   class="m-navbar m--is-skin-nav-soft m--is-multiline"
-  style="background: rgb(0, 153, 255);"
+  style="background: rgb(0, 153, 255); position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -1383,22 +1391,23 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -1408,6 +1417,7 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
 <div
   class="m-navbar m--is-skin-nav-sub m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -1667,22 +1677,23 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -1692,6 +1703,7 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
 <div
   class="m-navbar m--is-skin-plain m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -1951,22 +1963,23 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -1976,6 +1989,7 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
 <div
   class="m-navbar m--is-skin-tab-arrow m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -2238,22 +2252,23 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -2263,6 +2278,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
 <div
   class="m-navbar m--is-skin-tab-dark-main m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -2522,22 +2538,23 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -2547,6 +2564,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
 <div
   class="m-navbar m--is-skin-tab-light-main m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -2806,22 +2824,23 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -2831,6 +2850,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
 <div
   class="m-navbar m--is-skin-tab-soft m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -3090,22 +3110,23 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -3115,6 +3136,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
 <div
   class="m-navbar m--is-skin-tab-underline m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -3377,22 +3399,23 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -3403,6 +3426,7 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main m--is-multiline"
+    style="position: relative;"
   >
     <div
       class="m-navbar__max-width"
@@ -3505,22 +3529,23 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
     </div>
     <div
       class="resize-sensor"
-      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
         class="resize-sensor-expand"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
         />
       </div>
       <div
         class="resize-sensor-shrink"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
         />
       </div>
     </div>
@@ -3532,6 +3557,7 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main m--is-multiline"
+    style="position: relative;"
   >
     <div
       class="m-navbar__max-width"
@@ -3634,22 +3660,23 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
     </div>
     <div
       class="resize-sensor"
-      style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
         class="resize-sensor-expand"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
         />
       </div>
       <div
         class="resize-sensor-shrink"
-        style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
         />
       </div>
     </div>
@@ -3660,6 +3687,7 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
 exports[`Storyshots modul-components|m-navbar Url 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -3754,22 +3782,23 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>
@@ -3779,6 +3808,7 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
 exports[`Storyshots modul-components|m-navbar default 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
+  style="position: relative;"
 >
   <div
     class="m-navbar__max-width"
@@ -3879,22 +3909,23 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
   </div>
   <div
     class="resize-sensor"
-    style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
   >
     <div
       class="resize-sensor-expand"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
       />
     </div>
     <div
       class="resize-sensor-shrink"
-      style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
       />
     </div>
   </div>

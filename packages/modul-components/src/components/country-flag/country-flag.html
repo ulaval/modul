@@ -1,0 +1,10 @@
+<span class="m-country-flag"
+      :class="['m--is-code-iso2-'+ codeIso2]"
+      :width="width"
+      :height="height"
+      v-html="svg"
+      @click="emitClick"
+      @keydown="emitKeydown"
+      @mouseover="emitMouseOver"
+      @mouseleave="emitMouseLeave">
+</span>

@@ -5,9 +5,10 @@ import I18nPlugin, { I18nPluginOptions, Messages } from './i18n/i18n';
 import L10nPlugin, { L10n, L10nPluginOptions } from './l10n/l10n';
 import LoggerPlugin, { ConsoleOptions, Logger } from './logger/logger';
 import MediaQueriesPlugin, { MediaQueries } from './media-queries/media-queries';
-import ModulPlugin, { Modul } from './modul/modul';
+import ModulPlugin, { Modul, ModulPluginOptions } from './modul/modul';
 import ScrollToPlugin, { ScrollTo } from './scroll-to/scroll-to';
 import SpritesPlugin, { SpritesService } from './svg/sprites';
+import SvgSpritePlugin, { SvgSpriteService } from './svg/svg-sprite';
 
 declare module 'vue/types/vue' {
     interface Vue {
@@ -18,6 +19,7 @@ declare module 'vue/types/vue' {
         $http: HttpService;
         $mq: MediaQueries;
         $svg: SpritesService;
+        $svgSprite: SvgSpriteService;
         $scrollTo: ScrollTo;
     }
 }
@@ -27,10 +29,11 @@ export interface UtilsPluginOptions {
     i18PluginOptions?: I18nPluginOptions;
     l10nPluginOptions?: L10nPluginOptions;
     propagateVueParserErrors?: boolean;
+    modulPluginOptions?: ModulPluginOptions;
 }
 
 const UtilsPlugin: PluginObject<any> = {
-    install(v, options): void {
+    install(v, options: UtilsPluginOptions): void {
         if (!options || options.propagateVueParserErrors === undefined || options.propagateVueParserErrors) {
             // Vue parser errors do not propagate to window.onError by default
             Vue.config.errorHandler = (err, vm, info) => {
@@ -49,7 +52,8 @@ const UtilsPlugin: PluginObject<any> = {
         Vue.use(HttpPlugin, options.httpPluginOptions);
         Vue.use(MediaQueriesPlugin);
         Vue.use(SpritesPlugin);
-        Vue.use(ModulPlugin);
+        Vue.use(ModulPlugin, options.modulPluginOptions);
+        Vue.use(SvgSpritePlugin);
         Vue.use(ScrollToPlugin);
     }
 };

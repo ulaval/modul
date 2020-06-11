@@ -15,8 +15,7 @@
              :class="{ 'm--is-open': open,
                 'm--is-disabled': isDisabled,
                 'm--is-readonly': isReadonly,
-                'm--is-waiting': isWaiting,
-                'm--has-validation-message': hasValidationMessage }"
+                'm--is-waiting': isWaiting }"
              :style="{ width: width, maxWidth: maxWidth }"
              @focus="onFocus"
              @blur="onBlur"
@@ -85,15 +84,19 @@
                 </template>
 
             </m-input-style>
-            <m-validation-message class="m-select__validation-message"
-                                  :disabled="isDisabled"
-                                  :waiting="isWaiting"
-                                  :error="hasError"
-                                  :valid="isValid"
-                                  :error-message="errorMessage"
-                                  :valid-message="validMessage"
-                                  :helper-message="helperMessage"></m-validation-message>
         </div>
+    </template>
+
+    <template #validation-message>
+        <m-validation-message class="m-select__validation-message"
+                              :class="{ 'm--has-validation-message': hasValidationMessage }"
+                              :disabled="isDisabled"
+                              :waiting="isWaiting"
+                              :error="hasError"
+                              :valid="isValid"
+                              :error-message="errorMessage"
+                              :valid-message="validMessage"
+                              :helper-message="helperMessage"></m-validation-message>
     </template>
 
     <template #outer-items="{items, getItemProps, getItemHandlers}">

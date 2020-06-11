@@ -1,5 +1,6 @@
 import { mount, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
+import '../../../tests/helpers/mock-resizeSensor';
 import { renderComponent } from '../../../tests/helpers/render';
 import uuid from '../../utils/uuid/uuid';
 import { MRichTextEditor } from './rich-text-editor';

@@ -1,12 +1,20 @@
 <div class="m-limit-elements">
     <ul class="m-limit-elements__list">
         <template v-if="!internalOpen">
-            <li v-for="(element, indexLimited) in limitedElements"
-                :key="indexLimited">{{ element }}</li>
+            <li v-for="(limitedElement, indexLimited) in limitedElements"
+                :key="indexLimited">
+                <slot name="limited-element"
+                      :item="limitedElement"
+                      :index="indexLimited">{{ limitedElement }}</slot>
+            </li>
         </template>
         <template v-else>
             <li v-for="(element, indexExtra) in elements"
-                :key="indexExtra">{{ element }}</li>
+                :key="indexExtra">
+                <slot name="element"
+                      :item="element"
+                      :index="indexExtra">{{ element }}</slot>
+            </li>
         </template>
     </ul>
 
