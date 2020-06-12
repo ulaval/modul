@@ -5,7 +5,7 @@ export interface DateFilterParams {
     showMonth?: boolean;
     showYear?: boolean;
     showDay?: boolean;
-    showTime?: boolean;
+    withTime?: boolean;
 }
 export let dateFilter: (date: Date, params?: DateFilterParams) => string = (date, params) => {
     const defaultParams: DateFilterParams = {
@@ -13,7 +13,7 @@ export let dateFilter: (date: Date, params?: DateFilterParams) => string = (date
         showMonth: true,
         showYear: true,
         showDay: true,
-        showTime: false
+        withTime: false
     };
     const appliedParams: DateFilterParams = Object.assign(defaultParams, params);
     const options: Intl.DateTimeFormatOptions = {

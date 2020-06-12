@@ -49,7 +49,7 @@ describe(PERIOD_NAME, () => {
                     endDate.toLocaleDateString = jest.fn(() => '8 sept. 2019');
                     jest.spyOn(Vue.prototype.$i18n, 'getCurrentLocale').mockReturnValue('fr-CA');
 
-                    expect(PeriodFilter.formatPeriod(period, MFormatMode.ShortMonthShowHour))
+                    expect(PeriodFilter.formatPeriod(period, MFormatMode.ShortMonth, true))
                         .toEqual(`Le 8 sept. 2019 de ${new Intl.DateTimeFormat('', {
                             hour: 'numeric'
                         }).format(startDate)} à ${new Intl.DateTimeFormat('', {
