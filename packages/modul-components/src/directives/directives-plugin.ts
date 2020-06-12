@@ -1,7 +1,8 @@
 import Vue, { PluginObject } from 'vue';
-import PopupPlugin from '../components/popup/popup';
 import LoggerPlugin from '../utils/logger/logger';
+import BadgePlugin from './badge/badge';
 import I18nDirectivePlugin from './i18n/i18n';
+import PopupPlugin from './popup/popup';
 import TextareaAutoHeightPlugin from './textarea-auto-height/textarea-auto-height';
 
 
@@ -14,6 +15,7 @@ const DirectivesPlugin: PluginObject<any> = {
         Vue.use(PopupPlugin);
         Vue.use(TextareaAutoHeightPlugin);
         Vue.use(I18nDirectivePlugin);
+        Vue.use(BadgePlugin);
     }
 };
 

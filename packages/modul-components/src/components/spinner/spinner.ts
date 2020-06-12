@@ -1,11 +1,13 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
+import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import { BackdropMode } from '../../mixins/portal/portal';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { SPINNER_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
+import { I18N_NAME, SPINNER_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
 import WithRender from './spinner.html?style=./spinner.scss';
 
 export enum MSpinnerStyle {
@@ -24,7 +26,14 @@ export const PROCESSING_WARN: string = 'Change of property "processing" is not s
 const SPINNER_ID: string = 'MSpinner';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [I18N_NAME]: MI18n
+    },
+    filters: {
+        [I18N_FILTER_NAME]: i18nFilter
+    }
+})
 export class MSpinner extends ModulVue {
     @Prop()
     public title: boolean;
@@ -114,7 +123,6 @@ export class MSpinner extends ModulVue {
 
 const SpinnerPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nPlugin);
         v.component(SPINNER_NAME, MSpinner);
     }
 };

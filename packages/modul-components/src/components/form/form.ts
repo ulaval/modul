@@ -8,12 +8,24 @@ import { ControlValidator } from '../../utils/form/validators/control-validator'
 import { FormatMode } from '../../utils/i18n/i18n';
 import { getString } from '../../utils/str/str';
 import { ModulVue } from '../../utils/vue/vue';
+import { ACCORDION_TRANSITION_NAME, I18N_NAME, MESSAGE_NAME, TOAST } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MMessage } from '../message/message';
+import { MToast } from '../toast/toast';
+import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import { FormActionFallout } from './form-action-fallout';
 import { FormActions } from './form-action-type';
 import WithRender from './form.html?style=./form.scss';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ACCORDION_TRANSITION_NAME]: MAccordionTransition,
+        [TOAST]: MToast,
+        [MESSAGE_NAME]: MMessage,
+        [I18N_NAME]: MI18n
+    }
+})
 export class MForm extends ModulVue {
     @Prop({
         required: true
