@@ -111,7 +111,7 @@ export class PeriodFilter {
         const time: string = timePeriodFilter(timeRange, { preposition: true });
         const params: any = {
             date: dateFilter(start, filterParams),
-            time: (time.length > 1) ? time.charAt(0).toLowerCase() + time.slice(1) : ''
+            time: (time.length > 0) ? time.charAt(0).toLowerCase() + time.slice(1) : ''
         };
 
         if (filterParams && filterParams.withTime) {
