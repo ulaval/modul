@@ -61,10 +61,6 @@ describe(`Calendar state machine`, () => {
             expect(mockCalendarSingleDateState.onDateSelect).toHaveBeenCalledTimes(1);
         });
 
-        it(`should not render anything`, async () => {
-            initializeWrapper();
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
 
         it(`should call build method on state on render`, async () => {
             initializeWrapper();
@@ -96,10 +92,6 @@ describe(`Calendar state machine`, () => {
             expect(mockCalendarSingleDateState.onDateSelect).toHaveBeenCalledTimes(1);
         });
 
-        it(`should not render anything`, async () => {
-            initializeWrapper();
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
 
         describe(`with value`, () => {
             beforeEach(() => {
@@ -195,10 +187,6 @@ describe(`Calendar state machine`, () => {
             expect(mockCalendarRangeDateState.onDateSelect).toHaveBeenCalledTimes(1);
         });
 
-        it(`should not render anything`, async () => {
-            initializeWrapper();
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
 
         describe(`with value`, () => {
             beforeEach(() => {
