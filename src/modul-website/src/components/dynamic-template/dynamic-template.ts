@@ -1,5 +1,5 @@
 import uuid from '@ulaval/modul-components/dist/utils/uuid/uuid';
-import Vue from 'vue';
+import Vue, { CreateElement, VNode } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import WithRender from './dynamic-template.html';
@@ -23,7 +23,9 @@ export class MDynamicTemplate extends Vue {
     private get internalTemplate(): string {
         if (typeof this.template === 'string') {
             Vue.component(this.tag, {
-                template: `<div>${this.template}</div>`
+                render: function(createElement: CreateElement): VNode {
+                    return createElement('div', { domProps: { innerHTML: this.template } });
+                }
             });
         } else {
             Vue.component(this.tag, this.template);
