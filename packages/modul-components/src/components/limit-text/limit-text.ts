@@ -5,7 +5,7 @@ import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { DYNAMIC_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME } from '../component-names';
+import { DYNAMIC_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME, LINK_NAME } from '../component-names';
 import { MDynamicTemplate } from '../dynamic-template/dynamic-template';
 import { MI18n } from '../i18n/i18n';
 import { MLinkMode } from '../link/link';
