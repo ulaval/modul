@@ -25,11 +25,17 @@ export class MDynamicTemplate extends Vue {
         if (typeof this.template === 'string') {
             const innerHTML: string = this.template;
 
-            Vue.component(this.tag, {
-                render: function(createElement: CreateElement): VNode {
-                    return createElement('div', { domProps: { innerHTML } });
-                }
-            });
+            if (Vue.compile !== undefined) {
+                Vue.component(this.tag, {
+                    template: `<div>${this.template}</div>`
+                });
+            } else {
+                Vue.component(this.tag, {
+                    render: function(createElement: CreateElement): VNode {
+                        return createElement('div', { domProps: { innerHTML } });
+                    }
+                });
+            }
         } else {
             Vue.component(this.tag, this.template);
         }
