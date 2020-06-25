@@ -1,4 +1,4 @@
-import Vue, { DirectiveOptions, PluginObject, VNode, VNodeDirective, VueConstructor } from 'vue';
+import Vue, { CreateElement, DirectiveOptions, PluginObject, VNode, VNodeDirective, VueConstructor } from 'vue';
 import { MIconFile } from '../../components/icon-file/icon-file';
 import { MIcon } from '../../components/icon/icon';
 import { BADGE_NAME } from '../directive-names';
@@ -94,12 +94,18 @@ const buildBadge: (element, binding, vnode) => void = (element, binding, vnode) 
 
     let badge: BadgePosition = getBadgePosition(element, binding, vnode);
     const MyComponent: VueConstructor<Vue> = Vue.extend({
-        template: `<m-icon
-                        :name="'${BADGE_ICON[binding.value.state]}'"
-                        :size="'${badge.size}'"
-                        :x="${badge.leftDistance}"
-                        :y="${badge.topDistance}">
-                    </m-icon>`
+        render: function(createElement: CreateElement): VNode {
+            return createElement('m-icon', {
+                props: {
+                    name: BADGE_ICON[binding.value.state],
+                    size: badge.size
+                },
+                attrs: {
+                    x: badge.leftDistance,
+                    y: badge.topDistance
+                }
+            });
+        }
     });
 
     Vue.nextTick(() => {
