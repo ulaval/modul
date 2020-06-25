@@ -3,7 +3,6 @@ import Vue, { VueConstructor } from 'vue';
 import { resetModulPlugins } from '../../../tests/helpers/component';
 import { createMockFile, createMockFileList } from '../../../tests/helpers/file';
 import { addMessages } from '../../../tests/helpers/lang';
-import { renderComponent } from '../../../tests/helpers/render';
 import { DEFAULT_STORE_NAME } from '../../utils/file/file';
 import uuid from '../../utils/uuid/uuid';
 import { MButton, MButtonType } from '../button/button';
@@ -24,17 +23,6 @@ describe('file-select', () => {
             'components/validation-message/validation-message.lang.en.json'
         ]);
     });
-
-    it('should render correctly', () => {
-        const fileSelect: Wrapper<MFileSelect> = mount(MFileSelect, {
-            localVue: Vue
-        });
-
-        return expect(
-            renderComponent(fileSelect.vm)
-        ).resolves.toMatchSnapshot();
-    });
-
     it('should flow down button props', () => {
         const buttonProps: any = {
             skin: 'primary',

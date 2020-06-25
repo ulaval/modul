@@ -2,8 +2,8 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import uuid from '../../utils/uuid/uuid';
-import { INPUT_GROUP_NAME } from '../component-names';
-import ValidationMessagePlugin from '../validation-message/validation-message';
+import { INPUT_GROUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MValidationMessage } from '../validation-message/validation-message';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import { InputState } from './../../mixins/input-state/input-state';
 import { ModulVue } from './../../utils/vue/vue';
@@ -22,6 +22,9 @@ export interface MInputGroupProps {
 
 @WithRender
 @Component({
+    components: {
+        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+    },
     mixins: [
         InputState,
         InputManagement
@@ -62,7 +65,6 @@ export class MInputGroup extends ModulVue implements MInputGroupProps {
 
 const InputGroupPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(ValidationMessagePlugin);
         v.component(INPUT_GROUP_NAME, MInputGroup);
     }
 };

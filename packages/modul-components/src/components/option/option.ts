@@ -5,12 +5,10 @@ import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/medi
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { OPTION_ITEM_ADD_NAME, OPTION_ITEM_ARCHIVE_NAME, OPTION_ITEM_DELETE_NAME, OPTION_ITEM_EDIT_NAME, OPTION_ITEM_NAME, OPTION_NAME, OPTION_SEPARATOR, OPTION_TITLE } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin, { MIconButtonSkin } from '../icon-button/icon-button';
-import IconPlugin from '../icon/icon';
+import { ICON_BUTTON_NAME, OPTION_ITEM_ADD_NAME, OPTION_ITEM_ARCHIVE_NAME, OPTION_ITEM_DELETE_NAME, OPTION_ITEM_EDIT_NAME, OPTION_ITEM_NAME, OPTION_NAME, OPTION_SEPARATOR, OPTION_TITLE, POPUP_NAME } from '../component-names';
+import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import { MPopperPlacement } from '../popper/popper';
-import PopupPlugin from '../popup/popup';
+import { MPopup } from '../popup/popup';
 import { MOptionItem } from './option-item/option-item';
 import { MOptionItemAdd } from './option-item/option-item-add';
 import { MOptionItemArchive } from './option-item/option-item-archive';
@@ -41,6 +39,10 @@ export enum MOptionsSkin {
 
 @WithRender
 @Component({
+    components: {
+        [POPUP_NAME]: MPopup,
+        [ICON_BUTTON_NAME]: MIconButton
+    },
     mixins: [
         MediaQueries
     ]
@@ -164,10 +166,7 @@ export class MOption extends BaseOption implements MOptionInterface {
 
 const OptionPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(PopupPlugin);
-        v.use(I18nPlugin);
-        v.use(IconButtonPlugin);
-        v.use(IconPlugin);
+
         v.use(MediaQueriesPlugin);
         v.component(OPTION_ITEM_NAME, MOptionItem);
         v.component(OPTION_ITEM_ARCHIVE_NAME, MOptionItemArchive);
