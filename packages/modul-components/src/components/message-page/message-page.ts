@@ -3,13 +3,13 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../utils/vue/vue';
-import { MESSAGE_PAGE_NAME } from '../component-names';
-import IconPlugin from '../icon/icon';
-import LinkPlugin from '../link/link';
+import { ICON_NAME, LINK_NAME, MESSAGE_PAGE_NAME, SVG_NAME } from '../component-names';
+import { MIcon } from '../icon/icon';
+import { MLink } from '../link/link';
 import { MMessageState } from '../message/message';
-import ModalPlugin from '../modal/modal';
 import { MSvg } from './../svg/svg';
 import WithRender from './message-page.html?style=./message-page.scss';
+
 
 /**
  * Utility class to manage the properties related to the link displayed in the error pages.
@@ -37,7 +37,11 @@ export enum MMessagePageImageSize {
 
 @WithRender
 @Component({
-    components: { MSvg }
+    components: {
+        [ICON_NAME]: MIcon,
+        [LINK_NAME]: MLink,
+        [SVG_NAME]: MSvg
+    }
 })
 export class MMessagePage extends ModulVue {
 
@@ -149,9 +153,6 @@ export class MMessagePage extends ModulVue {
 const MessagePagePlugin: PluginObject<any> = {
     install(v): void {
         v.prototype.$log.debug(MESSAGE_PAGE_NAME, 'plugin.install');
-        v.use(LinkPlugin);
-        v.use(IconPlugin);
-        v.use(ModalPlugin);
         v.component(MESSAGE_PAGE_NAME, MMessagePage);
     }
 };

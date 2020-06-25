@@ -2,12 +2,12 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import I18nFilterPlugin from '../../filters/i18n/i18n';
-import { MESSAGE_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin from '../icon-button/icon-button';
-import IconPlugin from '../icon/icon';
-import MessagePagePlugin, { MMessagePageSkin } from '../message-page/message-page';
+import { I18N_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
+import { ICON_BUTTON_NAME, ICON_NAME, MESSAGE_NAME, MESSAGE_PAGE_NAME } from '../component-names';
+import { MIconButton } from '../icon-button/icon-button';
+import { MIcon } from '../icon/icon';
+import { MMessagePage, MMessagePageSkin } from '../message-page/message-page';
 import WithRender from './message.html?style=./message.scss';
 
 export enum MMessageState {
@@ -25,7 +25,16 @@ export enum MMessageSkin {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [MESSAGE_PAGE_NAME]: MMessagePage
+    },
+    filters: {
+        [I18N_NAME]: i18nFilter
+    }
+})
 export class MMessage extends Vue {
     @Prop({
         default: MMessageState.Confirmation,
@@ -156,11 +165,6 @@ export class MMessage extends Vue {
 
 const MessagePlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconPlugin);
-        v.use(IconButtonPlugin);
-        v.use(MessagePagePlugin);
-        v.use(I18nFilterPlugin);
-        v.use(I18nPlugin);
         v.component(MESSAGE_NAME, MMessage);
     }
 };

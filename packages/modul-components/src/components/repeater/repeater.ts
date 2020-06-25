@@ -1,9 +1,9 @@
 import { PluginObject } from 'vue';
 import { Component, Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
-import AddPlugin from '../add/add';
-import { REPEATER_NAME } from '../component-names';
-import IconButtonPlugin from '../icon-button/icon-button';
+import { MAdd } from '../add/add';
+import { ADD_NAME, ICON_BUTTON_NAME, REPEATER_NAME } from '../component-names';
+import { MIcon } from '../icon/icon';
 import WithRender from './repeater.html?style=./repeater.scss';
 
 export interface MRepeaterItem { }
@@ -27,7 +27,12 @@ export interface MRepeaterRowListeners {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_BUTTON_NAME]: MIcon,
+        [ADD_NAME]: MAdd
+    }
+})
 export class MRepeater extends ModulVue {
     @Prop({
         required: true
@@ -131,8 +136,6 @@ export class MRepeater extends ModulVue {
 
 const RepeaterPlugin: PluginObject<any> = {
     install(v): void {
-        v.use(AddPlugin);
-        v.use(IconButtonPlugin);
         v.component(REPEATER_NAME, MRepeater);
     }
 };

@@ -2,8 +2,8 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Messages } from '../../utils/i18n/i18n';
-import { ICON_FILE_NAME } from '../component-names';
-import IconPluggin from '../icon/icon';
+import { ICON_FILE_NAME, ICON_NAME } from '../component-names';
+import IconPluggin, { MIcon } from '../icon/icon';
 import WithRender from './icon-file.html';
 
 // Extensions list
@@ -100,7 +100,11 @@ type FileGroup = {
 };
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon
+    }
+})
 export class MIconFile extends Vue {
     @Prop()
     public extension: string;

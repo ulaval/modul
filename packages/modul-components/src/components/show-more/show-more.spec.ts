@@ -1,10 +1,9 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
-
-import { renderComponent } from '../../../tests/helpers/render';
 import { FormatMode } from '../../utils/i18n/i18n';
 import { MButtonSkin } from '../button/button';
 import { SHOW_MORE_NAME } from '../component-names';
 import { MShowMore } from './show-more';
+
 
 let wrapper: Wrapper<MShowMore>;
 
@@ -22,24 +21,12 @@ const initializeShallowWrapper: any = () => {
 };
 
 describe(SHOW_MORE_NAME, () => {
-    describe(`Without nbTotal specified`, () => {
-        it(`Should not render anything`, () => {
-            initializeShallowWrapper();
-            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-    });
-
     describe(`With nbTotal equals to 0`, () => {
 
         beforeEach(() => {
             initializeShallowWrapper();
             wrapper.setProps({ nbVisible: 0, nbTotal: -2 });
         });
-
-        it(`Should not render anything`, () => {
-            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-
         it(`Should not be visible`, () => {
             expect(wrapper.vm.isVisible).toBeFalsy();
         });
@@ -52,10 +39,6 @@ describe(SHOW_MORE_NAME, () => {
             wrapper.setProps({ nbVisible: 0, nbTotal: -2 });
         });
 
-        it(`Should not render anything`, () => {
-            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-
         it(`Should not be visible`, () => {
             expect(wrapper.vm.isVisible).toBeFalsy();
         });
@@ -66,7 +49,6 @@ describe(SHOW_MORE_NAME, () => {
             initializeShallowWrapper();
             wrapper.setProps({ nbVisible: NB_VISIBLE, nbTotal: NB_TOTAL });
         });
-
         it(`Should calculate pourcentage of visible elements`, () => {
             expect(wrapper.vm.visiblePourcentage).toBe(20);
         });
@@ -89,9 +71,7 @@ describe(SHOW_MORE_NAME, () => {
             wrapper.setProps({ nbVisible: NB_VISIBLE, nbTotal: NB_TOTAL });
         });
 
-        it(`Should render correctly`, () => {
-            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
+
 
         it(`Should be visible`, () => {
             expect(wrapper.vm.isVisible).toBeTruthy();
@@ -115,14 +95,12 @@ describe(SHOW_MORE_NAME, () => {
 
         describe(`When button is clicked`, () => {
             it(`Should emit a "click" event`, () => {
-                wrapper.find(REF_BUTTON).trigger('click');
-
-                expect(wrapper.emitted('click')).toBeTruthy();
+                wrapper.find(REF_BUTTON).vm.$emit('click');
+                expect(wrapper.emitted().click).toBeTruthy();
             });
 
             it(`Should emit a "update:loading" event with a value of true`, () => {
-                wrapper.find(REF_BUTTON).trigger('click');
-
+                wrapper.find(REF_BUTTON).vm.$emit('click');
                 expect(wrapper.emitted('update:loading')[0]).toEqual([true]);
             });
         });
@@ -144,10 +122,6 @@ describe(SHOW_MORE_NAME, () => {
 
         it(`Progress should not be visible`, () => {
             expect(wrapper.vm.isProgressVisible).toBeFalsy();
-        });
-
-        it(`Should render correctly`, () => {
-            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
         });
 
         it(`Should not render a button`, () => {

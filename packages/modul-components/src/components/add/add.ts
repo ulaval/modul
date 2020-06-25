@@ -2,13 +2,17 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
-import { ADD_NAME } from '../component-names';
-import { MLinkIconPosition, MLinkSkin } from '../link/link';
+import { ADD_NAME, LINK_NAME } from '../component-names';
+import { MLink, MLinkIconPosition, MLinkSkin } from '../link/link';
 import WithRender from './add.html';
 import './add.scss';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [LINK_NAME]: MLink
+    }
+})
 export class MAdd extends ModulVue {
     @Prop()
     public disabled: boolean;
