@@ -1,12 +1,13 @@
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
-import { MButton } from './button';
+import MButtonPlugin, { MButton } from './button';
 
 describe('MButton', () => {
     let localVue: VueConstructor<Vue>;
 
     beforeEach(() => {
         localVue = createLocalVue();
+        localVue.use(MButtonPlugin);
     });
 
     it('should emit click event when clicked', () => {

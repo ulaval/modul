@@ -1,4 +1,5 @@
 import { mount, RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
+import { renderComponent } from '../../../tests/helpers/render';
 import uuid from '../../utils/uuid/uuid';
 import { MCheckboxes, MSelectionMode, MTree, TreeNode } from './tree';
 
@@ -92,6 +93,9 @@ describe(`MTree`, () => {
                 initializeShallowWrapper();
             });
 
+            it(`Should render correctly`, () => {
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
 
             it(`Should be empty`, () => {
                 expect(wrapper.vm.propTreeEmpty).toBeTruthy();
@@ -105,6 +109,9 @@ describe(`MTree`, () => {
                 initializeShallowWrapper();
             });
 
+            it(`Should render correctly`, () => {
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
 
             it(`Should not be empty`, () => {
                 expect(wrapper.vm.propTreeEmpty).toBeFalsy();
@@ -179,6 +186,9 @@ describe(`MTree`, () => {
                 initializeMountWrapper();
             });
 
+            it(`Should render correctly`, () => {
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
 
             it(`Should render with two selected nodes`, () => {
                 expect(wrapper.findAll(SELECTED_NODE_CLASS).length).toBe(2);
@@ -192,6 +202,10 @@ describe(`MTree`, () => {
                 selectionMode = MSelectionMode.Readonly;
                 selectedNodes = SELECTED_NODES;
                 initializeMountWrapper();
+            });
+
+            it(`Should render correctly`, () => {
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
             });
 
             it(`Should render with two selected nodes`, () => {

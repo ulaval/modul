@@ -8,7 +8,7 @@ interface MFileDropElement extends HTMLElement {
     cleanupMFileDropDirective(): any;
 }
 
-export const MFileDropDirective: DirectiveOptions = {
+const MFileDropDirective: DirectiveOptions = {
     bind(
         el: MFileDropElement,
         binding: VNodeDirective,

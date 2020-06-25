@@ -1,4 +1,4 @@
-import { PluginObject } from 'vue';
+import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -7,11 +7,8 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_NAME, INPUT_STYLE_NAME, MULTI_SELECT_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
-import { MIcon } from '../icon/icon';
-import { MInputStyle } from '../input-style/input-style';
-import { MValidationMessage } from '../validation-message/validation-message';
+import { MULTI_SELECT_NAME } from '../component-names';
+import I18nPlugin from '../i18n/i18n';
 import MChipDelete from './../chip/chip-delete/chip-delete';
 import { MBaseSelect } from './../select/base-select/base-select';
 import { MSelectItem } from './../select/select-item/select-item';
@@ -22,11 +19,7 @@ import WithRender from './multi-select.html?style=./multi-select.scss';
     components: {
         MBaseSelect,
         MSelectItem,
-        MChipDelete,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [ICON_NAME]: MIcon,
-        [INPUT_STYLE_NAME]: MInputStyle
+        MChipDelete
     },
     mixins: [
         InputState,
@@ -243,6 +236,7 @@ export class MMultiSelect extends ModulVue {
 
 const MultiSelectPlugin: PluginObject<any> = {
     install(v, options): void {
+        Vue.use(I18nPlugin);
         v.component(MULTI_SELECT_NAME, MMultiSelect);
     }
 };

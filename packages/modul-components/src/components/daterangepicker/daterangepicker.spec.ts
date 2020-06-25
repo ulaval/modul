@@ -1,4 +1,5 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
+import { renderComponent } from '../../../tests/helpers/render';
 import { DATEPICKER_NAME, PERIODPICKER_NAME } from '../component-names';
 import { DatePickerSupportedTypes } from '../datepicker/datepicker';
 import { MDateRange, MPeriodpickerProps } from '../periodpicker/periodpicker';
@@ -38,6 +39,11 @@ beforeEach(() => {
 });
 
 describe(`m-daterangepicker`, () => {
+    it(`should render correctly`, () => {
+        initializeWrapper();
+
+        expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+    });
 
     describe(`considering all periodpicker props are present`, () => {
         const periodpickerProps: MPeriodpickerProps = new MPeriodpickerPropsStub(new MDateRange(new Date(), new Date()), 'minProp', 'maxProp');
@@ -50,7 +56,17 @@ describe(`m-daterangepicker`, () => {
         });
     });
 
+    describe(`considering custom labels are provided`, () => {
+        const labelFrom: string = 'labelFrom';
+        const labelTo: string = 'labelTo';
 
+        it(`should render them correctly`, () => {
+            initializeWrapper();
+            wrapper.setProps({ labelFrom, labelTo });
+
+            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+        });
+    });
 
     it(`should emit input event when periodpicker value is updated`, () => {
         const newValue: string = 'newValue';

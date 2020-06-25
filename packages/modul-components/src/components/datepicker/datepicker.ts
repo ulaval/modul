@@ -2,7 +2,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
-import { MPopupDirective } from '../../directives/popup/popup';
+import PopupDirectivePlugin from '../../directives/popup/popup';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
 import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width';
@@ -12,19 +12,18 @@ import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import ModulDate, { DatePrecision } from '../../utils/modul-date/modul-date';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MButton } from '../button/button';
-import { MCalendar } from '../calendar/calendar';
+import ButtonPlugin from '../button/button';
+import CalendarPlugin from '../calendar/calendar';
 import { MBaseCalendarType, MBaseCalendarView } from '../calendar/calendar-renderer/base-calendar/base-calendar';
-import { BUTTON_NAME, CALENDAR_NAME, DATEPICKER_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_MASK_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
-import { MIconButton } from '../icon-button/icon-button';
+import { DATEPICKER_NAME } from '../component-names';
+import IconButtonPlugin from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
-import { MInputStyle } from '../input-style/input-style';
-import { MPopper } from '../popper/popper';
-import { MValidationMessage } from '../validation-message/validation-message';
-import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from './../../directives/directive-names';
+import InputStylePlugin from '../input-style/input-style';
+import PopupPlugin from '../popup/popup';
+import ValidationMessagePlugin from '../validation-message/validation-message';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import WithRender from './datepicker.html?style=./datepicker.scss';
+
 export type DatePickerSupportedTypes = Date | string | undefined;
 
 export enum MDatepickerDefaultView {
@@ -35,17 +34,7 @@ export enum MDatepickerDefaultView {
 @WithRender
 @Component({
     components: {
-        [INPUT_MASK_NAME]: MInputMask,
-        [BUTTON_NAME]: MButton,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [POPUP_NAME]: MPopper,
-        [CALENDAR_NAME]: MCalendar
-    },
-    directives: {
-        [DIRECTIVE_POPUP_NAME]: MPopupDirective
+        MInputMask
     },
     mixins: [
         InputState,
@@ -412,7 +401,14 @@ export class MDatepicker extends ModulVue {
 
 const DatepickerPlugin: PluginObject<any> = {
     install(v): void {
+        v.use(InputStylePlugin);
+        v.use(ButtonPlugin);
+        v.use(IconButtonPlugin);
+        v.use(PopupPlugin);
+        v.use(ValidationMessagePlugin);
         v.use(MediaQueriesPlugin);
+        v.use(PopupDirectivePlugin);
+        v.use(CalendarPlugin);
         v.component(DATEPICKER_NAME, MDatepicker);
     }
 };

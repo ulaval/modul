@@ -1,4 +1,5 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
+import { renderComponent } from '../../../tests/helpers/render';
 import { ScrollToDuration } from '../../utils/scroll-to/scroll-to';
 import { SCROLL_TOP_NAME } from '../component-names';
 import { MScrollTop, MScrollTopPosition } from './scroll-top';
@@ -35,6 +36,9 @@ describe(SCROLL_TOP_NAME, () => {
         beforeEach(() => {
             initializeShallowWrapper();
         });
+        it(`Should render correctly.`, () => {
+            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+        });
         it(`Then the position is fixed.`, () => {
             expect(wrapper.vm.isPositionFixed).toBeTruthy();
         });
@@ -56,6 +60,9 @@ describe(SCROLL_TOP_NAME, () => {
         beforeEach(() => {
             position = MScrollTopPosition.Relative;
             initializeShallowWrapper();
+        });
+        it('Should render correctly.', () => {
+            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
         });
 
         it(`Then position is relative.`, () => {

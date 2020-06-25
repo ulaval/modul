@@ -1,6 +1,7 @@
 import { mount, RefSelector, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
 import { addMessages } from '../../../../../tests/helpers/lang';
+import { renderComponent } from '../../../../../tests/helpers/render';
 import ModulDate from '../../../../utils/modul-date/modul-date';
 import uuid from '../../../../utils/uuid/uuid';
 import { Calendar, CalendarEvent } from '../../calendar-state/state/calendar-state';
@@ -132,6 +133,17 @@ describe('Base calendar', () => {
         beforeEach(() => {
             initialView = MBaseCalendarView.DAYS;
         });
+
+        it(`should render a calendar`, async () => {
+            initializeWrapper();
+            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+        });
+
+        it(`when hiding days from previous and following month, these days should be hidden`, async () => {
+            showMonthBeforeAfter = false;
+            initializeWrapper();
+            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+        });
         describe(`event handling`, () => {
 
             beforeEach(() => {
@@ -246,6 +258,11 @@ describe(`in years-months view`, () => {
     beforeAll(() => {
         initialView = MBaseCalendarView.YEARS_MONTHS;
         calendar = initCalendar();
+    });
+
+    it(`should render a list of months`, async () => {
+        initializeWrapper();
+        return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
     });
 
     describe(`when selecting a month`, () => {

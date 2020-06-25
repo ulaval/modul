@@ -2,7 +2,8 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { BREADCRUMBS_NAME } from '../component-names';
-import { MLinkIconPosition, MLinkMode } from '../link/link';
+import LimitTextPlugin from '../limit-text/limit-text';
+import LinkPlugin, { MLinkIconPosition, MLinkMode } from '../link/link';
 import WithRender from './breadcrumbs.html?style=./breadcrumbs.scss';
 
 
@@ -21,11 +22,7 @@ export interface BreadcrumbsProps {
 }
 
 @WithRender
-@Component({
-    components: {
-        [BREADCRUMBS_NAME]: MBreadcrumbs
-    }
-})
+@Component
 export class MBreadcrumbs extends Vue implements BreadcrumbsProps {
 
     @Prop({ default: [] })
@@ -52,6 +49,8 @@ export class MBreadcrumbs extends Vue implements BreadcrumbsProps {
 const BreadcrumbsPlugin: PluginObject<any> = {
     install(v): void {
         v.prototype.$log.debug(BREADCRUMBS_NAME, 'plugin.install');
+        v.use(LinkPlugin);
+        v.use(LimitTextPlugin);
         v.component(BREADCRUMBS_NAME, MBreadcrumbs);
     }
 };

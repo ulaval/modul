@@ -1,60 +1,33 @@
 const path = require('path');
+const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const nodeExternals = require('webpack-node-externals');
+
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
+
 module.exports = {
+    mode: 'production',
     devtool: 'source-map',
-    mode: 'development',
     entry: {
-        modul: resolve('src/lib.ts'),
-        fr: resolve('src/lang/fr.ts'),
-        en: resolve('src/lang/en.ts'),
-        sprites: resolve('src/utils/svg/default-sprites.ts'),
-        rte: resolve('src/components/rich-text-editor/rich-text-editor.ts'),
-        phonefield: resolve('src/components/phonefield/phonefield.ts'),
-
-
+        lib: resolve('dist/lib.js')
     },
     output: {
-        path: resolve('lib'),
-        filename: '[name].js',
+        filename: 'modul.cjs.js',
         libraryTarget: 'commonjs2', // change to 'module' when available https://github.com/webpack/webpack/issues/2933
-        library: ['modulComponents', '[name]'],
+        path: resolve('dist'),
+        library: 'modulComponents',
         publicPath: '/dist/'
     },
-    externals: [
-        nodeExternals(),
-        nodeExternals({
-            modulesDir: resolve('../../node_modules') // taken from https://github.com/liady/webpack-node-externals/issues/39
-        })],
-
-
-    // there a bug in mini-css-exptract plugin that make chunck not working well using a common chunks
-    // https://github.com/webpack-contrib/mini-css-extract-plugin/pull/305
-    // hopefully this will be fixed in webpack 5
-    // optimization: {
-    //     splitChunks: {
-    //         name: 'modul',
-    //         chunks: 'all',
-    //         // cacheGroups: {
-    //         //     styles: {
-    //         //         name: 'styles',
-    //         //         test(module, chunks) {
-    //         //             //console.log('module = ' + module.resource);
-    //         //             return module.constructor.name === 'CssModule';
-    //         //         },
-    //         //         chunks: 'all',
-    //         //         priority: 1,
-    //         //         minChunks: 1,
-    //         //         reuseExistingChunk: true,
-    //         //         enforce: true,
-    //         //     },
-    //         // },
-    //     }
-    // },
+    externals: {
+        vue: {
+            commonjs: 'vue',
+            commonjs2: 'vue',
+            amd: 'vue',
+            root: 'Vue'
+        }
+    },
     resolve: {
         extensions: ['.js', '.ts', '.html'],
         alias: {
@@ -64,21 +37,12 @@ module.exports = {
     },
     module: {
         rules: [
-            // Uncomment to include babel polyfills
-            // {
-            //     test: /\.m?js$/,
-            //     exclude: /(node_modules)/,
-            //     use: {
-            //         loader: 'babel-loader'
-            //     }
-            // },
             {
-                test: /\.ts$/,
-                loader: 'ts-loader',
-                options: {
-                    transpileOnly: true,
-                    configFile: resolve('tsconfig.lib.json')
-                },
+                test: /\.m?js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader'
+                }
             },
             {
                 enforce: 'post',
@@ -130,9 +94,12 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].min.css',
-            chunkFilename: '[name].min.css',
+            filename: 'modul.min.css',
             ignoreOrder: false
-        })
+        }),
+        new ContextReplacementPlugin(
+            /moment[\/\\]locale$/,
+            /en-ca|fr-ca/
+        )
     ]
 };

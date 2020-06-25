@@ -1,8 +1,8 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { AVATAR_NAME, ICON_NAME } from '../component-names';
-import { MIcon } from '../icon/icon';
+import { AVATAR_NAME } from '../component-names';
+import IconPlugin from '../icon/icon';
 import WithRender from './avatar.html?style=./avatar.scss';
 
 export enum MAvatarSize {
@@ -12,11 +12,7 @@ export enum MAvatarSize {
 }
 
 @WithRender
-@Component({
-    components: {
-        [ICON_NAME]: MIcon
-    }
-})
+@Component
 export class MAvatar extends Vue {
 
     @Prop({
@@ -124,6 +120,7 @@ export class MAvatar extends Vue {
 const AvatarPlugin: PluginObject<any> = {
     install(v): void {
         v.prototype.$log.debug(AVATAR_NAME, 'plugin.install');
+        v.use(IconPlugin);
         v.component(AVATAR_NAME, MAvatar);
     }
 };

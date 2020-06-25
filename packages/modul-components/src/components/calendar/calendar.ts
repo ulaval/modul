@@ -4,6 +4,8 @@ import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { CALENDAR_NAME } from '../component-names';
+import IconButtonPlugin from '../icon-button/icon-button';
+import LinkPlugin from '../link/link';
 import MBaseCalendar, { MBaseCalendarType, MBaseCalendarView } from './calendar-renderer/base-calendar/base-calendar';
 import MCalendarStateMachine from './calendar-state/calendar-state-machine';
 import { RangeDate, SingleDate } from './calendar-state/state/abstract-calendar-state';
@@ -102,6 +104,8 @@ export class MCalendar extends ModulVue {
 
 const CalendarPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(IconButtonPlugin);
+        v.use(LinkPlugin);
         v.component(CALENDAR_NAME, MCalendar);
     }
 };

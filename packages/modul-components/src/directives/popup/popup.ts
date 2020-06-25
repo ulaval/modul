@@ -2,7 +2,7 @@ import { DirectiveOptions, PluginObject, VNode, VNodeDirective } from 'vue';
 import { OpenTrigger } from '../../mixins/open-trigger/open-trigger';
 import { POPUP_NAME } from '../directive-names';
 
-export const MPopupDirective: DirectiveOptions = {
+const MPopupDirective: DirectiveOptions = {
     bind(element: HTMLElement, binding: VNodeDirective, node: VNode): void {
         if (node.context) {
             node.context.$nextTick(() => {

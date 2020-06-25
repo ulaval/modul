@@ -3,7 +3,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addDecorator, addParameters, configure } from '@storybook/vue';
 import Vue from 'vue';
-import { getModulConfig } from '../../src/modul';
+import { ModulPlugin } from '../../src/modul';
 import modulTheme from './modul-theme';
 import { getSandboxPlugin } from './sandbox-loader';
 
@@ -14,7 +14,7 @@ declare module '@storybook/addon-knobs' {
     export function withKnobs(): any;
 }
 
-Vue.use(getModulConfig());
+Vue.use(ModulPlugin);
 
 // load all sandboxes
 Vue.use(getSandboxPlugin());

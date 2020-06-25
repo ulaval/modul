@@ -2,10 +2,10 @@ import { configure } from '@storybook/vue';
 import fs from 'fs';
 import path from 'path';
 import Vue from 'vue';
-import { getModulConfig } from '../../src/modul';
+import { ModulPlugin } from '../../src/modul';
 
 
-Vue.use(getModulConfig(true));
+Vue.use(ModulPlugin);
 
 // this function mimick a require.context in jest..
 // taken from https://stackoverflow.com/questions/38332094/how-can-i-mock-webpacks-require-context-in-jest/54151648#54151648
@@ -41,6 +41,10 @@ const requireContext: any = (base = '.', scanSubDirectories = false, regularExpr
     return Module;
 };
 
+const loadJestStories: any = () => {
+    const req: any = requireContext('../../src', true, /\.stories\.ts$/);
+    req.keys().forEach(filename => req(filename));
+};
 
 // configure(() => loadJestStories(), module);
-configure(requireContext('../../src', true, /(^((?!sandbox).)*)\.stories\.ts$/), module);
+configure(requireContext('../../src', true, /\.stories\.ts$/), module);

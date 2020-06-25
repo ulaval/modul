@@ -2,18 +2,14 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_RESOURCE_UNAVAILABLE_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
-import { Link, MMessagePage } from '../../message-page/message-page';
+import { ERROR_RESOURCE_UNAVAILABLE_NAME } from '../../component-names';
+import MessagePagePlugin, { Link } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-resource-unavailable.html';
 
 
 @WithRender
-@Component({
-    components: {
-        [MESSAGE_PAGE_NAME]: MMessagePage
-    }
-})
+@Component
 export class MErrorResourceUnavailable extends ModulVue {
 
     @Prop({
@@ -44,6 +40,7 @@ export class MErrorResourceUnavailable extends ModulVue {
 
 const ErrorResourceUnavailablePlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(MessagePagePlugin);
         v.component(ERROR_RESOURCE_UNAVAILABLE_NAME, MErrorResourceUnavailable);
     }
 };

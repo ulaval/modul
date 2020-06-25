@@ -1,5 +1,5 @@
 import { SORTABLE_NAME } from '@ulaval/modul-components/dist/directives/directive-names';
-import { MSortEvent, SortableDirective } from '@ulaval/modul-components/dist/directives/sortable/sortable';
+import SortablePlugin, { MSortEvent } from '@ulaval/modul-components/dist/directives/sortable/sortable';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
@@ -9,11 +9,7 @@ import WithRender from './sortable.sandbox.html';
 export type ElementSortable = { cle: number, titre: string };
 
 @WithRender
-@Component({
-    directives: {
-        [SORTABLE_NAME]: SortableDirective
-    }
-})
+@Component
 export class MSortableSandbox extends ModulVue {
 
     peutEtreDrag: boolean = false;
@@ -85,6 +81,7 @@ export class MSortableSandbox extends ModulVue {
 
 const SortableSandboxPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(SortablePlugin);
         v.component(`${SORTABLE_NAME}-sandbox`, MSortableSandbox);
     }
 };

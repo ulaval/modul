@@ -5,17 +5,14 @@ import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width';
 import { ModulVue } from '../../utils/vue/vue';
-import { DATEPICKER_NAME, DATERANGEPICKER_NAME, PERIODPICKER_NAME } from '../component-names';
-import { DatePickerSupportedTypes, MDatepicker } from '../datepicker/datepicker';
-import { MDateRange, MPeriodpicker, MPeriodpickerProps } from '../periodpicker/periodpicker';
+import { DATERANGEPICKER_NAME } from '../component-names';
+import DatepickerPlugin, { DatePickerSupportedTypes } from '../datepicker/datepicker';
+import MessagePlugin from '../message/message';
+import PeriodpickerPlugin, { MDateRange, MPeriodpickerProps } from '../periodpicker/periodpicker';
 import WithRender from './daterangepicker.html';
 
 @WithRender
 @Component({
-    components: {
-        [DATEPICKER_NAME]: MDatepicker,
-        [PERIODPICKER_NAME]: MPeriodpicker
-    },
     mixins: [
         InputLabel,
         InputState,
@@ -68,6 +65,9 @@ export class MDaterangepicker extends ModulVue {
 
 const DaterangepickerPlugin: PluginObject<any> = {
     install(v): void {
+        v.use(MessagePlugin);
+        v.use(DatepickerPlugin);
+        v.use(PeriodpickerPlugin);
         v.component(DATERANGEPICKER_NAME, MDaterangepicker);
     }
 };

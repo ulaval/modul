@@ -28,14 +28,6 @@ export class SpritesService {
         return id;
     }
 
-    public removeInternalSprite(id: string): void {
-        if (document.getElementById(id) !== null) {
-            document.getElementById(id)!.remove();
-        } else {
-            Vue.prototype.$log.warn(`unable to remove internal sprite with id=${id}`);
-        }
-    }
-
     public addExternalSprites(sprites: string, externalSpriteIdPrefix: string): void {
         if (this.isInExternalSprites(externalSpriteIdPrefix)) {
             Vue.prototype.$log.warn('"' + externalSpriteIdPrefix + '" already exists in the externalSpriteIdPrefixes. You are overwriting a sprites collection.');
@@ -45,7 +37,7 @@ export class SpritesService {
     }
 
     public getExternalSpritesFromSpriteId(spriteId: string): string | undefined {
-        if (spriteId && this.isInExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId))) {
+        if (this.isInExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId))) {
             return this.getExternalSprites(this.getExternalSpriteIdPrefixFromSpriteId(spriteId)!) + '#' + spriteId;
         }
     }

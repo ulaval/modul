@@ -1,5 +1,6 @@
 import { shallowMount, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
+import { renderComponent } from '../../../tests/helpers/render';
 import { MColumnSortDirection, MColumnTable, MTable } from './table';
 
 let slots: any = {};
@@ -59,10 +60,31 @@ describe(`MTable`, () => {
                 expect(wrapper.vm.isEmpty).toBeFalsy();
             });
 
+            it(`Then should render correctly`, () => {
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
 
         });
 
+        describe(`When a custom slot is given`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {
+                    'empty': SLOT_EMPTY
+                };
+                initializeShallowWrapper();
 
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
+        });
+
+        describe(`When we use the default template`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {};
+                initializeShallowWrapper();
+
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
+        });
 
     });
 
@@ -79,6 +101,12 @@ describe(`MTable`, () => {
         });
 
         describe(`When we don't use slots`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {};
+                initializeShallowWrapper();
+
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
 
             describe(`When a column is sortable`, () => {
                 it(`Should show a button with the label on it`, async () => {
@@ -97,6 +125,60 @@ describe(`MTable`, () => {
             });
         });
 
+        describe(`When using slot to replace the header`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {
+                    'header': SLOT_HEADER
+                };
+                initializeShallowWrapper();
+
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
+        });
+
+        describe(`When using slot to replace a th`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {
+                    'header.a': SLOT_TH
+                };
+                initializeShallowWrapper();
+
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
+        });
+
+        describe(`When using slot to replace the tbody`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {
+                    'body': SLOT_BODY
+                };
+                initializeShallowWrapper();
+
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
+        });
+
+        describe(`When using slot to replace a td`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {
+                    'body.a': SLOT_TD
+                };
+                initializeShallowWrapper();
+
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
+        });
+
+        describe(`When using a footer`, () => {
+            it(`Then should render correctly`, () => {
+                slots = {
+                    'footer': SLOT_FOOTER
+                };
+                initializeShallowWrapper();
+
+                expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+            });
+        });
 
     });
 

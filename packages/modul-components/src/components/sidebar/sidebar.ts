@@ -3,9 +3,9 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_BUTTON_NAME, SIDEBAR_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
-import { MIconButton } from '../icon-button/icon-button';
+import { SIDEBAR_NAME } from '../component-names';
+import I18nPlugin from '../i18n/i18n';
+import IconButtonPlugin from '../icon-button/icon-button';
 import WithRender from './sidebar.html?style=./sidebar.scss';
 
 export enum MSidebarOrigin {
@@ -21,11 +21,6 @@ export enum MSidebarCloseButtonPosition {
 
 @WithRender
 @Component({
-    components: {
-        [I18N_NAME]: MI18n,
-        [ICON_BUTTON_NAME]: MIconButton
-
-    },
     mixins: [Portal]
 })
 export class MSidebar extends ModulVue implements PortalMixinImpl {
@@ -149,6 +144,8 @@ export class MSidebar extends ModulVue implements PortalMixinImpl {
 
 const SidebarPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(IconButtonPlugin);
+        v.use(I18nPlugin);
         v.component(SIDEBAR_NAME, MSidebar);
     }
 };

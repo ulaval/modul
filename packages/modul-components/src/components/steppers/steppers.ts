@@ -3,6 +3,7 @@ import Component from 'vue-class-component';
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import { STEPPERS_ITEM_NAME, STEPPERS_NAME } from '../component-names';
+import IconPlugin from '../icon/icon';
 import { BaseSteppers, MSteppersItem, MSteppersItemState } from './steppers-item/steppers-item';
 import WithRender from './steppers.html?style=./steppers.scss';
 
@@ -123,6 +124,7 @@ export class MSteppers extends BaseSteppers {
 const SteppersPlugin: PluginObject<any> = {
     install(v, options): void {
         v.use(MediaQueriesPlugin);
+        v.use(IconPlugin);
         v.component(STEPPERS_ITEM_NAME, MSteppersItem);
         v.component(STEPPERS_NAME, MSteppers);
     }

@@ -1,8 +1,8 @@
 import filesize from 'filesize';
 import Vue, { PluginObject } from 'vue';
+
 import { Messages } from '../../utils/i18n/i18n';
 import { FILESIZE_NAME } from '../filter-names';
-
 
 let filesizeSymbols: { [name: string]: string } | undefined = undefined;
 

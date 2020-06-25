@@ -4,9 +4,8 @@ import { Model, Prop, Watch } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, SWITCH_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
-import { MValidationMessage } from '../validation-message/validation-message';
+import { SWITCH_NAME } from '../component-names';
+import ValidationMessagePlugin from '../validation-message/validation-message';
 import WithRender from './switch.html?style=./switch.scss';
 
 
@@ -17,10 +16,6 @@ export enum MSwitchPosition {
 
 @WithRender
 @Component({
-    components: {
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [I18N_NAME]: MI18n
-    },
     mixins: [InputState]
 })
 export class MSwitch extends ModulVue {
@@ -72,6 +67,7 @@ export class MSwitch extends ModulVue {
 
 const SwitchPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(ValidationMessagePlugin);
         v.component(SWITCH_NAME, MSwitch);
     }
 };

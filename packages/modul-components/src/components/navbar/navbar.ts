@@ -2,9 +2,10 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
+import ModulPlugin from '../../utils/modul/modul';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_BUTTON_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME } from '../component-names';
-import { MIconButton } from '../icon-button/icon-button';
+import { NAVBAR_ITEM_NAME, NAVBAR_NAME } from '../component-names';
+import IconButtonPlugin from '../icon-button/icon-button';
 import { MNavbarItem } from './navbar-item/navbar-item';
 import WithRender from './navbar.html?style=./navbar.scss';
 
@@ -52,9 +53,6 @@ export enum MNavbarMaxWidth {
 
 @WithRender
 @Component({
-    components: {
-        [ICON_BUTTON_NAME]: MIconButton
-    },
     mixins: [ElementQueries]
 })
 export class MNavbar extends BaseNavbar implements Navbar {
@@ -425,6 +423,8 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
 const NavbarPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(ModulPlugin);
+        v.use(IconButtonPlugin);
         v.component(NAVBAR_ITEM_NAME, MNavbarItem);
         v.component(NAVBAR_NAME, MNavbar);
     }

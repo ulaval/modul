@@ -3,9 +3,12 @@ import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { ACCORDION_TRANSITION_NAME, MENU_ITEM_NAME, MENU_NAME, PLUS_NAME } from '../component-names';
-import { MPlus } from '../plus/plus';
-import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
+import { MENU_ITEM_NAME, MENU_NAME } from '../component-names';
+import I18nPlugin from '../i18n/i18n';
+import IconButtonPlugin from '../icon-button/icon-button';
+import IconPlugin from '../icon/icon';
+import PlusPlugin from '../plus/plus';
+import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import { MMenuItem } from './menu-item/menu-item';
 import WithRender from './menu.html';
 import './menu.scss';
@@ -36,12 +39,7 @@ export enum MMenuSkin {
 }
 
 @WithRender
-@Component({
-    components: {
-        [PLUS_NAME]: MPlus,
-        [ACCORDION_TRANSITION_NAME]: MAccordionTransition
-    }
-})
+@Component
 export class MMenu extends BaseMenu implements Menu {
     @Prop()
     public selected: string;
@@ -241,6 +239,11 @@ export class MMenu extends BaseMenu implements Menu {
 
 const MenuPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(AccordionTransitionPlugin);
+        v.use(I18nPlugin);
+        v.use(PlusPlugin);
+        v.use(IconPlugin);
+        v.use(IconButtonPlugin);
         v.component(MENU_ITEM_NAME, MMenuItem);
         v.component(MENU_NAME, MMenu);
     }
