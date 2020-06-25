@@ -1,14 +1,15 @@
-import { PluginObject } from 'vue';
+import Vue, { CreateElement, PluginObject, VNode, VNodeChildren, VNodeData, VueConstructor } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
+import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { DYNAMIC_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME } from '../component-names';
+import { DYNAMIC_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME, LINK_NAME } from '../component-names';
 import { MDynamicTemplate } from '../dynamic-template/dynamic-template';
 import { MI18n } from '../i18n/i18n';
+import { MLinkMode } from '../link/link';
 import WithRender from './limit-text.html?style=./limit-text.scss';
-
 
 @WithRender
 @Component({
@@ -36,11 +37,12 @@ export class MLimitText extends ModulVue {
     private internalOpen: boolean = false;
     private hasFinish: boolean = false;
     private contentTooTall: boolean = false;
-    private child: ModulVue;
+    private child: Element;
     private el: HTMLElement;
     private initLineHeigh: any = '';
     private maxHeight: number = 0;
     private observer: MutationObserver;
+    private uuid: string = uuid.generate();
 
     protected mounted(): void {
         this.internalOpen = this.open;
@@ -62,7 +64,8 @@ export class MLimitText extends ModulVue {
 
     protected destroyed(): void {
         if (this.child) {
-            this.child.$off('click');
+            this.child.removeEventListener('click', this.openText);
+            this.child.removeEventListener('click', this.closeText);
         }
         this.observer.disconnect();
     }
@@ -183,18 +186,76 @@ export class MLimitText extends ModulVue {
     }
 
     private get openLinkOriginal(): string {
-        return this.openLabel ? `...&nbsp;<m-link style="font-weight:400;" mode="button" title="` + this.getOpenLabelTitle + `" hiddenText="` + this.getOpenLabelTitle + `" :underline="false">[` + this.openLabel.replace(/\s/g, '\xa0') + `]</m-link>` :
-            `...&nbsp;<m-link style="font-weight:400;" mode="button" title="` + this.getOpenLabelTitle + `" hiddenText="` + this.getOpenLabelTitle + `" :underline="false">[` + '\xa0+\xa0' + `]</m-link>`;
+        return '...&nbsp' + new this.openLinkOriginalRendered().$mount().$el.outerHTML;
+    }
+
+    private get openLinkOriginalRendered(): VueConstructor<Vue> {
+        const vNodeData: VNodeData = {
+            props: {
+                mode: MLinkMode.Button,
+                underline: false
+            },
+            attrs: {
+                style: 'font-weight:400;',
+                title: this.getOpenLabelTitle,
+                'data-id': this.uuid
+            }
+        };
+        const vNodeChildren: VNodeChildren = '[' + (this.openLabel ? this.openLabel.replace(/\s/g, '\xa0') : '\xa0+\xa0') + ']';
+
+        return Vue.extend({
+            render(createElement: CreateElement): VNode {
+                return createElement(LINK_NAME, vNodeData, vNodeChildren);
+            }
+        });
     }
 
     private get openLink(): string {
-        return this.openLabel ? `...&nbsp;<m-link mode="button" title="` + this.openLabel.replace(/\s/g, '\xa0') + `" hiddenText="` + this.openLabel.replace(/\s/g, '\xa0') + `" :underline="false">[` + this.openLabel.replace(/\s/g, '\xa0') + `]</m-link>` :
-            `...&nbsp;<m-link mode="button" title="` + this.$i18n.translate('m-limit-text:open') + `" hiddenText="` + this.$i18n.translate('m-limit-text:open') + `" :underline="false">[` + '\xa0+\xa0' + `]</m-link>`;
+        return '...&nbsp' + new this.openLinkRendered().$mount().$el.outerHTML;
+    }
+
+    private get openLinkRendered(): VueConstructor<Vue> {
+        const vNodeData: VNodeData = {
+            props: {
+                mode: MLinkMode.Button,
+                underline: false
+            },
+            attrs: {
+                title: this.getOpenLabelTitle,
+                'data-id': this.uuid
+            }
+        };
+        const vNodeChildren: VNodeChildren = '[' + (this.openLabel ? this.openLabel.replace(/\s/g, '\xa0') : '\xa0+\xa0') + ']';
+
+        return Vue.extend({
+            render(createElement: CreateElement): VNode {
+                return createElement(LINK_NAME, vNodeData, vNodeChildren);
+            }
+        });
     }
 
     private get closeLink(): string {
-        return this.closeLabel ? `&nbsp;<m-link mode="button" title="` + this.getCloseLabelTitle + `" hiddenText="` + this.getCloseLabelTitle + `" :underline="false">[` + this.closeLabel.replace(/\s/g, '\xa0') + `]</m-link>` :
-            `&nbsp;<m-link mode="button" title="` + this.getCloseLabelTitle + `" hiddenText="` + this.getCloseLabelTitle + `" :underline="false">[` + '\xa0-\xa0' + `]</m-link>`;
+        return '&nbsp;' + new this.closeLinkRendered().$mount().$el.outerHTML;
+    }
+
+    private get closeLinkRendered(): VueConstructor<Vue> {
+        const vNodeData: VNodeData = {
+            props: {
+                mode: MLinkMode.Button,
+                underline: false
+            },
+            attrs: {
+                title: this.getCloseLabelTitle,
+                'data-id': this.uuid
+            }
+        };
+        const vNodeChildren: VNodeChildren = '[' + (this.closeLabel ? this.closeLabel.replace(/\s/g, '\xa0') : '\xa0-\xa0') + ']';
+
+        return Vue.extend({
+            render(createElement: CreateElement): VNode {
+                return createElement(LINK_NAME, vNodeData, vNodeChildren);
+            }
+        });
     }
 
     private get getOpenLabelTitle(): string {
@@ -210,34 +271,42 @@ export class MLimitText extends ModulVue {
         this.internalOpen = open;
     }
 
-    private openText(): void {
+    private openText(event): void {
         this.internalOpen = true;
         this.$emit('open');
+        event.preventDefault();
     }
 
-    private closeText(): void {
+    private closeText(event): void {
         this.internalOpen = false;
         this.$emit('close');
+        event.preventDefault();
     }
 
-    private onUpdatedOpen(component: any): void {
+    private onUpdatedOpen(component: Vue[]): void {
+        const link: Element | null = component[0].$el.querySelector('a[data-id="' + this.uuid + '"]');
+
         if (this.child) {
-            this.child.$off('click');
+            this.child.removeEventListener('click', this.openText);
         }
-        if (component[0].$children.length > 0) {
-            this.child = component[0].$children[0];
+
+        if (link) {
+            this.child = link;
+            this.child.addEventListener('click', this.openText);
         }
-        this.child.$on('click', () => this.openText());
     }
 
-    private onUpdatedClose(component: any): void {
+    private onUpdatedClose(component: Vue[]): void {
+        const link: Element | null = component[0].$el.querySelector('a[data-id="' + this.uuid + '"]');
+
         if (this.child) {
-            this.child.$off('click');
+            this.child.removeEventListener('click', this.closeText);
         }
-        if (component[0].$children.length > 0) {
-            this.child = component[0].$children[0];
+
+        if (link) {
+            this.child = link;
+            this.child.addEventListener('click', this.closeText);
         }
-        this.child.$on('click', () => this.closeText());
     }
 }
 
