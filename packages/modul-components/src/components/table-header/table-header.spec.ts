@@ -1,4 +1,5 @@
 import { RefSelector, shallowMount, Wrapper } from '@vue/test-utils';
+import { renderComponent } from '../../../tests/helpers/render';
 import { TABLE_HEADER_NAME } from '../component-names';
 import { MTableHeader } from './table-header';
 
@@ -23,6 +24,10 @@ describe(TABLE_HEADER_NAME, () => {
         initializeShallowWrapper();
     });
 
+    it(`Should render correctly`, () => {
+        expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+    });
+
     it(`Should have an empty add button label`, () => {
         expect(wrapper.props().addBtnLabel).toBeUndefined();
     });
@@ -38,12 +43,44 @@ describe(TABLE_HEADER_NAME, () => {
         });
 
         it(`Should emit "add" event when clicked`, () => {
-            wrapper.find(REF_ADD_BTN).vm.$emit('click');
+            wrapper.find(REF_ADD_BTN).trigger('click');
 
             expect(wrapper.emitted('add')).toBeTruthy();
         });
     });
 
+    describe(`Given content in left slot`, () => {
+        it(`Should render correctly`, () => {
+            slots = {
+                left: SLOT_LEFT
+            };
+            initializeShallowWrapper();
 
+            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+        });
+    });
 
+    describe(`Given content in right slot`, () => {
+        it(`Should render correctly`, () => {
+            slots = {
+                right: SLOT_RIGHT
+            };
+            initializeShallowWrapper();
+
+            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+        });
+    });
+
+    describe(`Given a add button label, left and right slots`, () => {
+        it(`Should render correctly`, () => {
+            slots = {
+                left: SLOT_LEFT,
+                right: SLOT_RIGHT
+            };
+            initializeShallowWrapper();
+            wrapper.setProps({ addBtnLabel: ADD_BTN_LABEL });
+
+            expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
+        });
+    });
 });

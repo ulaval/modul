@@ -2,7 +2,7 @@ import { mount, Slots, Wrapper, WrapperArray } from '@vue/test-utils';
 import Vue from 'vue';
 import { addMessages } from '../../../tests/helpers/lang';
 import uuid from '../../utils/uuid/uuid';
-import AccordionPlugin, { MAccordion, MAccordionSkin } from '../accordion/accordion';
+import { MAccordion, MAccordionSkin } from '../accordion/accordion';
 import AccordionGroupPlugin, { MAccordionGroup } from './accordion-group';
 
 
@@ -12,7 +12,6 @@ jest.mock('../../utils/uuid/uuid');
 
 describe('MAcordionGroup', () => {
     beforeEach(() => {
-        Vue.use(AccordionPlugin);
         Vue.use(AccordionGroupPlugin);
         addMessages(Vue, [
             'components/accordion/accordion.lang.en.json',

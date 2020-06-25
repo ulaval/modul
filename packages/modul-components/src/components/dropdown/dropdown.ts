@@ -1,8 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
-import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../directives/directive-names';
-import { MPopupDirective } from '../../directives/popup/popup';
+import PopupPluginDirective from '../../directives/popup/popup';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputPopup } from '../../mixins/input-popup/input-popup';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
@@ -12,14 +11,12 @@ import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import { normalizeString } from '../../utils/str/str';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import uuid from '../../utils/uuid/uuid';
-import { MButton } from '../button/button';
-import { BUTTON_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
-import { MIconButton } from '../icon-button/icon-button';
-import { MIcon } from '../icon/icon';
-import { MInputStyle } from '../input-style/input-style';
-import { MPopup } from '../popup/popup';
-import { MValidationMessage } from '../validation-message/validation-message';
+import ButtonPlugin from '../button/button';
+import { DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
+import InputStylePlugin, { MInputStyle } from '../input-style/input-style';
+import PopupPlugin, { MPopup } from '../popup/popup';
+import RadioStylePlugin from '../radio-style/radio-style';
+import ValidationMessagePlugin from '../validation-message/validation-message';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import { BaseDropdown, BaseDropdownGroup, MDropdownInterface, MDropdownItem } from './dropdown-item/dropdown-item';
 import WithRender from './dropdown.html?style=./dropdown.scss';
@@ -28,19 +25,6 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 
 @WithRender
 @Component({
-    components: {
-        [BUTTON_NAME]: MButton,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_NAME]: MIcon,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [POPUP_NAME]: MPopup,
-        [DROPDOWN_ITEM_NAME]: MDropdownItem
-    },
-    directives: {
-        [DIRECTIVE_POPUP_NAME]: MPopupDirective
-    },
     mixins: [
         InputState,
         InputPopup,
@@ -590,6 +574,12 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
 const DropdownPlugin: PluginObject<any> = {
     install(v, options): void {
+        Vue.use(RadioStylePlugin);
+        Vue.use(InputStylePlugin);
+        Vue.use(ButtonPlugin);
+        Vue.use(PopupPlugin);
+        Vue.use(PopupPluginDirective);
+        Vue.use(ValidationMessagePlugin);
         Vue.use(MediaQueriesPlugin);
         v.component(DROPDOWN_ITEM_NAME, MDropdownItem);
         v.component(DROPDOWN_NAME, MDropdown);

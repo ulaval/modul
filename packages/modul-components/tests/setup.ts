@@ -8,8 +8,7 @@ let i18nOptions: I18nPluginOptions = {
 };
 
 let consoleOptions: ConsoleOptions = {
-    displayDebugs: false,
-    displayWarnings: false
+    displayDebugs: false
 };
 
 

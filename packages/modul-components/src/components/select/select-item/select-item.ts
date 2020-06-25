@@ -1,15 +1,10 @@
 import { Component, Emit, Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
-import { RADIO_STYLE_NAME } from '../../component-names';
-import { MRadioStyle } from '../../radio-style/radio-style';
 import WithRender from './select-item.html?style=./select-item.scss';
 
 @WithRender
 @Component({
-    components: {
-        [RADIO_STYLE_NAME]: MRadioStyle
-    },
     mixins: [MediaQueries]
 })
 export class MSelectItem extends ModulVue {

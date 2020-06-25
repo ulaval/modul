@@ -3,17 +3,14 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_BROWSER_NOT_SUPPORTED_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
-import { Link, MMessagePage } from '../../message-page/message-page';
+import { ERROR_BROWSER_NOT_SUPPORTED_NAME } from '../../component-names';
+import MessagePagePlugin, { Link } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-browser-not-supported.html';
 
 
 @WithRender
 @Component({
-    components: {
-        [MESSAGE_PAGE_NAME]: MMessagePage
-    },
     mixins: [MediaQueries]
 })
 export class MErrorBrowserNotSupported extends ModulVue {
@@ -52,6 +49,7 @@ export class MErrorBrowserNotSupported extends ModulVue {
 
 const ErrorBrowserNotSupported: PluginObject<any> = {
     install(v, options): void {
+        v.use(MessagePagePlugin);
         v.component(ERROR_BROWSER_NOT_SUPPORTED_NAME, MErrorBrowserNotSupported);
     }
 };

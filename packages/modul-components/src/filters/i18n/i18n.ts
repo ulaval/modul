@@ -1,16 +1,16 @@
 import Vue, { PluginObject } from 'vue';
+
 import { I18N_NAME } from '../filter-names';
 
-
-export const i18nFilter: (key: string,
+const i18nFilter: (key: string,
     params,
     nb?: number,
     modifier?: string,
     htmlEncodeParams?: boolean) => any = (key: string,
-        params: any[] = [],
-        nb?: number,
-        modifier?: string,
-        htmlEncodeParams: boolean = true) => {
+    params: any[] = [],
+    nb?: number,
+    modifier?: string,
+    htmlEncodeParams: boolean = true) => {
         return Vue.prototype.$i18n.translate(key, params, nb, modifier, htmlEncodeParams);
     };
 

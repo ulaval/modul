@@ -1,16 +1,10 @@
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { OPTION_ITEM_NAME } from '../../component-names';
-import { MOptionItem } from './option-item';
 import WithRender from './option-item-predefined.html';
 
 
-@Component({
-    components: {
-        [OPTION_ITEM_NAME]: MOptionItem
-    }
-})
+@Component
 @WithRender
 export class MOptionItemPredefined extends ModulVue {
     @Prop()

@@ -1,6 +1,4 @@
-
-import { MButton } from '@ulaval/modul-components/dist/components/button/button';
-import { BUTTON_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import ButtonPlugin from '@ulaval/modul-components/dist/components/button/button';
 import { FileUploadCustomValidation } from '@ulaval/modul-components/dist/components/file-upload/file-upload';
 import { MModalSize } from '@ulaval/modul-components/dist/components/modal/modal';
 import OverlayPlugin from '@ulaval/modul-components/dist/components/overlay/overlay';
@@ -27,10 +25,7 @@ const rteChunk = (): Promise<any> => import(/* webpackChunkName: "rte" */ '@ulav
 
 @WithRender
 @Component({
-    components: {
-        [BUTTON_NAME]: MButton,
-        'm-rich-text-editor': rteChunk, MRichText
-    }
+    components: { 'm-rich-text-editor': rteChunk, MRichText }
 })
 export class MRichTextEditorSandBox extends ModulVue {
     public model: string = '';
@@ -111,6 +106,7 @@ export class MRichTextEditorSandBox extends ModulVue {
 }
 const RichTextEditorSandBoxPlugin: PluginObject<any> = {
     install(v): void {
+        v.use(ButtonPlugin);
         v.use(OverlayPlugin);
         v.use(TextfieldPlugin);
         v.use(RadioGroupPlugin);

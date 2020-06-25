@@ -5,10 +5,12 @@ import { InputManagement } from '../../mixins/input-management/input-management'
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputMaxWidth } from '../../mixins/input-width/input-width';
 import { InputSelectable } from '../../utils/input/input';
-import ToastServicePlugin from '../../utils/toast/toast-service.plugin';
 import { ModulVue } from '../../utils/vue/vue';
-import { COPY_TO_CLIPBOARD_FEEDBACK_NAME, COPY_TO_CLIPBOARD_NAME, TEXTFIELD_NAME } from '../component-names';
-import { MTextfield } from '../textfield/textfield';
+import { COPY_TO_CLIPBOARD_FEEDBACK_NAME, COPY_TO_CLIPBOARD_NAME } from '../component-names';
+import I18nPlugin from '../i18n/i18n';
+import LinkPlugin from '../link/link';
+import TextfieldPlugin from '../textfield/textfield';
+import ToastPlugin from '../toast/toast';
 import { MCopyToClipboardFeedback } from './copy-to-clipboard-feedback';
 import WithRender from './copy-to-clipboard.html';
 import './copy-to-clipboard.scss';
@@ -55,9 +57,6 @@ function copyToClipboard(text: string): Promise<void> {
 
 @WithRender
 @Component({
-    components: {
-        [TEXTFIELD_NAME]: MTextfield
-    },
     mixins: [InputManagement, InputState]
 })
 export class MCopyToClipboard extends ModulVue {
@@ -107,9 +106,13 @@ export class MCopyToClipboard extends ModulVue {
 
 const CopyToClipboardPlugin: PluginObject<any> = {
     install(v): void {
-        v.use(ToastServicePlugin);
         v.component(COPY_TO_CLIPBOARD_NAME, MCopyToClipboard);
         v.component(COPY_TO_CLIPBOARD_FEEDBACK_NAME, MCopyToClipboardFeedback);
+        v.use(TextfieldPlugin);
+        v.use(LinkPlugin);
+        v.use(I18nPlugin);
+        v.use(TextfieldPlugin);
+        v.use(ToastPlugin);
     }
 };
 

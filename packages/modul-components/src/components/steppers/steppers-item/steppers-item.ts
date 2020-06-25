@@ -1,10 +1,11 @@
+import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import { ModulVue } from '../../../utils/vue/vue';
-import { ICON_NAME } from '../../component-names';
-import { MIcon } from '../../icon/icon';
-import WithRender from './steppers-item.html?style=./steppers-item.scss';
 
+import { ModulVue } from '../../../utils/vue/vue';
+import { STEPPERS_ITEM_NAME } from '../../component-names';
+import IconPlugin from '../../icon/icon';
+import WithRender from './steppers-item.html?style=./steppers-item.scss';
 
 export enum MSteppersItemState {
     Visited = 'visited',
@@ -18,11 +19,7 @@ export abstract class BaseSteppers extends ModulVue {
 }
 
 @WithRender
-@Component({
-    components: {
-        [ICON_NAME]: MIcon
-    }
-})
+@Component
 export class MSteppersItem extends ModulVue {
     @Prop({
         default: MSteppersItemState.Disabled,

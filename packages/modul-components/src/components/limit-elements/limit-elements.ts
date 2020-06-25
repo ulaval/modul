@@ -3,18 +3,13 @@ import { PluginObject } from 'vue';
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { FormatMode } from '../../utils/i18n/i18n';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, LIMIT_ELEMENTS, LINK_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
-import { MLink, MLinkMode } from '../link/link';
+import { LIMIT_ELEMENTS } from '../component-names';
+import I18nPlugin from '../i18n/i18n';
+import LinkPlugin, { MLinkMode } from '../link/link';
 import WithRender from './limit-elements.html?style=./limit-elements.scss';
 
 @WithRender
-@Component({
-    components: {
-        [LINK_NAME]: MLink,
-        [I18N_NAME]: MI18n
-    }
-})
+@Component
 export class MLimitElements extends ModulVue {
     @Prop({ required: true })
     readonly elements!: any[];
@@ -92,6 +87,8 @@ export class MLimitElements extends ModulVue {
 
 const LimitElementsPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(LinkPlugin);
+        v.use(I18nPlugin);
         v.component(LIMIT_ELEMENTS, MLimitElements);
     }
 };

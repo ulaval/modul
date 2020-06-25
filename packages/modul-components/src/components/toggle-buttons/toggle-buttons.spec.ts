@@ -1,6 +1,7 @@
 import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import { resetModulPlugins } from '../../../tests/helpers/component';
+import ButtonPlugin from '../../components/button/button';
 import ModulPlugin from '../../utils/modul/modul';
 import ToggleButtonsPlugin, { MToggleButton, MToggleButtons } from './toggle-buttons';
 
@@ -41,6 +42,7 @@ describe('MToggleButtons', () => {
         localVue = createLocalVue();
         localVue.use(ModulPlugin);
         Vue.use(ToggleButtonsPlugin);
+        Vue.use(ButtonPlugin);
     });
 
     describe(`Given no button`, () => {

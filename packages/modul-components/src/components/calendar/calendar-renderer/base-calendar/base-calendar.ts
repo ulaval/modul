@@ -2,9 +2,7 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Enums } from '../../../../utils/enums/enums';
 import { KeyCode } from '../../../../utils/keycode/keycode';
 import uuid from '../../../../utils/uuid/uuid';
-import { CALENDAR_BUTTON_NAME, ICON_BUTTON_NAME, LINK_NAME } from '../../../component-names';
-import { MIconButton } from '../../../icon-button/icon-button';
-import { MLink, MLinkMode } from '../../../link/link';
+import { MLinkMode } from '../../../link/link';
 import { MCalendarButton } from '../../calendar-button/calendar-button';
 import { RangeDate } from '../../calendar-state/state/abstract-calendar-state';
 import { CalendarType, DayState, MonthState, YearState } from '../../calendar-state/state/calendar-state';
@@ -56,9 +54,7 @@ export enum MBaseCalendarType {
 @WithRender
 @Component({
     components: {
-        [LINK_NAME]: MLink,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [CALENDAR_BUTTON_NAME]: MCalendarButton
+        MCalendarButton
     }
 })
 export default class MBaseCalendar extends MAbstractCalendarRenderer {

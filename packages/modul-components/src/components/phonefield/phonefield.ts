@@ -13,10 +13,8 @@ import { SpritesService } from '../../utils/svg/sprites';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
-import { MInputStyle } from '../input-style/input-style';
 import { MSelectVirtualScroll } from '../select-virtual-scroll/select-virtual-scroll';
 import { MSelectItem } from '../select/select-item/select-item';
-import { MValidationMessage } from '../validation-message/validation-message';
 import { CustomAsYouType } from './formatter/custom-asyoutype';
 import WithRender from './phonefield.html?style=./phonefield.scss';
 
@@ -25,12 +23,6 @@ import WithRender from './phonefield.html?style=./phonefield.scss';
 
 @WithRender
 @Component({
-    modul: {
-        i18n: {
-            'fr': require('./phonefield.lang.fr.json'),
-            'en': require('./phonefield.lang.en.json')
-        }
-    },
     mixins: [
         InputState,
         InputWidth,
@@ -38,11 +30,9 @@ import WithRender from './phonefield.html?style=./phonefield.scss';
         InputManagement
     ],
     components: {
-        MInputStyle,
         MInputMask,
         MSelectVirtualScroll,
-        MSelectItem,
-        MValidationMessage
+        MSelectItem
     }
 })
 export class MPhonefield extends ModulVue {
@@ -91,7 +81,6 @@ export class MPhonefield extends ModulVue {
 
     public internalSpriteId: string;
 
-
     protected beforeMount(): void {
         // sprites-flags.svg is a very big file, this is why sprites should only be added to the DOM before this component is mounted.
         const sprites: string = require('../../assets/icons/sprites-flags.svg');
@@ -101,13 +90,9 @@ export class MPhonefield extends ModulVue {
                 svg.addExternalSprites(sprites, 'mflag');
             }
         } else {
-            this.internalSpriteId = svg.addInternalSprites(sprites);
-        }
-    }
-
-    destroyed(): void {
-        if (this.internalSpriteId) {
-            this.$svg.removeInternalSprite(this.internalSpriteId);
+            if (!document.getElementById('mflag-svg__flag-ae')) {
+                svg.addInternalSprites(sprites);
+            }
         }
     }
 

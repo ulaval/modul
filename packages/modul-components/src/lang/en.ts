@@ -37,6 +37,7 @@ const EnglishPlugin: PluginObject<any> = {
                 require('../components/organize-table-columns-modal/organize-table-columns-modal.lang.en.json'),
                 require('../components/organize-table-columns-modal/organize-table-columns/organize-table-columns.lang.en.json'),
                 require('../components/pagination/pagination.lang.en.json'),
+                require('../components/phonefield/phonefield.lang.en.json'),
                 require('../components/photo-editor/photo-editor.lang.en.json'),
                 require('../components/repeater/repeater.lang.en.json'),
                 require('../components/rich-text-editor/rich-text-editor.lang.en.json'),

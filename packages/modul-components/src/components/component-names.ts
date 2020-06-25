@@ -120,5 +120,4 @@ export const INTEGERFIELD_NAME: string = 'm-integerfield';
 export const SELECT_NAME: string = 'm-select';
 export const SELECT_VIRTUAL_SCROLL_NAME: string = 'm-select-virtual-scroll';
 export const SVG_NAME: string = 'm-svg';
-export const INPUT_MASK_NAME: string = 'm-input-mask';
-export const CALENDAR_BUTTON_NAME: string = 'm-calendar-button';
+

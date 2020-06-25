@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -8,10 +8,10 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import L10nPlugin, { MDecimalFormat } from '../../utils/l10n/l10n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { DECIMALFIELD_NAME, INPUT_MASK_NAME, INPUT_STYLE_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { DECIMALFIELD_NAME } from '../component-names';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
-import { MInputStyle } from '../input-style/input-style';
-import { MValidationMessage } from '../validation-message/validation-message';
+import InputStyle from '../input-style/input-style';
+import ValidationMesagePlugin from '../validation-message/validation-message';
 import WithRender from './decimalfield.html?style=./decimalfield.scss';
 
 @WithRender
@@ -23,9 +23,7 @@ import WithRender from './decimalfield.html?style=./decimalfield.scss';
         InputManagement
     ],
     components: {
-        [INPUT_MASK_NAME]: MInputMask,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [INPUT_STYLE_NAME]: MInputStyle
+        MInputMask
     }
 })
 export class MDecimalfield extends ModulVue {
@@ -46,7 +44,6 @@ export class MDecimalfield extends ModulVue {
     public forceRoundingFormat: boolean;
 
     protected id: string = `mDecimalfield-${uuid.generate()}`;
-    private text: string = '';
 
     private get hasDecimalfieldError(): boolean {
         return this.as<InputState>().hasError;
@@ -77,21 +74,12 @@ export class MDecimalfield extends ModulVue {
     }
 
     private get model(): string {
-        return this.text;
+        return (!this.value && this.value !== 0 ? '' : this.value).toString();
     }
 
     private set model(value: string) {
-        this.text = value;
         const valueAsNumber: number = Number.parseFloat(value);
         this.emitNewValue(valueAsNumber);
-    }
-
-    @Watch('value', { immediate: true })
-    public onValueChange(newValue: number): void {
-        const currentTextAsNumber: number = Number.parseFloat(this.text);
-        if (newValue !== currentTextAsNumber) {
-            this.text = (!newValue && newValue !== 0 ? '' : newValue).toString();
-        }
     }
 
     @Emit('input')
@@ -101,6 +89,8 @@ export class MDecimalfield extends ModulVue {
 const DecimalfieldPlugin: PluginObject<any> = {
     install(v): void {
         v.use(L10nPlugin);
+        v.use(InputStyle);
+        v.use(ValidationMesagePlugin);
         v.component(DECIMALFIELD_NAME, MDecimalfield);
     }
 };

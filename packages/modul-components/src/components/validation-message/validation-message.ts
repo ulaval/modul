@@ -3,17 +3,13 @@ import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
 import { ModulVue } from '../../utils/vue/vue';
-import { ACCORDION_TRANSITION_NAME, ICON_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import IconPlugin, { MIcon } from '../icon/icon';
-import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
+import { VALIDATION_MESSAGE_NAME } from '../component-names';
+import IconPlugin from '../icon/icon';
+import AccordionTransitionPlugin from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './validation-message.html?style=./validation-message.scss';
 
 @WithRender
 @Component({
-    components: {
-        [ICON_NAME]: MIcon,
-        [ACCORDION_TRANSITION_NAME]: MAccordionTransition
-    },
     mixins: [InputState]
 })
 export class MValidationMessage extends ModulVue {

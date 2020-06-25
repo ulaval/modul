@@ -7,8 +7,9 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width';
 import L10nPlugin, { MCurrency } from '../../utils/l10n/l10n';
 import { ModulVue } from '../../utils/vue/vue';
-import { DECIMALFIELD_NAME, MONEYFIELD_NAME } from '../component-names';
-import { MDecimalfield } from '../decimalfield/decimalfield';
+import { MONEYFIELD_NAME } from '../component-names';
+import DecimalfieldPlugin from '../decimalfield/decimalfield';
+import MessagePlugin from '../message/message';
 import WithRender from './moneyfield.html?style=./moneyfield.scss';
 
 
@@ -16,9 +17,6 @@ import WithRender from './moneyfield.html?style=./moneyfield.scss';
 @WithRender
 @Component({
     inheritAttrs: false,
-    components: {
-        [DECIMALFIELD_NAME]: MDecimalfield
-    },
     mixins: [
         InputState,
         InputWidth,
@@ -53,7 +51,9 @@ export class MMoneyfield extends ModulVue {
 
 const MoneyFieldPlugin: PluginObject<any> = {
     install(v): void {
+        v.use(MessagePlugin);
         v.use(L10nPlugin);
+        v.use(DecimalfieldPlugin);
         v.component(MONEYFIELD_NAME, MMoneyfield);
     }
 };

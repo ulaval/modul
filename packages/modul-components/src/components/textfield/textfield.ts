@@ -1,8 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import { TEXTAREA_AUTO_HEIGHT } from '../../directives/directive-names';
-import { MTextareaAutoHeight } from '../../directives/textarea-auto-height/textarea-auto-height';
+import TextareaAutoHeightPlugin from '../../directives/textarea-auto-height/textarea-auto-height';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement, InputManagementData } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -10,11 +9,11 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { changeSelection, InputSelectable } from '../../utils/input/input';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MCharacterCount } from '../character-count/character-count';
-import { CHARACTER_COUNT_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, TEXTFIELD_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import { MIconButton } from '../icon-button/icon-button';
-import { MInputStyle } from '../input-style/input-style';
-import { MValidationMessage } from '../validation-message/validation-message';
+import CharacterCountPlugin from '../character-count/character-count';
+import { TEXTFIELD_NAME } from '../component-names';
+import IconButtonPlugin from '../icon-button/icon-button';
+import InputStyle from '../input-style/input-style';
+import ValidationMesagePlugin from '../validation-message/validation-message';
 import WithRender from './textfield.html?style=./textfield.scss';
 
 
@@ -32,15 +31,6 @@ const ICON_NAME_PASSWORD_HIDDEN: string = 'm-svg__hide';
 
 @WithRender
 @Component({
-    components: {
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [CHARACTER_COUNT_NAME]: MCharacterCount,
-        [ICON_BUTTON_NAME]: MIconButton
-    },
-    directives: {
-        [TEXTAREA_AUTO_HEIGHT]: MTextareaAutoHeight
-    },
     mixins: [
         InputState,
         InputManagement,
@@ -179,6 +169,11 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
 
 const TextfieldPlugin: PluginObject<any> = {
     install(v, options): void {
+        v.use(InputStyle);
+        v.use(ValidationMesagePlugin);
+        v.use(TextareaAutoHeightPlugin);
+        v.use(CharacterCountPlugin);
+        v.use(IconButtonPlugin);
         v.component(TEXTFIELD_NAME, MTextfield);
     }
 };

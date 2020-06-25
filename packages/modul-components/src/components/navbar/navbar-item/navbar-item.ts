@@ -10,8 +10,7 @@ import WithRender from './navbar-item.html?style=./navbar-item.scss';
 const FAKE_SELECTED_CLASS: string = 'm--is-fake-selected';
 
 @WithRender
-@Component({
-})
+@Component
 export class MNavbarItem extends ModulVue {
 
     @Prop()
