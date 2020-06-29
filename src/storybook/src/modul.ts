@@ -1,6 +1,7 @@
 import AccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import AccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import AddPlugin from '@ulaval/modul-components/dist/components/add/add';
+import AutoHorizontalScrollPlugin from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import AutoCompletePlugin from '@ulaval/modul-components/dist/components/autocomplete/autocomplete';
 import AvatarPlugin from '@ulaval/modul-components/dist/components/avatar/avatar';
 import BreadcrumbsPlugin from '@ulaval/modul-components/dist/components/breadcrumbs/breadcrumbs';
@@ -92,6 +93,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(DefaultSpritesPlugin);
 
         // modul-components
+        Vue.use(AutoHorizontalScrollPlugin);
         Vue.use(ButtonPlugin);
         Vue.use(I18nPlugin);
         Vue.use(IconPlugin);

@@ -11,6 +11,7 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../components/accordion-group/accordion-group.lang.fr.json'),
                 require('../components/address/address-editor/address-editor.lang.fr.json'),
                 require('../components/address/address-lookup-field/address-lookup-field.lang.fr.json'),
+                require('../components/auto-horizontal-scroll/auto-horizontal-scroll.lang.fr.json'),
                 require('../components/calendar/calendar.lang.fr.json'),
                 require('../components/chip/chip.lang.fr.json'),
                 require('../components/copy-to-clipboard/copy-to-clipboard.lang.fr.json'),
