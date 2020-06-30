@@ -1,13 +1,13 @@
-import {
-    MButton,
-    MButtonSkin
-} from '@ulaval/modul-components/dist/components/button/button';
 import { PluginObject } from 'vue';
 import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { EMPTY_AREA_NAME } from '../component-names';
 import { MAdd } from './../add/add';
+import {
+    MButton,
+    MButtonSkin
+} from './../button/button';
 import { MSvg } from './../svg/svg';
 import WithRender from './empty-area.html?style=./empty-area.scss';
 
