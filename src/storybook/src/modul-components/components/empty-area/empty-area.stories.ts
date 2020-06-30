@@ -14,14 +14,6 @@ export default {
 };
 
 export const defaultStory = () => ({
-    template: `<${EMPTY_AREA_NAME} />`
-});
-
-defaultStory.story = {
-    name: 'default'
-};
-
-export const Sandbox: () => Component = (): Component => ({
     methods: actions('emitButtonClick'),
     beforeCreate() {
         importAllSvg();
@@ -56,6 +48,11 @@ export const Sandbox: () => Component = (): Component => ({
         @button-click="emitButtonClick"
     />`
 });
+
+defaultStory.story = {
+    name: 'Sandbox'
+};
+
 
 export const PropSvgName: () => Component = (): Component => ({
     beforeCreate() {
