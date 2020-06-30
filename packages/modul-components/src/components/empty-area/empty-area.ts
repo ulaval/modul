@@ -30,7 +30,7 @@ default class MEmptyArea extends Vue {
     @Prop({
         default: MEmptyAreaButtonType.AddButton,
         validator: (value: MEmptyAreaButtonType) =>
-            Enums.toValueArray(MEmptyAreaButtonType).includes(value),
+            Enums.toValueArray(MEmptyAreaButtonType).includes(value)
     })
     public readonly buttonType!: MEmptyAreaButtonType;
 
