@@ -61,7 +61,7 @@ const TEMPLATE = (
             default: boolean('Slot default', true)
         }
     },
-    methods: actions('emitClickPreviousButton', 'emitClickNextButton'),
+    methods: actions('emitPreviousButtonClick', 'emitNextButtonClick'),
     data: () => ({
         currentScrollLeft: 60
     }),
@@ -77,8 +77,8 @@ const TEMPLATE = (
         :current-scroll-left.sync="currentScrollLeft"
         :gradient-skin="gradientSkin"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
-        @click-previous-button="emitClickPreviousButton"
-        @click-next-button="emitClickNextButton"
+        @previous-button-click="emitPreviousButtonClick"
+        @next-button-click="emitNextButtonClick"
     >
         <div v-if="slotDefault"
             style="background: #1f1f1f; padding: 32px; color: #fff; width: 100%;"

@@ -20,7 +20,7 @@
                            :ripple="false"
                            :title="textPreviousButton"
                            icon-name="m-svg__chevron--left"
-                           @click="emitClickPreviousButton($event)" />
+                           @click="emitPreviousButtonClick($event)" />
         </div>
     </transition>
     <transition name="m--is">
@@ -32,7 +32,7 @@
                            :ripple="false"
                            :title="textNextButton"
                            icon-name="m-svg__chevron--right"
-                           @click="emitClickNextButton($event)" />
+                           @click="emitNextButtonClick($event)" />
         </div>
     </transition>
     <div ref="body"

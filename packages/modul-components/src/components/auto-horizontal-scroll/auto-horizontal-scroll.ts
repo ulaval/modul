@@ -5,7 +5,7 @@ import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
 import { AUTO_HORIZONTAL_SCROLL } from '../component-names';
-import IconButtonPlugin, { MIconButtonSkin } from '../icon-button/icon-button';
+import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
 
 export enum MAutoHorizontalScrollGradientSkin {
@@ -24,6 +24,7 @@ export interface MAutoHorizontalScrollResizeProperties {
 
 @WithRender
 @Component({
+    components: { MIconButton },
     mixins: [ElementQueries]
 })
 export class MAutoHorizontalScroll extends ModulVue {
@@ -116,11 +117,11 @@ export class MAutoHorizontalScroll extends ModulVue {
     @Emit('update:currentScrollLeft')
     public emitUpdateCurrentScrollLeft(_currentScrollLeft: number): void { }
 
-    @Emit('click-previous-button')
-    public emitClickPreviousButton(_event: MouseEvent): void { }
+    @Emit('previous-button-click')
+    public emitPreviousButtonClick(_event: MouseEvent): void { }
 
-    @Emit('click-next-button')
-    public emitClickNextButton(_event: MouseEvent): void { }
+    @Emit('next-button-click')
+    public emitNextButtonClick(_event: MouseEvent): void { }
 
     @Watch('leftGradientActive')
     public onLeftGradientActiveChange(): void {
@@ -333,7 +334,6 @@ export class MAutoHorizontalScroll extends ModulVue {
 }
 const AutoHorizontalScrollPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconButtonPlugin);
         v.component(AUTO_HORIZONTAL_SCROLL, MAutoHorizontalScroll);
     }
 };

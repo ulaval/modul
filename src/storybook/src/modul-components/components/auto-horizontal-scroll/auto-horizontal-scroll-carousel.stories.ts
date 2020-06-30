@@ -72,8 +72,8 @@ const CAROUSEL_TEMPLATE = (
         :gradient-skin="gradientSkin"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
         style="background: #f4f4f4;"
-        @click-previous-button="onPreviousButtonClick()"
-        @click-next-button="onNextButtonClick()"
+        @previous-button-click="onPreviousButtonClick()"
+        @next-button-click="onNextButtonClick()"
     >
         <div style="display: flex; padding: 32px 16px;">
             <article

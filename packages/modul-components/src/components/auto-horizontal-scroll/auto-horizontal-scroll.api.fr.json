@@ -33,6 +33,24 @@
         "displayHorizontalScrollbar": {
             "description": "Affiche la barre de défilement horizontal au bas du composant lorsque le défilement est possible. Cette barre de défilement permet d'indiquer aux usagers la quantité d'information contenu dans le composant."
         }
-
+    },
+    "slots": {
+        "default": {
+            "description": ""
+        }
+    },
+    "events": {
+        "update:currentScrollLeft": {
+            "description": "Lancé lorsque la position du défilement horizontal change."
+        },
+        "resize": {
+            "description": "Lancé lorsque le composant est redimensionné."
+        },
+        "previousButtonClick": {
+            "description": "Lancé lorsque le bouton précédent est cliqué."
+        },
+        "nextButtonClick": {
+            "description": "Lancé lorsque le bouton suivant est cliqué."
+        }
     }
 }
