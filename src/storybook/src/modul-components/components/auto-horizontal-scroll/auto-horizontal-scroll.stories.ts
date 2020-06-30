@@ -18,7 +18,7 @@ const TEMPLATE = (
     _textPreviousButton: string = 'Previous',
     _textNextButton: string = 'Next',
     _dragActive: boolean = true,
-    _displayHorizontalScrollbar: boolean = true,
+    _displayHorizontalScrollbar: boolean = true
 ) => ({
     props: {
         minWidth: {
