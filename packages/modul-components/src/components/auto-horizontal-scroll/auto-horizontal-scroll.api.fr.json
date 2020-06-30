@@ -6,6 +6,9 @@
         "currentScrollLeft": {
             "description": "Position courante de la barre de défilement horizontal. Permet de se déplacer de droite à gauche en modifiant la valeur de cette propriété lorsque le défilement horizontal est possible."
         },
+        "dragActive": {
+            "description": "Le contenu du composant glisse de gauche à droite en suivant la position de la souris lorsque l'événement mousedown est appelé et que le défilement est possible."
+        },
         "gradientSkin": {
             "description": "Apparence visuelle des dégradés positionnés à droite et à gauche du composant lorsque le défilement horizontal est possible."
         },

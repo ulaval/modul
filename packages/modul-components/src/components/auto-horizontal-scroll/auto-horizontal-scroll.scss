@@ -20,8 +20,8 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
             height: 10px;
         }
 
-        &.m--is-grabbing {
-            cursor: grabbing;
+        &.m--is-dragging {
+            cursor: dragging;
         }
     }
 

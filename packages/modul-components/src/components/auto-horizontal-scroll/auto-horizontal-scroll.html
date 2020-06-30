@@ -38,7 +38,7 @@
     <div ref="body"
          class="m-auto-horizontal-scroll__body"
          :class="{
-                'm--is-grabbing': isGrabbing && hasHorizontalScroll,
+                'm--is-dragging': isDragging && hasHorizontalScroll,
             }"
          @scroll="onScroll()"
          @mousedown="onMousedown($event)"

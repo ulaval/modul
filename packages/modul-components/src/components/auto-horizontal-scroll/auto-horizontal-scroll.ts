@@ -40,6 +40,11 @@ export class MAutoHorizontalScroll extends ModulVue {
     public readonly currentScrollLeft!: number;
 
     @Prop({
+        default: true
+    })
+    public readonly dragActive!: boolean;
+
+    @Prop({
         default: MAutoHorizontalScrollGradientSkin.WhiteBackground,
         validator: (value: MAutoHorizontalScrollGradientSkin) =>
             Enums.toValueArray(
@@ -96,9 +101,9 @@ export class MAutoHorizontalScroll extends ModulVue {
     public scrollLeftCounter: number = 0;
     public scrollAnimationActive: boolean = false;
     public scrollAnimationInterval: any;
-    public isGrabbing: boolean = false;
-    public startXGrabbing: number = 0;
-    public scrollLeftGrabbing: number = 0;
+    public isDragging: boolean = false;
+    public startXDragging: number = 0;
+    public scrollLeftDragging: number = 0;
     private observer: MutationObserver = new MutationObserver(() => {
         this.resizeComponent();
     });
@@ -244,27 +249,27 @@ export class MAutoHorizontalScroll extends ModulVue {
     }
 
     public onMousedown(e: MouseEvent): void {
-        this.isGrabbing = true;
-        this.startXGrabbing = e.pageX - this.$refs.body.offsetLeft;
-        this.scrollLeftGrabbing = this.$refs.body.scrollLeft;
+        this.isDragging = this.dragActive;
+        this.startXDragging = e.pageX - this.$refs.body.offsetLeft;
+        this.scrollLeftDragging = this.$refs.body.scrollLeft;
     }
 
     public onMouseleave(): void {
-        this.isGrabbing = false;
+        this.isDragging = false;
     }
 
     public onMouseup(): void {
-        this.isGrabbing = false;
+        this.isDragging = false;
     }
 
     public onMousemove(e: MouseEvent): void {
-        if (!this.isGrabbing) {
+        if (!this.isDragging) {
             return;
         }
         e.preventDefault();
         const x: number = e.pageX - this.$refs.body.offsetLeft;
-        const walk: number = (x - this.startXGrabbing) * 2;
-        this.$refs.body.scrollLeft = this.scrollLeftGrabbing - walk;
+        const walk: number = (x - this.startXDragging) * 2;
+        this.$refs.body.scrollLeft = this.scrollLeftDragging - walk;
     }
 
     protected mounted(): void {
