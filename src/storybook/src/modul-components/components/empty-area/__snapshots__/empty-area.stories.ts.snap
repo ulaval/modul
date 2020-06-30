@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-empty-area Prop Button Type 1`] = `
+<div>
+  <div
+    class="m-empty-area"
+  >
+    <button
+      class="m-button m--is-skin-secondary"
+      type="button"
+    >
+      <!---->
+       
+      <!---->
+       
+      <span
+        class="m-button__text"
+      >
+        
+            Prop button-type = button
+         
+        <!---->
+      </span>
+       
+      <!---->
+       
+      <!---->
+    </button>
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-empty-area m-u--margin-top--l"
+  >
+    <a
+      class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+      href="#"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-link__icon"
+        height="24px"
+        width="24px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+       
+      <span
+        class="m-link__text"
+      >
+        
+            Prop button-type = add-button
+        
+      </span>
+       
+      <!---->
+    </a>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-empty-area Prop Svg Name 1`] = `
+<div
+  class="m-empty-area"
+>
+  <!---->
+   
+  <div
+    class="m-empty-area__icon-wrap"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-empty-area Prop Text 1`] = `
+<div
+  class="m-empty-area"
+>
+  <!---->
+   
+  <div
+    class="m-empty-area__icon-wrap"
+  >
+    <!---->
+     
+    <p
+      class="m-empty-area__icon-text"
+    >
+      
+            Prop text
+        
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-empty-area Prop Text Button 1`] = `
+<div
+  class="m-empty-area"
+>
+  <a
+    class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+    href="#"
+    role="button"
+    tabindex="0"
+  >
+    <svg
+      aria-hidden="true"
+      class="m-icon m-link__icon"
+      height="24px"
+      width="24px"
+    >
+      <!---->
+       
+      <use
+        aria-hidden="true"
+        class=""
+      />
+    </svg>
+     
+    <span
+      class="m-link__text"
+    >
+      
+            Prop text-button
+        
+    </span>
+     
+    <!---->
+  </a>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots modul-components|m-empty-area Sandbox 1`] = `
+<div
+  class="m-empty-area"
+>
+  <a
+    class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+    href="#"
+    role="button"
+    tabindex="0"
+  >
+    <svg
+      aria-hidden="true"
+      class="m-icon m-link__icon"
+      height="24px"
+      width="24px"
+    >
+      <!---->
+       
+      <use
+        aria-hidden="true"
+        class=""
+      />
+    </svg>
+     
+    <span
+      class="m-link__text"
+    >
+      
+            Ajouter
+        
+    </span>
+     
+    <!---->
+  </a>
+   
+  <div
+    class="m-empty-area__icon-wrap"
+  >
+    <!---->
+     
+    <p
+      class="m-empty-area__icon-text"
+    >
+      
+            Aucun contenu disponible
+        
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-empty-area default 1`] = `
+<div
+  class="m-empty-area"
+>
+  <!---->
+   
+  <!---->
+</div>
+`;

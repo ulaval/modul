@@ -1,0 +1,25 @@
+<div class="m-empty-area">
+    <template v-if="textButton">
+        <m-add v-if="isButtonTypeAdd"
+               @click="emitButtonClick()">
+            {{ textButton }}
+        </m-add>
+        <m-button v-else
+                  :skin="buttonSkin"
+                  @click="emitButtonClick()">
+            {{ textButton }}
+        </m-button>
+    </template>
+    <div v-if="svgName || text"
+         class="m-empty-area__icon-wrap">
+        <m-svg v-if="svgName"
+               class="m-empty-area__icon"
+               :name="svgName"
+               width="60px"
+               height="60px" />
+        <p v-if="text"
+           class="m-empty-area__icon-text">
+            {{ text }}
+        </p>
+    </div>
+</div>

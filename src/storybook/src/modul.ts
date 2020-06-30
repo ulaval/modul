@@ -14,6 +14,7 @@ import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/date
 import DecimalfieldPlugin from '@ulaval/modul-components/dist/components/decimalfield/decimalfield';
 import DialogPlugin from '@ulaval/modul-components/dist/components/dialog/dialog';
 import DropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
+import EmptyAreaPlugin from '@ulaval/modul-components/dist/components/empty-area/empty-area';
 import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
 import FileSelectPlugin from '@ulaval/modul-components/dist/components/file-select/file-select';
 import FileUploadPlugin from '@ulaval/modul-components/dist/components/file-upload/file-upload';
@@ -112,6 +113,7 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(AccordionGroupPlugin);
         Vue.use(DaterangepickerPlugin);
         Vue.use(DialogPlugin);
+        Vue.use(EmptyAreaPlugin);
         Vue.use(FileUploadPlugin);
         Vue.use(FileSelectPlugin);
         Vue.use(IconFilePlugin);

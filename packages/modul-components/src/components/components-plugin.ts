@@ -17,6 +17,7 @@ import DaterangepickerPlugin from './daterangepicker/daterangepicker';
 import DecimalfieldPlugin from './decimalfield/decimalfield';
 import DialogPlugin from './dialog/dialog';
 import DropdownPlugin from './dropdown/dropdown';
+import EmptyAreaPlugin from './empty-area/empty-area';
 import ErrorAccessDeniedPlugin from './error-pages/error-access-denied/error-access-denied';
 import ErrorBrowserNotSupported from './error-pages/error-browser-not-supported/error-browser-not-supported';
 import ErrorConfigNotSupportedPlugin from './error-pages/error-config-not-supported/error-config-not-supported';
@@ -118,6 +119,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ListItemPlugin);
         Vue.use(MessagePlugin);
         Vue.use(DialogPlugin);
+        Vue.use(EmptyAreaPlugin);
         Vue.use(NavbarPlugin);
         Vue.use(OpacityTransitionPlugin);
         Vue.use(OptionPlugin);
