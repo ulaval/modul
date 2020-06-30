@@ -52,6 +52,14 @@ const CAROUSEL_TEMPLATE = (
             const boxFullWidth: number = _this.crouselItemSize + _this.crouselItemSpacing;
             return currentScrollLeft >= (((boxIndex - 1) * boxFullWidth) - 160)
                 && currentScrollLeft < (((boxIndex - 1) * boxFullWidth) + boxFullWidth - 160);
+        },
+        onPreviousButtonClick(): void {
+            const _this: any = this;
+            _this.currentScrollLeft = ((_this.currentScrollLeft - 216) <= 0) ? 0 : _this.currentScrollLeft - 216;
+        },
+        onNextButtonClick(): void {
+            const _this: any = this;
+            _this.currentScrollLeft = _this.currentScrollLeft + 216;
         }
     },
     template: `<${AUTO_HORIZONTAL_SCROLL}
@@ -64,7 +72,9 @@ const CAROUSEL_TEMPLATE = (
         :gradient-skin="gradientSkin"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
         style="background: #f4f4f4;"
-        >
+        @click-previous-button="onPreviousButtonClick()"
+        @click-next-button="onNextButtonClick()"
+    >
         <div style="display: flex; padding: 32px 16px;">
             <article
                 v-for="index in nbItem"
