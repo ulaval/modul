@@ -3,8 +3,8 @@ import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
 import uuid from '../../utils/uuid/uuid';
-import { RADIO_GROUP_NAME } from '../component-names';
-import InputGroupPlugin, { MMInputGroupValidationMessagePosition } from '../input-group/input-group';
+import { INPUT_GROUP_NAME, RADIO_GROUP_NAME } from '../component-names';
+import { MInputGroup, MMInputGroupValidationMessagePosition } from '../input-group/input-group';
 import RadioPlugin, { BaseRadioGroup, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
 import WithRender from './radio-group.html?style=./radio-group.scss';
 
@@ -12,6 +12,9 @@ const FOCUS_OUT_TIMEOUT_MS: number = 200;
 
 @WithRender
 @Component({
+    components: {
+        [INPUT_GROUP_NAME]: MInputGroup
+    },
     mixins: [InputState]
 })
 export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
@@ -173,9 +176,7 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
 
 const RadioGroupPlugin: PluginObject<any> = {
     install(v, options): void {
-
         v.use(RadioPlugin);
-        v.use(InputGroupPlugin);
         v.component(RADIO_GROUP_NAME, MRadioGroup);
     }
 };

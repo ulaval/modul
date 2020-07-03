@@ -1,16 +1,21 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-
 import { FormatMode } from '../../utils/i18n/i18n';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin, { MButtonSkin } from '../button/button';
-import { SHOW_MORE_NAME } from '../component-names';
-import ProgressPlugin, { MProgressSkin } from '../progress/progress';
+import { MButton, MButtonSkin } from '../button/button';
+import { BUTTON_NAME, PROGRESS_NAME, SHOW_MORE_NAME } from '../component-names';
+import { MProgress, MProgressSkin } from '../progress/progress';
 import WithRender from './show-more.html?style=./show-more.scss';
 
+
 @WithRender
-@Component
+@Component({
+    components: {
+        [BUTTON_NAME]: MButton,
+        [PROGRESS_NAME]: MProgress
+    }
+})
 export class MShowMore extends ModulVue {
     @Prop({ default: 0 })
     nbVisible: number;
@@ -60,8 +65,6 @@ export class MShowMore extends ModulVue {
 
 const ShowMorePlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(ButtonPlugin);
-        v.use(ProgressPlugin);
         v.component(SHOW_MORE_NAME, MShowMore);
     }
 };
