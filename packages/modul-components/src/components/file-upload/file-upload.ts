@@ -1,24 +1,26 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import BadgePlugin, { MBadgeState } from '../../directives/badge/badge';
-import FileDropPlugin from '../../directives/file-drop/file-drop';
-import FileSizeFilterPlugin from '../../filters/filesize/filesize';
+import { MBadgeDirective, MBadgeState } from '../../directives/badge/badge';
+import { BADGE_NAME, FILE_DROP_NAME } from '../../directives/directive-names';
+import { MFileDropDirective } from '../../directives/file-drop/file-drop';
+import { fileSize } from '../../filters/filesize/filesize';
+import { FILESIZE_NAME } from '../../filters/filter-names';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import FilePlugin, { DEFAULT_STORE_NAME, MFile, MFileRejectionCause, MFileStatus } from '../../utils/file/file';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin from '../button/button';
-import { FILE_UPLOAD_NAME } from '../component-names';
-import FileSelectPlugin from '../file-select/file-select';
-import I18nPlugin from '../i18n/i18n';
-import IconButtonPlugin from '../icon-button/icon-button';
-import IconPlugin from '../icon/icon';
-import LinkPlugin from '../link/link';
-import MessagePlugin from '../message/message';
-import ModalPlugin, { MModal } from '../modal/modal';
-import ProgressPlugin, { MProgressState } from '../progress/progress';
+import { MButton } from '../button/button';
+import { BUTTON_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_FILE_NAME, LINK_NAME, MESSAGE_NAME, MODAL_NAME, PROGRESS_NAME } from '../component-names';
+import { MFileSelect } from '../file-select/file-select';
+import { MI18n } from '../i18n/i18n';
+import { MIconButton } from '../icon-button/icon-button';
+import { MIconFile } from '../icon-file/icon-file';
+import { MLink } from '../link/link';
+import { MMessage } from '../message/message';
+import { MModal } from '../modal/modal';
+import { MProgress, MProgressState } from '../progress/progress';
 import WithRender from './file-upload.html?style=./file-upload.scss';
 
 const COMPLETED_FILES_VISUAL_HINT_DELAY: number = 1000;
@@ -48,6 +50,25 @@ const defaultDragEvent: (e: DragEvent) => void = (e: DragEvent) => {
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton,
+        [MODAL_NAME]: MModal,
+        [MESSAGE_NAME]: MMessage,
+        [I18N_NAME]: MI18n,
+        [FILE_SELECT_NAME]: MFileSelect,
+        [ICON_FILE_NAME]: MIconFile,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [PROGRESS_NAME]: MProgress,
+        [LINK_NAME]: MLink
+    },
+    directives: {
+        [FILE_DROP_NAME]: MFileDropDirective,
+        [BADGE_NAME]: MBadgeDirective
+
+    },
+    filters: {
+        [FILESIZE_NAME]: fileSize
+    },
     mixins: [
         MediaQueries
     ]
@@ -157,7 +178,10 @@ export class MFileUpload extends ModulVue {
         }, 0);
 
         if (nbNewRejection > 0) {
-            this.$refs.modal.$refs.body.scrollTop = 0;
+            if (this.$refs.modal && this.$refs.modal.$refs) {
+                this.$refs.modal.$refs.body.scrollTop = 0;
+            }
+
             // TODO Change function to have a smooth scroll when it will work on a diferent element than the body of the page
             // ScrollTo.startScroll(bodyRef, 0, ScrollToDuration.Regular);
         }
@@ -358,19 +382,7 @@ export class MFileUpload extends ModulVue {
 const FileUploadPlugin: PluginObject<any> = {
     install(v, options): void {
         v.use(FilePlugin);
-        v.use(FileDropPlugin);
-        v.use(FileSelectPlugin);
-        v.use(ModalPlugin);
-        v.use(ProgressPlugin);
-        v.use(IconPlugin);
-        v.use(I18nPlugin);
-        v.use(IconButtonPlugin);
-        v.use(ButtonPlugin);
-        v.use(MessagePlugin);
-        v.use(LinkPlugin);
         v.use(MediaQueriesPlugin);
-        v.use(FileSizeFilterPlugin);
-        v.use(BadgePlugin);
         v.component(FILE_UPLOAD_NAME, MFileUpload);
     }
 };

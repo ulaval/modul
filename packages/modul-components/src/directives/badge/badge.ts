@@ -110,12 +110,15 @@ const buildBadge: (element, binding, vnode) => void = (element, binding, vnode) 
 
     Vue.nextTick(() => {
         const component: Vue = new MyComponent().$mount();
-        (component.$el as HTMLElement).style.color = BADGE_COLOR[binding.value.state];
+        if ((component.$el as HTMLElement).style) {
+            (component.$el as HTMLElement).style.color = BADGE_COLOR[binding.value.state];
+        }
+
         element.appendChild(component.$el);
     });
 };
 
-const MBadgeDirective: DirectiveOptions = {
+export const MBadgeDirective: DirectiveOptions = {
     inserted(
         element: HTMLElement,
         binding: VNodeDirective,
