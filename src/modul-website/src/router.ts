@@ -5,6 +5,7 @@ import { VueRouter } from 'vue-router/types/router';
 import { ComponentMeta } from './content/components.meta.loader';
 import { ModulMeta } from './modul-meta';
 import { MWComponentsPage } from './pages/components/components';
+import { MWDocumentationPage } from './pages/documentation/documentation';
 import { MWHomePage } from './pages/home/home';
 import { MWPhilosophyPage } from './pages/philosophy/philosophy';
 import { MWStandardsPage } from './pages/standards/standards';
@@ -72,6 +73,13 @@ export const ROUTER_OVERVIEW: string = 'router:overview';
 export const ROUTER_CODE: string = 'router:code';
 export const ROUTER_PHILOSOPHY: string = 'router:philosophy';
 export const ROUTER_STANDARDS: string = 'router:standards';
+
+export const ROUTER_DOCUMENTATION: string = 'router:documentation';
+export const ROUTER_DOCUMENTATION_GET_STARTED: string = 'router:documentation-get-started';
+export const ROUTER_DOCUMENTATION_SCSS_FRAMEWORK: string = 'router:documentation-scss-framework';
+export const ROUTER_DOCUMENTATION_ICON_SYSTEM: string = 'router:documentation-icon-system';
+export const ROUTER_DOCUMENTATION_I18N: string = 'router:documentation-i18n';
+export const ROUTER_DOCUMENTATION_FORM_SERVICE: string = 'router:documentation-form-service';
 
 export const ROUTER_STANDARDS_UI: string = 'router:standards-ui';
 export const ROUTER_STANDARDS_UI_COLORS: string = 'router:standards-ui-colors';
@@ -350,6 +358,62 @@ const routerFactory: RouterFactoryFn = (meta: ModulMeta) => {
                 meta: {
                     title: i18n.translate('website:accessibility-standards-implementation'),
                     markupFileName: 'standards/accessibility-standards/accessibility-standards.implementation.fr.md'
+                }
+            }
+        ]
+    });
+
+    pushRoute(ROUTER_DOCUMENTATION, modulRoutes, {
+        path: '/' + i18n.translate(ROUTER_DOCUMENTATION),
+        component: MWDocumentationPage,
+        children: [
+            {
+                path: '',
+                redirect: `${i18n.translate(ROUTER_DOCUMENTATION_GET_STARTED)}`
+            },
+            {
+                name: ROUTER_DOCUMENTATION_GET_STARTED,
+                path: `${i18n.translate(ROUTER_DOCUMENTATION_GET_STARTED)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:documentation-get-started'),
+                    markupFileName: 'documentation/documentation-get-started.fr.md'
+                }
+            },
+            {
+                name: ROUTER_DOCUMENTATION_SCSS_FRAMEWORK,
+                path: `${i18n.translate(ROUTER_DOCUMENTATION_SCSS_FRAMEWORK)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:documentation-scss-framework'),
+                    markupFileName: 'documentation/documentation-scss-framework.fr.md'
+                }
+            },
+            {
+                name: ROUTER_DOCUMENTATION_ICON_SYSTEM,
+                path: `${i18n.translate(ROUTER_DOCUMENTATION_ICON_SYSTEM)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:documentation-icon-system'),
+                    markupFileName: 'documentation/documentation-icon-system.fr.md'
+                }
+            },
+            {
+                name: ROUTER_DOCUMENTATION_I18N,
+                path: `${i18n.translate(ROUTER_DOCUMENTATION_I18N)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:documentation-i18n'),
+                    markupFileName: 'documentation/documentation-i18n.fr.md'
+                }
+            },
+            {
+                name: ROUTER_DOCUMENTATION_FORM_SERVICE,
+                path: `${i18n.translate(ROUTER_DOCUMENTATION_FORM_SERVICE)}`,
+                component: MWMarkdownPage,
+                meta: {
+                    title: i18n.translate('website:documentation-form_service'),
+                    markupFileName: 'documentation/documentation-form_service.fr.md'
                 }
             }
         ]

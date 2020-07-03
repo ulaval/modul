@@ -4,78 +4,12 @@
 
 [![MODUL](https://ulaval.github.io/public/modul_logo_350.png "MODUL")](https://ulaval.github.io/modul)
 
+
 A set of VueJS components for MOD**UL** web applications.
 
 ## Documentation
 
-[Check out our documentation](https://ulaval.github.io/modul)
-
-## Getting started to use MODUL in your project
-
-### Quick start guide (using Vue CLI)
-
-MODUL can be used in any Vue CLI 3+ project, the first step is to install the dependencies in your project
-
-```bash
-npm install @ulaval/modul-components --save
-```
-
-- In you main.ts file, import the modul.min.css and install the ModulComponentPlugin and the FrenchPlugin
-
-```typescript
-import { ModulComponentPlugin, FrenchPlugin } from '@ulaval/modul-components';
-import '@ulaval/modul-components/dist/modul.min.css';
-
-Vue.use(ModulComponentPlugin);
-Vue.use(FrenchPlugin);
-```
-
-- In the App.vue file, import the scss framework main file and add overrides for fonts
-
-
-```scss
-
-<style lang="scss">
-// modul sass overrides here.
-
-$m-font-path: '~@ulaval/modul-components/dist/assets/fonts/'; //this is required.
-
-@import "~@ulaval/modul-components/dist/styles/main.scss";
-
-</style>
-
-```
-- Add the "m-u--app-body" class to the main application container
-```html
-<template>
-  <div id="app" class="m-u--app-body">
-      ...
-  </div>
-</template>
-
-```
-
-MODUL components are now accessible globaly in all you VUE template
-
-```html
-    <m-button icon-name="m-svg__close-clear">A MODUL Button</m-button>
-```
-
-MODUL services are accessible via [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation) of the vue instance
-
-```typescript
-@Component
-export default class HelloWorld extends Vue {
-  public openToast(): void {
-    this.$toast.show({text: 'Hello World'});
-  }
-}
-
-```
-
-### Complexe usage
-
-If you need a more advanced solution you can refer to [this repository](https://github.com/ulaval/modul-typescript-template) for a template of a complete MODUL project.
+[Check out our documentation (in french)](https://ulaval.github.io/modul)
 
 ## Contributing to MODUL
 
