@@ -2,7 +2,6 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { CHIP_ADD_NAME, CHIP_DELETE_NAME, CHIP_NAME } from '../component-names';
-import IconButtonPlugin from '../icon-button/icon-button';
 import MChipAdd from './chip-add/chip-add';
 import MChipDelete from './chip-delete/chip-delete';
 import WithRender from './chip.html';
@@ -65,7 +64,6 @@ export class MChip extends Vue {
 const MChipPlugin: PluginObject<any> = {
     install(v, options): void {
         v.prototype.$log.debug(CHIP_NAME, 'plugin.install');
-        v.use(IconButtonPlugin);
         v.component(CHIP_NAME, MChip);
     }
 };

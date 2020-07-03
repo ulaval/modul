@@ -2,8 +2,8 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
-import { ICON_BUTTON_NAME } from '../component-names';
-import IconPlugin from '../icon/icon';
+import { ICON_BUTTON_NAME, ICON_NAME } from '../component-names';
+import IconPlugin, { MIcon } from '../icon/icon';
 import WithRender from './icon-button.html?style=./icon-button.scss';
 
 export enum MIconButtonSkin {
@@ -16,7 +16,11 @@ export enum MIconButtonSkin {
 }
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ICON_NAME]: MIcon
+    }
+})
 export class MIconButton extends Vue {
     @Prop({
         default: MIconButtonSkin.Light,

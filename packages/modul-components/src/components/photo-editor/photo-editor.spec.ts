@@ -2,7 +2,6 @@ import { createLocalVue, mount, RefSelector, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import { createMockFile } from '../../../tests/helpers/file';
 import { addMessages } from '../../../tests/helpers/lang';
-import { renderComponent } from '../../../tests/helpers/render';
 import FilePlugin from '../../utils/file/file';
 import { BUTTON_NAME, FILE_SELECT_NAME, ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
 import { CROP_IMAGE_NAME, IMAGE_DISPLAYER_NAME } from './component-names';
@@ -85,11 +84,6 @@ describe('MCropImage', () => {
         beforeEach(() => {
             wrapper.vm.photoEditorMode = MPhotoEditorMode.CROP;
         });
-
-        it(`should render correctly`, () => {
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-
         it('should manage the event "image-cropped"', async () => {
             wrapper.setMethods({ saveImage: jest.fn() });
 
@@ -144,11 +138,6 @@ describe('MCropImage', () => {
     });
 
     describe(`when ${MPhotoEditorMode.SELECT}`, () => {
-
-        it(`should render correctly`, () => {
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-
         it('should manage the event "file-selected"', async () => {
             wrapper.setMethods({ replaceImage: jest.fn() });
 

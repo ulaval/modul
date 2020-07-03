@@ -1,17 +1,12 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import { ModulVue } from '../../utils/vue/vue';
-import CheckboxPlugin from '../checkbox/checkbox';
-import { TREE_ICON_NAME, TREE_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import IconFilePlugin from '../icon-file/icon-file';
-import IconPlugin from '../icon/icon';
-import MessagePlugin from '../message/message';
-import PlusPlugin from '../plus/plus';
-import AccordionTransitionPlugin from '../transitions/accordion-transition/accordion-transition';
+import { MESSAGE_NAME, TREE_NAME } from '../component-names';
+import { MMessage } from '../message/message';
 import { TREE_NODE_NAME } from './component-names';
-import { MTreeIcon } from './tree-icon/tree-icon';
 import { MTreeNode } from './tree-node/tree-node';
 import WithRender from './tree.html?style=./tree.scss';
 export interface TreeNode {
@@ -41,7 +36,11 @@ export enum MCheckboxes {
 @WithRender
 @Component({
     components: {
-        [TREE_NODE_NAME]: MTreeNode
+        [TREE_NODE_NAME]: MTreeNode,
+        [MESSAGE_NAME]: MMessage
+    },
+    filters: {
+        [FILTER_I18N_NAME]: i18nFilter
     }
 })
 export class MTree extends ModulVue {
@@ -167,16 +166,7 @@ export class MTree extends ModulVue {
 
 const TreePlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nPlugin);
-        v.use(CheckboxPlugin);
-        v.use(IconFilePlugin);
-        v.use(IconPlugin);
-        v.use(PlusPlugin);
-        v.use(MessagePlugin);
-        v.use(AccordionTransitionPlugin);
         v.component(TREE_NAME, MTree);
-        v.component(TREE_NODE_NAME, MTreeNode);
-        v.component(TREE_ICON_NAME, MTreeIcon);
     }
 };
 
