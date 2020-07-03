@@ -44,6 +44,11 @@ import PopupPlugin from '@ulaval/modul-components/dist/components/popup/popup';
 import PostalcodefieldPlugin from '@ulaval/modul-components/dist/components/postalcodefield/postalcodefield';
 import ProgressPlugin from '@ulaval/modul-components/dist/components/progress/progress';
 import RadioGroupPlugin from '@ulaval/modul-components/dist/components/radio-group/radio-group';
+import ResponsiveTablePlugin from '@ulaval/modul-components/dist/components/responsive-table/responsive-table';
+import TableBodyHeaderPlugin from '@ulaval/modul-components/dist/components/responsive-table/table-body-header/table-body-header';
+import TableBodyPlugin from '@ulaval/modul-components/dist/components/responsive-table/table-body/table-body';
+import TableEmptyRowPlugin from '@ulaval/modul-components/dist/components/responsive-table/table-empty-row/table-empty-row';
+import TableHeadPlugin from '@ulaval/modul-components/dist/components/responsive-table/table-head/table-head';
 import SearchfieldPlugin from '@ulaval/modul-components/dist/components/searchfield/searchfield';
 import SelectPlugin from '@ulaval/modul-components/dist/components/select/select';
 import ShowMorePlugin from '@ulaval/modul-components/dist/components/show-more/show-more';
@@ -156,6 +161,11 @@ export const ModulPlugin: PluginObject<any> = {
         Vue.use(CopyToClipboardPlugin);
         Vue.use(MultiSelectPlugin);
         Vue.use(SelectPlugin);
+        Vue.use(ResponsiveTablePlugin);
+        Vue.use(TableHeadPlugin);
+        Vue.use(TableBodyPlugin);
+        Vue.use(TableBodyHeaderPlugin);
+        Vue.use(TableEmptyRowPlugin);
 
         Vue.use(MoneyFieldPlugin);
         Vue.use(DecimalfieldPlugin);

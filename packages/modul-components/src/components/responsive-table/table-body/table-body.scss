@@ -1,0 +1,176 @@
+@import 'commons';
+@import './../responsive-table-commons';
+
+@mixin effet-survol-row() {
+    &.m--has-row-hover-effect.m--has-row-hover-effect {
+        &:not(.m--is-disabled) {
+            tr:not(.m-table-body__header):hover {
+                background: $m-color--interactive-lightest;
+            }
+        }
+    }
+}
+
+@mixin skin-row-borders() {
+    tr:not(.m-table-body__header) {
+        + tr:not(:first-child) {
+            border-top: 1px solid $m-color--border;
+        }
+    }
+
+    &.m--is-first-column-fixed {
+        td:first-child {
+            &::after {
+                right: -$m-table--largeur-degrade;
+                width: $m-table--largeur-degrade;
+                background-image: linear-gradient(to right,
+                        lighten($m-color--grey-lightest, 0.5%),
+                        rgba($m-color--grey-lightest, 0));
+            }
+        }
+    }
+}
+
+@mixin skin-cell-borders() {
+    tr:not(.m-table-body__header) {
+        + tr:not(:first-child) {
+            border-top: 1px solid $m-color--border;
+        }
+    }
+
+    /deep/ td {
+        + td:not(:first-child) {
+            border-left: 1px solid $m-color--border;
+        }
+    }
+}
+
+@mixin skin-alternate-background--odd-row() {
+    &.m--has-header tr {
+        &:nth-child(odd):not(.m-table-body__header) {
+            background-color: $m-color--grey-lightest;
+        }
+    }
+
+    &.m--is-first-column-fixed {
+        &.m--has-header tr:nth-child(odd):not(.m-table-body__header)>td:first-child {
+            background: $m-color--grey-lightest;
+
+            &::after {
+                background: $m-color--white;
+            }
+        }
+    }
+}
+
+@mixin skin-alternate-background--even-row() {
+    &:not(.m--has-header) tr:not(.m-table-body__header) {
+        &:nth-child(even) {
+            background-color: $m-color--grey-lightest;
+        }
+    }
+
+    &.m--is-first-column-fixed {
+        &:not(.m--has-header) tr:nth-child(even):not(.m-table-body__header)>td:first-child {
+            background: $m-color--grey-lightest;
+
+            &::after {
+                background: $m-color--white;
+            }
+        }
+    }
+}
+
+@mixin skin-alternate-background() {
+    @include skin-alternate-background--odd-row();
+    @include skin-alternate-background--even-row();
+
+    &.m--is-first-column-fixed {
+        tr:not(.m-table-body__header) {
+            td:first-child {
+                &::after {
+                    right: 0;
+                    width: 1px;
+                    background: $m-color--grey-lighter;
+                }
+            }
+        }
+    }
+}
+
+@mixin default-premiere-colone-fixe() {
+    td:first-child {
+        @include m-table--sticky-cell();
+    }
+
+    tr:not(.m-table-body__header) {
+        td:first-child {
+            transition: background-color $m-transition-duration ease;
+            background: $m-color--white;
+
+            &::after {
+                transition: background-color $m-transition-duration ease;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                content: '';
+            }
+        }
+    }
+}
+
+.m-table-body {
+    border-collapse: collapse;
+    border: none;
+
+    @include effet-survol-row();
+
+    /deep/ {
+        td {
+            @include m-table--cell-alignment();
+
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    tr {
+        transition: background-color $m-transition-duration ease;
+
+        td:not(.m-table-body__empty-area) {
+            padding: $m-spacing;
+        }
+    }
+
+    + .m-table-body.m--no-header {
+        border-top: 3px solid $m-color--border;
+    }
+}
+
+.m-table-body.m--is-disabled {
+    color: $m-color--disabled;
+}
+
+.m-table-body.m--is-skin-row-borders {
+    @include skin-row-borders();
+}
+
+.m-table-body.m--is-skin-cell-borders {
+    @include skin-cell-borders();
+}
+
+.m-table-body.m--is-skin-alternate-background {
+    @include skin-alternate-background();
+}
+
+.m-table-body.m--is-first-column-fixed {
+    @include default-premiere-colone-fixe();
+
+    &.m--has-row-hover-effect {
+        &:not(.m--is-disabled) tr:not(.m-table-body__header):hover {
+            td:first-child {
+                background: $m-color--interactive-lightest;
+            }
+        }
+    }
+}

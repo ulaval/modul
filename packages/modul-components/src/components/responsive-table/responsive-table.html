@@ -1,0 +1,105 @@
+<mpo-defilement-horizontal-automatique class="m-responsive-table"
+                                       :largeur-minimale="tableMinWidth"
+                                       :current-scroll-left.sync="currentScrollLeftProp"
+                                       :degrade-gauche-actif="!isFirstColumnFixed"
+                                       :afficher-barre-defilement="displayScrollbar"
+                                       @redimensionner="resizeComponant($event)">
+    <table cellspacing="0">
+        <m-table-head v-if="displayTableHead"
+                      :columns="columns"
+                      :first-column-fixed="isFirstColumnFixed"
+                      :skin="headSkin"
+                      :waiting="waiting"
+                      @sort="emitSort($event)">
+            <template v-for="(column, index) in columns"
+                      :slot="'table-head.' + column.dataProp">
+                <slot :name="'table-head.' + column.dataProp"
+                      :column="column">
+                    <slot name="table-head"
+                          :column="column">
+                        <!-- eslint-disable-next-line vue/no-v-html -->
+                        <div :key="index"
+                             v-html="column.title"></div>
+                    </slot>
+                </slot>
+            </template>
+        </m-table-head>
+        <tr v-if="waiting"
+            class="m-responsive-table__waiting">
+            <td :colspan="columns.length">
+                <m-progress :indeterminate="true"
+                            :border-radius="false"
+                            :style="{
+                            left: currentScrollLeftProp + 'px',
+                            width: tableComponentWidth,
+                        }" />
+            </td>
+        </tr>
+        <m-table-body v-for="(rowsGroup, index) in rowsGroupFormater"
+                      :key="index"
+                      :columns="columns"
+                      :rows-group="rowsGroup"
+                      :row-hover-effect="rowHoverEffect"
+                      :first-column-fixed="isFirstColumnFixed"
+                      :skin="bodySkin"
+                      :current-scroll-left="currentScrollLeftProp"
+                      :table-component-width="tableComponentWidth">
+            <template #body-header-title="scope">
+                <slot v-if="
+                            scope.header && scope.header && scope.header.title
+                        "
+                      name="body-header-title"
+                      :header="scope.header">
+                    <!-- eslint-disable-next-line vue/no-v-html -->
+                    <div :key="index"
+                         v-html="scope.header.title"></div>
+                </slot>
+            </template>
+            <template v-for="(column, index) in columns"
+                      :slot="'body-header.' + column.dataProp"
+                      slot-scope="{ header }">
+                <slot :name="'body-header.' + column.dataProp"
+                      :header="header">
+                    <slot name="body-header"
+                          :header="header">
+                        <div v-if="
+                                    header &&
+                                    header.cells &&
+                                    header.cells[column.dataProp]
+                                "
+                             :key="index">
+                            {{ header.cells[column.dataProp].value }}
+                        </div>
+                    </slot>
+                </slot>
+            </template>
+
+            <template v-for="(column, index) in columns"
+                      :slot="'rows.' + column.dataProp"
+                      slot-scope="{ row }">
+                <slot :name="'rows.' + column.dataProp"
+                      :row="row">
+                    <slot name="rows"
+                          :row="row">
+                        <div v-if="
+                                    row &&
+                                    row.cells &&
+                                    row.cells[column.dataProp]
+                                "
+                             :key="index">
+                            {{ row.cells[column.dataProp].value }}
+                        </div>
+                    </slot>
+                </slot>
+            </template>
+        </m-table-body>
+        <tbody v-if="!hasRowsGroup">
+            <m-table-empty-row :empty-area="defaultEmptyArea"
+                               :current-scroll-left="currentScrollLeftProp"
+                               :table-component-width="tableComponentWidth"
+                               :nb-columns="columns.length"
+                               :display-default-text="true"
+                               :waiting="waiting" />
+        </tbody>
+    </table>
+</mpo-defilement-horizontal-automatique>

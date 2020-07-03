@@ -1,0 +1,49 @@
+<thead class="m-table-head"
+       :class="[
+            'm--is-skin-' + skin,
+            { 'm--is-first-column-fixed': firstColumnFixed },
+        ]">
+    <tr>
+        <th v-for="(column, index) in columnsInternal"
+            :key="index"
+            :class="[
+                {
+                    'm--is-sortable': column.sortable,
+                    'm--is-sorted': isColumnSorted(column),
+                    'm--is-waiting': waiting,
+                    'm--is-initial-sort': column.isInitialSort,
+                },
+                getColumnAlignmentClass(column),
+                column.class,
+            ]"
+            :style="getColumnWidthStyle(column)">
+            <slot v-if="!column.sortable"
+                  :name="'table-head.' + column.dataProp"
+                  :column="column">
+                <template v-if="column.title">
+                    {{ column.title }}
+                </template>
+            </slot>
+            <div v-else
+                 class="m-table-head__cell">
+                <div class="m-table-head__cell-content"
+                     @click="sort(column)">
+                    <slot :name="'table-head.' + column.dataProp"
+                          :column="column">
+                        <template v-if="column.title">
+                            {{ column.title }}
+                        </template>
+                    </slot>
+                    <m-icon-button class="m-table-head__sort-icon"
+                                   :class="getColumnSortDirectionClass(column)"
+                                   :disabled="waiting"
+                                   :skin="skinSortIcon"
+                                   button-size="14px"
+                                   icon-size="12px"
+                                   :icon-name="getColumnSortIcon(column)"
+                                   @click.stop="sort(column)" />
+                </div>
+            </div>
+        </th>
+    </tr>
+</thead>

@@ -1,0 +1,11 @@
+<tr class="m-table-empty-row">
+    <td :colspan="nbColumns">
+        <mpo-aucun-contenu :texte="text"
+                           :nom-icone="iconName"
+                           :style="{
+                                left: currentScrollLeft + 'px',
+                                width: tableComponentWidth,
+                            }"
+                           @click-bouton="emitClickBouton($event)" />
+    </td>
+</tr>

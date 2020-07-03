@@ -58,6 +58,7 @@ import ProgressPlugin from './progress/progress';
 import RadioGroupPlugin from './radio-group/radio-group';
 import RadioStylePlugin from './radio-style/radio-style';
 import RadioPlugin from './radio/radio';
+import ResponsiveTablePlugin from './responsive-table/responsive-table';
 import ScrollTopPlugin from './scroll-top/scroll-top';
 import SearchfieldPlugin from './searchfield/searchfield';
 import ShowMorePlugin from './show-more/show-more';
@@ -136,8 +137,9 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(SteppersPlugin);
         Vue.use(SwitchPlugin);
         Vue.use(TablePlugin);
-        Vue.use(MultiSelectPlugin);
         Vue.use(TableHeaderPlugin);
+        Vue.use(ResponsiveTablePlugin);
+        Vue.use(MultiSelectPlugin);
         Vue.use(TextareaPlugin);
         Vue.use(TextfieldPlugin);
         Vue.use(SearchfieldPlugin);
@@ -169,6 +171,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(ExpandableLayoutPlugin);
         Vue.use(AvatarPlugin);
         Vue.use(SvgPlugin);
+
     }
 };
 
