@@ -1,15 +1,15 @@
 <div class="m-auto-horizontal-scroll"
      :class="{
-            'm--has-horizontal-scrollbar': hasHorizontalScroll,
-            'm--has-left-gradient': hasLeftGradient,
-            'm--has-right-gradient': hasRightGradient,
-            'm--has-previous-button': hasPreviousButton,
-            'm--has-next-button': hasNextButton,
-            'm--is-skin-white-background': isSkinWhiteBackground,
-            'm--is-skin-light-background': isSkinLightBackground,
-            'm--is-skin-dark-background': isSkinDarkBackground,
-            'm--is-skin-interactive-background': isSkinInteractiveBackground,
-        }"
+        'm--has-horizontal-scrollbar': hasHorizontalScroll,
+        'm--has-left-gradient': hasLeftGradient,
+        'm--has-right-gradient': hasRightGradient,
+        'm--has-previous-button': hasPreviousButton,
+        'm--has-next-button': hasNextButton,
+        'm--is-gradient-background-style-white': isGradientBackgroundStyleWhite,
+        'm--is-gradient-background-style-light': isGradientBackgroundStyleLight,
+        'm--is-gradient-background-style-dark': isGradientBackgroundStyleDark,
+        'm--is-gradient-background-style-interactive': isGradientBackgroundStyleInteractive,
+    }"
      :style="{ height: componentHeight }">
     <transition name="m--is">
         <div v-if="hasPreviousButton || hasLeftGradient"

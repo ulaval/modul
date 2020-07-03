@@ -130,19 +130,19 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
     }
 }
 
-.m-auto-horizontal-scroll.m--is-skin-white-background {
+.m-auto-horizontal-scroll.m--is-gradient-background-style-white {
     @include gradientBackgroundColor($m-color--white);
 }
 
-.m-auto-horizontal-scroll.m--is-skin-light-background {
+.m-auto-horizontal-scroll.m--is-gradient-background-style-light {
     @include gradientBackgroundColor($m-color--grey-light);
 }
 
-.m-auto-horizontal-scroll.m--is-skin-dark-background {
+.m-auto-horizontal-scroll.m--is-gradient-background-style-dark {
     @include gradientBackgroundColor($m-color--grey-darkest);
 }
 
-.m-auto-horizontal-scroll.m--is-skin-interactive-background {
+.m-auto-horizontal-scroll.m--is-gradient-background-style-interactive {
     @include gradientBackgroundColor($m-color--interactive);
 }
 

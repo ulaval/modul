@@ -1,5 +1,5 @@
 import { boolean, select } from '@storybook/addon-knobs';
-import { MAutoHorizontalScrollGradientSkin } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
+import { MAutoHorizontalScrollGradientBackgroundStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import { AUTO_HORIZONTAL_SCROLL } from '@ulaval/modul-components/dist/components/component-names';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -10,7 +10,7 @@ export default {
 };
 
 const CAROUSEL_TEMPLATE = (
-    _currentScrollLeft: number,
+    _horizontalScrollOffset: number,
     _nbItem: number,
     _displayButton: boolean
 ) => ({
@@ -27,13 +27,13 @@ const CAROUSEL_TEMPLATE = (
         nextButtonActive: {
             default: boolean('Prop next-button-active', _displayButton)
         },
-        gradientSkin: {
+        gradientBackgroundStyle: {
             default: select(
-                'Prop gradient-skin',
+                'Prop gradient-background-style',
                 Enums.toValueArray(
-                    MAutoHorizontalScrollGradientSkin
+                    MAutoHorizontalScrollGradientBackgroundStyle
                 ),
-                MAutoHorizontalScrollGradientSkin.WhiteBackground
+                MAutoHorizontalScrollGradientBackgroundStyle.White
             )
         },
         displayHorizontalScrollbar: {
@@ -41,25 +41,29 @@ const CAROUSEL_TEMPLATE = (
         }
     },
     data: () => ({
-        currentScrollLeft: _currentScrollLeft,
+        horizontalScrollOffset: _horizontalScrollOffset,
         crouselItemSize: 200,
         crouselItemSpacing: 16,
         nbItem: _nbItem
     }),
     methods: {
-        isActiveBox(currentScrollLeft: number, boxIndex: number): boolean {
+        isActiveBox(horizontalScrollOffset: number, boxIndex: number): boolean {
             const _this: any = this;
             const boxFullWidth: number = _this.crouselItemSize + _this.crouselItemSpacing;
-            return currentScrollLeft >= (((boxIndex - 1) * boxFullWidth) - 160)
-                && currentScrollLeft < (((boxIndex - 1) * boxFullWidth) + boxFullWidth - 160);
+            return horizontalScrollOffset >= (((boxIndex - 1) * boxFullWidth) - 160)
+                && horizontalScrollOffset < (((boxIndex - 1) * boxFullWidth) + boxFullWidth - 160);
         },
         onPreviousButtonClick(): void {
             const _this: any = this;
-            _this.currentScrollLeft = ((_this.currentScrollLeft - 216) <= 0) ? 0 : _this.currentScrollLeft - 216;
+            _this.incrementHorizontalScrollOffset(-_this.crouselItemSize - _this.crouselItemSpacing);
         },
         onNextButtonClick(): void {
             const _this: any = this;
-            _this.currentScrollLeft = _this.currentScrollLeft + 216;
+            _this.incrementHorizontalScrollOffset(_this.crouselItemSize + _this.crouselItemSpacing);
+        },
+        incrementHorizontalScrollOffset(increment: number): void {
+            const _this: any = this;
+            _this.horizontalScrollOffset = _this.horizontalScrollOffset + increment;
         }
     },
     template: `<${AUTO_HORIZONTAL_SCROLL}
@@ -68,8 +72,8 @@ const CAROUSEL_TEMPLATE = (
         :right-gradient-active="rightGradientActive"
         :previous-button-active="previousButtonActive"
         :next-button-active="nextButtonActive"
-        :current-scroll-left.sync="currentScrollLeft"
-        :gradient-skin="gradientSkin"
+        :horizontal-scroll-offset.sync="horizontalScrollOffset"
+        :gradient-background-style="gradientBackgroundStyle"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
         style="background: #f4f4f4;"
         @previous-button-click="onPreviousButtonClick()"
@@ -83,7 +87,7 @@ const CAROUSEL_TEMPLATE = (
                 style="transition: background-color 0.3s ease; flex-shrink: 0; padding: 16px;"
                 :style="{
                     marginRight: index < nbItem ? crouselItemSpacing + 'px' : undefined,
-                    backgroundColor: isActiveBox(currentScrollLeft, index) ? '#ffc103': '#fff',
+                    backgroundColor: isActiveBox(horizontalScrollOffset, index) ? '#ffc103': '#fff',
                     width: crouselItemSize + 'px',
                     height: crouselItemSize + 'px',
                 }"

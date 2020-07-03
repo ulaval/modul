@@ -8,11 +8,11 @@ import { AUTO_HORIZONTAL_SCROLL } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
 
-export enum MAutoHorizontalScrollGradientSkin {
-    WhiteBackground = 'white-background',
-    LightBackground = 'light-background',
-    DarkBackground = 'dark-background',
-    InteractiveBackground = 'interactive-background'
+export enum MAutoHorizontalScrollGradientBackgroundStyle {
+    White = 'white',
+    Light = 'light',
+    Dark = 'dark',
+    Interactive = 'interactive'
 }
 
 export interface MAutoHorizontalScrollResizeProperties {
@@ -38,7 +38,7 @@ export class MAutoHorizontalScroll extends ModulVue {
     @Prop({
         default: true
     })
-    public readonly currentScrollLeft!: number;
+    public readonly horizontalScrollOffset!: number;
 
     @Prop({
         default: true
@@ -46,13 +46,13 @@ export class MAutoHorizontalScroll extends ModulVue {
     public readonly dragActive!: boolean;
 
     @Prop({
-        default: MAutoHorizontalScrollGradientSkin.WhiteBackground,
-        validator: (value: MAutoHorizontalScrollGradientSkin) =>
+        default: MAutoHorizontalScrollGradientBackgroundStyle.White,
+        validator: (value: MAutoHorizontalScrollGradientBackgroundStyle) =>
             Enums.toValueArray(
-                MAutoHorizontalScrollGradientSkin
+                MAutoHorizontalScrollGradientBackgroundStyle
             ).includes(value)
     })
-    public readonly gradientSkin!: MAutoHorizontalScrollGradientSkin;
+    public readonly gradientBackgroundStyle!: MAutoHorizontalScrollGradientBackgroundStyle;
 
     @Prop({
         default: true
@@ -114,8 +114,8 @@ export class MAutoHorizontalScroll extends ModulVue {
         _resizeProperties: MAutoHorizontalScrollResizeProperties
     ): void { }
 
-    @Emit('update:currentScrollLeft')
-    public emitUpdateCurrentScrollLeft(_currentScrollLeft: number): void { }
+    @Emit('update:horizontalScrollOffset')
+    public emitUpdateHorizontalScrollOffset(_horizontalScrollOffset: number): void { }
 
     @Emit('previous-button-click')
     public emitPreviousButtonClick(_event: MouseEvent): void { }
@@ -128,22 +128,36 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.checkGradientPresence();
     }
 
-    @Watch('currentScrollLeft', { immediate: true })
-    public async onCurrentScrollLeftChange(): Promise<void> {
+    @Watch('displayHorizontalScrollbar')
+    public onDisplayHorizontalScrollbarChange(): void {
+        this.resizeComponent();
+    }
+
+    @Watch('horizontalScrollOffset', { immediate: true })
+    public async onHorizontalScrollOffsetChange(): Promise<void> {
         await this.$nextTick();
+        const maxScrollLeft: number = this.$refs.bodyContent.scrollWidth - this.$refs.body.clientWidth;
         if (this.scrollAnimationActive) {
             this.stopScrollAnimation();
+            return;
+        } else if (this.horizontalScrollOffset < 0) {
+            this.emitUpdateHorizontalScrollOffset(0);
+            return;
+        } else if (this.horizontalScrollOffset > maxScrollLeft) {
+            this.emitUpdateHorizontalScrollOffset(maxScrollLeft - 0.5);
             return;
         }
         if (
             this.$refs.body &&
-            this.currentScrollLeft !== this.$refs.body.scrollLeft
+            this.horizontalScrollOffset !== this.$refs.body.scrollLeft
         ) {
+
             if (this.scrollLeftCounter <= 0) {
-                this.$refs.body.scrollLeft = this.currentScrollLeft;
+                this.$refs.body.scrollLeft = this.horizontalScrollOffset;
             } else {
                 this.startScrollAnimation();
             }
+
         }
         this.scrollLeftCounter++;
     }
@@ -169,36 +183,36 @@ export class MAutoHorizontalScroll extends ModulVue {
         return this.nextButtonActive && this.couldHaveRightContent;
     }
 
-    public get isSkinWhiteBackground(): boolean {
+    public get isGradientBackgroundStyleWhite(): boolean {
         return (
-            this.gradientSkin ===
-            MAutoHorizontalScrollGradientSkin.WhiteBackground
+            this.gradientBackgroundStyle ===
+            MAutoHorizontalScrollGradientBackgroundStyle.White
         );
     }
 
-    public get isSkinLightBackground(): boolean {
+    public get isGradientBackgroundStyleLight(): boolean {
         return (
-            this.gradientSkin ===
-            MAutoHorizontalScrollGradientSkin.LightBackground
+            this.gradientBackgroundStyle ===
+            MAutoHorizontalScrollGradientBackgroundStyle.Light
         );
     }
 
-    public get isSkinDarkBackground(): boolean {
+    public get isGradientBackgroundStyleDark(): boolean {
         return (
-            this.gradientSkin ===
-            MAutoHorizontalScrollGradientSkin.DarkBackground
+            this.gradientBackgroundStyle ===
+            MAutoHorizontalScrollGradientBackgroundStyle.Dark
         );
     }
 
-    public get isSkinInteractiveBackground(): boolean {
+    public get isGradientBackgroundStyleInteractive(): boolean {
         return (
-            this.gradientSkin ===
-            MAutoHorizontalScrollGradientSkin.InteractiveBackground
+            this.gradientBackgroundStyle ===
+            MAutoHorizontalScrollGradientBackgroundStyle.Interactive
         );
     }
 
     public get iconButtonSkin(): string {
-        return this.isSkinDarkBackground
+        return this.isGradientBackgroundStyleDark || this.isGradientBackgroundStyleInteractive
             ? MIconButtonSkin.Dark
             : MIconButtonSkin.Light;
     }
@@ -207,9 +221,9 @@ export class MAutoHorizontalScroll extends ModulVue {
         await this.$nextTick();
         const initialScrollLeft: number = this.$refs.body.scrollLeft;
         const difference: number =
-            this.currentScrollLeft - initialScrollLeft <=
+            this.horizontalScrollOffset - initialScrollLeft <=
                 this.$refs.body.scrollWidth
-                ? this.currentScrollLeft - initialScrollLeft
+                ? this.horizontalScrollOffset - initialScrollLeft
                 : this.$refs.body.scrollWidth;
         const intervalDelay: number = difference > 500 ? 7 : 10;
         const increment: number = difference / intervalDelay;
@@ -221,9 +235,9 @@ export class MAutoHorizontalScroll extends ModulVue {
             counter += intervalDelay;
             if (
                 (isPositiveIncrement &&
-                    this.$refs.body.scrollLeft >= this.currentScrollLeft) ||
+                    this.$refs.body.scrollLeft >= this.horizontalScrollOffset) ||
                 (!isPositiveIncrement &&
-                    this.$refs.body.scrollLeft <= this.currentScrollLeft) ||
+                    this.$refs.body.scrollLeft <= this.horizontalScrollOffset) ||
                 counter >= 5000
             ) {
                 this.stopScrollAnimation();
@@ -243,7 +257,7 @@ export class MAutoHorizontalScroll extends ModulVue {
         const bodyEl: HTMLElement = this.$refs.body;
 
         if (bodyEl && bodyEl.scrollLeft >= 0 && !this.scrollAnimationActive) {
-            this.emitUpdateCurrentScrollLeft(bodyEl.scrollLeft);
+            this.emitUpdateHorizontalScrollOffset(bodyEl.scrollLeft);
         }
 
         await this.checkGradientPresence();

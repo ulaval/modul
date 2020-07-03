@@ -1,6 +1,6 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
-import { MAutoHorizontalScrollGradientSkin } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
+import { MAutoHorizontalScrollGradientBackgroundStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import { AUTO_HORIZONTAL_SCROLL } from '@ulaval/modul-components/dist/components/component-names';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -45,13 +45,13 @@ const TEMPLATE = (
         rightGradientActive: {
             default: boolean('Prop right-gradient-active', _rightGradientActive)
         },
-        gradientSkin: {
+        gradientBackgroundStyle: {
             default: select(
-                'Prop gradient-skin',
+                'Prop gradient-background-style',
                 Enums.toValueArray(
-                    MAutoHorizontalScrollGradientSkin
+                    MAutoHorizontalScrollGradientBackgroundStyle
                 ),
-                MAutoHorizontalScrollGradientSkin.WhiteBackground
+                MAutoHorizontalScrollGradientBackgroundStyle.White
             )
         },
         displayHorizontalScrollbar: {
@@ -63,7 +63,7 @@ const TEMPLATE = (
     },
     methods: actions('emitPreviousButtonClick', 'emitNextButtonClick'),
     data: () => ({
-        currentScrollLeft: 60
+        horizontalScrollOffset: 60
     }),
     template: `<${AUTO_HORIZONTAL_SCROLL}
         :min-width="minWidth"
@@ -74,8 +74,8 @@ const TEMPLATE = (
         :next-button-active="nextButtonActive"
         :text-previous-button="textPreviousButton"
         :text-next-button="textNextButton"
-        :current-scroll-left.sync="currentScrollLeft"
-        :gradient-skin="gradientSkin"
+        :horizontal-scroll-offset.sync="horizontalScrollOffset"
+        :gradient-background-style="gradientBackgroundStyle"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
         @previous-button-click="emitPreviousButtonClick"
         @next-button-click="emitNextButtonClick"
