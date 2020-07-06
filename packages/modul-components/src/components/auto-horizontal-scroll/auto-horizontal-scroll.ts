@@ -4,7 +4,7 @@ import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
-import { AUTO_HORIZONTAL_SCROLL } from '../component-names';
+import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
 
@@ -24,7 +24,7 @@ export interface MAutoHorizontalScrollResizeProperties {
 
 @WithRender
 @Component({
-    components: { MIconButton },
+    components: { [ICON_BUTTON_NAME]: MIconButton },
     mixins: [ElementQueries]
 })
 export class MAutoHorizontalScroll extends ModulVue {
@@ -110,18 +110,16 @@ export class MAutoHorizontalScroll extends ModulVue {
     });
 
     @Emit('resize')
-    public emitResize(
-        _resizeProperties: MAutoHorizontalScrollResizeProperties
-    ): void { }
+    public emitResize(resizeProperties: MAutoHorizontalScrollResizeProperties): void { }
 
     @Emit('update:horizontalScrollOffset')
-    public emitUpdateHorizontalScrollOffset(_horizontalScrollOffset: number): void { }
+    public emitUpdateHorizontalScrollOffset(horizontalScrollOffset: number): void { }
 
     @Emit('previous-button-click')
-    public emitPreviousButtonClick(_event: MouseEvent): void { }
+    public emitPreviousButtonClick(event: MouseEvent): void { }
 
     @Emit('next-button-click')
-    public emitNextButtonClick(_event: MouseEvent): void { }
+    public emitNextButtonClick(event: MouseEvent): void { }
 
     @Watch('leftGradientActive')
     public onLeftGradientActiveChange(): void {
