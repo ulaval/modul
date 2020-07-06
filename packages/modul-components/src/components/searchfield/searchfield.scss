@@ -55,6 +55,10 @@
             --m-searchfield--color-button: var(--m-input-style--valid-color);
             --m-searchfield--color-icon: var(--m-searchfield--color-icon-hover);
         }
+
+        svg {
+            align-self: center;
+        }
     }
 
     &__reset {
