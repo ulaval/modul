@@ -1,10 +1,10 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableBodySkin, MTableHeadSkin } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableBodySkin, MTableHeadStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
-import { COLUMNS, ROWS_GROUP, ROW_GROUPS } from './responsive-table-data';
+import { COLUMNS, COMPLEX_TABLE_HEAD_ROWS, ROWS_GROUP, ROW_GROUPS } from './responsive-table-data';
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}`,
@@ -13,6 +13,7 @@ export default {
 
 export const defaultStory = () => ({
     data: () => ({
+        headRows: COMPLEX_TABLE_HEAD_ROWS,
         columns: COLUMNS,
         rowGroups: ROW_GROUPS,
         rows: ROWS_GROUP.rows,
@@ -24,8 +25,8 @@ export const defaultStory = () => ({
         headSkin: {
             default: select(
                 'Prop head-skin',
-                Enums.toValueArray(MTableHeadSkin),
-                MTableHeadSkin.LightBackground
+                Enums.toValueArray(MTableHeadStyle),
+                MTableHeadStyle.Light
             )
         },
         bodySkin: {
@@ -44,7 +45,8 @@ export const defaultStory = () => ({
     },
     methods: actions('emitScrollbarWidth', 'emitSort'),
     template: `<${RESPONSIVE_TABLE_NAME}
-        :columns="columns"
+        :head-rows="headRows"
+        :main-columns="columns"
         :row-groups="rowGroups"
         :rows="rows"
         :first-column-fixed="firstColumnFixed"

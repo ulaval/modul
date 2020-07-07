@@ -53,6 +53,7 @@
                     getRowClassName(row, column.dataProp),
                 ]"
                 :colspan="getRowColspan(row, column)"
+                :rowspan="getRowspan(row, column)"
                 :style="getRowWidthStyle(column)">
                 <slot :name="'rows.' + column.dataProp"
                       :row="row">

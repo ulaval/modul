@@ -4,25 +4,26 @@
                                        :degrade-gauche-actif="!isFirstColumnFixed"
                                        :afficher-barre-defilement="displayScrollbar"
                                        @redimensionner="resizeComponant($event)">
-    <table cellspacing="0">
+    <table id="idTable"
+           cellspacing="0">
         <m-table-head v-if="displayTableHead"
-                      :columns="columns"
+                      id="idTable"
+                      :head-rows="formatHeadRows"
                       :first-column-fixed="isFirstColumnFixed"
                       :skin="headSkin"
                       :waiting="waiting"
                       @sort="emitSort($event)">
-            <template v-for="(column, index) in columns"
-                      :slot="'table-head.' + column.dataProp">
-                <slot :name="'table-head.' + column.dataProp"
+            <!-- <template v-for="(column, indexColumns) in allColumns"
+                      :slot="'table-head.' + column.id">
+                <slot :name="'table-head.' + column.id"
                       :column="column">
                     <slot name="table-head"
                           :column="column">
-                        <!-- eslint-disable-next-line vue/no-v-html -->
-                        <div :key="index"
-                             v-html="column.title"></div>
+                        <div :key="indexColumns + '' + index"
+                             v-html="column.value"></div>
                     </slot>
                 </slot>
-            </template>
+            </template> -->
         </m-table-head>
         <tr v-if="waiting"
             class="m-responsive-table__waiting">
@@ -35,7 +36,7 @@
                         }" />
             </td>
         </tr>
-        <m-table-body v-for="(rowsGroup, index) in rowsGroupFormater"
+        <m-table-body v-for="(rowsGroup, index) in formatRowsGroup"
                       :key="index"
                       :columns="columns"
                       :rows-group="rowsGroup"

@@ -1,4 +1,46 @@
-import { MColumnTable } from '../table/table';
+
+export enum MTableColumnSortDirection {
+    None = 0,
+    Asc = 1,
+    Dsc = -1
+}
+
+export enum MTableTextAlign {
+    Center = 'center',
+    Left = 'left',
+    Right = 'right'
+}
+
+export interface MTableColumn {
+    id: string;
+    class?: string;
+    value: string;
+    colspan?: number | MTableColspan;
+    rowspan?: number;
+    data?: any;
+    width?: string;
+    sortable?: boolean;
+    enableUnsort?: boolean;
+    textAlign?: MTableTextAlign;
+    sortDirection?: MTableColumnSortDirection;
+    defaultSortDirection?: MTableColumnSortDirection;
+    visible?: boolean;
+    order?: number;
+}
+
+export type MTableColumns = MTableColumn[];
+
+export interface MTableHeadRow {
+    order?: number;
+    class?: string;
+    columns: MTableColumns;
+    mainColumns?: boolean;
+}
+
+export interface MTableHeadRows {
+    [row: string]: MTableHeadRow;
+}
+
 
 export interface MTableGroup {
     header?: MTableGroupHeader;
@@ -26,11 +68,12 @@ export interface MTableRow {
 }
 
 export interface MTableCells {
-    [dataProp: string]: MTableCell;
+    [idColumn: string]: MTableCell;
 }
 
 export interface MTableCell {
     value: any;
+    isHeader?: boolean;
     className?: string;
     colspan?: number | MTableColspan;
     data?: any;
@@ -51,9 +94,9 @@ export enum MTableGroupAccordionIconPosition {
     Right = 'right'
 }
 
-export enum MTableHeadSkin {
-    DarkBackground = 'dark-background',
-    LightBackground = 'light-background',
+export enum MTableHeadStyle {
+    Dark = 'dark',
+    Light = 'light',
     NoBackground = 'no-background'
 }
 
@@ -69,14 +112,14 @@ export enum MTableGroupHeaderSkin {
     Dark = 'dark'
 }
 
-export const getCellAlignmentClass: (column: MColumnTable) => string = (
-    column: MColumnTable
+export const getCellAlignmentClass: (column: MTableColumn) => string = (
+    column: MTableColumn
 ) => {
     return `m--is-text-align-${column.textAlign}`;
 };
 
-export const getCellWidthStyle: (column: MColumnTable) => string = (
-    column: MColumnTable
+export const getCellWidthStyle: (column: MTableColumn) => string = (
+    column: MTableColumn
 ) => {
     const width: string | undefined = column.width;
     return width ? `width: ${width}` : '';

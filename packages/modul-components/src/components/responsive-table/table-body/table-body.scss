@@ -13,7 +13,7 @@
 
 @mixin skin-row-borders() {
     tr:not(.m-table-body__header) {
-        + tr:not(:first-child) {
+        +tr:not(:first-child) {
             border-top: 1px solid $m-color--border;
         }
     }
@@ -33,13 +33,13 @@
 
 @mixin skin-cell-borders() {
     tr:not(.m-table-body__header) {
-        + tr:not(:first-child) {
+        +tr:not(:first-child) {
             border-top: 1px solid $m-color--border;
         }
     }
 
     /deep/ td {
-        + td:not(:first-child) {
+        +td:not(:first-child) {
             border-left: 1px solid $m-color--border;
         }
     }
@@ -142,7 +142,7 @@
         }
     }
 
-    + .m-table-body.m--no-header {
+    +.m-table-body.m--no-header {
         border-top: 3px solid $m-color--border;
     }
 }

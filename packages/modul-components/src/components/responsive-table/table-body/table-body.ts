@@ -48,6 +48,7 @@ export class MTableBody extends ModulVue {
             ? row.cells[columnDataProp].className
             : undefined;
     }
+
     public getRowColspan(
         row: MTableRow,
         column: MColumnTable
@@ -62,6 +63,17 @@ export class MTableBody extends ModulVue {
         return colspan === MTableColspan.AllColumns
             ? this.as<MTableBodyMixin>().columns.length
             : colspan;
+    }
+
+    public getRowspan(
+        row: MTableRow,
+        column: MColumnTable
+    ): number | undefined {
+        return row.cells &&
+            row.cells[column.dataProp] &&
+            row.cells[column.dataProp].rowspan
+            ? row.cells[column.dataProp].rowspan
+            : undefined;
     }
 
     public getRowAlignmentClass(column: MColumnTable): string {

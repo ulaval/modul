@@ -2,10 +2,10 @@ import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
+import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
-import { MColumnTable } from '../table/table';
 import { MProgress } from './../progress/progress';
-import { MTableBodySkin, MTableEmptyArea, MTableGroup, MTableHeadSkin, MTableRow } from './responsive-table-commons';
+import { MTableBodySkin, MTableColumn, MTableColumns, MTableEmptyArea, MTableGroup, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
 import { MTableBody } from './table-body/table-body';
 import { MTableEmptyRow } from './table-empty-row/table-empty-row';
@@ -24,10 +24,14 @@ export const REGEX_NOMBRE_EN_PX_EM_POURCENT: RegExp = /^\d+(\.[0-9]{1,4})?(px|em
     }
 })
 export class MResponsiveTable extends ModulVue {
-    @Prop({
-        required: true
-    })
-    public readonly columns!: MColumnTable[];
+    @Prop()
+    public readonly id?: string;
+
+    @Prop()
+    public readonly headRows?: MTableHeadRows;
+
+    @Prop()
+    public readonly columns?: MTableColumns;
 
     @Prop()
     public readonly rowGroups?: MTableGroup[];
@@ -59,11 +63,11 @@ export class MResponsiveTable extends ModulVue {
     public readonly rowHoverEffect!: boolean;
 
     @Prop({
-        default: MTableHeadSkin.LightBackground,
-        validator: (value: MTableHeadSkin) =>
-            Enums.toValueArray(MTableHeadSkin).includes(value)
+        default: MTableHeadStyle.Light
+        validator: (value: MTableHeadStyle) =>
+            Enums.toValueArray(MTableHeadStyle).includes(value)
     })
-    public readonly headSkin!: MTableHeadSkin;
+    public readonly headSkin!: MTableHeadStyle;
 
     @Prop({
         default: MTableBodySkin.AlternateBackground,
@@ -90,7 +94,7 @@ export class MResponsiveTable extends ModulVue {
     public tableComponentWidth: string = '100%';
 
     @Emit('sort')
-    public emitSort(_column: MColumnTable): void { }
+    public emitSort(_column: MTableColumn): void { }
 
     @Watch('currentScrollLeft', { immediate: true })
     public onCurrentScrollLeftChangement(value: number): void {
@@ -105,7 +109,11 @@ export class MResponsiveTable extends ModulVue {
     @Emit('scrollbar-width')
     public emitScrollbarWidth(_scrollbarWidth: number): void { }
 
-    public get rowsGroupFormater(): MTableGroup[] {
+    public get idTable(): string {
+        return this.id || uuid.generate();
+    }
+
+    public get formatRowsGroup(): MTableGroup[] {
         if (this.rows && this.rows.length) {
             const nouveauRowsGroup: MTableGroup[] = [
                 {
@@ -121,8 +129,50 @@ export class MResponsiveTable extends ModulVue {
         return [];
     }
 
+    public get formatHeadRows(): MTableHeadRows {
+        const headRows: MTableHeadRows = Object.assign({}, this.headRows);
+        const headRowsArray: MTableHeadRow[] = headRows ? Object.keys(headRows).map((key: string) => {
+            return headRows[key];
+        }) : [];
+        const hasSomeHeadMainRow: boolean = headRowsArray.some((hr: MTableHeadRow) => {
+            return hr.mainColumns;
+        });
+        let maxOrder: number = Math.max.apply(Math, headRowsArray.map((hr: MTableHeadRow) => hr.order));
+
+        if (this.columns && this.columns.length && headRowsArray.length) {
+            maxOrder = maxOrder && maxOrder > 0 ? maxOrder + 1 : 1;
+
+            if (hasSomeHeadMainRow) {
+                headRows['lastRow'] = {
+                    order: maxOrder,
+                    columns: this.columns
+                };
+            } else {
+                headRows['mainRow'] = {
+                    order: maxOrder,
+                    mainColumns: true,
+                    columns: this.columns
+                };
+            }
+
+            return headRows;
+
+        }
+        return headRows || {};
+    }
+
+    public get allColumns(): MTableColumns {
+        return Object.keys(this.formatHeadRows)
+            .reduce((acc: MTableColumn[], cur: string) => {
+                this.formatHeadRows[cur].columns.forEach(c => {
+                    acc.push(c);
+                });
+                return acc;
+            }, []);
+    }
+
     public get hasRowsGroup(): boolean {
-        return Boolean(this.rowsGroupFormater && this.rowsGroupFormater.length);
+        return Boolean(this.formatRowsGroup && this.formatRowsGroup.length);
     }
 
     public set currentScrollLeftProp(value: number) {

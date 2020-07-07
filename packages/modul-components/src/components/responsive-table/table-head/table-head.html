@@ -1,11 +1,20 @@
 <thead class="m-table-head"
        :class="[
-            'm--is-skin-' + skin,
-            { 'm--is-first-column-fixed': firstColumnFixed },
+            'm--is-head-style-' + headStyle,
+            {
+                'm--is-first-column-fixed': firstColumnFixed,
+                'm--has-multiple-head-row': sortHeadRows.length > 1,
+            },
         ]">
-    <tr>
-        <th v-for="(column, index) in columnsInternal"
-            :key="index"
+    <tr v-for="(headRowKey, index) in sortHeadRows"
+        :key="index"
+        :class="headRows[headRowKey].class">
+        <th v-for="(column, i) in getFormatColumns(headRows[headRowKey].columns)"
+            :key="i"
+            :id="column.id + '-' + id"
+            :colspan="column.colspan"
+            :rowspan="column.rowspan"
+            scope="col"
             :class="[
                 {
                     'm--is-sortable': column.sortable,
@@ -18,20 +27,20 @@
             ]"
             :style="getColumnWidthStyle(column)">
             <slot v-if="!column.sortable"
-                  :name="'table-head.' + column.dataProp"
+                  :name="'table-head.' + column.id"
                   :column="column">
-                <template v-if="column.title">
-                    {{ column.title }}
+                <template v-if="column.value">
+                    {{ column.value }}
                 </template>
             </slot>
             <div v-else
                  class="m-table-head__cell">
                 <div class="m-table-head__cell-content"
-                     @click="sort(column)">
-                    <slot :name="'table-head.' + column.dataProp"
+                     @click="sort(column, headRows[headRowKey].columns, headRowKey)">
+                    <slot :name="'table-head.' + column.id"
                           :column="column">
-                        <template v-if="column.title">
-                            {{ column.title }}
+                        <template v-if="column.value">
+                            {{ column.value }}
                         </template>
                     </slot>
                     <m-icon-button class="m-table-head__sort-icon"
@@ -41,7 +50,7 @@
                                    button-size="14px"
                                    icon-size="12px"
                                    :icon-name="getColumnSortIcon(column)"
-                                   @click.stop="sort(column)" />
+                                   @click.stop="sort(column, headRows[headRowKey].columns, headRowKey)" />
                 </div>
             </div>
         </th>
