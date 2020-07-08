@@ -1,12 +1,15 @@
 @import '../../styles/commons';
 
 .modul-highlight {
-    margin: 0;
+    // margin: 0;
     background: $modul-color--black-grey;
 
     @include m-scrollbar();
 
     .hljs {
-        max-height: none;
+        //max-height: none;
+        white-space: pre-wrap;
+        color: #fff;
+        margin: -24px 0; //Magic Number
     }
 }
