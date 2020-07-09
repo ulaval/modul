@@ -1,10 +1,9 @@
 import { PluginObject } from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
-import { Enums } from '../../../utils/enums/enums';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
-import { MTableColspan, MTableGroupAccordionIconPosition, MTableGroupHeaderStyle } from '../responsive-table-commons';
+import { MTableColspan, MTableGroupAccordionIconPosition } from '../responsive-table-commons';
 import { MTableBodyMixin } from '../table-body/table-body-mixin';
 import WithRender from './table-group-header.html?style=./table-group-header.scss';
 
@@ -25,13 +24,6 @@ export class MTableGroupHeader extends ModulVue {
         default: '100%'
     })
     public tableComponentWidth!: string;
-
-    @Prop({
-        default: MTableGroupHeaderStyle.Light,
-        validator: (value: MTableGroupHeaderStyle) =>
-            Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
-    })
-    public groupHeaderStyle!: MTableGroupHeaderStyle;
 
     public mPlusSkin: MPlusSkin = MPlusSkin.CurrentColor;
 

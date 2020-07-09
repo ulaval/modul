@@ -43,13 +43,15 @@
                       :first-column-fixed="isFirstColumnFixed"
                       :skin="bodySkin"
                       :current-scroll-left="currentScrollLeftProp"
-                      :table-component-width="tableComponentWidth">
-            <template #body-header-title="scope">
-                <slot v-if="scope.header && scope.header && scope.header.title"
+                      :table-component-width="tableComponentWidth"
+                      :group-header-style="groupHeaderStyle"
+                      :group-header-class-name="groupHeaderClassName">
+            <template #body-header-title="{ header }">
+                <slot v-if="header && header && header.title"
                       name="body-header-title"
-                      :header="scope.header">
+                      :header="header">
                     <div :key="index"
-                         v-html="scope.header.title"></div>
+                         v-html="header.title"></div>
                 </slot>
             </template>
             <template v-for="(column, index) in mainColumns"

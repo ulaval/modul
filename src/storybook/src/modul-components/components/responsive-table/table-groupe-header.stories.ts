@@ -35,6 +35,9 @@ export const Sandbox = () => ({
         tableComponentWidth: {
             default: text('Prop table-component-width', '100%')
         },
+        groupHeaderClassName: {
+            default: text('Prop group-header-class-name', '')
+        },
         groupHeaderStyle: {
             default: select(
                 'Prop group-header-style',
@@ -77,6 +80,7 @@ export const Sandbox = () => ({
             :rows-group="rowsGroupIntern"
             :first-column-fixed="firstColumnFixed"
             :group-header-style="groupHeaderStyle"
+            :group-header-class-name="groupHeaderClassName"
             :default-empty-area="defaultEmptyArea"
             :table-component-width="tableComponentWidth"
         >

@@ -6,7 +6,7 @@ import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
 import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-validation';
 import { MProgress } from './../progress/progress';
-import { getHeadRowsFilterAndSort, MTableBodyRowsStyle, MTableColumn, MTableEmptyArea, MTableGroup, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow } from './responsive-table-commons';
+import { getHeadRowsFilterAndSort, MTableBodyRowsStyle, MTableColumn, MTableEmptyArea, MTableGroup, MTableGroupHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
 import { MTableBody } from './table-body/table-body';
 import { MTableEmptyRow } from './table-empty-row/table-empty-row';
@@ -87,6 +87,16 @@ export class MResponsiveTable extends ModulVue {
         default: true
     })
     public readonly displayScrollbar!: boolean;
+
+    @Prop({
+        default: MTableGroupHeaderStyle.Light,
+        validator: (value: MTableGroupHeaderStyle) =>
+            Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
+    })
+    public groupHeaderStyle!: MTableGroupHeaderStyle;
+
+    @Prop()
+    public groupHeaderClassName: string;
 
     public currentScrollLeftInterne: number = 0;
     public hasDefilementVertical: boolean = false;

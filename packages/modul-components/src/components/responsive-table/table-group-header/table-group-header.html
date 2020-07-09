@@ -10,11 +10,11 @@
         },
         'm--is-group-header-style-' + groupHeaderStyle,
         rowsGroupHeaderClassName,
+        groupHeaderClassName
     ]"
     :style="[rowsGroup.header.style]"
     :tabindex="tabindexEnteteAccordeon"
-    @click="toggleAccordeon($event)"clar
-
+    @click="toggleAccordeon($event)"
     @keyup.self.enter="toggleAccordeon($event)">
     <th v-if="hasHeaderWithoutCell ||
             (emptyAreaTextHeader && !hasHeaderCell && !hasHeader)"

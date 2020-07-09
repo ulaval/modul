@@ -14,7 +14,7 @@ export const defaultStory = () => ({
         }
     }),
     template: `<${TABLE_EMPTY_ROW_NAME}
-    :empty-area="emptyArea"
+        :empty-area="emptyArea"
         :table-component-width="'400px'"
         :current-scroll-left="10"
         :nb-columns="3"

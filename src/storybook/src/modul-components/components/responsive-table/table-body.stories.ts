@@ -1,4 +1,7 @@
+import { select, text } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME, TABLE_BODY_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MTableGroupHeaderStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_GROUP_1 } from './responsive-table-data';
 
@@ -12,9 +15,23 @@ export const defaultStory = () => ({
         columns: DEFAULT_TABLE_COLUMNS,
         rowsGroup: DEFAULT_TABLE_GROUP_1
     }),
+    props: {
+        groupHeaderClassName: {
+            default: text('Prop group-header-class-name', '')
+        },
+        groupHeaderStyle: {
+            default: select(
+                'Prop group-header-style',
+                Enums.toValueArray(MTableGroupHeaderStyle),
+                MTableGroupHeaderStyle.Light
+            )
+        },
+    },
     template: `<${TABLE_BODY_NAME}
         :columns="columns"
         :rows-group="rowsGroup"
+        :group-header-style="groupHeaderStyle"
+        :group-header-class-name="groupHeaderClassName"
     />`
 });
 

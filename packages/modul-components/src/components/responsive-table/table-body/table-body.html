@@ -16,7 +16,9 @@
                          :first-column-fixed="firstColumnFixed"
                          :current-scroll-left="currentScrollLeft"
                          :table-component-width="tableComponentWidth"
-                         :default-empty-area="defaultEmptyArea">
+                         :default-empty-area="defaultEmptyArea"
+                         :group-header-style="groupHeaderStyle"
+                         :group-header-class-name="groupHeaderClassName">
         <template #body-header-title>
             <slot name="body-header-title"
                   :rows-group="{ rowsGroup }">

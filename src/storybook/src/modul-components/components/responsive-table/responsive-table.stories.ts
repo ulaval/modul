@@ -1,7 +1,7 @@
 import { actions } from '@storybook/addon-actions';
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableHeadStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableGroupHeaderStyle, MTableHeadStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { COLUMNS, DEFAULT_TABLE_GROUPS, DEFAULT_TABLE_HEAD_ROWS, ROWS_GROUP } from './responsive-table-data';
@@ -29,13 +29,16 @@ export const defaultStory = () => ({
                 MTableHeadStyle.Light
             )
         },
-        // bodySkin: {
-        //     default: select(
-        //         'Prop body-skin',
-        //         Enums.toValueArray(MTableBodyRowsStyle),
-        //         MTableBodyRowsStyle.AlternateBackground
-        //     )
-        // },
+        groupHeaderClassName: {
+            default: text('Prop group-header-class-name', '')
+        },
+        groupHeaderStyle: {
+            default: select(
+                'Prop group-header-style',
+                Enums.toValueArray(MTableGroupHeaderStyle),
+                MTableGroupHeaderStyle.Light
+            )
+        },
         waiting: {
             default: boolean('Prop waiting', false)
         },
@@ -53,6 +56,8 @@ export const defaultStory = () => ({
         :table-min-width="'1000px'"
         :default-empty-area="emptyArea"
         :head-style="headStyle"
+        :group-header-style="groupHeaderStyle"
+        :group-header-class-name="groupHeaderClassName"
         @scrollbar-width="emitScrollbarWidth"
         @sort="emitSort"
     >

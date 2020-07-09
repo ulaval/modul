@@ -23,61 +23,61 @@ const getTemplate: (
     slotTableHead: boolean = false,
     disabled: boolean = false
 ): VueConstructor => {
-        return Vue.extend({
-            props: {
-                firstColumnFixed: {
-                    default: boolean('Prop first-column-fixed', false)
-                },
-                disabled: {
-                    default: boolean('Prop disabled', disabled)
-                },
-                headStyle: {
-                    default: select(
-                        'Prop head-style',
-                        Enums.toValueArray(MTableHeadStyle),
-                        MTableHeadStyle.Light
-                    )
-                },
-                slotTableHead: {
-                    default: boolean('Slot table-head', slotTableHead)
-                }
+    return Vue.extend({
+        props: {
+            firstColumnFixed: {
+                default: boolean('Prop first-column-fixed', false)
             },
-            data: () => ({
-                headRows: headRows,
-                columns: columns
-            }),
-            methods: actions(
-                'emitSort'
-            ),
-            template: `<${TABLE_HEAD_NAME}
-        id="testTableHead"
-        :head-rows.sync="headRows"
-        :head-style="headStyle"
-        :first-column-fixed="firstColumnFixed"
-        :disabled="disabled"
-        @sort="emitSort"
-    >
-        <template
-            v-if="slotTableHead"
-            v-for="(column, columnIndex) in columns"
-            :slot="'table-head.' + column.id"
-            slot-scope="{ column }"
+            disabled: {
+                default: boolean('Prop disabled', disabled)
+            },
+            headStyle: {
+                default: select(
+                    'Prop head-style',
+                    Enums.toValueArray(MTableHeadStyle),
+                    MTableHeadStyle.Light
+                )
+            },
+            slotTableHead: {
+                default: boolean('Slot table-head', slotTableHead)
+            }
+        },
+        data: () => ({
+            headRows: headRows,
+            columns: columns
+        }),
+        methods: actions(
+            'emitSort'
+        ),
+        template: `<${TABLE_HEAD_NAME}
+            id="testTableHead"
+            :head-rows.sync="headRows"
+            :head-style="headStyle"
+            :first-column-fixed="firstColumnFixed"
+            :disabled="disabled"
+            @sort="emitSort"
         >
-            <template v-if="column && column.value">
-                <m-checkbox
-                    v-if="columnIndex == 0"
-                    :key="columnIndex"
-                >{{column.value}}
-                </m-checkbox>
-                <template v-else>
-                    {{column.value}}
+            <template
+                v-if="slotTableHead"
+                v-for="(column, columnIndex) in columns"
+                :slot="'table-head.' + column.id"
+                slot-scope="{ column }"
+            >
+                <template v-if="column && column.value">
+                    <m-checkbox
+                        v-if="columnIndex == 0"
+                        :key="columnIndex"
+                    >{{column.value}}
+                    </m-checkbox>
+                    <template v-else>
+                        {{column.value}}
+                    </template>
+                    (Slot table-head.{{column.id}})
                 </template>
-                (Slot table-head.{{column.id}})
             </template>
-        </template>
-    </${TABLE_HEAD_NAME}>`
-        });
-    };
+        </${TABLE_HEAD_NAME}>`
+    });
+};
 
 export const Sandbox = () => {
     return getTemplate(DEFAULT_TABLE_HEAD_ROWS, DEFAULT_TABLE_HEAD_ROWS[MAIN_ROW].columns);
