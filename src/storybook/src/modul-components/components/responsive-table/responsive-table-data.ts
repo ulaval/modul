@@ -14,16 +14,16 @@ export const getTableColumn: (
     defaultSortDirection: MTableColumnSortDirection = MTableColumnSortDirection.Asc
 
 ) => {
-    return {
-        id,
-        value,
-        sortable,
-        enableUnsort: true,
-        textAlign: MTableTextAlign.Left,
-        sortDirection,
-        defaultSortDirection
+        return {
+            id,
+            value,
+            sortable,
+            enableUnsort: true,
+            textAlign: MTableTextAlign.Left,
+            sortDirection,
+            defaultSortDirection
+        };
     };
-};
 
 export const MAIN_ROW: string = 'mainRow';
 
@@ -31,7 +31,7 @@ export const DEFAULT_TABLE_COLUMNS: MTableColumn[] = [
     getTableColumn('name', 'Name', true, MTableColumnSortDirection.Asc),
     getTableColumn('ni', 'NI'),
     getTableColumn('email', 'Email'),
-    getTableColumn('dateOfBirth', 'Date of birth', true, MTableColumnSortDirection.None, MTableColumnSortDirection.Dsc ),
+    getTableColumn('dateOfBirth', 'Date of birth', true, MTableColumnSortDirection.None, MTableColumnSortDirection.Dsc),
     getTableColumn('phoneNumber', 'Phone number')
 ];
 
@@ -374,9 +374,9 @@ export const ROWS_GROUP: MTableGroup = {
         }
     ],
     emptyArea: {
-        // headerText: 'Message header contenu vide',
+        headerText: 'Message header contenu vide',
         text: 'Message corps empty-area'
-        // iconName: 'm-svg__clock',
+        iconName: 'm-svg__clock',
     }
 };
 

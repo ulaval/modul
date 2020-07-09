@@ -15,12 +15,12 @@ const getTemplate: (
 ) => VueConstructor = (
     headRows: MTableHeadRows
 ): VueConstructor => {
-    return Vue.extend({
-        data: () => ({
-            headStyles: Enums.toValueArray(MTableHeadStyle),
-            headRows: headRows
-        }),
-        template: `<div>
+        return Vue.extend({
+            data: () => ({
+                headStyles: Enums.toValueArray(MTableHeadStyle),
+                headRows: headRows
+            }),
+            template: `<div>
             <div v-for="(headStyle, index) in headStyles" :key="index">
                 <p
                     :class="index === 0 ? 'm-u--no-margin': 'm-u--margin-top--l'"
@@ -34,8 +34,8 @@ const getTemplate: (
                 />
             </div>
         </div>`
-    });
-};
+        });
+    };
 
 export const AllHeadStyle: () => VueConstructor = (): VueConstructor => {
     return getTemplate(DEFAULT_TABLE_HEAD_ROWS);
