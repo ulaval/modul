@@ -115,7 +115,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     get allSelected(): boolean {
-        return this.options.length === this.value.length;
+        return this.options.length > 0 && this.options.length === this.value.length;
     }
 
     get chipsDisplayMode(): number {
