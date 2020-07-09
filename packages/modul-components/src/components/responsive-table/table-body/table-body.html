@@ -8,24 +8,24 @@
             'm--has-row-hover-effect': rowHoverEffect,
             'm--is-first-column-fixed': firstColumnFixed,
         },
-        'm--is-skin-' + skin,
+        'm--is-body-rows-style-' + bodyRowsStyle,
     ]">
-    <m-table-body-header class="m-table-body__header"
+    <m-table-group-header class="m-table-body__header"
                          :columns="columns"
                          :rows-group="rowsGroup"
                          :first-column-fixed="firstColumnFixed"
                          :current-scroll-left="currentScrollLeft"
                          :table-component-width="tableComponentWidth"
                          :default-empty-area="defaultEmptyArea">
-        <template #body-header-title="scope">
+        <template #body-header-title>
             <slot name="body-header-title"
-                  :rowsGroup="scope.rowsGroup">
+                  :rows-group="{ rowsGroup }">
                 <template v-if="
-                        scope.rowsGroup &&
-                        scope.rowsGroup.header &&
-                        scope.rowsGroup.header.title
+                        rowsGroup &&
+                        rowsGroup.header &&
+                        rowsGroup.header.title
                     ">
-                    {{ scope.rowsGroup.header.title }}
+                    {{ rowsGroup.header.title }}
                 </template>
                 <template v-else-if="emptyAreaTextHeader">
                     {{ emptyAreaTextHeader }}
@@ -33,39 +33,40 @@
             </slot>
         </template>
         <template v-for="(column, columnIndex) in columns"
-                  :slot="'body-header.' + column.dataProp"
+                  :slot="'body-header.' + column.id"
                   slot-scope="{ rowsGroup }">
-            <slot :name="'body-header.' + column.dataProp"
+            <slot :name="'body-header.' + column.id"
                   :rowsGroup="rowsGroup">
-                <template v-if="rowsGroup.header.cells[column.dataProp].value">
-                    {{ rowsGroup.header.cells[column.dataProp].value }}
+                <template v-if="rowsGroup.header.cells[column.id].value">
+                    {{ rowsGroup.header.cells[column.id].value }}
                 </template>
             </slot>
         </template>
-    </m-table-body-header>
+    </m-table-group-header>
     <template v-if="hasRowContent">
         <tr v-for="(row, rowIndex) in rowsGroup.rows"
             :key="rowIndex">
-            <td v-for="(column, indexColone) in columns"
-                :key="indexColone"
+            <td v-for="(column, indexCoumn) in columns"
+                :key="indexCoumn"
                 :class="[
                     getRowAlignmentClass(column),
-                    getRowClassName(row, column.dataProp),
+                    getRowClassName(row, column.id),
                 ]"
                 :colspan="getRowColspan(row, column)"
+                :rowspan="getRowspan(row, column)"
                 :style="getRowWidthStyle(column)">
-                <slot :name="'rows.' + column.dataProp"
+                <slot :name="'rows.' + column.id"
                       :row="row">
-                    <template v-if="row.cells && row.cells[column.dataProp]">
-                        {{ row.cells[column.dataProp].value }}
+                    <template v-if="row.cells && row.cells[column.id]">
+                        {{ row.cells[column.id].value }}
                     </template>
                 </slot>
             </td>
         </tr>
-        <m-table-empty-row v-if="!hasRows && (hasRowEmptyArea || hasDefaultEmptyArea)"
+        <!-- <m-table-empty-row v-if="!hasRows && (hasRowEmptyArea || hasDefaultEmptyArea)"
                            :empty-area="rowEmptyArea"
                            :current-scroll-left="currentScrollLeft"
                            :table-component-width="tableComponentWidth"
-                           :nb-columns="columns.length" />
+                           :nb-columns="nbColumns" /> -->
     </template>
 </tbody>

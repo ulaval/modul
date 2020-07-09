@@ -1,7 +1,7 @@
 @import 'commons';
 @import './../responsive-table-commons';
 
-@mixin effet-survol-row() {
+@mixin row-hover-effect() {
     &.m--has-row-hover-effect.m--has-row-hover-effect {
         &:not(.m--is-disabled) {
             tr:not(.m-table-body__header):hover {
@@ -11,7 +11,7 @@
     }
 }
 
-@mixin skin-row-borders() {
+@mixin body-rows-style-row-borders() {
     tr:not(.m-table-body__header) {
         + tr:not(:first-child) {
             border-top: 1px solid $m-color--border;
@@ -31,7 +31,7 @@
     }
 }
 
-@mixin skin-cell-borders() {
+@mixin body-rows-style-cell-borders() {
     tr:not(.m-table-body__header) {
         + tr:not(:first-child) {
             border-top: 1px solid $m-color--border;
@@ -45,7 +45,7 @@
     }
 }
 
-@mixin skin-alternate-background--odd-row() {
+@mixin body-rows-style-alternate-background--odd-row() {
     &.m--has-header tr {
         &:nth-child(odd):not(.m-table-body__header) {
             background-color: $m-color--grey-lightest;
@@ -63,7 +63,7 @@
     }
 }
 
-@mixin skin-alternate-background--even-row() {
+@mixin body-rows-style-alternate-background--even-row() {
     &:not(.m--has-header) tr:not(.m-table-body__header) {
         &:nth-child(even) {
             background-color: $m-color--grey-lightest;
@@ -81,9 +81,9 @@
     }
 }
 
-@mixin skin-alternate-background() {
-    @include skin-alternate-background--odd-row();
-    @include skin-alternate-background--even-row();
+@mixin body-rows-style-alternate-background() {
+    @include body-rows-style-alternate-background--odd-row();
+    @include body-rows-style-alternate-background--even-row();
 
     &.m--is-first-column-fixed {
         tr:not(.m-table-body__header) {
@@ -123,7 +123,7 @@
     border-collapse: collapse;
     border: none;
 
-    @include effet-survol-row();
+    @include row-hover-effect();
 
     /deep/ {
         td {
@@ -151,16 +151,16 @@
     color: $m-color--disabled;
 }
 
-.m-table-body.m--is-skin-row-borders {
-    @include skin-row-borders();
+.m-table-body.m--is-body-rows-style-row-borders {
+    @include body-rows-style-row-borders();
 }
 
-.m-table-body.m--is-skin-cell-borders {
-    @include skin-cell-borders();
+.m-table-body.m--is-body-rows-style-cell-borders {
+    @include body-rows-style-cell-borders();
 }
 
-.m-table-body.m--is-skin-alternate-background {
-    @include skin-alternate-background();
+.m-table-body.m--is-body-rows-style-alternate-background {
+    @include body-rows-style-alternate-background();
 }
 
 .m-table-body.m--is-first-column-fixed {

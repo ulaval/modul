@@ -1,11 +1,12 @@
 import { PluginObject } from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
+import { Enums } from '../../../utils/enums/enums';
 import { ModulVue } from '../../../utils/vue/vue';
-import { TABLE_BODY_HEADER_NAME } from '../../component-names';
+import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
-import { MTableGroupAccordionIconPosition, MTableGroupHeaderSkin } from '../responsive-table-commons';
+import { MTableColspan, MTableGroupAccordionIconPosition, MTableGroupHeaderStyle } from '../responsive-table-commons';
 import { MTableBodyMixin } from '../table-body/table-body-mixin';
-import WithRender from './table-body-header.html?style=./table-body-header.scss';
+import WithRender from './table-group-header.html?style=./table-group-header.scss';
 
 @WithRender
 @Component({
@@ -14,7 +15,7 @@ import WithRender from './table-body-header.html?style=./table-body-header.scss'
     },
     mixins: [MTableBodyMixin]
 })
-export class MTableBodyHeader extends ModulVue {
+export class MTableGroupHeader extends ModulVue {
     @Prop({
         default: 0
     })
@@ -25,10 +26,17 @@ export class MTableBodyHeader extends ModulVue {
     })
     public tableComponentWidth!: string;
 
+    @Prop({
+        default: MTableGroupHeaderStyle.Light,
+        validator: (value: MTableGroupHeaderStyle) =>
+            Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
+    })
+    public groupHeaderStyle!: MTableGroupHeaderStyle;
+
     public mPlusSkin: MPlusSkin = MPlusSkin.CurrentColor;
 
-    public hasIconeAcccordeon(columnDataProp: string): boolean {
-        if (!this.as<MTableBodyMixin>().hasAccordion) {
+    public displayAccordionIconInCorrectCell(columnId: string): boolean {
+        if (!this.displayAccordionIcon) {
             return false;
         }
         const arrayCells: string[] = this.as<MTableBodyMixin>().hasHeaderCell
@@ -36,9 +44,9 @@ export class MTableBodyHeader extends ModulVue {
             : [];
 
         if (this.isAccordeonIconPositionLeft || arrayCells.length <= 1) {
-            return arrayCells[0] === columnDataProp;
+            return arrayCells[0] === columnId;
         } else {
-            return arrayCells[arrayCells.length - 1] === columnDataProp;
+            return arrayCells[arrayCells.length - 1] === columnId;
         }
     }
 
@@ -58,6 +66,10 @@ export class MTableBodyHeader extends ModulVue {
         if (event.currentTarget) {
             (event.currentTarget as HTMLElement).blur();
         }
+    }
+
+    public getColspan(colspan: number | MTableColspan): number {
+        return colspan === MTableColspan.AllColumns ? this.as<MTableBodyMixin>().nbColumns : colspan;
     }
 
     public get tabindexEnteteAccordeon(): string | undefined {
@@ -129,17 +141,19 @@ export class MTableBodyHeader extends ModulVue {
             : '';
     }
 
-    public get skin(): MTableGroupHeaderSkin {
-        // const skin: MTableGroupHeaderSkin | undefined = this.as<MTableBodyMixin>().rowsGroup?.header?.skin;
-        // return skin ? skin : MTableGroupHeaderSkin.Light;
-        return MTableGroupHeaderSkin.Light;
+    public get displayAccordionIcon(): boolean {
+        return this.as<MTableBodyMixin>().rowsGroup
+        && this.as<MTableBodyMixin>().rowsGroup.accordion ?
+            this.as<MTableBodyMixin>().rowsGroup.accordion!.displayIcon === undefined
+            || Boolean(this.as<MTableBodyMixin>().rowsGroup.accordion!.displayIcon)
+        : false;
     }
 }
 
 const TableBodyHeaderPlugin: PluginObject<any> = {
     install(v): void {
-        v.prototype.$log.debug(TABLE_BODY_HEADER_NAME, 'plugin.install');
-        v.component(TABLE_BODY_HEADER_NAME, MTableBodyHeader);
+        v.prototype.$log.debug(TABLE_GROUP_HEADER_NAME, 'plugin.install');
+        v.component(TABLE_GROUP_HEADER_NAME, MTableGroupHeader);
     }
 };
 

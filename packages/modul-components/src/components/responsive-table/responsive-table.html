@@ -4,29 +4,29 @@
                                        :degrade-gauche-actif="!isFirstColumnFixed"
                                        :afficher-barre-defilement="displayScrollbar"
                                        @redimensionner="resizeComponant($event)">
-    <table cellspacing="0">
+    <table id="idTable"
+           cellspacing="0">
         <m-table-head v-if="displayTableHead"
-                      :columns="columns"
+                      id="idTable"
+                      :head-rows.sync="headRowsFilterAndSort"
                       :first-column-fixed="isFirstColumnFixed"
-                      :skin="headSkin"
-                      :waiting="waiting"
+                      :head-style="headStyle"
                       @sort="emitSort($event)">
-            <template v-for="(column, index) in columns"
-                      :slot="'table-head.' + column.dataProp">
-                <slot :name="'table-head.' + column.dataProp"
+            <template v-for="(column, indexColumns) in allColumns"
+                      :slot="'table-head.' + column.id">
+                <slot :name="'table-head.' + column.id"
                       :column="column">
                     <slot name="table-head"
                           :column="column">
-                        <!-- eslint-disable-next-line vue/no-v-html -->
-                        <div :key="index"
-                             v-html="column.title"></div>
+                        <div :key="indexColumns"
+                             v-html="column.value"></div>
                     </slot>
                 </slot>
             </template>
         </m-table-head>
         <tr v-if="waiting"
             class="m-responsive-table__waiting">
-            <td :colspan="columns.length">
+            <td :colspan="mainColumns.length">
                 <m-progress :indeterminate="true"
                             :border-radius="false"
                             :style="{
@@ -35,9 +35,9 @@
                         }" />
             </td>
         </tr>
-        <m-table-body v-for="(rowsGroup, index) in rowsGroupFormater"
+        <m-table-body v-for="(rowsGroup, index) in formatRowsGroup"
                       :key="index"
-                      :columns="columns"
+                      :columns="mainColumns"
                       :rows-group="rowsGroup"
                       :row-hover-effect="rowHoverEffect"
                       :first-column-fixed="isFirstColumnFixed"
@@ -45,49 +45,43 @@
                       :current-scroll-left="currentScrollLeftProp"
                       :table-component-width="tableComponentWidth">
             <template #body-header-title="scope">
-                <slot v-if="
-                            scope.header && scope.header && scope.header.title
-                        "
+                <slot v-if="scope.header && scope.header && scope.header.title"
                       name="body-header-title"
                       :header="scope.header">
-                    <!-- eslint-disable-next-line vue/no-v-html -->
                     <div :key="index"
                          v-html="scope.header.title"></div>
                 </slot>
             </template>
-            <template v-for="(column, index) in columns"
-                      :slot="'body-header.' + column.dataProp"
+            <template v-for="(column, index) in mainColumns"
+                      :slot="'body-header.' + column.id"
                       slot-scope="{ header }">
-                <slot :name="'body-header.' + column.dataProp"
+                <slot :name="'body-header.' + column.id"
                       :header="header">
                     <slot name="body-header"
                           :header="header">
-                        <div v-if="
-                                    header &&
-                                    header.cells &&
-                                    header.cells[column.dataProp]
+                        <div v-if=" header
+                                    && header.cells
+                                    && header.cells[column.id]
                                 "
                              :key="index">
-                            {{ header.cells[column.dataProp].value }}
+                            {{ header.cells[column.id].value }}
                         </div>
                     </slot>
                 </slot>
             </template>
-
-            <template v-for="(column, index) in columns"
-                      :slot="'rows.' + column.dataProp"
+            <template v-for="(column, index) in mainColumns"
+                      :slot="'rows.' + column.id"
                       slot-scope="{ row }">
-                <slot :name="'rows.' + column.dataProp"
+                <slot :name="'rows.' + column.id"
                       :row="row">
                     <slot name="rows"
                           :row="row">
-                        <div v-if="
-                                    row &&
-                                    row.cells &&
-                                    row.cells[column.dataProp]
-                                "
+                        <div v-if="row
+                                && row.cells
+                                && row.cells[column.id]
+                             "
                              :key="index">
-                            {{ row.cells[column.dataProp].value }}
+                            {{ row.cells[column.id].value }}
                         </div>
                     </slot>
                 </slot>
@@ -97,7 +91,7 @@
             <m-table-empty-row :empty-area="defaultEmptyArea"
                                :current-scroll-left="currentScrollLeftProp"
                                :table-component-width="tableComponentWidth"
-                               :nb-columns="columns.length"
+                               :nb-columns="mainColumns.length"
                                :display-default-text="true"
                                :waiting="waiting" />
         </tbody>

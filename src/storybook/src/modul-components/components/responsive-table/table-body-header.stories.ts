@@ -1,22 +1,22 @@
-import { boolean, number, object, text } from '@storybook/addon-knobs';
-import { RESPONSIVE_TABLE_NAME, TABLE_BODY_HEADER_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableEmptyArea, MTableGroup } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
-import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
+import { boolean, object, select, text } from '@storybook/addon-knobs';
+import { RESPONSIVE_TABLE_NAME, TABLE_GROUP_HEADER_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MTableColumn, MTableEmptyArea, MTableGroup, MTableGroupHeaderStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
-import { COLUMNS, ROWS_GROUP } from './responsive-table-data';
+import { DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_GROUP_1 } from './responsive-table-data';
 
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}/${TABLE_BODY_HEADER_NAME}`,
+    title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}/${TABLE_GROUP_HEADER_NAME}`,
     parameters: { fileName: __filename }
 };
 
 export const defaultStory = () => ({
     data: () => ({
-        columns: COLUMNS,
-        rowsGroup: ROWS_GROUP
+        columns: DEFAULT_TABLE_COLUMNS,
+        rowsGroup: DEFAULT_TABLE_GROUP_1
     }),
     template: `<table>
-        <${TABLE_BODY_HEADER_NAME}
+        <${TABLE_GROUP_HEADER_NAME}
             :columns="columns"
             :rowsGroup="rowsGroup"
         />
@@ -32,26 +32,30 @@ export const Sandbox = () => ({
         firstColumnFixed: {
             default: boolean('Prop first-column-fixed', false)
         },
-        currentScrollLeft: {
-            default: number('Prop current-scroll-left', 0)
-        },
         tableComponentWidth: {
             default: text('Prop table-component-width', '100%')
         },
+        groupHeaderStyle: {
+            default: select(
+                'Prop group-header-style',
+                Enums.toValueArray(MTableGroupHeaderStyle),
+                MTableGroupHeaderStyle.Light
+            )
+        },
+        columns: {
+            default: object<MTableColumn[]>('Prop columns', DEFAULT_TABLE_COLUMNS)
+        },
+        rowsGroup: {
+            default: object<MTableGroup>('Prop rows-group', DEFAULT_TABLE_GROUP_1)
+        },
         hasDataRowsGroup: {
-            default: boolean('Has data row group', true)
+            default: boolean('has data rows group', true)
         },
         slotBodyHeaderTitle: {
             default: boolean('Slot body-header-title', false)
         },
         slotBodyHeader: {
             default: boolean('Slot body-header', false)
-        },
-        columns: {
-            default: object<MColumnTable[]>('Prop columns', COLUMNS)
-        },
-        rowsGroup: {
-            default: object<MTableGroup>('Prop rows-group', ROWS_GROUP)
         },
         defaultEmptyArea: {
             default: object<MTableEmptyArea>('Prop default-empty-area', {
@@ -68,27 +72,28 @@ export const Sandbox = () => ({
         }
     },
     template: `<table style="width: 100%">
-        <${TABLE_BODY_HEADER_NAME}
+        <${TABLE_GROUP_HEADER_NAME}
             :columns="columns"
-            :rowsGroup="rowsGroupIntern"
-            :current-scroll-left="currentScrollLeft"
-            :table-component-width="tableComponentWidth"
+            :rows-group="rowsGroupIntern"
             :first-column-fixed="firstColumnFixed"
+            :group-header-style="groupHeaderStyle"
             :default-empty-area="defaultEmptyArea"
+            :table-component-width="tableComponentWidth"
         >
-            <template v-if="slotBodyHeaderTitle && scope.rowsGroup && scope.rowsGroup.header && scope.rowsGroup.header.title" #body-header-title="scope">
-                {{scope.rowsGroup.header.title}} (Slot body-header-title)
+            <template
+                v-if="slotBodyHeaderTitle && rowsGroup && rowsGroup.header && rowsGroup.header.title"
+                slot="body-header-title"
+                slot-scope="{ rowsGroup }">
+                {{ rowsGroup.header.title}} (Slot body-header-title)
             </template>
             <template
                 v-if="slotBodyHeader"
                 v-for="(column, columnIndex) in columns"
-                :slot="'body-header.' + column.dataProp"
+                :slot="'body-header.' + column.id"
                 slot-scope="{ rowsGroup }"
             >
-                <template v-if="rowsGroup.header && rowsGroup.header.cells && cells[column.dataProp]">
-                    {{ rowsGroup.header.cells[column.dataProp].value }} (Slot body-header.{{column.dataProp}})
-                </template>
+                {{ rowsGroup.header.cells[column.id].value}} (Slot body-header.{{column.id}})
             </template>
-        </${TABLE_BODY_HEADER_NAME}>
+        </${TABLE_GROUP_HEADER_NAME}>
     </table>`
 });

@@ -4,24 +4,24 @@ import { PluginObject } from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
 import { TABLE_BODY_NAME } from '../../component-names';
-import { getCellAlignmentClass, getCellWidthStyle, MTableBodySkin, MTableColspan, MTableRow } from './../responsive-table-commons';
-import { MTableBodyHeader } from './../table-body-header/table-body-header';
+import { MTableGroupHeader } from '../table-group-header/table-group-header';
+import { getCellAlignmentClass, getCellWidthStyle, MTableBodyRowsStyle, MTableColspan, MTableColumn, MTableRow } from './../responsive-table-commons';
 import { MTableEmptyRow } from './../table-empty-row/table-empty-row';
 import { MTableBodyMixin } from './table-body-mixin';
 import WithRender from './table-body.html?style=./table-body.scss';
 
 @WithRender
 @Component({
-    components: { MTableBodyHeader, MTableEmptyRow },
+    components: { MTableGroupHeader: MTableGroupHeader, MTableEmptyRow },
     mixins: [MTableBodyMixin]
 })
 export class MTableBody extends ModulVue {
     @Prop({
-        default: MTableBodySkin.AlternateBackground,
-        validator: (value: MTableBodySkin) =>
-            Enums.toValueArray(MTableBodySkin).includes(value)
+        default: MTableBodyRowsStyle.AlternateBackground,
+        validator: (value: MTableBodyRowsStyle) =>
+            Enums.toValueArray(MTableBodyRowsStyle).includes(value)
     })
-    public readonly skin!: MTableBodySkin;
+    public readonly bodyRowsStyle!: MTableBodyRowsStyle;
 
     @Prop({
         default: true
@@ -40,35 +40,47 @@ export class MTableBody extends ModulVue {
 
     public getRowClassName(
         row: MTableRow,
-        columnDataProp: string
+        columnid: string
     ): string | undefined {
         return row.cells &&
-            row.cells[columnDataProp] &&
-            row.cells[columnDataProp].className
-            ? row.cells[columnDataProp].className
+            row.cells[columnid] &&
+            row.cells[columnid].className
+            ? row.cells[columnid].className
             : undefined;
     }
+
     public getRowColspan(
         row: MTableRow,
         column: MColumnTable
     ): number | undefined {
         const colspan: number | undefined | MTableColspan =
             row.cells &&
-                row.cells[column.dataProp] &&
-                row.cells[column.dataProp].colspan
-                ? row.cells[column.dataProp].colspan
+                row.cells[column.id] &&
+                row.cells[column.id].colspan
+                ? row.cells[column.id].colspan
                 : undefined;
 
         return colspan === MTableColspan.AllColumns
-            ? this.as<MTableBodyMixin>().columns.length
+            ? this.as<MTableBodyMixin>().nbColumns
             : colspan;
     }
 
-    public getRowAlignmentClass(column: MColumnTable): string {
+    public getRowspan(
+        row: MTableRow,
+        column: MColumnTable
+    ): number | undefined {
+        return row.cells &&
+            row.cells[column.id] &&
+            row.cells[column.id].rowspan
+            ? row.cells[column.id].rowspan
+            : undefined;
+    }
+
+    public getRowAlignmentClass(column: MTableColumn): string {
         return getCellAlignmentClass(column);
     }
 
-    public getRowWidthStyle(column: MColumnTable): string {
+    public getRowWidthStyle(column: MTableColumn): string {
         return getCellWidthStyle(column);
     }
 }

@@ -2,16 +2,15 @@ import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
+import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
-import { MColumnTable } from '../table/table';
+import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-validation';
 import { MProgress } from './../progress/progress';
-import { MTableBodySkin, MTableEmptyArea, MTableGroup, MTableHeadSkin, MTableRow } from './responsive-table-commons';
+import { getHeadRowsFilterAndSort, MTableBodyRowsStyle, MTableColumn, MTableEmptyArea, MTableGroup, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
 import { MTableBody } from './table-body/table-body';
 import { MTableEmptyRow } from './table-empty-row/table-empty-row';
 import { MTableHead } from './table-head/table-head';
-
-export const REGEX_NOMBRE_EN_PX_EM_POURCENT: RegExp = /^\d+(\.[0-9]{1,4})?(px|em|%)$/;
 
 @WithRender
 @Component({
@@ -24,10 +23,14 @@ export const REGEX_NOMBRE_EN_PX_EM_POURCENT: RegExp = /^\d+(\.[0-9]{1,4})?(px|em
     }
 })
 export class MResponsiveTable extends ModulVue {
-    @Prop({
-        required: true
-    })
-    public readonly columns!: MColumnTable[];
+    @Prop()
+    public readonly id?: string;
+
+    @Prop()
+    public readonly headRows?: MTableHeadRows;
+
+    @Prop()
+    public readonly columns?: MTableColumn[];
 
     @Prop()
     public readonly rowGroups?: MTableGroup[];
@@ -48,7 +51,7 @@ export class MResponsiveTable extends ModulVue {
     @Prop({
         default: '1000px',
         validator: (value: string) =>
-            REGEX_NOMBRE_EN_PX_EM_POURCENT.test(value)
+            REGEX_CSS_NUMBER_VALUE.test(value)
     })
     public readonly tableMinWidth!: string;
 
@@ -59,18 +62,18 @@ export class MResponsiveTable extends ModulVue {
     public readonly rowHoverEffect!: boolean;
 
     @Prop({
-        default: MTableHeadSkin.LightBackground,
-        validator: (value: MTableHeadSkin) =>
-            Enums.toValueArray(MTableHeadSkin).includes(value)
+        default: MTableHeadStyle.Light,
+        validator: (value: MTableHeadStyle) =>
+            Enums.toValueArray(MTableHeadStyle).includes(value)
     })
-    public readonly headSkin!: MTableHeadSkin;
+    public readonly headStyle!: MTableHeadStyle;
 
     @Prop({
-        default: MTableBodySkin.AlternateBackground,
-        validator: (value: MTableBodySkin) =>
-            Enums.toValueArray(MTableBodySkin).includes(value)
+        default: MTableBodyRowsStyle.AlternateBackground,
+        validator: (value: MTableBodyRowsStyle) =>
+            Enums.toValueArray(MTableBodyRowsStyle).includes(value)
     })
-    public readonly bodySkin!: MTableBodySkin;
+    public readonly bodySkin!: MTableBodyRowsStyle;
 
     @Prop({
         default: 0
@@ -90,7 +93,13 @@ export class MResponsiveTable extends ModulVue {
     public tableComponentWidth: string = '100%';
 
     @Emit('sort')
-    public emitSort(_column: MColumnTable): void { }
+    public emitSort(_column: MTableColumn): void { }
+
+    @Emit('update:currentScrollLeft')
+    public emitUpdateCurrentScrollLeft(_currentScrollLeft: number): void { }
+
+    @Emit('scrollbar-width')
+    public emitScrollbarWidth(_scrollbarWidth: number): void { }
 
     @Watch('currentScrollLeft', { immediate: true })
     public onCurrentScrollLeftChangement(value: number): void {
@@ -99,13 +108,18 @@ export class MResponsiveTable extends ModulVue {
         }
     }
 
-    @Emit('update:currentScrollLeft')
-    public emitUpdateCurrentScrollLeft(_currentScrollLeft: number): void { }
+    @Watch('headRows', { immediate: true })
+    public onHeadRowsChange(headRows: MTableHeadRows): void {
+        this.headRowsFilterAndSort = headRows;
+    }
 
-    @Emit('scrollbar-width')
-    public emitScrollbarWidth(_scrollbarWidth: number): void { }
+    public headRowsInterne: MTableHeadRows = {};
 
-    public get rowsGroupFormater(): MTableGroup[] {
+    public get idTable(): string {
+        return this.id || uuid.generate();
+    }
+
+    public get formatRowsGroup(): MTableGroup[] {
         if (this.rows && this.rows.length) {
             const nouveauRowsGroup: MTableGroup[] = [
                 {
@@ -121,8 +135,60 @@ export class MResponsiveTable extends ModulVue {
         return [];
     }
 
+    public get headRowsFilterAndSort(): MTableHeadRows {
+        return this.headRowsInterne;
+    }
+
+    public set headRowsFilterAndSort(headRows: MTableHeadRows) {
+        const headRowsArray: MTableHeadRow[] = headRows ? Object.keys(headRows).map((key: string) => {
+            return headRows[key];
+        }) : [];
+        const hasSomeHeadMainColumns: boolean = headRowsArray.some((hr: MTableHeadRow) => {
+            return hr.mainColumns;
+        });
+        let maxOrder: number = Math.max.apply(Math, headRowsArray.map((hr: MTableHeadRow) => hr.order));
+
+        if (this.columns && this.columns.length && headRowsArray.length) {
+            maxOrder = maxOrder && maxOrder > 0 ? maxOrder + 1 : 1;
+
+            if (hasSomeHeadMainColumns) {
+                headRows['lastRow'] = {
+                    order: maxOrder,
+                    columns: this.columns
+                };
+            } else {
+                headRows['mainRow'] = {
+                    order: maxOrder,
+                    mainColumns: true,
+                    columns: this.columns
+                };
+            }
+
+            this.headRowsInterne = getHeadRowsFilterAndSort(headRows);
+
+        }
+        this.headRowsInterne = getHeadRowsFilterAndSort(headRows) || {};
+    }
+
+    public get allColumns(): MTableColumn[] {
+        return Object.keys(this.headRowsFilterAndSort)
+            .reduce((acc: MTableColumn[], cur: string) => {
+                this.headRowsFilterAndSort[cur].columns.forEach(c => {
+                    acc.push(c);
+                });
+                return acc;
+            }, []);
+    }
+
+
+    public get mainColumns(): MTableColumn[] | any {
+        const formatHeadRowKeys: string[] = Object.keys(this.headRowsFilterAndSort);
+        const keyMainColumns: string = formatHeadRowKeys[formatHeadRowKeys.findIndex(key => this.headRowsFilterAndSort[key].mainColumns)];
+        return this.headRowsFilterAndSort[keyMainColumns].columns;
+    }
+
     public get hasRowsGroup(): boolean {
-        return Boolean(this.rowsGroupFormater && this.rowsGroupFormater.length);
+        return Boolean(this.formatRowsGroup && this.formatRowsGroup.length);
     }
 
     public set currentScrollLeftProp(value: number) {

@@ -1,15 +1,14 @@
-import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { MTableEmptyArea, MTableGroup } from '../responsive-table-commons';
+import { MTableColspan, MTableColumn, MTableEmptyArea, MTableGroup } from '../responsive-table-commons';
 
 @Component
 export class MTableBodyMixin extends Vue {
     @Prop({
         required: true
     })
-    public readonly columns!: MColumnTable[];
+    public readonly columns!: MTableColumn[];
 
     @Prop({
         required: true
@@ -129,6 +128,16 @@ export class MTableBodyMixin extends Vue {
         return this.hasAccordion
             ? this.isAccordionOpen && this.hasRowsOrRowEmptyArea
             : this.hasRowsOrRowEmptyArea;
+    }
+
+    public get nbColumns(): number {
+        return this.columns.reduce((acc, curr) => {
+            return curr.colspan
+                && curr.colspan > 0
+                && curr.colspan !== MTableColspan.AllColumns
+                    ? acc + curr.colspan
+                    : acc + 1;
+        }, 0);
     }
 }
 
