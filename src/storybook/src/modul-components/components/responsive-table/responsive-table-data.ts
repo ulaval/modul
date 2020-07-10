@@ -5,13 +5,15 @@ export const getTableColumn: (
     value: string,
     sortable?: boolean,
     sortDirection?: MTableSortDirection,
-    defaultSortDirection?: MTableSortDirection
+    defaultSortDirection?: MTableSortDirection,
+    textAlign?: MTableTextAlign
 ) => MTableColumn = (
     name: string,
     value: string,
     sortable: boolean = true,
     sortDirection: MTableSortDirection | undefined = undefined,
-    defaultSortDirection: MTableSortDirection = MTableSortDirection.Asc
+    defaultSortDirection: MTableSortDirection = MTableSortDirection.Asc,
+    textAlign: MTableTextAlign = MTableTextAlign.Left
 
 ) => {
     return {
@@ -19,7 +21,7 @@ export const getTableColumn: (
         value,
         sortable,
         enableUnsort: true,
-        textAlign: MTableTextAlign.Left,
+        textAlign,
         sortDirection,
         defaultSortDirection
     };
@@ -29,7 +31,7 @@ export const MAIN_ROW: string = 'mainRow';
 
 export const DEFAULT_TABLE_COLUMNS: MTableColumn[] = [
     getTableColumn('name', 'Name', true, MTableSortDirection.Asc),
-    getTableColumn('ni', 'NI'),
+    getTableColumn('ni', 'NI', true, MTableSortDirection.None, MTableSortDirection.None, MTableTextAlign.Center),
     getTableColumn('email', 'Email'),
     getTableColumn('dateOfBirth', 'Date of birth', true, MTableSortDirection.None, MTableSortDirection.Dsc),
     getTableColumn('phoneNumber', 'Phone number')
@@ -108,11 +110,12 @@ export const DEFAULT_TABLE_GROUP_HEADER_1: MTableHeader = {
     title: 'English Class',
     cells: {
         name: {
-            value: 'ANL-3010'
+            value: 'ANL-3010',
         },
         ni: {
             value: 'Advanced English I',
-            colspan: 4
+            colspan: 4,
+            textAlign: MTableTextAlign.Right
         }
     }
 };

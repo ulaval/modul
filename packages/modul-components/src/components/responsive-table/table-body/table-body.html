@@ -64,7 +64,7 @@
                 :is="isCellHeader(row, column.name) ? 'th' : 'td'"
                 class="m-table-body__cell"
                 :class="[
-                    getRowAlignmentClass(column),
+                    getRowAlignmentClass(row, column),
                     getRowClassName(row, column.name),
                 ]"
                 :colspan="getRowColspan(row, column)"

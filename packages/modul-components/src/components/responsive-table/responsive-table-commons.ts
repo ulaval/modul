@@ -79,11 +79,12 @@ export interface MTableCells {
 
 export interface MTableCell {
     value: any;
+    data?: any;
     isHeader?: boolean;
-    className?: string;
     colspan?: number | MTableColspan;
     rowspan?: number;
-    data?: any;
+    className?: string;
+    textAlign?: MTableTextAlign;
 }
 
 export interface MTableEmptyArea {
@@ -120,10 +121,10 @@ export enum MTableHeaderStyle {
     Any = 'any'
 }
 
-export const getCellAlignmentClass: (column: MTableColumn) => string = (
-    column: MTableColumn
+export const getCellAlignmentClass: (textAlign: MTableTextAlign) => string = (
+    textAlign: MTableTextAlign
 ) => {
-    return `m--is-text-align-${column.textAlign}`;
+    return `m--is-text-align-${textAlign}`;
 };
 
 export const getCellWidthStyle: (column: MTableColumn) => string = (

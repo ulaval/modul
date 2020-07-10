@@ -18,9 +18,14 @@
     @keyup.self.enter="toggleAccordeon($event)">
     <th v-if="hasHeaderWithoutCell ||
             (emptyAreaTextHeader && !hasHeaderCell && !hasHeader)"
+        :class="[
+            rowsGroup.header.cells[column.name].className,
+            getRowAlignmentClass(rowsGroup, column)
+        ]"
+        :style="rowsGroup.header.cells[column.name].style"
         :colspan="totalColumnsLength">
         <div class="m-table-group-header__cell"
-             :style="[headerWithoutCellsStyle]">
+             :style="headerWithoutCellsStyle">
             <m-plus v-if="displayAccordionIcon"
                     class="m-table-group-header__accordion-icon"
                     :class="[rowsGroup.accordion.iconClassName]"
@@ -46,13 +51,14 @@
               v-else-if="hasHeaderCell">
         <th v-if="rowsGroup.header.cells[column.name]"
             :key="columnIndex"
-            :class="[rowsGroup.header.cells[column.name].className]"
-            :style="[rowsGroup.header.cells[column.name].style]"
+            :class="[
+                rowsGroup.header.cells[column.name].className,
+                getRowAlignmentClass(rowsGroup, column)
+            ]"
+            :style="rowsGroup.header.cells[column.name].style"
             :colspan="getColspan(rowsGroup.header.cells[column.name].colspan)">
-            <div v-if="firstCellsItem === column.name && hasAccordion"
-                 class="m-table-group-header__accordion-border"
-                 aria-hidden="true"></div>
-            <div class="m-table-group-header__cell">
+            <div class="m-table-group-header__cell"
+                >
                 <m-plus v-if="displayAccordionIconInCorrectCell(column.name)"
                         class="m-table-group-header__accordion-icon"
                         :class="[rowsGroup.accordion.iconClassName]"

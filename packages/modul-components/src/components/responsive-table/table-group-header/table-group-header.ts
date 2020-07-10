@@ -3,7 +3,7 @@ import { Component, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
-import { MTableAccordionIconPosition, MTableColspan } from '../responsive-table-commons';
+import { getCellAlignmentClass, MTableAccordionIconPosition, MTableColspan, MTableColumn, MTableRowsGroup } from '../responsive-table-commons';
 import { MTableBodyMixin } from '../table-body/table-body-mixin';
 import WithRender from './table-group-header.html?style=./table-group-header.scss';
 
@@ -26,50 +26,6 @@ export class MTableGroupHeader extends ModulVue {
     public readonly tableComponentWidth!: string;
 
     public mPlusSkin: MPlusSkin = MPlusSkin.CurrentColor;
-
-    public displayAccordionIconInCorrectCell(columnId: string): boolean {
-        if (!this.displayAccordionIcon) {
-            return false;
-        }
-        const arrayCells: string[] = this.as<MTableBodyMixin>().hasHeaderCell
-            ? Object.keys(this.as<MTableBodyMixin>().rowsGroup.header!.cells!)
-            : [];
-
-        if (this.isAccordeonIconPositionLeft || arrayCells.length <= 1) {
-            return arrayCells[0] === columnId;
-        } else {
-            return arrayCells[arrayCells.length - 1] === columnId;
-        }
-    }
-
-    public toggleAccordeon(event: MouseEvent): void {
-        const target: Element | null = (event.target as HTMLElement).closest(
-            `[href], [onclick], a, button, input, textarea, radio`
-        );
-        if (
-            !this.as<MTableBodyMixin>().hasAccordion ||
-            this.as<MTableBodyMixin>().isAccordionDisabled ||
-            Boolean(target)
-        ) {
-            event.preventDefault();
-            return;
-        }
-        this.as<MTableBodyMixin>().rowsGroup.accordion!.open = !this.as<MTableBodyMixin>().rowsGroup.accordion!.open;
-        if (event.currentTarget) {
-            (event.currentTarget as HTMLElement).blur();
-        }
-
-        if (this.as<MTableBodyMixin>().rowsGroup.accordion!.open) {
-            this.as<MTableBodyMixin>().emitOpenAccordion(this.as<MTableBodyMixin>().rowsGroup);
-        } else {
-            this.as<MTableBodyMixin>().emitCloseAccordion(this.as<MTableBodyMixin>().rowsGroup);
-        }
-    }
-
-
-    public getColspan(colspan: number | MTableColspan): number {
-        return colspan === MTableColspan.AllColumns ? this.as<MTableBodyMixin>().totalColumnsLength : colspan;
-    }
 
     public get tabindexEnteteAccordeon(): string | undefined {
         return !this.as<MTableBodyMixin>().hasAccordion ||
@@ -146,6 +102,57 @@ export class MTableGroupHeader extends ModulVue {
             this.as<MTableBodyMixin>().rowsGroup.accordion!.displayIcon === undefined
             || Boolean(this.as<MTableBodyMixin>().rowsGroup.accordion!.displayIcon)
         : false;
+    }
+
+    public displayAccordionIconInCorrectCell(columnId: string): boolean {
+        if (!this.displayAccordionIcon) {
+            return false;
+        }
+        const arrayCells: string[] = this.as<MTableBodyMixin>().hasHeaderCell
+            ? Object.keys(this.as<MTableBodyMixin>().rowsGroup.header!.cells!)
+            : [];
+
+        if (this.isAccordeonIconPositionLeft || arrayCells.length <= 1) {
+            return arrayCells[0] === columnId;
+        } else {
+            return arrayCells[arrayCells.length - 1] === columnId;
+        }
+    }
+
+    public toggleAccordeon(event: MouseEvent): void {
+        const target: Element | null = (event.target as HTMLElement).closest(
+            `[href], [onclick], a, button, input, textarea, radio`
+        );
+        if (
+            !this.as<MTableBodyMixin>().hasAccordion ||
+            this.as<MTableBodyMixin>().isAccordionDisabled ||
+            Boolean(target)
+        ) {
+            event.preventDefault();
+            return;
+        }
+        this.as<MTableBodyMixin>().rowsGroup.accordion!.open = !this.as<MTableBodyMixin>().rowsGroup.accordion!.open;
+        if (event.currentTarget) {
+            (event.currentTarget as HTMLElement).blur();
+        }
+
+        if (this.as<MTableBodyMixin>().rowsGroup.accordion!.open) {
+            this.as<MTableBodyMixin>().emitOpenAccordion(this.as<MTableBodyMixin>().rowsGroup);
+        } else {
+            this.as<MTableBodyMixin>().emitCloseAccordion(this.as<MTableBodyMixin>().rowsGroup);
+        }
+    }
+
+
+    public getColspan(colspan: number | MTableColspan): number {
+        return colspan === MTableColspan.AllColumns ? this.as<MTableBodyMixin>().totalColumnsLength : colspan;
+    }
+
+    public getRowAlignmentClass(rowsGroup: MTableRowsGroup, column: MTableColumn): string | undefined {
+        if (rowsGroup.header && rowsGroup.header.cells && rowsGroup.header.cells[column.name] && rowsGroup.header.cells[column.name].textAlign) {
+            return getCellAlignmentClass(rowsGroup.header.cells[column.name].textAlign!);
+        }
+        return column.textAlign ? getCellAlignmentClass(column.textAlign) : undefined;
     }
 }
 

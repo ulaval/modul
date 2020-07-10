@@ -75,7 +75,17 @@ export class MResponsiveTable extends ModulVue {
         validator: (value: MTableRowsStyle) =>
             Enums.toValueArray(MTableRowsStyle).includes(value)
     })
-    public readonly bodySkin!: MTableRowsStyle;
+    public readonly rowsStyle!: MTableRowsStyle;
+
+    @Prop({
+        default: MTableHeaderStyle.Light,
+        validator: (value: MTableHeaderStyle) =>
+            Enums.toValueArray(MTableHeaderStyle).includes(value)
+    })
+    public groupHeaderStyle!: MTableHeaderStyle;
+
+    @Prop()
+    public groupHeaderClassName: string;
 
     @Prop({
         default: 0
@@ -89,16 +99,6 @@ export class MResponsiveTable extends ModulVue {
         default: true
     })
     public readonly displayScrollbar!: boolean;
-
-    @Prop({
-        default: MTableHeaderStyle.Light,
-        validator: (value: MTableHeaderStyle) =>
-            Enums.toValueArray(MTableHeaderStyle).includes(value)
-    })
-    public groupHeaderStyle!: MTableHeaderStyle;
-
-    @Prop()
-    public groupHeaderClassName: string;
 
     public currentScrollLeftInterne: number = 0;
     public hasDefilementVertical: boolean = false;

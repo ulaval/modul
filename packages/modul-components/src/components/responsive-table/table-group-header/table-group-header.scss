@@ -2,7 +2,7 @@
 @import './../responsive-table-commons';
 
 @mixin first-column-fixed() {
-    &.m--is-first-column-fixed td {
+    &.m--is-first-column-fixed th {
         &:first-child {
             @include m-table--sticky-cell();
         }
@@ -38,8 +38,10 @@
     border-top: 1px solid $m-color--white;
     outline: none;
 
-    td {
+    th {
         position: relative;
+
+        @include m-table--cell-alignment();
     }
 
     @include first-column-fixed();

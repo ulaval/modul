@@ -1,7 +1,7 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableHeaderStyle, MTableHeadStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableHeaderStyle, MTableHeadStyle, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_GROUPS, DEFAULT_TABLE_HEAD_ROWS, ROWS_GROUP } from './responsive-table-data';
@@ -37,6 +37,13 @@ export const defaultStory = () => ({
                 'Prop group-header-style',
                 Enums.toValueArray(MTableHeaderStyle),
                 MTableHeaderStyle.Light
+            )
+        },
+        rowsStyle: {
+            default: select(
+                'Prop rows-style',
+                Enums.toValueArray(MTableRowsStyle),
+                MTableRowsStyle.AlternateBackground
             )
         },
         waiting: {
@@ -82,6 +89,7 @@ export const defaultStory = () => ({
         :table-min-width="'1000px'"
         :default-empty-area="emptyArea"
         :head-style="headStyle"
+        :rows-style="rowsStyle"
         :group-header-style="groupHeaderStyle"
         :group-header-class-name="groupHeaderClassName"
         :row-highlighted-on-hover="rowHighlightedOnHover"

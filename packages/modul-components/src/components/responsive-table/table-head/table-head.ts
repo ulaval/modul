@@ -101,8 +101,8 @@ export class MTableHead extends ModulVue {
         return Boolean(this.getColumnSortDirectionClass(currentColumn));
     }
 
-    public getColumnAlignmentClass(column: MTableColumn): string {
-        return getCellAlignmentClass(column);
+    public getColumnAlignmentClass(column: MTableColumn): string | undefined {
+        return column.textAlign ? getCellAlignmentClass(column.textAlign) : undefined;
     }
 
     public getColumnSortIcon(currentColumn: MTableColumn): string {
