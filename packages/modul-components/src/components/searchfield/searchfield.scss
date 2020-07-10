@@ -57,6 +57,10 @@
         }
     }
 
+    &__search-button-icon {
+        align-self: center;
+    }
+
     &__reset {
         margin-left: $m-spacing--s;
     }

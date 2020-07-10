@@ -5,7 +5,7 @@ import { MFormatMode, ModulPeriod, PeriodFilter } from './period';
 
 describe(PERIOD_NAME, () => {
     beforeEach(() => {
-        addMessages(Vue, ['filters/date/period/period.lang.en.json', 'filters/date/date/date.lang.en.json']);
+        addMessages(Vue, ['filters/date/period/period.lang.en.json', 'filters/date/date/date.lang.en.json', 'filters/date/time/time.lang.fr.json']);
     });
 
     describe(`Given both dates are present`, () => {
@@ -36,6 +36,26 @@ describe(PERIOD_NAME, () => {
                     endDate.toLocaleDateString = jest.fn(() => '8 sept. 2019');
 
                     expect(PeriodFilter.formatPeriod(period, MFormatMode.ShortMonth)).toEqual('Le 8 sept. 2019');
+                });
+
+                it(`should return a formatted period with only one date, but with 2 times with shortDate and showTime periode params`, () => {
+                    const startDate: Date = new Date(2019, 3, 8, 0, 0, 0, 0);
+                    const endDate: Date = new Date(2019, 3, 8, 23, 59, 0, 0);
+                    const period: ModulPeriod = {
+                        start: startDate,
+                        end: endDate
+                    };
+                    startDate.toLocaleDateString = jest.fn(() => '8 sept. 2019');
+                    endDate.toLocaleDateString = jest.fn(() => '8 sept. 2019');
+                    jest.spyOn(Vue.prototype.$i18n, 'getCurrentLocale').mockReturnValue('fr-CA');
+
+                    expect(PeriodFilter.formatPeriod(period, MFormatMode.ShortMonth, true))
+                        .toEqual(`Le 8 sept. 2019 de ${new Intl.DateTimeFormat('', {
+                            hour: 'numeric'
+                        }).format(startDate)} à ${new Intl.DateTimeFormat('', {
+                            hour: 'numeric',
+                            minute: 'numeric'
+                        }).format(endDate)}`);
                 });
             });
 
