@@ -1,15 +1,20 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import MAccordionPlugin, { AccordionGateway, AccordionGroupGateway, MAccordionSkin } from '../accordion/accordion';
-import { ACCORDION_GROUP_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import LinkPlugin from '../link/link';
+import AccordionPlugin, { AccordionGateway, AccordionGroupGateway, MAccordionSkin } from '../accordion/accordion';
+import { ACCORDION_GROUP_NAME, I18N_NAME, LINK_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MLink } from '../link/link';
 import WithRender from './accordion-group.html?style=./accordion-group.scss';
 
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [LINK_NAME]: MLink,
+        [I18N_NAME]: MI18n
+    }
+})
 export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     @Prop({
         default: MAccordionSkin.Default,
@@ -155,9 +160,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
 
 const AccordionGroupPlugin: PluginObject<any> = {
     install(v): void {
-        v.use(LinkPlugin);
-        v.use(I18nPlugin);
-        v.use(MAccordionPlugin);
+        v.use(AccordionPlugin);
         v.component(ACCORDION_GROUP_NAME, MAccordionGroup);
     }
 };

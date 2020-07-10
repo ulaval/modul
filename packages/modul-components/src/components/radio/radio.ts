@@ -5,7 +5,6 @@ import { InputState, InputStateMixin } from '../../mixins/input-state/input-stat
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { RADIO_NAME } from '../component-names';
-import IconPlugin from '../icon/icon';
 import WithRender from './radio.html?style=./radio.scss';
 
 export enum MRadioPosition {
@@ -191,7 +190,6 @@ export class MRadio extends ModulVue {
 
 const RadioPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(IconPlugin);
         v.component(RADIO_NAME, MRadio);
     }
 };

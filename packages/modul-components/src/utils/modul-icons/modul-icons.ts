@@ -85,10 +85,11 @@ export enum ModulIconName {
     FileZip = 'file-zip',
     FolderOpen = 'folder-open',
     Folder = 'folder',
-    FullScreen = 'fullScreen',
+    FullScreen = 'full-screen',
     GridFilled = 'grid-filled',
     Grid = 'grid',
-    Grouping = 'Grouping',
+    Grouping = 'grouping',
+    HelpCircle = 'help-circle',
     Heraldry = 'heraldry',
     Hide = 'hide',
     Hint = 'hint',
@@ -661,6 +662,9 @@ export const ModulIcons: ModulIcon[] = [
         category: [
             ModulIconsCategory.Control
         ]
+    },
+    {
+        name: ModulIconName.HelpCircle
     },
     {
         name: ModulIconName.Heraldry

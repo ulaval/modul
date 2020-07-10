@@ -462,7 +462,7 @@ const extractVnodeAttributes: (binding: VNodeDirective, node: VNode) => MSortabl
         encapsulate: (binding.modifiers || {}).encapsulate || false
     };
 };
-const Directive: DirectiveOptions = {
+export const SortableDirective: DirectiveOptions = {
     inserted(element: HTMLElement, binding: VNodeDirective, node: VNode): void {
         MDOMPlugin.attach(MSortable, element, extractVnodeAttributes(binding, node));
     },
@@ -477,7 +477,7 @@ const Directive: DirectiveOptions = {
 const SortablePlugin: PluginObject<any> = {
     install(v, _options): void {
         v.use(DragAndDropPlugin);
-        v.directive(SORTABLE_NAME, Directive);
+        v.directive(SORTABLE_NAME, SortableDirective);
     }
 };
 
