@@ -1,5 +1,5 @@
 <tbody v-if="hasHeaderOrHeaderEmptyArea || hasRowsOrRowEmptyArea"
-       class="m-table-body"
+       class="m-table-group"
        :class="[
         {
             'm--is-disabled': isAccordionDisabled,
@@ -11,7 +11,7 @@
         'm--is-rows-style-' + rowsStyle,
     ]">
     <m-table-group-header
-                         class="m-table-body__header"
+                         class="m-table-group__header"
                          :columns="columns"
                          :rows-group="rowsGroup"
                          :first-column-fixed="firstColumnFixed"
@@ -62,7 +62,7 @@
             <component v-for="(column, indexCoumn) in columns"
                 :key="indexCoumn"
                 :is="isCellHeader(row, column.name) ? 'th' : 'td'"
-                class="m-table-body__cell"
+                class="m-table-group__cell"
                 :class="[
                     getRowAlignmentClass(row, column),
                     getRowClassName(row, column.name),

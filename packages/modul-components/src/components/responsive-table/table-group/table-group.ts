@@ -3,19 +3,19 @@ import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import { Component, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
-import { TABLE_BODY_NAME } from '../../component-names';
+import { TABLE_GROUP_NAME } from '../../component-names';
+import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsStyle } from '../responsive-table-commons';
+import { MTableEmptyRow } from '../table-empty-row/table-empty-row';
 import { MTableGroupHeader } from '../table-group-header/table-group-header';
-import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsStyle } from './../responsive-table-commons';
-import { MTableEmptyRow } from './../table-empty-row/table-empty-row';
-import { MTableBodyMixin } from './table-body-mixin';
-import WithRender from './table-body.html?style=./table-body.scss';
+import { MTableGroupMixin } from './table-group-mixin';
+import WithRender from './table-group.html?style=./table-group.scss';
 
 @WithRender
 @Component({
     components: { MTableGroupHeader: MTableGroupHeader, MTableEmptyRow },
-    mixins: [MTableBodyMixin]
+    mixins: [MTableGroupMixin]
 })
-export class MTableBody extends ModulVue {
+export class MTableGroup extends ModulVue {
     @Prop({
         default: MTableRowsStyle.AlternateBackground,
         validator: (value: MTableRowsStyle) =>
@@ -61,7 +61,7 @@ export class MTableBody extends ModulVue {
                 : undefined;
 
         return colspan === MTableColspan.AllColumns
-            ? this.as<MTableBodyMixin>().totalColumnsLength
+            ? this.as<MTableGroupMixin>().totalColumnsLength
             : colspan;
     }
 
@@ -92,11 +92,11 @@ export class MTableBody extends ModulVue {
     }
 }
 
-const TableBodyPlugin: PluginObject<any> = {
+const TableGroupPlugin: PluginObject<any> = {
     install(v): void {
-        v.prototype.$log.debug(TABLE_BODY_NAME, 'plugin.install');
-        v.component(TABLE_BODY_NAME, MTableBody);
+        v.prototype.$log.debug(TABLE_GROUP_NAME, 'plugin.install');
+        v.component(TABLE_GROUP_NAME, MTableGroup);
     }
 };
 
-export default TableBodyPlugin;
+export default TableGroupPlugin;

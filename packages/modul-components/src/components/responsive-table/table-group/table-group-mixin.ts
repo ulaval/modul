@@ -5,7 +5,7 @@ import { Enums } from '../../../utils/enums/enums';
 import { getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableRowsGroup } from '../responsive-table-commons';
 
 @Component
-export class MTableBodyMixin extends Vue {
+export class MTableGroupMixin extends Vue {
     @Prop({
         required: true
     })
@@ -152,10 +152,10 @@ export class MTableBodyMixin extends Vue {
     }
 }
 
-const MTableBodyMixinPlugin: PluginObject<any> = {
+const MTableGroupMixinPlugin: PluginObject<any> = {
     install(_v, _options): void {
-        Vue.mixin(MTableBodyMixin);
+        Vue.mixin(MTableGroupMixin);
     }
 };
 
-export default MTableBodyMixinPlugin;
+export default MTableGroupMixinPlugin;

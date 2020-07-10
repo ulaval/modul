@@ -1,21 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`] = `
+exports[`Storyshots modul-components|m-responsive-table/m-table-group default 1`] = `
 <tbody
-  class="m-table-body m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+  class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
 >
   <tr
-    class="m-table-group-header m-table-body__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+    class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
     tabindex="0"
   >
     <th
-      class=""
+      class="m--is-text-align-left"
     >
-      <div
-        aria-hidden="true"
-        class="m-table-group-header__accordion-border"
-      />
-       
       <div
         class="m-table-group-header__cell"
       >
@@ -35,11 +30,9 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`]
       </div>
     </th>
     <th
-      class=""
+      class="m--is-text-align-right"
       colspan="4"
     >
-      <!---->
-       
       <div
         class="m-table-group-header__cell"
       >
@@ -62,7 +55,7 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`]
    
   <tr>
     <th
-      class="m-table-body__cell m--is-text-align-left add-custom-class-cell"
+      class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
       scope="row"
     >
       
@@ -70,28 +63,28 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`]
                         
     </th>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-center"
     >
       
                             111 222 333
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             vincent.gui@gmail.com
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             1976-12-05
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             819 232-3754
@@ -100,7 +93,7 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`]
   </tr>
   <tr>
     <th
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
       scope="row"
     >
       
@@ -108,28 +101,28 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`]
                         
     </th>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-center"
     >
       
                             111 322 344
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             charles.maheu@outlook.com
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             1980-06-11
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             418 233-4744
@@ -138,7 +131,7 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`]
   </tr>
   <tr>
     <th
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
       scope="row"
     >
       
@@ -146,28 +139,28 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`]
                         
     </th>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-center"
     >
       
                             112 528 967
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             po.boulet@gmail.com
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             1994-04-08
                         
     </td>
     <td
-      class="m-table-body__cell m--is-text-align-left"
+      class="m-table-group__cell m--is-text-align-left"
     >
       
                             819 135-3460

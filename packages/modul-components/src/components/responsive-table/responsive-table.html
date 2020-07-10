@@ -35,7 +35,7 @@
                         }" />
             </td>
         </tr>
-        <m-table-body v-for="(rowsGroup, index) in formatRowGroups"
+        <m-table-group v-for="(rowsGroup, index) in formatRowGroups"
                       :key="index"
                       :columns="mainColumns"
                       :rows-group="rowsGroup"
@@ -110,7 +110,7 @@
                     </slot>
                 </slot>
             </template> -->
-        </m-table-body>
+        </m-table-group>
         <tbody v-if="!hasRowsGroup">
             <m-table-empty-row :empty-area="defaultEmptyArea"
                                :current-scroll-left="currentScrollLeftProp"

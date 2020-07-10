@@ -8,8 +8,8 @@ import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-val
 import { MProgress } from './../progress/progress';
 import { getHeadRowsFilterAndSort, getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
-import { MTableBody } from './table-body/table-body';
 import { MTableEmptyRow } from './table-empty-row/table-empty-row';
+import { MTableGroup } from './table-group/table-group';
 import { MTableHead } from './table-head/table-head';
 
 @WithRender
@@ -17,7 +17,7 @@ import { MTableHead } from './table-head/table-head';
     components: {
         // MpoDefilementHorizontalAutomatique,
         MTableHead,
-        MTableBody,
+        MTableGroup,
         MTableEmptyRow,
         MProgress
     }

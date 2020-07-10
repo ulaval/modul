@@ -1,13 +1,13 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
-import { RESPONSIVE_TABLE_NAME, TABLE_BODY_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { RESPONSIVE_TABLE_NAME, TABLE_GROUP_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MTableHeaderStyle, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_GROUP_1 } from './responsive-table-data';
 
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}/${TABLE_BODY_NAME}`,
+    title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}/${TABLE_GROUP_NAME}`,
     parameters: { fileName: __filename }
 };
 
@@ -66,7 +66,7 @@ export const defaultStory = () => ({
         'emitOpenAccordion',
         'emitCloseAccordion'
     ),
-    template: `<${TABLE_BODY_NAME}
+    template: `<${TABLE_GROUP_NAME}
         :columns="columns"
         :rows-group="rowsGroup"
         :group-header-style="groupHeaderStyle"
@@ -121,7 +121,7 @@ export const defaultStory = () => ({
             slot-scope="{ rowsGroup, row, cell }">
             {{ cell.value }} (Slot row.{{column.name}}.{{rowsGroup.name}})
         </template>
-    </${TABLE_BODY_NAME}>`
+    </${TABLE_GROUP_NAME}>`
 });
 
 defaultStory.story = {
