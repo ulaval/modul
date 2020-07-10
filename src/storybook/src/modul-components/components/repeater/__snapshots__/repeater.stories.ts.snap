@@ -83,28 +83,21 @@ exports[`Storyshots modul-components|m-repeater With items (Custom item template
                 
       </div>
        
-      <button
-        class="m-icon-button m-repeater__delete m--is-skin-light m--has-ripple"
-        style="width: 44px; height: 44px;"
+      <svg
+        aria-hidden="true"
+        class="m-icon m-repeater__delete"
+        height="20px"
+        icon-name="m-svg__delete"
         title="Supprimer"
-        type="button"
+        width="20px"
       >
-        <svg
-          aria-hidden="true"
-          class="m-icon m-icon-button__icon"
-          height="20px"
-          width="20px"
-        >
-          <!---->
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
         <!---->
-      </button>
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
     </li>
     <li
       class="m-repeater__row"
@@ -117,28 +110,21 @@ exports[`Storyshots modul-components|m-repeater With items (Custom item template
                 
       </div>
        
-      <button
-        class="m-icon-button m-repeater__delete m--is-skin-light m--has-ripple"
-        style="width: 44px; height: 44px;"
+      <svg
+        aria-hidden="true"
+        class="m-icon m-repeater__delete"
+        height="20px"
+        icon-name="m-svg__delete"
         title="Supprimer"
-        type="button"
+        width="20px"
       >
-        <svg
-          aria-hidden="true"
-          class="m-icon m-icon-button__icon"
-          height="20px"
-          width="20px"
-        >
-          <!---->
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
         <!---->
-      </button>
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
     </li>
     <li
       class="m-repeater__footer"
