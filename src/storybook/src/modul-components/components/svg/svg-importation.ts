@@ -75,6 +75,7 @@ import MSvgFullScreen from '@ulaval/modul-components/dist/assets/icons/svg/full-
 import MSvgGridFilled from '@ulaval/modul-components/dist/assets/icons/svg/grid-filled.svg';
 import MSvgGrid from '@ulaval/modul-components/dist/assets/icons/svg/grid.svg';
 import MSvgGrouping from '@ulaval/modul-components/dist/assets/icons/svg/grouping.svg';
+import MSvgHelpCircle from '@ulaval/modul-components/dist/assets/icons/svg/help-circle.svg';
 import MSvgHeraldry from '@ulaval/modul-components/dist/assets/icons/svg/heraldry.svg';
 import MSvgHide from '@ulaval/modul-components/dist/assets/icons/svg/hide.svg';
 import MSvgHint from '@ulaval/modul-components/dist/assets/icons/svg/hint.svg';
@@ -202,6 +203,7 @@ export const importAllSvg: () => void = () => {
     svg.addSvg(ModulIconName.GridFilled, MSvgGridFilled);
     svg.addSvg(ModulIconName.Grid, MSvgGrid);
     svg.addSvg(ModulIconName.Grouping, MSvgGrouping);
+    svg.addSvg(ModulIconName.HelpCircle, MSvgHelpCircle);
     svg.addSvg(ModulIconName.Heraldry, MSvgHeraldry);
     svg.addSvg(ModulIconName.Hide, MSvgHide);
     svg.addSvg(ModulIconName.Hint, MSvgHint);

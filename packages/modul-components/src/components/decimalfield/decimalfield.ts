@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -46,6 +46,7 @@ export class MDecimalfield extends ModulVue {
     public forceRoundingFormat: boolean;
 
     protected id: string = `mDecimalfield-${uuid.generate()}`;
+    private text: string = '';
 
     private get hasDecimalfieldError(): boolean {
         return this.as<InputState>().hasError;
@@ -76,12 +77,21 @@ export class MDecimalfield extends ModulVue {
     }
 
     private get model(): string {
-        return (!this.value && this.value !== 0 ? '' : this.value).toString();
+        return this.text;
     }
 
     private set model(value: string) {
+        this.text = value;
         const valueAsNumber: number = Number.parseFloat(value);
         this.emitNewValue(valueAsNumber);
+    }
+
+    @Watch('value', { immediate: true })
+    public onValueChange(newValue: number): void {
+        const currentTextAsNumber: number = Number.parseFloat(this.text);
+        if (newValue !== currentTextAsNumber) {
+            this.text = (!newValue && newValue !== 0 ? '' : newValue).toString();
+        }
     }
 
     @Emit('input')
