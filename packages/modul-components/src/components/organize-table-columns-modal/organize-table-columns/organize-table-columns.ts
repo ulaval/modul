@@ -6,8 +6,9 @@ import { MSortEvent, SortableDirective } from '../../../directives/sortable/sort
 import { I18N_NAME as I18N_FILTER_NAME } from '../../../filters/filter-names';
 import { i18nFilter } from '../../../filters/i18n/i18n';
 import { ModulVue } from '../../../utils/vue/vue';
+import { MAdd } from '../../add/add';
 import { MButton } from '../../button/button';
-import { BUTTON_NAME, ICON_BUTTON_NAME, ICON_NAME, LIST_ITEM_NAME, ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
+import { ADD_NAME, BUTTON_NAME, ICON_BUTTON_NAME, ICON_NAME, LIST_ITEM_NAME, ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
 import { MIconButton } from '../../icon-button/icon-button';
 import { MIcon } from '../../icon/icon';
 import { MListItem } from '../../list-item/list-item';
@@ -17,6 +18,7 @@ import WithRender from './organize-table-columns.html?style=./organize-table-col
 @WithRender
 @Component({
     components: {
+        [ADD_NAME]: MAdd,
         [BUTTON_NAME]: MButton,
         [LIST_ITEM_NAME]: MListItem,
         [ICON_BUTTON_NAME]: MIconButton,
