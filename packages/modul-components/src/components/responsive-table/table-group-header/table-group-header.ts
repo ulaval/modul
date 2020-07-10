@@ -3,7 +3,7 @@ import { Component, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
-import { MTableColspan, MTableGroupAccordionIconPosition } from '../responsive-table-commons';
+import { MTableAccordionIconPosition, MTableColspan } from '../responsive-table-commons';
 import { MTableBodyMixin } from '../table-body/table-body-mixin';
 import WithRender from './table-group-header.html?style=./table-group-header.scss';
 
@@ -18,12 +18,12 @@ export class MTableGroupHeader extends ModulVue {
     @Prop({
         default: 0
     })
-    public currentScrollLeft!: number;
+    public readonly currentScrollLeft!: number;
 
     @Prop({
         default: '100%'
     })
-    public tableComponentWidth!: string;
+    public readonly tableComponentWidth!: string;
 
     public mPlusSkin: MPlusSkin = MPlusSkin.CurrentColor;
 
@@ -58,10 +58,17 @@ export class MTableGroupHeader extends ModulVue {
         if (event.currentTarget) {
             (event.currentTarget as HTMLElement).blur();
         }
+
+        if (this.as<MTableBodyMixin>().rowsGroup.accordion!.open) {
+            this.as<MTableBodyMixin>().emitOpenAccordion(this.as<MTableBodyMixin>().rowsGroup);
+        } else {
+            this.as<MTableBodyMixin>().emitCloseAccordion(this.as<MTableBodyMixin>().rowsGroup);
+        }
     }
 
+
     public getColspan(colspan: number | MTableColspan): number {
-        return colspan === MTableColspan.AllColumns ? this.as<MTableBodyMixin>().nbColumns : colspan;
+        return colspan === MTableColspan.AllColumns ? this.as<MTableBodyMixin>().totalColumnsLength : colspan;
     }
 
     public get tabindexEnteteAccordeon(): string | undefined {
@@ -74,27 +81,27 @@ export class MTableGroupHeader extends ModulVue {
     public get isAccordeonIconPositionRight(): boolean {
         return (
             this.accordionIconPosition ===
-            MTableGroupAccordionIconPosition.Right
+            MTableAccordionIconPosition.Right
         );
     }
 
     public get isAccordeonIconPositionLeft(): boolean {
         return (
             this.accordionIconPosition ===
-            MTableGroupAccordionIconPosition.Left
+            MTableAccordionIconPosition.Left
         );
     }
 
-    public get accordionIconPosition(): MTableGroupAccordionIconPosition {
+    public get accordionIconPosition(): MTableAccordionIconPosition {
         if (
             this.as<MTableBodyMixin>().hasAccordion &&
             this.as<MTableBodyMixin>().rowsGroup.accordion!.iconPosition &&
             this.as<MTableBodyMixin>().rowsGroup.accordion!.iconPosition ===
-            MTableGroupAccordionIconPosition.Right
+            MTableAccordionIconPosition.Right
         ) {
-            return MTableGroupAccordionIconPosition.Right;
+            return MTableAccordionIconPosition.Right;
         }
-        return MTableGroupAccordionIconPosition.Left;
+        return MTableAccordionIconPosition.Left;
     }
 
     public get headerLeftPositionStyle(): {

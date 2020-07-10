@@ -6,7 +6,7 @@ import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
 import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-validation';
 import { MProgress } from './../progress/progress';
-import { getHeadRowsFilterAndSort, MTableBodyRowsStyle, MTableColumn, MTableEmptyArea, MTableGroup, MTableGroupHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow } from './responsive-table-commons';
+import { getHeadRowsFilterAndSort, getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
 import { MTableBody } from './table-body/table-body';
 import { MTableEmptyRow } from './table-empty-row/table-empty-row';
@@ -33,7 +33,7 @@ export class MResponsiveTable extends ModulVue {
     public readonly columns?: MTableColumn[];
 
     @Prop()
-    public readonly rowGroups?: MTableGroup[];
+    public readonly rowGroups?: MTableRowsGroup[];
 
     @Prop()
     public readonly rows?: MTableRow[];
@@ -58,8 +58,10 @@ export class MResponsiveTable extends ModulVue {
     @Prop({ default: true })
     public readonly displayTableHead!: boolean;
 
-    @Prop({ default: true })
-    public readonly rowHoverEffect!: boolean;
+    @Prop({
+        default: true
+    })
+    public rowHighlightedOnHover!: boolean;
 
     @Prop({
         default: MTableHeadStyle.Light,
@@ -69,11 +71,11 @@ export class MResponsiveTable extends ModulVue {
     public readonly headStyle!: MTableHeadStyle;
 
     @Prop({
-        default: MTableBodyRowsStyle.AlternateBackground,
-        validator: (value: MTableBodyRowsStyle) =>
-            Enums.toValueArray(MTableBodyRowsStyle).includes(value)
+        default: MTableRowsStyle.AlternateBackground,
+        validator: (value: MTableRowsStyle) =>
+            Enums.toValueArray(MTableRowsStyle).includes(value)
     })
-    public readonly bodySkin!: MTableBodyRowsStyle;
+    public readonly bodySkin!: MTableRowsStyle;
 
     @Prop({
         default: 0
@@ -89,11 +91,11 @@ export class MResponsiveTable extends ModulVue {
     public readonly displayScrollbar!: boolean;
 
     @Prop({
-        default: MTableGroupHeaderStyle.Light,
-        validator: (value: MTableGroupHeaderStyle) =>
-            Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
+        default: MTableHeaderStyle.Light,
+        validator: (value: MTableHeaderStyle) =>
+            Enums.toValueArray(MTableHeaderStyle).includes(value)
     })
-    public groupHeaderStyle!: MTableGroupHeaderStyle;
+    public groupHeaderStyle!: MTableHeaderStyle;
 
     @Prop()
     public groupHeaderClassName: string;
@@ -110,6 +112,12 @@ export class MResponsiveTable extends ModulVue {
 
     @Emit('scrollbar-width')
     public emitScrollbarWidth(_scrollbarWidth: number): void { }
+
+    @Emit('open-accordion')
+    public emitOpenAccordion(rowsGroup: MTableRowsGroup): void { }
+
+    @Emit('close-accordion')
+    public emitCloseAccordion(rowsGroup: MTableRowsGroup): void { }
 
     @Watch('currentScrollLeft', { immediate: true })
     public onCurrentScrollLeftChangement(value: number): void {
@@ -129,16 +137,17 @@ export class MResponsiveTable extends ModulVue {
         return this.id || uuid.generate();
     }
 
-    public get formatRowsGroup(): MTableGroup[] {
+    public get formatRowGroups(): MTableRowsGroup[] {
         if (this.rows && this.rows.length) {
-            const nouveauRowsGroup: MTableGroup[] = [
+            const newRowsGroup: MTableRowsGroup[] = [
                 {
+                    name: `rowGroupName${uuid.generate()}`,
                     rows: this.rows
                 }
             ];
             return this.rowGroups
-                ? this.rowGroups.concat(nouveauRowsGroup)
-                : nouveauRowsGroup;
+                ? this.rowGroups.concat(newRowsGroup)
+                : newRowsGroup;
         } else if (this.rowGroups) {
             return this.rowGroups;
         }
@@ -197,8 +206,11 @@ export class MResponsiveTable extends ModulVue {
         return this.headRowsFilterAndSort[keyMainColumns].columns;
     }
 
+    public get mainColumnsLength(): number {
+        return getTotalColumnsLength(this.mainColumns);
+    }
     public get hasRowsGroup(): boolean {
-        return Boolean(this.formatRowsGroup && this.formatRowsGroup.length);
+        return Boolean(this.formatRowGroups && this.formatRowGroups.length);
     }
 
     public set currentScrollLeftProp(value: number) {
@@ -227,6 +239,18 @@ export class MResponsiveTable extends ModulVue {
             this.defaultEmptyArea &&
             Object.keys(this.defaultEmptyArea).length > 0
         );
+    }
+
+    public getEmptyAreaHeaderText(rowsGroup: MTableRowsGroup): string {
+        if (rowsGroup.emptyArea && rowsGroup.emptyArea.headerText) {
+            return rowsGroup.emptyArea.headerText;
+        } else if (
+            this.hasDefaultEmptyArea &&
+            this.defaultEmptyArea!.headerText
+        ) {
+            return this.defaultEmptyArea!.headerText;
+        }
+        return '';
     }
 }
 

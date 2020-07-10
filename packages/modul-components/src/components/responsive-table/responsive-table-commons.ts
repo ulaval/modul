@@ -1,5 +1,5 @@
 
-export enum MTableColumnSortDirection {
+export enum MTableSortDirection {
     None = 0,
     Asc = 1,
     Dsc = -1
@@ -16,21 +16,21 @@ export interface MTableStyle {
 }
 
 export interface MTableColumn {
-    id: string;
-    className?: string;
-    style?: MTableStyle;
+    name: string;
     value: string;
+    data?: any;
     colspan?: number | MTableColspan;
     rowspan?: number;
-    data?: any;
-    width?: string;
-    sortable?: boolean;
-    enableUnsort?: boolean;
-    textAlign?: MTableTextAlign;
-    sortDirection?: MTableColumnSortDirection;
-    defaultSortDirection?: MTableColumnSortDirection;
     visible?: boolean;
     order?: number;
+    sortable?: boolean;
+    enableUnsort?: boolean;
+    sortDirection?: MTableSortDirection;
+    defaultSortDirection?: MTableSortDirection;
+    width?: string;
+    className?: string;
+    style?: MTableStyle;
+    textAlign?: MTableTextAlign;
 }
 
 export interface MTableHeadRow {
@@ -44,25 +44,26 @@ export interface MTableHeadRows {
     [row: string]: MTableHeadRow;
 }
 
-export interface MTableGroup {
-    header?: MTableGroupHeader;
-    accordion?: MTableGroupAccordion;
+export interface MTableRowsGroup {
+    name: string;
+    header?: MTableHeader;
+    accordion?: MTableAccordion;
     rows?: MTableRow[];
     emptyArea?: MTableEmptyArea;
 }
 
-export interface MTableGroupHeader {
+export interface MTableHeader {
     title?: string;
     className?: string;
     style?: MTableStyle;
     cells?: MTableCells;
 }
 
-export interface MTableGroupAccordion {
+export interface MTableAccordion {
     open: boolean;
     disabled?: boolean;
     displayIcon?: boolean;
-    iconPosition?: MTableGroupAccordionIconPosition;
+    iconPosition?: MTableAccordionIconPosition;
     iconClassName?: string;
 }
 
@@ -73,7 +74,7 @@ export interface MTableRow {
 }
 
 export interface MTableCells {
-    [idColumn: string]: MTableCell;
+    [columnName: string]: MTableCell;
 }
 
 export interface MTableCell {
@@ -88,14 +89,14 @@ export interface MTableCell {
 export interface MTableEmptyArea {
     headerText?: string;
     text?: string;
-    iconName?: string;
+    svgName?: string;
 }
 
 export enum MTableColspan {
     AllColumns = 'all-columns'
 }
 
-export enum MTableGroupAccordionIconPosition {
+export enum MTableAccordionIconPosition {
     Left = 'left',
     Right = 'right'
 }
@@ -107,13 +108,13 @@ export enum MTableHeadStyle {
     Any = 'any'
 }
 
-export enum MTableBodyRowsStyle {
+export enum MTableRowsStyle {
     AlternateBackground = 'alternate-background',
-    RowBorders = 'row-borders',
+    RowBorders = 'borders',
     CellBorders = 'cell-borders'
 }
 
-export enum MTableGroupHeaderStyle {
+export enum MTableHeaderStyle {
     Dark = 'dark',
     Light = 'light',
     Any = 'any'
@@ -154,6 +155,21 @@ export const getHeadRowsFilterAndSort: (headRows: MTableHeadRows) => MTableHeadR
         }
     });
     return headRows;
+};
+
+export const getTotalColumnsLength: (columns: MTableColumn[]) => number = (
+    columns: MTableColumn[]
+) => {
+    return columns.reduce(
+        (
+            acc,
+            curr
+        ) => curr.colspan
+            && curr.colspan > 0
+            && curr.colspan !== MTableColspan.AllColumns
+                ? acc + curr.colspan
+                : acc + 1
+        , 0);
 };
 
 const getColumnFilterAndSorted: (columns: MTableColumn[]) => MTableColumn[] = (

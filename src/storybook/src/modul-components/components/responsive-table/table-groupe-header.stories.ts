@@ -1,6 +1,7 @@
+import { actions } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME, TABLE_GROUP_HEADER_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableColumn, MTableEmptyArea, MTableGroup, MTableGroupHeaderStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableRowsGroup } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_GROUP_1 } from './responsive-table-data';
@@ -41,39 +42,44 @@ export const Sandbox = () => ({
         groupHeaderStyle: {
             default: select(
                 'Prop group-header-style',
-                Enums.toValueArray(MTableGroupHeaderStyle),
-                MTableGroupHeaderStyle.Light
+                Enums.toValueArray(MTableHeaderStyle),
+                MTableHeaderStyle.Light
             )
         },
-        columns: {
-            default: object<MTableColumn[]>('Prop columns', DEFAULT_TABLE_COLUMNS)
-        },
-        rowsGroup: {
-            default: object<MTableGroup>('Prop rows-group', DEFAULT_TABLE_GROUP_1)
-        },
+
         hasDataRowsGroup: {
             default: boolean('has data rows group', true)
         },
-        slotBodyHeaderTitle: {
-            default: boolean('Slot body-header-title', false)
+        slotRowsGroupHeaderTitle: {
+            default: boolean('Slot rows-group-header-title', false)
         },
-        slotBodyHeader: {
-            default: boolean('Slot body-header', false)
+        slotRowsGroupHeaderCell: {
+            default: boolean('Slot rows-group-header-cell.<column.name>', false)
         },
         defaultEmptyArea: {
             default: object<MTableEmptyArea>('Prop default-empty-area', {
                 headerText: 'Default empty area: headerText',
                 text: 'Default empty area: text',
-                iconName: 'm-svg__clock'
+                svgName: 'm-svg__clock'
             })
+        },
+        columns: {
+            default: object<MTableColumn[]>('Prop columns', DEFAULT_TABLE_COLUMNS)
+        },
+        rowsGroup: {
+            default: object<MTableRowsGroup>('Prop rows-group', DEFAULT_TABLE_GROUP_1)
         }
     },
     computed: {
-        rowsGroupIntern(): MTableGroup[] {
+        rowsGroupIntern(): MTableRowsGroup[] {
             const _this: any = this;
             return _this.hasDataRowsGroup ? _this.rowsGroup : [];
         }
     },
+    methods: actions(
+        'emitOpenAccordion',
+        'emitCloseAccordion'
+    ),
     template: `<table style="width: 100%">
         <${TABLE_GROUP_HEADER_NAME}
             :columns="columns"
@@ -83,20 +89,21 @@ export const Sandbox = () => ({
             :group-header-class-name="groupHeaderClassName"
             :default-empty-area="defaultEmptyArea"
             :table-component-width="tableComponentWidth"
+            @open-accordion="emitOpenAccordion"
+            @close-accordion="emitCloseAccordion"
         >
             <template
-                v-if="slotBodyHeaderTitle && rowsGroup && rowsGroup.header && rowsGroup.header.title"
-                slot="body-header-title"
-                slot-scope="{ rowsGroup }">
-                {{ rowsGroup.header.title}} (Slot body-header-title)
+                v-if="slotRowsGroupHeaderTitle"
+                #rows-group-header-title="{ rowsGroup, title }">
+                {{ title}} (Slot rows-group-header-title)
             </template>
             <template
-                v-if="slotBodyHeader"
+                v-if="slotRowsGroupHeaderCell"
                 v-for="(column, columnIndex) in columns"
-                :slot="'body-header.' + column.id"
-                slot-scope="{ rowsGroup }"
+                :slot="'rows-group-header-cell.' + column.name"
+                slot-scope="{ rowsGroup, header, cell }"
             >
-                {{ rowsGroup.header.cells[column.id].value}} (Slot body-header.{{column.id}})
+                {{ cell.value }} (Slot rows-group-header-cell.{{column.name}})
             </template>
         </${TABLE_GROUP_HEADER_NAME}>
     </table>`

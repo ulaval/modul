@@ -5,7 +5,7 @@ import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
 import { TABLE_HEAD_NAME } from '../../component-names';
 import { MIconButton } from '../../icon-button/icon-button';
-import { getCellAlignmentClass, getCellWidthStyle, getHeadRowsFilterAndSort, MTableColumn, MTableColumnSortDirection, MTableHeadRows, MTableHeadStyle } from '../responsive-table-commons';
+import { getCellAlignmentClass, getCellWidthStyle, getHeadRowsFilterAndSort, MTableColumn, MTableHeadRows, MTableHeadStyle, MTableSortDirection } from '../responsive-table-commons';
 import WithRender from './table-head.html?style=./table-head.scss';
 
 interface MTableColumnInternal extends MTableColumn {
@@ -35,15 +35,15 @@ export class MTableHead extends ModulVue {
     @Prop({
         default: false
     })
-    public firstColumnFixed!: boolean;
+    public readonly firstColumnFixed!: boolean;
 
     @Prop({
         default: false
     })
-    public disabled!: boolean;
+    public readonly disabled!: boolean;
 
     @Emit('sort')
-    public emitSort(column: MTableColumnSortDirection): void { }
+    public emitSort(column: MTableColumn): void { }
 
     @Emit('update:headRows')
     public emitUpdateHeadRows(headRows: MTableHeadRows): void { }
@@ -69,31 +69,31 @@ export class MTableHead extends ModulVue {
             return;
         }
 
-        const sortDirection: MTableColumnSortDirection = this.getCurrentColumnSortDirection(currentColumn);
+        const sortDirection: MTableSortDirection = this.getCurrentColumnSortDirection(currentColumn);
 
         columns.forEach((c: MTableColumnInternal) => {
             if (c !== currentColumn) {
-                c.sortDirection = MTableColumnSortDirection.None;
+                c.sortDirection = MTableSortDirection.None;
             }
         });
 
         switch (sortDirection) {
-            case MTableColumnSortDirection.Asc:
+            case MTableSortDirection.Asc:
                 currentColumn.sortDirection = this.getNextSortDirectionWhenDirectionAsc(currentColumn);
                 currentColumn.isInitialSort = false;
                 break;
-            case MTableColumnSortDirection.Dsc:
+            case MTableSortDirection.Dsc:
                 currentColumn.sortDirection = this.getNextSortDirectionWhenDirectionDsc(currentColumn);
                 currentColumn.isInitialSort = false;
                 break;
-            case MTableColumnSortDirection.None:
+            case MTableSortDirection.None:
             default:
                 currentColumn.sortDirection = this.getNextSortDirectionWhenDirectionNone(currentColumn);
                 currentColumn.isInitialSort = true;
                 break;
         }
 
-        this.emitSort(currentColumn.sortDirection);
+        this.emitSort(currentColumn);
         this.emitUpdateHeadRows(this.headRowsFilterAndSort);
     }
 
@@ -109,7 +109,7 @@ export class MTableHead extends ModulVue {
         if (currentColumn.sortDirection) {
             return 'm-svg__arrow-thin--up'; // CSS rotate transform animation takes care of the arrow position
         } else {
-            return currentColumn.defaultSortDirection === MTableColumnSortDirection.Dsc
+            return currentColumn.defaultSortDirection === MTableSortDirection.Dsc
                 ? 'm-svg__arrow-thin--down'
                 : 'm-svg__arrow-thin--up';
         }
@@ -119,11 +119,11 @@ export class MTableHead extends ModulVue {
         currentColumn: MTableColumnInternal
     ): string | undefined {
         switch (this.getCurrentColumnSortDirection(currentColumn)) {
-            case MTableColumnSortDirection.Asc:
+            case MTableSortDirection.Asc:
                 return 'm--is-sort-asc';
-            case MTableColumnSortDirection.Dsc:
+            case MTableSortDirection.Dsc:
                 return 'm--is-sort-desc';
-            case MTableColumnSortDirection.None:
+            case MTableSortDirection.None:
             default:
                 return undefined;
         }
@@ -133,39 +133,39 @@ export class MTableHead extends ModulVue {
         return getCellWidthStyle(column);
     }
 
-    private getNextSortDirectionWhenDirectionAsc(column: MTableColumnInternal): MTableColumnSortDirection {
+    private getNextSortDirectionWhenDirectionAsc(column: MTableColumnInternal): MTableSortDirection {
         if (column.enableUnsort) {
-            return column.defaultSortDirection === MTableColumnSortDirection.Dsc
-                ? MTableColumnSortDirection.None
-                : MTableColumnSortDirection.Dsc;
+            return column.defaultSortDirection === MTableSortDirection.Dsc
+                ? MTableSortDirection.None
+                : MTableSortDirection.Dsc;
         } else {
-            return MTableColumnSortDirection.Dsc;
+            return MTableSortDirection.Dsc;
         }
 
     }
 
-    private getNextSortDirectionWhenDirectionDsc(column: MTableColumnInternal): MTableColumnSortDirection {
+    private getNextSortDirectionWhenDirectionDsc(column: MTableColumnInternal): MTableSortDirection {
         if (column.enableUnsort) {
-            return column.defaultSortDirection === MTableColumnSortDirection.Asc ||
+            return column.defaultSortDirection === MTableSortDirection.Asc ||
                 column.defaultSortDirection === undefined
-                ? MTableColumnSortDirection.None
-                : MTableColumnSortDirection.Asc;
+                ? MTableSortDirection.None
+                : MTableSortDirection.Asc;
         } else {
-            return MTableColumnSortDirection.Asc;
+            return MTableSortDirection.Asc;
         }
     }
 
-    private getNextSortDirectionWhenDirectionNone(column: MTableColumnInternal): MTableColumnSortDirection {
+    private getNextSortDirectionWhenDirectionNone(column: MTableColumnInternal): MTableSortDirection {
         return column.defaultSortDirection
             ? column.defaultSortDirection
-            : MTableColumnSortDirection.Asc;
+            : MTableSortDirection.Asc;
     }
 
-    private getCurrentColumnSortDirection(currentColumn: MTableColumnInternal): MTableColumnSortDirection {
+    private getCurrentColumnSortDirection(currentColumn: MTableColumnInternal): MTableSortDirection {
         if (typeof currentColumn.sortDirection === 'undefined') {
-            return MTableColumnSortDirection.None;
+            return MTableSortDirection.None;
         }
-        return currentColumn.sortDirection || MTableColumnSortDirection.None;
+        return currentColumn.sortDirection || MTableSortDirection.None;
     }
 }
 

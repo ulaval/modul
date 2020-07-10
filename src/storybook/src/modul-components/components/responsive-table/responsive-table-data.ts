@@ -1,21 +1,21 @@
-import { MTableColspan, MTableColumn, MTableColumnSortDirection, MTableGroup, MTableGroupAccordion, MTableGroupAccordionIconPosition, MTableGroupHeader, MTableHeadRows, MTableRow, MTableTextAlign } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableAccordion, MTableAccordionIconPosition, MTableColspan, MTableColumn, MTableHeader, MTableHeadRows, MTableRow, MTableRowsGroup, MTableSortDirection, MTableTextAlign } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 
 export const getTableColumn: (
-    id: string,
+    name: string,
     value: string,
     sortable?: boolean,
-    sortDirection?: MTableColumnSortDirection,
-    defaultSortDirection?: MTableColumnSortDirection
+    sortDirection?: MTableSortDirection,
+    defaultSortDirection?: MTableSortDirection
 ) => MTableColumn = (
-    id: string,
+    name: string,
     value: string,
     sortable: boolean = true,
-    sortDirection: MTableColumnSortDirection | undefined = undefined,
-    defaultSortDirection: MTableColumnSortDirection = MTableColumnSortDirection.Asc
+    sortDirection: MTableSortDirection | undefined = undefined,
+    defaultSortDirection: MTableSortDirection = MTableSortDirection.Asc
 
 ) => {
     return {
-        id,
+        name,
         value,
         sortable,
         enableUnsort: true,
@@ -28,10 +28,10 @@ export const getTableColumn: (
 export const MAIN_ROW: string = 'mainRow';
 
 export const DEFAULT_TABLE_COLUMNS: MTableColumn[] = [
-    getTableColumn('name', 'Name', true, MTableColumnSortDirection.Asc),
+    getTableColumn('name', 'Name', true, MTableSortDirection.Asc),
     getTableColumn('ni', 'NI'),
     getTableColumn('email', 'Email'),
-    getTableColumn('dateOfBirth', 'Date of birth', true, MTableColumnSortDirection.None, MTableColumnSortDirection.Dsc),
+    getTableColumn('dateOfBirth', 'Date of birth', true, MTableSortDirection.None, MTableSortDirection.Dsc),
     getTableColumn('phoneNumber', 'Phone number')
 ];
 
@@ -39,7 +39,8 @@ export const DEFAULT_TABLE_ROW_1: MTableRow = {
     cells: {
         name: {
             value: 'Vincent Guilmette',
-            className: 'add-custom-class-cell'
+            className: 'add-custom-class-cell',
+            isHeader: true
         },
         ni: {
             value: '111 222 333'
@@ -63,7 +64,8 @@ export const DEFAULT_TABLE_ROW_2: MTableRow = {
             data: {
                 nom: 'Maheu',
                 prenom: 'Charles'
-            }
+            },
+            isHeader: true
         },
         ni: {
             value: '111 322 344'
@@ -84,7 +86,8 @@ export const DEFAULT_TABLE_ROW_2: MTableRow = {
 export const DEFAULT_TABLE_ROW_3: MTableRow = {
     cells: {
         name: {
-            value: 'Pierre Olivier Boulet'
+            value: 'Pierre Olivier Boulet',
+            isHeader: true
         },
         ni: {
             value: '112 528 967'
@@ -101,7 +104,7 @@ export const DEFAULT_TABLE_ROW_3: MTableRow = {
     }
 };
 
-export const DEFAULT_TABLE_GROUP_HEADER_1: MTableGroupHeader = {
+export const DEFAULT_TABLE_GROUP_HEADER_1: MTableHeader = {
     title: 'English Class',
     cells: {
         name: {
@@ -114,7 +117,7 @@ export const DEFAULT_TABLE_GROUP_HEADER_1: MTableGroupHeader = {
     }
 };
 
-export const DEFAULT_TABLE_GROUP_HEADER_2: MTableGroupHeader = {
+export const DEFAULT_TABLE_GROUP_HEADER_2: MTableHeader = {
     title: 'NUT-1104',
     cells: {
         name: {
@@ -131,14 +134,15 @@ export const DEFAULT_TABLE_HEAD_ROWS: MTableHeadRows = {
     }
 };
 
-export const DEFAULT_TABLE_GROUP_ACCORDION_1: MTableGroupAccordion = {
+export const DEFAULT_TABLE_GROUP_ACCORDION_1: MTableAccordion = {
     open: true,
     disabled: false,
-    iconPosition: MTableGroupAccordionIconPosition.Left,
+    iconPosition: MTableAccordionIconPosition.Left,
     iconClassName: 'add-class-to-icon'
 };
 
-export const DEFAULT_TABLE_GROUP_1: MTableGroup = {
+export const DEFAULT_TABLE_GROUP_1: MTableRowsGroup = {
+    name: 'TABLE_GROUP_1',
     accordion: DEFAULT_TABLE_GROUP_ACCORDION_1,
     header: DEFAULT_TABLE_GROUP_HEADER_1,
     rows: [
@@ -148,7 +152,8 @@ export const DEFAULT_TABLE_GROUP_1: MTableGroup = {
     ]
 };
 
-export const DEFAULT_TABLE_GROUP_2: MTableGroup = {
+export const DEFAULT_TABLE_GROUP_2: MTableRowsGroup = {
+    name: 'TABLE_GROUP_2',
     header: DEFAULT_TABLE_GROUP_HEADER_2,
     rows: [
         DEFAULT_TABLE_ROW_1,
@@ -157,7 +162,7 @@ export const DEFAULT_TABLE_GROUP_2: MTableGroup = {
     ]
 };
 
-export const DEFAULT_TABLE_GROUPS: MTableGroup[] = [
+export const DEFAULT_TABLE_GROUPS: MTableRowsGroup[] = [
     DEFAULT_TABLE_GROUP_1,
     DEFAULT_TABLE_GROUP_2
 ];
@@ -165,20 +170,20 @@ export const DEFAULT_TABLE_GROUPS: MTableGroup[] = [
 
 export const COMPLEX_TABLE_FOLDER_COLUMNS: MTableColumn[] = [
     {
-        id: 'forlderSpacingColumn',
+        name: 'forlderSpacingColumn',
         value: '',
         order: 1,
         rowspan: 2,
         style: { background: '#fff' }
     },
     {
-        id: 'forlderBColumn',
+        name: 'forlderBColumn',
         value: 'Folder B',
         order: 3,
         colspan: 4
     },
     {
-        id: 'forlderAColumn',
+        name: 'forlderAColumn',
         value: 'Folder A',
         order: 2,
         colspan: 4
@@ -187,22 +192,22 @@ export const COMPLEX_TABLE_FOLDER_COLUMNS: MTableColumn[] = [
 
 export const COMPLEX_TABLE_AFTER_BEFORE_COLUMNS: MTableColumn[] = [
     {
-        id: 'beforeForlderAColumn',
+        name: 'beforeForlderAColumn',
         value: 'Before',
         colspan: 2
     },
     {
-        id: 'afterForlderAColumn',
+        name: 'afterForlderAColumn',
         value: 'After',
         colspan: 2
     },
     {
-        id: 'beforeForlderBColumn',
+        name: 'beforeForlderBColumn',
         value: 'Before',
         colspan: 2
     },
     {
-        id: 'afterForlderBColumn',
+        name: 'afterForlderBColumn',
         value: 'After',
         colspan: 2
     }
@@ -211,7 +216,7 @@ export const COMPLEX_TABLE_AFTER_BEFORE_COLUMNS: MTableColumn[] = [
 
 export const COMPLEX_TABLE_MAIN_COLUMNS: MTableColumn[] = [
     {
-        id: 'idColumn',
+        name: 'id',
         value: 'id',
         width: '120px'
     },
@@ -241,50 +246,50 @@ export const COMPLEX_TABLE_HEAD_ROWS: MTableHeadRows = {
 
 export const COLUMNS: MTableColumn[] = [
     {
-        id: 'name',
+        name: 'name',
         value: 'Name',
         sortable: true,
         width: '300px',
         textAlign: MTableTextAlign.Left,
-        sortDirection: MTableColumnSortDirection.None,
-        defaultSortDirection: MTableColumnSortDirection.None,
+        sortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None,
     },
     {
-        id: 'ni',
+        name: 'ni',
         value: 'NI',
         sortable: true,
         textAlign: MTableTextAlign.Left,
         className: 'add-class-ni',
-        sortDirection: MTableColumnSortDirection.None,
-        defaultSortDirection: MTableColumnSortDirection.None,
+        sortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None,
     },
     {
-        id: 'nrc',
+        name: 'nrc',
         value: 'NRC',
         sortable: true,
         enableUnsort: false,
         textAlign: MTableTextAlign.Center,
-        sortDirection: MTableColumnSortDirection.None,
-        defaultSortDirection: MTableColumnSortDirection.None
+        sortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None
     },
     {
-        id: 'program',
+        name: 'program',
         value: 'Program',
         sortable: true,
         enableUnsort: false,
         textAlign: MTableTextAlign.Left,
         className: 'add-class-program',
-        sortDirection: MTableColumnSortDirection.None,
-        defaultSortDirection: MTableColumnSortDirection.None,
+        sortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None,
     },
     {
-        id: 'date',
+        name: 'date',
         value: 'Date',
         sortable: true,
         enableUnsort: false,
         textAlign: MTableTextAlign.Right,
-        sortDirection: MTableColumnSortDirection.None,
-        defaultSortDirection: MTableColumnSortDirection.None,
+        sortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None,
     }
 ];
 
@@ -297,12 +302,12 @@ export const HEAD_ROW: MTableHeadRows = {
         order: 1,
         columns: [
             {
-                id: 'full-name',
+                name: 'full-name',
                 value: 'name',
                 order: 5
             },
             {
-                id: 'other-info',
+                name: 'other-info',
                 value: 'Other infos',
                 colspan: 4,
                 order: 1
@@ -311,11 +316,12 @@ export const HEAD_ROW: MTableHeadRows = {
     }
 };
 
-export const ROWS_GROUP: MTableGroup = {
+export const ROWS_GROUP: MTableRowsGroup = {
+    name: 'ROWS_GROUP',
     accordion: {
         open: true,
         disabled: false,
-        iconPosition: MTableGroupAccordionIconPosition.Left
+        iconPosition: MTableAccordionIconPosition.Left
     },
     header: {
         title: 'Nom du cours 2',
@@ -380,11 +386,12 @@ export const ROWS_GROUP: MTableGroup = {
     }
 };
 
-export const ROWS_GROUP_2: MTableGroup = {
+export const ROWS_GROUP_2: MTableRowsGroup = {
+    name: 'ROWS_GROUP_2',
     accordion: {
         open: true,
         disabled: false,
-        iconPosition: MTableGroupAccordionIconPosition.Left
+        iconPosition: MTableAccordionIconPosition.Left
     },
     header: {
         title: 'Entete 2',
@@ -482,7 +489,7 @@ export const ROWS_GROUP_2: MTableGroup = {
     ]
 };
 
-export const ROW_GROUPS: MTableGroup[] = [ROWS_GROUP, ROWS_GROUP_2];
+export const ROW_GROUPS: MTableRowsGroup[] = [ROWS_GROUP, ROWS_GROUP_2];
 
 export const ROWS: MTableRow[] = [
     {

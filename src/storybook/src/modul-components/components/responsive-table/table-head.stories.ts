@@ -60,7 +60,7 @@ const getTemplate: (
             <template
                 v-if="slotTableHead"
                 v-for="(column, columnIndex) in columns"
-                :slot="'table-head.' + column.id"
+                :slot="'table-head.' + column.name"
                 slot-scope="{ column }"
             >
                 <template v-if="column && column.value">
@@ -72,7 +72,7 @@ const getTemplate: (
                     <template v-else>
                         {{column.value}}
                     </template>
-                    (Slot table-head.{{column.id}})
+                    (Slot table-head.{{column.name}})
                 </template>
             </template>
         </${TABLE_HEAD_NAME}>`

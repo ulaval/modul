@@ -57,8 +57,8 @@ export class MTableEmptyRow extends ModulVue {
     }
 
     public get iconName(): string {
-        return this.emptyArea && this.emptyArea.iconName && !this.waiting
-            ? this.emptyArea.iconName
+        return this.emptyArea && this.emptyArea.svgName && !this.waiting
+            ? this.emptyArea.svgName
             : '';
     }
 }

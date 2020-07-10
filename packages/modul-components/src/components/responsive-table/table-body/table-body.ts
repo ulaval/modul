@@ -5,7 +5,7 @@ import { Component, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
 import { TABLE_BODY_NAME } from '../../component-names';
 import { MTableGroupHeader } from '../table-group-header/table-group-header';
-import { getCellAlignmentClass, getCellWidthStyle, MTableBodyRowsStyle, MTableColspan, MTableColumn, MTableRow } from './../responsive-table-commons';
+import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsStyle } from './../responsive-table-commons';
 import { MTableEmptyRow } from './../table-empty-row/table-empty-row';
 import { MTableBodyMixin } from './table-body-mixin';
 import WithRender from './table-body.html?style=./table-body.scss';
@@ -17,26 +17,26 @@ import WithRender from './table-body.html?style=./table-body.scss';
 })
 export class MTableBody extends ModulVue {
     @Prop({
-        default: MTableBodyRowsStyle.AlternateBackground,
-        validator: (value: MTableBodyRowsStyle) =>
-            Enums.toValueArray(MTableBodyRowsStyle).includes(value)
+        default: MTableRowsStyle.AlternateBackground,
+        validator: (value: MTableRowsStyle) =>
+            Enums.toValueArray(MTableRowsStyle).includes(value)
     })
-    public readonly bodyRowsStyle!: MTableBodyRowsStyle;
+    public readonly rowsStyle!: MTableRowsStyle;
 
     @Prop({
         default: true
     })
-    public rowHoverEffect!: boolean;
+    public readonly rowHighlightedOnHover!: boolean;
 
     @Prop({
         default: 0
     })
-    public currentScrollLeft!: number;
+    public readonly currentScrollLeft!: number;
 
     @Prop({
         default: '100%'
     })
-    public tableComponentWidth!: string;
+    public readonly tableComponentWidth!: string;
 
     public getRowClassName(
         row: MTableRow,
@@ -61,7 +61,7 @@ export class MTableBody extends ModulVue {
                 : undefined;
 
         return colspan === MTableColspan.AllColumns
-            ? this.as<MTableBodyMixin>().nbColumns
+            ? this.as<MTableBodyMixin>().totalColumnsLength
             : colspan;
     }
 
@@ -82,6 +82,10 @@ export class MTableBody extends ModulVue {
 
     public getRowWidthStyle(column: MTableColumn): string {
         return getCellWidthStyle(column);
+    }
+
+    public isCellHeader(row: MTableRow, columnName: string): boolean {
+        return Boolean(row.cells && row.cells[columnName] && row.cells[columnName].isHeader);
     }
 }
 

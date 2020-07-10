@@ -1,8 +1,8 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
-import { MTableColspan, MTableColumn, MTableEmptyArea, MTableGroup, MTableGroupHeaderStyle } from '../responsive-table-commons';
+import { getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableRowsGroup } from '../responsive-table-commons';
 
 @Component
 export class MTableBodyMixin extends Vue {
@@ -14,25 +14,31 @@ export class MTableBodyMixin extends Vue {
     @Prop({
         required: true
     })
-    public readonly rowsGroup!: MTableGroup;
+    public readonly rowsGroup!: MTableRowsGroup;
 
     @Prop({
         default: false
     })
-    public firstColumnFixed!: boolean;
+    public readonly firstColumnFixed!: boolean;
 
     @Prop()
     public readonly defaultEmptyArea?: MTableEmptyArea;
 
     @Prop({
-        default: MTableGroupHeaderStyle.Light,
-        validator: (value: MTableGroupHeaderStyle) =>
-            Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
+        default: MTableHeaderStyle.Light,
+        validator: (value: MTableHeaderStyle) =>
+            Enums.toValueArray(MTableHeaderStyle).includes(value)
     })
-    public groupHeaderStyle!: MTableGroupHeaderStyle;
+    public groupHeaderStyle!: MTableHeaderStyle;
 
     @Prop()
     public groupHeaderClassName: string;
+
+    @Emit('open-accordion')
+    public emitOpenAccordion(rowsGroup: MTableRowsGroup): void { }
+
+    @Emit('close-accordion')
+    public emitCloseAccordion(rowsGroup: MTableRowsGroup): void { }
 
     public get hasHeader(): boolean {
         return Boolean(
@@ -71,7 +77,7 @@ export class MTableBodyMixin extends Vue {
         return Boolean(
             this.hasEmptyArea &&
             (this.rowsGroup.emptyArea!.text ||
-                this.rowsGroup.emptyArea!.iconName)
+                this.rowsGroup.emptyArea!.svgName)
         );
     }
 
@@ -94,7 +100,7 @@ export class MTableBodyMixin extends Vue {
     public get hasDefaultRowEmptyAreas(): boolean {
         return Boolean(
             this.hasDefaultEmptyArea &&
-            (this.defaultEmptyArea!.text || this.defaultEmptyArea!.iconName)
+            (this.defaultEmptyArea!.text || this.defaultEmptyArea!.svgName)
         );
     }
 
@@ -141,14 +147,8 @@ export class MTableBodyMixin extends Vue {
             : this.hasRowsOrRowEmptyArea;
     }
 
-    public get nbColumns(): number {
-        return this.columns.reduce((acc, curr) => {
-            return curr.colspan
-                && curr.colspan > 0
-                && curr.colspan !== MTableColspan.AllColumns
-                    ? acc + curr.colspan
-                    : acc + 1;
-        }, 0);
+    public get totalColumnsLength(): number {
+        return getTotalColumnsLength(this.columns);
     }
 }
 

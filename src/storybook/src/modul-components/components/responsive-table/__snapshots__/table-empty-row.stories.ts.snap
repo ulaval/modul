@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row default 1`] = `
+<tr
+  class="m-table-empty-row"
+>
+  <td
+    colspan="3"
+  >
+    <mpo-aucun-contenu
+      nom-icone=""
+      style="left: 10px; width: 400px;"
+      texte="texte"
+    />
+  </td>
+</tr>
+`;

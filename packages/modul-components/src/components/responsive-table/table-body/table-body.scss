@@ -1,8 +1,8 @@
 @import 'commons';
 @import './../responsive-table-commons';
 
-@mixin row-hover-effect() {
-    &.m--has-row-hover-effect.m--has-row-hover-effect {
+@mixin row-highlighted-on-hover() {
+    &.m--has-row-highlighted-on-hover.m--has-row-highlighted-on-hover {
         &:not(.m--is-disabled) {
             tr:not(.m-table-body__header):hover {
                 background: $m-color--interactive-lightest;
@@ -11,7 +11,7 @@
     }
 }
 
-@mixin body-rows-style-row-borders() {
+@mixin rows-style-borders() {
     tr:not(.m-table-body__header) {
         + tr:not(:first-child) {
             border-top: 1px solid $m-color--border;
@@ -19,7 +19,7 @@
     }
 
     &.m--is-first-column-fixed {
-        td:first-child {
+        .m-table-body__cell:first-child {
             &::after {
                 right: -$m-table--largeur-degrade;
                 width: $m-table--largeur-degrade;
@@ -31,21 +31,27 @@
     }
 }
 
-@mixin body-rows-style-cell-borders() {
+@mixin rows-style-cell-borders() {
     tr:not(.m-table-body__header) {
         + tr:not(:first-child) {
             border-top: 1px solid $m-color--border;
         }
     }
 
-    /deep/ td {
-        + td:not(:first-child) {
-            border-left: 1px solid $m-color--border;
+    /deep/ {
+        th,
+        td {
+            + th,
+            + td {
+                &:not(:first-child) {
+                    border-left: 1px solid $m-color--border;
+                }
+            }
         }
     }
 }
 
-@mixin body-rows-style-alternate-background--odd-row() {
+@mixin rows-style-alternate-background--odd-row() {
     &.m--has-header tr {
         &:nth-child(odd):not(.m-table-body__header) {
             background-color: $m-color--grey-lightest;
@@ -53,7 +59,7 @@
     }
 
     &.m--is-first-column-fixed {
-        &.m--has-header tr:nth-child(odd):not(.m-table-body__header)>td:first-child {
+        &.m--has-header tr:nth-child(odd):not(.m-table-body__header) > .m-table-body__cell:first-child {
             background: $m-color--grey-lightest;
 
             &::after {
@@ -63,7 +69,7 @@
     }
 }
 
-@mixin body-rows-style-alternate-background--even-row() {
+@mixin rows-style-alternate-background--even-row() {
     &:not(.m--has-header) tr:not(.m-table-body__header) {
         &:nth-child(even) {
             background-color: $m-color--grey-lightest;
@@ -71,7 +77,7 @@
     }
 
     &.m--is-first-column-fixed {
-        &:not(.m--has-header) tr:nth-child(even):not(.m-table-body__header)>td:first-child {
+        &:not(.m--has-header) tr:nth-child(even):not(.m-table-body__header) > .m-table-body__cell:first-child {
             background: $m-color--grey-lightest;
 
             &::after {
@@ -81,13 +87,13 @@
     }
 }
 
-@mixin body-rows-style-alternate-background() {
-    @include body-rows-style-alternate-background--odd-row();
-    @include body-rows-style-alternate-background--even-row();
+@mixin rows-style-alternate-background() {
+    @include rows-style-alternate-background--odd-row();
+    @include rows-style-alternate-background--even-row();
 
     &.m--is-first-column-fixed {
         tr:not(.m-table-body__header) {
-            td:first-child {
+            .m-table-body__cell:first-child {
                 &::after {
                     right: 0;
                     width: 1px;
@@ -99,12 +105,12 @@
 }
 
 @mixin default-premiere-colone-fixe() {
-    td:first-child {
+    .m-table-body__cell:first-child {
         @include m-table--sticky-cell();
     }
 
     tr:not(.m-table-body__header) {
-        td:first-child {
+        .m-table-body__cell:first-child {
             transition: background-color $m-transition-duration ease;
             background: $m-color--white;
 
@@ -123,9 +129,10 @@
     border-collapse: collapse;
     border: none;
 
-    @include row-hover-effect();
+    @include row-highlighted-on-hover();
 
     /deep/ {
+        th,
         td {
             @include m-table--cell-alignment();
 
@@ -137,9 +144,14 @@
     tr {
         transition: background-color $m-transition-duration ease;
 
-        td:not(.m-table-body__empty-area) {
+        .m-table-body__cell:not(.m-table-body__empty-area) {
             padding: $m-spacing;
         }
+    }
+
+    th {
+        font-size: $m-font-size;
+        font-weight: $m-font-weight--bold;
     }
 
     + .m-table-body.m--no-header {
@@ -151,24 +163,24 @@
     color: $m-color--disabled;
 }
 
-.m-table-body.m--is-body-rows-style-row-borders {
-    @include body-rows-style-row-borders();
+.m-table-body.m--is-rows-style-borders {
+    @include rows-style-borders();
 }
 
-.m-table-body.m--is-body-rows-style-cell-borders {
-    @include body-rows-style-cell-borders();
+.m-table-body.m--is-rows-style-cell-borders {
+    @include rows-style-cell-borders();
 }
 
-.m-table-body.m--is-body-rows-style-alternate-background {
-    @include body-rows-style-alternate-background();
+.m-table-body.m--is-rows-style-alternate-background {
+    @include rows-style-alternate-background();
 }
 
 .m-table-body.m--is-first-column-fixed {
     @include default-premiere-colone-fixe();
 
-    &.m--has-row-hover-effect {
+    &.m--has-row-highlighted-on-hover {
         &:not(.m--is-disabled) tr:not(.m-table-body__header):hover {
-            td:first-child {
+            .m-table-body__cell:first-child {
                 background: $m-color--interactive-lightest;
             }
         }

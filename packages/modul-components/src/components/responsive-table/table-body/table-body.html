@@ -5,12 +5,13 @@
             'm--is-disabled': isAccordionDisabled,
             'm--has-header': hasHeaderOrHeaderEmptyArea,
             'm--no-header': !hasHeaderOrHeaderEmptyArea,
-            'm--has-row-hover-effect': rowHoverEffect,
+            'm--has-row-highlighted-on-hover': rowHighlightedOnHover,
             'm--is-first-column-fixed': firstColumnFixed,
         },
-        'm--is-body-rows-style-' + bodyRowsStyle,
+        'm--is-rows-style-' + rowsStyle,
     ]">
-    <m-table-group-header class="m-table-body__header"
+    <m-table-group-header
+                         class="m-table-body__header"
                          :columns="columns"
                          :rows-group="rowsGroup"
                          :first-column-fixed="firstColumnFixed"
@@ -18,57 +19,77 @@
                          :table-component-width="tableComponentWidth"
                          :default-empty-area="defaultEmptyArea"
                          :group-header-style="groupHeaderStyle"
-                         :group-header-class-name="groupHeaderClassName">
-        <template #body-header-title>
-            <slot name="body-header-title"
-                  :rows-group="{ rowsGroup }">
-                <template v-if="
-                        rowsGroup &&
-                        rowsGroup.header &&
-                        rowsGroup.header.title
-                    ">
-                    {{ rowsGroup.header.title }}
-                </template>
-                <template v-else-if="emptyAreaTextHeader">
-                    {{ emptyAreaTextHeader }}
-                </template>
+                         :group-header-class-name="groupHeaderClassName"
+                         @open-accordion="emitOpenAccordion($event)"
+                         @close-accordion="emitCloseAccordion($event)">
+        <template #rows-group-header-title="{ rowsGroup, title }">
+            <slot :name="'rows-group-header-title.' + rowsGroup.name"
+                :rows-group="rowsGroup"
+                :title="title">
+                <slot name="rows-group-header-title"
+                    :rows-group="rowsGroup"
+                    :title="title">
+                    <template v-if="title">
+                        {{ title }}
+                    </template>
+                    <template v-else-if="emptyAreaTextHeader">
+                        {{ emptyAreaTextHeader }}
+                    </template>
+                </slot>
             </slot>
         </template>
         <template v-for="(column, columnIndex) in columns"
-                  :slot="'body-header.' + column.id"
-                  slot-scope="{ rowsGroup }">
-            <slot :name="'body-header.' + column.id"
-                  :rowsGroup="rowsGroup">
-                <template v-if="rowsGroup.header.cells[column.id].value">
-                    {{ rowsGroup.header.cells[column.id].value }}
-                </template>
+                  :slot="'rows-group-header-cell.' + column.name"
+                  slot-scope="{ rowsGroup, header, cell }">
+            <slot :name="'rows-group-header-cell.' + column.name + '.' + rowsGroup.name"
+                  :rows-group="rowsGroup"
+                  :header="header"
+                  :cell="cell">
+                <slot :name="'rows-group-header-cell.' + column.name"
+                    :rows-group="rowsGroup"
+                    :header="header"
+                    :cell="cell">
+                    <template v-if="cell.value">
+                        {{ cell.value }}
+                    </template>
+                </slot>
             </slot>
         </template>
     </m-table-group-header>
     <template v-if="hasRowContent">
         <tr v-for="(row, rowIndex) in rowsGroup.rows"
             :key="rowIndex">
-            <td v-for="(column, indexCoumn) in columns"
+            <component v-for="(column, indexCoumn) in columns"
                 :key="indexCoumn"
+                :is="isCellHeader(row, column.name) ? 'th' : 'td'"
+                class="m-table-body__cell"
                 :class="[
                     getRowAlignmentClass(column),
-                    getRowClassName(row, column.id),
+                    getRowClassName(row, column.name),
                 ]"
                 :colspan="getRowColspan(row, column)"
                 :rowspan="getRowspan(row, column)"
+                :scope="isCellHeader(row, column.name) ? 'row' : undefined"
                 :style="getRowWidthStyle(column)">
-                <slot :name="'rows.' + column.id"
-                      :row="row">
-                    <template v-if="row.cells && row.cells[column.id]">
-                        {{ row.cells[column.id].value }}
-                    </template>
+                <slot :name="'row.' + column.name + '.' + rowsGroup.name"
+                    :rows-group="rowsGroup"
+                    :row="row"
+                    :cell="row.cells[column.name]">
+                    <slot :name="'row.' + column.name"
+                        :rows-group="rowsGroup"
+                        :row="row"
+                        :cell="row.cells[column.name]">
+                        <template v-if="row.cells && row.cells[column.name]">
+                            {{ row.cells[column.name].value }}
+                        </template>
+                    </slot>
                 </slot>
-            </td>
+            </component>
         </tr>
         <!-- <m-table-empty-row v-if="!hasRows && (hasRowEmptyArea || hasDefaultEmptyArea)"
                            :empty-area="rowEmptyArea"
                            :current-scroll-left="currentScrollLeft"
                            :table-component-width="tableComponentWidth"
-                           :nb-columns="nbColumns" /> -->
+                           :nb-columns="totalColumnsLength" /> -->
     </template>
 </tbody>

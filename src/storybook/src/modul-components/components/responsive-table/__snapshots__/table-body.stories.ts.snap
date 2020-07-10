@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-responsive-table/m-table-body default 1`] = `
+<tbody
+  class="m-table-body m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+>
+  <tr
+    class="m-table-group-header m-table-body__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+    tabindex="0"
+  >
+    <th
+      class=""
+    >
+      <div
+        aria-hidden="true"
+        class="m-table-group-header__accordion-border"
+      />
+       
+      <div
+        class="m-table-group-header__cell"
+      >
+        <span
+          class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
+        />
+         
+        <div
+          class="m-table-group-header__content-cell"
+        >
+          
+                        English Class
+                     
+                        ANL-3010
+                    
+        </div>
+      </div>
+    </th>
+    <th
+      class=""
+      colspan="4"
+    >
+      <!---->
+       
+      <div
+        class="m-table-group-header__cell"
+      >
+        <!---->
+         
+        <div
+          class="m-table-group-header__content-cell"
+        >
+          <!---->
+           
+                        Advanced English I
+                    
+        </div>
+      </div>
+    </th>
+    <!---->
+    <!---->
+    <!---->
+  </tr>
+   
+  <tr>
+    <th
+      class="m-table-body__cell m--is-text-align-left add-custom-class-cell"
+      scope="row"
+    >
+      
+                            Vincent Guilmette
+                        
+    </th>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            111 222 333
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            vincent.gui@gmail.com
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            1976-12-05
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            819 232-3754
+                        
+    </td>
+  </tr>
+  <tr>
+    <th
+      class="m-table-body__cell m--is-text-align-left"
+      scope="row"
+    >
+      
+                            Charles Maheu
+                        
+    </th>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            111 322 344
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            charles.maheu@outlook.com
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            1980-06-11
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            418 233-4744
+                        
+    </td>
+  </tr>
+  <tr>
+    <th
+      class="m-table-body__cell m--is-text-align-left"
+      scope="row"
+    >
+      
+                            Pierre Olivier Boulet
+                        
+    </th>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            112 528 967
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            po.boulet@gmail.com
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            1994-04-08
+                        
+    </td>
+    <td
+      class="m-table-body__cell m--is-text-align-left"
+    >
+      
+                            819 135-3460
+                        
+    </td>
+  </tr>
+</tbody>
+`;
