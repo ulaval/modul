@@ -17,9 +17,9 @@
             <div class="m-organize-table-columns__item">
                 <div class="m-organize-table-columns__item-title">
                     <m-icon v-if="column.fixed"
-                            name="m-svg__lock"></m-icon>
+                            name="m-svg__lock" />
                     <m-icon v-else
-                            name="m-svg__drag-vertical"></m-icon>
+                            name="m-svg__drag-vertical" />
                     <span class="m-organize-table-columns__item-title-text">
                         {{column.title}}
                     </span>
@@ -27,7 +27,7 @@
                 <m-icon-button @click="removeColumn(column)"
                                button-size="20px"
                                v-if="!column.fixed"
-                               icon-name="delete"></m-icon-button>
+                               icon-name="delete" />
             </div>
         </m-list-item>
     </ul>
@@ -48,7 +48,7 @@
                         </span>
                     </div>
                     <m-add @click="addColumn(column)"
-                           :title="'m-organize-table-columns:add-column' | f-m-i18n"></m-add>
+                           :title="'m-organize-table-columns:add-column' | f-m-i18n" />
                 </div>
             </m-list-item>
         </ul>

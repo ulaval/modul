@@ -2,14 +2,18 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_ACCESS_DENIED_NAME } from '../../component-names';
-import MessagePagePlugin, { Link } from '../../message-page/message-page';
+import { ERROR_ACCESS_DENIED_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
+import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-access-denied.html';
 
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [MESSAGE_PAGE_NAME]: MMessagePage
+    }
+})
 export class MErrorAccessDenied extends ModulVue {
 
     @Prop({
@@ -37,7 +41,6 @@ export class MErrorAccessDenied extends ModulVue {
 
 const ErrorAccessDeniedPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(MessagePagePlugin);
         v.component(ERROR_ACCESS_DENIED_NAME, MErrorAccessDenied);
     }
 };

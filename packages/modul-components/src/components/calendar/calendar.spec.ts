@@ -1,6 +1,5 @@
 import { mount, RefSelector, Wrapper } from '@vue/test-utils';
 import Vue from 'vue';
-import { renderComponent } from '../../../tests/helpers/render';
 import uuid from '../../utils/uuid/uuid';
 import { CalendarMode, MCalendar } from './calendar';
 import { RangeDate, SingleDate } from './calendar-state/state/abstract-calendar-state';
@@ -76,13 +75,6 @@ xdescribe(`Calendar`, () => {
         showMonthBeforeAfter = undefined;
     });
 
-    describe(`with default values`, () => {
-        it(`should render default view`, async () => {
-            initializeWrapper();
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
-    });
-
     describe(`delegates properties to calendar renderer`, () => {
         beforeEach(() => {
             minDate = '2005-01-01';
@@ -120,9 +112,6 @@ xdescribe(`Calendar`, () => {
             initializeWrapper();
         });
 
-        it(`should render single dates view`, async () => {
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
-        });
 
         describe(`on model update`, () => {
             it(`then event listener will be called`, () => {
@@ -179,10 +168,6 @@ xdescribe(`Calendar`, () => {
             mode = CalendarMode.DATE_RANGE;
             value = {};
             initializeWrapper();
-        });
-
-        it(`should render date range view`, async () => {
-            return expect(renderComponent(wrapper.vm)).resolves.toMatchSnapshot();
         });
 
         describe(`on model update`, () => {

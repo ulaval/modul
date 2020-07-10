@@ -1,18 +1,36 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import SortablePlugin, { MSortEvent } from '../../../directives/sortable/sortable';
+import { SORTABLE_NAME } from '../../../directives/directive-names';
+import { MSortEvent, SortableDirective } from '../../../directives/sortable/sortable';
+import { I18N_NAME as I18N_FILTER_NAME } from '../../../filters/filter-names';
+import { i18nFilter } from '../../../filters/i18n/i18n';
 import { ModulVue } from '../../../utils/vue/vue';
-import ButtonPlugin from '../../button/button';
-import { ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
-import IconButtonPlugin from '../../icon-button/icon-button';
-import IconPlugin from '../../icon/icon';
-import ListItemPlugin from '../../list-item/list-item';
+import { MAdd } from '../../add/add';
+import { MButton } from '../../button/button';
+import { ADD_NAME, BUTTON_NAME, ICON_BUTTON_NAME, ICON_NAME, LIST_ITEM_NAME, ORGANIZE_TABLE_COLUMNS_NAME } from '../../component-names';
+import { MIconButton } from '../../icon-button/icon-button';
+import { MIcon } from '../../icon/icon';
+import { MListItem } from '../../list-item/list-item';
 import { MColumnTable } from '../../table/table';
 import WithRender from './organize-table-columns.html?style=./organize-table-columns.scss';
 
 @WithRender
-@Component
+@Component({
+    components: {
+        [ADD_NAME]: MAdd,
+        [BUTTON_NAME]: MButton,
+        [LIST_ITEM_NAME]: MListItem,
+        [ICON_BUTTON_NAME]: MIconButton,
+        [ICON_NAME]: MIcon
+    },
+    filters: {
+        [I18N_FILTER_NAME]: i18nFilter
+    },
+    directives: {
+        [SORTABLE_NAME]: SortableDirective
+    }
+})
 export class MOrganizeTableColumns extends ModulVue {
     @Prop({
         required: true
@@ -96,11 +114,6 @@ export class MOrganizeTableColumns extends ModulVue {
 const OrganizeTableColumnsPlugin: PluginObject<any> = {
     install(v, options): void {
         v.component(ORGANIZE_TABLE_COLUMNS_NAME, MOrganizeTableColumns);
-        v.use(SortablePlugin);
-        v.use(ListItemPlugin);
-        v.use(IconPlugin);
-        v.use(IconButtonPlugin);
-        v.use(ButtonPlugin);
     }
 };
 

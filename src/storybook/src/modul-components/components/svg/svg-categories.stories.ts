@@ -12,17 +12,23 @@ export default {
 };
 
 const TEMPLATE_CATEGORY: string = `<div>
-    <${SVG_NAME}
+    <span
         v-for="(name, index) in iconNames"
         :key="index"
-        :name="name"
-        :width="size"
-        :height="size"
-        @click="emitClick"
-        @keydown="emitKeydown"
-        @mouseover="emitMouseover"
-        @mouseleave="emitMouseleave"
-    />
+        style="display: inline-flex; align-items: center; justify-content: center; flex-direction: column; margin: 0 24px 16px 0;"
+        :style="{ width: size }"
+    >
+        <${SVG_NAME}
+            :name="name"
+            :width="size"
+            :height="size"
+            @click="emitClick"
+            @keydown="emitKeydown"
+            @mouseover="emitMouseover"
+            @mouseleave="emitMouseleave"
+        />
+        <span style="margin: 4px 0 0 0; font-size: 10px; line-height: 1.1; text-align: center;">{{ name }}</span>
+    </span>
 </div>`;
 
 const getIconNameOfCategory: (modulIconsCategory: ModulIconsCategory) => string[] = (modulIconsCategory: ModulIconsCategory) => {

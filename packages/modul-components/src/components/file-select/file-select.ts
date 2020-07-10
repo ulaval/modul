@@ -5,14 +5,19 @@ import { InputState } from '../../mixins/input-state/input-state';
 import FilePlugin, { DEFAULT_STORE_NAME } from '../../utils/file/file';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import ButtonPlugin, { MButtonIconPosition, MButtonSkin } from '../button/button';
-import { FILE_SELECT_NAME } from '../component-names';
-import I18nPlugin from '../i18n/i18n';
-import ValidationMesagePlugin from '../validation-message/validation-message';
+import { MButton, MButtonIconPosition, MButtonSkin } from '../button/button';
+import { BUTTON_NAME, FILE_SELECT_NAME, I18N_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MI18n } from '../i18n/i18n';
+import { MValidationMessage } from '../validation-message/validation-message';
 import WithRender from './file-select.html?style=./file-select.scss';
 
 @WithRender
 @Component({
+    components: {
+        [BUTTON_NAME]: MButton,
+        [I18N_NAME]: MI18n,
+        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+    },
     mixins: [InputState]
 })
 export class MFileSelect extends ModulVue {
@@ -100,9 +105,6 @@ export class MFileSelect extends ModulVue {
 
 const FileSelectPlugin: PluginObject<any> = {
     install(v, options): void {
-        v.use(I18nPlugin);
-        v.use(ButtonPlugin);
-        v.use(ValidationMesagePlugin);
         v.use(FilePlugin);
         v.component(FILE_SELECT_NAME, MFileSelect);
     }

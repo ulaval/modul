@@ -1,11 +1,16 @@
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
+import { OPTION_ITEM_NAME } from '../../component-names';
+import { MOptionItem } from './option-item';
 import WithRender from './option-item-predefined.html';
 
-
-@Component
 @WithRender
+@Component({
+    components: {
+        [OPTION_ITEM_NAME]: MOptionItem
+    }
+})
 export class MOptionItemPredefined extends ModulVue {
     @Prop()
     public disabled: boolean;
@@ -18,7 +23,6 @@ export class MOptionItemPredefined extends ModulVue {
         throw new Error('not implemented');
     }
 
-    private onClick(event: Event): void {
-        this.$emit('click', event);
-    }
+    @Emit('click')
+    public onClick(_event: MouseEvent): void { }
 }

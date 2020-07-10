@@ -21,7 +21,7 @@ const ajustHeight: Function = (element: HTMLElement): void => {
     }
 };
 
-const MTextareaAutoHeight: DirectiveOptions = {
+export const MTextareaAutoHeight: DirectiveOptions = {
     bind(element: TextareaAutoHeightElement, binding: VNodeDirective, node: VNode): void {
         element.disabledUpdate = false;
 
