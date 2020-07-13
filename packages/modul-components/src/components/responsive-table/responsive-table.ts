@@ -162,31 +162,23 @@ export class MResponsiveTable extends ModulVue {
         const headRowsArray: MTableHeadRow[] = headRows ? Object.keys(headRows).map((key: string) => {
             return headRows[key];
         }) : [];
-        const hasSomeHeadMainColumns: boolean = headRowsArray.some((hr: MTableHeadRow) => {
+        const hasSomeHeadMainColumns: boolean = Boolean(headRowsArray.length) && headRowsArray.some((hr: MTableHeadRow) => {
             return hr.mainColumns;
         });
         let maxOrder: number = Math.max.apply(Math, headRowsArray.map((hr: MTableHeadRow) => hr.order));
 
-        if (this.columns && this.columns.length && headRowsArray.length) {
-            maxOrder = maxOrder && maxOrder > 0 ? maxOrder + 1 : 1;
+        headRows = headRowsArray.length ? headRows : {};
 
-            if (hasSomeHeadMainColumns) {
-                headRows['lastRow'] = {
-                    order: maxOrder,
-                    columns: this.columns
-                };
-            } else {
-                headRows['mainRow'] = {
-                    order: maxOrder,
-                    mainColumns: true,
-                    columns: this.columns
-                };
-            }
-
-            this.headRowsInterne = getHeadRowsFilterAndSort(headRows);
-
+        if (this.columns && this.columns.length && !Boolean(headRowsArray.length)) {
+            headRows[hasSomeHeadMainColumns ? `lastRow-${this.id}` : `mainRow-${this.id}`] = {
+                order: maxOrder && maxOrder > 0 ? maxOrder + 1 : 1,
+                mainColumns: !hasSomeHeadMainColumns,
+                columns: this.columns
+            };
+        } else if (!hasSomeHeadMainColumns && headRowsArray.length) {
+            headRows[Object.keys(headRows)[headRowsArray.length - 1]].mainColumns = true;
         }
-        this.headRowsInterne = getHeadRowsFilterAndSort(headRows) || {};
+        this.headRowsInterne = getHeadRowsFilterAndSort(headRows);
     }
 
     public get allColumns(): MTableColumn[] {
@@ -200,10 +192,10 @@ export class MResponsiveTable extends ModulVue {
     }
 
 
-    public get mainColumns(): MTableColumn[] | any {
+    public get mainColumns(): MTableColumn[] {
         const formatHeadRowKeys: string[] = Object.keys(this.headRowsFilterAndSort);
         const keyMainColumns: string = formatHeadRowKeys[formatHeadRowKeys.findIndex(key => this.headRowsFilterAndSort[key].mainColumns)];
-        return this.headRowsFilterAndSort[keyMainColumns].columns;
+        return this.headRowsFilterAndSort[keyMainColumns].columns || [];
     }
 
     public get mainColumnsLength(): number {

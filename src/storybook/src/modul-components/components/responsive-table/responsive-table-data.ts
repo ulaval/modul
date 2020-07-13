@@ -16,26 +16,40 @@ export const getTableColumn: (
     textAlign: MTableTextAlign = MTableTextAlign.Left
 
 ) => {
-    return {
-        name,
-        value,
-        sortable,
-        enableUnsort: true,
-        textAlign,
-        sortDirection,
-        defaultSortDirection
+        return {
+            name,
+            value,
+            sortable,
+            enableUnsort: true,
+            textAlign,
+            sortDirection,
+            defaultSortDirection
+        };
     };
+
+export const getScopeSlotTemplate = (
+    textHtml: string
+) => {
+    return `<div
+            style="background: blue; color: #fff; padding: 8px; border-radius: 4px;">
+            ${ textHtml}
+        </div>`;
 };
 
 export const MAIN_ROW: string = 'mainRow';
 
-export const DEFAULT_TABLE_COLUMNS: MTableColumn[] = [
-    getTableColumn('name', 'Name', true, MTableSortDirection.Asc),
-    getTableColumn('ni', 'NI', true, MTableSortDirection.None, MTableSortDirection.None, MTableTextAlign.Center),
-    getTableColumn('email', 'Email'),
-    getTableColumn('dateOfBirth', 'Date of birth', true, MTableSortDirection.None, MTableSortDirection.Dsc),
-    getTableColumn('phoneNumber', 'Phone number')
-];
+const getDefaultTableColumns = (isSortable: boolean = true) => {
+    return [
+        getTableColumn('name', 'Name', isSortable, MTableSortDirection.Asc),
+        getTableColumn('id', 'Id', isSortable, MTableSortDirection.None, MTableSortDirection.None, MTableTextAlign.Center),
+        getTableColumn('email', 'Email', isSortable),
+        getTableColumn('dateOfBirth', 'Date of birth', isSortable, MTableSortDirection.None, MTableSortDirection.Dsc),
+        getTableColumn('phoneNumber', 'Phone number', isSortable)
+    ]
+}
+
+export const DEFAULT_TABLE_COLUMNS: MTableColumn[] = getDefaultTableColumns(true);
+export const DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE: MTableColumn[] = getDefaultTableColumns(false);
 
 export const DEFAULT_TABLE_ROW_1: MTableRow = {
     cells: {
@@ -44,7 +58,7 @@ export const DEFAULT_TABLE_ROW_1: MTableRow = {
             className: 'add-custom-class-cell',
             isHeader: true
         },
-        ni: {
+        id: {
             value: '111 222 333'
         },
         email: {
@@ -69,7 +83,7 @@ export const DEFAULT_TABLE_ROW_2: MTableRow = {
             },
             isHeader: true
         },
-        ni: {
+        id: {
             value: '111 322 344'
         },
         email: {
@@ -91,7 +105,7 @@ export const DEFAULT_TABLE_ROW_3: MTableRow = {
             value: 'Pierre Olivier Boulet',
             isHeader: true
         },
-        ni: {
+        id: {
             value: '112 528 967'
         },
         email: {
@@ -110,9 +124,9 @@ export const DEFAULT_TABLE_GROUP_HEADER_1: MTableHeader = {
     title: 'English Class',
     cells: {
         name: {
-            value: 'ANL-3010',
+            value: 'ANL-3010'
         },
-        ni: {
+        id: {
             value: 'Advanced English I',
             colspan: 4,
             textAlign: MTableTextAlign.Right
@@ -124,8 +138,47 @@ export const DEFAULT_TABLE_GROUP_HEADER_2: MTableHeader = {
     title: 'NUT-1104',
     cells: {
         name: {
-            value: 'Éléments de nutrition',
+            value: 'Elements of nutrition',
             colspan: MTableColspan.AllColumns
+        }
+    }
+};
+
+export const DEFAULT_TABLE_GROUP_HEADER_3: MTableHeader = {
+    cells: {
+        name: {
+            value: 'ANI-1101'
+        },
+        id: {
+            value: 'Motion design',
+            colspan: 4,
+            textAlign: MTableTextAlign.Left
+        }
+    }
+};
+
+export const DEFAULT_TABLE_GROUP_HEADER_4: MTableHeader = {
+    cells: {
+        name: {
+            value: 'DES-1103'
+        },
+        id: {
+            value: 'User experience design I',
+            colspan: 4,
+            textAlign: MTableTextAlign.Left
+        }
+    }
+};
+
+export const DEFAULT_TABLE_GROUP_HEADER_5: MTableHeader = {
+    cells: {
+        name: {
+            value: 'DES-1104'
+        },
+        id: {
+            value: 'User experience design II',
+            colspan: 4,
+            textAlign: MTableTextAlign.Left
         }
     }
 };
@@ -144,8 +197,17 @@ export const DEFAULT_TABLE_GROUP_ACCORDION_1: MTableAccordion = {
     iconClassName: 'add-class-to-icon'
 };
 
-export const DEFAULT_TABLE_GROUP_1: MTableRowsGroup = {
-    name: 'TABLE_GROUP_1',
+export const DEFAULT_TABLE_GROUP_ACCORDION_2: MTableAccordion = {
+    open: false,
+    disabled: true,
+};
+
+export const DEFAULT_TABLE_GROUP_ACCORDION_3: MTableAccordion = {
+    open: false
+};
+
+export const DEFAULT_TABLE_ROWS_GROUP_1: MTableRowsGroup = {
+    name: 'group1',
     accordion: DEFAULT_TABLE_GROUP_ACCORDION_1,
     header: DEFAULT_TABLE_GROUP_HEADER_1,
     rows: [
@@ -155,9 +217,19 @@ export const DEFAULT_TABLE_GROUP_1: MTableRowsGroup = {
     ]
 };
 
-export const DEFAULT_TABLE_GROUP_2: MTableRowsGroup = {
-    name: 'TABLE_GROUP_2',
+export const DEFAULT_TABLE_ROWS_GROUP_2: MTableRowsGroup = {
+    name: 'group2',
     header: DEFAULT_TABLE_GROUP_HEADER_2,
+    accordion: DEFAULT_TABLE_GROUP_ACCORDION_3,
+    rows: [
+        DEFAULT_TABLE_ROW_1
+    ]
+};
+
+export const DEFAULT_TABLE_ROWS_GROUP_3: MTableRowsGroup = {
+    name: 'group3',
+    header: DEFAULT_TABLE_GROUP_HEADER_3,
+    accordion: DEFAULT_TABLE_GROUP_ACCORDION_1,
     rows: [
         DEFAULT_TABLE_ROW_1,
         DEFAULT_TABLE_ROW_2,
@@ -165,11 +237,53 @@ export const DEFAULT_TABLE_GROUP_2: MTableRowsGroup = {
     ]
 };
 
-export const DEFAULT_TABLE_GROUPS: MTableRowsGroup[] = [
-    DEFAULT_TABLE_GROUP_1,
-    DEFAULT_TABLE_GROUP_2
+export const DEFAULT_TABLE_ROWS_GROUP_4: MTableRowsGroup = {
+    name: 'group4',
+    header: DEFAULT_TABLE_GROUP_HEADER_4,
+    accordion: DEFAULT_TABLE_GROUP_ACCORDION_2,
+    rows: [
+        DEFAULT_TABLE_ROW_1,
+        DEFAULT_TABLE_ROW_2,
+        DEFAULT_TABLE_ROW_3
+    ]
+};
+
+export const DEFAULT_TABLE_ROWS_GROUP_5: MTableRowsGroup = {
+    name: 'group5',
+    header: DEFAULT_TABLE_GROUP_HEADER_5,
+    rows: [
+        DEFAULT_TABLE_ROW_1,
+        DEFAULT_TABLE_ROW_2
+    ]
+};
+
+export const DEFAULT_TABLE_ROWS_GROUP_6: MTableRowsGroup = {
+    name: 'group6',
+    rows: [
+        DEFAULT_TABLE_ROW_1,
+        DEFAULT_TABLE_ROW_2,
+        DEFAULT_TABLE_ROW_2
+    ]
+};
+
+export const DEFAULT_TABLE_ROWS: MTableRow[] = [
+    DEFAULT_TABLE_ROW_1,
+    DEFAULT_TABLE_ROW_2,
+    DEFAULT_TABLE_ROW_3
 ];
 
+export const DEFAULT_TABLE_ROW_GROUPS: MTableRowsGroup[] = [
+    DEFAULT_TABLE_ROWS_GROUP_1,
+    DEFAULT_TABLE_ROWS_GROUP_2
+];
+
+export const DEFAULT_TABLE_ROW_GROUPS_2: MTableRowsGroup[] = [
+    DEFAULT_TABLE_ROWS_GROUP_2,
+    DEFAULT_TABLE_ROWS_GROUP_3,
+    DEFAULT_TABLE_ROWS_GROUP_4,
+    DEFAULT_TABLE_ROWS_GROUP_5,
+    DEFAULT_TABLE_ROWS_GROUP_6
+];
 
 export const COMPLEX_TABLE_FOLDER_COLUMNS: MTableColumn[] = [
     {
@@ -216,21 +330,95 @@ export const COMPLEX_TABLE_AFTER_BEFORE_COLUMNS: MTableColumn[] = [
     }
 ];
 
+export const COMPLEX_TABLE_ID_COLUMN: string = 'userNaidmeBeforeFolderA';
+export const COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME: string = 'userNameBeforeFolderA';
+export const COMPLEX_TABLE_NAME_BEFORE_FOLDER_A_COLUMN_NAME: string = 'userBeforeFolderA';
+export const COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_A_COLUMN_NAME: string = 'userNameAfterFolderA';
+export const COMPLEX_TABLE_NAME_AFTER_FOLDER_A_COLUMN_NAME: string = 'userAfterFolderA';
+export const COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_B_COLUMN_NAME: string = 'userNameBeforeFolderB';
+export const COMPLEX_TABLE_NAME_BEFORE_FOLDER_B_COLUMN_NAME: string = 'userBeforeFolderB';
+export const COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_B_COLUMN_NAME: string = 'userNameAfterFolderB';
+export const COMPLEX_TABLE_NAME_AFTER_FOLDER_B_COLUMN_NAME: string = 'userAfterFolderB';
+
 
 export const COMPLEX_TABLE_MAIN_COLUMNS: MTableColumn[] = [
     {
-        name: 'id',
-        value: 'id',
+        name: COMPLEX_TABLE_ID_COLUMN,
+        value: 'Id',
         width: '120px'
     },
-    getTableColumn('niBeforeFolderAColumn', 'NI'),
-    getTableColumn('nameBeforeFolderAColumn', 'Name'),
-    getTableColumn('niAfterFolderAColumn', 'NI'),
-    getTableColumn('nameAfterFolderAColumn', 'Name'),
-    getTableColumn('niBeforeFolderBColumn', 'NI'),
-    getTableColumn('nameBeforeFolderBColumn', 'Name'),
-    getTableColumn('niAfterFolderBColumn', 'NI'),
-    getTableColumn('nameAfterFolderBColumn', 'Name')
+    getTableColumn(COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'User Name'),
+    getTableColumn(COMPLEX_TABLE_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'Name'),
+    getTableColumn(COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_A_COLUMN_NAME, 'User Name'),
+    getTableColumn(COMPLEX_TABLE_NAME_AFTER_FOLDER_A_COLUMN_NAME, 'Name'),
+    getTableColumn(COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_B_COLUMN_NAME, 'User Name'),
+    getTableColumn(COMPLEX_TABLE_NAME_BEFORE_FOLDER_B_COLUMN_NAME, 'Name'),
+    getTableColumn(COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_B_COLUMN_NAME, 'User Name'),
+    getTableColumn(COMPLEX_TABLE_NAME_AFTER_FOLDER_B_COLUMN_NAME, 'Name')
+];
+
+export const getComplexTableRow = (
+    id: string,
+    userNameBeforeFolderA: string,
+    nameBeforeFolderA: string,
+    userNameAfterFolderA: string,
+    nameAfterFolderA: string,
+    userNameBeforeFolderB: string,
+    nameBeforeFolderB: string,
+    userNameAfterFolderB: string,
+    nameAfterFolderB: string
+) => {
+    return {
+        [COMPLEX_TABLE_ID_COLUMN]: {
+            value: id
+        },
+        [COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME]: {
+            value: userNameBeforeFolderA
+        },
+        [COMPLEX_TABLE_NAME_BEFORE_FOLDER_A_COLUMN_NAME]: {
+            value: nameBeforeFolderA
+        },
+        [COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_A_COLUMN_NAME]: {
+            value: userNameAfterFolderA
+        },
+        [COMPLEX_TABLE_NAME_AFTER_FOLDER_A_COLUMN_NAME]: {
+            value: nameAfterFolderA
+        },
+        [COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_B_COLUMN_NAME]: {
+            value: userNameBeforeFolderB
+        },
+        [COMPLEX_TABLE_NAME_BEFORE_FOLDER_B_COLUMN_NAME]: {
+            value: nameBeforeFolderB
+        },
+        [COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_B_COLUMN_NAME]: {
+            value: userNameAfterFolderB
+
+        },
+        [COMPLEX_TABLE_NAME_AFTER_FOLDER_B_COLUMN_NAME]: {
+            value: nameAfterFolderB
+        }
+    };
+};
+
+export const COMPLEX_TABLE_ROWS: MTableRow[] = [
+    {
+        cells: getComplexTableRow('01', 'simon-test', 'Simons', 'simon.ca', 'Simon', 'test.simon', 'Simone', 'simon-com', 'Simon')
+    },
+    {
+        cells: getComplexTableRow('02', '20-100', 'Vincen', '_vincent', 'Vincent', 'test.vincent', 'VINcent', 'vincent_g', 'Vincent')
+    },
+    {
+        cells: getComplexTableRow('03', 'maxime-ber', 'maxime', 'maxim.ca', 'Maxim', 'max.max', 'MAXime', 'maxim.ber', 'Maxime')
+    },
+    {
+        cells: getComplexTableRow('04', 'frankD', 'Frank', 'frank.ca', 'Francois', 'JF', 'Jean', 'JFrancois', 'Francois')
+    },
+    {
+        cells: getComplexTableRow('05', 'Will.B', 'Will', 'simon.ca', 'William', 'b.will', 'willy', 'william.b', 'William')
+    },
+    {
+        cells: getComplexTableRow('06', 'johny_02', 'john', 'john-02', 'John', '02.jo', 'John', 'jo.02', 'John')
+    }
 ];
 
 export const COMPLEX_TABLE_HEAD_ROWS: MTableHeadRows = {
@@ -258,11 +446,11 @@ export const COLUMNS: MTableColumn[] = [
         defaultSortDirection: MTableSortDirection.None,
     },
     {
-        name: 'ni',
-        value: 'NI',
+        name: 'id',
+        value: 'Id',
         sortable: true,
         textAlign: MTableTextAlign.Left,
-        className: 'add-class-ni',
+        className: 'add-class-id',
         sortDirection: MTableSortDirection.None,
         defaultSortDirection: MTableSortDirection.None,
     },
@@ -332,8 +520,8 @@ export const ROWS_GROUP: MTableRowsGroup = {
             name: {
                 value: 'name'
             },
-            ni: {
-                value: 'ni'
+            id: {
+                value: 'id'
             },
             nrc: {
                 value: 'nrc',
@@ -348,7 +536,7 @@ export const ROWS_GROUP: MTableRowsGroup = {
                     value: 'Vincent',
                     className: 'ajouter-une-class-test'
                 },
-                ni: {
+                id: {
                     value: '111 222 333'
                 },
                 nrc: {
@@ -367,7 +555,7 @@ export const ROWS_GROUP: MTableRowsGroup = {
                 name: {
                     value: 'Maxime'
                 },
-                ni: {
+                id: {
                     value: '111 222 333'
                 },
                 nrc: {
@@ -402,7 +590,7 @@ export const ROWS_GROUP_2: MTableRowsGroup = {
             name: {
                 value: 'Entete 2 Martin'
             },
-            ni: {
+            id: {
                 value: '111 222 333',
                 colspan: 4
             }
@@ -415,7 +603,7 @@ export const ROWS_GROUP_2: MTableRowsGroup = {
                     value: 'Simard, Martin',
                     className: 'ajouter-une-class-test'
                 },
-                ni: {
+                id: {
                     value: '111 222 333'
                 },
                 nrc: {
@@ -435,7 +623,7 @@ export const ROWS_GROUP_2: MTableRowsGroup = {
                     value: 'Alex',
                     className: 'ajouter-une-class-test'
                 },
-                ni: {
+                id: {
                     value: '111 222 333'
                 },
                 nrc: {
@@ -455,7 +643,7 @@ export const ROWS_GROUP_2: MTableRowsGroup = {
                     value: 'Simon',
                     className: 'ajouter-une-class-test'
                 },
-                ni: {
+                id: {
                     value: '111 222 333'
                 },
                 nrc: {
@@ -475,7 +663,7 @@ export const ROWS_GROUP_2: MTableRowsGroup = {
                     value: 'Vincent',
                     className: 'ajouter-une-class-test'
                 },
-                ni: {
+                id: {
                     value: '111 222 333'
                 },
                 nrc: {
@@ -501,7 +689,7 @@ export const ROWS: MTableRow[] = [
                 value: 'Titi',
                 className: 'add-class'
             },
-            ni: {
+            id: {
                 value: '111 222 333'
             },
             nrc: {
@@ -521,7 +709,7 @@ export const ROWS: MTableRow[] = [
                 value: 'Alex',
                 className: 'ajouter-une-class-test'
             },
-            ni: {
+            id: {
                 value: '111 222 333'
             },
             nrc: {

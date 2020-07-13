@@ -98,13 +98,13 @@ export class MTableGroupHeader extends ModulVue {
 
     public get displayAccordionIcon(): boolean {
         return this.as<MTableGroupMixin>().rowsGroup
-        && this.as<MTableGroupMixin>().rowsGroup.accordion ?
+            && this.as<MTableGroupMixin>().rowsGroup.accordion ?
             this.as<MTableGroupMixin>().rowsGroup.accordion!.displayIcon === undefined
             || Boolean(this.as<MTableGroupMixin>().rowsGroup.accordion!.displayIcon)
-        : false;
+            : false;
     }
 
-    public displayAccordionIconInCorrectCell(columnId: string): boolean {
+    public displayAccordionIconInCorrectCell(columnId: string, columnIndex: number): boolean {
         if (!this.displayAccordionIcon) {
             return false;
         }
@@ -113,7 +113,7 @@ export class MTableGroupHeader extends ModulVue {
             : [];
 
         if (this.isAccordeonIconPositionLeft || arrayCells.length <= 1) {
-            return arrayCells[0] === columnId;
+            return columnIndex === 0;
         } else {
             return arrayCells[arrayCells.length - 1] === columnId;
         }

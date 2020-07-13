@@ -111,7 +111,7 @@ export enum MTableHeadStyle {
 
 export enum MTableRowsStyle {
     AlternateBackground = 'alternate-background',
-    RowBorders = 'borders',
+    Borders = 'borders',
     CellBorders = 'cell-borders'
 }
 
@@ -140,12 +140,12 @@ export const getHeadRowsFilterAndSort: (headRows: MTableHeadRows) => MTableHeadR
     const headRowsClone: MTableHeadRows = Object.assign({}, headRows);
     const headRowKeys: string[] = Object.keys(headRowsClone).sort((a, b) =>
         headRowsClone
-        && headRowsClone[a]
-        && headRowsClone[b]
-        && headRowsClone[a].order
-        && headRowsClone[b].order
-        ? headRowsClone[a].order! - headRowsClone[b].order!
-        : 1
+            && headRowsClone[a]
+            && headRowsClone[b]
+            && headRowsClone[a].order
+            && headRowsClone[b].order
+            ? headRowsClone[a].order! - headRowsClone[b].order!
+            : 1
     );
     headRows = {};
     headRowKeys.forEach(key => {

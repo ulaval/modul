@@ -30,21 +30,27 @@
                 column.style
             ]">
             <slot v-if="!column.sortable"
-                  :name="'table-head.' + column.name"
+                  :name="'head-cell.' + column.name"
                   :column="column">
-                <template v-if="column.value">
-                    {{ column.value }}
-                </template>
+                <slot name="head-cell"
+                      :column="column">
+                    <template v-if="column.value">
+                        {{ column.value }}
+                    </template>
+                </slot>
             </slot>
             <div v-else
                  class="m-table-head__cell">
                 <div class="m-table-head__cell-content"
                      @click="sort(column, headRow.columns)">
-                    <slot :name="'table-head.' + column.name"
+                    <slot :name="'head-cell.' + column.name"
                           :column="column">
-                        <template v-if="column.value">
-                            {{ column.value }}
-                        </template>
+                        <slot name="head-cell"
+                              :column="column">
+                            <template v-if="column.value">
+                                {{ column.value }}
+                            </template>
+                        </slot>
                     </slot>
                     <m-icon-button class="m-table-head__sort-icon"
                                    :class="getColumnSortDirectionClass(column)"

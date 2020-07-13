@@ -13,10 +13,10 @@
                       :head-style="headStyle"
                       @sort="emitSort($event)">
             <template v-for="(column, indexColumns) in allColumns"
-                      :slot="'table-head.' + column.name">
-                <slot :name="'table-head.' + column.name"
+                      :slot="'head-cell.' + column.name">
+                <slot :name="'head-cell.' + column.name"
                       :column="column">
-                    <slot name="table-head"
+                    <slot name="head-cell"
                           :column="column">
                         <div :key="indexColumns"
                              v-html="column.value"></div>
@@ -30,86 +30,86 @@
                 <m-progress :indeterminate="true"
                             :border-radius="false"
                             :style="{
-                            left: currentScrollLeftProp + 'px',
-                            width: tableComponentWidth,
-                        }" />
+                                left: currentScrollLeftProp + 'px',
+                                width: tableComponentWidth,
+                            }" />
             </td>
         </tr>
         <m-table-group v-for="(rowsGroup, index) in formatRowGroups"
-                      :key="index"
-                      :columns="mainColumns"
-                      :rows-group="rowsGroup"
-                      :first-column-fixed="isFirstColumnFixed"
-                      :rows-style="rowsStyle"
-                      :current-scroll-left="currentScrollLeftProp"
-                      :table-component-width="tableComponentWidth"
-                      :group-header-style="groupHeaderStyle"
-                      :group-header-class-name="groupHeaderClassName"
-                      :row-highlighted-on-hover="rowHighlightedOnHover"
-                      @open-accordion="emitOpenAccordion"
-                      @close-accordion="emitCloseAccordion">
+                       :key="index"
+                       :columns="mainColumns"
+                       :rows-group="rowsGroup"
+                       :first-column-fixed="isFirstColumnFixed"
+                       :rows-style="rowsStyle"
+                       :current-scroll-left="currentScrollLeftProp"
+                       :table-component-width="tableComponentWidth"
+                       :group-header-style="groupHeaderStyle"
+                       :group-header-class-name="groupHeaderClassName"
+                       :row-highlighted-on-hover="rowHighlightedOnHover"
+                       @open-accordion="emitOpenAccordion"
+                       @close-accordion="emitCloseAccordion">
 
-            <template #rows-group-header-title="{ rowsGroup, title }">
-                <slot :name="'rows-group-header-title.' + rowsGroup.name"
-                    :rows-group="rowsGroup"
-                    :title="title">
-                    <slot name="rows-group-header-title"
-                        :rows-group="rowsGroup"
-                        :title="title">
-                        <div v-if="title"  :key="index" v-html="title"></div>
-                        <div v-else-if="getEmptyAreaHeaderText(rowsGroup)" v-html="getEmptyAreaHeaderText(rowsGroup)"></div>
+            <template #group-header-title="{ rowsGroup, title }">
+                <slot :name="'group-header-title.' + rowsGroup.name"
+                      :rows-group="rowsGroup"
+                      :title="title">
+                    <slot name="group-header-title"
+                          :rows-group="rowsGroup"
+                          :title="title">
+                        <div v-if="title"
+                             :key="index"
+                             v-html="title"></div>
+                        <div v-else-if="getEmptyAreaHeaderText(rowsGroup)"
+                             v-html="getEmptyAreaHeaderText(rowsGroup)"></div>
                     </slot>
                 </slot>
             </template>
             <template v-for="(column, columnIndex) in mainColumns"
-                    :slot="'rows-group-header-cell.' + column.name"
-                    slot-scope="{ rowsGroup, header, cell }">
-                <slot :name="'rows-group-header-cell.' + column.name + '.' + rowsGroup.name"
-                    :rows-group="rowsGroup"
-                    :header="header"
-                    :cell="cell">
-                    <slot :name="'rows-group-header-cell.' + column.name"
-                        :rows-group="rowsGroup"
-                        :header="header"
-                        :cell="cell">
-                        <div v-if="cell.value" v-html="cell.value"></div>
+                      :slot="'group-header-cell.' + column.name"
+                      slot-scope="{ rowsGroup, header, cell }">
+                <slot :name="'group-header-cell.' + column.name + '.' + rowsGroup.name"
+                      :rows-group="rowsGroup"
+                      :header="header"
+                      :cell="cell">
+                    <slot :name="'group-header-cell.' + column.name"
+                          :rows-group="rowsGroup"
+                          :header="header"
+                          :cell="cell">
+                        <slot name="group-header-cell"
+                              :rows-group="rowsGroup"
+                              :header="header"
+                              :cell="cell">
+                            <div v-if="cell.value"
+                                 v-html="cell.value"></div>
+                        </slot>
                     </slot>
                 </slot>
             </template>
             <template v-for="(column, index) in mainColumns"
-                      :slot="'row.' + column.name"
-                      slot-scope="{ rowsGroup, row, cell }">
-                <slot :name="'row.' + column.name + '.' + rowsGroup.name"
-                    :rows-group="rowsGroup"
-                    :row="row"
-                    :cell="row.cells[column.name]">
-                    <slot :name="'row.' + column.name"
-                        :rows-group="rowsGroup"
-                        :row="row"
-                        :cell="row.cells[column.name]">
-                        <template v-if="row.cells && row.cells[column.name]">
-                            {{ row.cells[column.name].value }}
-                        </template>
+                      :slot="'row-cell.' + column.name"
+                      slot-scope="{ rowsGroup, row, cell, column }">
+                <slot :name="'row-cell.' + column.name + '.' + rowsGroup.name"
+                      :rows-group="rowsGroup"
+                      :row="row"
+                      :cell="cell"
+                      :column="column">
+                    <slot :name="'row-cell.' + column.name"
+                          :rows-group="rowsGroup"
+                          :row="row"
+                          :cell="cell"
+                          :column="column">
+                        <slot name="row-cell"
+                              :rows-group="rowsGroup"
+                              :row="row"
+                              :cell="cell"
+                              :column="column">
+                            <template v-if="cell && cell.value">
+                                {{ cell.value }}
+                            </template>
+                        </slot>
                     </slot>
                 </slot>
             </template>
-            <!-- <template v-for="(column, index) in mainColumns"
-                      :slot="'rows.' + column.name"
-                      slot-scope="{ row }">
-                <slot :name="'rows.' + column.name"
-                      :row="row">
-                    <slot name="rows"
-                          :row="row">
-                        <div v-if="row
-                                && row.cells
-                                && row.cells[column.name]
-                             "
-                             :key="index">
-                            {{ row.cells[column.name].value }}
-                        </div>
-                    </slot>
-                </slot>
-            </template> -->
         </m-table-group>
         <tbody v-if="!hasRowsGroup">
             <m-table-empty-row :empty-area="defaultEmptyArea"
