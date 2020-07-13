@@ -203,7 +203,7 @@ export const DEFAULT_TABLE_GROUP_ACCORDION_2: MTableAccordion = {
 };
 
 export const DEFAULT_TABLE_GROUP_ACCORDION_3: MTableAccordion = {
-    open: false,
+    open: true,
     displayIcon : false
 };
 
