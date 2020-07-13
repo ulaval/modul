@@ -6,7 +6,7 @@ import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
 import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-validation';
 import { MProgress } from './../progress/progress';
-import { getHeadRowsFilterAndSort, getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from './responsive-table-commons';
+import { getHeadRowsFilterAndSort, getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
 import { MTableEmptyRow } from './table-empty-row/table-empty-row';
 import { MTableGroup } from './table-group/table-group';
@@ -78,11 +78,11 @@ export class MResponsiveTable extends ModulVue {
     public readonly rowsStyle!: MTableRowsStyle;
 
     @Prop({
-        default: MTableHeaderStyle.Light,
-        validator: (value: MTableHeaderStyle) =>
-            Enums.toValueArray(MTableHeaderStyle).includes(value)
+        default: MTableGroupHeaderStyle.Light,
+        validator: (value: MTableGroupHeaderStyle) =>
+            Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
     })
-    public groupHeaderStyle!: MTableHeaderStyle;
+    public groupHeaderStyle!: MTableGroupHeaderStyle;
 
     @Prop()
     public groupHeaderClassName: string;

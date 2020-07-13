@@ -2,7 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
-import { getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableRowsGroup } from '../responsive-table-commons';
+import { getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableRowsGroup } from '../responsive-table-commons';
 
 @Component
 export class MTableGroupMixin extends Vue {
@@ -25,11 +25,11 @@ export class MTableGroupMixin extends Vue {
     public readonly defaultEmptyArea?: MTableEmptyArea;
 
     @Prop({
-        default: MTableHeaderStyle.Light,
-        validator: (value: MTableHeaderStyle) =>
-            Enums.toValueArray(MTableHeaderStyle).includes(value)
+        default: MTableGroupHeaderStyle.Light,
+        validator: (value: MTableGroupHeaderStyle) =>
+            Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
     })
-    public groupHeaderStyle!: MTableHeaderStyle;
+    public groupHeaderStyle!: MTableGroupHeaderStyle;
 
     @Prop()
     public groupHeaderClassName: string;

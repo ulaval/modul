@@ -1,80 +1,84 @@
-import { RESPONSIVE_TABLE_NAME, TABLE_HEAD_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableHeadRows, MTableHeadStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MTableHeadRows, MTableHeadStyle, MTableRow } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import Vue, { VueConstructor } from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
-import { COMPLEX_TABLE_HEAD_ROWS, DEFAULT_TABLE_HEAD_ROWS } from './responsive-table-data';
+import { COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS, DEFAULT_TABLE_HEAD_ROWS, DEFAULT_TABLE_ROWS } from './responsive-table-data';
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}/Prop head-style`,
     parameters: { fileName: __filename }
 };
 
-const COMPLEX_HEAD_ROWS_TEXT: string = 'Complex head-rows - ';
+const COMPLEX_HEAD_ROWS_TEXT: string = '(complex head-rows)';
 
 const getTemplate: (
     headStyle: MTableHeadStyle,
-    headRows: MTableHeadRows
+    headRows?: MTableHeadRows,
+    rows?: MTableRow[]
 ) => VueConstructor = (
     headStyle: MTableHeadStyle,
-    headRows: MTableHeadRows
+    headRows: MTableHeadRows = DEFAULT_TABLE_HEAD_ROWS,
+    rows: MTableRow[] = DEFAULT_TABLE_ROWS
 ): VueConstructor => {
     return Vue.extend({
         data: () => ({
             headStyle,
-            headRows
+            headRows,
+            rows
         }),
-        template: `<${TABLE_HEAD_NAME}
+        template: `<${RESPONSIVE_TABLE_NAME}
             :id="headStyles"
             :head-rows="headRows"
             :head-style="headStyle"
+            :rows="rows"
         />`
     });
 };
 
 export const Any = () => {
-    return getTemplate(MTableHeadStyle.Any, DEFAULT_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Any);
 };
 
 export const Dark = () => {
-    return getTemplate(MTableHeadStyle.Dark, DEFAULT_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Dark);
 };
 
 export const Light = () => {
-    return getTemplate(MTableHeadStyle.Light, DEFAULT_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Light);
 };
 
 export const Lightest = () => {
-    return getTemplate(MTableHeadStyle.Lightest, DEFAULT_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Lightest);
 };
 
 export const AnyComplex = () => {
-    return getTemplate(MTableHeadStyle.Any, COMPLEX_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Any, COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS);
 };
 
 AnyComplex.story = {
-    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Any}`
+    name: `Any ${COMPLEX_HEAD_ROWS_TEXT}`
 };
 
 export const DarkComplex = () => {
-    return getTemplate(MTableHeadStyle.Dark, COMPLEX_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Dark, COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS);
 };
 
 DarkComplex.story = {
-    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Dark}`
+    name: `Dark ${COMPLEX_HEAD_ROWS_TEXT}`
 };
 
 export const LightComplex = () => {
-    return getTemplate(MTableHeadStyle.Light, COMPLEX_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Light, COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS);
 };
 
 LightComplex.story = {
-    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Light}`
+    name: `Light ${COMPLEX_HEAD_ROWS_TEXT}`
 };
 
 export const LightestComplex = () => {
-    return getTemplate(MTableHeadStyle.Lightest, COMPLEX_TABLE_HEAD_ROWS);
+    return getTemplate(MTableHeadStyle.Lightest, COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS);
 };
 
 LightestComplex.story = {
-    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Lightest}`
+    name: `Lightest ${COMPLEX_HEAD_ROWS_TEXT}`
 };

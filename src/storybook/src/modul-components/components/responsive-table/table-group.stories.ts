@@ -1,7 +1,7 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME, TABLE_GROUP_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableHeaderStyle, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableGroupHeaderStyle, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_ROWS_GROUP_1, getScopeSlotTemplate } from './responsive-table-data';
@@ -23,8 +23,8 @@ export const Sandbox = () => ({
         groupHeaderStyle: {
             default: select(
                 'Prop group-header-style',
-                Enums.toValueArray(MTableHeaderStyle),
-                MTableHeaderStyle.Light
+                Enums.toValueArray(MTableGroupHeaderStyle),
+                MTableGroupHeaderStyle.Light
             )
         },
         rowsStyle: {

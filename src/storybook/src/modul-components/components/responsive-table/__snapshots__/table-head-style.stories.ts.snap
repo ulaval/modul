@@ -1,2377 +1,4685 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (complex head-rows) 1`] = `
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
+>
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-any m--has-multiple-head-row"
+    >
+      <tr>
+        <th
+          class=""
+          id="forlderSpacingColumn-idTable"
+          rowspan="2"
+          scope="col"
+          style="background: rgb(255, 255, 255);"
+        >
+          <div />
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder A
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder B
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          id="userNaidmeBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div>
+            Id
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+    >
+      <!---->
+       
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                01
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon-test
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simons
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                test.simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simone
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon-com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simon
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                02
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                20-100
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincen
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                _vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                test.vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                VINcent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                vincent_g
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincent
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                03
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxime-ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxim.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Maxim
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                max.max
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                MAXime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxim.ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Maxime
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                04
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frankD
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Frank
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frank.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JF
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Jean
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JFrancois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                05
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will.B
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                b.will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                willy
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                william.b
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                06
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                johny_02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john-02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                02.jo
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                jo.02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
+`;
+
 exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] = `
-<thead
-  class="m-table-head m--is-head-style-any"
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
 >
-  <tr>
-    <th
-      class="m--is-sortable m--is-sorted m--is-text-align-left"
-      id="name-undefined"
-      scope="col"
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-any"
     >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+      <tr>
+        <th
+          class="m--is-sortable m--is-sorted m--is-text-align-left"
+          id="name-idTable"
+          scope="col"
         >
-          
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
-            style="width: 14px; height: 14px;"
-            type="button"
+          <div
+            class="m-table-head__cell"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <div
+              class="m-table-head__cell-content"
             >
-              <!---->
+              <div>
+                Name
+              </div>
                
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-center"
-      id="id-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-center"
+          id="id-idTable"
+          scope="col"
         >
-          
-                                Id
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
+          <div
+            class="m-table-head__cell"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <div
+              class="m-table-head__cell-content"
             >
-              <!---->
+              <div>
+                Id
+              </div>
                
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="email-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="email-idTable"
+          scope="col"
         >
-          
-                                Email
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
+          <div
+            class="m-table-head__cell"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <div
+              class="m-table-head__cell-content"
             >
-              <!---->
+              <div>
+                Email
+              </div>
                
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="dateOfBirth-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="dateOfBirth-idTable"
+          scope="col"
         >
-          
-                                Date of birth
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
+          <div
+            class="m-table-head__cell"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <div
+              class="m-table-head__cell-content"
             >
-              <!---->
+              <div>
+                Date of birth
+              </div>
                
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="phoneNumber-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="phoneNumber-idTable"
+          scope="col"
         >
-          
-                                Phone number
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
+          <div
+            class="m-table-head__cell"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <div
+              class="m-table-head__cell-content"
             >
-              <!---->
+              <div>
+                Phone number
+              </div>
                
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
-`;
-
-exports[`Storyshots modul-components|m-responsive-table/Prop head-style Complex head-rows -  any 1`] = `
-<thead
-  class="m-table-head m--is-head-style-any m--has-multiple-head-row"
->
-  <tr>
-    <th
-      class=""
-      id="forlderSpacingColumn-undefined"
-      rowspan="2"
-      scope="col"
-      style="background: rgb(255, 255, 255);"
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder A
-                    
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder B
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      id="userNaidmeBeforeFolderA-undefined"
-      scope="col"
-    >
-      
-                        Id
-                    
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+       
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+          scope="row"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Vincent Guilmette
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                111 222 333
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                vincent.gui@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                1976-12-05
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                819 232-3754
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Charles Maheu
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                111 322 344
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
+                                charles.maheu@outlook.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1980-06-11
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                418 233-4744
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
+        >
+          
+                                Pierre Olivier Boulet
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
+        >
+          
+                                112 528 967
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                po.boulet@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1994-04-08
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                819 135-3460
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
 `;
 
-exports[`Storyshots modul-components|m-responsive-table/Prop head-style Complex head-rows -  dark 1`] = `
-<thead
-  class="m-table-head m--is-head-style-dark m--has-multiple-head-row"
+exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (complex head-rows) 1`] = `
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
 >
-  <tr>
-    <th
-      class=""
-      id="forlderSpacingColumn-undefined"
-      rowspan="2"
-      scope="col"
-      style="background: rgb(255, 255, 255);"
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-dark m--has-multiple-head-row"
+    >
+      <tr>
+        <th
+          class=""
+          id="forlderSpacingColumn-idTable"
+          rowspan="2"
+          scope="col"
+          style="background: rgb(255, 255, 255);"
+        >
+          <div />
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder A
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder B
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          id="userNaidmeBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div>
+            Id
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder A
-                    
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder B
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      id="userNaidmeBeforeFolderA-undefined"
-      scope="col"
-    >
-      
-                        Id
-                    
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+       
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                01
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                simon-test
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Simons
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                test.simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Simone
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
-`;
-
-exports[`Storyshots modul-components|m-responsive-table/Prop head-style Complex head-rows -  light 1`] = `
-<thead
-  class="m-table-head m--is-head-style-light m--has-multiple-head-row"
->
-  <tr>
-    <th
-      class=""
-      id="forlderSpacingColumn-undefined"
-      rowspan="2"
-      scope="col"
-      style="background: rgb(255, 255, 255);"
-    >
-      <!---->
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder A
-                    
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder B
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      id="userNaidmeBeforeFolderA-undefined"
-      scope="col"
-    >
-      
-                        Id
-                    
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                simon-com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Simon
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                02
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                20-100
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Vincen
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                _vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                test.vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
-`;
-
-exports[`Storyshots modul-components|m-responsive-table/Prop head-style Complex head-rows -  lightest 1`] = `
-<thead
-  class="m-table-head m--is-head-style-lightest m--has-multiple-head-row"
->
-  <tr>
-    <th
-      class=""
-      id="forlderSpacingColumn-undefined"
-      rowspan="2"
-      scope="col"
-      style="background: rgb(255, 255, 255);"
-    >
-      <!---->
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder A
-                    
-    </th>
-    <th
-      class=""
-      colspan="4"
-      id="forlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Folder B
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderAColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="beforeForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        Before
-                    
-    </th>
-    <th
-      class=""
-      colspan="2"
-      id="afterForlderBColumn-undefined"
-      scope="col"
-    >
-      
-                        After
-                    
-    </th>
-  </tr>
-  <tr>
-    <th
-      class=""
-      id="userNaidmeBeforeFolderA-undefined"
-      scope="col"
-    >
-      
-                        Id
-                    
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                VINcent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                vincent_g
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Vincent
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderA-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                03
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                maxime-ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userBeforeFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                maxime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userNameAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                maxim.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                User Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="userAfterFolderB-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Maxim
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
+                                max.max
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                MAXime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxim.ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Maxime
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                04
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frankD
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Frank
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frank.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JF
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Jean
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JFrancois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                05
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will.B
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                b.will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                willy
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                william.b
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                06
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                johny_02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john-02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                02.jo
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                jo.02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`] = `
-<thead
-  class="m-table-head m--is-head-style-dark"
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
 >
-  <tr>
-    <th
-      class="m--is-sortable m--is-sorted m--is-text-align-left"
-      id="name-undefined"
-      scope="col"
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-dark"
     >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+      <tr>
+        <th
+          class="m--is-sortable m--is-sorted m--is-text-align-left"
+          id="name-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple m--is-sort-asc"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-center"
+          id="id-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Id
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="email-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Email
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="dateOfBirth-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Date of birth
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="phoneNumber-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Phone number
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+    >
+      <!---->
+       
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+          scope="row"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple m--is-sort-asc"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-center"
-      id="id-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Vincent Guilmette
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
         >
           
-                                Id
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="email-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                111 222 333
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Email
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="dateOfBirth-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                vincent.gui@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Date of birth
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="phoneNumber-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                1976-12-05
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Phone number
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
+                                819 232-3754
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
+        >
+          
+                                Charles Maheu
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
+        >
+          
+                                111 322 344
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                charles.maheu@outlook.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1980-06-11
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                418 233-4744
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
+        >
+          
+                                Pierre Olivier Boulet
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
+        >
+          
+                                112 528 967
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                po.boulet@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1994-04-08
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                819 135-3460
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (complex head-rows) 1`] = `
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
+>
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-light m--has-multiple-head-row"
+    >
+      <tr>
+        <th
+          class=""
+          id="forlderSpacingColumn-idTable"
+          rowspan="2"
+          scope="col"
+          style="background: rgb(255, 255, 255);"
+        >
+          <div />
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder A
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder B
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          id="userNaidmeBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div>
+            Id
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <div
+              class="m-table-head__cell-content"
             >
-              <!---->
+              <div>
+                User Name
+              </div>
                
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+    >
+      <!---->
+       
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                01
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon-test
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simons
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                test.simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simone
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon-com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simon
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                02
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                20-100
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincen
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                _vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                test.vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                VINcent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                vincent_g
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincent
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                03
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxime-ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxim.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Maxim
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                max.max
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                MAXime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxim.ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Maxime
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                04
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frankD
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Frank
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frank.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JF
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Jean
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JFrancois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                05
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will.B
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                b.will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                willy
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                william.b
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                06
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                johny_02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john-02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                02.jo
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                jo.02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`] = `
-<thead
-  class="m-table-head m--is-head-style-light"
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
 >
-  <tr>
-    <th
-      class="m--is-sortable m--is-sorted m--is-text-align-left"
-      id="name-undefined"
-      scope="col"
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-light"
     >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+      <tr>
+        <th
+          class="m--is-sortable m--is-sorted m--is-text-align-left"
+          id="name-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-center"
+          id="id-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Id
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="email-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Email
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="dateOfBirth-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Date of birth
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="phoneNumber-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Phone number
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+    >
+      <!---->
+       
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+          scope="row"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-center"
-      id="id-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Vincent Guilmette
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
         >
           
-                                Id
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="email-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                111 222 333
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Email
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="dateOfBirth-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                vincent.gui@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Date of birth
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="phoneNumber-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                1976-12-05
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Phone number
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
+                                819 232-3754
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
+        >
+          
+                                Charles Maheu
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
+        >
+          
+                                111 322 344
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                charles.maheu@outlook.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1980-06-11
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                418 233-4744
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
+        >
+          
+                                Pierre Olivier Boulet
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
+        >
+          
+                                112 528 967
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                po.boulet@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1994-04-08
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                819 135-3460
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest (complex head-rows) 1`] = `
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
+>
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-lightest m--has-multiple-head-row"
+    >
+      <tr>
+        <th
+          class=""
+          id="forlderSpacingColumn-idTable"
+          rowspan="2"
+          scope="col"
+          style="background: rgb(255, 255, 255);"
+        >
+          <div />
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder A
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="4"
+          id="forlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Folder B
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderAColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="beforeForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            Before
+          </div>
+        </th>
+        <th
+          class=""
+          colspan="2"
+          id="afterForlderBColumn-idTable"
+          scope="col"
+        >
+          <div>
+            After
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th
+          class=""
+          id="userNaidmeBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div>
+            Id
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
           >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
+            <div
+              class="m-table-head__cell-content"
             >
-              <!---->
+              <div>
+                User Name
+              </div>
                
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderA-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userBeforeFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userNameAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                User Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="userAfterFolderB-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+    >
+      <!---->
+       
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                01
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon-test
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simons
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                test.simon
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simone
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon-com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Simon
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                02
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                20-100
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincen
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                _vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                test.vincent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                VINcent
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                vincent_g
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Vincent
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                03
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxime-ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxim.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Maxim
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                max.max
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                MAXime
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                maxim.ber
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Maxime
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                04
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frankD
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Frank
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                frank.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JF
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Jean
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                JFrancois
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Francois
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                05
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will.B
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                Will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                simon.ca
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                b.will
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                willy
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                william.b
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                William
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell"
+          scope="row"
+          style="width: 120px;"
+        >
+          
+                                06
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                johny_02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                john-02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                02.jo
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                jo.02
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                John
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest 1`] = `
-<thead
-  class="m-table-head m--is-head-style-lightest"
+<mpo-defilement-horizontal-automatique
+  afficher-barre-defilement="true"
+  class="m-responsive-table"
+  current-scroll-left="0"
+  degrade-gauche-actif="true"
+  largeur-minimale="1000px"
 >
-  <tr>
-    <th
-      class="m--is-sortable m--is-sorted m--is-text-align-left"
-      id="name-undefined"
-      scope="col"
+  <table
+    cellspacing="0"
+    id="idTable"
+  >
+    <thead
+      class="m-table-head m--is-head-style-lightest"
     >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+      <tr>
+        <th
+          class="m--is-sortable m--is-sorted m--is-text-align-left"
+          id="name-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Name
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-center"
+          id="id-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Id
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="email-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Email
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="dateOfBirth-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Date of birth
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+        <th
+          class="m--is-sortable m--is-text-align-left"
+          id="phoneNumber-idTable"
+          scope="col"
+        >
+          <div
+            class="m-table-head__cell"
+          >
+            <div
+              class="m-table-head__cell-content"
+            >
+              <div>
+                Phone number
+              </div>
+               
+              <button
+                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                style="width: 14px; height: 14px;"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+     
+    <!---->
+     
+    <tbody
+      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+    >
+      <!---->
+       
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+          scope="row"
         >
           
-                                Name
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-center"
-      id="id-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                Vincent Guilmette
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
         >
           
-                                Id
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="email-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                111 222 333
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Email
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="dateOfBirth-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                vincent.gui@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Date of birth
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-    <th
-      class="m--is-sortable m--is-text-align-left"
-      id="phoneNumber-undefined"
-      scope="col"
-    >
-      <div
-        class="m-table-head__cell"
-      >
-        <div
-          class="m-table-head__cell-content"
+                                1976-12-05
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
         >
           
-                                Phone number
-                             
-          <button
-            class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-            style="width: 14px; height: 14px;"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-        </div>
-      </div>
-    </th>
-  </tr>
-</thead>
+                                819 232-3754
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
+        >
+          
+                                Charles Maheu
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
+        >
+          
+                                111 322 344
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                charles.maheu@outlook.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1980-06-11
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                418 233-4744
+                            
+        </td>
+      </tr>
+      <tr>
+        <th
+          class="m-table-group__cell m--is-text-align-left"
+          scope="row"
+        >
+          
+                                Pierre Olivier Boulet
+                            
+        </th>
+        <td
+          class="m-table-group__cell m--is-text-align-center"
+        >
+          
+                                112 528 967
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                po.boulet@gmail.com
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                1994-04-08
+                            
+        </td>
+        <td
+          class="m-table-group__cell m--is-text-align-left"
+        >
+          
+                                819 135-3460
+                            
+        </td>
+      </tr>
+    </tbody>
+     
+    <!---->
+  </table>
+</mpo-defilement-horizontal-automatique>
 `;

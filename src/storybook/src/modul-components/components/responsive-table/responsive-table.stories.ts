@@ -1,7 +1,7 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableColumn, MTableEmptyArea, MTableHeaderStyle, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import './group-header-custom-class-name.css';
@@ -27,15 +27,15 @@ export const Sandbox = () => ({
         groupHeaderStyle: {
             default: select(
                 'Prop group-header-style',
-                Enums.toValueArray(MTableHeaderStyle),
-                MTableHeaderStyle.Light
+                Enums.toValueArray(MTableGroupHeaderStyle),
+                MTableGroupHeaderStyle.Light
             )
         },
         rowsStyle: {
             default: select(
                 'Prop rows-style',
                 Enums.toValueArray(MTableRowsStyle),
-                MTableRowsStyle.AlternateBackground
+                MTableRowsStyle.Borders
             )
         },
         waiting: {
@@ -240,12 +240,14 @@ export const Waiting = () => ({
 export const ComplexHeadRows = () => ({
     data: () => ({
         headRows: COMPLEX_TABLE_HEAD_ROWS,
-        rows: COMPLEX_TABLE_ROWS
+        rows: COMPLEX_TABLE_ROWS,
+        rowsStyle: MTableRowsStyle.Borders
     }),
     template: `<${RESPONSIVE_TABLE_NAME}
         id="ComplexHeadRows"
         :head-rows="headRows"
         :rows="rows"
+        :rows-style="rowsStyle"
     />`
 });
 

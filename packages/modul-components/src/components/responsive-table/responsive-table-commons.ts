@@ -115,7 +115,7 @@ export enum MTableRowsStyle {
     CellBorders = 'cell-borders'
 }
 
-export enum MTableHeaderStyle {
+export enum MTableGroupHeaderStyle {
     Dark = 'dark',
     Light = 'light',
     Any = 'any'

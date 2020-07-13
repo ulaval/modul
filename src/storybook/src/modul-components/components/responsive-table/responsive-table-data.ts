@@ -371,7 +371,8 @@ export const getComplexTableRow = (
 ) => {
     return {
         [COMPLEX_TABLE_ID_COLUMN]: {
-            value: id
+            value: id,
+            isHeader: true
         },
         [COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME]: {
             value: userNameBeforeFolderA

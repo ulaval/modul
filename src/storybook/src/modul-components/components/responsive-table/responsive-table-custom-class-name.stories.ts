@@ -1,6 +1,6 @@
 import { select } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MTableHeaderStyle, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableGroupHeaderStyle, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import './group-header-custom-class-name.css';
@@ -37,8 +37,8 @@ export const GroupHeader = () => ({
         groupHeaderStyle: {
             default: select(
                 'Prop group-header-style',
-                Enums.toValueArray(MTableHeaderStyle),
-                MTableHeaderStyle.Any
+                Enums.toValueArray(MTableGroupHeaderStyle),
+                MTableGroupHeaderStyle.Any
             )
         },
         rowsStyle: {
