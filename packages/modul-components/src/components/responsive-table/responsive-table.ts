@@ -23,8 +23,10 @@ import { MTableHead } from './table-head/table-head';
     }
 })
 export class MResponsiveTable extends ModulVue {
-    @Prop()
-    public readonly id?: string;
+    @Prop({
+        required: true
+    })
+    public readonly id!: string;
 
     @Prop()
     public readonly headRows?: MTableHeadRows;
