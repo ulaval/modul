@@ -204,7 +204,7 @@ export const DEFAULT_TABLE_GROUP_ACCORDION_2: MTableAccordion = {
 
 export const DEFAULT_TABLE_GROUP_ACCORDION_3: MTableAccordion = {
     open: true,
-    displayIcon : false
+    displayIcon: false
 };
 
 export const DEFAULT_TABLE_ROWS_GROUP_1: MTableRowsGroup = {
@@ -298,13 +298,15 @@ export const COMPLEX_TABLE_FOLDER_COLUMNS: MTableColumn[] = [
         name: 'forlderBColumn',
         value: 'Folder B',
         order: 3,
-        colspan: 4
+        colspan: 4,
+        textAlign: MTableTextAlign.Center
     },
     {
         name: 'forlderAColumn',
         value: 'Folder A',
         order: 2,
-        colspan: 4
+        colspan: 4,
+        textAlign: MTableTextAlign.Center
     }
 ];
 
@@ -312,26 +314,30 @@ export const COMPLEX_TABLE_AFTER_BEFORE_COLUMNS: MTableColumn[] = [
     {
         name: 'beforeForlderAColumn',
         value: 'Before',
-        colspan: 2
+        colspan: 2,
+        textAlign: MTableTextAlign.Center
     },
     {
         name: 'afterForlderAColumn',
         value: 'After',
-        colspan: 2
+        colspan: 2,
+        textAlign: MTableTextAlign.Center
     },
     {
         name: 'beforeForlderBColumn',
         value: 'Before',
-        colspan: 2
+        colspan: 2,
+        textAlign: MTableTextAlign.Center
     },
     {
         name: 'afterForlderBColumn',
         value: 'After',
-        colspan: 2
+        colspan: 2,
+        textAlign: MTableTextAlign.Center
     }
 ];
 
-export const COMPLEX_TABLE_ID_COLUMN: string = 'userNaidmeBeforeFolderA';
+export const COMPLEX_TABLE_ID_COLUMN: string = 'userNaimeBeforeFolderA';
 export const COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME: string = 'userNameBeforeFolderA';
 export const COMPLEX_TABLE_NAME_BEFORE_FOLDER_A_COLUMN_NAME: string = 'userBeforeFolderA';
 export const COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_A_COLUMN_NAME: string = 'userNameAfterFolderA';
@@ -346,7 +352,8 @@ export const COMPLEX_TABLE_MAIN_COLUMNS: MTableColumn[] = [
     {
         name: COMPLEX_TABLE_ID_COLUMN,
         value: 'Id',
-        width: '120px'
+        width: '120px',
+        textAlign: MTableTextAlign.Center
     },
     getTableColumn(COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'User Name'),
     getTableColumn(COMPLEX_TABLE_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'Name'),

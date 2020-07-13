@@ -49,8 +49,8 @@
         <th v-if="rowsGroup.header.cells[column.name]"
             :key="columnIndex"
             :class="[
+                getRowAlignmentClass(rowsGroup, column),
                 rowsGroup.header.cells[column.name].className,
-                getRowAlignmentClass(rowsGroup, column)
             ]"
             :style="rowsGroup.header.cells[column.name].style"
             :colspan="getColspan(rowsGroup.header.cells[column.name].colspan)">
@@ -91,7 +91,10 @@
                 </div>
             </div>
         </th>
-        <th v-else>
+        <th v-else
+            :class="[
+                getRowAlignmentClass(rowsGroup, column)
+            ]">
             <div v-if="columnIndex === 0 && rowsGroup.header.title"
                  class="m-table-group-header__cell">
                 <m-plus v-if="displayAccordionIconInCorrectCell(column.name, columnIndex)"

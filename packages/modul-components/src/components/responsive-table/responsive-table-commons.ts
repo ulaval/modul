@@ -121,10 +121,10 @@ export enum MTableGroupHeaderStyle {
     Any = 'any'
 }
 
-export const getCellAlignmentClass: (textAlign: MTableTextAlign) => string = (
+export const getCellAlignmentClass: (textAlign: MTableTextAlign | undefined) => string = (
     textAlign: MTableTextAlign
 ) => {
-    return `m--is-text-align-${textAlign}`;
+    return textAlign ? `m--is-text-align-${textAlign}` : 'm--is-text-align-left';
 };
 
 export const getCellWidthStyle: (column: MTableColumn) => string = (

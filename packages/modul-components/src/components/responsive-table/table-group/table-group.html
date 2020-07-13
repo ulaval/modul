@@ -73,9 +73,9 @@
                        :is="isCellHeader(row, column.name) ? 'th' : 'td'"
                        class="m-table-group__cell"
                        :class="[
-                    getRowAlignmentClass(row, column),
-                    getRowClassName(row, column.name),
-                ]"
+                            getRowAlignmentClass(row, column),
+                            getRowClassName(row, column.name),
+                        ]"
                        :colspan="getRowColspan(row, column)"
                        :rowspan="getRowspan(row, column)"
                        :scope="isCellHeader(row, column.name) ? 'row' : undefined"

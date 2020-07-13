@@ -17,7 +17,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
     >
       <tr>
         <th
-          class=""
+          class="m--is-text-align-left"
           id="forlderSpacingColumn-idTable"
           rowspan="2"
           scope="col"
@@ -26,7 +26,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
           <div />
         </th>
         <th
-          class=""
+          class="m--is-text-align-center"
           colspan="4"
           id="forlderAColumn-idTable"
           scope="col"
@@ -36,7 +36,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
           </div>
         </th>
         <th
-          class=""
+          class="m--is-text-align-center"
           colspan="4"
           id="forlderBColumn-idTable"
           scope="col"
@@ -48,7 +48,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </tr>
       <tr>
         <th
-          class=""
+          class="m--is-text-align-center"
           colspan="2"
           id="beforeForlderAColumn-idTable"
           scope="col"
@@ -58,7 +58,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
           </div>
         </th>
         <th
-          class=""
+          class="m--is-text-align-center"
           colspan="2"
           id="afterForlderAColumn-idTable"
           scope="col"
@@ -68,7 +68,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
           </div>
         </th>
         <th
-          class=""
+          class="m--is-text-align-center"
           colspan="2"
           id="beforeForlderBColumn-idTable"
           scope="col"
@@ -78,7 +78,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
           </div>
         </th>
         <th
-          class=""
+          class="m--is-text-align-center"
           colspan="2"
           id="afterForlderBColumn-idTable"
           scope="col"
@@ -90,8 +90,8 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </tr>
       <tr>
         <th
-          class=""
-          id="userNaidmeBeforeFolderA-idTable"
+          class="m--is-text-align-center"
+          id="userNaimeBeforeFolderA-idTable"
           scope="col"
         >
           <div>
@@ -422,7 +422,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
        
       <tr>
         <th
-          class="m-table-group__cell"
+          class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
@@ -489,7 +489,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </tr>
       <tr>
         <th
-          class="m-table-group__cell"
+          class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
@@ -556,7 +556,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </tr>
       <tr>
         <th
-          class="m-table-group__cell"
+          class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
@@ -623,7 +623,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </tr>
       <tr>
         <th
-          class="m-table-group__cell"
+          class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
@@ -690,7 +690,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </tr>
       <tr>
         <th
-          class="m-table-group__cell"
+          class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
@@ -757,7 +757,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </tr>
       <tr>
         <th
-          class="m-table-group__cell"
+          class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
@@ -1648,7 +1648,9 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header C
       <tr
         class="m-table-group-header m-table-group__header m--is-accordion-icon-position-left m--is-group-header-style-light"
       >
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <div
             class="m-table-group-header__cell"
           >
@@ -1682,13 +1684,19 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header C
             </div>
           </div>
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
       </tr>
@@ -1814,7 +1822,9 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header C
       <tr
         class="m-table-group-header m-table-group__header m--is-accordion-icon-position-left m--is-group-header-style-light"
       >
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <div
             class="m-table-group-header__cell"
           >
@@ -1848,13 +1858,19 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header C
             </div>
           </div>
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
       </tr>
@@ -2225,16 +2241,24 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
             </div>
           </div>
         </th>
-        <th>
+        <th
+          class="m--is-text-align-center"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
       </tr>
@@ -2326,13 +2350,19 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
             </div>
           </div>
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
       </tr>
@@ -2499,13 +2529,19 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
             </div>
           </div>
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
       </tr>
@@ -2557,13 +2593,19 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
             </div>
           </div>
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
-        <th>
+        <th
+          class="m--is-text-align-left"
+        >
           <!---->
         </th>
       </tr>

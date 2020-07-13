@@ -102,7 +102,7 @@ export class MTableHead extends ModulVue {
     }
 
     public getColumnAlignmentClass(column: MTableColumn): string | undefined {
-        return column.textAlign ? getCellAlignmentClass(column.textAlign) : undefined;
+        return column.textAlign ? getCellAlignmentClass(column.textAlign) : 'm--is-text-align-left';
     }
 
     public getColumnSortIcon(currentColumn: MTableColumn): string {

@@ -76,11 +76,11 @@ export class MTableGroup extends ModulVue {
             : undefined;
     }
 
-    public getRowAlignmentClass(row: MTableRow, column: MTableColumn): string | undefined {
+    public getRowAlignmentClass(row: MTableRow, column: MTableColumn): string {
         if (row.cells && row.cells[column.name] && row.cells[column.name].textAlign) {
             return getCellAlignmentClass(row.cells[column.name].textAlign!);
         }
-        return column.textAlign ? getCellAlignmentClass(column.textAlign) : undefined;
+        return getCellAlignmentClass(column.textAlign);
     }
 
     public getRowWidthStyle(column: MTableColumn): string {

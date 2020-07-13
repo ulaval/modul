@@ -148,11 +148,11 @@ export class MTableGroupHeader extends ModulVue {
         return colspan === MTableColspan.AllColumns ? this.as<MTableGroupMixin>().totalColumnsLength : colspan;
     }
 
-    public getRowAlignmentClass(rowsGroup: MTableRowsGroup, column: MTableColumn): string | undefined {
+    public getRowAlignmentClass(rowsGroup: MTableRowsGroup, column: MTableColumn): string {
         if (rowsGroup.header && rowsGroup.header.cells && rowsGroup.header.cells[column.name] && rowsGroup.header.cells[column.name].textAlign) {
             return getCellAlignmentClass(rowsGroup.header.cells[column.name].textAlign!);
         }
-        return column.textAlign ? getCellAlignmentClass(column.textAlign) : undefined;
+        return getCellAlignmentClass(column.textAlign);
     }
 }
 
