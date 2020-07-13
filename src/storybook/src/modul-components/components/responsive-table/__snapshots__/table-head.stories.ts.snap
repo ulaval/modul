@@ -439,7 +439,7 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-head Custom HTML
                 class="m-checkbox__label"
               >
                 Name
-                    
+                
               </div>
             </label>
              
@@ -452,8 +452,8 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-head Custom HTML
             </div>
           </div>
           
-                    (Slot head-cell.name)
-                 
+                (Slot head-cell.name)
+             
           <button
             class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
             style="width: 14px; height: 14px;"
@@ -490,10 +490,10 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-head Custom HTML
           class="m-table-head__cell-content"
         >
           
-                        Id
-                    
-                    (Slot head-cell.id)
-                 
+                    Id
+                
+                (Slot head-cell.id)
+             
           <button
             class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
             style="width: 14px; height: 14px;"
@@ -530,10 +530,10 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-head Custom HTML
           class="m-table-head__cell-content"
         >
           
-                        Email
-                    
-                    (Slot head-cell.email)
-                 
+                    Email
+                
+                (Slot head-cell.email)
+             
           <button
             class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
             style="width: 14px; height: 14px;"
@@ -570,10 +570,10 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-head Custom HTML
           class="m-table-head__cell-content"
         >
           
-                        Date of birth
-                    
-                    (Slot head-cell.dateOfBirth)
-                 
+                    Date of birth
+                
+                (Slot head-cell.dateOfBirth)
+             
           <button
             class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
             style="width: 14px; height: 14px;"
@@ -610,10 +610,10 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-head Custom HTML
           class="m-table-head__cell-content"
         >
           
-                        Phone number
-                    
-                    (Slot head-cell.phoneNumber)
-                 
+                    Phone number
+                
+                (Slot head-cell.phoneNumber)
+             
           <button
             class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
             style="width: 14px; height: 14px;"
