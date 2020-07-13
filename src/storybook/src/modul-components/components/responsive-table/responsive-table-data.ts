@@ -135,10 +135,10 @@ export const DEFAULT_TABLE_GROUP_HEADER_1: MTableHeader = {
 };
 
 export const DEFAULT_TABLE_GROUP_HEADER_2: MTableHeader = {
-    title: 'NUT-1104',
+    title: 'Title',
     cells: {
         name: {
-            value: 'Elements of nutrition',
+            value: 'Professor\'s name',
             colspan: MTableColspan.AllColumns
         }
     }

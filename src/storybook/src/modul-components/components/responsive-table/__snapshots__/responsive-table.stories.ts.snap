@@ -1987,7 +1987,7 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
     id="idTable"
   >
     <thead
-      class="m-table-head m--is-head-style-light"
+      class="m-table-head m--is-head-style-dark"
     >
       <tr>
         <th
@@ -2006,7 +2006,7 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
               </div>
                
               <button
-                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
                 type="button"
               >
@@ -2045,7 +2045,7 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
               </div>
                
               <button
-                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
                 type="button"
               >
@@ -2084,7 +2084,7 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
               </div>
                
               <button
-                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
                 type="button"
               >
@@ -2123,7 +2123,7 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
               </div>
                
               <button
-                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
                 type="button"
               >
@@ -2162,7 +2162,7 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
               </div>
                
               <button
-                class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
                 type="button"
               >
@@ -2210,11 +2210,11 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
               class="m-table-group-header__content-cell"
             >
               <div>
-                NUT-1104
+                Title
               </div>
                
               <div>
-                Elements of nutrition
+                Professor's name
               </div>
             </div>
           </div>

@@ -18,7 +18,7 @@ export const Sandbox = () => ({
             default: select(
                 'Prop head-style',
                 Enums.toValueArray(MTableHeadStyle),
-                MTableHeadStyle.Light
+                MTableHeadStyle.Dark
             )
         },
         groupHeaderClassName: {
