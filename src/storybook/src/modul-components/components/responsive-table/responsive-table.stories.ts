@@ -196,13 +196,13 @@ export const Sandbox = () => ({
     </${RESPONSIVE_TABLE_NAME}>`
 });
 
-export const Default = () => ({
+export const TableWithData = () => ({
     data: () => ({
         columns: DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE,
         rows: DEFAULT_TABLE_ROWS
     }),
     template: `<${RESPONSIVE_TABLE_NAME}
-        id="Default"
+        id="TableWithData"
         :columns="columns"
         :rows="rows"
     />`

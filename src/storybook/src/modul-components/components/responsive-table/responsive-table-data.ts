@@ -16,16 +16,16 @@ export const getTableColumn: (
     textAlign: MTableTextAlign = MTableTextAlign.Left
 
 ) => {
-        return {
-            name,
-            value,
-            sortable,
-            enableUnsort: true,
-            textAlign,
-            sortDirection,
-            defaultSortDirection
-        };
+    return {
+        name,
+        value,
+        sortable,
+        enableUnsort: true,
+        textAlign,
+        sortDirection,
+        defaultSortDirection
     };
+};
 
 export const getScopeSlotTemplate = (
     textHtml: string
@@ -45,8 +45,8 @@ const getDefaultTableColumns = (isSortable: boolean = true) => {
         getTableColumn('email', 'Email', isSortable),
         getTableColumn('dateOfBirth', 'Date of birth', isSortable, MTableSortDirection.None, MTableSortDirection.Dsc),
         getTableColumn('phoneNumber', 'Phone number', isSortable)
-    ]
-}
+    ];
+};
 
 export const DEFAULT_TABLE_COLUMNS: MTableColumn[] = getDefaultTableColumns(true);
 export const DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE: MTableColumn[] = getDefaultTableColumns(false);
@@ -199,7 +199,7 @@ export const DEFAULT_TABLE_GROUP_ACCORDION_1: MTableAccordion = {
 
 export const DEFAULT_TABLE_GROUP_ACCORDION_2: MTableAccordion = {
     open: false,
-    disabled: true,
+    disabled: true
 };
 
 export const DEFAULT_TABLE_GROUP_ACCORDION_3: MTableAccordion = {
@@ -434,7 +434,6 @@ export const COMPLEX_TABLE_HEAD_ROWS: MTableHeadRows = {
     }
 };
 
-
 export const COLUMNS: MTableColumn[] = [
     {
         name: 'name',
@@ -443,7 +442,7 @@ export const COLUMNS: MTableColumn[] = [
         width: '300px',
         textAlign: MTableTextAlign.Left,
         sortDirection: MTableSortDirection.None,
-        defaultSortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None
     },
     {
         name: 'id',
@@ -452,7 +451,7 @@ export const COLUMNS: MTableColumn[] = [
         textAlign: MTableTextAlign.Left,
         className: 'add-class-id',
         sortDirection: MTableSortDirection.None,
-        defaultSortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None
     },
     {
         name: 'nrc',
@@ -471,7 +470,7 @@ export const COLUMNS: MTableColumn[] = [
         textAlign: MTableTextAlign.Left,
         className: 'add-class-program',
         sortDirection: MTableSortDirection.None,
-        defaultSortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None
     },
     {
         name: 'date',
@@ -480,7 +479,7 @@ export const COLUMNS: MTableColumn[] = [
         enableUnsort: false,
         textAlign: MTableTextAlign.Right,
         sortDirection: MTableSortDirection.None,
-        defaultSortDirection: MTableSortDirection.None,
+        defaultSortDirection: MTableSortDirection.None
     }
 ];
 

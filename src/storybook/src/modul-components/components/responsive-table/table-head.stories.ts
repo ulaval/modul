@@ -23,70 +23,70 @@ const getTemplate: (
     slotHeadCell: boolean = false,
     disabled: boolean = false
 ): VueConstructor => {
-        return Vue.extend({
-            props: {
-                firstColumnFixed: {
-                    default: boolean('Prop first-column-fixed', false)
-                },
-                disabled: {
-                    default: boolean('Prop disabled', disabled)
-                },
-                headStyle: {
-                    default: select(
-                        'Prop head-style',
-                        Enums.toValueArray(MTableHeadStyle),
-                        MTableHeadStyle.Light
-                    )
-                },
-                slotHeadCell: {
-                    default: boolean('Slot head-cell', false)
-                },
-                slotHeadCellWithColumn: {
-                    default: boolean('Slot head-cell.<column.name>', slotHeadCell)
-                }
+    return Vue.extend({
+        props: {
+            firstColumnFixed: {
+                default: boolean('Prop first-column-fixed', false)
             },
-            data: () => ({
-                headRows: headRows,
-                columns: columns
-            }),
-            methods: actions(
-                'emitSort'
-            ),
-            template: `<${TABLE_HEAD_NAME}
-            id="testTableHead"
-            :head-rows.sync="headRows"
-            :head-style="headStyle"
-            :first-column-fixed="firstColumnFixed"
-            :disabled="disabled"
-            @sort="emitSort"
+            disabled: {
+                default: boolean('Prop disabled', disabled)
+            },
+            headStyle: {
+                default: select(
+                    'Prop head-style',
+                    Enums.toValueArray(MTableHeadStyle),
+                    MTableHeadStyle.Light
+                )
+            },
+            slotHeadCell: {
+                default: boolean('Slot head-cell', false)
+            },
+            slotHeadCellWithColumn: {
+                default: boolean('Slot head-cell.<column.name>', slotHeadCell)
+            }
+        },
+        data: () => ({
+            headRows: headRows,
+            columns: columns
+        }),
+        methods: actions(
+            'emitSort'
+        ),
+        template: `<${TABLE_HEAD_NAME}
+        id="testTableHead"
+        :head-rows.sync="headRows"
+        :head-style="headStyle"
+        :first-column-fixed="firstColumnFixed"
+        :disabled="disabled"
+        @sort="emitSort"
+    >
+        <template
+            v-if="slotHeadCellWithColumn"
+            v-for="(column, columnIndex) in columns"
+            :slot="'head-cell.' + column.name"
+            slot-scope="{ column }"
         >
-            <template
-                v-if="slotHeadCellWithColumn"
-                v-for="(column, columnIndex) in columns"
-                :slot="'head-cell.' + column.name"
-                slot-scope="{ column }"
-            >
-                <template v-if="column && column.value">
-                    <m-checkbox
-                        v-if="columnIndex == 0"
-                        :key="columnIndex"
-                    >{{column.value}}
-                    </m-checkbox>
-                    <template v-else>
-                        {{column.value}}
-                    </template>
-                    (Slot head-cell.{{column.name}})
+            <template v-if="column && column.value">
+                <m-checkbox
+                    v-if="columnIndex == 0"
+                    :key="columnIndex"
+                >{{column.value}}
+                </m-checkbox>
+                <template v-else>
+                    {{column.value}}
                 </template>
+                (Slot head-cell.{{column.name}})
             </template>
-            <template
-                v-if="slotHeadCell"
-                #head-cell="{ column }">
-                {{ column.value }}
-                (Slot head-cell)
-            </template>
-        </${TABLE_HEAD_NAME}>`
-        });
-    };
+        </template>
+        <template
+            v-if="slotHeadCell"
+            #head-cell="{ column }">
+            {{ column.value }}
+            (Slot head-cell)
+        </template>
+    </${TABLE_HEAD_NAME}>`
+    });
+};
 
 export const Sandbox = () => {
     return getTemplate(DEFAULT_TABLE_HEAD_ROWS, DEFAULT_TABLE_HEAD_ROWS[MAIN_ROW].columns);

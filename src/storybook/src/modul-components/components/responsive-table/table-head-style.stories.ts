@@ -1,46 +1,80 @@
 import { RESPONSIVE_TABLE_NAME, TABLE_HEAD_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MTableHeadRows, MTableHeadStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
-import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import Vue, { VueConstructor } from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { COMPLEX_TABLE_HEAD_ROWS, DEFAULT_TABLE_HEAD_ROWS } from './responsive-table-data';
 
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}/${TABLE_HEAD_NAME}/PropHeadStyle`,
+    title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}/Prop head-style`,
     parameters: { fileName: __filename }
 };
 
+const COMPLEX_HEAD_ROWS_TEXT: string = 'Complex head-rows - ';
+
 const getTemplate: (
+    headStyle: MTableHeadStyle,
     headRows: MTableHeadRows
 ) => VueConstructor = (
+    headStyle: MTableHeadStyle,
     headRows: MTableHeadRows
 ): VueConstructor => {
     return Vue.extend({
         data: () => ({
-            headStyles: Enums.toValueArray(MTableHeadStyle),
-            headRows: headRows
+            headStyle,
+            headRows
         }),
-        template: `<div>
-            <div v-for="(headStyle, index) in headStyles" :key="index">
-                <p
-                    :class="index === 0 ? 'm-u--no-margin': 'm-u--margin-top--l'"
-                >
-                    Prop head-style =  {{headStyle}}
-                </p>
-                <${TABLE_HEAD_NAME}
-                    :id="'default-' + index"
-                    :head-rows="headRows"
-                    :head-style="headStyle"
-                />
-            </div>
-        </div>`
+        template: `<${TABLE_HEAD_NAME}
+            :id="headStyles"
+            :head-rows="headRows"
+            :head-style="headStyle"
+        />`
     });
 };
 
-export const AllHeadStyle: () => VueConstructor = (): VueConstructor => {
-    return getTemplate(DEFAULT_TABLE_HEAD_ROWS);
+export const Any = () => {
+    return getTemplate(MTableHeadStyle.Any, DEFAULT_TABLE_HEAD_ROWS);
 };
 
-export const AllHeadStyleWithMultipleRows: () => VueConstructor = (): VueConstructor => {
-    return getTemplate(COMPLEX_TABLE_HEAD_ROWS);
+export const Dark = () => {
+    return getTemplate(MTableHeadStyle.Dark, DEFAULT_TABLE_HEAD_ROWS);
+};
+
+export const Light = () => {
+    return getTemplate(MTableHeadStyle.Light, DEFAULT_TABLE_HEAD_ROWS);
+};
+
+export const Lightest = () => {
+    return getTemplate(MTableHeadStyle.Lightest, DEFAULT_TABLE_HEAD_ROWS);
+};
+
+export const AnyComplex = () => {
+    return getTemplate(MTableHeadStyle.Any, COMPLEX_TABLE_HEAD_ROWS);
+};
+
+AnyComplex.story = {
+    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Any}`
+};
+
+export const DarkComplex = () => {
+    return getTemplate(MTableHeadStyle.Dark, COMPLEX_TABLE_HEAD_ROWS);
+};
+
+DarkComplex.story = {
+    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Dark}`
+};
+
+export const LightComplex = () => {
+    return getTemplate(MTableHeadStyle.Light, COMPLEX_TABLE_HEAD_ROWS);
+};
+
+LightComplex.story = {
+    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Light}`
+};
+
+export const LightestComplex = () => {
+    return getTemplate(MTableHeadStyle.Lightest, COMPLEX_TABLE_HEAD_ROWS);
+};
+
+LightestComplex.story = {
+    name: `${COMPLEX_HEAD_ROWS_TEXT} ${MTableHeadStyle.Lightest}`
 };
