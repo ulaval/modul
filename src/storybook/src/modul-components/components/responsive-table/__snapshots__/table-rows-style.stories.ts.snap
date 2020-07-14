@@ -4,7 +4,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -30,7 +30,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -43,13 +43,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -69,7 +69,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -82,13 +82,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -108,7 +108,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -121,13 +121,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -147,7 +147,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -160,13 +160,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -186,7 +186,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -199,13 +199,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -213,50 +213,50 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -264,37 +264,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -302,41 +302,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -346,7 +346,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -372,7 +372,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -385,13 +385,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -411,7 +411,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -424,13 +424,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -450,7 +450,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -463,13 +463,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -489,7 +489,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -502,13 +502,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -528,7 +528,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -541,13 +541,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -555,50 +555,50 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -606,37 +606,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -644,41 +644,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -688,7 +688,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -714,7 +714,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -727,13 +727,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -753,7 +753,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -766,13 +766,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -792,7 +792,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -805,13 +805,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -831,7 +831,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -844,13 +844,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -870,7 +870,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -883,13 +883,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -897,50 +897,50 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-cell-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -948,37 +948,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -986,41 +986,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>

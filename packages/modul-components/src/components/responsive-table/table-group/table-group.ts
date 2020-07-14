@@ -31,7 +31,7 @@ export class MTableGroup extends ModulVue {
     @Prop({
         default: 0
     })
-    public readonly currentScrollLeft!: number;
+    public readonly horizontalScrollOffset!: number;
 
     @Prop({
         default: '100%'

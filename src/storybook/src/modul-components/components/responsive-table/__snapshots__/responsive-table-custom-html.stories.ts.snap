@@ -4,7 +4,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -63,9 +63,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -81,20 +81,20 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             Professor's name (Slot group-header-cell)
-        
+
               </div>
             </div>
           </div>
@@ -120,43 +120,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -176,18 +176,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             ANI-1101 (Slot group-header-cell)
-        
+
               </div>
             </div>
           </div>
@@ -200,18 +200,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             Motion design (Slot group-header-cell)
-        
+
               </div>
             </div>
           </div>
@@ -232,43 +232,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -276,37 +276,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -314,37 +314,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -363,18 +363,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             DES-1103 (Slot group-header-cell)
-        
+
               </div>
             </div>
           </div>
@@ -387,18 +387,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             User experience design I (Slot group-header-cell)
-        
+
               </div>
             </div>
           </div>
@@ -419,7 +419,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -435,18 +435,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             DES-1104 (Slot group-header-cell)
-        
+
               </div>
             </div>
           </div>
@@ -459,18 +459,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             User experience design II (Slot group-header-cell)
-        
+
               </div>
             </div>
           </div>
@@ -491,43 +491,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -535,37 +535,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -573,43 +573,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -617,37 +617,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -655,41 +655,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -699,7 +699,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -758,9 +758,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -776,14 +776,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -811,43 +811,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -867,12 +867,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -887,18 +887,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             Motion design (Slot group-header-cell.id)
-        
+
               </div>
             </div>
           </div>
@@ -919,43 +919,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -963,37 +963,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -1001,37 +1001,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1050,12 +1050,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -1070,18 +1070,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             User experience design I (Slot group-header-cell.id)
-        
+
               </div>
             </div>
           </div>
@@ -1102,7 +1102,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -1118,12 +1118,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -1138,18 +1138,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             User experience design II (Slot group-header-cell.id)
-        
+
               </div>
             </div>
           </div>
@@ -1170,43 +1170,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1214,37 +1214,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1252,43 +1252,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1296,37 +1296,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -1334,41 +1334,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -1378,7 +1378,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -1437,9 +1437,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -1455,14 +1455,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -1490,43 +1490,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1546,12 +1546,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -1566,18 +1566,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             Motion design (Slot group-header-cell.id.group3)
-        
+
               </div>
             </div>
           </div>
@@ -1598,43 +1598,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1642,37 +1642,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -1680,37 +1680,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1729,12 +1729,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -1749,12 +1749,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -1777,7 +1777,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -1793,12 +1793,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -1813,12 +1813,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -1841,43 +1841,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1885,37 +1885,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1923,43 +1923,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1967,37 +1967,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -2005,41 +2005,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -2049,7 +2049,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -2108,9 +2108,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -2126,18 +2126,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             Title (Slot group-header-cell)
-        
+
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -2165,43 +2165,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -2221,12 +2221,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -2241,12 +2241,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -2269,43 +2269,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2313,37 +2313,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -2351,37 +2351,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -2400,12 +2400,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -2420,12 +2420,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -2448,7 +2448,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -2464,12 +2464,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -2484,12 +2484,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -2512,43 +2512,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2556,37 +2556,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -2594,43 +2594,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2638,37 +2638,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -2676,41 +2676,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -2720,7 +2720,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -2779,9 +2779,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -2797,18 +2797,18 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div
                 style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
               >
-                
+
             Title (Slot group-header-cell.group2)
-        
+
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -2836,43 +2836,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -2892,12 +2892,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -2912,12 +2912,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -2940,43 +2940,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2984,37 +2984,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -3022,37 +3022,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -3071,12 +3071,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -3091,12 +3091,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -3119,7 +3119,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -3135,12 +3135,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -3155,12 +3155,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -3183,43 +3183,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -3227,37 +3227,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -3265,43 +3265,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -3309,37 +3309,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -3347,41 +3347,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -3391,7 +3391,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -3411,9 +3411,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Name (Slot head-cell)
-        
+
           </div>
         </th>
         <th
@@ -3424,9 +3424,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Id (Slot head-cell)
-        
+
           </div>
         </th>
         <th
@@ -3437,9 +3437,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Email (Slot head-cell)
-        
+
           </div>
         </th>
         <th
@@ -3450,9 +3450,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Date of birth (Slot head-cell)
-        
+
           </div>
         </th>
         <th
@@ -3463,16 +3463,16 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Phone number (Slot head-cell)
-        
+
           </div>
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -3488,14 +3488,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -3523,43 +3523,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -3579,12 +3579,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -3599,12 +3599,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -3627,43 +3627,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -3671,37 +3671,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -3709,37 +3709,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -3758,12 +3758,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -3778,12 +3778,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -3806,7 +3806,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -3822,12 +3822,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -3842,12 +3842,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -3870,43 +3870,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -3914,37 +3914,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -3952,43 +3952,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -3996,37 +3996,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -4034,41 +4034,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -4078,7 +4078,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -4107,9 +4107,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Id (Slot head-cell.id)
-        
+
           </div>
         </th>
         <th
@@ -4141,9 +4141,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -4159,14 +4159,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -4194,43 +4194,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -4250,12 +4250,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -4270,12 +4270,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -4298,43 +4298,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -4342,37 +4342,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -4380,37 +4380,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -4429,12 +4429,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -4449,12 +4449,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -4477,7 +4477,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -4493,12 +4493,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -4513,12 +4513,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -4541,43 +4541,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -4585,37 +4585,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -4623,43 +4623,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -4667,37 +4667,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -4705,41 +4705,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -4749,7 +4749,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -4808,9 +4808,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
@@ -4826,14 +4826,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -4861,7 +4861,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
@@ -4870,9 +4870,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Vincent Guilmette (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -4881,9 +4881,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -4892,9 +4892,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             vincent.gui@gmail.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -4903,9 +4903,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1976-12-05 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -4914,9 +4914,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             819 232-3754 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -4937,12 +4937,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -4957,12 +4957,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -4985,7 +4985,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
@@ -4994,9 +4994,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Vincent Guilmette (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5005,9 +5005,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5016,9 +5016,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             vincent.gui@gmail.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5027,9 +5027,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1976-12-05 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5038,9 +5038,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             819 232-3754 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -5052,9 +5052,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Charles Maheu (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5063,9 +5063,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5074,9 +5074,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             charles.maheu@outlook.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5085,9 +5085,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1980-06-11 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5096,9 +5096,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             418 233-4744 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -5110,9 +5110,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Pierre Olivier Boulet (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5121,9 +5121,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             112 528 967 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5132,9 +5132,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             po.boulet@gmail.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5143,9 +5143,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1994-04-08 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5154,9 +5154,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             819 135-3460 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -5176,12 +5176,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -5196,12 +5196,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -5224,7 +5224,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -5240,12 +5240,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -5260,12 +5260,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -5288,7 +5288,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
@@ -5297,9 +5297,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Vincent Guilmette (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5308,9 +5308,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5319,9 +5319,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             vincent.gui@gmail.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5330,9 +5330,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1976-12-05 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5341,9 +5341,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             819 232-3754 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -5355,9 +5355,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Charles Maheu (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5366,9 +5366,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5377,9 +5377,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             charles.maheu@outlook.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5388,9 +5388,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1980-06-11 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5399,9 +5399,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             418 233-4744 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -5410,7 +5410,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
@@ -5419,9 +5419,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Vincent Guilmette (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5430,9 +5430,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5441,9 +5441,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             vincent.gui@gmail.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5452,9 +5452,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1976-12-05 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5463,9 +5463,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             819 232-3754 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -5477,9 +5477,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Charles Maheu (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5488,9 +5488,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5499,9 +5499,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             charles.maheu@outlook.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5510,9 +5510,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1980-06-11 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5521,9 +5521,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             418 233-4744 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
@@ -5535,9 +5535,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             Charles Maheu (Slot row-cell)
-        
+
           </div>
         </th>
         <td
@@ -5546,9 +5546,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5557,9 +5557,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             charles.maheu@outlook.com (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5568,9 +5568,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             1980-06-11 (Slot row-cell)
-        
+
           </div>
         </td>
         <td
@@ -5579,14 +5579,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             418 233-4744 (Slot row-cell)
-        
+
           </div>
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -5596,7 +5596,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -5655,9 +5655,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
@@ -5673,14 +5673,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -5708,15 +5708,15 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -5724,31 +5724,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -5768,12 +5768,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -5788,12 +5788,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -5816,15 +5816,15 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -5832,31 +5832,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -5864,9 +5864,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -5874,31 +5874,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -5906,9 +5906,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -5916,31 +5916,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             112 528 967 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -5959,12 +5959,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -5979,12 +5979,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -6007,7 +6007,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -6023,12 +6023,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -6043,12 +6043,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -6071,15 +6071,15 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -6087,31 +6087,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -6119,9 +6119,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -6129,31 +6129,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -6161,15 +6161,15 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -6177,31 +6177,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -6209,9 +6209,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -6219,31 +6219,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -6251,9 +6251,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -6261,35 +6261,35 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 322 344 (Slot row-cell.id)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -6299,7 +6299,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -6358,9 +6358,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
@@ -6376,14 +6376,14 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -6411,15 +6411,15 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
@@ -6427,31 +6427,31 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <div
             style="background: blue; color: rgb(255, 255, 255); padding: 8px; border-radius: 4px;"
           >
-            
+
             111 222 333 (Slot row-cell.id.group2)
-        
+
           </div>
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -6471,12 +6471,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -6491,12 +6491,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -6519,43 +6519,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -6563,37 +6563,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -6601,37 +6601,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -6650,12 +6650,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -6670,12 +6670,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -6698,7 +6698,7 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -6714,12 +6714,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -6734,12 +6734,12 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -6762,43 +6762,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -6806,37 +6806,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -6844,43 +6844,43 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -6888,37 +6888,37 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -6926,41 +6926,41 @@ exports[`Storyshots modul-components|m-responsive-table/Custom HTML - Scope slot
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>

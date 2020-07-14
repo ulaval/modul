@@ -1,6 +1,6 @@
 <mpo-defilement-horizontal-automatique class="m-responsive-table"
                                        :largeur-minimale="tableMinWidth"
-                                       :current-scroll-left.sync="currentScrollLeftProp"
+                                       :horizontal-scroll-offset.sync="horizontalScrollOffsetProp"
                                        :degrade-gauche-actif="!isFirstColumnFixed"
                                        :afficher-barre-defilement="displayScrollbar"
                                        @redimensionner="resizeComponant($event)">
@@ -30,7 +30,7 @@
                 <m-progress :indeterminate="true"
                             :border-radius="false"
                             :style="{
-                                left: currentScrollLeftProp + 'px',
+                                left: horizontalScrollOffsetProp + 'px',
                                 width: tableComponentWidth,
                             }" />
             </td>
@@ -41,7 +41,7 @@
                        :rows-group="rowsGroup"
                        :first-column-fixed="isFirstColumnFixed"
                        :rows-style="rowsStyle"
-                       :current-scroll-left="currentScrollLeftProp"
+                       :horizontal-scroll-offset="horizontalScrollOffsetProp"
                        :table-component-width="tableComponentWidth"
                        :group-header-style="groupHeaderStyle"
                        :group-header-class-name="groupHeaderClassName"
@@ -113,7 +113,7 @@
         </m-table-group>
         <tbody v-if="!hasRowsGroup">
             <m-table-empty-row :empty-area="defaultEmptyArea"
-                               :current-scroll-left="currentScrollLeftProp"
+                               :horizontal-scroll-offset="horizontalScrollOffsetProp"
                                :table-component-width="tableComponentWidth"
                                :nb-columns="mainColumnsLength"
                                :display-default-text="true"

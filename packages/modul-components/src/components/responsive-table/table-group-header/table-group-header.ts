@@ -18,7 +18,7 @@ export class MTableGroupHeader extends ModulVue {
     @Prop({
         default: 0
     })
-    public readonly currentScrollLeft!: number;
+    public readonly horizontalScrollOffset!: number;
 
     @Prop({
         default: '100%'
@@ -65,7 +65,7 @@ export class MTableGroupHeader extends ModulVue {
     } {
         return {
             left: this.as<MTableGroupMixin>().firstColumnFixed
-                ? `${this.currentScrollLeft}px`
+                ? `${this.horizontalScrollOffset}px`
                 : undefined
         };
     }

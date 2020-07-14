@@ -14,7 +14,7 @@
                           :columns="columns"
                           :rows-group="rowsGroup"
                           :first-column-fixed="firstColumnFixed"
-                          :current-scroll-left="currentScrollLeft"
+                          :horizontal-scroll-offset="horizontalScrollOffset"
                           :table-component-width="tableComponentWidth"
                           :default-empty-area="defaultEmptyArea"
                           :group-header-style="groupHeaderStyle"
@@ -105,7 +105,7 @@
         </tr>
         <!-- <m-table-empty-row v-if="!hasRows && (hasRowEmptyArea || hasDefaultEmptyArea)"
                            :empty-area="rowEmptyArea"
-                           :current-scroll-left="currentScrollLeft"
+                           :horizontal-scroll-offset="horizontalScrollOffset"
                            :table-component-width="tableComponentWidth"
                            :nb-columns="totalColumnsLength" /> -->
     </template>

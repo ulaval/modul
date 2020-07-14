@@ -92,7 +92,7 @@ export class MResponsiveTable extends ModulVue {
     @Prop({
         default: 0
     })
-    public readonly currentScrollLeft!: number;
+    public readonly horizontalScrollOffset!: number;
 
     @Prop()
     public readonly defaultEmptyArea?: MTableEmptyArea;
@@ -102,15 +102,15 @@ export class MResponsiveTable extends ModulVue {
     })
     public readonly displayScrollbar!: boolean;
 
-    public currentScrollLeftInterne: number = 0;
+    public horizontalScrollOffsetInterne: number = 0;
     public hasDefilementVertical: boolean = false;
     public tableComponentWidth: string = '100%';
 
     @Emit('sort')
     public emitSort(_column: MTableColumn): void { }
 
-    @Emit('update:currentScrollLeft')
-    public emitUpdateCurrentScrollLeft(_currentScrollLeft: number): void { }
+    @Emit('update:horizontalScrollOffset')
+    public emitUpdateHorizontalScrollOffset(_horizontalScrollOffset: number): void { }
 
     @Emit('scrollbar-width')
     public emitScrollbarWidth(_scrollbarWidth: number): void { }
@@ -121,10 +121,10 @@ export class MResponsiveTable extends ModulVue {
     @Emit('close-accordion')
     public emitCloseAccordion(rowsGroup: MTableRowsGroup): void { }
 
-    @Watch('currentScrollLeft', { immediate: true })
-    public onCurrentScrollLeftChangement(value: number): void {
-        if (this.currentScrollLeftInterne !== value) {
-            this.currentScrollLeftInterne = value;
+    @Watch('horizontalScrollOffset', { immediate: true })
+    public onHorizontalScrollOffsetChangement(value: number): void {
+        if (this.horizontalScrollOffsetInterne !== value) {
+            this.horizontalScrollOffsetInterne = value;
         }
     }
 
@@ -207,13 +207,13 @@ export class MResponsiveTable extends ModulVue {
         return Boolean(this.formatRowGroups && this.formatRowGroups.length);
     }
 
-    public set currentScrollLeftProp(value: number) {
-        this.currentScrollLeftInterne = value;
-        this.emitUpdateCurrentScrollLeft(this.currentScrollLeftInterne);
+    public set horizontalScrollOffsetProp(value: number) {
+        this.horizontalScrollOffsetInterne = value;
+        this.emitUpdateHorizontalScrollOffset(this.horizontalScrollOffsetInterne);
     }
 
-    public get currentScrollLeftProp(): number {
-        return this.currentScrollLeftInterne;
+    public get horizontalScrollOffsetProp(): number {
+        return this.horizontalScrollOffsetInterne;
     }
 
     public get isFirstColumnFixed(): boolean {

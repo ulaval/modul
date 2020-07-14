@@ -37,8 +37,8 @@ export const Sandbox = () => ({
         rowHighlightedOnHover: {
             default: boolean('Prop row-highlighted-on-hover', true)
         },
-        currentScrollLeft: {
-            default: number('Prop current-scroll-left', 0)
+        horizontalScrollOffset: {
+            default: number('Prop horizontal-scroll-offset', 0)
         },
         tableComponentWidth: {
             default: text('Prop table-component-width', '100%')
@@ -78,7 +78,7 @@ export const Sandbox = () => ({
         :group-header-style="groupHeaderStyle"
         :group-header-class-name="groupHeaderClassName"
         :row-highlighted-on-hover="rowHighlightedOnHover"
-        :current-scroll-left="currentScrollLeft"
+        :horizontal-scroll-offset="horizontalScrollOffset"
         :table-component-width="tableComponentWidth"
         :rows-style="rowsStyle"
         @open-accordion="emitOpenAccordion"

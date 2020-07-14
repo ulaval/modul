@@ -4,7 +4,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -112,7 +112,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -125,13 +125,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -151,7 +151,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -164,13 +164,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -190,7 +190,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -203,13 +203,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -229,7 +229,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -242,13 +242,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -268,7 +268,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -281,13 +281,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -307,7 +307,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -320,13 +320,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -346,7 +346,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -359,13 +359,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -385,7 +385,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -398,13 +398,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -412,79 +412,79 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 01
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-test
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simons
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simone
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
       </tr>
       <tr>
@@ -493,65 +493,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 02
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 20-100
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincen
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 _vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 VINcent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent_g
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
       </tr>
       <tr>
@@ -560,65 +560,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 03
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime-ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxim
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 max.max
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 MAXime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxime
-                            
+
         </td>
       </tr>
       <tr>
@@ -627,65 +627,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 04
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frankD
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Frank
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frank.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JF
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Jean
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JFrancois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
       </tr>
       <tr>
@@ -694,65 +694,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 05
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will.B
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 b.will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 willy
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 william.b
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
       </tr>
       <tr>
@@ -761,69 +761,69 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any (com
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 06
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 johny_02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john-02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 02.jo
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 jo.02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -833,7 +833,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -859,7 +859,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -872,13 +872,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -898,7 +898,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -911,13 +911,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -937,7 +937,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -950,13 +950,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -976,7 +976,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -989,13 +989,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1015,7 +1015,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1028,13 +1028,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1042,50 +1042,50 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1093,37 +1093,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -1131,41 +1131,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Any 1`] 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -1175,7 +1175,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -1283,7 +1283,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1296,13 +1296,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1322,7 +1322,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1335,13 +1335,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1361,7 +1361,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1374,13 +1374,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1400,7 +1400,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1413,13 +1413,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1439,7 +1439,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1452,13 +1452,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1478,7 +1478,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1491,13 +1491,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1517,7 +1517,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1530,13 +1530,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1556,7 +1556,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1569,13 +1569,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1583,79 +1583,79 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 01
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-test
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simons
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simone
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
       </tr>
       <tr>
@@ -1664,65 +1664,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 02
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 20-100
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincen
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 _vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 VINcent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent_g
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
       </tr>
       <tr>
@@ -1731,65 +1731,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 03
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime-ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxim
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 max.max
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 MAXime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxime
-                            
+
         </td>
       </tr>
       <tr>
@@ -1798,65 +1798,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 04
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frankD
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Frank
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frank.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JF
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Jean
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JFrancois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
       </tr>
       <tr>
@@ -1865,65 +1865,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 05
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will.B
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 b.will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 willy
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 william.b
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
       </tr>
       <tr>
@@ -1932,69 +1932,69 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark (co
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 06
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 johny_02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john-02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 02.jo
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 jo.02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -2004,7 +2004,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -2030,7 +2030,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -2043,13 +2043,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2069,7 +2069,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2082,13 +2082,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2108,7 +2108,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2121,13 +2121,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2147,7 +2147,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2160,13 +2160,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2186,7 +2186,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-dark m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2199,13 +2199,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2213,50 +2213,50 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2264,37 +2264,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -2302,41 +2302,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Dark 1`]
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -2346,7 +2346,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -2454,7 +2454,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2467,13 +2467,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2493,7 +2493,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2506,13 +2506,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2532,7 +2532,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2545,13 +2545,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2571,7 +2571,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2584,13 +2584,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2610,7 +2610,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2623,13 +2623,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2649,7 +2649,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2662,13 +2662,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2688,7 +2688,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2701,13 +2701,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2727,7 +2727,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -2740,13 +2740,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -2754,79 +2754,79 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 01
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-test
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simons
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simone
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
       </tr>
       <tr>
@@ -2835,65 +2835,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 02
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 20-100
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincen
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 _vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 VINcent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent_g
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
       </tr>
       <tr>
@@ -2902,65 +2902,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 03
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime-ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxim
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 max.max
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 MAXime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxime
-                            
+
         </td>
       </tr>
       <tr>
@@ -2969,65 +2969,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 04
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frankD
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Frank
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frank.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JF
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Jean
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JFrancois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
       </tr>
       <tr>
@@ -3036,65 +3036,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 05
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will.B
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 b.will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 willy
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 william.b
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
       </tr>
       <tr>
@@ -3103,69 +3103,69 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light (c
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 06
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 johny_02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john-02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 02.jo
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 jo.02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -3175,7 +3175,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -3201,7 +3201,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -3214,13 +3214,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3240,7 +3240,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3253,13 +3253,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3279,7 +3279,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3292,13 +3292,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3318,7 +3318,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3331,13 +3331,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3357,7 +3357,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3370,13 +3370,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3384,50 +3384,50 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -3435,37 +3435,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -3473,41 +3473,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Light 1`
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -3517,7 +3517,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -3625,7 +3625,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3638,13 +3638,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3664,7 +3664,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3677,13 +3677,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3703,7 +3703,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3716,13 +3716,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3742,7 +3742,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3755,13 +3755,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3781,7 +3781,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3794,13 +3794,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3820,7 +3820,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3833,13 +3833,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3859,7 +3859,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 User Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3872,13 +3872,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3898,7 +3898,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -3911,13 +3911,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -3925,79 +3925,79 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-center"
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 01
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-test
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simons
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.simon
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simone
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon-com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Simon
-                            
+
         </td>
       </tr>
       <tr>
@@ -4006,65 +4006,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 02
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 20-100
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincen
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 _vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 test.vincent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 VINcent
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent_g
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Vincent
-                            
+
         </td>
       </tr>
       <tr>
@@ -4073,65 +4073,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 03
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime-ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxim
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 max.max
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 MAXime
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 maxim.ber
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Maxime
-                            
+
         </td>
       </tr>
       <tr>
@@ -4140,65 +4140,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 04
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frankD
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Frank
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 frank.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JF
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Jean
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 JFrancois
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Francois
-                            
+
         </td>
       </tr>
       <tr>
@@ -4207,65 +4207,65 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 05
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will.B
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 Will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 simon.ca
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 b.will
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 willy
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 william.b
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 William
-                            
+
         </td>
       </tr>
       <tr>
@@ -4274,69 +4274,69 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
           scope="row"
           style="width: 120px;"
         >
-          
+
                                 06
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 johny_02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 john-02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 02.jo
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 jo.02
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 John
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -4346,7 +4346,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -4372,7 +4372,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -4385,13 +4385,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -4411,7 +4411,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -4424,13 +4424,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -4450,7 +4450,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -4463,13 +4463,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -4489,7 +4489,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -4502,13 +4502,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -4528,7 +4528,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -4541,13 +4541,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -4555,50 +4555,50 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -4606,37 +4606,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -4644,41 +4644,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop head-style Lightest
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>

@@ -4,7 +4,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -30,7 +30,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -43,13 +43,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -69,7 +69,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -82,13 +82,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -108,7 +108,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -121,13 +121,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -147,7 +147,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -160,13 +160,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -186,7 +186,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -199,13 +199,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -213,9 +213,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
@@ -231,14 +231,14 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -266,43 +266,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -322,12 +322,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -342,12 +342,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -370,43 +370,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -414,37 +414,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -452,37 +452,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -501,12 +501,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -521,12 +521,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -549,7 +549,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -565,12 +565,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -585,12 +585,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -613,43 +613,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -657,37 +657,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -695,43 +695,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -739,37 +739,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -777,41 +777,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -821,7 +821,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -847,7 +847,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -860,13 +860,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -886,7 +886,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -899,13 +899,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -925,7 +925,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -938,13 +938,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -964,7 +964,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -977,13 +977,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1003,7 +1003,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1016,13 +1016,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1030,9 +1030,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
@@ -1048,14 +1048,14 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -1083,43 +1083,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1139,12 +1139,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -1159,12 +1159,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -1187,43 +1187,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1231,37 +1231,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -1269,37 +1269,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1318,12 +1318,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -1338,12 +1338,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -1366,7 +1366,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -1382,12 +1382,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -1402,12 +1402,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -1430,43 +1430,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1474,37 +1474,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1512,43 +1512,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -1556,37 +1556,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -1594,41 +1594,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>
@@ -1638,7 +1638,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
 <mpo-defilement-horizontal-automatique
   afficher-barre-defilement="true"
   class="m-responsive-table"
-  current-scroll-left="0"
+  horizontal-scroll-offset="0"
   degrade-gauche-actif="true"
   largeur-minimale="1000px"
 >
@@ -1664,7 +1664,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Name
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
                 style="width: 14px; height: 14px;"
@@ -1677,13 +1677,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1703,7 +1703,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Id
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1716,13 +1716,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1742,7 +1742,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Email
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1755,13 +1755,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1781,7 +1781,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Date of birth
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1794,13 +1794,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1820,7 +1820,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
               <div>
                 Phone number
               </div>
-               
+
               <button
                 class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
                 style="width: 14px; height: 14px;"
@@ -1833,13 +1833,13 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
                   width="12px"
                 >
                   <!---->
-                   
+
                   <use
                     aria-hidden="true"
                     class=""
                   />
                 </svg>
-                 
+
                 <!---->
               </button>
             </div>
@@ -1847,9 +1847,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
         </th>
       </tr>
     </thead>
-     
+
     <!---->
-     
+
     <tbody
       class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
@@ -1865,14 +1865,14 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <div>
                 Title
               </div>
-               
+
               <div>
                 Professor's name
               </div>
@@ -1900,43 +1900,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
     </tbody>
@@ -1956,12 +1956,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 ANI-1101
               </div>
@@ -1976,12 +1976,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 Motion design
               </div>
@@ -2004,43 +2004,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2048,37 +2048,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -2086,37 +2086,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Pierre Olivier Boulet
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 112 528 967
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 po.boulet@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1994-04-08
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 135-3460
-                            
+
         </td>
       </tr>
     </tbody>
@@ -2135,12 +2135,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             <span
               class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-disabled m--is-large"
             />
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1103
               </div>
@@ -2155,12 +2155,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design I
               </div>
@@ -2183,7 +2183,7 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <!---->
     </tbody>
     <tbody
@@ -2199,12 +2199,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 DES-1104
               </div>
@@ -2219,12 +2219,12 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
             class="m-table-group-header__cell"
           >
             <!---->
-             
+
             <div
               class="m-table-group-header__content-cell"
             >
               <!---->
-               
+
               <div>
                 User experience design II
               </div>
@@ -2247,43 +2247,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           <!---->
         </th>
       </tr>
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2291,37 +2291,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
@@ -2329,43 +2329,43 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
       class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
     >
       <!---->
-       
+
       <tr>
         <th
           class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
           scope="row"
         >
-          
+
                                 Vincent Guilmette
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 222 333
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 vincent.gui@gmail.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1976-12-05
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 819 232-3754
-                            
+
         </td>
       </tr>
       <tr>
@@ -2373,37 +2373,37 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
       <tr>
@@ -2411,41 +2411,41 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group__cell m--is-text-align-left"
           scope="row"
         >
-          
+
                                 Charles Maheu
-                            
+
         </th>
         <td
           class="m-table-group__cell m--is-text-align-center"
         >
-          
+
                                 111 322 344
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 charles.maheu@outlook.com
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 1980-06-11
-                            
+
         </td>
         <td
           class="m-table-group__cell m--is-text-align-left"
         >
-          
+
                                 418 233-4744
-                            
+
         </td>
       </tr>
     </tbody>
-     
+
     <!---->
   </table>
 </mpo-defilement-horizontal-automatique>

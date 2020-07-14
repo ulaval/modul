@@ -3,7 +3,7 @@
         <mpo-aucun-contenu :texte="text"
                            :nom-icone="iconName"
                            :style="{
-                                left: currentScrollLeft + 'px',
+                                left: horizontalScrollOffset + 'px',
                                 width: tableComponentWidth,
                             }"
                            @click-bouton="emitClickBouton($event)" />

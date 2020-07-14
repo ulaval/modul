@@ -26,7 +26,7 @@ export class MTableEmptyRow extends ModulVue {
     @Prop({
         required: true
     })
-    public readonly currentScrollLeft!: number;
+    public readonly horizontalScrollOffset!: number;
 
     @Prop({
         required: true
