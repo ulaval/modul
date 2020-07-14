@@ -4,6 +4,7 @@ import ScrollToPlugin from '../utils/scroll-to/scroll-to';
 import AccordionGroupPlugin from './accordion-group/accordion-group';
 import AccordionPlugin from './accordion/accordion';
 import AddPlugin from './add/add';
+import AutoHorizontalScrollPlugin from './auto-horizontal-scroll/auto-horizontal-scroll';
 import AutoCompletePlugin from './autocomplete/autocomplete';
 import AvatarPlugin from './avatar/avatar';
 import ButtonPlugin from './button/button';
@@ -96,6 +97,7 @@ const ComponentsPlugin: PluginObject<any> = {
         Vue.use(AccordionPlugin);
         Vue.use(AccordionTransitionPlugin);
         Vue.use(AddPlugin);
+        Vue.use(AutoHorizontalScrollPlugin);
         Vue.use(ButtonPlugin);
         Vue.use(CalendarPlugin);
         Vue.use(CarouselPlugin);
