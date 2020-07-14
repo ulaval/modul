@@ -177,7 +177,7 @@ export class MAutoHorizontalScroll extends ModulVue {
         };
     }
 
-    public get buttonAreaHeightStyle(): { [CSSProperty: string]: string  } {
+    public get buttonAreaHeightStyle(): { [CSSProperty: string]: string } {
         return {
             height: this.componentHeight
         };
