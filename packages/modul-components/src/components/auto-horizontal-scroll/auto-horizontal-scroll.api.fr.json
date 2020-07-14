@@ -1,0 +1,56 @@
+{
+    "props": {
+        "minWidth": {
+            "description": "Largeur minimal du composant dans laquelle le défilement horizontal sera possible."
+        },
+        "horizontalScrollOffset": {
+            "description": "Position courante de la barre de défilement horizontal. Permet de se déplacer de droite à gauche en modifiant la valeur de cette propriété lorsque le défilement horizontal est possible."
+        },
+        "dragActive": {
+            "description": "Le contenu du composant glisse de gauche à droite en suivant la position de la souris lorsque l'événement mousedown est appelé et que le défilement est possible."
+        },
+        "gradientStyle": {
+            "description": "Apparence visuelle des dégradés positionnés à droite et à gauche du composant lorsque le défilement horizontal est possible."
+        },
+        "leftGradientActive": {
+            "description": "Affiche automatiquement un dégradé à gauche du composant lorsque le défilement horizontal vers la gauche est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à gauche du composant."
+        },
+        "rightGradientActive": {
+            "description": "Affiche automatiquement un dégradé à droite du composant lorsque le défilement horizontal vers la droite est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à droite du composant."
+        },
+        "previousButtonActive": {
+            "description": "Affiche automatiquement le bouton précédent à gauche du composant lorsque le défilement horizontal vers la gauche est possible."
+        },
+        "nextButtonActive": {
+            "description": "Affiche automatiquement le bouton suivant à droite du composant lorsque le défilement horizontal vers la droite est possible."
+        },
+        "previousButtonText": {
+            "description": "Texte affiché au survol du bouton précédent."
+        },
+        "nextButtonText": {
+            "description": "Texte affiché au survol du bouton suivant."
+        },
+        "displayHorizontalScrollbar": {
+            "description": "Affiche la barre de défilement horizontal au bas du composant lorsque le défilement est possible. Cette barre de défilement permet d'indiquer aux usagers la quantité d'information contenu dans le composant."
+        }
+    },
+    "slots": {
+        "default": {
+            "description": ""
+        }
+    },
+    "events": {
+        "update:horizontal-scroll-offset": {
+            "description": "Lancé lorsque la position du défilement horizontal change."
+        },
+        "resize": {
+            "description": "Lancé lorsque le composant est redimensionné."
+        },
+        "previous-button-click": {
+            "description": "Lancé lorsque le bouton précédent est cliqué."
+        },
+        "next-button-click": {
+            "description": "Lancé lorsque le bouton suivant est cliqué."
+        }
+    }
+}

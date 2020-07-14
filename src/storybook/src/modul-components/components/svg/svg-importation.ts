@@ -122,9 +122,6 @@ import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/m
 import { SvgSpriteService } from '@ulaval/modul-components/dist/utils/svg/svg-sprite';
 import Vue from 'vue';
 
-
-
-
 export const importAllSvg: () => void = () => {
     const svg: SvgSpriteService = Vue.prototype.$svgSprite;
     svg.addSvg(ModulIconName.AddCircleFilled, MSvgAddCircleFilled);

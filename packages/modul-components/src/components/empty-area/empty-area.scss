@@ -1,0 +1,45 @@
+@import 'commons';
+
+.m-empty-area {
+    position: relative;
+    min-height: 280px;
+    background: $m-color--grey-lightest;
+    padding: $m-spacing;
+
+    @media (min-width: $m-mq--min--s) {
+        padding: $m-spacing--l;
+    }
+
+    &__icon-area {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        color: $m-color--grey-dark;
+    }
+
+    .m-empty-area__title {
+        margin-top: 0;
+        font-weight: $m-font-weight--bold;
+        font-size: $m-font-size--l;
+
+        + .m-empty-area__subtitle {
+            margin-top: $m-spacing--xs;
+        }
+    }
+
+    &__icon {
+        + .m-empty-area__title {
+            margin-top: $m-spacing--s;
+        }
+    }
+
+    &__subtitle {
+        font-weight: $m-font-weight;
+        font-size: $m-font-size--s;
+    }
+}

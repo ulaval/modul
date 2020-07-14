@@ -50,10 +50,6 @@ export class MTableGroupMixin extends Vue {
         return this.hasHeader && Boolean(this.rowsGroup.header!.title);
     }
 
-    public get hasHeaderOrHeaderEmptyArea(): boolean {
-        return Boolean(this.hasHeader || this.emptyAreaTextHeader);
-    }
-
     public get hasHeaderWithoutCell(): boolean {
         return this.hasHeader && !this.hasHeaderCell;
     }
@@ -73,21 +69,13 @@ export class MTableGroupMixin extends Vue {
         );
     }
 
-    public get hasRowEmptyArea(): boolean {
-        return Boolean(
-            this.hasEmptyArea &&
-            (this.rowsGroup.emptyArea!.text ||
-                this.rowsGroup.emptyArea!.svgName)
-        );
-    }
-
     public get hasRows(): boolean {
         return Boolean(this.rowsGroup.rows && this.rowsGroup.rows.length);
     }
 
-    public get hasRowsOrRowEmptyArea(): boolean {
+    public get hasRowsOrEmptyArea(): boolean {
         return Boolean(
-            this.hasRows || this.hasDefaultRowEmptyAreas || this.hasRowEmptyArea
+            this.hasRows || this.hasDefaultEmptyArea || this.hasEmptyArea
         );
     }
 
@@ -97,29 +85,10 @@ export class MTableGroupMixin extends Vue {
         );
     }
 
-    public get hasDefaultRowEmptyAreas(): boolean {
-        return Boolean(
-            this.hasDefaultEmptyArea &&
-            (this.defaultEmptyArea!.text || this.defaultEmptyArea!.svgName)
-        );
-    }
-
-    public get emptyAreaTextHeader(): string {
-        if (this.hasEmptyArea && this.rowsGroup.emptyArea!.headerText) {
-            return this.rowsGroup.emptyArea!.headerText;
-        } else if (
-            this.hasDefaultEmptyArea &&
-            this.defaultEmptyArea!.headerText
-        ) {
-            return this.defaultEmptyArea!.headerText;
-        }
-        return '';
-    }
-
-    public get rowEmptyArea(): MTableEmptyArea {
-        if (this.hasRowEmptyArea) {
+    public get emptyArea(): MTableEmptyArea {
+        if (this.hasEmptyArea) {
             return this.rowsGroup.emptyArea!;
-        } else if (this.hasDefaultRowEmptyAreas) {
+        } else if (this.hasDefaultEmptyArea) {
             return this.defaultEmptyArea!;
         }
         return {};
@@ -132,8 +101,7 @@ export class MTableGroupMixin extends Vue {
     public get isAccordionDisabled(): boolean {
         return (
             this.hasAccordion &&
-            (Boolean(this.rowsGroup.accordion!.disabled) ||
-                !this.hasRowsOrRowEmptyArea)
+            Boolean(this.rowsGroup.accordion!.disabled)
         );
     }
 
@@ -143,8 +111,8 @@ export class MTableGroupMixin extends Vue {
 
     public get hasRowContent(): boolean {
         return this.hasAccordion
-            ? this.isAccordionOpen && this.hasRowsOrRowEmptyArea
-            : this.hasRowsOrRowEmptyArea;
+            ? this.isAccordionOpen && this.hasRowsOrEmptyArea
+            : this.hasRowsOrEmptyArea;
     }
 
     public get totalColumnsLength(): number {

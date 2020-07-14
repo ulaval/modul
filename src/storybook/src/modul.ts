@@ -1,6 +1,7 @@
 import AccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import AccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import AddPlugin from '@ulaval/modul-components/dist/components/add/add';
+import AutoHorizontalScrollPlugin from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import AutoCompletePlugin from '@ulaval/modul-components/dist/components/autocomplete/autocomplete';
 import AvatarPlugin from '@ulaval/modul-components/dist/components/avatar/avatar';
 import BreadcrumbsPlugin from '@ulaval/modul-components/dist/components/breadcrumbs/breadcrumbs';
@@ -15,6 +16,7 @@ import DaterangepickerPlugin from '@ulaval/modul-components/dist/components/date
 import DecimalfieldPlugin from '@ulaval/modul-components/dist/components/decimalfield/decimalfield';
 import DialogPlugin from '@ulaval/modul-components/dist/components/dialog/dialog';
 import DropdownPlugin from '@ulaval/modul-components/dist/components/dropdown/dropdown';
+import EmptyAreaPlugin from '@ulaval/modul-components/dist/components/empty-area/empty-area';
 import ExpandableLayoutPlugin from '@ulaval/modul-components/dist/components/expandable-layout/expandable-layout';
 import FileSelectPlugin from '@ulaval/modul-components/dist/components/file-select/file-select';
 import FileUploadPlugin from '@ulaval/modul-components/dist/components/file-upload/file-upload';
@@ -119,9 +121,11 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
                 }
             };
 
+
             Vue.use(UtilsPlugin, utilsOptions);
             Vue.use(FrenchPlugin);
             Vue.use(DefaultSpritesPlugin);
+
 
             // modul-components
             Vue.use(ButtonPlugin);
@@ -138,6 +142,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(MessagePlugin);
             Vue.use(SearchfieldPlugin);
             Vue.use(ExpandableLayoutPlugin);
+            Vue.use(EmptyAreaPlugin);
             Vue.use(CarouselPlugin);
             Vue.use(CheckboxPlugin);
             Vue.use(AccordionGroupPlugin);
@@ -209,6 +214,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             // modul-website
             Vue.use(ComponentExamplesPlugin);
             Vue.use(SvgPlugin);
+            Vue.use(AutoHorizontalScrollPlugin);
         }
     };
 };

@@ -1,4 +1,4 @@
-<tr v-if="hasHeader || emptyAreaTextHeader"
+<tr v-if="hasHeader"
     class="m-table-group-header"
     :class="[
         {
@@ -17,7 +17,7 @@
     @click="toggleAccordeon($event)"
     @keyup.self.enter="toggleAccordeon($event)">
     <th v-if="hasHeaderWithoutCell ||
-            (emptyAreaTextHeader && !hasHeaderCell && !hasHeader)"
+            (!hasHeaderCell && !hasHeader)"
         class="m--is-text-align-left"
         :colspan="totalColumnsLength">
         <div class="m-table-group-header__cell"
@@ -32,13 +32,9 @@
             <div class="m-table-group-header__content-cell">
                 <slot name="group-header-title"
                       :rows-group="rowsGroup"
-                      :title="rowsGroup.header.title"
-                      :column="column">
+                      :title="rowsGroup.header.title">
                     <template v-if="rowsGroup.header.title">
                         {{ rowsGroup.header.title }}
-                    </template>
-                    <template v-else-if="emptyAreaTextHeader">
-                        {{ emptyAreaTextHeader }}
                     </template>
                 </slot>
             </div>
@@ -54,7 +50,8 @@
             ]"
             :style="rowsGroup.header.cells[column.name].style"
             :colspan="getColspan(rowsGroup.header.cells[column.name].colspan)">
-            <div class="m-table-group-header__cell">
+            <div class="m-table-group-header__cell"
+                :style="getCellStyle(rowsGroup.header.cells[column.name], columnIndex)">
                 <m-plus v-if="displayAccordionIconInCorrectCell(column.name, columnIndex)"
                         class="m-table-group-header__accordion-icon"
                         :class="[rowsGroup.accordion.iconClassName]"

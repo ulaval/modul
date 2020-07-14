@@ -1,17 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row default 1`] = `
+exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Default 1`] = `
 <tr
   class="m-table-empty-row"
 >
   <td
     colspan="3"
   >
-    <mpo-aucun-contenu
-      nom-icone=""
-      style="left: 10px; width: 400px;"
-      texte="texte"
-    />
+    <div
+      class="m-empty-area"
+      style="left: 10px; width: 600px;"
+    >
+      <button
+        class="m-button m--is-skin-secondary"
+        type="button"
+      >
+        <!---->
+         
+        <!---->
+         
+        <span
+          class="m-button__text"
+        >
+          
+            Add content
+         
+          <!---->
+        </span>
+         
+        <!---->
+         
+        <!---->
+      </button>
+       
+      <div
+        class="m-empty-area__icon-area"
+      >
+        <!---->
+         
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Tilte
+          </strong>
+        </p>
+         
+        <p
+          class="m-empty-area__subtitle"
+        >
+          
+            Subtitle
+        
+        </p>
+      </div>
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Waiting 1`] = `
+<tr
+  class="m-table-empty-row"
+>
+  <td>
+    <div
+      class="m-empty-area"
+      style="left: 10px; width: 600px;"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__icon-area"
+      >
+        <!---->
+         
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Chargement en cours
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
   </td>
 </tr>
 `;

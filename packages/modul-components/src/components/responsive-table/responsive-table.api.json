@@ -21,17 +21,17 @@
         "waiting": {
             "description": "Affiche une barre de chargement dans l'entête du tableau."
         },
-        "firstColumnFixed": {
+        "firstColumnFixedActive": {
             "description": "Affiche la première colonne du tableau en position fixe."
         },
         "tableMinWidth": {
-            "description": "Largeur minimal du composant dans laquelle le défilement horizontal sera possible."
+            "description": "Largeur minimal du tableau dans laquelle le défilement horizontal sera possible."
         },
         "horizontalScrollOffset": {
             "description": "Position courante de la barre de défilement horizontal. Permet de se déplacer de droite à gauche en modifiant la valeur de cette propriété lorsque le défilement horizontal est possible."
         },
         "displayHorizontalScrollbar": {
-            "description": "Affiche la barre de défilement horizontal au bas du composant lorsque le défilement est possible. Cette barre de défilement permet d'indiquer aux usagers la quantité d'information contenu dans le composant."
+            "description": "Affiche la barre de défilement horizontal au bas du tableau lorsque le défilement est possible. Cette barre de défilement permet d'indiquer aux usagers la quantité d'information contenu dans le tableau."
         },
         "displayTableHead": {
             "description": "Afficher l'entête principal du tableau."
@@ -54,20 +54,20 @@
         "dragActive": {
             "description": "Le contenu du tableau glisse de gauche à droite en suivant la position de la souris lorsque l'événement mousedown est appelé et que le défilement est possible."
         },
-        "previousAndNextButtonStyle": {
-            "description": "Apparence visuelle des dégradés positionnés à droite et à gauche du composant lorsque le défilement horizontal est possible."
+        "gradientStyle": {
+            "description": "Apparence visuelle des dégradés positionnés à droite et à gauche du tableau lorsque le défilement horizontal est possible."
         },
         "leftGradientActive": {
-            "description": "Affiche automatiquement un dégradé à gauche du composant lorsque le défilement horizontal vers la gauche est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à gauche du composant."
+            "description": "Affiche automatiquement un dégradé à gauche du tableau lorsque le défilement horizontal vers la gauche est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à gauche du tableau."
         },
         "rightGradientActive": {
-            "description": "Affiche automatiquement un dégradé à droite du composant lorsque le défilement horizontal vers la droite est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à droite du composant."
+            "description": "Affiche automatiquement un dégradé à droite du tableau lorsque le défilement horizontal vers la droite est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à droite du tableau."
         },
         "previousButtonActive": {
-            "description": "Affiche automatiquement le bouton précédent à gauche du composant lorsque le défilement horizontal vers la gauche est possible."
+            "description": "Affiche automatiquement le bouton précédent à gauche du tableau lorsque le défilement horizontal vers la gauche est possible."
         },
         "nextButtonActive": {
-            "description": "Affiche automatiquement le bouton suivant à droite du composant lorsque le défilement horizontal vers la droite est possible."
+            "description": "Affiche automatiquement le bouton suivant à droite du tableau lorsque le défilement horizontal vers la droite est possible."
         },
         "previousButtonText": {
             "description": "Texte affiché au survol du bouton précédent."
@@ -118,16 +118,16 @@
         "close-accordion": {
             "description": "Lancé lorsque le contenu d'un regroupement de rangées en mode accordéon se ferme."
         },
-        "update:horizontalScrollOffset": {
+        "update:horizontal-scroll-offset": {
             "description": "Lancé lorsque la position du défilement horizontal change."
         },
-        "resize": {
-            "description": "Lancé lorsque le tableau est redimensionné."
+        "horizontal-scollbar-width": {
+            "description": "Lancé lorsque la largeur de la barre de défilement horizontale change."
         },
-        "previousButtonClick": {
+        "previous-button-click": {
             "description": "Lancé lorsque le bouton précédent est cliqué."
         },
-        "nextButtonClick": {
+        "next-button-click": {
             "description": "Lancé lorsque le bouton suivant est cliqué."
         }
     }

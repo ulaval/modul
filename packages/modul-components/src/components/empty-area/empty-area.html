@@ -1,0 +1,29 @@
+<div class="m-empty-area">
+    <template v-if="buttonText">
+        <m-add v-if="isButtonTypeAdd"
+               @click="emitButtonClick()">
+            {{ buttonText }}
+        </m-add>
+        <m-button v-else
+                  :skin="buttonSkin"
+                  @click="emitButtonClick()">
+            {{ buttonText }}
+        </m-button>
+    </template>
+    <div v-if="svgName || title || subtitle"
+         class="m-empty-area__icon-area">
+        <m-svg v-if="svgName"
+               class="m-empty-area__icon"
+               :name="svgName"
+               width="60px"
+               height="60px" />
+        <p v-if="title"
+           class="m-empty-area__title">
+            <strong>{{ title }}</strong>
+        </p>
+        <p v-if="subtitle"
+           class="m-empty-area__subtitle">
+            {{ subtitle }}
+        </p>
+    </div>
+</div>

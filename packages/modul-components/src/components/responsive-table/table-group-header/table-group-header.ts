@@ -3,7 +3,7 @@ import { Component, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
-import { getCellAlignmentClass, MTableAccordionIconPosition, MTableColspan, MTableColumn, MTableRowsGroup } from '../responsive-table-commons';
+import { getCellAlignmentClass, getTotalColumnsLength, MTableAccordionIconPosition, MTableCell, MTableColspan, MTableColumn, MTableRowsGroup } from '../responsive-table-commons';
 import { MTableGroupMixin } from '../table-group/table-group-mixin';
 import WithRender from './table-group-header.html?style=./table-group-header.scss';
 
@@ -64,7 +64,7 @@ export class MTableGroupHeader extends ModulVue {
         [key: string]: string | undefined;
     } {
         return {
-            left: this.as<MTableGroupMixin>().firstColumnFixed
+            left: this.as<MTableGroupMixin>().firstColumnFixed && this.horizontalScrollOffset
                 ? `${this.horizontalScrollOffset}px`
                 : undefined
         };
@@ -77,6 +77,21 @@ export class MTableGroupHeader extends ModulVue {
             left: this.headerLeftPositionStyle.left,
             width: this.tableComponentWidth
         };
+    }
+
+    public getCellStyle(cell: MTableCell, columnIndex: number): {
+        [key: string]: string | undefined;
+    } | undefined {
+        if (cell.colspan
+            && columnIndex === 0
+            && (
+                cell.colspan === getTotalColumnsLength(this.as<MTableGroupMixin>().columns)
+                || cell.colspan === MTableColspan.AllColumns
+            )
+        ) {
+            return this.headerWithoutCellsStyle;
+        }
+        return undefined;
     }
 
     public get rowsGroupHeaderClassName(): string {

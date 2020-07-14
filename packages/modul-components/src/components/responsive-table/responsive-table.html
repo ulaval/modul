@@ -1,15 +1,24 @@
-<mpo-defilement-horizontal-automatique class="m-responsive-table"
-                                       :largeur-minimale="tableMinWidth"
-                                       :horizontal-scroll-offset.sync="horizontalScrollOffsetProp"
-                                       :degrade-gauche-actif="!isFirstColumnFixed"
-                                       :afficher-barre-defilement="displayScrollbar"
-                                       @redimensionner="resizeComponant($event)">
+<m-auto-horizontal-scroll class="m-responsive-table"
+                          :min-width="tableMinWidth"
+                          :horizontal-scroll-offset.sync="horizontalScrollOffsetProp"
+                          :drag-active="dragActive"
+                          :left-gradient-active="!firstColumnFixed && leftGradientActive"
+                          :right-gradient-active="rightGradientActive"
+                          :gradient-style="gradientStyle"
+                          :previous-button-active="previousButtonActive"
+                          :next-button-active="nextButtonActive"
+                          :previous-button-text="previousButtonText"
+                          :next-button-text="nextButtonText"
+                          :display-horizontal-scrollbar="displayHorizontalScrollbar"
+                          @resize="resizeComponant($event)"
+                          @previous-button-click="emitPreviousButtonClick($event)"
+                          @next-button-click="emitNextButtonClick($event)">
     <table id="idTable"
            cellspacing="0">
         <m-table-head v-if="displayTableHead"
                       id="idTable"
                       :head-rows.sync="headRowsFilterAndSort"
-                      :first-column-fixed="isFirstColumnFixed"
+                      :first-column-fixed="firstColumnFixed"
                       :head-style="headStyle"
                       @sort="emitSort($event)">
             <template v-for="(column, index) in allColumns"
@@ -39,7 +48,7 @@
                        :key="index"
                        :columns="mainColumns"
                        :rows-group="rowsGroup"
-                       :first-column-fixed="isFirstColumnFixed"
+                       :first-column-fixed="firstColumnFixed"
                        :rows-style="rowsStyle"
                        :horizontal-scroll-offset="horizontalScrollOffsetProp"
                        :table-component-width="tableComponentWidth"
@@ -47,7 +56,8 @@
                        :group-header-class-name="groupHeaderClassName"
                        :row-highlighted-on-hover="rowHighlightedOnHover"
                        @open-accordion="emitOpenAccordion"
-                       @close-accordion="emitCloseAccordion">
+                       @close-accordion="emitCloseAccordion"
+                       @empty-button-click="emitEmptyButtonClick($event)">
 
             <template #group-header-title="{ rowsGroup, title }">
                 <slot :name="'group-header-title.' + rowsGroup.name"
@@ -59,8 +69,6 @@
                         <div v-if="title"
                              :key="index"
                              v-html="title"></div>
-                        <div v-else-if="getEmptyAreaHeaderText(rowsGroup)"
-                             v-html="getEmptyAreaHeaderText(rowsGroup)"></div>
                     </slot>
                 </slot>
             </template>
@@ -111,13 +119,14 @@
                 </slot>
             </template>
         </m-table-group>
-        <tbody v-if="!hasRowsGroup">
+        <tbody v-if="!hasRowsGroup && defaultEmptyArea">
             <m-table-empty-row :empty-area="defaultEmptyArea"
                                :horizontal-scroll-offset="horizontalScrollOffsetProp"
                                :table-component-width="tableComponentWidth"
                                :nb-columns="mainColumnsLength"
                                :display-default-text="true"
-                               :waiting="waiting" />
+                               :waiting="waiting"
+                               @empty-button-click="emitEmptyButtonClick({})" />
         </tbody>
     </table>
-</mpo-defilement-horizontal-automatique>
+</m-auto-horizontal-scroll>
