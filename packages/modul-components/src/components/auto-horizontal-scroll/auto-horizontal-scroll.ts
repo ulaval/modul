@@ -24,6 +24,12 @@ export interface MAutoHorizontalScrollResizeProperties {
 
 @WithRender
 @Component({
+    modul: {
+        i18n: {
+            'fr': require('./auto-horizontal-scroll.lang.fr.json'),
+            'en': require('./auto-horizontal-scroll.lang.en.json')
+        }
+    },
     components: { [ICON_BUTTON_NAME]: MIconButton },
     mixins: [ElementQueries]
 })
