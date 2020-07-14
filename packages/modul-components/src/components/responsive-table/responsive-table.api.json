@@ -1,0 +1,134 @@
+{
+    "props": {
+        "id": {
+            "description": "Identifiant unique du composant."
+        },
+        "headRows": {
+            "description": "Création d'un entête principal de tableau à plusieurs rangées."
+        },
+        "columns": {
+            "description": "Définition des colonne qui se retrouveront dans l'entête principal du tableau. Cette prop n'a pas besoin d'être utilisé lorsque la prop «headRow» est déjà définie."
+        },
+        "rowGroups": {
+            "description": "Création de regroupements de rangées dans le corps de tableau. Possibilité d'ajouter un entête pour chanque regroupement ansi qu'un accordéon."
+        },
+        "rows": {
+            "description": "Définition des rangées du corps du tableau. Cette prop peut être utilisé conjointement avec la prop «rowGroups». Les valeurs de ces deux props se fusionneront."
+        },
+        "defaultEmptyArea": {
+            "description": "Informations affichées par défaut lorsque le tableau ne possède aucune rangée."
+        },
+        "waiting": {
+            "description": "Affiche une barre de chargement dans l'entête du tableau."
+        },
+        "firstColumnFixed": {
+            "description": "Affiche la première colonne du tableau en position fixe."
+        },
+        "tableMinWidth": {
+            "description": "Largeur minimal du composant dans laquelle le défilement horizontal sera possible."
+        },
+        "horizontalScrollOffset": {
+            "description": "Position courante de la barre de défilement horizontal. Permet de se déplacer de droite à gauche en modifiant la valeur de cette propriété lorsque le défilement horizontal est possible."
+        },
+        "displayHorizontalScrollbar": {
+            "description": "Affiche la barre de défilement horizontal au bas du composant lorsque le défilement est possible. Cette barre de défilement permet d'indiquer aux usagers la quantité d'information contenu dans le composant."
+        },
+        "displayTableHead": {
+            "description": "Afficher l'entête principal du tableau."
+        },
+        "rowHighlightedOnHover": {
+            "description": "Met en évidence la rangée au survol de celle-ci."
+        },
+        "headStyle": {
+            "description": "Personnalisation du visuel de l'entête principal du tableau."
+        },
+        "rowsStyle": {
+            "description": "Personnalisation du visuel des rangées du tableau."
+        },
+        "groupHeaderStyle": {
+            "description": "Ajoute des styles CSS sur chaque entête de regroupement de rangées."
+        },
+        "groupHeaderClassName": {
+            "description": "Ajoute une class CSS sur chaque entête de regroupement de rangées."
+        },
+        "dragActive": {
+            "description": "Le contenu du tableau glisse de gauche à droite en suivant la position de la souris lorsque l'événement mousedown est appelé et que le défilement est possible."
+        },
+        "previousAndNextButtonStyle": {
+            "description": "Apparence visuelle des dégradés positionnés à droite et à gauche du composant lorsque le défilement horizontal est possible."
+        },
+        "leftGradientActive": {
+            "description": "Affiche automatiquement un dégradé à gauche du composant lorsque le défilement horizontal vers la gauche est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à gauche du composant."
+        },
+        "rightGradientActive": {
+            "description": "Affiche automatiquement un dégradé à droite du composant lorsque le défilement horizontal vers la droite est possible. Ce degradé indique aux usagers qu'il y a de l'information caché à droite du composant."
+        },
+        "previousButtonActive": {
+            "description": "Affiche automatiquement le bouton précédent à gauche du composant lorsque le défilement horizontal vers la gauche est possible."
+        },
+        "nextButtonActive": {
+            "description": "Affiche automatiquement le bouton suivant à droite du composant lorsque le défilement horizontal vers la droite est possible."
+        },
+        "previousButtonText": {
+            "description": "Texte affiché au survol du bouton précédent."
+        },
+        "nextButtonText": {
+            "description": "Texte affiché au survol du bouton suivant."
+        }
+    },
+    "slots": {
+        "head-cell": {
+            "description": "Personnalisation HTML de toutes les cellules de l'entête principale du tableau."
+        },
+        "head-cell.<column.name>­": {
+            "description": "Personnalisation HTML la cellule de l'entête principale du tableau liée une colonne en particulier."
+        },
+        "row-cell": {
+            "description": "Personnalisation HTML de toutes les cellules du corps du tableau."
+        },
+        "row-cell.<column.name>": {
+            "description": "Personnalisation HTML de toutes les cellules du corps du tableau liées à une colonne en particulier."
+        },
+        "row-cell.<column.name>.<rowsGroup.name>": {
+            "description": "Personnalisation HTML de toutes les cellules du corps du tableau liées à une colonne et un regroupement de rangées en particulier."
+        },
+        "group-header-title": {
+            "description": "Personnalisation HTML de tous les titres des regroupements de rangées."
+        },
+        "group-header-title.<rows-group.name>": {
+            "description": "Personnalisation HTML du titre d'un regroupement de rangées du tableau en particulier."
+        },
+        "group-header-cell": {
+            "description": "Personnalisation HTML de toutes les cellules de des entêtes de regroupements de rangée du tableau."
+        },
+        "group-header-cell.<column.name>": {
+            "description": "Personnalisation HTML la cellule de l'entête des regroupements rangées du tableau liées à une colonne en particulier."
+        },
+        "group-header-cell.<column.name>.<rows-group.name>": {
+            "description": "Personnalisation HTML la cellule de l'entête d'un regroupement rangées du tableau liées à une colonne en particulier."
+        }
+    },
+    "events": {
+        "sort": {
+            "description": "Lancé lorsqu'une colonne triable de tableau est cliquée."
+        },
+        "open-accordion": {
+            "description": "Lancé lorsque le contenu d'un regroupement de rangées en mode accordéon s'ouvre."
+        },
+        "close-accordion": {
+            "description": "Lancé lorsque le contenu d'un regroupement de rangées en mode accordéon se ferme."
+        },
+        "update:horizontalScrollOffset": {
+            "description": "Lancé lorsque la position du défilement horizontal change."
+        },
+        "resize": {
+            "description": "Lancé lorsque le tableau est redimensionné."
+        },
+        "previousButtonClick": {
+            "description": "Lancé lorsque le bouton précédent est cliqué."
+        },
+        "nextButtonClick": {
+            "description": "Lancé lorsque le bouton suivant est cliqué."
+        }
+    }
+}

@@ -63,7 +63,7 @@ export class MResponsiveTable extends ModulVue {
     @Prop({
         default: true
     })
-    public rowHighlightedOnHover!: boolean;
+    public readonly rowHighlightedOnHover!: boolean;
 
     @Prop({
         default: MTableHeadStyle.Light,
@@ -84,15 +84,15 @@ export class MResponsiveTable extends ModulVue {
         validator: (value: MTableGroupHeaderStyle) =>
             Enums.toValueArray(MTableGroupHeaderStyle).includes(value)
     })
-    public groupHeaderStyle!: MTableGroupHeaderStyle;
+    public readonly groupHeaderStyle!: MTableGroupHeaderStyle;
 
     @Prop()
-    public groupHeaderClassName: string;
+    public readonly groupHeaderClassName: string;
 
     @Prop({
         default: 0
     })
-    public currentScrollLeft!: number;
+    public readonly currentScrollLeft!: number;
 
     @Prop()
     public readonly defaultEmptyArea?: MTableEmptyArea;

@@ -12,13 +12,13 @@
                       :first-column-fixed="isFirstColumnFixed"
                       :head-style="headStyle"
                       @sort="emitSort($event)">
-            <template v-for="(column, indexColumns) in allColumns"
+            <template v-for="(column, index) in allColumns"
                       :slot="'head-cell.' + column.name">
                 <slot :name="'head-cell.' + column.name"
                       :column="column">
                     <slot name="head-cell"
                           :column="column">
-                        <div :key="indexColumns"
+                        <div :key="index"
                              v-html="column.value"></div>
                     </slot>
                 </slot>
