@@ -1,0 +1,151 @@
+@import 'commons';
+$m-defilement-horizontal-automatique--largueur-bouton: 22px;
+
+.m-auto-horizontal-scroll {
+    position: relative;
+    z-index: 0;
+
+    &__body {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        flex: 1 1 auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        @include m-scrollbar();
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        &.m--is-dragging {
+            cursor: dragging;
+        }
+    }
+
+    &__button-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1px;
+        opacity: 1;
+
+        &.m--is-left {
+            left: 0;
+
+            &::before {
+                transition: left $m-transition-duration linear;
+                right: -$m-spacing;
+            }
+        }
+
+        &.m--is-right {
+            right: 0;
+
+            &::after {
+                transition: right $m-transition-duration linear;
+                left: -$m-spacing;
+            }
+        }
+
+        &::before,
+        &::after {
+            transition: opacity $m-transition-duration linear, visibility $m-transition-duration linear;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            width: $m-spacing;
+        }
+
+        &.m--is-enter-active,
+        &.m--is-leave-active {
+            transition: opacity $m-transition-duration ease;
+        }
+
+        &.m--is-enter,
+        &.m--is-leave-to {
+            opacity: 0;
+        }
+    }
+
+    &.m--has-previous-button {
+        .m-auto-horizontal-scroll__button-area {
+            &.m--is-left {
+                width: $m-defilement-horizontal-automatique--largueur-bouton;
+            }
+        }
+    }
+
+    &.m--has-next-button {
+        .m-auto-horizontal-scroll__button-area {
+            &.m--is-right {
+                width: $m-defilement-horizontal-automatique--largueur-bouton;
+            }
+        }
+    }
+
+    &.m--has-left-gradient {
+        .m-auto-horizontal-scroll__button-area {
+            &.m--is-left {
+                &::before {
+                    content: '';
+                }
+            }
+        }
+    }
+
+    &.m--has-right-gradient {
+        .m-auto-horizontal-scroll__button-area {
+            &.m--is-right {
+                &::after {
+                    content: '';
+                }
+            }
+        }
+    }
+}
+
+@mixin gradientBackgroundColor($couleur) {
+    .m-auto-horizontal-scroll__button-area {
+        background: $couleur;
+
+        &.m--is-left {
+            &::before {
+                background-image: linear-gradient(90deg, $couleur, rgba($couleur, 0));
+            }
+        }
+
+        &.m--is-right {
+            &::after {
+                background-image: linear-gradient(90deg, rgba($couleur, 0), $couleur);
+            }
+        }
+    }
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-background-style-white {
+    @include gradientBackgroundColor($m-color--white);
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-background-style-light {
+    @include gradientBackgroundColor($m-color--grey-light);
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-background-style-dark {
+    @include gradientBackgroundColor($m-color--grey-darkest);
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-background-style-interactive {
+    @include gradientBackgroundColor($m-color--interactive);
+}
+
+.m-auto-horizontal-scroll.m--has-horizontal-scrollbar {
+    overflow: hidden;
+}

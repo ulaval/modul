@@ -1,6 +1,7 @@
 import AccordionGroupPlugin from '@ulaval/modul-components/dist/components/accordion-group/accordion-group';
 import AccordionPlugin from '@ulaval/modul-components/dist/components/accordion/accordion';
 import AddPlugin from '@ulaval/modul-components/dist/components/add/add';
+import AutoHorizontalScrollPlugin from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import AutoCompletePlugin from '@ulaval/modul-components/dist/components/autocomplete/autocomplete';
 import AvatarPlugin from '@ulaval/modul-components/dist/components/avatar/avatar';
 import BreadcrumbsPlugin from '@ulaval/modul-components/dist/components/breadcrumbs/breadcrumbs';
@@ -114,6 +115,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
                 }
             };
 
+
             Vue.use(UtilsPlugin, utilsOptions);
             Vue.use(FrenchPlugin);
             Vue.use(DefaultSpritesPlugin);
@@ -199,6 +201,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             // modul-website
             Vue.use(ComponentExamplesPlugin);
             Vue.use(SvgPlugin);
+            Vue.use(AutoHorizontalScrollPlugin);
         }
     };
 };
