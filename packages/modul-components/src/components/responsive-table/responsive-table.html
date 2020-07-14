@@ -56,7 +56,8 @@
                        :group-header-class-name="groupHeaderClassName"
                        :row-highlighted-on-hover="rowHighlightedOnHover"
                        @open-accordion="emitOpenAccordion"
-                       @close-accordion="emitCloseAccordion">
+                       @close-accordion="emitCloseAccordion"
+                       @empty-button-click="emitEmptyButtonClick($event)">
 
             <template #group-header-title="{ rowsGroup, title }">
                 <slot :name="'group-header-title.' + rowsGroup.name"
@@ -68,8 +69,6 @@
                         <div v-if="title"
                              :key="index"
                              v-html="title"></div>
-                        <div v-else-if="getEmptyAreaHeaderText(rowsGroup)"
-                             v-html="getEmptyAreaHeaderText(rowsGroup)"></div>
                     </slot>
                 </slot>
             </template>
@@ -120,13 +119,14 @@
                 </slot>
             </template>
         </m-table-group>
-        <tbody v-if="!hasRowsGroup">
+        <tbody v-if="!hasRowsGroup && defaultEmptyArea">
             <m-table-empty-row :empty-area="defaultEmptyArea"
                                :horizontal-scroll-offset="horizontalScrollOffsetProp"
                                :table-component-width="tableComponentWidth"
                                :nb-columns="mainColumnsLength"
                                :display-default-text="true"
-                               :waiting="waiting" />
+                               :waiting="waiting"
+                               @empty-button-click="emitEmptyButtonClick({})" />
         </tbody>
     </table>
 </m-auto-horizontal-scroll>

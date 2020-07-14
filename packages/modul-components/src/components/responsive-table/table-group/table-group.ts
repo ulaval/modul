@@ -1,10 +1,10 @@
 import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
 import { TABLE_GROUP_NAME } from '../../component-names';
-import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsStyle } from '../responsive-table-commons';
+import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsGroup, MTableRowsStyle } from '../responsive-table-commons';
 import { MTableEmptyRow } from '../table-empty-row/table-empty-row';
 import { MTableGroupHeader } from '../table-group-header/table-group-header';
 import { MTableGroupMixin } from './table-group-mixin';
@@ -37,6 +37,9 @@ export class MTableGroup extends ModulVue {
         default: '100%'
     })
     public readonly tableComponentWidth!: string;
+
+    @Emit('empty-button-click')
+    public emitEmptyButtonClick(rowsGroup: MTableRowsGroup): void { }
 
     public getRowClassName(
         row: MTableRow,

@@ -1,10 +1,10 @@
-<tbody v-if="hasHeaderOrHeaderEmptyArea || hasRowsOrRowEmptyArea"
+<tbody v-if="hasHeader || hasRowsOrEmptyArea"
        class="m-table-group"
        :class="[
         {
             'm--is-disabled': isAccordionDisabled,
-            'm--has-header': hasHeaderOrHeaderEmptyArea,
-            'm--no-header': !hasHeaderOrHeaderEmptyArea,
+            'm--has-header': hasHeader,
+            'm--no-header': !hasHeader,
             'm--has-row-highlighted-on-hover': rowHighlightedOnHover,
             'm--is-first-column-fixed': firstColumnFixed,
         },
@@ -32,9 +32,6 @@
                       :column="column">
                     <template v-if="title">
                         {{ title }}
-                    </template>
-                    <template v-else-if="emptyAreaTextHeader">
-                        {{ emptyAreaTextHeader }}
                     </template>
                 </slot>
             </slot>
@@ -103,10 +100,11 @@
                 </slot>
             </component>
         </tr>
-        <!-- <m-table-empty-row v-if="!hasRows && (hasRowEmptyArea || hasDefaultEmptyArea)"
-                           :empty-area="rowEmptyArea"
+        <m-table-empty-row v-if="!hasRows && (hasEmptyArea || hasDefaultEmptyArea)"
+                           :empty-area="emptyArea"
                            :horizontal-scroll-offset="horizontalScrollOffset"
                            :table-component-width="tableComponentWidth"
-                           :nb-columns="totalColumnsLength" /> -->
+                           :nb-columns="totalColumnsLength"
+                           @empty-button-click="emitEmptyButtonClick(rowsGroup)" />
     </template>
 </tbody>

@@ -143,6 +143,8 @@ export class MResponsiveTable extends ModulVue {
     })
     public readonly displayHorizontalScrollbar!: boolean;
 
+    @Emit('empty-button-click')
+    public emitEmptyButtonClick(rowsGroup: MTableRowsGroup): void { }
 
     public horizontalScrollOffsetInterne: number = 0;
     public hasHorizontalScroll: boolean = false;
@@ -284,18 +286,6 @@ export class MResponsiveTable extends ModulVue {
             this.defaultEmptyArea &&
             Object.keys(this.defaultEmptyArea).length > 0
         );
-    }
-
-    public getEmptyAreaHeaderText(rowsGroup: MTableRowsGroup): string {
-        if (rowsGroup.emptyArea && rowsGroup.emptyArea.headerText) {
-            return rowsGroup.emptyArea.headerText;
-        } else if (
-            this.hasDefaultEmptyArea &&
-            this.defaultEmptyArea!.headerText
-        ) {
-            return this.defaultEmptyArea!.headerText;
-        }
-        return '';
     }
 }
 

@@ -5,8 +5,10 @@ import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/
 import { MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
+import { importAllSvg } from '../svg/svg-importation';
 import './group-header-custom-class-name.css';
-import { COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS, DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE, DEFAULT_TABLE_ROWS, DEFAULT_TABLE_ROW_1, DEFAULT_TABLE_ROW_2, DEFAULT_TABLE_ROW_3, DEFAULT_TABLE_ROW_GROUPS_2, getScopeSlotTemplate } from './responsive-table-data';
+import { COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS, DEFAULT_EMPTY_AREA, DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE, DEFAULT_TABLE_ROWS, DEFAULT_TABLE_ROWS_GROUP_3, DEFAULT_TABLE_ROWS_GROUP_EMPTY_1, DEFAULT_TABLE_ROW_1, DEFAULT_TABLE_ROW_2, DEFAULT_TABLE_ROW_3, DEFAULT_TABLE_ROW_GROUPS_2, getScopeSlotTemplate } from './responsive-table-data';
+
 
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}`,
@@ -43,10 +45,10 @@ export const Sandbox = () => ({
             default: boolean('Prop waiting', false)
         },
         firstColumnFixedActive: {
-            default: boolean('Prop first-column-fixed-active', false)
+            default: boolean('Prop first-column-fixed-active', true)
         },
         tableMinWidth: {
-            default: text('Prop table-min-width', '1600px')
+            default: text('Prop table-min-width', '1200px')
         },
         rowHighlightedOnHover: {
             default: boolean('Prop row-highlighted-on-hover', true)
@@ -147,7 +149,6 @@ export const Sandbox = () => ({
         :first-column-fixed-active="firstColumnFixedActive"
         :table-min-width="tableMinWidth"
         :waiting="waiting"
-        :table-min-width="'1000px'"
         :default-empty-area="defaultEmptyArea"
         :head-style="headStyle"
         :rows-style="rowsStyle"
@@ -260,6 +261,36 @@ export const TableWithData = () => ({
     />`
 });
 
+export const TableWithoutHead = () => ({
+    data: () => ({
+        columns: DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE,
+        rows: DEFAULT_TABLE_ROWS
+    }),
+    template: `<${RESPONSIVE_TABLE_NAME}
+        id="TableWithData"
+        :display-table-head="false"
+        :columns="columns"
+        :rows="rows"
+    />`
+});
+
+export const TableWithoutData = () => ({
+    data: () => ({
+        columns: DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE,
+        defaultEmptyArea: DEFAULT_EMPTY_AREA
+    }),
+    methods: actions('emitEmptyButtonClick'),
+    beforeCreate() {
+        importAllSvg();
+    },
+    template: `<${RESPONSIVE_TABLE_NAME}
+        id="TableWithoutData"
+        :columns="columns"
+        :default-empty-area="defaultEmptyArea"
+        @empty-button-click="emitEmptyButtonClick"
+    />`
+});
+
 export const Sortable = () => ({
     data: () => ({
         columns: DEFAULT_TABLE_COLUMNS,
@@ -289,6 +320,19 @@ export const Waiting = () => ({
     />`
 });
 
+export const WaitingWithoutData = () => ({
+    data: () => ({
+        columns: DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE,
+        defaultEmptyArea: DEFAULT_EMPTY_AREA
+    }),
+    template: `<${RESPONSIVE_TABLE_NAME}
+        id="WaitingWithoutData"
+        :columns="columns"
+        :default-empty-area="defaultEmptyArea"
+        :waiting="true"
+    />`
+});
+
 export const ComplexHeadRows = () => ({
     data: () => ({
         headRows: COMPLEX_TABLE_HEAD_ROWS,
@@ -300,6 +344,7 @@ export const ComplexHeadRows = () => ({
         :head-rows="headRows"
         :rows="rows"
         :rows-style="rowsStyle"
+        table-min-width="900px"
     />`
 });
 
@@ -356,6 +401,27 @@ export const RowGroupsWithHeader = () => ({
         :columns="columns"
         :row-groups="rowGroups"
         :rows-style="rowsStyle"
+    />`
+});
+
+export const RowGroupsEmpty = () => ({
+    data: () => ({
+        columns: DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE,
+        rowGroups: [
+            DEFAULT_TABLE_ROWS_GROUP_EMPTY_1,
+            DEFAULT_TABLE_ROWS_GROUP_3
+        ]
+    }),
+    beforeCreate() {
+        importAllSvg();
+    },
+    methods: actions('emitEmptyButtonClick'),
+    template: `<${RESPONSIVE_TABLE_NAME}
+        id="RowGroupsEmpty"
+        :columns="columns"
+        :row-groups="rowGroups"
+        table-min-width="820px"
+        @empty-button-click="emitEmptyButtonClick"
     />`
 });
 

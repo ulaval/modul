@@ -23,7 +23,10 @@ export enum MEmptyAreaButtonType {
 })
 export class MEmptyArea extends ModulVue {
     @Prop()
-    public readonly text?: string;
+    public readonly title?: string;
+
+    @Prop()
+    public readonly subtitle?: string;
 
     @Prop()
     public readonly buttonText?: string;
@@ -41,7 +44,7 @@ export class MEmptyArea extends ModulVue {
     public readonly buttonSkin: MButtonSkin = MButtonSkin.Secondary;
 
     @Emit('button-click')
-    public emitButtonClick(): void { }
+    public emitButtonClick(event: MouseEvent): void { }
 
     public get isButtonTypeAdd(): boolean {
         this.$svgSprite.addSvg(ModulIconName.Calendar, require('./../../assets/icons/svg/calendar.svg'));

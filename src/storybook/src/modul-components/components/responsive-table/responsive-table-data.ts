@@ -1,4 +1,5 @@
-import { MTableAccordion, MTableAccordionIconPosition, MTableColspan, MTableColumn, MTableHeader, MTableHeadRows, MTableRow, MTableRowsGroup, MTableSortDirection, MTableTextAlign } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { MTableAccordion, MTableAccordionIconPosition, MTableColspan, MTableColumn, MTableEmptyArea, MTableHeader, MTableHeadRows, MTableRow, MTableRowsGroup, MTableSortDirection, MTableTextAlign } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
+import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 
 export const getTableColumn: (
     name: string,
@@ -50,6 +51,12 @@ const getDefaultTableColumns = (isSortable: boolean = true) => {
 
 export const DEFAULT_TABLE_COLUMNS: MTableColumn[] = getDefaultTableColumns(true);
 export const DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE: MTableColumn[] = getDefaultTableColumns(false);
+
+export const DEFAULT_EMPTY_AREA: MTableEmptyArea = {
+    title: 'No data to display',
+    svgName: ModulIconName.FolderOpen,
+    buttonText: 'Add content'
+};
 
 export const DEFAULT_TABLE_ROW_1: MTableRow = {
     cells: {
@@ -267,6 +274,22 @@ export const DEFAULT_TABLE_ROWS_GROUP_6: MTableRowsGroup = {
     ]
 };
 
+export const DEFAULT_TABLE_ROWS_GROUP_EMPTY_1: MTableRowsGroup = {
+    name: 'groupEmpty1',
+    header: {
+        title: 'Group empty'
+    },
+    rows: [],
+    accordion: {
+        open: true
+    },
+    emptyArea: {
+        title: 'No data',
+        svgName: ModulIconName.Grid,
+        buttonText: 'Add row'
+    }
+};
+
 export const DEFAULT_TABLE_ROWS: MTableRow[] = [
     DEFAULT_TABLE_ROW_1,
     DEFAULT_TABLE_ROW_2,
@@ -355,14 +378,14 @@ export const COMPLEX_TABLE_MAIN_COLUMNS: MTableColumn[] = [
         width: '120px',
         textAlign: MTableTextAlign.Center
     },
-    getTableColumn(COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'User Name'),
-    getTableColumn(COMPLEX_TABLE_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'Name'),
-    getTableColumn(COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_A_COLUMN_NAME, 'User Name'),
-    getTableColumn(COMPLEX_TABLE_NAME_AFTER_FOLDER_A_COLUMN_NAME, 'Name'),
-    getTableColumn(COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_B_COLUMN_NAME, 'User Name'),
-    getTableColumn(COMPLEX_TABLE_NAME_BEFORE_FOLDER_B_COLUMN_NAME, 'Name'),
-    getTableColumn(COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_B_COLUMN_NAME, 'User Name'),
-    getTableColumn(COMPLEX_TABLE_NAME_AFTER_FOLDER_B_COLUMN_NAME, 'Name')
+    getTableColumn(COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'User Name', false),
+    getTableColumn(COMPLEX_TABLE_NAME_BEFORE_FOLDER_A_COLUMN_NAME, 'Name', false),
+    getTableColumn(COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_A_COLUMN_NAME, 'User Name', false),
+    getTableColumn(COMPLEX_TABLE_NAME_AFTER_FOLDER_A_COLUMN_NAME, 'Name', false),
+    getTableColumn(COMPLEX_TABLE_USER_NAME_BEFORE_FOLDER_B_COLUMN_NAME, 'User Name', false),
+    getTableColumn(COMPLEX_TABLE_NAME_BEFORE_FOLDER_B_COLUMN_NAME, 'Name', false),
+    getTableColumn(COMPLEX_TABLE_USER_NAME_AFTER_FOLDER_B_COLUMN_NAME, 'User Name', false),
+    getTableColumn(COMPLEX_TABLE_NAME_AFTER_FOLDER_B_COLUMN_NAME, 'Name', false)
 ];
 
 export const getComplexTableRow = (
@@ -579,9 +602,7 @@ export const ROWS_GROUP: MTableRowsGroup = {
         }
     ],
     emptyArea: {
-        headerText: 'Message header contenu vide',
-        text: 'Message corps empty-area'
-        // iconName: 'm-svg__clock',
+        title: 'No data'
     }
 };
 

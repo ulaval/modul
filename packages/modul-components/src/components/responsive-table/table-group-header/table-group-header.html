@@ -1,4 +1,4 @@
-<tr v-if="hasHeader || emptyAreaTextHeader"
+<tr v-if="hasHeader"
     class="m-table-group-header"
     :class="[
         {
@@ -17,7 +17,7 @@
     @click="toggleAccordeon($event)"
     @keyup.self.enter="toggleAccordeon($event)">
     <th v-if="hasHeaderWithoutCell ||
-            (emptyAreaTextHeader && !hasHeaderCell && !hasHeader)"
+            (!hasHeaderCell && !hasHeader)"
         class="m--is-text-align-left"
         :colspan="totalColumnsLength">
         <div class="m-table-group-header__cell"
@@ -35,9 +35,6 @@
                       :title="rowsGroup.header.title">
                     <template v-if="rowsGroup.header.title">
                         {{ rowsGroup.header.title }}
-                    </template>
-                    <template v-else-if="emptyAreaTextHeader">
-                        {{ emptyAreaTextHeader }}
                     </template>
                 </slot>
             </div>

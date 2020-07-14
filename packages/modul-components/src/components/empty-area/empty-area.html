@@ -10,16 +10,20 @@
             {{ buttonText }}
         </m-button>
     </template>
-    <div v-if="svgName || text"
-         class="m-empty-area__icon-wrap">
+    <div v-if="svgName || title || subtitle"
+         class="m-empty-area__icon-area">
         <m-svg v-if="svgName"
                class="m-empty-area__icon"
                :name="svgName"
                width="60px"
                height="60px" />
-        <p v-if="text"
-           class="m-empty-area__icon-text">
-            {{ text }}
+        <p v-if="title"
+           class="m-empty-area__title">
+            <strong>{{ title }}</strong>
+        </p>
+        <p v-if="subtitle"
+           class="m-empty-area__subtitle">
+            {{ subtitle }}
         </p>
     </div>
 </div>

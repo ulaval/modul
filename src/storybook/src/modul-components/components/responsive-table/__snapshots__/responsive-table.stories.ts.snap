@@ -14,7 +14,7 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
   >
     <div
       class="m-auto-horizontal-scroll__body-content"
-      style="min-width: 100%;"
+      style="min-width: 900px;"
     >
       <table
         cellspacing="0"
@@ -107,315 +107,75 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userNameBeforeFolderA-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    User Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                User Name
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userBeforeFolderA-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                Name
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userNameAfterFolderA-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    User Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                User Name
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userAfterFolderA-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                Name
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userNameBeforeFolderB-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    User Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                User Name
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userBeforeFolderB-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                Name
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userNameAfterFolderB-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    User Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                User Name
               </div>
             </th>
             <th
-              class="m--is-sortable m--is-text-align-left"
+              class="m--is-text-align-left"
               id="userAfterFolderB-idTable"
               scope="col"
             >
-              <div
-                class="m-table-head__cell"
-              >
-                <div
-                  class="m-table-head__cell-content"
-                >
-                  <div>
-                    Name
-                  </div>
-                   
-                  <button
-                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
-                    style="width: 14px; height: 14px;"
-                    type="button"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-icon-button__icon"
-                      height="12px"
-                      width="12px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                     
-                    <!---->
-                  </button>
-                </div>
+              <div>
+                Name
               </div>
             </th>
           </tr>
@@ -830,6 +590,384 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
                             
             </td>
           </tr>
+           
+          <!---->
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 820px;"
+    >
+      <table
+        cellspacing="0"
+        id="idTable"
+      >
+        <thead
+          class="m-table-head m--is-head-style-light"
+        >
+          <tr>
+            <th
+              class="m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
+            >
+              <div>
+                Name
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div>
+                Id
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div>
+                Email
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div>
+                Date of birth
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div>
+                Phone number
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <!---->
+         
+        <tbody
+          class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+        >
+          <tr
+            class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            tabindex="0"
+          >
+            <th
+              class="m--is-text-align-left"
+              colspan="5"
+            >
+              <div
+                class="m-table-group-header__cell"
+                style="width: 100%;"
+              >
+                <span
+                  class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large"
+                />
+                 
+                <div
+                  class="m-table-group-header__content-cell"
+                >
+                  <div>
+                    Group empty
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+            
+          <tr
+            class="m-table-empty-row"
+          >
+            <td
+              colspan="5"
+            >
+              <div
+                class="m-empty-area"
+                style="left: 0px; width: 100%;"
+              >
+                <a
+                  class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-link__icon"
+                    height="24px"
+                    width="24px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                   
+                  <span
+                    class="m-link__text"
+                  >
+                    
+            Add row
+        
+                  </span>
+                   
+                  <!---->
+                </a>
+                 
+                <div
+                  class="m-empty-area__icon-area"
+                >
+                  <!---->
+                   
+                  <p
+                    class="m-empty-area__title"
+                  >
+                    <strong>
+                      No data
+                    </strong>
+                  </p>
+                   
+                  <!---->
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tbody
+          class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+        >
+          <tr
+            class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            tabindex="0"
+          >
+            <th
+              class="m--is-text-align-left"
+            >
+              <div
+                class="m-table-group-header__cell"
+              >
+                <span
+                  class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
+                />
+                 
+                <div
+                  class="m-table-group-header__content-cell"
+                >
+                  <!---->
+                   
+                  <div>
+                    ANI-1101
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              colspan="4"
+            >
+              <div
+                class="m-table-group-header__cell"
+              >
+                <!---->
+                 
+                <div
+                  class="m-table-group-header__content-cell"
+                >
+                  <!---->
+                   
+                  <div>
+                    Motion design
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+            >
+              <!---->
+            </th>
+            <th
+              class="m--is-text-align-left"
+            >
+              <!---->
+            </th>
+            <th
+              class="m--is-text-align-left"
+            >
+              <!---->
+            </th>
+          </tr>
+           
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+              scope="row"
+            >
+              
+                                Vincent Guilmette
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 222 333
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                vincent.gui@gmail.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1976-12-05
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                819 232-3754
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Charles Maheu
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 322 344
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                charles.maheu@outlook.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1980-06-11
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                418 233-4744
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Pierre Olivier Boulet
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                112 528 967
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                po.boulet@gmail.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1994-04-08
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                819 135-3460
+                            
+            </td>
+          </tr>
+           
+          <!---->
         </tbody>
          
         <!---->
@@ -1079,6 +1217,8 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Accordio
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
         <tbody
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
@@ -1357,6 +1497,8 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header 1
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
         <tbody
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
@@ -1499,6 +1641,8 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header 1
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
         <tbody
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
@@ -1641,6 +1785,8 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header 1
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
          
         <!---->
@@ -1919,6 +2065,8 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header C
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
         <tbody
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
@@ -2093,6 +2241,8 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header C
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
          
         <!---->
@@ -2138,7 +2288,7 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
   >
     <div
       class="m-auto-horizontal-scroll__body-content"
-      style="min-width: 1000px;"
+      style="min-width: 1200px;"
     >
       <table
         cellspacing="0"
@@ -2438,6 +2588,8 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
         <tbody
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
@@ -2618,6 +2770,8 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
         <tbody
           class="m-table-group m--is-disabled m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
@@ -2823,6 +2977,8 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
         <tbody
           class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
@@ -2943,6 +3099,8 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
          
         <!---->
@@ -3317,6 +3475,8 @@ exports[`Storyshots modul-components|m-responsive-table Sortable 1`] = `
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
          
         <!---->
@@ -3541,6 +3701,347 @@ exports[`Storyshots modul-components|m-responsive-table Table With Data 1`] = `
                             
             </td>
           </tr>
+           
+          <!---->
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table Table Without Data 1`] = `
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
+    >
+      <table
+        cellspacing="0"
+        id="idTable"
+      >
+        <thead
+          class="m-table-head m--is-head-style-light"
+        >
+          <tr>
+            <th
+              class="m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
+            >
+              <div>
+                Name
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div>
+                Id
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div>
+                Email
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div>
+                Date of birth
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div>
+                Phone number
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <!---->
+          
+        <tbody>
+          <tr
+            class="m-table-empty-row"
+          >
+            <td
+              colspan="5"
+            >
+              <div
+                class="m-empty-area"
+                style="left: 0px; width: 100%;"
+              >
+                <a
+                  class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+                  href="#"
+                  role="button"
+                  tabindex="0"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-link__icon"
+                    height="24px"
+                    width="24px"
+                  >
+                    <!---->
+                     
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
+                   
+                  <span
+                    class="m-link__text"
+                  >
+                    
+            Add content
+        
+                  </span>
+                   
+                  <!---->
+                </a>
+                 
+                <div
+                  class="m-empty-area__icon-area"
+                >
+                  <!---->
+                   
+                  <p
+                    class="m-empty-area__title"
+                  >
+                    <strong>
+                      No data to display
+                    </strong>
+                  </p>
+                   
+                  <!---->
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table Table Without Head 1`] = `
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
+    >
+      <table
+        cellspacing="0"
+        id="idTable"
+      >
+        <!---->
+         
+        <!---->
+         
+        <tbody
+          class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+        >
+          <!---->
+           
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+              scope="row"
+            >
+              
+                                Vincent Guilmette
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 222 333
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                vincent.gui@gmail.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1976-12-05
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                819 232-3754
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Charles Maheu
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 322 344
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                charles.maheu@outlook.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1980-06-11
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                418 233-4744
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Pierre Olivier Boulet
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                112 528 967
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                po.boulet@gmail.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1994-04-08
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                819 135-3460
+                            
+            </td>
+          </tr>
+           
+          <!---->
         </tbody>
          
         <!---->
@@ -3783,9 +4284,163 @@ exports[`Storyshots modul-components|m-responsive-table Waiting 1`] = `
                             
             </td>
           </tr>
+           
+          <!---->
         </tbody>
          
         <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table Waiting Without Data 1`] = `
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
+    >
+      <table
+        cellspacing="0"
+        id="idTable"
+      >
+        <thead
+          class="m-table-head m--is-head-style-light"
+        >
+          <tr>
+            <th
+              class="m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
+            >
+              <div>
+                Name
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div>
+                Id
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div>
+                Email
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div>
+                Date of birth
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div>
+                Phone number
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <tr
+          class="m-responsive-table__waiting"
+        >
+          <td
+            colspan="5"
+          >
+            <div
+              class="m-progress m--is-indeterminate m--is-in-progress"
+              style="height: 6px; border-radius: initial; left: 0px; width: 100%;"
+            >
+              <div
+                class="m-progress__bar"
+                style="width: 0%; border-bottom-left-radius: initial; border-top-left-radius: initial;"
+              />
+               
+              <!---->
+            </div>
+          </td>
+        </tr>
+          
+        <tbody>
+          <tr
+            class="m-table-empty-row"
+          >
+            <td
+              colspan="5"
+            >
+              <div
+                class="m-empty-area"
+                style="left: 0px; width: 100%;"
+              >
+                <!---->
+                 
+                <div
+                  class="m-empty-area__icon-area"
+                >
+                  <!---->
+                   
+                  <p
+                    class="m-empty-area__title"
+                  >
+                    <strong>
+                      Chargement en cours
+                    </strong>
+                  </p>
+                   
+                  <!---->
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>

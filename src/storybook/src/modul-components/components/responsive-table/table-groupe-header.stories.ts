@@ -3,6 +3,7 @@ import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { RESPONSIVE_TABLE_NAME, TABLE_GROUP_HEADER_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableRowsGroup } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
+import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 import { DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_ROWS_GROUP_1, getScopeSlotTemplate } from './responsive-table-data';
 
@@ -44,9 +45,8 @@ export const Sandbox = () => ({
         },
         defaultEmptyArea: {
             default: object<MTableEmptyArea>('Prop default-empty-area', {
-                headerText: 'Default empty area: headerText',
-                text: 'Default empty area: text',
-                svgName: 'm-svg__clock'
+                title: 'Default empty area: text',
+                svgName: ModulIconName.HelpCircle
             })
         },
         columns: {
