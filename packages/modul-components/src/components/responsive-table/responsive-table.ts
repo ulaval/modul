@@ -133,10 +133,8 @@ export class MResponsiveTable extends ModulVue {
     })
     public readonly tableMinWidth!: string;
 
-    @Prop({
-        default: 0
-    })
-    public readonly horizontalScrollOffset!: number;
+    @Prop()
+    public readonly horizontalScrollOffset?: number;
 
     @Prop({
         default: true
@@ -172,8 +170,8 @@ export class MResponsiveTable extends ModulVue {
     public emitNextButtonClick(event: MouseEvent): void { }
 
     @Watch('horizontalScrollOffset', { immediate: true })
-    public onHorizontalScrollOffsetChangement(value: number): void {
-        if (this.horizontalScrollOffsetInterne !== value) {
+    public onHorizontalScrollOffsetChangement(value: number | undefined): void {
+        if (this.horizontalScrollOffsetInterne !== value && value) {
             this.horizontalScrollOffsetInterne = value;
         }
     }

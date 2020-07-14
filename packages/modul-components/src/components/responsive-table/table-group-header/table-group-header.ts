@@ -64,7 +64,7 @@ export class MTableGroupHeader extends ModulVue {
         [key: string]: string | undefined;
     } {
         return {
-            left: this.as<MTableGroupMixin>().firstColumnFixed
+            left: this.as<MTableGroupMixin>().firstColumnFixed && this.horizontalScrollOffset
                 ? `${this.horizontalScrollOffset}px`
                 : undefined
         };

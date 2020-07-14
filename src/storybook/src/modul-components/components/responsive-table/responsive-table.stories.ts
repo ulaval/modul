@@ -163,7 +163,6 @@ export const Sandbox = () => ({
         :previous-button-text="previousButtonText"
         :next-button-text="nextButtonText"
         :gradient-style="gradientStyle"
-        :horizontal-scroll-offset.sync="horizontalScrollOffset"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
         @horizontal-scollbar-width="emitHorizontalScollbarWidth"
         @sort="emitSort"
