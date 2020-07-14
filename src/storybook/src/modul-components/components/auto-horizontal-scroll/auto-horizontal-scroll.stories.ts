@@ -1,6 +1,6 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
-import { MAutoHorizontalScrollGradientBackgroundStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
+import { MAutoHorizontalScrollGradientStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import { AUTO_HORIZONTAL_SCROLL } from '@ulaval/modul-components/dist/components/component-names';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -45,13 +45,13 @@ const getTemplate = (
         rightGradientActive: {
             default: boolean('Prop right-gradient-active', _rightGradientActive)
         },
-        gradientBackgroundStyle: {
+        gradientStyle: {
             default: select(
-                'Prop gradient-background-style',
+                'Prop gradient-style',
                 Enums.toValueArray(
-                    MAutoHorizontalScrollGradientBackgroundStyle
+                    MAutoHorizontalScrollGradientStyle
                 ),
-                MAutoHorizontalScrollGradientBackgroundStyle.White
+                MAutoHorizontalScrollGradientStyle.White
             )
         },
         displayHorizontalScrollbar: {
@@ -74,8 +74,8 @@ const getTemplate = (
         :next-button-active="nextButtonActive"
         :previous-button-text="previousButtonText"
         :next-button-text="nextButtonText"
+        :gradient-style="gradientStyle"
         :horizontal-scroll-offset.sync="horizontalScrollOffset"
-        :gradient-background-style="gradientBackgroundStyle"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
         @previous-button-click="emitPreviousButtonClick"
         @next-button-click="emitNextButtonClick"

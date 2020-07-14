@@ -8,7 +8,7 @@ import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
 
-export enum MAutoHorizontalScrollGradientBackgroundStyle {
+export enum MAutoHorizontalScrollGradientStyle {
     White = 'white',
     Light = 'light',
     Dark = 'dark',
@@ -52,13 +52,13 @@ export class MAutoHorizontalScroll extends ModulVue {
     public readonly dragActive!: boolean;
 
     @Prop({
-        default: MAutoHorizontalScrollGradientBackgroundStyle.White,
-        validator: (value: MAutoHorizontalScrollGradientBackgroundStyle) =>
+        default: MAutoHorizontalScrollGradientStyle.White,
+        validator: (value: MAutoHorizontalScrollGradientStyle) =>
             Enums.toValueArray(
-                MAutoHorizontalScrollGradientBackgroundStyle
+                MAutoHorizontalScrollGradientStyle
             ).includes(value)
     })
-    public readonly gradientBackgroundStyle!: MAutoHorizontalScrollGradientBackgroundStyle;
+    public readonly gradientStyle!: MAutoHorizontalScrollGradientStyle;
 
     @Prop({
         default: true
@@ -199,36 +199,36 @@ export class MAutoHorizontalScroll extends ModulVue {
         return this.nextButtonActive && this.couldHaveRightContent;
     }
 
-    public get isGradientBackgroundStyleWhite(): boolean {
+    public get isGradientStyleWhite(): boolean {
         return (
-            this.gradientBackgroundStyle ===
-            MAutoHorizontalScrollGradientBackgroundStyle.White
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.White
         );
     }
 
-    public get isGradientBackgroundStyleLight(): boolean {
+    public get isGradientStyleLight(): boolean {
         return (
-            this.gradientBackgroundStyle ===
-            MAutoHorizontalScrollGradientBackgroundStyle.Light
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.Light
         );
     }
 
-    public get isGradientBackgroundStyleDark(): boolean {
+    public get isGradientStyleDark(): boolean {
         return (
-            this.gradientBackgroundStyle ===
-            MAutoHorizontalScrollGradientBackgroundStyle.Dark
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.Dark
         );
     }
 
-    public get isGradientBackgroundStyleInteractive(): boolean {
+    public get isGradientStyleInteractive(): boolean {
         return (
-            this.gradientBackgroundStyle ===
-            MAutoHorizontalScrollGradientBackgroundStyle.Interactive
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.Interactive
         );
     }
 
     public get iconButtonSkin(): string {
-        return this.isGradientBackgroundStyleDark || this.isGradientBackgroundStyleInteractive
+        return this.isGradientStyleDark || this.isGradientStyleInteractive
             ? MIconButtonSkin.Dark
             : MIconButtonSkin.Light;
     }

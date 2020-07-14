@@ -5,7 +5,7 @@ import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
 import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-validation';
-import { MAutoHorizontalScroll } from './../auto-horizontal-scroll/auto-horizontal-scroll';
+import { MAutoHorizontalScroll, MAutoHorizontalScrollGradientStyle, MAutoHorizontalScrollResizeProperties } from './../auto-horizontal-scroll/auto-horizontal-scroll';
 import { MProgress } from './../progress/progress';
 import { getHeadRowsFilterAndSort, getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
@@ -41,22 +41,13 @@ export class MResponsiveTable extends ModulVue {
     @Prop()
     public readonly rows?: MTableRow[];
 
+    @Prop()
+    public readonly defaultEmptyArea?: MTableEmptyArea;
+
     @Prop({
         default: false
     })
     public readonly waiting!: boolean;
-
-    @Prop({
-        default: false
-    })
-    public readonly firstColumnFixed!: boolean;
-
-    @Prop({
-        default: '1000px',
-        validator: (value: string) =>
-            REGEX_CSS_NUMBER_VALUE.test(value)
-    })
-    public readonly tableMinWidth!: string;
 
     @Prop({ default: true })
     public readonly displayTableHead!: boolean;
@@ -91,20 +82,70 @@ export class MResponsiveTable extends ModulVue {
     public readonly groupHeaderClassName: string;
 
     @Prop({
+        default: true
+    })
+    public readonly dragActive!: boolean;
+
+    @Prop({
+        default: true
+    })
+    public readonly leftGradientActive!: boolean;
+
+    @Prop({
+        default: true
+    })
+    public readonly rightGradientActive!: boolean;
+
+    @Prop({
+        default: MAutoHorizontalScrollGradientStyle.White,
+        validator: (value: MAutoHorizontalScrollGradientStyle) =>
+            Enums.toValueArray(
+                MAutoHorizontalScrollGradientStyle
+            ).includes(value)
+    })
+    public readonly gradientStyle!: MAutoHorizontalScrollGradientStyle;
+
+    @Prop({
+        default: false
+    })
+    public readonly previousButtonActive!: boolean;
+
+    @Prop({
+        default: false
+    })
+    public readonly nextButtonActive!: boolean;
+
+    @Prop()
+    public readonly previousButtonText?: string;
+
+    @Prop()
+    public readonly nextButtonText?: string;
+
+    @Prop({
+        default: false
+    })
+    public readonly firstColumnFixedActive!: boolean;
+
+    @Prop({
+        default: '100%',
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
+    public readonly tableMinWidth!: string;
+
+    @Prop({
         default: 0
     })
     public readonly horizontalScrollOffset!: number;
-
-    @Prop()
-    public readonly defaultEmptyArea?: MTableEmptyArea;
 
     @Prop({
         default: true
     })
     public readonly displayHorizontalScrollbar!: boolean;
 
+
     public horizontalScrollOffsetInterne: number = 0;
-    public hasDefilementVertical: boolean = false;
+    public hasHorizontalScroll: boolean = false;
     public tableComponentWidth: string = '100%';
 
     @Emit('sort')
@@ -113,14 +154,20 @@ export class MResponsiveTable extends ModulVue {
     @Emit('update:horizontalScrollOffset')
     public emitUpdateHorizontalScrollOffset(_horizontalScrollOffset: number): void { }
 
-    @Emit('scrollbar-width')
-    public emitScrollbarWidth(_scrollbarWidth: number): void { }
+    @Emit('horizontal-scollbar-width')
+    public emitHorizontalScollbarWidth(_scrollbarWidth: number): void { }
 
     @Emit('open-accordion')
     public emitOpenAccordion(rowsGroup: MTableRowsGroup): void { }
 
     @Emit('close-accordion')
     public emitCloseAccordion(rowsGroup: MTableRowsGroup): void { }
+
+    @Emit('previous-button-click')
+    public emitPreviousButtonClick(event: MouseEvent): void { }
+
+    @Emit('next-button-click')
+    public emitNextButtonClick(event: MouseEvent): void { }
 
     @Watch('horizontalScrollOffset', { immediate: true })
     public onHorizontalScrollOffsetChangement(value: number): void {
@@ -217,16 +264,19 @@ export class MResponsiveTable extends ModulVue {
         return this.horizontalScrollOffsetInterne;
     }
 
-    public get isFirstColumnFixed(): boolean {
-        return this.firstColumnFixed && this.hasDefilementVertical;
+    public get firstColumnFixed(): boolean {
+        return this.firstColumnFixedActive && this.hasHorizontalScroll;
     }
 
     public resizeComponant(
-        proprieteRedimension: any
+        properties: MAutoHorizontalScrollResizeProperties
     ): void {
-        this.hasDefilementVertical = proprieteRedimension.hasDefilementVertical;
-        this.tableComponentWidth = proprieteRedimension.largeurComposant;
-        this.emitScrollbarWidth(proprieteRedimension.largeurBarreDefilement);
+        if (!properties) {
+            return;
+        }
+        this.hasHorizontalScroll = properties.hasHorizontalScroll;
+        this.tableComponentWidth = properties.componentWidth;
+        this.emitHorizontalScollbarWidth(properties.horizontalScollbarWidth);
     }
 
     public get hasDefaultEmptyArea(): boolean {

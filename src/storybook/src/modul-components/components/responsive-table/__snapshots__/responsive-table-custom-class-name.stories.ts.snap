@@ -1,334 +1,398 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots modul-components|m-responsive-table/Custom class-name Cells 1`] = `
-<mpo-defilement-horizontal-automatique
-  afficher-barre-defilement="true"
-  class="m-responsive-table"
-  horizontal-scroll-offset="0"
-  degrade-gauche-actif="true"
-  largeur-minimale="1000px"
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
-  <table
-    cellspacing="0"
-    id="idTable"
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
   >
-    <thead
-      class="m-table-head m--is-head-style-light"
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
     >
-      <tr>
-        <th
-          class="m--is-sorted m--is-text-align-left"
-          id="name-idTable"
-          scope="col"
+      <table
+        cellspacing="0"
+        id="idTable"
+      >
+        <thead
+          class="m-table-head m--is-head-style-light"
         >
-          <div>
-            Name
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-center"
-          id="id-idTable"
-          scope="col"
+          <tr>
+            <th
+              class="m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
+            >
+              <div>
+                Name
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div>
+                Id
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div>
+                Email
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div>
+                Date of birth
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div>
+                Phone number
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <!---->
+         
+        <tbody
+          class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
-          <div>
-            Id
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-left"
-          id="email-idTable"
-          scope="col"
-        >
-          <div>
-            Email
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-left"
-          id="dateOfBirth-idTable"
-          scope="col"
-        >
-          <div>
-            Date of birth
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-left"
-          id="phoneNumber-idTable"
-          scope="col"
-        >
-          <div>
-            Phone number
-          </div>
-        </th>
-      </tr>
-    </thead>
-
-    <!---->
-
-    <tbody
-      class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
-    >
-      <!---->
-
-      <tr>
-        <th
-          class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
-          scope="row"
-        >
-
+          <!---->
+           
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+              scope="row"
+            >
+              
                                 Vincent Guilmette
-
-        </th>
-        <td
-          class="m-table-group__cell m--is-text-align-center test-cell-custom-class-name"
-        >
-
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center test-cell-custom-class-name"
+            >
+              
                                 111 222 333
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 vincent.gui@gmail.com
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 1976-12-05
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 819 232-3754
-
-        </td>
-      </tr>
-    </tbody>
-
-    <!---->
-  </table>
-</mpo-defilement-horizontal-automatique>
+                            
+            </td>
+          </tr>
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table/Custom class-name Group Header 1`] = `
-<mpo-defilement-horizontal-automatique
-  afficher-barre-defilement="true"
-  class="m-responsive-table"
-  horizontal-scroll-offset="0"
-  degrade-gauche-actif="true"
-  largeur-minimale="1000px"
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
-  <table
-    cellspacing="0"
-    id="idTable"
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
   >
-    <thead
-      class="m-table-head m--is-head-style-light"
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
     >
-      <tr>
-        <th
-          class="m--is-sorted m--is-text-align-left"
-          id="name-idTable"
-          scope="col"
-        >
-          <div>
-            Name
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-center"
-          id="id-idTable"
-          scope="col"
-        >
-          <div>
-            Id
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-left"
-          id="email-idTable"
-          scope="col"
-        >
-          <div>
-            Email
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-left"
-          id="dateOfBirth-idTable"
-          scope="col"
-        >
-          <div>
-            Date of birth
-          </div>
-        </th>
-        <th
-          class="m--is-text-align-left"
-          id="phoneNumber-idTable"
-          scope="col"
-        >
-          <div>
-            Phone number
-          </div>
-        </th>
-      </tr>
-    </thead>
-
-    <!---->
-
-    <tbody
-      class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
-    >
-      <tr
-        class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-any test-group-header-custom-class-name"
-        tabindex="0"
+      <table
+        cellspacing="0"
+        id="idTable"
       >
-        <th
-          class="m--is-text-align-left"
-          colspan="5"
+        <thead
+          class="m-table-head m--is-head-style-light"
         >
-          <div
-            class="m-table-group-header__cell"
-            style="width: 100%;"
-          >
-            <span
-              class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large test-icon-accordion-custom-class-name"
-            />
-
-            <div
-              class="m-table-group-header__content-cell"
+          <tr>
+            <th
+              class="m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
             >
               <div>
-                Group #1
+                Name
               </div>
-            </div>
-          </div>
-        </th>
-      </tr>
-
-      <tr>
-        <th
-          class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
-          scope="row"
+            </th>
+            <th
+              class="m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div>
+                Id
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div>
+                Email
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div>
+                Date of birth
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div>
+                Phone number
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <!---->
+         
+        <tbody
+          class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
-
+          <tr
+            class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-any test-group-header-custom-class-name"
+            tabindex="0"
+          >
+            <th
+              class="m--is-text-align-left"
+              colspan="5"
+            >
+              <div
+                class="m-table-group-header__cell"
+                style="width: 100%;"
+              >
+                <span
+                  class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large test-icon-accordion-custom-class-name"
+                />
+                 
+                <div
+                  class="m-table-group-header__content-cell"
+                >
+                  <div>
+                    Group #1
+                  </div>
+                </div>
+              </div>
+            </th>
+          </tr>
+           
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+              scope="row"
+            >
+              
                                 Vincent Guilmette
-
-        </th>
-        <td
-          class="m-table-group__cell m--is-text-align-center"
-        >
-
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
                                 111 222 333
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 vincent.gui@gmail.com
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 1976-12-05
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 819 232-3754
-
-        </td>
-      </tr>
-      <tr>
-        <th
-          class="m-table-group__cell m--is-text-align-left"
-          scope="row"
-        >
-
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
                                 Charles Maheu
-
-        </th>
-        <td
-          class="m-table-group__cell m--is-text-align-center"
-        >
-
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
                                 111 322 344
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 charles.maheu@outlook.com
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 1980-06-11
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 418 233-4744
-
-        </td>
-      </tr>
-      <tr>
-        <th
-          class="m-table-group__cell m--is-text-align-left"
-          scope="row"
-        >
-
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
                                 Pierre Olivier Boulet
-
-        </th>
-        <td
-          class="m-table-group__cell m--is-text-align-center"
-        >
-
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
                                 112 528 967
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 po.boulet@gmail.com
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 1994-04-08
-
-        </td>
-        <td
-          class="m-table-group__cell m--is-text-align-left"
-        >
-
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
                                 819 135-3460
-
-        </td>
-      </tr>
-    </tbody>
-
-    <!---->
-  </table>
-</mpo-defilement-horizontal-automatique>
+                            
+            </td>
+          </tr>
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
 `;

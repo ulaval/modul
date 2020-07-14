@@ -1,5 +1,6 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
+import { MAutoHorizontalScrollGradientStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
@@ -41,11 +42,47 @@ export const Sandbox = () => ({
         waiting: {
             default: boolean('Prop waiting', false)
         },
-        firstColumnFixed: {
-            default: boolean('Prop first-column-fixed', false)
+        firstColumnFixedActive: {
+            default: boolean('Prop first-column-fixed-active', false)
+        },
+        tableMinWidth: {
+            default: text('Prop table-min-width', '1600px')
         },
         rowHighlightedOnHover: {
             default: boolean('Prop row-highlighted-on-hover', true)
+        },
+        dragActive: {
+            default: boolean('Prop drag-active', true)
+        },
+        previousButtonActive: {
+            default: boolean('Prop previous-button-active', false)
+        },
+        nextButtonActive: {
+            default: boolean('Prop next-button-active', false)
+        },
+        previousButtonText: {
+            default: text('Prop previous-button-text', 'Previous')
+        },
+        nextButtonText: {
+            default: text('Prop next-button-text', 'Next')
+        },
+        leftGradientActive: {
+            default: boolean('Prop left-gradient-active', true)
+        },
+        rightGradientActive: {
+            default: boolean('Prop right-gradient-active', true)
+        },
+        gradientStyle: {
+            default: select(
+                'Prop gradient-style',
+                Enums.toValueArray(
+                    MAutoHorizontalScrollGradientStyle
+                ),
+                MAutoHorizontalScrollGradientStyle.White
+            )
+        },
+        displayHorizontalScrollbar: {
+            default: boolean('Prop display-horizontal-scrollbar', true)
         },
         slotHeadCell: {
             default: boolean('Slot head-cell', false)
@@ -90,10 +127,12 @@ export const Sandbox = () => ({
         }
     },
     methods: actions(
-        'emitScrollbarWidth',
+        'emitHorizontalScollbarWidth',
         'emitSort',
         'emitOpenAccordion',
-        'emitCloseAccordion'
+        'emitCloseAccordion',
+        'emitPreviousButtonClick',
+        'emitNextButtonClick'
     ),
     computed: {
         rows(): MTableRow[] | undefined {
@@ -105,7 +144,8 @@ export const Sandbox = () => ({
         id="Sandbox"
         :columns="columns"
         :row-groups="rowGroups"
-        :first-column-fixed="firstColumnFixed"
+        :first-column-fixed-active="firstColumnFixedActive"
+        :table-min-width="tableMinWidth"
         :waiting="waiting"
         :table-min-width="'1000px'"
         :default-empty-area="defaultEmptyArea"
@@ -114,10 +154,22 @@ export const Sandbox = () => ({
         :group-header-style="groupHeaderStyle"
         :group-header-class-name="groupHeaderClassName"
         :row-highlighted-on-hover="rowHighlightedOnHover"
-        @scrollbar-width="emitScrollbarWidth"
+        :drag-active="dragActive"
+        :left-gradient-active="leftGradientActive"
+        :right-gradient-active="rightGradientActive"
+        :previous-button-active="previousButtonActive"
+        :next-button-active="nextButtonActive"
+        :previous-button-text="previousButtonText"
+        :next-button-text="nextButtonText"
+        :gradient-style="gradientStyle"
+        :horizontal-scroll-offset.sync="horizontalScrollOffset"
+        :display-horizontal-scrollbar="displayHorizontalScrollbar"
+        @horizontal-scollbar-width="emitHorizontalScollbarWidth"
         @sort="emitSort"
         @open-accordion="emitOpenAccordion"
         @close-accordion="emitCloseAccordion"
+        @previous-button-click="emitPreviousButtonClick"
+        @next-button-click="emitNextButtonClick"
     >
         <template
             v-if="slotHeadCell"
