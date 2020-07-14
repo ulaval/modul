@@ -1,7 +1,8 @@
 import { PluginObject } from 'vue';
-import { Component, Emit, Prop, Vue } from 'vue-property-decorator';
+import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
+import { ModulVue } from '../../utils/vue/vue';
 import { EMPTY_AREA_NAME } from '../component-names';
 import { MAdd } from './../add/add';
 import {
@@ -20,7 +21,7 @@ export enum MEmptyAreaButtonType {
 @Component({
     components: { MButton, MAdd, MSvg }
 })
-default class MEmptyArea extends Vue {
+export class MEmptyArea extends ModulVue {
     @Prop()
     public readonly text?: string;
 
@@ -50,8 +51,7 @@ default class MEmptyArea extends Vue {
 
 
 const EmptyAreaPlugin: PluginObject<any> = {
-    install(v): void {
-        v.prototype.$log.debug(EMPTY_AREA_NAME, 'plugin.install');
+    install(v, options): void {
         v.component(EMPTY_AREA_NAME, MEmptyArea);
     }
 };
