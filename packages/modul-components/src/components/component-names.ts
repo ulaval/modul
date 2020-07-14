@@ -6,6 +6,7 @@ export const ADDRESS_AUTOCOMPLETE_FIELD_NAME: string = 'm-address-autocomplete-f
 export const ADDRESS_EDITOR_NAME: string = 'm-address-editor';
 export const ADDRESS_LOOKUP_FIELD_NAME: string = 'm-address-lookup-field';
 export const ADDRESS_READER: string = 'm-address-reader';
+export const AUTO_HORIZONTAL_SCROLL: string = 'm-auto-horizontal-scroll';
 export const AUTOCOMPLETE_NAME: string = 'm-autocomplete';
 export const AVATAR_NAME: string = 'm-avatar';
 export const BREADCRUMBS_NAME: string = 'm-breadcrumbs';
