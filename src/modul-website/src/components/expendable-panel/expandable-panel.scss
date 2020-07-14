@@ -72,9 +72,8 @@ $w-content-max-width: $mw-max-width;
         a {
             transition: font-weight $m-transition-duration--s linear;
             display: block;
-            height: 50px;
-            line-height: 50px;
-            padding-left: 12px;
+            line-height: 1.3;
+            padding: $m-spacing $m-spacing $m-spacing 12px;
             border-left: 2px solid $m-color--grey-light;
             margin-left: 1px;
             font-size: $m-font-size;

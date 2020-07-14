@@ -18,7 +18,7 @@
                            ref="leftButton"
                            :skin="iconButtonSkin"
                            :ripple="false"
-                           :title="textPreviousButton"
+                           :title="previousButtonText"
                            icon-name="m-svg__chevron--left"
                            @click="emitPreviousButtonClick($event)" />
         </div>
@@ -30,7 +30,7 @@
                            ref="rightButton"
                            :skin="iconButtonSkin"
                            :ripple="false"
-                           :title="textNextButton"
+                           :title="nextButtonText"
                            icon-name="m-svg__chevron--right"
                            @click="emitNextButtonClick($event)" />
         </div>

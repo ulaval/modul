@@ -10,13 +10,13 @@ export default {
     parameters: { fileName: __filename }
 };
 
-const TEMPLATE = (
+const getTemplate = (
     _previousButtonActive: boolean,
     _nextButtonActive: boolean,
     _leftGradientActive: boolean,
     _rightGradientActive: boolean,
-    _textPreviousButton: string = 'Previous',
-    _textNextButton: string = 'Next',
+    _previousButtonText: string = 'Previous',
+    _nextButtonText: string = 'Next',
     _dragActive: boolean = true,
     _displayHorizontalScrollbar: boolean = true
 ) => ({
@@ -33,11 +33,11 @@ const TEMPLATE = (
         nextButtonActive: {
             default: boolean('Prop next-button-active', _nextButtonActive)
         },
-        textPreviousButton: {
-            default: text('Prop text-previous-button', _textPreviousButton)
+        previousButtonText: {
+            default: text('Prop previous-button-text', _previousButtonText)
         },
-        textNextButton: {
-            default: text('Prop text-next-button', _textNextButton)
+        nextButtonText: {
+            default: text('Prop next-button-text', _nextButtonText)
         },
         leftGradientActive: {
             default: boolean('Prop left-gradient-active', _leftGradientActive)
@@ -72,8 +72,8 @@ const TEMPLATE = (
         :right-gradient-active="rightGradientActive"
         :previous-button-active="previousButtonActive"
         :next-button-active="nextButtonActive"
-        :text-previous-button="textPreviousButton"
-        :text-next-button="textNextButton"
+        :previous-button-text="previousButtonText"
+        :next-button-text="nextButtonText"
         :horizontal-scroll-offset.sync="horizontalScrollOffset"
         :gradient-background-style="gradientBackgroundStyle"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
@@ -90,22 +90,22 @@ const TEMPLATE = (
     </${AUTO_HORIZONTAL_SCROLL}>`
 });
 
-export const defaultStory = () => TEMPLATE(true, true, true, true);
+export const defaultStory = () => getTemplate(true, true, true, true);
 
 defaultStory.story = {
     name: 'Sandbox'
 };
 
-export const PreviousButtonActive = () => TEMPLATE(true, false, false, false);
-export const NextButtonActive = () => TEMPLATE(false, true, false, false);
+export const PreviousButtonActive = () => getTemplate(true, false, false, false);
+export const NextButtonActive = () => getTemplate(false, true, false, false);
 
-export const LeftGradientActive = () => TEMPLATE(false, false, true, false);
-export const RightGradientActive = () => TEMPLATE(false, false, false, true);
+export const LeftGradientActive = () => getTemplate(false, false, true, false);
+export const RightGradientActive = () => getTemplate(false, false, false, true);
 
-export const TextPreviousButton = () => TEMPLATE(true, false, false, false, 'Custom Previous');
-export const TextNextButton = () => TEMPLATE(false, true, false, false, 'Previous', 'Custom Next');
+export const PreviousButtonText = () => getTemplate(true, false, false, false, 'Custom Previous');
+export const NextButtonText = () => getTemplate(false, true, false, false, 'Previous', 'Custom Next');
 
-export const DragDisabled = () => TEMPLATE(true, true, false, false, 'Previous', 'Next', false);
-export const HideHorizontalScrollbar = () => TEMPLATE(true, true, false, false, 'Previous', 'Next', true, false);
+export const DragDisabled = () => getTemplate(true, true, false, false, 'Previous', 'Next', false);
+export const HideHorizontalScrollbar = () => getTemplate(true, true, false, false, 'Previous', 'Next', true, false);
 
 

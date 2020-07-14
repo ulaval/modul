@@ -256,7 +256,135 @@ exports[`Storyshots modul-components|m-auto-horizontal-scroll Next Button Active
 </div>
 `;
 
+exports[`Storyshots modul-components|m-auto-horizontal-scroll Next Button Text 1`] = `
+<div
+  class="m-auto-horizontal-scroll m--is-gradient-background-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 1900px;"
+    >
+      <div
+        style="background: rgb(31, 31, 31); padding: 32px; color: rgb(255, 255, 255); width: 100%;"
+      >
+        <p
+          class="m-u--no-margin"
+        >
+          Adjust the width of your browser to 
+          <strong>
+            1820px
+          </strong>
+           to be able to test the component.
+        </p>
+         
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+         
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-auto-horizontal-scroll Previous Button Active 1`] = `
+<div
+  class="m-auto-horizontal-scroll m--is-gradient-background-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 1900px;"
+    >
+      <div
+        style="background: rgb(31, 31, 31); padding: 32px; color: rgb(255, 255, 255); width: 100%;"
+      >
+        <p
+          class="m-u--no-margin"
+        >
+          Adjust the width of your browser to 
+          <strong>
+            1820px
+          </strong>
+           to be able to test the component.
+        </p>
+         
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+         
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-auto-horizontal-scroll Previous Button Text 1`] = `
 <div
   class="m-auto-horizontal-scroll m--is-gradient-background-style-white"
   style="position: relative;"
@@ -385,134 +513,6 @@ exports[`Storyshots modul-components|m-auto-horizontal-scroll Right Gradient Act
 `;
 
 exports[`Storyshots modul-components|m-auto-horizontal-scroll Sandbox 1`] = `
-<div
-  class="m-auto-horizontal-scroll m--is-gradient-background-style-white"
-  style="position: relative;"
->
-  <!---->
-   
-  <!---->
-   
-  <div
-    class="m-auto-horizontal-scroll__body"
-  >
-    <div
-      class="m-auto-horizontal-scroll__body-content"
-      style="min-width: 1900px;"
-    >
-      <div
-        style="background: rgb(31, 31, 31); padding: 32px; color: rgb(255, 255, 255); width: 100%;"
-      >
-        <p
-          class="m-u--no-margin"
-        >
-          Adjust the width of your browser to 
-          <strong>
-            1820px
-          </strong>
-           to be able to test the component.
-        </p>
-         
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-         
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
-    <div
-      class="resize-sensor-expand"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-auto-horizontal-scroll Text Next Button 1`] = `
-<div
-  class="m-auto-horizontal-scroll m--is-gradient-background-style-white"
-  style="position: relative;"
->
-  <!---->
-   
-  <!---->
-   
-  <div
-    class="m-auto-horizontal-scroll__body"
-  >
-    <div
-      class="m-auto-horizontal-scroll__body-content"
-      style="min-width: 1900px;"
-    >
-      <div
-        style="background: rgb(31, 31, 31); padding: 32px; color: rgb(255, 255, 255); width: 100%;"
-      >
-        <p
-          class="m-u--no-margin"
-        >
-          Adjust the width of your browser to 
-          <strong>
-            1820px
-          </strong>
-           to be able to test the component.
-        </p>
-         
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-         
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
-    <div
-      class="resize-sensor-expand"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-auto-horizontal-scroll Text Previous Button 1`] = `
 <div
   class="m-auto-horizontal-scroll m--is-gradient-background-style-white"
   style="position: relative;"

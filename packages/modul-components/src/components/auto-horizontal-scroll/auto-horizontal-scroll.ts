@@ -75,14 +75,14 @@ export class MAutoHorizontalScroll extends ModulVue {
     public readonly nextButtonActive!: boolean;
 
     @Prop({
-        default: (): string => ModulVue.prototype.$i18n.translate('m-auto-horizontal-scroll:text-previous-button')
+        default: (): string => ModulVue.prototype.$i18n.translate('m-auto-horizontal-scroll:previous-button-text')
     })
-    public readonly textPreviousButton?: string;
+    public readonly previousButtonText?: string;
 
     @Prop({
-        default: (): string => ModulVue.prototype.$i18n.translate('m-auto-horizontal-scroll:text-next-button')
+        default: (): string => ModulVue.prototype.$i18n.translate('m-auto-horizontal-scroll:next-button-text')
     })
-    public readonly textNextButton?: string;
+    public readonly nextButtonText?: string;
 
     @Prop({
         default: false
