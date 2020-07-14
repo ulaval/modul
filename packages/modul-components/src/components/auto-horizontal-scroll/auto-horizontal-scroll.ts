@@ -171,6 +171,18 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.checkGradientPresence();
     }
 
+    public get componentHeightStyle(): { [CSSProperty: string]: string | undefined } {
+        return {
+            height: !this.displayHorizontalScrollbar ? this.componentHeight : undefined
+        };
+    }
+
+    public get buttonAreaHeightStyle(): { [CSSProperty: string]: string  } {
+        return {
+            height: this.componentHeight
+        };
+    }
+
     public get hasLeftGradient(): boolean {
         return this.leftGradientActive && this.couldHaveLeftContent;
     }
@@ -320,8 +332,7 @@ export class MAutoHorizontalScroll extends ModulVue {
             : '100%';
         this.hasHorizontalScroll =
             this.$el.clientWidth < parseInt(this.minWidth, 10);
-        this.componentHeight =
-            !this.displayHorizontalScrollbar && Boolean(this.$refs.bodyContent)
+        this.componentHeight = Boolean(this.$refs.bodyContent)
                 ? `${this.$refs.bodyContent.clientHeight}px`
                 : '';
         this.emitResize({

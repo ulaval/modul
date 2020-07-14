@@ -1,9 +1,9 @@
-<mpo-defilement-horizontal-automatique class="m-responsive-table"
-                                       :largeur-minimale="tableMinWidth"
-                                       :horizontal-scroll-offset.sync="horizontalScrollOffsetProp"
-                                       :degrade-gauche-actif="!isFirstColumnFixed"
-                                       :afficher-barre-defilement="displayScrollbar"
-                                       @redimensionner="resizeComponant($event)">
+<m-auto-horizontal-scroll class="m-responsive-table"
+                          :min-width="tableMinWidth"
+                          :horizontal-scroll-offset.sync="horizontalScrollOffsetProp"
+                          :left-gradient-active="!isFirstColumnFixed"
+                          :display-horizontal-scrollbar="displayHorizontalScrollbar"
+                          @redimensionner="resizeComponant($event)">
     <table id="idTable"
            cellspacing="0">
         <m-table-head v-if="displayTableHead"
@@ -120,4 +120,4 @@
                                :waiting="waiting" />
         </tbody>
     </table>
-</mpo-defilement-horizontal-automatique>
+</m-auto-horizontal-scroll>

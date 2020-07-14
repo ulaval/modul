@@ -32,8 +32,7 @@
             <div class="m-table-group-header__content-cell">
                 <slot name="group-header-title"
                       :rows-group="rowsGroup"
-                      :title="rowsGroup.header.title"
-                      :column="column">
+                      :title="rowsGroup.header.title">
                     <template v-if="rowsGroup.header.title">
                         {{ rowsGroup.header.title }}
                     </template>

@@ -5,6 +5,7 @@ import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
 import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-validation';
+import { MAutoHorizontalScroll } from './../auto-horizontal-scroll/auto-horizontal-scroll';
 import { MProgress } from './../progress/progress';
 import { getHeadRowsFilterAndSort, getTotalColumnsLength, MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableHeadRow, MTableHeadRows, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from './responsive-table-commons';
 import WithRender from './responsive-table.html?style=./responsive-table.scss';
@@ -15,7 +16,7 @@ import { MTableHead } from './table-head/table-head';
 @WithRender
 @Component({
     components: {
-        // MpoDefilementHorizontalAutomatique,
+        MAutoHorizontalScroll,
         MTableHead,
         MTableGroup,
         MTableEmptyRow,
@@ -100,7 +101,7 @@ export class MResponsiveTable extends ModulVue {
     @Prop({
         default: true
     })
-    public readonly displayScrollbar!: boolean;
+    public readonly displayHorizontalScrollbar!: boolean;
 
     public horizontalScrollOffsetInterne: number = 0;
     public hasDefilementVertical: boolean = false;
