@@ -13,17 +13,17 @@ export default {
     parameters: { fileName: __filename }
 };
 
-export const defaultStory = () => ({
+export const Sandbox = () => ({
     methods: actions('emitButtonClick'),
     beforeCreate() {
         importAllSvg();
     },
     props: {
         text: {
-            default: text('Prop text', 'Aucun contenu disponible')
+            default: text('Prop text', 'No content available')
         },
-        textButton: {
-            default: text('Prop text-button', 'Ajouter')
+        buttonText: {
+            default: text('Prop button-text', 'Add')
         },
         buttonType: {
             default: select(
@@ -42,17 +42,12 @@ export const defaultStory = () => ({
     },
     template: `<${EMPTY_AREA_NAME}
         :text="text"
-        :text-button="textButton"
+        :button-text="buttonText"
         :button-type="buttonType"
         :svg-name="svgName"
         @button-click="emitButtonClick"
     />`
 });
-
-defaultStory.story = {
-    name: 'Sandbox'
-};
-
 
 export const PropSvgName: () => Component = (): Component => ({
     beforeCreate() {
@@ -84,18 +79,18 @@ export const PropText: () => Component = (): Component => ({
     />`
 });
 
-export const PropTextButton: () => Component = (): Component => ({
+export const PropButtonText: () => Component = (): Component => ({
     beforeCreate() {
         importAllSvg();
     },
     props: {
-        textButton: {
-            default: text('Prop text-button', 'Prop text-button')
+        buttonText: {
+            default: text('Prop button-text', 'Prop button-text')
         }
     },
     methods: actions('emitButtonClick'),
     template: `<${EMPTY_AREA_NAME}
-        :text-button="textButton"
+        :button-text="buttonText"
         @button-click="emitButtonClick"
     />`
 });
@@ -104,13 +99,13 @@ export const PropButtonType: () => Component = (): Component => ({
     methods: actions('emitButtonClick'),
     template: `<div>
         <${EMPTY_AREA_NAME}
-            text-button="Prop button-type = ${MEmptyAreaButtonType.Button}"
+            button-text="Prop button-type = ${MEmptyAreaButtonType.Button}"
             button-type="${MEmptyAreaButtonType.Button}"
             @button-click="emitButtonClick"
         />
         <${EMPTY_AREA_NAME}
             class="m-u--margin-top--l"
-            text-button="Prop button-type = ${MEmptyAreaButtonType.AddButton}"
+            button-text="Prop button-type = ${MEmptyAreaButtonType.AddButton}"
             button-type="${MEmptyAreaButtonType.AddButton}"
             @button-click="emitButtonClick"
         />

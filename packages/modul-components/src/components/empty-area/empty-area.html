@@ -1,13 +1,13 @@
 <div class="m-empty-area">
-    <template v-if="textButton">
+    <template v-if="buttonText">
         <m-add v-if="isButtonTypeAdd"
                @click="emitButtonClick()">
-            {{ textButton }}
+            {{ buttonText }}
         </m-add>
         <m-button v-else
                   :skin="buttonSkin"
                   @click="emitButtonClick()">
-            {{ textButton }}
+            {{ buttonText }}
         </m-button>
     </template>
     <div v-if="svgName || text"

@@ -25,7 +25,7 @@ default class MEmptyArea extends Vue {
     public readonly text?: string;
 
     @Prop()
-    public readonly textButton?: string;
+    public readonly buttonText?: string;
 
     @Prop({
         default: MEmptyAreaButtonType.AddButton,
@@ -50,7 +50,7 @@ default class MEmptyArea extends Vue {
 
 
 const EmptyAreaPlugin: PluginObject<any> = {
-    install(v, options): void {
+    install(v): void {
         v.prototype.$log.debug(EMPTY_AREA_NAME, 'plugin.install');
         v.component(EMPTY_AREA_NAME, MEmptyArea);
     }
