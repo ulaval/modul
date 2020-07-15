@@ -3,7 +3,7 @@ import { Component, Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
 import { MAdd } from '../add/add';
 import { ADD_NAME, ICON_BUTTON_NAME, REPEATER_NAME } from '../component-names';
-import { MIcon } from '../icon/icon';
+import { MIconButton } from '../icon-button/icon-button';
 import WithRender from './repeater.html?style=./repeater.scss';
 
 export interface MRepeaterItem { }
@@ -29,7 +29,7 @@ export interface MRepeaterRowListeners {
 @WithRender
 @Component({
     components: {
-        [ICON_BUTTON_NAME]: MIcon,
+        [ICON_BUTTON_NAME]: MIconButton,
         [ADD_NAME]: MAdd
     }
 })
