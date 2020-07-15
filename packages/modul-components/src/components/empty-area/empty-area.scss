@@ -1,0 +1,35 @@
+@import 'commons';
+
+.m-empty-area {
+    position: relative;
+    min-height: 280px;
+    background: $m-color--grey-lightest;
+    padding: $m-spacing;
+
+    @media (min-width: $m-mq--min--s) {
+        padding: $m-spacing--l;
+    }
+
+    &__icon-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        color: $m-color--grey-dark;
+    }
+
+    .m-empty-area__icon-text {
+        margin-top: 0;
+        font-weight: $m-font-weight--bold;
+    }
+
+    &__icon {
+        + .m-empty-area__icon-text {
+            margin-top: $m-spacing--s;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "props": {
+        "buttonText": {
+            "description": "Text affiché dans le buttton."
+        },
+        "buttonType": {
+            "description": "Type de bouton à afficher."
+        },
+        "svgName": {
+            "description": "Nom du SVG à afficher."
+        },
+        "text": {
+            "description": "Texte affiché au centre du composant."
+        }
+    },
+    "events": {
+        "button-click": {
+            "description": "Lancé lorsque le bouton est cliqué."
+        }
+    }
+}
