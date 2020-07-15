@@ -26,11 +26,19 @@
                     </li>
                     <li>
                         <a href
+                           @click.prevent="navigateTo($event, 'documentation')"
+                           class="mw-header__link">
+                            <m-i18n k="modul:documentation"></m-i18n>
+                        </a>
+                    </li>
+                    <li>
+                        <a href
                            @click.prevent="toggleMegaMenu('components')"
                            class="mw-header__link">
                             <m-i18n k="modul:components"></m-i18n>
                         </a>
                     </li>
+
                     <li>
                         <a href
                            @click.prevent="toggleMegaMenu('standards')"

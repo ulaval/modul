@@ -1,0 +1,49 @@
+<mw-expandable-panel ref="expandablePanel">
+    <router-view></router-view>
+    <template slot="sidemenu">
+        <div class="mw-expandable-panel__sidemenu"
+             :key="fullPath">
+
+            <!-- <div class="mw-expandable-panel__search">
+                    <m-searchfield></m-searchfield>
+                </div> -->
+            <div class="mw-expandable-panel__sidemenu-body">
+
+                <!-- <div class="mw-expandable-panel__sidemenu-title">
+                    <m-i18n k="website:documentation"></m-i18n>
+                </div> -->
+                <div class="mw-expandable-panel__sidemenu-item">
+                    <router-link :to="{name :'router:documentation-get-started'}"
+                                 @click.native="onSideMenuSelection()"><span>
+                            <m-i18n k="website:documentation-get-started"></m-i18n>
+                        </span></router-link>
+                </div>
+                <div class="mw-expandable-panel__sidemenu-item">
+                    <router-link :to="{name :'router:documentation-scss-framework'}"
+                                 @click.native="onSideMenuSelection()"><span>
+                            <m-i18n k="website:documentation-scss-framework"></m-i18n>
+                        </span></router-link>
+                </div>
+                <div class="mw-expandable-panel__sidemenu-item">
+                    <router-link :to="{name :'router:documentation-icon-system'}"
+                                 @click.native="onSideMenuSelection()"><span>
+                            <m-i18n k="website:documentation-icon-system"></m-i18n>
+                        </span></router-link>
+                </div>
+                <div class="mw-expandable-panel__sidemenu-item">
+                    <router-link :to="{name :'router:documentation-i18n'}"
+                                 @click.native="onSideMenuSelection()"><span>
+                            <m-i18n k="website:documentation-i18n"></m-i18n>
+                        </span></router-link>
+                </div>
+                <div class="mw-expandable-panel__sidemenu-item">
+                    <router-link :to="{name :'router:documentation-form-service'}"
+                                 @click.native="onSideMenuSelection()"><span>
+                            <m-i18n k="website:documentation-form-service"></m-i18n>
+                        </span></router-link>
+                </div>
+
+            </div>
+        </div>
+    </template>
+</mw-expandable-panel>
