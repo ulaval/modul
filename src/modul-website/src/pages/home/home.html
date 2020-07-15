@@ -27,38 +27,6 @@
                 <mw-card>
                     <template slot="header">
                         <img class="mw-home__icon"
-                             :src="componentIcon"
-                             alt="" />
-                        <h2>{{'modul:components' | f-m-i18n}}</h2>
-                    </template>
-                    <p slot="content">
-                        Les composants sont les éléments réutilisables qui composent les interfaces des applications <strong>modUL</strong>. Chaque composant est accompagné d’une documentation facilitant leur utilisation en plus d'une implémentations complète avec la platform VueJS
-                    </p>
-                    <m-link slot="link"
-                            :url="componentsUi">{{'website:components-ui' | f-m-i18n}}</m-link>
-                </mw-card>
-
-                <mw-card>
-                    <template slot="header">
-                        <img class="mw-home__icon"
-                             :src="normesIcon"
-                             alt="" />
-                        <h2>{{'website:standards' | f-m-i18n}}</h2>
-                    </template>
-                    <p slot="content">
-                        Les normes et standards définissent les guides utilisés pour la conception des composants et les interfaces des applications <strong>modul</strong>
-                    </p>
-                    <m-link slot="link"
-                            :url="uiStandards">{{'website:standards-ui' | f-m-i18n}}</m-link>
-                    <m-link slot="link"
-                            :url="editorialStandards">{{'website:standards-editorial' | f-m-i18n}}</m-link>
-                    <m-link slot="link"
-                            :url="a11yStandards">{{'website:accessibility-standards' | f-m-i18n}}</m-link>
-                </mw-card>
-
-                <mw-card>
-                    <template slot="header">
-                        <img class="mw-home__icon"
                              :src="philoIcon"
                              alt="" />
                         <h2>{{'website:philosophy' | f-m-i18n}}</h2>
@@ -70,6 +38,39 @@
                             :url="philosophy">{{'website:philosophy' | f-m-i18n}}</m-link>
 
                 </mw-card>
+
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="componentIcon"
+                             alt="" />
+                        <h2>{{'modul:components' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content">
+                        Les composants sont les éléments réutilisables qui composent les interfaces des applications <strong>MODUL</strong>. Chaque composant est accompagné d’une documentation facilitant leur utilisation en plus d'une implémentations complète avec la platform VueJS
+                    </p>
+                    <m-link slot="link"
+                            :url="componentsUi">{{'website:components-ui' | f-m-i18n}}</m-link>
+                </mw-card>
+
+                <mw-card>
+                    <template slot="header">
+                        <img class="mw-home__icon"
+                             :src="normesIcon"
+                             alt="" />
+                        <h2>{{'website:documentation' | f-m-i18n}}</h2>
+                    </template>
+                    <p slot="content">
+                        La documentation et normes utilisés pour la conception des composants et les interfaces des applications <strong>MODUL</strong>
+                    </p>
+                    <m-link slot="link"
+                            :url="documentation">{{'website:documentation' | f-m-i18n}}</m-link>
+                    <m-link slot="link"
+                            :url="uiStandards">{{'website:standards' | f-m-i18n}}</m-link>
+
+                </mw-card>
+
+
                 <!-- <article class="modul-home-content__panel"
                  tabindex="0"
                  @click="onRoute(writingStandards)">
