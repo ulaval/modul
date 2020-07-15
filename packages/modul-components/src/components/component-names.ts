@@ -30,6 +30,7 @@ export const DIALOG_NAME: string = 'm-dialog';
 export const DROPDOWN_NAME: string = 'm-dropdown';
 export const DROPDOWN_ITEM_NAME: string = 'm-dropdown-item';
 export const DYNAMIC_TEMPLATE_NAME: string = 'm-dynamic-template';
+export const EMPTY_AREA_NAME: string = 'm-empty-area';
 export const ERROR_ACCESS_DENIED_NAME: string = 'm-error-access-denied';
 export const ERROR_BROWSER_NOT_SUPPORTED_NAME: string = 'm-error-browser-not-supported';
 export const ERROR_CONFIG_NOT_SUPPORTED_NAME: string = 'm-error-config-not-supported';
