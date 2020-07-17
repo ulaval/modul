@@ -3,7 +3,7 @@ import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../utils/vue/vue';
-import { EMPTY_AREA_NAME } from '../component-names';
+import { ADD_NAME, BUTTON_NAME, EMPTY_AREA_NAME, SVG_NAME } from '../component-names';
 import { MAdd } from './../add/add';
 import {
     MButton,
@@ -19,7 +19,11 @@ export enum MEmptyAreaButtonType {
 
 @WithRender
 @Component({
-    components: { MButton, MAdd, MSvg }
+    components: {
+        [BUTTON_NAME]: MButton,
+        [ADD_NAME]: MAdd,
+        [SVG_NAME]: MSvg
+    }
 })
 export class MEmptyArea extends ModulVue {
     @Prop()
