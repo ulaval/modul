@@ -90,11 +90,7 @@ const getTemplate = (
     </${AUTO_HORIZONTAL_SCROLL}>`
 });
 
-export const defaultStory = () => getTemplate(true, true, true, true);
-
-defaultStory.story = {
-    name: 'Sandbox'
-};
+export const Sandbox = () => getTemplate(true, true, true, true);
 
 export const PreviousButtonActive = () => getTemplate(true, false, false, false);
 export const NextButtonActive = () => getTemplate(false, true, false, false);

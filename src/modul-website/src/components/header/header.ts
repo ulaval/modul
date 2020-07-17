@@ -1,5 +1,5 @@
 
-import { ROUTER_COMPONENTS, ROUTER_PHILOSOPHY, ROUTER_STANDARDS } from '@/router';
+import { ROUTER_COMPONENTS, ROUTER_DOCUMENTATION, ROUTER_PHILOSOPHY, ROUTER_STANDARDS } from '@/router';
 import IconButtonPlugin from '@ulaval/modul-components/dist/components/icon-button/icon-button';
 import { MediaQueries } from '@ulaval/modul-components/dist/mixins/media-queries/media-queries';
 import { PluginObject } from 'vue';
@@ -12,7 +12,8 @@ export enum ModulMenuSection {
     Home = 'home',
     Philosophy = 'philosophy',
     Components = 'components',
-    Standards = 'standards'
+    Standards = 'standards',
+    Documentation = 'documentation'
 }
 
 @WithRender
@@ -44,6 +45,7 @@ export class MWHeader extends ModulWebsite {
     }
 
     private navigateTo(event: MouseEvent, menuSection: string) {
+        this.openMegaMenu = false;
         switch (menuSection) {
             case ModulMenuSection.Home:
                 this.$router.push('/');
@@ -52,10 +54,14 @@ export class MWHeader extends ModulWebsite {
                 this.$router.push(this.$routerIndex.for(ROUTER_COMPONENTS));
                 break;
             case ModulMenuSection.Philosophy:
+
                 this.$router.push(this.$routerIndex.for(ROUTER_PHILOSOPHY));
                 break;
             case ModulMenuSection.Standards:
                 this.$router.push(this.$routerIndex.for(ROUTER_STANDARDS));
+                break;
+            case ModulMenuSection.Documentation:
+                this.$router.push(this.$routerIndex.for(ROUTER_DOCUMENTATION));
                 break;
             default:
                 this.$router.push('/');

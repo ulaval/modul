@@ -40,7 +40,8 @@
         }
     },
     "events": {
-        "update:horizontal-scroll-offset": {
+        "update:horizontalScrollOffset": {
+
             "description": "Lancé lorsque la position du défilement horizontal change."
         },
         "resize": {
@@ -50,6 +51,7 @@
             "description": "Lancé lorsque le bouton précédent est cliqué."
         },
         "next-button-click": {
+
             "description": "Lancé lorsque le bouton suivant est cliqué."
         }
     }

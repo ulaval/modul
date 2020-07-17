@@ -7,7 +7,7 @@ export default {
     parameters: { fileName: __filename }
 };
 
-const GRADIENT_SKIN_TEMPLATE = (gradientStyle: MAutoHorizontalScrollGradientStyle) => ({
+const getGradientSkinTemplate = (gradientStyle: MAutoHorizontalScrollGradientStyle) => ({
     template: `<${AUTO_HORIZONTAL_SCROLL}
         min-width="2200px"
         :previous-button-active="true"
@@ -21,12 +21,7 @@ const GRADIENT_SKIN_TEMPLATE = (gradientStyle: MAutoHorizontalScrollGradientStyl
     </${AUTO_HORIZONTAL_SCROLL}>`
 });
 
-export const defaultStory = () => GRADIENT_SKIN_TEMPLATE(MAutoHorizontalScrollGradientStyle.White);
-
-defaultStory.story = {
-    name: 'WhiteBackground'
-};
-
-export const Dark = () => GRADIENT_SKIN_TEMPLATE(MAutoHorizontalScrollGradientStyle.Dark);
-export const Light = () => GRADIENT_SKIN_TEMPLATE(MAutoHorizontalScrollGradientStyle.Light);
-export const Interactive = () => GRADIENT_SKIN_TEMPLATE(MAutoHorizontalScrollGradientStyle.Interactive);
+export const WhiteBackground = () => getGradientSkinTemplate(MAutoHorizontalScrollGradientStyle.White);
+export const Dark = () => getGradientSkinTemplate(MAutoHorizontalScrollGradientStyle.Dark);
+export const Light = () => getGradientSkinTemplate(MAutoHorizontalScrollGradientStyle.Light);
+export const Interactive = () => getGradientSkinTemplate(MAutoHorizontalScrollGradientStyle.Interactive);

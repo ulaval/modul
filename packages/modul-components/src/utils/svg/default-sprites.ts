@@ -1,7 +1,7 @@
 import { PluginObject } from 'vue';
 import { SpritesPluginOptions, SpritesService } from './sprites';
 
-const DefaultSpritesPlugin: PluginObject<any> = {
+export const DefaultSpritesPlugin: PluginObject<any> = {
     install(v, options: SpritesPluginOptions = { externalSprites: false }): void {
         v.prototype.$log.debug('sprites-default.svg', 'plugin.install');
         const svg: SpritesService = (v.prototype).$svg;

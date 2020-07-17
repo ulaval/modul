@@ -333,8 +333,8 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.hasHorizontalScroll =
             this.$el.clientWidth < parseInt(this.minWidth, 10);
         this.componentHeight = Boolean(this.$refs.bodyContent)
-                ? `${this.$refs.bodyContent.clientHeight}px`
-                : '';
+            ? `${this.$refs.bodyContent.clientHeight}px`
+            : '';
         this.emitResize({
             element: this.$el as HTMLElement,
             hasHorizontalScroll: this.hasHorizontalScroll,

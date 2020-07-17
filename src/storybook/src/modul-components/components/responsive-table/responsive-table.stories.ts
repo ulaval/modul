@@ -9,7 +9,6 @@ import { importAllSvg } from '../svg/svg-importation';
 import './group-header-custom-class-name.css';
 import { COMPLEX_TABLE_HEAD_ROWS, COMPLEX_TABLE_ROWS, DEFAULT_EMPTY_AREA, DEFAULT_TABLE_COLUMNS, DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE, DEFAULT_TABLE_ROWS, DEFAULT_TABLE_ROWS_GROUP_3, DEFAULT_TABLE_ROWS_GROUP_EMPTY_1, DEFAULT_TABLE_ROW_1, DEFAULT_TABLE_ROW_2, DEFAULT_TABLE_ROW_3, DEFAULT_TABLE_ROW_GROUPS_2, getScopeSlotTemplate } from './responsive-table-data';
 
-
 export default {
     title: `${modulComponentsHierarchyRootSeparator}${RESPONSIVE_TABLE_NAME}`,
     parameters: { fileName: __filename }

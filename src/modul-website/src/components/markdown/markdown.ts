@@ -20,8 +20,12 @@ export class MMarkdown extends Vue {
         linkify: false,         // autoconvert URL-like texts to links
         highlight: function(str, lang) {
             if (lang && hljs.getLanguage(lang)) {
+                console.log(`lang=${lang}`);
                 try {
-                    return hljs.highlight(lang, str).value;
+                    // return hljs.highlight(lang, str).value;
+                    return `<pre class="hljs"><code class="hl${lang}">` +
+                        hljs.highlight(lang, str, true).value +
+                        '</code></pre>';
                 } catch (__) { }
             }
             return ''; // use external default escaping

@@ -9,7 +9,7 @@ export default {
     parameters: { fileName: __filename }
 };
 
-const CAROUSEL_TEMPLATE = (
+const getCarouselTemplate = (
     _horizontalScrollOffset: number,
     _nbItem: number,
     _displayButton: boolean
@@ -98,11 +98,7 @@ const CAROUSEL_TEMPLATE = (
     </${AUTO_HORIZONTAL_SCROLL}>`
 });
 
-export const defaultStory = () => CAROUSEL_TEMPLATE(1200, 20, false);
+export const Sandbox = () => getCarouselTemplate(1200, 20, false);
 
-defaultStory.story = {
-    name: 'Sandbox'
-};
-
-export const twoItems = () => CAROUSEL_TEMPLATE(0, 2, false);
-export const WithButton = () => CAROUSEL_TEMPLATE(120, 14, true);
+export const TwoItems = () => getCarouselTemplate(0, 2, false);
+export const WithButton = () => getCarouselTemplate(120, 14, true);
