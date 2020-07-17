@@ -150,7 +150,7 @@ export const getHeadRowsFilterAndSort: (headRows: MTableHeadRows) => MTableHeadR
             && headRowsClone[a].order !== undefined
             && headRowsClone[b].order !== undefined
             ? headRowsClone[a].order! - headRowsClone[b].order!
-            : 1
+            : 0
     );
     headRows = {};
     headRowKeys.forEach(key => {
@@ -187,6 +187,6 @@ const getColumnFilterAndSorted: (columns: MTableColumn[]) => MTableColumn[] = (
             if (a.order && b.order && a.order !== undefined && b.order !== undefined) {
                 return a.order - b.order;
             }
-            return 1;
+            return 0;
         });
 };
