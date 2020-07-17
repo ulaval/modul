@@ -1,7 +1,8 @@
 import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
-import { Component, Emit, Prop } from 'vue-property-decorator';
+import Component from 'vue-class-component';
+import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
 import { TABLE_GROUP_NAME } from '../../component-names';
 import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsGroup, MTableRowsStyle } from '../responsive-table-commons';

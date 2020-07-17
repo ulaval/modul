@@ -1,6 +1,7 @@
 
 import { PluginObject } from 'vue';
-import { Component, Emit, Prop } from 'vue-property-decorator';
+import Component from 'vue-class-component';
+import { Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TABLE_EMPTY_ROW_NAME } from '../../component-names';
 import { MTableEmptyArea } from '../responsive-table-commons';

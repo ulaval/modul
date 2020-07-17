@@ -1,5 +1,6 @@
 import { PluginObject } from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import Component from 'vue-class-component';
+import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';

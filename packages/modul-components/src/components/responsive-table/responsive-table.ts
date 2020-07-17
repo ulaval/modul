@@ -1,6 +1,7 @@
 import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
-import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import Component from 'vue-class-component';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { RESPONSIVE_TABLE_NAME } from '../component-names';
