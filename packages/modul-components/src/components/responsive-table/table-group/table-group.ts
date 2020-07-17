@@ -1,10 +1,10 @@
-import { MColumnTable } from '@ulaval/modul-components/dist/components/table/table';
-import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
+import { ModulVue } from '../../../utils/vue/vue';
 import { TABLE_EMPTY_ROW_NAME, TABLE_GROUP_HEADER_NAME, TABLE_GROUP_NAME } from '../../component-names';
+import { MColumnTable } from '../../table/table';
 import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsGroup, MTableRowsStyle } from '../responsive-table-commons';
 import { MTableEmptyRow } from '../table-empty-row/table-empty-row';
 import { MTableGroupHeader } from '../table-group-header/table-group-header';

@@ -1,11 +1,10 @@
-import { MIconButtonSkin } from '@ulaval/modul-components/dist/components/icon-button/icon-button';
-import { ModulVue } from '@ulaval/modul-components/dist/utils/vue/vue';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
+import { ModulVue } from '../../../utils/vue/vue';
 import { ICON_BUTTON_NAME, TABLE_HEAD_NAME } from '../../component-names';
-import { MIconButton } from '../../icon-button/icon-button';
+import { MIconButton, MIconButtonSkin } from '../../icon-button/icon-button';
 import { getCellAlignmentClass, getCellWidthStyle, getHeadRowsFilterAndSort, MTableColumn, MTableHeadRows, MTableHeadStyle, MTableSortDirection } from '../responsive-table-commons';
 import WithRender from './table-head.html?style=./table-head.scss';
 
