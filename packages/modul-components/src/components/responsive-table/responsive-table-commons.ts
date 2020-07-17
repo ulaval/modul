@@ -147,6 +147,8 @@ export const getHeadRowsFilterAndSort: (headRows: MTableHeadRows) => MTableHeadR
             && headRowsClone[b]
             && headRowsClone[a].order
             && headRowsClone[b].order
+            && headRowsClone[a].order !== undefined
+            && headRowsClone[b].order !== undefined
             ? headRowsClone[a].order! - headRowsClone[b].order!
             : 1
     );
@@ -181,8 +183,8 @@ const getColumnFilterAndSorted: (columns: MTableColumn[]) => MTableColumn[] = (
 ) => {
     return columns
         .filter((c: MTableColumn) => c.visible === undefined || c.visible)
-        .sort((a, b) => {
-            if (a.order && b.order) {
+        .sort((a: MTableColumn, b: MTableColumn) => {
+            if (a.order && b.order && a.order !== undefined && b.order !== undefined) {
                 return a.order - b.order;
             }
             return 1;
