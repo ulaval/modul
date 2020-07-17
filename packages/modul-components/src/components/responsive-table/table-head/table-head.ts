@@ -131,7 +131,7 @@ export class MTableHead extends ModulVue {
         }
     }
 
-    public getColumnWidthStyle(column: MTableColumn): string {
+    public getColumnWidthStyle(column: MTableColumn): string | undefined {
         return getCellWidthStyle(column);
     }
 

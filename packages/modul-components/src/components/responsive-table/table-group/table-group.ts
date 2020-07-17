@@ -90,7 +90,7 @@ export class MTableGroup extends ModulVue {
         return getCellAlignmentClass(column.textAlign);
     }
 
-    public getRowWidthStyle(column: MTableColumn): string {
+    public getRowWidthStyle(column: MTableColumn): string | undefined {
         return getCellWidthStyle(column);
     }
 

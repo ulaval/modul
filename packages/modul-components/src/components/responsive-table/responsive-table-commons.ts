@@ -130,11 +130,11 @@ export const getCellAlignmentClass: (textAlign: MTableTextAlign | undefined) => 
     return textAlign ? `m--is-text-align-${textAlign}` : 'm--is-text-align-left';
 };
 
-export const getCellWidthStyle: (column: MTableColumn) => string = (
+export const getCellWidthStyle: (column: MTableColumn) => string | undefined = (
     column: MTableColumn
 ) => {
-    const width: string | undefined = column.width;
-    return width ? `width: ${width}` : '';
+    const width: string | undefined = column.width || undefined;
+    return width ? `width: ${width}` : undefined;
 };
 
 export const getHeadRowsFilterAndSort: (headRows: MTableHeadRows) => MTableHeadRows = (

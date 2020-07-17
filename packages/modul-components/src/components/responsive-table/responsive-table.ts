@@ -153,10 +153,10 @@ export class MResponsiveTable extends ModulVue {
     public emitSort(_column: MTableColumn): void { }
 
     @Emit('update:horizontalScrollOffset')
-    public emitUpdateHorizontalScrollOffset(_horizontalScrollOffset: number): void { }
+    public emitUpdateHorizontalScrollOffset(horizontalScrollOffset: number): void { }
 
     @Emit('horizontal-scollbar-width')
-    public emitHorizontalScollbarWidth(_scrollbarWidth: number): void { }
+    public emitHorizontalScollbarWidth(scrollbarWidth: number): void { }
 
     @Emit('open-accordion')
     public emitOpenAccordion(rowsGroup: MTableRowsGroup): void { }
