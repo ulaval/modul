@@ -2,7 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
+import { PLUS_NAME, TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
 import { getCellAlignmentClass, getTotalColumnsLength, MTableAccordionIconPosition, MTableCell, MTableColspan, MTableColumn, MTableRowsGroup } from '../responsive-table-commons';
 import { MTableGroupMixin } from '../table-group/table-group-mixin';
@@ -11,7 +11,7 @@ import WithRender from './table-group-header.html?style=./table-group-header.scs
 @WithRender
 @Component({
     components: {
-        MPlus
+        [PLUS_NAME]: MPlus
     },
     mixins: [MTableGroupMixin]
 })

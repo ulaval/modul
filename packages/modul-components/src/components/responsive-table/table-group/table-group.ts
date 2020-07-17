@@ -4,7 +4,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
-import { TABLE_GROUP_NAME } from '../../component-names';
+import { TABLE_EMPTY_ROW_NAME, TABLE_GROUP_HEADER_NAME, TABLE_GROUP_NAME } from '../../component-names';
 import { getCellAlignmentClass, getCellWidthStyle, MTableColspan, MTableColumn, MTableRow, MTableRowsGroup, MTableRowsStyle } from '../responsive-table-commons';
 import { MTableEmptyRow } from '../table-empty-row/table-empty-row';
 import { MTableGroupHeader } from '../table-group-header/table-group-header';
@@ -13,7 +13,10 @@ import WithRender from './table-group.html?style=./table-group.scss';
 
 @WithRender
 @Component({
-    components: { MTableGroupHeader: MTableGroupHeader, MTableEmptyRow },
+    components: {
+        [TABLE_GROUP_HEADER_NAME]: MTableGroupHeader,
+        [TABLE_EMPTY_ROW_NAME]: MTableEmptyRow
+    },
     mixins: [MTableGroupMixin]
 })
 export class MTableGroup extends ModulVue {
