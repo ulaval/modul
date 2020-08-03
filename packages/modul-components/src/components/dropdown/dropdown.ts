@@ -3,6 +3,8 @@ import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../directives/directive-names';
 import { MPopupDirective } from '../../directives/popup/popup';
+import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
+import { i18nFilter } from '../../filters/i18n/i18n';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputPopup } from '../../mixins/input-popup/input-popup';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
@@ -40,6 +42,9 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
+    },
+    filters: {
+        [FILTER_I18N_NAME]: i18nFilter
     },
     mixins: [
         InputState,
