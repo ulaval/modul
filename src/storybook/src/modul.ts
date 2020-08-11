@@ -71,9 +71,11 @@ import AccordionTransitionPlugin from '@ulaval/modul-components/dist/components/
 import SlideTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/slide-transition/slide-transition';
 import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
 import FrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
+import { HttpPlugin } from '@ulaval/modul-components/dist/lib';
 import '@ulaval/modul-components/dist/styles/main.scss';
 import MessagePlugin, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { ConsoleOptions } from '@ulaval/modul-components/dist/utils/logger/logger';
+import QAPlugin from '@ulaval/modul-components/dist/utils/qa/qa-plugin';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
 import UtilsPlugin, { UtilsPluginOptions } from '@ulaval/modul-components/dist/utils/utils-plugin';
@@ -120,8 +122,8 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(UtilsPlugin, utilsOptions);
             Vue.use(FrenchPlugin);
             Vue.use(DefaultSpritesPlugin);
-
-
+            Vue.use(HttpPlugin);
+            Vue.use(QAPlugin);
             // modul-components
             Vue.use(ButtonPlugin);
             Vue.use(I18nPlugin);

@@ -1,0 +1,13 @@
+<div :class="inputClass">
+    <div v-if="expanded">
+        <ul>
+            <li v-for="(id, index) in dataIds"
+                class="m-qa-input__list"
+                :key="index + id"
+                @mouseenter="onMouseEnter(id)"
+                @mouseleave="onMouseLeave(id)">
+                {{id}}
+            </li>
+        </ul>
+    </div>
+</div>

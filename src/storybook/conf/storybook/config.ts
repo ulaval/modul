@@ -15,7 +15,6 @@ declare module '@storybook/addon-knobs' {
 }
 
 Vue.use(getModulConfig());
-
 // load all sandboxes
 Vue.use(getSandboxPlugin());
 
