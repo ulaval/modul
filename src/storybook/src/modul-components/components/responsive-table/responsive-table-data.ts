@@ -61,7 +61,7 @@ export const DEFAULT_EMPTY_AREA: MTableEmptyArea = {
 export const DEFAULT_TABLE_ROW_1: MTableRow = {
     cells: {
         name: {
-            value: 'Vincent Guilmette',
+            value: 'Name 1',
             className: 'add-custom-class-cell',
             isHeader: true
         },
@@ -69,13 +69,13 @@ export const DEFAULT_TABLE_ROW_1: MTableRow = {
             value: '111 222 333'
         },
         email: {
-            value: 'vincent.gui@gmail.com'
+            value: 'fake1@email.com'
         },
         dateOfBirth: {
-            value: '1976-12-05'
+            value: '1971-12-05'
         },
         phoneNumber: {
-            value: '819 232-3754'
+            value: '819 555-0111'
         }
     }
 };
@@ -83,10 +83,10 @@ export const DEFAULT_TABLE_ROW_1: MTableRow = {
 export const DEFAULT_TABLE_ROW_2: MTableRow = {
     cells: {
         name: {
-            value: 'Charles Maheu',
+            value: 'Name 2',
             data: {
-                nom: 'Maheu',
-                prenom: 'Charles'
+                nom: 'First Name',
+                prenom: 'Family Name'
             },
             isHeader: true
         },
@@ -94,13 +94,13 @@ export const DEFAULT_TABLE_ROW_2: MTableRow = {
             value: '111 322 344'
         },
         email: {
-            value: 'charles.maheu@outlook.com'
+            value: 'fake2@email.com'
         },
         dateOfBirth: {
             value: '1980-06-11'
         },
         phoneNumber: {
-            value: '418 233-4744'
+            value: '418 555-0163'
         }
     },
     className: 'add-custom-class-row'
@@ -109,20 +109,20 @@ export const DEFAULT_TABLE_ROW_2: MTableRow = {
 export const DEFAULT_TABLE_ROW_3: MTableRow = {
     cells: {
         name: {
-            value: 'Pierre Olivier Boulet',
+            value: 'Name 3',
             isHeader: true
         },
         id: {
             value: '112 528 967'
         },
         email: {
-            value: 'po.boulet@gmail.com'
+            value: 'fake3@email.com'
         },
         dateOfBirth: {
-            value: '1994-04-08'
+            value: '1970-04-08'
         },
         phoneNumber: {
-            value: '819 135-3460'
+            value: '438 555-0113'
         }
     }
 };
