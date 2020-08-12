@@ -58,6 +58,7 @@ export interface MTableHeader {
     className?: string;
     style?: MTableStyle;
     cells?: MTableCells;
+    data?: any;
 }
 
 export interface MTableAccordion {
