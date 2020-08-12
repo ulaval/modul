@@ -172,12 +172,12 @@ export class MTableGroupHeader extends ModulVue {
     }
 }
 
-const TableBodyHeaderPlugin: PluginObject<any> = {
+const TableGroupHeaderPlugin: PluginObject<any> = {
     install(v): void {
         v.prototype.$log.debug(TABLE_GROUP_HEADER_NAME, 'plugin.install');
         v.component(TABLE_GROUP_HEADER_NAME, MTableGroupHeader);
     }
 };
 
-export default TableBodyHeaderPlugin;
+export default TableGroupHeaderPlugin;
 

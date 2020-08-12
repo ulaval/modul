@@ -171,13 +171,13 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.checkGradientPresence();
     }
 
-    public get componentHeightStyle(): { [CSSProperty: string]: string | undefined } {
+    public get componentHeightStyle(): { height?: string } {
         return {
             height: !this.displayHorizontalScrollbar ? this.componentHeight : undefined
         };
     }
 
-    public get buttonAreaHeightStyle(): { [CSSProperty: string]: string } {
+    public get buttonAreaHeightStyle(): { height?: string } {
         return {
             height: this.componentHeight
         };

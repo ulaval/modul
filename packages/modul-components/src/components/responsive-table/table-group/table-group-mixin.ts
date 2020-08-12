@@ -1,4 +1,4 @@
-import Vue, { PluginObject } from 'vue';
+import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
@@ -120,10 +120,3 @@ export class MTableGroupMixin extends Vue {
     }
 }
 
-const MTableGroupMixinPlugin: PluginObject<any> = {
-    install(_v, _options): void {
-        Vue.mixin(MTableGroupMixin);
-    }
-};
-
-export default MTableGroupMixinPlugin;

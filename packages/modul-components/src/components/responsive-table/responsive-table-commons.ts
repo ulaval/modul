@@ -80,7 +80,7 @@ export interface MTableCells {
 }
 
 export interface MTableCell {
-    value: any;
+    value: string;
     data?: any;
     isHeader?: boolean;
     colspan?: number | MTableColspan;
@@ -125,7 +125,7 @@ export enum MTableGroupHeaderStyle {
     Any = 'any'
 }
 
-export const getCellAlignmentClass: (textAlign: MTableTextAlign | undefined) => string = (
+export const getCellAlignmentClass: (textAlign?: MTableTextAlign) => string = (
     textAlign: MTableTextAlign
 ) => {
     return textAlign ? `m--is-text-align-${textAlign}` : 'm--is-text-align-left';

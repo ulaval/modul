@@ -25,10 +25,8 @@ import { MTableHead } from './table-head/table-head';
     }
 })
 export class MResponsiveTable extends ModulVue {
-    @Prop({
-        required: true
-    })
-    public readonly id!: string;
+    @Prop()
+    public readonly id?: string;
 
     @Prop()
     public readonly headRows?: MTableHeadRows;
@@ -177,7 +175,7 @@ export class MResponsiveTable extends ModulVue {
         }
     }
 
-    @Watch('headRows', { immediate: true })
+    @Watch('headRows', { immediate: true, deep: true })
     public onHeadRowsChange(headRows: MTableHeadRows): void {
         this.headRowsFilterAndSort = headRows;
     }
@@ -185,7 +183,7 @@ export class MResponsiveTable extends ModulVue {
     public headRowsInterne: MTableHeadRows = {};
 
     public get idTable(): string {
-        return this.id || uuid.generate();
+        return this.id || `m-responsive-table-${uuid.generate()}`;
     }
 
     public get formatRowGroups(): MTableRowsGroup[] {
@@ -285,6 +283,15 @@ export class MResponsiveTable extends ModulVue {
             this.defaultEmptyArea &&
             Object.keys(this.defaultEmptyArea).length > 0
         );
+    }
+
+    protected beforeMount(): void {
+        if (!this.columns && !this.headRows) {
+            this.$log.error(`"columns" prop or "head-rows" prop need to be declared on "${RESPONSIVE_TABLE_NAME}" component.`);
+        }
+        if (!this.rows && !this.rowGroups) {
+            this.$log.error(`"rows" prop or "row-groups" need to be declared on "${RESPONSIVE_TABLE_NAME}" component.`);
+        }
     }
 }
 
