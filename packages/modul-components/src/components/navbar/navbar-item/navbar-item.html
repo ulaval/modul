@@ -1,21 +1,20 @@
 <li class="m-navbar-item"
     :class="{'m--is-selected': isSelected,
              'm--is-disabled': disabled }"
-    role="menuitem">
+    role="menuitem"
+    @click="onClick"
+    @mouseover="onMouseover"
+    @mouseleave="onMouseleave">
     <component class="m-navbar-item__contents"
-               :is="(url && !disabled) ? 'router-link' : 'div'"
-               :to="(url && !disabled) ? url : undefined"
+               :is="isRouterLink ? 'router-link' : 'div'"
+               :to="isRouterLink ? url : undefined"
                :aria-selected="isSelected"
                :aria-haspopup="ariaHaspopup"
                :aria-expanded="ariaExpanded"
                :aria-controls="ariaControls"
                :tabindex="(url || disabled) ? undefined : '0'"
                :role="(url || disabled) ? undefined : 'button'"
-               @click.native="onClick"
-               @click="onClick"
                @keyup.enter="onClick"
-               @mouseover="onMouseover"
-               @mouseleave="onMouseleave"
                ref="item">
         <div class="m-navbar-item__text"
              :class="{ 'pp--is-nowrap': shouldNotWrap }">
