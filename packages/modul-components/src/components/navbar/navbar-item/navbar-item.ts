@@ -159,6 +159,10 @@ export class MNavbarItem extends ModulVue {
         return !this.multiline && this.parentNavbar ? this.parentNavbar.multiline : this.multiline;
     }
 
+    public get isRouterLink(): boolean {
+        return Boolean(this.url) && !this.disabled;
+    }
+
     public onClick(event: MouseEvent): void {
         if (!this.disabled && this.parentNavbar) {
             this.parentNavbar.onClick(event, this.value);
