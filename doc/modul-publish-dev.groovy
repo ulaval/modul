@@ -93,7 +93,7 @@ pipeline {
 			steps {
 				withNPM(npmrcConfig: NPM_CONFIG) {
 					echo "Publish version to npm"
-					sh "yarn run lerna publish --canary ${params.version} --preid ${params.prereleaseid}  --dist-tag ${params.disttag} --yes"
+					sh "yarn run lerna publish --canary ${params.version} --preid ${params.prereleaseid}  --dist-tag ${params.disttag} --no-private --yes"
 				}
 			}
 		}

@@ -9,7 +9,7 @@
         "dragActive": {
             "description": "Le contenu du composant glisse de gauche à droite en suivant la position de la souris lorsque l'événement mousedown est appelé et que le défilement est possible."
         },
-        "gradientBackgroundStyle": {
+        "gradientStyle": {
             "description": "Apparence visuelle des dégradés positionnés à droite et à gauche du composant lorsque le défilement horizontal est possible."
         },
         "leftGradientActive": {
@@ -41,15 +41,17 @@
     },
     "events": {
         "update:horizontalScrollOffset": {
+
             "description": "Lancé lorsque la position du défilement horizontal change."
         },
         "resize": {
             "description": "Lancé lorsque le composant est redimensionné."
         },
-        "previousButtonClick": {
+        "previous-button-click": {
             "description": "Lancé lorsque le bouton précédent est cliqué."
         },
-        "nextButtonClick": {
+        "next-button-click": {
+
             "description": "Lancé lorsque le bouton suivant est cliqué."
         }
     }

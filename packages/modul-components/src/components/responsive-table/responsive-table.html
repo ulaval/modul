@@ -1,0 +1,133 @@
+<m-auto-horizontal-scroll class="m-responsive-table"
+                          :min-width="tableMinWidth"
+                          :horizontal-scroll-offset.sync="horizontalScrollOffsetProp"
+                          :drag-active="dragActive"
+                          :left-gradient-active="!firstColumnFixed && leftGradientActive"
+                          :right-gradient-active="rightGradientActive"
+                          :gradient-style="gradientStyle"
+                          :previous-button-active="previousButtonActive"
+                          :next-button-active="nextButtonActive"
+                          :previous-button-text="previousButtonText"
+                          :next-button-text="nextButtonText"
+                          :display-horizontal-scrollbar="displayHorizontalScrollbar"
+                          @resize="resizeComponant($event)"
+                          @previous-button-click="emitPreviousButtonClick($event)"
+                          @next-button-click="emitNextButtonClick($event)">
+    <table id="idTable"
+           class="m-responsive-table__table"
+           cellspacing="0">
+        <m-table-head v-if="displayTableHead"
+                      id="idTable"
+                      :head-rows.sync="headRowsFilterAndSort"
+                      :first-column-fixed="firstColumnFixed"
+                      :head-style="headStyle"
+                      @sort="emitSort($event)">
+            <template v-for="(column, index) in allColumns"
+                      :slot="'head-cell.' + column.name">
+                <slot :name="'head-cell.' + column.name"
+                      :column="column">
+                    <slot name="head-cell"
+                          :column="column">
+                        <div :key="index"
+                             v-html="column.value"></div>
+                    </slot>
+                </slot>
+            </template>
+        </m-table-head>
+        <tr v-if="waiting"
+            class="m-responsive-table__waiting">
+            <td :colspan="mainColumnsLength">
+                <m-progress :indeterminate="true"
+                            :border-radius="false"
+                            :style="{
+                                left: horizontalScrollOffsetProp + 'px',
+                                width: tableComponentWidth,
+                            }" />
+            </td>
+        </tr>
+        <m-table-group v-for="(rowsGroup, index) in formatRowGroups"
+                       :key="index"
+                       :columns="mainColumns"
+                       :rows-group="rowsGroup"
+                       :first-column-fixed="firstColumnFixed"
+                       :rows-style="rowsStyle"
+                       :horizontal-scroll-offset="horizontalScrollOffsetProp"
+                       :table-component-width="tableComponentWidth"
+                       :group-header-style="groupHeaderStyle"
+                       :group-header-class-name="groupHeaderClassName"
+                       :row-highlighted-on-hover="rowHighlightedOnHover"
+                       @open-accordion="emitOpenAccordion"
+                       @close-accordion="emitCloseAccordion"
+                       @empty-button-click="emitEmptyButtonClick($event)">
+
+            <template #group-header-title="{ rowsGroup, title }">
+                <slot :name="'group-header-title.' + rowsGroup.name"
+                      :rows-group="rowsGroup"
+                      :title="title">
+                    <slot name="group-header-title"
+                          :rows-group="rowsGroup"
+                          :title="title">
+                        <div v-if="title"
+                             :key="index"
+                             v-html="title"></div>
+                    </slot>
+                </slot>
+            </template>
+            <template v-for="(column, columnIndex) in mainColumns"
+                      :slot="'group-header-cell.' + column.name"
+                      slot-scope="{ rowsGroup, header, cell }">
+                <slot :name="'group-header-cell.' + column.name + '.' + rowsGroup.name"
+                      :rows-group="rowsGroup"
+                      :header="header"
+                      :cell="cell">
+                    <slot :name="'group-header-cell.' + column.name"
+                          :rows-group="rowsGroup"
+                          :header="header"
+                          :cell="cell">
+                        <slot name="group-header-cell"
+                              :rows-group="rowsGroup"
+                              :header="header"
+                              :cell="cell">
+                            <div v-if="cell.value"
+                                 v-html="cell.value"></div>
+                        </slot>
+                    </slot>
+                </slot>
+            </template>
+            <template v-for="(column, index) in mainColumns"
+                      :slot="'row-cell.' + column.name"
+                      slot-scope="{ rowsGroup, row, cell, column }">
+                <slot :name="'row-cell.' + column.name + '.' + rowsGroup.name"
+                      :rows-group="rowsGroup"
+                      :row="row"
+                      :cell="cell"
+                      :column="column">
+                    <slot :name="'row-cell.' + column.name"
+                          :rows-group="rowsGroup"
+                          :row="row"
+                          :cell="cell"
+                          :column="column">
+                        <slot name="row-cell"
+                              :rows-group="rowsGroup"
+                              :row="row"
+                              :cell="cell"
+                              :column="column">
+                            <template v-if="cell && cell.value">
+                                {{ cell.value }}
+                            </template>
+                        </slot>
+                    </slot>
+                </slot>
+            </template>
+        </m-table-group>
+        <tbody v-if="!hasRowsGroup && defaultEmptyArea">
+            <m-table-empty-row :empty-area="defaultEmptyArea"
+                               :horizontal-scroll-offset="horizontalScrollOffsetProp"
+                               :table-component-width="tableComponentWidth"
+                               :nb-columns="mainColumnsLength"
+                               :display-default-text="true"
+                               :waiting="waiting"
+                               @empty-button-click="emitEmptyButtonClick({})" />
+        </tbody>
+    </table>
+</m-auto-horizontal-scroll>

@@ -1,0 +1,110 @@
+<tbody v-if="hasHeader || hasRowsOrEmptyArea"
+       class="m-table-group"
+       :class="[
+        {
+            'm--is-disabled': isAccordionDisabled,
+            'm--has-header': hasHeader,
+            'm--no-header': !hasHeader,
+            'm--has-row-highlighted-on-hover': rowHighlightedOnHover,
+            'm--is-first-column-fixed': firstColumnFixed,
+        },
+        'm--is-rows-style-' + rowsStyle,
+    ]">
+    <m-table-group-header class="m-table-group__header"
+                          :columns="columns"
+                          :rows-group="rowsGroup"
+                          :first-column-fixed="firstColumnFixed"
+                          :horizontal-scroll-offset="horizontalScrollOffset"
+                          :table-component-width="tableComponentWidth"
+                          :default-empty-area="defaultEmptyArea"
+                          :group-header-style="groupHeaderStyle"
+                          :group-header-class-name="groupHeaderClassName"
+                          @open-accordion="emitOpenAccordion($event)"
+                          @close-accordion="emitCloseAccordion($event)">
+        <template #group-header-title="{ rowsGroup, title, column }">
+            <slot :name="'group-header-title.' + rowsGroup.name"
+                  :rows-group="rowsGroup"
+                  :title="title"
+                  :column="column">
+                <slot name="group-header-title"
+                      :rows-group="rowsGroup"
+                      :title="title"
+                      :column="column">
+                    <template v-if="title">
+                        {{ title }}
+                    </template>
+                </slot>
+            </slot>
+        </template>
+        <template v-for="(column, columnIndex) in columns"
+                  :slot="'group-header-cell.' + column.name"
+                  slot-scope="{ rowsGroup, header, cell, column }">
+            <slot :name="'group-header-cell.' + column.name + '.' + rowsGroup.name"
+                  :rows-group="rowsGroup"
+                  :header="header"
+                  :cell="cell"
+                  :column="column">
+                <slot :name="'group-header-cell.' + column.name"
+                      :rows-group="rowsGroup"
+                      :header="header"
+                      :cell="cell"
+                      :column="column">
+                    <slot name="group-header-cell"
+                          :rows-group="rowsGroup"
+                          :header="header"
+                          :cell="cell"
+                          :column="column">
+                        <template v-if="cell.value">
+                            {{ cell.value }}
+                        </template>
+                    </slot>
+                </slot>
+            </slot>
+        </template>
+    </m-table-group-header>
+    <template v-if="hasRowContent">
+        <tr v-for="(row, rowIndex) in rowsGroup.rows"
+            :key="rowIndex">
+            <component v-for="(column, indexColumn) in columns"
+                       :key="indexColumn"
+                       :is="isCellHeader(row, column.name) ? 'th' : 'td'"
+                       class="m-table-group__cell"
+                       :class="[
+                            getRowAlignmentClass(row, column),
+                            getRowClassName(row, column.name),
+                        ]"
+                       :colspan="getRowColspan(row, column)"
+                       :rowspan="getRowspan(row, column)"
+                       :scope="isCellHeader(row, column.name) ? 'row' : undefined"
+                       :style="getRowWidthStyle(column)">
+                <slot :name="'row-cell.' + column.name + '.' + rowsGroup.name"
+                      :rows-group="rowsGroup"
+                      :row="row"
+                      :cell="row.cells[column.name]"
+                      :column="column">
+                    <slot :name="'row-cell.' + column.name"
+                          :rows-group="rowsGroup"
+                          :row="row"
+                          :cell="row.cells[column.name]"
+                          :column="column">
+                        <slot name="row-cell"
+                              :rows-group="rowsGroup"
+                              :row="row"
+                              :cell="row.cells[column.name]"
+                              :column="column">
+                            <template v-if="row.cells && row.cells[column.name]">
+                                {{ row.cells[column.name].value }}
+                            </template>
+                        </slot>
+                    </slot>
+                </slot>
+            </component>
+        </tr>
+        <m-table-empty-row v-if="!hasRows && (hasEmptyArea || hasDefaultEmptyArea)"
+                           :empty-area="emptyArea"
+                           :horizontal-scroll-offset="horizontalScrollOffset"
+                           :table-component-width="tableComponentWidth"
+                           :nb-columns="totalColumnsLength"
+                           @empty-button-click="emitEmptyButtonClick(rowsGroup)" />
+    </template>
+</tbody>

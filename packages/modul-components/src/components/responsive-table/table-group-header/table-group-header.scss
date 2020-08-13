@@ -1,0 +1,109 @@
+@import 'commons';
+@import './../responsive-table-commons';
+
+@mixin first-column-fixed() {
+    &.m--is-first-column-fixed th {
+        &:first-child {
+            @include m-table--sticky-cell();
+        }
+    }
+}
+
+@mixin group-header-style-light() {
+    th {
+        background: $m-color--grey-lighter;
+
+        .m-table-group-header__accordion-icon {
+            color: $m-color--interactive;
+        }
+    }
+}
+
+@mixin group-header-style-dark() {
+    th {
+        background: $m-color--grey-darker;
+        color: $m-color--white;
+
+        .m-table-group-header__accordion-icon {
+            color: $m-color--ul-yellow;
+        }
+    }
+}
+
+.m-table-group-header {
+    border-collapse: collapse;
+    border: none;
+    transition: background-color $m-transition-duration linear;
+    position: relative;
+    border-top: 1px solid $m-color--white;
+    outline: none;
+
+    th {
+        position: relative;
+
+        @include m-table--cell-alignment();
+    }
+
+    @include first-column-fixed();
+
+    &__cell {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: $m-font-size;
+        font-weight: $m-font-weight--bold;
+    }
+
+    &.m--is-group-header-style-light {
+        @include group-header-style-light();
+    }
+
+    &.m--is-group-header-style-dark {
+        @include group-header-style-dark();
+    }
+
+    &.m--is-group-header-style-light,
+    &.m--is-group-header-style-dark {
+        .m-table-group-header__cell {
+            padding: $m-spacing;
+        }
+    }
+
+    &.m--has-accordion {
+        &:not(.m--is-disabled) {
+            cursor: pointer;
+        }
+    }
+
+    &__content-cell {
+        flex: 1 1 auto;
+    }
+
+    &__accordion-icon {
+        flex-shrink: 0;
+    }
+}
+
+.m-table-group-header.m--is-disabled {
+    color: $m-color--disabled;
+}
+
+.m-table-group-header.m--is-accordion-icon-position-left {
+    .m-table-group-header__accordion-icon {
+        margin-right: $m-spacing;
+    }
+}
+
+@mixin accordion-icon-position-right() {
+    .m-table-group-header__cell {
+        flex-direction: row-reverse;
+    }
+
+    .m-table-group-header__accordion-icon {
+        margin-left: $m-spacing;
+    }
+}
+
+.m-table-group-header.m--is-accordion-icon-position-right {
+    @include accordion-icon-position-right();
+}

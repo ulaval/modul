@@ -1,0 +1,39 @@
+$m-table--largeur-degrade: 20px;
+
+@mixin m-table--cell-alignment($is-table-head: false) {
+    &.m--is-text-align-center {
+        text-align: center;
+
+        @if ($is-table-head) {
+            .m-table-head__cell {
+                justify-content: center;
+            }
+        }
+    }
+
+    &.m--is-text-align-left {
+        text-align: left;
+
+        @if ($is-table-head) {
+            .m-table-head__cell {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    &.m--is-text-align-right {
+        text-align: right;
+
+        @if ($is-table-head) {
+            .m-table-head__cell {
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+
+@mixin m-table--sticky-cell() {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+}
