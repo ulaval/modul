@@ -93,7 +93,7 @@ pipeline {
 				withCredentials([usernamePassword(credentialsId: GIT_CREDS, passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
 					withNPM(npmrcConfig: NPM_CONFIG) {
 						echo "Publish version to npm"
-						sh "yarn run lerna publish ${params.version} --conventional-commits --conventional-prerelease --no-changelog --no-push --preid ${params.prereleaseid}  --dist-tag ${params.disttag} --yes"
+						sh "yarn run lerna publish ${params.version} --conventional-commits --conventional-prerelease --no-changelog --no-push --preid ${params.prereleaseid}  --dist-tag ${params.disttag} --no-private --yes"
 						sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@${REPO_URL} --follow-tags"
 					}
 				}
