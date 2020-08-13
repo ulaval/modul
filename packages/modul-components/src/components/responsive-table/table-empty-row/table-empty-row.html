@@ -1,0 +1,15 @@
+<tr class="m-table-empty-row">
+    <td :colspan="nbColumns">
+        <m-empty-area
+                :title="title"
+                :subtitle="subtitle"
+                :svg-name="svgName"
+                :button-text="buttonText"
+                :button-type="emptyArea.buttonType"
+                :style="{
+                    left: horizontalScrollOffset + 'px',
+                    width: tableComponentWidth,
+                }"
+                @button-click="emitEmptyButtonClick($event)" />
+    </td>
+</tr>

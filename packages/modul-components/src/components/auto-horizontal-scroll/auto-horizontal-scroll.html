@@ -5,15 +5,17 @@
         'm--has-right-gradient': hasRightGradient,
         'm--has-previous-button': hasPreviousButton,
         'm--has-next-button': hasNextButton,
-        'm--is-gradient-background-style-white': isGradientBackgroundStyleWhite,
-        'm--is-gradient-background-style-light': isGradientBackgroundStyleLight,
-        'm--is-gradient-background-style-dark': isGradientBackgroundStyleDark,
-        'm--is-gradient-background-style-interactive': isGradientBackgroundStyleInteractive,
+        'm--is-gradient-style-white': isGradientStyleWhite,
+        'm--is-gradient-style-light': isGradientStyleLight,
+        'm--is-gradient-style-dark': isGradientStyleDark,
+        'm--is-gradient-style-interactive': isGradientStyleInteractive,
     }"
-     :style="{ height: componentHeight }">
+     :style="componentHeightStyle">
     <transition name="m--is">
         <div v-if="hasPreviousButton || hasLeftGradient"
-             class="m-auto-horizontal-scroll__button-area m--is-left">
+             class="m-auto-horizontal-scroll__button-area m--is-left"
+             :style="buttonAreaHeightStyle">
+
             <m-icon-button v-if="hasPreviousButton"
                            ref="leftButton"
                            :skin="iconButtonSkin"
@@ -25,7 +27,8 @@
     </transition>
     <transition name="m--is">
         <div v-if="hasNextButton || hasRightGradient"
-             class="m-auto-horizontal-scroll__button-area m--is-right">
+             class="m-auto-horizontal-scroll__button-area m--is-right"
+             :style="buttonAreaHeightStyle">
             <m-icon-button v-if="hasNextButton"
                            ref="rightButton"
                            :skin="iconButtonSkin"

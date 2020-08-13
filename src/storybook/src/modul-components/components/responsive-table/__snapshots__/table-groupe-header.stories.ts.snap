@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-responsive-table/m-table-group-header Sandbox 1`] = `
+<table
+  style="width: 100%;"
+>
+  <tr
+    class="m-table-group-header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+    tabindex="0"
+  >
+    <th
+      class="m--is-text-align-left"
+    >
+      <div
+        class="m-table-group-header__cell"
+      >
+        <span
+          class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large add-class-to-icon"
+        />
+         
+        <div
+          class="m-table-group-header__content-cell"
+        >
+          
+                            English Class
+                         
+                                ANL-3010
+                            
+        </div>
+      </div>
+    </th>
+    <th
+      class="m--is-text-align-right"
+      colspan="4"
+    >
+      <div
+        class="m-table-group-header__cell"
+      >
+        <!---->
+         
+        <div
+          class="m-table-group-header__content-cell"
+        >
+          <!---->
+           
+                                Advanced English I
+                            
+        </div>
+      </div>
+    </th>
+    <th
+      class="m--is-text-align-left"
+    >
+      <!---->
+    </th>
+    <th
+      class="m--is-text-align-left"
+    >
+      <!---->
+    </th>
+    <th
+      class="m--is-text-align-left"
+    >
+      <!---->
+    </th>
+  </tr>
+</table>
+`;

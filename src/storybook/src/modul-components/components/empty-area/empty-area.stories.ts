@@ -19,8 +19,11 @@ export const Sandbox = () => ({
         importAllSvg();
     },
     props: {
-        text: {
-            default: text('Prop text', 'No content available')
+        title: {
+            default: text('Prop title', 'No content available')
+        },
+        subtitle: {
+            default: text('Prop subtitle', '')
         },
         buttonText: {
             default: text('Prop button-text', 'Add')
@@ -41,7 +44,8 @@ export const Sandbox = () => ({
         }
     },
     template: `<${EMPTY_AREA_NAME}
-        :text="text"
+        :title="title"
+        :subtitle="subtitle"
         :button-text="buttonText"
         :button-type="buttonType"
         :svg-name="svgName"
@@ -67,15 +71,25 @@ export const PropSvgName: () => Component = (): Component => ({
     />`
 });
 
-export const PropText: () => Component = (): Component => ({
-    methods: actions('emitButtonClick'),
+export const PropTitle: () => Component = (): Component => ({
     props: {
-        text: {
-            default: text('Prop text', 'Prop text')
+        title: {
+            default: text('Prop title', 'Prop title')
         }
     },
     template: `<${EMPTY_AREA_NAME}
-        :text="text"
+        :title="title"
+    />`
+});
+
+export const PropSubtitle: () => Component = (): Component => ({
+    props: {
+        subtitle: {
+            default: text('Prop subtitle', 'Prop subtitle')
+        }
+    },
+    template: `<${EMPTY_AREA_NAME}
+        :subtitle="subtitle"
     />`
 });
 

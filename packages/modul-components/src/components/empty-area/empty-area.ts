@@ -2,7 +2,7 @@ import { PluginObject } from 'vue';
 import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
-import { EMPTY_AREA_NAME } from '../component-names';
+import { ADD_NAME, BUTTON_NAME, EMPTY_AREA_NAME, SVG_NAME } from '../component-names';
 import { MAdd } from './../add/add';
 import {
     MButton,
@@ -18,11 +18,18 @@ export enum MEmptyAreaButtonType {
 
 @WithRender
 @Component({
-    components: { MButton, MAdd, MSvg }
+    components: {
+        [BUTTON_NAME]: MButton,
+        [ADD_NAME]: MAdd,
+        [SVG_NAME]: MSvg
+    }
 })
 export class MEmptyArea extends ModulVue {
     @Prop()
-    public readonly text?: string;
+    public readonly title?: string;
+
+    @Prop()
+    public readonly subtitle?: string;
 
     @Prop()
     public readonly buttonText?: string;
@@ -40,7 +47,7 @@ export class MEmptyArea extends ModulVue {
     public readonly buttonSkin: MButtonSkin = MButtonSkin.Secondary;
 
     @Emit('button-click')
-    public emitButtonClick(): void { }
+    public emitButtonClick(event: MouseEvent): void { }
 
     public get isButtonTypeAdd(): boolean {
         return this.buttonType === MEmptyAreaButtonType.AddButton;

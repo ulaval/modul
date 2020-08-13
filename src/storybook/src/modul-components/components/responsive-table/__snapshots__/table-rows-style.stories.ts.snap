@@ -1,0 +1,1132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternate Background 1`] = `
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
+    >
+      <table
+        cellspacing="0"
+        class="m-responsive-table__table"
+        id="idTable"
+      >
+        <thead
+          class="m-table-head m--is-head-style-light"
+        >
+          <tr>
+            <th
+              class="m--is-sortable m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Name
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Id
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Email
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Date of birth
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Phone number
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <!---->
+         
+        <tbody
+          class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
+        >
+          <!---->
+           
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+              scope="row"
+            >
+              
+                                Name 1
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 222 333
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake1@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1971-12-05
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                819 555-0111
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Name 2
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 322 344
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake2@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1980-06-11
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                418 555-0163
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Name 3
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                112 528 967
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake3@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1970-04-08
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                438 555-0113
+                            
+            </td>
+          </tr>
+           
+          <!---->
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 1`] = `
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
+    >
+      <table
+        cellspacing="0"
+        class="m-responsive-table__table"
+        id="idTable"
+      >
+        <thead
+          class="m-table-head m--is-head-style-light"
+        >
+          <tr>
+            <th
+              class="m--is-sortable m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Name
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Id
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Email
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Date of birth
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Phone number
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <!---->
+         
+        <tbody
+          class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
+        >
+          <!---->
+           
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+              scope="row"
+            >
+              
+                                Name 1
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 222 333
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake1@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1971-12-05
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                819 555-0111
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Name 2
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 322 344
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake2@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1980-06-11
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                418 555-0163
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Name 3
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                112 528 967
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake3@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1970-04-08
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                438 555-0113
+                            
+            </td>
+          </tr>
+           
+          <!---->
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Borders 1`] = `
+<div
+  class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
+>
+  <!---->
+   
+  <!---->
+   
+  <div
+    class="m-auto-horizontal-scroll__body"
+  >
+    <div
+      class="m-auto-horizontal-scroll__body-content"
+      style="min-width: 100%;"
+    >
+      <table
+        cellspacing="0"
+        class="m-responsive-table__table"
+        id="idTable"
+      >
+        <thead
+          class="m-table-head m--is-head-style-light"
+        >
+          <tr>
+            <th
+              class="m--is-sortable m--is-sorted m--is-text-align-left"
+              id="name-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Name
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple m--is-sort-asc"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-center"
+              id="id-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Id
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="email-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Email
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="dateOfBirth-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Date of birth
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-sortable m--is-text-align-left"
+              id="phoneNumber-idTable"
+              scope="col"
+            >
+              <div
+                class="m-table-head__cell"
+              >
+                <div
+                  class="m-table-head__cell-content"
+                >
+                  <div>
+                    Phone number
+                  </div>
+                   
+                  <button
+                    class="m-icon-button m-table-head__sort-icon m--is-skin-light m--has-ripple"
+                    style="width: 14px; height: 14px;"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      class="m-icon m-icon-button__icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                     
+                    <!---->
+                  </button>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+         
+        <!---->
+         
+        <tbody
+          class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-cell-borders"
+        >
+          <!---->
+           
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left add-custom-class-cell"
+              scope="row"
+            >
+              
+                                Name 1
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 222 333
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake1@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1971-12-05
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                819 555-0111
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Name 2
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                111 322 344
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake2@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1980-06-11
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                418 555-0163
+                            
+            </td>
+          </tr>
+          <tr>
+            <th
+              class="m-table-group__cell m--is-text-align-left"
+              scope="row"
+            >
+              
+                                Name 3
+                            
+            </th>
+            <td
+              class="m-table-group__cell m--is-text-align-center"
+            >
+              
+                                112 528 967
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                fake3@email.com
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                1970-04-08
+                            
+            </td>
+            <td
+              class="m-table-group__cell m--is-text-align-left"
+            >
+              
+                                438 555-0113
+                            
+            </td>
+          </tr>
+           
+          <!---->
+        </tbody>
+         
+        <!---->
+      </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,117 @@
+<tr v-if="hasHeader"
+    class="m-table-group-header"
+    :class="[
+        {
+            'm--is-disabled': isAccordionDisabled,
+            'm--has-accordion': hasAccordion,
+            'm--is-accordion-icon-position-left': isAccordeonIconPositionLeft,
+            'm--is-accordion-icon-position-right': isAccordeonIconPositionRight,
+            'm--is-first-column-fixed': firstColumnFixed,
+        },
+        'm--is-group-header-style-' + groupHeaderStyle,
+        rowsGroupHeaderClassName,
+        groupHeaderClassName
+    ]"
+    :style="[rowsGroup.header.style]"
+    :tabindex="tabindexEnteteAccordeon"
+    @click="toggleAccordeon($event)"
+    @keyup.self.enter="toggleAccordeon($event)">
+    <th v-if="hasHeaderWithoutCell ||
+            (!hasHeaderCell && !hasHeader)"
+        class="m--is-text-align-left"
+        :colspan="totalColumnsLength">
+        <div class="m-table-group-header__cell"
+             :style="headerWithoutCellsStyle">
+            <m-plus v-if="displayAccordionIcon"
+                    class="m-table-group-header__accordion-icon"
+                    :class="[rowsGroup.accordion.iconClassName]"
+                    :open="isAccordionOpen"
+                    :disabled="isAccordionDisabled"
+                    :skin="mPlusSkin"
+                    :large="true" />
+            <div class="m-table-group-header__content-cell">
+                <slot name="group-header-title"
+                      :rows-group="rowsGroup"
+                      :title="rowsGroup.header.title">
+                    <template v-if="rowsGroup.header.title">
+                        {{ rowsGroup.header.title }}
+                    </template>
+                </slot>
+            </div>
+        </div>
+    </th>
+    <template v-for="(column, columnIndex) in columns"
+              v-else-if="hasHeaderCell">
+        <th v-if="rowsGroup.header.cells[column.name]"
+            :key="columnIndex"
+            :class="[
+                getRowAlignmentClass(rowsGroup, column),
+                rowsGroup.header.cells[column.name].className,
+            ]"
+            :style="rowsGroup.header.cells[column.name].style"
+            :colspan="getColspan(rowsGroup.header.cells[column.name].colspan)">
+            <div class="m-table-group-header__cell"
+                :style="getCellStyle(rowsGroup.header.cells[column.name], columnIndex)">
+                <m-plus v-if="displayAccordionIconInCorrectCell(column.name, columnIndex)"
+                        class="m-table-group-header__accordion-icon"
+                        :class="[rowsGroup.accordion.iconClassName]"
+                        :open="isAccordionOpen"
+                        :disabled="isAccordionDisabled"
+                        :skin="mPlusSkin"
+                        :large="true" />
+                <div class="m-table-group-header__content-cell">
+                    <slot v-if="columnIndex === 0 && rowsGroup.header.title"
+                          name="group-header-title"
+                          :rows-group="rowsGroup"
+                          :title="rowsGroup.header.title"
+                          :column="column">
+                        <template v-if="rowsGroup.header.title">
+                            {{ rowsGroup.header.title }}
+                        </template>
+                    </slot>
+                    <slot v-if="hasHeaderCell"
+                          :name="'group-header-cell.' + column.name"
+                          :rows-group="rowsGroup"
+                          :header="rowsGroup.header"
+                          :cell="rowsGroup.header.cells[column.name]"
+                          :column="column">
+                        <slot name="group-header-cell"
+                              :rows-group="rowsGroup"
+                              :header="rowsGroup.header"
+                              :cell="rowsGroup.header.cells[column.name]"
+                              :column="column">
+                            <template v-if="rowsGroup.header.cells[column.name].value">
+                                {{ rowsGroup.header.cells[column.name].value }}
+                            </template>
+                        </slot>
+                    </slot>
+                </div>
+            </div>
+        </th>
+        <th v-else
+            :class="[
+                getRowAlignmentClass(rowsGroup, column)
+            ]">
+            <div v-if="columnIndex === 0 && rowsGroup.header.title"
+                 class="m-table-group-header__cell">
+                <m-plus v-if="displayAccordionIconInCorrectCell(column.name, columnIndex)"
+                        class="m-table-group-header__accordion-icon"
+                        :class="[rowsGroup.accordion.iconClassName]"
+                        :open="isAccordionOpen"
+                        :disabled="isAccordionDisabled"
+                        :skin="mPlusSkin"
+                        :large="true" />
+                <div class="m-table-group-header__content-cell">
+                    <slot name="group-header-title"
+                          :rows-group="rowsGroup"
+                          :title="rowsGroup.header.title"
+                          :column="column">
+                        <template v-if="rowsGroup.header.title">
+                            {{ rowsGroup.header.title }}
+                        </template>
+                    </slot>
+                </div>
+            </div>
+        </th>
+    </template>
+</tr>

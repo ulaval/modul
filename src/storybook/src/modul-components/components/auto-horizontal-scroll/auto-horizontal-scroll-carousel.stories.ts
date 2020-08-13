@@ -1,5 +1,5 @@
 import { boolean, select } from '@storybook/addon-knobs';
-import { MAutoHorizontalScrollGradientBackgroundStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
+import { MAutoHorizontalScrollGradientStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import { AUTO_HORIZONTAL_SCROLL } from '@ulaval/modul-components/dist/components/component-names';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -9,7 +9,7 @@ export default {
     parameters: { fileName: __filename }
 };
 
-const CAROUSEL_TEMPLATE = (
+const getCarouselTemplate = (
     _horizontalScrollOffset: number,
     _nbItem: number,
     _displayButton: boolean
@@ -27,13 +27,13 @@ const CAROUSEL_TEMPLATE = (
         nextButtonActive: {
             default: boolean('Prop next-button-active', _displayButton)
         },
-        gradientBackgroundStyle: {
+        gradientStyle: {
             default: select(
-                'Prop gradient-background-style',
+                'Prop gradient-style',
                 Enums.toValueArray(
-                    MAutoHorizontalScrollGradientBackgroundStyle
+                    MAutoHorizontalScrollGradientStyle
                 ),
-                MAutoHorizontalScrollGradientBackgroundStyle.White
+                MAutoHorizontalScrollGradientStyle.White
             )
         },
         displayHorizontalScrollbar: {
@@ -73,7 +73,7 @@ const CAROUSEL_TEMPLATE = (
         :previous-button-active="previousButtonActive"
         :next-button-active="nextButtonActive"
         :horizontal-scroll-offset.sync="horizontalScrollOffset"
-        :gradient-background-style="gradientBackgroundStyle"
+        :gradient-style="gradientStyle"
         :display-horizontal-scrollbar="displayHorizontalScrollbar"
         style="background: #f4f4f4;"
         @previous-button-click="onPreviousButtonClick()"
@@ -98,11 +98,7 @@ const CAROUSEL_TEMPLATE = (
     </${AUTO_HORIZONTAL_SCROLL}>`
 });
 
-export const defaultStory = () => CAROUSEL_TEMPLATE(1200, 20, false);
+export const Sandbox = () => getCarouselTemplate(1200, 20, false);
 
-defaultStory.story = {
-    name: 'Sandbox'
-};
-
-export const twoItems = () => CAROUSEL_TEMPLATE(0, 2, false);
-export const WithButton = () => CAROUSEL_TEMPLATE(120, 14, true);
+export const TwoItems = () => getCarouselTemplate(0, 2, false);
+export const WithButton = () => getCarouselTemplate(120, 14, true);
