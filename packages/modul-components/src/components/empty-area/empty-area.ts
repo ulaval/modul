@@ -1,7 +1,6 @@
 import { PluginObject } from 'vue';
 import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
-import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../utils/vue/vue';
 import { ADD_NAME, BUTTON_NAME, EMPTY_AREA_NAME, SVG_NAME } from '../component-names';
 import { MAdd } from './../add/add';
@@ -51,7 +50,6 @@ export class MEmptyArea extends ModulVue {
     public emitButtonClick(event: MouseEvent): void { }
 
     public get isButtonTypeAdd(): boolean {
-        this.$svgSprite.addSvg(ModulIconName.Calendar, require('./../../assets/icons/svg/calendar.svg'));
         return this.buttonType === MEmptyAreaButtonType.AddButton;
     }
 }
