@@ -28,6 +28,10 @@
             color: $m-color--ul-yellow;
         }
     }
+
+    .m-table-group-header__cell {
+        border-top-color: $m-color--grey-dark;
+    }
 }
 
 .m-table-group-header {
