@@ -56,7 +56,8 @@ $m-toast-max-width: 768px;
         display: flex;
         flex: 1 0 100%;
 
-        p {
+        p,
+        div /deep/ p:first-child {
             margin-top: 0;
         }
     }
