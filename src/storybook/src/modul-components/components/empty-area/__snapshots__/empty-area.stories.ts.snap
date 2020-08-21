@@ -1,11 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-empty-area Prop Backgroun Style 1`] = `
+<div>
+  <div
+    class="m-empty-area m--is-background-style-any m--is-display-mode-block m--has-content-area"
+    style="min-height: 280px;"
+  >
+    <!---->
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop background-style = 'any'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-content-area"
+    style="min-height: 280px;"
+  >
+    <!---->
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop background-style = 'light'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-empty-area Prop Button Text 1`] = `
 <div
-  class="m-empty-area"
+  class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-button"
+  style="min-height: 280px;"
 >
   <a
-    class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+    class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
     href="#"
     role="button"
     tabindex="0"
@@ -42,10 +101,11 @@ exports[`Storyshots modul-components|m-empty-area Prop Button Text 1`] = `
 exports[`Storyshots modul-components|m-empty-area Prop Button Type 1`] = `
 <div>
   <div
-    class="m-empty-area"
+    class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-button"
+    style="min-height: 280px;"
   >
     <button
-      class="m-button m--is-skin-secondary"
+      class="m-button m-empty-area__button m--is-skin-secondary"
       type="button"
     >
       <!---->
@@ -70,10 +130,11 @@ exports[`Storyshots modul-components|m-empty-area Prop Button Type 1`] = `
   </div>
    
   <div
-    class="m-empty-area m-u--margin-top--l"
+    class="m-empty-area m-u--margin-top--l m--is-background-style-light m--is-display-mode-block m--has-button"
+    style="min-height: 280px;"
   >
     <a
-      class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+      class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
       href="#"
       role="button"
       tabindex="0"
@@ -108,78 +169,405 @@ exports[`Storyshots modul-components|m-empty-area Prop Button Type 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-empty-area Prop Display Mode 1`] = `
+<div>
+  <div
+    class="m-empty-area m--is-background-style-light m--is-display-mode-inline m--has-button m--has-content-area"
+    style="min-height: 280px;"
+  >
+    <a
+      class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
+      href="#"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-link__icon"
+        height="24px"
+        width="24px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+       
+      <span
+        class="m-link__text"
+      >
+        
+            Add
+        
+      </span>
+       
+      <!---->
+    </a>
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop display-mode = 'inline'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-empty-area m-u--margin-top--l m--is-background-style-light m--is-display-mode-block m--has-button m--has-content-area"
+    style="min-height: 280px;"
+  >
+    <a
+      class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
+      href="#"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-link__icon"
+        height="24px"
+        width="24px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+       
+      <span
+        class="m-link__text"
+      >
+        
+            Add
+        
+      </span>
+       
+      <!---->
+    </a>
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop display-mode = 'block'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-empty-area Prop Min Height 1`] = `
+<div>
+  <div
+    class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-button m--has-content-area"
+    style="min-height: auto;"
+  >
+    <a
+      class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
+      href="#"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-link__icon"
+        height="24px"
+        width="24px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+       
+      <span
+        class="m-link__text"
+      >
+        
+            Add
+        
+      </span>
+       
+      <!---->
+    </a>
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop min-height = 'auto'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-empty-area m-u--margin-top--l m--is-background-style-light m--is-display-mode-block m--has-button m--has-content-area"
+    style="min-height: 400px;"
+  >
+    <a
+      class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
+      href="#"
+      role="button"
+      tabindex="0"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-icon m-link__icon"
+        height="24px"
+        width="24px"
+      >
+        <!---->
+         
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
+       
+      <span
+        class="m-link__text"
+      >
+        
+            Add
+        
+      </span>
+       
+      <!---->
+    </a>
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop min-height = '400px'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-empty-area Prop Subtitle 1`] = `
 <div
-  class="m-empty-area"
+  class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-content-area"
+  style="min-height: 280px;"
 >
   <!---->
    
   <div
-    class="m-empty-area__icon-area"
+    class="m-empty-area__content-area"
   >
     <!---->
      
-    <!---->
-     
-    <p
-      class="m-empty-area__subtitle"
+    <div
+      class="m-empty-area__title-area"
     >
-      
-            Prop subtitle
+      <!---->
+       
+      <p
+        class="m-empty-area__subtitle"
+      >
         
-    </p>
+                Prop subtitle
+            
+      </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-empty-area Prop Svg Name 1`] = `
 <div
-  class="m-empty-area"
+  class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-content-area"
+  style="min-height: 280px;"
 >
   <!---->
    
   <div
-    class="m-empty-area__icon-area"
+    class="m-empty-area__content-area"
   >
     <!---->
      
     <!---->
-     
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-empty-area Prop Svg Size 1`] = `
+<div>
+  <div
+    class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-content-area"
+    style="min-height: 280px;"
+  >
     <!---->
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop svg-size = '30px'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-empty-area m-u--margin-top--l m--is-background-style-light m--is-display-mode-block m--has-content-area"
+    style="min-height: 280px;"
+  >
+    <!---->
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop svg-size = '80px'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-empty-area m-u--margin-top--l m--is-background-style-light m--is-display-mode-block m--has-content-area"
+    style="min-height: 280px;"
+  >
+    <!---->
+     
+    <div
+      class="m-empty-area__content-area"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__title-area"
+      >
+        <p
+          class="m-empty-area__title"
+        >
+          <strong>
+            Prop svg-size = '1em'
+          </strong>
+        </p>
+         
+        <!---->
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-empty-area Prop Title 1`] = `
 <div
-  class="m-empty-area"
+  class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-content-area"
+  style="min-height: 280px;"
 >
   <!---->
    
   <div
-    class="m-empty-area__icon-area"
+    class="m-empty-area__content-area"
   >
     <!---->
      
-    <p
-      class="m-empty-area__title"
+    <div
+      class="m-empty-area__title-area"
     >
-      <strong>
-        Prop title
-      </strong>
-    </p>
-     
-    <!---->
+      <p
+        class="m-empty-area__title"
+      >
+        <strong>
+          Prop title
+        </strong>
+      </p>
+       
+      <!---->
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-empty-area Sandbox 1`] = `
 <div
-  class="m-empty-area"
+  class="m-empty-area m--is-background-style-light m--is-display-mode-block m--has-button m--has-content-area"
+  style="min-height: 280px;"
 >
   <a
-    class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+    class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
     href="#"
     role="button"
     tabindex="0"
@@ -210,19 +598,23 @@ exports[`Storyshots modul-components|m-empty-area Sandbox 1`] = `
   </a>
    
   <div
-    class="m-empty-area__icon-area"
+    class="m-empty-area__content-area"
   >
     <!---->
      
-    <p
-      class="m-empty-area__title"
+    <div
+      class="m-empty-area__title-area"
     >
-      <strong>
-        No content available
-      </strong>
-    </p>
-     
-    <!---->
+      <p
+        class="m-empty-area__title"
+      >
+        <strong>
+          No content available
+        </strong>
+      </p>
+       
+      <!---->
+    </div>
   </div>
 </div>
 `;

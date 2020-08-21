@@ -5,7 +5,7 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { EMPTY_AREA_NAME, TABLE_EMPTY_ROW_NAME } from '../../component-names';
 import { MTableEmptyArea } from '../responsive-table-commons';
-import { MEmptyArea } from './../../empty-area/empty-area';
+import { MEmptyArea, MEmptyAreaBackgroundStyle, MEmptyAreaDisplayMode } from './../../empty-area/empty-area';
 import WithRender from './table-empty-row.html?style=./table-empty-row.scss';
 
 @WithRender
@@ -47,6 +47,11 @@ export class MTableEmptyRow extends ModulVue {
     })
     public readonly displayDefaultText!: boolean;
 
+    @Prop({
+        default: false
+    })
+    public readonly insideOfTableGroup!: boolean;
+
     @Emit('empty-button-click')
     public emitEmptyButtonClick(event: MouseEvent): void { }
 
@@ -74,10 +79,42 @@ export class MTableEmptyRow extends ModulVue {
             : '';
     }
 
+    public get svgSize(): string {
+        if (this.emptyArea && this.emptyArea.svgSize) {
+            return this.emptyArea.svgSize;
+        }
+
+        return this.insideOfTableGroup ? '30px' : '60px';
+    }
+
     public get buttonText(): string {
         return this.emptyArea && this.emptyArea.buttonText && !this.waiting
             ? this.emptyArea.buttonText
             : '';
+    }
+
+    public get backgroundStyle(): MEmptyAreaBackgroundStyle {
+        if (this.emptyArea && this.emptyArea.backgroundStyle) {
+            return this.emptyArea.backgroundStyle;
+        }
+
+        return this.insideOfTableGroup ? MEmptyAreaBackgroundStyle.Any : MEmptyAreaBackgroundStyle.Light;
+    }
+
+    public get displayMode(): MEmptyAreaDisplayMode {
+        if (this.emptyArea && this.emptyArea.displayMode) {
+            return this.emptyArea.displayMode;
+        }
+
+        return this.insideOfTableGroup ? MEmptyAreaDisplayMode.Inline : MEmptyAreaDisplayMode.Block;
+    }
+
+    public get minHeight(): string {
+        if (this.emptyArea && this.emptyArea.minHeight) {
+            return this.emptyArea.minHeight;
+        }
+
+        return this.insideOfTableGroup ? 'auto' : '280px';
     }
 }
 

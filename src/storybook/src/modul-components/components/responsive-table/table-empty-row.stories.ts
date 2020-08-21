@@ -33,7 +33,7 @@ export const Default = () => ({
     />`
 });
 
-export const Waiting = () => ({
+export const PropWaiting = () => ({
     data: () => ({
         emptyArea: {
             title: 'Text',
@@ -52,5 +52,25 @@ export const Waiting = () => ({
         :horizontal-scroll-offset="10"
         :waiting="true"
         @empty-button-click="emitEmptyButtonClick"
+    />`
+});
+
+export const PropInsideOfTableGroup = () => ({
+    data: () => ({
+        emptyArea: {
+            title: 'Text',
+            svgName: ModulIconName.Folder,
+            buttonText: 'Add content',
+            buttonType: MEmptyAreaButtonType.Button
+        }
+    }),
+    beforeCreate() {
+        importAllSvg();
+    },
+    template: `<${TABLE_EMPTY_ROW_NAME}
+        :empty-area="emptyArea"
+        :table-component-width="'600px'"
+        :horizontal-scroll-offset="10"
+        :inside-of-table-group="true"
     />`
 });

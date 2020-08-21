@@ -730,17 +730,17 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
           </tr>
             
           <tr
-            class="m-table-empty-row"
+            class="m-table-empty-row m--is-background-style-any"
           >
             <td
               colspan="5"
             >
               <div
-                class="m-empty-area"
-                style="left: 0px; width: 100%;"
+                class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-inline m--has-button m--has-content-area"
+                style="min-height: auto; left: 0px; width: 100%;"
               >
                 <a
-                  class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+                  class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
                   href="#"
                   role="button"
                   tabindex="0"
@@ -771,19 +771,23 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
                 </a>
                  
                 <div
-                  class="m-empty-area__icon-area"
+                  class="m-empty-area__content-area"
                 >
                   <!---->
                    
-                  <p
-                    class="m-empty-area__title"
+                  <div
+                    class="m-empty-area__title-area"
                   >
-                    <strong>
-                      No data
-                    </strong>
-                  </p>
-                   
-                  <!---->
+                    <p
+                      class="m-empty-area__title"
+                    >
+                      <strong>
+                        No data
+                      </strong>
+                    </p>
+                     
+                    <!---->
+                  </div>
                 </div>
               </div>
             </td>
@@ -3819,17 +3823,17 @@ exports[`Storyshots modul-components|m-responsive-table Table Without Data 1`] =
           
         <tbody>
           <tr
-            class="m-table-empty-row"
+            class="m-table-empty-row m--is-background-style-light"
           >
             <td
               colspan="5"
             >
               <div
-                class="m-empty-area"
-                style="left: 0px; width: 100%;"
+                class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-block m--has-button m--has-content-area"
+                style="min-height: 280px; left: 0px; width: 100%;"
               >
                 <a
-                  class="m-link m-add m--is-unvisited m--is-button m--has-left-icon m--has-content"
+                  class="m-link m-add m-empty-area__button m--is-unvisited m--is-button m--has-left-icon m--has-content"
                   href="#"
                   role="button"
                   tabindex="0"
@@ -3860,19 +3864,23 @@ exports[`Storyshots modul-components|m-responsive-table Table Without Data 1`] =
                 </a>
                  
                 <div
-                  class="m-empty-area__icon-area"
+                  class="m-empty-area__content-area"
                 >
                   <!---->
                    
-                  <p
-                    class="m-empty-area__title"
+                  <div
+                    class="m-empty-area__title-area"
                   >
-                    <strong>
-                      No data to display
-                    </strong>
-                  </p>
-                   
-                  <!---->
+                    <p
+                      class="m-empty-area__title"
+                    >
+                      <strong>
+                        No data to display
+                      </strong>
+                    </p>
+                     
+                    <!---->
+                  </div>
                 </div>
               </div>
             </td>
@@ -4423,31 +4431,35 @@ exports[`Storyshots modul-components|m-responsive-table Waiting Without Data 1`]
           
         <tbody>
           <tr
-            class="m-table-empty-row"
+            class="m-table-empty-row m--is-background-style-light"
           >
             <td
               colspan="5"
             >
               <div
-                class="m-empty-area"
-                style="left: 0px; width: 100%;"
+                class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-block m--has-content-area"
+                style="min-height: 280px; left: 0px; width: 100%;"
               >
                 <!---->
                  
                 <div
-                  class="m-empty-area__icon-area"
+                  class="m-empty-area__content-area"
                 >
                   <!---->
                    
-                  <p
-                    class="m-empty-area__title"
+                  <div
+                    class="m-empty-area__title-area"
                   >
-                    <strong>
-                      Chargement en cours
-                    </strong>
-                  </p>
-                   
-                  <!---->
+                    <p
+                      class="m-empty-area__title"
+                    >
+                      <strong>
+                        Chargement en cours
+                      </strong>
+                    </p>
+                     
+                    <!---->
+                  </div>
                 </div>
               </div>
             </td>
