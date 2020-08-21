@@ -2,22 +2,14 @@
 
 .m-empty-area {
     position: relative;
-    min-height: 280px;
-    background: $m-color--grey-lightest;
     padding: $m-spacing;
+
 
     @media (min-width: $m-mq--min--s) {
         padding: $m-spacing--l;
     }
 
-    &__icon-area {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    &__content-area {
         width: 100%;
         color: $m-color--grey-dark;
     }
@@ -32,14 +24,72 @@
         }
     }
 
-    &__icon {
-        + .m-empty-area__title {
+    &__subtitle {
+        font-weight: $m-font-weight;
+        font-size: $m-font-size--s;
+    }
+}
+
+.m-empty-area.m--is-background-style-light {
+    background: $m-color--grey-lightest;
+}
+
+.m-empty-area.m--is-display-mode-inline {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    &.m--has-content-area {
+        .m-empty-area__button {
             margin-top: $m-spacing--s;
         }
     }
 
-    &__subtitle {
-        font-weight: $m-font-weight;
-        font-size: $m-font-size--s;
+    .m-empty-area {
+        &__content-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__icon {
+            + .m-empty-area__title-area {
+                margin-left: $m-spacing--s  * 1.5;
+            }
+        }
+    }
+}
+
+
+.m-empty-area.m--is-display-mode-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .m-empty-area {
+        &__content-area {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        &__icon {
+            + .m-empty-area__title-area {
+                margin-top: $m-spacing--s * 1.5;
+            }
+        }
+
+        &__button {
+            align-self: flex-start;
+
+            + .m-empty-area__content-area {
+                margin-top: $m-spacing--s;
+            }
+        }
     }
 }
