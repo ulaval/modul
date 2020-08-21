@@ -124,6 +124,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(DefaultSpritesPlugin);
             Vue.use(HttpPlugin);
             Vue.use(QAPlugin);
+            
             // modul-components
             Vue.use(ButtonPlugin);
             Vue.use(I18nPlugin);
