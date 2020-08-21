@@ -58,10 +58,8 @@ export const PropWaiting = () => ({
 export const PropInsideOfTableGroup = () => ({
     data: () => ({
         emptyArea: {
-            title: 'Text',
-            svgName: ModulIconName.Folder,
-            buttonText: 'Add content',
-            buttonType: MEmptyAreaButtonType.Button
+            title: 'Prop inside-of-table-group = true',
+            svgName: ModulIconName.Folder
         }
     }),
     beforeCreate() {

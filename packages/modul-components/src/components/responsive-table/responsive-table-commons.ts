@@ -98,7 +98,7 @@ export interface MTableEmptyArea {
     buttonType?: MEmptyAreaButtonType;
     backgroundStyle?: MEmptyAreaBackgroundStyle;
     displayMode?: MEmptyAreaDisplayMode;
-    minHeight: string;
+    minHeight?: string;
 }
 
 export enum MTableColspan {

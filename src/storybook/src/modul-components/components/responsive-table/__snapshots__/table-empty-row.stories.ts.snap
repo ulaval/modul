@@ -69,30 +69,10 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Prop I
 >
   <td>
     <div
-      class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-inline m--has-button m--has-content-area"
+      class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-inline m--has-content-area"
       style="min-height: auto; left: 10px; width: 600px;"
     >
-      <button
-        class="m-button m-empty-area__button m--is-skin-secondary"
-        type="button"
-      >
-        <!---->
-         
-        <!---->
-         
-        <span
-          class="m-button__text"
-        >
-          
-            Add content
-         
-          <!---->
-        </span>
-         
-        <!---->
-         
-        <!---->
-      </button>
+      <!---->
        
       <div
         class="m-empty-area__content-area"
@@ -106,7 +86,7 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Prop I
             class="m-empty-area__title"
           >
             <strong>
-              Text
+              Prop inside-of-table-group = true
             </strong>
           </p>
            
