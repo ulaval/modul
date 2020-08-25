@@ -19,7 +19,12 @@ export const defaultStory = () => ({
         'focus',
         'blur'
     ),
-    template: `<m-button v-qa="'button default'" @click="click" @focus="focus" @blur="blur">{{ text }}</m-button>`
+    template: `
+    <p v-qa="'paragraphe'">
+        <m-button v-qa="'button default'" @click="click" @focus="focus" @blur="blur">{{ text }}</m-button>
+        <m-button v-qa="'button secondary'" @click="click" @focus="focus" @blur="blur">{{ text }}</m-button>
+    </p>
+    `
 });
 
 defaultStory.story = {

@@ -1,5 +1,43 @@
-<div :class="inputClass">
+<div :class="inputClass"
+     style="z-index: 2000;">
     <div v-if="expanded">
-        {{elements.length}}
+        <m-qa-login v-if="!user"></m-qa-login>
+        <div v-else>
+            <div v-if="!selectedElement">
+                <ul>
+                    <li v-for="(element, index) in elements"
+                        :key="index"
+                        style="display: flex; align-items: center; justify-content: space-between;">
+                        <div @mouseenter="onElementMouseEnter(element.id)"
+                             @mouseleave="onElementMouseLeave(element.id)"
+                             @click="selectedElement = element"
+                             style="display: flex; align-items: center; cursor: pointer;">
+                            {{element.id}}
+                        </div>
+                        <div>
+                            <m-icon name="m-svg__file-text"
+                                    color="blue"></m-icon>
+                            <m-icon name="m-svg__error"
+                                    color="red"></m-icon>
+                            <m-icon v-if="!elementHasError(element)"
+                                    name="m-svg__clock"
+                                    color="orange"></m-icon>
+                            <m-icon v-if="!elementHasError(element)"
+                                    name="m-svg__completed-filled"
+                                    color="green"></m-icon>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div v-else>
+                {{selectedElement.id}}
+                <ul>
+                    <li v-for="(log, index) in selectedElement.logs"
+                        :key="index + 'log'">
+                        {{log.body}}
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>

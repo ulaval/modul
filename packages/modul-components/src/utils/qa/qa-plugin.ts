@@ -1,5 +1,6 @@
 import { PluginObject } from 'vue';
 import Vuex from 'vuex';
+import { MQAlogin } from './components/qa-login';
 import { QADirectiveFactory } from './qa-directive';
 import { MQAPanel } from './qa-panel';
 import { MQAServiceMock } from './qa-service';
@@ -9,10 +10,10 @@ element.setAttribute('id', 'qa-container');
 document.body.appendChild(element);
 
 export const QAPlugin: PluginObject<any> = {
-    install(v): void {
+    install(v, options: { project: string }): void {
         v.use(Vuex);
-
-        const store = QAStoreFactory(new MQAServiceMock());
+        v.component('m-qa-login', MQAlogin);
+        const store = QAStoreFactory(new MQAServiceMock(), { project: options.project });
 
         v.directive('qa', QADirectiveFactory(store));
 

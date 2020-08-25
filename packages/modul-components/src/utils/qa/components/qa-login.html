@@ -1,0 +1,23 @@
+<div class="m-qa-login">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span class="m-u--h2">
+            QA-Plugin
+        </span>
+        <img height="40"
+             src="https://dataverse.scholarsportal.info/logos/75125/UL_C.png"
+             alt="">
+    </div>
+    <m-form :form-group="formGroup"
+            @submit="submit">
+        <m-input-group class="m-u--margin-top--l">
+            <m-textfield v-model="usernameControl.value"
+                         label="Username"></m-textfield>
+            <m-textfield v-model="passwordControl.value"
+                         label="Password"
+                         type="password"></m-textfield>
+        </m-input-group>
+
+        <m-button style="margin-top: 10px;"
+                  type="submit">Login</m-button>
+    </m-form>
+</div>

@@ -123,7 +123,8 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(FrenchPlugin);
             Vue.use(DefaultSpritesPlugin);
             Vue.use(HttpPlugin);
-            Vue.use(QAPlugin);
+            Vue.use(FormPlugin);
+            Vue.use(QAPlugin, { project: 'storybook' });
 
             // modul-components
             Vue.use(ButtonPlugin);
@@ -197,7 +198,6 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(IntegerfieldPlugin);
             Vue.use(MaskedfieldPlugin);
             Vue.use(PostalcodefieldPlugin);
-            Vue.use(FormPlugin);
             Vue.use(PopperPlugin);
             Vue.use(CharacterCountPlugin);
             Vue.use(InputStylePlugin);
