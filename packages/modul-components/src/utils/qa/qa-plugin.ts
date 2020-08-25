@@ -1,26 +1,24 @@
 import { PluginObject } from 'vue';
+import Vuex from 'vuex';
 import { QADirectiveFactory } from './qa-directive';
 import { MQAPanel } from './qa-panel';
-import { MQAService, QAData } from './qa-service';
-
-declare module 'vue/types/vue' {
-    interface Vue {
-        $qa: MQAService;
-    }
-}
-
+import { MQAServiceMock } from './qa-service';
+import { QAStoreFactory } from './qa-store';
 const element = document.createElement('div');
 element.setAttribute('id', 'qa-container');
 document.body.appendChild(element);
 
 export const QAPlugin: PluginObject<any> = {
     install(v): void {
-        const panelInstance = new MQAPanel();
-        const service = new MQAService('modul', v.prototype.$http, (data: { [id: string]: QAData }) => v.prototype.$set(panelInstance, 'data', data));
+        v.use(Vuex);
 
-        v.prototype.$qa = service;
+        const store = QAStoreFactory(new MQAServiceMock());
 
-        v.directive('qa', QADirectiveFactory(v.prototype.$qa, panelInstance));
+        v.directive('qa', QADirectiveFactory(store));
+
+        const panelInstance = new MQAPanel({
+            store
+        });
 
         panelInstance.$mount('#qa-container');
     }

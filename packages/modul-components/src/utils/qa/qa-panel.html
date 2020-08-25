@@ -1,16 +1,5 @@
 <div :class="inputClass">
     <div v-if="expanded">
-        <ul class="m-qa-panel__list">
-            <li v-for="(id, index) in dataIds"
-                class="m-qa-input__list"
-                :key="index + id"
-                @mouseenter="onMouseEnter(id)"
-                @mouseleave="onMouseLeave(id)">
-                {{id}}
-                <m-icon-button icon-name="m-svg__add-circle-filled"
-                               @click="onAddClick(id)"></m-icon-button>
-            </li>
-        </ul>
+        {{elements.length}}
     </div>
-    <m-qa-form :item="this.editingItem"></m-qa-form>
 </div>

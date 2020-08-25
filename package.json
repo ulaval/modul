@@ -50,5 +50,9 @@
             "commit-msg": "node conf/hooks/commit-msg.js",
             "prepare-commit-msg": "node conf/hooks/prepare-msg.js"
         }
+    },
+    "dependencies": {
+        "vuex": "^3.5.1",
+        "vuex-class": "^0.3.2"
     }
 }
