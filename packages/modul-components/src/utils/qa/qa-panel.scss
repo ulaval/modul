@@ -1,21 +1,12 @@
 .m-qa-panel {
-    background-color: #000000a8;
+    background-color: black;
     color: white;
     padding: 1rem;
-    width: 36rem !important;
+    width: 20rem !important;
     height: 10rem;
     position: absolute;
     right: 0;
     top: 0;
     height: 100vh;
-
-    &__list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &--extended {
-        width: 15rem;
-    }
+    z-index: 2000;
 }

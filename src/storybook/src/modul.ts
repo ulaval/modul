@@ -124,7 +124,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(DefaultSpritesPlugin);
             Vue.use(HttpPlugin);
             Vue.use(FormPlugin);
-            Vue.use(QAPlugin, { project: 'storybook' });
+            Vue.use(QAPlugin, { project: 'storybook', token: 'my-token' });
 
             // modul-components
             Vue.use(ButtonPlugin);

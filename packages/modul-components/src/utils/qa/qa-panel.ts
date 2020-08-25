@@ -26,38 +26,5 @@ export class MQAPanel extends Vue {
     public user: MQAUser;
 
     public expanded: boolean = true;
-    public stableModel: string[] = ['stable', 'unstable'];
     public selectedElement: MQAElement | null = null;
-
-    public get inputClass(): string {
-        return !this.expanded ? 'm-qa-panel' : 'm-qa-panel m-qa-panel--extended';
-    }
-
-    public elementHasError(element: MQAElement): boolean {
-        return element.logs.some(l => l.type === 'error');
-    }
-
-    public onElementMouseEnter(id: string): void {
-        const element: HTMLElement = document.querySelector(
-            `[data-qa='${id}']`
-        )! as HTMLElement;
-
-        if (!element) {
-            return;
-        }
-
-        element.style.border = '2px red solid';
-    }
-
-    public onElementMouseLeave(id: string): void {
-        const element: HTMLElement = document.querySelector(
-            `[data-qa='${id}']`
-        )! as HTMLElement;
-
-        if (!element) {
-            return;
-        }
-
-        element.style.border = 'none';
-    }
 }

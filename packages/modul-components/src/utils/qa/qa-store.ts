@@ -3,7 +3,9 @@ import { MQAElement, MQAUser } from './qa-def';
 import { MQAService } from './qa-service';
 
 export class MQAState {
-    public user: MQAUser | null = null;
+    public user: MQAUser | null = {
+        username: 'test'
+    };
     public elements: MQAElement[] = [];
 
     constructor(
@@ -11,7 +13,7 @@ export class MQAState {
     ) { }
 }
 
-export function QAStoreFactory(service: MQAService, options: { project: string }): Store<MQAState> {
+export function QAStoreFactory(service: MQAService, options: { project: string, token: string }): Store<MQAState> {
     return new Store({
         state: new MQAState(options.project),
         getters: {

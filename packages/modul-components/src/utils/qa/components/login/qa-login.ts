@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Action } from 'vuex-class';
-import { MButton } from '../../../components/button/button';
-import { MForm } from '../../../components/form/form';
-import { MIcon } from '../../../components/icon/icon';
-import { MInputGroup } from '../../../components/input-group/input-group';
-import { MTextfield } from '../../../components/textfield/textfield';
-import { FormControl, FormGroup, RequiredValidator } from '../../form';
+import { MButton } from '../../../../components/button/button';
+import { MForm } from '../../../../components/form/form';
+import { MIcon } from '../../../../components/icon/icon';
+import { MInputGroup } from '../../../../components/input-group/input-group';
+import { MTextfield } from '../../../../components/textfield/textfield';
+import { FormControl, FormGroup, RequiredValidator } from '../../../form';
 import WithRender from './qa-login.html?style=./qa-login.scss';
 
 @WithRender
@@ -19,7 +19,7 @@ import WithRender from './qa-login.html?style=./qa-login.scss';
         MInputGroup
     }
 })
-export class MQAlogin extends Vue {
+export class MQALogin extends Vue {
     @Action
     public login: (payload: { username: string, password: string }) => void;
 
