@@ -3,8 +3,9 @@ export interface MQAUser {
 }
 
 export interface MQAElementLog {
+    id?: string;
     author?: MQAUser;
-    date?: string;
+    date?: Date;
     body?: string;
     type?: 'error' | 'question' | 'comments';
     needResolve?: boolean;
@@ -13,6 +14,8 @@ export interface MQAElementLog {
 
 export interface MQAElement {
     id: string;
+    name?: string;
+    docUrl?: string;
     logs: MQAElementLog[];
     stable: boolean;
 }

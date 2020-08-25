@@ -8,21 +8,17 @@
             style="display: flex; align-items: center; justify-content: space-between;">
             <div @mouseenter="onElementMouseEnter(element.id)"
                  @mouseleave="onElementMouseLeave(element.id)"
-                 @click="$emit('element-selected', element)"
+                 @click="onElementMouseClick(element.id)"
                  style="display: flex; align-items: center; cursor: pointer;">
-                {{element.id}}
+                {{element.name}}
             </div>
             <div>
-                <m-icon name="m-svg__file-text"
-                        color="blue"></m-icon>
-                <m-icon name="m-svg__error"
-                        color="red"></m-icon>
-                <m-icon v-if="!elementHasError(element)"
-                        name="m-svg__clock"
-                        color="orange"></m-icon>
-                <m-icon v-if="!elementHasError(element)"
+                <m-icon v-if="elementIsStable(element)"
                         name="m-svg__completed-filled"
                         color="green"></m-icon>
+                <m-icon v-if="!elementIsStable(element)"
+                        name="m-svg__error-filled"
+                        color="red"></m-icon>
             </div>
         </li>
     </ul>

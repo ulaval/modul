@@ -1,0 +1,21 @@
+<div class="m-qa-element-form">
+    <m-icon-button icon-name="m-svg__chevron-circle--left"
+                   skin="link"
+                   @click="$emit('back')"></m-icon-button>
+    <h2>
+        Edit Element
+    </h2>
+    <m-form v-if="formGroup"
+            :form-group="formGroup"
+            @submit="submit">
+        <m-input-group class="m-u--margin-top--l">
+            <m-textfield v-model="nameControl.value"
+                         label="Element name"></m-textfield>
+            <m-textfield v-model="docUrlControl.value"
+                         label="Documentation url"></m-textfield>
+        </m-input-group>
+
+        <m-button style="margin-top: 10px;"
+                  type="submit">Soumettre</m-button>
+    </m-form>
+</div>

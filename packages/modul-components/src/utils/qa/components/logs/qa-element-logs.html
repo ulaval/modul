@@ -1,0 +1,34 @@
+<div class="m-qa-element-logs">
+    <h2>
+        Logs
+        <m-icon-button icon-name="m-svg__add-circle-filled"
+                       @click="onAddClick"></m-icon-button>
+    </h2>
+    <div v-if="!selectedLog">
+        <ul>
+            <li v-for="(log, index) in logs"
+                :key="index +'logs'">
+                <div style="display: flex; align-items: center;">
+                    <m-avatar></m-avatar>
+                    <div style="margin-left: 5px;">
+                        by: {{log.author.username}}
+                        <br />
+                        date: {{log.date | f-m-date}}
+                    </div>
+                </div>
+                <p>
+                    {{log.body}}
+                </p>
+                <br />
+                <m-checkbox v-if="log.needResolve"
+                            v-model="log.resolved">resolved</m-checkbox>
+                <hr />
+            </li>
+        </ul>
+    </div>
+    <div v-else>
+        <m-qa-element-log-form :element-id="elementId"
+                               :log="selectedLog"
+                               @back="selectedLog = null"></m-qa-element-log-form>
+    </div>
+</div>

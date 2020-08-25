@@ -10,8 +10,8 @@ export class MQAElements extends Vue {
     @Prop({ required: true })
     public elements: MQAElement[];
 
-    public elementHasError(element: MQAElement): boolean {
-        return element.logs.some(l => l.type === 'error');
+    public elementIsStable(element: MQAElement): boolean {
+        return !element.logs.some(l => l.type === 'error' || ((!l.resolved) && l.needResolve === true));
     }
 
     public onElementMouseEnter(id: string): void {
@@ -36,5 +36,10 @@ export class MQAElements extends Vue {
         }
 
         element.style.border = 'none';
+    }
+
+    public onElementMouseClick(id: string): void {
+        this.onElementMouseLeave(id);
+        this.$emit('element-selected', this.elements.find(e => e.id === id));
     }
 }

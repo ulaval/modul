@@ -1,0 +1,22 @@
+<div class="m-qa-element-log-form">
+    <h2>
+        {{log.id ? 'Edit Log' : 'New Log'}}
+    </h2>
+    <m-form v-if="formGroup"
+            :form-group="formGroup"
+            @submit="submit">
+        <m-input-group class="m-u--margin-top--l">
+            <m-textarea v-model="bodyControl.value"
+                        label="Body"></m-textarea>
+            <m-select v-model="typeControl.value"
+                      @select-item="onTypeChange($event)"
+                      label="Type"
+                      :options="types"></m-select>
+            <m-checkbox :readonly="typeControl.value === 'error'"
+                        v-model="needResolveControl.value">Need resolve</m-checkbox>
+        </m-input-group>
+
+        <m-button style="margin-top: 10px;"
+                  type="submit">Soumettre</m-button>
+    </m-form>
+</div>

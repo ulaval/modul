@@ -5,8 +5,9 @@
             <m-qa-elements v-if="!selectedElement"
                            :elements="elements"
                            @element-selected="selectedElement = $event"></m-qa-elements>
-            <m-qa-logs v-else
-                       :element="selectedElement"></m-qa-logs>
+            <m-qa-element-details v-else
+                                  :element="selectedElement"
+                                  @back="selectedElement = null"></m-qa-element-details>
         </div>
     </div>
 </div>

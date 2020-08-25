@@ -28,3 +28,5 @@ export class MQAPanel extends Vue {
     public expanded: boolean = true;
     public selectedElement: MQAElement | null = null;
 }
+
+// todo: toast
