@@ -3,9 +3,7 @@ import { MQAElement, MQAElementLog, MQAUser } from './qa-def';
 import { MQAService } from './qa-service';
 
 export class MQAState {
-    public user: MQAUser | null = {
-        username: 'test'
-    };
+    public user: MQAUser | null = null;
     public elements: MQAElement[] = [];
 
     constructor(
@@ -47,6 +45,13 @@ export function QAStoreFactory(service: MQAService, options: { project: string, 
                     1,
                     payload.log
                 );
+            },
+            deleteLog: (state: MQAState, payload: { elementId: string, logId: string }) => {
+                const logs = state.elements.find(e => e.id === payload.elementId)!.logs;
+                logs.splice(
+                    logs.map(l => l.id).indexOf(payload.logId),
+                    1
+                );
             }
 
         },
@@ -55,20 +60,41 @@ export function QAStoreFactory(service: MQAService, options: { project: string, 
                 username: string,
                 password: string
             }): void => {
-                service.login(payload.username, payload.password).then((user: MQAUser) => context.commit('user', user));
+                service
+                    .login(payload.username, payload.password)
+                    .then((user: MQAUser) =>
+                        context.commit('user', user));
             },
             fetch: (context: ActionContext<MQAState, MQAState>): void => {
-                service.fetch(context.state.project).then((elements: MQAElement[]) => context.commit('elements', elements));
+                service
+                    .fetch(context.state.project)
+                    .then((elements: MQAElement[]) =>
+                        context.commit('elements', elements));
             },
             register: (context: ActionContext<MQAState, MQAState>, payload: { id: string }): void => {
-                service.register(context.state.project, payload.id).then((elements: MQAElement[]) => context.commit('elements', elements));
+                service
+                    .register(context.state.project, payload.id)
+                    .then((elements: MQAElement[]) =>
+                        context.commit('elements', elements));
             },
             update: (context: ActionContext<MQAState, MQAState>, payload: { element: MQAElement }): void => {
-                service.update(context.state.project, payload.element).then((element: MQAElement) => context.commit('updateElement', element));
+                service
+                    .update(context.state.project, payload.element)
+                    .then((element: MQAElement) =>
+                        context.commit('updateElement', element));
             },
             updateLog: (context: ActionContext<MQAState, MQAState>, payload: { elementId: string, log: MQAElementLog }): void => {
-                service.updateLog(context.state.project, payload.elementId, payload.log).then((log: MQAElementLog) => context.commit('updateLog', { elementId: payload.elementId, log }));
+                service
+                    .updateLog(context.state.project, payload.elementId, payload.log)
+                    .then((log: MQAElementLog) =>
+                        context.commit('updateLog', { elementId: payload.elementId, log }));
             },
+            deleteLog: (context: ActionContext<MQAState, MQAState>, payload: { elementId: string, logId: string }) => {
+                service
+                    .deleteLog(context.state.project, payload.elementId, payload.logId)
+                    .then(() =>
+                        context.commit('deleteLog', { elementId: payload.elementId, logId: payload.logId }));
+            }
         }
     });
 };

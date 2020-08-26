@@ -16,6 +16,9 @@
         </m-input-group>
 
         <m-button style="margin-top: 10px;"
-                  type="submit">Soumettre</m-button>
+                  type="submit">Submit</m-button>
+        <m-button style="margin-top: 10px;"
+                  @click="$emit('back')"
+                  skin="secondary">Annuler</m-button>
     </m-form>
 </div>

@@ -8,20 +8,29 @@
         <ul>
             <li v-for="(log, index) in logs"
                 :key="index +'logs'">
-                <div style="display: flex; align-items: center;">
-                    <m-avatar></m-avatar>
-                    <div style="margin-left: 5px;">
-                        by: {{log.author.username}}
-                        <br />
-                        date: {{log.date | f-m-date}}
+                <div style="cursor: pointer;"
+                     @click="onLogClick(log)">
+                    <div style="display: flex; align-items: center;">
+                        <m-avatar></m-avatar>
+                        <div style="margin-left: 5px;">
+                            by: {{log.author.username}}
+                            <br />
+                            date: {{log.date | f-m-date}}
+                        </div>
                     </div>
+                    <p>
+                        {{log.body}}
+                    </p>
                 </div>
-                <p>
-                    {{log.body}}
-                </p>
                 <br />
-                <m-checkbox v-if="log.needResolve"
-                            v-model="log.resolved">resolved</m-checkbox>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <m-icon-button v-if="log.author.id === user.id"
+                                   @click="onDeleteClick(log)"
+                                   icon-name="m-svg__delete"></m-icon-button>
+                    <m-checkbox v-if="log.needResolve"
+                                @click="onResolvedClick(log)"
+                                :value="log.resolved">resolved</m-checkbox>
+                </div>
                 <hr />
             </li>
         </ul>

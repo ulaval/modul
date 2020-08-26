@@ -1,11 +1,18 @@
 .m-qa-panel {
-    background-color: #222f3e;
-    color: white;
+    background-color: white;
+    border: 1px solid black;
     padding: 1rem;
     width: 20rem !important;
     height: 10rem;
     position: absolute;
-    right: 0;
-    top: 0;
     height: 100vh;
+
+    &--right {
+        right: 0;
+        top: 0;
+    }
+    &--left {
+        left: 0;
+        top: 0;
+    }
 }

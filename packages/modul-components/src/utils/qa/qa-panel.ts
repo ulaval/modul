@@ -25,8 +25,24 @@ export class MQAPanel extends Vue {
     @Getter('user')
     public user: MQAUser;
 
-    public expanded: boolean = true;
+    public positionRight: boolean = true;
+    public expanded: boolean = false;
     public selectedElement: MQAElement | null = null;
+
+    public get activeClass(): string {
+        if (this.expanded) {
+            return `m-qa-panel m-qa-panel--${this.positionRight ? 'right' : 'left'}`;
+        }
+        return '';
+    }
+
+    public changeDock(): void {
+        this.positionRight = !this.positionRight;
+    }
+
+    public toggle(): void {
+        this.expanded = !this.expanded;
+    }
 }
 
 // todo: toast

@@ -1,4 +1,6 @@
+
 export interface MQAUser {
+    id: string;
     username: string;
 }
 
@@ -10,6 +12,14 @@ export interface MQAElementLog {
     type?: 'error' | 'question' | 'comments';
     needResolve?: boolean;
     resolved?: boolean;
+    replies?: MQAElementLogReply[];
+}
+
+export interface MQAElementLogReply {
+    id?: string;
+    author?: MQAUser;
+    date?: Date;
+    body?: string;
 }
 
 export interface MQAElement {

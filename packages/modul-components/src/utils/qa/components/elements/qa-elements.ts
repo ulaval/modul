@@ -11,7 +11,7 @@ export class MQAElements extends Vue {
     public elements: MQAElement[];
 
     public elementIsStable(element: MQAElement): boolean {
-        return !element.logs.some(l => l.type === 'error' || ((!l.resolved) && l.needResolve === true));
+        return !element.logs.some(l => !l.resolved && l.needResolve === true);
     }
 
     public onElementMouseEnter(id: string): void {
