@@ -1,0 +1,59 @@
+<div class="m-qa-element-elementLog-thread">
+    <h2>
+        Thread
+    </h2>
+
+    <div class="m-u--margin-top">
+        <div style="display: flex; align-items: center;">
+            <m-avatar></m-avatar>
+            <div style="margin-left: 5px;">
+                by: {{elementLog.author.username}}
+                <br />
+                date: {{elementLog.date | f-m-date}}
+                <br />
+                type: <span :style="{color: elementLog.type === 'error' ? 'red' : elementLog.type === 'question' ? 'blue' : 'orange'}">{{elementLog.type}}</span>
+            </div>
+        </div>
+        <p>
+            {{elementLog.body}}
+        </p>
+    </div>
+    <hr />
+    <h4>
+        Replies
+    </h4>
+    <div>
+        <ul>
+            <li v-for="(reply, index) in elementLog.replies"
+                :key="index + 'reply'">
+                <div style="display: flex; align-items: center;">
+                    <m-avatar></m-avatar>
+                    <div style="margin-left: 5px;">
+                        by: {{reply.author.username}}
+                        <br />
+                        date: {{reply.date | f-m-date}}
+                    </div>
+                </div>
+                <p>
+                    {{reply.body}}
+                </p>
+                <hr />
+            </li>
+        </ul>
+    </div>
+    <div>
+        <m-form v-if="formGroup"
+                :form-group="formGroup"
+                @submit="submit">
+            <m-input-group class="m-u--margin-top--l">
+                <m-textfield class="m-u--margin-top"
+                             v-model="bodyControl.value"
+                             label="New comments"></m-textfield>
+            </m-input-group>
+
+            <div class="m-u--margin-top">
+                <m-button type="submit">Add</m-button>
+            </div>
+        </m-form>
+    </div>
+</div>

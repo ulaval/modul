@@ -20,10 +20,12 @@
                 <m-icon-button icon-name="m-svg__chevron-circle--left"
                                skin="link"
                                @click="onBackClick"></m-icon-button>
-                <m-qa-element-details v-if="!editedElement && !editedElementLog"
+
+                <m-qa-element-details v-if="!editedElement && !editedElementLog && !selectedElementLog"
                                       :element="selectedElement"
                                       @element-edited="updateEditedElement({element: $event})"
-                                      @element-log-edited="updateEditedElementLog({elementLog: $event})"></m-qa-element-details>
+                                      @element-log-edited="updateEditedElementLog({elementLog: $event})"
+                                      @element-log-selected="updateSelectedElementLog({elementLog: $event})"></m-qa-element-details>
 
                 <m-qa-element-form v-if="editedElement"
                                    :element="editedElement"
@@ -33,6 +35,10 @@
                                        :element-id="selectedElement.id"
                                        :element-log="editedElementLog"
                                        @back="onBackClick"></m-qa-element-log-form>
+
+                <m-qa-element-log-thread v-if="selectedElementLog"
+                                         :element-id="selectedElement.id"
+                                         :element-log="selectedElementLog"></m-qa-element-log-thread>
             </div>
         </div>
     </div>

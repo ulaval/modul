@@ -2,6 +2,7 @@ import { PluginObject } from 'vue';
 import Vuex from 'vuex';
 import { MQAElementDetails } from './components/element-details/qa-element-details';
 import { MQAElementForm } from './components/element-form/qa-element-form';
+import { MQAElementLogThread } from './components/element-log-thread/qa-element-log-thread';
 import { MQAElements } from './components/elements/qa-elements';
 import { MQAElementLogForm } from './components/log-form/qa-element-log-form';
 import { MQALogin } from './components/login/qa-login';
@@ -25,6 +26,7 @@ export const QAPlugin: PluginObject<any> = {
         v.component('m-qa-element-details', MQAElementDetails);
         v.component('m-qa-element-form', MQAElementForm);
         v.component('m-qa-element-log-form', MQAElementLogForm);
+        v.component('m-qa-element-log-thread', MQAElementLogThread);
 
         const store = QAStoreFactory(new MQAServiceMock(options.project, options.token));
 

@@ -1,5 +1,6 @@
 .m-qa-panel {
     background-color: white;
+    overflow-x: scroll;
     border: 1px solid black;
     padding: 1rem;
     width: 25rem !important;
@@ -11,6 +12,7 @@
         right: 0;
         top: 0;
     }
+
     &--left {
         left: 0;
         top: 0;

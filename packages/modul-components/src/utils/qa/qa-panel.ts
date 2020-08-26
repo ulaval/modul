@@ -28,6 +28,9 @@ export class MQAPanel extends Vue {
     @Action('updateSelectedElement')
     public updateSelectedElement: (payload: { element: QAElement | null }) => void;
 
+    @Action('updateSelectedElementLog')
+    public updateSelectedElementLog: (payload: { elementLog: QAElementLog | null }) => void;
+
     @Action('updateEditedElement')
     public updateEditedElement: (payload: { element: QAElement | null }) => void;
 
@@ -45,7 +48,9 @@ export class MQAPanel extends Vue {
     }
 
     public onBackClick(): void {
-        if (this.editedElementLog) {
+        if (this.selectedElementLog) {
+            this.updateSelectedElementLog({ elementLog: null });
+        } else if (this.editedElementLog) {
             this.updateEditedElementLog({ elementLog: null });
         } else if (this.editedElement) {
             this.updateEditedElement({ element: null });

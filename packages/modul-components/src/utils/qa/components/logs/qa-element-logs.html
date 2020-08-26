@@ -33,6 +33,10 @@
                         :url="log.jiraUrl"
                         target="_blank">jira</m-link>
                 <div style="display: flex; align-items: center;">
+                    <m-link mode="button"
+                            @click="onLogClick(log)">
+                        comments ({{log.replies.length}})
+                    </m-link>
                     <m-icon-button v-if="log.author.id === user.id"
                                    @click="onEditClick(log)"
                                    icon-name="m-svg__edit"></m-icon-button>

@@ -34,7 +34,7 @@ export class MQAElementLogs extends Vue {
     }
 
     public onLogClick(log: QAElementLog): void {
-
+        this.$emit('element-log-selected', log);
     }
 
     public onResolvedClick(log: QAElementLog): void {

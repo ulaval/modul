@@ -1,5 +1,5 @@
 import { ActionContext, Store } from 'vuex';
-import { QAElement, QAElementLog, QAState, QAUser } from './qa-def';
+import { QAElement, QAElementLog, QAElementLogReply, QAState, QAUser } from './qa-def';
 import { MQAService } from './qa-service';
 
 export function QAStoreFactory(service: MQAService): Store<QAState> {
@@ -59,6 +59,21 @@ export function QAStoreFactory(service: MQAService): Store<QAState> {
             },
             editedElementLog: (state: QAState, elementLog: QAElementLog | null) => {
                 state.editedElementLog = elementLog;
+            },
+            updateElementLogReplies: (state: QAState, payload: { elementId: string, elementLogId: string, elementLogReply: QAElementLogReply }) => {
+                const element = state.elements.find(e => e.id === payload.elementId)!;
+                const elementLog = element.logs.find(l => l.id === payload.elementLogId);
+
+                if (elementLog!.replies!.map(r => r.id).indexOf(payload.elementLogReply.id) === -1) {
+                    elementLog!.replies!.push(payload.elementLogReply);
+                    return;
+                }
+
+                elementLog!.replies!.splice(
+                    elementLog!.replies!.map(r => r.id).indexOf(payload.elementLogReply.id),
+                    1,
+                    payload.elementLogReply
+                );
             }
         },
         actions: {
@@ -112,6 +127,12 @@ export function QAStoreFactory(service: MQAService): Store<QAState> {
             },
             updateEditedElementLog: (context: ActionContext<QAState, QAState>, payload: { elementLog: QAElementLog | null }) => {
                 context.commit('editedElementLog', payload.elementLog);
+            },
+            updateElementLogReplies: (context: ActionContext<QAState, QAState>, payload: { elementId: string, elementLogId: string, elementLogReply: QAElementLogReply }) => {
+                service
+                    .updateElementLogReplies(payload.elementId, payload.elementLogId, payload.elementLogReply)
+                    .then((elementLogReply: QAElementLogReply) =>
+                        context.commit('updateElementLogReplies', { elementId: payload.elementId, elementLogId: payload.elementLogId, elementLogReply: payload.elementLogReply }));
             }
         }
     });

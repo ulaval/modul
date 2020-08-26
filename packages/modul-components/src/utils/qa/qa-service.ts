@@ -1,5 +1,5 @@
 import uuid from '../uuid/uuid';
-import { QAElement, QAElementLog, QAUser } from './qa-def';
+import { QAElement, QAElementLog, QAElementLogReply, QAUser } from './qa-def';
 
 export interface MQAService {
     login(username: string, password: string): Promise<QAUser>;
@@ -8,6 +8,7 @@ export interface MQAService {
     updateElement(element: QAElement): Promise<QAElement>;
     updateElementLog(elementId: string, elementLog: QAElementLog): Promise<QAElementLog>;
     deleteElementLog(elementId: string, elementLogId: string): Promise<void>;
+    updateElementLogReplies(elementId: string, elementLogId: string, elementLogReply: QAElementLogReply): Promise<QAElementLogReply>;
 }
 
 export class MQAServiceHttp implements MQAService {
@@ -29,25 +30,18 @@ export class MQAServiceHttp implements MQAService {
     public deleteElementLog(elementId: string, elementLogId: string): Promise<void> {
         return Promise.resolve();
     }
+    public updateElementLogReplies(elementId: string, elementLogId: string, elementLogReply: QAElementLogReply): Promise<QAElementLogReply> {
+        return Promise.resolve({} as any);
+    }
 }
 
 export class MQAServiceMock implements MQAService {
     private elements: QAElement[] = [];
-    private users: QAUser[] = [
-        {
-            id: '1',
-            username: 'John Doe'
-        },
-        {
-            id: '2',
-            username: 'Jane Doe'
-        },
-    ];
 
     public constructor(private project: string, private token: string) { }
 
     public login(username: string, password: string): Promise<QAUser> {
-        return Promise.resolve(this.users[0]);
+        return Promise.resolve({ id: '1', username });
     }
 
     public fetchElements(): Promise<QAElement[]> {
@@ -80,5 +74,16 @@ export class MQAServiceMock implements MQAService {
 
     public deleteElementLog(elementId: string, elementLogId: string): Promise<void> {
         return Promise.resolve();
+    }
+
+    public updateElementLogReplies(elementId: string, elementLogId: string, elementLogReply: QAElementLogReply): Promise<QAElementLogReply> {
+        if (
+            !elementLogReply.id
+        ) {
+            elementLogReply.id = uuid.generate();
+            elementLogReply.date = new Date();
+        }
+
+        return Promise.resolve(elementLogReply);
     }
 }

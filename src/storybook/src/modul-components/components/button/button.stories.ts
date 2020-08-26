@@ -20,7 +20,7 @@ export const defaultStory = () => ({
         'blur'
     ),
     template: `
-    <p v-qa="'section 1'">
+    <p v-qa="'paragephe'">
         <m-button v-qa="'button submit'" @click="click" @focus="focus" @blur="blur">{{ text }}</m-button>
         <m-button v-qa="'button annuler'" @click="click" @focus="focus" @blur="blur">{{ text }}</m-button>
     </p>

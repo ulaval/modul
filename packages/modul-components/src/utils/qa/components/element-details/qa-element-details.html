@@ -16,5 +16,6 @@
     </m-link>
     <m-qa-element-logs :element-id="element.id"
                        :element-logs="element.logs"
-                       @element-log-edited="$emit('element-log-edited', $event)"></m-qa-element-logs>
+                       @element-log-edited="$emit('element-log-edited', $event)"
+                       @element-log-selected="$emit('element-log-selected', $event)"></m-qa-element-logs>
 </div>
