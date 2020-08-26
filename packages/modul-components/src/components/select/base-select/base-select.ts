@@ -1,7 +1,7 @@
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
-import { InputWidth } from '../../../mixins/input-width/input-width';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../../directives/directive-names';
 import { MPopupDirective } from '../../../directives/popup/popup';
+import { InputWidth } from '../../../mixins/input-width/input-width';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../../utils/vue/vue';
 import { POPUP_NAME } from '../../component-names';
@@ -62,6 +62,9 @@ export class MBaseSelect extends ModulVue {
     @Prop()
     public listMinWidth: string;
 
+    @Prop()
+    public listMaxHeight: string;
+
     public $refs: {
         items: HTMLUListElement;
         popup: MPopup;
@@ -80,6 +83,12 @@ export class MBaseSelect extends ModulVue {
 
     get ariaControls(): string {
         return this.controlId + '-controls';
+    }
+
+    get listMaxHeightProps(): string | undefined {
+        if (this.as<MediaQueriesMixin>().isMqMinS) {
+            return this.listMaxHeight;
+        }
     }
 
     @Emit('close')

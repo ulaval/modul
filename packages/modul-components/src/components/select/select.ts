@@ -54,6 +54,9 @@ export class MSelect extends ModulVue {
     @Prop()
     public listMinWidth: string;
 
+    @Prop()
+    public listMaxHeight: string;
+
     id: string = `${SELECT_NAME}-${uuid.generate()}`;
     open: boolean = false;
 
