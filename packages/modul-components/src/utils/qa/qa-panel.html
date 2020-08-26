@@ -12,12 +12,17 @@
         </div>
         <m-qa-login v-if="!user"></m-qa-login>
         <div v-else>
+            <m-icon-button icon-name="m-svg__chevron-circle--left"
+                           skin="link"
+                           @click="onBackClick"></m-icon-button>
             <m-qa-elements v-if="!selectedElement"
-                           :elements="elements"
-                           @element-selected="selectedElement = $event"></m-qa-elements>
-            <m-qa-element-details v-else
-                                  :element="selectedElement"
-                                  @back="selectedElement = null"></m-qa-element-details>
+                           :elements="elements"></m-qa-elements>
+            <div>
+                <m-qa-element-details v-if="selectedElement && !editingElement"
+                                      :element="selectedElement"></m-qa-element-details>
+
+                <m-qa-element-form v-if="selectedElement && editingElement"></m-qa-element-form>
+            </div>
         </div>
     </div>
     <div v-else

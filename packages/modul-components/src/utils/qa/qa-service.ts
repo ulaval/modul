@@ -1,39 +1,39 @@
 import uuid from '../uuid/uuid';
-import { MQAElement, MQAElementLog, MQAUser } from './qa-def';
+import { QAElement, QAElementLog, QAUser } from './qa-def';
 
 export interface MQAService {
-    login(username: string, password: string): Promise<MQAUser>;
-    fetch(project: string): Promise<MQAElement[]>;
-    register(project: string, elementId: string): Promise<MQAElement[]>;
-    update(project: string, element: MQAElement): Promise<MQAElement>;
-    updateLog(project: string, elementId: string, log: MQAElementLog): Promise<MQAElementLog>;
-    deleteLog(project: string, elementId: string, logId: string): Promise<void>;
+    login(username: string, password: string): Promise<QAUser>;
+    fetchElements(): Promise<QAElement[]>;
+    registerElement(elementId: string): Promise<QAElement[]>;
+    updateElement(element: QAElement): Promise<QAElement>;
+    updateElementLog(elementId: string, elementLog: QAElementLog): Promise<QAElementLog>;
+    deleteElementLog(elementId: string, elementLogId: string): Promise<void>;
 }
 
 export class MQAServiceHttp implements MQAService {
-    public login(username: string, password: string): Promise<MQAUser> {
+    public login(username: string, password: string): Promise<QAUser> {
         return Promise.resolve({} as any);
     }
-    public fetch(project: string): Promise<MQAElement[]> {
+    public fetchElements(): Promise<QAElement[]> {
         return Promise.resolve([]);
     }
-    public register(project: string, elementId: string): Promise<MQAElement[]> {
+    public registerElement(elementId: string): Promise<QAElement[]> {
         return Promise.resolve([]);
     }
-    public update(project: string, element: MQAElement): Promise<MQAElement> {
+    public updateElement(element: QAElement): Promise<QAElement> {
         return Promise.resolve({} as any);
     }
-    public updateLog(project: string, elementId: string, log: MQAElementLog): Promise<MQAElementLog> {
+    public updateElementLog(elementId: string, elementLog: QAElementLog): Promise<QAElementLog> {
         return Promise.resolve({} as any);
     }
-    public deleteLog(project: string, elementId: string, logId: string): Promise<void> {
+    public deleteElementLog(elementId: string, elementLogId: string): Promise<void> {
         return Promise.resolve();
     }
 }
 
 export class MQAServiceMock implements MQAService {
-    private elements: MQAElement[] = [];
-    private users: MQAUser[] = [
+    private elements: QAElement[] = [];
+    private users: QAUser[] = [
         {
             id: '1',
             username: 'John Doe'
@@ -44,15 +44,17 @@ export class MQAServiceMock implements MQAService {
         },
     ];
 
-    public login(username: string, password: string): Promise<MQAUser> {
+    public constructor(private project: string, private token: string) { }
+
+    public login(username: string, password: string): Promise<QAUser> {
         return Promise.resolve(this.users[0]);
     }
 
-    public fetch(project: string): Promise<MQAElement[]> {
+    public fetchElements(): Promise<QAElement[]> {
         return Promise.resolve(this.elements);
     }
 
-    public register(project: string, elementId: string): Promise<MQAElement[]> {
+    public registerElement(elementId: string): Promise<QAElement[]> {
         if (this.elements.map(e => e.id).indexOf(elementId) === -1) {
             this.elements.push({ id: elementId, name: elementId, stable: false, logs: [] });
         }
@@ -60,22 +62,23 @@ export class MQAServiceMock implements MQAService {
         return Promise.resolve(this.elements);
     }
 
-    public update(project: string, element: MQAElement): Promise<MQAElement> {
+    public updateElement(element: QAElement): Promise<QAElement> {
         return Promise.resolve(element);
     }
 
-    public updateLog(project: string, elementId: string, log: MQAElementLog): Promise<MQAElementLog> {
+    public updateElementLog(elementId: string, elementLog: QAElementLog): Promise<QAElementLog> {
         if (
-            !log.id
+            !elementLog.id
         ) {
-            log.id = uuid.generate();
-            log.date = new Date();
+            elementLog.id = uuid.generate();
+            elementLog.date = new Date();
+            elementLog.replies = [];
         };
 
-        return Promise.resolve(log);
+        return Promise.resolve(elementLog);
     }
 
-    public deleteLog(project: string, elementId: string, logId: string): Promise<void> {
+    public deleteElementLog(elementId: string, elementLogId: string): Promise<void> {
         return Promise.resolve();
     }
 }

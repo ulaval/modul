@@ -1,8 +1,8 @@
 import { DirectiveOptions, VNode, VNodeDirective } from 'vue';
 import { Store } from 'vuex';
-import { MQAState } from './qa-store';
+import { QAState } from './qa-store';
 
-export function QADirectiveFactory(store: Store<MQAState>): DirectiveOptions {
+export function QADirectiveFactory(store: Store<QAState>): DirectiveOptions {
     return {
         bind(
             el: HTMLElement,
@@ -11,7 +11,7 @@ export function QADirectiveFactory(store: Store<MQAState>): DirectiveOptions {
         ): void {
             const id: string = binding.value;
             el.setAttribute('data-qa', id);
-            store.dispatch('register', { id });
+            store.dispatch('registerElement', { elementId: id });
         }
     }
 };

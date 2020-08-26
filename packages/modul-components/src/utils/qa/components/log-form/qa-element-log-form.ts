@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { Action } from 'vuex-class';
 import { FormControl, FormGroup, RequiredValidator } from '../../../form';
-import { MQAElementLog } from '../../qa-def';
+import { QAElementLog } from '../../qa-def';
 import WithRender from './qa-element-log-form.html?style=./qa-element-log-form.scss';
 
 @WithRender
@@ -13,10 +13,10 @@ export class MQAElementLogForm extends Vue {
     public elementId: string;
 
     @Prop({ required: true })
-    public log: MQAElementLog;
+    public log: QAElementLog;
 
-    @Action('updateLog')
-    public updateLog: (payload: { elementId: string, log: MQAElementLog }) => void;
+    @Action('updateElementLog')
+    public updateElementLog: (payload: { elementId: string, elementLogId: QAElementLog }) => void;
 
     public formGroup: FormGroup | null = null;
     public types = ['error', 'question', 'comments'];
@@ -49,7 +49,7 @@ export class MQAElementLogForm extends Vue {
 
     public submit(): void {
         const clone = Object.assign(this.log, this.formGroup!.value);
-        this.updateLog({ elementId: this.elementId, log: clone });
+        this.updateElementLog({ elementId: this.elementId, log: clone });
         this.formGroup = null;
         this.$emit('back');
     }

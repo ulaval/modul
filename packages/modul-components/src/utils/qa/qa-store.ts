@@ -1,99 +1,117 @@
 import { ActionContext, Store } from 'vuex';
-import { MQAElement, MQAElementLog, MQAUser } from './qa-def';
+import { QAElement, QAElementLog, QAState, QAUser } from './qa-def';
 import { MQAService } from './qa-service';
 
-export class MQAState {
-    public user: MQAUser | null = null;
-    public elements: MQAElement[] = [];
-
-    constructor(
-        public project: string
-    ) { }
-}
-
-export function QAStoreFactory(service: MQAService, options: { project: string, token: string }): Store<MQAState> {
+export function QAStoreFactory(service: MQAService): Store<QAState> {
     return new Store({
-        state: new MQAState(options.project),
+        state: new QAState(),
         getters: {
-            user: (state: MQAState) => state.user,
-            elements: (state: MQAState) => state.elements
+            user: (state: QAState) => state.user,
+            elements: (state: QAState) => state.elements,
+            selectedElement: (state: QAState) => state.selectedElement,
+            selectedElementLog: (state: QAState) => state.selectedElementLog,
+            editingElement: (state: QAState) => state.editingElement,
+            editingElementLog: (state: QAState) => state.editingElementLog
         },
         mutations: {
-            user: (state: MQAState, user: MQAUser) => {
+            user: (state: QAState, user: QAUser) => {
                 state.user = user;
             },
-            elements: (state: MQAState, elements: MQAElement[]) => {
+            elements: (state: QAState, elements: QAElement[]) => {
                 state.elements = [...elements];
             },
-            updateElement: (state: MQAState, element: MQAElement) => {
+            updateElement: (state: QAState, element: QAElement) => {
                 state.elements.splice(
                     state.elements.map(e => e.id).indexOf(element.id),
                     1,
                     element
                 );
             },
-            updateLog: (state: MQAState, payload: { elementId: string, log: MQAElementLog }) => {
+            updateLog: (state: QAState, payload: { elementId: string, elementLog: QAElementLog }) => {
                 const logs = state.elements.find(e => e.id === payload.elementId)!.logs!;
 
-                if (logs.map(l => l.id).indexOf(payload.log.id) === -1) {
-                    logs.push(payload.log);
+                if (logs.map(l => l.id).indexOf(payload.elementLog.id) === -1) {
+                    logs.push(payload.elementLog);
                     return;
                 }
 
                 logs.splice(
-                    logs.map(l => l.id).indexOf(payload.log.id),
+                    logs.map(l => l.id).indexOf(payload.elementLog.id),
                     1,
-                    payload.log
+                    payload.elementLog
                 );
             },
-            deleteLog: (state: MQAState, payload: { elementId: string, logId: string }) => {
+            deleteLog: (state: QAState, payload: { elementId: string, elementLogId: string }) => {
                 const logs = state.elements.find(e => e.id === payload.elementId)!.logs;
                 logs.splice(
-                    logs.map(l => l.id).indexOf(payload.logId),
+                    logs.map(l => l.id).indexOf(payload.elementLogId),
                     1
                 );
+            },
+            selectedElement: (state: QAState, element: QAElement | null) => {
+                state.selectedElement = element
+            },
+            selectedElementLog: (state: QAState, elementLog: QAElement | null) => {
+                state.selectedElementLog = elementLog;
+            },
+            editingElement: (state: QAState, element: QAElement | null) => {
+                state.editingElement = element;
+            },
+            editingElementLog: (state: QAState, elementLog: QAElementLog | null) => {
+                state.editingElementLog = elementLog;
             }
-
         },
         actions: {
-            login: (context: ActionContext<MQAState, MQAState>, payload: {
+            login: (context: ActionContext<QAState, QAState>, payload: {
                 username: string,
                 password: string
             }): void => {
                 service
                     .login(payload.username, payload.password)
-                    .then((user: MQAUser) =>
+                    .then((user: QAUser) =>
                         context.commit('user', user));
             },
-            fetch: (context: ActionContext<MQAState, MQAState>): void => {
+            fetchElements: (context: ActionContext<QAState, QAState>): void => {
                 service
-                    .fetch(context.state.project)
-                    .then((elements: MQAElement[]) =>
+                    .fetchElements()
+                    .then((elements: QAElement[]) =>
                         context.commit('elements', elements));
             },
-            register: (context: ActionContext<MQAState, MQAState>, payload: { id: string }): void => {
+            registerElement: (context: ActionContext<QAState, QAState>, payload: { elementId: string }): void => {
                 service
-                    .register(context.state.project, payload.id)
-                    .then((elements: MQAElement[]) =>
+                    .registerElement(payload.elementId)
+                    .then((elements: QAElement[]) =>
                         context.commit('elements', elements));
             },
-            update: (context: ActionContext<MQAState, MQAState>, payload: { element: MQAElement }): void => {
+            updateElement: (context: ActionContext<QAState, QAState>, payload: { element: QAElement }): void => {
                 service
-                    .update(context.state.project, payload.element)
-                    .then((element: MQAElement) =>
+                    .updateElement(payload.element)
+                    .then((element: QAElement) =>
                         context.commit('updateElement', element));
             },
-            updateLog: (context: ActionContext<MQAState, MQAState>, payload: { elementId: string, log: MQAElementLog }): void => {
+            updateElementLog: (context: ActionContext<QAState, QAState>, payload: { elementId: string, elementLog: QAElementLog }): void => {
                 service
-                    .updateLog(context.state.project, payload.elementId, payload.log)
-                    .then((log: MQAElementLog) =>
+                    .updateElementLog(payload.elementId, payload.elementLog)
+                    .then((log: QAElementLog) =>
                         context.commit('updateLog', { elementId: payload.elementId, log }));
             },
-            deleteLog: (context: ActionContext<MQAState, MQAState>, payload: { elementId: string, logId: string }) => {
+            deleteElementLog: (context: ActionContext<QAState, QAState>, payload: { elementId: string, elementLogId: string }) => {
                 service
-                    .deleteLog(context.state.project, payload.elementId, payload.logId)
+                    .deleteElementLog(payload.elementId, payload.elementLogId)
                     .then(() =>
-                        context.commit('deleteLog', { elementId: payload.elementId, logId: payload.logId }));
+                        context.commit('deleteLog', { elementId: payload.elementId, elementLogId: payload.elementLogId }));
+            },
+            updateSelectedElement: (context: ActionContext<QAState, QAState>, payload: { element: QAElement }) => {
+                context.commit('selectedElement', payload.element);
+            },
+            updateSelectedElementLog: (context: ActionContext<QAState, QAState>, payload: { elementLog: QAElementLog }) => {
+                context.commit('selectedElementLog', payload.elementLog);
+            },
+            updateEditingElement: (context: ActionContext<QAState, QAState>, payload: { element: QAElement }) => {
+                context.commit('editingElement', payload.element);
+            },
+            updateEditingElementLog: (context: ActionContext<QAState, QAState>, payload: { elementLog: QAElementLog }) => {
+                context.commit('editingElementLog', payload.elementLog);
             }
         }
     });

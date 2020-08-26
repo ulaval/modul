@@ -26,7 +26,7 @@ export const QAPlugin: PluginObject<any> = {
         v.component('m-qa-element-form', MQAElementForm);
         v.component('m-qa-element-log-form', MQAElementLogForm);
 
-        const store = QAStoreFactory(new MQAServiceMock(), { project: options.project, token: options.token });
+        const store = QAStoreFactory(new MQAServiceMock(options.project, options.token));
 
         v.directive('qa', QADirectiveFactory(store));
 

@@ -1,31 +1,40 @@
 
-export interface MQAUser {
+export interface QAUser {
     id: string;
     username: string;
 }
 
-export interface MQAElementLog {
+export interface QAElementLog {
     id?: string;
-    author?: MQAUser;
+    author?: QAUser;
     date?: Date;
     body?: string;
     type?: 'error' | 'question' | 'comments';
     needResolve?: boolean;
     resolved?: boolean;
-    replies?: MQAElementLogReply[];
+    replies?: QAElementLogReply[];
 }
 
-export interface MQAElementLogReply {
+export interface QAElementLogReply {
     id?: string;
-    author?: MQAUser;
+    author?: QAUser;
     date?: Date;
     body?: string;
 }
 
-export interface MQAElement {
+export interface QAElement {
     id: string;
     name?: string;
     docUrl?: string;
-    logs: MQAElementLog[];
+    logs: QAElementLog[];
     stable: boolean;
+}
+
+export class QAState {
+    public user: QAUser | null = null;
+    public elements: QAElement[] = [];
+    public selectedElement: QAElement | null;
+    public selectedElementLog: QAElementLog | null;
+    public editingElement: QAElement | null;
+    public editingElementLog: QAElementLog | null;
 }

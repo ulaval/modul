@@ -3,17 +3,17 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { Action } from 'vuex-class';
 import { FormControl, FormGroup, RequiredValidator } from '../../../form';
-import { MQAElement } from '../../qa-def';
+import { QAElement } from '../../qa-def';
 import WithRender from './qa-element-form.html?style=./qa-element-form.scss';
 
 @WithRender
 @Component
 export class MQAElementForm extends Vue {
     @Prop({ required: true })
-    public element: MQAElement;
+    public element: QAElement;
 
-    @Action('update')
-    public update: (payload: { element: MQAElement }) => void;
+    @Action('updateElement')
+    public updateElement: (payload: { element: QAElement }) => void;
 
     public formGroup: FormGroup | null = null;
 
@@ -34,8 +34,7 @@ export class MQAElementForm extends Vue {
 
     public submit(): void {
         const clone = Object.assign(this.element, this.formGroup!.value);
-        this.update(clone);
+        this.updateElement(clone);
         this.formGroup = null;
-        this.$emit('back');
     }
 }
