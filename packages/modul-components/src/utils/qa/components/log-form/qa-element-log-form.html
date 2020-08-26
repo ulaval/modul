@@ -22,10 +22,10 @@
                         v-model="needResolveControl.value">Need resolve</m-checkbox>
         </m-input-group>
 
-        <m-button style="margin-top: 10px;"
-                  type="submit">Submit</m-button>
-        <m-button style="margin-top: 10px;"
-                  skin="secondary"
-                  @click="$emit('back')">Cancel</m-button>
+        <div class="m-u--margin-top">
+            <m-button type="submit">Submit</m-button>
+            <m-button skin="secondary"
+                      @click="$emit('back')">Cancel</m-button>
+        </div>
     </m-form>
 </div>

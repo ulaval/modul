@@ -6,13 +6,15 @@
             @submit="submit">
         <m-input-group class="m-u--margin-top--l">
             <m-textfield v-model="usernameControl.value"
+                         class="m-u--margin-top"
                          label="Username"></m-textfield>
             <m-textfield v-model="passwordControl.value"
+                         class="m-u--margin-top"
                          label="Password"
                          type="password"></m-textfield>
         </m-input-group>
-
-        <m-button style="margin-top: 10px;"
-                  type="submit">Login</m-button>
+        <div class="m-u--margin-top">
+            <m-button type="submit">Login</m-button>
+        </div>
     </m-form>
 </div>

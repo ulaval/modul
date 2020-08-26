@@ -4,22 +4,24 @@
     </h2>
     <ul>
         <li v-for="(element, index) in elements"
-            :key="index"
-            style="display: flex; align-items: center; justify-content: space-between;">
-            <div @mouseenter="onElementMouseEnter(element.id)"
-                 @mouseleave="onElementMouseLeave(element.id)"
-                 @click="onElementMouseClick(element.id)"
-                 style="display: flex; align-items: center; cursor: pointer;">
-                {{element.name}}
+            :key="index">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div @mouseenter="onElementMouseEnter(element.id)"
+                     @mouseleave="onElementMouseLeave(element.id)"
+                     @click="onElementMouseClick(element.id)"
+                     style="display: flex; align-items: center; cursor: pointer;">
+                    {{element.name}}
+                </div>
+                <div>
+                    <m-icon v-if="elementIsStable(element)"
+                            name="m-svg__completed-filled"
+                            color="green"></m-icon>
+                    <m-icon v-if="!elementIsStable(element)"
+                            name="m-svg__error-filled"
+                            color="red"></m-icon>
+                </div>
             </div>
-            <div>
-                <m-icon v-if="elementIsStable(element)"
-                        name="m-svg__completed-filled"
-                        color="green"></m-icon>
-                <m-icon v-if="!elementIsStable(element)"
-                        name="m-svg__error-filled"
-                        color="red"></m-icon>
-            </div>
+            <hr />
         </li>
     </ul>
 </div>
