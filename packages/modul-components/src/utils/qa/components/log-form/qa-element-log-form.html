@@ -1,18 +1,24 @@
 <div class="m-qa-element-log-form">
     <h2>
-        {{log.id ? 'Edit Log' : 'New Log'}}
+        {{elementLog.id ? 'Edit Log' : 'New Log'}}
     </h2>
     <m-form v-if="formGroup"
             :form-group="formGroup"
             @submit="submit">
         <m-input-group class="m-u--margin-top--l">
             <m-textarea v-model="bodyControl.value"
+                        class="m-u--margin-top"
                         label="Body"></m-textarea>
             <m-select v-model="typeControl.value"
+                      class="m-u--margin-top"
                       @select-item="onTypeChange($event)"
                       label="Type"
                       :options="types"></m-select>
+            <m-textfield v-model="jiraUrlControl.value"
+                         class="m-u--margin-top"
+                         label="Jira url"></m-textfield>
             <m-checkbox :readonly="typeControl.value === 'error'"
+                        class="m-u--margin-top"
                         v-model="needResolveControl.value">Need resolve</m-checkbox>
         </m-input-group>
 

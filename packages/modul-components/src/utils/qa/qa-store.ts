@@ -10,8 +10,8 @@ export function QAStoreFactory(service: MQAService): Store<QAState> {
             elements: (state: QAState) => state.elements,
             selectedElement: (state: QAState) => state.selectedElement,
             selectedElementLog: (state: QAState) => state.selectedElementLog,
-            editingElement: (state: QAState) => state.editingElement,
-            editingElementLog: (state: QAState) => state.editingElementLog
+            editedElement: (state: QAState) => state.editedElement,
+            editedElementLog: (state: QAState) => state.editedElementLog
         },
         mutations: {
             user: (state: QAState, user: QAUser) => {
@@ -27,7 +27,7 @@ export function QAStoreFactory(service: MQAService): Store<QAState> {
                     element
                 );
             },
-            updateLog: (state: QAState, payload: { elementId: string, elementLog: QAElementLog }) => {
+            updateElementLog: (state: QAState, payload: { elementId: string, elementLog: QAElementLog }) => {
                 const logs = state.elements.find(e => e.id === payload.elementId)!.logs!;
 
                 if (logs.map(l => l.id).indexOf(payload.elementLog.id) === -1) {
@@ -54,11 +54,11 @@ export function QAStoreFactory(service: MQAService): Store<QAState> {
             selectedElementLog: (state: QAState, elementLog: QAElement | null) => {
                 state.selectedElementLog = elementLog;
             },
-            editingElement: (state: QAState, element: QAElement | null) => {
-                state.editingElement = element;
+            editedElement: (state: QAState, element: QAElement | null) => {
+                state.editedElement = element;
             },
-            editingElementLog: (state: QAState, elementLog: QAElementLog | null) => {
-                state.editingElementLog = elementLog;
+            editedElementLog: (state: QAState, elementLog: QAElementLog | null) => {
+                state.editedElementLog = elementLog;
             }
         },
         actions: {
@@ -92,8 +92,8 @@ export function QAStoreFactory(service: MQAService): Store<QAState> {
             updateElementLog: (context: ActionContext<QAState, QAState>, payload: { elementId: string, elementLog: QAElementLog }): void => {
                 service
                     .updateElementLog(payload.elementId, payload.elementLog)
-                    .then((log: QAElementLog) =>
-                        context.commit('updateLog', { elementId: payload.elementId, log }));
+                    .then((elementLog: QAElementLog) =>
+                        context.commit('updateElementLog', { elementId: payload.elementId, elementLog }));
             },
             deleteElementLog: (context: ActionContext<QAState, QAState>, payload: { elementId: string, elementLogId: string }) => {
                 service
@@ -101,17 +101,17 @@ export function QAStoreFactory(service: MQAService): Store<QAState> {
                     .then(() =>
                         context.commit('deleteLog', { elementId: payload.elementId, elementLogId: payload.elementLogId }));
             },
-            updateSelectedElement: (context: ActionContext<QAState, QAState>, payload: { element: QAElement }) => {
+            updateSelectedElement: (context: ActionContext<QAState, QAState>, payload: { element: QAElement | null }) => {
                 context.commit('selectedElement', payload.element);
             },
-            updateSelectedElementLog: (context: ActionContext<QAState, QAState>, payload: { elementLog: QAElementLog }) => {
+            updateSelectedElementLog: (context: ActionContext<QAState, QAState>, payload: { elementLog: QAElementLog | null }) => {
                 context.commit('selectedElementLog', payload.elementLog);
             },
-            updateEditingElement: (context: ActionContext<QAState, QAState>, payload: { element: QAElement }) => {
-                context.commit('editingElement', payload.element);
+            updateEditedElement: (context: ActionContext<QAState, QAState>, payload: { element: QAElement | null }) => {
+                context.commit('editedElement', payload.element);
             },
-            updateEditingElementLog: (context: ActionContext<QAState, QAState>, payload: { elementLog: QAElementLog }) => {
-                context.commit('editingElementLog', payload.elementLog);
+            updateEditedElementLog: (context: ActionContext<QAState, QAState>, payload: { elementLog: QAElementLog | null }) => {
+                context.commit('editedElementLog', payload.elementLog);
             }
         }
     });

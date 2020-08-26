@@ -34,7 +34,8 @@ export class MQAElementForm extends Vue {
 
     public submit(): void {
         const clone = Object.assign(this.element, this.formGroup!.value);
-        this.updateElement(clone);
+        this.updateElement({ element: clone });
+        this.$emit('back');
         this.formGroup = null;
     }
 }

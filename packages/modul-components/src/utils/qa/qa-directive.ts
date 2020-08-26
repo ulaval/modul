@@ -1,6 +1,6 @@
 import { DirectiveOptions, VNode, VNodeDirective } from 'vue';
 import { Store } from 'vuex';
-import { QAState } from './qa-store';
+import { QAState } from './qa-def';
 
 export function QADirectiveFactory(store: Store<QAState>): DirectiveOptions {
     return {

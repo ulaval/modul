@@ -12,21 +12,38 @@
         </div>
         <m-qa-login v-if="!user"></m-qa-login>
         <div v-else>
-            <m-icon-button icon-name="m-svg__chevron-circle--left"
-                           skin="link"
-                           @click="onBackClick"></m-icon-button>
-            <m-qa-elements v-if="!selectedElement"
-                           :elements="elements"></m-qa-elements>
-            <div>
-                <m-qa-element-details v-if="selectedElement && !editingElement"
-                                      :element="selectedElement"></m-qa-element-details>
+            <div v-if="!selectedElement">
+                <m-qa-elements :elements="elements"
+                               @element-selected="updateSelectedElement({element: $event})"></m-qa-elements>
+            </div>
+            <div v-else>
+                <m-icon-button icon-name="m-svg__chevron-circle--left"
+                               skin="link"
+                               @click="onBackClick"></m-icon-button>
+                <m-qa-element-details v-if="!editedElement && !editedElementLog"
+                                      :element="selectedElement"
+                                      @element-edited="updateEditedElement({element: $event})"
+                                      @element-log-edited="updateEditedElementLog({elementLog: $event})"></m-qa-element-details>
 
-                <m-qa-element-form v-if="selectedElement && editingElement"></m-qa-element-form>
+                <m-qa-element-form v-if="editedElement"
+                                   :element="editedElement"
+                                   @back="onBackClick"></m-qa-element-form>
+
+                <m-qa-element-log-form v-if="editedElementLog"
+                                       :element-id="selectedElement.id"
+                                       :element-log="editedElementLog"
+                                       @back="onBackClick"></m-qa-element-log-form>
             </div>
         </div>
     </div>
     <div v-else
-         style="position: absolute; top: 10px; right: 10px;">
+         style="
+                                   position:
+                                   absolute;
+                                   top:
+                                   10px;
+                                   right:
+                                   10px;">
         <m-icon-button icon-name="m-svg__show"
                        skin="link"
                        @click="toggle"></m-icon-button>

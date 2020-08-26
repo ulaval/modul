@@ -12,6 +12,7 @@ export interface QAElementLog {
     type?: 'error' | 'question' | 'comments';
     needResolve?: boolean;
     resolved?: boolean;
+    jiraUrl?: string;
     replies?: QAElementLogReply[];
 }
 
@@ -31,10 +32,12 @@ export interface QAElement {
 }
 
 export class QAState {
-    public user: QAUser | null = null;
+    public user: QAUser | null = {
+        id: '1', username: 'test'
+    };
     public elements: QAElement[] = [];
-    public selectedElement: QAElement | null;
-    public selectedElementLog: QAElementLog | null;
-    public editingElement: QAElement | null;
-    public editingElementLog: QAElementLog | null;
+    public selectedElement: QAElement | null = null;
+    public selectedElementLog: QAElementLog | null = null;
+    public editedElement: QAElement | null = null;
+    public editedElementLog: QAElementLog | null = null;
 }

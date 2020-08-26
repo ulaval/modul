@@ -4,40 +4,44 @@
         <m-icon-button icon-name="m-svg__add-circle-filled"
                        @click="onAddClick"></m-icon-button>
     </h2>
-    <div v-if="!selectedLog">
-        <ul>
-            <li v-for="(log, index) in logs"
-                :key="index +'logs'">
-                <div style="cursor: pointer;"
-                     @click="onLogClick(log)">
-                    <div style="display: flex; align-items: center;">
-                        <m-avatar></m-avatar>
-                        <div style="margin-left: 5px;">
-                            by: {{log.author.username}}
-                            <br />
-                            date: {{log.date | f-m-date}}
-                        </div>
+    <ul>
+        <li v-for="(log, index) in elementLogs"
+            :key="index +'logs'">
+            <div style="cursor: pointer;"
+                 @click="onLogClick(log)">
+                <div style="display: flex; align-items: center;">
+                    <m-avatar></m-avatar>
+                    <div style="margin-left: 5px;">
+                        by: {{log.author.username}}
+                        <br />
+                        date: {{log.date | f-m-date}}
+                        <br />
+                        type: <span :style="{color: log.type === 'error' ? 'red' : log.type === 'question' ? 'blue' : 'orange'}">{{log.type}}</span>
                     </div>
-                    <p>
-                        {{log.body}}
-                    </p>
                 </div>
-                <br />
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p>
+                    {{log.body}}
+                </p>
+            </div>
+            <br />
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <m-checkbox v-if="log.needResolve"
+                            @click="onResolvedClick(log)"
+                            :value="log.resolved">resolved</m-checkbox>
+                <m-link v-if="log.jiraUrl"
+                        mode="link"
+                        :url="log.jiraUrl"
+                        target="_blank">jira</m-link>
+                <div style="display: flex; align-items: center;">
+                    <m-icon-button v-if="log.author.id === user.id"
+                                   @click="onEditClick(log)"
+                                   icon-name="m-svg__edit"></m-icon-button>
                     <m-icon-button v-if="log.author.id === user.id"
                                    @click="onDeleteClick(log)"
                                    icon-name="m-svg__delete"></m-icon-button>
-                    <m-checkbox v-if="log.needResolve"
-                                @click="onResolvedClick(log)"
-                                :value="log.resolved">resolved</m-checkbox>
                 </div>
-                <hr />
-            </li>
-        </ul>
-    </div>
-    <div v-else>
-        <m-qa-element-log-form :element-id="elementId"
-                               :log="selectedLog"
-                               @back="selectedLog = null"></m-qa-element-log-form>
-    </div>
+            </div>
+            <hr />
+        </li>
+    </ul>
 </div>

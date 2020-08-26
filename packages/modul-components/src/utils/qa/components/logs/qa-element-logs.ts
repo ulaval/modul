@@ -12,7 +12,7 @@ export class MQAElementLogs extends Vue {
     public elementId: string;
 
     @Prop({ required: true })
-    public logs: QAElementLog[];
+    public elementLogs: QAElementLog[];
 
     @Getter('user')
     public user: QAUser;
@@ -20,7 +20,7 @@ export class MQAElementLogs extends Vue {
     @Action('updateElementLog')
     public updateLog: (payload: {
         elementId: string,
-        elementLogId: QAElementLog
+        elementLog: QAElementLog
     }) => void;
 
     @Action('deleteElementLog')
@@ -29,10 +29,8 @@ export class MQAElementLogs extends Vue {
         elementLogId: string
     }) => void;
 
-    public selectedLog: QAElementLog | null = null;
-
     public onAddClick(): void {
-        this.selectedLog = { author: this.user };
+        this.$emit('element-log-edited', { author: this.user });
     }
 
     public onLogClick(log: QAElementLog): void {
@@ -41,13 +39,17 @@ export class MQAElementLogs extends Vue {
 
     public onResolvedClick(log: QAElementLog): void {
         const clone = Object.assign(log, { resolved: !log.resolved });
-        this.updateLog({ elementId: this.elementId, log: clone });
+        this.updateLog({ elementId: this.elementId, elementLog: clone });
+    }
+
+    public onEditClick(log: QAElementLog): void {
+        this.$emit('element-log-edited', log);
     }
 
     public onDeleteClick(log: QAElementLog): void {
         this.deleteLog({
             elementId: this.elementId,
-            logId: log.id!
+            elementLogId: log.id!
         });
     }
 }

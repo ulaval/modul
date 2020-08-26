@@ -13,19 +13,20 @@ export class MQAElementLogForm extends Vue {
     public elementId: string;
 
     @Prop({ required: true })
-    public log: QAElementLog;
+    public elementLog: QAElementLog;
 
     @Action('updateElementLog')
-    public updateElementLog: (payload: { elementId: string, elementLogId: QAElementLog }) => void;
+    public updateElementLog: (payload: { elementId: string, elementLog: QAElementLog }) => void;
 
     public formGroup: FormGroup | null = null;
     public types = ['error', 'question', 'comments'];
 
     protected created(): void {
         this.formGroup = new FormGroup({
-            body: new FormControl<string>([RequiredValidator()], { initialValue: this.log.body }),
-            type: new FormControl<string>([RequiredValidator()], { initialValue: this.log.type || 'error' }),
-            needResolve: new FormControl<boolean>([], { initialValue: this.log.needResolve || true }),
+            body: new FormControl<string>([RequiredValidator()], { initialValue: this.elementLog.body }),
+            type: new FormControl<string>([RequiredValidator()], { initialValue: this.elementLog.type || 'error' }),
+            jiraUrl: new FormControl<string>([], { initialValue: this.elementLog.jiraUrl }),
+            needResolve: new FormControl<boolean>([], { initialValue: this.elementLog.needResolve || true }),
         });
     }
 
@@ -35,6 +36,10 @@ export class MQAElementLogForm extends Vue {
 
     public get typeControl(): FormControl<string> {
         return this.formGroup!.getControl('type') as FormControl<string>;
+    }
+
+    public get jiraUrlControl(): FormControl<string> {
+        return this.formGroup!.getControl('jiraUrl') as FormControl<string>;
     }
 
     public get needResolveControl(): FormControl<boolean> {
@@ -48,8 +53,8 @@ export class MQAElementLogForm extends Vue {
     }
 
     public submit(): void {
-        const clone = Object.assign(this.log, this.formGroup!.value);
-        this.updateElementLog({ elementId: this.elementId, log: clone });
+        const clone = Object.assign(this.elementLog, this.formGroup!.value);
+        this.updateElementLog({ elementId: this.elementId, elementLog: clone });
         this.formGroup = null;
         this.$emit('back');
     }

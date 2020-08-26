@@ -1,21 +1,20 @@
 <div class="m-qa-element-details">
-    <div v-if="!editing">
-        <h2>
-            <div>
-                {{element.name}}
-                <m-icon-button icon-name="m-svg__edit"
-                               skin="link"
-                               @click=""></m-icon-button>
-            </div>
-        </h2>
-        <m-link v-if="element.docUrl"
-                mode="link"
-                target="_blank">
-            <m-icon name="m-svg__file-text"
-                    :url="element.docUrl"></m-icon>
-            Documentation
-        </m-link>
-        <m-qa-element-logs :element-id="element.id"
-                           :logs="element.logs"></m-qa-element-logs>
-    </div>
+    <h2>
+        <div>
+            {{element.name}}
+            <m-icon-button icon-name="m-svg__edit"
+                           skin="link"
+                           @click="$emit('element-edited', element)"></m-icon-button>
+        </div>
+    </h2>
+    <m-link v-if="element.docUrl"
+            mode="link"
+            target="_blank">
+        <m-icon name="m-svg__file-text"
+                :url="element.docUrl"></m-icon>
+        Documentation
+    </m-link>
+    <m-qa-element-logs :element-id="element.id"
+                       :element-logs="element.logs"
+                       @element-log-edited="$emit('element-log-edited', $event)"></m-qa-element-logs>
 </div>
