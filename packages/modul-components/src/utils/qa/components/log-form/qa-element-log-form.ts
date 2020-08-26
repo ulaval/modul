@@ -19,7 +19,7 @@ export class MQAElementLogForm extends Vue {
     public updateElementLog: (payload: { elementId: string, elementLog: QAElementLog }) => void;
 
     public formGroup: FormGroup | null = null;
-    public types = ['error', 'question', 'comments'];
+    public types = ['error', 'question', 'comments', 'todo'];
 
     protected created(): void {
         this.formGroup = new FormGroup({

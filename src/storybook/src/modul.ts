@@ -206,7 +206,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(ComponentExamplesPlugin);
             Vue.use(SvgPlugin);
             Vue.use(AutoHorizontalScrollPlugin);
-            Vue.use(QAPlugin, { project: 'storybook', token: 'my-token' });
+            Vue.use(QAPlugin, { project: 'modul', token: 'my-token' });
         }
     };
 };

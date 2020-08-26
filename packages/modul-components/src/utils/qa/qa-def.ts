@@ -9,7 +9,7 @@ export interface QAElementLog {
     author?: QAUser;
     date?: Date;
     body?: string;
-    type?: 'error' | 'question' | 'comments';
+    type?: 'error' | 'question' | 'comments' | 'todo';
     needResolve?: boolean;
     resolved?: boolean;
     jiraUrl?: string;
@@ -32,9 +32,10 @@ export interface QAElement {
 }
 
 export class QAState {
-    public user: QAUser | null = {
-        id: '1', username: 'test'
-    };
+    // public user: QAUser | null = {
+    //     id: '1', username: 'test'
+    // };
+    public user: QAUser | null = null;
     public elements: QAElement[] = [];
     public selectedElement: QAElement | null = null;
     public selectedElementLog: QAElementLog | null = null;
