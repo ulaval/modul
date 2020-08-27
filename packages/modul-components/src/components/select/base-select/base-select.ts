@@ -3,6 +3,7 @@ import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../../directives/directiv
 import { MPopupDirective } from '../../../directives/popup/popup';
 import { InputWidth } from '../../../mixins/input-width/input-width';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
+import { REGEX_CSS_NUMBER_VALUE } from '../../../utils/props-validation/props-validation';
 import { ModulVue } from '../../../utils/vue/vue';
 import { POPUP_NAME } from '../../component-names';
 import { MPopup } from '../../popup/popup';
@@ -59,10 +60,16 @@ export class MBaseSelect extends ModulVue {
     @Prop({ default: false })
     public virtualScroll: boolean;
 
-    @Prop()
+    @Prop({
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
     public listMinWidth: string;
 
-    @Prop()
+    @Prop({
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
     public listMaxHeight: string;
 
     public $refs: {
