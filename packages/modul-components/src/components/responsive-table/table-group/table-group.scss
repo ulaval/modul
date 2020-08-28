@@ -104,7 +104,7 @@
     }
 }
 
-@mixin default-premiere-colone-fixe() {
+@mixin default-first-column-fixed() {
     .m-table-group__cell:first-child {
         @include m-table--sticky-cell();
     }
@@ -181,7 +181,7 @@
 }
 
 .m-table-group.m--is-first-column-fixed {
-    @include default-premiere-colone-fixe();
+    @include default-first-column-fixed();
 
     &.m--has-row-highlighted-on-hover {
         &:not(.m--is-disabled) tr:not(.m-table-group__header):hover {

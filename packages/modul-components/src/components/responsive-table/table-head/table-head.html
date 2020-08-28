@@ -6,7 +6,7 @@
                 'm--has-multiple-head-row': hasMultipleHeadRow,
             },
         ]">
-    <tr v-for="(headRow, headRowKey) in headRowsFilterAndSort"
+    <tr v-for="(headRow, headRowKey) in headRows"
         :key="headRowKey"
         :class="headRow.className">
         <th v-for="(column, i) in headRow.columns"

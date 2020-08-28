@@ -343,6 +343,7 @@ export const ComplexHeadRows = () => ({
         :head-rows="headRows"
         :rows="rows"
         :rows-style="rowsStyle"
+        :first-column-fixed-active="true"
         table-min-width="900px"
     />`
 });

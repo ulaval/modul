@@ -5,7 +5,7 @@ import { Enums } from '../../../utils/enums/enums';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ICON_BUTTON_NAME, TABLE_HEAD_NAME } from '../../component-names';
 import { MIconButton, MIconButtonSkin } from '../../icon-button/icon-button';
-import { getCellAlignmentClass, getCellWidthStyle, getHeadRowsFilterAndSort, MTableColumn, MTableHeadRows, MTableHeadStyle, MTableSortDirection } from '../responsive-table-commons';
+import { getCellAlignmentClass, getCellWidthStyle, MTableColumn, MTableHeadRows, MTableHeadStyle, MTableSortDirection } from '../responsive-table-commons';
 import WithRender from './table-head.html?style=./table-head.scss';
 
 interface MTableColumnInternal extends MTableColumn {
@@ -50,12 +50,8 @@ export class MTableHead extends ModulVue {
     @Emit('update:headRows')
     public emitUpdateHeadRows(headRows: MTableHeadRows): void { }
 
-    public get headRowsFilterAndSort(): MTableHeadRows {
-        return getHeadRowsFilterAndSort(this.headRows);
-    }
-
     public get hasMultipleHeadRow(): boolean {
-        return Object.keys(this.headRowsFilterAndSort).length > 1;
+        return Object.keys(this.headRows).length > 1;
     }
 
     public getSkinSortIcon(headRowKey: string): MIconButtonSkin {
@@ -96,7 +92,7 @@ export class MTableHead extends ModulVue {
         }
 
         this.emitSort(currentColumn);
-        this.emitUpdateHeadRows(this.headRowsFilterAndSort);
+        this.emitUpdateHeadRows(this.headRows);
     }
 
     public isColumnSorted(currentColumn: MTableColumn): boolean {
