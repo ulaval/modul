@@ -177,18 +177,18 @@ export class MResponsiveTable extends ModulVue {
 
     @Watch('headRows', { immediate: true, deep: true })
     public onHeadRowsChange(headRows: MTableHeadRows): void {
-        if (headRows && !(this.columns && this.columns.length)) {
+        if (headRows && !(this.columns && this.columns.length > 0)) {
             this.headRowsFilterAndSort = headRows;
         }
     }
 
     @Watch('columns', { immediate: true, deep: true })
     public onColumnsChange(columns: MTableColumn[]): void {
-        if (columns && columns.length) {
+        if (columns && columns.length > 0) {
             let headRows: MTableHeadRows = this.headRows ? this.headRows : {};
             const headRowsArray: MTableHeadRow[] = this.getHeadRowsArray(headRows);
             const hasSomeMainColumnsInHeadRowsArray: boolean = this.hasSomeMainColumnsInHeadRowsArray(headRowsArray);
-            let maxOrder: number = Math.max.apply(Math, headRowsArray.map((hr: MTableHeadRow) => hr.order));
+            const maxOrder: number = Math.max.apply(Math, headRowsArray.map((hr: MTableHeadRow) => hr.order));
             headRows = headRowsArray.length ? headRows : {};
             headRows[hasSomeMainColumnsInHeadRowsArray ? `last-row-${this.idTable}-internal-name` : `main-row-${this.idTable}-internal-name`] = {
                 order: maxOrder && maxOrder > 0 ? maxOrder + 1 : 1,
@@ -227,7 +227,7 @@ export class MResponsiveTable extends ModulVue {
     }
 
     public set headRowsFilterAndSort(headRows: MTableHeadRows) {
-        const headRowsArray: MTableHeadRow[] = this.getHeadRowsArray(headRows ? headRows : {});
+        const headRowsArray: MTableHeadRow[] = this.getHeadRowsArray(headRows || {});
         const hasSomeMainColumnsInHeadRowsArray: boolean = this.hasSomeMainColumnsInHeadRowsArray(headRowsArray);
         if (!hasSomeMainColumnsInHeadRowsArray && headRowsArray.length) {
             headRows[Object.keys(headRows)[headRowsArray.length - 1]].mainColumns = true;
