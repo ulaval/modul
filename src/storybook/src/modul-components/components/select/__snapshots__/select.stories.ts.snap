@@ -1827,6 +1827,120 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-select List Max Height 1`] = `
+<div
+  class="m-base-select"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-select"
+      style="width: 100%; max-width: regular;"
+      tabindex="0"
+    >
+      <div
+        class="m-input-style m--has-cursor-pointer m--is-tag-default"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__main"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <span
+              class="m-input-style__label"
+              style="z-index: -1;"
+            >
+              <span
+                class="m-input-style__text"
+              />
+            </span>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <div
+                class="m-input-style__prefix"
+              />
+               
+              <div
+                class="m-input-style__content"
+              >
+                <div>
+                  <input
+                    readonly="readonly"
+                    tabindex="-1"
+                  />
+                </div>
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                 
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <div
+            class="m-input-style__append"
+          >
+            <!---->
+             
+            <div
+              class="m-select__arrow"
+            >
+              <svg
+                aria-hidden="true"
+                class="m-icon m-select__arrow__icon"
+                height="12px"
+                width="12px"
+              >
+                <!---->
+                 
+                <use
+                  aria-hidden="true"
+                  class=""
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popup"
+  >
+    <div
+      class="m-popper"
+    >
+       
+      <!---->
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
 <div
   class="m-base-select"
