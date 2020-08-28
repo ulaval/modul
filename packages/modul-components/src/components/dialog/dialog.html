@@ -47,7 +47,8 @@
                         <nav class="m-dialog__footer__nav"
                              v-if="!hasFooterSlot">
                             <m-button @click="onOk()"
-                                      :style="dialogStyles">
+                                      :style="dialogStyles"
+                                      :skin="okBtnSkin">
                                 <template v-if="hasOkLabel">{{ okLabel }}</template>
                                 <m-i18n v-else
                                         k="m-dialog:ok"></m-i18n>

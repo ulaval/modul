@@ -4,7 +4,7 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import DialogServicePlugin from '../../utils/dialog/dialog-service.plugin';
 import { ModulVue } from '../../utils/vue/vue';
-import { MButton } from '../button/button';
+import { MButton, MButtonSkin } from '../button/button';
 import { BUTTON_NAME, DIALOG_NAME, I18N_NAME, ICON_NAME, LINK_NAME, MESSAGE_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIcon } from '../icon/icon';
@@ -45,6 +45,8 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
     public okLabel: string | undefined;
     @Prop()
     public okPrecision: string | undefined;
+    @Prop({ default: MButtonSkin.Primary })
+    public okBtnSkin: MButtonSkin;
     @Prop({ default: false })
     public secBtn: boolean;
     @Prop()

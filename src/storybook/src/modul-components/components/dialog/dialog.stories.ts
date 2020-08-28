@@ -56,6 +56,14 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DIALOG_NAME}`, module)
         A Dialog with a custom primary button precision
                    </m-dialog>`
     }))
+    .add('okBtnSkin', () => ({
+        data: () => ({
+            openProp: true
+        }),
+        template: `<m-dialog :open.sync="openProp" okBtnSkin="secondary">
+        A Dialog with a custom primary button precision
+                   </m-dialog>`
+    }))
     .add('secBtn="true"', () => ({
         data: () => ({
             openProp: true
