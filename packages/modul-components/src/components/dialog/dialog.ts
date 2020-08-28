@@ -46,7 +46,7 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
     @Prop()
     public okPrecision: string | undefined;
     @Prop({ default: MButtonSkin.Primary })
-    public okBtnSkin: MButtonSkin;
+    public okButtonSkin: MButtonSkin;
     @Prop({ default: false })
     public secBtn: boolean;
     @Prop()
