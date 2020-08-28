@@ -1,11 +1,18 @@
-<tr class="m-table-empty-row">
+<tr class="m-table-empty-row"
+    :class="[
+        'm--is-background-style-' + backgroundStyle
+    ]">
     <td :colspan="nbColumns">
         <m-empty-area
                 :title="title"
                 :subtitle="subtitle"
                 :svg-name="svgName"
+                :svg-size="svgSize"
                 :button-text="buttonText"
                 :button-type="emptyArea.buttonType"
+                :background-style="'backgroundStyle'"
+                :display-mode="displayMode"
+                :min-height="minHeight"
                 :style="{
                     left: horizontalScrollOffset + 'px',
                     width: tableComponentWidth,

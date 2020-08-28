@@ -2,17 +2,17 @@
 
 exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Default 1`] = `
 <tr
-  class="m-table-empty-row"
+  class="m-table-empty-row m--is-background-style-light"
 >
   <td
     colspan="3"
   >
     <div
-      class="m-empty-area"
-      style="left: 10px; width: 600px;"
+      class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-block m--has-button m--has-content-area"
+      style="min-height: 280px; left: 10px; width: 600px;"
     >
       <button
-        class="m-button m--is-skin-secondary"
+        class="m-button m-empty-area__button m--is-skin-secondary"
         type="button"
       >
         <!---->
@@ -34,56 +34,99 @@ exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Defaul
       </button>
        
       <div
-        class="m-empty-area__icon-area"
+        class="m-empty-area__content-area"
       >
         <!---->
          
-        <p
-          class="m-empty-area__title"
+        <div
+          class="m-empty-area__title-area"
         >
-          <strong>
-            Tilte
-          </strong>
-        </p>
-         
-        <p
-          class="m-empty-area__subtitle"
-        >
-          
-            Subtitle
-        
-        </p>
+          <p
+            class="m-empty-area__title"
+          >
+            <strong>
+              Tilte
+            </strong>
+          </p>
+           
+          <p
+            class="m-empty-area__subtitle"
+          >
+            
+                Subtitle
+            
+          </p>
+        </div>
       </div>
     </div>
   </td>
 </tr>
 `;
 
-exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Waiting 1`] = `
+exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Prop Inside Of Table Group 1`] = `
 <tr
-  class="m-table-empty-row"
+  class="m-table-empty-row m--is-background-style-any"
 >
   <td>
     <div
-      class="m-empty-area"
-      style="left: 10px; width: 600px;"
+      class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-inline m--has-content-area"
+      style="min-height: auto; left: 10px; width: 600px;"
     >
       <!---->
        
       <div
-        class="m-empty-area__icon-area"
+        class="m-empty-area__content-area"
       >
         <!---->
          
-        <p
-          class="m-empty-area__title"
+        <div
+          class="m-empty-area__title-area"
         >
-          <strong>
-            Chargement en cours
-          </strong>
-        </p>
-         
+          <p
+            class="m-empty-area__title"
+          >
+            <strong>
+              Prop inside-of-table-group = true
+            </strong>
+          </p>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`Storyshots modul-components|m-responsive-table/m-table-empty-row Prop Waiting 1`] = `
+<tr
+  class="m-table-empty-row m--is-background-style-light"
+>
+  <td>
+    <div
+      class="m-empty-area m--is-background-style-backgroundStyle m--is-display-mode-block m--has-content-area"
+      style="min-height: 280px; left: 10px; width: 600px;"
+    >
+      <!---->
+       
+      <div
+        class="m-empty-area__content-area"
+      >
         <!---->
+         
+        <div
+          class="m-empty-area__title-area"
+        >
+          <p
+            class="m-empty-area__title"
+          >
+            <strong>
+              Chargement en cours
+            </strong>
+          </p>
+           
+          <!---->
+        </div>
       </div>
     </div>
   </td>

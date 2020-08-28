@@ -1,6 +1,7 @@
 import { PluginObject } from 'vue';
 import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
+import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
 import { ADD_NAME, BUTTON_NAME, EMPTY_AREA_NAME, SVG_NAME } from '../component-names';
 import { MAdd } from './../add/add';
@@ -14,6 +15,16 @@ import WithRender from './empty-area.html?style=./empty-area.scss';
 export enum MEmptyAreaButtonType {
     Button = 'button',
     AddButton = 'add-button'
+}
+
+export enum MEmptyAreaBackgroundStyle {
+    Any = 'any',
+    Light = 'light'
+}
+
+export enum MEmptyAreaDisplayMode {
+    Inline = 'inline',
+    Block = 'block'
 }
 
 @WithRender
@@ -42,15 +53,47 @@ export class MEmptyArea extends ModulVue {
     public readonly buttonType!: MEmptyAreaButtonType;
 
     @Prop()
-    public svgName?: string;
+    public readonly svgName?: string;
 
-    public readonly buttonSkin: MButtonSkin = MButtonSkin.Secondary;
+    @Prop({
+        default: MEmptyAreaBackgroundStyle.Light,
+        validator: (value: MEmptyAreaBackgroundStyle) =>
+            Enums.toValueArray(MEmptyAreaBackgroundStyle).includes(value)
+    })
+    public readonly backgroundStyle?: MEmptyAreaBackgroundStyle;
+
+    @Prop({
+        default: MEmptyAreaDisplayMode.Block,
+        validator: (value: MEmptyAreaDisplayMode) =>
+            Enums.toValueArray(MEmptyAreaDisplayMode).includes(value)
+    })
+    public readonly displayMode?: MEmptyAreaDisplayMode;
+
+    @Prop({
+        default: '60px',
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
+    public readonly svgSize?: MEmptyAreaDisplayMode;
+
+    @Prop({
+        default: '280px',
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value) || value === 'auto'
+    })
+    public readonly minHeight: string;
+
+    public buttonSkin: MButtonSkin = MButtonSkin.Secondary;
 
     @Emit('button-click')
     public emitButtonClick(event: MouseEvent): void { }
 
     public get isButtonTypeAdd(): boolean {
         return this.buttonType === MEmptyAreaButtonType.AddButton;
+    }
+
+    public get hasContentArea(): boolean {
+        return Boolean(this.svgName || this.title || this.subtitle);
     }
 }
 
