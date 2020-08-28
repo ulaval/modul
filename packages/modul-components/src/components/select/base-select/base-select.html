@@ -52,7 +52,7 @@
             :aria-labelledby="controlId"
             aria-live="polite"
             :class="{ 'm--is-virutalScroll': virtualScroll }"
-            :style="{ minWidth: inputMaxWidth }">
+            :style="{ minWidth: inputMaxWidth, maxHeight: listMaxHeightProps }">
 
             <slot name="outer-items"
                   :items="items"

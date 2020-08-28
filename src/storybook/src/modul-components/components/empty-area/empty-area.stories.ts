@@ -1,7 +1,7 @@
 import { actions } from '@storybook/addon-actions';
 import { select, text } from '@storybook/addon-knobs';
 import { EMPTY_AREA_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MEmptyAreaButtonType } from '@ulaval/modul-components/dist/components/empty-area/empty-area';
+import { MEmptyAreaBackgroundStyle, MEmptyAreaButtonType, MEmptyAreaDisplayMode } from '@ulaval/modul-components/dist/components/empty-area/empty-area';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { ModulIconName } from '@ulaval/modul-components/dist/utils/modul-icons/modul-icons';
 import { Component } from 'vue';
@@ -35,20 +35,44 @@ export const Sandbox = () => ({
                 MEmptyAreaButtonType.AddButton
             )
         },
+        backgroundStyle: {
+            default: select(
+                'Prop backgroun-style',
+                Enums.toValueArray(MEmptyAreaBackgroundStyle),
+                MEmptyAreaBackgroundStyle.Light
+            )
+        },
+        displayMode: {
+            default: select(
+                'Prop display-mode',
+                Enums.toValueArray(MEmptyAreaDisplayMode),
+                MEmptyAreaDisplayMode.Block
+            )
+        },
+        minHeight: {
+            default: text('Prop min-height', '280px')
+        },
         svgName: {
             default: select<ModulIconName>(
                 'Prop name',
                 Enums.toValueArray(ModulIconName) as ModulIconName[],
                 ModulIconName.Folder
             )
+        },
+        svgSize: {
+            default: text('Prop svg-size', '60px')
         }
     },
     template: `<${EMPTY_AREA_NAME}
         :title="title"
         :subtitle="subtitle"
         :button-text="buttonText"
+        :background-style="backgroundStyle"
+        :display-mode="displayMode"
         :button-type="buttonType"
+        :min-height="minHeight"
         :svg-name="svgName"
+        :svg-size="svgSize"
         @button-click="emitButtonClick"
     />`
 });
@@ -123,5 +147,80 @@ export const PropButtonType: () => Component = (): Component => ({
             button-type="${MEmptyAreaButtonType.AddButton}"
             @button-click="emitButtonClick"
         />
+    </div>`
+});
+
+
+export const PropDisplayMode: () => Component = (): Component => ({
+    template: `<div>
+        <${EMPTY_AREA_NAME}
+            title="Prop display-mode = '${MEmptyAreaDisplayMode.Inline}'"
+            svg-name="${ModulIconName.FolderOpen}"
+            display-mode="${MEmptyAreaDisplayMode.Inline}"
+            button-text="Add"
+        />
+        <${EMPTY_AREA_NAME}
+            class="m-u--margin-top--l"
+            title="Prop display-mode = '${MEmptyAreaDisplayMode.Block}'"
+            svg-name="${ModulIconName.Folder}"
+            display-mode="${MEmptyAreaDisplayMode.Block}"
+            button-text="Add"
+        />
+    </div>`
+});
+
+export const PropMinHeight: () => Component = (): Component => ({
+    template: `<div>
+        <${EMPTY_AREA_NAME}
+            title="Prop min-height = 'auto'"
+            min-height="auto"
+            svg-name="${ModulIconName.Folder}"
+            button-text="Add"
+        />
+        <${EMPTY_AREA_NAME}
+            class="m-u--margin-top--l"
+            title="Prop min-height = '400px'"
+            min-height="400px"
+            svg-name="${ModulIconName.Folder}"
+            button-text="Add"
+        />
+    </div>`
+});
+
+export const PropSvgSize: () => Component = (): Component => ({
+    template: `<div>
+        <${EMPTY_AREA_NAME}
+            title="Prop svg-size = '30px'"
+            svg-name="${ModulIconName.Folder}"
+            svg-size="30px"
+        />
+        <${EMPTY_AREA_NAME}
+            class="m-u--margin-top--l"
+            title="Prop svg-size = '80px'"
+            svg-name="${ModulIconName.Folder}"
+            svg-size="80px"
+        />
+        <${EMPTY_AREA_NAME}
+            class="m-u--margin-top--l"
+            title="Prop svg-size = '1em'"
+            svg-name="${ModulIconName.Folder}"
+            svg-size="1em"
+        />
+    </div>`
+});
+
+
+export const PropBackgrounStyle: () => Component = (): Component => ({
+    template: `<div>
+        <${EMPTY_AREA_NAME}
+            title="Prop background-style = '${MEmptyAreaBackgroundStyle.Any}'"
+            svg-name="${ModulIconName.Folder}"
+            background-style="${MEmptyAreaBackgroundStyle.Any}"
+        />
+        <${EMPTY_AREA_NAME}
+        title="Prop background-style = '${MEmptyAreaBackgroundStyle.Light}'"
+        svg-name="${ModulIconName.Folder}"
+        background-style="${MEmptyAreaBackgroundStyle.Light}"
+    />
     </div>`
 });

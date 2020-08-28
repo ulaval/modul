@@ -5,7 +5,7 @@ import { MSelectItem } from '@ulaval/modul-components/dist/components/select/sel
 import { InputMaxWidth } from '@ulaval/modul-components/dist/mixins/input-width/input-width';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-const OPTIONS: string[] = ['apple', 'banana', 'patate', 'tomato', 'avocados', 'etc'];
+const OPTIONS: string[] = ['apple', 'banana', 'patate', 'tomato', 'avocados', 'orange', 'cherry', 'grape', 'lemon', 'peach', 'pineapple', 'etc'];
 const LONG_OPTIONS: string[] = ['apple juice', 'banana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
 
 
@@ -245,6 +245,14 @@ export const disabledItemSelectedWithLabelClearable = () => ({
         options: OPTIONS
     }),
     template: `<m-select :options="options" :disabled="true" label="Fruits" :clearable="true" v-model="model" ></m-select>`
+});
+
+export const listMaxHeight = () => ({
+    data: () => ({
+        options: OPTIONS,
+        model: ''
+    }),
+    template: `<m-select v-model="model" :options="options" list-max-height="450px" ></m-select>`
 });
 
 export const withItemsSlot = () => ({

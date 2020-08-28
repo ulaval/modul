@@ -2,6 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
+import { ACCORDION_CLOSEST_ELEMENTS } from '../../accordion/accordion';
 import { PLUS_NAME, TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
 import { getCellAlignmentClass, getTotalColumnsLength, MTableAccordionIconPosition, MTableCell, MTableColspan, MTableColumn, MTableRowsGroup } from '../responsive-table-commons';
@@ -136,15 +137,12 @@ export class MTableGroupHeader extends ModulVue {
     }
 
     public toggleAccordeon(event: MouseEvent): void {
-        const target: Element | null = (event.target as HTMLElement).closest(
-            `[href], [onclick], a, button, input, textarea, radio`
-        );
+        const target: Element | null = (event.target as HTMLElement).closest(ACCORDION_CLOSEST_ELEMENTS);
         if (
             !this.as<MTableGroupMixin>().hasAccordion ||
             this.as<MTableGroupMixin>().isAccordionDisabled ||
             Boolean(target)
         ) {
-            event.preventDefault();
             return;
         }
         this.as<MTableGroupMixin>().rowsGroup.accordion!.open = !this.as<MTableGroupMixin>().rowsGroup.accordion!.open;

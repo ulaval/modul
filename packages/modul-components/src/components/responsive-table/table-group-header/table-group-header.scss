@@ -28,10 +28,6 @@
             color: $m-color--ul-yellow;
         }
     }
-
-    .m-table-group-header__cell {
-        border-top-color: $m-color--grey-dark;
-    }
 }
 
 .m-table-group-header {
@@ -54,7 +50,6 @@
         align-items: center;
         font-size: $m-font-size;
         font-weight: $m-font-weight--bold;
-        border-top: 2px solid $m-color--white;
     }
 
     &.m--is-group-header-style-light {

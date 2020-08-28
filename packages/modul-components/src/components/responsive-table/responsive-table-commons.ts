@@ -1,4 +1,4 @@
-import { MEmptyAreaButtonType } from '../empty-area/empty-area';
+import { MEmptyAreaBackgroundStyle, MEmptyAreaButtonType, MEmptyAreaDisplayMode } from '../empty-area/empty-area';
 
 export enum MTableSortDirection {
     None = 0,
@@ -93,8 +93,12 @@ export interface MTableEmptyArea {
     title?: string;
     subtitle?: string;
     svgName?: string;
+    svgSize?: MEmptyAreaDisplayMode;
     buttonText?: string;
     buttonType?: MEmptyAreaButtonType;
+    backgroundStyle?: MEmptyAreaBackgroundStyle;
+    displayMode?: MEmptyAreaDisplayMode;
+    minHeight?: string;
 }
 
 export enum MTableColspan {

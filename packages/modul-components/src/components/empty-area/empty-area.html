@@ -1,29 +1,41 @@
-<div class="m-empty-area">
+<div class="m-empty-area"
+     :class="[
+        'm--is-background-style-' + backgroundStyle,
+        'm--is-display-mode-' + displayMode, {
+            'm--has-button': buttonText,
+            'm--has-content-area': hasContentArea
+        }
+     ]"
+     :style="{ minHeight: minHeight }">
     <template v-if="buttonText">
         <m-add v-if="isButtonTypeAdd"
+               class="m-empty-area__button"
                @click="emitButtonClick()">
             {{ buttonText }}
         </m-add>
         <m-button v-else
+                  class="m-empty-area__button"
                   :skin="buttonSkin"
                   @click="emitButtonClick()">
             {{ buttonText }}
         </m-button>
     </template>
-    <div v-if="svgName || title || subtitle"
-         class="m-empty-area__icon-area">
+    <div v-if="hasContentArea"
+         class="m-empty-area__content-area">
         <m-svg v-if="svgName"
                class="m-empty-area__icon"
                :name="svgName"
-               width="60px"
-               height="60px" />
-        <p v-if="title"
-           class="m-empty-area__title">
-            <strong>{{ title }}</strong>
-        </p>
-        <p v-if="subtitle"
-           class="m-empty-area__subtitle">
-            {{ subtitle }}
-        </p>
+               :width="svgSize"
+               :height="svgSize"/>
+        <div v-if="title || subtitle" class="m-empty-area__title-area">
+            <p v-if="title"
+            class="m-empty-area__title">
+                <strong>{{ title }}</strong>
+            </p>
+            <p v-if="subtitle"
+            class="m-empty-area__subtitle">
+                {{ subtitle }}
+            </p>
+        </div>
     </div>
 </div>

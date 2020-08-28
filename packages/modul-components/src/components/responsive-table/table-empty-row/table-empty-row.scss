@@ -1,11 +1,13 @@
 @import 'commons';
 
 .m-table-empty-row {
-    background: $m-color--grey-lightest;
-
     &,
     td {
         padding: 0;
         margin: 0;
+    }
+
+    &.m--is-background-style-light {
+        background: $m-color--grey-lightest;
     }
 }
