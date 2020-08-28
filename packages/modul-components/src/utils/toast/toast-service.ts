@@ -66,9 +66,14 @@ export default class ToastService {
 
         toast.offset = toast.isTop ? this.baseTopPosition : '0';
 
+        // Si c'est déjà du HTML, laisser tel quel, sinon, encapsuler dans un p
         params.text = /^<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>$/.test(params.text) ? params.text : `<p>${params.text}</p>`;
 
-        toast.$slots.default = [toast.$createElement(Vue.compile ? Vue.compile(params.text) : params.text)];
+        if (Vue.compile !== undefined) {
+            toast.$slots.default = [toast.$createElement(Vue.compile(params.text))];
+        } else {
+            toast.$slots.default = [toast.$createElement('div', { domProps: { innerHTML: params.text } })];
+        }
 
         return toast;
     }
