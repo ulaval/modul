@@ -1089,11 +1089,9 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Accordio
           >
             <th
               class="m--is-text-align-left"
-              colspan="5"
             >
               <div
                 class="m-table-group-header__cell"
-                style="width: 100%;"
               >
                 <span
                   class="m-plus m-table-group-header__accordion-icon m--is-skin-current-color m--is-open m--is-large"
@@ -1105,6 +1103,57 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Accordio
                   <div>
                     Group #1
                   </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="m--is-text-align-center"
+            >
+              <!---->
+            </th>
+            <th
+              class="m--is-text-align-left"
+            >
+              <!---->
+            </th>
+            <th
+              class="m--is-text-align-left"
+            >
+              <!---->
+            </th>
+            <th
+              class="m--is-text-align-left"
+            >
+              <div
+                class="m-table-group-header__cell"
+              >
+                <!---->
+                 
+                <div
+                  class="m-table-group-header__content-cell"
+                >
+                  <!---->
+                   
+                  <a
+                    class="m-link m--has-content"
+                    href="https://www.google.ca/"
+                    tabindex="0"
+                    target="_blank"
+                  >
+                    <!---->
+                     
+                    <span
+                      class="m-link__text"
+                    >
+                      Google link
+                    </span>
+                     
+                    <span
+                      class="m-i18n m-link__hidden"
+                    >
+                      Cet hyperlien s'ouvrira dans un nouvel onglet.
+                    </span>
+                  </a>
                 </div>
               </div>
             </th>

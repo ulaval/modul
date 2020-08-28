@@ -2,6 +2,7 @@ import { actions } from '@storybook/addon-actions';
 import { boolean, object, select, text } from '@storybook/addon-knobs';
 import { MAutoHorizontalScrollGradientStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import { RESPONSIVE_TABLE_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MLinkMode } from '@ulaval/modul-components/dist/components/link/link';
 import { MTableColumn, MTableEmptyArea, MTableGroupHeaderStyle, MTableHeadStyle, MTableRow, MTableRowsGroup, MTableRowsStyle } from '@ulaval/modul-components/dist/components/responsive-table/responsive-table-commons';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -485,7 +486,15 @@ export const RowGroupsWithAccordion = () => ({
             {
                 name: 'group01',
                 header: {
-                    title: 'Group #1'
+                    title: 'Group #1',
+                    cells: {
+                        phoneNumber: {
+                            value: 'Google link',
+                            data: {
+                                url: 'https://www.google.ca/'
+                            }
+                        }
+                    }
                 },
                 accordion: {
                     open: true
@@ -525,6 +534,10 @@ export const RowGroupsWithAccordion = () => ({
         :columns="columns"
         :row-groups="rowGroups"
         :rows-style="rowsStyle"
-    />`
+    >
+        <template #group-header-cell.phoneNumber="{ cell }">
+            <m-link :url="cell.data.url" target="_blank" mode="${MLinkMode.Link}">{{ cell.value }}</m-link>
+        </template>
+    </${RESPONSIVE_TABLE_NAME}>`
 });
 
