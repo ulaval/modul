@@ -28,6 +28,10 @@
             color: $m-color--ul-yellow;
         }
     }
+
+    .m-table-group-header__cell {
+        border-top-color: $m-color--grey-dark;
+    }
 }
 
 .m-table-group-header {
@@ -35,12 +39,10 @@
     border: none;
     transition: background-color $m-transition-duration linear;
     position: relative;
-    border-top: 1px solid $m-color--white;
     outline: none;
 
     th {
         position: relative;
-
         @include m-table--cell-alignment();
     }
 
@@ -52,6 +54,7 @@
         align-items: center;
         font-size: $m-font-size;
         font-weight: $m-font-weight--bold;
+        border-top: 2px solid $m-color--white;
     }
 
     &.m--is-group-header-style-light {
