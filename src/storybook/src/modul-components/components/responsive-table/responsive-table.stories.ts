@@ -286,6 +286,7 @@ export const TableWithoutData = () => ({
         id="TableWithoutData"
         :columns="columns"
         :default-empty-area="defaultEmptyArea"
+        :rows="[]"
         @empty-button-click="emitEmptyButtonClick"
     />`
 });
@@ -328,6 +329,7 @@ export const WaitingWithoutData = () => ({
         id="WaitingWithoutData"
         :columns="columns"
         :default-empty-area="defaultEmptyArea"
+        :rows="[]"
         :waiting="true"
     />`
 });
