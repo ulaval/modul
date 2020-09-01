@@ -272,6 +272,13 @@ export class MResponsiveTable extends ModulVue {
         return this.firstColumnFixedActive && this.hasHorizontalScroll;
     }
 
+    public get hasDefaultEmptyArea(): boolean {
+        return Boolean(
+            this.defaultEmptyArea &&
+            Object.keys(this.defaultEmptyArea).length > 0
+        );
+    }
+
     public resizeComponant(
         properties: MAutoHorizontalScrollResizeProperties
     ): void {
@@ -283,11 +290,37 @@ export class MResponsiveTable extends ModulVue {
         this.emitHorizontalScollbarWidth(properties.horizontalScollbarWidth);
     }
 
-    public get hasDefaultEmptyArea(): boolean {
-        return Boolean(
-            this.defaultEmptyArea &&
-            Object.keys(this.defaultEmptyArea).length > 0
-        );
+
+    public getSpacingTop(rowsGroup: MTableRowsGroup): string | undefined {
+        if (rowsGroup.spacingTop === undefined) {
+            if (this.groupHeaderStyle === MTableGroupHeaderStyle.Any) {
+                return undefined;
+            }
+            return '2px';
+        } else if (REGEX_CSS_NUMBER_VALUE.test(rowsGroup.spacingTop)) {
+            return rowsGroup.spacingTop;
+        } else {
+            this.$log.error(`rowsGroup.spacingTop value ("${rowsGroup.spacingTop}") must match with this regEx ${REGEX_CSS_NUMBER_VALUE}`);
+            return undefined;
+        }
+    }
+
+    public getSpacingTopAreaStyle(rowsGroup: MTableRowsGroup): { height: string | undefined } {
+        return {
+            height: this.getSpacingTop(rowsGroup)
+        };
+    }
+
+    public getSpacingTopStyle(rowsGroup: MTableRowsGroup): {
+        height: string | undefined,
+        width: string,
+        left: string
+    } {
+        return {
+            height: this.getSpacingTop(rowsGroup),
+            width: this.tableComponentWidth,
+            left: `${this.horizontalScrollOffsetInterne}px`
+        };
     }
 
     protected beforeMount(): void {

@@ -51,6 +51,8 @@ export interface MTableRowsGroup {
     accordion?: MTableAccordion;
     rows?: MTableRow[];
     emptyArea?: MTableEmptyArea;
+    spacingTop?: string;
+    spacingClassName?: string;
 }
 
 export interface MTableHeader {

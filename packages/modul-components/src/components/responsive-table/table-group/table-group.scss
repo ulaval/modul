@@ -130,12 +130,6 @@
     border: none;
     @include row-highlighted-on-hover();
 
-    &::before {
-        content: '';
-        display: block;
-        height: 2px;
-    }
-
     /deep/ {
         th,
         td {

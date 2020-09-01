@@ -225,6 +225,17 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
          
         <!---->
          
+        <tr
+          aria-hidden="true"
+          class="m-responsive-table__spacing-top-rows-group-area"
+          style="height: 2px;"
+        >
+          <td
+            class="m-responsive-table__spacing-top-rows-group"
+            style="height: 2px; width: 100%; left: 0px;"
+          />
+        </tr>
+         
         <tbody
           class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
@@ -236,36 +247,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               scope="row"
             >
               
-                                Name 1
-                            
+                                    Name 1
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                111 222 333
-                            
+                                    111 222 333
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake1@email.com
-                            
+                                    fake1@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1971-12-05
-                            
+                                    1971-12-05
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                819 555-0111
-                            
+                                    819 555-0111
+                                
             </td>
           </tr>
           <tr>
@@ -274,36 +285,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               scope="row"
             >
               
-                                Name 2
-                            
+                                    Name 2
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                111 322 344
-                            
+                                    111 322 344
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake2@email.com
-                            
+                                    fake2@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1980-06-11
-                            
+                                    1980-06-11
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                418 555-0163
-                            
+                                    418 555-0163
+                                
             </td>
           </tr>
           <tr>
@@ -312,36 +323,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Alternat
               scope="row"
             >
               
-                                Name 3
-                            
+                                    Name 3
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                112 528 967
-                            
+                                    112 528 967
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake3@email.com
-                            
+                                    fake3@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1970-04-08
-                            
+                                    1970-04-08
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                438 555-0113
-                            
+                                    438 555-0113
+                                
             </td>
           </tr>
            
@@ -602,6 +613,17 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
          
         <!---->
          
+        <tr
+          aria-hidden="true"
+          class="m-responsive-table__spacing-top-rows-group-area"
+          style="height: 2px;"
+        >
+          <td
+            class="m-responsive-table__spacing-top-rows-group"
+            style="height: 2px; width: 100%; left: 0px;"
+          />
+        </tr>
+         
         <tbody
           class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
@@ -613,36 +635,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               scope="row"
             >
               
-                                Name 1
-                            
+                                    Name 1
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                111 222 333
-                            
+                                    111 222 333
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake1@email.com
-                            
+                                    fake1@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1971-12-05
-                            
+                                    1971-12-05
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                819 555-0111
-                            
+                                    819 555-0111
+                                
             </td>
           </tr>
           <tr>
@@ -651,36 +673,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               scope="row"
             >
               
-                                Name 2
-                            
+                                    Name 2
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                111 322 344
-                            
+                                    111 322 344
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake2@email.com
-                            
+                                    fake2@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1980-06-11
-                            
+                                    1980-06-11
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                418 555-0163
-                            
+                                    418 555-0163
+                                
             </td>
           </tr>
           <tr>
@@ -689,36 +711,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Borders 
               scope="row"
             >
               
-                                Name 3
-                            
+                                    Name 3
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                112 528 967
-                            
+                                    112 528 967
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake3@email.com
-                            
+                                    fake3@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1970-04-08
-                            
+                                    1970-04-08
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                438 555-0113
-                            
+                                    438 555-0113
+                                
             </td>
           </tr>
            
@@ -979,6 +1001,17 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
          
         <!---->
          
+        <tr
+          aria-hidden="true"
+          class="m-responsive-table__spacing-top-rows-group-area"
+          style="height: 2px;"
+        >
+          <td
+            class="m-responsive-table__spacing-top-rows-group"
+            style="height: 2px; width: 100%; left: 0px;"
+          />
+        </tr>
+         
         <tbody
           class="m-table-group m--no-header m--has-row-highlighted-on-hover m--is-rows-style-cell-borders"
         >
@@ -990,36 +1023,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               scope="row"
             >
               
-                                Name 1
-                            
+                                    Name 1
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                111 222 333
-                            
+                                    111 222 333
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake1@email.com
-                            
+                                    fake1@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1971-12-05
-                            
+                                    1971-12-05
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                819 555-0111
-                            
+                                    819 555-0111
+                                
             </td>
           </tr>
           <tr>
@@ -1028,36 +1061,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               scope="row"
             >
               
-                                Name 2
-                            
+                                    Name 2
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                111 322 344
-                            
+                                    111 322 344
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake2@email.com
-                            
+                                    fake2@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1980-06-11
-                            
+                                    1980-06-11
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                418 555-0163
-                            
+                                    418 555-0163
+                                
             </td>
           </tr>
           <tr>
@@ -1066,36 +1099,36 @@ exports[`Storyshots modul-components|m-responsive-table/Prop rows-style Cell Bor
               scope="row"
             >
               
-                                Name 3
-                            
+                                    Name 3
+                                
             </th>
             <td
               class="m-table-group__cell m--is-text-align-center"
             >
               
-                                112 528 967
-                            
+                                    112 528 967
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                fake3@email.com
-                            
+                                    fake3@email.com
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                1970-04-08
-                            
+                                    1970-04-08
+                                
             </td>
             <td
               class="m-table-group__cell m--is-text-align-left"
             >
               
-                                438 555-0113
-                            
+                                    438 555-0113
+                                
             </td>
           </tr>
            
