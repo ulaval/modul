@@ -186,7 +186,7 @@ export class MTable extends ModulVue {
         if (columnTable.sortDirection) {
             return 'm-svg__arrow-thin--up'; // CSS rotate transform animation takes care of the arrow position
         } else {
-            return columnTable.defaultSortDirection === MColumnSortDirection.Dsc ? 'm-svg__arrow-thin--down' : 'm-svg__arrow-thin--up';
+            return columnTable.defaultSortDirection === MColumnSortDirection.Dsc ? 'm-svg__arrow-thin--up' : 'm-svg__arrow-thin--down';
         }
     }
 
