@@ -4,7 +4,7 @@
 @mixin row-highlighted-on-hover() {
     &.m--has-row-highlighted-on-hover.m--has-row-highlighted-on-hover {
         &:not(.m--is-disabled) {
-            tr:not(.m-table-group__header):hover {
+            tr:not(.m-table-group__header):not(.m-table-empty-row):hover {
                 background: $m-color--interactive-lightest;
             }
         }
@@ -130,12 +130,6 @@
     border: none;
     @include row-highlighted-on-hover();
 
-    &::before {
-        content: '';
-        display: block;
-        height: 2px;
-    }
-
     /deep/ {
         th,
         td {
@@ -184,7 +178,7 @@
     @include default-first-column-fixed();
 
     &.m--has-row-highlighted-on-hover {
-        &:not(.m--is-disabled) tr:not(.m-table-group__header):hover {
+        &:not(.m--is-disabled) tr:not(.m-table-group__header):not(.m-table-empty-row):hover {
             .m-table-group__cell:first-child {
                 background: $m-color--interactive-lightest;
             }

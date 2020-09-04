@@ -1,7 +1,7 @@
 @import 'commons';
 
 .m-responsive-table {
-    table {
+    &__table {
         position: relative;
         border-collapse: collapse;
         border: none;
@@ -24,5 +24,13 @@
             right: 0;
             background: $m-color--grey-light;
         }
+    }
+
+    &__spacing-top-rows-group-area {
+        position: relative;
+    }
+
+    &__spacing-top-rows-group {
+        position: absolute;
     }
 }
