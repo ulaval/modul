@@ -286,6 +286,7 @@ export const TableWithoutData = () => ({
         id="TableWithoutData"
         :columns="columns"
         :default-empty-area="defaultEmptyArea"
+        :rows="[]"
         @empty-button-click="emitEmptyButtonClick"
     />`
 });
@@ -328,6 +329,7 @@ export const WaitingWithoutData = () => ({
         id="WaitingWithoutData"
         :columns="columns"
         :default-empty-area="defaultEmptyArea"
+        :rows="[]"
         :waiting="true"
     />`
 });
@@ -428,40 +430,23 @@ export const RowGroupsEmpty = () => ({
 export const RowGroupsWithHeaderCell = () => ({
     data: () => ({
         columns: DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE,
-        rowGroups: [
-            {
-                name: 'group01',
-                header: {
-                    title: 'Group #1',
-                    cells: {
-                        id: {
-                            value: 'Identification'
-                        }
+        rowGroups: [1, 2, 3].map((e: number) => (
+        {
+            name: `group${e}`,
+            header: {
+                title: `Group #${e}`,
+                cells: {
+                    id: {
+                        value: 'Identification'
                     }
-                },
-                rows: [
-                    DEFAULT_TABLE_ROW_1,
-                    DEFAULT_TABLE_ROW_2,
-                    DEFAULT_TABLE_ROW_3
-                ]
+                }
             },
-            {
-                name: 'group02',
-                header: {
-                    title: 'Group #2',
-                    cells: {
-                        id: {
-                            value: 'Identification'
-                        }
-                    }
-                },
-                rows: [
-                    DEFAULT_TABLE_ROW_1,
-                    DEFAULT_TABLE_ROW_2,
-                    DEFAULT_TABLE_ROW_3
-                ]
-            }
-        ]
+            rows: [
+                DEFAULT_TABLE_ROW_1,
+                DEFAULT_TABLE_ROW_2,
+                DEFAULT_TABLE_ROW_3
+            ]
+        }))
     }),
     props: {
         rowsStyle: {
@@ -477,6 +462,47 @@ export const RowGroupsWithHeaderCell = () => ({
         :columns="columns"
         :row-groups="rowGroups"
         :rows-style="rowsStyle"
+    />`
+});
+
+export const RowGroupsSpacingTop = () => ({
+    data: () => ({
+        columns: DEFAULT_TABLE_COLUMNS_DISABLED_SORTABLE,
+        rowGroups: [1, 2, 3, 4, 5, 6].map((e: number) => (
+        {
+            name: `group${e}`,
+            header: {
+                title: `Group #${e}`,
+                cells: {
+                    id: {
+                        value: 'Identification'
+                    }
+                }
+            },
+            rows: [
+                DEFAULT_TABLE_ROW_1,
+                DEFAULT_TABLE_ROW_2
+            ],
+            spacingTop: `${5 * e}px`,
+            spacingClassName: 'test-red-background'
+        }))
+    }),
+    props: {
+        rowsStyle: {
+            default: select(
+                'Prop rows-style',
+                Enums.toValueArray(MTableRowsStyle),
+                MTableRowsStyle.Borders
+            )
+        }
+    },
+    template: `<${RESPONSIVE_TABLE_NAME}
+        id="RowGroupsWithHeaderCell"
+        :columns="columns"
+        :row-groups="rowGroups"
+        :rows-style="rowsStyle"
+        :first-column-fixed-active="true"
+        table-min-width="1100px"
     />`
 });
 

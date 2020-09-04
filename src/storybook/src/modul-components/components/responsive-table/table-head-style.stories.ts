@@ -27,7 +27,7 @@ const getTemplate: (
             rows
         }),
         template: `<${RESPONSIVE_TABLE_NAME}
-            :id="headStyles"
+            :id="headStyle"
             :head-rows="headRows"
             :head-style="headStyle"
             :rows="rows"
