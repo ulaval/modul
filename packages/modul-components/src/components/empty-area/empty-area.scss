@@ -53,9 +53,14 @@
             justify-content: center;
         }
 
+        &__title-area {
+            text-align: center;
+        }
+
         &__icon {
             + .m-empty-area__title-area {
                 margin-left: $m-spacing--s  * 1.5;
+                text-align: left;
             }
         }
     }
