@@ -4,7 +4,7 @@
         "close": "Close drop-down",
         "link-select-all": "Select All",
         "link-deselect-all": "Deselect All",
-        "all-selected": "All items selected ({0})",
-        "more": "{0} more..."
+        "all-selected": "All items selected (%(nbSelectedItems)s)",
+        "more": "%(nbSelectedItems)s more..."
     }
 }

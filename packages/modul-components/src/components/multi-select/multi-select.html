@@ -53,8 +53,7 @@
                                        @delete="onDeleteAll()">
                             <template v-slot:default>
                                 <slot name="chips-all">
-                                    <m-i18n k="m-multi-select:all-selected"
-                                            :params="[numberOfItemsSelected]"></m-i18n>
+                                    {{textAllSelected}}
                                 </slot>
                             </template>
                         </m-chip-delete>
@@ -75,8 +74,7 @@
                         </m-chip-delete>
                         <span class="m-multi-select__more">
                             <slot name="more">
-                                <m-i18n k="m-multi-select:more"
-                                        :params="[numberOfItemsSelected - maxVisibleChips]"></m-i18n>
+                               {{textMoreSelected}}
                             </slot>
                         </span>
                     </template>

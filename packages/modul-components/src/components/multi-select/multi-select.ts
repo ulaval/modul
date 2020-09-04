@@ -134,6 +134,18 @@ export class MMultiSelect extends ModulVue {
         return -1;
     }
 
+    get textAllSelected(): string {
+        return this.$i18n.translate('m-multi-select:all-selected', {
+            nbSelectedItems: this.numberOfItemsSelected.toString()
+        });
+    };
+
+    get textMoreSelected(): string {
+        return this.$i18n.translate('m-multi-select:more', {
+            nbSelectedItems: (this.numberOfItemsSelected - this.maxVisibleChips).toString()
+        });
+    };
+
     public toggle(): void {
         this.selectAllFocused = false;
         this.$refs.baseSelect.togglePopup();

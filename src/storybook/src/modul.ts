@@ -77,7 +77,7 @@ import SlideTransitionPlugin from '@ulaval/modul-components/dist/components/tran
 import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
 import FrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
 import '@ulaval/modul-components/dist/styles/main.scss';
-import MessagePlugin, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
+import MessagePlugin, { FormatMode, FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { ConsoleOptions } from '@ulaval/modul-components/dist/utils/logger/logger';
 import ScrollToPlugin from '@ulaval/modul-components/dist/utils/scroll-to/scroll-to';
 import DefaultSpritesPlugin from '@ulaval/modul-components/dist/utils/svg/default-sprites';
@@ -117,7 +117,8 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
                 consoleOptions,
                 propagateVueParserErrors: false,
                 i18PluginOptions: {
-                    curLang: FRENCH
+                    curLang: FRENCH,
+                    formatMode: FormatMode.Vsprintf,
                 }
             };
 
