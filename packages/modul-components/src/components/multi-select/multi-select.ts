@@ -2,21 +2,12 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
-import {
-    InputState,
-    InputStateMixin
-} from '../../mixins/input-state/input-state';
+import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import {
-    I18N_NAME,
-    ICON_NAME,
-    INPUT_STYLE_NAME,
-    MULTI_SELECT_NAME,
-    VALIDATION_MESSAGE_NAME
-} from '../component-names';
+import { I18N_NAME, ICON_NAME, INPUT_STYLE_NAME, MULTI_SELECT_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
@@ -37,17 +28,22 @@ import WithRender from './multi-select.html?style=./multi-select.scss';
         [ICON_NAME]: MIcon,
         [INPUT_STYLE_NAME]: MInputStyle
     },
-    mixins: [InputState, MediaQueries, InputWidth, InputLabel]
+    mixins: [
+        InputState,
+        MediaQueries,
+        InputWidth,
+        InputLabel
+    ]
 })
 export class MMultiSelect extends ModulVue {
     @Model('input')
     @Prop({
-        validator: (value) => Array.isArray(value)
+        validator: value => Array.isArray(value)
     })
     public value: any[];
 
     @Prop({
-        validator: (value) => Array.isArray(value)
+        validator: value => Array.isArray(value)
     })
     public options: any[];
 
@@ -118,7 +114,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     get isEmpty(): boolean {
-        return this.hasValue || this.open ? false : true;
+        return this.hasValue || (this.open) ? false : true;
     }
 
     get hasValue(): boolean {
@@ -161,7 +157,7 @@ export class MMultiSelect extends ModulVue {
     onSelect(option: any, index: number, $event: Event): void {
         let positionInModel: number = this.model.indexOf(option);
         if (positionInModel === -1) {
-            this.model = [...this.model, this.options[index]];
+            this.model = [...this.model, (this.options[index])];
         } else {
             this.onDelete(positionInModel);
         }
@@ -195,10 +191,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     onKeydownDown($event: KeyboardEvent): void {
-        if (
-            this.$refs.baseSelect.focusedIndex === this.options.length - 1 &&
-            this.linkSelectAll
-        ) {
+        if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
             this.$refs.baseSelect.focusedIndex = -1;
             this.selectAllFocused = true;
         } else {
@@ -219,11 +212,7 @@ export class MMultiSelect extends ModulVue {
 
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.$refs.baseSelect.focusedIndex > -1) {
-            this.$refs.baseSelect.select(
-                this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex],
-                this.$refs.baseSelect.focusedIndex,
-                $event
-            );
+            this.$refs.baseSelect.select(this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex], this.$refs.baseSelect.focusedIndex, $event);
         } else if (this.selectAllFocused) {
             this.onToggleAll();
         }
@@ -243,11 +232,8 @@ export class MMultiSelect extends ModulVue {
     }
 
     getChipLabel(item: any): string {
-        let ellipsis: string =
-            item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
-        return `${item
-            .toString()
-            .substring(0, this.defaultChipCharsTrunk)}${ellipsis}`;
+        let ellipsis: string = item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
+        return `${item.toString().substring(0, this.defaultChipCharsTrunk)}${ellipsis}`;
     }
 
     @Watch('value', { immediate: true })
