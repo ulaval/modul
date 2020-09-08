@@ -118,7 +118,7 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
                 propagateVueParserErrors: false,
                 i18PluginOptions: {
                     curLang: FRENCH,
-                    formatMode: FormatMode.Vsprintf,
+                    formatMode: FormatMode.Vsprintf
                 }
             };
 
