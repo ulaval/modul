@@ -70,6 +70,7 @@ export * from './components/link/link';
 export * from './components/list-item/list-item';
 export * from './components/menu/menu';
 export * from './components/menu/menu-item/menu-item';
+export * from './components/message-page/message-page';
 export * from './components/message/message';
 export * from './components/modal/modal';
 export * from './components/moneyfield/moneyfield';
