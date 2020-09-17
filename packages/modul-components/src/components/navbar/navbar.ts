@@ -95,7 +95,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     public horizontalScrollOffset: number = 0;
     private internalValue: any | undefined = '';
     private observer: MutationObserver;
-    private navbarItemsInterne: Vue[] = [];
+    private navbarItemsInterne: MNavbarItem[] = [];
 
     @Emit('update:selected')
     public emitUpdateSelected(value: string): void { }
@@ -282,7 +282,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
         this.navbarItemsInterne = this.$children &&
             this.$children[0] &&
             this.$children[0].$children ?
-                this.$children[0].$children.filter(element => element instanceof MNavbarItem)
+                this.$children[0].$children.filter(element => element instanceof MNavbarItem) as MNavbarItem[]
                 : [];
     }
 

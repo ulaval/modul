@@ -4,19 +4,21 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main m--is-multiline"
-    style="position: relative;"
   >
     <div
-      class="m-navbar__max-width"
-      style="max-width: 1200px;"
+      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+      style="max-width: 1200px; position: relative;"
     >
       <!---->
        
+      <!---->
+       
       <div
-        class="m-navbar__contents"
+        class="m-auto-horizontal-scroll__body"
       >
         <div
-          class="m-navbar__wrap"
+          class="m-auto-horizontal-scroll__body-content"
+          style="min-width: 100px;"
         >
           <ul
             class="m-navbar__list"
@@ -24,11 +26,11 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
           >
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -44,11 +46,11 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -64,11 +66,11 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -84,11 +86,11 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -104,11 +106,11 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -129,29 +131,27 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
           </ul>
         </div>
       </div>
-       
-      <!---->
-    </div>
-    <div
-      class="resize-sensor"
-      dir="ltr"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
       <div
-        class="resize-sensor-expand"
+        class="resize-sensor"
+        dir="ltr"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-        />
-      </div>
-      <div
-        class="resize-sensor-shrink"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-        />
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -162,19 +162,21 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main"
-    style="position: relative;"
   >
     <div
-      class="m-navbar__max-width"
-      style="max-width: 1200px;"
+      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+      style="max-width: 1200px; position: relative;"
     >
       <!---->
        
+      <!---->
+       
       <div
-        class="m-navbar__contents"
+        class="m-auto-horizontal-scroll__body"
       >
         <div
-          class="m-navbar__wrap"
+          class="m-auto-horizontal-scroll__body-content"
+          style="min-width: 100px;"
         >
           <ul
             class="m-navbar__list"
@@ -182,11 +184,11 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
           >
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -204,11 +206,11 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -226,11 +228,11 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -248,11 +250,11 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -270,11 +272,11 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
@@ -297,29 +299,27 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
           </ul>
         </div>
       </div>
-       
-      <!---->
-    </div>
-    <div
-      class="resize-sensor"
-      dir="ltr"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
       <div
-        class="resize-sensor-expand"
+        class="resize-sensor"
+        dir="ltr"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-        />
-      </div>
-      <div
-        class="resize-sensor-shrink"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-        />
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -329,19 +329,21 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
 exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -349,11 +351,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -372,11 +374,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -395,11 +397,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -418,11 +420,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -441,11 +443,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -464,11 +466,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -487,11 +489,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -510,11 +512,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -533,11 +535,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -556,11 +558,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -579,11 +581,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -602,11 +604,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -625,11 +627,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -648,11 +650,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -671,11 +673,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -694,11 +696,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -717,11 +719,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -740,11 +742,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -763,11 +765,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -786,11 +788,11 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -814,29 +816,27 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -845,19 +845,21 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -865,11 +867,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -888,11 +890,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -911,11 +913,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -934,11 +936,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -957,11 +959,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -980,11 +982,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1003,11 +1005,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1026,11 +1028,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1049,11 +1051,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1072,11 +1074,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1100,29 +1102,27 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -1131,19 +1131,22 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
 <div
   class="m-navbar m--is-skin-nav-soft m--is-multiline"
-  style="background: rgb(0, 153, 255); position: relative;"
+  style="background: rgb(0, 153, 255);"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-interactive"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -1151,11 +1154,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1174,11 +1177,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1197,11 +1200,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1220,11 +1223,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1243,11 +1246,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1266,11 +1269,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1289,11 +1292,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1312,11 +1315,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1335,11 +1338,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1358,11 +1361,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1386,29 +1389,27 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -1417,19 +1418,21 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
 <div
   class="m-navbar m--is-skin-nav-sub m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -1437,11 +1440,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1460,11 +1463,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1483,11 +1486,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1506,11 +1509,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1529,11 +1532,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1552,11 +1555,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1575,11 +1578,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1598,11 +1601,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1621,11 +1624,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1644,11 +1647,11 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1672,29 +1675,27 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -1703,19 +1704,21 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
 <div
   class="m-navbar m--is-skin-plain m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -1723,11 +1726,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1746,11 +1749,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1769,11 +1772,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1792,11 +1795,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1815,11 +1818,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1838,11 +1841,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1861,11 +1864,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1884,11 +1887,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1907,11 +1910,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1930,11 +1933,11 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -1958,29 +1961,27 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -1989,19 +1990,21 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
 <div
   class="m-navbar m--is-skin-tab-arrow m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -2009,11 +2012,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2032,11 +2035,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2055,11 +2058,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2078,11 +2081,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2101,11 +2104,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2124,11 +2127,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2147,11 +2150,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2170,11 +2173,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2193,11 +2196,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2216,11 +2219,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2243,33 +2246,33 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
           <li
             aria-hidden="true"
             class="m-navbar__arrow"
+            role="none"
+            style="transform: translate3d(0px, 0, 0); width: 0px;"
           />
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -2278,19 +2281,21 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
 <div
   class="m-navbar m--is-skin-tab-dark-main m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -2298,11 +2303,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2321,11 +2326,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2344,11 +2349,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2367,11 +2372,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2390,11 +2395,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2413,11 +2418,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2436,11 +2441,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2459,11 +2464,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2482,11 +2487,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2505,11 +2510,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2533,29 +2538,27 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -2564,19 +2567,21 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
 <div
   class="m-navbar m--is-skin-tab-light-main m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-light"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -2584,11 +2589,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2607,11 +2612,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2630,11 +2635,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2653,11 +2658,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2676,11 +2681,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2699,11 +2704,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2722,11 +2727,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2745,11 +2750,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2768,11 +2773,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2791,11 +2796,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2819,29 +2824,27 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -2850,19 +2853,21 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
 <div
   class="m-navbar m--is-skin-tab-soft m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -2870,11 +2875,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2893,11 +2898,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2916,11 +2921,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2939,11 +2944,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2962,11 +2967,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -2985,11 +2990,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3008,11 +3013,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3031,11 +3036,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3054,11 +3059,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3077,11 +3082,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3105,29 +3110,27 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -3136,19 +3139,21 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
 exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
 <div
   class="m-navbar m--is-skin-tab-underline m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -3156,11 +3161,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3179,11 +3184,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3202,11 +3207,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3225,11 +3230,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3248,11 +3253,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3271,11 +3276,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3294,11 +3299,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3317,11 +3322,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3340,11 +3345,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3363,11 +3368,11 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           </li>
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3388,35 +3393,35 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
           <li
             aria-hidden="true"
             class="m-navbar__line"
+            role="none"
+            style="transform: translate3d(0px, 0, 0); width: 0px;"
           />
            
           <!---->
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
@@ -3426,19 +3431,21 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main m--is-multiline"
-    style="position: relative;"
   >
     <div
-      class="m-navbar__max-width"
-      style="max-width: 1200px;"
+      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+      style="max-width: 1200px; position: relative;"
     >
       <!---->
        
+      <!---->
+       
       <div
-        class="m-navbar__contents"
+        class="m-auto-horizontal-scroll__body"
       >
         <div
-          class="m-navbar__wrap"
+          class="m-auto-horizontal-scroll__body-content"
+          style="min-width: 100px;"
         >
           <ul
             class="m-navbar__list"
@@ -3446,15 +3453,15 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
           >
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
-                  class="m-navbar-item__text pp--is-nowrap"
+                  class="m-navbar-item__text m--is-nowrap"
                 >
                   <div
                     class="m-navbar-item__text-left-contain"
@@ -3483,15 +3490,15 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
              
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
-                  class="m-navbar-item__text pp--is-nowrap"
+                  class="m-navbar-item__text m--is-nowrap"
                 >
                   <div
                     class="m-navbar-item__text-left-contain"
@@ -3524,29 +3531,27 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
           </ul>
         </div>
       </div>
-       
-      <!---->
-    </div>
-    <div
-      class="resize-sensor"
-      dir="ltr"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
       <div
-        class="resize-sensor-expand"
+        class="resize-sensor"
+        dir="ltr"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-        />
-      </div>
-      <div
-        class="resize-sensor-shrink"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-        />
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -3557,19 +3562,21 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-nav-main m--is-multiline"
-    style="position: relative;"
   >
     <div
-      class="m-navbar__max-width"
-      style="max-width: 1200px;"
+      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+      style="max-width: 1200px; position: relative;"
     >
       <!---->
        
+      <!---->
+       
       <div
-        class="m-navbar__contents"
+        class="m-auto-horizontal-scroll__body"
       >
         <div
-          class="m-navbar__wrap"
+          class="m-auto-horizontal-scroll__body-content"
+          style="min-width: 100px;"
         >
           <ul
             class="m-navbar__list"
@@ -3577,15 +3584,15 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
           >
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
-                  class="m-navbar-item__text pp--is-nowrap"
+                  class="m-navbar-item__text m--is-nowrap"
                 >
                   <!---->
                    
@@ -3614,15 +3621,15 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
              
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 tabindex="0"
               >
                 <div
-                  class="m-navbar-item__text pp--is-nowrap"
+                  class="m-navbar-item__text m--is-nowrap"
                 >
                   <!---->
                    
@@ -3655,8 +3662,130 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
           </ul>
         </div>
       </div>
-       
-      <!---->
+      <div
+        class="resize-sensor"
+        dir="ltr"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
+        <div
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-navbar Url 1`] = `
+<div
+  class="m-navbar m--is-skin-nav-main m--is-multiline"
+>
+  <div
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
+  >
+    <!---->
+     
+    <!---->
+     
+    <div
+      class="m-auto-horizontal-scroll__body"
+    >
+      <div
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
+      >
+        <ul
+          class="m-navbar__list"
+          role="menubar"
+        >
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <a
+              class="m-navbar-item__contents"
+              href="#/story/components-m-navbar--url"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__text"
+              >
+                <!---->
+                 
+                <div>
+                  Home
+                </div>
+                 
+                <!---->
+              </div>
+            </a>
+          </li>
+           
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <a
+              class="m-navbar-item__contents router-link-exact-active router-link-active"
+              href="#/"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__text"
+              >
+                <!---->
+                 
+                <div>
+                  About
+                </div>
+                 
+                <!---->
+              </div>
+            </a>
+          </li>
+           
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <a
+              class="m-navbar-item__contents router-link-exact-active router-link-active"
+              href="#/"
+              role="menuitem"
+            >
+              <div
+                class="m-navbar-item__text"
+              >
+                <!---->
+                 
+                <div>
+                  Contact
+                </div>
+                 
+                <!---->
+              </div>
+            </a>
+          </li>
+           
+          <!---->
+           
+          <!---->
+        </ul>
+      </div>
     </div>
     <div
       class="resize-sensor"
@@ -3684,143 +3813,24 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-navbar Url 1`] = `
-<div
-  class="m-navbar m--is-skin-nav-main m--is-multiline"
-  style="position: relative;"
->
-  <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
-  >
-    <!---->
-     
-    <div
-      class="m-navbar__contents"
-    >
-      <div
-        class="m-navbar__wrap"
-      >
-        <ul
-          class="m-navbar__list"
-          role="menubar"
-        >
-          <li
-            class="m-navbar-item"
-            role="menuitem"
-          >
-            <a
-              class="m-navbar-item__contents"
-              href="#/story/components-m-navbar--url"
-            >
-              <div
-                class="m-navbar-item__text"
-              >
-                <!---->
-                 
-                <div>
-                  Home
-                </div>
-                 
-                <!---->
-              </div>
-            </a>
-          </li>
-           
-          <li
-            class="m-navbar-item"
-            role="menuitem"
-          >
-            <a
-              class="m-navbar-item__contents router-link-exact-active router-link-active"
-              href="#/"
-            >
-              <div
-                class="m-navbar-item__text"
-              >
-                <!---->
-                 
-                <div>
-                  About
-                </div>
-                 
-                <!---->
-              </div>
-            </a>
-          </li>
-           
-          <li
-            class="m-navbar-item"
-            role="menuitem"
-          >
-            <a
-              class="m-navbar-item__contents router-link-exact-active router-link-active"
-              href="#/"
-            >
-              <div
-                class="m-navbar-item__text"
-              >
-                <!---->
-                 
-                <div>
-                  Contact
-                </div>
-                 
-                <!---->
-              </div>
-            </a>
-          </li>
-           
-          <!---->
-           
-          <!---->
-        </ul>
-      </div>
-    </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
-    <div
-      class="resize-sensor-expand"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots modul-components|m-navbar default 1`] = `
 <div
   class="m-navbar m--is-skin-nav-main m--is-multiline"
-  style="position: relative;"
 >
   <div
-    class="m-navbar__max-width"
-    style="max-width: 1200px;"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
+    <!---->
+     
     <div
-      class="m-navbar__contents"
+      class="m-auto-horizontal-scroll__body"
     >
       <div
-        class="m-navbar__wrap"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
         <ul
           class="m-navbar__list"
@@ -3828,11 +3838,11 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
         >
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3852,11 +3862,11 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
            
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3876,11 +3886,11 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
            
           <li
             class="m-navbar-item"
-            role="menuitem"
+            role="none"
           >
             <div
               class="m-navbar-item__contents"
-              role="button"
+              role="menuitem"
               style="white-space: nowrap;"
               tabindex="0"
             >
@@ -3904,29 +3914,27 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
         </ul>
       </div>
     </div>
-     
-    <!---->
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
     <div
-      class="resize-sensor-expand"
+      class="resize-sensor"
+      dir="ltr"
       style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
     >
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
       <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
     </div>
   </div>
 </div>
