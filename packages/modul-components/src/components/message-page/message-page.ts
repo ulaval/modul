@@ -6,7 +6,6 @@ import { ModulVue } from '../../utils/vue/vue';
 import { ICON_NAME, LINK_NAME, MESSAGE_PAGE_NAME, SVG_NAME } from '../component-names';
 import { MIcon } from '../icon/icon';
 import { MLink } from '../link/link';
-import { MMessageState } from '../message/message';
 import { MSvg } from './../svg/svg';
 import WithRender from './message-page.html?style=./message-page.scss';
 
@@ -35,6 +34,13 @@ export enum MMessagePageImageSize {
     Small = '76px'
 }
 
+export enum MMessagePageState {
+    Information = 'information',
+    Warning = 'warning',
+    Confirmation = 'confirmation',
+    Error = 'error'
+}
+
 @WithRender
 @Component({
     components: {
@@ -48,12 +54,12 @@ export class MMessagePage extends ModulVue {
     @Prop({
         default: 'error',
         validator: value =>
-            value === MMessageState.Information ||
-            value === MMessageState.Warning ||
-            value === MMessageState.Confirmation ||
-            value === MMessageState.Error
+            value === MMessagePageState.Information ||
+            value === MMessagePageState.Warning ||
+            value === MMessagePageState.Confirmation ||
+            value === MMessagePageState.Error
     })
-    public state: string;
+    public state: MMessagePageState;
 
     @Prop({
         default: MMessagePageSkin.Default,
@@ -117,19 +123,19 @@ export class MMessagePage extends ModulVue {
     }
 
     public get isStateInformation(): boolean {
-        return this.state === MMessageState.Information;
+        return this.state === MMessagePageState.Information;
     }
 
     public get isStateWarning(): boolean {
-        return this.state === MMessageState.Warning;
+        return this.state === MMessagePageState.Warning;
     }
 
     public get isStateError(): boolean {
-        return this.state === MMessageState.Error;
+        return this.state === MMessagePageState.Error;
     }
 
     public get isStateConfirmation(): boolean {
-        return this.state === MMessageState.Confirmation;
+        return this.state === MMessagePageState.Confirmation;
     }
 
     public get iconNameProp(): string {
@@ -137,11 +143,11 @@ export class MMessagePage extends ModulVue {
             return this.iconName;
         } else {
             switch (this.state) {
-                case MMessageState.Confirmation:
+                case MMessagePageState.Confirmation:
                     return ModulIconName.ConfirmationWhiteFilled;
-                case MMessageState.Information:
+                case MMessagePageState.Information:
                     return ModulIconName.InformationWhiteFilled;
-                case MMessageState.Warning:
+                case MMessagePageState.Warning:
                     return ModulIconName.WarningWhiteFilled;
                 default:
                     return ModulIconName.ErrorWhiteFilled;
