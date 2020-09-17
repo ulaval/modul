@@ -59,7 +59,7 @@ export class MMessagePage extends ModulVue {
             value === MMessagePageState.Confirmation ||
             value === MMessagePageState.Error
     })
-    public state: string;
+    public state: MMessagePageState;
 
     @Prop({
         default: MMessagePageSkin.Default,
