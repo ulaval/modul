@@ -1,6 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
+import { FormatMode } from '../../../dist/utils/i18n/i18n';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
@@ -132,6 +133,14 @@ export class MMultiSelect extends ModulVue {
             return 0;
         }
         return -1;
+    }
+
+    get textNumberOfItemsSelected(): string {
+        return this.$i18n.translate('m-multi-select:all-selected', [this.numberOfItemsSelected], undefined, undefined,false, FormatMode.Default)
+    }
+
+    get textNumberOfItemsSelectedMore(): string {
+        return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined,false, FormatMode.Default)
     }
 
     public toggle(): void {
