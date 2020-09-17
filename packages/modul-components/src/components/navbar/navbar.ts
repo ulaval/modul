@@ -2,6 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
+import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
 import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
@@ -66,7 +67,11 @@ export class MNavbar extends BaseNavbar implements Navbar {
     @Prop({ default: true })
     public readonly navigationArrow: boolean;
 
-    @Prop({ default: MNavbarMaxWidth.Large })
+    @Prop({
+        default: MNavbarMaxWidth.Large,
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
     public readonly maxWidth: string;
 
     @Prop({ default: true })

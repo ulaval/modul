@@ -1,157 +1,155 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
-<div>
+<div
+  class="m-navbar m--is-skin-nav-main m--is-multiline"
+>
   <div
-    class="m-navbar m--is-skin-nav-main m--is-multiline"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
+    <!---->
+     
+    <!---->
+     
     <div
-      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-      style="max-width: 1200px; position: relative;"
+      class="m-auto-horizontal-scroll__body"
     >
-      <!---->
-       
-      <!---->
-       
       <div
-        class="m-auto-horizontal-scroll__body"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
-        <div
-          class="m-auto-horizontal-scroll__body-content"
-          style="min-width: 100px;"
+        <ul
+          class="m-navbar__list"
+          role="menubar"
         >
-          <ul
-            class="m-navbar__list"
-            role="menubar"
+          <li
+            class="m-navbar-item"
+            role="none"
           >
-            <li
-              class="m-navbar-item"
-              role="none"
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
               </div>
-            </li>
-             
-            <!---->
-             
-            <!---->
-          </ul>
-        </div>
+            </div>
+          </li>
+           
+          <!---->
+           
+          <!---->
+        </ul>
       </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
       <div
-        class="resize-sensor"
-        dir="ltr"
+        class="resize-sensor-expand"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
         <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -159,167 +157,175 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
 `;
 
 exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
-<div>
+<div
+  class="m-navbar m--is-skin-nav-main"
+>
   <div
-    class="m-navbar m--is-skin-nav-main"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
+    <!---->
+     
+    <!---->
+     
     <div
-      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-      style="max-width: 1200px; position: relative;"
+      class="m-auto-horizontal-scroll__body"
     >
-      <!---->
-       
-      <!---->
-       
       <div
-        class="m-auto-horizontal-scroll__body"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
-        <div
-          class="m-auto-horizontal-scroll__body-content"
-          style="min-width: 100px;"
+        <ul
+          class="m-navbar__list"
+          role="menubar"
         >
-          <ul
-            class="m-navbar__list"
-            role="menubar"
+          <li
+            class="m-navbar-item"
+            role="none"
           >
-            <li
-              class="m-navbar-item"
-              role="none"
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <div>
-                    Very very very long text #1
-                  </div>
-                   
-                  <!---->
+                <!---->
+                 
+                <div>
+                  
+            Very very very long text #1
+        
                 </div>
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <div>
-                    Very very very long text #2
-                  </div>
-                   
-                  <!---->
+                <!---->
+                 
+                <div>
+                  
+            Very very very long text #2
+        
                 </div>
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <div>
-                    Very very very long text #3
-                  </div>
-                   
-                  <!---->
+                <!---->
+                 
+                <div>
+                  
+            Very very very long text #3
+        
                 </div>
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <div>
-                    Very very very long text #4
-                  </div>
-                   
-                  <!---->
+                <!---->
+                 
+                <div>
+                  
+            Very very very long text #4
+        
                 </div>
+                 
+                <!---->
               </div>
-            </li>
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text"
               >
-                <div
-                  class="m-navbar-item__text"
-                >
-                  <!---->
-                   
-                  <div>
-                    Very very very long text #5
-                  </div>
-                   
-                  <!---->
+                <!---->
+                 
+                <div>
+                  
+            Very very very long text #5
+        
                 </div>
+                 
+                <!---->
               </div>
-            </li>
-             
-            <!---->
-             
-            <!---->
-          </ul>
-        </div>
+            </div>
+          </li>
+           
+          <!---->
+           
+          <!---->
+        </ul>
       </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
       <div
-        class="resize-sensor"
-        dir="ltr"
+        class="resize-sensor-expand"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
         <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -365,7 +371,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -388,7 +396,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -411,7 +421,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -434,7 +446,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -457,7 +471,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -480,7 +496,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -503,7 +521,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -526,7 +546,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -549,7 +571,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -572,7 +596,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -595,7 +621,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #11
+                  
+            Item navbar #11
+        
                 </div>
                  
                 <!---->
@@ -618,7 +646,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #12
+                  
+            Item navbar #12
+        
                 </div>
                  
                 <!---->
@@ -641,7 +671,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #13
+                  
+            Item navbar #13
+        
                 </div>
                  
                 <!---->
@@ -664,7 +696,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #14
+                  
+            Item navbar #14
+        
                 </div>
                  
                 <!---->
@@ -687,7 +721,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #15
+                  
+            Item navbar #15
+        
                 </div>
                  
                 <!---->
@@ -710,7 +746,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #16
+                  
+            Item navbar #16
+        
                 </div>
                  
                 <!---->
@@ -733,7 +771,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #17
+                  
+            Item navbar #17
+        
                 </div>
                  
                 <!---->
@@ -756,7 +796,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #18
+                  
+            Item navbar #18
+        
                 </div>
                  
                 <!---->
@@ -779,7 +821,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #19
+                  
+            Item navbar #19
+        
                 </div>
                  
                 <!---->
@@ -802,7 +846,9 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #20
+                  
+            Item navbar #20
+        
                 </div>
                  
                 <!---->
@@ -881,7 +927,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -904,7 +952,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -927,7 +977,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -950,7 +1002,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -973,7 +1027,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -996,7 +1052,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -1019,7 +1077,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -1042,7 +1102,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -1065,7 +1127,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -1088,7 +1152,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -1168,7 +1234,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -1191,7 +1259,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -1214,7 +1284,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -1237,7 +1309,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -1260,7 +1334,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -1283,7 +1359,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -1306,7 +1384,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -1329,7 +1409,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -1352,7 +1434,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -1375,7 +1459,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -1454,7 +1540,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -1477,7 +1565,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -1500,7 +1590,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -1523,7 +1615,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -1546,7 +1640,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -1569,7 +1665,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -1592,7 +1690,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -1615,7 +1715,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -1638,7 +1740,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -1661,7 +1765,9 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -1740,7 +1846,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -1763,7 +1871,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -1786,7 +1896,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -1809,7 +1921,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -1832,7 +1946,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -1855,7 +1971,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -1878,7 +1996,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -1901,7 +2021,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -1924,7 +2046,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -1947,7 +2071,9 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -2026,7 +2152,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -2049,7 +2177,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -2072,7 +2202,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -2095,7 +2227,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -2118,7 +2252,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -2141,7 +2277,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -2164,7 +2302,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -2187,7 +2327,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -2210,7 +2352,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -2233,7 +2377,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -2317,7 +2463,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -2340,7 +2488,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -2363,7 +2513,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -2386,7 +2538,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -2409,7 +2563,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -2432,7 +2588,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -2455,7 +2613,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -2478,7 +2638,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -2501,7 +2663,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -2524,7 +2688,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -2603,7 +2769,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -2626,7 +2794,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -2649,7 +2819,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -2672,7 +2844,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -2695,7 +2869,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -2718,7 +2894,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -2741,7 +2919,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -2764,7 +2944,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -2787,7 +2969,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -2810,7 +2994,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -2889,7 +3075,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -2912,7 +3100,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -2935,7 +3125,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -2958,7 +3150,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -2981,7 +3175,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -3004,7 +3200,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -3027,7 +3225,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -3050,7 +3250,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -3073,7 +3275,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -3096,7 +3300,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -3175,7 +3381,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #1
+                  
+            Item navbar #1
+        
                 </div>
                  
                 <!---->
@@ -3198,7 +3406,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #2
+                  
+            Item navbar #2
+        
                 </div>
                  
                 <!---->
@@ -3221,7 +3431,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #3
+                  
+            Item navbar #3
+        
                 </div>
                  
                 <!---->
@@ -3244,7 +3456,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #4
+                  
+            Item navbar #4
+        
                 </div>
                  
                 <!---->
@@ -3267,7 +3481,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #5
+                  
+            Item navbar #5
+        
                 </div>
                  
                 <!---->
@@ -3290,7 +3506,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #6
+                  
+            Item navbar #6
+        
                 </div>
                  
                 <!---->
@@ -3313,7 +3531,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #7
+                  
+            Item navbar #7
+        
                 </div>
                  
                 <!---->
@@ -3336,7 +3556,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #8
+                  
+            Item navbar #8
+        
                 </div>
                  
                 <!---->
@@ -3359,7 +3581,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #9
+                  
+            Item navbar #9
+        
                 </div>
                  
                 <!---->
@@ -3382,7 +3606,9 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
                 <!---->
                  
                 <div>
-                  Item navbar #10
+                  
+            Item navbar #10
+        
                 </div>
                  
                 <!---->
@@ -3428,130 +3654,128 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
 `;
 
 exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
-<div>
+<div
+  class="m-navbar m--is-skin-nav-main m--is-multiline"
+>
   <div
-    class="m-navbar m--is-skin-nav-main m--is-multiline"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
+    <!---->
+     
+    <!---->
+     
     <div
-      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-      style="max-width: 1200px; position: relative;"
+      class="m-auto-horizontal-scroll__body"
     >
-      <!---->
-       
-      <!---->
-       
       <div
-        class="m-auto-horizontal-scroll__body"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
-        <div
-          class="m-auto-horizontal-scroll__body-content"
-          style="min-width: 100px;"
+        <ul
+          class="m-navbar__list"
+          role="menubar"
         >
-          <ul
-            class="m-navbar__list"
-            role="menubar"
+          <li
+            class="m-navbar-item"
+            role="none"
           >
-            <li
-              class="m-navbar-item"
-              role="none"
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text m--is-nowrap"
               >
                 <div
-                  class="m-navbar-item__text m--is-nowrap"
+                  class="m-navbar-item__text-left-contain"
                 >
-                  <div
-                    class="m-navbar-item__text-left-contain"
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-u--margin-right--s"
+                    height="20px"
+                    width="20px"
                   >
-                    <svg
+                    <!---->
+                     
+                    <use
                       aria-hidden="true"
-                      class="m-icon m-u--margin-right--s"
-                      height="20px"
-                      width="20px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                  </div>
-                   
-                  <!---->
-                   
-                  <!---->
+                      class=""
+                    />
+                  </svg>
                 </div>
+                 
+                <!---->
+                 
+                <!---->
               </div>
-            </li>
-             
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+           
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text m--is-nowrap"
               >
                 <div
-                  class="m-navbar-item__text m--is-nowrap"
+                  class="m-navbar-item__text-left-contain"
                 >
-                  <div
-                    class="m-navbar-item__text-left-contain"
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-u--margin-right--s"
+                    height="20px"
+                    width="20px"
                   >
-                    <svg
+                    <!---->
+                     
+                    <use
                       aria-hidden="true"
-                      class="m-icon m-u--margin-right--s"
-                      height="20px"
-                      width="20px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                  </div>
-                   
-                  <!---->
-                   
-                  <!---->
+                      class=""
+                    />
+                  </svg>
                 </div>
+                 
+                <!---->
+                 
+                <!---->
               </div>
-            </li>
-             
-            <!---->
-             
-            <!---->
-          </ul>
-        </div>
+            </div>
+          </li>
+           
+          <!---->
+           
+          <!---->
+        </ul>
       </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
       <div
-        class="resize-sensor"
-        dir="ltr"
+        class="resize-sensor-expand"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
         <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -3559,130 +3783,128 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
 `;
 
 exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
-<div>
+<div
+  class="m-navbar m--is-skin-nav-main m--is-multiline"
+>
   <div
-    class="m-navbar m--is-skin-nav-main m--is-multiline"
+    class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
+    style="max-width: 1200px; position: relative;"
   >
+    <!---->
+     
+    <!---->
+     
     <div
-      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-      style="max-width: 1200px; position: relative;"
+      class="m-auto-horizontal-scroll__body"
     >
-      <!---->
-       
-      <!---->
-       
       <div
-        class="m-auto-horizontal-scroll__body"
+        class="m-auto-horizontal-scroll__body-content"
+        style="min-width: 100px;"
       >
-        <div
-          class="m-auto-horizontal-scroll__body-content"
-          style="min-width: 100px;"
+        <ul
+          class="m-navbar__list"
+          role="menubar"
         >
-          <ul
-            class="m-navbar__list"
-            role="menubar"
+          <li
+            class="m-navbar-item"
+            role="none"
           >
-            <li
-              class="m-navbar-item"
-              role="none"
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text m--is-nowrap"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <div
-                  class="m-navbar-item__text m--is-nowrap"
+                  class="m-navbar-item__text-right-contain"
                 >
-                  <!---->
-                   
-                  <!---->
-                   
-                  <div
-                    class="m-navbar-item__text-right-contain"
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-u--margin-left--s"
+                    height="20px"
+                    width="20px"
                   >
-                    <svg
+                    <!---->
+                     
+                    <use
                       aria-hidden="true"
-                      class="m-icon m-u--margin-left--s"
-                      height="20px"
-                      width="20px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                  </div>
+                      class=""
+                    />
+                  </svg>
                 </div>
               </div>
-            </li>
-             
-            <li
-              class="m-navbar-item"
-              role="none"
+            </div>
+          </li>
+           
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
             >
               <div
-                class="m-navbar-item__contents"
-                role="menuitem"
-                tabindex="0"
+                class="m-navbar-item__text m--is-nowrap"
               >
+                <!---->
+                 
+                <!---->
+                 
                 <div
-                  class="m-navbar-item__text m--is-nowrap"
+                  class="m-navbar-item__text-right-contain"
                 >
-                  <!---->
-                   
-                  <!---->
-                   
-                  <div
-                    class="m-navbar-item__text-right-contain"
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-u--margin-left--s"
+                    height="20px"
+                    width="20px"
                   >
-                    <svg
+                    <!---->
+                     
+                    <use
                       aria-hidden="true"
-                      class="m-icon m-u--margin-left--s"
-                      height="20px"
-                      width="20px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                  </div>
+                      class=""
+                    />
+                  </svg>
                 </div>
               </div>
-            </li>
-             
-            <!---->
-             
-            <!---->
-          </ul>
-        </div>
+            </div>
+          </li>
+           
+          <!---->
+           
+          <!---->
+        </ul>
       </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
       <div
-        class="resize-sensor"
-        dir="ltr"
+        class="resize-sensor-expand"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          class="resize-sensor-expand"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
         <div
-          class="resize-sensor-shrink"
-          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-        >
-          <div
-            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-          />
-        </div>
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -3727,7 +3949,9 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
                 <!---->
                  
                 <div>
-                  Home
+                  
+            Home
+        
                 </div>
                  
                 <!---->
@@ -3750,7 +3974,9 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
                 <!---->
                  
                 <div>
-                  About
+                  
+            About
+        
                 </div>
                  
                 <!---->
@@ -3773,7 +3999,9 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
                 <!---->
                  
                 <div>
-                  Contact
+                  
+            Contact
+        
                 </div>
                  
                 <!---->
@@ -3815,7 +4043,7 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
 
 exports[`Storyshots modul-components|m-navbar default 1`] = `
 <div
-  class="m-navbar m--is-skin-nav-main m--is-multiline"
+  class="m-navbar m--is-skin-nav-main"
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
@@ -3843,7 +4071,6 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
             <div
               class="m-navbar-item__contents"
               role="menuitem"
-              style="white-space: nowrap;"
               tabindex="0"
             >
               <div
@@ -3852,7 +4079,9 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
                 <!---->
                  
                 <div>
-                  Home
+                  
+            Home
+        
                 </div>
                  
                 <!---->
@@ -3867,7 +4096,6 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
             <div
               class="m-navbar-item__contents"
               role="menuitem"
-              style="white-space: nowrap;"
               tabindex="0"
             >
               <div
@@ -3876,7 +4104,9 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
                 <!---->
                  
                 <div>
-                  About
+                  
+            About
+        
                 </div>
                  
                 <!---->
@@ -3891,7 +4121,6 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
             <div
               class="m-navbar-item__contents"
               role="menuitem"
-              style="white-space: nowrap;"
               tabindex="0"
             >
               <div
@@ -3900,8 +4129,91 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
                 <!---->
                  
                 <div>
-                  Contact
+                  
+            Contact
+        
                 </div>
+                 
+                <!---->
+              </div>
+            </div>
+          </li>
+           
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
+            >
+              <div
+                class="m-navbar-item__text"
+              >
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
+            >
+              <div
+                class="m-navbar-item__text"
+              >
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
+            >
+              <div
+                class="m-navbar-item__text"
+              >
+                <!---->
+                 
+                <!---->
+                 
+                <!---->
+              </div>
+            </div>
+          </li>
+          <li
+            class="m-navbar-item"
+            role="none"
+          >
+            <div
+              class="m-navbar-item__contents"
+              role="menuitem"
+              tabindex="0"
+            >
+              <div
+                class="m-navbar-item__text"
+              >
+                <!---->
+                 
+                <!---->
                  
                 <!---->
               </div>
