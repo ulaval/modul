@@ -139,7 +139,7 @@ export class MMultiSelect extends ModulVue {
         return this.$i18n.translate('m-multi-select:all-selected', [this.numberOfItemsSelected], undefined, undefined,false, FormatMode.Default);
     }
 
-    get textNumberOfItemsSelectedMore(): string {
+    get textNumberOfUnselectedItemsLeft(): string {
         return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined,false, FormatMode.Default);
     }
 
