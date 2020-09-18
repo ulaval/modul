@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Vue, Watch } from 'vue-property-decorator';
 import { MFile } from '../../utils/file/file';
 import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
@@ -44,6 +44,9 @@ export class MPhotoEditor extends ModulVue {
 
     @Prop({ default: false })
     savingInProgress: boolean;
+
+    @Prop({ default: (): string => Vue.prototype.$i18n.translate('m-photo-editor:title') })
+    titleModal: string;
 
     $refs: {
         cropImage: MCropImage
