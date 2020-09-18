@@ -48,7 +48,7 @@ export enum MNavbarMaxWidth {
 @Component({
     components: {
         [ICON_BUTTON_NAME]: MIconButton,
-        [AUTO_HORIZONTAL_SCROLL]: MAutoHorizontalScroll,
+        [AUTO_HORIZONTAL_SCROLL]: MAutoHorizontalScroll
     }
 })
 export class MNavbar extends BaseNavbar implements Navbar {
@@ -299,17 +299,42 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
         const navbarItemSelected: Vue | undefined = this.navbarItemsInterne.find(i => i && i.$props.value === this.model);
 
+
         if (navbarItemSelected) {
+            const navbarItemSelectedEl: HTMLElement = navbarItemSelected.$el as HTMLElement;
             const componentWidth: number = parseInt(this.componentWidth, 10);
-            let scrollPositionAlignLeft: number = (navbarItemSelected.$el as HTMLElement).offsetLeft;
+            const scrollPositionAlignLeft: number = navbarItemSelectedEl.offsetLeft;
+
             // Check if selected element is visible in navbar
-            if (componentWidth > ((navbarItemSelected.$el as HTMLElement).offsetLeft - this.horizontalScrollOffset)) {
+            if (componentWidth >
+                (
+                    navbarItemSelectedEl.offsetLeft -
+                    this.horizontalScrollOffset
+                )
+            ) {
                 // Check if the selected element exceeds on the left side
-                if (((navbarItemSelected.$el as HTMLElement).offsetLeft - this.horizontalScrollOffset) < 0) {
+                if (
+                    (
+                        navbarItemSelectedEl.offsetLeft -
+                        this.horizontalScrollOffset
+                    )
+                    < 0
+                ) {
                     this.horizontalScrollOffset = scrollPositionAlignLeft;
                     // Check if the selected element exceeds on the right side
-                } else if (componentWidth < ((navbarItemSelected.$el as HTMLElement).offsetLeft - this.horizontalScrollOffset + navbarItemSelected.$el.clientWidth )) {
-                    this.horizontalScrollOffset = this.horizontalScrollOffset + navbarItemSelected.$el.clientWidth - (this.horizontalScrollOffset + componentWidth - (navbarItemSelected.$el as HTMLElement).offsetLeft);
+                } else if (
+                    componentWidth < (
+                        navbarItemSelectedEl.offsetLeft -
+                        this.horizontalScrollOffset + navbarItemSelectedEl.clientWidth
+                    )
+                ) {
+                    this.horizontalScrollOffset = this.horizontalScrollOffset +
+                        navbarItemSelectedEl.clientWidth -
+                        (
+                            this.horizontalScrollOffset +
+                            componentWidth -
+                            navbarItemSelectedEl.offsetLeft
+                        );
                 }
             } else {
                 this.horizontalScrollOffset = scrollPositionAlignLeft;
