@@ -52,7 +52,6 @@ export class MPhotoEditor extends ModulVue {
         cropImage: MCropImage
     };
 
-    i18nTitleModal: string = this.$i18n.translate('m-photo-editor:title');
     i18nChoosePhoto: string = this.$i18n.translate('m-photo-editor:choose-photo');
     i18nSave: string = this.$i18n.translate('m-photo-editor:save');
     i18nCancel: string = this.$i18n.translate('m-photo-editor:cancel');
