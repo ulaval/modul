@@ -49,6 +49,17 @@ describe('MNavbarItem', () => {
             parentNavbar.vm.updateValue = jest.fn();
         });
 
+        it('should set parentNavbar value if current item is router-link-active', () => {
+            mockIsRouterLinkActive = true;
+            jest.spyOn(parentNavbar.vm, 'updateValue');
+            jest.spyOn(NavbarItemHelper, 'isRouterLinkActive');
+
+            initializeWrapper({ value: 'someValue' });
+
+            expect(NavbarItemHelper.isRouterLinkActive).toHaveBeenCalledWith(wrapper.vm);
+            expect(parentNavbar.vm.updateValue).toHaveBeenCalledWith('someValue');
+        });
+
         it('should not set parentNavbar value if current item is not router-link-active', () => {
             mockIsRouterLinkActive = false;
             jest.spyOn(parentNavbar.vm, 'updateValue');
@@ -56,7 +67,7 @@ describe('MNavbarItem', () => {
 
             initializeWrapper({ value: 'someValue' });
 
-            // expect(NavbarItemHelper.isRouterLinkActive).toHaveBeenCalledWith(wrapper.vm);
+            expect(NavbarItemHelper.isRouterLinkActive).toHaveBeenCalledWith(wrapper.vm);
             expect(parentNavbar.vm.updateValue).not.toHaveBeenCalled();
         });
     });
