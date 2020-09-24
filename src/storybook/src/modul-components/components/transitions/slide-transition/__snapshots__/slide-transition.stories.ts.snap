@@ -4,19 +4,21 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
 <div>
   <div
     class="m-navbar m--is-skin-tab-light m--is-multiline"
-    style="position: relative;"
   >
     <div
-      class="m-navbar__max-width"
-      style="max-width: 1200px;"
+      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
+      style="max-width: 1200px; position: relative;"
     >
       <!---->
        
+      <!---->
+       
       <div
-        class="m-navbar__contents"
+        class="m-auto-horizontal-scroll__body"
       >
         <div
-          class="m-navbar__wrap"
+          class="m-auto-horizontal-scroll__body-content"
+          style="min-width: 100px;"
         >
           <ul
             class="m-navbar__list"
@@ -24,11 +26,11 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
           >
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -49,11 +51,11 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -74,11 +76,11 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -99,11 +101,11 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -124,11 +126,11 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -149,11 +151,11 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -174,11 +176,11 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -204,29 +206,27 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
           </ul>
         </div>
       </div>
-       
-      <!---->
-    </div>
-    <div
-      class="resize-sensor"
-      dir="ltr"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
       <div
-        class="resize-sensor-expand"
+        class="resize-sensor"
+        dir="ltr"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-        />
-      </div>
-      <div
-        class="resize-sensor-shrink"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-        />
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -378,19 +378,21 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
 <div>
   <div
     class="m-navbar m--is-skin-tab-light m--is-multiline"
-    style="position: relative;"
   >
     <div
-      class="m-navbar__max-width"
-      style="max-width: 1200px;"
+      class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
+      style="max-width: 1200px; position: relative;"
     >
       <!---->
        
+      <!---->
+       
       <div
-        class="m-navbar__contents"
+        class="m-auto-horizontal-scroll__body"
       >
         <div
-          class="m-navbar__wrap"
+          class="m-auto-horizontal-scroll__body-content"
+          style="min-width: 100px;"
         >
           <ul
             class="m-navbar__list"
@@ -398,11 +400,11 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
           >
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -423,11 +425,11 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -448,11 +450,11 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
             </li>
             <li
               class="m-navbar-item"
-              role="menuitem"
+              role="none"
             >
               <div
                 class="m-navbar-item__contents"
-                role="button"
+                role="menuitem"
                 style="white-space: nowrap;"
                 tabindex="0"
               >
@@ -478,29 +480,27 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
           </ul>
         </div>
       </div>
-       
-      <!---->
-    </div>
-    <div
-      class="resize-sensor"
-      dir="ltr"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
       <div
-        class="resize-sensor-expand"
+        class="resize-sensor"
+        dir="ltr"
         style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
       >
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-        />
-      </div>
-      <div
-        class="resize-sensor-shrink"
-        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-      >
+          class="resize-sensor-expand"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+          />
+        </div>
         <div
-          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-        />
+          class="resize-sensor-shrink"
+          style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+        >
+          <div
+            style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+          />
+        </div>
       </div>
     </div>
   </div>

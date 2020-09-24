@@ -1,26 +1,26 @@
 <li class="m-navbar-item"
     :class="{'m--is-selected': isSelected,
              'm--is-disabled': disabled }"
-    role="menuitem"
+    role="none"
     @click="onClick"
     @mouseover="onMouseover"
     @mouseleave="onMouseleave">
     <component class="m-navbar-item__contents"
                :is="isRouterLink ? 'router-link' : 'div'"
                :to="isRouterLink ? url : undefined"
+               :tabindex="(url || disabled) ? undefined : '0'"
+               role="menuitem"
                :aria-selected="isSelected"
                :aria-haspopup="ariaHaspopup"
                :aria-expanded="ariaExpanded"
                :aria-controls="ariaControls"
-               :tabindex="(url || disabled) ? undefined : '0'"
-               :role="(url || disabled) ? undefined : 'button'"
-               @keyup.enter="onClick"
-               ref="item">
+               ref="item"
+               @keyup.enter="onClick">
         <div class="m-navbar-item__text"
-             :class="{ 'pp--is-nowrap': shouldNotWrap }">
+             :class="{ 'm--is-nowrap': shouldNotWrap }">
             <div v-if="$slots.leftContain"
                  class="m-navbar-item__text-left-contain">
-                <slot name="leftContain"></slot>
+                <slot name="leftContain" />
             </div>
             <span v-if="formatedLabel"
                   v-html="formatedLabel"
@@ -30,7 +30,7 @@
             </div>
             <div v-if="$slots.rightContain"
                  class="m-navbar-item__text-right-contain">
-                <slot name="rightContain"></slot>
+                <slot name="rightContain" />
             </div>
         </div>
     </component>
