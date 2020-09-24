@@ -2,7 +2,7 @@ import { createLocalVue, shallowMount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import '../../../../tests/helpers/mock-resizeSensor';
 import ModulPlugin from '../../../utils/modul/modul';
-import { MNavbar } from '../../navbar/navbar';
+import { BaseNavbar } from '../../navbar/navbar';
 import { MNavbarItem } from './navbar-item';
 import NavbarItemHelper from './navbar-item-helper';
 
@@ -12,15 +12,26 @@ jest.mock('./navbar-item-helper', () => ({
     isRouterLinkActive: jest.fn(() => mockIsRouterLinkActive)
 }));
 
+
+class MockedMNavbar extends BaseNavbar {
+
+    public autoSelect: boolean = false;
+
+    updateValue(value: string): void {
+        return;
+    }
+
+}
+
 describe('MNavbarItem', () => {
     let wrapper: Wrapper<MNavbarItem>;
-    let parentNavbar: Wrapper<MNavbar>;
+    let parentNavbar: MockedMNavbar = new MockedMNavbar();
     let localVue: VueConstructor<Vue>;
     beforeEach(() => {
         mockIsRouterLinkActive = false;
         Vue.use(ModulPlugin);
         localVue = createLocalVue();
-        parentNavbar = shallowMount(MNavbar);
+        //  parentNavbar = shallowMount(MNavbar);
     });
 
     const initializeWrapper: (initialPropValues: any)
@@ -28,8 +39,8 @@ describe('MNavbarItem', () => {
             document.querySelector = () => true;
             wrapper = shallowMount(MNavbarItem, {
                 methods: {
-                    getParent(): MNavbar {
-                        return parentNavbar.vm;
+                    getParent(): BaseNavbar {
+                        return parentNavbar;
                     }
                 },
                 propsData: initialPropValues
@@ -44,60 +55,65 @@ describe('MNavbarItem', () => {
 
     describe('given parent Navbar has autoselect set to true', () => {
         beforeEach(() => {
-            parentNavbar = shallowMount(MNavbar);
-            parentNavbar.setProps({ autoSelect: true });
-            parentNavbar.vm.updateValue = jest.fn();
+            parentNavbar.autoSelect = true;
         });
 
         it('should set parentNavbar value if current item is router-link-active', () => {
             mockIsRouterLinkActive = true;
-            jest.spyOn(parentNavbar.vm, 'updateValue');
+            jest.spyOn(parentNavbar, 'updateValue');
             jest.spyOn(NavbarItemHelper, 'isRouterLinkActive');
 
             initializeWrapper({ value: 'someValue' });
 
             expect(NavbarItemHelper.isRouterLinkActive).toHaveBeenCalledWith(wrapper.vm);
-            expect(parentNavbar.vm.updateValue).toHaveBeenCalledWith('someValue');
+            expect(parentNavbar.updateValue).toHaveBeenCalledWith('someValue');
         });
 
         it('should not set parentNavbar value if current item is not router-link-active', () => {
             mockIsRouterLinkActive = false;
-            jest.spyOn(parentNavbar.vm, 'updateValue');
+            jest.spyOn(parentNavbar, 'updateValue');
             jest.spyOn(NavbarItemHelper, 'isRouterLinkActive');
 
             initializeWrapper({ value: 'someValue' });
 
             expect(NavbarItemHelper.isRouterLinkActive).toHaveBeenCalledWith(wrapper.vm);
-            expect(parentNavbar.vm.updateValue).not.toHaveBeenCalled();
+            expect(parentNavbar.updateValue).not.toHaveBeenCalled();
+        });
+
+        afterEach(() => {
+            jest.clearAllMocks();
         });
     });
 
     describe('given parent Navbar has autoselect set to false', () => {
         beforeEach(() => {
-            parentNavbar = shallowMount(MNavbar);
-            parentNavbar.setProps({ autoSelect: false });
+            parentNavbar.autoSelect = false;
         });
 
         it('should not set parentNavbar value if current item is router-link-active', () => {
             mockIsRouterLinkActive = true;
-            jest.spyOn(parentNavbar.vm, 'updateValue');
+            jest.spyOn(parentNavbar, 'updateValue');
             jest.spyOn(NavbarItemHelper, 'isRouterLinkActive');
 
             initializeWrapper({ value: 'someValue' });
 
             expect(NavbarItemHelper.isRouterLinkActive).not.toHaveBeenCalledWith(wrapper.vm);
-            expect(parentNavbar.vm.updateValue).not.toHaveBeenCalled();
+            expect(parentNavbar.updateValue).not.toHaveBeenCalled();
         });
 
-        it('should not set parentNavbar value if current item is not router-link-active', () => {
+        it('should not set parentNavbar value if current item is not router-link-active 2', () => {
             mockIsRouterLinkActive = false;
-            jest.spyOn(parentNavbar.vm, 'updateValue');
+            jest.spyOn(parentNavbar, 'updateValue');
             jest.spyOn(NavbarItemHelper, 'isRouterLinkActive');
 
             initializeWrapper({ value: 'someValue' });
 
             expect(NavbarItemHelper.isRouterLinkActive).not.toHaveBeenCalledWith(wrapper.vm);
-            expect(parentNavbar.vm.updateValue).not.toHaveBeenCalled();
+            expect(parentNavbar.updateValue).not.toHaveBeenCalled();
+        });
+
+        afterEach(() => {
+            jest.clearAllMocks();
         });
     });
 });

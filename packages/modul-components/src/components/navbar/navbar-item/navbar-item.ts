@@ -13,58 +13,57 @@ const FAKE_SELECTED_CLASS: string = 'm--is-fake-selected';
 @Component({
 })
 export class MNavbarItem extends ModulVue {
+    @Prop()
+    public readonly value: string;
 
     @Prop()
-    public value: string;
+    public readonly label: string;
 
     @Prop()
-    public label: string;
+    public readonly disabled: boolean;
 
     @Prop()
-    public disabled: boolean;
+    public readonly url: string | Location;
 
     @Prop()
-    public url: string | Location;
+    public readonly ariaHaspopup: boolean;
 
     @Prop()
-    public ariaHaspopup: boolean;
+    public readonly ariaExpanded: boolean;
 
     @Prop()
-    public ariaExpanded: boolean;
+    public readonly ariaControls: string;
 
     @Prop()
-    public ariaControls: string;
+    public readonly multiline: boolean;
 
-    @Prop()
-    public multiline: boolean;
-
+    public formatedLabel: string = '';
     // should be initialized to be reactive
     // tslint:disable-next-line:no-null-keyword
     private parentNavbar: Navbar | null = null;
-    public formatedLabel: string = '';
 
     @Emit('click')
-    private emitClick(event: MouseEvent): void { }
+    public emitClick(event: MouseEvent): void { }
 
     @Emit('mouseover')
-    private emitMouseover(event: MouseEvent): void { }
+    public emitMouseover(event: MouseEvent): void { }
 
     @Emit('mouseleave')
-    private emitMouseleave(event: MouseEvent): void { }
+    public emitMouseleave(event: MouseEvent): void { }
 
     @Watch('label')
-    private labelChanged(): void {
+    public labelChanged(): void {
         this.setFormatedLabel();
     }
 
     @Watch('isMultiline')
-    private isMultilineChanged(): void {
+    public isMultilineChanged(): void {
         this.setDimension();
         this.setFormatedLabel();
     }
 
     @Watch('$route')
-    private routeChanged(): void {
+    public routeChanged(): void {
         this.$nextTick(() => {
             if (this.parentNavbar && this.parentNavbar.autoSelect && NavbarItemHelper.isRouterLinkActive(this)) {
                 this.parentNavbar.updateValue(this.value);
@@ -119,7 +118,7 @@ export class MNavbarItem extends ModulVue {
             if (this.label.length < 15) {
                 return;
             } else if (this.label.length > 30) {
-                this._splitAndWrap();
+                this.splitAndWrap();
                 return;
             }
         }
@@ -137,18 +136,8 @@ export class MNavbarItem extends ModulVue {
             return;
         }
 
-        this._splitAndWrap();
+        this.splitAndWrap();
         return;
-    }
-
-    private _splitAndWrap(): void {
-        const split: string[] = this.label.split(' ');
-
-        split.splice(Math.round(split.length / 2), 0, '</br>');
-
-        this.formatedLabel = '<span style="all: inherit; white-space: nowrap;">'
-            + split.join(' ')
-            + '</span>';
     }
 
     public get isSelected(): boolean {
@@ -230,5 +219,15 @@ export class MNavbarItem extends ModulVue {
                 itemEl.style.whiteSpace = 'nowrap';
             }
         }
+    }
+
+    private splitAndWrap(): void {
+        const split: string[] = this.label.split(' ');
+
+        split.splice(Math.round(split.length / 2), 0, '</br>');
+
+        this.formatedLabel = '<span style="all: inherit; white-space: nowrap;">'
+            + split.join(' ')
+            + '</span>';
     }
 }

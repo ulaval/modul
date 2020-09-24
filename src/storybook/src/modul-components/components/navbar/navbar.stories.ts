@@ -1,5 +1,7 @@
-import { NAVBAR_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { boolean, select, text } from '@storybook/addon-knobs';
+import { NAVBAR_ITEM_NAME, NAVBAR_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MNavbarSkin } from '@ulaval/modul-components/dist/components/navbar/navbar';
+import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
@@ -25,11 +27,54 @@ export const defaultStory = () => ({
     data: () => ({
         selected: 'home'
     }),
-    template: `<m-navbar :selected.sync="selected">
-                    <m-navbar-item value="home">Home</m-navbar-item>
-                    <m-navbar-item value="about">About</m-navbar-item>
-                    <m-navbar-item value="contact">Contact</m-navbar-item>
-                </m-navbar>`
+    props: {
+        skin: {
+            default: select(
+                'Prop skin',
+                Enums.toValueArray(MNavbarSkin),
+                MNavbarSkin.NavMain
+            )
+        },
+        multiline: {
+            default: boolean(
+                'Prop multiline',
+                false
+            )
+        },
+        maxWidth: {
+            default: text(
+                'Prop text',
+                '1200px'
+            )
+        }
+    },
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+        :multiline="multiline"
+        :max-width="maxWidth"
+    >
+        <${NAVBAR_ITEM_NAME}
+            value="home"
+        >
+            Home
+        </${NAVBAR_ITEM_NAME}>
+        <${NAVBAR_ITEM_NAME}
+            value="about"
+        >
+            About
+        </${NAVBAR_ITEM_NAME}>
+        <${NAVBAR_ITEM_NAME}
+            value="contact"
+        >
+            Contact
+        </${NAVBAR_ITEM_NAME}>
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 4"
+            :key="i"
+            :value="i"
+            :label="'Very very very very long text #' + i" />
+    </${NAVBAR_NAME}>`
 });
 
 defaultStory.story = {
@@ -40,11 +85,28 @@ export const url = () => ({
     data: () => ({
         selected: '/story/components-m-navbar--url'
     }),
-    template: `<m-navbar :selected="selected">
-                    <m-navbar-item value="/story/components-m-navbar--url" url="/story/components-m-navbar--url">Home</m-navbar-item>
-                    <m-navbar-item value="about" url="/">About</m-navbar-item>
-                    <m-navbar-item value="contact" url="/">Contact</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected="selected"
+    >
+        <${NAVBAR_ITEM_NAME}
+            value="/story/components-m-navbar--url"
+            url="/story/components-m-navbar--url"
+        >
+            Home
+        </${NAVBAR_ITEM_NAME}>
+        <${NAVBAR_ITEM_NAME}
+            value="about"
+            url="/"
+        >
+            About
+        </${NAVBAR_ITEM_NAME}>
+        <${NAVBAR_ITEM_NAME}
+            value="contact"
+            url="/"
+        >
+            Contact
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 url.story = {
@@ -56,17 +118,17 @@ export const multiline = () => ({
         selectedItem: 1,
         multiline: true
     }),
-    template: `<div>
-                    <m-navbar :selected.sync="selectedItem"
-                            skin="nav-main">
-                        <m-navbar-item v-for="i in 5"
-                                       :key="i"
-                                       :value="i"
-                                       :label="'Very very very very very very long text #' + i"
-                                       :multiline="true">
-                        </m-navbar-item>
-                    </m-navbar>
-                </div>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selectedItem"
+        skin="nav-main"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 5"
+            :key="i"
+            :value="i"
+            :label="'Very very very very very very long text #' + i"
+            :multiline="true" />
+    </${NAVBAR_NAME}>`
 });
 
 export const noMultiline = () => ({
@@ -74,22 +136,34 @@ export const noMultiline = () => ({
         selectedItem: 1,
         multiline: true
     }),
-    template: `<div>
-                    <m-navbar :selected.sync="selectedItem"
-                            skin="nav-main"
-                            :multiline="false">
-                        <m-navbar-item v-for="i in 5" :key="i" :value="i">Very very very long text #{{i}}</m-navbar-item>
-                    </m-navbar>
-                </div>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selectedItem"
+        skin="nav-main"
+        :multiline="false"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 5"
+            :key="i"
+            :value="i"
+        >
+            Very very very long text #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const ScrollToLastItem = () => ({
     data: () => ({
         selected: 20
     }),
-    template: `<m-navbar :selected.sync="selected">
-                    <m-navbar-item v-for="i in 20" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME} :selected.sync="selected">
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 20"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinNavMain = () => ({
@@ -97,10 +171,18 @@ export const SkinNavMain = () => ({
         selected: 1,
         skin: MNavbarSkin.NavMain
     }),
-    template: `<m-navbar :selected.sync="selected"
-                         :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinNavSoft = () => ({
@@ -108,11 +190,19 @@ export const SkinNavSoft = () => ({
         selected: 1,
         skin: MNavbarSkin.NavSoft
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin"
-                            style="background: #09f;">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+        style="background: #09f;"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinNavSub = () => ({
@@ -120,10 +210,18 @@ export const SkinNavSub = () => ({
         selected: 1,
         skin: MNavbarSkin.NavSub
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinPlain = () => ({
@@ -131,10 +229,18 @@ export const SkinPlain = () => ({
         selected: 1,
         skin: MNavbarSkin.Plain
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 
@@ -143,10 +249,18 @@ export const SkinTabArrow = () => ({
         selected: 1,
         skin: MNavbarSkin.TabArrow
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinTabDarkMain = () => ({
@@ -154,10 +268,18 @@ export const SkinTabDarkMain = () => ({
         selected: 1,
         skin: MNavbarSkin.TabDarkMain
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinTabLightMain = () => ({
@@ -165,10 +287,18 @@ export const SkinTabLightMain = () => ({
         selected: 1,
         skin: MNavbarSkin.TabLightMain
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinTabSoft = () => ({
@@ -176,10 +306,18 @@ export const SkinTabSoft = () => ({
         selected: 1,
         skin: MNavbarSkin.TabSoft
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const SkinTabUnderline = () => ({
@@ -187,55 +325,75 @@ export const SkinTabUnderline = () => ({
         selected: 1,
         skin: MNavbarSkin.TabUnderline
     }),
-    template: `<m-navbar :selected.sync="selected"
-                            :skin="skin">
-                    <m-navbar-item v-for="i in 10" :key="i" :value="i">Item navbar #{{i}}</m-navbar-item>
-                </m-navbar>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selected"
+        :skin="skin"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 10"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const slotLeftContain = () => ({
     data: () => ({
         selectedItem: 1
     }),
-    template: `<div>
-                    <m-navbar :selected.sync="selectedItem"
-                            skin="nav-main">
-                        <m-navbar-item :value="1"
-                                       label="Clock">
-                            <m-icon class="m-u--margin-right--s"
-                                    slot="leftContain"
-                                    name="m-svg__clock"></m-icon>
-                        </m-navbar-item>
-                        <m-navbar-item :value="2"
-                                       label="Logout">
-                            <m-icon class="m-u--margin-right--s"
-                                    slot="leftContain"
-                                    name="m-svg__logout"></m-icon>
-                        </m-navbar-item>
-                    </m-navbar>
-                </div>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selectedItem"
+        skin="nav-main"
+    >
+        <${NAVBAR_ITEM_NAME}
+            :value="1"
+            label="Clock"
+        >
+            <m-icon
+                class="m-u--margin-right--s"
+                slot="leftContain"
+                name="m-svg__clock" />
+        </${NAVBAR_ITEM_NAME}>
+        <${NAVBAR_ITEM_NAME}
+            :value="2"
+            label="Logout"
+        >
+            <m-icon
+                class="m-u--margin-right--s"
+                slot="leftContain"
+                name="m-svg__logout" />
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
 export const slotRightContain = () => ({
     data: () => ({
         selectedItem: 1
     }),
-    template: `<div>
-                    <m-navbar :selected.sync="selectedItem"
-                            skin="nav-main">
-                        <m-navbar-item :value="1"
-                                       label="Clock">
-                            <m-icon class="m-u--margin-left--s"
-                                    slot="rightContain"
-                                    name="m-svg__clock"></m-icon>
-                        </m-navbar-item>
-                        <m-navbar-item :value="2"
-                                       label="Logout">
-                            <m-icon class="m-u--margin-left--s"
-                                    slot="rightContain"
-                                    name="m-svg__logout"></m-icon>
-                        </m-navbar-item>
-                    </m-navbar>
-                </div>`
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selectedItem"
+        skin="nav-main"
+    >
+        <${NAVBAR_ITEM_NAME}
+            :value="1"
+            label="Clock"
+        >
+            <m-icon
+                class="m-u--margin-left--s"
+                slot="rightContain"
+                name="m-svg__clock" />
+        </${NAVBAR_ITEM_NAME}>
+        <${NAVBAR_ITEM_NAME}
+            :value="2"
+            label="Logout"
+        >
+            <m-icon
+                class="m-u--margin-left--s"
+                slot="rightContain"
+                name="m-svg__logout" />
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
 });
 
