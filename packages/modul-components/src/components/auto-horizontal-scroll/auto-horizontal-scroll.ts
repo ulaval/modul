@@ -156,6 +156,7 @@ export class MAutoHorizontalScroll extends ModulVue {
             this.horizontalScrollOffset !== this.$refs.body.scrollLeft
         ) {
 
+
             if (this.scrollLeftCounter <= 0) {
                 this.$refs.body.scrollLeft = this.horizontalScrollOffset;
             } else {
@@ -234,37 +235,44 @@ export class MAutoHorizontalScroll extends ModulVue {
     }
 
     public async startScrollAnimation(): Promise<void> {
-        await this.$nextTick();
-        const initialScrollLeft: number = this.$refs.body.scrollLeft;
-        const difference: number =
-            this.horizontalScrollOffset - initialScrollLeft <=
-                this.$refs.body.scrollWidth
-                ? this.horizontalScrollOffset - initialScrollLeft
-                : this.$refs.body.scrollWidth;
-        const intervalDelay: number = difference > 500 ? 7 : 10;
-        const increment: number = difference / intervalDelay;
-        const isPositiveIncrement: boolean = increment > 0;
-        let counter: number = 0;
         this.scrollAnimationActive = true;
+        await this.$nextTick();
+        if (this.$refs.body && this.$refs.body.scrollLeft >= 0) {
+            const initialScrollLeft: number = this.$refs.body.scrollLeft;
+            const difference: number =
+                this.horizontalScrollOffset - initialScrollLeft <=
+                    this.$refs.body.scrollWidth
+                    ? this.horizontalScrollOffset - initialScrollLeft
+                    : this.$refs.body.scrollWidth;
+            const intervalDelay: number = difference > 500 ? 7 : 10;
+            const increment: number = difference / intervalDelay;
+            const isPositiveIncrement: boolean = increment > 0;
+            let counter: number = 0;
 
-        this.scrollAnimationInterval = setInterval(() => {
-            counter += intervalDelay;
-            if (
-                (isPositiveIncrement &&
-                    this.$refs.body.scrollLeft >= this.horizontalScrollOffset) ||
-                (!isPositiveIncrement &&
-                    this.$refs.body.scrollLeft <= this.horizontalScrollOffset) ||
-                counter >= 5000
-            ) {
-                this.stopScrollAnimation();
-            } else {
-                this.$refs.body.scrollLeft += increment;
-            }
-        }, intervalDelay);
+            const scrollAnimationInterval: number = window.setInterval(() => {
+                counter += intervalDelay;
+                if (
+                    !this.scrollAnimationActive ||
+                    !this.$refs.body ||
+                    this.$refs.body.scrollLeft === undefined ||
+                    (
+                        (isPositiveIncrement &&
+                            this.$refs.body.scrollLeft >= this.horizontalScrollOffset) ||
+                        (!isPositiveIncrement &&
+                            this.$refs.body.scrollLeft <= this.horizontalScrollOffset) ||
+                            counter >= 5000
+                    )
+                ) {
+                    this.stopScrollAnimation();
+                    window.clearInterval(scrollAnimationInterval);
+                } else {
+                    this.$refs.body.scrollLeft += increment;
+                }
+            }, intervalDelay);
+        }
     }
 
     public stopScrollAnimation(): void {
-        window.clearInterval(this.scrollAnimationInterval);
         this.scrollAnimationActive = false;
         this.onScroll();
     }
@@ -333,7 +341,7 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.hasHorizontalScroll =
             this.$el.clientWidth < parseInt(this.minWidth, 10);
         this.componentHeight = Boolean(this.$refs.bodyContent)
-            ? `${this.$refs.bodyContent.clientHeight}px`
+            ? `${this.$refs.bodyContent.clientHeight - 1}px`
             : '';
         this.emitResize({
             element: this.$el as HTMLElement,
