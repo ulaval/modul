@@ -47,7 +47,7 @@ export const defaultStory = () => ({
                 'Prop text',
                 '1200px'
             )
-        },
+        }
     },
     template: `<${NAVBAR_NAME}
         :selected.sync="selected"
