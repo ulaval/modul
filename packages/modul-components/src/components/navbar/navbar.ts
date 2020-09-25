@@ -181,10 +181,11 @@ export class MNavbar extends BaseNavbar implements Navbar {
     public get gradientStyle(): MAutoHorizontalScrollGradientStyle {
         switch (this.skin) {
             case MNavbarSkin.NavMain:
-            case MNavbarSkin.NavSub:
             case MNavbarSkin.TabDark:
             case MNavbarSkin.TabDarkMain :
                 return MAutoHorizontalScrollGradientStyle.Dark;
+            case MNavbarSkin.NavSub:
+                return MAutoHorizontalScrollGradientStyle.GreyBlack;
             case MNavbarSkin.NavSoft:
                 return MAutoHorizontalScrollGradientStyle.Interactive;
             case MNavbarSkin.TabLightMain:

@@ -158,6 +158,10 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
     @include gradientBackgroundColor(currentColor);
 }
 
+.m-auto-horizontal-scroll.m--is-gradient-style-grey-black {
+    @include gradientBackgroundColor($m-color--grey-black);
+}
+
 .m-auto-horizontal-scroll.m--has-horizontal-scrollbar {
     overflow: hidden;
 }
