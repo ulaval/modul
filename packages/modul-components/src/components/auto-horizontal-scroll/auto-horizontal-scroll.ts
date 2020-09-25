@@ -15,6 +15,7 @@ export enum MAutoHorizontalScrollGradientStyle {
     Dark = 'dark',
     GreyBlack = 'grey-black',
     Interactive = 'interactive',
+    InteractiveDark = 'interactive-dark',
     CurrentColor = 'current-color'
 }
 
@@ -235,6 +236,20 @@ export class MAutoHorizontalScroll extends ModulVue {
         );
     }
 
+    public get isGradientStyleGreyBlack(): boolean {
+        return (
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.GreyBlack
+        );
+    }
+
+    public get isGradientStyleInteractiveDark(): boolean {
+        return (
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.InteractiveDark
+        );
+    }
+
     public get isGradientStyleCurrentColor(): boolean {
         return (
             this.gradientStyle ===
@@ -242,16 +257,13 @@ export class MAutoHorizontalScroll extends ModulVue {
         );
     }
 
-    public get isGradientStyleGreyBlack(): boolean {
-        return (
-            this.gradientStyle ===
-            MAutoHorizontalScrollGradientStyle.GreyBlack
-        );
-    }
     public get iconButtonSkin(): string {
-        return this.isGradientStyleDark || this.isGradientStyleGreyBlack || this.isGradientStyleInteractive
-            ? MIconButtonSkin.Dark
-            : MIconButtonSkin.Light;
+        return this.isGradientStyleDark ||
+            this.isGradientStyleGreyBlack ||
+            this.isGradientStyleInteractive ||
+            this.isGradientStyleInteractiveDark
+                ? MIconButtonSkin.Dark
+                : MIconButtonSkin.Light;
     }
 
     public async startScrollAnimation(): Promise<void> {

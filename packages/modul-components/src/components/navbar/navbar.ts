@@ -84,6 +84,14 @@ export class MNavbar extends BaseNavbar implements Navbar {
     @Prop()
     public readonly titleButtonRight: string;
 
+    @Prop({
+        validator: (value: MAutoHorizontalScrollGradientStyle) =>
+            Enums.toValueArray(
+                MAutoHorizontalScrollGradientStyle
+            ).includes(value)
+    })
+    public readonly buttonGradientStyle?: MAutoHorizontalScrollGradientStyle;
+
     @Prop({ default: false })
     public readonly autoSelect: boolean;
 
@@ -179,20 +187,24 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     public get gradientStyle(): MAutoHorizontalScrollGradientStyle {
-        switch (this.skin) {
-            case MNavbarSkin.NavMain:
-            case MNavbarSkin.TabDark:
-            case MNavbarSkin.TabDarkMain :
-                return MAutoHorizontalScrollGradientStyle.Dark;
-            case MNavbarSkin.NavSub:
-                return MAutoHorizontalScrollGradientStyle.GreyBlack;
-            case MNavbarSkin.NavSoft:
-                return MAutoHorizontalScrollGradientStyle.Interactive;
-            case MNavbarSkin.TabLightMain:
-                return MAutoHorizontalScrollGradientStyle.Light;
-            case MNavbarSkin.TabArrow:
-            default:
-                return MAutoHorizontalScrollGradientStyle.White;
+        if (this.buttonGradientStyle) {
+            return this.buttonGradientStyle;
+        } else {
+            switch (this.skin) {
+                case MNavbarSkin.NavMain:
+                case MNavbarSkin.TabDark:
+                case MNavbarSkin.TabDarkMain :
+                    return MAutoHorizontalScrollGradientStyle.Dark;
+                case MNavbarSkin.NavSub:
+                    return MAutoHorizontalScrollGradientStyle.GreyBlack;
+                case MNavbarSkin.NavSoft:
+                    return MAutoHorizontalScrollGradientStyle.Interactive;
+                case MNavbarSkin.TabLightMain:
+                    return MAutoHorizontalScrollGradientStyle.Light;
+                case MNavbarSkin.TabArrow:
+                default:
+                    return MAutoHorizontalScrollGradientStyle.White;
+            }
         }
     }
 
