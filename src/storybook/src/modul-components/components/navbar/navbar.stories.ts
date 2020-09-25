@@ -121,7 +121,7 @@ export const multiline = () => ({
     }),
     template: `<${NAVBAR_NAME}
         :selected.sync="selectedItem"
-        skin="nav-main"
+        skin="${MNavbarSkin.NavMain}"
     >
         <${NAVBAR_ITEM_NAME}
             v-for="i in 5"
@@ -139,7 +139,7 @@ export const noMultiline = () => ({
     }),
     template: `<${NAVBAR_NAME}
         :selected.sync="selectedItem"
-        skin="nav-main"
+        skin="${MNavbarSkin.NavMain}"
         :multiline="false"
     >
         <${NAVBAR_ITEM_NAME}
@@ -407,14 +407,14 @@ export const propButtonGradientStyle = () => ({
             default: select(
                 'button-gradient-style',
                 Enums.toValueArray(MAutoHorizontalScrollGradientStyle),
-                undefined
+                MAutoHorizontalScrollGradientStyle.InteractiveDarker
             )
         }
     },
     template: `<${NAVBAR_NAME}
         :selected.sync="selectedItem"
         :button-gradient-style="buttonGradientStyle"
-        skin="nav-main"
+        skin="${MNavbarSkin.NavMain}"
     >
         <${NAVBAR_ITEM_NAME}
             v-for="i in 20"

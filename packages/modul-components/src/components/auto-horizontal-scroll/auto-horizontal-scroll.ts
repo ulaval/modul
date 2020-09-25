@@ -16,6 +16,7 @@ export enum MAutoHorizontalScrollGradientStyle {
     GreyBlack = 'grey-black',
     Interactive = 'interactive',
     InteractiveDark = 'interactive-dark',
+    InteractiveDarker = 'interactive-darker',
     CurrentColor = 'current-color'
 }
 
@@ -208,20 +209,6 @@ export class MAutoHorizontalScroll extends ModulVue {
         return this.nextButtonActive && this.couldHaveRightContent;
     }
 
-    public get isGradientStyleWhite(): boolean {
-        return (
-            this.gradientStyle ===
-            MAutoHorizontalScrollGradientStyle.White
-        );
-    }
-
-    public get isGradientStyleLight(): boolean {
-        return (
-            this.gradientStyle ===
-            MAutoHorizontalScrollGradientStyle.Light
-        );
-    }
-
     public get isGradientStyleDark(): boolean {
         return (
             this.gradientStyle ===
@@ -250,10 +237,10 @@ export class MAutoHorizontalScroll extends ModulVue {
         );
     }
 
-    public get isGradientStyleCurrentColor(): boolean {
+    public get isGradientStyleInteractiveDarker(): boolean {
         return (
             this.gradientStyle ===
-            MAutoHorizontalScrollGradientStyle.CurrentColor
+            MAutoHorizontalScrollGradientStyle.InteractiveDarker
         );
     }
 
@@ -261,7 +248,8 @@ export class MAutoHorizontalScroll extends ModulVue {
         return this.isGradientStyleDark ||
             this.isGradientStyleGreyBlack ||
             this.isGradientStyleInteractive ||
-            this.isGradientStyleInteractiveDark
+            this.isGradientStyleInteractiveDark ||
+            this.isGradientStyleInteractiveDarker
                 ? MIconButtonSkin.Dark
                 : MIconButtonSkin.Light;
     }

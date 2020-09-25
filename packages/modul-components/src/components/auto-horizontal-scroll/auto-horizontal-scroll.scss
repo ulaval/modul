@@ -162,6 +162,10 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
     @include gradientBackgroundColor($m-color--interactive-dark);
 }
 
+.m-auto-horizontal-scroll.m--is-gradient-style-interactive-darker {
+    @include gradientBackgroundColor($m-color--interactive-darker);
+}
+
 .m-auto-horizontal-scroll.m--is-gradient-style-current-color {
     @include gradientBackgroundColor(currentColor);
 }
