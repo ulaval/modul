@@ -8,8 +8,8 @@ import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME
 import { MIconButton } from '../icon-button/icon-button';
 import { MAutoHorizontalScroll, MAutoHorizontalScrollGradientStyle, MAutoHorizontalScrollResizeProperties } from './../auto-horizontal-scroll/auto-horizontal-scroll';
 import { MNavbarItem } from './navbar-item/navbar-item';
+import './navbar-unscoped.scss';
 import WithRender from './navbar.html?style=./navbar.scss';
-
 export abstract class BaseNavbar extends ModulVue { }
 
 export interface Navbar {
@@ -23,6 +23,7 @@ export interface Navbar {
 }
 
 export enum MNavbarSkin {
+    Any = 'any',
     NavMain = 'nav-main',
     NavSub = 'nav-sub',
     NavSoft = 'nav-soft',

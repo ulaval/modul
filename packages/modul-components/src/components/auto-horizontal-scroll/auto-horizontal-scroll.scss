@@ -116,15 +116,23 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
     .m-auto-horizontal-scroll__button-area {
         background: $couleur;
 
+        $transparent-color: $couleur;
+
+        @if $couleur == currentColor {
+            $transparent-color: rgba($m-color--white, 0);
+        } @else {
+            $transparent-color: rgba($couleur, 0);
+        }
+
         &.m--is-left {
             &::before {
-                background-image: linear-gradient(90deg, $couleur, rgba($couleur, 0));
+                background-image: linear-gradient(90deg, $couleur, $transparent-color);
             }
         }
 
         &.m--is-right {
             &::after {
-                background-image: linear-gradient(90deg, rgba($couleur, 0), $couleur);
+                background-image: linear-gradient(90deg, $transparent-color, $couleur);
             }
         }
     }
@@ -146,6 +154,11 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
     @include gradientBackgroundColor($m-color--interactive);
 }
 
+.m-auto-horizontal-scroll.m--is-gradient-style-current-color {
+    @include gradientBackgroundColor(currentColor);
+}
+
 .m-auto-horizontal-scroll.m--has-horizontal-scrollbar {
     overflow: hidden;
 }
+

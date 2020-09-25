@@ -184,14 +184,14 @@
 
         &.m--is-selected:not(.m--is-disabled) {
             .m-navbar-item__contents {
-                color: $m-color--white;
-                font-weight: $m-font-weight--bold;
+                color: var(--m-navbar-item--selected-color);
+                font-weight: var(--m-navbar-item--selected-font-weight);
             }
         }
 
         &.m--is-fake-selected {
             .m-navbar-item__contents {
-                font-weight: $m-font-weight--bold;
+                font-weight: var(--m-navbar-item--selected-font-weight);
             }
         }
 
@@ -200,7 +200,7 @@
 
                 &:hover,
                 &:focus {
-                    color: $m-color--white;
+                    color: var(--m-navbar-item--hover-color);
                 }
             }
         }
@@ -212,9 +212,9 @@
         }
 
         &__contents {
-            font-weight: $m-font-weight--semi-bold;
+            font-weight: var(--m-navbar-item--font-weight);
             justify-content: center;
-            color: $m-color--grey-light;
+            color: var(--m-navbar-item--color);
         }
     }
 }
@@ -240,7 +240,7 @@
             .m-navbar-item__contents::before {
                 opacity: 1;
                 width: $m-navbar-item--min-width;
-                background: $m-color--active;
+                background: var(--m-navbar-item--selected-border-color);
             }
         }
 
@@ -257,14 +257,14 @@
 
                 &:active {
                     &::before {
-                        background: $m-color--active;
+                        background: var(--m-navbar-item--selected-border-color);
                     }
                 }
             }
         }
 
         &__contents {
-            font-size: $m-font-size--l;
+            font-size: var(--m-navbar-item--font-size);
             padding: $m-spacing--m 0;
             min-width: $m-navbar-item--min-width;
             min-height: 80px;
@@ -278,7 +278,7 @@
                 transform: translateX(-50%);
                 width: $m-navbar-item--min-width/3;
                 height: $m-border-width--l;
-                background: $m-color--grey;
+                background: var(--m-navbar-item--hover-border-color);
                 opacity: 0;
             }
         }
@@ -301,7 +301,7 @@
         }
 
         &__contents {
-            font-size: $m-font-size;
+            font-size: var(--m-navbar-item--font-size);
             padding: $m-spacing 0;
         }
     }
@@ -521,7 +521,7 @@
                     left: 0;
                     content: '';
                     height: $m-border-width--l;
-                    background: $m-color--active;
+                    background: var(--m-navbar-item--selected-border-color);
                 }
             }
         }

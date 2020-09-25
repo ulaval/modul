@@ -9,10 +9,12 @@ import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
 
 export enum MAutoHorizontalScrollGradientStyle {
+    Any = 'Any',
     White = 'white',
     Light = 'light',
     Dark = 'dark',
-    Interactive = 'interactive'
+    Interactive = 'interactive',
+    CurrentColor = 'current-color'
 }
 
 export interface MAutoHorizontalScrollResizeProperties {
@@ -115,6 +117,11 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.resizeComponent();
     });
 
+    // tslint:disable-next-line: no-null-keyword
+    public start: number | null = null;
+    public timestamp: number = 5000;
+    public progress: number = 0;
+
     @Emit('resize')
     public emitResize(resizeProperties: MAutoHorizontalScrollResizeProperties): void { }
 
@@ -155,7 +162,6 @@ export class MAutoHorizontalScroll extends ModulVue {
             this.$refs.body &&
             this.horizontalScrollOffset !== this.$refs.body.scrollLeft
         ) {
-
 
             if (this.scrollLeftCounter <= 0) {
                 this.$refs.body.scrollLeft = this.horizontalScrollOffset;
@@ -228,6 +234,13 @@ export class MAutoHorizontalScroll extends ModulVue {
         );
     }
 
+    public get isGradientStyleCurrentColor(): boolean {
+        return (
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.CurrentColor
+        );
+    }
+
     public get iconButtonSkin(): string {
         return this.isGradientStyleDark || this.isGradientStyleInteractive
             ? MIconButtonSkin.Dark
@@ -256,11 +269,15 @@ export class MAutoHorizontalScroll extends ModulVue {
                     !this.$refs.body ||
                     this.$refs.body.scrollLeft === undefined ||
                     (
-                        (isPositiveIncrement &&
-                            this.$refs.body.scrollLeft >= this.horizontalScrollOffset) ||
-                        (!isPositiveIncrement &&
-                            this.$refs.body.scrollLeft <= this.horizontalScrollOffset) ||
-                            counter >= 5000
+                        (
+                            isPositiveIncrement &&
+                            this.$refs.body.scrollLeft >= this.horizontalScrollOffset
+                        ) ||
+                        (
+                            !isPositiveIncrement &&
+                            this.$refs.body.scrollLeft <= this.horizontalScrollOffset
+                        ) ||
+                        counter >= 5000
                     )
                 ) {
                     this.stopScrollAnimation();
