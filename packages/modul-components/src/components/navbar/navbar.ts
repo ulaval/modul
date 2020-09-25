@@ -23,7 +23,6 @@ export interface Navbar {
 }
 
 export enum MNavbarSkin {
-    Any = 'any',
     NavMain = 'nav-main',
     NavSub = 'nav-sub',
     NavSoft = 'nav-soft',
