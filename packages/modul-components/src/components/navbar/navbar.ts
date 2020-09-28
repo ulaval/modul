@@ -182,7 +182,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
             case MNavbarSkin.NavMain:
             case MNavbarSkin.NavSub:
             case MNavbarSkin.TabDark:
-            case MNavbarSkin.TabDarkMain :
+            case MNavbarSkin.TabDarkMain:
                 return MAutoHorizontalScrollGradientStyle.Dark;
             case MNavbarSkin.NavSoft:
                 return MAutoHorizontalScrollGradientStyle.Interactive;
@@ -222,6 +222,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
         let outbound: Vue | undefined;
 
         // find the previus element outside visible area
+
         this.navbarItemsInterne.forEach(item => {
             if ((item.$el as HTMLElement).offsetLeft < this.horizontalScrollOffset) {
                 outbound = item;
@@ -259,7 +260,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     private get selectedNavbarItem(): MNavbarItem | undefined {
         return this.navbarItemsInterne.length > 0 ?
             this.navbarItemsInterne.find(i => i && i.$props.value === this.model) :
-                undefined;
+            undefined;
     }
 
     private resizeComponant(properties?: MAutoHorizontalScrollResizeProperties): void {
@@ -272,11 +273,11 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
     private setSelectedIndicatorPosition(): void {
         const navbarItemElement: HTMLElement | undefined = this.selectedNavbarItem && this.selectedNavbarItem.$el ?
-                this.selectedNavbarItem.$el as HTMLElement :
-                    undefined;
+            this.selectedNavbarItem.$el as HTMLElement :
+            undefined;
         const localRef: HTMLElement | undefined = this.skin && this.$refs[this.skin] ?
             this.$refs[this.skin] :
-                undefined;
+            undefined;
         if (
             !(this.isTabUnderlineSkin || this.isTabArrowSkin) ||
             !(navbarItemElement && localRef)
@@ -295,8 +296,8 @@ export class MNavbar extends BaseNavbar implements Navbar {
         this.navbarItemsInterne = this.$children &&
             this.$children[0] &&
             this.$children[0].$children ?
-                this.$children[0].$children.filter(element => element instanceof MNavbarItem) as MNavbarItem[]
-                : [];
+            this.$children[0].$children.filter(element => element instanceof MNavbarItem) as MNavbarItem[]
+            : [];
     }
 
     private async scrollToSelected(): Promise<void> {
@@ -307,7 +308,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
         const navbarItemSelectedEl: HTMLElement | undefined = this.selectedNavbarItem && this.selectedNavbarItem.$el ?
             this.selectedNavbarItem.$el as HTMLElement :
-                undefined;
+            undefined;
 
         if (navbarItemSelectedEl) {
             const componentWidth: number = parseInt(this.componentWidth, 10);
