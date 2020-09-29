@@ -4,8 +4,7 @@
      }">
     <m-popper v-if="!isSidebarUsed"
               :id="id"
-              :open="popperOpen"
-              @update:open="onPopperOpen"
+              :open.sync="popperOpen"
               :disabled="disabled"
               :class-name="className"
               :placement="placement"
@@ -30,13 +29,15 @@
               :width="width"
               :background="background"
               :close-on-click-outside="closeOnBackdrop"
-              @open="onOpen"
-              @close="onClose"
-              @portal-mounted="onPortalMounted"
-              @portal-after-open="onPortalAfterOpen"
+              @open="emitOpen"
+              @close="emitClose"
+              @portal-mounted="emitPortalMounted"
+              @portal-after-open="emitPortalAfterOpen"
               ref="popper">
-        <slot name="trigger"
-              slot="trigger" />
+        <div v-if="$slots.trigger"
+             slot="trigger">
+            <slot name="trigger" />
+        </div>
         <slot name="header"
               slot="header" />
         <slot />
@@ -45,8 +46,7 @@
     </m-popper>
     <m-sidebar v-if="isSidebarUsed"
                :id="id"
-               :open="sideBarOpen"
-               @update:open="onSideBarOpen"
+               :open.sync="sideBarOpen"
                :disabled="disabled"
                :class-name="className"
                :focus-management="focusManagement"
@@ -60,12 +60,14 @@
                :padding-footer="paddingFooter"
                :open-trigger="propOpenTrigger"
                :full-height="sidebarFullHeight"
-               @open="onOpen()"
-               @close="onClose()"
-               @portal-mounted="onPortalMounted"
-               @portal-after-open="onPortalAfterOpen">
-        <slot name="trigger"
-              slot="trigger" />
+               @open="emitOpen"
+               @close="emitClose"
+               @portal-mounted="emitPortalMounted"
+               @portal-after-open="emitPortalAfterOpen">
+        <div v-if="$slots.trigger"
+             slot="trigger">
+              <slot name="trigger" />
+        </div>
         <slot name="header"
               slot="header"></slot>
         <slot />

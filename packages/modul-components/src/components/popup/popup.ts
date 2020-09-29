@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { MOpenTrigger, OpenTrigger, OpenTriggerMixin } from '../../mixins/open-trigger/open-trigger';
 import { Enums } from '../../utils/enums/enums';
@@ -117,20 +117,28 @@ export class MPopup extends ModulVue {
 
     private internalOpen: boolean = false;
 
-    @Emit('open')
-    public onOpen(): void { }
-
     @Emit('update:open')
     public emitUpdateOpen(open: boolean): void { }
 
+    @Emit('open')
+    public emitOpen(): void { }
+
     @Emit('close')
-    public onClose(): void { }
+    public emitClose(): void { }
 
     @Emit('portal-mounted')
-    public onPortalMounted(): void { }
+    public emitPortalMounted(): void { }
 
     @Emit('portal-after-open')
-    public onPortalAfterOpen(): void { }
+    public emitPortalAfterOpen(): void { }
+
+    @Watch('open', { immediate: true })
+    public onOpenChange(open: boolean): void {
+        if (this.disabled) {
+            return;
+        }
+        this.internalOpen = open;
+    }
 
     public get popupBody(): Element {
         return (this.$children[0] as any).popupBody;
@@ -144,37 +152,26 @@ export class MPopup extends ModulVue {
         return this.trigger || this.as<OpenTriggerMixin>().triggerHook || undefined;
     }
 
-    public onSideBarOpen(value: boolean): void {
-        if (!this.disabled && this.isSidebarUsed) {
-            this.internalOpen = value;
-            this.emitUpdateOpen(value);
-        }
-    }
-
-    public onPopperOpen(value: boolean): void {
-        if (!this.disabled && !this.isSidebarUsed) {
-            this.internalOpen = value;
-            this.emitUpdateOpen(value);
-        }
-    }
-
-    public get sideBarOpen(): boolean {
+    public set popperOpen(open: boolean) {
         if (this.isSidebarUsed) {
-            return this.open === undefined ? this.internalOpen : this.open;
-        } else {
-            return false;
+            return;
         }
-
+        this.setOpen(open);
     }
 
     public get popperOpen(): boolean {
+        return !this.isSidebarUsed ? this.internalOpen : false;
+    }
 
+    public set sideBarOpen(open: boolean) {
         if (!this.isSidebarUsed) {
-            return (this.open === undefined ? this.internalOpen : this.open);
-        } else {
-            return false;
+            return;
         }
+        this.setOpen(open);
+    }
 
+    public get sideBarOpen(): boolean {
+        return this.isSidebarUsed ? this.internalOpen : false;
     }
 
     public update(): void {
@@ -187,6 +184,14 @@ export class MPopup extends ModulVue {
     public get isSidebarUsed(): boolean {
         // Use a sidebar instead when in mobile
         return this.as<MediaQueries>().isMqMaxS;
+    }
+
+    private setOpen(open: boolean): void {
+        if (this.disabled) {
+            return;
+        }
+        this.internalOpen = open;
+        this.emitUpdateOpen(open);
     }
 
 }

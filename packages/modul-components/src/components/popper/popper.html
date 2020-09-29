@@ -2,7 +2,7 @@
      :class="{ 'm--is-open': propOpen }">
     <slot name="trigger"></slot>
     <portal :target-el="portalTargetSelector"
-            v-if="$slots.default && portalCreated">
+            v-if="($slots.default || $slots.header || $slots.footer) && portalCreated">
         <transition name="m--is"
                     @before-enter="onBeforeEnter"
                     @enter="onEnter"

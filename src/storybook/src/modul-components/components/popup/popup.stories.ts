@@ -42,12 +42,12 @@ export const defaultStory = () => ({
         }
     },
     methods: actions(
-        'open',
-        'close',
-        'portalMounted',
-        'portalAfterOpen'
+        'emitOpen',
+        'emitClose',
+        'emitPortalMounted',
+        'emitPortalAfterOpen'
     ),
-    template: `<m-popup
+    template: `<${POPUP_NAME}
         :close-on-backdrop="closeOnBackdrop"
         :width="width"
         :shadow="shadow"
@@ -56,10 +56,10 @@ export const defaultStory = () => ({
         :padding-body="paddingBody"
         :padding-footer="paddingFooter"
         :background="background"
-        @open="open"
-        @close="close"
-        @portal-mounted="portalMounted"
-        @portal-after-open="portalAfterOpen"
+        @open="emitOpen"
+        @close="emitClose"
+        @portal-mounted="emitPortalMounted"
+        @portal-after-open="emitPortalAfterOpen"
     >
         <m-button slot="trigger">Open popper</m-button>
         <p
@@ -75,15 +75,15 @@ export const defaultStory = () => ({
         >
             Slot footer
         </p>
-    </m-popup>`
+    </${POPUP_NAME}>`
 });
 defaultStory.story = {
     name: 'default'
 };
 
-export const closeOnBackdropDisabled = () => `<m-popup
+export const closeOnBackdropDisabled = () => `<${POPUP_NAME}
     :close-on-backdrop="false"
 >
     <m-button slot="trigger">Open popper</m-button>
     <p>Cannot close popup by clicking outside</p>
-</m-popup>`;
+</${POPUP_NAME}>`;
