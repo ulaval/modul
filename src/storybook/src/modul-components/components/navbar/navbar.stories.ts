@@ -425,6 +425,3 @@ export const propButtonGradientStyle = () => ({
         </${NAVBAR_ITEM_NAME}>
     </${NAVBAR_NAME}>`
 });
-
-
-

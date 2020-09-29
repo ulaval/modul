@@ -384,7 +384,7 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.couldHaveLeftContent =
             this.hasHorizontalScroll &&
             Boolean(this.$refs.body) &&
-            this.$refs.body.scrollLeft > 30;
+            this.$refs.body.scrollLeft > 2;
         this.couldHaveRightContent =
             this.hasHorizontalScroll &&
             Boolean(this.$refs.body) &&
@@ -392,7 +392,7 @@ export class MAutoHorizontalScroll extends ModulVue {
             Math.round(
                 this.$refs.body.scrollWidth -
                 this.$refs.body.clientWidth -
-                50
+                2
             );
     }
 }
