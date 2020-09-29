@@ -3,6 +3,8 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
+import { Enums } from '../../utils/enums/enums';
+import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
 import { POPPER_NAME } from '../component-names';
 import WithRender from './popper.html?style=./popper.scss';
@@ -29,69 +31,67 @@ export enum MPopperPlacement {
 export class MPopper extends ModulVue implements PortalMixinImpl {
     @Prop({
         default: MPopperPlacement.Bottom,
-        validator: value =>
-            value === MPopperPlacement.Bottom ||
-            value === MPopperPlacement.BottomEnd ||
-            value === MPopperPlacement.BottomStart ||
-            value === MPopperPlacement.Left ||
-            value === MPopperPlacement.LeftEnd ||
-            value === MPopperPlacement.LeftStart ||
-            value === MPopperPlacement.Right ||
-            value === MPopperPlacement.RightEnd ||
-            value === MPopperPlacement.RightStart ||
-            value === MPopperPlacement.Top ||
-            value === MPopperPlacement.TopEnd ||
-            value === MPopperPlacement.TopStart
+        validator: value => Enums.toValueArray(MPopperPlacement).includes(value)
     })
-    public placement: MPopperPlacement;
+    public readonly placement: MPopperPlacement;
 
     @Prop({ default: true })
-    public closeOnClickOutside: boolean;
+    public readonly closeOnClickOutside: boolean;
 
     @Prop({ default: true })
-    public focusManagement: boolean;
+    public readonly focusManagement: boolean;
 
     @Prop({ default: true })
-    public shadow: boolean;
+    public readonly shadow: boolean;
+
     @Prop({ default: false })
-    public padding: boolean;
+    public readonly padding: boolean;
+
     @Prop({ default: false })
-    public paddingHeader: boolean;
+    public readonly paddingHeader: boolean;
+
     @Prop({ default: false })
-    public paddingBody: boolean;
+    public readonly paddingBody: boolean;
+
     @Prop({ default: false })
-    public paddingFooter: boolean;
+    public readonly paddingFooter: boolean;
+
     @Prop({ default: true })
-    public background: boolean;
-    @Prop({ default: 'auto' })
-    public width: string;
+    public readonly background: boolean;
+
+    @Prop({
+        default: 'auto',
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value) || value === 'auto'
+    })
+    public readonly width: string;
 
     @Prop()
-    public beforeEnter: any;
+    public readonly beforeEnter: any;
 
     @Prop()
-    public enter: any;
+    public readonly enter: any;
 
     @Prop()
-    public afterEnter: any;
+    public readonly afterEnter: any;
 
     @Prop()
-    public enterCancelled: any;
+    public readonly enterCancelled: any;
 
     @Prop()
-    public beforeLeave: any;
+    public readonly beforeLeave: any;
 
     @Prop()
-    public leave: any;
+    public readonly leave: any;
 
     @Prop()
-    public afterLeave: any;
+    public readonly afterLeave: any;
 
     @Prop()
-    public leaveCancelled: any;
+    public readonly leaveCancelled: any;
 
     @Prop()
-    public boundariesElement: string;
+    public readonly boundariesElement: string;
 
     public $refs: {
         popper: HTMLElement;
@@ -99,10 +99,25 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     };
 
     private popper: Popper | undefined;
-    private defaultAnimOpen: boolean = false;
-    private internalOpen: boolean = false;
-    private isHidden: boolean = false;
+    public defaultAnimOpen: boolean = false;
+    public internalOpen: boolean = false;
+    public isHidden: boolean = false;
     private observer: MutationObserver;
+
+    public get popupBody(): HTMLElement {
+        return this.$refs.body;
+    }
+
+    public get defaultAnimActive(): boolean {
+        return !(
+            this.beforeEnter ||
+            this.enter ||
+            this.afterEnter ||
+            this.beforeLeave ||
+            this.leave ||
+            this.afterLeave
+        );
+    }
 
     public handlesFocus(): boolean {
         return this.focusManagement;
@@ -149,6 +164,69 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         }
     }
 
+    public onBeforeEnter(el: HTMLElement): void {
+        if (this.beforeEnter) {
+            this.beforeEnter(el.children[0]);
+        }
+    }
+
+    public onEnter(el: HTMLElement, done): void {
+        this.$nextTick(() => {
+            this.update();
+            if (this.enter) {
+                this.enter(el.children[0], done);
+            } else {
+                let transitionDuration: number = (window.getComputedStyle(el).getPropertyValue('transition-duration').slice(1, -1) as any) * 1000;
+                setTimeout(() => {
+                    this.defaultAnimOpen = true;
+                    done();
+                }, transitionDuration);
+            }
+        });
+    }
+
+    public onAfterEnter(el: HTMLElement): void {
+        if (this.afterEnter) {
+            this.afterEnter(el.children[0]);
+        }
+        this.$emit('after-enter', el);
+        this.as<PortalMixin>().setFocusToPortal();
+    }
+
+    public onEnterCancelled(el: HTMLElement): void {
+        if (this.enterCancelled) {
+            this.enterCancelled(el);
+        }
+    }
+
+    public onBeforeLeave(el: HTMLElement): void {
+        if (this.beforeLeave) {
+            this.beforeLeave(el.children[0]);
+        }
+    }
+
+    public onLeave(el: HTMLElement, done): void {
+        if (this.leave) {
+            this.leave(el.children[0], done);
+        } else {
+            this.defaultAnimOpen = false;
+            setTimeout(done, 300);
+        }
+    }
+
+    public onAfterLeave(el: HTMLElement): void {
+        if (this.afterLeave) {
+            this.afterLeave(el.children[0]);
+        }
+        this.as<PortalMixin>().setFocusToTrigger();
+    }
+
+    public onLeaveCancelled(el: HTMLElement): void {
+        if (this.leaveCancelled) {
+            this.leaveCancelled(el.children[0]);
+        }
+    }
+
     protected mounted(): void {
         this.$modul.event.$on('updateAfterResize', this.update);
 
@@ -163,15 +241,13 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         this.$modul.event.$off('updateAfterResize', this.update);
         document.removeEventListener('mouseup', this.onDocumentClick);
 
-        if (this.observer) { this.observer.disconnect(); }
+        if (this.observer) {
+            this.observer.disconnect();
+        }
 
         this.$off('portal-mounted', this.setPopperMutationObserver);
 
         this.destroyPopper();
-    }
-
-    public get popupBody(): HTMLElement {
-        return this.$refs.body;
     }
 
     private setPopperMutationObserver(): void {
@@ -202,85 +278,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
             this.popper.destroy();
             this.popper = undefined;
             this.isHidden = false;
-        }
-    }
-
-    private get defaultAnim(): boolean {
-        return !(this.beforeEnter || this.enter || this.afterEnter || this.beforeLeave || this.leave || this.afterLeave);
-    }
-
-    private get hasHeaderSlot(): boolean {
-        return !!this.$slots.header;
-    }
-
-    private get hasDefaultSlot(): boolean {
-        return !!this.$slots.default;
-    }
-
-    private get hasFooterSlot(): boolean {
-        return !!this.$slots.footer;
-    }
-
-    private onBeforeEnter(el: HTMLElement): void {
-        if (this.beforeEnter) {
-            this.beforeEnter(el.children[0]);
-        }
-    }
-
-    private onEnter(el: HTMLElement, done): void {
-        this.$nextTick(() => {
-            this.update();
-            if (this.enter) {
-                this.enter(el.children[0], done);
-            } else {
-                let transitionDuration: number = (window.getComputedStyle(el).getPropertyValue('transition-duration').slice(1, -1) as any) * 1000;
-                setTimeout(() => {
-                    this.defaultAnimOpen = true;
-                    done();
-                }, transitionDuration);
-            }
-        });
-    }
-
-    private onAfterEnter(el: HTMLElement): void {
-        if (this.afterEnter) {
-            this.afterEnter(el.children[0]);
-        }
-        this.$emit('after-enter', el);
-        this.as<PortalMixin>().setFocusToPortal();
-    }
-
-    private onEnterCancelled(el: HTMLElement): void {
-        if (this.enterCancelled) {
-            this.enterCancelled(el);
-        }
-    }
-
-    private onBeforeLeave(el: HTMLElement): void {
-        if (this.beforeLeave) {
-            this.beforeLeave(el.children[0]);
-        }
-    }
-
-    private onLeave(el: HTMLElement, done): void {
-        if (this.leave) {
-            this.leave(el.children[0], done);
-        } else {
-            this.defaultAnimOpen = false;
-            setTimeout(done, 300);
-        }
-    }
-
-    private onAfterLeave(el: HTMLElement): void {
-        if (this.afterLeave) {
-            this.afterLeave(el.children[0]);
-        }
-        this.as<PortalMixin>().setFocusToTrigger();
-    }
-
-    private onLeaveCancelled(el: HTMLElement): void {
-        if (this.leaveCancelled) {
-            this.leaveCancelled(el.children[0]);
         }
     }
 }
