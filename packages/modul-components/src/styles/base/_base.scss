@@ -41,6 +41,9 @@
     --m-base--ul-padding: 0;
     --m-base--li-padding: 0;
     --m-base--list-style: none;
+
+    // button
+    --m-base-button--border-radius: 3px;
 }
 
 .m-u--app-body {
@@ -83,7 +86,7 @@
     }
 
     button {
-        border-radius: 0;
+        border-radius: var(--m-base-button--border-radius);
     }
 
     abbr {
