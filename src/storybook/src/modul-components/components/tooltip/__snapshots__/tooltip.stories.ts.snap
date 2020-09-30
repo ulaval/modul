@@ -4,39 +4,33 @@ exports[`Storyshots modul-components|m-tooltip change icon 1`] = `
 <span>
   Lorem Ipsum
   <div
-    class="m-popup m-tooltip m--is-inline"
+    class="m-popper m-popup m-tooltip m--is-inline"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <button
-          aria-controls="mTooltip-fakeId-controls"
-          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-          id="mTooltip-fakeId"
-          style="width: 22px; height: 22px;"
-          title="Ouvrir l'infobulle"
-          type="button"
+    <div>
+      <button
+        aria-controls="mTooltip-fakeId-controls"
+        class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
+        id="mTooltip-fakeId"
+        style="width: 22px; height: 22px;"
+        title="Ouvrir l'infobulle"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-icon-button__icon"
+          height="20px"
+          width="20px"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-icon-button__icon"
-            height="20px"
-            width="20px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
           <!---->
-        </button>
-      </div>
-       
-      <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+      </button>
     </div>
      
     <!---->
@@ -48,39 +42,33 @@ exports[`Storyshots modul-components|m-tooltip close-button="false" 1`] = `
 <span>
   Lorem Ipsum
   <div
-    class="m-popup m-tooltip m--is-inline"
+    class="m-popper m-popup m-tooltip m--is-inline"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <button
-          aria-controls="mTooltip-fakeId-controls"
-          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-          id="mTooltip-fakeId"
-          style="width: 22px; height: 22px;"
-          title="Ouvrir l'infobulle"
-          type="button"
+    <div>
+      <button
+        aria-controls="mTooltip-fakeId-controls"
+        class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
+        id="mTooltip-fakeId"
+        style="width: 22px; height: 22px;"
+        title="Ouvrir l'infobulle"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-icon-button__icon"
+          height="20px"
+          width="20px"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-icon-button__icon"
-            height="20px"
-            width="20px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
           <!---->
-        </button>
-      </div>
-       
-      <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+      </button>
     </div>
      
     <!---->
@@ -92,39 +80,33 @@ exports[`Storyshots modul-components|m-tooltip default 1`] = `
 <span>
   Lorem Ipsum
   <div
-    class="m-popup m-tooltip m--is-inline"
+    class="m-popper m-popup m-tooltip m--is-inline"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <button
-          aria-controls="mTooltip-fakeId-controls"
-          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-          id="mTooltip-fakeId"
-          style="width: 22px; height: 22px;"
-          title="Ouvrir l'infobulle"
-          type="button"
+    <div>
+      <button
+        aria-controls="mTooltip-fakeId-controls"
+        class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
+        id="mTooltip-fakeId"
+        style="width: 22px; height: 22px;"
+        title="Ouvrir l'infobulle"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-icon-button__icon"
+          height="20px"
+          width="20px"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-icon-button__icon"
-            height="20px"
-            width="20px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
           <!---->
-        </button>
-      </div>
-       
-      <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+      </button>
     </div>
      
     <!---->
@@ -136,40 +118,34 @@ exports[`Storyshots modul-components|m-tooltip disabled 1`] = `
 <span>
   Lorem Ipsum
   <div
-    class="m-popup m-tooltip m--is-inline m--is-disabled"
+    class="m-popper m-popup m-tooltip m--is-inline m--is-disabled"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <button
-          aria-controls="mTooltip-fakeId-controls"
-          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple m--is-disabled"
-          disabled="disabled"
-          id="mTooltip-fakeId"
-          style="width: 22px; height: 22px;"
-          title="Ouvrir l'infobulle"
-          type="button"
+    <div>
+      <button
+        aria-controls="mTooltip-fakeId-controls"
+        class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple m--is-disabled"
+        disabled="disabled"
+        id="mTooltip-fakeId"
+        style="width: 22px; height: 22px;"
+        title="Ouvrir l'infobulle"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-icon-button__icon"
+          height="20px"
+          width="20px"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-icon-button__icon"
-            height="20px"
-            width="20px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
           <!---->
-        </button>
-      </div>
-       
-      <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+      </button>
     </div>
      
     <!---->
@@ -182,36 +158,30 @@ exports[`Storyshots modul-components|m-tooltip/mode mode="definition" 1`] = `
   Spicy jalapeno
                         
   <div
-    class="m-popup m-tooltip m--is-inline m--is-mode-definition"
+    class="m-popper m-popup m-tooltip m--is-inline m--is-mode-definition"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <a
-          aria-controls="mTooltip-fakeId-controls"
-          aria-haspopup="true"
-          class="m-link m-tooltip__link m--is-unvisited m--no-underline m--is-button m--has-content"
-          href="#"
-          id="mTooltip-fakeId"
-          role="button"
-          tabindex="0"
+    <div>
+      <a
+        aria-controls="mTooltip-fakeId-controls"
+        aria-haspopup="true"
+        class="m-link m-tooltip__link m--is-unvisited m--no-underline m--is-button m--has-content"
+        href="#"
+        id="mTooltip-fakeId"
+        role="button"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
         >
-          <!---->
-           
-          <span
-            class="m-link__text"
-          >
-            <span>
-              bacon ipsum
-            </span>
+          <span>
+            bacon ipsum
           </span>
-           
-          <!---->
-        </a>
-      </div>
-       
-      <!---->
+        </span>
+         
+        <!---->
+      </a>
     </div>
      
     <!---->
@@ -228,39 +198,33 @@ exports[`Storyshots modul-components|m-tooltip/mode mode="icon" 1`] = `
 <span>
   Lorem Ipsum
   <div
-    class="m-popup m-tooltip m--is-inline"
+    class="m-popper m-popup m-tooltip m--is-inline"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <button
-          aria-controls="mTooltip-fakeId-controls"
-          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-          id="mTooltip-fakeId"
-          style="width: 22px; height: 22px;"
-          title="Ouvrir l'infobulle"
-          type="button"
+    <div>
+      <button
+        aria-controls="mTooltip-fakeId-controls"
+        class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
+        id="mTooltip-fakeId"
+        style="width: 22px; height: 22px;"
+        title="Ouvrir l'infobulle"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-icon-button__icon"
+          height="20px"
+          width="20px"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-icon-button__icon"
-            height="20px"
-            width="20px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
           <!---->
-        </button>
-      </div>
-       
-      <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+      </button>
     </div>
      
     <!---->
@@ -273,36 +237,30 @@ exports[`Storyshots modul-components|m-tooltip/mode mode="link" 1`] = `
   Spicy jalapeno
                         
   <div
-    class="m-popup m-tooltip m--is-inline"
+    class="m-popper m-popup m-tooltip m--is-inline"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <a
-          aria-controls="mTooltip-fakeId-controls"
-          aria-haspopup="true"
-          class="m-link m-tooltip__link m--is-unvisited m--is-button m--has-content"
-          href="#"
-          id="mTooltip-fakeId"
-          role="button"
-          tabindex="0"
+    <div>
+      <a
+        aria-controls="mTooltip-fakeId-controls"
+        aria-haspopup="true"
+        class="m-link m-tooltip__link m--is-unvisited m--is-button m--has-content"
+        href="#"
+        id="mTooltip-fakeId"
+        role="button"
+        tabindex="0"
+      >
+        <!---->
+         
+        <span
+          class="m-link__text"
         >
-          <!---->
-           
-          <span
-            class="m-link__text"
-          >
-            <span>
-              bacon ipsum
-            </span>
+          <span>
+            bacon ipsum
           </span>
-           
-          <!---->
-        </a>
-      </div>
-       
-      <!---->
+        </span>
+         
+        <!---->
+      </a>
     </div>
      
     <!---->
@@ -319,39 +277,33 @@ exports[`Storyshots modul-components|m-tooltip/size size="large" 1`] = `
 <span>
   Lorem Ipsum
   <div
-    class="m-popup m-tooltip m--is-inline"
+    class="m-popper m-popup m-tooltip m--is-inline"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <button
-          aria-controls="mTooltip-fakeId-controls"
-          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-          id="mTooltip-fakeId"
-          style="width: 22px; height: 22px;"
-          title="Ouvrir l'infobulle"
-          type="button"
+    <div>
+      <button
+        aria-controls="mTooltip-fakeId-controls"
+        class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
+        id="mTooltip-fakeId"
+        style="width: 22px; height: 22px;"
+        title="Ouvrir l'infobulle"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-icon-button__icon"
+          height="20px"
+          width="20px"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-icon-button__icon"
-            height="20px"
-            width="20px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
           <!---->
-        </button>
-      </div>
-       
-      <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+      </button>
     </div>
      
     <!---->
@@ -363,39 +315,33 @@ exports[`Storyshots modul-components|m-tooltip/size size="small" 1`] = `
 <span>
   Lorem Ipsum
   <div
-    class="m-popup m-tooltip m--is-inline"
+    class="m-popper m-popup m-tooltip m--is-inline"
   >
-    <div
-      class="m-popper"
-    >
-      <div>
-        <button
-          aria-controls="mTooltip-fakeId-controls"
-          class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-          id="mTooltip-fakeId"
-          style="width: 22px; height: 22px;"
-          title="Ouvrir l'infobulle"
-          type="button"
+    <div>
+      <button
+        aria-controls="mTooltip-fakeId-controls"
+        class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
+        id="mTooltip-fakeId"
+        style="width: 22px; height: 22px;"
+        title="Ouvrir l'infobulle"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-icon-button__icon"
+          height="20px"
+          width="20px"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-icon-button__icon"
-            height="20px"
-            width="20px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
           <!---->
-        </button>
-      </div>
-       
-      <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+         
+        <!---->
+      </button>
     </div>
      
     <!---->
