@@ -121,11 +121,6 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.resizeComponent();
     });
 
-    // tslint:disable-next-line: no-null-keyword
-    public start: number | null = null;
-    public timestamp: number = 5000;
-    public progress: number = 0;
-
     @Emit('resize')
     public emitResize(resizeProperties: MAutoHorizontalScrollResizeProperties): void { }
 
@@ -251,8 +246,8 @@ export class MAutoHorizontalScroll extends ModulVue {
             this.isGradientStyleInteractive ||
             this.isGradientStyleInteractiveDark ||
             this.isGradientStyleInteractiveDarker
-                ? MIconButtonSkin.Dark
-                : MIconButtonSkin.Light;
+            ? MIconButtonSkin.Dark
+            : MIconButtonSkin.Light;
     }
 
     public async startScrollAnimation(): Promise<void> {
