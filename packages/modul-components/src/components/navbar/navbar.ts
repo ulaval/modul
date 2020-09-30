@@ -8,8 +8,8 @@ import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME
 import { MIconButton } from '../icon-button/icon-button';
 import { MAutoHorizontalScroll, MAutoHorizontalScrollGradientStyle, MAutoHorizontalScrollResizeProperties } from './../auto-horizontal-scroll/auto-horizontal-scroll';
 import { MNavbarItem } from './navbar-item/navbar-item';
+import './navbar-unscoped.scss';
 import WithRender from './navbar.html?style=./navbar.scss';
-
 export abstract class BaseNavbar extends ModulVue { }
 
 export interface Navbar {
@@ -23,6 +23,7 @@ export interface Navbar {
 }
 
 export enum MNavbarSkin {
+    Any = 'any',
     NavMain = 'nav-main',
     NavSub = 'nav-sub',
     NavSoft = 'nav-soft',
@@ -82,6 +83,14 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
     @Prop()
     public readonly titleButtonRight: string;
+
+    @Prop({
+        validator: (value: MAutoHorizontalScrollGradientStyle) =>
+            Enums.toValueArray(
+                MAutoHorizontalScrollGradientStyle
+            ).includes(value)
+    })
+    public readonly buttonGradientStyle?: MAutoHorizontalScrollGradientStyle;
 
     @Prop({ default: false })
     public readonly autoSelect: boolean;
@@ -178,19 +187,24 @@ export class MNavbar extends BaseNavbar implements Navbar {
     }
 
     public get gradientStyle(): MAutoHorizontalScrollGradientStyle {
-        switch (this.skin) {
-            case MNavbarSkin.NavMain:
-            case MNavbarSkin.NavSub:
-            case MNavbarSkin.TabDark:
-            case MNavbarSkin.TabDarkMain:
-                return MAutoHorizontalScrollGradientStyle.Dark;
-            case MNavbarSkin.NavSoft:
-                return MAutoHorizontalScrollGradientStyle.Interactive;
-            case MNavbarSkin.TabLightMain:
-                return MAutoHorizontalScrollGradientStyle.Light;
-            case MNavbarSkin.TabArrow:
-            default:
-                return MAutoHorizontalScrollGradientStyle.White;
+        if (this.buttonGradientStyle) {
+            return this.buttonGradientStyle;
+        } else {
+            switch (this.skin) {
+                case MNavbarSkin.NavMain:
+                case MNavbarSkin.TabDark:
+                case MNavbarSkin.TabDarkMain :
+                    return MAutoHorizontalScrollGradientStyle.Dark;
+                case MNavbarSkin.NavSub:
+                    return MAutoHorizontalScrollGradientStyle.GreyBlack;
+                case MNavbarSkin.NavSoft:
+                    return MAutoHorizontalScrollGradientStyle.Interactive;
+                case MNavbarSkin.TabLightMain:
+                    return MAutoHorizontalScrollGradientStyle.Light;
+                case MNavbarSkin.TabArrow:
+                default:
+                    return MAutoHorizontalScrollGradientStyle.White;
+            }
         }
     }
 
@@ -260,7 +274,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     private get selectedNavbarItem(): MNavbarItem | undefined {
         return this.navbarItemsInterne.length > 0 ?
             this.navbarItemsInterne.find(i => i && i.$props.value === this.model) :
-            undefined;
+                undefined;
     }
 
     private resizeComponant(properties?: MAutoHorizontalScrollResizeProperties): void {
@@ -273,11 +287,11 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
     private setSelectedIndicatorPosition(): void {
         const navbarItemElement: HTMLElement | undefined = this.selectedNavbarItem && this.selectedNavbarItem.$el ?
-            this.selectedNavbarItem.$el as HTMLElement :
-            undefined;
+                this.selectedNavbarItem.$el as HTMLElement :
+                    undefined;
         const localRef: HTMLElement | undefined = this.skin && this.$refs[this.skin] ?
             this.$refs[this.skin] :
-            undefined;
+                undefined;
         if (
             !(this.isTabUnderlineSkin || this.isTabArrowSkin) ||
             !(navbarItemElement && localRef)
@@ -308,7 +322,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
         const navbarItemSelectedEl: HTMLElement | undefined = this.selectedNavbarItem && this.selectedNavbarItem.$el ?
             this.selectedNavbarItem.$el as HTMLElement :
-            undefined;
+                undefined;
 
         if (navbarItemSelectedEl) {
             const componentWidth: number = parseInt(this.componentWidth, 10);

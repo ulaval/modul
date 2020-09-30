@@ -6,13 +6,19 @@ import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-valid
 import { ModulVue } from '../../utils/vue/vue';
 import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
+import './auto-horizontal-scroll-unscoped.scss';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
 
 export enum MAutoHorizontalScrollGradientStyle {
+    Any = 'Any',
     White = 'white',
     Light = 'light',
     Dark = 'dark',
-    Interactive = 'interactive'
+    GreyBlack = 'grey-black',
+    Interactive = 'interactive',
+    InteractiveDark = 'interactive-dark',
+    InteractiveDarker = 'interactive-darker',
+    CurrentColor = 'current-color'
 }
 
 export interface MAutoHorizontalScrollResizeProperties {
@@ -156,7 +162,6 @@ export class MAutoHorizontalScroll extends ModulVue {
             this.horizontalScrollOffset !== this.$refs.body.scrollLeft
         ) {
 
-
             if (this.scrollLeftCounter <= 0) {
                 this.$refs.body.scrollLeft = this.horizontalScrollOffset;
             } else {
@@ -200,20 +205,6 @@ export class MAutoHorizontalScroll extends ModulVue {
         return this.nextButtonActive && this.couldHaveRightContent;
     }
 
-    public get isGradientStyleWhite(): boolean {
-        return (
-            this.gradientStyle ===
-            MAutoHorizontalScrollGradientStyle.White
-        );
-    }
-
-    public get isGradientStyleLight(): boolean {
-        return (
-            this.gradientStyle ===
-            MAutoHorizontalScrollGradientStyle.Light
-        );
-    }
-
     public get isGradientStyleDark(): boolean {
         return (
             this.gradientStyle ===
@@ -228,8 +219,33 @@ export class MAutoHorizontalScroll extends ModulVue {
         );
     }
 
+    public get isGradientStyleGreyBlack(): boolean {
+        return (
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.GreyBlack
+        );
+    }
+
+    public get isGradientStyleInteractiveDark(): boolean {
+        return (
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.InteractiveDark
+        );
+    }
+
+    public get isGradientStyleInteractiveDarker(): boolean {
+        return (
+            this.gradientStyle ===
+            MAutoHorizontalScrollGradientStyle.InteractiveDarker
+        );
+    }
+
     public get iconButtonSkin(): string {
-        return this.isGradientStyleDark || this.isGradientStyleInteractive
+        return this.isGradientStyleDark ||
+            this.isGradientStyleGreyBlack ||
+            this.isGradientStyleInteractive ||
+            this.isGradientStyleInteractiveDark ||
+            this.isGradientStyleInteractiveDarker
             ? MIconButtonSkin.Dark
             : MIconButtonSkin.Light;
     }
@@ -256,11 +272,15 @@ export class MAutoHorizontalScroll extends ModulVue {
                     !this.$refs.body ||
                     this.$refs.body.scrollLeft === undefined ||
                     (
-                        (isPositiveIncrement &&
-                            this.$refs.body.scrollLeft >= this.horizontalScrollOffset) ||
-                        (!isPositiveIncrement &&
-                            this.$refs.body.scrollLeft <= this.horizontalScrollOffset) ||
-                            counter >= 5000
+                        (
+                            isPositiveIncrement &&
+                            this.$refs.body.scrollLeft >= this.horizontalScrollOffset
+                        ) ||
+                        (
+                            !isPositiveIncrement &&
+                            this.$refs.body.scrollLeft <= this.horizontalScrollOffset
+                        ) ||
+                        counter >= 5000
                     )
                 ) {
                     this.stopScrollAnimation();
@@ -359,7 +379,7 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.couldHaveLeftContent =
             this.hasHorizontalScroll &&
             Boolean(this.$refs.body) &&
-            this.$refs.body.scrollLeft > 30;
+            this.$refs.body.scrollLeft > 2;
         this.couldHaveRightContent =
             this.hasHorizontalScroll &&
             Boolean(this.$refs.body) &&
@@ -367,7 +387,7 @@ export class MAutoHorizontalScroll extends ModulVue {
             Math.round(
                 this.$refs.body.scrollWidth -
                 this.$refs.body.clientWidth -
-                50
+                2
             );
     }
 }

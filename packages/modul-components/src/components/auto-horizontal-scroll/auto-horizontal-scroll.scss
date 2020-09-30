@@ -34,7 +34,10 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
         align-items: center;
         justify-content: center;
         width: 1px;
+        background: var(--m-auto-horizontal-scroll--button-background);
         opacity: 1;
+
+        $transparent-color: rgba($m-color--white, 0);
 
         &.m--is-left {
             left: 0;
@@ -42,6 +45,7 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
             &::before {
                 transition: left $m-transition-duration linear;
                 right: -$m-spacing;
+                background-image: linear-gradient(90deg, var(--m-auto-horizontal-scroll--button-background), $transparent-color);
             }
         }
 
@@ -51,6 +55,7 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
             &::after {
                 transition: right $m-transition-duration linear;
                 left: -$m-spacing;
+                background-image: linear-gradient(90deg, $transparent-color, var(--m-auto-horizontal-scroll--button-background));
             }
         }
 
@@ -73,6 +78,7 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
         &.m--is-leave-to {
             opacity: 0;
         }
+
     }
 
     &.m--has-previous-button {
@@ -112,40 +118,39 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
     }
 }
 
-@mixin gradientBackgroundColor($couleur) {
-    .m-auto-horizontal-scroll__button-area {
-        background: $couleur;
-
-        &.m--is-left {
-            &::before {
-                background-image: linear-gradient(90deg, $couleur, rgba($couleur, 0));
-            }
-        }
-
-        &.m--is-right {
-            &::after {
-                background-image: linear-gradient(90deg, rgba($couleur, 0), $couleur);
-            }
-        }
-    }
-}
-
 .m-auto-horizontal-scroll.m--is-gradient-style-white {
-    @include gradientBackgroundColor($m-color--white);
+    --m-auto-horizontal-scroll--button-background: #{ $m-color--white };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-light {
-    @include gradientBackgroundColor($m-color--grey-light);
+    --m-auto-horizontal-scroll--button-background: #{ $m-color--grey-light };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-dark {
-    @include gradientBackgroundColor($m-color--grey-darkest);
+    --m-auto-horizontal-scroll--button-background: #{ $m-color--grey-darkest };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-interactive {
-    @include gradientBackgroundColor($m-color--interactive);
+    --m-auto-horizontal-scroll--button-background: #{ $m-color--interactive };
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-style-grey-black {
+    --m-auto-horizontal-scroll--button-background: #{ $m-color--grey-black };
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-style-interactive-dark {
+    --m-auto-horizontal-scroll--button-background: #{ $m-color--interactive-dark };
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-style-interactive-darker {
+    --m-auto-horizontal-scroll--button-background: #{ $m-color--interactive-darker };
+}
+
+.m-auto-horizontal-scroll.m--is-gradient-style-current-color {
+    --m-auto-horizontal-scroll--button-background: currentColor;
 }
 
 .m-auto-horizontal-scroll.m--has-horizontal-scrollbar {
     overflow: hidden;
 }
+
