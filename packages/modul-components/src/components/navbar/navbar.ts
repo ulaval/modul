@@ -236,6 +236,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
         let outbound: Vue | undefined;
 
         // find the previus element outside visible area
+
         this.navbarItemsInterne.forEach(item => {
             if ((item.$el as HTMLElement).offsetLeft < this.horizontalScrollOffset) {
                 outbound = item;
@@ -309,8 +310,8 @@ export class MNavbar extends BaseNavbar implements Navbar {
         this.navbarItemsInterne = this.$children &&
             this.$children[0] &&
             this.$children[0].$children ?
-                this.$children[0].$children.filter(element => element instanceof MNavbarItem) as MNavbarItem[]
-                : [];
+            this.$children[0].$children.filter(element => element instanceof MNavbarItem) as MNavbarItem[]
+            : [];
     }
 
     private async scrollToSelected(): Promise<void> {
