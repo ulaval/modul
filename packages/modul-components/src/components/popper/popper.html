@@ -1,8 +1,8 @@
 <div class="m-popper"
      :class="{ 'm--is-open': propOpen }">
-    <slot name="trigger"></slot>
-    <portal :target-el="portalTargetSelector"
-            v-if="($slots.default || $slots.header || $slots.footer) && portalCreated">
+    <slot name="trigger" />
+    <portal v-if="($slots.default || $slots.header || $slots.footer) && portalCreated"
+            :target-el="portalTargetSelector">
         <transition name="m--is"
                     @before-enter="onBeforeEnter"
                     @enter="onEnter"
@@ -12,7 +12,9 @@
                     @leave="onLeave"
                     @after-leave="onAfterLeave"
                     @leave-cancelled="onLeaveCancelled">
-            <article ref="popper"
+            <article v-show="propOpen"
+                     v-if="portalMounted"
+                     ref="popper"
                      class="m-popper__article"
                      :class="[
                         {
@@ -26,9 +28,7 @@
                         className
                     ]"
                      :aria-hidden="!propOpen || isHidden"
-                     :style="{ width: width }"
-                     v-show="propOpen"
-                     v-if="portalMounted">
+                     :style="{ width: width }">
                 <header v-if="$slots.header"
                         class="m-popper__header"
                         :class="{

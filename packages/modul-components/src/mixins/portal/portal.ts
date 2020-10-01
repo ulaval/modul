@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MouseButtons } from '../../utils/mouse/mouse';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
@@ -88,6 +88,37 @@ export class Portal extends ModulVue implements PortalMixin {
     private mouseenterEventListener: EventListener;
     private mousedownEventListener: EventListener;
 
+    @Emit('update:open')
+    public emitUpdateOpen(open: boolean): void { }
+
+    @Emit('open')
+    public emitOpen(): void { }
+
+    @Emit('close')
+    public emitClose(): void { }
+
+    @Emit('portal-mounted')
+    public emitPortalMounted(): void { }
+
+    @Emit('portal-after-open')
+    public emitPortalAfterOpen(): void { }
+
+    @Emit('portal-after-close')
+    public emitPortalAfterClose(): void { }
+
+    @Emit('click')
+    public emitClick(event: MouseEvent): void { }
+
+    @Watch('open', { immediate: true })
+    public onOpenChange(open: boolean): void {
+        if (this.disabled || open === this.internalOpen) {
+            return;
+        }
+
+        this.internalOpen = open;
+        this.manageOpeningAndClosing(open);
+    }
+
     public setFocusToPortal(): void {
         if (this.as<PortalMixinImpl>().handlesFocus()) {
             let el: HTMLElement = this.as<PortalMixinImpl>().getPortalElement();
@@ -171,63 +202,65 @@ export class Portal extends ModulVue implements PortalMixin {
     }
 
     public get propOpen(): boolean {
-        let open: boolean = (this.open === undefined ? this.internalOpen : this.open) && !this.disabled;
-        if (open) {
+        if (this.internalOpen) {
             this.loaded = true;
         }
-        return open;
+        return this.internalOpen;
     }
 
-    public set propOpen(value: boolean) {
-        if (value !== this.internalOpen) {
-            if (value) {
-                this.ensurePortalTargetEl(() => {
-                    if (this.portalTargetEl) {
-                        this.stackId = this.$modul.pushElement(this.portalTargetEl, this.as<PortalMixinImpl>().getBackdropMode(), this.as<MediaQueriesMixin>().isMqMaxS);
-                        if (!this.as<PortalMixinImpl>().doCustomPropOpen(value, this.portalTargetEl)) {
-                            this.portalTargetEl.style.position = 'absolute';
-                            this.portalTargetEl.style.top = '0';
-                            this.portalTargetEl.style.left = '0';
-
-                            // this.opening is important since it's fix a race condition where the portal
-                            // could appear behind the content of the page if it was toggled too quickly.
-                            this.opening = true;
-                            setTimeout(() => {
-                                this.$emit('portal-after-open');
-                                this.setFocusToPortal();
-                                this.opening = false;
-                            }, this.transitionDuration);
-                        } else {
-                            this.$emit('portal-after-open');
-                        }
-                    }
-                });
-            } else {
+    public manageOpeningAndClosing(open: boolean): void {
+        if (open) {
+            this.ensurePortalTargetEl(() => {
                 if (this.portalTargetEl) {
-                    this.$modul.popElement(this.stackId);
+                    this.stackId = this.$modul.pushElement(this.portalTargetEl, this.as<PortalMixinImpl>().getBackdropMode(), this.as<MediaQueriesMixin>().isMqMaxS);
+                    if (!this.as<PortalMixinImpl>().doCustomPropOpen(open, this.portalTargetEl)) {
+                        this.portalTargetEl.style.position = 'absolute';
+                        this.portalTargetEl.style.top = '0';
+                        this.portalTargetEl.style.left = '0';
 
-                    if (!this.as<PortalMixinImpl>().doCustomPropOpen(value, this.portalTargetEl)) {
-                        this.setFocusToTrigger();
-
+                        // this.opening is important since it's fix a race condition where the portal
+                        // could appear behind the content of the page if it was toggled too quickly.
+                        this.opening = true;
                         setTimeout(() => {
-                            // $emit update:open has been launched, animation already occurs
-                            if (!this.opening) {
-                                this.portalTargetEl.style.position = '';
-                                this.$emit('portal-after-close');
-                            }
+                            this.emitPortalAfterOpen();
+                            this.setFocusToPortal();
+                            this.opening = false;
                         }, this.transitionDuration);
                     } else {
-                        this.$emit('portal-after-close');
+                        this.emitPortalAfterOpen();
                     }
                 }
+            });
+            this.emitOpen();
+        } else {
+            if (this.portalTargetEl) {
+                this.$modul.popElement(this.stackId);
+
+                if (!this.as<PortalMixinImpl>().doCustomPropOpen(open, this.portalTargetEl)) {
+                    this.setFocusToTrigger();
+
+                    setTimeout(() => {
+                        // $emit update:open has been launched, animation already occurs
+                        if (!this.opening) {
+                            this.portalTargetEl.style.position = '';
+                            this.emitPortalAfterClose();
+                        }
+                    }, this.transitionDuration);
+                } else {
+                    this.emitPortalAfterClose();
+                }
             }
-            if (value !== this.internalOpen) {
-                // really closing, reset focus
-                this.$emit(value ? 'open' : 'close');
-            }
+            this.emitClose();
         }
-        this.internalOpen = value;
-        this.$emit('update:open', value);
+    }
+
+    public set propOpen(open: boolean) {
+        if (open !== this.internalOpen && !this.disabled) {
+            this.manageOpeningAndClosing(open);
+
+            this.internalOpen = open;
+            this.emitUpdateOpen(open);
+        }
     }
 
     public get transitionDuration(): number {
@@ -290,7 +323,7 @@ export class Portal extends ModulVue implements PortalMixin {
     private toggle(event: MouseEvent): void {
         if (!this.disabled && event.button !== undefined && event.button === MouseButtons.LEFT) {
             this.propOpen = !this.propOpen;
-            this.$emit('click', event);
+            this.emitClick(event);
         }
     }
 
@@ -311,18 +344,11 @@ export class Portal extends ModulVue implements PortalMixin {
             this.$nextTick(() => {
                 this.portalTargetMounted = true;
                 this.portalTargetEl = document.querySelector(this.portalTargetSelector) as HTMLElement;
-                this.$emit('portal-mounted');
+                this.emitPortalMounted();
                 onPortalReady();
             });
         } else {
             onPortalReady();
         }
-    }
-
-    @Watch('open', {
-        immediate: true
-    })
-    private openChanged(open: boolean): void {
-        this.propOpen = open;
     }
 }
