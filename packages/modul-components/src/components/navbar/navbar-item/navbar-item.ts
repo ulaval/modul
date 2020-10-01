@@ -3,6 +3,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Location } from 'vue-router';
 import { ModulVue } from '../../../utils/vue/vue';
 import { BaseNavbar, Navbar } from '../navbar';
+import './../navbar-unscoped.scss';
 import NavbarItemHelper from './navbar-item-helper';
 import WithRender from './navbar-item.html?style=./navbar-item.scss';
 

@@ -1,0 +1,25 @@
+@import 'commons';
+
+:root {
+    --m-navbar--background: none;
+    --m-navbar--tab-border-bottom-width: 1px;
+    --m-navbar--tab-border-bottom-color: #{ $m-color--border };
+    //
+    --m-navbar-item--background: none;
+    --m-navbar-item--selected-background: none;
+    --m-navbar-item--hover-background: none;
+    //
+    --m-navbar-item--font-size: #{ $m-font-size };
+    //
+    --m-navbar-item--hover-border-color: #{ $m-color--active };
+    --m-navbar-item--selected-border-color: #{ $m-color--active };
+    //
+    --m-navbar-item--color: #{ $m-color--text };
+    --m-navbar-item--hover-color: #{ $m-color--text };
+    --m-navbar-item--selected-color: #{ $m-color--text };
+    //
+    --m-navbar-item--font-weight: #{ $m-font-weight };
+    --m-navbar-item--selected-font-weight: #{ $m-font-weight };
+    //
+    --m-navbar-item--text-transform: none;
+}

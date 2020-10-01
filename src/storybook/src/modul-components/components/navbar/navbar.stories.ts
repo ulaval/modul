@@ -1,4 +1,5 @@
 import { boolean, select, text } from '@storybook/addon-knobs';
+import { MAutoHorizontalScrollGradientStyle } from '@ulaval/modul-components/dist/components/auto-horizontal-scroll/auto-horizontal-scroll';
 import { NAVBAR_ITEM_NAME, NAVBAR_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { MNavbarSkin } from '@ulaval/modul-components/dist/components/navbar/navbar';
 import { Enums } from '@ulaval/modul-components/dist/utils/enums/enums';
@@ -120,7 +121,7 @@ export const multiline = () => ({
     }),
     template: `<${NAVBAR_NAME}
         :selected.sync="selectedItem"
-        skin="nav-main"
+        skin="${MNavbarSkin.NavMain}"
     >
         <${NAVBAR_ITEM_NAME}
             v-for="i in 5"
@@ -138,7 +139,7 @@ export const noMultiline = () => ({
     }),
     template: `<${NAVBAR_NAME}
         :selected.sync="selectedItem"
-        skin="nav-main"
+        skin="${MNavbarSkin.NavMain}"
         :multiline="false"
     >
         <${NAVBAR_ITEM_NAME}
@@ -397,3 +398,30 @@ export const slotRightContain = () => ({
     </${NAVBAR_NAME}>`
 });
 
+export const propButtonGradientStyle = () => ({
+    data: () => ({
+        selectedItem: 8
+    }),
+    props: {
+        buttonGradientStyle: {
+            default: select(
+                'button-gradient-style',
+                Enums.toValueArray(MAutoHorizontalScrollGradientStyle),
+                MAutoHorizontalScrollGradientStyle.InteractiveDarker
+            )
+        }
+    },
+    template: `<${NAVBAR_NAME}
+        :selected.sync="selectedItem"
+        :button-gradient-style="buttonGradientStyle"
+        skin="${MNavbarSkin.NavMain}"
+    >
+        <${NAVBAR_ITEM_NAME}
+            v-for="i in 20"
+            :key="i"
+            :value="i"
+        >
+            Item navbar #{{i}}
+        </${NAVBAR_ITEM_NAME}>
+    </${NAVBAR_NAME}>`
+});
