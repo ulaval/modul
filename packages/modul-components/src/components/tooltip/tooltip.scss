@@ -13,7 +13,7 @@ $m-tooltip--max-height: 280px !default;
     }
 
     &.m--is-mode-definition {
-        .m-tooltip__link /deep/ .m-link__text> :first-child {
+        .m-tooltip__link /deep/ .m-link__text > :first-child {
             border-bottom: 1px dotted currentColor;
         }
     }
