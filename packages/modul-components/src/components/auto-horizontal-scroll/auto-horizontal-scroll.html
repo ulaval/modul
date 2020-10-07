@@ -5,10 +5,11 @@
             'm--has-left-gradient': hasLeftGradient,
             'm--has-right-gradient': hasRightGradient,
             'm--has-previous-button': hasPreviousButton,
-            'm--has-next-button': hasNextButton
+            'm--has-next-button': hasNextButton,
+            'm--is-drag-active': dragActive,
+            'm--is-dragging': isDragging && hasHorizontalScroll,
         },
         'm--is-gradient-style-' + gradientStyle
-
     ]"
      :style="componentHeightStyle">
     <transition name="m--is">
@@ -40,9 +41,6 @@
     </transition>
     <div ref="body"
          class="m-auto-horizontal-scroll__body"
-         :class="{
-                'm--is-dragging': isDragging && hasHorizontalScroll,
-            }"
          @scroll="onScroll()"
          @mousedown="onMousedown($event)"
          @mouseleave="onMouseleave()"

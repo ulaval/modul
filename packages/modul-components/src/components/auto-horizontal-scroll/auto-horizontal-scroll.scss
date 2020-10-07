@@ -19,10 +19,6 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
             width: 10px;
             height: 10px;
         }
-
-        &.m--is-dragging {
-            cursor: dragging;
-        }
     }
 
     &__button-area {
@@ -152,5 +148,22 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
 
 .m-auto-horizontal-scroll.m--has-horizontal-scrollbar {
     overflow: hidden;
+
+    &.m--is-drag-active {
+        cursor: move;
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+
+        &:active,
+        &.m--is-dragging {
+            cursor: grabbing;
+            cursor: -moz-grabbing;
+            cursor: -webkit-grabbing;
+        }
+    }
+
+
+
 }
 
