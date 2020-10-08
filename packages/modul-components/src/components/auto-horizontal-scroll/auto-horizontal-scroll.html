@@ -6,7 +6,7 @@
             'm--has-right-gradient': hasRightGradient,
             'm--has-previous-button': hasPreviousButton,
             'm--has-next-button': hasNextButton,
-            'm--is-drag-active': dragActive,
+            'm--is-drag-active': dragActive && hasHorizontalScroll,
             'm--is-dragging': isDragging && hasHorizontalScroll,
         },
         'm--is-gradient-style-' + gradientStyle
