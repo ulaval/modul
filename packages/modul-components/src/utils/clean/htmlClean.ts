@@ -4,13 +4,19 @@ function createMultiTagsRegexString(tags: string[]): string {
 }
 
 export function eraseNewLines(html: string): string {
-    return html.replace(/\n|\r/g, '');
+    if (typeof html === 'string') {
+        return html.replace(/\n|\r/g, '');
+    }
+    return '';
 }
 
 export function filterByTag(tag: string, html: string): string {
     const regex: RegExp = new RegExp(`<${tag}([^>]*)>([^]*)</${tag}>`, 'gmi');
+    if (typeof html === 'string') {
+        return html.replace(regex, '');
+    }
 
-    return html.replace(regex, '');
+    return '';
 }
 
 export function filterByTags(tags: string[], html: string): string {
@@ -19,7 +25,12 @@ export function filterByTags(tags: string[], html: string): string {
 
 export function replaceTag(tag: string, replace: string, html: string): string {
     const openingTag: RegExp = new RegExp(`<${tag}([^>]*)>`, 'gmi');
-    return html.replace(openingTag, `<${replace}>`).replace(`${tag}>`, `${replace}>`);
+
+    if (typeof html === 'string') {
+        return html.replace(openingTag, `<${replace}>`).replace(`${tag}>`, `${replace}>`);
+    }
+
+    return '';
 }
 
 export function replaceTags(tags: string[], replace: string, html: string): string {
@@ -29,7 +40,11 @@ export function replaceTags(tags: string[], replace: string, html: string): stri
 export function eraseTag(tag: string, html: string): string {
     const regex: RegExp = new RegExp(`(<${tag}([^>]*)>)|(</${tag}>)`, 'gmi');
 
-    return html.replace(regex, '');
+    if (typeof html === 'string') {
+        return html.replace(regex, '');
+    }
+    return '';
+
 }
 
 export function eraseTags(tags: string[], html: string): string {
@@ -39,5 +54,8 @@ export function eraseTags(tags: string[], html: string): string {
 export function eraseTagAndAllIsContent(tag: string, html: string): string {
     const regex: RegExp = new RegExp(`(<${tag}([^>]*)>)[^>]*(</${tag}>)`, 'gmi');
 
-    return html.replace(regex, '');
+    if (typeof html === 'string') {
+        return html.replace(regex, '');
+    }
+    return '';
 }
