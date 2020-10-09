@@ -1,5 +1,4 @@
 import { configure } from '@storybook/vue';
-import { config } from '@vue/test-utils';
 import fs from 'fs';
 import path from 'path';
 import Vue from 'vue';
@@ -11,9 +10,6 @@ Vue.config.productionTip = false;
 Vue.config.silent = true;
 
 Vue.use(getModulConfig(true));
-
-config.stubs = {};
-config.stubs['portal'] = { template: '<div"><slot /></div>' };
 
 // this function mimick a require.context in jest..
 // taken from https://stackoverflow.com/questions/38332094/how-can-i-mock-webpacks-require-context-in-jest/54151648#54151648
