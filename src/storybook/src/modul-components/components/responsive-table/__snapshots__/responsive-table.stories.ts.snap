@@ -795,7 +795,12 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
                 <div
                   class="m-empty-area__content-area"
                 >
-                  <!---->
+                  <svg
+                    aria-hidden="true"
+                    class="m-svg m-empty-area__icon"
+                    height="30px"
+                    width="30px"
+                  />
                    
                   <div
                     class="m-empty-area__title-area"
@@ -5288,7 +5293,12 @@ exports[`Storyshots modul-components|m-responsive-table Table Without Data 1`] =
                 <div
                   class="m-empty-area__content-area"
                 >
-                  <!---->
+                  <svg
+                    aria-hidden="true"
+                    class="m-svg m-empty-area__icon"
+                    height="60px"
+                    width="60px"
+                  />
                    
                   <div
                     class="m-empty-area__title-area"
