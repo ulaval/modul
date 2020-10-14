@@ -23,7 +23,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/m-address/${ADDRESS_LOOKUP_F
             }
         },
         template: `<div>
-            current key is: {{ $addressLookup.key }}
+            current key is: {{ $addressLookup?.key }}
             <${ADDRESS_LOOKUP_FIELD_NAME}
                 :origin="origin"
                 :language="language"
