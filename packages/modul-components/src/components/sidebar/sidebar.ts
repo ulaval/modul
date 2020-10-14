@@ -2,6 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 import { I18N_NAME, ICON_BUTTON_NAME, SIDEBAR_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
@@ -31,42 +32,42 @@ export enum MSidebarCloseButtonPosition {
 export class MSidebar extends ModulVue implements PortalMixinImpl {
     @Prop({
         default: MSidebarOrigin.Bottom,
-        validator: value =>
-            value === MSidebarOrigin.Top ||
-            value === MSidebarOrigin.Right ||
-            value === MSidebarOrigin.Left ||
-            value === MSidebarOrigin.Bottom
+        validator: value => Enums.toValueArray(MSidebarOrigin).includes(value)
     })
-    public origin: MSidebarOrigin;
+    public readonly origin: MSidebarOrigin;
 
     @Prop()
-    public width: string;
+    public readonly width: string;
+
     @Prop()
-    public title: string;
+    public readonly title: string;
+
     @Prop({ default: true })
-    public closeButton: boolean;
+    public readonly closeButton: boolean;
+
     @Prop({
         default: MSidebarCloseButtonPosition.Right,
-        validator: value =>
-            value === MSidebarCloseButtonPosition.Right ||
-            value === MSidebarCloseButtonPosition.Left
+        validator: value => Enums.toValueArray(MSidebarCloseButtonPosition).includes(value)
     })
-    public closeButtonPosition: MSidebarCloseButtonPosition;
+    public readonly closeButtonPosition: MSidebarCloseButtonPosition;
 
     @Prop({ default: true })
-    public focusManagement: boolean;
+    public readonly focusManagement: boolean;
 
     @Prop({ default: true })
-    public closeOnBackdrop: boolean;
+    public readonly closeOnBackdrop: boolean;
 
     @Prop({ default: true })
-    public padding: boolean;
+    public readonly padding: boolean;
+
     @Prop({ default: true })
-    public paddingHeader: boolean;
+    public readonly paddingHeader: boolean;
+
     @Prop({ default: true })
-    public paddingBody: boolean;
+    public readonly paddingBody: boolean;
+
     @Prop({ default: true })
-    public paddingFooter: boolean;
+    public readonly paddingFooter: boolean;
 
     @Prop({ default: false })
     public fullHeight: boolean;
@@ -80,6 +81,23 @@ export class MSidebar extends ModulVue implements PortalMixinImpl {
 
     public get popupBody(): HTMLElement {
         return this.$refs.article.querySelector('.m-popup__body') as HTMLElement;
+    }
+
+    public get hasHeader(): boolean {
+        return Boolean(this.title) || (this.closeButton && this.origin !== MSidebarOrigin.Bottom);
+    }
+
+    public get marginLeft(): string {
+        return this.origin === MSidebarOrigin.Right ? 'calc(100% - ' + this.propWidth + ')' : '';
+    }
+
+    public get propWidth(): string {
+        if (this.origin === MSidebarOrigin.Left || this.origin === MSidebarOrigin.Right) {
+            return this.width ? this.width : '50%';
+        } else {
+            return '100%';
+        }
+
     }
 
     public handlesFocus(): boolean {
@@ -98,52 +116,18 @@ export class MSidebar extends ModulVue implements PortalMixinImpl {
         return this.$refs.article;
     }
 
-    protected mounted(): void {
-        this.as<Portal>().transitionDuration = PortalTransitionDuration.Slow;
+    public closeModal(): void {
+        this.as<PortalMixin>().tryClose();
     }
 
-    private get hasHeaderSlot(): boolean {
-        return !!this.$slots.header;
-    }
-
-    private get hasDefaultSlot(): boolean {
-        return !!this.$slots.default;
-    }
-
-    private get hasHeader(): boolean {
-        return this.hasHeaderSlot || this.hasTitle || (this.closeButton && this.origin !== MSidebarOrigin.Bottom);
-    }
-
-    private get hasTitle(): boolean {
-        return !!this.title;
-    }
-
-    private get hasFooterSlot(): boolean {
-        return !!this.$slots.footer;
-    }
-
-    private backdropClick(): void {
+    public backdropClick(): void {
         if (this.closeOnBackdrop) {
             this.as<PortalMixin>().tryClose();
         }
     }
 
-    private closeModal(): void {
-        this.as<PortalMixin>().tryClose();
-    }
-
-    private get marginLeft(): string {
-        return this.origin === MSidebarOrigin.Right ? 'calc(100% - ' + this.propWidth + ')' : '';
-    }
-
-    private get propWidth(): string {
-
-        if (this.origin === MSidebarOrigin.Left || this.origin === MSidebarOrigin.Right) {
-            return this.width ? this.width : '50%';
-        } else {
-            return '100%';
-        }
-
+    protected mounted(): void {
+        this.as<Portal>().transitionDuration = PortalTransitionDuration.Slow;
     }
 }
 

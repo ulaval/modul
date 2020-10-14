@@ -206,8 +206,9 @@ describe(`MToast`, () => {
             });
         });
         describe(`When the variable is set to true`, () => {
-            it(`should appear`, () => {
+            it(`should appear`, async () => {
                 wrapper.vm.$props.open = true;
+                await Vue.nextTick();
                 expect(((wrapper.vm as any) as PortalMixin).propOpen).toBe(true);
             });
         });

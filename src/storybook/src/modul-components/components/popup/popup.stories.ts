@@ -11,47 +11,79 @@ export default {
 export const defaultStory = () => ({
     props: {
         closeOnBackdrop: {
-            default: boolean('Toggle closeOnBackdrop', true)
+            default: boolean('Prop close-on-backdrop', true)
         },
         width: {
-            default: text('Width', 'auto')
+            default: text('Prop width', 'auto')
         },
         shadow: {
-            default: boolean('Toggle shadow', true)
+            default: boolean('Prop shadow', true)
         },
         padding: {
-            default: boolean('Toggle padding', true)
+            default: boolean('Prop padding', true)
         },
         paddingHeader: {
-            default: boolean('Toggle paddingHeader', true)
+            default: boolean('Prop padding-header', true)
         },
         paddingBody: {
-            default: boolean('Toggle paddingBody', true)
+            default: boolean('Prop padding-body', true)
         },
         paddingFooter: {
-            default: boolean('Toggle paddingFooter', true)
+            default: boolean('Prop padding-footer', true)
         },
         background: {
-            default: boolean('Toggle background', true)
+            default: boolean('Prop background', true)
+        },
+        slotHeader: {
+            default: boolean('Slot header', true)
+        },
+        slotFooter: {
+            default: boolean('Slot footer', true)
         }
     },
     methods: actions(
-        'open',
-        'close',
-        'portalMounted',
-        'portalAfterOpen'
+        'emitOpen',
+        'emitClose',
+        'emitPortalMounted',
+        'emitPortalAfterOpen'
     ),
-    template: `<div>
-                <m-popup :close-on-backdrop="closeOnBackdrop" :width="width" :shadow="shadow" :padding="padding" :padding-header="paddingHeader" :padding-body="paddingBody" :padding-footer="paddingFooter" :background="background" @open="open" @close="close" @portal-mounted="portalMounted" @portal-after-open="portalAfterOpen">
-                    <m-button slot="trigger">Open popper</m-button>
-                    <p slot="header">Header</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p slot="footer">Footer</p>
-                </m-popup>
-            </div>`
+    template: `<${POPUP_NAME}
+        :close-on-backdrop="closeOnBackdrop"
+        :width="width"
+        :shadow="shadow"
+        :padding="padding"
+        :padding-header="paddingHeader"
+        :padding-body="paddingBody"
+        :padding-footer="paddingFooter"
+        :background="background"
+        @open="emitOpen"
+        @close="emitClose"
+        @portal-mounted="emitPortalMounted"
+        @portal-after-open="emitPortalAfterOpen"
+    >
+        <m-button slot="trigger">Open popper</m-button>
+        <p
+            v-if="slotHeader"
+            slot="header"
+        >
+           Slot header
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p
+            v-if="slotFooter"
+            slot="footer"
+        >
+            Slot footer
+        </p>
+    </${POPUP_NAME}>`
 });
 defaultStory.story = {
     name: 'default'
 };
 
-export const closeOnBackdropDisabled = () => '<m-popup :close-on-backdrop="false"><m-button slot="trigger">Open popper</m-button><p>Cannot close popup by clicking outside</p></m-popup>';
+export const closeOnBackdropDisabled = () => `<${POPUP_NAME}
+    :close-on-backdrop="false"
+>
+    <m-button slot="trigger">Open popper</m-button>
+    <p>Cannot close popup by clicking outside</p>
+</${POPUP_NAME}>`;

@@ -95,7 +95,9 @@ $m-tooltip--max-height: 280px !default;
 
     &.m--is-size-large {
         .m-tooltip__body {
-            width: $m-tooltip--width--l;
+            @media (min-width: $m-mq--min--s) {
+                width: $m-tooltip--width--l;
+            }
         }
     }
 
