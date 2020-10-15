@@ -95,7 +95,7 @@ export interface MTableEmptyArea {
     title?: string;
     subtitle?: string;
     svgName?: string;
-    svgSize?: MEmptyAreaDisplayMode;
+    svgSize?: string;
     buttonText?: string;
     buttonType?: MEmptyAreaButtonType;
     backgroundStyle?: MEmptyAreaBackgroundStyle;
