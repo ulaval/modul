@@ -111,7 +111,7 @@ export class MAutoHorizontalScroll extends ModulVue {
     public couldHaveRightContent: boolean = false;
     public componentWidth: string = '';
     public componentHeight: string = '';
-    public scrollLeftCounter: number = 0;
+    public scrollLeftCounter: number = -1;
     public scrollAnimationActive: boolean = false;
     public scrollAnimationInterval: any;
     public isDragging: boolean = false;
@@ -146,15 +146,9 @@ export class MAutoHorizontalScroll extends ModulVue {
     @Watch('horizontalScrollOffset', { immediate: true })
     public async onHorizontalScrollOffsetChange(): Promise<void> {
         await this.$nextTick();
-        const maxScrollLeft: number = this.$refs.bodyContent.scrollWidth - this.$refs.body.clientWidth;
+        this.scrollLeftCounter++;
         if (this.scrollAnimationActive) {
             this.stopScrollAnimation();
-            return;
-        } else if (this.horizontalScrollOffset < 0) {
-            this.emitUpdateHorizontalScrollOffset(0);
-            return;
-        } else if (this.horizontalScrollOffset > maxScrollLeft) {
-            this.emitUpdateHorizontalScrollOffset(maxScrollLeft - 0.5);
             return;
         }
         if (
@@ -169,7 +163,6 @@ export class MAutoHorizontalScroll extends ModulVue {
             }
 
         }
-        this.scrollLeftCounter++;
     }
 
     @Watch('rightGradientActive')
@@ -253,7 +246,11 @@ export class MAutoHorizontalScroll extends ModulVue {
     public async startScrollAnimation(): Promise<void> {
         this.scrollAnimationActive = true;
         await this.$nextTick();
-        if (this.$refs.body && this.$refs.body.scrollLeft >= 0) {
+
+        const bodyEl: HTMLElement = this.$refs.body;
+        const bodyScrollLeft: number = this.$refs.body.scrollLeft;
+
+        if (this.$refs.body) {
             const initialScrollLeft: number = this.$refs.body.scrollLeft;
             const difference: number =
                 this.horizontalScrollOffset - initialScrollLeft <=
@@ -286,7 +283,7 @@ export class MAutoHorizontalScroll extends ModulVue {
                     this.stopScrollAnimation();
                     window.clearInterval(scrollAnimationInterval);
                 } else {
-                    this.$refs.body.scrollLeft += increment;
+                    this.setScrollLeftOffset(this.$refs.body.scrollLeft += increment);
                 }
             }, intervalDelay);
         }
@@ -300,7 +297,7 @@ export class MAutoHorizontalScroll extends ModulVue {
     public async onScroll(): Promise<void> {
         const bodyEl: HTMLElement = this.$refs.body;
 
-        if (bodyEl && bodyEl.scrollLeft >= 0 && !this.scrollAnimationActive) {
+        if (bodyEl && !this.scrollAnimationActive) {
             this.emitUpdateHorizontalScrollOffset(bodyEl.scrollLeft);
         }
 
@@ -372,6 +369,25 @@ export class MAutoHorizontalScroll extends ModulVue {
                 : 0
         });
         this.checkGradientPresence();
+    }
+
+    private async setScrollLeftOffset(scrollLeftOffset: number): Promise<void> {
+        await this.$nextTick();
+
+        if (!this.$refs.body) {
+            return;
+        }
+
+        const maxScrollLeft: number = this.$refs.bodyContent.scrollWidth - this.$refs.body.clientWidth;
+        if (scrollLeftOffset < 0) {
+            this.$refs.body.scrollLeft = 0;
+            this.scrollAnimationActive = false;
+        } else if (scrollLeftOffset >= maxScrollLeft) {
+            this.$refs.body.scrollLeft = maxScrollLeft - 0.5;
+            this.scrollAnimationActive = false;
+        } else {
+            this.$refs.body.scrollLeft = scrollLeftOffset;
+        }
     }
 
     private async checkGradientPresence(): Promise<void> {
