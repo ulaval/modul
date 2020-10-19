@@ -1,5 +1,5 @@
 import { PluginObject } from 'vue';
-import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import { Component, Emit, Prop, Ref, Watch } from 'vue-property-decorator';
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
@@ -101,10 +101,11 @@ export class MAutoHorizontalScroll extends ModulVue {
     })
     public readonly displayHorizontalScrollbar!: boolean;
 
-    public $refs!: {
-        body: HTMLElement;
-        bodyContent: HTMLElement;
-    };
+    @Ref('body')
+    public readonly refBody: HTMLElement;
+
+    @Ref('bodyContent')
+    public readonly refBodyContent: HTMLElement;
 
     public hasHorizontalScroll: boolean = false;
     public couldHaveLeftContent: boolean = false;
@@ -152,12 +153,12 @@ export class MAutoHorizontalScroll extends ModulVue {
             return;
         }
         if (
-            this.$refs.body &&
-            this.horizontalScrollOffset !== this.$refs.body.scrollLeft
+            this.refBody &&
+            this.horizontalScrollOffset !== this.refBody.scrollLeft
         ) {
 
             if (this.scrollLeftCounter <= 0) {
-                this.$refs.body.scrollLeft = this.horizontalScrollOffset;
+                this.refBody.scrollLeft = this.horizontalScrollOffset;
             } else {
                 this.startScrollAnimation();
             }
@@ -247,16 +248,13 @@ export class MAutoHorizontalScroll extends ModulVue {
         this.scrollAnimationActive = true;
         await this.$nextTick();
 
-        const bodyEl: HTMLElement = this.$refs.body;
-        const bodyScrollLeft: number = this.$refs.body.scrollLeft;
-
-        if (this.$refs.body) {
-            const initialScrollLeft: number = this.$refs.body.scrollLeft;
+        if (this.refBody) {
+            const initialScrollLeft: number = this.refBody.scrollLeft;
             const difference: number =
                 this.horizontalScrollOffset - initialScrollLeft <=
-                    this.$refs.body.scrollWidth
+                    this.refBody.scrollWidth
                     ? this.horizontalScrollOffset - initialScrollLeft
-                    : this.$refs.body.scrollWidth;
+                    : this.refBody.scrollWidth;
             const intervalDelay: number = difference > 500 ? 7 : 10;
             const increment: number = difference / intervalDelay;
             const isPositiveIncrement: boolean = increment > 0;
@@ -266,16 +264,16 @@ export class MAutoHorizontalScroll extends ModulVue {
                 counter += intervalDelay;
                 if (
                     !this.scrollAnimationActive ||
-                    !this.$refs.body ||
-                    this.$refs.body.scrollLeft === undefined ||
+                    !this.refBody ||
+                    this.refBody.scrollLeft === undefined ||
                     (
                         (
                             isPositiveIncrement &&
-                            this.$refs.body.scrollLeft >= this.horizontalScrollOffset
+                            this.refBody.scrollLeft >= this.horizontalScrollOffset
                         ) ||
                         (
                             !isPositiveIncrement &&
-                            this.$refs.body.scrollLeft <= this.horizontalScrollOffset
+                            this.refBody.scrollLeft <= this.horizontalScrollOffset
                         ) ||
                         counter >= 5000
                     )
@@ -283,7 +281,7 @@ export class MAutoHorizontalScroll extends ModulVue {
                     this.stopScrollAnimation();
                     window.clearInterval(scrollAnimationInterval);
                 } else {
-                    this.setScrollLeftOffset(this.$refs.body.scrollLeft += increment);
+                    this.setScrollLeftOffset(this.refBody.scrollLeft += increment);
                 }
             }, intervalDelay);
         }
@@ -295,10 +293,8 @@ export class MAutoHorizontalScroll extends ModulVue {
     }
 
     public async onScroll(): Promise<void> {
-        const bodyEl: HTMLElement = this.$refs.body;
-
-        if (bodyEl && !this.scrollAnimationActive) {
-            this.emitUpdateHorizontalScrollOffset(bodyEl.scrollLeft);
+        if (this.refBody && !this.scrollAnimationActive) {
+            this.emitUpdateHorizontalScrollOffset(this.refBody.scrollLeft);
         }
 
         await this.checkGradientPresence();
@@ -306,8 +302,8 @@ export class MAutoHorizontalScroll extends ModulVue {
 
     public onMousedown(e: MouseEvent): void {
         this.isDragging = this.dragActive;
-        this.startXDragging = e.pageX - this.$refs.body.offsetLeft;
-        this.scrollLeftDragging = this.$refs.body.scrollLeft;
+        this.startXDragging = e.pageX - this.refBody.offsetLeft;
+        this.scrollLeftDragging = this.refBody.scrollLeft;
     }
 
     public onMouseleave(): void {
@@ -323,17 +319,17 @@ export class MAutoHorizontalScroll extends ModulVue {
             return;
         }
         e.preventDefault();
-        const x: number = e.pageX - this.$refs.body.offsetLeft;
+        const x: number = e.pageX - this.refBody.offsetLeft;
         const walk: number = (x - this.startXDragging) * 2;
-        this.$refs.body.scrollLeft = this.scrollLeftDragging - walk;
+        this.refBody.scrollLeft = this.scrollLeftDragging - walk;
     }
 
     protected mounted(): void {
         this.resizeComponent();
         this.$on('resizeDone', this.resizeComponent);
 
-        if (this.$refs.bodyContent) {
-            this.observer.observe(this.$refs.bodyContent, {
+        if (this.refBodyContent) {
+            this.observer.observe(this.refBodyContent, {
                 subtree: true,
                 childList: true
             });
@@ -357,15 +353,15 @@ export class MAutoHorizontalScroll extends ModulVue {
             : '100%';
         this.hasHorizontalScroll =
             this.$el.clientWidth < parseInt(this.minWidth, 10);
-        this.componentHeight = Boolean(this.$refs.bodyContent)
-            ? `${this.$refs.bodyContent.clientHeight - 1}px`
+        this.componentHeight = Boolean(this.refBodyContent)
+            ? `${this.refBodyContent.clientHeight - 1}px`
             : '';
         this.emitResize({
             element: this.$el as HTMLElement,
             hasHorizontalScroll: this.hasHorizontalScroll,
             componentWidth: this.componentWidth,
-            horizontalScollbarWidth: this.$refs.bodyContent.scrollWidth
-                ? this.$refs.bodyContent.scrollWidth
+            horizontalScollbarWidth: this.refBodyContent.scrollWidth
+                ? this.refBodyContent.scrollWidth
                 : 0
         });
         this.checkGradientPresence();
@@ -374,19 +370,19 @@ export class MAutoHorizontalScroll extends ModulVue {
     private async setScrollLeftOffset(scrollLeftOffset: number): Promise<void> {
         await this.$nextTick();
 
-        if (!this.$refs.body) {
+        if (!this.refBody) {
             return;
         }
 
-        const maxScrollLeft: number = this.$refs.bodyContent.scrollWidth - this.$refs.body.clientWidth;
+        const maxScrollLeft: number = this.refBodyContent.scrollWidth - this.refBody.clientWidth;
         if (scrollLeftOffset < 0) {
-            this.$refs.body.scrollLeft = 0;
+            this.refBody.scrollLeft = 0;
             this.scrollAnimationActive = false;
         } else if (scrollLeftOffset >= maxScrollLeft) {
-            this.$refs.body.scrollLeft = maxScrollLeft - 0.5;
+            this.refBody.scrollLeft = maxScrollLeft - 0.5;
             this.scrollAnimationActive = false;
         } else {
-            this.$refs.body.scrollLeft = scrollLeftOffset;
+            this.refBody.scrollLeft = scrollLeftOffset;
         }
     }
 
@@ -394,15 +390,15 @@ export class MAutoHorizontalScroll extends ModulVue {
         await this.$nextTick();
         this.couldHaveLeftContent =
             this.hasHorizontalScroll &&
-            Boolean(this.$refs.body) &&
-            this.$refs.body.scrollLeft > 2;
+            Boolean(this.refBody) &&
+            this.refBody.scrollLeft > 2;
         this.couldHaveRightContent =
             this.hasHorizontalScroll &&
-            Boolean(this.$refs.body) &&
-            this.$refs.body.scrollLeft <=
+            Boolean(this.refBody) &&
+            this.refBody.scrollLeft <=
             Math.round(
-                this.$refs.body.scrollWidth -
-                this.$refs.body.clientWidth -
+                this.refBody.scrollWidth -
+                this.refBody.clientWidth -
                 2
             );
     }
