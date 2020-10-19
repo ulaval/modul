@@ -39,7 +39,7 @@ const AddressLookupPlugin: PluginObject<any> = {
         } else if (!(Object.keys(options.googleProxy).length === 0 && options.googleProxy.constructor === Object)) {
             addressLookup = new AddressLookupGoogleProxyService(options.googleProxy.findPromise, options.googleProxy.retrievePromise, options.googleProxy.findErrorCallback, options.googleProxy.retrieveErrorCallback);
         } else {
-            v.prototype.$log.error(`You need to provide a Loqate Web Service, Google Maps API key or Proxies URL to Google.`);
+            v.prototype.$log.warn(`You need to provide a Loqate Web Service, Google Maps API key or Proxies URL to Google.`);
         }
 
         v.prototype.$addressLookup = addressLookup;

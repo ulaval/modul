@@ -1,5 +1,8 @@
 <div class="m-base-select"
-     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+     :style="{
+         width: inputWidth,
+         maxWidth: inputMaxWidth
+     }">
     <div v-m-popup:popup
          class="m-base-select__popup">
         <slot :toggle="togglePopup"
@@ -11,14 +14,12 @@
               :key-space="onKeydownSpace"
               :key-home="onKeydownHome"
               :key-end="onKeydownEnd"
-              :key-letter="onKeydownLetter"></slot>
+              :key-letter="onKeydownLetter" />
     </div>
-
-    <slot name="validation-message"></slot>
-
+    <slot name="validation-message" />
     <m-popup ref="popup"
              placement="bottom-start"
-             :open.sync="internalOpen"
+             :open.sync="popupOpen"
              :disabled="!active"
              :enter="transitionEnter"
              :leave="transitionLeave"
@@ -30,29 +31,28 @@
              :open-trigger="'manual'"
              :sidebar-full-height="sidebarFullHeight"
              width="100%"
-             @open="onOpen"
-             @close="onClose">
-        <template slot="header">
-            <slot name="popup-header"
-                  :key-up="onKeydownUp"
-                  :key-down="onKeydownDown"
-                  :key-tab="onKeydownTab"
-                  :key-esc="onKeydownEsc"
-                  :key-enter="onKeydownEnter"
-                  :key-space="onKeydownSpace"
-                  :key-home="onKeydownHome"
-                  :key-end="onKeydownEnd"
-                  :key-letter="onKeydownLetter">
-            </slot>
-        </template>
+             @open="emitOpen"
+             @close="emitClose">
+
+        <slot name="popup-header"
+              slot="header"
+              :key-up="onKeydownUp"
+              :key-down="onKeydownDown"
+              :key-tab="onKeydownTab"
+              :key-esc="onKeydownEsc"
+              :key-enter="onKeydownEnter"
+              :key-space="onKeydownSpace"
+              :key-home="onKeydownHome"
+              :key-end="onKeydownEnd"
+              :key-letter="onKeydownLetter" />
 
         <ul :id="ariaControls"
             class="m-base-select__list"
+            :class="{ 'm--is-virutalScroll': virtualScroll }"
+            :style="{ minWidth: inputMaxWidth, maxHeight: listMaxHeightProps }"
             ref="items"
             :aria-labelledby="controlId"
-            aria-live="polite"
-            :class="{ 'm--is-virutalScroll': virtualScroll }"
-            :style="{ minWidth: inputMaxWidth, maxHeight: listMaxHeightProps }">
+            aria-live="polite">
 
             <slot name="outer-items"
                   :items="items"
@@ -67,8 +67,6 @@
                     </m-select-item>
                 </template>
             </slot>
-
         </ul>
     </m-popup>
-
 </div>

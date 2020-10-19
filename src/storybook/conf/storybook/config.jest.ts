@@ -5,6 +5,10 @@ import Vue from 'vue';
 import { getModulConfig } from '../../src/modul';
 
 
+// do not display vue error in tests
+Vue.config.productionTip = false;
+Vue.config.silent = true;
+
 Vue.use(getModulConfig(true));
 
 // this function mimick a require.context in jest..

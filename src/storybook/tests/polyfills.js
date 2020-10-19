@@ -26,8 +26,6 @@ if (!window.Element.prototype.closest) {
     };
 }
 
-window.requestAnimationFrame = callback => callback();
-
 // FIX Cannot read property 'split' of undefined error when running tests.  It is related to vue-test-utils
 // https://github.com/vuejs/vue-test-utils/issues/839
 // The issue is marked as closed, but it still occurs.

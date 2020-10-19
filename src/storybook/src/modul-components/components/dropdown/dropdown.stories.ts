@@ -222,7 +222,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/disabled`, m
                         <m-dropdown-item value="e" label="Vision"></m-dropdown-item>
                         <m-dropdown-item value="f" label="Captain America"></m-dropdown-item>
                     </m-dropdown>
-                <div>`
+                </div>`
     }))
 
     .add('No selection, no label, with placeholder', () => ({
@@ -256,7 +256,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/disabled`, m
                         <m-dropdown-item value="e" label="Vision"></m-dropdown-item>
                         <m-dropdown-item value="f" label="Captain America"></m-dropdown-item>
                     </m-dropdown>
-                <div>`
+                </div>`
     }))
 
     .add('Item selected, with label', () => ({
@@ -273,6 +273,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/disabled`, m
                         <m-dropdown-item value="e" label="Vision"></m-dropdown-item>
                         <m-dropdown-item value="f" label="Captain America"></m-dropdown-item>
                     </m-dropdown>
-                <div>`
+                </div>`
     }));
 

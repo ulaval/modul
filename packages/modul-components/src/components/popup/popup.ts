@@ -1,14 +1,15 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { MOpenTrigger, OpenTrigger, OpenTriggerMixin } from '../../mixins/open-trigger/open-trigger';
+import { Enums } from '../../utils/enums/enums';
+import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
 import { POPPER_NAME, POPUP_NAME, SIDEBAR_NAME } from '../component-names';
 import { MPopper, MPopperPlacement } from '../popper/popper';
 import { MSidebar } from '../sidebar/sidebar';
 import WithRender from './popup.html?style=./popup.scss';
-
 
 @WithRender
 @Component({
@@ -19,63 +20,96 @@ import WithRender from './popup.html?style=./popup.scss';
     mixins: [MediaQueries, OpenTrigger]
 })
 export class MPopup extends ModulVue {
+    @Prop()
+    public readonly open: boolean;
+
+    @Prop({
+        default: MPopperPlacement.Bottom,
+        validator: value => Enums.toValueArray(MPopperPlacement).includes(value)
+    })
+    public readonly placement: MPopperPlacement;
+
+    @Prop({ default: MOpenTrigger.Click })
+    public readonly openTrigger: MOpenTrigger;
 
     @Prop()
-    public open: boolean;
-    @Prop({ default: MPopperPlacement.Bottom })
-    public placement: MPopperPlacement;
-    @Prop({ default: MOpenTrigger.Click })
-    public openTrigger: MOpenTrigger;
-    @Prop()
-    public closeOnBackdrop: boolean;
+    public readonly closeOnBackdrop: boolean;
+
     @Prop({ default: true })
-    public focusManagement: boolean;
-    @Prop({ default: 'auto' })
-    public width: string;
+    public readonly focusManagement: boolean;
+
+    @Prop({
+        default: 'auto',
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value) || value === 'auto'
+    })
+    public readonly width: string;
+
     @Prop()
-    public id: string;
+    public readonly id: string;
+
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
+
     @Prop()
-    public shadow: boolean;
+    public readonly shadow: boolean;
+
     @Prop({ default: true })
-    public padding: boolean;
+    public readonly padding: boolean;
+
     @Prop({ default: true })
-    public paddingHeader: boolean;
+    public readonly paddingHeader: boolean;
+
     @Prop({ default: true })
-    public paddingBody: boolean;
+    public readonly paddingBody: boolean;
+
     @Prop({ default: true })
-    public paddingFooter: boolean;
+    public readonly paddingFooter: boolean;
+
     @Prop({ default: true })
-    public background: boolean;
+    public readonly background: boolean;
+
     @Prop()
-    public beforeEnter: any;
+    public readonly beforeEnter: any;
+
     @Prop()
-    public enter: any;
+    public readonly enter: any;
+
     @Prop()
-    public afterEnter: any;
+    public readonly afterEnter: any;
+
     @Prop()
-    public enterCancelled: any;
+    public readonly enterCancelled: any;
+
     @Prop()
-    public beforeLeave: any;
+    public readonly beforeLeave: any;
+
     @Prop()
-    public leave: any;
+    public readonly leave: any;
+
     @Prop()
-    public afterLeave: any;
+    public readonly afterLeave: any;
+
     @Prop()
-    public leaveCancelled: any;
+    public readonly leaveCancelled: any;
+
     @Prop()
-    public desktopOnly: boolean;
+    public readonly desktopOnly: boolean;
+
     @Prop()
-    public className: string;
+    public readonly className: string;
+
     @Prop()
-    public preload: boolean;
+    public readonly preload: boolean;
+
     @Prop()
-    public trigger: HTMLElement;
+    public readonly trigger: HTMLElement;
+
     @Prop({ default: true })
-    public lazy: boolean;
+    public readonly lazy: boolean;
+
     @Prop()
-    public sidebarFullHeight: boolean;
+    public readonly sidebarFullHeight: boolean;
 
     public $refs: {
         popper: MPopper;
@@ -83,17 +117,28 @@ export class MPopup extends ModulVue {
 
     private internalOpen: boolean = false;
 
+    @Emit('update:open')
+    public emitUpdateOpen(open: boolean): void { }
+
     @Emit('open')
-    public onOpen(): void { }
+    public emitOpen(): void { }
 
     @Emit('close')
-    public onClose(): void { }
+    public emitClose(): void { }
 
     @Emit('portal-mounted')
-    public onPortalMounted(): void { }
+    public emitPortalMounted(): void { }
 
     @Emit('portal-after-open')
-    public onPortalAfterOpen(): void { }
+    public emitPortalAfterOpen(): void { }
+
+    @Watch('open', { immediate: true })
+    public onOpenChange(open: boolean): void {
+        if (this.disabled) {
+            return;
+        }
+        this.internalOpen = open;
+    }
 
     public get popupBody(): Element {
         return (this.$children[0] as any).popupBody;
@@ -107,42 +152,26 @@ export class MPopup extends ModulVue {
         return this.trigger || this.as<OpenTriggerMixin>().triggerHook || undefined;
     }
 
-    public get hasTriggerSlot(): boolean {
-        return !!this.$slots.trigger;
-    }
-
-    public onSideBarOpen(value: boolean): void {
-
-        if (!this.disabled && this.isSidebarUsed) {
-            this.internalOpen = value;
-            this.$emit('update:open', value);
-        }
-    }
-
-    public onPopperOpen(value: boolean): void {
-        if (!this.disabled && !this.isSidebarUsed) {
-            this.internalOpen = value;
-            this.$emit('update:open', value);
-        }
-    }
-
-    public get sideBarOpen(): boolean {
+    public set popperOpen(open: boolean) {
         if (this.isSidebarUsed) {
-            return this.open === undefined ? this.internalOpen : this.open;
-        } else {
-            return false;
+            return;
         }
-
+        this.setOpen(open);
     }
 
     public get popperOpen(): boolean {
+        return !this.isSidebarUsed ? this.internalOpen : false;
+    }
 
+    public set sideBarOpen(open: boolean) {
         if (!this.isSidebarUsed) {
-            return (this.open === undefined ? this.internalOpen : this.open);
-        } else {
-            return false;
+            return;
         }
+        this.setOpen(open);
+    }
 
+    public get sideBarOpen(): boolean {
+        return this.isSidebarUsed ? this.internalOpen : false;
     }
 
     public update(): void {
@@ -155,6 +184,14 @@ export class MPopup extends ModulVue {
     public get isSidebarUsed(): boolean {
         // Use a sidebar instead when in mobile
         return this.as<MediaQueries>().isMqMaxS;
+    }
+
+    private setOpen(open: boolean): void {
+        if (this.disabled) {
+            return;
+        }
+        this.internalOpen = open;
+        this.emitUpdateOpen(open);
     }
 
 }
