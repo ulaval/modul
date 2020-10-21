@@ -1,4 +1,3 @@
-
 import MSvgAddCircleFilled from '@ulaval/modul-components/dist/assets/icons/svg/add-circle-filled.svg';
 import MSvgAddCircle from '@ulaval/modul-components/dist/assets/icons/svg/add-circle.svg';
 import MSvgArrowDown from '@ulaval/modul-components/dist/assets/icons/svg/arrow--down.svg';
