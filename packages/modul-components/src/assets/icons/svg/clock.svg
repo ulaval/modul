@@ -1,6 +1,6 @@
-<svg id="m-svg__clock" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 26 26">
-    <g stroke="currentColor" fill="none">
+<svg id="svg__clock" xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 26 26">
+    <g fill="none" stroke="currentColor">
         <circle cx="12" cy="12" r="11.5"/>
-        <polyline points="20.3,12 12,12 12,4.7 	"/>
+        <polyline stroke-linecap="round" points="20.3,12 12,12 12,4.7 	"/>
     </g>
 </svg>
