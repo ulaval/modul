@@ -43,6 +43,7 @@ export enum ModulIconName {
     Clock = 'clock',
     CloseClear = 'close-clear',
     CodeTag = 'code-tag',
+    Compare = 'compare',
     CompletedFilled = 'completed-filled',
     ConfirmationWhiteFilled = 'confirmation-white-filled',
     Confirmation = 'confirmation',
@@ -339,6 +340,13 @@ export const ModulIcons: ModulIcon[] = [
         name: ModulIconName.CodeTag,
         category: [
             ModulIconsCategory.Text
+        ]
+    },
+    {
+        name: ModulIconName.Compare,
+        category: [
+            ModulIconsCategory.Control,
+            ModulIconsCategory.Document
         ]
     },
     {
