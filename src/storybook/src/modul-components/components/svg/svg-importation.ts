@@ -1,4 +1,3 @@
-
 import MSvgAddCircleFilled from '@ulaval/modul-components/dist/assets/icons/svg/add-circle-filled.svg';
 import MSvgAddCircle from '@ulaval/modul-components/dist/assets/icons/svg/add-circle.svg';
 import MSvgArrowDown from '@ulaval/modul-components/dist/assets/icons/svg/arrow--down.svg';
@@ -29,6 +28,7 @@ import MSvgChevronUp from '@ulaval/modul-components/dist/assets/icons/svg/chevro
 import MSvgClock from '@ulaval/modul-components/dist/assets/icons/svg/clock.svg';
 import MSvgCloseClear from '@ulaval/modul-components/dist/assets/icons/svg/close-clear.svg';
 import MSvgCodeTag from '@ulaval/modul-components/dist/assets/icons/svg/code-tag.svg';
+import MSvgCompare from '@ulaval/modul-components/dist/assets/icons/svg/compare.svg';
 import MSvgCompletedFilled from '@ulaval/modul-components/dist/assets/icons/svg/completed-filled.svg';
 import MSvgConfirmationWhiteFilled from '@ulaval/modul-components/dist/assets/icons/svg/confirmation-white-filled.svg';
 import MSvgConfirmation from '@ulaval/modul-components/dist/assets/icons/svg/confirmation.svg';
@@ -154,6 +154,7 @@ export const importAllSvg: () => void = () => {
     svg.addSvg(ModulIconName.Clock, MSvgClock);
     svg.addSvg(ModulIconName.CloseClear, MSvgCloseClear);
     svg.addSvg(ModulIconName.CodeTag, MSvgCodeTag);
+    svg.addSvg(ModulIconName.Compare, MSvgCompare);
     svg.addSvg(ModulIconName.CompletedFilled, MSvgCompletedFilled);
     svg.addSvg(ModulIconName.ConfirmationWhiteFilled, MSvgConfirmationWhiteFilled);
     svg.addSvg(ModulIconName.Confirmation, MSvgConfirmation);
