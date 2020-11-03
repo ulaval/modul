@@ -184,10 +184,6 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         }
     }
 
-    public hasContent(): boolean {
-        return Boolean(this.$slots.default);
-    }
-
     public get propSkin(): MAccordionSkin {
         return isAccordionGroup(this.$parent) ? this.$parent.skin : this.skin;
     }
@@ -210,6 +206,10 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         }
 
         return this.propSkin === MAccordionSkin.Light;
+    }
+
+     public hasContent(): boolean {
+        return Boolean(this.$slots.default);
     }
 
     public toggleAccordion(event: Event): void {
