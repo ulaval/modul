@@ -69,9 +69,10 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Disa
     >
       <div
         aria-controls="fakeId-body-wrap"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
         tabindex="0"
       >
         <div
@@ -80,20 +81,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Disa
           <h3>
             An Accordion Title
           </h3>
-           
-          <span
-            class="m-accordion__hidden"
-          >
-            
-                Cliquer pour afficher le contenu
-            
-          </span>
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -105,9 +97,10 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Disa
     >
       <div
         aria-controls="fakeId-body-wrap"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
         tabindex="0"
       >
         <div
@@ -116,20 +109,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Disa
           <h3>
             An Accordion Title
           </h3>
-           
-          <span
-            class="m-accordion__hidden"
-          >
-            
-                Cliquer pour afficher le contenu
-            
-          </span>
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -141,9 +125,10 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Disa
     >
       <div
         aria-controls="fakeId-body-wrap"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
         tabindex="0"
       >
         <div
@@ -152,20 +137,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Disa
           <h3>
             An Accordion Title
           </h3>
-           
-          <span
-            class="m-accordion__hidden"
-          >
-            
-                Cliquer pour afficher le contenu
-            
-          </span>
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -246,7 +222,7 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Enab
         aria-controls="fakeId-body-wrap"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
       >
         <div
           class="m-accordion__header-content"
@@ -254,14 +230,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Enab
           <h3>
             An Accordion Title
           </h3>
-           
-          <!---->
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -275,7 +248,7 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Enab
         aria-controls="fakeId-body-wrap"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
       >
         <div
           class="m-accordion__header-content"
@@ -283,14 +256,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Enab
           <h3>
             An Accordion Title
           </h3>
-           
-          <!---->
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -304,7 +274,7 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Enab
         aria-controls="fakeId-body-wrap"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
       >
         <div
           class="m-accordion__header-content"
@@ -312,14 +282,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Enab
           <h3>
             An Accordion Title
           </h3>
-           
-          <!---->
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -400,7 +367,7 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Mixe
         aria-controls="fakeId-body-wrap"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
       >
         <div
           class="m-accordion__header-content"
@@ -408,14 +375,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Mixe
           <h3>
             An Accordion Title
           </h3>
-           
-          <!---->
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -427,9 +391,10 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Mixe
     >
       <div
         aria-controls="fakeId-body-wrap"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
         tabindex="0"
       >
         <div
@@ -438,20 +403,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Mixe
           <h3>
             An Accordion Title
           </h3>
-           
-          <span
-            class="m-accordion__hidden"
-          >
-            
-                Cliquer pour afficher le contenu
-            
-          </span>
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
@@ -465,7 +421,7 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Mixe
         aria-controls="fakeId-body-wrap"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
       >
         <div
           class="m-accordion__header-content"
@@ -473,14 +429,11 @@ exports[`Storyshots modul-components|m-accordion-group/enabled All Children Mixe
           <h3>
             An Accordion Title
           </h3>
-           
-          <!---->
         </div>
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
-          title="Cliquer pour afficher le contenu"
         />
       </div>
        
