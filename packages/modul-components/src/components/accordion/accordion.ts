@@ -114,7 +114,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     public emitClick(event: Event): void {}
 
     @Emit('update:open')
-    public emitUpdateOpen(open: boolean): void {};
+    public emitUpdateOpen(open: boolean): void {}
 
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
@@ -208,7 +208,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         return this.propSkin === MAccordionSkin.Light;
     }
 
-     public hasContent(): boolean {
+    public hasContent(): boolean {
         return Boolean(this.$slots.default);
     }
 
