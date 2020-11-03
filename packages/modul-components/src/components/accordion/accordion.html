@@ -18,15 +18,14 @@
          :aria-expanded="propOpen"
          :aria-controls="idBodyWrap"
          :tabindex="headerTabindex"
-         role="tab"
+         :aria-label="headerAriaLabel"
+         role="button"
          ref="accordionHeader"
          @click.prevent="toggleAccordion"
-         @keyup.self.enter="toggleAccordion">
+         @keyup.self.enter="toggleAccordion"
+         @keyup.self.space="toggleAccordion">
         <div class="m-accordion__header-content">
             <slot name="header" />
-            <span v-if="!propDisabled && hasContent()" class="m-accordion__hidden">
-                {{ headerHiddenText}}
-            </span>
         </div>
         <m-plus v-if="hasContent()"
                 class="m-accordion__header-icon"
@@ -37,8 +36,6 @@
                 :large="isIconSizeLarge"
                 :open="propOpen"
                 :skin="plusSkin"
-                :title-open="titleMenuOpen"
-                :title-close="titleMenuClose"
                 aria-hidden="true" />
     </div>
     <m-accordion-transition v-if="hasContent()"
@@ -48,8 +45,7 @@
             <div v-if="propOpen"
                  :id="idBodyWrap"
                  class="m-accordion__body-wrap"
-                 :aria-labelledby="propId"
-                 role="tabpanel">
+                 :aria-labelledby="propId">
                 <div class="m-accordion__body"
                      :class="classBody">
                     <slot />
@@ -60,8 +56,7 @@
             <div v-show="propOpen"
                  :id="idBodyWrap"
                  class="m-accordion__body-wrap"
-                 :aria-labelledby="propId"
-                 role="tabpanel">
+                 :aria-labelledby="propId">
                 <div class="m-accordion__body"
                      :class="classBody">
                     <slot />
