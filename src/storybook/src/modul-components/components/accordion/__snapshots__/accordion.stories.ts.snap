@@ -32,6 +32,7 @@ exports[`Storyshots modul-components|m-accordion disabled and closed 1`] = `
 >
   <div
     aria-controls="fakeId-body-wrap"
+    aria-disabled="true"
     class="m-accordion__header m--has-padding"
     id="fakeId"
     role="button"
@@ -62,6 +63,7 @@ exports[`Storyshots modul-components|m-accordion disabled and open 1`] = `
 >
   <div
     aria-controls="fakeId-body-wrap"
+    aria-disabled="true"
     aria-expanded="true"
     class="m-accordion__header m--has-padding"
     id="fakeId"

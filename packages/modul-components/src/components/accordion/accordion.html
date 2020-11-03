@@ -1,4 +1,4 @@
-<article class="m-accordion"
+<div class="m-accordion"
          :class="[
             'm--is-' + propSkin,
             {
@@ -19,6 +19,7 @@
          :aria-controls="idBodyWrap"
          :tabindex="headerTabindex"
          :aria-label="headerAriaLabel"
+         :aria-disabled="propDisabled"
          role="button"
          ref="accordionHeader"
          @click.prevent="toggleAccordion"
@@ -64,4 +65,4 @@
             </div>
         </template>
     </m-accordion-transition>
-</article>
+</div>
