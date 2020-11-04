@@ -1,5 +1,5 @@
 <article class="m-accordion-group">
-    <div v-if="hasTitleSlot() || !concurrent"
+    <header v-if="hasTitleSlot() || !concurrent"
          class="m-accordion-group__header"
          :class="{
             'm--no-title' : !hasTitleSlot(),
@@ -29,7 +29,7 @@
                 </m-link>
             </div>
         </div>
-    </div>
+    </header>
     <div class="m-accordion-group__body">
         <slot />
     </div>
