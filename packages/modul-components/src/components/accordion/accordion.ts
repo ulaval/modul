@@ -35,7 +35,7 @@ export interface AccordionGateway extends Vue {
 }
 
 export interface AccordionGroupGateway {
-    skin: MAccordionSkin;
+    skin?: MAccordionSkin;
     disabled: boolean;
     concurrent: boolean;
     addAccordion(accordion: AccordionGateway): void;
