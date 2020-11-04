@@ -20,7 +20,7 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
         default: MAccordionSkin.Default,
         validator: value => Enums.toValueArray(MAccordionSkin).includes(value)
     })
-    public readonly skin?: MAccordionSkin;
+    public readonly skin: MAccordionSkin;
 
     @Prop({
         default: false
