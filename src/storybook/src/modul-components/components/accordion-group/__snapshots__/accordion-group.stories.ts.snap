@@ -124,7 +124,7 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
@@ -175,7 +175,7 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
         </a>
       </div>
     </div>
-  </div>
+  </header>
    
   <div
     class="m-accordion-group__body"
@@ -301,7 +301,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
   <article
     class="m-accordion-group"
   >
-    <div
+    <header
       class="m-accordion-group__header m--no-title"
     >
       <!---->
@@ -352,7 +352,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
           </a>
         </div>
       </div>
-    </div>
+    </header>
      
     <div
       class="m-accordion-group__body"
@@ -676,7 +676,7 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
   <article
     class="m-accordion-group"
   >
-    <div
+    <header
       class="m-accordion-group__header m--no-title"
     >
       <!---->
@@ -727,7 +727,7 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
           </a>
         </div>
       </div>
-    </div>
+    </header>
      
     <div
       class="m-accordion-group__body"
@@ -824,7 +824,7 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--has-secondary-content"
   >
     <div
@@ -884,7 +884,7 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
         </a>
       </div>
     </div>
-  </div>
+  </header>
    
   <div
     class="m-accordion-group__body"
@@ -1005,7 +1005,7 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header"
   >
     <div
@@ -1062,7 +1062,7 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
         </a>
       </div>
     </div>
-  </div>
+  </header>
    
   <div
     class="m-accordion-group__body"
@@ -1184,7 +1184,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
   <article
     class="m-accordion-group"
   >
-    <div
+    <header
       class="m-accordion-group__header m--no-title m--is-toggle-link-left"
     >
       <!---->
@@ -1235,7 +1235,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
           </a>
         </div>
       </div>
-    </div>
+    </header>
      
     <div
       class="m-accordion-group__body"
@@ -1281,7 +1281,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
   <article
     class="m-accordion-group"
   >
-    <div
+    <header
       class="m-accordion-group__header m--is-toggle-link-left"
     >
       <div
@@ -1338,7 +1338,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
           </a>
         </div>
       </div>
-    </div>
+    </header>
      
     <div
       class="m-accordion-group__body"
@@ -1385,7 +1385,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
   <article
     class="m-accordion-group"
   >
-    <div
+    <header
       class="m-accordion-group__header m--has-secondary-content"
     >
       <div
@@ -1445,7 +1445,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
           </a>
         </div>
       </div>
-    </div>
+    </header>
      
     <div
       class="m-accordion-group__body"
@@ -1495,7 +1495,7 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
@@ -1546,7 +1546,7 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
         </a>
       </div>
     </div>
-  </div>
+  </header>
    
   <div
     class="m-accordion-group__body"
