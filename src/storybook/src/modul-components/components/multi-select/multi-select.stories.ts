@@ -45,18 +45,11 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
     .add('options undefined', () => ({
-        methods: actions(
-            'open',
-            'close',
-            'focus',
-            'blur',
-            'select'
-        ),
         data: () => ({
             model1: [],
             options: undefined
         }),
-        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select>`
+        template: `<m-multi-select :options="options" v-model="model1"></m-multi-select>`
     })
     );
 
