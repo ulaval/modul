@@ -23,8 +23,7 @@
          role="button"
          ref="accordionHeader"
          @click.prevent="toggleAccordion"
-         @keyup.self.enter="toggleAccordion"
-         @keyup.self.space="toggleAccordion">
+         @keyup.self.enter="toggleAccordion">
         <div class="m-accordion__header-content">
             <slot name="header" />
         </div>
