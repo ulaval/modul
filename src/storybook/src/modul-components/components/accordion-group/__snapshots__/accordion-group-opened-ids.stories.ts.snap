@@ -4,7 +4,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
@@ -27,11 +27,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout ouvrir
-            </span>
+            
+                    Tout ouvrir
+                
           </span>
            
           <!---->
@@ -48,18 +46,16 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout fermer
-            </span>
+            
+                    Tout fermer
+                
           </span>
            
           <!---->
         </a>
       </div>
     </div>
-  </div>
+  </header>
    
   <div
     class="m-accordion-group__body"
@@ -82,12 +78,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
            
-          <!---->
-           
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour cacher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
         </div>
          
@@ -130,12 +126,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           </h3>
            
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour afficher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
-           
-          <!---->
         </div>
          
         <span
@@ -166,12 +162,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
            
-          <!---->
-           
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour cacher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
         </div>
          
@@ -203,7 +199,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
@@ -226,11 +222,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout ouvrir
-            </span>
+            
+                    Tout ouvrir
+                
           </span>
            
           <!---->
@@ -247,18 +241,16 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout fermer
-            </span>
+            
+                    Tout fermer
+                
           </span>
            
           <!---->
         </a>
       </div>
     </div>
-  </div>
+  </header>
    
   <div
     class="m-accordion-group__body"
@@ -281,12 +273,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           </h3>
            
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour afficher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
-           
-          <!---->
         </div>
          
         <span
@@ -317,12 +309,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           </h3>
            
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour afficher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
-           
-          <!---->
         </div>
          
         <span
@@ -353,12 +345,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           </h3>
            
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour afficher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
-           
-          <!---->
         </div>
          
         <span
@@ -378,7 +370,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
@@ -401,11 +393,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout ouvrir
-            </span>
+            
+                    Tout ouvrir
+                
           </span>
            
           <!---->
@@ -422,18 +412,16 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout fermer
-            </span>
+            
+                    Tout fermer
+                
           </span>
            
           <!---->
         </a>
       </div>
     </div>
-  </div>
+  </header>
    
   <div
     class="m-accordion-group__body"
@@ -456,12 +444,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
             An Accordion Title
           </h3>
            
-          <!---->
-           
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour cacher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
         </div>
          
@@ -504,12 +492,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
             An Accordion Title
           </h3>
            
-          <!---->
-           
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour cacher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
         </div>
          
@@ -552,12 +540,12 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
             An Accordion Title
           </h3>
            
-          <!---->
-           
           <span
-            class="m-i18n m-accordion__hidden"
+            class="m-accordion__hidden"
           >
-            Cliquer pour cacher le contenu
+            
+                Cliquer pour afficher le contenu
+            
           </span>
         </div>
          
