@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop, Ref, Watch } from 'vue-property-decorator';
-import { Enums } from '../../utils/enums/enums';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { ACCORDION_NAME, ACCORDION_TRANSITION_NAME, BUTTON_GROUP_NAME, CHECKBOX_NAME, I18N_NAME, INPLACE_EDIT_NAME, INPUT_STYLE_NAME, LINK_NAME, PLUS_NAME, RADIO_GROUP_NAME, RADIO_NAME } from '../component-names';
@@ -9,6 +8,7 @@ import { MI18n } from '../i18n/i18n';
 import { MPlus, MPlusSkin } from '../plus/plus';
 import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './accordion.html?style=./accordion.scss';
+
 
 export enum MAccordionSkin {
     Default = 'default',
@@ -59,74 +59,90 @@ function isAccordionGroup(parent: any): parent is AccordionGroupGateway {
 })
 export class MAccordion extends ModulVue implements AccordionGateway {
     @Prop()
-    public readonly id?: string;
+    public id?: string;
 
     @Prop({
         default: false
     })
-    public readonly open!: boolean;
+    public open: boolean;
 
     @Prop({
         default: false
     })
-    public readonly disabled!: boolean;
+    public disabled: boolean;
 
     @Prop({
         default: MAccordionSkin.Default,
-        validator: value => Enums.toValueArray(MAccordionSkin).includes(value)
+        validator: value =>
+            value === MAccordionSkin.Default ||
+            value === MAccordionSkin.Dark ||
+            value === MAccordionSkin.DarkB ||
+            value === MAccordionSkin.Light ||
+            value === MAccordionSkin.Plain
     })
-    public readonly skin: MAccordionSkin;
+    public skin: MAccordionSkin;
 
     @Prop({
         default: MAccordionIconPosition.Left,
-        validator: value => Enums.toValueArray(MAccordionIconPosition).includes(value)
+        validator: value =>
+            value === MAccordionIconPosition.Left ||
+            value === MAccordionIconPosition.Right
     })
-    public readonly iconPosition?: MAccordionIconPosition;
+    public iconPosition?: MAccordionIconPosition;
 
     @Prop()
-    public readonly iconBorder!: boolean;
+    public iconBorder?: boolean;
 
     @Prop({
         default: MAccordionIconSize.Large,
-        validator: value => Enums.toValueArray(MAccordionIconSize).includes(value)
+        validator: value =>
+            value === MAccordionIconSize.Small ||
+            value === MAccordionIconSize.Large
     })
-    public readonly iconSize?: MAccordionIconSize;
+    public iconSize?: MAccordionIconSize;
 
     @Prop({ default: true })
-    public readonly padding!: boolean;
-
+    public padding: boolean;
     @Prop({ default: true })
-    public readonly paddingHeader!: boolean;
-
+    public paddingHeader: boolean;
     @Prop({ default: true })
-    public readonly paddingBody!: boolean;
-
+    public paddingBody: boolean;
     @Prop({ default: false })
-    public readonly keepContentAlive!: boolean;
+    public keepContentAlive: boolean;
 
-    @Ref('accordionHeader')
-    public readonly refAccordionHeader: HTMLElement;
+    public titleMenuOpen: string = this.$i18n.translate('m-accordion:open');
+    public titleMenuClose: string = this.$i18n.translate('m-accordion:close');
+
+    $refs: {
+        accordionHeader: HTMLElement;
+    };
 
     private uuid: string = uuid.generate();
-    private internalOpen: boolean = false;
+    private internalPropOpen: boolean = false;
+
 
     @Emit('click')
-    public emitClick(event: Event): void {}
-
-    @Emit('update:open')
-    public emitUpdateOpen(open: boolean): void {}
-
-    @Watch('open', { immediate: true })
-    public onOpenChange(open: boolean): void {
-        this.internalOpen = open;
+    private clickEvent(event: Event): void {
     }
 
     public get propDisabled(): boolean {
-        return (
-                isAccordionGroup(this.$parent) &&
-                this.$parent.disabled
-            ) ||
+
+        return (isAccordionGroup(this.$parent) && this.$parent.disabled) ||
             this.disabled;
+    }
+
+    protected created(): void {
+        this.internalPropOpen = this.open;
+
+        if (isAccordionGroup(this.$parent)) {
+            this.$parent.addAccordion(this);
+        }
+    }
+
+    protected beforeDestroy(): void {
+        if (isAccordionGroup(this.$parent)) {
+            this.$parent.removeAccordion(this.propId);
+        }
     }
 
     public get propId(): string {
@@ -144,13 +160,13 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     }
 
     public get propOpen(): boolean {
-        return this.internalOpen;
+        return this.internalPropOpen;
     }
 
-    public set propOpen(open: boolean) {
-        if (open !== this.internalOpen) {
-            this.internalOpen = open;
-            this.emitUpdateOpen(open);
+    public set propOpen(value) {
+        if (value !== this.internalPropOpen) {
+            this.internalPropOpen = value;
+            this.$emit('update:open', value);
         }
     }
 
@@ -158,30 +174,8 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         return this.propDisabled || !this.hasContent() ? undefined : 0;
     }
 
-    public get headerAriaLabel(): string | undefined {
-        return !this.propDisabled && this.hasContent() ?
-            this.$i18n.translate(`m-accordion:${this.propOpen ? 'close' : 'open'}`)
-            : undefined;
-
-    }
-
-    public get isIconPositionLeft(): boolean {
-        return this.iconPosition === MAccordionIconPosition.Left;
-    }
-
-    public get isIconSizeLarge(): boolean {
-        return this.iconSize === MAccordionIconSize.Large;
-    }
-
-    public get deltaHeight(): number {
-        switch (this.propSkin) {
-            case MAccordionSkin.Default:
-            case MAccordionSkin.Dark:
-            case MAccordionSkin.DarkB:
-                return 32;
-            default:
-                return 0;
-        }
+    public hasContent(): boolean {
+        return !!this.$slots.default;
     }
 
     public get propSkin(): MAccordionSkin {
@@ -205,11 +199,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
             return this.iconBorder;
         }
 
-        return this.propSkin === MAccordionSkin.Light;
-    }
-
-    public hasContent(): boolean {
-        return Boolean(this.$slots.default);
+        return this.propSkin === MAccordionSkin.Light ? true : false;
     }
 
     public toggleAccordion(event: Event): void {
@@ -217,40 +207,31 @@ export class MAccordion extends ModulVue implements AccordionGateway {
             return;
         }
 
-        const target: Element | null = (event.target as HTMLElement).closest(ACCORDION_CLOSEST_ELEMENTS);
+        let target: Element | null = (event.target as HTMLElement).closest(ACCORDION_CLOSEST_ELEMENTS);
 
         if (!this.propDisabled && !target) {
-            const initialState: boolean = this.internalOpen;
+            const initialState: boolean = this.internalPropOpen;
 
-            if (
-                !this.internalOpen &&
+            if (!this.internalPropOpen &&
                 isAccordionGroup(this.$parent) &&
-                this.$parent.concurrent
-            ) {
+                this.$parent.concurrent) {
                 this.$parent.closeAllAccordions();
             }
 
-            this.refAccordionHeader.blur();
+            this.$refs.accordionHeader.blur();
             this.propOpen = !initialState;
-            this.emitClick(event);
+            this.clickEvent(event);
         }
     }
 
-    protected created(): void {
-        if (isAccordionGroup(this.$parent)) {
-            this.$parent.addAccordion(this);
-        }
-    }
-
-    protected beforeDestroy(): void {
-        if (isAccordionGroup(this.$parent)) {
-            this.$parent.removeAccordion(this.propId);
-        }
+    @Watch('open')
+    private syncOpenProp(val: boolean): void {
+        this.propOpen = val;
     }
 }
 
 const AccordionPlugin: PluginObject<any> = {
-    install(v): void {
+    install(v, options): void {
         v.component(ACCORDION_NAME, MAccordion);
     }
 };

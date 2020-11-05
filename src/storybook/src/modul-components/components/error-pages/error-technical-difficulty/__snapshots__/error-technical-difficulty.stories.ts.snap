@@ -48,15 +48,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -67,16 +66,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
@@ -166,15 +174,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -185,16 +192,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
@@ -284,15 +300,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -303,16 +318,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
@@ -402,15 +426,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -421,16 +444,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
@@ -521,15 +553,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -540,16 +571,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
@@ -639,15 +679,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -658,16 +697,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
@@ -757,15 +805,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -776,16 +823,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
@@ -873,15 +929,14 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
       <div
         class="m-message-page__details"
       >
-        <div
+        <article
           class="m-accordion m--is-light m--is-closed m--has-icon-left"
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
             class="m-accordion__header m--has-padding"
             id="fakeId"
-            role="button"
+            role="tab"
             tabindex="0"
           >
             <div
@@ -892,16 +947,25 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
               >
                 Précisions techniques
               </span>
+               
+              <span
+                class="m-i18n m-accordion__hidden"
+              >
+                Cliquer pour afficher le contenu
+              </span>
+               
+              <!---->
             </div>
              
             <span
               aria-hidden="true"
               class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+              title="Cliquer pour afficher le contenu"
             />
           </div>
            
           <!---->
-        </div>
+        </article>
       </div>
        
       <ul
