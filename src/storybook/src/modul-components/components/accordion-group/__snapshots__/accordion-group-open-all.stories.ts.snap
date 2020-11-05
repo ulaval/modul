@@ -64,7 +64,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Delay
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large m--is-empty-content"
     >
       <div
@@ -82,7 +82,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Delay
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -223,7 +223,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Dynam
     <div
       class="m-accordion-group__body"
     >
-      <article
+      <div
         class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
       >
         <div
@@ -256,7 +256,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Dynam
             Some Accordion Content
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </article>
 </div>
@@ -326,7 +326,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -359,9 +359,9 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -394,9 +394,9 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -429,7 +429,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </article>
 `;

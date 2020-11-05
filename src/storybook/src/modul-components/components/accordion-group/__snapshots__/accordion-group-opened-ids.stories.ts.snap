@@ -64,7 +64,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -101,9 +101,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -129,9 +129,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -168,7 +168,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -237,7 +237,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -263,9 +263,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -291,9 +291,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -319,7 +319,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -388,7 +388,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -425,9 +425,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -464,9 +464,9 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -503,7 +503,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </article>
 `;

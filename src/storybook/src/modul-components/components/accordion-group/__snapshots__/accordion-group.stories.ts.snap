@@ -9,7 +9,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent 1`] = `
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -35,9 +35,9 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -63,9 +63,9 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -91,7 +91,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -160,7 +160,7 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -186,9 +186,9 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -214,9 +214,9 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -242,7 +242,7 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -317,7 +317,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
     <div
       class="m-accordion-group__body"
     >
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -334,9 +334,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -358,9 +358,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -382,9 +382,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -406,9 +406,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -425,9 +425,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -444,9 +444,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -463,9 +463,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -487,9 +487,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -506,9 +506,9 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -530,7 +530,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
         </div>
          
         <!---->
-      </article>
+      </div>
     </div>
   </article>
 </div>
@@ -606,7 +606,7 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
     <div
       class="m-accordion-group__body"
     >
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -623,9 +623,9 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -642,9 +642,9 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
         </div>
          
         <!---->
-      </article>
+      </div>
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
       >
         <div
@@ -661,7 +661,7 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
         </div>
          
         <!---->
-      </article>
+      </div>
     </div>
   </article>
 </div>
@@ -741,7 +741,7 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
     class="m-accordion-group__body"
   >
       
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -767,9 +767,9 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -795,9 +795,9 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -823,7 +823,7 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -899,7 +899,7 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
     class="m-accordion-group__body"
   >
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -925,9 +925,9 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -953,9 +953,9 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -981,7 +981,7 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -1051,7 +1051,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
     <div
       class="m-accordion-group__body"
     >
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -1077,7 +1077,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
         </div>
          
         <!---->
-      </article>
+      </div>
     </div>
   </article>
    
@@ -1151,7 +1151,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
       class="m-accordion-group__body"
     >
        
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -1177,7 +1177,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
         </div>
          
         <!---->
-      </article>
+      </div>
     </div>
   </article>
    
@@ -1254,7 +1254,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
       class="m-accordion-group__body"
     >
         
-      <article
+      <div
         class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
       >
         <div
@@ -1280,7 +1280,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
         </div>
          
         <!---->
-      </article>
+      </div>
     </div>
   </article>
 </div>
@@ -1350,7 +1350,7 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -1372,9 +1372,9 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -1396,9 +1396,9 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -1420,7 +1420,7 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;

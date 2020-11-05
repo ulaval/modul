@@ -64,7 +64,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -101,9 +101,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -140,9 +140,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
@@ -179,7 +179,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content default
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -283,7 +283,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
     class="m-accordion-group__body"
   >
       
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -309,9 +309,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -337,9 +337,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -365,7 +365,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content m-link 
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -438,7 +438,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
     class="m-accordion-group__body"
   >
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -464,9 +464,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -492,9 +492,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -520,7 +520,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -593,7 +593,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
     class="m-accordion-group__body"
   >
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -619,9 +619,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -647,9 +647,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -675,7 +675,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content no-titl
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -754,7 +754,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
     class="m-accordion-group__body"
   >
       
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -780,9 +780,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -808,9 +808,9 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
       </div>
        
       <!---->
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
@@ -836,7 +836,7 @@ exports[`Storyshots modul-components|m-accordion-group/secondary-content toggle-
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;

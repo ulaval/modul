@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots modul-components|m-accordion default 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -23,11 +23,11 @@ exports[`Storyshots modul-components|m-accordion default 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion disabled and closed 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--is-disabled m--has-icon-left m--has-icon-large"
 >
   <div
@@ -54,11 +54,11 @@ exports[`Storyshots modul-components|m-accordion disabled and closed 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion disabled and open 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-open m--is-disabled m--has-icon-left m--has-icon-large"
 >
   <div
@@ -96,11 +96,11 @@ exports[`Storyshots modul-components|m-accordion disabled and open 1`] = `
        Some Accordion Content
     </div>
   </div>
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion empty $slots.default 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large m--is-empty-content"
 >
   <div
@@ -123,11 +123,11 @@ exports[`Storyshots modul-components|m-accordion empty $slots.default 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion header 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -155,11 +155,11 @@ exports[`Storyshots modul-components|m-accordion header 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion icon-border="true" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -187,11 +187,11 @@ exports[`Storyshots modul-components|m-accordion icon-border="true" 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion id 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -219,11 +219,11 @@ exports[`Storyshots modul-components|m-accordion id 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion open 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
 >
   <div
@@ -262,11 +262,11 @@ exports[`Storyshots modul-components|m-accordion open 1`] = `
        Some Accordion Content
     </div>
   </div>
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/icon-position="right" default 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-large"
 >
   <div
@@ -294,11 +294,11 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" default 1
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-border="true" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-large"
 >
   <div
@@ -326,11 +326,11 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-bord
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-size="small && icon-border="true" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed"
 >
   <div
@@ -358,11 +358,11 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-size
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-size="small" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed"
 >
   <div
@@ -390,11 +390,11 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-size
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/icon-size="small" default 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left"
 >
   <div
@@ -422,11 +422,11 @@ exports[`Storyshots modul-components|m-accordion/icon-size="small" default 1`] =
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/icon-size="small" icon-border="true" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left"
 >
   <div
@@ -454,11 +454,11 @@ exports[`Storyshots modul-components|m-accordion/icon-size="small" icon-border="
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/keepContentAlive default 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -486,11 +486,11 @@ exports[`Storyshots modul-components|m-accordion/keepContentAlive default 1`] = 
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/keepContentAlive keep-content-alive="true" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -529,11 +529,11 @@ exports[`Storyshots modul-components|m-accordion/keepContentAlive keep-content-a
        Some Accordion Content
     </div>
   </div>
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/padding default 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -561,11 +561,11 @@ exports[`Storyshots modul-components|m-accordion/padding default 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/padding padding-body="false" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -593,11 +593,11 @@ exports[`Storyshots modul-components|m-accordion/padding padding-body="false" 1`
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/padding padding-header="false" 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -625,11 +625,11 @@ exports[`Storyshots modul-components|m-accordion/padding padding-header="false" 
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/skin dark 1`] = `
-<article
+<div
   class="m-accordion m--is-dark m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -657,11 +657,11 @@ exports[`Storyshots modul-components|m-accordion/skin dark 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/skin dark-b 1`] = `
-<article
+<div
   class="m-accordion m--is-dark-b m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -689,11 +689,11 @@ exports[`Storyshots modul-components|m-accordion/skin dark-b 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/skin default 1`] = `
-<article
+<div
   class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -721,11 +721,11 @@ exports[`Storyshots modul-components|m-accordion/skin default 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/skin light 1`] = `
-<article
+<div
   class="m-accordion m--is-light m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -753,11 +753,11 @@ exports[`Storyshots modul-components|m-accordion/skin light 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
 
 exports[`Storyshots modul-components|m-accordion/skin plain 1`] = `
-<article
+<div
   class="m-accordion m--is-plain m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
@@ -785,5 +785,5 @@ exports[`Storyshots modul-components|m-accordion/skin plain 1`] = `
   </div>
    
   <!---->
-</article>
+</div>
 `;
