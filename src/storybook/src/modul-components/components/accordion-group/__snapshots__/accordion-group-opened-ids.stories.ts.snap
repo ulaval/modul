@@ -4,15 +4,15 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
-     
+
     <div
       class="m-accordion-group__secondary-content"
     >
-       
+
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -23,20 +23,18 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout ouvrir
-            </span>
+
+                    Tout ouvrir
+
           </span>
-           
+
           <!---->
         </a>
-           |   
+           |  
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -44,23 +42,21 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout fermer
-            </span>
+
+                    Tout fermer
+
           </span>
-           
+
           <!---->
         </a>
       </div>
     </div>
-  </div>
-   
+  </header>
+
   <div
     class="m-accordion-group__body"
   >
@@ -83,13 +79,13 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
         />
       </div>
-       
+
       <div
         aria-labelledby="1"
         class="m-accordion__body-wrap"
@@ -102,7 +98,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
         </div>
       </div>
     </div>
-     
+
     <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -121,16 +117,16 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
-       
+
       <!---->
     </div>
-     
+
     <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
@@ -150,13 +146,13 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
         />
       </div>
-       
+
       <div
         aria-labelledby="3"
         class="m-accordion__body-wrap"
@@ -177,15 +173,15 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
-     
+
     <div
       class="m-accordion-group__secondary-content"
     >
-       
+
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -196,20 +192,18 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout ouvrir
-            </span>
+
+                    Tout ouvrir
+
           </span>
-           
+
           <!---->
         </a>
-           |   
+           |  
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -217,23 +211,21 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout fermer
-            </span>
+
+                    Tout fermer
+
           </span>
-           
+
           <!---->
         </a>
       </div>
     </div>
-  </div>
-   
+  </header>
+
   <div
     class="m-accordion-group__body"
   >
@@ -255,16 +247,16 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
-       
+
       <!---->
     </div>
-     
+
     <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -283,16 +275,16 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
-       
+
       <!---->
     </div>
-     
+
     <div
       class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
@@ -311,13 +303,13 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
-       
+
       <!---->
     </div>
   </div>
@@ -328,15 +320,15 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
 <article
   class="m-accordion-group"
 >
-  <div
+  <header
     class="m-accordion-group__header m--no-title"
   >
     <!---->
-     
+
     <div
       class="m-accordion-group__secondary-content"
     >
-       
+
       <div
         class="m-accordion-group__toggle-link"
       >
@@ -347,20 +339,18 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout ouvrir
-            </span>
+
+                    Tout ouvrir
+
           </span>
-           
+
           <!---->
         </a>
-           |   
+           |  
         <a
           class="m-link m--is-unvisited m--is-button m--has-content"
           href="#"
@@ -368,23 +358,21 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-link__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Tout fermer
-            </span>
+
+                    Tout fermer
+
           </span>
-           
+
           <!---->
         </a>
       </div>
     </div>
-  </div>
-   
+  </header>
+
   <div
     class="m-accordion-group__body"
   >
@@ -407,13 +395,13 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
         />
       </div>
-       
+
       <div
         aria-labelledby="1"
         class="m-accordion__body-wrap"
@@ -426,7 +414,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
         </div>
       </div>
     </div>
-     
+
     <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
@@ -446,13 +434,13 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
         />
       </div>
-       
+
       <div
         aria-labelledby="2"
         class="m-accordion__body-wrap"
@@ -465,7 +453,7 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
         </div>
       </div>
     </div>
-     
+
     <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
@@ -485,13 +473,13 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
             An Accordion Title
           </h3>
         </div>
-         
+
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
         />
       </div>
-       
+
       <div
         aria-labelledby="3"
         class="m-accordion__body-wrap"
