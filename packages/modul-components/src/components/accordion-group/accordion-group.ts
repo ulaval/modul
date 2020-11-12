@@ -1,12 +1,12 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import AccordionPlugin, { AccordionGateway, AccordionGroupGateway, MAccordionSkin } from '../accordion/accordion';
 import { ACCORDION_GROUP_NAME, I18N_NAME, LINK_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
-import { MLink } from '../link/link';
+import { MLink, MLinkMode } from '../link/link';
 import WithRender from './accordion-group.html?style=./accordion-group.scss';
-
 
 @WithRender
 @Component({
@@ -18,46 +18,51 @@ import WithRender from './accordion-group.html?style=./accordion-group.scss';
 export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     @Prop({
         default: MAccordionSkin.Default,
-        validator: value =>
-            value === MAccordionSkin.Default ||
-            value === MAccordionSkin.Light ||
-            value === MAccordionSkin.Plain
+        validator: value => Enums.toValueArray(MAccordionSkin).includes(value)
     })
-    public skin: MAccordionSkin;
+    public readonly skin: MAccordionSkin;
 
     @Prop({
         default: false
     })
-    public concurrent: boolean;
+    public readonly concurrent!: boolean;
 
     @Prop({
         default: false
     })
-    public disabled: boolean;
+    public readonly disabled!: boolean;
 
     @Prop()
-    public openedIds?: string[];
+    public readonly openedIds?: string[];
 
     @Prop({
         default: false
     })
-    public toggleLinkLeft: boolean;
+    public readonly toggleLinkLeft!: boolean;
 
     @Prop({
         default: false
     })
-    public openAll: boolean;
+    public readonly openAll!: boolean;
 
-    isAllOpen: boolean = false;
-    isAllClosed: boolean = false;
+    public isAllOpen: boolean = false;
+    public isAllClosed: boolean = false;
+    public linkModeButton: MLinkMode = MLinkMode.Button;
     private accordions: { [id: string]: AccordionGateway } = {};
 
-    protected mounted(): void {
-        this.updateToggleLinks();
+    @Emit('update:openedIds')
+    public emitUpdateOpenedIds(openedIds: string[]): void {}
+
+    @Watch('openedIds')
+    public onOpenedIdsChange(openedIds: string[]): void {
+        for (const id in this.accordions) {
+            this.accordions[id].propOpen =
+            openedIds.find(openedId => openedId === id) !== undefined;
+        }
     }
 
-    protected updated(): void {
-        this.updateToggleLinks();
+    public get propSkin(): MAccordionSkin {
+        return this.skin || MAccordionSkin.Default;
     }
 
     public addAccordion(accordion: AccordionGateway): void {
@@ -79,6 +84,44 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
                 this.accordions[id].propOpen = false;
             }
         }
+    }
+
+    public hasTitleSlot(): boolean {
+        return !!this.$slots['title'] || !!this.$scopedSlots['title'];
+    }
+
+    public hasSecondaryContentSlot(): boolean {
+        return Boolean(this.$slots['secondary-content']) || Boolean(this.$scopedSlots['secondary-content']);
+    }
+
+    public openAllAccordions(): void {
+        for (const id in this.accordions) {
+            if (!this.accordions[id].propDisabled) {
+                this.accordions[id].propOpen = true;
+            }
+        }
+    }
+
+    private onAccordionOpenChange(): void {
+        this.updateToggleLinks();
+        const openedIds: string[] = Object.keys(this.accordions).filter(
+            id => this.accordions[id].propOpen
+        );
+
+        this.emitUpdateOpenedIds(openedIds);
+    }
+
+    private updateToggleLinks(): void {
+        this.updateIsAllOpen();
+        this.updateIsAllClosed();
+    }
+
+    protected mounted(): void {
+        this.updateToggleLinks();
+    }
+
+    protected updated(): void {
+        this.updateToggleLinks();
     }
 
     private updateIsAllOpen(): void {
@@ -110,51 +153,9 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
         this.isAllClosed = allClosed;
     }
 
-    private get propSkin(): MAccordionSkin {
-        return this.skin === MAccordionSkin.Light || this.skin === MAccordionSkin.Plain || this.skin === MAccordionSkin.Default ? this.skin : MAccordionSkin.Default;
-    }
-
-    private get hasTitleSlot(): boolean {
-        return !!this.$slots['title'] || !!this.$scopedSlots['title'];
-    }
-
-    private get hasSecondaryContentSlot(): boolean {
-        return !!this.$slots['secondary-content'] || !!this.$scopedSlots['secondary-content'];
-    }
-
-    private openAllAccordions(): void {
-        for (const id in this.accordions) {
-            if (!this.accordions[id].propDisabled) {
-                this.accordions[id].propOpen = true;
-            }
-        }
-    }
-
-    private onAccordionOpenChange(): void {
-        this.updateToggleLinks();
-        const openedIds: string[] = Object.keys(this.accordions).filter(
-            id => this.accordions[id].propOpen
-        );
-
-        this.$emit('update:openedIds', openedIds);
-    }
-
-    @Watch('openedIds')
-    private applyValuePropChange(val: string[]): void {
-        for (const id in this.accordions) {
-            this.accordions[id].propOpen =
-                val.find(openedId => openedId === id) !== undefined;
-        }
-    }
-
     private accordionHasContent(id: string): boolean {
         return !!this.accordions[id].$slots.default ||
             (!!this.accordions[id].$scopedSlots.default && !!this.accordions[id].$scopedSlots.default!(undefined));
-    }
-
-    private updateToggleLinks(): void {
-        this.updateIsAllOpen();
-        this.updateIsAllClosed();
     }
 }
 

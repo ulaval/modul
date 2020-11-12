@@ -83,9 +83,6 @@ export class MMultiSelect extends ModulVue {
         if (!Array.isArray(this.value)) {
             this.$log.error('MMultiSelect - The model must be an array');
         }
-        if (!Array.isArray(this.options)) {
-            this.$log.error('MMultiSelect - The options must be an array');
-        }
     }
 
     mounted(): void {
@@ -123,7 +120,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     get allSelected(): boolean {
-        return this.options.length > 0 && this.options.length === this.value.length;
+        return this.options && this.options.length > 0 && this.options.length === this.value.length;
     }
 
     get chipsDisplayMode(): number {
@@ -186,36 +183,44 @@ export class MMultiSelect extends ModulVue {
     }
 
     onKeydownDown($event: KeyboardEvent): void {
-        if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
-            this.$refs.baseSelect.focusedIndex = -1;
-            this.selectAllFocused = true;
-        } else {
-            this.selectAllFocused = false;
-            this.$refs.baseSelect.focusNextItem();
+        if (this.options) {
+            if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
+                this.$refs.baseSelect.focusedIndex = -1;
+                this.selectAllFocused = true;
+            } else {
+                this.selectAllFocused = false;
+                this.$refs.baseSelect.focusNextItem();
+            }
         }
     }
 
     onKeydownUp($event: KeyboardEvent): void {
-        if (this.$refs.baseSelect.focusedIndex === 0 && this.linkSelectAll) {
-            this.$refs.baseSelect.focusedIndex = -1;
-            this.selectAllFocused = true;
-        } else {
-            this.selectAllFocused = false;
-            this.$refs.baseSelect.focusPreviousItem();
+        if (this.options) {
+            if (this.$refs.baseSelect.focusedIndex === 0 && this.linkSelectAll) {
+                this.$refs.baseSelect.focusedIndex = -1;
+                this.selectAllFocused = true;
+            } else {
+                this.selectAllFocused = false;
+                this.$refs.baseSelect.focusPreviousItem();
+            }
         }
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
-        if (this.$refs.baseSelect.focusedIndex > -1) {
-            this.$refs.baseSelect.select(this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex], this.$refs.baseSelect.focusedIndex, $event);
-        } else if (this.selectAllFocused) {
-            this.onToggleAll();
+        if (this.options) {
+            if (this.$refs.baseSelect.focusedIndex > -1) {
+                this.$refs.baseSelect.select(this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex], this.$refs.baseSelect.focusedIndex, $event);
+            } else if (this.selectAllFocused) {
+                this.onToggleAll();
+            }
         }
     }
 
     onKeydownSpace($event: KeyboardEvent): void {
-        this.selectAllFocused = false;
-        this.$refs.baseSelect.onKeydownSpace($event);
+        if (this.options) {
+            this.selectAllFocused = false;
+            this.$refs.baseSelect.onKeydownSpace($event);
+        }
     }
 
     onToggleAll(): void {

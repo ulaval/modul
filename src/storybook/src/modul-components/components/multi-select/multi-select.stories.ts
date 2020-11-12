@@ -44,6 +44,16 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
     );
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
+    .add('options undefined', () => ({
+        data: () => ({
+            model1: [],
+            options: undefined
+        }),
+        template: `<m-multi-select :options="options" v-model="model1"></m-multi-select>`
+    })
+    );
+
+storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module)
     .add('complete', () => ({
         methods: actions(
             'open',
