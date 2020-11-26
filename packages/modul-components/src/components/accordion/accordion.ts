@@ -107,9 +107,6 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     @Ref('accordionHeader')
     public readonly refAccordionHeader: HTMLElement;
 
-    public titleMenuOpen: string = this.$i18n.translate('m-accordion:open');
-    public titleMenuClose: string = this.$i18n.translate('m-accordion:close');
-
     private uuid: string = uuid.generate();
     private internalOpen: boolean = false;
 
@@ -161,8 +158,11 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         return this.propDisabled || !this.hasContent() ? undefined : 0;
     }
 
-    public get headerHiddenText(): string {
-        return this.open ? this.titleMenuClose : this.titleMenuOpen;
+    public get headerAriaLabel(): string | undefined {
+        return !this.propDisabled && this.hasContent() ?
+            this.$i18n.translate(`m-accordion:${this.propOpen ? 'close' : 'open'}`)
+            : undefined;
+
     }
 
     public get isIconPositionLeft(): boolean {

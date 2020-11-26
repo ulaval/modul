@@ -60,7 +60,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Delay
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large m--is-empty-content"
     >
       <div
@@ -68,20 +68,17 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Delay
         aria-expanded="true"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
       >
         <div
           class="m-accordion__header-content"
-        >
-           
-          <!---->
-        </div>
+        />
          
         <!---->
       </div>
        
       <!---->
-    </article>
+    </div>
   </div>
 </article>
 `;
@@ -214,34 +211,25 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Dynam
     <div
       class="m-accordion-group__body"
     >
-      <article
+      <div
         class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
       >
         <div
           aria-controls="fakeId-body-wrap"
           aria-expanded="true"
+          aria-label="Cacher le contenu"
           class="m-accordion__header m--has-padding"
           id="fakeId"
-          role="tab"
+          role="button"
           tabindex="0"
         >
           <div
             class="m-accordion__header-content"
-          >
-             
-            <span
-              class="m-accordion__hidden"
-            >
-              
-                Cliquer pour afficher le contenu
-            
-            </span>
-          </div>
+          />
            
           <span
             aria-hidden="true"
             class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
-            title="Cliquer pour cacher le contenu"
           />
         </div>
          
@@ -249,7 +237,6 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Dynam
           aria-labelledby="fakeId"
           class="m-accordion__body-wrap"
           id="fakeId-body-wrap"
-          role="tabpanel"
         >
           <div
             class="m-accordion__body m--has-padding"
@@ -257,7 +244,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Dynam
             Some Accordion Content
           </div>
         </div>
-      </article>
+      </div>
     </div>
   </article>
 </div>
@@ -323,34 +310,25 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
   <div
     class="m-accordion-group__body"
   >
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="fakeId-body-wrap"
         aria-expanded="true"
+        aria-label="Cacher le contenu"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
         tabindex="0"
       >
         <div
           class="m-accordion__header-content"
-        >
-           
-          <span
-            class="m-accordion__hidden"
-          >
-            
-                Cliquer pour afficher le contenu
-            
-          </span>
-        </div>
+        />
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
-          title="Cliquer pour cacher le contenu"
         />
       </div>
        
@@ -358,7 +336,6 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
         aria-labelledby="fakeId"
         class="m-accordion__body-wrap"
         id="fakeId-body-wrap"
-        role="tabpanel"
       >
         <div
           class="m-accordion__body m--has-padding"
@@ -366,36 +343,27 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="fakeId-body-wrap"
         aria-expanded="true"
+        aria-label="Cacher le contenu"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
         tabindex="0"
       >
         <div
           class="m-accordion__header-content"
-        >
-           
-          <span
-            class="m-accordion__hidden"
-          >
-            
-                Cliquer pour afficher le contenu
-            
-          </span>
-        </div>
+        />
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
-          title="Cliquer pour cacher le contenu"
         />
       </div>
        
@@ -403,7 +371,6 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
         aria-labelledby="fakeId"
         class="m-accordion__body-wrap"
         id="fakeId-body-wrap"
-        role="tabpanel"
       >
         <div
           class="m-accordion__body m--has-padding"
@@ -411,36 +378,27 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
      
-    <article
+    <div
       class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="fakeId-body-wrap"
         aria-expanded="true"
+        aria-label="Cacher le contenu"
         class="m-accordion__header m--has-padding"
         id="fakeId"
-        role="tab"
+        role="button"
         tabindex="0"
       >
         <div
           class="m-accordion__header-content"
-        >
-           
-          <span
-            class="m-accordion__hidden"
-          >
-            
-                Cliquer pour afficher le contenu
-            
-          </span>
-        </div>
+        />
          
         <span
           aria-hidden="true"
           class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
-          title="Cliquer pour cacher le contenu"
         />
       </div>
        
@@ -448,7 +406,6 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
         aria-labelledby="fakeId"
         class="m-accordion__body-wrap"
         id="fakeId-body-wrap"
-        role="tabpanel"
       >
         <div
           class="m-accordion__body m--has-padding"
@@ -456,7 +413,7 @@ exports[`Storyshots modul-components|m-accordion-group/openAll="true" With Initi
           Some Accordion Content
         </div>
       </div>
-    </article>
+    </div>
   </div>
 </article>
 `;
