@@ -14,7 +14,7 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
 import { MCalendarButton } from '../calendar/calendar-button/calendar-button';
-import { BUTTON_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, LINK_NAME, POPPER_NAME, TIMEPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { BUTTON_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, LINK_NAME, POPPER_NAME, POPUP_NAME, TIMEPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
@@ -45,7 +45,7 @@ function validateTimeString(value: string): boolean {
 @Component({
     components: {
         [BUTTON_NAME]: MButton,
-        [POPPER_NAME]: MPopup,
+        [POPUP_NAME]: MPopup,
         [ICON_BUTTON_NAME]: MIconButton,
         [VALIDATION_MESSAGE_NAME]: MValidationMessage,
         [LINK_NAME]: MLink,
