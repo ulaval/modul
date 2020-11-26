@@ -27,14 +27,14 @@ export class MDateRange {
     }
 
     get toIsoString(): string | undefined {
-        if (!this.from) {
+        if (!this.to) {
             return undefined;
         }
 
-        if (typeof this.from === 'string') {
-            return this.from.includes('T') ? this.from : new ModulDate(this.from).endOfDay().toISOString();
+        if (typeof this.to === 'string') {
+            return this.to.includes('T') ? this.to : new ModulDate(this.to).endOfDay().toISOString();
         } else {
-            return this.from.toISOString();
+            return this.to.toISOString();
         }
     }
 }
