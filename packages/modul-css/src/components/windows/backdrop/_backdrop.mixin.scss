@@ -1,0 +1,22 @@
+@mixin m-backdrop-variables() {
+    --m-backdrop-z-index: 100;
+}
+
+@mixin m-backdrop() {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--m-window-z-index);
+    transition: opacity $m-transition-duration-md linear;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@mixin m-backdrop-open() {
+    opacity: 1;
+}
+
+@mixin m-backdrop-close() {
+    opacity: 0;
+}

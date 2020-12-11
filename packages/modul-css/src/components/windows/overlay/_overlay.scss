@@ -1,0 +1,44 @@
+.mc-overlay {
+    @include m-modal-variables();
+    @include m-overlay-variables();
+    @include m-overlay();
+    
+
+    &__content {
+        @include m-modal();
+        @include m-overlay-content();
+        @include m-overlay-content-close();
+
+        @include m-screen-min-sm() {
+            max-width: var(--m-max-width);
+        }
+
+    }
+
+    &__header {
+        @include m-modal-header();
+    }
+
+    &__body {
+        @include m-modal-body();
+    }
+
+    &__footer {
+        @include m-modal-footer();
+    }
+
+    &__backdrop {
+        @include m-overlay-backdrop();
+        @include m-overlay-backdrop-close();
+    }
+
+    &.mc-overlay--open {
+        .mc-overlay__backdrop {
+            @include m-overlay-backdrop-open();
+        }
+
+        .mc-overlay__content {
+            @include m-overlay-content-open();
+        }
+    }
+}

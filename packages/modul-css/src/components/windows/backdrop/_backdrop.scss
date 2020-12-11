@@ -1,0 +1,9 @@
+.mc-backdrop {
+    @include m-backdrop-variables();
+    @include m-backdrop();
+    @include m-backdrop-close();
+
+    &.mc-backdrop--open {
+        @include m-backdrop-open();
+    }
+}

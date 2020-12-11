@@ -1,0 +1,49 @@
+@mixin m-overlay-variables() {
+    --m-overlay-z-index: 100;
+}
+
+@mixin m-overlay() {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: var(--m-overlay-z-index);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin m-overlay-content() {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    transition: transform $m-transition-duration-lg ease;
+}
+
+@mixin m-overlay-content-open() {
+    transform: translate3d(0, 0, 0);
+}
+
+@mixin m-overlay-content-close() {
+    transform: translate3d(0, 100%, 0);
+}
+
+@mixin m-overlay-backdrop() {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    transition: opacity $m-transition-duration-md linear;
+    background-color: var(--m-color-grey-lighter);
+}
+
+@mixin m-overlay-backdrop-open() {
+    opacity: 1;
+}
+
+@mixin m-overlay-backdrop-close() {
+    opacity: 0;
+}
