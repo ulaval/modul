@@ -1,0 +1,31 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+abbr {
+    text-decoration: none;
+    box-shadow: 0 1px --m-color--grey-dark;
+}
+
+a {
+    color: var(--m-color--interactive);
+}
+
+input,
+textarea,
+button {
+    font-family: inherit;
+    @include m-font-size(var(--m-font-size));
+    line-height: inherit;
+}
+
+@include m-headings-styles();
+
+@include m-text-styles();

@@ -1,0 +1,5 @@
+.mu-text {
+    $values: normal, italic, oblique;
+
+    @include m-attribute-values-factory(font-style, $values);
+}

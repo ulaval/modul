@@ -1,0 +1,83 @@
+
+
+@mixin get-margin($attribute) {
+    $margin-values: xxxxl, xxxl, xxl, xl, lg, md, sm, xs, xxs;
+
+    @each $value in $margin-values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                #{$attribute}: var(--m-space-#{$value});
+            } 
+        }
+    }
+}
+
+.mu-m {
+    @include m-media-queries-content-factory() {
+        margin:  var(--m-space);
+    }
+
+    @include get-margin(margin);
+}
+
+.mu-mt {
+    @include m-media-queries-content-factory() {
+        margin-top:  var(--m-space);
+    }
+
+    @include get-margin(margin-top);
+}
+
+.mu-mr {
+    @include m-media-queries-content-factory() {
+        margin-right:  var(--m-space);
+    }
+
+    @include get-margin(margin-right);
+}
+
+.mu-mb {
+    @include m-media-queries-content-factory() {
+        margin-bottom:  var(--m-space);
+    }
+
+    @include get-margin(margin-bottom);
+}
+
+.mu-ml {
+    @include m-media-queries-content-factory() {
+        margin-left:  var(--m-space);
+    }
+
+    @include get-margin(margin-left);
+}
+
+.mu-no-m {
+    @include m-media-queries-content-factory() {
+        margin: 0;
+    }
+
+    &t {
+        @include m-media-queries-content-factory() {
+            margin-top: 0;
+        }
+    }
+
+    &r {
+        @include m-media-queries-content-factory() {
+            margin-right: 0;
+        }
+    }
+
+    &b {
+        @include m-media-queries-content-factory() {
+            margin-bottom: 0;
+        }
+    }
+
+    &l {
+        @include m-media-queries-content-factory() {
+            margin-left: 0;
+        }
+    }
+}

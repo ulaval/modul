@@ -1,0 +1,5 @@
+.mu-text {
+    $values: uppercase, lowercase, capitalize, none;
+
+    @include m-attribute-values-factory(text-transform, $values);
+}

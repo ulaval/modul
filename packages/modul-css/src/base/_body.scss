@@ -1,0 +1,24 @@
+.mu-app-body {
+    box-sizing: border-box;
+    min-width: var(--m-min-width);
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    color: var(--m-color-text);
+    @include m-get-current-font-family();
+    @include m-font-size(var(--m-base-font-size));
+    font-weight: var(--m-font-weight);
+    line-height: var(--m-line-height);
+    outline-color: var(--m-color--interactive-light);
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    ::selection {
+        color: var(--m-color-text);
+        background: var(--m-color-ul-yellow);
+    }
+}

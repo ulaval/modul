@@ -1,0 +1,9 @@
+.mu-text-highlighting {
+    @include m-media-queries-content-factory() {
+        display: inline;
+        font-size: var(--m-font-size-sm);
+        font-weight: var(--m-font-weight-semi-bold);
+        background: var(--m-color-warning-lightest);
+        box-shadow: 0 0 0 2px var(--m-color-warning-lightest);
+    }   
+}

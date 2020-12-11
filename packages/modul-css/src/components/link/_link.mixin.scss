@@ -1,0 +1,35 @@
+@mixin m-link-variables() {
+    --m-link-text-color: var(--m-color-interactive);
+    --m-link-text-color-hover: var(--m-color-interactive-light);
+    --m-link-text-color-active: var(--m-color-interactive-dark);
+}
+
+@mixin m-link() {
+    transition: color $m-transition-duration ease;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-weight: var(--m-font-weight-semi-bold);
+    color: var(--m-link-text-color);
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+@mixin m-link-hover() {
+    &:hover,
+    &:focus {
+        color: var(--m-link-text-color-hover);
+    }
+
+    &:active {
+        color: var(--m-link-text-color-active);
+    }
+}
+
+@mixin m-link-icon() {
+    display: inline-flex;
+    flex-shrink: 0;
+    vertical-align: middle;
+    stroke-width: 2px;
+    width: 0.8em;
+}

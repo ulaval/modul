@@ -1,0 +1,13 @@
+// Min
+$m-screen-min-xl: 1600px;
+$m-screen-min-lg: 1200px;
+$m-screen-min-md: 1024px;
+$m-screen-min-sm: 768px;
+$m-screen-min-xs: 480px;
+
+// Max
+$m-screen-max-xl: $m-screen-min-xl - 1;
+$m-screen-max-lg: $m-screen-min-lg - 1;
+$m-screen-max-md: $m-screen-min-md - 1;
+$m-screen-max-sm: $m-screen-min-sm - 1;
+$m-screen-max-xs: $m-screen-min-xs - 1;

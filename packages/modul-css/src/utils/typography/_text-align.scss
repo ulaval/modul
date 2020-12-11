@@ -1,0 +1,5 @@
+.mu-text {
+    $values: left, right, center, justify, start, end;
+
+    @include m-attribute-values-factory(text-align, $values);
+}

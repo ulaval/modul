@@ -1,0 +1,10 @@
+@mixin m-attribute-values-factory($attribute, $values) {
+    @each $value in $values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                #{$attribute}: $value;
+            }
+            
+        }
+    }
+}

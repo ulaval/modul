@@ -1,0 +1,7 @@
+@mixin m-get-current-font-family() {
+    font-family: var(--m-font-family-fallback);
+
+    @supports (font-variation-settings: normal) {
+        font-family: var(--m-font-family);
+    }
+}

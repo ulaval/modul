@@ -1,0 +1,27 @@
+.mu-button,
+.mu-button-primary,
+.mu-button-secondary {
+    @include m-button-variables();
+    @include m-button();
+    @include m-button-hover();
+
+    &:disabled,
+    &.mu-button--disabled {
+        @include m-button-disabled();
+    }
+    
+    &.mu-button--loading {
+        @include m-button-loading();
+    }
+}
+
+.mu-button,
+.mu-button-primary {
+    @include m-button-primary();
+}
+
+.mu-button-secondary {
+    @include m-button-secondary();
+}
+
+

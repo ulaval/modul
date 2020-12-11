@@ -1,0 +1,31 @@
+@mixin m-media-queries-content-factory() {
+    @content;
+
+    $map-media-queries: (
+        min: (
+            min-xl: $m-screen-min-xl,
+            min-lg: $m-screen-min-lg,
+            min-md: $m-screen-min-md,
+            min-sm: $m-screen-min-sm,
+            min-xs: $m-screen-min-xs,
+        ),
+        max: (
+            max-xl: $m-screen-max-xl,
+            max-lg: $m-screen-max-lg,
+            max-md: $m-screen-max-md,
+            max-sm: $m-screen-max-sm,
+            max-xs: $m-screen-max-xs
+        )
+    );
+
+    @each $type, $media-queries in $map-media-queries {
+        @each $name, $value in $media-queries {
+            &--#{$name} {
+                @media (#{$type}-width: $value) {
+                    @content;
+                }
+            }
+        }
+    }
+
+}

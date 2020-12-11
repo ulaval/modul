@@ -1,0 +1,20 @@
+// Border
+$m-border-width-l: 4px;
+$m-border-width: 2px;
+$m-border-width-s: 1px;
+$m-border-radius-l: 8px;
+$m-border-radius: 6px;
+$m-border-radius-s: 3px;
+
+// Box-shadow
+$m-box-shadow-l: 0 3px 6px rgba(var(--m-color-black), 0.15);
+$m-box-shadow: 0 2px 4px rgba(var(--m-color-black), 0.1);
+$m-box-shadow-s: 0 1px 1px rgba(var(--m-color-black), 0.1);
+
+// Scrollbar
+$m-scrollbar-width: 8px;
+
+// Touch size
+$m-touch-size-l: 48px;
+$m-touch-size: 44px;
+$m-touch-size-s: 38px;

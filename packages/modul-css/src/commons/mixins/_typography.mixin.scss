@@ -1,0 +1,156 @@
+@mixin m-font-size($font-size-in-pixel-without-unit) {
+    $base-font-size: 16;
+    // Fallback: px font-size
+    font-size: calc(#{$font-size-in-pixel-without-unit} * 1px);
+    // Em font-size
+    font-size: calc(#{$font-size-in-pixel-without-unit} / #{$base-font-size} * 1rem); 
+}
+
+@mixin m-commons-headings-styles() {
+    font-family: var(--m-font-family-headings);
+    font-weight: var(--m-font-weight-headings);
+    line-height: var(--m-line-height-headings);
+}
+
+@mixin m-font-style-h1() {
+    @include m-font-size(var(--m-font-size-h1-mobile));
+
+    @media (min-width: $m-screen-min-sm) {
+        @include m-font-size(var(--m-font-size-h1));
+    }
+}
+
+@mixin m-font-style-h2() {
+    @include m-font-size(var(--m-font-size-h2-mobile));
+
+    @media (min-width: $m-screen-min-sm) {
+        @include m-font-size(var(--m-font-size-h2));
+    }
+}
+
+@mixin m-font-style-h3() {
+    @include m-font-size(var(--m-font-size-h3-mobile));
+
+    @media (min-width: $m-screen-min-sm) {
+        @include m-font-size(var(--m-font-size-h3));
+    }
+}
+
+@mixin m-font-style-h4() {
+    @include m-font-size(var(--m-font-size-h4-mobile));
+
+    @media (min-width: $m-screen-min-sm) {
+        @include m-font-size(var(--m-font-size-h4));
+    }
+}
+
+@mixin m-font-style-h5() {
+    @include m-font-size(var(--m-font-size-h5-mobile));
+
+    @media (min-width: $m-screen-min-sm) {
+        @include m-font-size(var(--m-font-size-h5));
+    }
+}
+
+@mixin m-font-style-h6() {
+    @include m-font-size(var(--m-font-size-h6-mobile));
+
+    @media (min-width: $m-screen-min-sm) {
+        @include m-font-size(var(--m-font-size-h6));
+    }
+}
+
+@mixin m-headings-styles() {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .mu-h1,
+    .mu-h2,
+    .mu-h3,
+    .mu-h4,
+    .mu-h5,
+    .mu-h6 {
+        @include m-commons-headings-styles();
+    }
+
+    h1,
+    .mu-h1 {
+        margin: var(--m-margin-h1);
+
+        @include m-font-style-h1();
+    }
+
+    h2,
+    .mu-h2 {
+        margin: var(--m-margin-h2);
+
+        @include m-font-style-h2();
+    }
+
+    h3,
+    .mu-h3 {
+        margin: var(--m-margin-h3);
+
+        @include m-font-style-h3();
+    }
+
+    h4,
+    .mu-h4 {
+        margin: var(--m-margin-h4);
+
+        @include m-font-style-h4();
+    }
+
+    h5,
+    .mu-h5 {
+        margin: var(--m-margin-h5);
+
+        @include m-font-style-h5();
+    }
+
+    h6,
+    .mu-h6 {
+        margin: var(--m-margin-h6);
+
+        @include m-font-style-h6();
+    }
+}
+
+@mixin m-text-styles() {
+    p,
+    .mu-p {
+        margin: var(--m-margin-paragraph);
+    }
+
+    b,
+    strong {
+        font-weight: var(--m-font-weight-semi-bold);
+    }
+
+    i,
+    em {
+        font-style: italic;
+    }
+
+    small {
+        @include m-font-size(var(--m-font-size-sm));
+    }
+
+    pre,
+    code {
+        word-break: break-all;
+        word-wrap: break-word;
+        @include m-font-size(var(--m-font-size));
+        font-weight: var(--m-font-weight-light);
+        color: var(--m-color-text);
+    }
+}
+
+@mixin m-break-word() {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}

@@ -1,0 +1,45 @@
+
+.mu-link {
+    @include m-link-variables();
+    
+    @include m-link();
+
+    @include m-link-hover();
+
+    &:hover,
+    &:focus {
+        .mu-link__text-underline {
+            text-decoration: underline;
+        }
+    }
+
+    &:not(.mu-link--unvisited, :hover, :focus):visited {
+        color: var(--m-color-interactive-darker);
+    }
+
+    &.mu-link--underline {
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &__text-underline {
+        position: relative;
+
+        + .mu-link__icon {
+            margin-left: var(--m-space-xs);
+        }
+    }
+
+    &__icon {
+        @include m-link-icon();
+
+        + .mu-link__text-underline {
+            margin-left: var(--m-space-xs);
+        }
+    }
+}
+
+
+

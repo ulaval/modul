@@ -1,0 +1,31 @@
+:root {
+    // Font family
+    --m-font-family-headings: var(--m-font-family);
+
+    // Desktop font size
+    --m-font-size-h1: 36;
+    --m-font-size-h2: 32;
+    --m-font-size-h3: 28;
+    --m-font-size-h4: 24;
+    --m-font-size-h5: 20;
+    --m-font-size-h6: 16;
+
+    // Mobile font size
+    --m-font-size-h1-mobile: 26;
+    --m-font-size-h2-mobile: 24;
+    --m-font-size-h3-mobile: 22;
+    --m-font-size-h4-mobile: 20;
+    --m-font-size-h5-mobile: 18;
+    --m-font-size-h6-mobile: 16;
+
+    --m-line-height-headings: 1.1;
+
+    // Headings margin 
+    --m-margin-h1: 0;
+    --m-margin-h2: var(--m-space-lg) 0 0 0;
+    --m-margin-h3: var(--m-space-lg) 0 0 0;
+    --m-margin-h4: var(--m-space-md) 0 0 0;
+    --m-margin-h5: var(--m-space-md) 0 0 0;
+    --m-margin-h6: var(--m-space-md) 0 0 0;
+    --m-margin-paragraph: var(--m-space) 0 0 0;
+}

@@ -1,0 +1,15 @@
+.mu-text-precision {
+    &,
+    &-italic {
+        @include m-media-queries-content-factory() {
+            @include m-font-size(var(--m-font-size-sm));
+            color: var(--m-color-text-light);
+        }
+    }
+
+    &-italic {
+        @include m-media-queries-content-factory() {
+            font-style: italic;
+        }
+    }
+}

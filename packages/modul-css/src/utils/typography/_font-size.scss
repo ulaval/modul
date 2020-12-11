@@ -1,0 +1,12 @@
+.mu-text {
+    $values: xl, lg, md, sm, xs;
+
+    @each $value in $values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                @include m-font-size(var(--m-font-size-#{$value}));
+            } 
+            
+        }
+    }
+}

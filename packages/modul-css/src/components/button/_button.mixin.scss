@@ -1,0 +1,82 @@
+@mixin m-button-variables() {
+    --m-button-color: var(--m-color-interactive);
+
+    --m-button-primary-text-color: var(--m-color-white);
+
+    --m-button-secondary-background-color: rgba(255, 255, 255, 0);
+
+    --m-button-loading-text-color: var(--m-color-white);
+    --m-button-loading-background-color: var(--m-color-interactive-lighter);
+
+    --m-button-hover-text-color: var(--m-color-white);
+    --m-button-hover-background-color: var(--m-color-interactive-light);
+
+    --m-button-disabled-text-color: var(--m-color-disabled);
+    --m-button-disabled-background-color: rgba(255, 255, 255, 0);
+
+    --m-button-active-text-color: var(--m-color-white);
+    --m-button-active-background-color: var(--m-color-interactive-dark);
+
+    --m-button-padding: 11px var(--m-space);
+    --m-button-border-radius: #{ $m-border-radius };
+}
+
+@mixin m-button() {
+    transition-property: background, border-color, color;
+    transition-duration: $m-transition-duration;
+    transition-timing-function: ease;
+    border: 1px solid var(--m-button-color);
+    appearance: none;
+    outline: none;
+    user-select: none;
+    text-decoration: none;
+    line-height: 1;
+    font-family: inherit;
+    padding: var(--m-button-padding);
+    border-radius: var(--m-button-border-radius);
+}
+
+@mixin m-button-primary() {
+    color: var(--m-button-primary-text-color);
+    background: var(--m-button-color);
+}
+
+@mixin m-button-secondary() {
+    color: var(--m-button-color);
+    background: var(--m-button-secondary-background-color);
+}
+
+@mixin m-button-loading() {
+    cursor: progress;
+    color: var(--m-button-loading-text-color);
+    background: var(--m-button-loading-background-color);
+    border-color: var(--m-button-loading-background-color);
+}
+
+@mixin m-button-disabled() {
+    cursor: default;
+    color: var(--m-button-disabled-text-color);
+    background: var(--m-button-disabled-background-color);
+    border-color: var(--m-button-disabled-text-color);
+}
+
+@mixin m-button-hover() {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: var(--m-button-hover-text-color);
+        background: var(--m-button-hover-background-color);
+        border-color: var(--m-button-hover-background-color);
+    }
+
+    &:active {
+        @include m-button-active();
+    }
+}
+
+@mixin m-button-active() {
+    color: var(--m-button-active-text-color);
+    background: var( --m-button-active-background-color);
+    border-color: var( --m-button-active-background-color);
+}

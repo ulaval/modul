@@ -1,0 +1,28 @@
+@mixin m-scrollbar() {
+    scrollbar-face-color: var(--m-color-scrollbar);
+    scrollbar-shadow-color:var( --m-color-scrollbar);
+    scrollbar-highlight-color: var(--m-color-white);
+    scrollbar-darkshadow-color: var(--m-color-white);
+    scrollbar-track-color: var(--m-color-white);
+    scrollbar-arrow-color: var(--m-color-scrollbar);
+    
+    // For firefox 64+
+    scrollbar-color: var(--m-color-scrollbar) var(--m-color-scrollbar-light);
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: $m-scrollbar-width;
+        height: $m-scrollbar-width;
+        background: none;
+
+        &-track-piece {
+            background: var(--m-color-scrollbar-light);
+        }
+
+        &-thumb {
+            background: var(--m-color-scrollbar);
+            border-radius: $m-scrollbar-width/2;
+            border: 1px solid var(--m-color-scrollbar-light);
+        }
+    }
+}

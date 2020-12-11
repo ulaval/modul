@@ -1,0 +1,28 @@
+@import 
+    'typography',
+    'layout',
+    'padding',
+    'margin';
+
+.mu-visually-hidden {
+    @include m-visually-hidden;
+}
+
+.mu-bullet-list {
+    @include m-bullet-list();
+}
+
+.mu-decimal-list {
+    @include m-decimal-list();
+}
+
+.mu-label {
+    font-size: var(--m-font-size);
+    font-weight: var(--m-font-weight-semi-bold);
+}
+
+.mu-asterisk {
+    color: var(--m-color-accent);
+    font-weight: var(--m-font-weight-bold);
+}
+

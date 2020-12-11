@@ -1,0 +1,12 @@
+.mu-text {
+    $values: 'black', 'bold', semi-bold, regular, light;
+
+    @each $value in $values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                font-weight: var(--m-font-weight-#{$value});
+            } 
+            
+        }
+    }
+}

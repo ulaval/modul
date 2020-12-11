@@ -1,0 +1,81 @@
+@mixin get-padding($attribute) {
+    $padding-values: xxxxl, xxxl, xxl, xl, lg, md, sm, xs, xxs;
+
+    @each $value in $padding-values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                #{$attribute}: var(--m-space-#{$value});
+            } 
+        }
+    }
+}
+
+.mu-p {
+    @include m-media-queries-content-factory() {
+        padding:  var(--m-space);
+    }
+
+    @include get-padding(padding);
+}
+
+.mu-pt {
+    @include m-media-queries-content-factory() {
+        padding-top:  var(--m-space);
+    }
+
+    @include get-padding(padding-top);
+}
+
+.mu-pr {
+    @include m-media-queries-content-factory() {
+        padding-right:  var(--m-space);
+    }
+
+    @include get-padding(padding-right);
+}
+
+.mu-pb {
+    @include m-media-queries-content-factory() {
+        padding-bottom:  var(--m-space);
+    }
+
+    @include get-padding(padding-bottom);
+}
+
+.mu-pl {
+    @include m-media-queries-content-factory() {
+        padding-left:  var(--m-space);
+    }
+
+    @include get-padding(padding-left);
+}
+
+.mu-no-p {
+    @include m-media-queries-content-factory() {
+        padding: 0;
+    }
+
+    &t {
+        @include m-media-queries-content-factory() {
+            padding-top: 0;
+        }
+    }
+
+    &r {
+        @include m-media-queries-content-factory() {
+            padding-right: 0;
+        }
+    }
+
+    &b {
+        @include m-media-queries-content-factory() {
+            padding-bottom: 0;
+        }
+    }
+
+    &l {
+        @include m-media-queries-content-factory() {
+            padding-left: 0;
+        }
+    }
+}

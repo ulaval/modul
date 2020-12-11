@@ -1,0 +1,16 @@
+@mixin m-triangle($direction, $color: currentcolor, $size: 1em) {
+    @if not index(top right bottom left, $direction) {
+        @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+    }
+
+    $transparent: rgba(0, 0, 0, 0);
+    $opposite: (top:bottom, right:left, left:right, bottom:top);
+
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: calc(#{$size} / 2) solid $transparent;
+    border-#{map-get($opposite, $direction)}-color: $color;
+    border-#{map-get($opposite, $direction)}-width: calc(#{$size} / 2 / 1.5);
+}
