@@ -314,6 +314,11 @@ code {
   color: var(--m-color-text);
 }
 
+.mu-asterisk {
+  color: var(--m-color-accent);
+  font-weight: var(--m-font-weight-bold);
+}
+
 .mu-bg-ul-blue {
   background-color: var(--m-color-ul-blue);
 }
@@ -10444,6 +10449,11 @@ code {
   }
 }
 
+.mu-label {
+  font-size: var(--m-font-size);
+  font-weight: var(--m-font-weight-semi-bold);
+}
+
 .mu-scrollbar {
   scrollbar-face-color: var(--m-color-scrollbar);
   scrollbar-shadow-color: var(--m-color-scrollbar);
@@ -14360,6 +14370,17 @@ code {
   .mu-visibility-hidden--max-xs {
     visibility: hidden;
   }
+}
+
+.mu-visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 
 .mu-w-5 {
@@ -23195,27 +23216,6 @@ code {
     background: var(--m-color-warning-lightest);
     box-shadow: 0 0 0 2px var(--m-color-warning-lightest);
   }
-}
-
-.mu-visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-
-.mu-label {
-  font-size: var(--m-font-size);
-  font-weight: var(--m-font-weight-semi-bold);
-}
-
-.mu-asterisk {
-  color: var(--m-color-accent);
-  font-weight: var(--m-font-weight-bold);
 }
 
 .mc-bullet-list ul,
