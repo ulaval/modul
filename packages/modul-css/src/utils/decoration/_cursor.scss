@@ -1,0 +1,28 @@
+.mu-cursor {
+    $values:
+        alias,
+        all-scroll,
+        auto,
+        cell,
+        context-menu,
+        col-resize,
+        copy,
+        crosshair,
+        default,
+        grab,
+        grabbing,
+        help,
+        move,
+        no-drop,
+        none,
+        not-allowed,
+        pointer,
+        progress,
+        row-resize,
+        text,
+        wait,
+        zoom-in,
+        zoom-out;
+
+    @include m-attribute-values-factory(cursor, $values);
+}

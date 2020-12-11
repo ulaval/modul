@@ -18,22 +18,23 @@
     --m-button-active-background-color: var(--m-color-interactive-dark);
 
     --m-button-padding: 11px var(--m-space);
-    --m-button-border-radius: #{ $m-border-radius };
+    --m-button-radius: #{ $m-radius };
 }
 
 @mixin m-button() {
     transition-property: background, border-color, color;
     transition-duration: $m-transition-duration;
     transition-timing-function: ease;
-    border: 1px solid var(--m-button-color);
+    border: var(--m-border-width-sm) solid var(--m-button-color);
     appearance: none;
     outline: none;
     user-select: none;
     text-decoration: none;
     line-height: 1;
     font-family: inherit;
+    font-weight: var(--m-font-weight-semi-bold);
     padding: var(--m-button-padding);
-    border-radius: var(--m-button-border-radius);
+    border-radius: var(--m-button-radius);
 }
 
 @mixin m-button-primary() {

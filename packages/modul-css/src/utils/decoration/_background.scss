@@ -1,0 +1,9 @@
+.mu-bg {
+    @each $key, $value in $m-colors {
+        &-#{$key} {
+            @include m-media-queries-content-factory() {
+                background-color: $value;
+            } 
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.mu-justify-content {
+    $values:
+        flex-start,
+        flex-end,
+        start,
+        end,
+        self-start,
+        self-end,
+        right,
+        left,
+        space-around,
+        space-between,
+        space-evenly,
+        center,
+        stretch;
+
+    @include m-attribute-values-factory(justify-content, $values);
+}

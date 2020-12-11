@@ -1,0 +1,11 @@
+.mu-d {
+    $values:
+        block,
+        flex,
+        inline,
+        inline-block,
+        grid,
+        none;
+
+    @include m-attribute-values-factory(display, $values);
+}

@@ -1,0 +1,58 @@
+$m-colors: (
+    ul-blue: var(--m-color-ul-blue),
+    ul-yellow: var( --m-color-ul-yellow),
+    ul-red: var(--m-color-ul-red),
+
+    grey-black: var(--m-color-grey-black),
+    grey-darkest: var(--m-color-grey-darkest),
+    grey-darker: var(--m-color-grey-darker),
+    grey-dark: var(--m-color-grey-dark),
+    grey: var(--m-color-grey),
+    grey-light: var(--m-color-gre-light),
+    grey-lighter: var(--m-color-grey-lighter),
+    grey-lightest: var(--m-color-grey-lightest),
+
+    black: var(--m-color-black),
+    white: var(--m-color-white),
+    text: var(--m-color-text),
+    text-light: var(--m-color-text-light),
+
+    success-dark: var(--m-color-success-dark),
+    success: var(--m-color-success),
+    success-light: var(--m-color-success-light),
+    success-lightest: var(--m-color-success-lightest),
+
+    warning: var(--m-color-warning),
+    warning-lightest: var(--m-color-warning-lightest),
+
+    error-dark: var(--m-color-error-dark),
+    error: var(--m-color-error),
+    error-lightest: var(--m-color-error-lightest),
+
+    hint: var(--m-color-hint),
+
+    interactive-darker: var(--m-color-interactive-darker),
+    interactive-dark: var(--m-color-interactive-dark),
+    interactive: var(--m-color-interactive),
+    interactive-light: var(--m-color-interactive-light),
+    interactive-lighter: var(--m-color-interactive-lighter),
+    interactive-lightest: var(--m-color-interactive-lightest),
+    information: var(--m-color-information),
+
+    accent-dark: var(--m-color-accent-dark),
+    accent: var(--m-color-accent),
+    accent-light: var(--m-color-accent-light),
+    accent-lightest: var(--m-color-accent-lightest),
+
+    active: var(--m-color-ul-yellow),
+
+    disabled: var(--m-color-grey),
+    disabled-light: var(--m-color-grey-light),
+
+    scrollbar: var(--m-color-grey),
+    scrollbar-light: var(--m-color-grey-light),
+
+    border-dark: var(--m-color-grey-dark),
+    border: var(--m-color-grey-light),
+    border-light: var(--m-color-grey-lighter),
+);

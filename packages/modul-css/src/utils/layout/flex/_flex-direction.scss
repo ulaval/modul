@@ -1,0 +1,9 @@
+.mu-flex {
+    $values: 
+        column,
+        column-reverse,
+        row,
+        row-reverse;
+
+    @include m-attribute-values-factory(flex-direction, $values);
+}

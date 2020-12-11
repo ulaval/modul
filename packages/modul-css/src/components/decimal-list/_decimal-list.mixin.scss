@@ -1,0 +1,20 @@
+@mixin m-decimal-list() {
+    @include m-list();
+
+    &,
+    ol,
+    ul {
+        counter-reset: item;
+        padding-left: var(--m-space);
+    }
+
+    li {
+        list-style: none;
+
+        &:before { 
+            content: counters(item, '.') '.'; 
+            counter-increment: item;
+            margin-right: var(--m-space-xs);
+        }
+    }
+}

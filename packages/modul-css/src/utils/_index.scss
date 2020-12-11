@@ -1,19 +1,11 @@
 @import 
-    'typography',
+    'decoration',
     'layout',
-    'padding',
-    'margin';
+    'space',
+    'text';
 
 .mu-visually-hidden {
     @include m-visually-hidden;
-}
-
-.mu-bullet-list {
-    @include m-bullet-list();
-}
-
-.mu-decimal-list {
-    @include m-decimal-list();
 }
 
 .mu-label {

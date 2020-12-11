@@ -11,8 +11,8 @@
     scrollbar-width: thin;
 
     &::-webkit-scrollbar {
-        width: $m-scrollbar-width;
-        height: $m-scrollbar-width;
+        width: var(--m-scrollbar-width);
+        height: var(--m-scrollbar-width);
         background: none;
 
         &-track-piece {
@@ -21,7 +21,7 @@
 
         &-thumb {
             background: var(--m-color-scrollbar);
-            border-radius: $m-scrollbar-width/2;
+            border-radius: calc(var(--m-scrollbar-width) / 2);
             border: 1px solid var(--m-color-scrollbar-light);
         }
     }

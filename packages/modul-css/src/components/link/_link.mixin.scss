@@ -6,7 +6,6 @@
 
 @mixin m-link() {
     transition: color $m-transition-duration ease;
-    position: relative;
     display: inline-flex;
     align-items: center;
     font-weight: var(--m-font-weight-semi-bold);

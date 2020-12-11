@@ -1,0 +1,8 @@
+.mu-flex {
+    $values: 
+        nowrap,
+        wrap,
+        wrap-reverse;
+
+    @include m-attribute-values-factory(flex-wrap, $values);
+}

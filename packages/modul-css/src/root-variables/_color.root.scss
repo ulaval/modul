@@ -4,7 +4,7 @@
     --m-color-ul-yellow: #ffc103;
     --m-color-ul-red: #e30513;
 
-    // Seven Shades of Grey
+    // Grey
     --m-color-grey-black: #1f1f1f;
     --m-color-grey-darkest: #2e2e2e;
     --m-color-grey-darker: #3d3d3d;
@@ -16,9 +16,9 @@
 
     // General color
     --m-color-black: #000;
+    --m-color-white: #fff;
     --m-color-text: var(--m-color-black);
     --m-color-text-light: #757575;
-    --m-color-white: #fff;
 
     // Success colors
     --m-color-success-dark: #009962;
@@ -64,7 +64,7 @@
     --m-color-scrollbar: var(--m-color-grey);
     --m-color-scrollbar-light: var(--m-color-grey-light);
 
-    // Boder colors
+    // Border colors
     --m-color-border-dark: var(--m-color-grey-dark);
     --m-color-border: var(--m-color-grey-light);
     --m-color-border-light: var(--m-color-grey-lighter);

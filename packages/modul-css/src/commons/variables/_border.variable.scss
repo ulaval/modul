@@ -1,0 +1,17 @@
+// Border
+$m-border-xxl: var(--m-border-width-xxl) solid var(--m-color-border);
+$m-border-xl: var(--m-border-width-xl) solid var(--m-color-border);
+$m-border-lg: var(--m-border-width-lg) solid var(--m-color-border);
+$m-border-md: var(--m-border-width-md) solid var(--m-color-border);
+$m-border: var(--m-border-width) solid var(--m-color-border);
+$m-border-sm: var(--m-border-width-sm) solid var(--m-color-border);
+
+// Border radius
+$m-radius-xxl: 12px;
+$m-radius-xl: 10px;
+$m-radius-lg: 8px;
+$m-radius-md: 6px;
+$m-radius: 4px;
+$m-radius-sm: 2px;
+$m-radius-50: 50%;
+$m-radius-100: 100%;

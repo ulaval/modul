@@ -1,0 +1,100 @@
+$border-types:
+        border,
+        border-top,
+        border-right,
+        border-bottom,
+        border-left;
+
+// Borders
+.mu {
+    @each $border, $value in $border-types {
+        &-#{$border} {
+            @include m-media-queries-content-factory() {
+                #{$border}: $m-border;
+            } 
+        
+            $width-variables:(
+                xxl: $m-border-xxl,
+                xl: $m-border-xl,
+                lg: $m-border-lg,
+                md: $m-border-md,
+                sm: $m-border-sm
+            );
+            
+            @each $width, $value in $width-variables {
+                &-#{$width} {
+                    @include m-media-queries-content-factory() {
+                        #{$border}: $value;
+                    } 
+                }
+            }
+        }
+    }
+}
+
+// No borders
+.mu-no {
+    @each $border, $value in $border-types {
+        &-#{$border} {
+            @include m-media-queries-content-factory() {
+                #{$border}: 0;
+            } 
+        }
+    }
+}
+
+@mixin get-radius-style($attribute) {
+    $radius-widths: (
+        xxl: $m-radius-xxl,
+        xl: $m-radius-xl,
+        lg: $m-radius-lg,
+        md: $m-radius-md,
+        sm: $m-radius-sm,
+        50: $m-radius-50,
+        100: $m-radius-100
+    );
+
+    @include m-media-queries-content-factory() {
+        #{$attribute}: $m-radius;
+    }
+
+    @each $width, $value in $radius-widths {
+        &-#{$width} {
+            @include m-media-queries-content-factory() {
+                #{$attribute}: $value;
+            }
+        }
+    }
+}
+
+$border-radius-positions:
+    top-right,
+    top-left,
+    bottom-left,
+    bottom-right;
+
+// Border radius
+.mu-radius {
+    @include get-radius-style(border-radius);
+
+    @each $position in $border-radius-positions {
+        &-#{$position} {
+            @include get-radius-style(border-#{$position}-radius);
+        }
+    }
+}
+
+// No border radius
+.mu-no-radius {
+    @include m-media-queries-content-factory() {
+        border-radius: 0;
+    }
+
+    @each $position in $border-radius-positions {
+        &-#{$position} {
+            @include m-media-queries-content-factory() {
+                border-#{$position}-radius: 0;
+            }
+        }
+    }
+}

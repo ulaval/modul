@@ -1,0 +1,25 @@
+.mu-center-block {
+    @include m-media-queries-content-factory() {
+        max-width: var(--m-max-width); 
+    }
+
+    &,
+    &-xl,
+    &-lg,
+    &-sm,
+    &-xs {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    $values: xl, lg, sm, xs;
+
+    @each $value in $values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                max-width: var(--m-max-width-#{$value});
+            } 
+        }
+    }
+}

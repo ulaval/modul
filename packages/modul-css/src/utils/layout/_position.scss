@@ -1,0 +1,10 @@
+.mu-position {
+    $values:
+        static,
+        relative,
+        absolute,
+        fixed,
+        sticky;
+
+    @include m-attribute-values-factory(position, $values);
+}

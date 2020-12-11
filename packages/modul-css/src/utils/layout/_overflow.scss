@@ -1,0 +1,16 @@
+$overflow-values:
+    auto,
+    hidden,
+    visible; 
+
+.mu-overflow {
+    @include m-attribute-values-factory(overflow, $overflow-values);
+
+    &-x {
+        @include m-attribute-values-factory(overflow-x, $overflow-values);
+    }
+
+    &-y {
+        @include m-attribute-values-factory(overflow-y, $overflow-values);
+    }
+}

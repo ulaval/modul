@@ -1,5 +1,5 @@
 
-.mu-link {
+.mc-link {
     @include m-link-variables();
     
     @include m-link();
@@ -8,16 +8,16 @@
 
     &:hover,
     &:focus {
-        .mu-link__text-underline {
+        .mc-link__text-underline {
             text-decoration: underline;
         }
     }
 
-    &:not(.mu-link--unvisited, :hover, :focus):visited {
+    &:not(.mc-link--unvisited, :hover, :focus):visited {
         color: var(--m-color-interactive-darker);
     }
 
-    &.mu-link--underline {
+    &.mc-link--underline {
         &:hover,
         &:focus {
             text-decoration: underline;
@@ -27,7 +27,7 @@
     &__text-underline {
         position: relative;
 
-        + .mu-link__icon {
+        + .mc-link__icon {
             margin-left: var(--m-space-xs);
         }
     }
@@ -35,7 +35,7 @@
     &__icon {
         @include m-link-icon();
 
-        + .mu-link__text-underline {
+        + .mc-link__text-underline {
             margin-left: var(--m-space-xs);
         }
     }

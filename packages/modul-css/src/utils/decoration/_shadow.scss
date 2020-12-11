@@ -1,0 +1,17 @@
+.mu-shadow {
+    @include m-media-queries-content-factory() {
+        box-shadow: $m-shadow;
+    }
+
+    &-lg {
+        @include m-media-queries-content-factory() {
+            box-shadow: $m-shadow-lg;
+        }
+    }
+
+    &-sm {
+        @include m-media-queries-content-factory() {
+            box-shadow: $m-shadow-sm;
+        }
+    }
+}

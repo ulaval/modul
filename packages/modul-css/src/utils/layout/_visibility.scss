@@ -1,0 +1,7 @@
+.mu-visibility {
+    $values:
+        visible,
+        hidden;
+
+    @include m-attribute-values-factory(visibility, $values);
+}

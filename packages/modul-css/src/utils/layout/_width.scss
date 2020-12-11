@@ -1,0 +1,42 @@
+// Percentage width 
+.mu-w {
+    $values: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100;
+
+    @each $value in $values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                width: $value * 1%;
+            }
+        }
+    }
+
+    &-33 {
+        @include m-media-queries-content-factory() {
+            width: 33.33%;
+        }
+    }
+}
+
+// Max width
+.mu-max-w {
+    @include m-media-queries-content-factory() {
+        max-width: var(--m-max-width);
+    }
+
+    $values: xl, lg, sm, xs, text;
+
+    @each $value in $values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                max-width: var(--m-max-width-#{$value});
+            } 
+        }
+    }
+}
+
+// Min width
+.mu-min-w {
+    @include m-media-queries-content-factory() {
+        min-width: var(--m-min-width);
+    }
+}

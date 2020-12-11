@@ -2,23 +2,15 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="w=device-w,initial-scale=1">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="src/main.css">
-  <link rel="stylesheet" href="src/custom.css" >
+  <!-- <link rel="stylesheet" href="src/themes/a11y.css" > -->
 </head>
-<body class="mu-app-body">
-    <main class="mu-center-block">
-        <!-- <p class="mu-font-size-xl mu-display-inline">mu-font-size-xl - Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima sequi nulla magnam sunt dolorum totam quisquam, iusto veniam aliquam perferendis, nemo libero vitae vero, dolores hic quia nihil maxime.</p>
-
-        <p class="mu-font-size-l mu-display-inline">mu-font-size-l - Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima sequi nulla magnam sunt dolorum totam quisquam, iusto veniam aliquam perferendis, nemo libero vitae vero, dolores hic quia nihil maxime.</p>
-
-        <p class="mu-font-size mu-display-inline">mu-font-size - Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima sequi nulla magnam sunt dolorum totam quisquam, iusto veniam aliquam perferendis, nemo libero vitae vero, dolores hic quia nihil maxime.</p>
-        <p class="mu-font-size-s mu-display-inline">mu-font-size-s - Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima sequi nulla magnam sunt dolorum totam quisquam, iusto veniam aliquam perferendis, nemo libero vitae vero, dolores hic quia nihil maxime.</p>
-
-        <p class="mu-font-size-xs">mu-font-size-xs - Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima sequi nulla magnam sunt dolorum totam quisquam, iusto veniam aliquam perferendis, nemo libero vitae vero, dolores hic quia nihil maxime.</p> -->
-        <div class="mu-display-flex mu-flex-direction-column-reverse--max-xs">
-            <div class="mu-width-50--min-xs mu-p-md">
+<body class="mu-app-body mu-bg-grey-lighter">
+    <main class="mu-center-block mu-bg-white mu-pb-xxxl">
+        <div class="mu-d-flex mu-flex-column-reverse--max-xs">
+            <div class="mu-w-50--min-xs mu-p-md mu-border-left-xl">
                 <h1>Titre H1</h1>
                 <h2>Titre H2</h2>
                 <h3>Titre H3</h3>
@@ -26,7 +18,7 @@
                 <h5>Titre H5</h5>
                 <h6>Titre H6</h6>
             </div>
-            <div class="mu-width-50--min-xs mu-p-md">
+            <div class="mu-w-50--min-xs mu-p-md">
                 <p class="mu-h1 mu-text-uppercase">Class .mu-h1</p>
                 <p class="mu-h2 mu-mt--max-xs mu-text-capitalize">Class .mu-h2</p>
                 <p class="mu-h3 mu-mt--max-xs mu-text-lowercase">Class .mu-h3</p>
@@ -36,46 +28,46 @@
             </div>
         </div>
 
-        <div class="mu-display-flex mu-text-center">
-            <div class="mu-width-50 mu-width-33--min-sm mu-p">
-                <h2 class="mu-h5 mu-display-none--max-sm">Class .mu-width-33</h2>
-                <h2 class="mu-h5 mu-display-none--min-sm">Class .mu-width-50</h2>
+        <div class="mu-d-flex mu-text-center mu-shadow-lg mu-m-lg mu-mb-xxl mu-radius-xxl mu-radius-top-left-50--min-md mu-no-radius-bottom-right">
+            <div class="mu-w-50 mu-w-33--min-sm mu-p">
+                <h2 class="mu-h5 mu-d-none--max-sm mu-no-m">Class .mu-w-33</h2>
+                <h2 class="mu-h5 mu-visibility-hidden--min-sm mu-no-m">Class .mu-w-50</h2>
             </div>
-            <div class="mu-width-50 mu-width-33--min-sm mu-p">
-                <h2 class="mu-h5 mu-display-none--max-sm">Class .mu-width-33</h2>
-                <h2 class="mu-h5 mu-display-none--min-sm">Class .mu-width-50</h2>
+            <div class="mu-w-50 mu-w-33--min-sm mu-p">
+                <h2 class="mu-h5 mu-d-none--max-sm mu-no-m">Class .mu-w-33</h2>
+                <h2 class="mu-h5 mu-d-none--min-sm mu-no-m">Class .mu-w-50</h2>
             </div>
-            <div class="mu-width-50 mu-width-33--min-sm mu-display-none--max-sm mu-p">
-                <h2 class="mu-h5">Class .mu-width-33</h2>
-            </div>
-        </div>
-
-        <div class="mu-display-flex--min-sm mu-text-right--max-sm mu-text-center--min-sm">
-            <div class="mu-width-25--min-sm mu-p--max-md">
-                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-width-25--min-sm</h2>
-            </div>
-            <div class="mu-width-25--min-sm mu-p--max-md">
-                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-width-25--min-sm</h2>
-            </div>
-            <div class="mu-width-25--min-sm mu-p--max-md">
-                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-width-25--min-sm</h2>
-            </div>
-            <div class="mu-width-25--min-sm mu-p--max-md">
-                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-width-25--min-sm</h2>
+            <div class="mu-w-50 mu-w-33--min-sm mu-d-none--max-sm mu-p mu-no-m">
+                <h2 class="mu-h5">Class .mu-w-33</h2>
             </div>
         </div>
 
-        <p class="mu-max-width-xs--min-lg"><b>Lorem</b> ipsum dolor <strong>sit</strong>, amet <span class="mu-text-black">consectetur</span> adipisicing <span class="mu-text-light">elit</span>. Nesciunt error ex molestias sit dolores. Laborum, sequi quidem! Sapiente, error modi adipisci aut deleniti, commodi voluptate, pariatur dolore aspernatur odio officia.</p>
+        <div class="mu-d-flex--min-sm mu-text-right--max-sm mu-text-center--min-sm">
+            <div class="mu-w-25--min-sm mu-p--max-md">
+                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-w-25--min-sm</h2>
+            </div>
+            <div class="mu-w-25--min-sm mu-p--max-md">
+                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-w-25--min-sm</h2>
+            </div>
+            <div class="mu-w-25--min-sm mu-p--max-md">
+                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-w-25--min-sm</h2>
+            </div>
+            <div class="mu-w-25--min-sm mu-p--max-md">
+                <h2 class="mu-h5 mu-no-mt--min-sm">Class .mu-w-25--min-sm</h2>
+            </div>
+        </div>
+
+        <p class="mu-max-w-xs--min-lg mu-bg-information mu-color-interactive"><b class="mu-color-black">Lorem</b> ipsum dolor <strong>sit</strong>, amet <span class="mu-text-black">consectetur</span> adipisicing <span class="mu-text-light">elit</span>. Nesciunt error ex molestias sit dolores. Laborum, sequi quidem! Sapiente, error modi adipisci aut deleniti, commodi voluptate, pariatur dolore aspernatur odio officia.</p>
     
-        <a href="#" class="mu-link">Lien</a>
-        <div class="mu-display-flex mu-justify-content-space-between mu-mt-xl--max-sm">
-            <button class="mu-button mu-mr">Bouton primaire</button>
-            <button class="mu-button-secondary">Bouton secondaire</button>
+        <a href="#" class="mc-link">Lien</a>
+        <div class="mu-d-flex mu-justify-content-space-between mu-mt-xl--max-sm mu-bg-success-lightest mu-p-xl--min-sm mu-p--max-sm">
+            <button class="mc-button mu-mr">Bouton primaire</button>
+            <button class="mc-button-secondary">Bouton secondaire</button>
         </div>
-        <div class="mu-display-flex--min-sm mu-mt-xl">
-            <button class="mu-button-secondary mu-button--disabled mu-mr--min-sm">Bouton désactivé</button>
-            <div class="mu-display-flex--min-sm mu-mt--max-sm">
-                <button class="mu-button-secondary mu-button--loading">Bouton en chargement</button>
+        <div class="mu-d-flex--min-sm mu-mt-xl">
+            <button class="mc-button-secondary mc-button--disabled mu-mr--min-sm">Bouton désactivé</button>
+            <div class="mu-d-flex--min-sm mu-mt--max-sm">
+                <button class="mc-button-secondary mc-button--loading">Bouton en chargement</button>
             </div>
         </div>
         <ul>
@@ -84,7 +76,7 @@
             <li>Item 3</li>
             <li>Item 4</li>
         </ul>
-        <ol class="mu-decimal-list">
+        <ol class="mc-decimal-list mu-m-lg mu-no-mb">
             <li>Item</li>
             <li>Item
                 <ol>
@@ -102,7 +94,7 @@
             <li>Item</li>
             <li>Item</li>
         </ol>
-        <ul class="mu-bullet-list">
+        <ul class="mc-bullet-list mu-m-lg mu-no-mb mu-overflow-y-auto mu-scrollbar" style="height: 200px;">
             <li>Item 1
                 <ul>
                     <li class="mu-text-xl">Item 1.1</li>

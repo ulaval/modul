@@ -1,0 +1,14 @@
+.mu-align-items {
+    $values:
+        flex-start, 
+        flex-end,
+        start,
+        end,
+        self-start,
+        self-end,
+        baseline,
+        center,
+        stretch;
+
+    @include m-attribute-values-factory(align-items, $values);
+}
