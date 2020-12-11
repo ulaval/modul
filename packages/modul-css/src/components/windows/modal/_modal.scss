@@ -27,20 +27,14 @@
     }
 
     &.mc-modal--width-100 {
-        @include m-screen-min-sm() {
-            max-width: 100%;
-        }
+        @include m-modal-width-100();
     }
 
     &.mc-modal--width-lg {
-        @include m-screen-min-sm() {
-            max-width: var(--m-max-width);
-        }
+        @include m-modal-width-lg();
     }
 
     &.mc-modal--width-sm {
-        @include m-screen-min-sm() {
-            max-width: 420px;
-        }
+        @include m-modal-width-sm();
     }
 }

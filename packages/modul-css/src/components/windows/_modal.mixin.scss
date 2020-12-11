@@ -68,6 +68,25 @@
     }
 }
 
+@mixin m-modal-width-100() {
+    @include m-screen-min-sm() {
+        max-width: 100%;
+        height: 100%;
+    }
+}
+
+@mixin m-modal-width-lg() {
+    @include m-screen-min-sm() {
+        max-width: var(--m-max-width);
+    }
+}
+
+@mixin m-modal-width-sm {
+    @include m-screen-min-sm() {
+        max-width: 420px;
+    }
+}
+
 @mixin m-modal-open() {
     transform: translate3d(0, 0, 0);
     opacity: 1;
