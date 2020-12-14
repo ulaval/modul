@@ -73,4 +73,4 @@ class A11yFocusCssClass {
     }
 }
 
-new A11yFocusCssClass();
+new A11yFocusCssClass('.mu-app-body', 'mu-a11y-focus-active');
