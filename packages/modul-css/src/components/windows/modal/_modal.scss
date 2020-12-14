@@ -1,13 +1,10 @@
 .mc-modal {
     @include m-modal-variables();
     @include m-modal();
-    @include m-modal-close();
 
-    transform: translate3d(0, 0, 0);
-    opacity: 0;
-
-    @include m-screen-min-sm() {
-        max-width: 672px;
+    &__box {
+        @include m-modal-box();
+        
     }
 
     &__header {
@@ -22,12 +19,34 @@
         @include m-modal-footer();
     }
 
+    &__backdrop {
+        @include m-modal-backdrop();
+    }
+
     &.mc-modal--open {
-        @include m-modal-open();
+        .mc-modal__backdrop {
+            @include m-modal-backdrop-open();
+        }
+
+        .mc-modal__box {
+            @include m-modal-box-open();
+        }
+    }
+
+    &.mc-modal--close {
+        .mc-modal__backdrop {
+            @include m-modal-backdrop-close();
+        }
+
+        .mc-modal__box {
+            @include m-modal-box-close();
+        }
     }
 
     &.mc-modal--width-100 {
-        @include m-modal-width-100();
+        .mc-modal__box {
+            @include m-modal-width-100();
+        }
     }
 
     &.mc-modal--width-lg {

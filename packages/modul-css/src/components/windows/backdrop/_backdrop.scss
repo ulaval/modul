@@ -1,9 +1,18 @@
-.mc-backdrop {
-    @include m-backdrop-variables();
-    @include m-backdrop();
-    @include m-backdrop-close();
+.mc-backdrop,
+.mc-backdrop-grey {
+    @include  m-backdrop-variables();
+
+    @include m-backdrop(var(--m-backdrop-z-index), var(--m-backdrop-bg));
 
     &.mc-backdrop--open {
         @include m-backdrop-open();
     }
+
+    &.mc-backdrop--close {
+        @include m-backdrop-close();
+    }
+}
+
+.mc-backdrop-grey {
+    @include m-backdrop-grey();
 }

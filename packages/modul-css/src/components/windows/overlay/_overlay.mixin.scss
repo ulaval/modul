@@ -1,49 +1,57 @@
+$m-overlay-box-transition: transform $m-transition-duration-lg ease;
+$m-overlay-box-default-transform: translate3d(0, 100%, 0);
+
 @mixin m-overlay-variables() {
-    --m-overlay-z-index: 100;
+    --m-overlay-header-bg: var(--m-color-grey-darker);
+    --m-overlay-header-color: var(--m-color-white);
+    --m-overlay-body-padding: var(--m-space-md) var(--m-space);
+
+    @include m-screen-min-sm() {
+        --m-overlay-body-padding: var(--m-space-lg);
+    }
 }
 
 @mixin m-overlay() {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: var(--m-overlay-z-index);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include m-window();
 }
 
-@mixin m-overlay-content() {
-    position: relative;
-    z-index: 1;
+@mixin m-overlay-box() {
+    @include m-window-box;
     height: 100%;
-    transition: transform $m-transition-duration-lg ease;
+    transform: $m-overlay-box-default-transform;
 }
 
-@mixin m-overlay-content-open() {
+@mixin m-overlay-box-open() {
+    transition: $m-overlay-box-transition;
     transform: translate3d(0, 0, 0);
 }
 
-@mixin m-overlay-content-close() {
-    transform: translate3d(0, 100%, 0);
+@mixin m-overlay-box-close() {
+    transition: $m-overlay-box-transition;
+    transform: $m-overlay-box-default-transform;
+}
+
+@mixin m-overlay-header() {
+    @include m-window-dark-header(var(--m-overlay-header-bg), var(--m-overlay-header-color));
+}
+
+@mixin m-overlay-body {
+    @include m-window-body(var(--m-overlay-body-padding));
+}
+
+@mixin m-overlay-footer {
+    @include m-window-footer();
 }
 
 @mixin m-overlay-backdrop() {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    transition: opacity $m-transition-duration-md linear;
-    background-color: var(--m-color-grey-lighter);
+    @include m-backdrop();
+    @include m-backdrop-grey();
 }
 
 @mixin m-overlay-backdrop-open() {
-    opacity: 1;
+    @include m-backdrop-open();
 }
 
 @mixin m-overlay-backdrop-close() {
-    opacity: 0;
+    @include m-backdrop-close();
 }

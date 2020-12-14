@@ -1,0 +1,56 @@
+.mc-dialog {
+    @include m-dialog-variables();
+    @include m-dialog();
+    
+    &__box {
+        @include m-dialog-box();
+    }
+
+    &__header {
+        @include m-dialog-header();
+    }
+
+    &__body {
+        @include m-dialog-body();
+    }
+
+    &__footer {
+        @include m-dialog-footer();
+    }
+
+    &__buttons-area {
+        @include m-dialog-buttons-area();
+    }
+
+    &__backdrop {
+        @include m-dialog-backdrop();
+    }
+
+    &.mc-dialog--open {
+        .mc-dialog__backdrop {
+            @include m-dialog-backdrop-open();
+        }
+
+        .mc-dialog__box {
+            @include m-dialog-box-open();
+        }
+    }
+
+    &.mc-dialog--close {
+        .mc-dialog__backdrop {
+            @include m-dialog-backdrop-close();
+        }
+
+        .mc-dialog__box {
+            @include m-dialog-box-close();
+        }
+    }
+
+    &.mc-dialog--width-md {
+        @include m-dialog-box-width-md();
+    }
+
+    &.mc-dialog--width-lg {
+        @include m-dialog-box-width-lg();
+    }
+}

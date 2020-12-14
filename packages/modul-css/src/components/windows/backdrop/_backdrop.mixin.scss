@@ -1,22 +1,27 @@
+$m-backdrop-bg: rgba(0, 0, 0, 0.6);
+
 @mixin m-backdrop-variables() {
-    --m-backdrop-z-index: 100;
+    --m-backdrop-z-index: 99;
+    --m-backdrop-bg: #{$m-backdrop-bg};
 }
 
-@mixin m-backdrop() {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: var(--m-window-z-index);
-    transition: opacity $m-transition-duration-md linear;
-    background-color: rgba(0, 0, 0, 0.7);
+@mixin m-backdrop($z-index: 0, $bg: $m-backdrop-bg) {
+    @include m-window($z-index);
+    opacity: 0;
+
+    background-color: $bg;
 }
 
-@mixin m-backdrop-open() {
+@mixin m-backdrop-grey() {
+    background-color: var(--m-color-grey-lighter);
+}
+
+@mixin m-backdrop-open($transition-duration: $m-transition-duration) {
+    transition: opacity $transition-duration linear;
     opacity: 1;
 }
 
-@mixin m-backdrop-close() {
+@mixin m-backdrop-close($transition-duration: $m-transition-duration) {
+    transition: opacity $transition-duration linear;
     opacity: 0;
 }

@@ -1,0 +1,8 @@
+* :focus {
+    outline: none;
+}
+
+.a11y-focus-active.a11y-focus-active.a11y-focus-active.a11y-focus-active * :focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px var(--m-color-interactive-dark), inset 0 0 0 1px #fff !important;
+}

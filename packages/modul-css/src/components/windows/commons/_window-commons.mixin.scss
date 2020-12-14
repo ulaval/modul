@@ -1,0 +1,70 @@
+$m-window-z-index: 100 !default;
+
+@mixin m-window($z-index: $m-window-z-index) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin m-window-box() {
+    transition: none;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 100%;
+    max-height: 100%;
+    box-shadow: $m-shadow;
+    background: var(--m-color-white);
+}
+
+@mixin m-window-dark-header($header-bg, $header-color: #fff) {
+    position: relative;
+    background: $header-bg;
+    color: $header-color;
+    padding: var(--m-space);
+
+    > :first-child {
+        margin-top: 0;
+    }
+
+    @include m-screen-min-sm() {
+        padding-right: var(--m-space-lg);
+        padding-left: var(--m-space-lg);
+    }
+}
+
+@mixin m-window-body($padding) {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 100px;
+    padding: $padding;
+    overflow-y: auto;
+
+    @include m-scrollbar();
+
+    > :first-child {
+        margin-top: 0;
+    }
+}
+
+@mixin m-window-footer($z-index: $m-window-z-index) {
+    position: relative;
+    flex-shrink: 0;
+    border-top: $m-border-sm;
+    padding: var(--m-space);
+
+    > :first-child {
+        margin-top: 0;
+    }
+
+    @include m-screen-min-sm() {
+        padding-right: var(--m-space-lg);
+        padding-left: var(--m-space-lg);
+    }
+}

@@ -1,0 +1,101 @@
+$m-modal-box-transition-mobile: transform $m-transition-duration ease;
+$m-modal-box-transition: transform $m-transition-duration ease, opacity $m-transition-duration ease;
+$m-modal-box-default-transform-mobile: translate3d(0, 100%, 0);
+$m-modal-box-default-transform: translate3d(0, 40px, 0);
+
+@mixin m-modal-variables {
+    --m-modal-header-bg: var(--m-color-grey-darker);
+    --m-modal-header-color: var(--m-color-white);
+    --m-modal-body-padding: var(--m-space-md) var(--m-space);
+    --m-modal-width: 672px;
+
+    @include m-screen-min-sm() {
+        --m-modal-body-padding: var(--m-space-lg);
+    }
+}
+
+@mixin m-modal() {
+    @include m-window();
+}
+
+@mixin m-modal-box {
+    @include m-window-box;
+
+    @include m-screen-max-sm() {
+        transform: $m-modal-box-default-transform-mobile;
+        height: 100%;
+        max-width: 100%;
+    }
+
+    @include m-screen-min-sm() {
+        transform: $m-modal-box-default-transform;
+        max-width: var(--m-modal-width);
+        opacity: 0;
+    }
+}
+
+@mixin m-modal-width-sm {
+    --m-modal-width: 420px;
+}
+
+@mixin m-modal-width-lg {
+    --m-modal-width: var(--m-max-width);
+}
+
+@mixin m-modal-width-100() {
+    --m-modal-width: 100%;
+
+    @include m-screen-min-sm() {
+        height: 100%;
+    }
+}
+
+@mixin m-modal-header {
+    @include m-window-dark-header(var(--m-modal-header-bg), var(--m-modal-header-color));
+}
+
+@mixin m-modal-body {
+    @include m-window-body(var(--m-modal-body-padding));
+}
+
+@mixin m-modal-footer {
+    @include m-window-footer();
+}
+
+@mixin m-modal-box-open() {
+    @include m-screen-max-sm() {
+        transition: $m-modal-box-transition-mobile;
+        transform: translate3d(0, 0, 0);
+    }
+
+    @include m-screen-min-sm() {
+        transition: $m-modal-box-transition;
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    };
+}
+
+@mixin m-modal-box-close() {
+    @include m-screen-max-sm() {
+        transition: $m-modal-box-transition-mobile;
+        transform: $m-modal-box-default-transform-mobile;
+    }
+
+    @include m-screen-min-sm() {
+        transition: $m-modal-box-transition;
+        opacity: 0;
+        transform: $m-modal-box-default-transform;
+    };
+}
+
+@mixin m-modal-backdrop() {
+    @include m-backdrop(0);
+}
+
+@mixin m-modal-backdrop-open() {
+    @include m-backdrop-open();
+}
+
+@mixin m-modal-backdrop-close() {
+    @include m-backdrop-close($m-transition-duration-sm);
+}

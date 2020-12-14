@@ -1,35 +1,30 @@
 .mc-overlay {
-    @include m-modal-variables();
     @include m-overlay-variables();
     @include m-overlay();
-    
 
-    &__content {
-        @include m-modal();
-        @include m-overlay-content();
-        @include m-overlay-content-close();
+    &__box {
+        @include m-overlay-box();
 
         @include m-screen-min-sm() {
             max-width: var(--m-max-width);
         }
-
     }
 
     &__header {
-        @include m-modal-header();
+        @include m-overlay-header();
     }
 
     &__body {
-        @include m-modal-body();
+        @include m-overlay-body();
     }
 
     &__footer {
-        @include m-modal-footer();
+        @include m-overlay-footer();
     }
 
     &__backdrop {
         @include m-overlay-backdrop();
-        @include m-overlay-backdrop-close();
+        
     }
 
     &.mc-overlay--open {
@@ -37,8 +32,18 @@
             @include m-overlay-backdrop-open();
         }
 
-        .mc-overlay__content {
-            @include m-overlay-content-open();
+        .mc-overlay__box {
+            @include m-overlay-box-open();
+        }
+    }
+
+    &.mc-overlay--close {
+        .mc-overlay__backdrop {
+            @include m-overlay-backdrop-close();
+        }
+
+        .mc-overlay__box {
+            @include m-overlay-box-close();
         }
     }
 }
