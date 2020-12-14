@@ -1,4 +1,8 @@
 :root {
+  --m-a11y-box-shadow: 0 0 1px 2px var(--m-color-interactive-darker), inset 0 0 0 2px #fff, 0 0 1px 4px rgba(255, 255, 255, 0.3) !important;
+}
+
+:root {
   --m-border-width-xxl: 8px;
   --m-border-width-xl: 6px;
   --m-border-width-lg: 4px;
@@ -160,7 +164,7 @@
 
 .a11y-focus-active.a11y-focus-active.a11y-focus-active.a11y-focus-active * :focus {
   outline: none;
-  box-shadow: 0 0 1px 1px var(--m-color-interactive-dark), inset 0 0 0 1px #fff !important;
+  box-shadow: var(--m-a11y-box-shadow) !important;
 }
 
 html,
