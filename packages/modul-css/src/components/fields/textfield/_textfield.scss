@@ -1,0 +1,84 @@
+.mc-textfield {
+    --m-textfield-label-bg: #fff;
+    --m-textfield-label-color: var(--m-color-text);
+    --m-textfield-max-width: 300px;
+
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--m-textfield-max-width);
+
+    &__label {
+        transition: color $m-transition-duration-xl linear, background $m-transition-duration-xl linear;
+        position: absolute;
+        top: 0;
+        left: var(--m-space-sm);
+        transform: translate3d(0, -50%, 0);
+        background: var(--m-textfield-label-bg);
+        padding: 0 var(--m-space-xs);
+        color: var(--m-textfield-label-color);
+
+        @include m-font-size(var(--m-font-size-sm));
+
+    }
+    
+    &__field {
+        transition: color $m-transition-duration-xl linear, border-color $m-transition-duration-xl linear;
+        min-height: 33px;
+        border: $m-border-sm;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        padding: 12px calc(var(--m-space) - var(--m-space-xs));
+        border-radius: $m-radius;
+
+        input,
+        textarea {
+            width: 100%;
+            appearance: none;
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+        }
+    }
+
+    &.mc-textfield--focus:not(.mc-textfield--error),
+    &:not(.mc-textfield--error) .mc-textfield__field:focus {
+        --m-color-border: var(--m-color-interactive);
+
+        ~ .mc-textfield__label {
+            --m-textfield-label-color: var(--m-color-interactive);
+        }
+        
+    }
+
+    &.mc-textfield--valid {
+        .mc-textfield__label {
+            --m-textfield-label-color: var(--m-color-success);
+        }
+
+        .mc-textfield__field {
+            --m-color-border: var(--m-color-success);
+        }
+    }
+    
+
+    &.mc-textfield--error {
+        .mc-textfield__label {
+            --m-textfield-label-color: var(--m-color-error);
+        }
+
+        .mc-textfield__field {
+            --m-color-border: var(--m-color-error);
+        }
+    }
+
+    &.mc-textfield--width-lg {
+        --m-textfield-max-width: 600px;
+    }
+
+    &.mc-textfield--width-md {
+        --m-textfield-max-width: 480px;
+    }
+}
