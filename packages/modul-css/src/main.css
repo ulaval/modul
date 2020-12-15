@@ -23570,6 +23570,9 @@ code {
 .mc-textfield__label ~ .mc-textfield__field {
   margin-top: calc(var(--m-font-size-sm) / 2 * 1px);
 }
+.mc-textfield:not(.mc-textfield--disabled) .mc-textfield__label {
+  cursor: pointer;
+}
 .mc-textfield__field {
   --m-color-border: var(--m-textfield-border-color);
   transition-property: color, border-color, box-shadow;
@@ -23580,11 +23583,7 @@ code {
   min-height: 44px;
   overflow-x: hidden;
   overflow-y: auto;
-  resize: vertical;
   background: var(--m-textfield-bg);
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
   padding: 12px calc(var(--m-space));
   border-radius: 4px;
   scrollbar-face-color: var(--m-color-scrollbar);
@@ -23619,15 +23618,34 @@ code {
 .mc-textfield__field input[type=password] ::placeholder {
   letter-spacing: 0;
 }
+.mc-textfield__field,
 .mc-textfield__field input,
-.mc-textfield__field textarea {
-  width: 100%;
+.mc-textfield__field textarea,
+.mc-textfield__field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  border: none;
+  width: 100%;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
-  resize: inherit;
+  resize: vertical;
+}
+.mc-textfield__field input,
+.mc-textfield__field textarea,
+.mc-textfield__field select {
+  border: none;
+}
+.mc-textfield__field select::-ms-expand {
+  display: none;
+}
+.mc-textfield.mc-textfield--disabled .mc-textfield__field, .mc-textfield__field:disabled {
+  border: var(--m-border-width) dotted var(--m-color-disabled);
+  cursor: not-allowed;
+  color: var(--m-color-disabled);
+}
+.mc-textfield.mc-textfield--read-only .mc-textfield__field, .mc-textfield__field:read-only:not(select) {
+  border-style: dotted;
 }
 .mc-textfield__message {
   margin-top: var(--m-space-xxs);
@@ -23635,10 +23653,10 @@ code {
   font-size: calc(var(--m-font-size-sm) * 1px);
   font-size: calc(var(--m-font-size-sm) / 16 * 1rem);
 }
-.mc-textfield:not(.mc-textfield--valid):not(.mc-textfield--error) .mc-textfield__field:hover:not(:focus) {
+.mc-textfield:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled) .mc-textfield__field:hover:not(:focus):not(:disabled) {
   --m-textfield-border-color: var(--m-color-text);
 }
-.mc-textfield.mc-textfield--focus:not(.mc-textfield--valid):not(.mc-textfield--error), .mc-textfield:not(.mc-textfield--valid):not(.mc-textfield--error) .mc-textfield__field:focus {
+.mc-textfield.mc-textfield--focus:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled), .mc-textfield:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled) .mc-textfield__field:focus:not(:disabled) {
   --m-color-border: var(--m-color-interactive);
 }
 .mc-textfield.mc-textfield--valid {

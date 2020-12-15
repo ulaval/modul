@@ -54,11 +54,7 @@ $m-textfield-max-width-xs: 60px;
     min-height: 44px;
     overflow-x: hidden;
     overflow-y: auto;
-    resize: vertical;
     background: var(--m-textfield-bg);
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
     padding: 12px calc(var(--m-space));
     border-radius: $m-radius;
     
@@ -74,15 +70,28 @@ $m-textfield-max-width-xs: 60px;
         }
     }
 
+    &,
     input,
-    textarea {
-        width: 100%;
+    textarea,
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
         appearance: none;
-        border: none;
+        width: 100%;
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
-        resize: inherit;
+        resize: vertical;
+    }
+
+    input,
+    textarea,
+    select {
+        border: none;
+    }
+
+    select::-ms-expand {
+        display: none;
     }
 }
 

@@ -10,25 +10,41 @@
             @include m-textfield-field-margin-top();
         }
     }
+
+    &:not(.mc-textfield--disabled) .mc-textfield__label {
+        cursor: pointer;
+    }
     
     &__field {
         @include m-textfield-field();
+    }
+
+    &.mc-textfield--disabled .mc-textfield__field,
+    &__field:disabled {
+        border: var(--m-border-width) dotted var(--m-color-disabled);
+        cursor: not-allowed;
+        color: var(--m-color-disabled);
+    }
+
+    &.mc-textfield--read-only .mc-textfield__field,
+    &__field:read-only:not(select) {
+        border-style: dotted;
     }
 
     &__message {
         @include m-textfield-message();
     }
 
-    &:not(.mc-textfield--valid):not(.mc-textfield--error) {
+    &:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled) {
         .mc-textfield__field {
-            &:hover:not(:focus) {
+            &:hover:not(:focus):not(:disabled) {
                 --m-textfield-border-color: var(--m-color-text);
             }
         }
     }
 
-    &.mc-textfield--focus:not(.mc-textfield--valid):not(.mc-textfield--error),
-    &:not(.mc-textfield--valid):not(.mc-textfield--error) .mc-textfield__field:focus {
+    &.mc-textfield--focus:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled),
+    &:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled) .mc-textfield__field:focus:not(:disabled) {
         --m-color-border: var(--m-color-interactive);
     }
 
