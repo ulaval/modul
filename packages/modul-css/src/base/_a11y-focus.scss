@@ -2,7 +2,7 @@
     outline: none;
 }
 
-.mu-a11y-focus-active.mu-a11y-focus-active.mu-a11y-focus-active.mu-a11y-focus-active * :focus {
+.mu-a11y-focus-active * :focus {
     outline: none;
     box-shadow: var(--m-a11y-box-shadow) !important;
 }

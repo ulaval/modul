@@ -1,0 +1,123 @@
+$m-textfield-label-margin-top: calc(var(--m-font-size-sm) / 2 * 1px);
+
+$m-textfield-max-width-lg: 896px;
+$m-textfield-max-width-md: 592px;
+$m-textfield-max-width-sm: 136px;
+$m-textfield-max-width: 288px;
+$m-textfield-max-width-xs: 60px;
+
+@mixin m-textfield-variabled() {
+    --m-textfield-bg: var(--m-color-white);
+    --m-textfield-border-color: var(--m-color-border-dark);
+    --m-textfield-max-width: #{$m-textfield-max-width};
+    --m-textfield-message-color: var(--m-color-text-light);
+}
+
+
+@mixin m-textfield() {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--m-textfield-max-width);
+
+    ::placeholder {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        color: var(--m-color-disabled);
+    }
+}
+
+@mixin m-textfield-label() {
+    transition-property: color, background;
+    transition-duration: $m-transition-duration;
+    transition-timing-function: linear;
+    position: absolute;
+    top: $m-textfield-label-margin-top;
+    left: calc(var(--m-space-sm) + var(--m-space-xs));
+    transform: translate3d(0, -50%, 0);
+    background: linear-gradient(0deg, var(--m-textfield-bg) 0%, var(--m-textfield-bg) 54%, rgba(255,255,255,0) 80%);
+    padding: 0 var(--m-space-xs);
+    color: var(--m-textfield-border-color);
+
+    @include m-font-size(var(--m-font-size-sm));
+}
+
+@mixin m-textfield-field() {
+    --m-color-border: var(--m-textfield-border-color);
+    transition-property: color, border-color, box-shadow;
+    transition-duration: $m-transition-duration;
+    transition-timing-function: linear;
+    border: $m-border-sm;
+    width: 100%;
+    min-height: 44px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    resize: vertical;
+    background: var(--m-textfield-bg);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 12px calc(var(--m-space));
+    border-radius: $m-radius;
+    
+    @include m-scrollbar();
+
+    &[type=password],
+    input[type=password] {
+        letter-spacing: 3px;
+
+        &::placeholder,
+        ::placeholder {
+            letter-spacing: 0;
+        }
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        appearance: none;
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        resize: inherit;
+    }
+}
+
+@mixin m-textfield-field-margin-top() {
+    margin-top: $m-textfield-label-margin-top;
+}
+
+@mixin m-textfield-message() {
+    margin-top: var(--m-space-xxs);
+    color: var(--m-textfield-message-color);
+    @include m-font-size(var(--m-font-size-sm));
+}
+
+@mixin m-textfield-valid() {
+    --m-textfield-border-color: var(--m-color-success);
+    --m-textfield-message-color: var(--m-color-success);
+}
+
+@mixin m-textfield-error() {
+    --m-textfield-border-color: var(--m-color-error);
+    --m-textfield-message-color: var(--m-color-error);
+}
+
+@mixin m-textfield-width-lg() {
+    --m-textfield-max-width: #{$m-textfield-max-width-lg};
+}
+
+@mixin m-textfield-width-md() {
+    --m-textfield-max-width: #{$m-textfield-max-width-md};
+}
+
+@mixin m-textfield-width-sm() {
+    --m-textfield-max-width: #{$m-textfield-max-width-sm};
+}
+
+@mixin m-textfield-width-xs() {
+    --m-textfield-max-width: #{$m-textfield-max-width-xs};
+}

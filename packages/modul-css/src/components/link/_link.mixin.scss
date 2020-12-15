@@ -5,7 +5,9 @@
 }
 
 @mixin m-link() {
-    transition: color $m-transition-duration ease;
+    transition-property: color, box-shadow;
+    transition-duration: $m-transition-duration;
+    transition-timing-function: linear;
     display: inline-flex;
     align-items: center;
     font-weight: var(--m-font-weight-semi-bold);

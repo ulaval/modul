@@ -71,20 +71,31 @@
                 <button class="mc-button-secondary mc-button--loading">Bouton en chargement</button>
             </div>
         </div>
-        <div class="mc-textfield mc-textfield--width-lg mc-textfield--error mc-textfield--valid mc-textfield--focus">
-            <input id="input01" class="mc-textfield__field" />
+        <div class="mc-textfield mc-textfield--width-lg mc-textfield--error mc-textfield--valid mc-textfield--focus mu-mt-md">
             <label for="input01" class="mc-textfield__label" >Label text</label>
+            <input id="input01" class="mc-textfield__field" placeholder="Text"/>
             <p class="mc-textfield__message mc-field-message">Error</p>
         </div>
 
-        <div class="mc-textfield">
-            <textarea id="input02" class="mc-textfield__field"></textarea>
-            <label for="input02" class="mc-textfield__label" >Label text</label>
-            <p class="mc-textfield__message mc-field-message">Error</p>
+        <div class="mc-textfield mu-mt-md mu-mr">
+            <label for="input02" class="mc-textfield__label" >Textarea</label>
+            <textarea id="input02" class="mc-textfield__field" placeholder="Text"></textarea>
+            <p class="mc-textfield__message mc-field-message">Helper message</p>
+        </div>
+
+        <div class="mc-textfield mu-mt-md mu-mr">
+            <label for="input03" class="mc-textfield__label" >Password</label>
+            <input id="input03" class="mc-textfield__field" type="password" placeholder="Placeholder" />
+            <p class="mc-textfield__message mc-field-message">Helper message</p>
+        </div>
+
+        <div class="mc-textfield mc-textfield--valid mu-mt-md">
+            <label for="input04" class="mc-textfield__label" >Valid email</label>
+            <input id="input04" class="mc-textfield__field" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+            <p class="mc-textfield__message mc-field-message">Email valid</p>
         </div>
         
-        
-        <ul>
+        <ul class="mu-mt-md">
             <li>Item 1</li>
             <li>Item 2</li>
             <li>Item 3</li>

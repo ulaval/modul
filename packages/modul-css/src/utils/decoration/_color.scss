@@ -1,9 +1,7 @@
-.mu-color {
-    @each $key, $value in $m-colors {
-        &-#{$key} {
-            @include m-media-queries-content-factory() {
-                color: $value;
-            } 
-        }
+@each $color, $value in $m-colors {
+    #{'.mu-color-' + $color} {
+        @include m-media-queries-content-factory() {
+            color: $value;
+        } 
     }
 }
