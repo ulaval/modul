@@ -17,7 +17,7 @@
     --m-button-active-text-color: var(--m-color-white);
     --m-button-active-background-color: var(--m-color-interactive-dark);
 
-    --m-button-padding: 12px var(--m-space);
+    --m-button-padding: 14px var(--m-space);
     --m-button-radius: #{ $m-radius };
 }
 
@@ -27,14 +27,15 @@
     transition-timing-function: ease;
     appearance: none;
     outline: none;
-    border: var(--m-border-width-sm) solid var(--m-button-color);
-    border-radius: var(--m-button-radius);
     user-select: none;
     text-decoration: none;
-    line-height: 1;
+    line-height: 1.1;
     font-family: inherit;
     font-weight: var(--m-font-weight-semi-bold);
+    text-align: center;
     padding: var(--m-button-padding);
+    border: var(--m-border-width-sm) solid var(--m-button-color);
+    border-radius: var(--m-button-radius);
 }
 
 @mixin m-button-primary() {

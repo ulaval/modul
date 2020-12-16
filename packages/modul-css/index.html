@@ -84,6 +84,16 @@
         </div>
 
         <div class="mc-textfield mu-mt-md mu-mr">
+            <label for="textarea02" class="mc-textfield__label" >Textarea</label>
+            <div class="mc-textfield__field mu-d-inline-flex mu-align-items-center mu-justify-content-space-between">
+                <div class="mu-pt mu-pr-xs mu-pb mu-pl">Left</div>
+                <textarea id="textarea02" placeholder="Text"></textarea>
+                <div class="mu-pt mu-pr mu-pb mu-pl-xs">Right</div>
+            </div>
+            <p class="mc-textfield__message mc-field-message">Helper message</p>
+        </div>
+
+        <div class="mc-textfield mu-mt-md mu-mr">
             <label for="input03" class="mc-textfield__label" >Password</label>
             <input id="input03" class="mc-textfield__field" type="password" placeholder="Placeholder" />
             <p class="mc-textfield__message mc-field-message">Helper message</p>
@@ -91,7 +101,10 @@
 
         <div class="mc-textfield mc-textfield--valid mu-mt-md">
             <label for="input04" class="mc-textfield__label" >Valid email</label>
-            <input id="input04" class="mc-textfield__field" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+            <div class="mc-textfield__field mu-d-flex">
+                <input id="input04" class="mu-flex-1" style="--m-textfield-padding: 12px 4px 12px 16px;" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+                <button class="mc-button-secondary mu-text-sx mu-mt-xs mu-mr-xs mu-mb-xs mu-flex-shrink-0" style="--m-button-padding: 8px 10px;">Validate</button>
+            </div>
             <p class="mc-textfield__message mc-field-message">Email valid</p>
         </div>
 
@@ -106,7 +119,7 @@
             <input id="input06" class="mc-textfield__field" read-only="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
         </div>
         
-        <div class="mc-textfield mu-mt-md">
+        <div class="mc-textfield mu-mt-md mu-mr">
             <label for="input07" class="mc-textfield__label" >Select</label>
             <select id="input07" name="input07" class="mc-textfield__field" placeholder="Placeholder" value="3">
                 <option value="1">1</option>
@@ -115,6 +128,8 @@
             </select>
         </div>
         
+        <button class="mc-button">Text</button>
+
         <ul class="mu-mt-md">
             <li>Item 1</li>
             <li>Item 2</li>

@@ -1,6 +1,5 @@
 .mc-textfield {
-    @include m-textfield-variabled();
-
+    @include m-textfield-variables();
     @include m-textfield();
 
     &__label {
@@ -21,14 +20,7 @@
 
     &.mc-textfield--disabled .mc-textfield__field,
     &__field:disabled {
-        border: var(--m-border-width) dotted var(--m-color-disabled);
-        cursor: not-allowed;
-        color: var(--m-color-disabled);
-    }
-
-    &.mc-textfield--read-only .mc-textfield__field,
-    &__field:read-only:not(select) {
-        border-style: dotted;
+        @include m-textfield-field-disabled();
     }
 
     &__message {
@@ -37,15 +29,13 @@
 
     &:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled) {
         .mc-textfield__field {
-            &:hover:not(:focus):not(:disabled) {
-                --m-textfield-border-color: var(--m-color-text);
-            }
+            @include m-textfield-field-hover();
         }
     }
 
     &.mc-textfield--focus:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled),
     &:not(.mc-textfield--valid):not(.mc-textfield--error):not(.mc-textfield--disabled) .mc-textfield__field:focus:not(:disabled) {
-        --m-color-border: var(--m-color-interactive);
+        @include m-textfield-focus();
     }
 
     &.mc-textfield--valid {
@@ -71,4 +61,16 @@
     &.mc-textfield--width-xs {
         @include m-textfield-width-xs();
     }
+}
+
+input,
+textarea,
+select {
+    &.mc-textfield__field {
+        @include m-textfield-padding();
+    }
+}
+
+textarea.mc-textfield__field {
+    @include m-textfield-textarea();
 }

@@ -1,16 +1,17 @@
 $m-textfield-label-margin-top: calc(var(--m-font-size-sm) / 2 * 1px);
-
 $m-textfield-max-width-lg: 896px;
 $m-textfield-max-width-md: 592px;
 $m-textfield-max-width-sm: 136px;
 $m-textfield-max-width: 288px;
+$m-textfield-max-width-sm: 100px;
 $m-textfield-max-width-xs: 60px;
 
-@mixin m-textfield-variabled() {
+@mixin m-textfield-variables() {
     --m-textfield-bg: var(--m-color-white);
     --m-textfield-border-color: var(--m-color-border-dark);
     --m-textfield-max-width: #{$m-textfield-max-width};
     --m-textfield-message-color: var(--m-color-text-light);
+    --m-textfield-padding:  12px calc(var(--m-space));
 }
 
 
@@ -29,6 +30,14 @@ $m-textfield-max-width-xs: 60px;
     }
 }
 
+@mixin m-textfield-focus() {
+    --m-color-border: var(--m-color-interactive);
+}
+
+@mixin m-textfield-padding() {
+    padding: var(--m-textfield-padding);
+}
+
 @mixin m-textfield-label() {
     transition-property: color, background;
     transition-duration: $m-transition-duration;
@@ -44,21 +53,37 @@ $m-textfield-max-width-xs: 60px;
     @include m-font-size(var(--m-font-size-sm));
 }
 
+@mixin m-textfield-textarea() {
+    min-width: $m-textfield-max-width-sm;
+    max-width: 100%;
+    @include m-scrollbar();
+}
+
 @mixin m-textfield-field() {
     --m-color-border: var(--m-textfield-border-color);
     transition-property: color, border-color, box-shadow;
     transition-duration: $m-transition-duration;
     transition-timing-function: linear;
-    border: $m-border-sm;
+    display: inline-flex;
     width: 100%;
-    min-height: 44px;
+    min-height: 46px;
     overflow-x: hidden;
     overflow-y: auto;
     background: var(--m-textfield-bg);
-    padding: 12px calc(var(--m-space));
+    border: $m-border-sm;
     border-radius: $m-radius;
-    
-    @include m-scrollbar();
+
+    textarea {
+        @include m-textfield-textarea();
+    }
+
+    &:not(input):not(textarea):not(select) {
+        input,
+        textarea,
+        select {
+            @include m-textfield-padding();
+        }
+    }
 
     &[type=password],
     input[type=password] {
@@ -81,7 +106,7 @@ $m-textfield-max-width-xs: 60px;
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
-        resize: vertical;
+        line-height: inherit;
     }
 
     input,
@@ -89,14 +114,22 @@ $m-textfield-max-width-xs: 60px;
     select {
         border: none;
     }
-
-    select::-ms-expand {
-        display: none;
-    }
 }
 
 @mixin m-textfield-field-margin-top() {
     margin-top: $m-textfield-label-margin-top;
+}
+
+@mixin m-textfield-field-hover {    
+    &:hover:not(:focus):not(:disabled) {
+        --m-textfield-border-color: var(--m-color-text);
+    }
+}
+
+@mixin m-textfield-field-disabled() {
+    border: var(--m-border-width) dotted var(--m-color-disabled);
+    cursor: not-allowed;
+    color: var(--m-color-disabled);
 }
 
 @mixin m-textfield-message() {
