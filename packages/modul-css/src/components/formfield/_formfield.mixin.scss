@@ -1,0 +1,176 @@
+$m-formfield-label-margin-top: calc(var(--m-font-size-sm) / 2 * 1px);
+$m-formfield-max-width-lg: 896px;
+$m-formfield-max-width-md: 592px;
+$m-formfield-max-width-sm: 136px;
+$m-formfield-max-width: 288px;
+$m-formfield-max-width-sm: 100px;
+$m-formfield-max-width-xs: 60px;
+
+@mixin m-formfield-variables() {
+    --m-formfield-bg: var(--m-color-white);
+    --m-formfield-border-color: var(--m-color-border-dark);
+    --m-formfield-padding:  12px calc(var(--m-space));
+    --m-formfield-max-width: #{$m-formfield-max-width};
+    --m-formfield-helper-message-color: var(--m-color-text-light);
+    --m-formfield-message-color: var(--m-color-text-light);
+}
+
+
+@mixin m-formfield() {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--m-formfield-max-width);
+
+    ::placeholder {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        color: var(--m-color-disabled);
+    }
+}
+
+@mixin m-formfield-focus() {
+    --m-formfield-border-color: var(--m-color-interactive);
+}
+
+@mixin m-formfield-padding() {
+    padding: var(--m-formfield-padding);
+}
+
+@mixin m-formfield-label() {
+    transition-property: color, background;
+    transition-duration: $m-transition-duration;
+    transition-timing-function: linear;
+    position: absolute;
+    top: $m-formfield-label-margin-top;
+    left: calc(var(--m-space-sm) + var(--m-space-xs));
+    transform: translate3d(0, -50%, 0);
+    background: linear-gradient(0deg, var(--m-formfield-bg) 0%, var(--m-formfield-bg) 54%, rgba(255,255,255,0) 80%);
+    padding: 0 var(--m-space-xs);
+    color: var(--m-formfield-border-color);
+    font-weight: var(--m-font-weight);
+
+    @include m-font-size(var(--m-font-size-sm));
+}
+
+@mixin m-formfield-textarea() {
+    min-width: $m-formfield-max-width-sm;
+    max-width: 100%;
+    @include m-scrollbar();
+}
+
+@mixin m-formfield-area() {
+    transition-property: color, border-color, box-shadow;
+    transition-duration: $m-transition-duration;
+    transition-timing-function: linear;
+    display: inline-flex;
+    width: 100%;
+    min-height: 46px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--m-formfield-bg);
+    border: var(--m-border-width-sm) solid var(--m-formfield-border-color);
+    border-radius: $m-radius;
+
+    textarea {
+        @include m-formfield-textarea();
+    }
+
+    &:not(input):not(textarea):not(select) {
+        input,
+        textarea,
+        select {
+            @include m-formfield-padding();
+        }
+    }
+
+    &[type=password],
+    input[type=password] {
+        letter-spacing: 3px;
+
+        &::placeholder,
+        ::placeholder {
+            letter-spacing: 0;
+        }
+    }
+
+    &,
+    input,
+    textarea,
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        color: currentColor;
+    }
+
+    input,
+    textarea,
+    select {
+        border: none;
+    }
+}
+
+@mixin m-formfield-area-margin-top() {
+    margin-top: $m-formfield-label-margin-top;
+}
+
+@mixin m-formfield-area-hover {    
+    &:hover:not(:focus):not(:disabled) {
+        --m-formfield-border-color: var(--m-color-text);
+    }
+}
+
+@mixin m-formfield-area-disabled() {
+    border: var(--m-border-width) dotted var(--m-color-disabled);
+    cursor: not-allowed;
+    color: var(--m-color-disabled);
+}
+
+@mixin m-formfield-message-commons() {
+    margin-top: var(--m-space-xxs);
+    @include m-font-size(var(--m-font-size-sm));
+}
+
+@mixin m-formfield-message() {
+    @include m-formfield-message-commons();
+    color: var(--m-formfield-message-color);
+}
+
+@mixin m-formfield-helper-message() {
+    @include m-formfield-message-commons();
+    color: var(--m-formfield-helper-message-color);
+}
+
+@mixin m-formfield-valid() {
+    --m-formfield-border-color: var(--m-color-success);
+    --m-formfield-message-color: var(--m-color-success);
+}
+
+@mixin m-formfield-error() {
+    --m-formfield-border-color: var(--m-color-error);
+    --m-formfield-message-color: var(--m-color-error);
+}
+
+@mixin m-formfield-width-lg() {
+    --m-formfield-max-width: #{$m-formfield-max-width-lg};
+}
+
+@mixin m-formfield-width-md() {
+    --m-formfield-max-width: #{$m-formfield-max-width-md};
+}
+
+@mixin m-formfield-width-sm() {
+    --m-formfield-max-width: #{$m-formfield-max-width-sm};
+}
+
+@mixin m-formfield-width-xs() {
+    --m-formfield-max-width: #{$m-formfield-max-width-xs};
+}

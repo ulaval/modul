@@ -1,0 +1,33 @@
+@mixin m-input-area-variables() {
+    --m-input-area-gap: var(--m-space-sm);
+    --m-input-area-label-align: center;
+    --m-input-area-label-font-weight: var(--m-font-weight);
+}
+
+@mixin m-input-area() {
+    display: inline-flex;
+    align-items: var(--m-input-area-label-align);
+    gap: var(--m-input-area-gap);
+}
+
+@mixin m-input-area-input() {
+    flex-shrink: 0;
+}
+
+@mixin m-input-area-label() {
+    transition: color $m-transition-duration linear;
+    flex: 1 1 auto;
+    font-weight: var(--m-input-area-label-font-weight);
+}
+
+@mixin m-input-area-label-disabled() {
+    color: var(--m-color-disabled-dark);
+}
+
+@mixin m-input-area-label-hover() {
+    color: var(--m-color-interactive);
+}
+
+@mixin m-input-area-input() {
+    flex-shrink: 0;
+}

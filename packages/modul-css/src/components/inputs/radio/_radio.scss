@@ -1,0 +1,23 @@
+.mc-radio {
+    @include m-radio-variables();
+
+    @include m-radio();
+
+    &:not(:disabled):not(.mc-radio--disabled) {
+        @include m-radio-hover();
+    }
+
+    &--checked,
+    &:checked {
+        @include m-radio-checked();
+    }
+
+    &--disabled,
+    &:disabled {
+        @include m-radio-disabled();
+    }
+
+    input {
+        @include m-visually-hidden();
+    }
+}

@@ -117,10 +117,7 @@ $m-dialog-box-default-transform: translate3d(0, 40px, 0);
     flex-direction: column;
     align-items: center;
     width: 100%;
-
-    > :not(:first-child) {
-        margin-top: var(--m-space);
-    }
+    gap: var(--m-space);
 
     &:not(:first-child) {
         margin-top: var(--m-space-lg);

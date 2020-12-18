@@ -1,7 +1,7 @@
 .mc-dialog {
     @include m-dialog-variables();
     @include m-dialog();
-    
+
     &__box {
         @include m-dialog-box();
     }

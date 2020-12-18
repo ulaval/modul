@@ -1,0 +1,51 @@
+@mixin m-input-commons($dimension: 1.2rem,  $bg: rgba(255, 255, 255, 0), $border-color: var(--m-color-border-dark)) {
+    transition-property: background-color, border, box-shadow;
+    transition-duration: $m-transition-duration;
+    transition-timing-function: linear;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    width: $dimension;
+    height: $dimension;
+    background: $bg;
+    border: var(--m-border-width-sm) solid $border-color;
+    margin: 0;
+}
+
+@mixin m-input-commons-hover($border-color: var(--m-color-interactive), $bg: var(--m-color-interactive-lightest), $check-color: var(--m-color-interactive)) {
+    cursor: pointer;
+
+    &:hover,
+    &:focus-within,
+    &:focus {
+        border-color: $border-color;
+        background: $bg;
+        
+        &::before,
+        &::after {
+            background: $check-color;
+        }
+    }
+}
+
+@mixin m-input-commons-checked($bg: rgba(255, 255, 255, 0), $border-color: var(--m-color-interactive), $check-color: var(--m-color-interactive)) {
+    background: $bg;
+    border-color: $border-color;
+
+    &::before,
+    &::after {
+        background: $check-color;
+    }
+}
+
+@mixin m-input-commons-disabled() {
+    border-color: var(--m-color-disabled-light);
+    background: var(--m-color-white);
+
+    &::before,
+    &::after {
+        background: var(--m-color-disabled-dark);
+    }
+}

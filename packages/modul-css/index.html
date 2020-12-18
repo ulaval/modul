@@ -10,6 +10,43 @@
 </head>
 <body class="mu-app-body mu-bg-grey-lighter">
     <main class="mu-center-block mu-bg-white mu-pb-xxxl">
+        <ul class="mu-form-layout mu-from-layout--gap-xl mu-w-70">
+            <li class="mc-input-area mc-input-area--disabled">
+                <input class="mc-checkbox" disabled id="checkboxSexe01" name="sexe" type="checkbox" value="m"/>
+                <label for="checkboxSexe01">Male</label>
+            </li>
+            <li class="mc-input-area">
+                <input class="mc-checkbox" id="checkboxSexe02" name="sexe" type="checkbox" value="m"/>
+                <label for="checkboxSexe02">Male</label>
+            </li>
+            <li class="mc-input-area">
+                <input class="mc-checkbox" id="checkboxSexe03" name="sexe" type="checkbox" value="f" style="--m-checkbox-check-color-hover: red; --m-checkbox-check-color-checked: white; --m-checkbox-bg-checked: red; --m-checkbox-bg-hover: #fcf2f3; --m-checkbox-border-color-hover: red;"/>
+                <label for="checkboxSexe03">Female</label>
+            </li>
+        </ul>
+
+        <ul class="mu-form-layout mu-from-layout--gap-xl mu-w-70">
+            <li class="mc-input-area mc-input-area--disabled">
+                <input class="mc-radio" disabled id="male" name="sexe01" type="radio" value="m"/>
+                <label for="male">Male</label>
+            </li>
+            <li class="mc-input-area">
+                <input class="mc-radio" id="female" name="sexe01" type="radio" value="f" />
+                <label for="female">Female</label>
+            </li>
+        </ul>
+       
+        <ul class="mu-form-layout mu-from-layout--column mu-from-layout--gap-xs--min-xs mu-from-layout--gap-xl--max-xs">
+            <li class="mc-input-area">
+                <input class="mc-radio" id="F" name="sexe02" type="radio" value="f"/>
+                <label for="F">Women</label>
+            </li>
+            <li class="mc-input-area">
+                <input class="mc-radio" id="M" name="sexe02" type="radio" value="m" />
+                <label for="M">Man Man Man Man Man Man Man</label>
+            </li>
+        </ul>
+
         <div class="mu-d-flex mu-flex-column-reverse--max-xs">
             <div class="mu-w-50--min-xs mu-p-md mu-border-left-xl">
                 <h1>Titre H1</h1>
@@ -71,57 +108,60 @@
                 <button class="mc-button-secondary mc-button--loading">Bouton en chargement</button>
             </div>
         </div>
-        <div class="mc-textfield mc-textfield--width-lg mc-textfield--error mc-textfield--valid mc-textfield--focus mu-mt-md">
-            <label for="input01" class="mc-textfield__label" >Label text</label>
-            <input id="input01" class="mc-textfield__field" placeholder="Text"/>
-            <p class="mc-textfield__message mc-field-message">Error</p>
+        <div class="mc-formfield mc-formfield--width-lg mu-h1 mc-formfield--error mc-formfield--valid mc-formfield--focus mu-mt-md">
+            <label for="input01" class="mc-formfield__label" >Label text</label>
+            <input id="input01" class="mc-formfield__area" placeholder="Font-size: h1"/>
+            <p class="mc-formfield__helper-message">Helper message</p>
+            <p class="mc-formfield__message">Error</p>
+        </div>
+       
+        <div class="mc-formfield mu-mt-md mu-mr">
+            <label for="input02" class="mc-formfield__label" >Textarea</label>
+            <textarea id="input02" class="mc-formfield__area" placeholder="Text"></textarea>
+            <p class="mc-formfield__message">Helper message</p>
         </div>
 
-        <div class="mc-textfield mu-mt-md mu-mr">
-            <label for="input02" class="mc-textfield__label" >Textarea</label>
-            <textarea id="input02" class="mc-textfield__field" placeholder="Text"></textarea>
-            <p class="mc-textfield__message mc-field-message">Helper message</p>
-        </div>
-
-        <div class="mc-textfield mu-mt-md mu-mr">
-            <label for="textarea02" class="mc-textfield__label" >Textarea</label>
-            <div class="mc-textfield__field mu-d-inline-flex mu-align-items-center mu-justify-content-space-between">
-                <div class="mu-pt mu-pr-xs mu-pb mu-pl">Left</div>
-                <textarea id="textarea02" placeholder="Text"></textarea>
-                <div class="mu-pt mu-pr mu-pb mu-pl-xs">Right</div>
+        <div class="mu-d-flex mu-flex-wrap--max-xs mu-flex-wrap--min-sm mu-gap mu-w-100">
+            <div class="mc-formfield">
+                <label for="textarea02" class="mc-formfield__label" >Textarea</label>
+                <div class="mc-formfield__area mu-d-inline-flex mu-align-items-center mu-justify-content-space-between">
+                    <div class="mu-pt mu-pr-xs mu-pb mu-pl">Left</div>
+                    <textarea id="textarea02" placeholder="Text"></textarea>
+                    <div class="mu-pt mu-pr mu-pb mu-pl-xs">Right</div>
+                </div>
+                <p class="mc-formfield__message">Helper message</p>
             </div>
-            <p class="mc-textfield__message mc-field-message">Helper message</p>
-        </div>
 
-        <div class="mc-textfield mu-mt-md mu-mr">
-            <label for="input03" class="mc-textfield__label" >Password</label>
-            <input id="input03" class="mc-textfield__field" type="password" placeholder="Placeholder" />
-            <p class="mc-textfield__message mc-field-message">Helper message</p>
-        </div>
-
-        <div class="mc-textfield mc-textfield--valid mu-mt-md">
-            <label for="input04" class="mc-textfield__label" >Valid email</label>
-            <div class="mc-textfield__field mu-d-flex">
-                <input id="input04" class="mu-flex-1" style="--m-textfield-padding: 12px 4px 12px 16px;" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
-                <button class="mc-button-secondary mu-text-sx mu-mt-xs mu-mr-xs mu-mb-xs mu-flex-shrink-0" style="--m-button-padding: 8px 10px;">Validate</button>
+            <div class="mc-formfield">
+                <label for="input03" class="mc-formfield__label" >Password</label>
+                <input id="input03" class="mc-formfield__area" type="password" placeholder="Placeholder" />
+                <p class="mc-formfield__message">Helper message</p>
             </div>
-            <p class="mc-textfield__message mc-field-message">Email valid</p>
+
+            <div class="mc-formfield mc-formfield--valid">
+                <label for="input04" class="mc-formfield__label" >Valid email</label>
+                <div class="mc-formfield__area mu-d-flex">
+                    <input id="input04" class="mu-flex-1" style="--m-formfield-padding: 12px 4px 12px 16px;" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+                    <button class="mc-button-secondary mu-text-sx mu-mt-xs mu-mr-xs mu-mb-xs mu-flex-shrink-0" style="--m-button-padding: 8px 10px;">Validate</button>
+                </div>
+                <p class="mc-formfield__message">Email valid</p>
+            </div>
         </div>
 
-        <div class="mc-textfield mc-textfield--disabled mu-mt-md">
-            <label for="input05" class="mc-textfield__label" >Disabled</label>
-            <input id="input05" class="mc-textfield__field" disabled="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
-            <p class="mc-textfield__message mc-field-message">Email valid</p>
+        <div class="mc-formfield mc-formfield--disabled mu-mt-md">
+            <label for="input05" class="mc-formfield__label" >Disabled</label>
+            <input id="input05" class="mc-formfield__area" disabled="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+            <p class="mc-formfield__message">Email valid</p>
         </div>
 
-        <div class="mc-textfield mc-textfield--read-only mu-mt-md">
-            <label for="input06" class="mc-textfield__label" >Read only</label>
-            <input id="input06" class="mc-textfield__field" read-only="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+        <div class="mc-formfield mc-formfield--read-only mu-mt-md">
+            <label for="input06" class="mc-formfield__label" >Read only</label>
+            <input id="input06" class="mc-formfield__area" read-only="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
         </div>
         
-        <div class="mc-textfield mu-mt-md mu-mr">
-            <label for="input07" class="mc-textfield__label" >Select</label>
-            <select id="input07" name="input07" class="mc-textfield__field" placeholder="Placeholder" value="3">
+        <div class="mc-formfield mu-mt-md mu-mr">
+            <label for="input07" class="mc-formfield__label" >Select</label>
+            <select id="input07" name="input07" class="mc-formfield__area" placeholder="Placeholder" value="3">
                 <option value="1">1</option>
                 <option value="2">Option 2</option>
                 <option value="3">Option 3</option>

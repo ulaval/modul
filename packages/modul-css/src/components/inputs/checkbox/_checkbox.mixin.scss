@@ -1,0 +1,68 @@
+@import '../commons';
+
+@mixin m-checkbox-variables() {
+    --m-checkbox-dimension: 1.2rem;
+    --m-checkbox-border-color: var(--m-color-border-dark);
+    --m-checkbox-border-color-hover: var(--m-color-interactive);
+    --m-checkbox-border-color-checked: var(--m-checkbox-border-color-hover);
+    --m-checkbox-bg: rgba(255, 255, 255, 0);
+    --m-checkbox-bg-hover: var(--m-color-interactive-lightest);
+    --m-checkbox-bg-checked: --m-checkbox-bg;
+    --m-checkbox-check-color: var(--m-color-interactive);
+    --m-checkbox-check-color-hover: var(--m-checkbox-check-color);
+    --m-checkbox-check-color-checked: var(--m-checkbox-check-color);
+}
+
+@mixin m-checkbox() {
+    @include m-input-commons(var(--m-checkbox-dimension), var(--m-checkbox-bg), var(--m-checkbox-border-color));
+
+    border-radius: $m-radius-sm;
+
+    &::before,
+    &::after {
+        position: absolute;
+        transition: width $m-transition-duration-xs ease;
+        top: calc(var(--m-checkbox-dimension) / 1.7);//1.79
+        left: calc(var(--m-checkbox-dimension) / 2.7);//3.1
+        content: '';
+        background: var(--m-checkbox-check-color);
+        border-radius: 2px;
+        transform-origin: top left;
+        width: 0;
+        height: calc(var(--m-checkbox-dimension) / 10);
+        border-radius: 5px;
+    }
+
+    &::before {
+        transition-delay: 0;
+        transform: translate(-1px, -1px) rotate(315deg);
+    }
+
+    &::after {
+        transition-delay: $m-transition-duration-xs;
+        transform: rotate(-135deg);
+    }
+}
+
+@mixin m-checkbox-hover() {
+    @include m-input-commons-hover(var(--m-checkbox-border-color-hover), var(--m-checkbox-bg-hover), var(--m-checkbox-check-color-hover));
+}
+
+@mixin m-checkbox-checked() {
+    @include m-input-commons-checked( var(--m-checkbox-bg-checked), var(--m-checkbox-border-color-checked), var(--m-checkbox-check-color-checked));
+
+    &::before {
+        transition-delay: 0.2s;
+        width: calc(var(--m-checkbox-dimension) - (var(--m-checkbox-dimension) / 2));
+    }
+
+    &::after {
+        transition-delay: 0;
+        width: calc(var(--m-checkbox-dimension) - (var(--m-checkbox-dimension) / 1.3));
+    }
+}
+
+@mixin m-checkbox-disabled() {
+    @include m-input-commons-disabled();
+}
+

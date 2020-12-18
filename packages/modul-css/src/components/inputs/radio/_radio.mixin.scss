@@ -1,0 +1,41 @@
+@import '../commons';
+
+@mixin m-radio-variables() {
+    --m-radio-dimension: 1.2rem;
+    --m-radio-border-color: var(--m-color-border-dark);
+    --m-radio-border-color-hover: var(--m-color-interactive);
+    --m-radio-bg: rgba(255, 255, 255, 0);
+}
+
+@mixin m-radio() {
+    @include m-input-commons(var(--m-radio-dimension), var(--m-radio-bg), var(--m-radio-border-color));
+
+    border-radius: 50%;
+
+    &::after {
+        transition: transform $m-transition-duration ease;
+        position: absolute;
+        content: '';
+        transform: scale(0);
+        width: calc(var(--m-radio-dimension) - (var(--m-radio-dimension) / 2.5));
+        height: calc(var(--m-radio-dimension) - (var(--m-radio-dimension) / 2.5));
+        background: var(--m-radio-border-color-hover);
+        border-radius: 50%;
+        
+    }
+}
+
+@mixin m-radio-hover() {
+    @include m-input-commons-hover(var(--m-radio-border-color-hover));
+}
+
+@mixin m-radio-checked() {
+    &::after {
+        transform: scale(1);
+    }
+}
+
+@mixin m-radio-disabled() {
+    @include m-input-commons-disabled();
+}
+

@@ -46,13 +46,14 @@ $m-colors: (
 
     active: var(--m-color-ul-yellow),
 
-    disabled: var(--m-color-grey),
-    disabled-light: var(--m-color-grey-light),
+    disabled-dark: var(--m-color-disabled-dark),
+    disabled: var(--m-color-disabled),
+    disabled-light: var(--m-color-disabled-light),
 
-    scrollbar: var(--m-color-grey),
-    scrollbar-light: var(--m-color-grey-light),
+    scrollbar: var(--m-color-scrollbar),
+    scrollbar-light: var(--m-color-scrollbar-light),
 
-    border-dark: var(--m-color-grey-dark),
-    border: var(--m-color-grey-light),
-    border-light: var(--m-color-grey-lighter),
+    border-dark: var(--m-color-border-dark),
+    border: var(--m-color-border-light),
+    border-light: var(--m-color-border-lighter),
 );

@@ -1,0 +1,86 @@
+.mc-formfield {
+    @include m-formfield-variables();
+    @include m-formfield();
+
+    &__label {
+        @include m-formfield-label();
+
+        ~ .mc-formfield__area {
+            @include m-formfield-area-margin-top();
+        }
+    }
+    
+    &__area {
+        @include m-formfield-area();
+   
+        &:disabled {
+            @include m-formfield-area-disabled();
+        }
+    }
+
+    &__message {
+        @include m-formfield-message();
+    }
+
+    &__helper-message {
+        @include m-formfield-helper-message();
+    }
+
+    &--valid {
+        @include m-formfield-valid();
+    }
+
+
+    &:not(.mc-formfield--disabled) .mc-formfield__label {
+        cursor: pointer;
+    }
+
+    &:not(.mc-formfield--valid):not(.mc-formfield--error):not(.mc-formfield--disabled) {
+        .mc-formfield__area {
+            @include m-formfield-area-hover();
+        }
+
+        &:focus-within,
+        &.mc-formfield--focus,
+        .mc-formfield__area:focus-within,
+        .mc-formfield__area:focus {
+            @include m-formfield-focus();
+        }
+    }
+
+    &.mc-formfield--disabled .mc-formfield__area {
+        @include m-formfield-area-disabled();
+    }
+    
+    &--error {
+        @include m-formfield-error();
+    }
+    
+    &--width-lg {
+        @include m-formfield-width-lg();
+    }
+    
+    &--width-md {
+        @include m-formfield-width-md();
+    }
+    
+    &--width-sm {
+        @include m-formfield-width-sm();
+    }
+    
+    &--width-xs {
+        @include m-formfield-width-xs();
+    }
+}
+
+input,
+textarea,
+select {
+    &.mc-formfield__area {
+        @include m-formfield-padding();
+    }
+}
+
+textarea.mc-formfield__area {
+    @include m-formfield-textarea();
+}

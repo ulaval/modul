@@ -66,9 +66,10 @@ class A11yFocusCssClass {
         }
         
         if (this.#hasSomeElementFocusInHtml && !bodyEl.classList.contains(this.#classNameToAddToElement)) {
-            bodyEl.classList.add(this.#classNameToAddToElement)
+            bodyEl.classList.add(this.#classNameToAddToElement);
+            
         } else if (!this.#hasSomeElementFocusInHtml && bodyEl.classList.contains(this.#classNameToAddToElement)) {
-            bodyEl.classList.remove(this.#classNameToAddToElement)
+            bodyEl.classList.remove(this.#classNameToAddToElement);
         }
     }
 }

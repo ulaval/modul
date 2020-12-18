@@ -1,0 +1,30 @@
+.mu-form-layout {
+    @include m-media-queries-content-factory() {
+        --m-from-layout-gap: var(--m-space);
+
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        gap: var(--m-from-layout-gap);
+    }
+    
+    $space-values: xxxxl, xxxl, xxl, xl, lg, md, sm, xs, xxs;
+
+    @each $value in $space-values {
+        &.mu-from-layout--gap-#{$value} {
+            @include m-media-queries-content-factory() {
+                --m-from-layout-gap: var(--m-space-#{$value});
+            }
+        }
+    }
+
+    &.mu-from-layout--column {
+        @include m-media-queries-content-factory() {
+            flex-direction: column;
+        }
+    }
+}
+
+

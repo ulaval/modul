@@ -23,6 +23,7 @@ $m-checkbox--width: 16px;
                     width: 10px;
                     height: 10px;
                     background-color: $m-color--ul-blue;
+                    transform-origin: center;
                     transform: scale(0);
                     transition: transform $m-transition-duration ease;
                 }

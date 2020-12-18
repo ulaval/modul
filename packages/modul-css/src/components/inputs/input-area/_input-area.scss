@@ -1,0 +1,53 @@
+@import '../commons/input-commons';
+
+.mc-input-area {
+    @include m-input-area-variables();
+
+    @include m-input-area();
+
+    input {
+        @include m-input-area-input();
+    }
+
+    label,
+    &__label {
+        @include m-input-area-label();
+    }
+
+    &:disabled,
+    &.mc-input-area--disabled {
+        input {
+            @include m-input-commons-disabled();
+        }
+
+        label,
+        .mc-input__label {
+            @include m-input-area-label-disabled();
+        }
+    }
+    
+
+    &:not(:disabled):not(.mc-input-area--disabled) {
+        .mc-input__label,
+        label {
+            cursor: pointer;
+        }
+
+        &:hover,
+        &:focus-within,
+        &:focus {
+            label,
+            .mc-input__label {
+                @include m-input-area-label-hover();
+            }
+        }
+    }
+
+    &--align-label-top {
+        --m-input-area-label-align: flex-start;
+    }
+
+    &--align-label-bottom {
+        --m-input-area-label-align: flex-end;
+    }
+}

@@ -1,0 +1,15 @@
+.mu-gap {
+    @include m-media-queries-content-factory() {
+        gap: var(--m-space);
+    }
+    
+    $space-values: xxxxl, xxxl, xxl, xl, lg, md, sm, xs, xxs;
+
+    @each $value in $space-values {
+        &-#{$value} {
+            @include m-media-queries-content-factory() {
+                gap: var(--m-space-#{$value});
+            }
+        }
+    }
+}

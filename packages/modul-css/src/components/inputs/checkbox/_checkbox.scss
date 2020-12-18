@@ -1,0 +1,23 @@
+.mc-checkbox {
+    @include m-checkbox-variables();
+
+    @include m-checkbox();
+
+    &:not(:disabled):not(.mc-checkbox--disabled) {
+        @include m-checkbox-hover();
+    }
+
+    &--checked,
+    &:checked {
+        @include m-checkbox-checked();
+    }
+
+    &--disabled,
+    &:disabled {
+        @include m-checkbox-disabled();
+    }
+
+    input {
+        @include m-visually-hidden();
+    }
+}
