@@ -1,0 +1,6 @@
+@import
+    'all-css-var.mixin';
+
+:root {
+    @include m-all-css-var();
+}

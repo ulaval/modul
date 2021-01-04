@@ -1,4 +1,4 @@
-:root {
+@mixin m-css-var-heading() {
     // Font family
     --m-font-family-headings: var(--m-font-family);
 

@@ -41,6 +41,21 @@
                 @include m-input-area-label-hover();
             }
         }
+
+        &.mc-input-area--error {
+            input {
+                @include m-input-commons-error();
+            }
+
+            &:hover,
+            &:focus-within,
+            &:focus {
+                label,
+                .mc-input__label {
+                    @include m-input-area-label-hover(var(--m-color-error));
+                }
+            }
+        }
     }
 
     &--align-label-top {

@@ -1,4 +1,8 @@
-@mixin m-input-commons($dimension: 1.2rem,  $bg: rgba(255, 255, 255, 0), $border-color: var(--m-color-border-dark)) {
+@mixin m-input-commons(
+    $dimension: 1.2rem,
+    $bg: rgba(255, 255, 255, 0),
+    $border-color: var(--m-color-border-dark)
+) {
     transition-property: background-color, border, box-shadow;
     transition-duration: $m-transition-duration;
     transition-timing-function: linear;
@@ -14,7 +18,11 @@
     margin: 0;
 }
 
-@mixin m-input-commons-hover($border-color: var(--m-color-interactive), $bg: var(--m-color-interactive-lightest), $check-color: var(--m-color-interactive)) {
+@mixin m-input-commons-hover(
+    $border-color: var(--m-color-interactive),
+    $bg: var(--m-color-interactive-lightest),
+    $check-color: var(--m-color-interactive)
+) {
     cursor: pointer;
 
     &:hover,
@@ -30,7 +38,11 @@
     }
 }
 
-@mixin m-input-commons-checked($bg: rgba(255, 255, 255, 0), $border-color: var(--m-color-interactive), $check-color: var(--m-color-interactive)) {
+@mixin m-input-commons-checked(
+    $bg: rgba(255, 255, 255, 0),
+    $border-color: var(--m-color-interactive),
+    $check-color: var(--m-color-interactive)
+) {
     background: $bg;
     border-color: $border-color;
 
@@ -38,6 +50,22 @@
     &::after {
         background: $check-color;
     }
+}
+
+@mixin m-input-commons-error() {
+    border-color: var(--m-color-error);
+    background: var(--m-color-error-lightest);
+
+    &::before,
+    &::after {
+        background: var(--m-color-error);
+    }
+
+    @include m-input-commons-hover(
+            var(--m-color-error),
+            var(--m-color-grey-lighter),
+            var(--m-color-error)
+        );
 }
 
 @mixin m-input-commons-disabled() {

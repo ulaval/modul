@@ -14,7 +14,11 @@
 }
 
 @mixin m-checkbox() {
-    @include m-input-commons(var(--m-checkbox-dimension), var(--m-checkbox-bg), var(--m-checkbox-border-color));
+    @include m-input-commons(
+        var(--m-checkbox-dimension),
+        var(--m-checkbox-bg),
+        var(--m-checkbox-border-color)
+    );
 
     border-radius: $m-radius-sm;
 
@@ -45,11 +49,19 @@
 }
 
 @mixin m-checkbox-hover() {
-    @include m-input-commons-hover(var(--m-checkbox-border-color-hover), var(--m-checkbox-bg-hover), var(--m-checkbox-check-color-hover));
+    @include m-input-commons-hover(
+        var(--m-checkbox-border-color-hover),
+        var(--m-checkbox-bg-hover),
+        var(--m-checkbox-check-color-hover)
+    );
 }
 
 @mixin m-checkbox-checked() {
-    @include m-input-commons-checked( var(--m-checkbox-bg-checked), var(--m-checkbox-border-color-checked), var(--m-checkbox-check-color-checked));
+    @include m-input-commons-checked(
+        var(--m-checkbox-bg-checked),
+        var(--m-checkbox-border-color-checked),
+        var(--m-checkbox-check-color-checked)
+    );
 
     &::before {
         transition-delay: 0.2s;
@@ -60,6 +72,10 @@
         transition-delay: 0;
         width: calc(var(--m-checkbox-dimension) - (var(--m-checkbox-dimension) / 1.3));
     }
+}
+
+@mixin m-checkbox-error() {
+    @include m-input-commons-error();
 }
 
 @mixin m-checkbox-disabled() {

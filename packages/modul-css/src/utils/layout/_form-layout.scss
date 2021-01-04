@@ -1,13 +1,14 @@
 .mu-form-layout {
-    @include m-media-queries-content-factory() {
-        --m-from-layout-gap: var(--m-space);
+    --m-from-layout-gap: var(--m-space);
 
+    @include m-media-queries-content-factory() {
         display: inline-flex;
         flex-wrap: wrap;
         margin: 0;
         padding: 0;
         list-style: none;
         gap: var(--m-from-layout-gap);
+        align-items: baseline;
     }
     
     $space-values: xxxxl, xxxl, xxl, xl, lg, md, sm, xs, xxs;

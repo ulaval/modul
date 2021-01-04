@@ -1,4 +1,4 @@
-:root {
+@mixin m-css-var-min-max-width() {
     --m-min-width: 320px;
     --m-max-width-xl: 1400px;
     --m-max-width-lg: 1200px;

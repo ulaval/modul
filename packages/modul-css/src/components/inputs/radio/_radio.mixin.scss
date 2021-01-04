@@ -35,6 +35,10 @@
     }
 }
 
+@mixin m-radio-error() {
+    @include m-input-commons-error();
+}
+
 @mixin m-radio-disabled() {
     @include m-input-commons-disabled();
 }

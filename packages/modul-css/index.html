@@ -10,29 +10,86 @@
 </head>
 <body class="mu-app-body mu-bg-grey-lighter">
     <main class="mu-center-block mu-bg-white mu-pb-xxxl">
-        <ul class="mu-form-layout mu-from-layout--gap-xl mu-w-70">
+        <ul class="mu-form-layout mu-w-70"
+            style="--m-from-layout-gap: 12px 60px;">
             <li class="mc-input-area mc-input-area--disabled">
-                <input class="mc-checkbox" disabled id="checkboxSexe01" name="sexe" type="checkbox" value="m"/>
+                <input id="checkboxSexe01"
+                       class="mc-checkbox"
+                       disabled 
+                       name="sexe"
+                       type="checkbox"
+                       value="m"
+                       checked/>
                 <label for="checkboxSexe01">Male</label>
             </li>
             <li class="mc-input-area">
-                <input class="mc-checkbox" id="checkboxSexe02" name="sexe" type="checkbox" value="m"/>
+                <input id="checkboxSexe02"
+                       class="mc-checkbox"
+                       name="sexe"
+                       type="checkbox"
+                       value="m"/>
                 <label for="checkboxSexe02">Male</label>
             </li>
             <li class="mc-input-area">
-                <input class="mc-checkbox" id="checkboxSexe03" name="sexe" type="checkbox" value="f" style="--m-checkbox-check-color-hover: red; --m-checkbox-check-color-checked: white; --m-checkbox-bg-checked: red; --m-checkbox-bg-hover: #fcf2f3; --m-checkbox-border-color-hover: red;"/>
+                <input id="checkboxSexe03"
+                       class="mc-checkbox"
+                       name="sexe"
+                       type="checkbox"
+                       value="f"
+                       style="--m-checkbox-check-color-hover: yellow; --m-checkbox-check-color-checked: white; --m-checkbox-bg-checked: red; --m-checkbox-bg-hover: #b6535d; --m-checkbox-border-color-hover: yellow;"/>
                 <label for="checkboxSexe03">Female</label>
+            </li>
+            <li class="mc-input-area mc-input-area--error">
+                <input id="checkboxSexe04"
+                       class="mc-checkbox"
+                       name="sexe"
+                       type="checkbox"
+                       value="error">
+                <label for="checkboxSexe04">mc-input-area--error</label>
+            </li>
+            <li>
+                <input id="checkboxSexe05"
+                       class="mc-checkbox mc-checkbox--error"
+                       name="sexe"
+                       type="checkbox"
+                       value="error">
+                <label for="checkboxSexe05">mc-checkbox--error</label>
             </li>
         </ul>
 
         <ul class="mu-form-layout mu-from-layout--gap-xl mu-w-70">
             <li class="mc-input-area mc-input-area--disabled">
-                <input class="mc-radio" disabled id="male" name="sexe01" type="radio" value="m"/>
+                <input id="male"
+                       class="mc-radio"
+                       disabled
+                       name="sexe01"
+                       type="radio"
+                       value="m"/>
                 <label for="male">Male</label>
             </li>
             <li class="mc-input-area">
-                <input class="mc-radio" id="female" name="sexe01" type="radio" value="f" />
+                <input id="female"
+                       class="mc-radio"
+                       name="sexe01"
+                       type="radio"
+                       value="f" />
                 <label for="female">Female</label>
+            </li>
+            <li class="mc-input-area mc-input-area--error">
+                <input id="areaError"
+                       class="mc-radio"
+                       name="sexe01"
+                       type="radio"
+                       value="areaError" />
+                <label for="areaError">mc-input-area--error</label>
+            </li>
+            <li>
+                <input id="inputError"
+                       class="mc-radio mc-radio--error"
+                       name="sexe01"
+                       type="radio"
+                       value="inputError" />
+                <label for="inputError">mc-radio--error</label>
             </li>
         </ul>
        
@@ -60,7 +117,7 @@
                 <p class="mu-h1 mu-text-uppercase">Class .mu-h1</p>
                 <p class="mu-h2 mu-mt--max-xs mu-text-capitalize">Class .mu-h2</p>
                 <p class="mu-h3 mu-mt--max-xs mu-text-lowercase">Class .mu-h3</p>
-                <p class="mu-h4 mu-mt-s--max-xs" style="--m-font-weight-headings: var(--m-font-weight-black)">Class .mu-h4</p>
+                <p class="mu-h4 mu-mt-s--max-xs" style="--m-font-weight-headings: var(--m-font-weight-black)">Class .mu-h4 (font-weight-black)</p>
                 <p class="mu-h5 mu-mt-s--max-xs">Class .mu-h5</p>
                 <p class="mu-h6 mu-mt-s--max-xs" style="--m-font-size-h6-mobile: 32">Class .mu-h6</p>
             </div>
@@ -148,27 +205,30 @@
             </div>
         </div>
 
-        <div class="mc-formfield mc-formfield--disabled mu-mt-md">
-            <label for="input05" class="mc-formfield__label" >Disabled</label>
-            <input id="input05" class="mc-formfield__area" disabled="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
-            <p class="mc-formfield__message">Email valid</p>
-        </div>
-
-        <div class="mc-formfield mc-formfield--read-only mu-mt-md">
-            <label for="input06" class="mc-formfield__label" >Read only</label>
-            <input id="input06" class="mc-formfield__area" read-only="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+        <div class="mu-form-layout mu-mt-xxxl mu-w-100">
+            <div class="mc-formfield mc-formfield--disabled">
+                <label for="input05" class="mc-formfield__label" >Disabled</label>
+                <input id="input05" class="mc-formfield__area" disabled="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+                <p class="mc-formfield__message">Email valid</p>
+            </div>
+    
+            <div class="mc-formfield mc-formfield--read-only">
+                <label for="input06" class="mc-formfield__label" >Read only</label>
+                <input id="input06" class="mc-formfield__area" read-only="true" type="email" placeholder="Placeholder" value="raph.pare@gmail.com"/>
+            </div>
+            
+            <div class="mc-formfield">
+                <label for="input07" class="mc-formfield__label" >Select</label>
+                <select id="input07" name="input07" class="mc-formfield__area" placeholder="Placeholder" value="3">
+                    <option value="1">1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+            <button class="mc-button">Text</button>
         </div>
         
-        <div class="mc-formfield mu-mt-md mu-mr">
-            <label for="input07" class="mc-formfield__label" >Select</label>
-            <select id="input07" name="input07" class="mc-formfield__area" placeholder="Placeholder" value="3">
-                <option value="1">1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-        </div>
         
-        <button class="mc-button">Text</button>
 
         <ul class="mu-mt-md">
             <li>Item 1</li>

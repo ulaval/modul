@@ -12,6 +12,12 @@
         @include m-checkbox-checked();
     }
 
+    &--error {
+        &:not(.mc-checkbox--disabled):not(:disabled) {
+            @include m-checkbox-error();
+        }
+    }
+
     &--disabled,
     &:disabled {
         @include m-checkbox-disabled();

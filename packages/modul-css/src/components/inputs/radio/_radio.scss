@@ -12,6 +12,12 @@
         @include m-radio-checked();
     }
 
+    &--error {
+        &:not(.mc-checkbox--disabled):not(:disabled) {
+            @include m-radio-error();
+        }
+    }
+
     &--disabled,
     &:disabled {
         @include m-radio-disabled();

@@ -24,8 +24,8 @@
     color: var(--m-color-disabled-dark);
 }
 
-@mixin m-input-area-label-hover() {
-    color: var(--m-color-interactive);
+@mixin m-input-area-label-hover($color: var(--m-color-interactive)) {
+    color: $color;
 }
 
 @mixin m-input-area-input() {

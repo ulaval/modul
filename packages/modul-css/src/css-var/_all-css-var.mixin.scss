@@ -1,0 +1,21 @@
+@import
+    'a11y-focus.mixin',
+    'border.mixin',
+    'color.mixin',
+    'font.mixin',
+    'headings.mixin',
+    'min-max-width.mixin',
+    'scrollbar.mixin',
+    'space.mixin';
+
+
+@mixin m-all-css-var() {
+    @include m-css-var-a11y-focus();
+    @include m-css-var-border();
+    @include m-css-var-color();
+    @include m-css-var-font();
+    @include m-css-var-heading();
+    @include m-css-var-min-max-width();
+    @include m-css-var-scrollbar();
+    @include m-css-var-space();
+}
