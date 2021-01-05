@@ -1,4 +1,4 @@
-:root {
+@mixin m-a11y-theme() {
     --m-color-grey-black: #000;
     --m-color-grey-darkest: #1f1f1f;
     --m-color-grey-darker: #2e2e2e;
@@ -54,9 +54,4 @@
     --m-font-weight-light: 425;
 
     --m-scrollbar-width: 12px;
-}
-
-a[tabindex],
-a[href] {
-    text-decoration: underline !important;
 }

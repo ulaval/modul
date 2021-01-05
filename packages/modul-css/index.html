@@ -5,11 +5,89 @@
   <meta name="viewport" content="w=device-w,initial-scale=1">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="src/main.css">
-  <link rel="stylesheet" href="src/themes/a11y.css" >
+  <!-- <link rel="stylesheet" href="src/themes/a11y/a11y.theme.css" > -->
   <script src="a11yFocusCssClass.js"></script>
 </head>
-<body class="mu-app-body mu-bg-grey-lighter">
-    <main class="mu-center-block mu-bg-white mu-pb-xxxl">
+<body class="mu-app-body mu-bg-grey-lighter mu-scrollbar">
+    <main class="mu-center-block mu-no-mt mu-bg-white mu-p mu-pt-xxl mu-pb-xxxl">
+        <div class="mc-tablist mc-tablist--arrow" role="tablist">
+            <button id="tab-1" 
+                    class="mc-tab mc-tab--arrow" 
+                    role="tab" 
+                    aria-selected="true"
+                    aria-controls="panel-1"
+                    tabindex="0">
+                First Tab
+            </button>
+            <button id="tab-2" 
+                    class="mc-tab mc-tab--arrow" 
+                    role="tab" 
+                    aria-selected="false"
+                    aria-controls="panel-2"
+                    tabindex="-1">
+                Second Tab
+            </button>
+            <a id="tab-3" 
+               class="mc-tab mc-tab--selected mc-tab--arrow"
+               href="#"
+               role="tab" 
+               aria-selected="false"
+               aria-controls="panel-3"
+               tabindex="-1">
+                Third Tab
+            </a>
+        </div>
+        <div class="mc-tablist mc-tablist--underline" role="tablist">
+            <button id="tab1-1" 
+                    class="mc-tab mc-tab--underline" 
+                    role="tab" 
+                    aria-selected="true"
+                    aria-controls="panel-1"
+                    tabindex="0">
+                First Tab
+            </button>
+            <button id="tab1-2" 
+                    class="mc-tab mc-tab--underline" 
+                    role="tab" 
+                    aria-selected="false"
+                    aria-controls="panel-2"
+                    tabindex="-1">
+                Second Tab
+            </button>
+            <a id="tab1-3" 
+               class="mc-tab mc-tab--selected mc-tab--underline"
+               href="#"
+               role="tab" 
+               aria-selected="false"
+               aria-controls="panel-3"
+               tabindex="-1">
+                Third Tab
+            </a>
+        </div>
+        <div id="panel-1"
+             class="mc-tabpanel"
+             role="tabpanel"
+             tabindex="0"
+             aria-labelledby="tab-1">
+            <p>Content for the first panel</p>
+        </div>
+        <div id="panel-2"
+             class="mc-tabpanel"
+             role="tabpanel"
+             tabindex="0"
+             aria-labelledby="tab-2"
+             hidden>
+            <p>Content for the second panel</p>
+        </div>
+        <div id="panel-3"
+             class="mc-tabpanel"
+             role="tabpanel"
+             tabindex="0"
+             aria-labelledby="tab-3"
+             hidden>
+            <p>Content for the third panel</p>
+        </div>
+
         <ul class="mu-form-layout mu-w-70"
             style="--m-from-layout-gap: 12px 60px;">
             <li class="mc-input-area mc-input-area--disabled">
@@ -227,9 +305,6 @@
             </div>
             <button class="mc-button">Text</button>
         </div>
-        
-        
-
         <ul class="mu-mt-md">
             <li>Item 1</li>
             <li>Item 2</li>

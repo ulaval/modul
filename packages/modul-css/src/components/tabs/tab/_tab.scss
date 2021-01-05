@@ -1,0 +1,153 @@
+
+
+.mc-tab {
+    --m-tab-p: var(--m-space-md) var(--m-space-lg);
+    --m-tab-bg: var(--m-color-grey-lighter);
+    --m-tab-text-color: var(--m-color-text);
+    --m-tab-bg-hover: var(--m-color-grey-light);
+    --m-tab-bg-selected: var(--m-color-white);
+    --m-tab-selected-border-color: var(--m-color-active);
+    --m-tab-selected-border-width: var(--m-border-width-lg);
+    --m-tab-border-color: var(--m-color-border);
+    --m-tab-space-between: 2px;
+    --m-tab-arrow-width: 22px;
+
+    transition: background-color $m-transition-duration ease, color $m-transition-duration ease;
+    position: relative;
+    z-index: 0;
+    appearance: none;
+    border: none;
+    background: var(--m-tab-bg);
+    padding: var(--m-tab-p);
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+    text-decoration: none;
+    color: var(--m-tab-text-color);
+
+    &::after {
+        transition: opacity $m-transition-duration ease;
+        position: absolute;
+        top: 0;
+        right: calc(var(--m-border-width-sm) * -1);
+        left: calc(var(--m-border-width-sm) * -1);
+        content: '';
+        height: var(--m-tab-selected-border-width);
+        background: var(--m-tab-selected-border-color);
+        opacity: 0;
+    }
+
+    &:not(.mc-tab--disabled):not(:disabled) {
+        cursor: pointer;
+    }
+
+    &[aria-selected="true"],
+    &.mc-tab--selected {
+        background: var(--m-tab-bg-selected);
+        z-index: 1;
+
+        &:first-child {
+            border-left: var(--m-border-width-sm) solid var(--m-tab-border-color);
+        }
+
+        &:last-child {
+            border-right: var(--m-border-width-sm) solid var(--m-tab-border-color);
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &:not([aria-selected="true"]):not(.mc-tab--selected) {
+        &:hover,
+        &:focus {
+            background: var(--m-tab-bg-hover);
+        }
+    }
+
+    + .mc-tab {
+        margin-left: var(--m-tab-space-between);
+    }
+}
+
+.mc-tab--arrow,
+.mc-tab--underline { 
+    --m-tab-p: 0 0 calc(var(--m-space) + var(--m-tab-selected-border-width)) 0;
+    --m-tab-bg-selected: var(--m-tab-bg);
+    --m-tab-text-color: var(--m-color-grey-dark);
+    --m-tab-border-color: rgba(255, 255, 255, 0);
+    
+
+    &[aria-selected="true"],
+    &.mc-tab--selected {
+        color: var(--m-color-text);
+
+        &:first-child,
+        &:last-child {
+            border-left: none;
+            border-right: none;
+        }
+    }
+
+    &:not([aria-selected="true"]):not(.mc-tab--selected) {
+        &:hover,
+        &:focus {
+            color: var(--m-color-text);
+        }
+    }
+}
+
+.mc-tab--arrow {
+    --m-tab-p: 0 var(--m-space) calc(var(--m-space) + var(--m-tab-selected-border-width)) var(--m-space);
+    --m-tab-bg: var(--m-color-white);
+    --m-tab-bg-hover: var(--m-color-white);
+    --m-tab-space-between: 0;
+    --m-tab-selected-border-width: var(--m-border-width);
+
+    border-bottom: var(--m-tab-selected-border-width) solid var(--m-tab-border-color);
+    margin-bottom: calc(var(--m-tab-arrow-width) / 2);
+
+    &::before {
+        transition: opacity $m-transition-duration ease;
+        @include m-triangle(bottom, var(--m-tab-border-color), var(--m-tab-arrow-width));
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 100%);
+        content: '';
+        opacity: 0;
+    }
+
+    &::after {
+        transition: opacity $m-transition-duration ease, transform $m-transition-duration ease;
+        @include m-triangle(bottom, var(--m-tab-bg), var(--m-tab-arrow-width));
+        top: auto;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, calc(100% - var(--m-tab-selected-border-width)));
+        background: none;
+    }
+
+    &[aria-selected="true"],
+    &.mc-tab--selected {
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+
+.mc-tab--underline {
+    --m-tab-p: 0 0 calc(var(--m-space) + var(--m-tab-selected-border-width)) 0;
+    --m-tab-bg: rgba(255, 255, 255, 0);
+    --m-tab-bg-hover: rgba(255, 255, 255, 0);
+    --m-tab-space-between: var(--m-space-lg);
+
+    &[aria-selected="true"],
+    &.mc-tab--selected {
+        &::after {
+            top: auto;
+            bottom: 0;
+        }
+    }
+}

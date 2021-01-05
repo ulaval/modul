@@ -1,0 +1,53 @@
+.mc-tablist {
+    --m-tablist-border-color: var(--m-color-border);
+    --m-tablist-border-width: var(--m-border-width-sm);
+
+    position: relative;
+    z-index: 0;
+    display: flex;
+
+    &::before {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        height: var(--m-tablist-border-width);
+        background: var(--m-tablist-border-color);
+    }
+
+    .mc-tab {
+        --m-tab-border-color: var(--m-tablist-border-color);
+    }
+}
+
+.mc-tablist--arrow {
+    --m-tablist-bg: var(--m-color-white);
+    --m-tablist-border-width: var(--m-border-width);
+    --m-tablist-arrow-width: 24px;
+
+    &::before {
+        bottom: calc(var(--m-tablist-arrow-width) / 2);
+    }
+
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: calc(var(--m-tablist-arrow-width) / 2);
+        left: 0;
+        z-index: -1;
+        content: '';
+        background: var(--m-tablist-bg);
+    }
+
+    .mc-tab {
+        --m-tab-bg: var(--m-tablist-bg);
+        --m-tab-arrow-width: var(--m-tablist-arrow-width);
+    }
+}
+
+
+.mc-tablist--underline {
+    --m-tablist-border-width: var(--m-border-width-lg);
+}

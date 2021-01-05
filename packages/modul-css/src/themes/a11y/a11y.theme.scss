@@ -1,0 +1,10 @@
+@import 'a11y.theme.mixin';
+
+:root {
+    @include m-a11y-theme();
+}
+
+a[tabindex],
+a[href] {
+    text-decoration: underline !important;
+}
