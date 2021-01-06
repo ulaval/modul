@@ -5,11 +5,38 @@
   <meta name="viewport" content="w=device-w,initial-scale=1">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="src/main.css">
-  <!-- <link rel="stylesheet" href="src/themes/a11y/a11y.theme.css" > -->
+  <link rel="stylesheet" href="src/themes/a11y/a11y.theme.css" >
   <script src="a11yFocusCssClass.js"></script>
 </head>
 <body class="mu-app-body mu-bg-grey-lighter mu-scrollbar">
-    <main class="mu-center-block mu-no-mt mu-bg-white mu-p mu-pt-xxl mu-pb-xxxl">
+    <nav class="mc-navbar mu-position-fixed mu-w-100"
+         aria-labelledby="mainmenulabel"
+         style="z-index: 1;" >
+        <h2 id="mainmenulabel" class="mu-visually-hidden">Main Menu</h2>
+        <ul class="mc-navbar__list">
+            <li>
+                <a class="mc-navbar-link mc-navbar-link--disabled" href="#" aria-current="page">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a class="mc-navbar-link mc-navbar-link--disabled" href="dialog.html">
+                    Dialog
+                </a>
+            </li>
+            <li>
+                <a class="mc-navbar-link" href="modal.html">
+                    Modal
+                </a>
+            </li>
+            <li>
+                <a class="mc-navbar-link" href="overlay.html">
+                    Overlay
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main class="mu-center-block mu-mt-xxxxl mu-bg-white mu-p mu-pt-xxxxl mu-pb-xxxl">
         <div class="mc-tablist mc-tablist--arrow"
              role="tablist">
             <button id="tab-1" 

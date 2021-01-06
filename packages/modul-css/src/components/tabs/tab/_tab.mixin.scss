@@ -19,6 +19,7 @@
     transition-timing-function: ease;
     position: relative;
     z-index: 0;
+    display: block;
     appearance: none;
     border: none;
     background: var(--m-tab-bg);

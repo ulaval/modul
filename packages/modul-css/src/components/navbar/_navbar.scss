@@ -1,0 +1,48 @@
+@import 'navbar.mixin';
+
+.mc-navbar {
+    @include m-navbar-variables();
+    @include m-navbar();
+
+    &__list {
+        @include m-navbar-list(); 
+    }
+}
+
+.mc-navbar-link {
+    @include m-navbar-variables();
+    @include m-navbar-link-variables();
+    @include m-navbar-link();
+
+    &::before {
+        @include m-navbar-link-line();
+    }
+
+    &:not(:disabled):not(.mc-navbar-link--disabled) {
+        &:hover,
+        &:focus {
+            @include m-navbar-link-hover();
+
+            &::before {
+                @include m-navbar-link-line-hover();
+            }
+        }
+    }
+
+    &[aria-current="page"],
+    &.mc-navbar-link--selected {
+        @include m-navbar-link-selected();
+
+        &::before {
+            @include m-navbar-link-line-selected();
+        }
+    }
+
+    &:disabled,
+    &.mc-navbar-link--disabled {
+        cursor: default;
+
+        @include m-navbar-link-disabled();
+    }
+
+}
