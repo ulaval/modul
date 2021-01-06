@@ -1,3 +1,5 @@
+@import '../commons';
+
 $m-overlay-box-transition: transform $m-transition-duration-lg ease;
 $m-overlay-box-default-transform: translate3d(0, 100%, 0);
 
@@ -13,6 +15,7 @@ $m-overlay-box-default-transform: translate3d(0, 100%, 0);
 
 @mixin m-overlay() {
     @include m-window();
+    min-width: var(--m-min-width);
 }
 
 @mixin m-overlay-box() {
@@ -41,6 +44,10 @@ $m-overlay-box-default-transform: translate3d(0, 100%, 0);
 
 @mixin m-overlay-footer {
     @include m-window-footer();
+}
+
+@mixin m-overlay-buttons-area() {
+    @include m-window-buttons-area();
 }
 
 @mixin m-overlay-backdrop() {

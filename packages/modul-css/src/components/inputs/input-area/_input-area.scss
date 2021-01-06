@@ -1,4 +1,4 @@
-@import '../commons/input-commons';
+@import 'input-area.mixin';
 
 .mc-input-area {
     @include m-input-area-variables();

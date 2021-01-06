@@ -1,3 +1,5 @@
+@import '../commons';
+
 $m-dialog-box-transition: transform $m-transition-duration ease, opacity $m-transition-duration linear;
 $m-dialog-backdrop-transition: opacity $m-transition-duration-md linear;
 $m-dialog-box-default-transform: translate3d(0, 40px, 0);
@@ -15,6 +17,7 @@ $m-dialog-box-default-transform: translate3d(0, 40px, 0);
     @include m-window();
     overflow-x: hidden;
     overflow-y: auto;
+    min-width: var(--m-min-width);
 
     @include m-scrollbar();
 }

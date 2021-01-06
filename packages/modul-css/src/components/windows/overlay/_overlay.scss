@@ -1,3 +1,5 @@
+@import 'overlay.mixin';
+
 .mc-overlay {
     @include m-overlay-variables();
     @include m-overlay();
@@ -20,6 +22,10 @@
 
     &__footer {
         @include m-overlay-footer();
+    }
+
+    &__buttons-area {
+        @include m-overlay-buttons-area();
     }
 
     &__backdrop {

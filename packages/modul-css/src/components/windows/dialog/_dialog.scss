@@ -1,3 +1,5 @@
+@import 'dialog.mixin';
+
 .mc-dialog {
     @include m-dialog-variables();
     @include m-dialog();

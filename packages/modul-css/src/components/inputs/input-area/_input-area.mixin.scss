@@ -1,3 +1,5 @@
+@import '../commons/'; 
+
 @mixin m-input-area-variables() {
     --m-input-area-gap: var(--m-space-sm);
     --m-input-area-label-align: center;

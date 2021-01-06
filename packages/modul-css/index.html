@@ -10,9 +10,10 @@
 </head>
 <body class="mu-app-body mu-bg-grey-lighter mu-scrollbar">
     <main class="mu-center-block mu-no-mt mu-bg-white mu-p mu-pt-xxl mu-pb-xxxl">
-        <div class="mc-tablist mc-tablist--arrow" role="tablist">
+        <div class="mc-tablist mc-tablist--arrow"
+             role="tablist">
             <button id="tab-1" 
-                    class="mc-tab mc-tab--arrow" 
+                    class="mc-tab" 
                     role="tab" 
                     aria-selected="true"
                     aria-controls="panel-1"
@@ -21,7 +22,7 @@
                 First Tab
             </button>
             <button id="tab-2" 
-                    class="mc-tab mc-tab--arrow" 
+                    class="mc-tab" 
                     role="tab" 
                     aria-selected="false"
                     aria-controls="panel-2"
@@ -29,7 +30,7 @@
                 Second Tab
             </button>
             <a id="tab-3" 
-               class="mc-tab mc-tab--selected mc-tab--arrow"
+               class="mc-tab mc-tab--selected"
                href="#"
                role="tab" 
                aria-selected="false"
@@ -38,9 +39,10 @@
                 Third Tab
             </a>
         </div>
-        <div class="mc-tablist mc-tablist--underline" role="tablist">
+        <div class="mc-tablist mc-tablist--underline mu-mt-lg"
+             role="tablist">
             <button id="tab1-1" 
-                    class="mc-tab mc-tab--underline" 
+                    class="mc-tab" 
                     role="tab" 
                     aria-selected="true"
                     aria-controls="panel-1"
@@ -52,11 +54,55 @@
                     role="tab" 
                     aria-selected="false"
                     aria-controls="panel-2"
-                    tabindex="-1">
+                    tabindex="-1"
+                    disabled>
                 Second Tab
             </button>
             <a id="tab1-3" 
-               class="mc-tab mc-tab--selected mc-tab--underline"
+               class="mc-tab mc-tab--disabled mc-tab--selected"
+               href="#"
+               role="tab" 
+               aria-selected="false"
+               aria-controls="panel-3"
+               tabindex="-1">
+                Third Tab
+            </a>
+            <button id="tab1-4" 
+                class="mc-tab" 
+                role="tab" 
+                aria-selected="false"
+                aria-controls="panel-2"
+                tabindex="-1">
+                Fourth Tab
+            </button>
+            <button id="tab1-5" 
+                class="mc-tab mc-tab--selected" 
+                role="tab" 
+                aria-controls="panel-2"
+                tabindex="-1">
+                Fifth Tab
+            </button>
+        </div>
+        <div class="mc-tablist mu-mt-lg"
+             role="tablist">
+            <button id="tab2-1" 
+                    class="mc-tab" 
+                    role="tab" 
+                    aria-selected="true"
+                    aria-controls="panel-1"
+                    tabindex="0">
+                First Tab
+            </button>
+            <button id="tab2-2" 
+                    class="mc-tab" 
+                    role="tab" 
+                    aria-selected="false"
+                    aria-controls="panel-2"
+                    tabindex="-1">
+                Second Tab
+            </button>
+            <a id="tab2-3" 
+               class="mc-tab mc-tab--disabled"
                href="#"
                role="tab" 
                aria-selected="false"
@@ -89,8 +135,8 @@
             <p>Content for the third panel</p>
         </div>
 
-        <ul class="mu-form-layout mu-w-70"
-            style="--m-from-layout-gap: 12px 60px;">
+        <ul class="mu-form-layout mu-w-70 mu-mt-xl"
+            style="--m-form-layout-gap: 12px 60px;">
             <li class="mc-input-area mc-input-area--disabled">
                 <input id="checkboxSexe01"
                        class="mc-checkbox"
@@ -136,7 +182,7 @@
             </li>
         </ul>
 
-        <ul class="mu-form-layout mu-from-layout--gap-xl mu-w-70">
+        <ul class="mu-form-layout mu-form-layout--gap-xl mu-w-70 mu-mt-lg">
             <li class="mc-input-area mc-input-area--disabled">
                 <input id="male"
                        class="mc-radio"
@@ -172,7 +218,7 @@
             </li>
         </ul>
        
-        <ul class="mu-form-layout mu-from-layout--column mu-from-layout--gap-xs--min-xs mu-from-layout--gap-xl--max-xs">
+        <ul class="mu-form-layout mu-form-layout--column mu-form-layout--gap-xs--min-xs mu-form-layout--gap-xl--max-xs">
             <li class="mc-input-area">
                 <input class="mc-radio" id="F" name="sexe02" type="radio" value="f"/>
                 <label for="F">Women</label>

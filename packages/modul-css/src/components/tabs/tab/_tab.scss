@@ -1,4 +1,4 @@
-
+@import 'tab.mixin';
 
 .mc-tab {
     @include m-tab-variables();
@@ -12,6 +12,10 @@
 
     &:not(.mc-tab--disabled):not(:disabled) {
         cursor: pointer;
+
+        &:not([aria-selected="true"]):not(.mc-tab--selected) {
+            @include m-tab-hover();
+        }
     }
 
     &[aria-selected="true"],
@@ -28,62 +32,7 @@
         @include m-tab-disabled();
     }
 
-    &:not([aria-selected="true"]):not(.mc-tab--selected) {
-        @include m-tab-hover();
-    }
-
     + .mc-tab {
         margin-left: var(--m-tab-space-between);
-    }
-}
-
-.mc-tab--arrow,
-.mc-tab--underline { 
-    @include m-tab-arrow-underline-variables();
-    
-
-    &[aria-selected="true"],
-    &.mc-tab--selected {
-        @include m-tab-arrow-underline-selected();
-    }
-
-    &:not([aria-selected="true"]):not(.mc-tab--selected) {
-        @include m-tab-arrow-underline-hover();
-    }
-}
-
-.mc-tab--arrow {
-    @include m-tab-arrow-variables();
-
-    @include m-tab-arrow();
-
-    &::before {
-        opacity: 0;
-    }
-
-    &[aria-selected="true"],
-    &.mc-tab--selected {
-        &::before {
-            opacity: 1;
-        }
-    }
-
-    &:disabled,
-    &.mc-tab--disabled {
-        @include m-tab-disabled();
-    }
-}
-
-.mc-tab--underline {
-    @include m-tab-underline-variables();
-
-    &[aria-selected="true"],
-    &.mc-tab--selected {
-        @include m-tab-underline-selected();
-    }
-
-    &:disabled,
-    &.mc-tab--disabled {
-        @include m-tab-disabled();
     }
 }

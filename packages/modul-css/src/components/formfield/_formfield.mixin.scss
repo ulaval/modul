@@ -1,3 +1,5 @@
+@import '../../commons/';
+
 $m-formfield-label-margin-top: calc(var(--m-font-size-sm) / 2 * 1px);
 $m-formfield-max-width-lg: 896px;
 $m-formfield-max-width-md: 592px;
@@ -130,7 +132,7 @@ $m-formfield-max-width-xs: 60px;
 
 @mixin m-formfield-area-disabled() {
     border: var(--m-border-width) dotted var(--m-color-disabled);
-    cursor: not-allowed;
+    cursor: default;
     color: var(--m-color-disabled);
 }
 

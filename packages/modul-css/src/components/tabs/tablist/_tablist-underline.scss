@@ -1,0 +1,13 @@
+@import 'tablist.mixin';
+
+.mc-tablist--underline { 
+    @include m-tablist-underline-variables();
+
+    .mc-tab {
+        @include m-tab-arrow-underline-variables-commons();
+        @include m-tab-underline-commons();
+
+        --m-tab-bg: var(--m-tablist-bg);
+        --m-tab-arrow-width: var(--m-tablist-arrow-width);
+    }
+}

@@ -1,0 +1,6 @@
+@import 'tab.mixin';
+
+.mc-tab--arrow { 
+    @include m-tab-arrow-underline-variables-commons();
+    @include m-tab-arrow-commons();
+}

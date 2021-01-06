@@ -1,5 +1,5 @@
 .mu-form-layout {
-    --m-from-layout-gap: var(--m-space);
+    --m-form-layout-gap: var(--m-space);
 
     @include m-media-queries-content-factory() {
         display: inline-flex;
@@ -7,21 +7,21 @@
         margin: 0;
         padding: 0;
         list-style: none;
-        gap: var(--m-from-layout-gap);
+        gap: var(--m-form-layout-gap);
         align-items: baseline;
     }
     
     $space-values: xxxxl, xxxl, xxl, xl, lg, md, sm, xs, xxs;
 
     @each $value in $space-values {
-        &.mu-from-layout--gap-#{$value} {
+        &.mu-form-layout--gap-#{$value} {
             @include m-media-queries-content-factory() {
-                --m-from-layout-gap: var(--m-space-#{$value});
+                --m-form-layout-gap: var(--m-space-#{$value});
             }
         }
     }
 
-    &.mu-from-layout--column {
+    &.mu-form-layout--column {
         @include m-media-queries-content-factory() {
             flex-direction: column;
         }

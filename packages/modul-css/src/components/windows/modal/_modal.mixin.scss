@@ -1,3 +1,5 @@
+@import '../commons';
+
 $m-modal-box-transition-mobile: transform $m-transition-duration ease;
 $m-modal-box-transition: transform $m-transition-duration ease, opacity $m-transition-duration ease;
 $m-modal-box-default-transform-mobile: translate3d(0, 100%, 0);
@@ -16,6 +18,7 @@ $m-modal-box-default-transform: translate3d(0, 40px, 0);
 
 @mixin m-modal() {
     @include m-window();
+    min-width: var(--m-min-width);
 }
 
 @mixin m-modal-box {
@@ -60,6 +63,10 @@ $m-modal-box-default-transform: translate3d(0, 40px, 0);
 
 @mixin m-modal-footer {
     @include m-window-footer();
+}
+
+@mixin m-modal-buttons-area() {
+    @include m-window-buttons-area();
 }
 
 @mixin m-modal-box-open() {

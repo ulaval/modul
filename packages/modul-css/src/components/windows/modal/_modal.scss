@@ -1,3 +1,5 @@
+@import 'modal.mixin';
+
 .mc-modal {
     @include m-modal-variables();
     @include m-modal();
@@ -17,6 +19,10 @@
 
     &__footer {
         @include m-modal-footer();
+    }
+
+    &__buttons-area {
+        @include m-modal-buttons-area();
     }
 
     &__backdrop {
