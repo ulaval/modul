@@ -8,7 +8,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { DYNAMIC_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME, LINK_NAME } from '../component-names';
 import { MDynamicTemplate } from '../dynamic-template/dynamic-template';
 import { MI18n } from '../i18n/i18n';
-import { MLinkMode } from '../link/link';
+import { MLink, MLinkMode } from '../link/link';
 import WithRender from './limit-text.html?style=./limit-text.scss';
 
 
@@ -16,6 +16,7 @@ import WithRender from './limit-text.html?style=./limit-text.scss';
 @Component({
     components: {
         [I18N_NAME]: MI18n,
+        [LINK_NAME]: MLink,
         [DYNAMIC_TEMPLATE_NAME]: MDynamicTemplate
     },
     mixins: [MediaQueries, ElementQueries]

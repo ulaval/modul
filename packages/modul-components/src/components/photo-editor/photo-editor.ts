@@ -5,10 +5,10 @@ import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton, MButtonSkin } from '../button/button';
-import { BUTTON_NAME, FILE_SELECT_NAME } from '../component-names';
+import { BUTTON_NAME, FILE_SELECT_NAME, MODAL_NAME } from '../component-names';
 import { MFileSelect } from '../file-select/file-select';
 import { MMessage, MMessageState } from '../message/message';
-import { MModalSize } from '../modal/modal';
+import { MModal, MModalSize } from '../modal/modal';
 import { MCropImage } from './crop-image/crop-image';
 import { MImageDisplayer } from './image-displayer/image-displayer';
 import WithRender from './photo-editor.html?style=./photo-editor.scss';
@@ -25,7 +25,8 @@ export enum MPhotoEditorMode {
         MImageDisplayer,
         MCropImage,
         [FILE_SELECT_NAME]: MFileSelect,
-        [BUTTON_NAME]: MButton
+        [BUTTON_NAME]: MButton,
+        [MODAL_NAME]: MModal
     }
 })
 export class MPhotoEditor extends ModulVue {
