@@ -21,6 +21,7 @@ import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
 import { MInputStyle } from '../input-style/input-style';
 import { MPopper } from '../popper/popper';
+import { MPopup } from '../popup/popup';
 import { MValidationMessage } from '../validation-message/validation-message';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from './../../directives/directive-names';
 import { InputManagement } from './../../mixins/input-management/input-management';
@@ -41,7 +42,7 @@ export enum MDatepickerDefaultView {
         [ICON_BUTTON_NAME]: MIconButton,
         [I18N_NAME]: MI18n,
         [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [POPUP_NAME]: MPopper,
+        [POPUP_NAME]: MPopup,
         [CALENDAR_NAME]: MCalendar
     },
     directives: {

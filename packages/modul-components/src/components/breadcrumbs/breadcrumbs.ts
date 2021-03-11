@@ -1,8 +1,8 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { BREADCRUMBS_NAME } from '../component-names';
-import { MLinkIconPosition, MLinkMode } from '../link/link';
+import { BREADCRUMBS_NAME, LINK_NAME } from '../component-names';
+import { MLink, MLinkIconPosition, MLinkMode } from '../link/link';
 import WithRender from './breadcrumbs.html?style=./breadcrumbs.scss';
 
 
@@ -23,7 +23,7 @@ export interface BreadcrumbsProps {
 @WithRender
 @Component({
     components: {
-        [BREADCRUMBS_NAME]: MBreadcrumbs
+        [LINK_NAME]: MLink
     }
 })
 export class MBreadcrumbs extends Vue implements BreadcrumbsProps {

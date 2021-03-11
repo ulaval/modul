@@ -1,6 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { FormatMode } from '../../utils/i18n/i18n';
 
 import { ModulVue } from '../../utils/vue/vue';
 import { I18N_NAME } from '../component-names';
@@ -19,6 +20,8 @@ export class MI18n extends ModulVue {
     public modifier: string;
     @Prop({ default: true })
     public htmlEncode: boolean;
+    @Prop()
+    public formatMode?: FormatMode;
 
     protected created(): void {
         if (!this.$i18n) {
@@ -34,7 +37,8 @@ export class MI18n extends ModulVue {
                 this.params,
                 this.nb,
                 this.modifier,
-                this.htmlEncode
+                this.htmlEncode,
+                this.formatMode ? this.formatMode : undefined
             );
         }
 
