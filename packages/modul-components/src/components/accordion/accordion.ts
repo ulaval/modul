@@ -4,6 +4,7 @@ import { Emit, Prop, Ref, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
+import { MAccordionGroup } from '../accordion-group/accordion-group';
 import { ACCORDION_NAME, ACCORDION_TRANSITION_NAME, BUTTON_GROUP_NAME, CHECKBOX_NAME, I18N_NAME, INPLACE_EDIT_NAME, INPUT_STYLE_NAME, LINK_NAME, PLUS_NAME, RADIO_GROUP_NAME, RADIO_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MPlus, MPlusSkin } from '../plus/plus';
@@ -45,10 +46,6 @@ export interface AccordionGroupGateway {
 
 export const ACCORDION_CLOSEST_ELEMENTS: string = `[href], [onclick], [for], a, button, input, textarea, radio, .${BUTTON_GROUP_NAME}, .${INPUT_STYLE_NAME}, .${CHECKBOX_NAME}, .${RADIO_GROUP_NAME}, .${RADIO_NAME}, .${LINK_NAME}, .${INPLACE_EDIT_NAME}`;
 
-function isAccordionGroup(parent: any): parent is AccordionGroupGateway {
-    return parent && 'addAccordion' in parent;
-}
-
 @WithRender
 @Component({
     components: {
@@ -58,6 +55,9 @@ function isAccordionGroup(parent: any): parent is AccordionGroupGateway {
     }
 })
 export class MAccordion extends ModulVue implements AccordionGateway {
+    @Prop()
+    public groupRef?: MAccordionGroup;
+
     @Prop()
     public readonly id?: string;
 
@@ -122,11 +122,11 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     }
 
     public get propDisabled(): boolean {
-        return (
-                isAccordionGroup(this.$parent) &&
-                this.$parent.disabled
-            ) ||
-            this.disabled;
+        if (!this.internalGroupRef) {
+            return false;
+        }
+
+        return this.internalGroupRef!.disabled || this.disabled;
     }
 
     public get propId(): string {
@@ -185,7 +185,8 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     }
 
     public get propSkin(): MAccordionSkin {
-        return isAccordionGroup(this.$parent) ? this.$parent.skin : this.skin;
+
+        return this.internalGroupRef ? this.internalGroupRef!.skin : this.skin;
     }
 
     public get plusSkin(): MPlusSkin {
@@ -224,10 +225,10 @@ export class MAccordion extends ModulVue implements AccordionGateway {
 
             if (
                 !this.internalOpen &&
-                isAccordionGroup(this.$parent) &&
-                this.$parent.concurrent
+                this.internalGroupRef &&
+                this.internalGroupRef!.concurrent
             ) {
-                this.$parent.closeAllAccordions();
+                this.internalGroupRef!.closeAllAccordions();
             }
 
             this.refAccordionHeader.blur();
@@ -236,16 +237,32 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         }
     }
 
-    protected created(): void {
-        if (isAccordionGroup(this.$parent)) {
-            this.$parent.addAccordion(this);
+    protected mounted(): void {
+        if (this.internalGroupRef) {
+            this.internalGroupRef!.addAccordion(this);
         }
     }
 
     protected beforeDestroy(): void {
-        if (isAccordionGroup(this.$parent)) {
-            this.$parent.removeAccordion(this.propId);
+        if (!this.internalGroupRef) {
+            return
         }
+
+        this.internalGroupRef!!.removeAccordion(this.propId);
+    }
+
+    private get internalGroupRef(): MAccordionGroup | null {
+        if (this.isParentAccordionGroup()) {
+            return this.$parent as MAccordionGroup;
+        } else if (this.groupRef) {
+            return this.groupRef;
+        }
+
+        return null;
+    }
+
+    private isParentAccordionGroup(): boolean {
+        return this.$parent instanceof MAccordionGroup;
     }
 }
 
