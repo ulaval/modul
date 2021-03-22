@@ -121,12 +121,6 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         this.internalOpen = open;
     }
 
-    @Watch('groupRefs')
-    public watchRefs(): void {
-        if (this.groupRef) {
-            this.groupRef.addAccordion(this);
-        }
-    }
     public get propDisabled(): boolean {
         if (!this.internalGroupRef) {
             return false;

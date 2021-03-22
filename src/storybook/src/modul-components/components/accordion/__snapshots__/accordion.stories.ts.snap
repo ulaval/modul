@@ -28,14 +28,15 @@ exports[`Storyshots modul-components|m-accordion default 1`] = `
 
 exports[`Storyshots modul-components|m-accordion disabled and closed 1`] = `
 <div
-  class="m-accordion m--is-default m--is-closed m--is-disabled m--has-icon-left m--has-icon-large"
+  class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
 >
   <div
     aria-controls="fakeId-body-wrap"
-    aria-disabled="true"
+    aria-label="Afficher le contenu"
     class="m-accordion__header m--has-padding"
     id="fakeId"
     role="button"
+    tabindex="0"
   >
     <div
       class="m-accordion__header-content"
@@ -59,15 +60,16 @@ exports[`Storyshots modul-components|m-accordion disabled and closed 1`] = `
 
 exports[`Storyshots modul-components|m-accordion disabled and open 1`] = `
 <div
-  class="m-accordion m--is-default m--is-open m--is-disabled m--has-icon-left m--has-icon-large"
+  class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
 >
   <div
     aria-controls="fakeId-body-wrap"
-    aria-disabled="true"
     aria-expanded="true"
+    aria-label="Cacher le contenu"
     class="m-accordion__header m--has-padding"
     id="fakeId"
     role="button"
+    tabindex="0"
   >
     <div
       class="m-accordion__header-content"

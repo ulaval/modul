@@ -61,12 +61,11 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
     class="m-accordion-group__body"
   >
     <div
-      class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
+      class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="1-body-wrap"
-        aria-expanded="true"
-        aria-label="Cacher le contenu"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="1"
         role="button"
@@ -82,21 +81,11 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
          
         <span
           aria-hidden="true"
-          class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
+          class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
        
-      <div
-        aria-labelledby="1"
-        class="m-accordion__body-wrap"
-        id="1-body-wrap"
-      >
-        <div
-          class="m-accordion__body m--has-padding"
-        >
-          Some Accordion Content
-        </div>
-      </div>
+      <!---->
     </div>
      
     <div
@@ -128,12 +117,11 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
     </div>
      
     <div
-      class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
+      class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="3-body-wrap"
-        aria-expanded="true"
-        aria-label="Cacher le contenu"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="3"
         role="button"
@@ -149,21 +137,11 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] :opened
          
         <span
           aria-hidden="true"
-          class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
+          class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
        
-      <div
-        aria-labelledby="3"
-        class="m-accordion__body-wrap"
-        id="3-body-wrap"
-      >
-        <div
-          class="m-accordion__body m--has-padding"
-        >
-          Some Accordion Content
-        </div>
-      </div>
+      <!---->
     </div>
   </div>
 </article>
@@ -377,12 +355,11 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
     class="m-accordion-group__body"
   >
     <div
-      class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
+      class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="1-body-wrap"
-        aria-expanded="true"
-        aria-label="Cacher le contenu"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="1"
         role="button"
@@ -398,30 +375,19 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
          
         <span
           aria-hidden="true"
-          class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
+          class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
        
-      <div
-        aria-labelledby="1"
-        class="m-accordion__body-wrap"
-        id="1-body-wrap"
-      >
-        <div
-          class="m-accordion__body m--has-padding"
-        >
-          Some Accordion Content
-        </div>
-      </div>
+      <!---->
     </div>
      
     <div
-      class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
+      class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="2-body-wrap"
-        aria-expanded="true"
-        aria-label="Cacher le contenu"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="2"
         role="button"
@@ -437,30 +403,19 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
          
         <span
           aria-hidden="true"
-          class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
+          class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
        
-      <div
-        aria-labelledby="2"
-        class="m-accordion__body-wrap"
-        id="2-body-wrap"
-      >
-        <div
-          class="m-accordion__body m--has-padding"
-        >
-          Some Accordion Content
-        </div>
-      </div>
+      <!---->
     </div>
      
     <div
-      class="m-accordion m--is-default m--is-open m--has-icon-left m--has-icon-large"
+      class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
     >
       <div
         aria-controls="3-body-wrap"
-        aria-expanded="true"
-        aria-label="Cacher le contenu"
+        aria-label="Afficher le contenu"
         class="m-accordion__header m--has-padding"
         id="3"
         role="button"
@@ -476,21 +431,11 @@ exports[`Storyshots modul-components|m-accordion-group/openedIds=[x,y,z] openedI
          
         <span
           aria-hidden="true"
-          class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--is-large m--is-left"
+          class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
         />
       </div>
        
-      <div
-        aria-labelledby="3"
-        class="m-accordion__body-wrap"
-        id="3-body-wrap"
-      >
-        <div
-          class="m-accordion__body m--has-padding"
-        >
-          Some Accordion Content
-        </div>
-      </div>
+      <!---->
     </div>
   </div>
 </article>
