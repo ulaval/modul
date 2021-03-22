@@ -126,7 +126,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
             return false;
         }
 
-        return this.internalGroupRef!.disabled || this.disabled;
+        return this.internalGroupRef.disabled || this.disabled;
     }
 
     public get propId(): string {
@@ -186,7 +186,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
 
     public get propSkin(): MAccordionSkin {
 
-        return this.internalGroupRef ? this.internalGroupRef!.skin : this.skin;
+        return this.internalGroupRef ? this.internalGroupRef.skin : this.skin;
     }
 
     public get plusSkin(): MPlusSkin {
@@ -226,9 +226,9 @@ export class MAccordion extends ModulVue implements AccordionGateway {
             if (
                 !this.internalOpen &&
                 this.internalGroupRef &&
-                this.internalGroupRef!.concurrent
+                this.internalGroupRef.concurrent
             ) {
-                this.internalGroupRef!.closeAllAccordions();
+                this.internalGroupRef.closeAllAccordions();
             }
 
             this.refAccordionHeader.blur();
@@ -239,7 +239,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
 
     protected mounted(): void {
         if (this.internalGroupRef) {
-            this.internalGroupRef!.addAccordion(this);
+            this.internalGroupRef.addAccordion(this);
         }
     }
 
@@ -248,7 +248,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
             return
         }
 
-        this.internalGroupRef!!.removeAccordion(this.propId);
+        this.internalGroupRef!.removeAccordion(this.propId);
     }
 
     private get internalGroupRef(): MAccordionGroup | null {
