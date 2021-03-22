@@ -125,11 +125,11 @@ export const concurrent = () => ({
 export const concurrentWithNoDirectParentRelation = () => ({
     template: `
     <m-accordion-group :concurrent="true">
-        <template v-slot:default="slotProps">
+        <template v-slot:default="{ groupRef }">
             <m-panel>
-                <m-accordion :group-ref="slotProps.groupRef">Some Accordion Content</m-accordion>
-                <m-accordion :group-ref="slotProps.groupRef">Some Accordion Content</m-accordion>
-                <m-accordion :group-ref="slotProps.groupRef">Some Accordion Content</m-accordion>
+                <m-accordion :group-ref="groupRef">Some Accordion Content</m-accordion>
+                <m-accordion :group-ref="groupRef">Some Accordion Content</m-accordion>
+                <m-accordion :group-ref="groupRef">Some Accordion Content</m-accordion>
             </m-panel>
         </template>
     </m-accordion-group>`
