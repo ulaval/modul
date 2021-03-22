@@ -121,3 +121,16 @@ export const concurrent = () => ({
         <m-accordion><h3 slot="header">An Accordion Title</h3>Some Accordion Content</m-accordion>
     </m-accordion-group>`
 });
+
+export const concurrentWithNoDirectParentRelation = () => ({
+    template: `
+    <m-accordion-group :concurrent="true">
+        <template v-slot:default="slotProps">
+            <m-panel>
+                <m-accordion :group-ref="slotProps.groupRef">Some Accordion Content</m-accordion>
+                <m-accordion :group-ref="slotProps.groupRef">Some Accordion Content</m-accordion>
+                <m-accordion :group-ref="slotProps.groupRef">Some Accordion Content</m-accordion>
+            </m-panel>
+        </template>
+    </m-accordion-group>`
+});
