@@ -185,7 +185,6 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     }
 
     public get propSkin(): MAccordionSkin {
-
         return this.internalGroupRef ? this.internalGroupRef.skin : this.skin;
     }
 
