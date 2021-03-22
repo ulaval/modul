@@ -244,20 +244,18 @@ export class MAccordion extends ModulVue implements AccordionGateway {
 
     protected beforeDestroy(): void {
         if (!this.internalGroupRef) {
-            return
+            return;
         }
 
-        this.internalGroupRef!.removeAccordion(this.propId);
+        this.internalGroupRef.removeAccordion(this.propId);
     }
 
-    private get internalGroupRef(): MAccordionGroup | null {
+    private get internalGroupRef(): MAccordionGroup | undefined {
         if (this.isParentAccordionGroup()) {
             return this.$parent as MAccordionGroup;
         } else if (this.groupRef) {
             return this.groupRef;
         }
-
-        return null;
     }
 
     private isParentAccordionGroup(): boolean {
