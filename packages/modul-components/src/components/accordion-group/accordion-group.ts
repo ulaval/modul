@@ -3,6 +3,7 @@ import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import AccordionPlugin, { AccordionGateway, AccordionGroupGateway, MAccordionSkin } from '../accordion/accordion';
+import { MAccordionGroupAPI } from '../accordion/accordion.models';
 import { ACCORDION_GROUP_NAME, I18N_NAME, LINK_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MLink, MLinkMode } from '../link/link';
@@ -15,7 +16,7 @@ import WithRender from './accordion-group.html?style=./accordion-group.scss';
         [I18N_NAME]: MI18n
     }
 })
-export class MAccordionGroup extends Vue implements AccordionGroupGateway {
+export class MAccordionGroup extends Vue implements AccordionGroupGateway, MAccordionGroupAPI {
     @Prop({
         default: MAccordionSkin.Default,
         validator: value => Enums.toValueArray(MAccordionSkin).includes(value)
@@ -51,13 +52,13 @@ export class MAccordionGroup extends Vue implements AccordionGroupGateway {
     private accordions: { [id: string]: AccordionGateway } = {};
 
     @Emit('update:openedIds')
-    public emitUpdateOpenedIds(openedIds: string[]): void {}
+    public emitUpdateOpenedIds(openedIds: string[]): void { }
 
     @Watch('openedIds')
     public onOpenedIdsChange(openedIds: string[]): void {
         for (const id in this.accordions) {
             this.accordions[id].propOpen =
-            openedIds.find(openedId => openedId === id) !== undefined;
+                openedIds.find(openedId => openedId === id) !== undefined;
         }
     }
 

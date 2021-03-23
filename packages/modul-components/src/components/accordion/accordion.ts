@@ -4,12 +4,12 @@ import { Emit, Prop, Ref, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MAccordionGroup } from '../accordion-group/accordion-group';
 import { ACCORDION_NAME, ACCORDION_TRANSITION_NAME, BUTTON_GROUP_NAME, CHECKBOX_NAME, I18N_NAME, INPLACE_EDIT_NAME, INPUT_STYLE_NAME, LINK_NAME, PLUS_NAME, RADIO_GROUP_NAME, RADIO_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MPlus, MPlusSkin } from '../plus/plus';
 import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './accordion.html?style=./accordion.scss';
+import { MAccordionGroupAPI } from './accordion.models';
 
 export enum MAccordionSkin {
     Default = 'default',
@@ -56,7 +56,7 @@ export const ACCORDION_CLOSEST_ELEMENTS: string = `[href], [onclick], [for], a, 
 })
 export class MAccordion extends ModulVue implements AccordionGateway {
     @Prop()
-    public groupRef?: MAccordionGroup;
+    public groupRef?: MAccordionGroupAPI;
 
     @Prop()
     public readonly id?: string;
@@ -111,10 +111,10 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     private internalOpen: boolean = false;
 
     @Emit('click')
-    public emitClick(event: Event): void {}
+    public emitClick(event: Event): void { }
 
     @Emit('update:open')
-    public emitUpdateOpen(open: boolean): void {}
+    public emitUpdateOpen(open: boolean): void { }
 
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
@@ -185,7 +185,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     }
 
     public get propSkin(): MAccordionSkin {
-        return this.internalGroupRef ? this.internalGroupRef.skin : this.skin;
+        return this.internalGroupRef ? (this.internalGroupRef.skin as MAccordionSkin) : this.skin;
     }
 
     public get plusSkin(): MPlusSkin {
@@ -250,16 +250,16 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         this.internalGroupRef.removeAccordion(this.propId);
     }
 
-    private get internalGroupRef(): MAccordionGroup | undefined {
+    private get internalGroupRef(): MAccordionGroupAPI | undefined {
         if (this.isParentAccordionGroup()) {
-            return this.$parent as MAccordionGroup;
+            return (this.$parent as any) as MAccordionGroupAPI;
         } else if (this.groupRef) {
             return this.groupRef;
         }
     }
 
     private isParentAccordionGroup(): boolean {
-        return this.$parent instanceof MAccordionGroup;
+        return 'addAccordion' in this.$parent;
     }
 }
 
