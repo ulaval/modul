@@ -5,10 +5,12 @@
                   :hints="hints"
                   :links="links">
     <m-accordion skin="light"
-                 icon-size="small">
+                 icon-size="small"
+                 :open="openAccordion">
         <m-i18n slot="header" k="m-error-technical-difficulty:details"></m-i18n>
         <p class="m-error-technical-difficulty__browser"><strong>{{'m-error-technical-difficulty:browser' | f-m-i18n}}: </strong>{{userAgent}}</p>
         <p v-if="!!errorReferenceNumber"><strong>{{'m-error-technical-difficulty:reference-number' | f-m-i18n}}: </strong>{{errorReferenceNumber}}</p>
+        <p v-if="!!system"><strong>{{'m-error-technical-difficulty:system' | f-m-i18n}}: </strong>{{system}}</p>
         <p>
             {{'m-error-technical-difficulty:date.primary' | f-m-i18n}}
             <strong>{{formattedDate}}</strong>
