@@ -68,6 +68,26 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}/m-error-pages/${ERROR_TECHNI
                         <m-error-technical-difficulty :errorReferenceNumber="errorReferenceNumber"></m-error-technical-difficulty>
                    </div>`
     }))
+    .add('system', () => ({
+        props: {
+            system: {
+                default: text('system', '[XYZ] Nom du système')
+            }
+        },
+        template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
+                        <m-error-technical-difficulty :system="system"></m-error-technical-difficulty>
+                   </div>`
+    }))
+    .add('openAccordion', () => ({
+        props: {
+            openAccordion: {
+                default: boolean('openAccordion', true)
+            }
+        },
+        template: `<div style="border: solid 1px black; padding: 10px; width: 600px;">
+                        <m-error-technical-difficulty :open-accordion="openAccordion"></m-error-technical-difficulty>
+                   </div>`
+    }))
     .add('showStackTrace', () => ({
         data(): any {
             return {

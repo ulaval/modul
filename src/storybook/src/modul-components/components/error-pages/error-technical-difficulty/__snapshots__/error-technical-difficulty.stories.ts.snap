@@ -709,7 +709,283 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty
 </div>
 `;
 
+exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty openAccordion 1`] = `
+<div
+  style="border: 1px solid black; padding: 10px; width: 600px;"
+>
+  <article
+    class="m-message-page m-error-technical-difficulty m--is-state-error m--is-skin-default"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Un problème technique
+        <br />
+        s'est produit
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-svg m-message-page__icon"
+          height="130px"
+          width="130px"
+        />
+      </div>
+    </header>
+     
+    <div
+      class="m-message-page__body"
+    >
+      <p
+        class="m-message-page__hints"
+      >
+        Essayez de rafraîchir la page.
+      </p>
+      <p
+        class="m-message-page__hints"
+      >
+        Si le problème persiste, vous pouvez contacter l'équipe de soutien et leur fournir les précisions techniques ci-dessous.
+      </p>
+       
+      <div
+        class="m-message-page__details"
+      >
+        <div
+          class="m-accordion m--is-light m--is-open m--has-icon-left"
+        >
+          <div
+            aria-controls="fakeId-body-wrap"
+            aria-expanded="true"
+            aria-label="Cacher le contenu"
+            class="m-accordion__header m--has-padding"
+            id="fakeId"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="m-accordion__header-content"
+            >
+              <span
+                class="m-i18n"
+              >
+                Précisions techniques
+              </span>
+            </div>
+             
+            <span
+              aria-hidden="true"
+              class="m-plus m-accordion__header-icon m--is-skin-default m--is-open m--has-border m--is-left"
+            />
+          </div>
+           
+          <div
+            aria-labelledby="fakeId"
+            class="m-accordion__body-wrap"
+            id="fakeId-body-wrap"
+          >
+            <div
+              class="m-accordion__body m--has-padding"
+            >
+               
+              <p
+                class="m-error-technical-difficulty__browser"
+              >
+                <strong>
+                  Navigateur: 
+                </strong>
+                Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0
+              </p>
+               
+              <!---->
+               
+              <!---->
+               
+              <p>
+                
+            Elle a eu lieu le 
+            
+                <strong>
+                  2021-04-06
+                </strong>
+                
+             à 
+            
+                <strong>
+                  10:53:36
+                </strong>
+              </p>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <ul
+        class="m-message-page__links"
+      >
+        <li>
+          <a
+            class="m-link m-message-page__link m--has-left-icon m--has-content"
+            href="\\\\"
+            tabindex="0"
+            target=""
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-link__icon m--has-large-stroke"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="m-link__text"
+            >
+              Coordonnées du soutien technique
+            </span>
+             
+            <!---->
+          </a>
+        </li>
+      </ul>
+    </div>
+  </article>
+</div>
+`;
+
 exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty showStackTrace 1`] = `
+<div
+  style="border: 1px solid black; padding: 10px; width: 600px;"
+>
+  <article
+    class="m-message-page m-error-technical-difficulty m--is-state-error m--is-skin-default"
+  >
+    <header
+      class="m-message-page__header"
+    >
+      <h2
+        class="m-message-page__title"
+      >
+        Un problème technique
+        <br />
+        s'est produit
+      </h2>
+       
+      <div
+        aria-hidden="true"
+        class="m-message-page__icon-container"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-svg m-message-page__icon"
+          height="130px"
+          width="130px"
+        />
+      </div>
+    </header>
+     
+    <div
+      class="m-message-page__body"
+    >
+      <p
+        class="m-message-page__hints"
+      >
+        Essayez de rafraîchir la page.
+      </p>
+      <p
+        class="m-message-page__hints"
+      >
+        Si le problème persiste, vous pouvez contacter l'équipe de soutien et leur fournir les précisions techniques ci-dessous.
+      </p>
+       
+      <div
+        class="m-message-page__details"
+      >
+        <div
+          class="m-accordion m--is-light m--is-closed m--has-icon-left"
+        >
+          <div
+            aria-controls="fakeId-body-wrap"
+            aria-label="Afficher le contenu"
+            class="m-accordion__header m--has-padding"
+            id="fakeId"
+            role="button"
+            tabindex="0"
+          >
+            <div
+              class="m-accordion__header-content"
+            >
+              <span
+                class="m-i18n"
+              >
+                Précisions techniques
+              </span>
+            </div>
+             
+            <span
+              aria-hidden="true"
+              class="m-plus m-accordion__header-icon m--is-skin-default m--has-border m--is-left"
+            />
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+       
+      <ul
+        class="m-message-page__links"
+      >
+        <li>
+          <a
+            class="m-link m-message-page__link m--has-left-icon m--has-content"
+            href="\\\\"
+            tabindex="0"
+            target=""
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-link__icon m--has-large-stroke"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <span
+              class="m-link__text"
+            >
+              Coordonnées du soutien technique
+            </span>
+             
+            <!---->
+          </a>
+        </li>
+      </ul>
+    </div>
+  </article>
+</div>
+`;
+
+exports[`Storyshots modul-components|/m-error-pages/m-error-technical-difficulty system 1`] = `
 <div
   style="border: 1px solid black; padding: 10px; width: 600px;"
 >
