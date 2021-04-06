@@ -70,6 +70,20 @@ export class MErrorTechnicalDifficulty extends ModulVue {
     @Prop()
     public error?: Error;
 
+    /**
+     * Name of the system in error
+     */
+    @Prop()
+    public system?: string;
+
+    /**
+     * Open accordion on display of the error
+     */
+    @Prop({
+        default: false
+    })
+    public openAccordion?: boolean;
+
     public state: string = MMessageState.Error;
 
     beforeCreate(): void {
