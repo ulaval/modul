@@ -9,6 +9,7 @@ export interface RequestConfig {
     formParams?: any;
     data?: any;
     timeout?: number;
+    ignoreParamsSerializer?: boolean;
 }
 
 export interface RestAdapter {
