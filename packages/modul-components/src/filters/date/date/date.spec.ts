@@ -16,7 +16,7 @@ describe(DATE_NAME, () => {
 
     it(`should return short formatted date`, () => {
         // French is not available in jsdom
-        expect(dateFilter(new Date(2018, 8, 27), { shortMode: true })).toEqual('Sep 27, 2018');
+        expect(dateFilter(new Date(2018, 8, 27), { shortMode: true })).toEqual('Sep. 27, 2018');
     });
 
     describe(`When the date is the first of the month`, () => {
