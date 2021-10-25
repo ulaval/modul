@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 import { PERIODPICKER_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MDatepicker, MPeriodpicker } from '@ulaval/modul-components/dist/lib';
+import { MDatepicker } from '@ulaval/modul-components/dist/components/datepicker/datepicker';
+import { MPeriodpicker } from '@ulaval/modul-components/dist/components/periodpicker/periodpicker';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${PERIODPICKER_NAME}`, module)
