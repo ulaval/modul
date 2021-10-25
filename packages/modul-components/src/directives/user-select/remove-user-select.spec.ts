@@ -22,8 +22,8 @@ xdescribe('remove-user-select', () => {
             const options: any = { preventDefault: () => { } };
             removeUserSelect.trigger('onmouseover', options);
 
-            expect(removeUserSelect.element.style.webkitUserSelect).toBe('none');
-            expect(removeUserSelect.element.style.msUserSelect).toBe('none');
+            expect(removeUserSelect.element.style['webkitUserSelect']).toBe('none');
+            expect(removeUserSelect.element.style['msUserSelect']).toBe('none');
             expect(removeUserSelect.element.style.userSelect).toBe('none');
         });
     });
@@ -36,8 +36,8 @@ xdescribe('remove-user-select', () => {
         const options: any = { preventDefault: () => { } };
         removeUserSelect.trigger('onmouseover', options);
 
-        expect(removeUserSelect.element.style.webkitUserSelect).toBe('');
-        expect(removeUserSelect.element.style.msUserSelect).toBeUndefined();
+        expect(removeUserSelect.element.style['webkitUserSelect']).toBe('');
+        expect(removeUserSelect.element.style['msUserSelect']).toBeUndefined();
         expect(removeUserSelect.element.style.userSelect).toBeUndefined();
     });
 });

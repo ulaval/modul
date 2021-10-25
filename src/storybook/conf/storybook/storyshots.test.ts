@@ -1,7 +1,5 @@
 import initStoryshots, { multiSnapshotWithOptions, Stories2SnapsConverter } from '@storybook/addon-storyshots';
-declare module '@storybook/addon-storyshots' {
-    export const Stories2SnapsConverter: any;
-}
+
 
 initStoryshots({
     configPath: 'conf/storybook/config.jest.ts',
