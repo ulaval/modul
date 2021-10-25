@@ -19,5 +19,5 @@ function serializeValue(value: any): string {
         ? encodeURIComponent(value)
         : toString.call(value) === '[object Date]'
             ? (value as Date).toISOString()
-            : JSON.stringify(value);
+            : encodeURI(JSON.stringify(value));
 }

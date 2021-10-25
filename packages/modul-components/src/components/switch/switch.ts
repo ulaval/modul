@@ -58,7 +58,7 @@ export class MSwitch extends ModulVue {
 
     private onClick(event): void {
         this.$emit('click', event);
-        this.$refs['switch']['blur']();
+        this.$refs['switch']!['blur']();
     }
 
     public get hasSwitchLeft(): boolean {

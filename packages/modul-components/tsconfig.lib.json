@@ -18,6 +18,7 @@
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "strictNullChecks": true,
+        "skipLibCheck": true,
         "types": [
             "node",
             "jest",

@@ -35,7 +35,7 @@ function copyToClipboard(text: string): Promise<void> {
         const fakeElement: HTMLButtonElement = document.createElement('button');
         const clipboard: ClipboardJs = new ClipboardJs(fakeElement, {
             text(): string { return text; },
-            action(): string { return 'copy'; },
+            action(): 'copy' { return 'copy'; },
             container: document.body
         });
 
