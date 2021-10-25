@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:14.18
 
     working_directory: ~/repo
 
@@ -12,17 +12,17 @@ jobs:
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
+            - yarn-packages-2-{{ checksum "yarn.lock" }}
 
       - run: yarn install --frozen-lockfile
 
       - run:
-         name: lint
-         command: yarn run lint:ci
+          name: lint
+          command: yarn run lint:ci
 
       - run:
-         name:  test
-         command: yarn run test:ci
+          name: test
+          command: yarn run test:ci
 
       - run:
           name: build
@@ -36,7 +36,7 @@ jobs:
 
       - save_cache:
           name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
+          key: yarn-packages-2-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
   publish_image:
@@ -46,7 +46,6 @@ jobs:
     working_directory: ~/repo
 
     steps:
-
       - checkout
 
       - setup_remote_docker
@@ -57,7 +56,7 @@ jobs:
       - run:
           name: "Setup tag name as environment variables"
           command: |
-             echo "export TAG_NAME=$(echo ${CIRCLE_BRANCH} | sed -e 's/\(.*\)/\L\1/' | sed -r 's/[_/]+/-/g' |  cut -c1-48)" >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
+            echo "export TAG_NAME=$(echo ${CIRCLE_BRANCH} | sed -e 's/\(.*\)/\L\1/' | sed -r 's/[_/]+/-/g' |  cut -c1-48)" >> $BASH_ENV # Redirect TAG_NAME into $BASH_ENV
 
       - run:
           name: "What TAG_NAME is set?"
@@ -66,7 +65,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-              docker build -t ulaval/modul:${TAG_NAME} .
+            docker build -t ulaval/modul:${TAG_NAME} .
 
       - run:
           name: Publish Docker Image to Docker Hub
@@ -76,9 +75,8 @@ jobs:
 workflows:
   version: 2
   build_and_publish_image:
-     jobs:
-       - build
-       - publish_image:
+    jobs:
+      - build
+      - publish_image:
           requires:
             - build
-

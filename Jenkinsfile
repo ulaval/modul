@@ -23,7 +23,7 @@ pipeline {
         stage('install, build, lint & test') {
             agent {
                 docker {
-                    image 'node:10'
+                    image 'node:14'
                 }
             }
             when {
