@@ -16,6 +16,7 @@
         "moduleResolution": "node",
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
         "strictNullChecks": true,
         "typeRoots": [
             "../../node_modules/@types"
