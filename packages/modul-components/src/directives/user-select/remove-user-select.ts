@@ -34,7 +34,7 @@ export class MRemoveUserSelect extends MElementDomPlugin<boolean | undefined> {
         this.element.style['webkitTapHighlightColor'] = '';
         this.element.style.userSelect = '';
         this.element.style['msUserSelect'] = '';
-        this.element.style.webkitUserSelect = '';
+        this.element.style['webkitUserSelect'] = '';
         this.element.style['-moz-user-select'] = '';
     }
 }
