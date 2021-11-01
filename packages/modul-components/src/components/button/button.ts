@@ -69,9 +69,7 @@ export class MButton extends Vue {
     public iconSize: string;
 
     @Emit('click')
-    onClick(event: Event): void {
-        (this.$el as HTMLElement).blur();
-    }
+    onClick(event: Event): void { }
 
     @Emit('mousedown')
     onMousedown(event: MouseEvent): void { }
