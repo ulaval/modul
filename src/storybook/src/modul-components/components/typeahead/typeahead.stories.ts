@@ -27,7 +27,18 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             value: ''
         }),
         template: `<div>
-            <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" @keydown="keydown" @keyup="keyup" @paste="paste" v-model="value" :label="label" :results="results"></m-typeahead>
+            <m-typeahead
+                v-model="value"
+                :label="label"
+                :results="results"
+                @input="input"
+                @focus="focus"
+                @blur="blur"
+                @filter-results="filter"
+                @keydown="keydown"
+                @keyup="keyup"
+                @paste="paste"
+            />
             <p>v-model = {{ value }}</p>
             <h2 class="m-u--h5">Values</h2>
             <p v-html="results"></p>
@@ -41,7 +52,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             maxResults: 5
         }),
         template: `<div>
-            <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results"></m-typeahead>
+            <m-typeahead
+                v-model="value"
+                :label="label"
+                :max-results="maxResults"
+                :results="results"
+            />
             <p>maxResult = {{ maxResults}}</p>
             <h2 class="m-u--h5">Values</h2>
             <p v-html="results"></p>
@@ -55,7 +71,13 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             maxResults: 5
         }),
         template: `<div>
-            <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results" error-message="Error message"></m-typeahead>
+            <m-typeahead
+                v-model="value"
+                :label="label"
+                :max-results="maxResults"
+                :results="results"
+                error-message="Error message"
+            />
             <p>maxResult = {{ maxResults}}</p>
             <h2 class="m-u--h5">Values</h2>
             <p v-html="results"></p>
@@ -69,7 +91,12 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             maxResults: 5
         }),
         template: `<div>
-            <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results">
+            <m-typeahead
+                v-model="value"
+                :label="label"
+                :max-results="maxResults"
+                :results="results"
+            />
                 <template  v-slot:items="{item , index, highlight }">
                    <span v-html="highlight"/><br/>
                    <em class="m-u--typo--precision">{{item}} in the uk</em>
@@ -101,9 +128,33 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             }
         },
         template: `<div>
-            <m-typeahead v-model="value" :filter-results-manually="true" :throttle="500" :placeholder="placeholder" :results="filterResult" :waiting-results="loddingResults" @filter-results="onFilter"></m-typeahead>
+            <m-typeahead
+                v-model="value"
+                :filter-results-manually="true"
+                :throttle="500"
+                :placeholder="placeholder"
+                :results="filterResult"
+                :waiting-results="loddingResults"
+                @filter-results="onFilter"
+            />
             <h2 class="m-u--h5">Results</h2>
             <p v-html="results"></p>
+        </div>`
+    }))
+    .add('slot popup-footer', () => ({
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: '',
+        }),
+        template: `<div>
+            <m-typeahead
+                v-model="value"
+                :label="label"
+                :results="results"
+            >
+                <div slot="popup-footer">popup-footer</div>
+            </m-typeahead>
         </div>`
     }));
 
@@ -116,7 +167,11 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}/mobile`, mo
             value: ''
         }),
         template: `<div>
-            <m-typeahead v-model="value" :label="label" :results="results"></m-typeahead>
+            <m-typeahead
+                v-model="value"
+                :label="label"
+                :results="results"
+            />
             <h2 class="m-u--h5">Results</h2>
             <p v-html="results"></p>
         </div>`
