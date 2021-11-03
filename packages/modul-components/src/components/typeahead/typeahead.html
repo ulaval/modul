@@ -99,5 +99,8 @@
                   :index="index"
                   :highlight="getTextHighlight(item)"><span v-html="getTextHighlight(item)"></span></slot>
         </template>
+        <template slot="popup-footer">
+            <slot name="popup-footer"></slot>
+        </template>
     </m-base-select>
 </div>
