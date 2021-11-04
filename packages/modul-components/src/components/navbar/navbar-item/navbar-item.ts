@@ -36,6 +36,9 @@ export class MNavbarItem extends ModulVue {
     public readonly ariaControls: string;
 
     @Prop()
+    public readonly ariaCurrent: string;
+
+    @Prop()
     public readonly multiline: boolean;
 
     public formatedLabel: string = '';
