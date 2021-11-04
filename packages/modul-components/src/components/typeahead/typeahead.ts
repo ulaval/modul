@@ -88,7 +88,7 @@ export class MTypeahead extends ModulVue {
     private throttleTimeout: number;
 
     @Emit('input')
-    emitInput(event: string): void { }
+    emitInput(_event: string): void { }
 
     @Emit('filter-results')
     emitFilterResults(): void { }
