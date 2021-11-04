@@ -68,20 +68,31 @@ export class MOverlay extends ModulVue {
         return UserAgentUtil.isAndroid();
     }
 
-    private onFocusIn(): void {
-        if (this.isAndroid) {
+    private isFocusableTextBox(element: HTMLElement): boolean {
+        const type = element.getAttribute('type');
+        return (element.tagName === 'INPUT'
+            && type != 'checkbox'
+            && type != 'radio'
+            && type != 'button'
+            && type != 'reset'
+            && type != 'file') || element.tagName === 'TEXTAREA';
+    }
+
+    private onFocusIn(event: FocusEvent): void {
+        if (
+            this.isAndroid
+            && this.isFocusableTextBox(event.target as HTMLElement)
+        ) {
             this.hasKeyboard = true;
         }
     }
 
-    private onFocusOut(): void {
+    private onFocusOut(event: FocusEvent): void {
         if (!this.isAndroid) {
             return;
         }
 
-        setTimeout(() => {
-            this.hasKeyboard = false;
-        });
+        this.hasKeyboard = false;
     }
 
     private handlesFocus(): boolean {
