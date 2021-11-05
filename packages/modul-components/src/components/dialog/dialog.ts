@@ -88,8 +88,6 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
         this.as<PortalMixin>().propOpen = true;
     }
 
-
-
     public doCustomPropOpen(value: boolean): boolean {
         return false;
     }

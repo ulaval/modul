@@ -126,11 +126,11 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     private isFocusableTextBox(element: HTMLElement): boolean {
         const type = element.getAttribute('type');
         return (element.tagName === 'INPUT'
-            && type != 'checkbox'
-            && type != 'radio'
-            && type != 'button'
-            && type != 'reset'
-            && type != 'file') || element.tagName === 'TEXTAREA';
+            && type !== 'checkbox'
+            && type !== 'radio'
+            && type !== 'button'
+            && type !== 'reset'
+            && type !== 'file') || element.tagName === 'TEXTAREA';
     }
 
     private onFocusIn(event: FocusEvent): void {
