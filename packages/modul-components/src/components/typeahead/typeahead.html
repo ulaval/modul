@@ -5,48 +5,55 @@
         'm--is-waiting': isWaiting
      }"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
-    <m-base-select :control-id="id"
-                   :active="active"
-                   :items="filteredResults"
-                   :open.sync="isResultsPopupOpen"
-                   :input-max-width="inputMaxWidth"
-                   :sidebar-full-height="true"
-                   :enable-animation="false"
-                   @select-item="onSelect"
-                   ref="mBaseSelect">
+    <m-base-select
+        ref="mBaseSelect"
+        :control-id="id"
+        :active="active"
+        :items="filteredResults"
+        :open.sync="isResultsPopupOpen"
+        :input-max-width="inputMaxWidth"
+        :sidebar-full-height="true"
+        :enable-animation="false"
+        @select-item="onSelect"
+    >
         <template v-slot:default="scope">
-            <m-textfield :value="textfieldValue"
-                         :label="label"
-                         :placeholder="placeholder"
-                         :disabled="isDisabled"
-                         :waiting="isWaiting"
-                         :focus="focus"
-                         :error="hasError"
-                         :valid="isValid"
-                         :required-marker="requiredMarker"
-                         :tag-style="tagStyle"
-                         :cursor-pointer="true"
-                         :max-length="maxLength"
-                         :length-overflow="lengthOverflow"
-                         :character-count="characterCount"
-                         :character-count-threshold="characterCountThreshold"
-                         :max-width="inputMaxWidth"
-                         :aria-controls="ariaControls"
-                         aria-haspopup="true"
-                         :aria-expanded="scope.open"
-                         @input="onInput"
-                         @keydown.up.prevent="onKeydownUp"
-                         @keydown.down.prevent="onKeydownDown"
-                         @keydown.enter.prevent="onKeydownEnter"
-                         @keydown.return.prevent="onKeydownEnter"
-                         @keydown.esc="onKeydownEsc"
-                         @keydown.tab="onKeydownTab"
-                         @keydown="onKeydown"
-                         @keyup="onKeyup"
-                         @focus="onFocus"
-                         @blur="onBlur"
-                         @paste="onPaste"
-                         ref="mTextfield">
+            <m-textfield
+                id="testtttt"
+                ref="mTextfield"
+                :value="textfieldValue"
+                :label="label"
+                :placeholder="placeholder"
+                :disabled="isDisabled"
+                :waiting="isWaiting"
+                :focus="focus"
+                :error="hasError"
+                :valid="isValid"
+                :required-marker="requiredMarker"
+                :tag-style="tagStyle"
+                :cursor-pointer="true"
+                :max-length="maxLength"
+                :length-overflow="lengthOverflow"
+                :character-count="characterCount"
+                :character-count-threshold="characterCountThreshold"
+                :max-width="inputMaxWidth"
+                :input-aria-activedescendant="scope.ariaActivedescendant"
+                input-aria-autocomplete="list"
+                :input-aria-controls="scope.ariaControls"
+                @input="onInput"
+                @keydown.up.prevent="onKeydownUp"
+                @keydown.down.prevent="onKeydownDown"
+                @keydown.enter.prevent="onKeydownEnter"
+                @keydown.return.prevent="onKeydownEnter"
+                @keydown.esc="onKeydownEsc"
+                @keydown.tab="onKeydownTab"
+                @keydown.home.prevent="scope.keyHome"
+                @keydown.end.prevent="scope.keyEnd"
+                @keydown="onKeydown"
+                @keyup="onKeyup"
+                @focus="onFocus"
+                @blur="onBlur"
+                @paste="onPaste"
+            >
                 <template v-slot:suffix>
                     <div v-if="waitingResults">
                         <m-spinner class="m-input-style__spinner"
@@ -56,48 +63,55 @@
             </m-textfield>
         </template>
         <template #validation-message>
-            <m-validation-message class="m-typeahead__validation-message"
-                                  :class="{ 'm--has-validation-message': hasValidationMessage }"
-                                  :disabled="isDisabled"
-                                  :waiting="isWaiting"
-                                  :error="hasError"
-                                  :valid="isValid"
-                                  :error-message="errorMessage"
-                                  :valid-message="validMessage"
-                                  :helper-message="helperMessage"></m-validation-message>
+            <m-validation-message
+                class="m-typeahead__validation-message"
+                :class="{ 'm--has-validation-message': hasValidationMessage }"
+                :disabled="isDisabled"
+                :waiting="isWaiting"
+                :error="hasError"
+                :valid="isValid"
+                :error-message="errorMessage"
+                :valid-message="validMessage"
+                :helper-message="helperMessage"
+            />
         </template>
-
-        <template v-slot:popup-header="scope"
-                  v-if="isMqMaxS">
+        <template
+            v-if="isMqMaxS"
+            v-slot:popup-header="scope"
+        >
             <h2 class="m-typeahead__label-popup"
                 v-if="label">{{ label }}</h2>
             <div class="m-typeahead__research-popup">
-                <input class="m-typeahead__research-input-popup"
-                       :value="textfieldValue"
-                       type="text"
-                       :placeholder="placeholder || 'm-typeahead:search' | f-m-i18n"
-                       :max-length="maxLength"
-                       :aria-controls="ariaControls"
-                       @input="onInput($event.target.value)"
-                       @keydown.up.prevent="onKeydownUp"
-                       @keydown.down.prevent="onKeydownDown"
-                       @keydown.enter.prevent="onKeydownEnter"
-                       @keydown.return.prevent="onKeydownEnter"
-                       @keydown.esc="onKeydownEsc"
-                       @keydown.tab="onKeydownTab"
-                       ref="researchInput" />
-                <m-icon-button class="m-typeahead__research-button-popup"
-                               icon-name="m-svg__search"
-                               @click="focusOnResearchInput">
-                    {{'m-typeahead:research' | f-m-i18n}}
-                </m-icon-button>
+                <input
+                    ref="researchInput"
+                    class="m-typeahead__research-input-popup"
+                    :value="textfieldValue"
+                    type="text"
+                    :placeholder="placeholder || $i18n.translate('m-typeahead:search')"
+                    :max-length="maxLength"
+                    @input="onInput($event.target.value)"
+                    @keydown.up.prevent="onKeydownUp"
+                    @keydown.down.prevent="onKeydownDown"
+                    @keydown.enter.prevent="onKeydownEnter"
+                    @keydown.return.prevent="onKeydownEnter"
+                    @keydown.esc="onKeydownEsc"
+                    @keydown.tab="onKeydownTab"
+                />
+                <m-icon-button
+                    class="m-typeahead__research-button-popup"
+                    icon-name="m-svg__search"
+                    :aria-label="$i18n.translate('m-typeahead:research')"
+                    @click="focusOnResearchInput"
+                />
             </div>
         </template>
         <template v-slot:items="{item , index }">
             <slot name="items"
                   :item="item"
                   :index="index"
-                  :highlight="getTextHighlight(item)"><span v-html="getTextHighlight(item)"></span></slot>
+                  :highlight="getTextHighlight(item)">
+                <span v-html="getTextHighlight(item)"></span>
+            </slot>
         </template>
         <template slot="popup-footer">
             <slot name="popup-footer"></slot>

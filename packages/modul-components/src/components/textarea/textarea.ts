@@ -38,12 +38,30 @@ import WithRender from './textarea.html?style=./textarea.scss';
 export class MTextarea extends ModulVue implements InputManagementData {
     @Prop()
     public characterCount: boolean;
+
     @Prop({ default: 0 })
     public maxLength: number;
+
     @Prop({ default: true })
     public lengthOverflow: boolean;
+
     @Prop({ default: 0 })
     public characterCountThreshold: number;
+
+    @Prop({ default: () => `mTextarea-${uuid.generate()}` })
+    public id: string;
+
+    @Prop({ default: () => uuid.generate() })
+    public inputAriaDescribedby: string;
+
+    @Prop()
+    public inputAriaActivedescendant?: string;
+
+    @Prop()
+    public inputAriaAutocomplete?: string;
+
+    @Prop()
+    public inputAriaControls?: string;
 
     public $refs: {
         input: HTMLElement
@@ -51,7 +69,6 @@ export class MTextarea extends ModulVue implements InputManagementData {
 
     readonly internalValue: string;
     private internalTextareaHeight: string = '0';
-    private id: string = `mTextarea-${uuid.generate()}`;
 
     private get valueLength(): number {
         return this.internalValue.length;

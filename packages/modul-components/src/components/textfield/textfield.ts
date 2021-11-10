@@ -60,20 +60,43 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
             value === MTextfieldType.Number
     })
     public type: MTextfieldType;
+
     @Prop({ default: true })
     public icon: boolean;
+
     @Prop({ default: false })
     public wordWrap: boolean;
+
     @Prop()
     public characterCount: boolean;
+
     @Prop({ default: 0 })
     public maxLength: number;
+
     @Prop({ default: true })
     public lengthOverflow: boolean;
+
     @Prop({ default: 0 })
     public characterCountThreshold: number;
+
     @Prop({ default: '' })
     public selection: string;
+
+    @Prop({ default: () => `mTextfield-${uuid.generate()}` })
+    public id: string;
+
+    @Prop({ default: () => uuid.generate() })
+    public inputAriaDescribedby: string;
+
+    @Prop()
+    public inputAriaActivedescendant?: string;
+
+    @Prop()
+    public inputAriaAutocomplete?: string;
+
+    @Prop()
+    public inputAriaControls?: string;
+
     @Prop({ default: false })
     public append: boolean;
 
@@ -83,11 +106,9 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
 
     readonly internalValue: string;
 
-
     private passwordAsText: boolean = false;
     private iconDescriptionShowPassword: string = this.$i18n.translate('m-textfield:show-password');
     private iconDescriptionHidePassword: string = this.$i18n.translate('m-textfield:hide-password');
-    private id: string = `mTextfield-${uuid.generate()}`;
 
     protected created(): void {
         if (!this.$i18n) {

@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
 import { i18nFilter } from '../../filters/i18n/i18n';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -10,8 +10,9 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_BUTTON_NAME, TEXTFIELD_NAME, TYPEAHEAD_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { ICON_BUTTON_NAME, INPUT_STYLE_NAME, TYPEAHEAD_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
+import { MInputStyle } from '../input-style/input-style';
 import { MBaseSelect } from '../select/base-select/base-select';
 import { MTextfield } from '../textfield/textfield';
 import { MValidationMessage } from '../validation-message/validation-message';
@@ -21,9 +22,9 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
 @Component({
     components: {
         MBaseSelect,
-        [TEXTFIELD_NAME]: MTextfield,
+        [INPUT_STYLE_NAME]: MInputStyle,
         [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [ICON_BUTTON_NAME]: MIconButton
+        [ICON_BUTTON_NAME]: MIconButton,
     },
     filters: {
         [FILTER_I18N_NAME]: i18nFilter
@@ -70,20 +71,26 @@ export class MTypeahead extends ModulVue {
     @Prop({ default: 20 })
     public maxResults: number;
 
+    @Ref('input')
+    public readonly refInput?: HTMLInputElement;
+
+    @Ref('mBaseSelect')
+    public readonly refBaseSelect: MBaseSelect;
+
+    @Ref('researchInput')
+    public readonly refResearchInput: HTMLInputElement;
+
     public $refs: {
         mTextfield: MTextfield;
         result: HTMLUListElement;
         resultsList: HTMLElement;
-        researchInput: HTMLElement;
-        mBaseSelect: MBaseSelect;
     };
 
     public id: string = `${TYPEAHEAD_NAME}-${uuid.generate()}`;
     public isResultsPopupOpen: boolean = false;
     public textfieldValue: string = '';
 
-    public filteredResults: any[] = [];
-    public ariaControls: string = this.id + '-controls';
+    public filteredResults: string[] = [];
     public throttleTimeoutActive: boolean = false;
     private throttleTimeout: number;
 
@@ -115,7 +122,7 @@ export class MTypeahead extends ModulVue {
     onBaseSelectOpen(newValue: boolean): void {
         if (newValue && this.as<MediaQueries>().isMqMaxS) {
             setTimeout(() => {
-                this.$refs.researchInput.focus();
+                this.refResearchInput.focus();
             });
         }
     }
@@ -167,7 +174,7 @@ export class MTypeahead extends ModulVue {
     }
 
     focusOnResearchInput(): void {
-        this.$refs.researchInput.focus();
+        this.refResearchInput.focus();
     }
 
     onFilterResults(): void {
@@ -201,7 +208,7 @@ export class MTypeahead extends ModulVue {
             this.onFilterResults();
 
             if (this.resultsCouldBeDisplay) {
-                this.$refs.mBaseSelect.setFocusedIndex(0);
+                this.refBaseSelect.setFocusedIndex(0);
             }
 
             if (!this.isResultsPopupOpen) {
@@ -216,35 +223,34 @@ export class MTypeahead extends ModulVue {
 
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay && this.as<MediaQueries>().isMqMinS) {
-            this.$refs.mBaseSelect.selectFocusedItem($event);
+            this.refBaseSelect.selectFocusedItem($event);
         }
-        this.$refs.mBaseSelect.closePopup();
+        this.refBaseSelect.closePopup();
     }
 
     onKeydownDown($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
-            this.$refs.mBaseSelect.onKeydownDown($event);
+            this.refBaseSelect.onKeydownDown($event);
         }
     }
 
     onKeydownUp($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
-            this.$refs.mBaseSelect.onKeydownUp($event);
+            this.refBaseSelect.onKeydownUp($event);
         }
     }
 
     onKeydownTab($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
-            this.$refs.mBaseSelect.onKeydownTab($event);
+            this.refBaseSelect.onKeydownTab($event);
         }
     }
 
     onKeydownEsc($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
-            this.$refs.mBaseSelect.onKeydownEsc($event);
+            this.refBaseSelect.onKeydownEsc($event);
         }
     }
-
 }
 
 const TypeaheadPlugin: PluginObject<any> = {
