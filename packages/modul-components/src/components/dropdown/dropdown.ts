@@ -58,31 +58,49 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Model('change')
     @Prop()
-    public value: any;
+    public readonly value: any;
+
     @Prop()
-    public filterable: boolean;
+    public readonly filterable: boolean;
+
     @Prop()
     public textNoData: string;
+
     @Prop()
-    public textNoMatch: string;
+    public readonly textNoMatch: string;
+
     @Prop()
     public listMinWidth: string;
+
     @Prop()
-    public focus: boolean;
+    public readonly focus: boolean;
+
     @Prop()
-    public forceOpen: boolean;
+    public readonly forceOpen: boolean;
+
     @Prop()
-    public maxLength: number;
+    public readonly maxLength: number;
+
     @Prop({ default: true })
-    public showArrowIcon: boolean;
+    public readonly showArrowIcon: boolean;
+
     @Prop({ default: true })
-    public enableAnimation: boolean;
+    public readonly enableAnimation: boolean;
+
     @Prop({ default: true })
-    public includeFilterableStatusItems: boolean;
+    public readonly includeFilterableStatusItems: boolean;
+
     @Prop({ default: false })
-    public clearInvalidSelectionOnClose: boolean;
+    public readonly clearInvalidSelectionOnClose: boolean;
+
     @Prop({ default: false })
-    public clearModelOnSelectedText: boolean;
+    public readonly clearModelOnSelectedText: boolean;
+
+    @Prop({ default: () => `mDropdown-${uuid.generate()}` })
+    public readonly id: string;
+
+    @Prop({ default: uuid.generate() })
+    public readonly inputAriaDescribedby: string;
 
     public $refs: {
         popup: MPopup;
@@ -91,6 +109,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         mInputStyle: MInputStyle;
         researchInput: HTMLInputElement;
     };
+
+    public readonly listboxId: string = `listboxId-${uuid.generate()}`;
+    public readonly labelId: string = `label-${uuid.generate()}`
 
     private internalFilter: string = '';
     private internalFilterRegExp: RegExp = / /;
@@ -104,13 +125,16 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private internalOpen: boolean = false;
     private dirty: boolean = false;
-    private id: string = `mDropdown-${uuid.generate()}`;
 
     @Watch('forceOpen')
     public onForceOpenUpdate(): void {
         if (this.forceOpen) {
             this.internalOpen = this.forceOpen;
         }
+    }
+
+    public get inputAriaActivedescendant(): string {
+        return this.focusedIndex >= 0 && this.open ? this.internalNavigationItems[this.focusedIndex].id : '';
     }
 
     public matchFilter(text: string | undefined): boolean {
@@ -368,10 +392,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         return this.internalItems.length > 0;
     }
 
-    private get ariaControls(): string {
-        return this.id + '-controls';
-    }
-
     public get inactive(): boolean {
         return this.as<InputState>().isDisabled || this.as<InputState>().isReadonly || this.as<InputState>().isWaiting;
     }
@@ -464,7 +484,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (this.focusedIndex > -1) {
             this.focusedIndex++;
             if (this.focusedIndex >= this.internalNavigationItems.length) {
-                this.focusedIndex = 0;
+                this.focusedIndex = this.internalNavigationItems.length - 1;
             }
         } else {
             this.focusedIndex = this.internalNavigationItems.length === 0 ? -1 : 0;
@@ -479,7 +499,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (this.focusedIndex > -1) {
             this.focusedIndex--;
             if (this.focusedIndex < 0) {
-                this.focusedIndex = this.internalNavigationItems.length - 1;
+                this.focusedIndex = 0;
             }
         } else {
             this.focusedIndex = this.internalNavigationItems.length - 1;

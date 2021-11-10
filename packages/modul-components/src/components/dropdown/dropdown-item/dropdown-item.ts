@@ -2,11 +2,11 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { normalizeString } from '../../../utils/str/str';
+import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import { RADIO_STYLE_NAME } from '../../component-names';
 import { MRadioStyle } from '../../radio-style/radio-style';
 import WithRender from './dropdown-item.html?style=./dropdown-item.scss';
-
 export interface MDropdownInterface {
     model: any;
     inactive: boolean;
@@ -32,14 +32,21 @@ export abstract class BaseDropdownGroup extends ModulVue {
 export class MDropdownItem extends ModulVue {
     @Prop()
     public label: string;
+
     @Prop()
     public value: any;
+
     @Prop()
     public disabled: boolean;
+
     @Prop()
     public readonly: boolean;
+
     @Prop()
     public nonFilterable: boolean;
+
+    @Prop({ default: () => `mDropdownItem-${uuid.generate()}` })
+    public id: string;
 
     public root: MDropdownInterface; // Dropdown component
     public group: BaseDropdown | undefined; // Dropdown-group parent if there is one
@@ -93,10 +100,6 @@ export class MDropdownItem extends ModulVue {
 
     private get focused(): boolean {
         return this.root.focused === this.value && !this.readonly;
-    }
-
-    private get tabindex(): number | undefined {
-        return this.disabled || this.readonly ? undefined : 0;
     }
 
     private onClick(): void {
