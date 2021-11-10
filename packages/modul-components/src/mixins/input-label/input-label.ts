@@ -7,8 +7,13 @@ import { ModulVue } from '../../utils/vue/vue';
 export class InputLabel extends ModulVue {
     @Prop()
     public label: string;
+
     @Prop()
     public labelUp: boolean;
+
+    @Prop()
+    public labelId?: string;
+
     @Prop()
     public requiredMarker: boolean;
 
