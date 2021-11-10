@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -16,7 +16,7 @@ import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
 import { MOpacityTransition } from '../transitions/opacity-transition/opacity-transition';
 import { MValidationMessage } from '../validation-message/validation-message';
-import { MBaseSelect } from './base-select/base-select';
+import { MBaseSelect, MBaseSelectItem } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
 @WithRender
 @Component({
@@ -41,74 +41,104 @@ export class MSelect extends ModulVue {
 
     @Model('input')
     @Prop()
-    public value: any;
+    public readonly value: string;
 
     @Prop()
-    public options: any[];
+    public readonly options: MBaseSelectItem<unknown>[] | string[];
 
     @Prop()
-    public clearable: boolean;
+    public readonly clearable: boolean;
 
     @Prop({ default: false })
-    public virtualScroll: boolean;
+    public readonly virtualScroll: boolean;
 
     @Prop()
-    public listMinWidth: string;
+    public readonly listMinWidth: string;
 
     @Prop({
         validator: (value: string) =>
             REGEX_CSS_NUMBER_VALUE.test(value)
     })
-    public listMaxHeight: string;
+    public readonly listMaxHeight: string;
 
-    id: string = `${SELECT_NAME}-${uuid.generate()}`;
-    open: boolean = false;
+    @Prop({ default: uuid.generate() })
+    public inputAriaDescribedby: string;
 
-    onSelect(option: any, index: number, $event: Event): void {
-        this.$emit('select-item', option, index, $event);
-        this.as<InputManagement>().model = this.options[index];
-    }
+    @Ref('input')
+    public readonly refInput?: HTMLInputElement;
+
+    public readonly id: string = `${SELECT_NAME}-${uuid.generate()}`;
+    public readonly labelId: string = `label-${uuid.generate()}`;
+    public readonly listboxId: string = `listbox-${uuid.generate()}`;
+
+    public open: boolean = false;
 
     @Emit('open')
-    onOpen(): void { }
+    public onOpen(): void { }
 
     @Emit('close')
-    onClose(): void { }
+    public onClose(): void { }
 
-    get hasItems(): boolean {
+    public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
+        this.$emit('select-item', option, index, event)
+    }
+
+    public get hasItems(): boolean {
         return this.options && this.options.length > 0;
     }
 
-    get isEmpty(): boolean {
+    public get isEmpty(): boolean {
         return this.as<InputManagement>().hasValue || (this.open) ? false : true;
     }
 
-    get isClearable(): boolean {
+    public get isClearable(): boolean {
         return this.clearable !== undefined ? this.clearable && this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable : this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable && !this.as<InputLabel>().requiredMarker;
     }
 
-    get selectedItems(): any {
+    public get selectedItems(): any {
         if (this.value) {
             return [this.value];
         }
         return [];
     }
 
-    get isSelectable(): boolean {
+    public get isSelectable(): boolean {
         return !this.as<InputState>().isDisabled &&
             !this.as<InputState>().isReadonly;
     }
 
-    get internalLabelUp(): boolean {
+    public get internalLabelUp(): boolean {
         return !this.as<InputState>().isReadonly ? this.as<InputLabel>().labelUp : true;
     }
 
-    get internalPlaceholder(): string {
+    public get internalPlaceholder(): string {
         return !this.as<InputState>().isReadonly ? this.as<InputManagement>().placeholder : '';
+    }
+
+    public get optionsIsStringArray(): boolean {
+        if (this.options.length === 0) return false;
+        return typeof this.options[0] === 'string';
+    }
+
+
+    public onInputStyleClick(callbackToggle: any): void {
+        callbackToggle();
+
+        if (
+            this.refInput && document.activeElement !== this.refInput && this.open
+        ) {
+            this.refInput.focus();
+        }
+    }
+
+    public onSelect(option: MBaseSelectItem<unknown> | string, index: number, $event: Event): void {
+        this.emitSelectItem(option, index, $event);
+        this.as<InputManagement>().model = this.optionsIsStringArray ? this.options[index] : this.options[index].value;
     }
 
     public onReset(): void {
         this.as<InputManagement>().model = '';
+        this.refInput?.focus();
     }
 
     public onKeyDownDelete(event: KeyboardEvent): void {

@@ -4,7 +4,11 @@
          maxWidth: inputMaxWidth
      }">
     <div v-m-popup:popup
-         class="m-base-select__popup">
+         class="m-base-select__popup"
+         role="combobox"
+         :aria-owns="listboxId"
+         :aria-expanded="popupOpen === true ? 'true' : 'false'"
+         aria-haspopup="listbox">
         <slot :toggle="togglePopup"
               :key-up="onKeydownUp"
               :key-down="onKeydownDown"
@@ -14,7 +18,9 @@
               :key-space="onKeydownSpace"
               :key-home="onKeydownHome"
               :key-end="onKeydownEnd"
-              :key-letter="onKeydownLetter" />
+              :key-letter="onKeydownLetter"
+              :aria-activedescendant="ariaActivedescendantId"
+              :aria-controls="listboxId" />
     </div>
     <slot name="validation-message" />
     <m-popup ref="popup"
@@ -44,28 +50,30 @@
               :key-space="onKeydownSpace"
               :key-home="onKeydownHome"
               :key-end="onKeydownEnd"
-              :key-letter="onKeydownLetter" />
+              :key-letter="onKeydownLetter"
+              :aria-activedescendant="ariaActivedescendantId" />
 
-        <ul :id="ariaControls"
+        <ul :id="listboxId"
             class="m-base-select__list"
             :class="{ 'm--is-virutalScroll': virtualScroll }"
             :style="{ minWidth: inputMaxWidth, maxHeight: listMaxHeightProps }"
             ref="items"
-            :aria-labelledby="controlId"
-            aria-live="polite">
-
+            role="listbox"
+            :aria-labelledby="listboxAriaLabelledby">
             <slot name="outer-items"
                   :items="items"
                   :get-item-props="getItemProps"
                   :get-item-handlers="getItemHandlers">
-                <template v-for="(item, index) of items">
-                    <m-select-item v-bind="getItemProps(item, index)"
-                                   v-on="getItemHandlers(item, index)">
-                        <slot name="items"
-                              :item="item"
-                              :index="index"><span v-html="item"></span></slot>
-                    </m-select-item>
-                </template>
+                <m-select-item
+                    v-for="(item, index) of items"
+                    v-bind="getItemProps(item, index)"
+                    v-on="getItemHandlers(item, index)"
+                    :key="index"
+                >
+                    <slot name="items"
+                            :item="item"
+                            :index="index"><span v-html="itemsIsStringArray ? item : item.value"></span></slot>
+                </m-select-item>
             </slot>
         </ul>
         <template slot="footer">

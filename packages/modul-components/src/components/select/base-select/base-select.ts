@@ -1,9 +1,10 @@
-import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import { Component, Emit, Prop, Ref, Watch } from 'vue-property-decorator';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../../directives/directive-names';
 import { MPopupDirective } from '../../../directives/popup/popup';
 import { InputWidth } from '../../../mixins/input-width/input-width';
 import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
 import { REGEX_CSS_NUMBER_VALUE } from '../../../utils/props-validation/props-validation';
+import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
 import { POPUP_NAME } from '../../component-names';
 import { MPopup } from '../../popup/popup';
@@ -12,6 +13,13 @@ import WithRender from './base-select.html';
 import './base-select.scss';
 
 const BASE_SELECT_STYLE_TRANSITION: string = 'max-height 0.3s ease';
+
+export interface MBaseSelectItem<T> {
+    value: string,
+    disabled?: boolean,
+    hideRadioButtonMobile?: boolean,
+    data?: T
+}
 
 @WithRender
 @Component({
@@ -31,16 +39,13 @@ const BASE_SELECT_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 export class MBaseSelect extends ModulVue {
 
     @Prop()
-    public readonly items: any[];
+    public readonly items: MBaseSelectItem<unknown>[] | string[];
 
     @Prop()
-    public readonly selectedItems: any[];
+    public readonly selectedItems: string[];
 
     @Prop()
     public readonly active: boolean;
-
-    @Prop({ required: true })
-    public readonly controlId: string;
 
     @Prop({ default: false })
     public readonly open: boolean;
@@ -72,11 +77,16 @@ export class MBaseSelect extends ModulVue {
     })
     public readonly listMaxHeight: string;
 
-    public $refs: {
-        items: HTMLUListElement;
-        popup: MPopup;
-    };
+    @Prop()
+    public readonly listboxAriaLabelledby?: string;
 
+    @Ref('items')
+    public readonly refItems: HTMLUListElement;
+
+    @Ref('popup')
+    public readonly refPopup: MPopup;
+
+    public readonly listboxId: string = `listbox-${uuid.generate()}`;
     public focusedIndex: number = -1;
     private internalOpen: boolean = false;
 
@@ -87,7 +97,6 @@ export class MBaseSelect extends ModulVue {
     public async emitOpen(): Promise<void> {
         await this.$nextTick();
         this.focusFirstSelected();
-        this.scrollToFocused();
     }
 
     @Emit('close')
@@ -95,9 +104,16 @@ export class MBaseSelect extends ModulVue {
         this.focusedIndex = -1;
     }
 
+    public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
+        this.$emit('select-item', option, index, event);
+        if (this.closeOnSelect) {
+            this.closePopup();
+        }
+    }
+
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
-        if (open !== this.internalOpen) {
+        if (open != this.internalOpen) {
             this.internalOpen = open;
         }
     }
@@ -111,32 +127,39 @@ export class MBaseSelect extends ModulVue {
         return this.internalOpen;
     }
 
-    public get ariaControls(): string {
-        return this.controlId + '-controls';
-    }
-
     public get listMaxHeightProps(): string | undefined {
         if (this.as<MediaQueriesMixin>().isMqMinS) {
             return this.listMaxHeight;
         }
     }
 
-    public select(option: any, index: number, $event: Event): void {
-        this.$emit('select-item', option, index, $event);
+    public get itemIds(): string[] {
+        return this.items.map(() => uuid.generate());
     }
 
-    public getItemProps(item: any, index: number): any {
+    public get ariaActivedescendantId(): string {
+        return this.focusedIndex >= 0 ? this.itemIds[this.focusedIndex] : '';
+    }
+
+    public get itemsIsStringArray(): boolean {
+        if (this.items.length === 0) return false;
+        return typeof this.items[0] === 'string';
+    }
+
+    public getItemProps(item: MBaseSelectItem<unknown> | string, index: number): any {
         return {
-            value: item,
+            id: this.itemIds[index],
+            value: this.itemsIsStringArray ? item : (item as MBaseSelectItem<unknown>).value,
             focused: index === this.focusedIndex,
             selected: this.isSelected(item),
-            hideRadioButtonMobile: this.hideRadioButtonMobile
+            disabled: this.itemsIsStringArray ? undefined : (item as MBaseSelectItem<unknown>).disabled,
+            hideRadioButtonMobile: this.hideRadioButtonMobile || this.itemsIsStringArray ? false : (item as MBaseSelectItem<unknown>).hideRadioButtonMobile,
         };
     }
 
-    public getItemHandlers(item: any, index: number): any {
+    public getItemHandlers(item: MBaseSelectItem<unknown> | string, index: number): any {
         return {
-            click: (event: Event): void => this.onSelectItem(item, index, event)
+            click: (event: MouseEvent): void => this.emitSelectItem(item, index, event),
         };
     }
 
@@ -155,43 +178,72 @@ export class MBaseSelect extends ModulVue {
     }
 
     public selectFocusedItem($event: Event): void {
-        this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+        this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
     }
 
     public focusFirstSelected(): void {
-        if (this.selectedItems && this.selectedItems.length > 0) {
-            this.focusedIndex = this.items.indexOf(this.selectedItems[0]);
+        if (this.items.length > 0 && this.selectedItems && this.selectedItems.length > 0) {
+            if (this.itemsIsStringArray) {
+                this.focusedIndex = (this.items as string[]).indexOf(this.selectedItems[0]);
+            } else {
+                const items = this.items as MBaseSelectItem<unknown>[];
+                const findSelectedItem = items.find((items) => items.value === this.selectedItems[0]);
+
+                this.focusedIndex = findSelectedItem ? items.indexOf(findSelectedItem) : 0;
+            }
         } else {
             this.focusedIndex = 0;
         }
+
+        if (
+            !this.itemsIsStringArray
+            && this.items.length > 0
+            && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+        ) {
+            this.focusNextItem();
+
+        }
+
+        this.scrollToFocused();
     }
 
     public focusNextItem(): void {
-        if (this.focusedIndex > -1) {
+        if (this.focusedIndex < 0 || this.focusedIndex >= this.items.length - 1) return;
+        if (this.itemsIsStringArray) {
             this.focusedIndex++;
-            if (this.focusedIndex >= this.items.length) {
-                this.focusedIndex = 0;
-            }
         } else {
-            this.focusedIndex = this.items.length === 0 ? -1 : 0;
+            const items = this.items as MBaseSelectItem<unknown>[];
+            if (this.focusedIndex + 1 === items.length - 1 && items[items.length - 1].disabled) {
+                return;
+            } else {
+                this.focusedIndex++;
+                if (items[this.focusedIndex].disabled) {
+                    this.focusNextItem();
+                }
+            }
         }
-        this.scrollToFocused();
     }
 
     public focusPreviousItem(): void {
-        if (this.focusedIndex > -1) {
+        if (this.focusedIndex <= 0) return;
+
+        if (this.itemsIsStringArray) {
             this.focusedIndex--;
-            if (this.focusedIndex < 0) {
-                this.focusedIndex = this.items.length - 1;
-            }
         } else {
-            this.focusedIndex = this.items.length - 1;
+            const items = this.items as MBaseSelectItem<unknown>[];
+            if (this.focusedIndex - 1 === 0 && items[0].disabled) {
+                return;
+            } else {
+                this.focusedIndex--;
+                if (items[this.focusedIndex].disabled) {
+                    this.focusPreviousItem();
+                }
+            }
         }
-        this.scrollToFocused();
     }
 
     public update(): void {
-        this.$refs.popup.update();
+        this.refPopup.update();
     }
 
     public transitionEnter(el: HTMLElement, done: any): void {
@@ -253,19 +305,18 @@ export class MBaseSelect extends ModulVue {
             this.togglePopup();
         } else {
             this.focusNextItem();
+            this.scrollToFocused();
         }
     }
 
     public onKeydownUp($event: KeyboardEvent): void {
-        if (!this.popupOpen) {
-            this.togglePopup();
-        }
         this.focusPreviousItem();
+        this.scrollToFocused();
     }
 
     public onKeydownSpace($event: KeyboardEvent): void {
         if (this.focusedIndex > -1) {
-            this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
             this.closePopup();
         } else {
             this.togglePopup();
@@ -282,7 +333,7 @@ export class MBaseSelect extends ModulVue {
 
     public onKeydownEnter($event: KeyboardEvent): void {
         if (this.focusedIndex > -1) {
-            this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
             this.closePopup();
         } else {
             this.togglePopup();
@@ -292,6 +343,15 @@ export class MBaseSelect extends ModulVue {
     public onKeydownHome($event: KeyboardEvent): void {
         if (this.popupOpen) {
             this.focusedIndex = 0;
+
+            if (
+                !this.itemsIsStringArray
+                && this.items.length > 0
+                && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+            ) {
+                this.focusNextItem();
+
+            }
             this.scrollToFocused();
         }
     }
@@ -299,6 +359,14 @@ export class MBaseSelect extends ModulVue {
     public onKeydownEnd($event: KeyboardEvent): void {
         if (this.popupOpen) {
             this.focusedIndex = this.items.length - 1;
+
+            if (
+                !this.itemsIsStringArray
+                && this.items.length > 0
+                && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+            ) {
+                this.focusPreviousItem();
+            }
             this.scrollToFocused();
         }
     }
@@ -309,16 +377,21 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
-    private onSelectItem(option: any, index: number, $event: Event): void {
-        this.select(option, index, $event);
-        if (this.closeOnSelect) {
-            this.closePopup();
-        }
-    }
-
     private findFirstItemWithLetter(key: string): void {
         if (this.as<MediaQueriesMixin>().isMqMinS) {
-            const index: number = this.items.indexOf(this.items.find((item: any) => item.startsWith(key)));
+            const findItem = this.items.find(
+                (item: MBaseSelectItem<unknown> | string) => {
+                    if (
+                        this.itemsIsStringArray
+                    ) {
+                        return (item as string).startsWith(key)
+                    }
+                    return (item as MBaseSelectItem<unknown>).value.startsWith(key)
+                }
+            );
+            const index: number = findItem ? this.items.indexOf(
+                findItem
+            ) : -1;
             if (index !== -1) {
                 this.focusedIndex = index;
                 this.scrollToFocused();
@@ -327,31 +400,33 @@ export class MBaseSelect extends ModulVue {
     }
 
     private scrollToFocused(): void {
-        if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
+        if (this.focusedIndex < 0 && this.as<MediaQueriesMixin>().isMqMaxS) return;
 
-            let container: HTMLElement = this.$refs.items;
-            if (container) {
-                let element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
+        const container: HTMLElement = this.refItems;
+        if (container) {
+            const element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
 
-                if (element) {
-                    let top: number = element.offsetTop;
-                    let bottom: number = element.offsetTop + element.offsetHeight;
-                    let viewRectTop: number = container.scrollTop;
-                    let viewRectBottom: number = viewRectTop + container.clientHeight;
-                    if (top < viewRectTop) {
-                        container.scrollTop = top;
-                    } else if (bottom > viewRectBottom) {
-                        container.scrollTop = bottom - container.clientHeight;
-                    }
+            if (element) {
+                const top: number = element.offsetTop;
+                const bottom: number = element.offsetTop + element.offsetHeight;
+                const viewRectTop: number = container.scrollTop;
+                const viewRectBottom: number = viewRectTop + container.clientHeight;
+                if (top < viewRectTop) {
+                    container.scrollTop = top;
+                } else if (bottom > viewRectBottom) {
+                    container.scrollTop = bottom - container.clientHeight;
                 }
             }
-
         }
     }
 
-    private isSelected(option: any): boolean {
+    private isSelected(item: MBaseSelectItem<unknown> | string): boolean {
         if (this.selectedItems && this.selectedItems.length > 0) {
-            return this.selectedItems.indexOf(option) > -1;
+            if (this.itemsIsStringArray) {
+                return this.selectedItems.indexOf(item as string) > -1;
+            }
+            item = item as MBaseSelectItem<unknown>;
+            return item.disabled ? false : this.selectedItems.indexOf(item.value) > -1;
         }
         return false;
     }

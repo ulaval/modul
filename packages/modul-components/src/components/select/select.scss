@@ -21,6 +21,7 @@
         display: flex;
         align-items: center;
         justify-content: left;
+        color: $m-color--grey;
 
         &__icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
@@ -29,6 +30,7 @@
         &.m--is-open {
             .m-select__arrow__icon {
                 transform: rotate(-180deg);
+                color: $m-color--interactive;
             }
         }
     }

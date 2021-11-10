@@ -1,5 +1,6 @@
-<li class="m-select-item"
-    :class="{ 'm--is-focus': focused && isItemActive,
+<li :id="id"
+    class="m-select-item"
+    :class="{ 'm--is-focus': isFocused,
               'm--is-selected': selected && isItemActive,
               'm--is-item-active': isItemActive,
               'm--is-disabled': disabled,
@@ -11,15 +12,13 @@
 
     <slot v-if="isMqMinS || readonly || hideRadioButtonMobile"><span class="m-select-item__element-text">{{ label }}</span></slot>
 
-    <m-radio-style :full-width="true"
+    <m-radio-style v-else
+                   :full-width="true"
                    radio-position="right"
-                   :focus="focused"
+                   :focus="isFocused"
                    :checked="selected"
                    :disabled="disabled"
-                   tabindex="0"
-                   v-else>
-
+                   tabindex="0">
         <slot><span class="m-select-item__element-text">{{ label }}</span></slot>
-
     </m-radio-style>
 </li>
