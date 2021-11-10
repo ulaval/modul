@@ -22,24 +22,36 @@ export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
 export class MInputStyle extends ModulVue {
     @Prop({ default: '' })
     public label: string;
+
     @Prop()
     public labelFor: string;
-    @Prop({ default: false })
-    public focus: boolean;
-    @Prop({ default: false })
-    public append: boolean;
-    @Prop({ default: true })
-    public empty: boolean;
-    @Prop()
-    public width: string;
-    @Prop()
-    public requiredMarker: boolean;
-    @Prop()
-    public readonly: boolean;
-    @Prop({ default: false })
-    public cursorPointer: boolean;
+
     @Prop({ default: false })
     public labelUp: boolean;
+
+    @Prop()
+    public labelId?: string;
+
+    @Prop({ default: false })
+    public focus: boolean;
+
+    @Prop({ default: false })
+    public append: boolean;
+
+    @Prop({ default: true })
+    public empty: boolean;
+
+    @Prop()
+    public width: string;
+
+    @Prop()
+    public requiredMarker: boolean;
+
+    @Prop()
+    public readonly: boolean;
+
+    @Prop({ default: false })
+    public cursorPointer: boolean;
 
     public $refs: {
         root: HTMLElement,

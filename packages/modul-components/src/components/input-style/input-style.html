@@ -19,10 +19,11 @@
     <div class="m-input-style__main">
         <div class="m-input-style__body">
             <label v-if="hasLabel"
+                   ref="label"
+                   :id="labelId"
                    class="m-input-style__label"
                    :style="{ marginRight: suffixOffset }"
-                   :for="labelFor"
-                   ref="label">
+                   :for="labelFor">
                 <span class="m-input-style__text">
                     <span>{{ label }}</span>&nbsp;<sup v-if="requiredMarker"
                          class="m-input-style__required-marker">*</sup>
