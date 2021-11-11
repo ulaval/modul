@@ -1,56 +1,68 @@
-<div class="m-maskedlfield"
-     :class="[{ 'm--is-disabled': isDisabled,
-                'm--is-waiting': isWaiting,
-                'm--is-readonly': isReadonly,
-                'm--has-error': hasMaskedfieldError,
-                'm--is-valid': isMaskedfieldValid,
-                'm--has-label': hasLabel,
-                'm--has-validation-message': hasValidationMessage } ]"
-     @click="onClick"
-     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
-    <m-input-style class="m-maskedfield__input-style"
-                   :disabled="isDisabled"
-                   :waiting="isWaiting"
-                   :error="hasMaskedfieldError"
-                   :valid="isMaskedfieldValid"
-                   :label="label"
-                   :label-for="id"
-                   :focus="isFocus"
-                   :label-up="labelUp"
-                   :empty="isEmpty"
-                   :readonly="isReadonly"
-                   :required-marker="requiredMarker"
-                   :tag-style="tagStyle">
-        <template slot="prefix">
-            <slot name="prefix"></slot>
-        </template>
-        <m-input-mask v-model="model"
-                      :id="id"
-                      :autocomplete="autocomplete"
-                      :disabled="isDisabled || isWaiting"
-                      :readonly="isReadonly"
-                      :placeholder="placeholder"
-                      :raw="raw"
-                      :options="maskOptions"
-                      @blur="onBlur"
-                      @change="onChange"
-                      @focus="onFocus"
-                      @keyup="onKeyup"
-                      @keydown="onKeydown"
-                      @paste="onPaste"
-                      ref="inputMask"></m-input-mask>
-        <template slot="suffix">
-            <slot name="suffix"></slot>
-        </template>
+<div
+    class="m-maskedlfield"
+    :class="[{
+        'm--is-disabled': isDisabled,
+        'm--is-waiting': isWaiting,
+        'm--is-readonly': isReadonly,
+        'm--has-error': hasMaskedfieldError,
+        'm--is-valid': isMaskedfieldValid,
+        'm--has-label': hasLabel,
+        'm--has-validation-message': hasValidationMessage
+    }]"
+    :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+    @click="onClick"
+>
+    <m-input-style
+        class="m-maskedfield__input-style"
+        :disabled="isDisabled"
+        :waiting="isWaiting"
+        :error="hasMaskedfieldError"
+        :valid="isMaskedfieldValid"
+        :label="label"
+        :label-for="id"
+        :focus="isFocus"
+        :label-up="labelUp"
+        :empty="isEmpty"
+        :readonly="isReadonly"
+        :required-marker="requiredMarker"
+        :tag-style="tagStyle"
+    >
+        <slot name="prefix" slot="prefix" />
+        <m-input-mask
+            ref="inputMask"
+            v-model="model"
+            :id="id"
+            :autocomplete="autocomplete"
+            :disabled="isDisabled || isWaiting"
+            :readonly="isReadonly"
+            :placeholder="placeholder"
+            :raw="raw"
+            :options="maskOptions"
+            :aria-invalid="hasMaskedfieldError"
+            :aria-describedby="messageValidationId"
+            @blur="onBlur"
+            @change="onChange"
+            @focus="onFocus"
+            @keyup="onKeyup"
+            @keydown="onKeydown"
+            @paste="onPaste"
+        />
+        <slot name="suffix" slot="suffix" />
     </m-input-style>
-    <div class="m-maskedfield__validation">
-        <m-validation-message class="m-maskedfield__validation-message"
-                              :disabled="isDisabled"
-                              :waiting="isWaiting"
-                              :error="hasMaskedfieldError"
-                              :error-message="errorMessage"
-                              :valid="isMaskedfieldValid"
-                              :valid-message="validMessage"
-                              :helper-message="helperMessage"></m-validation-message>
+    <div
+        :id="messageValidationId"
+        class="m-maskedfield__validation"
+        aria-live="polite"
+    >
+        <m-validation-message
+            class="m-maskedfield__validation-message"
+            :disabled="isDisabled"
+            :waiting="isWaiting"
+            :error="hasMaskedfieldError"
+            :error-message="errorMessage"
+            :valid="isMaskedfieldValid"
+            :valid-message="validMessage"
+            :helper-message="helperMessage"
+        />
     </div>
 </div>

@@ -28,20 +28,22 @@ import WithRender from './maskedfield.html?style=./maskedfield.scss';
     }
 })
 export class MMaskedfield extends ModulVue {
-
     @Prop({ default: {} })
-    public maskOptions: InputMaskOptions;
+    public readonly maskOptions: InputMaskOptions;
 
     @Prop({ default: true })
-    public raw: boolean;
+    public readonly raw: boolean;
 
-    protected id: string = `mMaskedfield-${uuid.generate()}`;
+    @Prop({ default: () => `mMaskedfield-${uuid.generate()}` })
+    public readonly id: string;
 
-    get hasMaskedfieldError(): boolean {
+    public readonly messageValidationId: string = uuid.generate();
+
+    public get hasMaskedfieldError(): boolean {
         return this.as<InputState>().hasError;
     }
 
-    get isMaskedfieldValid(): boolean {
+    public get isMaskedfieldValid(): boolean {
         return this.as<InputState>().isValid;
     }
 
