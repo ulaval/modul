@@ -144,7 +144,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     public get ariaActivedescendantId(): string {
-        if (this.focusedIndex >= 0) {
+        if (this.focusedIndex < 0) {
             return ''
         }
 
