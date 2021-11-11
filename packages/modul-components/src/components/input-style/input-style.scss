@@ -8,13 +8,13 @@
     --m-input-style--valid-color: #{ $m-color--success };
     --m-input-style--waiting-color: #{ $m-color--active };
     --m-input-style--disabled-color: #{ $m-color--disabled };
-    --m-input-style--label-up-color: #{ $m-color--grey };
+    --m-input-style--label-up-color: #{ $m-color--grey-dark };
     --m-input-style--label-up-border-color: #{ $m-color--grey };
     // core
     --m-input-style--box-shadow: none;
     --m-input-style--font-weight: #{ $m-font-weight--light };
     --m-input-style--input-color: #{ $m-color--text};
-    --m-input-style--label-color: #{ $m-color--grey };
+    --m-input-style--label-color: #{ $m-color--grey-dark };
     --m-input-style--border-color: #{ $m-color--grey-light };
     --m-input-style--buttons-color: #{ $m-color--grey };
     --m-input-style--background-color: white;
@@ -22,6 +22,7 @@
 }
 
 @mixin input-style-cursor($cursor: default) {
+
     &,
     .m-input-style__label,
     .m-input-style__input,
@@ -295,6 +296,7 @@
     &.m--is-tag-h4,
     &.m--is-tag-h5,
     &.m--is-tag-h6 {
+
         input,
         textarea,
         ::placeholder,
@@ -306,6 +308,7 @@
     }
 
     &.m--is-tag-p {
+
         input,
         textarea,
         ::placeholder,
