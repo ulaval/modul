@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
@@ -69,11 +69,20 @@ export class MMultiSelect extends ModulVue {
     @Prop()
     public placeholder: string;
 
-    public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
+    @Prop({ default: () => `${MULTI_SELECT_NAME}-${uuid.generate()}` })
+    public readonly id: string;
+
+    public readonly inputAriaDescribedby: string = uuid.generate();
     public internalValue: any[] = [];
     public internalIsFocus: boolean = false;
     public selectAllFocused: boolean = false;
     public open: boolean = false;
+
+    @Ref('input')
+    public readonly refInput?: HTMLElement;
+
+    @Ref('baseSelect')
+    public readonly refBaseSelect: MBaseSelect;
 
     public $refs: {
         baseSelect: MBaseSelect;
@@ -133,16 +142,26 @@ export class MMultiSelect extends ModulVue {
     }
 
     get textNumberOfSelectedItems(): string {
-        return this.$i18n.translate('m-multi-select:all-selected', [this.numberOfItemsSelected], undefined, undefined,false, FormatMode.Default);
+        return this.$i18n.translate('m-multi-select:all-selected', [this.numberOfItemsSelected], undefined, undefined, false, FormatMode.Default);
     }
 
     get textNumberOfUnselectedItemsLeft(): string {
-        return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined,false, FormatMode.Default);
+        return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined, false, FormatMode.Default);
     }
 
     public toggle(): void {
         this.selectAllFocused = false;
-        this.$refs.baseSelect.togglePopup();
+        this.refBaseSelect.togglePopup();
+    }
+
+    public onInputStyleClick(callbackToggle: any): void {
+        callbackToggle();
+
+        if (
+            this.refInput && document.activeElement !== this.refInput && this.open
+        ) {
+            this.refInput.focus();
+        }
     }
 
     @Emit('select-item')
@@ -153,21 +172,23 @@ export class MMultiSelect extends ModulVue {
         } else {
             this.onDelete(positionInModel);
         }
-        this.$refs.baseSelect.update();
+        this.refBaseSelect.update();
 
         if ($event.type === 'click') {
-            this.$refs.baseSelect.focusedIndex = -1;
+            this.refBaseSelect.focusedIndex = -1;
         }
     }
 
     onDelete(index: number): void {
         this.model = this.model.slice(0, index).concat(this.model.slice(index + 1));
-        this.$refs.baseSelect.update();
+        this.refBaseSelect.update();
+        this.refInput?.focus();
     }
 
     onDeleteAll(): void {
         this.model = [];
-        this.$refs.baseSelect.update();
+        this.refBaseSelect.update();
+        this.refInput?.focus();
     }
 
     onFocus($event: FocusEvent): void {
@@ -184,32 +205,38 @@ export class MMultiSelect extends ModulVue {
 
     onKeydownDown($event: KeyboardEvent): void {
         if (this.options) {
-            if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
-                this.$refs.baseSelect.focusedIndex = -1;
+            if (!this.open) {
+                this.open = true;
+            }
+            if (this.refBaseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
+                this.refBaseSelect.focusedIndex = -1;
                 this.selectAllFocused = true;
             } else {
                 this.selectAllFocused = false;
-                this.$refs.baseSelect.focusNextItem();
+                this.refBaseSelect.onKeydownDown($event);
             }
         }
     }
 
     onKeydownUp($event: KeyboardEvent): void {
         if (this.options) {
-            if (this.$refs.baseSelect.focusedIndex === 0 && this.linkSelectAll) {
-                this.$refs.baseSelect.focusedIndex = -1;
+            if (this.refBaseSelect.focusedIndex === 0 && this.linkSelectAll) {
+                this.refBaseSelect.focusedIndex = -1;
                 this.selectAllFocused = true;
             } else {
                 this.selectAllFocused = false;
-                this.$refs.baseSelect.focusPreviousItem();
+                this.refBaseSelect.onKeydownUp($event);
             }
         }
     }
 
     onKeydownEnter($event: KeyboardEvent): void {
         if (this.options) {
-            if (this.$refs.baseSelect.focusedIndex > -1) {
-                this.$refs.baseSelect.select(this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex], this.$refs.baseSelect.focusedIndex, $event);
+            if (!this.open) {
+                this.open = true;
+            }
+            if (this.refBaseSelect.focusedIndex > -1) {
+                this.refBaseSelect.emitSelectItem(this.refBaseSelect.items[this.refBaseSelect.focusedIndex], this.refBaseSelect.focusedIndex, $event);
             } else if (this.selectAllFocused) {
                 this.onToggleAll();
             }
@@ -218,8 +245,11 @@ export class MMultiSelect extends ModulVue {
 
     onKeydownSpace($event: KeyboardEvent): void {
         if (this.options) {
+            if (!this.open) {
+                this.open = true;
+            }
             this.selectAllFocused = false;
-            this.$refs.baseSelect.onKeydownSpace($event);
+            this.refBaseSelect.onKeydownSpace($event);
         }
     }
 

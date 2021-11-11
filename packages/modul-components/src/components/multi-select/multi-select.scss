@@ -39,6 +39,7 @@
 
     &__chips {
         min-height: 24px; // Magic number
+        outline: none;
     }
 
     &__chip {
@@ -50,6 +51,7 @@
         color: $m-color--interactive-darker;
 
         &.m--is-item-active {
+
             &.m--is-focus,
             &:hover {
                 background: none;

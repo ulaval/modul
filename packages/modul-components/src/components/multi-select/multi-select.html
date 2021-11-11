@@ -1,148 +1,180 @@
-<m-base-select :control-id="id"
-               :active="active"
-               :items="options"
-               :selected-items="selectedItems"
-               :open.sync="open"
-               :input-max-width="inputMaxWidth"
-               :close-on-select="false"
-               :hide-radio-button-mobile="true"
-               :enable-animation="!linkSelectAll"
-               :width="width"
-               :max-width="maxWidth"
-               @select-item="onSelect"
-               ref="baseSelect">
+<m-base-select
+    ref="baseSelect"
+    :control-id="id"
+    :active="active"
+    :items="options"
+    :selected-items="selectedItems"
+    :open.sync="open"
+    :input-max-width="inputMaxWidth"
+    :close-on-select="false"
+    :hide-radio-button-mobile="true"
+    :enable-animation="!linkSelectAll"
+    :width="width"
+    :max-width="maxWidth"
+    :multiselect="true"
+    :listbox-aria-labelledby="label ? labelId : undefined"
+    @select-item="onSelect"
+>
     <template v-slot:default="scope">
-        <div class="m-multi-select"
-             :class="{ 'm--is-open': open,
+        <m-input-style
+            class="m-multi-select"
+            :class="{
+                'm--is-open': open,
                 'm--is-disabled': isDisabled,
-                'm--is-waiting': isWaiting }"
-             :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
-             @focus="onFocus"
-             @blur="onBlur"
-             @click="toggle"
-             @keydown.up.prevent="onKeydownUp"
-             @keydown.down.prevent="onKeydownDown"
-             @keydown.enter.prevent="onKeydownEnter"
-             @keydown.return.prevent="onKeydownEnter"
-             @keydown.esc="scope.keyEsc"
-             @keydown.tab="scope.keyTab"
-             @keydown.space.prevent="onKeydownSpace"
-             tabindex="0">
+                'm--is-waiting': isWaiting
+            }"
+            :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+            :label="label"
+            :label-id="labelId"
+            :label-for="id"
+            :disabled="isDisabled"
+            :waiting="isWaiting"
+            :focus="internalIsFocus"
+            :label-up="labelUp"
+            :empty="isEmpty"
+            :error="hasError"
+            :cursor-pointer="true"
+            :valid="isValid"
+            :required-marker="requiredMarker"
+            :tag-style="tagStyle"
+            @click.prevent="onInputStyleClick(scope.toggle)"
+        >
+            <div
+                ref="input"
+                class="m-multi-select__chips"
+                role="textbox"
+                contenteditable="false"
+                tabindex="0"
+                :aria-controls="scope.ariaControls"
+                :aria-labelledby="label ? labelId : undefined"
+                :aria-describedby="inputAriaDescribedby"
+                :aria-activedescendant="scope.ariaActivedescendant"
+                @focus="onFocus"
+                @blur="onBlur"
+                @keydown.up.prevent="onKeydownUp"
+                @keydown.down.prevent="onKeydownDown"
+                @keydown.enter.prevent="onKeydownEnter"
+                @keydown.return.prevent="onKeydownEnter"
+                @keydown.space.prevent="onKeydownEnter"
+                @keydown.home.prevent="scope.keyHome"
+                @keydown.end.prevent="scope.keyEnd"
+                @keydown.esc="scope.keyEsc"
+                @keydown.tab="scope.keyTab"
+            >
+                <input
+                    v-if="numberOfItemsSelected === 0"
+                    :placeholder="placeholder"
+                    type="text"
+                    readonly
+                    :aria-labelledby="label ? labelId : undefined"
+                />
+                <m-chip-delete
+                    v-if="chipsDisplayMode === 1"
+                    class="m-multi-select__chip"
+                    size="small"
+                    @delete="onDeleteAll()"
+                >
+                    <slot name="chips-all">
+                        {{ textNumberOfSelectedItems }}
+                    </slot>
+                </m-chip-delete>
 
-            <m-input-style :label="label"
-                           :label-for="id"
-                           :disabled="isDisabled"
-                           :waiting="isWaiting"
-                           :focus="internalIsFocus"
-                           :label-up="labelUp"
-                           :empty="isEmpty"
-                           :error="hasError"
-                           :cursor-pointer="true"
-                           :valid="isValid"
-                           :required-marker="requiredMarker"
-                           :tag-style="tagStyle">
-                <div class="m-multi-select__chips">
-                    <template v-if="numberOfItemsSelected === 0">
-                        <input :placeholder="placeholder"
-                               type="text"
-                               readonly />
-                    </template>
-                    <template v-if="chipsDisplayMode === 1">
-                        <m-chip-delete class="m-multi-select__chip"
-                                       size="small"
-                                       @delete="onDeleteAll()">
-                            <template v-slot:default>
-                                <slot name="chips-all">
-                                    {{ textNumberOfSelectedItems }}
-                                </slot>
-                            </template>
-                        </m-chip-delete>
-                    </template>
-                    <template v-else-if="chipsDisplayMode === 0">
-                        <m-chip-delete class="m-multi-select__chip"
-                                       v-for="item, index in internalValue.slice(0, maxVisibleChips)"
-                                       :key="index"
-                                       size="small"
-                                       @delete="onDelete(index)">
-                            <template v-slot:default>
-                                <slot name="chips"
-                                      :item="item"
-                                      :index="index">
-                                    {{ getChipLabel(item) }}
-                                </slot>
-                            </template>
-                        </m-chip-delete>
-                        <span class="m-multi-select__more">
-                            <slot name="more">
-                                {{ textNumberOfUnselectedItemsLeft }}
-                            </slot>
-                        </span>
-                    </template>
-                    <template v-else-if="chipsDisplayMode === -1">
-                        <m-chip-delete class="m-multi-select__chip"
-                                       v-for="item, index in internalValue"
-                                       :key="index"
-                                       size="small"
-                                       @delete="onDelete(index)">
-                            <template v-slot:default>
-                                <slot name="chips"
-                                      :item="item"
-                                      :index="index">
-                                    {{ getChipLabel(item) }}
-                                </slot>
-                            </template>
-                        </m-chip-delete>
-                    </template>
-                </div>
+                <template v-else-if="chipsDisplayMode === 0">
+                    <m-chip-delete
+                        v-for="item, index in internalValue.slice(0, maxVisibleChips)"
+                        class="m-multi-select__chip"
+                        :key="index"
+                        size="small"
+                        @delete="onDelete(index)"
+                    >
+                        <slot
+                            name="chips"
+                            :item="item"
+                            :index="index"
+                        >
+                            {{ getChipLabel(item) }}
+                        </slot>
+                    </m-chip-delete>
+                    <span class="m-multi-select__more">
+                        <slot name="more">
+                            {{ textNumberOfUnselectedItemsLeft }}
+                        </slot>
+                    </span>
+                </template>
+                <template v-else-if="chipsDisplayMode === -1">
+                    <m-chip-delete
+                        v-for="item, index in internalValue"
+                        class="m-multi-select__chip"
+                        :key="index"
+                        size="small"
+                        @delete="onDelete(index)"
+                    >
+                        <slot
+                            name="chips"
+                            :item="item"
+                            :index="index"
+                        >
+                            {{ getChipLabel(item) }}
+                        </slot>
+                    </m-chip-delete>
+                </template>
+            </div>
+            <div
+                v-if="active"
+                slot="suffix"
+                class="m-multi-select__arrow"
+                :class="{ 'm--is-open': open }"
+            >
+                <m-icon
+                    ref="arrow"
+                    class="m-multi-select__arrow__icon"
+                    name="m-svg__arrow-head-filled--down"
+                    size="16px"
+                    :disabled="!active"
+                    @keydown.enter.prevent="open = active"
+                >
+                    {{ !open ? $i18n.translate('m-multi-select:open') : $i18n.translate('m-multi-select:close')}}
+                </m-icon>
+            </div>
+        </m-input-style>
 
-                <div class="m-multi-select__arrow"
-                     slot="suffix"
-                     :class="{ 'm--is-open': open }"
-                     v-if="active">
-                    <m-icon class="m-multi-select__arrow__icon"
-                            ref="arrow"
-                            name="m-svg__arrow-head-filled--down"
-                            size="16px"
-                            :disabled="!active"
-                            @keydown.enter.prevent="open = active">
-                        <m-i18n k="m-multi-select:open"
-                                v-if="!open"></m-i18n>
-                        <m-i18n k="m-multi-select:close"
-                                v-else></m-i18n>
-                    </m-icon>
-                </div>
-            </m-input-style>
-        </div>
     </template>
 
-    <template #validation-message>
-        <m-validation-message class="m-multi-select__validation-message"
-                              :class="{ 'm--has-validation-message': hasValidationMessage }"
-                              :disabled="isDisabled"
-                              :waiting="isWaiting"
-                              :error="hasError"
-                              :valid="isValid"
-                              :error-message="errorMessage"
-                              :valid-message="validMessage"
-                              :helper-message="helperMessage"></m-validation-message>
-    </template>
-
-
+    <div
+        :id="inputAriaDescribedby"
+        slot="validation-message"
+        aria-live="polite"
+    >
+        <m-validation-message
+            class="m-multi-select__validation-message"
+            :class="{ 'm--has-validation-message': hasValidationMessage }"
+            :disabled="isDisabled"
+            :waiting="isWaiting"
+            :error="hasError"
+            :valid="isValid"
+            :error-message="errorMessage"
+            :valid-message="validMessage"
+            :helper-message="helperMessage"
+        />
+    </div>
     <template v-if="linkSelectAll"
               v-slot:popup-header>
-        <m-select-item @click="onToggleAll"
-                       class="m-multi-select__popup-header"
-                       :focused="selectAllFocused"
-                       :hide-radio-button-mobile="true">
-            <m-i18n k="m-multi-select:link-select-all"
-                    v-if="!allSelected"></m-i18n>
-            <m-i18n k="m-multi-select:link-deselect-all"
-                    v-else></m-i18n>
+        <m-select-item
+            class="m-multi-select__popup-header"
+            :focused="selectAllFocused"
+            :hide-radio-button-mobile="true"
+            @click="onToggleAll"
+        >
+            {{ allSelected ? $i18n.translate('m-multi-select:link-deselect-all') : $i18n.translate('m-multi-select:link-select-all') }}
         </m-select-item>
     </template>
     <template v-slot:items="{item , index}">
-        <slot name="items"
-              :item="item"
-              :index="index"><span v-html="item"></span></slot>
+        <slot
+            name="items"
+            :item="item"
+            :index="index"
+        >
+            <span v-html="item"></span>
+        </slot>
     </template>
 </m-base-select>
