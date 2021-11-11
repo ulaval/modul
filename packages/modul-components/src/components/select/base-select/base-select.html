@@ -1,15 +1,18 @@
-<div class="m-base-select"
-     :style="{
-         width: inputWidth,
-         maxWidth: inputMaxWidth
-     }"
-     role="combobox"
-     :aria-owns="listboxId"
-     :aria-expanded="popupOpen === true ? 'true' : 'false'"
-     aria-haspopup="listbox">
-    <div v-m-popup:popup
-         class="m-base-select__popup"
-        >
+<div
+    class="m-base-select"
+    :style="{
+        width: inputWidth,
+        maxWidth: inputMaxWidth
+    }"
+    role="combobox"
+    :aria-owns="listboxId"
+    :aria-expanded="popupOpen === true ? 'true' : 'false'"
+    aria-haspopup="listbox"
+>
+    <div
+        v-m-popup:popup
+        class="m-base-select__popup"
+    >
         <slot :toggle="togglePopup"
               :key-up="onKeydownUp"
               :key-down="onKeydownDown"
@@ -24,48 +27,57 @@
               :aria-controls="listboxId" />
     </div>
     <slot name="validation-message" />
-    <m-popup ref="popup"
-             placement="bottom-start"
-             :open.sync="popupOpen"
-             :disabled="!active"
-             :enter="transitionEnter"
-             :leave="transitionLeave"
-             :padding="false"
-             :preload="true"
-             :lazy="false"
-             :focus-management="false"
-             :close-on-backdrop="true"
-             :open-trigger="'manual'"
-             :sidebar-full-height="sidebarFullHeight"
-             width="100%"
-             @open="emitOpen"
-             @close="emitClose">
+    <m-popup
+        ref="popup"
+        placement="bottom-start"
+        :open.sync="popupOpen"
+        :disabled="!active"
+        :enter="transitionEnter"
+        :leave="transitionLeave"
+        :padding="false"
+        :preload="true"
+        :lazy="false"
+        :focus-management="false"
+        :close-on-backdrop="true"
+        :open-trigger="'manual'"
+        :sidebar-full-height="sidebarFullHeight"
+        width="100%"
+        @open="emitOpen"
+        @close="emitClose"
+        @portal-after-close="emitPortalAfterClose"
+    >
 
-        <slot name="popup-header"
-              slot="header"
-              :key-up="onKeydownUp"
-              :key-down="onKeydownDown"
-              :key-tab="onKeydownTab"
-              :key-esc="onKeydownEsc"
-              :key-enter="onKeydownEnter"
-              :key-space="onKeydownSpace"
-              :key-home="onKeydownHome"
-              :key-end="onKeydownEnd"
-              :key-letter="onKeydownLetter"
-              :aria-activedescendant="ariaActivedescendantId" />
+        <slot
+            name="popup-header"
+            slot="header"
+            :key-up="onKeydownUp"
+            :key-down="onKeydownDown"
+            :key-tab="onKeydownTab"
+            :key-esc="onKeydownEsc"
+            :key-enter="onKeydownEnter"
+            :key-space="onKeydownSpace"
+            :key-home="onKeydownHome"
+            :key-end="onKeydownEnd"
+            :key-letter="onKeydownLetter"
+            :aria-activedescendant="ariaActivedescendantId"
+        />
 
-        <ul :id="listboxId"
+        <ul
+            :id="listboxId"
             class="m-base-select__list"
             :class="{ 'm--is-virutalScroll': virtualScroll }"
             :style="{ minWidth: inputMaxWidth, maxHeight: listMaxHeightProps }"
             ref="items"
             role="listbox"
             :aria-labelledby="listboxAriaLabelledby"
-            :aria-multiselectable="multiselect">
-            <slot name="outer-items"
-                  :items="items"
-                  :get-item-props="getItemProps"
-                  :get-item-handlers="getItemHandlers">
+            :aria-multiselectable="multiselect"
+        >
+            <slot
+                name="outer-items"
+                :items="items"
+                :get-item-props="getItemProps"
+                :get-item-handlers="getItemHandlers"
+            >
                 <m-select-item
                     v-for="(item, index) of items"
                     v-bind="getItemProps(item, index)"
@@ -77,12 +89,12 @@
                         :item="item"
                         :index="index"
                     >
-                        <span v-html="itemsIsStringArray ? item : item.value"></span>
+                        <span v-html="itemsAreStringArray ? item : item.value"></span>
                     </slot>
                 </m-select-item>
             </slot>
         </ul>
-        <template slot="footer">
+        <template #footer>
             <slot name="popup-footer"></slot>
         </template>
     </m-popup>

@@ -37,7 +37,6 @@ export interface MBaseSelectItem<T> {
     ]
 })
 export class MBaseSelect extends ModulVue {
-
     @Prop()
     public readonly items: MBaseSelectItem<unknown>[] | string[];
 
@@ -52,9 +51,6 @@ export class MBaseSelect extends ModulVue {
 
     @Prop({ default: false })
     public readonly open: boolean;
-
-    @Prop({ default: true })
-    public readonly closeOnSelect: boolean;
 
     @Prop({ default: false })
     public readonly hideRadioButtonMobile: boolean;
@@ -92,9 +88,15 @@ export class MBaseSelect extends ModulVue {
     public readonly listboxId: string = `listbox-${uuid.generate()}`;
     public focusedIndex: number = -1;
     private internalOpen: boolean = false;
+    private letterTap: string = '';
+    private timerLetterTap: number | NodeJS.Timeout = 0;
+    private timerLetterTapActive: boolean = false;
 
     @Emit('update:open')
-    public emitUpdateOpen(open: boolean): void { }
+    public emitUpdateOpen(_open: boolean): void { }
+
+    @Emit('click-on-item')
+    public emitClickOnItem(_event: MouseEvent): void { }
 
     @Emit('open')
     public async emitOpen(): Promise<void> {
@@ -107,11 +109,11 @@ export class MBaseSelect extends ModulVue {
         this.focusedIndex = -1;
     }
 
+    @Emit('portal-after-close')
+    public emitPortalAfterClose(): void { }
+
     public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
         this.$emit('select-item', option, index, event);
-        if (this.closeOnSelect) {
-            this.closePopup();
-        }
     }
 
     @Watch('open', { immediate: true })
@@ -141,21 +143,26 @@ export class MBaseSelect extends ModulVue {
     }
 
     public get ariaActivedescendantId(): string {
+        if (this.focusedIndex >= 0) {
+            return ''
+        }
+
         if (this.selectedItems && this.selectedItems.length > 0) {
             let ids: string[] = [];
             this.items.forEach((item, index) => {
                 if (this.selectedItems.some(i => {
-                    return this.itemsIsStringArray ? i === item : i === item.value
-                })) {
+                    return this.itemsAreStringArray ? i === item : i === item.value
+                }) || index === this.focusedIndex) {
                     ids.push(this.itemIds[index]);
                 }
             })
+            this.itemIds[this.focusedIndex];
             return ids.join(' ');
         }
-        return this.focusedIndex >= 0 ? this.itemIds[this.focusedIndex] : '';
+        return this.itemIds[this.focusedIndex];
     }
 
-    public get itemsIsStringArray(): boolean {
+    public get itemsAreStringArray(): boolean {
         if (this.items.length === 0) return false;
         return typeof this.items[0] === 'string';
     }
@@ -163,18 +170,24 @@ export class MBaseSelect extends ModulVue {
     public getItemProps(item: MBaseSelectItem<unknown> | string, index: number): any {
         return {
             id: this.itemIds[index],
-            value: this.itemsIsStringArray ? item : (item as MBaseSelectItem<unknown>).value,
+            value: this.itemsAreStringArray ? item : (item as MBaseSelectItem<unknown>).value,
             focused: index === this.focusedIndex,
             selected: this.isSelected(item),
             multiselect: this.multiselect,
-            disabled: this.itemsIsStringArray ? undefined : (item as MBaseSelectItem<unknown>).disabled,
-            hideRadioButtonMobile: this.hideRadioButtonMobile || this.itemsIsStringArray ? false : (item as MBaseSelectItem<unknown>).hideRadioButtonMobile,
+            disabled: this.itemsAreStringArray ? undefined : (item as MBaseSelectItem<unknown>).disabled,
+            hideRadioButtonMobile: this.hideRadioButtonMobile || this.itemsAreStringArray ? false : (item as MBaseSelectItem<unknown>).hideRadioButtonMobile,
         };
     }
 
     public getItemHandlers(item: MBaseSelectItem<unknown> | string, index: number): any {
         return {
-            click: (event: MouseEvent): void => this.emitSelectItem(item, index, event),
+            click: (event: MouseEvent): void => {
+                this.emitSelectItem(item, index, event);
+                this.emitClickOnItem(event: MouseEvent);
+                if (!this.multiselect) {
+                    this.closePopup();
+                }
+            },
         };
     }
 
@@ -198,7 +211,7 @@ export class MBaseSelect extends ModulVue {
 
     public focusFirstSelected(): void {
         if (this.items.length > 0 && this.selectedItems && this.selectedItems.length > 0) {
-            if (this.itemsIsStringArray) {
+            if (this.itemsAreStringArray) {
                 this.focusedIndex = (this.items as string[]).indexOf(this.selectedItems[0]);
             } else {
                 const items = this.items as MBaseSelectItem<unknown>[];
@@ -211,7 +224,7 @@ export class MBaseSelect extends ModulVue {
         }
 
         if (
-            !this.itemsIsStringArray
+            !this.itemsAreStringArray
             && this.items.length > 0
             && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
         ) {
@@ -223,7 +236,7 @@ export class MBaseSelect extends ModulVue {
 
     public focusNextItem(): void {
         if (this.focusedIndex < 0 || this.focusedIndex >= this.items.length - 1) return;
-        if (this.itemsIsStringArray) {
+        if (this.itemsAreStringArray) {
             this.focusedIndex++;
         } else {
             const items = this.items as MBaseSelectItem<unknown>[];
@@ -243,7 +256,7 @@ export class MBaseSelect extends ModulVue {
     public focusPreviousItem(): void {
         if (this.focusedIndex <= 0) return;
 
-        if (this.itemsIsStringArray) {
+        if (this.itemsAreStringArray) {
             this.focusedIndex--;
         } else {
             const items = this.items as MBaseSelectItem<unknown>[];
@@ -320,14 +333,22 @@ export class MBaseSelect extends ModulVue {
     public onKeydownDown($event: KeyboardEvent): void {
         if (!this.popupOpen) {
             this.togglePopup();
-        } else {
-            this.focusNextItem();
-            this.scrollToFocused();
         }
+
+        this.focusNextItem();
+        this.scrollToFocused();
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
+        }
+
     }
 
     public onKeydownUp($event: KeyboardEvent): void {
+        if (!this.popupOpen) return;
         this.focusPreviousItem();
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
+        }
     }
 
     public onKeydownSpace($event: KeyboardEvent): void {
@@ -357,63 +378,45 @@ export class MBaseSelect extends ModulVue {
     }
 
     public onKeydownHome($event: KeyboardEvent): void {
-        if (this.popupOpen) {
-            this.focusedIndex = 0;
+        if (!this.popupOpen) return
+        this.focusedIndex = 0;
 
-            if (
-                !this.itemsIsStringArray
-                && this.items.length > 0
-                && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
-            ) {
-                this.focusNextItem();
-            } else {
-                this.scrollToFocused();
-            }
+        if (
+            !this.itemsAreStringArray
+            && this.items.length > 0
+            && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+        ) {
+            this.focusNextItem();
+        } else {
+            this.scrollToFocused();
+        }
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
     }
 
     public onKeydownEnd($event: KeyboardEvent): void {
-        if (this.popupOpen) {
-            this.focusedIndex = this.items.length - 1;
+        if (!this.popupOpen) return
 
-            if (
-                !this.itemsIsStringArray
-                && this.items.length > 0
-                && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
-            ) {
-                this.focusPreviousItem();
-            } else {
-                this.scrollToFocused();
-            }
+        this.focusedIndex = this.items.length - 1;
+        if (
+            !this.itemsAreStringArray
+            && this.items.length > 0
+            && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+        ) {
+            this.focusPreviousItem();
+        } else {
+            this.scrollToFocused();
+        }
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
     }
 
     public onKeydownLetter($event: KeyboardEvent): void {
         if (/^[a-z0-9]$/i.test($event.key)) {
-            this.findFirstItemWithLetter($event.key);
+            this.findFirstItemWithLetter($event.key, $event);
         }
-    }
-
-    private findFirstItemWithLetter(key: string): void {
-        // if (this.as<MediaQueriesMixin>().isMqMinS) {
-        //     const findItem = this.items.find(
-        //         (item: MBaseSelectItem<unknown> | string) => {
-        //             if (
-        //                 this.itemsIsStringArray
-        //             ) {
-        //                 return (item as string).startsWith(key)
-        //             }
-        //             return (item as MBaseSelectItem<unknown>).value.startsWith(key)
-        //         }
-        //     );
-        //     const index: number = findItem ? this.items.indexOf(
-        //         findItem
-        //     ) : -1;
-        //     if (index !== -1) {
-        //         this.focusedIndex = index;
-        //         this.scrollToFocused();
-        //     }
-        // }
     }
 
     private scrollToFocused(): void {
@@ -437,9 +440,59 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
+    private createTimeoutLetterTap(): void {
+        this.timerLetterTap = setTimeout(() => {
+            this.timerLetterTapActive = false;
+            this.letterTap = '';
+        }, 400);
+    }
+
+    private findFirstItemWithLetter(key: string, event: KeyboardEvent): void {
+        if (
+            this.timerLetterTapActive
+        ) {
+            clearTimeout(this.timerLetterTap as NodeJS.Timeout);
+            this.createTimeoutLetterTap();
+        } else {
+            this.timerLetterTapActive = true;
+            this.createTimeoutLetterTap();
+        }
+        this.letterTap += key;
+
+        if (this.itemsAreStringArray) {
+            const items = this.items as string[];
+            const findItem = items.find(items => items.toUpperCase().startsWith(this.letterTap.toUpperCase()))
+            if (findItem) {
+                const index: number = findItem ? items.indexOf(
+                    findItem
+                ) : -1;
+                this.focusedIndex = index;
+                this.scrollToFocused();
+
+                if (!this.multiselect) {
+                    this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, event);
+                }
+            }
+        } else if (this.items.length > 0) {
+            const items = this.items as MBaseSelectItem<unknown>[];
+            const findItem = items.find(items => items.value.toUpperCase().startsWith(this.letterTap.toUpperCase()))
+            if (findItem) {
+                const index: number = findItem ? items.indexOf(
+                    findItem
+                ) : -1;
+                this.focusedIndex = index;
+                this.scrollToFocused();
+
+                if (!this.multiselect) {
+                    this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, event);
+                }
+            }
+        }
+    }
+
     private isSelected(item: MBaseSelectItem<unknown> | string): boolean {
         if (this.selectedItems && this.selectedItems.length > 0) {
-            if (this.itemsIsStringArray) {
+            if (this.itemsAreStringArray) {
                 return this.selectedItems.indexOf(item as string) > -1;
             }
             item = item as MBaseSelectItem<unknown>;

@@ -116,11 +116,10 @@ export class MSelect extends ModulVue {
         return !this.as<InputState>().isReadonly ? this.as<InputManagement>().placeholder : '';
     }
 
-    public get optionsIsStringArray(): boolean {
+    public get optionsAreStringArray(): boolean {
         if (this.options.length === 0) return false;
         return typeof this.options[0] === 'string';
     }
-
 
     public onInputStyleClick(callbackToggle: any): void {
         callbackToggle();
@@ -132,9 +131,17 @@ export class MSelect extends ModulVue {
         }
     }
 
+    public onPortalAfterClose(): void {
+        if (
+            this.refInput && document.activeElement !== this.refInput
+        ) {
+            this.refInput.focus();
+        }
+    }
+
     public onSelect(option: MBaseSelectItem<unknown> | string, index: number, $event: Event): void {
         this.emitSelectItem(option, index, $event);
-        this.as<InputManagement>().model = this.optionsIsStringArray ? this.options[index] : this.options[index].value;
+        this.as<InputManagement>().model = this.optionsAreStringArray ? this.options[index] : this.options[index].value;
     }
 
     public onReset(): void {

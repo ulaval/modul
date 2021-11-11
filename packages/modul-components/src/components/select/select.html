@@ -12,8 +12,9 @@
     @open="onOpen"
     @close="onClose"
     @select-item="onSelect"
+    @portal-after-close="onPortalAfterClose"
 >
-    <template v-slot:default="scope">
+    <template #default="scope">
         <m-input-style
             class="m-select"
             :class="{
@@ -81,7 +82,7 @@
                     @keydown="scope.keyLetter"
                 />
             </slot>
-            <template v-slot:append>
+            <template #append>
                 <m-opacity-transition>
                     <m-icon-button
                         v-if="isClearable"
@@ -93,8 +94,10 @@
                     />
                 </m-opacity-transition>
 
-                <div class="m-select__arrow"
-                        :class="{ 'm--is-open': open }">
+                <div
+                    class="m-select__arrow"
+                    :class="{ 'm--is-open': open }"
+                >
                     <m-icon
                         class="m-select__arrow__icon"
                         ref="arrow"
@@ -108,14 +111,12 @@
         </m-input-style>
     </template>
 
-    <div
-        :id="inputAriaDescribedby"
-        slot="validation-message"
-        aria-live="polite"
-    >
+    <template #validation-message>
         <m-validation-message
+            :id="inputAriaDescribedby"
             class="m-select__validation-message"
             :class="{ 'm--has-validation-message': hasValidationMessage }"
+            aria-live="polite"
             :disabled="isDisabled"
             :waiting="isWaiting"
             :error="hasError"
@@ -124,19 +125,25 @@
             :valid-message="validMessage"
             :helper-message="helperMessage"
         />
-    </div>
-
-    <template #outer-items="{items, getItemProps, getItemHandlers}">
-        <slot name="outer-items"
-              :items="items"
-              :get-item-props="getItemProps"
-              :get-item-handlers="getItemHandlers"></slot>
     </template>
 
-    <template v-slot:items="{item , index }">
-        <slot name="items"
-              :item="item"
-              :index="index"><span v-html="optionsIsStringArray ? item : item.value"></span></slot>
+    <template #outer-items="{items, getItemProps, getItemHandlers}">
+        <slot
+            name="outer-items"
+            :items="items"
+            :get-item-props="getItemProps"
+            :get-item-handlers="getItemHandlers"
+        />
+    </template>
+
+    <template #items="{item , index }">
+        <slot
+            name="items"
+            :item="item"
+            :index="index"
+        >
+            <span v-html="optionsAreStringArray ? item : item.value"></span>
+        </slot>
     </template>
 
 </m-base-select>
