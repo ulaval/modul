@@ -14,8 +14,10 @@
     :multiselect="true"
     :listbox-aria-labelledby="label ? labelId : undefined"
     @select-item="onSelect"
+    @click-on-item="onClickOnItem"
+    @portal-after-close="onPortalAfterClose"
 >
-    <template v-slot:default="scope">
+    <template #default="scope">
         <m-input-style
             class="m-multi-select"
             :class="{
@@ -60,18 +62,21 @@
                 @keydown.end.prevent="scope.keyEnd"
                 @keydown.esc="scope.keyEsc"
                 @keydown.tab="scope.keyTab"
+                @keydown="scope.keyLetter"
             >
                 <input
                     v-if="numberOfItemsSelected === 0"
                     :placeholder="placeholder"
                     type="text"
                     readonly
+                    tabindex="-1"
                     :aria-labelledby="label ? labelId : undefined"
                 />
                 <m-chip-delete
                     v-if="chipsDisplayMode === 1"
                     class="m-multi-select__chip"
                     size="small"
+                    tabindex="-1"
                     @delete="onDeleteAll()"
                 >
                     <slot name="chips-all">
@@ -85,6 +90,7 @@
                         class="m-multi-select__chip"
                         :key="index"
                         size="small"
+                        tabindex="-1"
                         @delete="onDelete(index)"
                     >
                         <slot
@@ -107,6 +113,7 @@
                         class="m-multi-select__chip"
                         :key="index"
                         size="small"
+                        tabindex="-1"
                         @delete="onDelete(index)"
                     >
                         <slot
@@ -158,7 +165,7 @@
         />
     </div>
     <template v-if="linkSelectAll"
-              v-slot:popup-header>
+              #popup-header>
         <m-select-item
             class="m-multi-select__popup-header"
             :focused="selectAllFocused"
@@ -168,7 +175,7 @@
             {{ allSelected ? $i18n.translate('m-multi-select:link-deselect-all') : $i18n.translate('m-multi-select:link-select-all') }}
         </m-select-item>
     </template>
-    <template v-slot:items="{item , index}">
+    <template #items="{item , index}">
         <slot
             name="items"
             :item="item"

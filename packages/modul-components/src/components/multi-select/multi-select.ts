@@ -88,51 +88,39 @@ export class MMultiSelect extends ModulVue {
         baseSelect: MBaseSelect;
     };
 
-    created(): void {
-        if (!Array.isArray(this.value)) {
-            this.$log.error('MMultiSelect - The model must be an array');
-        }
-    }
-
-    mounted(): void {
-        if (this.focus) {
-            this.focusChanged(this.focus);
-        }
-    }
-
-    set model(value: any[]) {
+    public set model(value: any[]) {
         this.internalValue = value;
         this.$emit('input', this.internalValue);
     }
 
-    get model(): any[] {
+    public get model(): any[] {
         return this.internalValue;
     }
 
-    get selectedItems(): any[] {
+    public get selectedItems(): any[] {
         if (this.value) {
             return this.value;
         }
         return [];
     }
 
-    get numberOfItemsSelected(): number {
+    public get numberOfItemsSelected(): number {
         return this.selectedItems.length;
     }
 
-    get isEmpty(): boolean {
+    public get isEmpty(): boolean {
         return this.hasValue || (this.open) ? false : true;
     }
 
-    get hasValue(): boolean {
+    public get hasValue(): boolean {
         return !!(this.model && this.model.length > 0);
     }
 
-    get allSelected(): boolean {
+    public get allSelected(): boolean {
         return this.options && this.options.length > 0 && this.options.length === this.value.length;
     }
 
-    get chipsDisplayMode(): number {
+    public get chipsDisplayMode(): number {
         if (this.allSelected) {
             return 1;
         } else if (this.numberOfItemsSelected > this.maxVisibleChips) {
@@ -141,12 +129,20 @@ export class MMultiSelect extends ModulVue {
         return -1;
     }
 
-    get textNumberOfSelectedItems(): string {
+    public get textNumberOfSelectedItems(): string {
         return this.$i18n.translate('m-multi-select:all-selected', [this.numberOfItemsSelected], undefined, undefined, false, FormatMode.Default);
     }
 
-    get textNumberOfUnselectedItemsLeft(): string {
+    public get textNumberOfUnselectedItemsLeft(): string {
         return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined, false, FormatMode.Default);
+    }
+
+    public onPortalAfterClose(): void {
+        this.focusOnInput();
+    }
+
+    public onClickOnItem(): void {
+        this.focusOnInput();
     }
 
     public toggle(): void {
@@ -157,15 +153,13 @@ export class MMultiSelect extends ModulVue {
     public onInputStyleClick(callbackToggle: any): void {
         callbackToggle();
 
-        if (
-            this.refInput && document.activeElement !== this.refInput && this.open
-        ) {
-            this.refInput.focus();
+        if (this.open) {
+            this.focusOnInput();
         }
     }
 
     @Emit('select-item')
-    onSelect(option: any, index: number, $event: Event): void {
+    public onSelect(option: any, index: number, $event: Event): void {
         let positionInModel: number = this.model.indexOf(option);
         if (positionInModel === -1) {
             this.model = [...this.model, (this.options[index])];
@@ -179,19 +173,27 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    onDelete(index: number): void {
+    public focusOnInput(): void {
+        if (
+            this.refInput && document.activeElement !== this.refInput
+        ) {
+            this.refInput.focus();
+        }
+    }
+
+    public onDelete(index: number): void {
         this.model = this.model.slice(0, index).concat(this.model.slice(index + 1));
         this.refBaseSelect.update();
         this.refInput?.focus();
     }
 
-    onDeleteAll(): void {
+    public onDeleteAll(): void {
         this.model = [];
         this.refBaseSelect.update();
         this.refInput?.focus();
     }
 
-    onFocus($event: FocusEvent): void {
+    public onFocus($event: FocusEvent): void {
         this.internalIsFocus = this.as<InputStateMixin>().active;
         if (this.internalIsFocus) {
             this.$emit('focus', $event);
@@ -199,11 +201,11 @@ export class MMultiSelect extends ModulVue {
     }
 
     @Emit('blur')
-    onBlur($event: FocusEvent): void {
+    public onBlur($event: FocusEvent): void {
         this.internalIsFocus = false;
     }
 
-    onKeydownDown($event: KeyboardEvent): void {
+    public onKeydownDown($event: KeyboardEvent): void {
         if (this.options) {
             if (!this.open) {
                 this.open = true;
@@ -218,7 +220,7 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    onKeydownUp($event: KeyboardEvent): void {
+    public onKeydownUp($event: KeyboardEvent): void {
         if (this.options) {
             if (this.refBaseSelect.focusedIndex === 0 && this.linkSelectAll) {
                 this.refBaseSelect.focusedIndex = -1;
@@ -230,7 +232,7 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    onKeydownEnter($event: KeyboardEvent): void {
+    public onKeydownEnter($event: KeyboardEvent): void {
         if (this.options) {
             if (!this.open) {
                 this.open = true;
@@ -243,7 +245,7 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    onKeydownSpace($event: KeyboardEvent): void {
+    public onKeydownSpace($event: KeyboardEvent): void {
         if (this.options) {
             if (!this.open) {
                 this.open = true;
@@ -253,7 +255,7 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    onToggleAll(): void {
+    public onToggleAll(): void {
         if (this.allSelected) {
             this.model = [];
         } else {
@@ -261,9 +263,21 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    getChipLabel(item: any): string {
+    public getChipLabel(item: any): string {
         let ellipsis: string = item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
         return `${item.toString().substring(0, this.defaultChipCharsTrunk)}${ellipsis}`;
+    }
+
+    protected created(): void {
+        if (!Array.isArray(this.value)) {
+            this.$log.error('MMultiSelect - The model must be an array');
+        }
+    }
+
+    protected mounted(): void {
+        if (this.focus) {
+            this.focusChanged(this.focus);
+        }
     }
 
     @Watch('value', { immediate: true })

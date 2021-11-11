@@ -200,7 +200,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
             model1: [optionsLionKing[0]],
             options: optionsLionKing
         }),
-        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:chips="{item , index }"> {{ index }} - {{ item }} </template></m-multi-select>`
+        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:chips="{item , index }"> {{ index + 1 }} - {{ item }} </template></m-multi-select>`
     })
     );
 
