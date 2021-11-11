@@ -31,6 +31,7 @@
           @close="emitClose"
           @portal-mounted="emitPortalMounted"
           @portal-after-open="emitPortalAfterOpen"
+          @portal-after-close="emitPortalAfterClose"
           ref="popper">
     <div v-if="$slots.trigger"
          slot="trigger">
@@ -63,7 +64,8 @@
            @open="emitOpen"
            @close="emitClose"
            @portal-mounted="emitPortalMounted"
-           @portal-after-open="emitPortalAfterOpen">
+           @portal-after-open="emitPortalAfterOpen"
+           @portal-after-close="emitPortalAfterClose">
     <div v-if="$slots.trigger"
          slot="trigger">
         <slot name="trigger" />
