@@ -15,7 +15,9 @@
     <m-checkbox
         v-if="multiselect && !hideRadioButtonMobile"
         :value="selected"
+        :focused="isFocused"
         :disabled="disabled"
+        :readonly="readonly"
         position="right"
         style="width: 100%"
     >
@@ -38,6 +40,7 @@
         :focus="isFocused"
         :checked="selected"
         :disabled="disabled"
+        :readonly="readonly"
         tabindex="0"
     >
         <span class="m-select-item__element-text">
