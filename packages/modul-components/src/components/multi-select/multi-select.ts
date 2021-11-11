@@ -166,7 +166,7 @@ export class MMultiSelect extends ModulVue {
         } else {
             this.onDelete(positionInModel);
         }
-        this.refBaseSelect.update();
+        this.update();
 
         if ($event.type === 'click') {
             this.refBaseSelect.focusedIndex = -1;
@@ -183,13 +183,13 @@ export class MMultiSelect extends ModulVue {
 
     public onDelete(index: number): void {
         this.model = this.model.slice(0, index).concat(this.model.slice(index + 1));
-        this.refBaseSelect.update();
+        this.update();
         this.refInput?.focus();
     }
 
     public onDeleteAll(): void {
         this.model = [];
-        this.refBaseSelect.update();
+        this.update();
         this.refInput?.focus();
     }
 
@@ -255,12 +255,17 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
+    public update(): void {
+        this.refBaseSelect.update();
+    }
+
     public onToggleAll(): void {
         if (this.allSelected) {
             this.model = [];
         } else {
             this.model = [...this.options];
         }
+        this.update();
     }
 
     public getChipLabel(item: any): string {
