@@ -45,6 +45,11 @@ export class MInputGroup extends ModulVue implements MInputGroupProps {
     })
     public validationMessagePosition: MMInputGroupValidationMessagePosition;
 
+    @Prop({
+        default: () => uuid.generate();
+    })
+    public validationMessageId?: string;
+
     get hasLabel(): boolean {
         return !!this.label;
     }
@@ -53,12 +58,8 @@ export class MInputGroup extends ModulVue implements MInputGroupProps {
         return this.validationMessagePosition === MMInputGroupValidationMessagePosition.Bottom;
     }
 
-    get idLabel(): string | undefined {
+    get labelId(): string | undefined {
         return this.hasLabel ? uuid.generate() : undefined;
-    }
-
-    get idValidationMessage(): string | undefined {
-        return this.as<InputState>().errorMessage || this.as<InputState>().validMessage || this.as<InputState>().helperMessage ? uuid.generate() : undefined;
     }
 }
 

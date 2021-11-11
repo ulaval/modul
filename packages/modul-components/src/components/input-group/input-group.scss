@@ -2,10 +2,15 @@
 @import './../input-style/input-style.scss';
 
 .m-input-group {
+    border: none;
+    padding: 0;
+    margin: inherit 0 0;
+
+
     &.m--has-validation-message {
         &:not(.m--is-validation-message-position-bottom) {
             .m-input-group__label {
-                ~ .m-input-group__body {
+                ~.m-input-group__body {
                     margin-top: $m-spacing--xs;
                 }
             }
@@ -34,7 +39,7 @@
         display: flex;
         align-items: center;
 
-        ~ .m-input-group__body {
+        ~.m-input-group__body {
             margin-top: $m-spacing--s;
         }
     }
