@@ -7,6 +7,9 @@
     &__list {
         margin: 0;
         padding: 0;
+        max-height: 80%;
+        overflow-x: hidden;
+        overflow-y: hidden;
 
         @media (min-width: $m-mq--min--s) {
             max-height: 208px;
@@ -25,7 +28,7 @@
     }
 
     &__list.m--is-virutalScroll {
-        > div {
+        >div {
             @include m-scrollbar();
         }
     }

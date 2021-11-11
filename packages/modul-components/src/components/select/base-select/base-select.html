@@ -28,6 +28,7 @@
     </div>
     <slot name="validation-message" />
     <m-popup
+        :id="popupId"
         ref="popup"
         placement="bottom-start"
         :open.sync="popupOpen"

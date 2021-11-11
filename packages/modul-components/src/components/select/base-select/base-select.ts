@@ -85,6 +85,7 @@ export class MBaseSelect extends ModulVue {
     @Ref('popup')
     public readonly refPopup: MPopup;
 
+    public readonly popupId: string = `popup-${uuid.generate()}`;
     public readonly listboxId: string = `listbox-${uuid.generate()}`;
     public focusedIndex: number = -1;
     private internalOpen: boolean = false;
@@ -420,11 +421,15 @@ export class MBaseSelect extends ModulVue {
     }
 
     private scrollToFocused(): void {
-        if (this.focusedIndex < 0 && this.as<MediaQueriesMixin>().isMqMaxS) return;
+        if (this.focusedIndex < 0) return;
 
-        const container: HTMLElement = this.refItems;
+        const sidebarBody = this.as<MediaQueriesMixin>().isMqMaxS ?
+            document.querySelector(`#${this.popupId} .m-sidebar__body`)
+            : undefined;
+        const refUl: HTMLElement = this.refItems as HTMLElement;
+        const container = sidebarBody || refUl;
         if (container) {
-            const element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
+            const element: HTMLElement = refUl.children[this.focusedIndex] as HTMLElement;
 
             if (element) {
                 const top: number = element.offsetTop;
