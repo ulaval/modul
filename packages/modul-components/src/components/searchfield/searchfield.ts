@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -28,10 +28,20 @@ import './searchfield.scss';
         InputWidth,
         InputLabel,
         InputManagement
-    ]
+    ],
+    modul: {
+        i18n: {
+            'fr': require('./searchfield.lang.fr.json'),
+            'en': require('./searchfield.lang.en.json')
+        }
+    },
+
 })
 export class MSearchfield extends ModulVue {
-    public id: string = `mSearchfield-${uuid.generate()}`;
+    @Prop({ default: () => `mSearchfield-${uuid.generate()}` })
+    public readonly id: string;
+
+    public readonly messageValidationId: string = uuid.generate();
     public searchIconDescription: string = this.$i18n.translate('m-textfield:search');
 
     public $refs: {
