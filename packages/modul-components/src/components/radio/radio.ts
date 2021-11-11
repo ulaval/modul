@@ -38,14 +38,16 @@ export abstract class BaseRadioGroup extends ModulVue {
     mixins: [InputState]
 })
 export class MRadio extends ModulVue {
-
     @Prop()
     @Model('change')
     public modelValue: string;
+
     @Prop()
     public value: string;
+
     @Prop()
     public name: string;
+
     @Prop({
         default: MRadioPosition.Left,
         validator: value =>
@@ -53,8 +55,10 @@ export class MRadio extends ModulVue {
             value === MRadioPosition.Right
     })
     public radioPosition: MRadioPosition;
+
     @Prop()
     public disabled: boolean;
+
     @Prop({
         default: MRadioVerticalAlignement.Top,
         validator: value =>
@@ -62,16 +66,24 @@ export class MRadio extends ModulVue {
             value === MRadioVerticalAlignement.Center
     })
     public radioVerticalAlign: MRadioVerticalAlignement;
+
     @Prop()
     public radioMarginTop: string;
+
+    @Prop({
+        default: () => `mRadio-${uuid.generate()}`
+    })
+    public id: string;
+
     @Prop()
     public focus: boolean;
+
+    @Prop()
+    public inputAriaDescribedby: string;
 
     $refs: {
         radioInput: HTMLInputElement;
     };
-
-    public radioID: string = uuid.generate();
 
     private hasFocus: boolean = false;
     private hasParentGroup: boolean | undefined = undefined;

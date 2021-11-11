@@ -1,27 +1,33 @@
 <li class="m-radio"
-    :class="{ 'm--is-disabled': propDisabled,
-              'm--is-readonly': propReadonly,
-              'm--is-error': propError,
-              'm--is-valid': propValid,
-              'm--is-checked': isChecked,
-              'm--is-focus': hasFocus && !propDisabled,
-              'm--is-input-right': propPosition === 'right',
-              'm--is-inline': propInline,
-              'm--is-align-center': propVerticalAlign === 'center' }">
-    <input class="m-radio__hidden"
-           @focus="onFocus"
-           @blur="onBlur"
-           :aria-hidden="propDisabled"
-           :disabled="propDisabled || isReadonlyUnchecked"
-           :id="radioID"
-           :name="propName"
-           :value="value"
-           v-model="model"
-           type="radio"
-           ref="radioInput" />
+    :class="{
+        'm--is-disabled': propDisabled,
+        'm--is-readonly': propReadonly,
+        'm--is-error': propError,
+        'm--is-valid': propValid,
+        'm--is-checked': isChecked,
+        'm--is-focus': hasFocus && !propDisabled,
+        'm--is-input-right': propPosition === 'right',
+        'm--is-inline': propInline,
+        'm--is-align-center': propVerticalAlign === 'center'
+    }"
+>
+    <input
+        ref="radioInput"
+        v-model="model"
+        :id="id"
+        class="m-radio__hidden"
+        type="radio"
+        :disabled="propDisabled || isReadonlyUnchecked"
+        :name="propName"
+        :value="value"
+        :aria-invalid="propError"
+        :aria-describedby="inputAriaDescribedby"
+        @focus="onFocus"
+        @blur="onBlur"
+    />
     <label class="m-radio__wrap"
            ref="label"
-           :for="radioID">
+           :for="id">
         <span class="m-radio__input"
               :style="{ 'margin-top': propRadioMarginTop }"
               aria-hidden="true"></span>

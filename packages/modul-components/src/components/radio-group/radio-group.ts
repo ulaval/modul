@@ -18,10 +18,10 @@ const FOCUS_OUT_TIMEOUT_MS: number = 200;
     mixins: [InputState]
 })
 export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
-
     @Model('change')
     @Prop()
     public value: any;
+
     @Prop({
         default: MRadioPosition.Left,
         validator: value =>
@@ -29,12 +29,16 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
             value === MRadioPosition.Right
     })
     public radiosPosition: MRadioPosition;
+
     @Prop()
     public inline: boolean;
+
     @Prop()
     public label: string;
+
     @Prop()
     public requiredMarker: boolean;
+
     @Prop({
         default: MRadioVerticalAlignement.Top,
         validator: value =>
@@ -42,10 +46,13 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
             value === MRadioVerticalAlignement.Center
     })
     public radiosVerticalAlign: MRadioVerticalAlignement;
+
     @Prop()
     public radiosMarginTop: string;
+
     @Prop()
     public focus: boolean;
+
     @Prop({
         default: MMInputGroupValidationMessagePosition.Top,
         validator: value =>
@@ -53,6 +60,9 @@ export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
             value === MMInputGroupValidationMessagePosition.Bottom
     })
     public validationMessagePosition: MMInputGroupValidationMessagePosition;
+
+    @Prop()
+    public validationMessageId?: string;
 
     public name: string = uuid.generate();
     private internalValue: any | undefined = '';
