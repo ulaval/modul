@@ -20,7 +20,6 @@ import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
 import { MInputStyle } from '../input-style/input-style';
-import { MPopper } from '../popper/popper';
 import { MPopup } from '../popup/popup';
 import { MValidationMessage } from '../validation-message/validation-message';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from './../../directives/directive-names';
@@ -60,42 +59,45 @@ export class MDatepicker extends ModulVue {
 
     @Model('change')
     @Prop()
-    public value: DatePickerSupportedTypes;
+    public readonly value: DatePickerSupportedTypes;
 
     @Prop()
-    public label: string;
+    public readonly label: string;
 
     @Prop({
         default: MBaseCalendarView.DAYS,
         validator: value => Enums.toValueArray(MBaseCalendarView).includes(value)
     })
-    public initialView: MBaseCalendarView;
+    public readonly initialView: MBaseCalendarView;
 
     @Prop({
         default: MBaseCalendarType.FULL_DATE,
         validator: value => Enums.toValueArray(MBaseCalendarType).includes(value)
     })
-    public type: MBaseCalendarType;
+    public readonly type: MBaseCalendarType;
 
     @Prop({ default: () => { return new ModulDate().subtract(10, DatePrecision.YEAR); } })
-    public min: DatePickerSupportedTypes;
+    public readonly min: DatePickerSupportedTypes;
 
     @Prop({ default: () => { return new ModulDate().add(10, DatePrecision.YEAR); } })
-    public max: DatePickerSupportedTypes;
+    public readonly max: DatePickerSupportedTypes;
 
     @Prop()
-    public placeholder: string;
+    public readonly placeholder: string;
 
     @Prop({ default: InputMaxWidth.Small })
-    public maxWidth: string;
+    public readonly maxWidth: string;
 
     @Prop({ default: false })
-    public hideInternalErrorMessage: boolean;
+    public readonly hideInternalErrorMessage: boolean;
 
     @Prop({ default: false })
-    public skipInputValidation: boolean;
+    public readonly skipInputValidation: boolean;
 
-    public id: string = `mDatepicker-${uuid.generate()}`;
+    @Prop({ default: () => `mDatepicker-${uuid.generate()}` })
+    public readonly id: string;
+
+    public readonly messageValidationId: string = uuid.generate();
     public $refs: {
         input: MInputMask;
     };
