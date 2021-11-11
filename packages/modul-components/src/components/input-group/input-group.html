@@ -10,7 +10,7 @@
 >
     <legend
         v-if="hasLabel"
-        :id="idLabel"
+        :id="labelId"
         class="m-input-group__label"
     >
         {{ label }}
@@ -38,7 +38,7 @@
         <div
             v-if="$slots.default"
             class="m-input-group__content"
-            :aria-labelledby="idLabel"
+            :aria-labelledby="labelId"
             :aria-describedby="validationMessageId"
         >
             <slot />
