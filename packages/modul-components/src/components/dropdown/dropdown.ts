@@ -400,6 +400,22 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         return !!this.$slots.footer;
     }
 
+    public onKeydownHome($event: KeyboardEvent): void {
+        if (!this.hasItems || this.focusedIndex < 0) {
+            return;
+        }
+        this.focusedIndex = 0;
+        this.scrollToFocused();
+    }
+
+    public onKeydownEnd($event: KeyboardEvent): void {
+        if (!this.hasItems || this.focusedIndex < 0) {
+            return;
+        }
+        this.focusedIndex = this.internalNavigationItems.length - 1;
+        this.scrollToFocused();
+    }
+
     private onKeydownUp($event: KeyboardEvent): void {
         if (!this.open) {
             this.open = true;
@@ -421,7 +437,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             this.open = true;
         }
         if (this.focusedIndex > -1) {
-            let item: MDropdownItem = this.internalNavigationItems[this.focusedIndex];
+            const item: MDropdownItem = this.internalNavigationItems[this.focusedIndex];
             this.model = item.value;
         }
         this.selectText();
