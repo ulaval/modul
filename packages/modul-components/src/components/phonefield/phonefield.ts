@@ -48,10 +48,10 @@ import WithRender from './phonefield.html?style=./phonefield.scss';
 export class MPhonefield extends ModulVue {
     @Prop()
     @Model('input')
-    public value: string;
+    public readonly value: string;
 
     @Prop()
-    public label: string;
+    public readonly label: string;
 
     @Prop({
         default: () => ({
@@ -59,23 +59,27 @@ export class MPhonefield extends ModulVue {
             prefix: '1'
         })
     })
-    public country: MCountry;
+    public readonly country: MCountry;
 
     @Prop({
         default: () => [MCountryCodeISO2.Canada]
     })
-    public priorityIsoCountries: MCountryCodeISO2[];
+    public readonly priorityIsoCountries: MCountryCodeISO2[];
 
     @Prop({
         default: false
     })
-    public externalSprite: boolean;
+    public readonly externalSprite: boolean;
+
+    @Prop({ default: () => `mPhonefield-${uuid.generate()}` })
+    public readonly id: string;
+
+    public readonly messageValidationId: string = uuid.generate();
 
     public $refs: {
         inputMask: MInputMask;
     };
 
-    protected id: string = `mIntegerfield-${uuid.generate()}`;
     private examples: any = require('libphonenumber-js/examples.mobile.json');
 
     public countryModelInternal: MCountryCodeISO2 = MCountryCodeISO2.Empty;

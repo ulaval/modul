@@ -13,7 +13,7 @@
     role="combobox"
     :aria-owns="listboxId"
     aria-haspopup="listbox"
-    :aria-expanded="open"
+    :aria-expanded="open === true ? 'true' : 'false'"
 >
     <m-input-style
         v-m-popup:popup
@@ -142,7 +142,7 @@
             class="m-dropdown__list"
             ref="items"
             role="listbox"
-            :aria-labelledby="labelId"
+            :aria-labelledby="label ? labelId : undefined"
             @mouseup="selectText">
             <slot></slot>
             <m-dropdown-item v-if="!hasItems && !dirty && includeFilterableStatusItems"

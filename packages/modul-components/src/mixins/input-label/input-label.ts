@@ -1,8 +1,7 @@
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-
-
 @Component
 export class InputLabel extends ModulVue {
     @Prop()
@@ -11,7 +10,7 @@ export class InputLabel extends ModulVue {
     @Prop()
     public labelUp: boolean;
 
-    @Prop()
+    @Prop({ default: () => uuid.generate() })
     public labelId?: string;
 
     @Prop()
