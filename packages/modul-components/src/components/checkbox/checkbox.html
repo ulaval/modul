@@ -1,30 +1,42 @@
-<div class="m-checkbox"
-     :class="{ 'm--is-checkbox-left': hasCheckboxLeft,
-                'm--is-checkbox-right': !hasCheckboxLeft,
-                'm--is-checkbox-top': isAlignTop,
-                'm--is-checked': propValue,
-                'm--is-disabled': isDisabled,
-                'm--is-indeterminate': propIndeterminate,
-                'm--is-readonly': readonly,
-                'm--is-focus': isFocus,
-                'm--has-error': hasError,
-                'm--is-valid': isValid,
-                'm--has-validation-message': hasValidationMessage }">
-    <input v-if="!readonly"
-           :id="id"
-           class="m-checkbox__hidden"
-           :indeterminate.prop="propIndeterminate"
-           :disabled="isDisabled"
-           v-model="propValue"
-           @click="onClick"
-           @focus="setFocus(true)"
-           @blur="setFocus(false)"
-           ref="checkbox"
-           type="checkbox">
-    <input :id="id"
-           v-if="readonly"
-           :value="propValue"
-           type="hidden" />
+<div
+    class="m-checkbox"
+    :class="{
+        'm--is-checkbox-left': hasCheckboxLeft,
+        'm--is-checkbox-right': !hasCheckboxLeft,
+        'm--is-checkbox-top': isAlignTop,
+        'm--is-checked': propValue,
+        'm--is-disabled': isDisabled,
+        'm--is-indeterminate': propIndeterminate,
+        'm--is-readonly': readonly,
+        'm--is-focus': isFocus || focused,
+        'm--has-error': hasError,
+        'm--is-valid': isValid,
+        'm--has-validation-message': hasValidationMessage
+    }"
+>
+    <input
+        v-if="!readonly"
+        v-model="propValue"
+        ref="checkbox"
+        :id="id"
+        class="m-checkbox__hidden"
+        type="checkbox"
+        :indeterminate.prop="propIndeterminate"
+        :disabled="isDisabled"
+        :aria-invalid="hasError"
+        :aria-describedby="messageValidationId"
+        @click="onClick"
+        @focus="setFocus(true)"
+        @blur="setFocus(false)"
+    />
+    <input
+        v-else="readonly"
+        :id="id"
+        :value="propValue"
+        :aria-invalid="hasError"
+        :aria-describedby="messageValidationId"
+        type="hidden"
+    />
     <label class="m-checkbox__wrap"
            :for="id"
            :aria-label="ariaLabel">
@@ -34,14 +46,22 @@
         </span>
         <div v-if="$slots.default"
              class="m-checkbox__label">
-            <slot></slot>
+            <slot />
         </div>
     </label>
-    <m-validation-message class="m-checkbox__message"
-                          :disabled="isDisabled"
-                          :error="hasError"
-                          :error-message="errorMessage"
-                          :valid-message="validMessage"
-                          :helper-message="helperMessage"
-                          ref="validation"></m-validation-message>
+    <div
+        :id="messageValidationId"
+        class="m-checkbox__message"
+        aria-live="polite"
+    >
+        <m-validation-message
+            :disabled="isDisabled"
+            :error="hasError"
+            :error-message="errorMessage"
+            :valid-message="validMessage"
+            :helper-message="helperMessage"
+            ref="validation"
+        />
+    </div>
+
 </div>
