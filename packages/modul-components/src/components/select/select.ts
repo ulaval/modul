@@ -64,12 +64,13 @@ export class MSelect extends ModulVue {
     @Prop({ default: uuid.generate() })
     public inputAriaDescribedby: string;
 
+    @Prop({
+        default: () => `${SELECT_NAME}-${uuid.generate()}`
+    })
+    public readonly id: string;
+
     @Ref('input')
     public readonly refInput?: HTMLInputElement;
-
-    public readonly id: string = `${SELECT_NAME}-${uuid.generate()}`;
-    public readonly labelId: string = `label-${uuid.generate()}`;
-    public readonly listboxId: string = `listbox-${uuid.generate()}`;
 
     public open: boolean = false;
 

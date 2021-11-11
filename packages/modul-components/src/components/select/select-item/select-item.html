@@ -1,24 +1,48 @@
 <li :id="id"
     class="m-select-item"
-    :class="{ 'm--is-focus': isFocused,
-              'm--is-selected': selected && isItemActive,
-              'm--is-item-active': isItemActive,
-              'm--is-disabled': disabled,
-              'm--readonly': readonly,
-              'm--without-radio': hideRadioButtonMobile }"
+    :class="{
+        'm--is-focus': isFocused,
+        'm--is-selected': selected && isItemActive,
+        'm--is-item-active': isItemActive,
+        'm--is-disabled': disabled,
+        'm--readonly': readonly,
+        'm--without-radio': hideRadioButtonMobile
+    }"
     role="option"
     :aria-selected="selected && isItemActive"
     @click.prevent="onClick">
 
-    <slot v-if="isMqMinS || readonly || hideRadioButtonMobile"><span class="m-select-item__element-text">{{ label }}</span></slot>
+    <m-checkbox
+        v-if="multiselect && !hideRadioButtonMobile"
+        :value="selected"
+        :disabled="disabled"
+        position="right"
+        style="width: 100%"
+    >
+        <span class="m-select-item__element-text">
+            <slot>{{label}}</slot>
+        </span>
+    </m-checkbox>
 
-    <m-radio-style v-else
-                   :full-width="true"
-                   radio-position="right"
-                   :focus="isFocused"
-                   :checked="selected"
-                   :disabled="disabled"
-                   tabindex="0">
-        <slot><span class="m-select-item__element-text">{{ label }}</span></slot>
+    <span
+        v-else-if="isMqMinS || hideRadioButtonMobile"
+        class="m-select-item__element-text"
+    >
+        <slot>{{label}}</slot>
+    </span>
+
+    <m-radio-style
+        v-else-if="!multiselect"
+        :full-width="true"
+        radio-position="right"
+        :focus="isFocused"
+        :checked="selected"
+        :disabled="disabled"
+        tabindex="0"
+    >
+        <span class="m-select-item__element-text">
+            <slot>{{label}}</slot>
+        </span>
     </m-radio-style>
+
 </li>

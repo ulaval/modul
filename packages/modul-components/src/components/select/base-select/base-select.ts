@@ -45,6 +45,9 @@ export class MBaseSelect extends ModulVue {
     public readonly selectedItems: string[];
 
     @Prop()
+    public readonly multiselect: boolean;
+
+    @Prop()
     public readonly active: boolean;
 
     @Prop({ default: false })
@@ -138,6 +141,17 @@ export class MBaseSelect extends ModulVue {
     }
 
     public get ariaActivedescendantId(): string {
+        if (this.selectedItems && this.selectedItems.length > 0) {
+            let ids: string[] = [];
+            this.items.forEach((item, index) => {
+                if (this.selectedItems.some(i => {
+                    return this.itemsIsStringArray ? i === item : i === item.value
+                })) {
+                    ids.push(this.itemIds[index]);
+                }
+            })
+            return ids.join(' ');
+        }
         return this.focusedIndex >= 0 ? this.itemIds[this.focusedIndex] : '';
     }
 
@@ -152,6 +166,7 @@ export class MBaseSelect extends ModulVue {
             value: this.itemsIsStringArray ? item : (item as MBaseSelectItem<unknown>).value,
             focused: index === this.focusedIndex,
             selected: this.isSelected(item),
+            multiselect: this.multiselect,
             disabled: this.itemsIsStringArray ? undefined : (item as MBaseSelectItem<unknown>).disabled,
             hideRadioButtonMobile: this.hideRadioButtonMobile || this.itemsIsStringArray ? false : (item as MBaseSelectItem<unknown>).hideRadioButtonMobile,
         };
@@ -201,10 +216,9 @@ export class MBaseSelect extends ModulVue {
             && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
         ) {
             this.focusNextItem();
-
+        } else {
+            this.scrollToFocused();
         }
-
-        this.scrollToFocused();
     }
 
     public focusNextItem(): void {
@@ -222,6 +236,8 @@ export class MBaseSelect extends ModulVue {
                 }
             }
         }
+
+        this.scrollToFocused();
     }
 
     public focusPreviousItem(): void {
@@ -240,6 +256,7 @@ export class MBaseSelect extends ModulVue {
                 }
             }
         }
+        this.scrollToFocused();
     }
 
     public update(): void {
@@ -311,7 +328,6 @@ export class MBaseSelect extends ModulVue {
 
     public onKeydownUp($event: KeyboardEvent): void {
         this.focusPreviousItem();
-        this.scrollToFocused();
     }
 
     public onKeydownSpace($event: KeyboardEvent): void {
@@ -350,9 +366,9 @@ export class MBaseSelect extends ModulVue {
                 && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
             ) {
                 this.focusNextItem();
-
+            } else {
+                this.scrollToFocused();
             }
-            this.scrollToFocused();
         }
     }
 
@@ -366,8 +382,9 @@ export class MBaseSelect extends ModulVue {
                 && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
             ) {
                 this.focusPreviousItem();
+            } else {
+                this.scrollToFocused();
             }
-            this.scrollToFocused();
         }
     }
 
@@ -378,25 +395,25 @@ export class MBaseSelect extends ModulVue {
     }
 
     private findFirstItemWithLetter(key: string): void {
-        if (this.as<MediaQueriesMixin>().isMqMinS) {
-            const findItem = this.items.find(
-                (item: MBaseSelectItem<unknown> | string) => {
-                    if (
-                        this.itemsIsStringArray
-                    ) {
-                        return (item as string).startsWith(key)
-                    }
-                    return (item as MBaseSelectItem<unknown>).value.startsWith(key)
-                }
-            );
-            const index: number = findItem ? this.items.indexOf(
-                findItem
-            ) : -1;
-            if (index !== -1) {
-                this.focusedIndex = index;
-                this.scrollToFocused();
-            }
-        }
+        // if (this.as<MediaQueriesMixin>().isMqMinS) {
+        //     const findItem = this.items.find(
+        //         (item: MBaseSelectItem<unknown> | string) => {
+        //             if (
+        //                 this.itemsIsStringArray
+        //             ) {
+        //                 return (item as string).startsWith(key)
+        //             }
+        //             return (item as MBaseSelectItem<unknown>).value.startsWith(key)
+        //         }
+        //     );
+        //     const index: number = findItem ? this.items.indexOf(
+        //         findItem
+        //     ) : -1;
+        //     if (index !== -1) {
+        //         this.focusedIndex = index;
+        //         this.scrollToFocused();
+        //     }
+        // }
     }
 
     private scrollToFocused(): void {
