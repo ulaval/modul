@@ -110,17 +110,12 @@ $m-phonefiled--width-flag-dropdown: 88px;
         }
     }
 
-    &__example {
-        margin-top: $m-spacing--xs;
-        margin-left: calc(#{$m-phonefiled--width-flag-dropdown} + #{$m-input-style--padding} + #{$m-border-width--s});
-        color: $m-color--grey-dark;
-        font-size: $m-font-size--xs;
-    }
-
     &__validation {
         transition: margin-top $m-transition-duration ease;
         display: flex;
         justify-content: flex-end;
+        margin-top: $m-spacing--xs;
+        margin-left: calc(#{$m-phonefiled--width-flag-dropdown} + #{$m-input-style--padding});
     }
 
     &__validation-message {
