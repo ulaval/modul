@@ -14,7 +14,7 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
 import { MCalendarButton } from '../calendar/calendar-button/calendar-button';
-import { BUTTON_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, LINK_NAME, POPPER_NAME, POPUP_NAME, TIMEPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { BUTTON_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, LINK_NAME, POPUP_NAME, TIMEPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
@@ -67,15 +67,18 @@ function validateTimeString(value: string): boolean {
 
 })
 export class MTimepicker extends ModulVue {
-
     @Model('input')
     public value: string;
+
     @Prop({ default: '00:00' })
     public min: string;
+
     @Prop({ default: '23:59' })
     public max: string;
+
     @Prop({ default: 5 })
     public step: number;
+
     @Prop({ default: InputMaxWidth.Small })
     public maxWidth: string;
 
@@ -84,6 +87,11 @@ export class MTimepicker extends ModulVue {
 
     @Prop({ default: false })
     public skipInputValidation: boolean;
+
+    @Prop({ default: () => `mTimepicker-${uuid.generate()}` })
+    public readonly id: string;
+
+    public readonly messageValidationId: string = uuid.generate();
 
     public $refs: {
         input: MInputMask;
@@ -107,7 +115,6 @@ export class MTimepicker extends ModulVue {
 
     private internalOpen: boolean = false;
     private internalTimeErrorMessage: string = '';
-    private id: string = `mTimepicker-${uuid.generate()}`;
 
     private created(): void {
         this.internalTime = this.value;
@@ -393,10 +400,6 @@ export class MTimepicker extends ModulVue {
             time: true,
             timePattern: ['h', 'm']
         };
-    }
-
-    private get ariaControls(): string {
-        return this.id + '-controls';
     }
 }
 
