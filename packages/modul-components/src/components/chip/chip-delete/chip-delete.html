@@ -1,22 +1,32 @@
 <div class="m-chip-delete"
-     :class="{'m--is-disabled': disabled, 'm--is-small' : size === 'small', 'm--is-hover': iconHover}">
+     :class="{
+        'm--is-disabled': disabled,
+        'm--is-small' : size === 'small',
+        'm--is-hover': iconHover,
+        'm--is-focused': focused
+    }">
     <div class="m-chip-delete__body">
         <span :id="textId"
               class="m-chip-delete__text">
             <span class="m-chip-delete__hidden-text">{{ 'chip:delete' | f-m-i18n }}&nbsp;: </span>
             <slot></slot>
         </span>
-        <button class="m-chip-delete__button"
-                :aria-labelledby="textId"
-                :disabled="disabled"
-                @click.stop="onClick"
-                type="button">
-            <m-icon class="m-chip-delete__icon"
-                    :size="iconSize"
-                    name="m-svg__close-clear"
-                    @mouseover="onMouseOver"
-                    @mouseleave="onMouseLeave">
-            </m-icon>
+        <button
+            class="m-chip-delete__button"
+            type="button"
+            :aria-labelledby="textId"
+            :disabled="disabled"
+            @click.stop="onClick"
+            @focus="onFocus"
+            @blur="onBlur"
+            @mouseover="onMouseOver"
+            @mouseleave="onMouseLeave"
+        >
+            <m-icon
+                class="m-chip-delete__icon"
+                :size="iconSize"
+                name="m-svg__close-clear"
+            />
         </button>
     </div>
 </div>

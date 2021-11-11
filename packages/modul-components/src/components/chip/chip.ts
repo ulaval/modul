@@ -44,10 +44,10 @@ export class MChip extends Vue {
     size: MChipSize;
 
     @Emit('click')
-    public emitClick(): void { }
+    public emitClick(_event: MouseEvent): void { }
 
     @Emit('add')
-    public emitAdd(): void { }
+    public emitAdd(_event: MouseEvent): void { }
 
     @Emit('delete')
     public emitDelete(): void { }

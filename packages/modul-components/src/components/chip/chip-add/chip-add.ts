@@ -37,21 +37,21 @@ export default class MChipAdd extends Vue {
     size: MChipSize;
 
     @Emit('click')
-    public emitClick(): void { }
+    public emitClick(_event: MouseEvent): void { }
 
     @Emit('add')
-    public emitAdd(): void { }
+    public emitAdd(_event: MouseEvent): void { }
 
     public get iconSize(): string {
         return this.size === MChipSize.Small ? '13px' : '20px';
     }
 
-    public onClick(event: Event): void {
+    public onClick(event: MouseEvent): void {
         if (this.disabled) {
             return;
         }
-        this.emitClick();
-        this.emitAdd();
+        this.emitClick(event);
+        this.emitAdd(event);
         (this.$el as HTMLElement).blur();
     }
 }

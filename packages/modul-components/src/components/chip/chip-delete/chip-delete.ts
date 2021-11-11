@@ -35,24 +35,34 @@ export default class MChipDelete extends Vue {
     size: MChipSize;
 
     @Emit('click')
-    public emitClick(): void { }
+    public emitClick(_event: MouseEvent): void { }
 
     @Emit('delete')
-    public emitDelete(): void { }
+    public emitDelete(_event: MouseEvent): void { }
 
     public textId: string = `mChipDeleteText-${uuid.generate()}`;
     public iconHover: boolean = false;
+    public focused: boolean = false;
 
     public get iconSize(): string {
         return this.size === MChipSize.Small ? '8px' : '14px';
     }
 
-    public onClick(event: Event): void {
+    public onClick(event: MouseEvent): void {
         if (this.disabled) {
             return;
         }
-        this.emitClick();
-        this.emitDelete();
+        this.emitClick(event);
+        this.emitDelete(event);
+        (event.currentTarget as HTMLElement).blur();
+    }
+
+    public onFocus(): void {
+        this.focused = true;
+    }
+
+    public onBlur(): void {
+        this.focused = false;
     }
 
     public onMouseOver(event: Event): void {

@@ -7,6 +7,25 @@
     border: 1px solid $m-color--grey;
     background: $m-color--grey-lighter;
 
+    &:not(.m--is-disabled) {
+
+        &.m--is-hover,
+        &.m--is-focused {
+            color: $m-color--white;
+            background: $m-color--interactive-light;
+            border-color: $m-color--interactive-light;
+
+            .m-chip-delete__icon {
+                color: $m-color--white;
+            }
+
+        }
+
+        .m-chip-delete__button {
+            cursor: pointer;
+        }
+    }
+
     &.m--is-small {
         @include m-chip-small-style();
 
@@ -32,35 +51,6 @@
             top: 0;
             padding: 5px; // Magic number: perfect icon size
             transform: none;
-        }
-
-        &:not(.m--is-disabled) {
-            &.m--is-hover {
-                @include m-button--hover();
-
-                &:hover,
-                &:focus,
-                &:active {
-                    .m-chip-delete__icon {
-                        color: $m-color--white;
-                    }
-                }
-            }
-        }
-    }
-
-    &:not(.m--is-disabled) {
-        .m-chip-delete__button {
-            cursor: pointer;
-
-            &:hover,
-            &:focus {
-                color: $m-color--interactive-light;
-            }
-
-            &:active {
-                color: $m-color--interactive-dark;
-            }
         }
     }
 
@@ -90,13 +80,13 @@
         height: $m-chip-delete--button-width;
         padding: 0;
         margin: 0 $m-spacing--xs;
-        outline: none;
         appearance: none;
         border: none;
         font-size: 1em;
         font-family: $m-font-family;
         color: $m-color--interactive;
         background: none;
+        outline: none;
     }
 
     &__icon {
