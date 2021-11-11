@@ -13,7 +13,7 @@ import { ModulVue } from '../../utils/vue/vue';
 import { ICON_BUTTON_NAME, INPUT_STYLE_NAME, TYPEAHEAD_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MInputStyle } from '../input-style/input-style';
-import { MBaseSelect } from '../select/base-select/base-select';
+import { MBaseSelect, MBaseSelectItem } from '../select/base-select/base-select';
 import { MTextfield } from '../textfield/textfield';
 import { MValidationMessage } from '../validation-message/validation-message';
 import WithRender from './typeahead.html?style=./typeahead.scss';
@@ -45,7 +45,7 @@ export class MTypeahead extends ModulVue {
     public value: any;
 
     @Prop()
-    public results: any[];
+    public results: MBaseSelectItem<unknown>[] | string[];
 
     @Prop()
     public waitingResults: boolean;
@@ -71,8 +71,8 @@ export class MTypeahead extends ModulVue {
     @Prop({ default: 20 })
     public maxResults: number;
 
-    @Ref('input')
-    public readonly refInput?: HTMLInputElement;
+    @Prop({ default: () => `${TYPEAHEAD_NAME}-${uuid.generate()}` })
+    public id: string;
 
     @Ref('mBaseSelect')
     public readonly refBaseSelect: MBaseSelect;
@@ -80,46 +80,47 @@ export class MTypeahead extends ModulVue {
     @Ref('researchInput')
     public readonly refResearchInput: HTMLInputElement;
 
+    public readonly validationMessageId: string = uuid.generate();
+    public readonly inputLabelId: string = uuid.generate();
+
     public $refs: {
         mTextfield: MTextfield;
         result: HTMLUListElement;
         resultsList: HTMLElement;
     };
 
-    public id: string = `${TYPEAHEAD_NAME}-${uuid.generate()}`;
     public isResultsPopupOpen: boolean = false;
     public textfieldValue: string = '';
 
-    public filteredResults: string[] = [];
+    public filteredResults: MBaseSelectItem<unknown>[] | string[] = [];
     public throttleTimeoutActive: boolean = false;
     private throttleTimeout: number;
 
     @Emit('input')
-    emitInput(_event: string): void { }
+    public emitInput(_event: string): void { }
 
     @Emit('filter-results')
-    emitFilterResults(): void { }
+    public emitFilterResults(): void { }
 
     @Watch('value', { immediate: true })
-    onValueChange(newValue: string): void {
+    public onValueChange(newValue: string): void {
         this.textfieldValue = newValue;
     }
 
     @Watch('results', { immediate: true })
-    onResultsChange(): void {
+    public onResultsChange(): void {
         this.onFilterResults();
     }
 
     @Watch('internalIsFocus')
-    onFocusChanged(newValue: boolean): void {
+    public onFocusChanged(newValue: boolean): void {
         if (newValue) {
-            this.openResultsPopup();
             this.onFilterResults();
         }
     }
 
     @Watch('isResultsPopupOpen')
-    onBaseSelectOpen(newValue: boolean): void {
+    public onBaseSelectOpen(newValue: boolean): void {
         if (newValue && this.as<MediaQueries>().isMqMaxS) {
             setTimeout(() => {
                 this.refResearchInput.focus();
@@ -128,31 +129,50 @@ export class MTypeahead extends ModulVue {
     }
 
 
-    get hasResults(): boolean {
+    public get hasResults(): boolean {
         return this.results && this.results.length > 0;
     }
 
-    get hasFilteredResults(): boolean {
+    public get hasFilteredResults(): boolean {
         return this.filteredResults && this.filteredResults.length > 0;
     }
 
-    get hasTextfieldValue(): boolean {
+    public get hasTextfieldValue(): boolean {
         return this.textfieldValue.length > 0;
     }
 
-    get resultsCouldBeDisplay(): boolean {
+    public get resultsCouldBeDisplay(): boolean {
         return this.hasFilteredResults && this.hasTextfieldValue && this.as<InputState>().active;
     }
 
-    get hasSomeAResultSelected(): boolean {
+    public get hasSomeAResultSelected(): boolean {
         return this.filteredResults.some((e, index) => this.isSelected(index));
     }
 
-    get sortedResult(): any[] {
-        return this.results.sort();
+    public get sortedResult(): MBaseSelectItem<unknown>[] | string[] {
+        if (this.resultsAreStringArray) {
+            return (this.results as string[]).sort((a, b) => a.localeCompare(b))
+        }
+        return (this.results as MBaseSelectItem<unknown>[]).sort(
+            (a, b) => a.value.localeCompare(b.value)
+        );
     }
 
-    openResultsPopup(): void {
+    public get resultsAreStringArray(): boolean {
+        if (this.results.length === 0) return false;
+        return typeof this.results[0] === 'string';
+    }
+
+    public onPortalAfterClose(): void {
+        const refInput = (this.$el as HTMLElement).querySelector(`#${this.id}`) as HTMLInputElement;
+        if (
+            refInput && document.activeElement !== refInput
+        ) {
+            refInput.focus();
+        }
+    }
+
+    public openResultsPopup(): void {
         if (this.isResultsPopupOpen) {
             return;
         }
@@ -160,42 +180,62 @@ export class MTypeahead extends ModulVue {
         this.isResultsPopupOpen = true;
     }
 
-    closeResultsPopup(): void {
+    public closeResultsPopup(): void {
         this.isResultsPopupOpen = false;
     }
 
-    onSelect(option: any, index: number): void {
-        this.textfieldValue = this.filteredResults[index];
+    public onSelect(_option: any, index: number): void {
+        if (this.resultsAreStringArray) {
+            this.textfieldValue = (this.filteredResults as string[])[index];
+        } else {
+            this.textfieldValue = (this.filteredResults as MBaseSelectItem<unknown>[])[index].value;
+        }
         this.emitInput(this.textfieldValue);
     }
 
-    isSelected(index: number): boolean {
-        return this.isResultsPopupOpen && this.textfieldValue.indexOf(this.filteredResults[index]) > -1;
+    public isSelected(index: number): boolean {
+        return this.isResultsPopupOpen && this.textfieldValue.indexOf(
+            this.resultsAreStringArray ?
+                (this.filteredResults as string[])[index] :
+                (this.filteredResults as MBaseSelectItem<unknown>[])[index].value
+        ) > -1;
     }
 
-    focusOnResearchInput(): void {
+    public focusOnResearchInput(): void {
         this.refResearchInput.focus();
     }
 
-    onFilterResults(): void {
+    public onFilterResults(): void {
+        let filteredResults: MBaseSelectItem<unknown>[] | string[] = [];
         if (this.filterResultsManually) {
-            this.filteredResults = this.results.slice(0, this.maxResults);
+            filteredResults = this.results;
         } else {
-            this.filteredResults = this.sortedResult
-                .filter(r =>
-                    this.hasTextfieldValue
-                    &&
-                    r.toLowerCase().includes(this.textfieldValue.toLowerCase())
-                ).slice(0, this.maxResults);
+            if (this.resultsAreStringArray) {
+                filteredResults = (this.sortedResult as string[])
+                    .filter(r =>
+                        this.hasTextfieldValue
+                        && r.toLowerCase().includes(this.textfieldValue.toLowerCase())
+                    )
+            } else {
+                filteredResults = (this.sortedResult as MBaseSelectItem<unknown>[])
+                    .filter(r =>
+                        this.hasTextfieldValue
+                        && r.value.toLowerCase().includes(this.textfieldValue.toLowerCase())
+                    )
+            }
         }
+        this.filteredResults = filteredResults.slice(0, this.maxResults);
     }
 
-    getTextHighlight(item): string {
-        let regex: RegExp = RegExp(this.textfieldValue, 'i');
-        return item.replace(regex, '<b>$&</b>');
+    public getTextHighlight(item: MBaseSelectItem<unknown> | string): string {
+        const regex: RegExp = RegExp(this.textfieldValue, 'i');
+        if (this.resultsAreStringArray) {
+            return (item as string).replace(regex, '<b>$&</b>');
+        }
+        return (item as MBaseSelectItem<unknown>).value.replace(regex, '<b>$&</b>');
     }
 
-    onInput(event: string): void {
+    public onInput(event: string): void {
         this.textfieldValue = event;
         this.emitInput(event);
 
@@ -221,32 +261,32 @@ export class MTypeahead extends ModulVue {
 
     }
 
-    onKeydownEnter($event: KeyboardEvent): void {
+    public onKeydownEnter($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay && this.as<MediaQueries>().isMqMinS) {
             this.refBaseSelect.selectFocusedItem($event);
         }
         this.refBaseSelect.closePopup();
     }
 
-    onKeydownDown($event: KeyboardEvent): void {
+    public onKeydownDown($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
             this.refBaseSelect.onKeydownDown($event);
         }
     }
 
-    onKeydownUp($event: KeyboardEvent): void {
+    public onKeydownUp($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
             this.refBaseSelect.onKeydownUp($event);
         }
     }
 
-    onKeydownTab($event: KeyboardEvent): void {
+    public onKeydownTab($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
             this.refBaseSelect.onKeydownTab($event);
         }
     }
 
-    onKeydownEsc($event: KeyboardEvent): void {
+    public onKeydownEsc($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
             this.refBaseSelect.onKeydownEsc($event);
         }
