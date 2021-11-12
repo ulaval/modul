@@ -68,6 +68,10 @@
         font-size: 12px;
     }
 
+    &__visually-hidden {
+        @include m-visually-hidden();
+    }
+
     /deep/ .m-input-style__body {
         padding-top: 10px; // Magic number pour avoir la même hauteur que le m-select
         padding-bottom: 9px; // Magic number pour avoir la même hauteur que le m-select

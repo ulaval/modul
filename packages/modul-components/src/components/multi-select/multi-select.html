@@ -13,6 +13,8 @@
     :max-width="maxWidth"
     :multiselect="true"
     :listbox-aria-labelledby="label ? labelId : undefined"
+    @open="emitOpen"
+    @close="emitClose"
     @select-item="onSelect"
     @click-on-item="onClickOnItem"
     @portal-after-close="onPortalAfterClose"
@@ -44,13 +46,14 @@
             <div
                 ref="input"
                 class="m-multi-select__chips"
-                role="textbox"
-                contenteditable="false"
+                role="button"
                 tabindex="0"
+                aria-haspopup="listbox"
                 :aria-controls="scope.ariaControls"
                 :aria-labelledby="label ? labelId : undefined"
-                :aria-describedby="inputAriaDescribedby"
+                :aria-describedby="`${inputAriaDescribedby} ${selectedValueId}`"
                 :aria-activedescendant="scope.ariaActivedescendant"
+                :aria-required="required || requiredMarker"
                 @focus="onFocus"
                 @blur="onBlur"
                 @keydown.up.prevent="onKeydownUp"
@@ -125,6 +128,10 @@
                         </slot>
                     </m-chip-delete>
                 </template>
+                <div :id="selectedValueId" class="m-multi-select__visually-hidden" aria-hidden="true">
+                    {{ $i18n.translate('m-multi-select:selected-items') }}: {{ internalValue.join(', ') }}
+                </div>
+
             </div>
             <div
                 v-if="active"
@@ -150,7 +157,6 @@
     <div
         :id="inputAriaDescribedby"
         slot="validation-message"
-        aria-live="polite"
     >
         <m-validation-message
             class="m-multi-select__validation-message"

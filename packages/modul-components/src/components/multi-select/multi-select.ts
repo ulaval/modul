@@ -73,6 +73,7 @@ export class MMultiSelect extends ModulVue {
     public readonly id: string;
 
     public readonly inputAriaDescribedby: string = uuid.generate();
+    public readonly selectedValueId: string = uuid.generate();
     public internalValue: any[] = [];
     public internalIsFocus: boolean = false;
     public selectAllFocused: boolean = false;
@@ -157,6 +158,15 @@ export class MMultiSelect extends ModulVue {
             this.focusOnInput();
         }
     }
+
+    @Emit('open')
+    public async emitOpen(): Promise<void> {
+        await this.$nextTick();
+        this.refBaseSelect.focusFirstSelected();
+    }
+
+    @Emit('close')
+    public emitClose(): void { }
 
     @Emit('select-item')
     public onSelect(option: any, index: number, $event: Event): void {
