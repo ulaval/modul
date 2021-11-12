@@ -2,6 +2,7 @@
     <m-accordion-transition :disabled="!transition">
         <div v-if="hasCounter"
              class="m-character-count__wrap"
-             aria-hidden="true"><span>{{ valueLength }}</span>/{{ maxLength }}</div>
+             aria-hidden="true"
+             aria-live="polite"><span>{{ valueLength }}</span>/{{ maxLength }}</div>
     </m-accordion-transition>
 </div>

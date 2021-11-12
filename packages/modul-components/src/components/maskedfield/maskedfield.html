@@ -25,6 +25,7 @@
         :empty="isEmpty"
         :readonly="isReadonly"
         :required-marker="requiredMarker"
+        :required="required || requiredMarker"
         :tag-style="tagStyle"
     >
         <slot name="prefix" slot="prefix" />
@@ -52,7 +53,6 @@
     <div
         :id="messageValidationId"
         class="m-maskedfield__validation"
-        aria-live="polite"
     >
         <m-validation-message
             class="m-maskedfield__validation-message"

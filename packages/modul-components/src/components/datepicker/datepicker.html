@@ -30,6 +30,7 @@
             :id="id"
             :aria-haspopup="true"
             :aria-expanded="open"
+            :required="required || requiredMarker"
             :disabled="isDisabled || isWaiting"
             :readonly="isReadonly || isLessThanTablet"
             :options="inputOptions"
@@ -61,7 +62,6 @@
     <div
         :id="messageValidationId"
         class="m-datepicker__validation"
-        aria-live="polite"
     >
         <m-validation-message
             class="m-datepicker__validation__message"

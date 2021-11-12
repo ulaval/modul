@@ -38,6 +38,7 @@
             :readonly="isReadonly"
             :aria-invalid="hasSearchfieldError"
             :aria-describedby="messageValidationId"
+            :required="required || requiredMarker"
             @focus="onFocus"
             @blur="onBlur"
             @change="onChange"
@@ -72,19 +73,16 @@
             </button>
         </template>
     </m-input-style>
-    <div
+
+    <m-validation-message
         id="messageValidationId"
         class="m-searchfield__validation"
-        aria-live="polite"
-    >
-        <m-validation-message
-            :disabled="isDisabled"
-            :waiting="isWaiting"
-            :error="hasSearchfieldError"
-            :error-message="errorMessage"
-            :valid="isSearchfieldValid"
-            :valid-message="validMessage"
-            :helper-message="helperMessage"
-        />
-    </div>
+        :disabled="isDisabled"
+        :waiting="isWaiting"
+        :error="hasSearchfieldError"
+        :error-message="errorMessage"
+        :valid="isSearchfieldValid"
+        :valid-message="validMessage"
+        :helper-message="helperMessage"
+    />
 </div>

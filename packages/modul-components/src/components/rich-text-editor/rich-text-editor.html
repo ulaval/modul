@@ -34,6 +34,7 @@
             ref="input"
             :readonly="readonly"
             :min-rows="minRows"
+            :required="required || requiredMarker"
             @input="refreshModel"
             @focus="onFocus"
             @blur="onBlur"
@@ -49,19 +50,14 @@
         />
     </m-input-style>
 
-    <div
+    <m-validation-message
         class="m-rich-text__validation-message"
-        aria-live="polite"
-    >
-        <m-validation-message
-            :disabled="isDisabled"
-            :waiting="isWaiting"
-            :error="hasError"
-            :error-message="errorMessage"
-            :valid="isValid"
-            :valid-message="validMessage"
-            :helper-message="helperMessage"
-        />
-    </div>
-
+        :disabled="isDisabled"
+        :waiting="isWaiting"
+        :error="hasError"
+        :error-message="errorMessage"
+        :valid="isValid"
+        :valid-message="validMessage"
+        :helper-message="helperMessage"
+    />
 </div>

@@ -40,6 +40,7 @@
             :options="inputMaskOptions"
             :aria-invalid="hasDecimalfieldError"
             :aria-describedby="messageValidationId"
+            :required="required || requiredMarker"
             @focus="onFocus"
             @blur="onBlur"
             @keyup="onKeyup"
@@ -50,7 +51,6 @@
     <div
         :id="messageValidationId"
         class="m-integerfield__validation"
-        aria-live="polite"
     >
         <m-validation-message
             class="m-integerfield__validation__message"

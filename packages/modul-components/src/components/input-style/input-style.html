@@ -25,8 +25,13 @@
                    :style="{ marginRight: suffixOffset }"
                    :for="labelFor">
                 <span class="m-input-style__text">
-                    <span>{{ label }}</span>&nbsp;<sup v-if="requiredMarker"
-                         class="m-input-style__required-marker">*</sup>
+                    <span>{{ label }}</span>&nbsp;<sup
+                        v-if="requiredMarker"
+                        class="m-input-style__required-marker"
+                        aria-hidden="true"
+                    >
+                        *
+                    </sup>
                 </span>
             </label>
 
