@@ -38,6 +38,7 @@
             :raw="false"
             :aria-invalid="timeError"
             :aria-describedby="messageValidationId"
+            :required="required || requiredMarker"
             @blur="onBlur"
             @focus="onFocus"
         />
@@ -51,20 +52,18 @@
             :title="!open ? $i18n.translate('m-timepicker:open') : $i18n.translate('m-timepicker:close')"
         />
     </m-input-style>
-    <div
+
+    <m-validation-message
         :id="messageValidationId"
         class="m-timepicker__validation-message"
-        aria-live="polite"
-    >
-        <m-validation-message
-            :disabled="isDisabled"
-            :waiting="isWaiting"
-            :error="timeError"
-            :error-message="timeErrorMessage"
-            :valid-message="validMessage"
-            :helper-message="helperMessage"
-        />
-    </div>
+        :disabled="isDisabled"
+        :waiting="isWaiting"
+        :error="timeError"
+        :error-message="timeErrorMessage"
+        :valid-message="validMessage"
+        :helper-message="helperMessage"
+    />
+
     <m-popup ref="popup"
              :open.sync="open"
              :disabled="!active"

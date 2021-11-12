@@ -40,6 +40,8 @@
                :aria-activedescendant="inputAriaActivedescendant"
                :aria-autocomplete="inputAriaAutocomplete"
                :aria-controls="inputAriaControls"
+               :required="required || requiredMarker"
+               :aria-required="required || requiredMarker"
                @blur="onBlur"
                @change="onChange"
                @focus="onFocus"
@@ -84,6 +86,8 @@
             :aria-activedescendant="inputAriaActivedescendant"
             :aria-autocomplete="inputAriaAutocomplete"
             :aria-controls="inputAriaControls"
+            :required="required || requiredMarker"
+            :aria-required="required || requiredMarker"
             rows="1"
             @focus="onFocus"
             @blur="onBlur"
@@ -97,7 +101,6 @@
     <div
         :id="inputAriaDescribedby"
         class="m-textfield__validation"
-        aria-live="polite"
     >
         <m-validation-message
             class="m-textfield__validation__message"

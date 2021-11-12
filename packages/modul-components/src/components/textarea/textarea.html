@@ -41,6 +41,8 @@
             :aria-activedescendant="inputAriaActivedescendant"
             :aria-autocomplete="inputAriaAutocomplete"
             :aria-controls="inputAriaControls"
+            :required="required || requiredMarker"
+            :aria-required="required || requiredMarker"
             @focus="onFocus"
             @blur="onBlur"
             @change="onChange"
@@ -52,7 +54,6 @@
     <div
         :id="inputAriaDescribedby"
         class="m-textarea__validation"
-        aria-live="polite"
     >
         <m-validation-message
             class="m-textarea__validation__message"

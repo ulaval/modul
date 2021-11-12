@@ -2,7 +2,8 @@
      @click="onClick">
     <m-accordion-transition :disabled="!transition">
         <p :class="['m-validation-message__' + classMessage]"
-           v-if="message">
+           v-if="message"
+           aria-live="polite">
             <m-icon class="m-validation-message__icon"
                     :name="iconName"
                     :svg-title="svgTitle"
