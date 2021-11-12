@@ -100,10 +100,7 @@ export class MBaseSelect extends ModulVue {
     public emitClickOnItem(_event: MouseEvent): void { }
 
     @Emit('open')
-    public async emitOpen(): Promise<void> {
-        await this.$nextTick();
-        this.focusFirstSelected();
-    }
+    public async emitOpen(): Promise<void> { }
 
     @Emit('close')
     public emitClose(): void {
@@ -147,25 +144,19 @@ export class MBaseSelect extends ModulVue {
         if (this.focusedIndex < 0) {
             return ''
         }
-
-        if (this.selectedItems && this.selectedItems.length > 0) {
-            let ids: string[] = [];
-            this.items.forEach((item, index) => {
-                if (this.selectedItems.some(i => {
-                    return this.itemsAreStringArray ? i === item : i === item.value
-                }) || index === this.focusedIndex) {
-                    ids.push(this.itemIds[index]);
-                }
-            })
-            this.itemIds[this.focusedIndex];
-            return ids.join(' ');
-        }
         return this.itemIds[this.focusedIndex];
     }
 
     public get itemsAreStringArray(): boolean {
         if (this.items.length === 0) return false;
         return typeof this.items[0] === 'string';
+    }
+
+    public get focusValue(): string {
+        if (this.focusedIndex < 0) return '';
+        return this.itemsAreStringArray
+            ? (this.items as string[])[this.focusedIndex]
+            : (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].value;
     }
 
     public getItemProps(item: MBaseSelectItem<unknown> | string, index: number): any {
@@ -184,7 +175,7 @@ export class MBaseSelect extends ModulVue {
         return {
             click: (event: MouseEvent): void => {
                 this.emitSelectItem(item, index, event);
-                this.emitClickOnItem(event: MouseEvent);
+                this.emitClickOnItem(event);
                 if (!this.multiselect) {
                     this.closePopup();
                 }
@@ -334,14 +325,13 @@ export class MBaseSelect extends ModulVue {
     public onKeydownDown($event: KeyboardEvent): void {
         if (!this.popupOpen) {
             this.togglePopup();
+        } else {
+            this.focusNextItem();
+            this.scrollToFocused();
+            if (!this.multiselect) {
+                this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
+            }
         }
-
-        this.focusNextItem();
-        this.scrollToFocused();
-        if (!this.multiselect) {
-            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
-        }
-
     }
 
     public onKeydownUp($event: KeyboardEvent): void {

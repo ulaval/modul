@@ -47,7 +47,6 @@
         @close="emitClose"
         @portal-after-close="emitPortalAfterClose"
     >
-
         <slot
             name="popup-header"
             slot="header"
@@ -67,7 +66,9 @@
             :id="listboxId"
             class="m-base-select__list"
             :class="{ 'm--is-virutalScroll': virtualScroll }"
-            :style="{ minWidth: inputMaxWidth, maxHeight: listMaxHeightProps }"
+            :style="{
+                maxHeight: isMqMinS ? listMaxHeightProps : undefined
+            }"
             ref="items"
             role="listbox"
             :aria-labelledby="listboxAriaLabelledby"

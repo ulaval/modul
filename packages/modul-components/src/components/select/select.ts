@@ -72,10 +72,16 @@ export class MSelect extends ModulVue {
     @Ref('input')
     public readonly refInput?: HTMLInputElement;
 
+    @Ref('baseSelect')
+    public readonly refBaseSelect: MBaseSelect;
+
     public open: boolean = false;
 
     @Emit('open')
-    public onOpen(): void { }
+    public async onOpen(): Promise<void> {
+        await this.$nextTick();
+        this.refBaseSelect.focusFirstSelected();
+    }
 
     @Emit('close')
     public onClose(): void { }
@@ -141,7 +147,8 @@ export class MSelect extends ModulVue {
 
     public onSelect(option: MBaseSelectItem<unknown> | string, index: number, $event: Event): void {
         this.emitSelectItem(option, index, $event);
-        this.as<InputManagement>().model = this.optionsAreStringArray ? this.options[index] : this.options[index].value;
+        console.warn('aaa');
+        this.as<InputManagement>().model = this.refBaseSelect.focusValue;
     }
 
     public onReset(): void {

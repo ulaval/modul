@@ -1,4 +1,5 @@
 <m-base-select
+    ref="baseSelect"
     :active="active"
     :items="options"
     :selected-items="selectedItems"
@@ -19,16 +20,16 @@
             class="m-select"
             :class="{
                 'm--is-open': open,
-                'm--is-disabled': isDisabled,
-                'm--is-readonly': isReadonly,
+                'm--is-disabled': disabled,
+                'm--is-readonly': readonly,
                 'm--is-waiting': isWaiting
             }"
             :style="{ width: width, maxWidth: maxWidth }"
             :label="label"
             :label-id="labelId"
             :label-for="id"
-            :disabled="isDisabled"
-            :readonly="isReadonly"
+            :disabled="disabled"
+            :readonly="readonly"
             :waiting="isWaiting"
             :focus="internalIsFocus"
             :label-up="internalLabelUp"
@@ -57,16 +58,21 @@
                 :focus="onFocus"
                 :blur="onBlur"
             >
-                <input
-                    v-model="internalValue"
+                <div
+                    class="m-select__input"
                     ref="input"
                     :id="id"
+                    :role="button"
+                    :tabindex="disabled ? '-1' : '0'"
                     :placeholder="internalPlaceholder"
-                    :readonly="true"
                     :aria-invalid="hasError"
-                    :aria-controls="scope.ariaControls"
                     :aria-activedescendant="scope.ariaActivedescendant"
+                    aria-haspopup="listbox"
+                    :aria-labelledby="`${labelId} ${id}`"
                     :aria-describedby="inputAriaDescribedby"
+                    :aria-disabled="disabled"
+                    :aria-readonly="readonly"
+                    :aria-required="required || requiredMarker"
                     @focus="onFocus"
                     @blur="onBlur"
                     @keydown.up.prevent="scope.keyUp"
@@ -80,7 +86,9 @@
                     @keydown.home.prevent="scope.keyHome"
                     @keydown.end.prevent="scope.keyEnd"
                     @keydown="scope.keyLetter"
-                />
+                >
+                    {{ internalValue }}
+                </div>
             </slot>
             <template #append>
                 <m-opacity-transition>
@@ -116,7 +124,6 @@
             :id="inputAriaDescribedby"
             class="m-select__validation-message"
             :class="{ 'm--has-validation-message': hasValidationMessage }"
-            aria-live="polite"
             :disabled="isDisabled"
             :waiting="isWaiting"
             :error="hasError"
