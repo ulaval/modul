@@ -111,7 +111,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     };
 
     public readonly listboxId: string = `listboxId-${uuid.generate()}`;
-    public readonly labelId: string = `label-${uuid.generate()}`
 
     private internalFilter: string = '';
     private internalFilterRegExp: RegExp = / /;
