@@ -49,10 +49,10 @@
         <m-icon-button
             class="m-datepicker__icon"
             slot="suffix"
-            :aria-controls="id"
             button-size="22px"
             :disabled="!active"
             tabindex="-1"
+            :aria-hidden="true"
             icon-name="m-svg__calendar"
             :title="!open ? $i18n.translate('m-datepicker:open') : $i18n.translate('m-datepicker:close')"
             @click="togglePopup($event)"

@@ -25,7 +25,6 @@
             v-model="currentTime"
             ref="input"
             :id="id"
-            aria-haspopup="true"
             :disabled="isDisabled || isWaiting"
             inputmode="decimal"
             :options="inputMaskOptions"
@@ -49,6 +48,7 @@
             :disabled="!active"
             button-size="22px"
             tabindex="-1"
+            aria-hidden="true"
             :title="!open ? $i18n.translate('m-timepicker:open') : $i18n.translate('m-timepicker:close')"
         />
     </m-input-style>
@@ -68,7 +68,6 @@
              :open.sync="open"
              :disabled="!active"
              :padding="false"
-             :focus-management="isMqMaxS"
              @open="onPopupOpen"
              @close="onClose">
         <div slot="header"
@@ -80,10 +79,8 @@
         </div>
         <div
             class="m-timepicker__body"
-            :aria-labelledby="id"
         >
             <ul class="m-timepicker__hours"
-                :aria-activedescendant="currentHour"
                 ref="hours"
                 role="listbox"
                 @mousedown="onMousedown"
@@ -105,7 +102,6 @@
             </ul>
             <ul
                 class="m-timepicker__minutes"
-                :aria-activedescendant="currentMinute"
                 ref="minutes"
                 @mousedown="onMousedown"
                 @mouseup="onMouseup"
