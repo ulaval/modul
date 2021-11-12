@@ -49,19 +49,15 @@
             <slot />
         </div>
     </label>
-    <div
+
+    <m-validation-message
         :id="messageValidationId"
         class="m-checkbox__message"
-        aria-live="polite"
-    >
-        <m-validation-message
-            :disabled="isDisabled"
-            :error="hasError"
-            :error-message="errorMessage"
-            :valid-message="validMessage"
-            :helper-message="helperMessage"
-            ref="validation"
-        />
-    </div>
-
+        :disabled="isDisabled"
+        :error="hasError"
+        :error-message="errorMessage"
+        :valid-message="validMessage"
+        :helper-message="helperMessage"
+        ref="validation"
+    />
 </div>
