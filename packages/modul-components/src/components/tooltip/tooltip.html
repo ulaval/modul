@@ -9,38 +9,34 @@
          :background="false"
          :placement="placement"
          :disabled="disabled"
+         :preload="true"
+         :lazy="false"
          @open="onOpen"
          @close="onClose">
-    <m-icon-button :id="id"
-                   class="m-tooltip__icon"
-                   v-if="isModeIcon"
-                   :aria-controls="ariaControls"
-                   :aria-expanded="propOpen"
+    <m-icon-button v-if="isModeIcon"
                    slot="trigger"
+                   class="m-tooltip__icon"
+                   :aria-describedby="tooltipId"
                    :icon-name="iconName"
                    :title="title"
                    button-size="22px"
                    :disabled="disabled">
     </m-icon-button>
-    <m-link :id="id"
+
+    <m-link v-else
             class="m-tooltip__link"
-            v-else
-            @click="onClick"
-            aria-haspopup="true"
-            :aria-controls="ariaControls"
-            :aria-expanded="propOpen"
             slot="trigger"
+            :aria-describedby="tooltipId"
             mode="button"
             :underline="isModeLink"
-            :disabled="disabled">
+            :disabled="disabled"
+            @click="onClick">
         <slot name="link"></slot>
     </m-link>
-    <div :id="ariaControls"
-         class="m-tooltip__body-container"
+    <div class="m-tooltip__body-container"
          :class="{ 'm--is-mode-icon': isModeIcon,
                    'm--is-size-large': isSizeLarge,
-                   'm--has-close-button': hasCloseButton }"
-         :aria-labelledby="id">
+                   'm--has-close-button': hasCloseButton }">
         <m-icon-button class="m-tooltip__close-button"
                        v-if="hasCloseButton"
                        @click="close"
@@ -48,7 +44,7 @@
                        icon-size="14px"
                        :svg-tile="CloseTitle">
         </m-icon-button>
-        <div class="m-tooltip__body">
+        <div :id="tooltipId" class="m-tooltip__body" role="tooltip" >
             <slot></slot>
         </div>
     </div>

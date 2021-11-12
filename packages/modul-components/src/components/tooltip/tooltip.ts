@@ -81,8 +81,7 @@ export class MTooltip extends ModulVue {
     @Prop({ default: 'm-svg__information' })
     public iconName: string;
 
-    public id: string = `mTooltip-${uuid.generate()}`;
-    public ariaControls: string = this.id + '-controls';
+    public tooltipId: string = `mTooltip-${uuid.generate()}`;
 
     private propOpen: boolean = false;
 
