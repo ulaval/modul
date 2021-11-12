@@ -1,4 +1,5 @@
 <m-popper v-if="!isSidebarUsed"
+          ref="popper"
           :id="id"
           class="m-popup"
           :class="{ 'm--is-inline': $slots.trigger }"
@@ -31,8 +32,7 @@
           @close="emitClose"
           @portal-mounted="emitPortalMounted"
           @portal-after-open="emitPortalAfterOpen"
-          @portal-after-close="emitPortalAfterClose"
-          ref="popper">
+          @portal-after-close="emitPortalAfterClose">
     <div v-if="$slots.trigger"
          slot="trigger">
         <slot name="trigger" />
@@ -44,6 +44,7 @@
           slot="footer" />
 </m-popper>
 <m-sidebar v-else-if="isSidebarUsed"
+           ref="sidebar"
            :id="id"
            class="m-popup"
            :class="{ 'm--is-inline': $slots.trigger }"
@@ -71,7 +72,7 @@
         <slot name="trigger" />
     </div>
     <slot name="header"
-          slot="header"></slot>
+          slot="header" />
     <slot />
     <slot name="footer"
           slot="footer" />

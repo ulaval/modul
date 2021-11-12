@@ -5,7 +5,6 @@ import { Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
-import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { POPPER_NAME } from '../component-names';
 import WithRender from './popper.html?style=./popper.scss';
@@ -93,11 +92,6 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
 
     @Prop()
     public readonly boundariesElement: string;
-
-    @Prop({
-        default: () => uuid.generate();
-    })
-    public readonly id?: string;
 
     public $refs: {
         popper: HTMLElement;
