@@ -16,6 +16,7 @@
     :enable-animation="false"
     :listbox-aria-labelledby="label ? labelId : undefined"
     @select-item="onSelect"
+    @open="onOpen"
     @portal-after-close="onPortalAfterClose"
 >
     <template #default="scope">
@@ -24,7 +25,7 @@
             ref="mTextfield"
             :value="textfieldValue"
             :label="label"
-            :label-d="labelId"
+            :label-id="labelId"
             :placeholder="placeholder"
             :disabled="isDisabled"
             :waiting="isWaiting"
@@ -41,6 +42,7 @@
             :max-width="inputMaxWidth"
             :input-aria-activedescendant="scope.ariaActivedescendant"
             input-aria-autocomplete="list"
+            :required="required || requiredMarker"
             :input-aria-controls="scope.ariaControls"
             :input-aria-describedby="validationMessageId"
             @input="onInput"
@@ -50,8 +52,8 @@
             @keydown.return.prevent="onKeydownEnter"
             @keydown.esc="onKeydownEsc"
             @keydown.tab="onKeydownTab"
-            @keydown.home.prevent="scope.keyHome"
-            @keydown.end.prevent="scope.keyEnd"
+            @keydown.home.prevent="onKeydownHome"
+            @keydown.end.prevent="onKeydownEnd"
             @keydown="onKeydown"
             @keyup="onKeyup"
             @focus="onFocus"
@@ -69,7 +71,6 @@
             id="validationMessageId"
             class="m-typeahead__validation-message"
             :class="{ 'm--has-validation-message': hasValidationMessage }"
-            aria-live="polite"
             :disabled="isDisabled"
             :waiting="isWaiting"
             :error="hasError"
@@ -86,8 +87,8 @@
     >
         <h2
             v-if="label"
-            class="m-typeahead__label-popup"
             :id="inputLabelId"
+            class="m-typeahead__label-popup"
         >
             {{ label }}
         </h2>
@@ -107,8 +108,8 @@
                 @keydown.down.prevent="onKeydownDown"
                 @keydown.enter.prevent="onKeydownEnter"
                 @keydown.return.prevent="onKeydownEnter"
-                @keydown.home.prevent="scope.keyHome"
-                @keydown.end.prevent="scope.keyEnd"
+                @keydown.home.prevent="onKeydownHome"
+                @keydown.end.prevent="onKeydownEnd"
                 @keydown.esc="onKeydownEsc"
                 @keydown.tab="onKeydownTab"
             />

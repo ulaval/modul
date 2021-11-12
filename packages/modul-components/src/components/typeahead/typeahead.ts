@@ -95,6 +95,7 @@ export class MTypeahead extends ModulVue {
     public filteredResults: MBaseSelectItem<unknown>[] | string[] = [];
     public throttleTimeoutActive: boolean = false;
     private throttleTimeout: number;
+    private firstSelection: boolean = true;
 
     @Emit('input')
     public emitInput(_event: string): void { }
@@ -161,6 +162,10 @@ export class MTypeahead extends ModulVue {
     public get resultsAreStringArray(): boolean {
         if (this.results.length === 0) return false;
         return typeof this.results[0] === 'string';
+    }
+
+    public onOpen(): void {
+        this.firstSelection = true;
     }
 
     public onPortalAfterClose(): void {
@@ -247,18 +252,12 @@ export class MTypeahead extends ModulVue {
 
             this.onFilterResults();
 
-            if (this.resultsCouldBeDisplay) {
-                this.refBaseSelect.setFocusedIndex(0);
-            }
-
             if (!this.isResultsPopupOpen) {
                 this.openResultsPopup();
             }
 
             this.emitFilterResults();
         }, this.throttle);
-
-
     }
 
     public onKeydownEnter($event: KeyboardEvent): void {
@@ -270,7 +269,12 @@ export class MTypeahead extends ModulVue {
 
     public onKeydownDown($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
-            this.refBaseSelect.onKeydownDown($event);
+            if (this.firstSelection) {
+                this.refBaseSelect.focusFirstSelected();
+                this.firstSelection = false;
+            } else {
+                this.refBaseSelect.onKeydownDown($event);
+            }
         }
     }
 
@@ -289,6 +293,18 @@ export class MTypeahead extends ModulVue {
     public onKeydownEsc($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
             this.refBaseSelect.onKeydownEsc($event);
+        }
+    }
+
+    public onKeydownHome($event: KeyboardEvent): void {
+        if (this.resultsCouldBeDisplay) {
+            this.refBaseSelect.onKeydownHome($event);
+        }
+    }
+
+    public onKeydownEnd($event: KeyboardEvent): void {
+        if (this.resultsCouldBeDisplay) {
+            this.refBaseSelect.onKeydownHome($event);
         }
     }
 }
