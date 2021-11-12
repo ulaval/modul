@@ -4,7 +4,7 @@ import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
-import { InputWidth } from '../../mixins/input-width/input-width';
+import { InputMaxWidthValues, InputWidth } from '../../mixins/input-width/input-width';
 import { allCountriesOptionsEn } from '../../utils/country/countries-options-en';
 import { allCountriesOptionsFr } from '../../utils/country/countries-options-fr';
 import { MCountry, MCountryCodeISO2, MCountryOptions } from '../../utils/country/country';
@@ -87,7 +87,7 @@ export class MPhonefield extends ModulVue {
     public selectedCountries: MCountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesOptionsFr : allCountriesOptionsEn;
     public countries: MCountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
     public internalFocus: boolean = false;
-    public listMinWidth: string = '325px';
+    public listMinWidth: string = InputMaxWidthValues.Regular;
 
     public i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
     public i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');

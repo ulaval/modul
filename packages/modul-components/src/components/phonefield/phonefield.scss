@@ -56,8 +56,7 @@ $m-phonefiled--width-flag-dropdown: 88px;
 
     &__item-wrapper {
         display: flex;
-        align-items: left;
-        width: 300px;
+        align-items: center;
         position: relative;
     }
 
@@ -75,13 +74,6 @@ $m-phonefiled--width-flag-dropdown: 88px;
                 background: $m-color--grey-lighter;
             }
         }
-    }
-
-    &__flag {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        outline: none;
     }
 
     &__item-flag-wrapper {

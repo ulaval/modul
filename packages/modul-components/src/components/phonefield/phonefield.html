@@ -23,20 +23,18 @@
             :label-up="true"
             :label="i18nCountryLabel"
             :clearable="false"
-            width="auto"
             :list-min-width="listMinWidth"
             @select-item="onContryChanged"
             @focus="onSelectFocus"
             @blur="onSelectBlur"
         >
-            <div class="m-phonefield__flag-wrapper">
-                <svg class="m-phonefield__flag"
-                     width="27px"
-                     height="20px">
-                    <use :xlink:href="spriteId(countryModel)"
-                         aria-hidden="true"></use>
-                </svg>
-            </div>
+
+            <svg class="m-phonefield__flag-wrapper"
+                    width="27px"
+                    height="20px">
+                <use :xlink:href="spriteId(countryModel)"
+                        aria-hidden="true"></use>
+            </svg>
             <template #outer-items="{item, index, props, handlers}">
                 <m-select-item
                     v-if="item"
@@ -47,11 +45,9 @@
                     v-on="handlers"
                 >
                     <div class="m-phonefield__item-wrapper">
-                        <div class="m-phonefield__item-flag-wrapper">
-                            <svg width="27px" height="20px">
-                                <use :xlink:href="spriteId(item)"aria-hidden="true"></use>
-                            </svg>
-                        </div>
+                        <svg class="m-phonefield__item-flag-wrapper" width="27px" height="20px">
+                            <use :xlink:href="spriteId(item)"aria-hidden="true"></use>
+                        </svg>
                         <span class="m-phonefield__item-name">{{ countriesSorted[index].name }}</span>
                         <span class="m-phonefield__item-dialCode">+{{ countriesSorted[index].dialCode }}</span>
                     </div>
@@ -85,6 +81,8 @@
                 :options="inputMaskOptions"
                 :aria-invalid="hasPhonefieldError"
                 :aria-describedby="messageValidationId"
+                :required="required || requiredMarker"
+                type="tel"
                 @input="inputChanged($event)"
                 @focus="onFocus"
                 @blur="onBlur"
@@ -96,7 +94,6 @@
     <div
         :id="messageValidationId"
         class="m-phonefield__validation"
-        aria-live="polite"
     >
         <m-validation-message
             class="m-phonefield__validation-message"
