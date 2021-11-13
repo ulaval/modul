@@ -41,7 +41,7 @@ export class MBaseSelect extends ModulVue {
     public readonly items: MBaseSelectItem<unknown>[] | string[];
 
     @Prop()
-    public readonly selectedItems: string[];
+    public readonly selectedItems: unknown[];
 
     @Prop()
     public readonly multiselect: boolean;
@@ -137,7 +137,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     public get itemIds(): string[] {
-        return this.items.map(() => uuid.generate());
+        return this.items?.map(() => uuid.generate()) ?? [];
     }
 
     public get ariaActivedescendantId(): string {
@@ -148,7 +148,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     public get itemsAreStringArray(): boolean {
-        if (this.items.length === 0) return false;
+        if (!this.items || this.items.length === 0) return false;
         return typeof this.items[0] === 'string';
     }
 
@@ -202,9 +202,9 @@ export class MBaseSelect extends ModulVue {
     }
 
     public focusFirstSelected(): void {
-        if (this.items.length > 0 && this.selectedItems && this.selectedItems.length > 0) {
+        if (this.items && this.items.length > 0 && this.selectedItems && this.selectedItems.length > 0) {
             if (this.itemsAreStringArray) {
-                this.focusedIndex = (this.items as string[]).indexOf(this.selectedItems[0]);
+                this.focusedIndex = (this.items as string[]).indexOf((this.selectedItems as string[])[0]);
             } else {
                 const items = this.items as MBaseSelectItem<unknown>[];
                 const findSelectedItem = items.find((items) => items.value === this.selectedItems[0]);
@@ -217,6 +217,7 @@ export class MBaseSelect extends ModulVue {
 
         if (
             !this.itemsAreStringArray
+            && this.items
             && this.items.length > 0
             && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
         ) {
@@ -488,10 +489,10 @@ export class MBaseSelect extends ModulVue {
     private isSelected(item: MBaseSelectItem<unknown> | string): boolean {
         if (this.selectedItems && this.selectedItems.length > 0) {
             if (this.itemsAreStringArray) {
-                return this.selectedItems.indexOf(item as string) > -1;
+                return this.selectedItems.some(i => i === item);
             }
             item = item as MBaseSelectItem<unknown>;
-            return item.disabled ? false : this.selectedItems.indexOf(item.value) > -1;
+            return item.disabled ? false : this.selectedItems.some(i => i === item);
         }
         return false;
     }
