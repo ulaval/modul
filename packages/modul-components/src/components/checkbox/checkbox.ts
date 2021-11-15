@@ -56,6 +56,9 @@ export class MCheckbox extends ModulVue {
     @Prop()
     public ariaLabel: string;
 
+    @Prop()
+    public focused: boolean;
+
     public readonly messageValidationId: string = uuid.generate();
 
     public isFocus = false;
