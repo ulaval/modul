@@ -12,7 +12,7 @@
                :aria-haspopup="ariaHaspopup"
                :aria-expanded="ariaExpanded"
                :aria-controls="ariaControls"
-               :aria-current="isSelected ? ariaCurrent | undefined"
+               :aria-current="isSelected ? ariaCurrent : undefined"
                ref="item"
                @keyup.enter="onClick">
         <div class="m-navbar-item__text"
