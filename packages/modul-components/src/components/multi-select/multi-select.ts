@@ -75,9 +75,10 @@ export class MMultiSelect extends ModulVue {
     public readonly inputAriaDescribedby: string = uuid.generate();
     public readonly selectedValueId: string = uuid.generate();
     public internalValue: any[] = [];
-    public internalIsFocus: boolean = false;
-    public selectAllFocused: boolean = false;
+    public internalFocus: boolean = false;
     public open: boolean = false;
+    public internalOptions: any[];
+    public allSelectedCheckboxIsChecked: boolean = false;
 
     @Ref('input')
     public readonly refInput?: HTMLElement;
@@ -85,13 +86,51 @@ export class MMultiSelect extends ModulVue {
     @Ref('baseSelect')
     public readonly refBaseSelect: MBaseSelect;
 
+    @Emit('open')
+    public async emitOpen(): Promise<void> {
+        await this.$nextTick();
+        this.refBaseSelect.focusFirstSelected();
+    }
+
+    @Emit('close')
+    public emitClose(): void { }
+
+    @Emit('blur')
+    public onBlur($event: FocusEvent): void {
+        this.internalFocus = false;
+    }
+
+    @Emit('select-item')
+    public onSelect(option: any, index: number, $event: Event): void {
+        let positionInModel: number = this.model.indexOf(option);
+        if (this.linkSelectAll && index === 0) {
+            this.onToggleAll();
+        } else {
+            if (positionInModel === -1) {
+                this.model = [...this.model, (this.internalOptions[index])];
+            } else {
+                this.onDelete(option);
+            }
+
+            this.update();
+        }
+
+        if ($event.type === 'click') {
+            this.refBaseSelect.focusedIndex = -1;
+        }
+    }
+
     public $refs: {
         baseSelect: MBaseSelect;
     };
 
     public set model(value: any[]) {
         this.internalValue = value;
-        this.$emit('input', this.internalValue);
+        if (this.linkSelectAll && this.internalValue.some(v => v === this.internalOptions[0])) {
+            this.$emit('input', this.internalValue.filter(v => v !== this.internalOptions[0]));
+        } else {
+            this.$emit('input', this.internalValue);
+        }
     }
 
     public get model(): any[] {
@@ -99,10 +138,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     public get selectedItems(): any[] {
-        if (this.value) {
-            return this.value;
-        }
-        return [];
+        return this.value || [];
     }
 
     public get numberOfItemsSelected(): number {
@@ -118,7 +154,7 @@ export class MMultiSelect extends ModulVue {
     }
 
     public get allSelected(): boolean {
-        return this.options && this.options.length > 0 && this.options.length === this.value.length;
+        return this.options && this.options.length === this.selectedItems.length;
     }
 
     public get chipsDisplayMode(): number {
@@ -138,6 +174,14 @@ export class MMultiSelect extends ModulVue {
         return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined, false, FormatMode.Default);
     }
 
+    public get hiddenTextSelectedValue(): string {
+        let text = this.$i18n.translate('m-multi-select:selected-items', [this.numberOfItemsSelected], this.numberOfItemsSelected);
+        if (this.numberOfItemsSelected) {
+            text += `: ${this.selectedItems.join(', ')}`;
+        }
+        return text;
+    }
+
     public onPortalAfterClose(): void {
         this.focusOnInput();
     }
@@ -147,7 +191,6 @@ export class MMultiSelect extends ModulVue {
     }
 
     public toggle(): void {
-        this.selectAllFocused = false;
         this.refBaseSelect.togglePopup();
     }
 
@@ -159,30 +202,6 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    @Emit('open')
-    public async emitOpen(): Promise<void> {
-        await this.$nextTick();
-        this.refBaseSelect.focusFirstSelected();
-    }
-
-    @Emit('close')
-    public emitClose(): void { }
-
-    @Emit('select-item')
-    public onSelect(option: any, index: number, $event: Event): void {
-        let positionInModel: number = this.model.indexOf(option);
-        if (positionInModel === -1) {
-            this.model = [...this.model, (this.options[index])];
-        } else {
-            this.onDelete(positionInModel);
-        }
-        this.update();
-
-        if ($event.type === 'click') {
-            this.refBaseSelect.focusedIndex = -1;
-        }
-    }
-
     public focusOnInput(): void {
         if (
             this.refInput && document.activeElement !== this.refInput
@@ -191,8 +210,8 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
-    public onDelete(index: number): void {
-        this.model = this.model.slice(0, index).concat(this.model.slice(index + 1));
+    public onDelete(option: any): void {
+        this.model = this.model.filter(m => m !== option);
         this.update();
         this.refInput?.focus();
     }
@@ -204,63 +223,43 @@ export class MMultiSelect extends ModulVue {
     }
 
     public onFocus($event: FocusEvent): void {
-        this.internalIsFocus = this.as<InputStateMixin>().active;
-        if (this.internalIsFocus) {
+        this.internalFocus = this.as<InputStateMixin>().active;
+        if (this.internalFocus) {
             this.$emit('focus', $event);
         }
     }
 
-    @Emit('blur')
-    public onBlur($event: FocusEvent): void {
-        this.internalIsFocus = false;
-    }
-
     public onKeydownDown($event: KeyboardEvent): void {
-        if (this.options) {
+        if (this.internalOptions) {
             if (!this.open) {
                 this.open = true;
             }
-            if (this.refBaseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
-                this.refBaseSelect.focusedIndex = -1;
-                this.selectAllFocused = true;
-            } else {
-                this.selectAllFocused = false;
-                this.refBaseSelect.onKeydownDown($event);
-            }
+            this.refBaseSelect.onKeydownDown($event);
         }
     }
 
     public onKeydownUp($event: KeyboardEvent): void {
-        if (this.options) {
-            if (this.refBaseSelect.focusedIndex === 0 && this.linkSelectAll) {
-                this.refBaseSelect.focusedIndex = -1;
-                this.selectAllFocused = true;
-            } else {
-                this.selectAllFocused = false;
-                this.refBaseSelect.onKeydownUp($event);
-            }
+        if (this.internalOptions) {
+            this.refBaseSelect.onKeydownUp($event);
         }
     }
 
     public onKeydownEnter($event: KeyboardEvent): void {
-        if (this.options) {
+        if (this.internalOptions) {
             if (!this.open) {
                 this.open = true;
             }
             if (this.refBaseSelect.focusedIndex > -1) {
                 this.refBaseSelect.emitSelectItem(this.refBaseSelect.items[this.refBaseSelect.focusedIndex], this.refBaseSelect.focusedIndex, $event);
-            } else if (this.selectAllFocused) {
-                this.onToggleAll();
             }
         }
     }
 
     public onKeydownSpace($event: KeyboardEvent): void {
-        if (this.options) {
+        if (this.internalOptions) {
             if (!this.open) {
                 this.open = true;
             }
-            this.selectAllFocused = false;
             this.refBaseSelect.onKeydownSpace($event);
         }
     }
@@ -270,16 +269,16 @@ export class MMultiSelect extends ModulVue {
     }
 
     public onToggleAll(): void {
-        if (this.allSelected) {
+        if (this.selectedItems.length >= this.options.length) {
             this.model = [];
         } else {
-            this.model = [...this.options];
+            this.model = [...this.internalOptions];
         }
         this.update();
     }
 
     public getChipLabel(item: any): string {
-        let ellipsis: string = item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
+        const ellipsis: string = item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
         return `${item.toString().substring(0, this.defaultChipCharsTrunk)}${ellipsis}`;
     }
 
@@ -295,21 +294,34 @@ export class MMultiSelect extends ModulVue {
         }
     }
 
+    @Watch('options', { immediate: true })
+    private onOptionsChange(): void {
+        if (!this.options) return;
+        if (this.linkSelectAll) {
+            this.internalOptions = ['linkSelectAll', ...this.options];
+            return;
+        }
+        this.internalOptions = [...this.options];
+    }
+
     @Watch('value', { immediate: true })
     private onValueChange(value: any[]): void {
-        this.internalValue = this.value;
+        if (this.linkSelectAll && !this.value.some(v => v === this.internalOptions[0])) {
+            this.internalValue = [this.internalOptions[0], ...value]
+        } else {
+            this.internalValue = value;
+        }
     }
 
     @Watch('focus')
     private focusChanged(focus: boolean): void {
-        this.internalIsFocus = focus && this.as<InputStateMixin>().active;
-        let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (inputEl) {
-            if (this.internalIsFocus) {
-                inputEl.focus();
-            } else {
-                inputEl.blur();
-            }
+        this.internalFocus = focus && this.as<InputStateMixin>().active;
+        const inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
+        if (!inputEl) return;
+        if (this.internalFocus) {
+            inputEl.focus();
+        } else {
+            inputEl.blur();
         }
     }
 }
