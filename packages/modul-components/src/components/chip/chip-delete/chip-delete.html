@@ -8,7 +8,7 @@
     <div class="m-chip-delete__body">
         <span :id="textId"
               class="m-chip-delete__text">
-            <span class="m-chip-delete__hidden-text">{{ 'chip:delete' | f-m-i18n }}&nbsp;: </span>
+            <span class="m-chip-delete__hidden-text">{{ $i18n.translate('chip:delete') }}&nbsp;: </span>
             <slot></slot>
         </span>
         <button

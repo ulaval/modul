@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { I18N_NAME } from '../../../filters/filter-names';
-import { i18nFilter } from '../../../filters/i18n/i18n';
 import uuid from '../../../utils/uuid/uuid';
 import { ICON_NAME } from '../../component-names';
 import { MIcon } from '../../icon/icon';
@@ -18,8 +16,11 @@ enum MChipSize {
     components: {
         [ICON_NAME]: MIcon
     },
-    filters: {
-        [I18N_NAME]: i18nFilter
+    modul: {
+        i18n: {
+            'fr': require('./../chip.lang.fr.json'),
+            'en': require('./../chip.lang.en.json')
+        }
     }
 })
 export default class MChipDelete extends Vue {

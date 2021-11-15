@@ -9,7 +9,7 @@
     @click="onClick"
 >
     <div class="m-chip-add__body">
-        <span class="m-chip-add__hidden-text">{{ 'chip:add' | f-m-i18n }}&nbsp;: </span>
+        <span class="m-chip-add__hidden-text">{{ $i18n.translate('chip:add') }}&nbsp;: </span>
         <slot />
         <m-icon
             v-if="icon"
