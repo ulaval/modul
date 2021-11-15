@@ -5,10 +5,10 @@
     flex-direction: column;
 
     &:focus {
-        outline: 0 solid transparent;
+        outline: none;
     }
 
-    &:not(.m--is-disabled) {
+    &:not(.m--is-disabled):not(.m--is-readonly) {
         .m-select__arrow {
             cursor: pointer;
         }
@@ -23,14 +23,21 @@
         justify-content: left;
         color: $m-color--grey;
 
-        &__icon {
+        &-icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
         }
 
-        &.m--is-open {
-            .m-select__arrow__icon {
-                transform: rotate(-180deg);
+        &.m--is-open,
+        &.m--is-focus {
+            .m-select__arrow-icon {
                 color: $m-color--interactive;
+            }
+        }
+
+        &.m--is-open {
+            .m-select__arrow-icon {
+                transform: rotate(-180deg);
+
             }
         }
     }
@@ -41,7 +48,7 @@
             cursor: default;
         }
 
-        .m-select__arrow__icon {
+        .m-select__arrow-icon {
             color: $m-input-style--color-disabled;
         }
     }

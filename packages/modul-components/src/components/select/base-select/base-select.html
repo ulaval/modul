@@ -76,12 +76,13 @@
         >
             <slot
                 name="outer-items"
+                v-for="(item, index) of items"
                 :items="items"
-                :get-item-props="getItemProps"
-                :get-item-handlers="getItemHandlers"
+                :index="index"
+                :get-item-pops="getItemProps(item, index)"
+                :get-item-handlers="getItemHandlers(item, index)"
             >
                 <m-select-item
-                    v-for="(item, index) of items"
                     v-bind="getItemProps(item, index)"
                     v-on="getItemHandlers(item, index)"
                     :key="index"

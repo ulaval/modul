@@ -22,7 +22,7 @@
                 'm--is-open': open,
                 'm--is-disabled': disabled,
                 'm--is-readonly': readonly,
-                'm--is-waiting': isWaiting
+                'm--is-waiting': isWaiting,
             }"
             :style="{ width: width, maxWidth: maxWidth }"
             :label="label"
@@ -62,7 +62,7 @@
                     class="m-select__input"
                     ref="input"
                     :id="id"
-                    :role="button"
+                    role="button"
                     :tabindex="disabled ? '-1' : '0'"
                     :placeholder="internalPlaceholder"
                     :aria-invalid="hasError"
@@ -98,16 +98,20 @@
                         icon-size="11px"
                         icon-name="m-svg__close-clear"
                         :title="$i18n.translate('m-select:delete')"
+                        :aria-describedby="id"
                         @click.stop="onReset"
                     />
                 </m-opacity-transition>
 
                 <div
                     class="m-select__arrow"
-                    :class="{ 'm--is-open': open }"
+                    :class="{
+                        'm--is-open': open,
+                        'm--is-focus': internalIsFocus
+                    }"
                 >
                     <m-icon
-                        class="m-select__arrow__icon"
+                        class="m-select__arrow-icon"
                         ref="arrow"
                         name="m-svg__arrow-head-filled--down"
                         :aria-label="!open ? $i18n.translate('m-select:open') : $i18n.translate('m-select:close')"

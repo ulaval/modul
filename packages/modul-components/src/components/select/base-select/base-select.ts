@@ -270,18 +270,17 @@ export class MBaseSelect extends ModulVue {
     }
 
     public transitionEnter(el: HTMLElement, done: any): void {
-        if (this.enableAnimation) {
-            this.$nextTick(() => {
-                if (this.as<MediaQueriesMixin>().isMqMinS) {
-                    let height: number = el.clientHeight;
-
-                    el.style.transition = BASE_SELECT_STYLE_TRANSITION;
-                    el.style.overflowY = 'hidden';
+        this.$nextTick(() => {
+            if (this.as<MediaQueriesMixin>().isMqMinS) {
+                let height: number = el.clientHeight;
+                el.style.transition = BASE_SELECT_STYLE_TRANSITION;
+                el.style.overflowY = 'hidden';
+                el.style.width = this.$el.clientWidth + 'px';
+                if (this.listMinWidth) {
+                    el.style.minWidth = this.listMinWidth;
+                }
+                if (this.enableAnimation) {
                     el.style.maxHeight = '0';
-                    el.style.width = this.$el.clientWidth + 'px';
-                    if (this.listMinWidth) {
-                        el.style.minWidth = this.listMinWidth;
-                    }
                     requestAnimationFrame(() => {
                         el.style.maxHeight = height + 'px';
                         done();
@@ -290,10 +289,10 @@ export class MBaseSelect extends ModulVue {
                     done();
                 }
 
-            });
-        } else {
-            done();
-        }
+            } else {
+                done();
+            }
+        });
     }
 
     public transitionLeave(el: HTMLElement, done: any): void {
@@ -476,6 +475,8 @@ export class MBaseSelect extends ModulVue {
                 const index: number = findItem ? items.indexOf(
                     findItem
                 ) : -1;
+                if (items[index].disabled) return;
+
                 this.focusedIndex = index;
                 this.scrollToFocused();
 
@@ -491,6 +492,7 @@ export class MBaseSelect extends ModulVue {
             if (this.itemsAreStringArray) {
                 return this.selectedItems.some(i => i === item);
             }
+
             item = item as MBaseSelectItem<unknown>;
             return item.disabled ? false : this.selectedItems.some(i => i === item);
         }

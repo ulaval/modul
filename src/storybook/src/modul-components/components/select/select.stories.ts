@@ -1,13 +1,31 @@
 import { actions } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
 import { SELECT_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MBaseSelectItem } from '@ulaval/modul-components/dist/components/select//base-select/base-select';
 import { MSelectItem } from '@ulaval/modul-components/dist/components/select/select-item/select-item';
 import { InputMaxWidth } from '@ulaval/modul-components/dist/mixins/input-width/input-width';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 const OPTIONS: string[] = ['apple', 'banana', 'patate', 'tomato', 'avocados', 'orange', 'cherry', 'grape', 'lemon', 'peach', 'pineapple', 'etc'];
 const LONG_OPTIONS: string[] = ['apple juice', 'banana', 'patate', 'tomato', 'avocados', 'A fruit with a very long word for testing'];
-
+const OPTIONS_2: MBaseSelectItem<unknown>[] = [
+    {
+        value: 'apple',
+        disabled: false
+    },
+    {
+        value: 'banana',
+        disabled: true
+    },
+    {
+        value: 'patate',
+        disabled: false
+    },
+    {
+        value: 'tomato',
+        disabled: false
+    },
+];
 
 const buildLongList = (): string[] => {
 
@@ -54,7 +72,7 @@ export const defaultStory = () => ({
         'select'
     ),
     data: () => ({
-        options: OPTIONS,
+        options: OPTIONS_2,
         model: ''
     }),
     template: `<m-select v-model="model" :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly"  @open="open" @close="close" @focus="focus" @select-item="select" @blur="blur"></m-select>`
@@ -285,7 +303,7 @@ export const withOuterItemsSlot = () => ({
                             {{ item  }} 123
                         </m-select-item>
                         <m-select-item v-else
-                                        :disabled="true">
+                                :disabled="true">
                             {{ item  }}123
                         </m-select-item>
                     </template>
