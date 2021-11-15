@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop, Ref } from 'vue-property-decorator';
+import { Emit, Mixins, Model, Prop, Ref } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -8,8 +8,7 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import uuid from '../../utils/uuid/uuid';
-import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, SELECT_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { SELECT_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
@@ -23,21 +22,14 @@ import WithRender from './select.html?style=./select.scss';
     components: {
         MBaseSelect,
         MOpacityTransition,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_NAME]: MIcon,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [I18N_NAME]: MI18n,
-        [ICON_BUTTON_NAME]: MIconButton
+        MInputStyle,
+        MIcon,
+        MValidationMessage,
+        MI18n,
+        MIconButton
     },
-    mixins: [
-        InputState,
-        MediaQueries,
-        InputManagement,
-        InputWidth,
-        InputLabel
-    ]
 })
-export class MSelect extends ModulVue {
+export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, InputWidth, InputLabel) {
 
     @Model('input')
     @Prop()
@@ -95,11 +87,11 @@ export class MSelect extends ModulVue {
     }
 
     public get isEmpty(): boolean {
-        return this.as<InputManagement>().hasValue || (this.open) ? false : true;
+        return this.hasValue || (this.open) ? false : true;
     }
 
     public get isClearable(): boolean {
-        return this.clearable !== undefined ? this.clearable && this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable : this.hasItems && this.as<InputManagement>().hasValue && this.isSelectable && !this.as<InputLabel>().requiredMarker;
+        return this.clearable !== undefined ? this.clearable && this.hasItems && this.hasValue && this.isSelectable : this.hasItems && this.hasValue && this.isSelectable && !this.requiredMarker;
     }
 
     public get selectedItems(): any {
@@ -110,16 +102,16 @@ export class MSelect extends ModulVue {
     }
 
     public get isSelectable(): boolean {
-        return !this.as<InputState>().isDisabled &&
-            !this.as<InputState>().isReadonly;
+        return !this.isDisabled &&
+            !this.isReadonly;
     }
 
     public get internalLabelUp(): boolean {
-        return !this.as<InputState>().isReadonly ? this.as<InputLabel>().labelUp : true;
+        return !this.isReadonly ? this.labelUp : true;
     }
 
     public get internalPlaceholder(): string {
-        return !this.as<InputState>().isReadonly ? this.as<InputManagement>().placeholder : '';
+        return !this.isReadonly ? this.placeholder : '';
     }
 
     public get optionsAreStringArray(): boolean {
@@ -130,14 +122,11 @@ export class MSelect extends ModulVue {
     public onInputStyleClick(callbackToggle: any): void {
         callbackToggle();
 
-        if (
-            this.refInput && document.activeElement !== this.refInput && this.open
-        ) {
-            this.refInput.focus();
-        }
+        if (!this.open) return
+        this.focusInput();
     }
 
-    public onPortalAfterClose(): void {
+    public focusInput(): void {
         if (
             this.refInput && document.activeElement !== this.refInput
         ) {
@@ -145,14 +134,17 @@ export class MSelect extends ModulVue {
         }
     }
 
+    public onPortalAfterClose(): void {
+        this.focusInput();
+    }
+
     public onSelect(option: MBaseSelectItem<unknown> | string, index: number, $event: Event): void {
         this.emitSelectItem(option, index, $event);
-        console.warn('aaa');
-        this.as<InputManagement>().model = this.refBaseSelect.focusValue;
+        this.model = this.refBaseSelect.focusValue;
     }
 
     public onReset(): void {
-        this.as<InputManagement>().model = '';
+        this.model = '';
         this.refInput?.focus();
     }
 

@@ -69,11 +69,10 @@
                 <div class="m-input-style__suffix"
                      ref="suffix">
 
-                    <slot name="suffix"></slot>
-
+                    <slot name="suffix" />
                     <m-spinner v-if="isWaiting"
                                class="m-input-style__spinner"
-                               size="small"></m-spinner>
+                               size="small" />
                 </div>
             </div>
         </div>

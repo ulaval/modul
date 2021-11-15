@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Prop, Ref, Watch } from 'vue-property-decorator';
 import { TEXTAREA_AUTO_HEIGHT } from '../../directives/directive-names';
 import { MTextareaAutoHeight } from '../../directives/textarea-auto-height/textarea-auto-height';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -99,6 +99,9 @@ export class MTextfield extends ModulVue implements InputManagementData, InputSe
 
     @Prop({ default: false })
     public append: boolean;
+
+    @Ref('input')
+    public refInput?: HTMLInputElement;
 
     public $refs: {
         input: HTMLElement

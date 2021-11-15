@@ -1,14 +1,13 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop, Ref, Watch } from 'vue-property-decorator';
+import { Emit, Mixins, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
-import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
+import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
-import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_NAME, INPUT_STYLE_NAME, MULTI_SELECT_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MULTI_SELECT_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
@@ -24,19 +23,13 @@ import WithRender from './multi-select.html?style=./multi-select.scss';
         MBaseSelect,
         MSelectItem,
         MChipDelete,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [ICON_NAME]: MIcon,
-        [INPUT_STYLE_NAME]: MInputStyle
+        MI18n,
+        MValidationMessage,
+        MIcon,
+        MInputStyle
     },
-    mixins: [
-        InputState,
-        MediaQueries,
-        InputWidth,
-        InputLabel
-    ]
 })
-export class MMultiSelect extends ModulVue {
+export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, MediaQueries) {
     @Model('input')
     @Prop({
         validator: value => Array.isArray(value)
@@ -183,11 +176,11 @@ export class MMultiSelect extends ModulVue {
     }
 
     public onPortalAfterClose(): void {
-        this.focusOnInput();
+        this.focusInput();
     }
 
     public onClickOnItem(): void {
-        this.focusOnInput();
+        this.focusInput();
     }
 
     public toggle(): void {
@@ -198,11 +191,11 @@ export class MMultiSelect extends ModulVue {
         callbackToggle();
 
         if (this.open) {
-            this.focusOnInput();
+            this.focusInput();
         }
     }
 
-    public focusOnInput(): void {
+    public focusInput(): void {
         if (
             this.refInput && document.activeElement !== this.refInput
         ) {
@@ -213,17 +206,17 @@ export class MMultiSelect extends ModulVue {
     public onDelete(option: any): void {
         this.model = this.model.filter(m => m !== option);
         this.update();
-        this.refInput?.focus();
+        this.focusInput();
     }
 
     public onDeleteAll(): void {
         this.model = [];
         this.update();
-        this.refInput?.focus();
+        this.focusInput();
     }
 
     public onFocus($event: FocusEvent): void {
-        this.internalFocus = this.as<InputStateMixin>().active;
+        this.internalFocus = this.active;
         if (this.internalFocus) {
             this.$emit('focus', $event);
         }
@@ -315,13 +308,12 @@ export class MMultiSelect extends ModulVue {
 
     @Watch('focus')
     private focusChanged(focus: boolean): void {
-        this.internalFocus = focus && this.as<InputStateMixin>().active;
-        const inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (!inputEl) return;
+        this.internalFocus = focus && this.active;
+        if (!this.refInput) return;
         if (this.internalFocus) {
-            inputEl.focus();
+            this.focusInput();
         } else {
-            inputEl.blur();
+            this.refInput.blur();
         }
     }
 }

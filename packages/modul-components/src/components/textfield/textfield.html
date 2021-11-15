@@ -24,33 +24,34 @@
                    :readonly="isReadonly"
                    :required-marker="requiredMarker"
                    :tag-style="tagStyle">
-        <input v-if="!hasWordWrap"
-               ref="input"
-               :id="id"
-               class="m-textfield__input"
-               v-model="model"
-               :autocomplete="autocomplete"
-               :disabled="isDisabled || isWaiting"
-               :placeholder="placeholder"
-               :readonly="isReadonly"
-               :maxlength="maxLengthNumber"
-               :type="inputType"
-               :aria-invalid="hasTextfieldError"
-               :aria-describedby="inputAriaDescribedby"
-               :aria-activedescendant="inputAriaActivedescendant"
-               :aria-autocomplete="inputAriaAutocomplete"
-               :aria-controls="inputAriaControls"
-               :required="required || requiredMarker"
-               :aria-required="required || requiredMarker"
-               @blur="onBlur"
-               @change="onChange"
-               @focus="onFocus"
-               @keyup="onKeyup"
-               @keydown="onKeydown"
-               @paste="onPaste"
-                />
+        <input
+            v-if="!hasWordWrap"
+            ref="input"
+            :id="id"
+            class="m-textfield__input"
+            v-model="model"
+            :autocomplete="autocomplete"
+            :disabled="isDisabled || isWaiting"
+            :placeholder="placeholder"
+            :readonly="isReadonly"
+            :maxlength="maxLengthNumber"
+            :type="inputType"
+            :aria-invalid="hasTextfieldError"
+            :aria-describedby="inputAriaDescribedby"
+            :aria-activedescendant="inputAriaActivedescendant"
+            :aria-autocomplete="inputAriaAutocomplete"
+            :aria-controls="inputAriaControls"
+            :required="required || requiredMarker"
+            :aria-required="required || requiredMarker"
+            @blur="onBlur"
+            @change="onChange"
+            @focus="onFocus"
+            @keyup="onKeyup"
+            @keydown="onKeydown"
+            @paste="onPaste"
+        />
         <template v-if="!hasWordWrap"
-                  slot="suffix">
+                  #suffix>
             <transition name="m--is"
                         style="white-space: nowrap;">
                 <m-icon-button
@@ -63,11 +64,11 @@
                     key="passwordIcon"
                     button-size="22px"
                 />
-                <slot name="suffix"></slot>
             </transition>
+            <slot  name="suffix" />
         </template>
         <template slot="append">
-            <slot name="append"></slot>
+            <slot name="append" />
         </template>
         <textarea
             v-if="hasWordWrap"

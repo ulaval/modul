@@ -1,12 +1,10 @@
-import { Component, Emit, Prop, Ref, Watch } from 'vue-property-decorator';
+import { Component, Emit, Mixins, Prop, Ref, Watch } from 'vue-property-decorator';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../../directives/directive-names';
 import { MPopupDirective } from '../../../directives/popup/popup';
 import { InputWidth } from '../../../mixins/input-width/input-width';
-import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
+import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { REGEX_CSS_NUMBER_VALUE } from '../../../utils/props-validation/props-validation';
 import uuid from '../../../utils/uuid/uuid';
-import { ModulVue } from '../../../utils/vue/vue';
-import { POPUP_NAME } from '../../component-names';
 import { MPopup } from '../../popup/popup';
 import { MSelectItem } from '../../select/select-item/select-item';
 import WithRender from './base-select.html';
@@ -25,18 +23,14 @@ export interface MBaseSelectItem<T> {
 @Component({
     components: {
         MSelectItem,
-        [POPUP_NAME]: MPopup
+        MPopup
 
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
-    },
-    mixins: [
-        InputWidth,
-        MediaQueries
-    ]
+    }
 })
-export class MBaseSelect extends ModulVue {
+export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     @Prop()
     public readonly items: MBaseSelectItem<unknown>[] | string[];
 
@@ -131,7 +125,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     public get listMaxHeightProps(): string | undefined {
-        if (this.as<MediaQueriesMixin>().isMqMinS) {
+        if (this.isMqMinS) {
             return this.listMaxHeight;
         }
     }
@@ -174,6 +168,7 @@ export class MBaseSelect extends ModulVue {
     public getItemHandlers(item: MBaseSelectItem<unknown> | string, index: number): any {
         return {
             click: (event: MouseEvent): void => {
+                this.focusedIndex = index;
                 this.emitSelectItem(item, index, event);
                 this.emitClickOnItem(event);
                 if (!this.multiselect) {
@@ -271,7 +266,7 @@ export class MBaseSelect extends ModulVue {
 
     public transitionEnter(el: HTMLElement, done: any): void {
         this.$nextTick(() => {
-            if (this.as<MediaQueriesMixin>().isMqMinS) {
+            if (this.isMqMinS) {
                 let height: number = el.clientHeight;
                 el.style.transition = BASE_SELECT_STYLE_TRANSITION;
                 el.style.overflowY = 'hidden';
@@ -298,7 +293,7 @@ export class MBaseSelect extends ModulVue {
     public transitionLeave(el: HTMLElement, done: any): void {
         if (this.enableAnimation) {
             this.$nextTick(() => {
-                if (this.as<MediaQueriesMixin>().isMqMinS) {
+                if (this.isMqMinS) {
                     let height: number = el.clientHeight;
 
                     el.style.maxHeight = height + 'px';
@@ -413,7 +408,7 @@ export class MBaseSelect extends ModulVue {
     private scrollToFocused(): void {
         if (this.focusedIndex < 0) return;
 
-        const sidebarBody = this.as<MediaQueriesMixin>().isMqMaxS ?
+        const sidebarBody = this.isMqMaxS ?
             document.querySelector(`#${this.popupId} .m-sidebar__body`)
             : undefined;
         const refUl: HTMLElement = this.refItems as HTMLElement;
