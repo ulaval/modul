@@ -169,7 +169,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
     <ul
       class="m-u--no-margin"
     >
-      <div
+      <fieldset
         class="m-input-group"
       >
         <!---->
@@ -197,8 +197,6 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-                 
-                <!---->
                  
                 <label
                   class="m-checkbox__wrap"
@@ -240,8 +238,6 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   type="checkbox"
                 />
                  
-                <!---->
-                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -281,8 +277,6 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-                 
-                <!---->
                  
                 <label
                   class="m-checkbox__wrap"
@@ -324,8 +318,6 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   type="checkbox"
                 />
                  
-                <!---->
-                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -365,8 +357,6 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-                 
-                <!---->
                  
                 <label
                   class="m-checkbox__wrap"
@@ -408,8 +398,6 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   type="checkbox"
                 />
                  
-                <!---->
-                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -450,8 +438,6 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   type="checkbox"
                 />
                  
-                <!---->
-                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -484,7 +470,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
             </li>
           </div>
         </div>
-      </div>
+      </fieldset>
     </ul>
      
     <p
@@ -694,7 +680,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
      
     <!---->
      
-    <div
+    <fieldset
       class="m-input-group"
       legend=""
     >
@@ -877,7 +863,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
           </div>
         </div>
       </div>
-    </div>
+    </fieldset>
      
     <p
       class="m-u--margin-bottom--l"
@@ -1227,18 +1213,19 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
     <div
       class="m-radio-group"
     >
-      <div
+      <fieldset
         class="m-input-group"
       >
-        <p
+        <legend
           class="m-input-group__label"
-          id="fakeId"
         >
-          Select a role :
+          
+        Select a role :
+        
           <!---->
            
           <!---->
-        </p>
+        </legend>
          
         <div
           class="m-input-group__body"
@@ -1252,7 +1239,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
           </div>
            
           <div
-            aria-labelledby="fakeId"
             class="m-input-group__content"
           >
              
@@ -1265,7 +1251,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
-                  id="fakeId"
                   name="fakeId"
                   type="radio"
                   value="Sys admin"
@@ -1273,7 +1258,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
-                  for="fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1293,7 +1277,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
-                  id="fakeId"
                   name="fakeId"
                   type="radio"
                   value="Unit admin"
@@ -1301,7 +1284,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
-                  for="fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1321,7 +1303,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
-                  id="fakeId"
                   name="fakeId"
                   type="radio"
                   value="Conceptor"
@@ -1329,7 +1310,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
-                  for="fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1349,7 +1329,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
-                  id="fakeId"
                   name="fakeId"
                   type="radio"
                   value="Assistant"
@@ -1357,7 +1336,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
-                  for="fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1377,7 +1355,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
-                  id="fakeId"
                   name="fakeId"
                   type="radio"
                   value="Student"
@@ -1385,7 +1362,6 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
-                  for="fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1402,7 +1378,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
             </ul>
           </div>
         </div>
-      </div>
+      </fieldset>
     </div>
      
     <p

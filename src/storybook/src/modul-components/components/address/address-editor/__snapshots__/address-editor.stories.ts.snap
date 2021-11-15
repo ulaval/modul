@@ -335,7 +335,10 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
       <br />
        
       <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
         class="m-dropdown"
+        role="combobox"
         style="width: 100%; max-width: 288px;"
       >
         <div
@@ -375,11 +378,11 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
                   <!---->
                    
                   <input
-                    aria-controls="mDropdown-fakeId-controls"
-                    aria-haspopup="true"
+                    aria-haspopup="listbox"
                     class="m-dropdown__input"
                     id="mDropdown-fakeId"
                     readonly="readonly"
+                    role="button"
                     type="text"
                   />
                    
@@ -398,6 +401,7 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
                   >
                     <svg
                       aria-hidden="true"
+                      aria-label="Ouvrir la liste déroulante"
                       class="m-icon m-dropdown__arrow__icon"
                       height="12px"
                       width="12px"
@@ -886,7 +890,10 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
       <br />
        
       <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
         class="m-dropdown"
+        role="combobox"
         style="width: 100%; max-width: 288px;"
       >
         <div
@@ -926,11 +933,11 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
                   <!---->
                    
                   <input
-                    aria-controls="mDropdown-fakeId-controls"
-                    aria-haspopup="true"
+                    aria-haspopup="listbox"
                     class="m-dropdown__input"
                     id="mDropdown-fakeId"
                     readonly="readonly"
+                    role="button"
                     type="text"
                   />
                    
@@ -949,6 +956,7 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
                   >
                     <svg
                       aria-hidden="true"
+                      aria-label="Ouvrir la liste déroulante"
                       class="m-icon m-dropdown__arrow__icon"
                       height="12px"
                       width="12px"

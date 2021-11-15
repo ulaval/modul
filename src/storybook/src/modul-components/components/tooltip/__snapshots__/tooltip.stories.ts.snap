@@ -8,9 +8,7 @@ exports[`Storyshots modul-components|m-tooltip change icon 1`] = `
   >
     <div>
       <button
-        aria-controls="mTooltip-fakeId-controls"
         class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-        id="mTooltip-fakeId"
         style="width: 22px; height: 22px;"
         title="Ouvrir l'infobulle"
         type="button"
@@ -46,9 +44,7 @@ exports[`Storyshots modul-components|m-tooltip close-button="false" 1`] = `
   >
     <div>
       <button
-        aria-controls="mTooltip-fakeId-controls"
         class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-        id="mTooltip-fakeId"
         style="width: 22px; height: 22px;"
         title="Ouvrir l'infobulle"
         type="button"
@@ -84,9 +80,7 @@ exports[`Storyshots modul-components|m-tooltip default 1`] = `
   >
     <div>
       <button
-        aria-controls="mTooltip-fakeId-controls"
         class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-        id="mTooltip-fakeId"
         style="width: 22px; height: 22px;"
         title="Ouvrir l'infobulle"
         type="button"
@@ -122,10 +116,8 @@ exports[`Storyshots modul-components|m-tooltip disabled 1`] = `
   >
     <div>
       <button
-        aria-controls="mTooltip-fakeId-controls"
         class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple m--is-disabled"
         disabled="disabled"
-        id="mTooltip-fakeId"
         style="width: 22px; height: 22px;"
         title="Ouvrir l'infobulle"
         type="button"
@@ -162,11 +154,8 @@ exports[`Storyshots modul-components|m-tooltip/mode mode="definition" 1`] = `
   >
     <div>
       <a
-        aria-controls="mTooltip-fakeId-controls"
-        aria-haspopup="true"
         class="m-link m-tooltip__link m--is-unvisited m--no-underline m--is-button m--has-content"
         href="#"
-        id="mTooltip-fakeId"
         role="button"
         tabindex="0"
       >
@@ -202,9 +191,7 @@ exports[`Storyshots modul-components|m-tooltip/mode mode="icon" 1`] = `
   >
     <div>
       <button
-        aria-controls="mTooltip-fakeId-controls"
         class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-        id="mTooltip-fakeId"
         style="width: 22px; height: 22px;"
         title="Ouvrir l'infobulle"
         type="button"
@@ -241,11 +228,8 @@ exports[`Storyshots modul-components|m-tooltip/mode mode="link" 1`] = `
   >
     <div>
       <a
-        aria-controls="mTooltip-fakeId-controls"
-        aria-haspopup="true"
         class="m-link m-tooltip__link m--is-unvisited m--is-button m--has-content"
         href="#"
-        id="mTooltip-fakeId"
         role="button"
         tabindex="0"
       >
@@ -281,9 +265,7 @@ exports[`Storyshots modul-components|m-tooltip/size size="large" 1`] = `
   >
     <div>
       <button
-        aria-controls="mTooltip-fakeId-controls"
         class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-        id="mTooltip-fakeId"
         style="width: 22px; height: 22px;"
         title="Ouvrir l'infobulle"
         type="button"
@@ -319,9 +301,7 @@ exports[`Storyshots modul-components|m-tooltip/size size="small" 1`] = `
   >
     <div>
       <button
-        aria-controls="mTooltip-fakeId-controls"
         class="m-icon-button m-tooltip__icon m--is-skin-light m--has-ripple"
-        id="mTooltip-fakeId"
         style="width: 22px; height: 22px;"
         title="Ouvrir l'infobulle"
         type="button"

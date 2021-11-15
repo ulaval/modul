@@ -2,94 +2,98 @@
 
 exports[`Storyshots modul-components|m-select Clearable 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -115,98 +119,106 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
 
 exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <sup
-                  class="m-input-style__required-marker"
-                >
-                  *
-                </sup>
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <!---->
-               
-              <div
-                class="m-input-style__content"
+               
+              <sup
+                aria-hidden="true"
+                class="m-input-style__required-marker"
               >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+                
+                        *
+                    
+              </sup>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-required="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -232,98 +244,106 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
 
 exports[`Storyshots modul-components|m-select Clearable False And Required Marker 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <sup
-                  class="m-input-style__required-marker"
-                >
-                  *
-                </sup>
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <!---->
-               
-              <div
-                class="m-input-style__content"
+               
+              <sup
+                aria-hidden="true"
+                class="m-input-style__required-marker"
               >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+                
+                        *
+                    
+              </sup>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-required="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -349,95 +369,99 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
 
 exports[`Storyshots modul-components|m-select Default 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a fruit"
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder="Choose a fruit"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -463,95 +487,100 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
 
 exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default m--is-disabled"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-disabled="true"
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="-1"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -577,95 +606,100 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Disabled Item Selected With Label Clearable 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default m--is-disabled"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-disabled="true"
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="-1"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -691,90 +725,95 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-disabled m--is-tag-default m--is-disabled"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-disabled m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-disabled="true"
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="-1"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -800,91 +839,96 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
 
 exports[`Storyshots modul-components|m-select Disabled No Selection No Label With Placeholder 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-disabled m--is-tag-default m--is-disabled"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-disabled m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a fruit"
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-disabled="true"
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder="Choose a fruit"
+                role="button"
+                tabindex="-1"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -910,95 +954,100 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
 
 exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-disabled m--has-label m--is-tag-default m--is-disabled"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-disabled m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-disabled="true"
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="-1"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1024,96 +1073,101 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
 
 exports[`Storyshots modul-components|m-select Disabled No Selection With Label With Placeholder 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-disabled"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-disabled m--has-label m--is-tag-default m--is-disabled"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-disabled m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a fruit"
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-disabled="true"
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder="Choose a fruit"
+                role="button"
+                tabindex="-1"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1139,89 +1193,94 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
 
 exports[`Storyshots modul-components|m-select Error Message 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-error m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-error m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-invalid="true"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1232,6 +1291,7 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
     class="m-validation-message m-select__validation-message m--has-validation-message"
   >
     <p
+      aria-live="polite"
       class="m-validation-message__error"
     >
       <svg
@@ -1270,89 +1330,93 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
 
 exports[`Storyshots modul-components|m-select Focus 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1378,116 +1442,120 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
 
 exports[`Storyshots modul-components|m-select Full Width 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: none;"
-      tabindex="0"
+      class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: none;"
     >
       <div
-        class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <button
-              aria-controls="m-select-fakeId"
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              style="width: 44px; height: 44px;"
-              tabindex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="11px"
-                width="11px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
-              <!---->
-            </button>
+            <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            aria-describedby="m-select-fakeId"
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 44px; height: 44px;"
+            title="Supprimer la sélection"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="11px"
+              width="11px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1513,94 +1581,98 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
 
 exports[`Storyshots modul-components|m-select Label 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1626,94 +1698,98 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
 
 exports[`Storyshots modul-components|m-select Label Up 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1739,89 +1815,93 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
 
 exports[`Storyshots modul-components|m-select List Max Height 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1847,94 +1927,98 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
 
 exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -1960,116 +2044,120 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
 
 exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 500px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: 500px;"
-      tabindex="0"
+      class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: 500px;"
     >
       <div
-        class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <button
-              aria-controls="m-select-fakeId"
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              style="width: 44px; height: 44px;"
-              tabindex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="11px"
-                width="11px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
-              <!---->
-            </button>
+            <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            aria-describedby="m-select-fakeId"
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 44px; height: 44px;"
+            title="Supprimer la sélection"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="11px"
+              width="11px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2095,116 +2183,120 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
 
 exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 896px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: large;"
-      tabindex="0"
+      class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: large;"
     >
       <div
-        class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <button
-              aria-controls="m-select-fakeId"
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              style="width: 44px; height: 44px;"
-              tabindex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="11px"
-                width="11px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
-              <!---->
-            </button>
+            <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            aria-describedby="m-select-fakeId"
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 44px; height: 44px;"
+            title="Supprimer la sélection"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="11px"
+              width="11px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2230,90 +2322,94 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
 
 exports[`Storyshots modul-components|m-select Placeholder 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder="Choose a Fruit"
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder="Choose a Fruit"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2339,96 +2435,101 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
 
 exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default m--is-readonly"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-readonly="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder=""
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2454,96 +2555,101 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Readonly Item Selected With Label Clearable 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default m--is-readonly"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-readonly="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder=""
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2569,91 +2675,96 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 
 exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-readonly m--is-tag-default m--is-readonly"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-readonly="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder=""
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2679,91 +2790,96 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
 
 exports[`Storyshots modul-components|m-select Readonly No Selection No Label With Placeholder 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-readonly m--is-tag-default m--is-readonly"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <!---->
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-readonly="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder=""
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2789,96 +2905,101 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
 
 exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--is-tag-default m--is-readonly"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-readonly="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder=""
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -2904,96 +3025,101 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
 
 exports[`Storyshots modul-components|m-select Readonly No Selection With Label With Placeholder 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select m--is-readonly"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--is-tag-default m--is-readonly"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    placeholder=""
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                disabled="disabled"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-readonly="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                placeholder=""
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              disabled="disabled"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -3019,98 +3145,106 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
 
 exports[`Storyshots modul-components|m-select Required Marker 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <sup
-                  class="m-input-style__required-marker"
-                >
-                  *
-                </sup>
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <!---->
-               
-              <div
-                class="m-input-style__content"
+               
+              <sup
+                aria-hidden="true"
+                class="m-input-style__required-marker"
               >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+                
+                        *
+                    
+              </sup>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
             <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                aria-required="true"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -3136,116 +3270,120 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
 
 exports[`Storyshots modul-components|m-select Selected Item 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="m-select-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Fruits
-                </span>
-                 
-                <!---->
+              <span>
+                Fruits
               </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
+               
               <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+            </span>
+          </label>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <button
-              aria-controls="m-select-fakeId"
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              style="width: 44px; height: 44px;"
-              tabindex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="11px"
-                width="11px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
-              <!---->
-            </button>
+            <!---->
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banana
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            aria-describedby="m-select-fakeId"
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 44px; height: 44px;"
+            title="Supprimer la sélection"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="11px"
+              width="11px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -3271,111 +3409,115 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
 
 exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-base-select"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-base-select__popup"
   >
     <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
+      class="m-input-style m-select m--has-cursor-pointer m--has-value m--is-tag-default"
+      style="width: 100%; margin-top: 10px; max-width: regular;"
     >
       <div
-        class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
+        class="m-input-style__main"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
           <div
-            class="m-input-style__append"
+            class="m-input-style__input"
           >
-            <button
-              aria-controls="m-select-fakeId"
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              style="width: 44px; height: 44px;"
-              tabindex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="11px"
-                width="11px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
-              <!---->
-            </button>
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-select__arrow"
+              class="m-input-style__content"
             >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
+              <div
+                aria-haspopup="listbox"
+                aria-labelledby="undefined m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
               >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
+                
+                    banane
+                
+              </div>
+               
+              <!---->
+               
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            aria-describedby="m-select-fakeId"
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 44px; height: 44px;"
+            title="Supprimer la sélection"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="11px"
+              width="11px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
           </div>
         </div>
       </div>
@@ -3399,132 +3541,4 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
-<div
-  class="m-base-select"
-  style="width: 100%; max-width: 288px;"
->
-  <div
-    class="m-base-select__popup"
-  >
-    <div
-      class="m-select"
-      style="width: 100%; max-width: regular;"
-      tabindex="0"
-    >
-      <div
-        class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
-        style="width: 100%; margin-top: 10px;"
-      >
-        <div
-          class="m-input-style__main"
-        >
-          <div
-            class="m-input-style__body"
-          >
-            <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                <div>
-                  <input
-                    readonly="readonly"
-                    tabindex="-1"
-                  />
-                </div>
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
-           
-          <div
-            class="m-input-style__append"
-          >
-            <button
-              aria-controls="m-select-fakeId"
-              class="m-icon-button m--is-skin-light m--has-ripple"
-              style="width: 44px; height: 44px;"
-              tabindex="-1"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="11px"
-                width="11px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
-              <!---->
-            </button>
-             
-            <div
-              class="m-select__arrow"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-select__arrow__icon"
-                height="12px"
-                width="12px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-select__validation-message"
-  >
-    <!---->
-     
-    <!---->
-  </div>
-   
-  <div
-    class="m-popper m-popup"
-  >
-     
-    <!---->
-  </div>
-</div>
-`;
+exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `<!---->`;

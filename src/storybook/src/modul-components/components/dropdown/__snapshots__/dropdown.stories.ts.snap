@@ -2,7 +2,10 @@
 
 exports[`Storyshots modul-components|m-dropdown default 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-dropdown"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -42,11 +45,11 @@ exports[`Storyshots modul-components|m-dropdown default 1`] = `
             <!---->
              
             <input
-              aria-controls="mDropdown-fakeId-controls"
-              aria-haspopup="true"
+              aria-haspopup="listbox"
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               readonly="readonly"
+              role="button"
               type="text"
             />
              
@@ -65,6 +68,7 @@ exports[`Storyshots modul-components|m-dropdown default 1`] = `
             >
               <svg
                 aria-hidden="true"
+                aria-label="Ouvrir la liste déroulante"
                 class="m-icon m-dropdown__arrow__icon"
                 height="12px"
                 width="12px"
@@ -137,7 +141,10 @@ exports[`Storyshots modul-components|m-dropdown drodown in overlay 1`] = `
 
 exports[`Storyshots modul-components|m-dropdown focus 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-dropdown"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -177,11 +184,11 @@ exports[`Storyshots modul-components|m-dropdown focus 1`] = `
             <!---->
              
             <input
-              aria-controls="mDropdown-fakeId-controls"
-              aria-haspopup="true"
+              aria-haspopup="listbox"
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               readonly="readonly"
+              role="button"
               type="text"
             />
              
@@ -200,6 +207,7 @@ exports[`Storyshots modul-components|m-dropdown focus 1`] = `
             >
               <svg
                 aria-hidden="true"
+                aria-label="Ouvrir la liste déroulante"
                 class="m-icon m-dropdown__arrow__icon"
                 height="12px"
                 width="12px"
@@ -241,7 +249,10 @@ exports[`Storyshots modul-components|m-dropdown focus 1`] = `
 
 exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-dropdown"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -281,12 +292,12 @@ exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
             <!---->
              
             <input
-              aria-controls="mDropdown-fakeId-controls"
-              aria-haspopup="true"
+              aria-haspopup="listbox"
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               placeholder="placeholder"
               readonly="readonly"
+              role="button"
               type="text"
             />
              
@@ -305,6 +316,7 @@ exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
             >
               <svg
                 aria-hidden="true"
+                aria-label="Ouvrir la liste déroulante"
                 class="m-icon m-dropdown__arrow__icon"
                 height="12px"
                 width="12px"
@@ -346,7 +358,10 @@ exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
 
 exports[`Storyshots modul-components|m-dropdown with disabled items 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-dropdown"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -386,11 +401,11 @@ exports[`Storyshots modul-components|m-dropdown with disabled items 1`] = `
             <!---->
              
             <input
-              aria-controls="mDropdown-fakeId-controls"
-              aria-haspopup="true"
+              aria-haspopup="listbox"
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               readonly="readonly"
+              role="button"
               type="text"
             />
              
@@ -409,6 +424,7 @@ exports[`Storyshots modul-components|m-dropdown with disabled items 1`] = `
             >
               <svg
                 aria-hidden="true"
+                aria-label="Ouvrir la liste déroulante"
                 class="m-icon m-dropdown__arrow__icon"
                 height="12px"
                 width="12px"
@@ -457,7 +473,10 @@ exports[`Storyshots modul-components|m-dropdown/disabled Item selected, with lab
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-disabled"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -497,12 +516,12 @@ exports[`Storyshots modul-components|m-dropdown/disabled Item selected, with lab
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
                 disabled="disabled"
                 id="mDropdown-fakeId"
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -521,6 +540,7 @@ exports[`Storyshots modul-components|m-dropdown/disabled Item selected, with lab
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -571,7 +591,10 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, no label 
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-disabled"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -606,12 +629,12 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, no label 
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
                 disabled="disabled"
                 id="mDropdown-fakeId"
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -630,6 +653,7 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, no label 
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -680,7 +704,10 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, no label,
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-disabled"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -715,13 +742,13 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, no label,
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
                 disabled="disabled"
                 id="mDropdown-fakeId"
                 placeholder="Select your avenger"
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -740,6 +767,7 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, no label,
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -790,7 +818,10 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, with labe
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-disabled"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -830,12 +861,12 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, with labe
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
                 disabled="disabled"
                 id="mDropdown-fakeId"
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -854,6 +885,7 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, with labe
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -898,7 +930,10 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, with labe
 exports[`Storyshots modul-components|m-dropdown/filterable Clear-model-on-selected-text = true 1`] = `
 <div>
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--has-placeholder-icon"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -950,11 +985,12 @@ exports[`Storyshots modul-components|m-dropdown/filterable Clear-model-on-select
               </svg>
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-autocomplete="both"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
                 id="mDropdown-fakeId"
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -973,6 +1009,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable Clear-model-on-select
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   height="12px"
                   width="12px"
@@ -1016,7 +1053,10 @@ exports[`Storyshots modul-components|m-dropdown/filterable Clear-model-on-select
 exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = `
 <div>
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--has-placeholder-icon"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -1068,11 +1108,12 @@ exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = 
               </svg>
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-autocomplete="both"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
                 id="mDropdown-fakeId"
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -1091,6 +1132,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = 
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   height="12px"
                   width="12px"
@@ -1133,8 +1175,11 @@ exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = 
 
 exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] = `
 <div
+  aria-expanded="false"
+  aria-haspopup="listbox"
   class="m-dropdown"
   placeholder-icon-name="m-svg__search"
+  role="combobox"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -1174,12 +1219,13 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
             <!---->
              
             <input
-              aria-controls="mDropdown-fakeId-controls"
-              aria-haspopup="true"
+              aria-autocomplete="both"
+              aria-haspopup="listbox"
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               placeholder="Type to filter"
               readonly="readonly"
+              role="button"
               type="text"
             />
              
@@ -1198,6 +1244,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
             >
               <svg
                 aria-hidden="true"
+                aria-label="Ouvrir la liste déroulante"
                 class="m-icon m-dropdown__arrow__icon"
                 height="12px"
                 width="12px"
@@ -1246,7 +1293,10 @@ exports[`Storyshots modul-components|m-dropdown/readonly Item selected, with lab
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-readonly"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -1286,13 +1336,12 @@ exports[`Storyshots modul-components|m-dropdown/readonly Item selected, with lab
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
                 placeholder=""
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -1311,6 +1360,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly Item selected, with lab
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -1361,7 +1411,10 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label 
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-readonly"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -1396,13 +1449,12 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label 
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
                 placeholder=""
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -1421,6 +1473,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label 
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -1471,7 +1524,10 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label,
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-readonly"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -1506,13 +1562,12 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label,
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
                 placeholder=""
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -1531,6 +1586,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, no label,
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -1581,7 +1637,10 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-readonly"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -1621,13 +1680,12 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
                 placeholder=""
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -1646,6 +1704,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"
@@ -1696,7 +1755,10 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
   </p>
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--is-readonly"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -1736,13 +1798,12 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
                 class="m-dropdown__input"
-                disabled="disabled"
                 id="mDropdown-fakeId"
                 placeholder=""
                 readonly="readonly"
+                role="button"
                 type="text"
               />
                
@@ -1761,6 +1822,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   disabled="disabled"
                   height="12px"

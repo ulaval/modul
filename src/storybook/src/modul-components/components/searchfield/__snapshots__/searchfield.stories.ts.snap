@@ -87,15 +87,12 @@ exports[`Storyshots modul-components|m-searchfield Custom Visual 1`] = `
   </div>
    
   <div
-    class="m-searchfield__validation"
+    class="m-validation-message m-searchfield__validation"
+    id="validationMessageId"
   >
-    <div
-      class="m-validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <!---->
+     
+    <!---->
   </div>
 </div>
 `;
@@ -141,6 +138,7 @@ exports[`Storyshots modul-components|m-searchfield Error 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-invalid="true"
               class="m-textfield__input"
               id="mSearchfield-fakeId"
               type="search"
@@ -187,38 +185,36 @@ exports[`Storyshots modul-components|m-searchfield Error 1`] = `
   </div>
    
   <div
-    class="m-searchfield__validation"
+    class="m-validation-message m-searchfield__validation"
+    id="validationMessageId"
   >
-    <div
-      class="m-validation-message"
+    <p
+      aria-live="polite"
+      class="m-validation-message__error"
     >
-      <p
-        class="m-validation-message__error"
+      <svg
+        class="m-icon m-validation-message__icon"
+        height="1em"
+        width="1em"
       >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
-        >
-          <title>
-            Erreur
-          </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
+        <title>
+          Erreur
+        </title>
          
-        <span
-          class="m-validation-message__text"
-        >
-          Error message
-        </span>
-      </p>
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
        
-      <!---->
-    </div>
+      <span
+        class="m-validation-message__text"
+      >
+        Error message
+      </span>
+    </p>
+     
+    <!---->
   </div>
 </div>
 `;
@@ -311,15 +307,12 @@ exports[`Storyshots modul-components|m-searchfield Label 1`] = `
   </div>
    
   <div
-    class="m-searchfield__validation"
+    class="m-validation-message m-searchfield__validation"
+    id="validationMessageId"
   >
-    <div
-      class="m-validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <!---->
+     
+    <!---->
   </div>
 </div>
 `;
@@ -407,15 +400,12 @@ exports[`Storyshots modul-components|m-searchfield Placeholder 1`] = `
   </div>
    
   <div
-    class="m-searchfield__validation"
+    class="m-validation-message m-searchfield__validation"
+    id="validationMessageId"
   >
-    <div
-      class="m-validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <!---->
+     
+    <!---->
   </div>
 </div>
 `;
@@ -507,38 +497,36 @@ exports[`Storyshots modul-components|m-searchfield Valid 1`] = `
   </div>
    
   <div
-    class="m-searchfield__validation"
+    class="m-validation-message m-searchfield__validation"
+    id="validationMessageId"
   >
-    <div
-      class="m-validation-message"
+    <p
+      aria-live="polite"
+      class="m-validation-message__valid"
     >
-      <p
-        class="m-validation-message__valid"
+      <svg
+        class="m-icon m-validation-message__icon"
+        height="1em"
+        width="1em"
       >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
-        >
-          <title>
-            Valide
-          </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
+        <title>
+          Valide
+        </title>
          
-        <span
-          class="m-validation-message__text"
-        >
-          Valid message
-        </span>
-      </p>
+        <use
+          aria-hidden="true"
+          class=""
+        />
+      </svg>
        
-      <!---->
-    </div>
+      <span
+        class="m-validation-message__text"
+      >
+        Valid message
+      </span>
+    </p>
+     
+    <!---->
   </div>
 </div>
 `;
@@ -625,15 +613,12 @@ exports[`Storyshots modul-components|m-searchfield default 1`] = `
   </div>
    
   <div
-    class="m-searchfield__validation"
+    class="m-validation-message m-searchfield__validation"
+    id="validationMessageId"
   >
-    <div
-      class="m-validation-message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <!---->
+     
+    <!---->
   </div>
 </div>
 `;

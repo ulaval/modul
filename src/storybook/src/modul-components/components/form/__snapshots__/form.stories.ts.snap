@@ -331,9 +331,12 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -347,9 +350,11 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
               class="m-input-style__content"
             >
               <input
+                aria-required="true"
                 class="m-textfield__input"
                 id="mTextfield-fakeId"
                 maxlength="Infinity"
+                required="required"
                 type="text"
               />
                  
@@ -415,9 +420,12 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -431,9 +439,11 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
               class="m-input-style__content"
             >
               <input
+                aria-required="true"
                 class="m-textfield__input"
                 id="mTextfield-fakeId"
                 maxlength="Infinity"
+                required="required"
                 type="text"
               />
                  
@@ -499,9 +509,12 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -515,9 +528,11 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
               class="m-input-style__content"
             >
               <input
+                aria-required="true"
                 class="m-textfield__input"
                 id="mTextfield-fakeId"
                 maxlength="Infinity"
+                required="required"
                 type="text"
               />
                  
@@ -561,7 +576,7 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
    
   <hr />
    
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -752,9 +767,9 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
         <br />
       </div>
     </div>
-  </div>
+  </fieldset>
    
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -945,7 +960,7 @@ exports[`Storyshots modul-components|m-form Toast Message Count For Form Group 1
         <br />
       </div>
     </div>
-  </div>
+  </fieldset>
    
   <p>
     <button
