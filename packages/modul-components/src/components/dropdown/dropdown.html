@@ -146,6 +146,7 @@
             ref="items"
             role="listbox"
             :aria-labelledby="label ? labelId : undefined"
+            :aria-multiselectable="true"
             @mouseup="selectText">
             <slot></slot>
             <m-dropdown-item v-if="!hasItems && !dirty && includeFilterableStatusItems"
