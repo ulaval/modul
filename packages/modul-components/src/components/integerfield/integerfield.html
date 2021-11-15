@@ -39,7 +39,7 @@
             :autocomplete="autocomplete"
             :options="inputMaskOptions"
             :aria-invalid="hasDecimalfieldError"
-            :aria-describedby="messageValidationId"
+            :aria-describedby="validationMessageId"
             :required="required || requiredMarker"
             @focus="onFocus"
             @blur="onBlur"
@@ -49,7 +49,7 @@
         <slot name="suffix" slot="suffix" />
     </m-input-style>
     <div
-        :id="messageValidationId"
+        :id="validationMessageId"
         class="m-integerfield__validation"
     >
         <m-validation-message

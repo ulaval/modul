@@ -37,7 +37,7 @@
             :placeholder="placeholder"
             :readonly="isReadonly"
             :aria-invalid="hasSearchfieldError"
-            :aria-describedby="messageValidationId"
+            :aria-describedby="validationMessageId"
             :required="required || requiredMarker"
             @focus="onFocus"
             @blur="onBlur"
@@ -75,7 +75,7 @@
     </m-input-style>
 
     <m-validation-message
-        id="messageValidationId"
+        id="validationMessageId"
         class="m-searchfield__validation"
         :disabled="isDisabled"
         :waiting="isWaiting"

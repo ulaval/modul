@@ -41,7 +41,7 @@ export class MSearchfield extends ModulVue {
     @Prop({ default: () => `mSearchfield-${uuid.generate()}` })
     public readonly id: string;
 
-    public readonly messageValidationId: string = uuid.generate();
+    public readonly validationMessageId: string = uuid.generate();
     public searchIconDescription: string = this.$i18n.translate('m-textfield:search');
 
     public $refs: {

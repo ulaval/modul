@@ -50,7 +50,7 @@ export class MIntegerfield extends ModulVue {
     @Prop({ default: () => `mIntegerfield-${uuid.generate()}` })
     public readonly id: string;
 
-    public readonly messageValidationId: string = uuid.generate();
+    public readonly validationMessageId: string = uuid.generate();
 
     public get hasDecimalfieldError(): boolean {
         return this.as<InputState>().hasError;

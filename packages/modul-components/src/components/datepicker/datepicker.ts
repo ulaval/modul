@@ -97,7 +97,7 @@ export class MDatepicker extends ModulVue {
     @Prop({ default: () => `mDatepicker-${uuid.generate()}` })
     public readonly id: string;
 
-    public readonly messageValidationId: string = uuid.generate();
+    public readonly validationMessageId: string = uuid.generate();
     public $refs: {
         input: MInputMask;
     };

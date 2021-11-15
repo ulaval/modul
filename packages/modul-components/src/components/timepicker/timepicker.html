@@ -36,7 +36,7 @@
             type="text"
             :raw="false"
             :aria-invalid="timeError"
-            :aria-describedby="messageValidationId"
+            :aria-describedby="validationMessageId"
             :required="required || requiredMarker"
             @blur="onBlur"
             @focus="onFocus"
@@ -54,7 +54,7 @@
     </m-input-style>
 
     <m-validation-message
-        :id="messageValidationId"
+        :id="validationMessageId"
         class="m-timepicker__validation-message"
         :disabled="isDisabled"
         :waiting="isWaiting"

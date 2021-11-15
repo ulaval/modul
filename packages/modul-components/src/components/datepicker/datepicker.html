@@ -38,7 +38,7 @@
             :raw="false"
             :value="inputModel"
             :aria-invalid="hasCalandarError"
-            :aria-describedby="messageValidationId"
+            :aria-describedby="validationMessageId"
             autocomplete="off"
             @focus="onFocus"
             @blur="onBlur"
@@ -60,7 +60,7 @@
     </m-input-style>
 
     <div
-        :id="messageValidationId"
+        :id="validationMessageId"
         class="m-datepicker__validation"
     >
         <m-validation-message

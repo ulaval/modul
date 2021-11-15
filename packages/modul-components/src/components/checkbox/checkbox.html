@@ -24,7 +24,7 @@
         :indeterminate.prop="propIndeterminate"
         :disabled="isDisabled"
         :aria-invalid="hasError"
-        :aria-describedby="messageValidationId"
+        :aria-describedby="validationMessageId"
         @click="onClick"
         @focus="setFocus(true)"
         @blur="setFocus(false)"
@@ -34,7 +34,7 @@
         :id="id"
         :value="propValue"
         :aria-invalid="hasError"
-        :aria-describedby="messageValidationId"
+        :aria-describedby="validationMessageId"
         type="hidden"
     />
     <label class="m-checkbox__wrap"
@@ -51,7 +51,7 @@
     </label>
 
     <m-validation-message
-        :id="messageValidationId"
+        :id="validationMessageId"
         class="m-checkbox__message"
         :disabled="isDisabled"
         :error="hasError"

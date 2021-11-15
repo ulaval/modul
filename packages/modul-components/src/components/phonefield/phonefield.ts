@@ -74,7 +74,7 @@ export class MPhonefield extends ModulVue {
     @Prop({ default: () => `mPhonefield-${uuid.generate()}` })
     public readonly id: string;
 
-    public readonly messageValidationId: string = uuid.generate();
+    public readonly validationMessageId: string = uuid.generate();
 
     public $refs: {
         inputMask: MInputMask;

@@ -48,7 +48,7 @@ export class MDecimalfield extends ModulVue {
     @Prop({ default: () => `mDecimalfield-${uuid.generate()}` })
     public readonly id: string;
 
-    public readonly messageValidationId: string = uuid.generate();
+    public readonly validationMessageId: string = uuid.generate();
     public text: string = '';
 
     public get hasDecimalfieldError(): boolean {

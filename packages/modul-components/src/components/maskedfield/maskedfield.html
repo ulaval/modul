@@ -40,7 +40,7 @@
             :raw="raw"
             :options="maskOptions"
             :aria-invalid="hasMaskedfieldError"
-            :aria-describedby="messageValidationId"
+            :aria-describedby="validationMessageId"
             @blur="onBlur"
             @change="onChange"
             @focus="onFocus"
@@ -51,7 +51,7 @@
         <slot name="suffix" slot="suffix" />
     </m-input-style>
     <div
-        :id="messageValidationId"
+        :id="validationMessageId"
         class="m-maskedfield__validation"
     >
         <m-validation-message

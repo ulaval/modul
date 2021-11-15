@@ -80,7 +80,7 @@
                 :autocomplete="autocomplete"
                 :options="inputMaskOptions"
                 :aria-invalid="hasPhonefieldError"
-                :aria-describedby="messageValidationId"
+                :aria-describedby="validationMessageId"
                 :required="required || requiredMarker"
                 type="tel"
                 @input="inputChanged($event)"
@@ -92,7 +92,7 @@
         </m-input-style>
     </div>
     <div
-        :id="messageValidationId"
+        :id="validationMessageId"
         class="m-phonefield__validation"
     >
         <m-validation-message

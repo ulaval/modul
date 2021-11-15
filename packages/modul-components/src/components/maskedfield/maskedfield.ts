@@ -37,7 +37,7 @@ export class MMaskedfield extends ModulVue {
     @Prop({ default: () => `mMaskedfield-${uuid.generate()}` })
     public readonly id: string;
 
-    public readonly messageValidationId: string = uuid.generate();
+    public readonly validationMessageId: string = uuid.generate();
 
     public get hasMaskedfieldError(): boolean {
         return this.as<InputState>().hasError;
