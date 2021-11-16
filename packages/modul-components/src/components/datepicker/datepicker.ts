@@ -12,10 +12,9 @@ import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import ModulDate, { DatePrecision } from '../../utils/modul-date/modul-date';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MButton } from '../button/button';
 import { MCalendar } from '../calendar/calendar';
 import { MBaseCalendarType, MBaseCalendarView } from '../calendar/calendar-renderer/base-calendar/base-calendar';
-import { BUTTON_NAME, CALENDAR_NAME, DATEPICKER_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_MASK_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { DATEPICKER_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
@@ -35,14 +34,13 @@ export enum MDatepickerDefaultView {
 @WithRender
 @Component({
     components: {
-        [INPUT_MASK_NAME]: MInputMask,
-        [BUTTON_NAME]: MButton,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [POPUP_NAME]: MPopup,
-        [CALENDAR_NAME]: MCalendar
+        MInputMask,
+        MInputStyle,
+        MIconButton,
+        MI18n,
+        MValidationMessage,
+        MPopup,
+        MCalendar
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
@@ -193,11 +191,8 @@ export class MDatepicker extends ModulVue {
 
     @Emit('open')
     public async onOpen(): Promise<void> {
-        // dont set the focus on less than tablet
-        if (!this.isLessThanTablet) {
-            let inputMask: MInputMask = this.$refs.input;
-            inputMask.focusAndSelectAll();
-        }
+        const inputMask: MInputMask = this.$refs.input;
+        inputMask?.focusAndSelectAll();
     }
 
     @Emit('close')
@@ -320,7 +315,7 @@ export class MDatepicker extends ModulVue {
 
     // override from InputManagement
     public onFocus(event: FocusEvent): void {
-        if (!this.open) { // open on focus
+        if (!this.open && this.as<MediaQueries>().isMqMinS) {
             this.open = true;
         }
 
@@ -333,7 +328,7 @@ export class MDatepicker extends ModulVue {
     // override from InputManagement
     public onClick(event: MouseEvent): void {
         this.as<InputManagement>().internalIsFocus = this.as<InputStateMixin>().active;
-        let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
+        const inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
         if (this.as<InputManagement>().internalIsFocus && inputEl) {
             inputEl.focus();
         }

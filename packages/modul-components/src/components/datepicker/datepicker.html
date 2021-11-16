@@ -8,7 +8,6 @@
 >
     <m-input-style
         v-m-popup:popup
-
         :disabled="isDisabled"
         :label="label"
         :label-for="id"
@@ -23,8 +22,6 @@
         :error-message="errorMessage"
         :valid-message="validMessage"
         :helper-message="helperMessage"
-
-
     >
         <m-input-mask
             ref="input"
@@ -33,19 +30,22 @@
             :aria-expanded="open"
             :required="required || requiredMarker"
             :disabled="isDisabled"
-            :readonly="isReadonly || isWaiting || isLessThanTablet"
+            :readonly="isReadonly || isWaiting"
             :options="inputOptions"
             :placeholder="propPlaceholder"
             :raw="false"
             :value="inputModel"
             :aria-invalid="hasCalandarError"
             :aria-describedby="validationMessageId"
+            :min="minModulDate"
+            :max="maxModulDate"
             autocomplete="off"
             @focus="onFocus"
             @blur="onBlur"
             @input="inputDate($event)"
             @keyup="onKeyup"
             @keydown="onKeydown"
+            @keydown.esc="open = false"
         />
         <m-icon-button
             class="m-datepicker__icon"
@@ -64,7 +64,7 @@
             :open.sync="open"
             :disabled="!active"
             :close-on-backdrop="true"
-            :focus-management="isMqMaxS"
+            :focus-management="false"
             open-trigger="manual"
             :padding="false"
             placement="bottom"
