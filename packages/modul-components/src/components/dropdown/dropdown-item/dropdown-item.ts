@@ -1,10 +1,9 @@
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Mixins, Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { normalizeString } from '../../../utils/str/str';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
-import { RADIO_STYLE_NAME } from '../../component-names';
 import { MRadioStyle } from '../../radio-style/radio-style';
 import WithRender from './dropdown-item.html?style=./dropdown-item.scss';
 export interface MDropdownInterface {
@@ -25,11 +24,10 @@ export abstract class BaseDropdownGroup extends ModulVue {
 @WithRender
 @Component({
     components: {
-        [RADIO_STYLE_NAME]: MRadioStyle
+        MRadioStyle
     },
-    mixins: [MediaQueries]
 })
-export class MDropdownItem extends ModulVue {
+export class MDropdownItem extends Mixins(MediaQueries) {
     @Prop()
     public label: string;
 

@@ -1,59 +1,54 @@
-<div
+<m-input-style
     class="m-timepicker"
-    :class="{
-        'm--is-disabled': isDisabled,
-        'm--is-readonly': isReadonly,
-        'm--has-validation-message': hasValidationMessage
-    }"
+    :disabled="isDisabled"
+    :readonly="isReadonly"
+    :waiting="isWaiting"
+    :focus="isFocus"
+    :required-marker="requiredMarker"
+    :label-up="labelUp"
+    :label="label"
+    :label-for="id"
+    :empty="isEmpty"
+    :error="timeError"
+    :valid="isValid"
+    :error-message="errorMessage"
+    :valid-message="validMessage"
+    :helper-message="helperMessage"
     :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+    @click="focusInput()"
 >
-    <m-input-style
-        :disabled="isDisabled"
+    <m-input-mask
+        v-model="currentTime"
+        ref="input"
+        :id="id"
+        :disabled="isDisabled || isWaiting"
+        inputmode="decimal"
+        :options="inputMaskOptions"
+        :placeholder="i18nPlaceHolder"
+        :min="min"
+        :max="max"
         :readonly="isReadonly"
-        :waiting="isWaiting"
-        :focus="isFocus"
-        :required-marker="requiredMarker"
-        :label-up="labelUp"
-        :label="label"
-        :label-for="id"
-        :empty="isEmpty"
-        :error="timeError"
-        :valid="isValid"
-        @click="focusInput()"
-    >
-        <m-input-mask
-            v-model="currentTime"
-            ref="input"
-            :id="id"
-            :disabled="isDisabled || isWaiting"
-            inputmode="decimal"
-            :options="inputMaskOptions"
-            :placeholder="i18nPlaceHolder"
-            :min="min"
-            :max="max"
-            :readonly="isReadonly"
-            :step="currentStep"
-            type="text"
-            :raw="false"
-            :aria-invalid="timeError"
-            :aria-describedby="validationMessageId"
-            :required="required || requiredMarker"
-            @blur="onBlur"
-            @focus="onFocus"
-        />
-        <m-icon-button
-            slot="suffix"
-            v-m-popup:popup
-            icon-name="m-svg__clock"
-            :disabled="!active"
-            button-size="22px"
-            tabindex="-1"
-            aria-hidden="true"
-            :title="!open ? $i18n.translate('m-timepicker:open') : $i18n.translate('m-timepicker:close')"
-        />
-    </m-input-style>
-
+        :step="currentStep"
+        type="text"
+        :raw="false"
+        :aria-invalid="timeError"
+        :aria-describedby="validationMessageId"
+        :required="required || requiredMarker"
+        @blur="onBlur"
+        @focus="onFocus"
+    />
+    <m-icon-button
+        slot="suffix"
+        v-m-popup:popup
+        icon-name="m-svg__clock"
+        :disabled="!active"
+        button-size="22px"
+        tabindex="-1"
+        aria-hidden="true"
+        :title="!open ? $i18n.translate('m-timepicker:open') : $i18n.translate('m-timepicker:close')"
+    />
     <m-validation-message
+        slot="validation"
         :id="validationMessageId"
         class="m-timepicker__validation-message"
         :disabled="isDisabled"
@@ -63,15 +58,18 @@
         :valid-message="validMessage"
         :helper-message="helperMessage"
     />
-
-    <m-popup ref="popup"
-             :open.sync="open"
-             :disabled="!active"
-             :padding="false"
-             @open="onPopupOpen"
-             @close="onClose">
+    <m-popup
+        slot="popup"
+        ref="popup"
+        :open.sync="open"
+        :disabled="!active"
+        :padding="false"
+        :focus-management="false"
+        @open="onPopupOpen"
+        @close="onClose"
+    >
         <div slot="header"
-             class="m-timepicker__header">
+            class="m-timepicker__header">
             <m-i18n k="m-timepicker:hours"
                     class="m-timepicker__header__hours"></m-i18n>:
             <m-i18n k="m-timepicker:minutes"
@@ -128,4 +126,4 @@
             <m-link mode="button" @click="onOk">{{i18nButton}}</m-link>
         </div>
     </m-popup>
-</div>
+</m-input-style>

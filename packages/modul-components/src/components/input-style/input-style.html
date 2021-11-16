@@ -9,14 +9,16 @@
               'm--is-valid' : isValid,
               'm--has-label': hasLabel,
               'm--has-value': hasValue,
-              'm--is-anim-ready': animReady },
+              'm--is-anim-ready': animReady,
+              'm--has-auto-spacing-right': autoSpacingRight,
+              'm--has-validation-message': hasValidationMessage },
               'm--is-tag-' + tagStyle]"
      @click="onClick"
      @mousedown="onMousedown"
      @mouseup="onMouseup"
-     ref="root"
-     :style="{ width: width, marginTop: labelOffset }">
-    <div class="m-input-style__main">
+     ref="root">
+    <div class="m-input-style__main"
+        :style="{ width: width, marginTop: labelOffset }">
         <div class="m-input-style__body">
             <label v-if="hasLabel"
                    ref="label"
@@ -82,7 +84,11 @@
         <div v-if="append"
              ref="append"
              class="m-input-style__append">
-            <slot name="append"></slot>
+            <slot name="append" />
         </div>
+    </div>
+    <slot name="popup"></slot>
+    <div v-if="$slots['validation']" class="m-input-style__validation">
+        <slot name="validation" />
     </div>
 </div>

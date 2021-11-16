@@ -3,8 +3,6 @@ import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../directives/directive-names';
 import { MPopupDirective } from '../../directives/popup/popup';
-import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
-import { i18nFilter } from '../../filters/i18n/i18n';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputPopup } from '../../mixins/input-popup/input-popup';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
@@ -15,8 +13,7 @@ import { normalizeString } from '../../utils/str/str';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import uuid from '../../utils/uuid/uuid';
 import { MButton } from '../button/button';
-import { BUTTON_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
@@ -31,20 +28,17 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_NAME]: MIcon,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [POPUP_NAME]: MPopup,
-        [DROPDOWN_ITEM_NAME]: MDropdownItem
+        MButton,
+        MInputStyle,
+        MIcon,
+        MIconButton,
+
+        MValidationMessage,
+        MPopup,
+        MDropdownItem
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
-    },
-    filters: {
-        [FILTER_I18N_NAME]: i18nFilter
     },
     mixins: [
         InputState,

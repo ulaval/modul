@@ -195,6 +195,10 @@
         margin-left: $m-spacing--s;
     }
 
+    &__validation {
+        transition: margin-top $m-transition-duration ease;
+    }
+
     // modifiers
 
     &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus):not(.m--is-readonly) {
@@ -341,6 +345,12 @@
 
         &h6 {
             @include m-h6-font-style();
+        }
+    }
+
+    &.m--has-validation-message {
+        .m-input-style__validation {
+            margin-top: $m-spacing--xs;
         }
     }
 }

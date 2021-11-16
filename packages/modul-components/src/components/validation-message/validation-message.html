@@ -1,19 +1,22 @@
-<div class="m-validation-message"
-     @click="onClick"
-     aria-live="polite">
-    <m-accordion-transition :disabled="!transition">
-        <p :class="['m-validation-message__' + classMessage]"
-           v-if="message"
-          >
-            <m-icon class="m-validation-message__icon"
-                    :name="iconName"
-                    :svg-title="svgTitle"
-                    size="1em">
-            </m-icon>
-            <span class="m-validation-message__text"
-                  v-html="message"></span>
-        </p>
-    </m-accordion-transition>
+<div
+    class="m-validation-message"
+    @click="onClick"
+>
+    <div aria-live="polite">
+        <m-accordion-transition :disabled="!transition">
+            <p :class="['m-validation-message__' + classMessage]"
+            v-if="message"
+            >
+                <m-icon class="m-validation-message__icon"
+                        :name="iconName"
+                        :svg-title="svgTitle"
+                        size="1em">
+                </m-icon>
+                <span class="m-validation-message__text"
+                    v-html="message"></span>
+            </p>
+        </m-accordion-transition>
+    </div>
     <m-accordion-transition :disabled="!transition">
         <p class="m-validation-message__helper"
            v-if="hasHelperMessage"

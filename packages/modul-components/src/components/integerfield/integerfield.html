@@ -1,59 +1,52 @@
-<div
+
+<m-input-style
     class="m-integerfield"
-    :class="[{
-        'm--is-disabled': isDisabled,
-        'm--is-waiting': isWaiting,
-        'm--is-readonly': isReadonly,
-        'm--has-error': hasDecimalfieldError,
-        'm--is-valid': isDecimalfieldValid,
-        'm--has-label': hasLabel,
-        'm--has-validation-message': hasValidationMessage
-    }]"
+    :disabled="isDisabled"
+    :waiting="isWaiting"
+    :error="hasDecimalfieldError"
+    :valid="isDecimalfieldValid"
+    :label="label"
+    :label-for="id"
+    :focus="isFocus"
+    :label-up="labelUp"
+    :empty="isEmpty"
+    :readonly="isReadonly"
+    :required-marker="requiredMarker"
+    :tag-style="tagStyle"
+    :error-message="errorMessage"
+    :valid-message="validMessage"
+    :helper-message="helperMessage"
     :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
     @click="onClick"
 >
-    <m-input-style
+    <slot name="prefix" slot="prefix" />
+    <m-input-mask
+        v-model="model"
+        ref="inputMask"
+        :id="id"
+        class="m-integerfield__input"
+        inputmode="decimal"
         :disabled="isDisabled"
-        :waiting="isWaiting"
-        :error="hasDecimalfieldError"
-        :valid="isDecimalfieldValid"
-        :label="label"
-        :label-for="id"
-        :focus="isFocus"
-        :label-up="labelUp"
-        :empty="isEmpty"
-        :readonly="isReadonly"
-        :required-marker="requiredMarker"
-        :tag-style="tagStyle"
-    >
-        <slot name="prefix" slot="prefix" />
-        <m-input-mask
-            v-model="model"
-            ref="inputMask"
-            :id="id"
-            class="m-integerfield__input"
-            inputmode="decimal"
-            :disabled="isDisabled || isWaiting"
-            :placeholder="placeholder"
-            :readonly="isReadonly"
-            :autocomplete="autocomplete"
-            :options="inputMaskOptions"
-            :aria-invalid="hasDecimalfieldError"
-            :aria-describedby="validationMessageId"
-            :required="required || requiredMarker"
-            @focus="onFocus"
-            @blur="onBlur"
-            @keyup="onKeyup"
-            @change="onChange"
-        />
-        <slot name="suffix" slot="suffix" />
-    </m-input-style>
+        :readonly="isReadonly || isWaiting"
+        :placeholder="placeholder"
+        :autocomplete="autocomplete"
+        :options="inputMaskOptions"
+        :aria-invalid="hasDecimalfieldError"
+        :aria-describedby="validationMessageId"
+        :required="required || requiredMarker"
+        @focus="onFocus"
+        @blur="onBlur"
+        @keyup="onKeyup"
+        @change="onChange"
+    />
+    <slot name="suffix" slot="suffix" />
     <div
+        slot="validation"
         :id="validationMessageId"
         class="m-integerfield__validation"
     >
         <m-validation-message
-            class="m-integerfield__validation__message"
+            class="m-integerfield__validation-message"
             :disabled="isDisabled"
             :waiting="isWaiting"
             :error="hasDecimalfieldError"
@@ -63,4 +56,4 @@
             :helper-message="helperMessage"
         />
     </div>
-</div>
+</m-input-style>
