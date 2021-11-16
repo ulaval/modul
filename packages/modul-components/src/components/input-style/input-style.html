@@ -53,11 +53,14 @@
                 </div>
 
                 <div class="m-input-style__content">
-                    <slot></slot>
-                    <m-i18n v-if="!hasDefaultSlot"
-                            class="m-input-style__transparent-text"
-                            k="m-input-style:empty-value"
-                            aria-hidden="true"></m-i18n>
+                    <slot />
+                    <span
+                        v-if="!hasDefaultSlot"
+                        class="m-input-style__transparent-text"
+                        aria-hidden="true"
+                    >
+                        {{ $i18n.translate('m-input-style:empty-value') }}
+                    </span>
                     <div v-if="hasAdjustWidthAutoSlot"
                          class="m-input-style__adjust-width-auto"
                          aria-hidden="true"

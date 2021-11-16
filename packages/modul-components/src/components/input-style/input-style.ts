@@ -1,10 +1,8 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Mixins, Prop, Watch } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
-import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, INPUT_STYLE_NAME, SPINNER_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { INPUT_STYLE_NAME } from '../component-names';
 import { MSpinner } from '../spinner/spinner';
 import WithRender from './input-style.html';
 import './input-style.scss';
@@ -14,12 +12,10 @@ export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
 @WithRender
 @Component({
     components: {
-        [I18N_NAME]: MI18n,
-        [SPINNER_NAME]: MSpinner
+        MSpinner
     },
-    mixins: [InputState]
 })
-export class MInputStyle extends ModulVue {
+export class MInputStyle extends Mixins(InputState) {
     @Prop({ default: '' })
     public label: string;
 
@@ -80,9 +76,9 @@ export class MInputStyle extends ModulVue {
     public setInputWidth(): void {
         // This is not very VueJs friendly.  It should be replaced by :style or something similar.
         this.$nextTick(() => {
-            let labelEl: HTMLElement = this.$refs.label;
-            let inputEl: HTMLElement | undefined = this.as<InputState>().getInput();
-            let adjustWidthAutoEl: HTMLElement = this.$refs.adjustWidthAuto;
+            const labelEl: HTMLElement = this.$refs.label;
+            const inputEl: HTMLElement | undefined = this.getInput();
+            const adjustWidthAutoEl: HTMLElement = this.$refs.adjustWidthAuto;
             if (this.width === 'auto' && this.hasAdjustWidthAutoSlot) {
                 setTimeout(() => {
                     if (inputEl !== undefined) {
@@ -143,7 +139,7 @@ export class MInputStyle extends ModulVue {
     }
 
     public get isFocus(): boolean {
-        let focus: boolean = this.focus && this.as<InputState>().active;
+        const focus: boolean = this.focus && this.active;
         this.$emit('focus', focus);
         return focus;
     }
