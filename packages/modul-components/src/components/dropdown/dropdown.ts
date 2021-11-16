@@ -195,15 +195,15 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Emit('open')
     private async onOpen(): Promise<void> {
         await this.$nextTick();
-
-        let inputEl: any = this.$refs.input;
-
-        setTimeout(() => { // Need timeout to set focus on input
+        requestAnimationFrame(() => {
+            const inputEl: HTMLElement = this.$refs.input;
+            const researchInputEl: HTMLElement = this.$refs.researchInput;
             if (!(this.filterable && this.as<MediaQueries>().isMqMaxS)) {
                 inputEl.focus();
+            } else if (researchInputEl) {
+                researchInputEl.focus();
             }
-        }, 200);
-
+        });
         this.focusSelected();
         this.scrollToFocused();
     }
@@ -400,7 +400,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     public onKeydownHome($event: KeyboardEvent): void {
-        if (!this.hasItems || this.focusedIndex < 0) {
+        if (!this.hasItems || this.focusedIndex < 0 || !this.open) {
             return;
         }
         this.focusedIndex = 0;
@@ -408,7 +408,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     public onKeydownEnd($event: KeyboardEvent): void {
-        if (!this.hasItems || this.focusedIndex < 0) {
+        if (!this.hasItems || this.focusedIndex < 0 || !this.open) {
             return;
         }
         this.focusedIndex = this.internalNavigationItems.length - 1;
@@ -416,11 +416,8 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private onKeydownUp($event: KeyboardEvent): void {
-        if (!this.open) {
-            this.open = true;
-        } else {
-            this.focusPreviousItem();
-        }
+        if (!this.open) return;
+        this.focusPreviousItem();
     }
 
     private onKeydownDown($event: KeyboardEvent): void {

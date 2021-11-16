@@ -70,7 +70,7 @@
             @keydown.home.prevent="onKeydownHome"
             @keydown.end.prevent="onKeydownEnd"
             @keydown.tab="onKeydownTab"
-            @keydown="inputOnKeydown"
+            @keydown="filterable ? inputOnKeydown($event) : undefined"
             @focusin="onFocusIn"
             @focusout="onFocusOut"
             @input="onInput"
@@ -132,13 +132,27 @@
                        :placeholder="'m-dropdown:search' | f-m-i18n"
                        ref="researchInput"
                        v-model.trim="selectedText"
-                       :max-length="maxLength"
-                       @input="onInput" />
-                <m-icon-button class="m-dropdown__header__research-button"
-                               icon-name="m-svg__search"
-                               @click="focusOnResearchInput">
-                    <m-i18n k="m-dropdown:research"></m-i18n>
-                </m-icon-button>
+                       :maxlength="maxLength"
+                       :autocomplete="autocomplete"
+                       :aria-describedby="inputAriaDescribedby"
+                       :aria-activedescendant="inputAriaActivedescendant"
+                       @input="onInput"
+                       @keydown.enter.prevent="onKeydownEnter"
+                       @keydown.return.prevent="onKeydownEnter"
+                       @keydown.space.prevent="onKeydownEnter"
+                       @keydown.esc="onKeydownEsc"
+                       @keydown.up.prevent="onKeydownUp"
+                       @keydown.down.prevent="onKeydownDown"
+                       @keydown.home.prevent="onKeydownHome"
+                       @keydown.end.prevent="onKeydownEnd"
+                       @keydown.tab="onKeydownTab" />
+                <m-icon-button
+                    class="m-dropdown__header__research-button"
+                    icon-name="m-svg__search"
+                    tabindex="-1"
+                    :title="$i18n.translate('m-dropdown:research')"
+                    @click="focusOnResearchInput"
+                />
             </div>
         </template>
         <ul :id="listboxId"

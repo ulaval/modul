@@ -33,6 +33,13 @@
         stroke-width: 2px;
     }
 
+    &__mobile-spiner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $m-spacing--xl $m-spacing;
+    }
+
     &__validation-message {
         transition: margin-top $m-transition-duration ease;
 

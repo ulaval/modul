@@ -248,7 +248,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
             clearTimeout(this.throttleTimeout as NodeJS.Timeout);
             this.createThrottleTimeout();
         } else {
-            this.isResultsPopupOpen = false;
+            this.isResultsPopupOpen = this.isMqMaxS;
             this.throttleTimeoutActive = true;
             this.createThrottleTimeout();
         }

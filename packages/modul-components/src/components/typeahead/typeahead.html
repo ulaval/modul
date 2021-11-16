@@ -117,11 +117,19 @@
             <m-icon-button
                 class="m-typeahead__research-button-popup"
                 icon-name="m-svg__search"
-                :aria-label="$i18n.translate('m-typeahead:research')"
+                :title="$i18n.translate('m-typeahead:research')"
+                tabindex="-1"
                 @click="focusOnResearchInput"
             />
         </div>
     </template>
+
+    <template #outer-items v-if="waitingResults && isMqMaxS">
+        <div class="m-typeahead__mobile-spiner">
+            <m-spinner class="m-input-style__spinner"/>
+        </div>
+    </template>
+
     <template #items="{item , index }">
         <slot
             name="items"
