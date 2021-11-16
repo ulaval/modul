@@ -1,4 +1,3 @@
-
 <div
     class="m-dropdown"
     :class="{
@@ -6,6 +5,8 @@
         'm--has-placeholder-icon': hasPlaceholderIcon,
         'm--has-validation-message': hasValidationMessage
     }"
+    :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+    @click="onOpen"
 >
     <m-input-style
         v-m-popup:popup
@@ -33,8 +34,6 @@
         :error-message="errorMessage"
         :valid-message="validMessage"
         :helper-message="helperMessage"
-        :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
-        @click="onOpen"
     >
         <m-icon
             v-if="hasPlaceholderIcon"
