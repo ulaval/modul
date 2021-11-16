@@ -51,6 +51,7 @@ export class MSearchfield extends ModulVue {
     @Emit('empty-field')
     public onReset(): void {
         this.as<InputManagement>().model = '';
+        this.$refs?.input?.focus();
     }
 
     public onSearch(event: KeyboardEvent | MouseEvent): void {
