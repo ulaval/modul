@@ -44,16 +44,16 @@
             @click.prevent="onInputStyleClick(scope.toggle)"
         >
             <slot
-                :key-up="scope.onKeydownUp"
-                :key-down="scope.onKeydownDown"
-                :key-tab="scope.onKeydownTab"
-                :key-esc="scope.onKeydownEsc"
-                :key-enter="scope.onKeydownEnter"
-                :key-space="scope.onKeydownSpace"
-                :key-home="scope.onKeydownHome"
-                :key-end="scope.onKeydownEnd"
-                :key-letter="scope.onKeydownLetter"
-                :aria-activedescendant="scope.ariaActivedescendantId"
+                :key-up="scope.keyUp"
+                :key-down="scope.keyDown"
+                :key-tab="scope.keyTab"
+                :key-esc="scope.keyEsc"
+                :key-enter="scope.keyEnter"
+                :key-space="scope.keySpace"
+                :key-home="scope.keyHome"
+                :key-end="scope.keyEnd"
+                :key-letter="scope.keyLetter"
+                :aria-activedescendant="scope.ariaActivedescendant"
                 :aria-controls="scope.ariaControls"
                 :focus="onFocus"
                 :blur="onBlur"
@@ -146,7 +146,6 @@
             :get-item-handlers="getItemHandlers"
         />
     </template>
-
     <template #items="{item , index }">
         <slot
             name="items"

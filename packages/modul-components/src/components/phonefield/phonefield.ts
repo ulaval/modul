@@ -1,10 +1,10 @@
 import { CountryCode, getExampleNumber, ParsedNumber, parseNumber, PhoneNumber } from 'libphonenumber-js';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
-import { InputMaxWidthValues, InputWidth } from '../../mixins/input-width/input-width';
+import { InputMaxWidth, InputMaxWidthValues, InputWidth } from '../../mixins/input-width/input-width';
 import { allCountriesOptionsEn } from '../../utils/country/countries-options-en';
 import { allCountriesOptionsFr } from '../../utils/country/countries-options-fr';
 import { MCountry, MCountryCodeISO2, MCountryOptions } from '../../utils/country/country';
@@ -75,6 +75,13 @@ export class MPhonefield extends ModulVue {
     public readonly id: string;
 
     public readonly validationMessageId: string = uuid.generate();
+    public readonly valueDropdownCountryId: string = uuid.generate();
+
+    @Ref('inputMask')
+    public refInputMask: MInputMask;
+
+    @Ref('inputSelect')
+    public refInputSelect: HTMLElement;
 
     public $refs: {
         inputMask: MInputMask;
@@ -86,8 +93,6 @@ export class MPhonefield extends ModulVue {
     public internalCountry: MCountryOptions = { name: '', iso2: MCountryCodeISO2.Empty, dialCode: '' };
     public selectedCountries: MCountryOptions[] = this.$i18n.currentLang() === FRENCH ? allCountriesOptionsFr : allCountriesOptionsEn;
     public countries: MCountryOptions[] = this.selectedCountries.sort((a, b) => (this.nameNormalize(a.name) > this.nameNormalize(b.name)) ? 1 : ((this.nameNormalize(b.name) > this.nameNormalize(a.name)) ? -1 : 0));
-    public internalFocus: boolean = false;
-    public listMinWidth: string = InputMaxWidthValues.Regular;
 
     public i18nInternalLabel: string = this.$i18n.translate('m-phonefield:phone-label');
     public i18nCountryLabel: string = this.$i18n.translate('m-phonefield:country-label');
@@ -152,12 +157,32 @@ export class MPhonefield extends ModulVue {
         }
     }
 
+    public onKeydownTab(callbackTab: Function, event: KeyboardEvent): void {
+        callbackTab();
+        this.focusInput();
+    }
+
     public isLastPriorityIsoCountrie(iso: MCountryCodeISO2): boolean {
         return this.priorityIsoCountries[this.priorityIsoCountries.length - 1] === iso;
     }
 
     public get isoCountries(): string[] {
         return this.countriesSorted.map(contry => contry.iso2);
+    }
+
+    public get listMinWidth(): string {
+        switch (this.as<InputWidth>().maxWidth) {
+            case InputMaxWidth.Medium:
+            case InputMaxWidth.Large:
+                return InputMaxWidthValues.Medium;
+            case InputMaxWidth.None:
+            case InputMaxWidth.XSmall:
+            case InputMaxWidth.Small:
+            case InputMaxWidth.Regular:
+                return InputMaxWidthValues.Regular;
+            default:
+                return this.as<InputWidth>().maxWidth;
+        }
     }
 
     public get countriesSorted(): MCountryOptions[] {
@@ -251,18 +276,16 @@ export class MPhonefield extends ModulVue {
         });
     }
 
-    public onSelectFocus(): void {
-        this.internalFocus = true;
-    }
-
-    public onSelectBlur(): void {
-        this.internalFocus = false;
-        this.focusInput();
-    }
-
-    public async focusInput(): Promise<any> {
+    public async focusInputSelect(): Promise<void> {
         await this.$nextTick();
-        this.$refs.inputMask.focus();
+        if (!this.refInputSelect) return;
+        this.refInputSelect.focus();
+    }
+
+    public async focusInput(): Promise<void> {
+        await this.$nextTick();
+        if (!this.refInputMask) return;
+        this.refInputMask.focus();
     }
 }
 

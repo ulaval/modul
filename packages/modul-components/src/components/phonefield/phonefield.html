@@ -6,7 +6,6 @@
         'm--is-readonly': isReadonly,
         'm--has-error': hasPhonefieldError,
         'm--is-valid': isPhonefieldValid,
-        'm--is-country-focus': internalFocus,
         'm--has-validation-message': hasValidationMessage
     }]"
     :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
@@ -25,17 +24,46 @@
             :clearable="false"
             :list-min-width="listMinWidth"
             @select-item="onContryChanged"
-            @focus="onSelectFocus"
-            @blur="onSelectBlur"
+            @open="focusInputSelect"
+            @close="focusInput"
         >
+            <template #default="{propsAndHandlers}">
+                <div role="button"
+                    class="m-phonefield__country-field"
+                    aria-haspopup="listbox"
+                    ref="inputSelect"
+                    :tabindex="isDisabled || isReadonly || isWaiting ? -1 : 0"
+                    :aria-activedescendant="propsAndHandlers.ariaActivedescendant"
+                    :aria-controls="propsAndHandlers.ariaControls"
+                    :aria-labelleby="valueDropdownCountryId"
+                    @keydown.up.prevent="propsAndHandlers.keyUp"
+                    @keydown.down.prevent="propsAndHandlers.keyDown"
+                    @keydown.home.prevent="propsAndHandlers.keyHome"
+                    @keydown.end.prevent="propsAndHandlers.keyEnd"
+                    @keydown.enter.prevent="propsAndHandlers.keyEnter"
+                    @keydown.space.prevent="propsAndHandlers.keyEnter"
+                    @keydown.tab.prevent="onKeydownTab(propsAndHandlers.keyTab)"
+                    @keydown.prevent="propsAndHandlers.keyLetter"
+                    @focus="propsAndHandlers.focus()"
+                    @blur="propsAndHandlers.blur()"
+                >
+                    <span
+                        :id="valueDropdownCountryId"
+                        class="m-phonefield__hidden"
+                    >
+                        {{$i18n.translate('m-phonefield:country-code')}}: {{countryModel}}
+                    </span>
+                    <svg class="m-phonefield__flag-wrapper"
+                        aria-hidden="true"
+                            width="27px"
+                            height="20px">
+                        <use :xlink:href="spriteId(countryModel)"
+                                aria-hidden="true"></use>
+                    </svg>
+                </div>
 
-            <svg class="m-phonefield__flag-wrapper"
-                    width="27px"
-                    height="20px">
-                <use :xlink:href="spriteId(countryModel)"
-                        aria-hidden="true"></use>
-            </svg>
-            <template #outer-items="{item, index, props, handlers}">
+            </template>
+            <template #outer-item="{item, index, props, handlers}">
                 <m-select-item
                     v-if="item"
                     class="m-phonefield__item-country-list"

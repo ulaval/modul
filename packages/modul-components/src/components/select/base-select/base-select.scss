@@ -18,7 +18,7 @@
         }
     }
 
-    &__list:not(.m--is-virutalScroll) {
+    &__list:not(.m--is-virtual-scroll) {
         @include m-scrollbar();
 
         @media (min-width: $m-mq--min--s) {
@@ -27,7 +27,7 @@
         }
     }
 
-    &__list.m--is-virutalScroll {
+    &__list.m--is-virtual-scroll {
         >div {
             @include m-scrollbar();
         }

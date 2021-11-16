@@ -168,7 +168,7 @@
             :valid-message="validMessage"
             :helper-message="helperMessage"
         />
-    <template #outer-items="{item, index, getItemPops}">
+    <template #outer-item="{item, index, getItemPops}">
         <m-select-item
             v-if="index === 0 && linkSelectAll"
             class="m-multi-select__all-check"

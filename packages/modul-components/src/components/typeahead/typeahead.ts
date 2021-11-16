@@ -6,6 +6,7 @@ import { InputManagement } from '../../mixins/input-management/input-management'
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
+import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import uuid from '../../utils/uuid/uuid';
 import { TYPEAHEAD_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
@@ -62,6 +63,12 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
 
     @Prop({ default: () => `${TYPEAHEAD_NAME}-${uuid.generate()}` })
     public readonly id: string;
+
+    @Prop({
+        validator: (value: string) =>
+            REGEX_CSS_NUMBER_VALUE.test(value)
+    })
+    public readonly listMaxHeight: string;
 
     @Ref('mBaseSelect')
     public readonly refBaseSelect: MBaseSelect;

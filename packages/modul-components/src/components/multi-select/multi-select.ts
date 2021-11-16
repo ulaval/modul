@@ -70,7 +70,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
     public internalValue: any[] = [];
     public internalFocus: boolean = false;
     public open: boolean = false;
-    public internalOptions: any[];
+    public internalOptions: any[] = [];
     public allSelectedCheckboxIsChecked: boolean = false;
 
     @Ref('input')

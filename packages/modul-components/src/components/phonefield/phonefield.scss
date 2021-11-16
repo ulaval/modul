@@ -13,16 +13,6 @@ $m-phonefiled--width-flag-dropdown: 88px;
         }
     }
 
-    &.m--is-country-focus {
-        .m-phonefield {
-            &__number:not(.m--has-error) {
-                /deep/ .m-input-style__main {
-                    border-left-color: $m-color--interactive;
-                }
-            }
-        }
-    }
-
     &__wrapper {
         display: grid;
         grid-template-columns: #{$m-phonefiled--width-flag-dropdown} auto;
@@ -112,5 +102,13 @@ $m-phonefiled--width-flag-dropdown: 88px;
 
     &__validation-message {
         flex: 1 1 auto;
+    }
+
+    &__country-field {
+        outline: none;
+    }
+
+    &__hidden {
+        @include m-visually-hidden();
     }
 }
