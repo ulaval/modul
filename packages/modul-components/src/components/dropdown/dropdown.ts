@@ -32,7 +32,6 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
         MInputStyle,
         MIcon,
         MIconButton,
-
         MValidationMessage,
         MPopup,
         MDropdownItem
