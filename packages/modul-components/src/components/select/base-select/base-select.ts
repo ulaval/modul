@@ -208,6 +208,9 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
             }
         } else {
             this.focusedIndex = 0;
+            if (!this.multiselect) {
+                this.selectFocusedItem(new Event(''));
+            }
         }
 
         if (
