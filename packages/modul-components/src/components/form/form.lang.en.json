@@ -1,8 +1,8 @@
 {
     "m-form": {
-        "multipleErrorsToCorrect": "<strong>%(totalNbOfErrors)s information</strong> needs your attention.",
-        "multipleErrorsToCorrect.p": "<strong>%(totalNbOfErrors)s informations</strong> need your attention.",
-        "requiredValidatorErrorMessage": "this field is required.",
+        "multipleErrorsToCorrect": "<strong>1 error</strong> to correct to continue.",
+        "multipleErrorsToCorrect.p": "<strong>%(totalNbOfErrors)s errors</strong> to correct to continue.",
+        "requiredValidatorErrorMessage": "This field is required.",
         "requiredValidatorErrorSummaryMessage": "The field %(controlLabel)s is required.",
         "minLengthValidatorErrorMessage": "The min length for this field is %(minLength)s.",
         "minLengthValidatorErrorSummaryMessage": "The min length for %(controlLabel)s is %(minLength)s.",
