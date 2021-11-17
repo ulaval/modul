@@ -10,7 +10,6 @@
 >
     <m-input-style
         v-m-popup:popup
-
         role="combobox"
         :aria-owns="listboxId"
         aria-haspopup="listbox"
@@ -91,6 +90,7 @@
             </m-icon>
         </div>
         <m-popup
+            :id="popupId"
             slot="popup"
             ref="popup"
             width="100%"
@@ -103,7 +103,7 @@
             :focus-management="false"
             :close-on-backdrop="true"
             :preload="true"
-            :open-trigger="'mousedown'"
+            open-trigger="mousedown"
             :lazy="false"
             :sidebar-full-height="filterable"
             @open="onOpen"

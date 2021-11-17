@@ -104,6 +104,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     };
 
     public readonly listboxId: string = `listboxId-${uuid.generate()}`;
+    public readonly popupId: string = `popup-${uuid.generate()}`;
 
     private internalFilter: string = '';
     private internalFilterRegExp: RegExp = / /;
@@ -192,11 +193,13 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             const inputEl: HTMLElement = this.$refs.input;
             const researchInputEl: HTMLElement = this.$refs.researchInput;
             if (!(this.filterable && this.as<MediaQueries>().isMqMaxS)) {
+                this.as<InputManagement>().internalIsFocus = true;
                 inputEl.focus();
             } else if (researchInputEl) {
                 researchInputEl.focus();
             }
         });
+
         this.focusSelected();
         this.scrollToFocused();
     }
@@ -226,7 +229,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             if (!this.isAndroid) {
                 this.$refs.input.blur();
             }
-            this.internalOpen = false;
+            this.open = false;
         }
     }
 
@@ -263,7 +266,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         }
         this.dirty = false;
         if (value !== '') {
-            this.internalOpen = false;
+            this.open = false;
         }
 
         this.setInputWidth();
@@ -513,79 +516,82 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private scrollToFocused(): void {
-        if (!this.hasItems) {
+        if (!this.hasItems || this.focusedIndex < 0) {
             return;
         }
-        if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
-            this.$nextTick(() => {
-                let container: HTMLElement = this.$refs.items;
-                if (container) {
-                    let focusedItem: MDropdownItem = this.internalNavigationItems[this.focusedIndex];
-                    let top: number = (focusedItem.$el as HTMLElement).offsetTop;
-                    let bottom: number = (focusedItem.$el as HTMLElement).offsetTop + (focusedItem.$el as HTMLElement).offsetHeight;
-                    let viewRectTop: number = container.scrollTop;
-                    let viewRectBottom: number = viewRectTop + container.clientHeight;
 
-                    if (top < viewRectTop) {
-                        container.scrollTop = top;
-                    } else if (bottom > viewRectBottom) {
-                        container.scrollTop = bottom - container.clientHeight;
-                    }
+        const sidebarBody = this.as<MediaQueriesMixin>().isMqMaxS ?
+            document.querySelector(`#${this.popupId} .m-sidebar__body`)
+            : undefined;
+        const refUl: HTMLElement = this.$refs.items as HTMLElement;
+        const container = sidebarBody || refUl;
+        if (container) {
+            const element: HTMLElement = refUl.children[this.focusedIndex] as HTMLElement;
+
+            if (element) {
+                const top: number = element.offsetTop;
+                const bottom: number = element.offsetTop + element.offsetHeight;
+                const viewRectTop: number = container.scrollTop;
+                const viewRectBottom: number = viewRectTop + container.clientHeight;
+                if (top < viewRectTop) {
+                    container.scrollTop = top;
+                } else if (bottom > viewRectBottom) {
+                    container.scrollTop = bottom - container.clientHeight;
                 }
-            });
+            }
         }
     }
 
     private transitionEnter(el: HTMLElement, done: any): void {
         this.$nextTick(() => {
-            el.style.opacity = '0';
-            el.style.width = this.$el.clientWidth + 'px';
-            setTimeout(() => {
-                if (this.as<MediaQueriesMixin>().isMqMinS) {
-                    let height: number = el.clientHeight;
-                    // tslint:disable-next-line: deprecation
-                    el.style.webkitTransition = DROPDOWN_STYLE_TRANSITION;
-                    el.style.transition = DROPDOWN_STYLE_TRANSITION;
-                    el.style.overflowY = 'hidden';
-                    if (this.enableAnimation) {
-                        el.style.maxHeight = '0';
-                    }
-                    el.style.width = this.$el.clientWidth + 'px';
+            if (this.as<MediaQueriesMixin>().isMqMinS) {
+                let height: number = el.clientHeight;
+                el.style.transition = DROPDOWN_STYLE_TRANSITION;
+                el.style.overflowY = 'hidden';
+                el.style.width = this.$el.clientWidth + 'px';
+                if (this.listMinWidth) {
                     el.style.minWidth = this.listMinWidth;
-                    el.style.removeProperty('opacity');
-                    setTimeout(() => {
-                        if (this.enableAnimation) {
-                            el.style.maxHeight = height + 'px';
-                        }
+                }
+                if (this.enableAnimation) {
+                    el.style.maxHeight = '0';
+                    requestAnimationFrame(() => {
+                        el.style.maxHeight = height + 'px';
                         done();
-                    }, 0);
+                    });
                 } else {
                     done();
                 }
-            }, 0);
-        });
-    }
 
-    private transitionLeave(el: HTMLElement, done: any): void {
-        this.$nextTick(() => {
-            if (this.as<MediaQueriesMixin>().isMqMinS) {
-                let height: number = el.clientHeight;
-                el.style.width = this.$el.clientWidth + 'px';
-                el.style.minWidth = this.listMinWidth;
-                if (this.enableAnimation) {
-                    el.style.maxHeight = height + 'px';
-                    el.style.maxHeight = '0';
-                }
-                setTimeout(() => {
-                    if (this.enableAnimation) {
-                        el.style.maxHeight = 'none';
-                    }
-                    done();
-                }, 300);
             } else {
                 done();
             }
         });
+    }
+
+    private transitionLeave(el: HTMLElement, done: any): void {
+        if (this.enableAnimation) {
+            if (this.filterable && this.as<MediaQueriesMixin>().isMqMinS) {
+                el.style.maxHeight = 'none';
+                done();
+            } else {
+                this.$nextTick(() => {
+                    const height: number = el.clientHeight;
+                    if (this.as<MediaQueriesMixin>().isMqMinS) {
+                        el.style.maxHeight = height + 'px';
+                        el.style.maxHeight = '0';
+
+                        setTimeout(() => {
+                            el.style.maxHeight = 'none';
+                            done();
+                        }, 300);
+                    } else {
+                        done();
+                    }
+                });
+            }
+        } else {
+            done();
+        }
     }
 
     private get hasPointer(): boolean {
