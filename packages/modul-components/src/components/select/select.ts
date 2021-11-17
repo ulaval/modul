@@ -9,7 +9,6 @@ import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import uuid from '../../utils/uuid/uuid';
 import { SELECT_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
@@ -17,6 +16,8 @@ import { MOpacityTransition } from '../transitions/opacity-transition/opacity-tr
 import { MValidationMessage } from '../validation-message/validation-message';
 import { MBaseSelect, MBaseSelectItem } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
+
+
 @WithRender
 @Component({
     components: {
@@ -25,7 +26,6 @@ import WithRender from './select.html?style=./select.scss';
         MInputStyle,
         MIcon,
         MValidationMessage,
-        MI18n,
         MIconButton
     },
 })
@@ -108,10 +108,6 @@ export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, I
 
     public get internalLabelUp(): boolean {
         return !this.isReadonly ? this.labelUp : true;
-    }
-
-    public get internalPlaceholder(): string {
-        return !this.isReadonly ? this.placeholder : '';
     }
 
     public get optionsAreStringArray(): boolean {

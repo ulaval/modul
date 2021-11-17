@@ -64,7 +64,6 @@
                     :id="id"
                     role="button"
                     :tabindex="disabled ? '-1' : '0'"
-                    :placeholder="internalPlaceholder"
                     :aria-invalid="hasError"
                     :aria-activedescendant="scope.ariaActivedescendant"
                     aria-haspopup="listbox"
@@ -73,6 +72,7 @@
                     :aria-disabled="disabled"
                     :aria-readonly="readonly"
                     :aria-required="required || requiredMarker"
+                    :aria-placeholder="placeholder"
                     @focus="onFocus"
                     @blur="onBlur"
                     @keydown.up.prevent="scope.keyUp"
@@ -88,6 +88,15 @@
                     @keydown="scope.keyLetter"
                 >
                     {{ internalValue }}
+                    <input
+                        v-if="!internalValue && placeholder"
+                        :placeholder="placeholder"
+                        role="none"
+                        type="text"
+                        readonly
+                        tabindex="-1"
+                        aria-hidden="true"
+                    />
                 </div>
             </slot>
             <template #append>

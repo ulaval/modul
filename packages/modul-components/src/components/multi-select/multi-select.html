@@ -61,6 +61,7 @@
                 :aria-required="required || requiredMarker"
                 :aria-readonly="readonly"
                 :aria-disabled="isDisabled"
+                :aria-placeholder="placeholder"
                 @focus="onFocus"
                 @blur="onBlur"
                 @keydown.up.prevent="onKeydownUp"
@@ -77,10 +78,11 @@
                 <input
                     v-if="numberOfItemsSelected === 0"
                     :placeholder="placeholder"
+                    role="none"
                     type="text"
                     readonly
                     tabindex="-1"
-                    :aria-labelledby="label ? labelId : undefined"
+                    aria-hidden="true"
                 />
                 <m-chip-delete
                     v-if="chipsDisplayMode === 1"
