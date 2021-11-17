@@ -284,7 +284,9 @@ export class MDatepicker extends ModulVue {
     }
 
     public togglePopup(event: Event): void {
-        this.open = !this.open;
+        if (this.as<InputState>().active) {
+            this.open = !this.open;
+        }
         // stop event propagation to parent.
         event.stopPropagation();
     }
@@ -328,9 +330,8 @@ export class MDatepicker extends ModulVue {
     // override from InputManagement
     public onClick(event: MouseEvent): void {
         this.as<InputManagement>().internalIsFocus = this.as<InputStateMixin>().active;
-        const inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (this.as<InputManagement>().internalIsFocus && inputEl) {
-            inputEl.focus();
+        if (this.as<InputManagement>().internalIsFocus) {
+            this.as<InputManagement>().focusInput();
         }
         this.emitClick(event);
     }

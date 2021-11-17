@@ -1,7 +1,7 @@
 
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Model, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { MPopupDirective } from '../../directives/popup/popup';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -12,9 +12,8 @@ import { KeyCode } from '../../utils/keycode/keycode';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MButton } from '../button/button';
 import { MCalendarButton } from '../calendar/calendar-button/calendar-button';
-import { BUTTON_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_STYLE_NAME, LINK_NAME, POPUP_NAME, TIMEPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { TIMEPICKER_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
@@ -44,13 +43,12 @@ function validateTimeString(value: string): boolean {
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [POPUP_NAME]: MPopup,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [LINK_NAME]: MLink,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [I18N_NAME]: MI18n,
+        MPopup,
+        MIconButton,
+        MValidationMessage,
+        MLink,
+        MInputStyle,
+        MI18n,
         MInputMask,
         MCalendarButton
     },
@@ -61,10 +59,9 @@ function validateTimeString(value: string): boolean {
         InputState,
         InputManagement,
         InputWidth,
-        MediaQueries,
-        InputLabel
+        InputLabel,
+        MediaQueries
     ]
-
 })
 export class MTimepicker extends ModulVue {
     @Model('input')
@@ -116,9 +113,30 @@ export class MTimepicker extends ModulVue {
     private internalOpen: boolean = false;
     private internalTimeErrorMessage: string = '';
 
+    @Emit('click')
+    private emitClick(event: Event): void { }
+
     private created(): void {
         this.internalTime = this.value;
         this.updatePopupTime(this.internalTime);
+    }
+
+    public togglePopup(event: Event): void {
+        if (this.as<InputState>().active) {
+            this.open = !this.open;
+
+        }
+        // stop event propagation to parent.
+        event.stopPropagation();
+    }
+
+    // override from InputManagement
+    public onClick(event: MouseEvent): void {
+        this.as<InputManagement>().internalIsFocus = this.as<InputState>().active;
+        if (this.as<InputManagement>().internalIsFocus) {
+            this.as<InputManagement>().focusInput();
+        }
+        this.emitClick(event);
     }
 
     private mounted(): void {
@@ -136,8 +154,8 @@ export class MTimepicker extends ModulVue {
     }
 
     private timeStringToNumber(value: string): TimeObject {
-        let timeString: string[] = value.split(':');
-        let timeObject: TimeObject = {
+        const timeString: string[] = value.split(':');
+        const timeObject: TimeObject = {
             hour: parseInt(timeString[0], 10),
             minute: parseInt(timeString[1], 10)
         };
@@ -264,6 +282,7 @@ export class MTimepicker extends ModulVue {
         if (!isNaN(this.internalHour)) {
             this.currentTime = this.formatTimeString();
             this.open = false;
+            this.as<InputManagement>().focusInput();
         }
     }
 
@@ -292,6 +311,7 @@ export class MTimepicker extends ModulVue {
             this.currentTime = this.formatTimeString();
         }
         this.open = false;
+        this.as<InputManagement>().focusInput();
     }
 
     private onClose(): void {
@@ -302,16 +322,8 @@ export class MTimepicker extends ModulVue {
         }
     }
 
-    private async onPopupOpen(): Promise<void> {
-        this.open = true;
-        this.focusInput();
-    }
-
-    private async focusInput(): Promise<void> {
-        await this.$nextTick();
-        const inputEl: HTMLInputElement = this.$refs.input.$el as HTMLInputElement;
-        inputEl.focus();
-        this.open = true;
+    private onOpen(): void {
+        this.as<InputManagement>().focusInput();
     }
 
     ///////////////////////////////////////

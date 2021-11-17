@@ -26,8 +26,6 @@
         <m-input-mask
             ref="input"
             :id="id"
-            :aria-haspopup="true"
-            :aria-expanded="open"
             :required="required || requiredMarker"
             :disabled="isDisabled"
             :readonly="isReadonly || isWaiting"
@@ -86,20 +84,16 @@
             />
         </m-popup>
     </m-input-style>
-    <div
+    <m-validation-message
         :id="validationMessageId"
-        class="m-datepicker__validation"
-    >
-        <m-validation-message
-            class="m-datepicker__validation-message"
-            :disabled="isDisabled"
-            :waiting="isWaiting"
-            :error="hasCalandarError"
-            :error-message="calandarErrorMessage"
-            :valid-message="validMessage"
-            :helper-message="helperMessage"
-        />
-    </div>
+        class="m-datepicker__validation-message"
+        :disabled="isDisabled"
+        :waiting="isWaiting"
+        :error="hasCalandarError"
+        :error-message="calandarErrorMessage"
+        :valid-message="validMessage"
+        :helper-message="helperMessage"
+    />
 </div>
 
 

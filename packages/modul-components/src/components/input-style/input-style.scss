@@ -201,7 +201,7 @@
 
     // modifiers
 
-    &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus):not(.m--is-readonly) {
+    &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus) {
         --m-input-style--label-color: var(--m-input-style--hover-color);
         --m-input-style--border-color: var(--m-input-style--hover-color);
     }
@@ -253,16 +253,13 @@
     }
 
     &.m--is-disabled,
-    &.m--is-waiting {
+    &.m--is-waiting,
+    &.m--is-readonly {
         --m-input-style--label-color: var(--m-input-style--disabled-color);
         --m-input-style--border-color: var(--m-input-style--disabled-color);
         --m-input-style--buttons-color: var(--m-input-style--disabled-color);
         --m-input-style--input-color: var(--m-input-style--disabled-color);
-    }
 
-    &.m--is-disabled,
-    &.m--is-waiting,
-    &.m--is-readonly {
         .m-input-style__main {
             border-style: dashed;
         }
