@@ -227,6 +227,7 @@ export class MDatepicker extends ModulVue {
         this.model = this.convertValueToModel(selectedDate);
         this.inputModel = this.internalDateModel;
         this.open = false;
+        this.as<InputManagement>().focusInput();
     }
 
     public inputDate(inputValue: string): void {
@@ -317,10 +318,6 @@ export class MDatepicker extends ModulVue {
 
     // override from InputManagement
     public onFocus(event: FocusEvent): void {
-        if (!this.open && this.as<MediaQueries>().isMqMinS) {
-            this.open = true;
-        }
-
         this.as<InputManagement>().internalIsFocus = this.as<InputStateMixin>().active;
         if (this.as<InputManagement>().internalIsFocus) {
             this.$emit('focus', event);
