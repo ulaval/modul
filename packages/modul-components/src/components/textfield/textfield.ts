@@ -39,7 +39,7 @@ const ICON_NAME_PASSWORD_HIDDEN: string = 'm-svg__hide';
     },
     directives: {
         [TEXTAREA_AUTO_HEIGHT]: MTextareaAutoHeight
-    },
+    }
 })
 export class MTextfield extends Mixins(
     InputState,

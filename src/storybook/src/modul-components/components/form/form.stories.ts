@@ -181,7 +181,7 @@ export const toastMessageCountForFormGroup = () => ({
     }),
     methods: {
         reset: () => {
-            console.log('form reset')
+            console.log('form reset');
         }
     },
     computed: {

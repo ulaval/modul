@@ -13,10 +13,10 @@ import './base-select.scss';
 const BASE_SELECT_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 
 export interface MBaseSelectItem<T> {
-    value: string,
-    disabled?: boolean,
-    hideRadioButtonMobile?: boolean,
-    data?: T
+    value: string;
+    disabled?: boolean;
+    hideRadioButtonMobile?: boolean;
+    data?: T;
 }
 
 @WithRender
@@ -110,7 +110,7 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
 
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
-        if (open != this.internalOpen) {
+        if (open !== this.internalOpen) {
             this.internalOpen = open;
         }
     }
@@ -131,23 +131,23 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     }
 
     public get itemIds(): string[] {
-        return this.items?.map(() => uuid.generate()) ?? [];
+        return (this.items as any[])?.map(() => uuid.generate()) ?? [];
     }
 
     public get ariaActivedescendantId(): string {
         if (this.focusedIndex < 0) {
-            return ''
+            return '';
         }
         return this.itemIds[this.focusedIndex];
     }
 
     public get itemsAreStringArray(): boolean {
-        if (!this.items || this.items.length === 0) return false;
+        if (!this.items || this.items.length === 0) { return false; }
         return typeof this.items[0] === 'string';
     }
 
     public get focusValue(): string {
-        if (this.focusedIndex < 0) return '';
+        if (this.focusedIndex < 0) { return ''; }
         return this.itemsAreStringArray
             ? (this.items as string[])[this.focusedIndex]
             : (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].value;
@@ -161,7 +161,7 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
             selected: this.isSelected(item),
             multiselect: this.multiselect,
             disabled: this.itemsAreStringArray ? undefined : (item as MBaseSelectItem<unknown>).disabled,
-            hideRadioButtonMobile: this.hideRadioButtonMobile || this.itemsAreStringArray ? false : (item as MBaseSelectItem<unknown>).hideRadioButtonMobile,
+            hideRadioButtonMobile: this.hideRadioButtonMobile || this.itemsAreStringArray ? false : (item as MBaseSelectItem<unknown>).hideRadioButtonMobile
         };
     }
 
@@ -174,7 +174,7 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
                 if (!this.multiselect) {
                     this.closePopup();
                 }
-            },
+            }
         };
     }
 
@@ -201,8 +201,8 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
             if (this.itemsAreStringArray) {
                 this.focusedIndex = (this.items as string[]).indexOf((this.selectedItems as string[])[0]);
             } else {
-                const items = this.items as MBaseSelectItem<unknown>[];
-                const findSelectedItem = items.find((items) => items.value === this.selectedItems[0]);
+                const items: MBaseSelectItem<unknown>[] = this.items as MBaseSelectItem<unknown>[];
+                const findSelectedItem: MBaseSelectItem<unknown> | undefined = items.find((items) => items.value === this.selectedItems[0]);
 
                 this.focusedIndex = findSelectedItem ? items.indexOf(findSelectedItem) : 0;
             }
@@ -226,11 +226,11 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     }
 
     public focusNextItem(): void {
-        if (this.focusedIndex < 0 || this.focusedIndex >= this.items.length - 1) return;
+        if (this.focusedIndex < 0 || this.focusedIndex >= this.items.length - 1) { return; }
         if (this.itemsAreStringArray) {
             this.focusedIndex++;
         } else {
-            const items = this.items as MBaseSelectItem<unknown>[];
+            const items: MBaseSelectItem<unknown>[] = this.items as MBaseSelectItem<unknown>[];
             if (this.focusedIndex + 1 === items.length - 1 && items[items.length - 1].disabled) {
                 return;
             } else {
@@ -245,12 +245,12 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     }
 
     public focusPreviousItem(): void {
-        if (this.focusedIndex <= 0) return;
+        if (this.focusedIndex <= 0) { return; }
 
         if (this.itemsAreStringArray) {
             this.focusedIndex--;
         } else {
-            const items = this.items as MBaseSelectItem<unknown>[];
+            const items: MBaseSelectItem<unknown>[] = this.items as MBaseSelectItem<unknown>[];
             if (this.focusedIndex - 1 === 0 && items[0].disabled) {
                 return;
             } else {
@@ -333,7 +333,7 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     }
 
     public onKeydownUp($event: KeyboardEvent): void {
-        if (!this.popupOpen) return;
+        if (!this.popupOpen) { return; }
         this.focusPreviousItem();
         if (!this.multiselect) {
             this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
@@ -367,7 +367,7 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     }
 
     public onKeydownHome($event: KeyboardEvent): void {
-        if (!this.popupOpen) return
+        if (!this.popupOpen) { return; }
         this.focusedIndex = 0;
 
         if (
@@ -385,7 +385,7 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     }
 
     public onKeydownEnd($event: KeyboardEvent): void {
-        if (!this.popupOpen) return
+        if (!this.popupOpen) { return; }
 
         this.focusedIndex = this.items.length - 1;
         if (
@@ -409,13 +409,13 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
     }
 
     private scrollToFocused(): void {
-        if (this.focusedIndex < 0) return;
+        if (this.focusedIndex < 0) { return; }
 
-        const sidebarBody = this.isMqMaxS ?
-            document.querySelector(`#${this.popupId} .m-sidebar__body`)
+        const sidebarBody: HTMLElement | undefined = this.isMqMaxS ?
+            document.querySelector(`#${this.popupId} .m-sidebar__body`) as HTMLElement
             : undefined;
         const refUl: HTMLElement = this.refItems as HTMLElement;
-        const container = sidebarBody || refUl;
+        const container: HTMLElement | undefined = sidebarBody || refUl;
         if (container) {
             const element: HTMLElement = refUl.children[this.focusedIndex] as HTMLElement;
 
@@ -453,8 +453,8 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
         this.letterTap += key;
 
         if (this.itemsAreStringArray) {
-            const items = this.items as string[];
-            const findItem = items.find(items => items.toUpperCase().startsWith(this.letterTap.toUpperCase()))
+            const items: string[] = this.items as string[];
+            const findItem: string | undefined = items.find(items => items.toUpperCase().startsWith(this.letterTap.toUpperCase()));
             if (findItem) {
                 const index: number = findItem ? items.indexOf(
                     findItem
@@ -467,13 +467,13 @@ export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
                 }
             }
         } else if (this.items.length > 0) {
-            const items = this.items as MBaseSelectItem<unknown>[];
-            const findItem = items.find(items => items.value.toUpperCase().startsWith(this.letterTap.toUpperCase()))
+            const items: MBaseSelectItem<unknown>[] = this.items as MBaseSelectItem<unknown>[];
+            const findItem: MBaseSelectItem<unknown> | undefined = items.find(items => items.value.toUpperCase().startsWith(this.letterTap.toUpperCase()));
             if (findItem) {
                 const index: number = findItem ? items.indexOf(
                     findItem
                 ) : -1;
-                if (items[index].disabled) return;
+                if (items[index].disabled) { return; }
 
                 this.focusedIndex = index;
                 this.scrollToFocused();

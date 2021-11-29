@@ -27,7 +27,7 @@ import WithRender from './multi-select.html?style=./multi-select.scss';
         MValidationMessage,
         MIcon,
         MInputStyle
-    },
+    }
 })
 export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, MediaQueries) {
     @Model('input')
@@ -168,7 +168,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
     }
 
     public get hiddenTextSelectedValue(): string {
-        let text = this.$i18n.translate('m-multi-select:selected-items', [this.numberOfItemsSelected], this.numberOfItemsSelected);
+        let text: string = this.$i18n.translate('m-multi-select:selected-items', [this.numberOfItemsSelected], this.numberOfItemsSelected);
         if (this.numberOfItemsSelected) {
             text += `: ${this.selectedItems.join(', ')}`;
         }
@@ -289,7 +289,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
 
     @Watch('options', { immediate: true })
     private onOptionsChange(): void {
-        if (!this.options) return;
+        if (!this.options) { return; }
         if (this.linkSelectAll) {
             this.internalOptions = ['linkSelectAll', ...this.options];
             return;
@@ -300,7 +300,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
     @Watch('value', { immediate: true })
     private onValueChange(value: any[]): void {
         if (this.linkSelectAll && !this.value.some(v => v === this.internalOptions[0])) {
-            this.internalValue = [this.internalOptions[0], ...value]
+            this.internalValue = [this.internalOptions[0], ...value];
         } else {
             this.internalValue = value;
         }
@@ -309,7 +309,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
     @Watch('focus')
     private focusChanged(focus: boolean): void {
         this.internalFocus = focus && this.active;
-        if (!this.refInput) return;
+        if (!this.refInput) { return; }
         if (this.internalFocus) {
             this.focusInput();
         } else {

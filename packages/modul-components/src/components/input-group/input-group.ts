@@ -46,7 +46,7 @@ export class MInputGroup extends ModulVue implements MInputGroupProps {
     public validationMessagePosition: MMInputGroupValidationMessagePosition;
 
     @Prop({
-        default: () => uuid.generate();
+        default: () => uuid.generate()
     })
     public validationMessageId?: string;
 

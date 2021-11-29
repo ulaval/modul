@@ -27,7 +27,7 @@ import WithRender from './select.html?style=./select.scss';
         MIcon,
         MValidationMessage,
         MIconButton
-    },
+    }
 })
 export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, InputWidth, InputLabel) {
 
@@ -79,7 +79,7 @@ export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, I
     public onClose(): void { }
 
     public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
-        this.$emit('select-item', option, index, event)
+        this.$emit('select-item', option, index, event);
     }
 
     public get hasItems(): boolean {
@@ -111,14 +111,14 @@ export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, I
     }
 
     public get optionsAreStringArray(): boolean {
-        if (this.options.length === 0) return false;
+        if (this.options.length === 0) { return false; }
         return typeof this.options[0] === 'string';
     }
 
     public onInputStyleClick(callbackToggle: any): void {
         callbackToggle();
 
-        if (!this.open) return
+        if (!this.open) { return; }
         this.focusInput();
     }
 

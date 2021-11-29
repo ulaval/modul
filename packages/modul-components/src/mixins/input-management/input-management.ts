@@ -70,7 +70,7 @@ export class InputManagement extends ModulVue
 
     focusInput(): void {
         const inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (!inputEl) return;
+        if (!inputEl) { return; }
         inputEl.focus();
     }
 

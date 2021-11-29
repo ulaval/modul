@@ -25,7 +25,7 @@ export abstract class BaseDropdownGroup extends ModulVue {
 @Component({
     components: {
         MRadioStyle
-    },
+    }
 })
 export class MDropdownItem extends Mixins(MediaQueries) {
     @Prop()

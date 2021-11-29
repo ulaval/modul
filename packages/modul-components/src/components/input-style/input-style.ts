@@ -13,7 +13,7 @@ export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
 @Component({
     components: {
         MSpinner
-    },
+    }
 })
 export class MInputStyle extends Mixins(InputState) {
     @Prop({ default: '' })
@@ -89,7 +89,7 @@ export class MInputStyle extends Mixins(InputState) {
                                 if (this.hasLabel) {
                                     width = !this.isLabelUp && (labelEl.clientWidth > width) ? labelEl.clientWidth : width;
                                 }
-                                inputEl!.style.width = width + 'px';
+                                inputEl.style.width = width + 'px';
                             }
                         }, 0);
                     }

@@ -24,7 +24,7 @@ const OPTIONS_2: MBaseSelectItem<unknown>[] = [
     {
         value: 'tomato',
         disabled: false
-    },
+    }
 ];
 
 const buildLongList = (): string[] => {

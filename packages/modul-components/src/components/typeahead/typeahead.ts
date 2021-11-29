@@ -25,7 +25,7 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
         MValidationMessage,
         MIconButton,
         MSpinner
-    },
+    }
 })
 export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, MediaQueries, InputManagement) {
     @Model('input')
@@ -150,7 +150,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
 
     public get sortedResult(): MBaseSelectItem<unknown>[] | string[] {
         if (this.resultsAreStringArray) {
-            return (this.results as string[]).sort((a, b) => a.localeCompare(b))
+            return (this.results as string[]).sort((a, b) => a.localeCompare(b));
         }
         return (this.results as MBaseSelectItem<unknown>[]).sort(
             (a, b) => a.value.localeCompare(b.value)
@@ -158,7 +158,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
     }
 
     public get resultsAreStringArray(): boolean {
-        if (this.results.length === 0) return false;
+        if (this.results.length === 0) { return false; }
         return typeof this.results[0] === 'string';
     }
 
@@ -167,7 +167,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
     }
 
     public onPortalAfterClose(): void {
-        const refInput = this.refMTextfield?.refInput ?? null;
+        const refInput: HTMLInputElement | undefined = this.refMTextfield?.refInput ?? undefined;
         if (
             refInput && document.activeElement !== refInput
         ) {
@@ -218,13 +218,13 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
                     .filter(r =>
                         this.hasTextfieldValue
                         && r.toLowerCase().includes(this.textfieldValue.toLowerCase())
-                    )
+                    );
             } else {
                 filteredResults = (this.sortedResult as MBaseSelectItem<unknown>[])
                     .filter(r =>
                         this.hasTextfieldValue
                         && r.value.toLowerCase().includes(this.textfieldValue.toLowerCase())
-                    )
+                    );
             }
         }
         this.filteredResults = filteredResults.slice(0, this.maxResults);
@@ -265,7 +265,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
         if (this.resultsCouldBeDisplay) {
             if (this.firstSelection) {
                 this.refBaseSelect.focusFirstSelected();
-                this.onSelect({}, this.refBaseSelect.focusedIndex)
+                this.onSelect({}, this.refBaseSelect.focusedIndex);
                 this.firstSelection = false;
             } else {
                 this.refBaseSelect.onKeydownDown($event);

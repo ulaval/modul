@@ -25,7 +25,7 @@ import WithRender from './textarea.html?style=./textarea.scss';
     },
     directives: {
         [TEXTAREA_AUTO_HEIGHT]: MTextareaAutoHeight
-    },
+    }
 })
 export class MTextarea extends Mixins(
     InputState,

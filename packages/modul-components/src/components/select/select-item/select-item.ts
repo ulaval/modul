@@ -9,7 +9,7 @@ import WithRender from './select-item.html?style=./select-item.scss';
     components: {
         MRadioStyle,
         MCheckbox
-    },
+    }
 })
 export class MSelectItem extends Mixins(MediaQueries) {
     @Prop()

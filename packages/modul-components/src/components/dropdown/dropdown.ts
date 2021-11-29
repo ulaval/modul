@@ -412,7 +412,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private onKeydownUp($event: KeyboardEvent): void {
-        if (!this.open) return;
+        if (!this.open) { return; }
         this.focusPreviousItem();
     }
 
@@ -520,11 +520,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             return;
         }
 
-        const sidebarBody = this.as<MediaQueriesMixin>().isMqMaxS ?
-            document.querySelector(`#${this.popupId} .m-sidebar__body`)
+        const sidebarBody: HTMLElement | undefined = this.as<MediaQueriesMixin>().isMqMaxS ?
+            document.querySelector(`#${this.popupId} .m-sidebar__body`) as HTMLElement
             : undefined;
         const refUl: HTMLElement = this.$refs.items as HTMLElement;
-        const container = sidebarBody || refUl;
+        const container: HTMLElement = sidebarBody || refUl;
         if (container) {
             const element: HTMLElement = refUl.children[this.focusedIndex] as HTMLElement;
 

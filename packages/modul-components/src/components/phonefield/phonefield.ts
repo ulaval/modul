@@ -278,13 +278,13 @@ export class MPhonefield extends ModulVue {
 
     public async focusInputSelect(): Promise<void> {
         await this.$nextTick();
-        if (!this.refInputSelect) return;
+        if (!this.refInputSelect) { return; }
         this.refInputSelect.focus();
     }
 
     public async focusInput(): Promise<void> {
         await this.$nextTick();
-        if (!this.refInputMask) return;
+        if (!this.refInputMask) { return; }
         this.refInputMask.focus();
     }
 }

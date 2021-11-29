@@ -34,7 +34,7 @@ import './searchfield.scss';
             'fr': require('./searchfield.lang.fr.json'),
             'en': require('./searchfield.lang.en.json')
         }
-    },
+    }
 
 })
 export class MSearchfield extends ModulVue {
