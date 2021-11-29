@@ -33,6 +33,18 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             <p v-html="results"></p>
         </div>`
     }))
+    .add('popup-footer-slot', () => ({
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: ''
+        }),
+        template: `<div>
+            <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" @keydown="keydown" @keyup="keyup" @paste="paste" v-model="value" :label="label" :results="results">
+                <template slot="popup-footer">footer slot here</template>
+            </m-typeahead>
+        </div>`
+    }))
     .add('max-results', () => ({
         data: () => ({
             label: 'Fruits and vegetables',
