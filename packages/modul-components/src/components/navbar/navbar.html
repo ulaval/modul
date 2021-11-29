@@ -25,18 +25,15 @@
                             @next-button-click="onNextButtonClick($event)">
 
         <ul class="m-navbar__list"
-            role="menubar"
             ref="list">
             <slot />
             <li v-if="isTabUnderlineSkin"
                 class="m-navbar__line"
                 ref="tab-underline"
-                role="none"
                 aria-hidden="true"></li>
             <li v-if="isTabArrowSkin"
                 class="m-navbar__arrow"
                 ref="tab-arrow"
-                role="none"
                 aria-hidden="true"></li>
         </ul>
     </m-auto-horizontal-scroll>
