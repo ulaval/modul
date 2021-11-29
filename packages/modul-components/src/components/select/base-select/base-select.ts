@@ -1,11 +1,10 @@
-import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
+import { Component, Emit, Mixins, Prop, Ref, Watch } from 'vue-property-decorator';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../../directives/directive-names';
 import { MPopupDirective } from '../../../directives/popup/popup';
 import { InputWidth } from '../../../mixins/input-width/input-width';
-import { MediaQueries, MediaQueriesMixin } from '../../../mixins/media-queries/media-queries';
+import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { REGEX_CSS_NUMBER_VALUE } from '../../../utils/props-validation/props-validation';
-import { ModulVue } from '../../../utils/vue/vue';
-import { POPUP_NAME } from '../../component-names';
+import uuid from '../../../utils/uuid/uuid';
 import { MPopup } from '../../popup/popup';
 import { MSelectItem } from '../../select/select-item/select-item';
 import WithRender from './base-select.html';
@@ -13,40 +12,39 @@ import './base-select.scss';
 
 const BASE_SELECT_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 
+export interface MBaseSelectItem<T> {
+    value: string,
+    disabled?: boolean,
+    hideRadioButtonMobile?: boolean,
+    data?: T
+}
+
 @WithRender
 @Component({
     components: {
         MSelectItem,
-        [POPUP_NAME]: MPopup
+        MPopup
 
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
-    },
-    mixins: [
-        InputWidth,
-        MediaQueries
-    ]
+    }
 })
-export class MBaseSelect extends ModulVue {
+export class MBaseSelect extends Mixins(InputWidth, MediaQueries) {
+    @Prop()
+    public readonly items: MBaseSelectItem<unknown>[] | string[];
 
     @Prop()
-    public readonly items: any[];
+    public readonly selectedItems: unknown[];
 
     @Prop()
-    public readonly selectedItems: any[];
+    public readonly multiselect: boolean;
 
     @Prop()
     public readonly active: boolean;
 
-    @Prop({ required: true })
-    public readonly controlId: string;
-
     @Prop({ default: false })
     public readonly open: boolean;
-
-    @Prop({ default: true })
-    public readonly closeOnSelect: boolean;
 
     @Prop({ default: false })
     public readonly hideRadioButtonMobile: boolean;
@@ -72,32 +70,47 @@ export class MBaseSelect extends ModulVue {
     })
     public readonly listMaxHeight: string;
 
-    public $refs: {
-        items: HTMLUListElement;
-        popup: MPopup;
-    };
+    @Prop()
+    public readonly listboxAriaLabelledby?: string;
 
+    @Ref('items')
+    public readonly refItems: HTMLUListElement;
+
+    @Ref('popup')
+    public readonly refPopup: MPopup;
+
+    public readonly popupId: string = `popup-${uuid.generate()}`;
+    public readonly listboxId: string = `listbox-${uuid.generate()}`;
     public focusedIndex: number = -1;
     private internalOpen: boolean = false;
+    private letterTap: string = '';
+    private timerLetterTap: number | NodeJS.Timeout = 0;
+    private timerLetterTapActive: boolean = false;
 
     @Emit('update:open')
-    public emitUpdateOpen(open: boolean): void { }
+    public emitUpdateOpen(_open: boolean): void { }
+
+    @Emit('click-on-item')
+    public emitClickOnItem(_event: MouseEvent): void { }
 
     @Emit('open')
-    public async emitOpen(): Promise<void> {
-        await this.$nextTick();
-        this.focusFirstSelected();
-        this.scrollToFocused();
-    }
+    public async emitOpen(): Promise<void> { }
 
     @Emit('close')
     public emitClose(): void {
         this.focusedIndex = -1;
     }
 
+    @Emit('portal-after-close')
+    public emitPortalAfterClose(): void { }
+
+    public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
+        this.$emit('select-item', option, index, event);
+    }
+
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
-        if (open !== this.internalOpen) {
+        if (open != this.internalOpen) {
             this.internalOpen = open;
         }
     }
@@ -111,32 +124,57 @@ export class MBaseSelect extends ModulVue {
         return this.internalOpen;
     }
 
-    public get ariaControls(): string {
-        return this.controlId + '-controls';
-    }
-
     public get listMaxHeightProps(): string | undefined {
-        if (this.as<MediaQueriesMixin>().isMqMinS) {
+        if (this.isMqMinS) {
             return this.listMaxHeight;
         }
     }
 
-    public select(option: any, index: number, $event: Event): void {
-        this.$emit('select-item', option, index, $event);
+    public get itemIds(): string[] {
+        return this.items?.map(() => uuid.generate()) ?? [];
     }
 
-    public getItemProps(item: any, index: number): any {
+    public get ariaActivedescendantId(): string {
+        if (this.focusedIndex < 0) {
+            return ''
+        }
+        return this.itemIds[this.focusedIndex];
+    }
+
+    public get itemsAreStringArray(): boolean {
+        if (!this.items || this.items.length === 0) return false;
+        return typeof this.items[0] === 'string';
+    }
+
+    public get focusValue(): string {
+        if (this.focusedIndex < 0) return '';
+        return this.itemsAreStringArray
+            ? (this.items as string[])[this.focusedIndex]
+            : (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].value;
+    }
+
+    public getItemProps(item: MBaseSelectItem<unknown> | string, index: number): any {
         return {
-            value: item,
+            id: this.itemIds[index],
+            value: this.itemsAreStringArray ? item : (item as MBaseSelectItem<unknown>).value,
             focused: index === this.focusedIndex,
             selected: this.isSelected(item),
-            hideRadioButtonMobile: this.hideRadioButtonMobile
+            multiselect: this.multiselect,
+            disabled: this.itemsAreStringArray ? undefined : (item as MBaseSelectItem<unknown>).disabled,
+            hideRadioButtonMobile: this.hideRadioButtonMobile || this.itemsAreStringArray ? false : (item as MBaseSelectItem<unknown>).hideRadioButtonMobile,
         };
     }
 
-    public getItemHandlers(item: any, index: number): any {
+    public getItemHandlers(item: MBaseSelectItem<unknown> | string, index: number): any {
         return {
-            click: (event: Event): void => this.onSelectItem(item, index, event)
+            click: (event: MouseEvent): void => {
+                this.focusedIndex = index;
+                this.emitSelectItem(item, index, event);
+                this.emitClickOnItem(event);
+                if (!this.multiselect) {
+                    this.closePopup();
+                }
+            },
         };
     }
 
@@ -155,58 +193,92 @@ export class MBaseSelect extends ModulVue {
     }
 
     public selectFocusedItem($event: Event): void {
-        this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+        this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
     }
 
     public focusFirstSelected(): void {
-        if (this.selectedItems && this.selectedItems.length > 0) {
-            this.focusedIndex = this.items.indexOf(this.selectedItems[0]);
+        if (this.items && this.items.length > 0 && this.selectedItems && this.selectedItems.length > 0) {
+            if (this.itemsAreStringArray) {
+                this.focusedIndex = (this.items as string[]).indexOf((this.selectedItems as string[])[0]);
+            } else {
+                const items = this.items as MBaseSelectItem<unknown>[];
+                const findSelectedItem = items.find((items) => items.value === this.selectedItems[0]);
+
+                this.focusedIndex = findSelectedItem ? items.indexOf(findSelectedItem) : 0;
+            }
         } else {
             this.focusedIndex = 0;
+            if (!this.multiselect) {
+                this.selectFocusedItem(new Event(''));
+            }
+        }
+
+        if (
+            !this.itemsAreStringArray
+            && this.items
+            && this.items.length > 0
+            && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+        ) {
+            this.focusNextItem();
+        } else {
+            this.scrollToFocused();
         }
     }
 
     public focusNextItem(): void {
-        if (this.focusedIndex > -1) {
+        if (this.focusedIndex < 0 || this.focusedIndex >= this.items.length - 1) return;
+        if (this.itemsAreStringArray) {
             this.focusedIndex++;
-            if (this.focusedIndex >= this.items.length) {
-                this.focusedIndex = 0;
-            }
         } else {
-            this.focusedIndex = this.items.length === 0 ? -1 : 0;
+            const items = this.items as MBaseSelectItem<unknown>[];
+            if (this.focusedIndex + 1 === items.length - 1 && items[items.length - 1].disabled) {
+                return;
+            } else {
+                this.focusedIndex++;
+                if (items[this.focusedIndex].disabled) {
+                    this.focusNextItem();
+                }
+            }
         }
+
         this.scrollToFocused();
     }
 
     public focusPreviousItem(): void {
-        if (this.focusedIndex > -1) {
+        if (this.focusedIndex <= 0) return;
+
+        if (this.itemsAreStringArray) {
             this.focusedIndex--;
-            if (this.focusedIndex < 0) {
-                this.focusedIndex = this.items.length - 1;
-            }
         } else {
-            this.focusedIndex = this.items.length - 1;
+            const items = this.items as MBaseSelectItem<unknown>[];
+            if (this.focusedIndex - 1 === 0 && items[0].disabled) {
+                return;
+            } else {
+                this.focusedIndex--;
+                if (items[this.focusedIndex].disabled) {
+                    this.focusPreviousItem();
+                }
+            }
         }
         this.scrollToFocused();
     }
 
     public update(): void {
-        this.$refs.popup.update();
+        this.refPopup.update();
     }
 
     public transitionEnter(el: HTMLElement, done: any): void {
-        if (this.enableAnimation) {
-            this.$nextTick(() => {
-                if (this.as<MediaQueriesMixin>().isMqMinS) {
-                    let height: number = el.clientHeight;
-
-                    el.style.transition = BASE_SELECT_STYLE_TRANSITION;
-                    el.style.overflowY = 'hidden';
+        this.$nextTick(() => {
+            if (this.isMqMinS) {
+                let height: number = el.clientHeight;
+                el.style.transition = BASE_SELECT_STYLE_TRANSITION;
+                el.style.overflowY = 'hidden';
+                el.style.width = this.$el.clientWidth + 'px';
+                if (this.listMinWidth) {
+                    el.style.minWidth = this.listMinWidth;
+                }
+                if (this.enableAnimation) {
                     el.style.maxHeight = '0';
-                    el.style.width = this.$el.clientWidth + 'px';
-                    if (this.listMinWidth) {
-                        el.style.minWidth = this.listMinWidth;
-                    }
                     requestAnimationFrame(() => {
                         el.style.maxHeight = height + 'px';
                         done();
@@ -215,16 +287,16 @@ export class MBaseSelect extends ModulVue {
                     done();
                 }
 
-            });
-        } else {
-            done();
-        }
+            } else {
+                done();
+            }
+        });
     }
 
     public transitionLeave(el: HTMLElement, done: any): void {
         if (this.enableAnimation) {
             this.$nextTick(() => {
-                if (this.as<MediaQueriesMixin>().isMqMinS) {
+                if (this.isMqMinS) {
                     let height: number = el.clientHeight;
 
                     el.style.maxHeight = height + 'px';
@@ -253,19 +325,24 @@ export class MBaseSelect extends ModulVue {
             this.togglePopup();
         } else {
             this.focusNextItem();
+            this.scrollToFocused();
+            if (!this.multiselect) {
+                this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
+            }
         }
     }
 
     public onKeydownUp($event: KeyboardEvent): void {
-        if (!this.popupOpen) {
-            this.togglePopup();
-        }
+        if (!this.popupOpen) return;
         this.focusPreviousItem();
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
+        }
     }
 
     public onKeydownSpace($event: KeyboardEvent): void {
         if (this.focusedIndex > -1) {
-            this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
             this.closePopup();
         } else {
             this.togglePopup();
@@ -282,7 +359,7 @@ export class MBaseSelect extends ModulVue {
 
     public onKeydownEnter($event: KeyboardEvent): void {
         if (this.focusedIndex > -1) {
-            this.select(this.items[this.focusedIndex], this.focusedIndex, $event);
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
             this.closePopup();
         } else {
             this.togglePopup();
@@ -290,68 +367,132 @@ export class MBaseSelect extends ModulVue {
     }
 
     public onKeydownHome($event: KeyboardEvent): void {
-        if (this.popupOpen) {
-            this.focusedIndex = 0;
+        if (!this.popupOpen) return
+        this.focusedIndex = 0;
+
+        if (
+            !this.itemsAreStringArray
+            && this.items.length > 0
+            && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+        ) {
+            this.focusNextItem();
+        } else {
             this.scrollToFocused();
+        }
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
     }
 
     public onKeydownEnd($event: KeyboardEvent): void {
-        if (this.popupOpen) {
-            this.focusedIndex = this.items.length - 1;
+        if (!this.popupOpen) return
+
+        this.focusedIndex = this.items.length - 1;
+        if (
+            !this.itemsAreStringArray
+            && this.items.length > 0
+            && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
+        ) {
+            this.focusPreviousItem();
+        } else {
             this.scrollToFocused();
+        }
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
     }
 
     public onKeydownLetter($event: KeyboardEvent): void {
         if (/^[a-z0-9]$/i.test($event.key)) {
-            this.findFirstItemWithLetter($event.key);
-        }
-    }
-
-    private onSelectItem(option: any, index: number, $event: Event): void {
-        this.select(option, index, $event);
-        if (this.closeOnSelect) {
-            this.closePopup();
-        }
-    }
-
-    private findFirstItemWithLetter(key: string): void {
-        if (this.as<MediaQueriesMixin>().isMqMinS) {
-            const index: number = this.items.indexOf(this.items.find((item: any) => item.startsWith(key)));
-            if (index !== -1) {
-                this.focusedIndex = index;
-                this.scrollToFocused();
-            }
+            this.findFirstItemWithLetter($event.key, $event);
         }
     }
 
     private scrollToFocused(): void {
-        if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
+        if (this.focusedIndex < 0) return;
 
-            let container: HTMLElement = this.$refs.items;
-            if (container) {
-                let element: HTMLElement = container.children[this.focusedIndex] as HTMLElement;
+        const sidebarBody = this.isMqMaxS ?
+            document.querySelector(`#${this.popupId} .m-sidebar__body`)
+            : undefined;
+        const refUl: HTMLElement = this.refItems as HTMLElement;
+        const container = sidebarBody || refUl;
+        if (container) {
+            const element: HTMLElement = refUl.children[this.focusedIndex] as HTMLElement;
 
-                if (element) {
-                    let top: number = element.offsetTop;
-                    let bottom: number = element.offsetTop + element.offsetHeight;
-                    let viewRectTop: number = container.scrollTop;
-                    let viewRectBottom: number = viewRectTop + container.clientHeight;
-                    if (top < viewRectTop) {
-                        container.scrollTop = top;
-                    } else if (bottom > viewRectBottom) {
-                        container.scrollTop = bottom - container.clientHeight;
-                    }
+            if (element) {
+                const top: number = element.offsetTop;
+                const bottom: number = element.offsetTop + element.offsetHeight;
+                const viewRectTop: number = container.scrollTop;
+                const viewRectBottom: number = viewRectTop + container.clientHeight;
+                if (top < viewRectTop) {
+                    container.scrollTop = top;
+                } else if (bottom > viewRectBottom) {
+                    container.scrollTop = bottom - container.clientHeight;
                 }
             }
-
         }
     }
 
-    private isSelected(option: any): boolean {
+    private createTimeoutLetterTap(): void {
+        this.timerLetterTap = setTimeout(() => {
+            this.timerLetterTapActive = false;
+            this.letterTap = '';
+        }, 400);
+    }
+
+    private findFirstItemWithLetter(key: string, event: KeyboardEvent): void {
+        if (
+            this.timerLetterTapActive
+        ) {
+            clearTimeout(this.timerLetterTap as NodeJS.Timeout);
+            this.createTimeoutLetterTap();
+        } else {
+            this.timerLetterTapActive = true;
+            this.createTimeoutLetterTap();
+        }
+        this.letterTap += key;
+
+        if (this.itemsAreStringArray) {
+            const items = this.items as string[];
+            const findItem = items.find(items => items.toUpperCase().startsWith(this.letterTap.toUpperCase()))
+            if (findItem) {
+                const index: number = findItem ? items.indexOf(
+                    findItem
+                ) : -1;
+                this.focusedIndex = index;
+                this.scrollToFocused();
+
+                if (!this.multiselect) {
+                    this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, event);
+                }
+            }
+        } else if (this.items.length > 0) {
+            const items = this.items as MBaseSelectItem<unknown>[];
+            const findItem = items.find(items => items.value.toUpperCase().startsWith(this.letterTap.toUpperCase()))
+            if (findItem) {
+                const index: number = findItem ? items.indexOf(
+                    findItem
+                ) : -1;
+                if (items[index].disabled) return;
+
+                this.focusedIndex = index;
+                this.scrollToFocused();
+
+                if (!this.multiselect) {
+                    this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, event);
+                }
+            }
+        }
+    }
+
+    private isSelected(item: MBaseSelectItem<unknown> | string): boolean {
         if (this.selectedItems && this.selectedItems.length > 0) {
-            return this.selectedItems.indexOf(option) > -1;
+            if (this.itemsAreStringArray) {
+                return this.selectedItems.some(i => i === item);
+            }
+
+            item = item as MBaseSelectItem<unknown>;
+            return item.disabled ? false : this.selectedItems.some(i => i === item);
         }
         return false;
     }

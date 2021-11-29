@@ -6,14 +6,12 @@ exports[`Storyshots modul-components|m-radio default 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -34,17 +32,14 @@ exports[`Storyshots modul-components|m-radio disabled 1`] = `
   class="m-radio m--is-disabled m--is-checked"
 >
   <input
-    aria-hidden="true"
     class="m-radio__hidden"
     disabled="disabled"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -65,15 +60,14 @@ exports[`Storyshots modul-components|m-radio error 1`] = `
   class="m-radio m--is-error m--is-checked"
 >
   <input
+    aria-invalid="true"
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -95,14 +89,12 @@ exports[`Storyshots modul-components|m-radio focus 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -125,14 +117,12 @@ exports[`Storyshots modul-components|m-radio label 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -154,7 +144,6 @@ exports[`Storyshots modul-components|m-radio name 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     name="radio2-name"
     type="radio"
     value=""
@@ -162,7 +151,6 @@ exports[`Storyshots modul-components|m-radio name 1`] = `
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -184,14 +172,12 @@ exports[`Storyshots modul-components|m-radio radio-vertical-align="center" 1`] =
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -213,14 +199,12 @@ exports[`Storyshots modul-components|m-radio readonly 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -242,14 +226,12 @@ exports[`Storyshots modul-components|m-radio valid 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -271,14 +253,12 @@ exports[`Storyshots modul-components|m-radio value 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value="radio1-value"
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -300,14 +280,12 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" default 1`] 
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -328,17 +306,14 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" disabled 1`]
   class="m-radio m--is-disabled m--is-checked m--is-input-right"
 >
   <input
-    aria-hidden="true"
     class="m-radio__hidden"
     disabled="disabled"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -359,15 +334,14 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" error 1`] = 
   class="m-radio m--is-error m--is-checked m--is-input-right"
 >
   <input
+    aria-invalid="true"
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -389,14 +363,12 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" focus 1`] = 
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -419,14 +391,12 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" label 1`] = 
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -448,7 +418,6 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" name 1`] = `
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     name="radio5-name"
     type="radio"
     value=""
@@ -456,7 +425,6 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" name 1`] = `
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -478,14 +446,12 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" radio-vertic
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -507,14 +473,12 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" readonly 1`]
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -536,14 +500,12 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" valid 1`] = 
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value=""
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"
@@ -565,14 +527,12 @@ exports[`Storyshots modul-components|m-radio/radio-position="right" value 1`] = 
 >
   <input
     class="m-radio__hidden"
-    id="fakeId"
     type="radio"
     value="radio4-value"
   />
    
   <label
     class="m-radio__wrap"
-    for="fakeId"
   >
     <span
       aria-hidden="true"

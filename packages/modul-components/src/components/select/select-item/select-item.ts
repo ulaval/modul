@@ -1,47 +1,56 @@
-import { Component, Emit, Prop } from 'vue-property-decorator';
+import { Component, Emit, Mixins, Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
-import { ModulVue } from '../../../utils/vue/vue';
-import { RADIO_STYLE_NAME } from '../../component-names';
+import { MCheckbox } from '../../checkbox/checkbox';
 import { MRadioStyle } from '../../radio-style/radio-style';
 import WithRender from './select-item.html?style=./select-item.scss';
 
 @WithRender
 @Component({
     components: {
-        [RADIO_STYLE_NAME]: MRadioStyle
+        MRadioStyle,
+        MCheckbox
     },
-    mixins: [MediaQueries]
 })
-export class MSelectItem extends ModulVue {
+export class MSelectItem extends Mixins(MediaQueries) {
     @Prop()
-    public label: string;
+    public readonly label: string;
 
     @Prop()
-    public value: any;
+    public readonly value: string;
 
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
 
     @Prop()
-    public waiting: boolean;
+    public readonly waiting: boolean;
 
     @Prop()
-    public readonly: boolean;
+    public readonly readonly: boolean;
 
     @Prop()
-    public selected: boolean;
+    public readonly selected: boolean;
 
     @Prop()
-    public focused: boolean;
+    public readonly multiselect: boolean;
+
+    @Prop()
+    public readonly focused: boolean;
 
     @Prop({ default: false })
-    public hideRadioButtonMobile: boolean;
+    public readonly hideRadioButtonMobile: boolean;
+
+    @Prop()
+    public readonly id: string;
 
     @Emit('click')
     public emitClick($event: Event): void { }
 
     public get isItemActive(): boolean {
         return !this.disabled;
+    }
+
+    public get isFocused(): boolean {
+        return this.isItemActive && this.focused;
     }
 
     public onClick($event: Event): void {

@@ -280,6 +280,7 @@ exports[`Storyshots modul-components|m-textfield error 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-invalid="true"
               class="m-textfield__input"
               id="mTextfield-fakeId"
               maxlength="Infinity"
@@ -358,6 +359,7 @@ exports[`Storyshots modul-components|m-textfield error-message 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-invalid="true"
               class="m-textfield__input"
               id="mTextfield-fakeId"
               maxlength="Infinity"
@@ -392,6 +394,7 @@ exports[`Storyshots modul-components|m-textfield error-message 1`] = `
       class="m-validation-message m-textfield__validation__message"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg
@@ -943,9 +946,12 @@ exports[`Storyshots modul-components|m-textfield required-marker 1`] = `
             </span>
              
             <sup
+              aria-hidden="true"
               class="m-input-style__required-marker"
             >
-              *
+              
+                        *
+                    
             </sup>
           </span>
         </label>
@@ -959,9 +965,11 @@ exports[`Storyshots modul-components|m-textfield required-marker 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-required="true"
               class="m-textfield__input"
               id="mTextfield-fakeId"
               maxlength="Infinity"
+              required="required"
               type="text"
             />
                
@@ -1149,6 +1157,7 @@ exports[`Storyshots modul-components|m-textfield valid-message 1`] = `
       class="m-validation-message m-textfield__validation__message"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__valid"
       >
         <svg
@@ -1658,6 +1667,7 @@ exports[`Storyshots modul-components|m-textfield/Counter character-count 1`] = `
       >
         <div
           aria-hidden="true"
+          aria-live="polite"
           class="m-character-count__wrap"
         >
           <span>
@@ -1781,6 +1791,7 @@ exports[`Storyshots modul-components|m-textfield/Counter character-count-thresho
       >
         <div
           aria-hidden="true"
+          aria-live="polite"
           class="m-character-count__wrap"
         >
           <span>

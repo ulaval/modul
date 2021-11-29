@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { I18N_NAME } from '../../../filters/filter-names';
-import { i18nFilter } from '../../../filters/i18n/i18n';
 import uuid from '../../../utils/uuid/uuid';
 import { ICON_NAME } from '../../component-names';
 import { MIcon } from '../../icon/icon';
@@ -18,13 +16,19 @@ enum MChipSize {
     components: {
         [ICON_NAME]: MIcon
     },
-    filters: {
-        [I18N_NAME]: i18nFilter
+    modul: {
+        i18n: {
+            'fr': require('./../chip.lang.fr.json'),
+            'en': require('./../chip.lang.en.json')
+        }
     }
 })
 export default class MChipDelete extends Vue {
     @Prop()
-    disabled: boolean;
+    public readonly disabled: boolean;
+
+    @Prop()
+    public readonly tabindex: string;
 
     @Prop({
         default: MChipSize.Large,
@@ -32,27 +36,37 @@ export default class MChipDelete extends Vue {
             value === MChipSize.Large ||
             value === MChipSize.Small
     })
-    size: MChipSize;
+    public readonly size: MChipSize;
 
     @Emit('click')
-    public emitClick(): void { }
+    public emitClick(_event: MouseEvent): void { }
 
     @Emit('delete')
-    public emitDelete(): void { }
+    public emitDelete(_event: MouseEvent): void { }
 
     public textId: string = `mChipDeleteText-${uuid.generate()}`;
     public iconHover: boolean = false;
+    public focused: boolean = false;
 
     public get iconSize(): string {
         return this.size === MChipSize.Small ? '8px' : '14px';
     }
 
-    public onClick(event: Event): void {
+    public onClick(event: MouseEvent): void {
         if (this.disabled) {
             return;
         }
-        this.emitClick();
-        this.emitDelete();
+        this.emitClick(event);
+        this.emitDelete(event);
+        (event.currentTarget as HTMLElement).blur();
+    }
+
+    public onFocus(): void {
+        this.focused = true;
+    }
+
+    public onBlur(): void {
+        this.focused = false;
     }
 
     public onMouseOver(event: Event): void {

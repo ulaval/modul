@@ -2,7 +2,7 @@
 
 exports[`Storyshots modul-components|m-input-group default 1`] = `
 <div>
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -29,8 +29,6 @@ exports[`Storyshots modul-components|m-input-group default 1`] = `
             id="mCheckbox-fakeId"
             type="checkbox"
           />
-           
-          <!---->
            
           <label
             class="m-checkbox__wrap"
@@ -70,8 +68,6 @@ exports[`Storyshots modul-components|m-input-group default 1`] = `
             type="checkbox"
           />
            
-          <!---->
-           
           <label
             class="m-checkbox__wrap"
             for="mCheckbox-fakeId"
@@ -110,8 +106,6 @@ exports[`Storyshots modul-components|m-input-group default 1`] = `
             type="checkbox"
           />
            
-          <!---->
-           
           <label
             class="m-checkbox__wrap"
             for="mCheckbox-fakeId"
@@ -142,9 +136,9 @@ exports[`Storyshots modul-components|m-input-group default 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </fieldset>
    
-  <div
+  <fieldset
     class="m-input-group m-u--margin-top--l"
   >
     <!---->
@@ -326,32 +320,33 @@ exports[`Storyshots modul-components|m-input-group default 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-input-group error-message 1`] = `
-<div
+<fieldset
   class="m-input-group m--has-error m--has-validation-message"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <!---->
      
     <!---->
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
   >
     <div
       class="m-validation-message m-input-group__message"
-      id="fakeId"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg
@@ -380,8 +375,6 @@ exports[`Storyshots modul-components|m-input-group error-message 1`] = `
     </div>
      
     <div
-      aria-describedby="fakeId"
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -392,8 +385,6 @@ exports[`Storyshots modul-components|m-input-group error-message 1`] = `
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -433,8 +424,6 @@ exports[`Storyshots modul-components|m-input-group error-message 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -473,8 +462,6 @@ exports[`Storyshots modul-components|m-input-group error-message 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -505,29 +492,29 @@ exports[`Storyshots modul-components|m-input-group error-message 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group helper-message 1`] = `
-<div
+<fieldset
   class="m-input-group m--has-validation-message"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <!---->
      
     <!---->
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
   >
     <div
       class="m-validation-message m-input-group__message"
-      id="fakeId"
     >
       <!---->
        
@@ -539,8 +526,6 @@ exports[`Storyshots modul-components|m-input-group helper-message 1`] = `
     </div>
      
     <div
-      aria-describedby="fakeId"
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -551,8 +536,6 @@ exports[`Storyshots modul-components|m-input-group helper-message 1`] = `
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -592,8 +575,6 @@ exports[`Storyshots modul-components|m-input-group helper-message 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -632,8 +613,6 @@ exports[`Storyshots modul-components|m-input-group helper-message 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -664,18 +643,19 @@ exports[`Storyshots modul-components|m-input-group helper-message 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group icon slot 1`] = `
-<div
+<fieldset
   class="m-input-group"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <span
       class="m-input-group__icon"
     >
@@ -699,7 +679,7 @@ exports[`Storyshots modul-components|m-input-group icon slot 1`] = `
     >
       *
     </sup>
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
@@ -713,7 +693,6 @@ exports[`Storyshots modul-components|m-input-group icon slot 1`] = `
     </div>
      
     <div
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
        
@@ -725,8 +704,6 @@ exports[`Storyshots modul-components|m-input-group icon slot 1`] = `
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -766,8 +743,6 @@ exports[`Storyshots modul-components|m-input-group icon slot 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -806,8 +781,6 @@ exports[`Storyshots modul-components|m-input-group icon slot 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -838,22 +811,23 @@ exports[`Storyshots modul-components|m-input-group icon slot 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group label 1`] = `
-<div
+<fieldset
   class="m-input-group"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <!---->
      
     <!---->
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
@@ -867,7 +841,6 @@ exports[`Storyshots modul-components|m-input-group label 1`] = `
     </div>
      
     <div
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -878,8 +851,6 @@ exports[`Storyshots modul-components|m-input-group label 1`] = `
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -919,8 +890,6 @@ exports[`Storyshots modul-components|m-input-group label 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -959,8 +928,6 @@ exports[`Storyshots modul-components|m-input-group label 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -991,18 +958,19 @@ exports[`Storyshots modul-components|m-input-group label 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group required-marker 1`] = `
-<div
+<fieldset
   class="m-input-group"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <!---->
      
     <sup
@@ -1010,7 +978,7 @@ exports[`Storyshots modul-components|m-input-group required-marker 1`] = `
     >
       *
     </sup>
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
@@ -1024,7 +992,6 @@ exports[`Storyshots modul-components|m-input-group required-marker 1`] = `
     </div>
      
     <div
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -1035,8 +1002,6 @@ exports[`Storyshots modul-components|m-input-group required-marker 1`] = `
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -1076,8 +1041,6 @@ exports[`Storyshots modul-components|m-input-group required-marker 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1116,8 +1079,6 @@ exports[`Storyshots modul-components|m-input-group required-marker 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1148,31 +1109,32 @@ exports[`Storyshots modul-components|m-input-group required-marker 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group valid-message 1`] = `
-<div
+<fieldset
   class="m-input-group m--is-valid m--has-validation-message"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <!---->
      
     <!---->
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
   >
     <div
       class="m-validation-message m-input-group__message"
-      id="fakeId"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__valid"
       >
         <svg
@@ -1201,8 +1163,6 @@ exports[`Storyshots modul-components|m-input-group valid-message 1`] = `
     </div>
      
     <div
-      aria-describedby="fakeId"
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -1213,8 +1173,6 @@ exports[`Storyshots modul-components|m-input-group valid-message 1`] = `
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -1254,8 +1212,6 @@ exports[`Storyshots modul-components|m-input-group valid-message 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1294,8 +1250,6 @@ exports[`Storyshots modul-components|m-input-group valid-message 1`] = `
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1326,11 +1280,11 @@ exports[`Storyshots modul-components|m-input-group valid-message 1`] = `
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group/validation-message-position bottom - no label 1`] = `
-<div
+<fieldset
   class="m-input-group m--has-error m--has-validation-message m--is-validation-message-position-bottom"
 >
   <!---->
@@ -1340,9 +1294,9 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
   >
     <div
       class="m-validation-message m-input-group__message"
-      id="fakeId"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg
@@ -1371,7 +1325,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
     </div>
      
     <div
-      aria-describedby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -1382,8 +1335,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -1423,8 +1374,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1463,8 +1412,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1495,31 +1442,32 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group/validation-message-position bottom 1`] = `
-<div
+<fieldset
   class="m-input-group m--has-error m--has-validation-message m--is-validation-message-position-bottom"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <!---->
      
     <!---->
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
   >
     <div
       class="m-validation-message m-input-group__message"
-      id="fakeId"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg
@@ -1548,8 +1496,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
     </div>
      
     <div
-      aria-describedby="fakeId"
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -1560,8 +1506,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -1601,8 +1545,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1641,8 +1583,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1673,11 +1613,11 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position b
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group/validation-message-position top - no label 1`] = `
-<div
+<fieldset
   class="m-input-group m--has-error m--has-validation-message"
 >
   <!---->
@@ -1687,9 +1627,9 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
   >
     <div
       class="m-validation-message m-input-group__message"
-      id="fakeId"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg
@@ -1718,7 +1658,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
     </div>
      
     <div
-      aria-describedby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -1729,8 +1668,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -1770,8 +1707,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1810,8 +1745,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1842,31 +1775,32 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;
 
 exports[`Storyshots modul-components|m-input-group/validation-message-position top 1`] = `
-<div
+<fieldset
   class="m-input-group m--has-error m--has-validation-message"
 >
-  <p
+  <legend
     class="m-input-group__label"
-    id="fakeId"
   >
-    This is a label
+    
+        This is a label
+        
     <!---->
      
     <!---->
-  </p>
+  </legend>
    
   <div
     class="m-input-group__body"
   >
     <div
       class="m-validation-message m-input-group__message"
-      id="fakeId"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg
@@ -1895,8 +1829,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
     </div>
      
     <div
-      aria-describedby="fakeId"
-      aria-labelledby="fakeId"
       class="m-input-group__content"
     >
       <div
@@ -1907,8 +1839,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
           id="mCheckbox-fakeId"
           type="checkbox"
         />
-         
-        <!---->
          
         <label
           class="m-checkbox__wrap"
@@ -1948,8 +1878,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -1988,8 +1916,6 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
           type="checkbox"
         />
          
-        <!---->
-         
         <label
           class="m-checkbox__wrap"
           for="mCheckbox-fakeId"
@@ -2020,5 +1946,5 @@ exports[`Storyshots modul-components|m-input-group/validation-message-position t
       </div>
     </div>
   </div>
-</div>
+</fieldset>
 `;

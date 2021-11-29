@@ -45,8 +45,6 @@ exports[`Storyshots modul-components|m-timepicker Hide internal error messages 1
               class="m-input-style__content"
             >
               <input
-                aria-controls="mTimepicker-fakeId-controls"
-                aria-haspopup="true"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="15:15"
@@ -65,9 +63,11 @@ exports[`Storyshots modul-components|m-timepicker Hide internal error messages 1
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mTimepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le sélecteur d'heure"
                 type="button"
               >
                 <svg
@@ -160,8 +160,6 @@ exports[`Storyshots modul-components|m-timepicker Skip internal validations 1`] 
               class="m-input-style__content"
             >
               <input
-                aria-controls="mTimepicker-fakeId-controls"
-                aria-haspopup="true"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="15:15"
@@ -180,9 +178,11 @@ exports[`Storyshots modul-components|m-timepicker Skip internal validations 1`] 
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mTimepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le sélecteur d'heure"
                 type="button"
               >
                 <svg
@@ -266,8 +266,6 @@ exports[`Storyshots modul-components|m-timepicker default 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-controls="mTimepicker-fakeId-controls"
-              aria-haspopup="true"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -286,9 +284,11 @@ exports[`Storyshots modul-components|m-timepicker default 1`] = `
             class="m-input-style__suffix"
           >
             <button
-              aria-controls="mTimepicker-fakeId"
+              aria-hidden="true"
               class="m-icon-button m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
+              tabindex="-1"
+              title="Ouvrir le sélecteur d'heure"
               type="button"
             >
               <svg
@@ -374,8 +374,6 @@ exports[`Storyshots modul-components|m-timepicker label 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-controls="mTimepicker-fakeId-controls"
-              aria-haspopup="true"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -394,9 +392,11 @@ exports[`Storyshots modul-components|m-timepicker label 1`] = `
             class="m-input-style__suffix"
           >
             <button
-              aria-controls="mTimepicker-fakeId"
+              aria-hidden="true"
               class="m-icon-button m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
+              tabindex="-1"
+              title="Ouvrir le sélecteur d'heure"
               type="button"
             >
               <svg
@@ -482,8 +482,6 @@ exports[`Storyshots modul-components|m-timepicker label-up 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-controls="mTimepicker-fakeId-controls"
-              aria-haspopup="true"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -502,9 +500,11 @@ exports[`Storyshots modul-components|m-timepicker label-up 1`] = `
             class="m-input-style__suffix"
           >
             <button
-              aria-controls="mTimepicker-fakeId"
+              aria-hidden="true"
               class="m-icon-button m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
+              tabindex="-1"
+              title="Ouvrir le sélecteur d'heure"
               type="button"
             >
               <svg
@@ -585,8 +585,6 @@ exports[`Storyshots modul-components|m-timepicker max widht 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-controls="mTimepicker-fakeId-controls"
-              aria-haspopup="true"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -605,9 +603,11 @@ exports[`Storyshots modul-components|m-timepicker max widht 1`] = `
             class="m-input-style__suffix"
           >
             <button
-              aria-controls="mTimepicker-fakeId"
+              aria-hidden="true"
               class="m-icon-button m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
+              tabindex="-1"
+              title="Ouvrir le sélecteur d'heure"
               type="button"
             >
               <svg
@@ -688,8 +688,6 @@ exports[`Storyshots modul-components|m-timepicker min 8:45 / max 15:15 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-controls="mTimepicker-fakeId-controls"
-              aria-haspopup="true"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="15:15"
@@ -708,9 +706,11 @@ exports[`Storyshots modul-components|m-timepicker min 8:45 / max 15:15 1`] = `
             class="m-input-style__suffix"
           >
             <button
-              aria-controls="mTimepicker-fakeId"
+              aria-hidden="true"
               class="m-icon-button m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
+              tabindex="-1"
+              title="Ouvrir le sélecteur d'heure"
               type="button"
             >
               <svg
@@ -792,8 +792,6 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-controls="mTimepicker-fakeId-controls"
-                aria-haspopup="true"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="23:59"
@@ -812,9 +810,11 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mTimepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le sélecteur d'heure"
                 type="button"
               >
                 <svg
@@ -893,8 +893,6 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-controls="mTimepicker-fakeId-controls"
-                aria-haspopup="true"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="23:59"
@@ -913,9 +911,11 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mTimepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le sélecteur d'heure"
                 type="button"
               >
                 <svg
@@ -990,9 +990,12 @@ exports[`Storyshots modul-components|m-timepicker required 1`] = `
             </span>
              
             <sup
+              aria-hidden="true"
               class="m-input-style__required-marker"
             >
-              *
+              
+                        *
+                    
             </sup>
           </span>
         </label>
@@ -1006,13 +1009,12 @@ exports[`Storyshots modul-components|m-timepicker required 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-controls="mTimepicker-fakeId-controls"
-              aria-haspopup="true"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
               min="00:00"
               placeholder="HH:MM"
+              required="required"
               step="300"
               type="text"
             />
@@ -1026,9 +1028,11 @@ exports[`Storyshots modul-components|m-timepicker required 1`] = `
             class="m-input-style__suffix"
           >
             <button
-              aria-controls="mTimepicker-fakeId"
+              aria-hidden="true"
               class="m-icon-button m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
+              tabindex="-1"
+              title="Ouvrir le sélecteur d'heure"
               type="button"
             >
               <svg
@@ -1109,8 +1113,6 @@ exports[`Storyshots modul-components|m-timepicker step 15m 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-controls="mTimepicker-fakeId-controls"
-              aria-haspopup="true"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -1129,9 +1131,11 @@ exports[`Storyshots modul-components|m-timepicker step 15m 1`] = `
             class="m-input-style__suffix"
           >
             <button
-              aria-controls="mTimepicker-fakeId"
+              aria-hidden="true"
               class="m-icon-button m--is-skin-light m--has-ripple"
               style="width: 22px; height: 22px;"
+              tabindex="-1"
+              title="Ouvrir le sélecteur d'heure"
               type="button"
             >
               <svg

@@ -1,10 +1,18 @@
-<div class="m-base-select"
-     :style="{
-         width: inputWidth,
-         maxWidth: inputMaxWidth
-     }">
-    <div v-m-popup:popup
-         class="m-base-select__popup">
+<div
+    class="m-base-select"
+    :style="{
+        width: inputWidth,
+        maxWidth: inputMaxWidth
+    }"
+    role="combobox"
+    :aria-owns="listboxId"
+    :aria-expanded="popupOpen === true ? 'true' : 'false'"
+    aria-haspopup="listbox"
+>
+    <div
+        v-m-popup:popup
+        class="m-base-select__popup"
+    >
         <slot :toggle="togglePopup"
               :key-up="onKeydownUp"
               :key-down="onKeydownDown"
@@ -14,61 +22,91 @@
               :key-space="onKeydownSpace"
               :key-home="onKeydownHome"
               :key-end="onKeydownEnd"
-              :key-letter="onKeydownLetter" />
+              :key-letter="onKeydownLetter"
+              :aria-activedescendant="ariaActivedescendantId"
+              :aria-controls="listboxId" />
     </div>
     <slot name="validation-message" />
-    <m-popup ref="popup"
-             placement="bottom-start"
-             :open.sync="popupOpen"
-             :disabled="!active"
-             :enter="transitionEnter"
-             :leave="transitionLeave"
-             :padding="false"
-             :preload="true"
-             :lazy="false"
-             :focus-management="false"
-             :close-on-backdrop="true"
-             :open-trigger="'manual'"
-             :sidebar-full-height="sidebarFullHeight"
-             width="100%"
-             @open="emitOpen"
-             @close="emitClose">
+    <m-popup
+        :id="popupId"
+        ref="popup"
+        placement="bottom-start"
+        :open.sync="popupOpen"
+        :disabled="!active"
+        :enter="transitionEnter"
+        :leave="transitionLeave"
+        :padding="false"
+        :preload="true"
+        :lazy="false"
+        :focus-management="false"
+        :close-on-backdrop="true"
+        :open-trigger="'manual'"
+        :sidebar-full-height="sidebarFullHeight"
+        width="100%"
+        @open="emitOpen"
+        @close="emitClose"
+        @portal-after-close="emitPortalAfterClose"
+    >
+        <slot
+            name="popup-header"
+            slot="header"
+            :key-up="onKeydownUp"
+            :key-down="onKeydownDown"
+            :key-tab="onKeydownTab"
+            :key-esc="onKeydownEsc"
+            :key-enter="onKeydownEnter"
+            :key-space="onKeydownSpace"
+            :key-home="onKeydownHome"
+            :key-end="onKeydownEnd"
+            :key-letter="onKeydownLetter"
+            :aria-activedescendant="ariaActivedescendantId"
+        />
 
-        <slot name="popup-header"
-              slot="header"
-              :key-up="onKeydownUp"
-              :key-down="onKeydownDown"
-              :key-tab="onKeydownTab"
-              :key-esc="onKeydownEsc"
-              :key-enter="onKeydownEnter"
-              :key-space="onKeydownSpace"
-              :key-home="onKeydownHome"
-              :key-end="onKeydownEnd"
-              :key-letter="onKeydownLetter" />
-
-        <ul :id="ariaControls"
+        <component
+            :is="$slots['outer-items'] ? 'div' : 'ul'"
+            :id="listboxId"
             class="m-base-select__list"
-            :class="{ 'm--is-virutalScroll': virtualScroll }"
-            :style="{ minWidth: inputMaxWidth, maxHeight: listMaxHeightProps }"
+            :class="{ 'm--is-virtual-scroll': virtualScroll }"
+            :style="{
+                maxHeight: isMqMinS ? listMaxHeightProps : undefined
+            }"
             ref="items"
-            :aria-labelledby="controlId"
-            aria-live="polite">
-
-            <slot name="outer-items"
-                  :items="items"
-                  :get-item-props="getItemProps"
-                  :get-item-handlers="getItemHandlers">
+            role="listbox"
+            :aria-labelledby="listboxAriaLabelledby"
+            :aria-multiselectable="multiselect"
+        >
+            <slot
+                name="outer-items"
+                :items="items"
+                :get-item-props="getItemProps"
+                :get-item-handlers="getItemHandlers"
+            >
                 <template v-for="(item, index) of items">
-                    <m-select-item v-bind="getItemProps(item, index)"
-                                   v-on="getItemHandlers(item, index)">
-                        <slot name="items"
-                              :item="item"
-                              :index="index"><span v-html="item"></span></slot>
-                    </m-select-item>
+                    <slot
+                        name="outer-item"
+                        :item="item"
+                        :index="index"
+                        :get-item-pops="getItemProps(item, index)"
+                        :get-item-handlers="getItemHandlers(item, index)"
+                    >
+                        <m-select-item
+                            v-bind="getItemProps(item, index)"
+                            v-on="getItemHandlers(item, index)"
+                            :key="index"
+                        >
+                            <slot
+                                name="items"
+                                :item="item"
+                                :index="index"
+                            >
+                                <span v-html="itemsAreStringArray ? item : item.value"></span>
+                            </slot>
+                        </m-select-item>
+                    </slot>
                 </template>
             </slot>
-        </ul>
-        <template slot="footer">
+        </component>
+        <template #footer>
             <slot name="popup-footer"></slot>
         </template>
     </m-popup>

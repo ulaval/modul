@@ -56,6 +56,11 @@ export class MCheckbox extends ModulVue {
     @Prop()
     public ariaLabel: string;
 
+    @Prop()
+    public focused: boolean;
+
+    public readonly validationMessageId: string = uuid.generate();
+
     public isFocus = false;
     public internalValue: boolean = false;
 
@@ -64,10 +69,6 @@ export class MCheckbox extends ModulVue {
 
     @Emit('click')
     public onClick(event: MouseEvent): void {
-        // NOTE: this.$refs.checkbox is undefined when using Edge
-        if (this.$refs.checkbox) {
-            (this.$refs.checkbox as HTMLInputElement).blur();
-        }
         // NOTE: Edge does not change the checkbox value when indeterminate="true"
         if (this.propIndeterminate) {
             this.propValue = true;

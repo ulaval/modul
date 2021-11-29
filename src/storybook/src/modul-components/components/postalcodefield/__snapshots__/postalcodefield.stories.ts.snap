@@ -335,6 +335,7 @@ exports[`Storyshots modul-components|m-postalcodefield With Label And Error 1`] 
           >
              
             <input
+              aria-invalid="true"
               id="mMaskedfield-fakeId"
             />
               
@@ -363,6 +364,7 @@ exports[`Storyshots modul-components|m-postalcodefield With Label And Error 1`] 
       class="m-validation-message m-maskedfield__validation-message"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg

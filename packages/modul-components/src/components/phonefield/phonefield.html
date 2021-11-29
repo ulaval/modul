@@ -1,99 +1,137 @@
-<div class="m-phonefield"
-     :class="[{ 'm--is-disabled': isDisabled,
-                'm--is-waiting': isWaiting,
-                'm--is-readonly': isReadonly,
-                'm--has-error': hasPhonefieldError,
-                'm--is-valid': isPhonefieldValid,
-                'm--is-country-focus': internalFocus,
-                'm--has-validation-message': hasValidationMessage } ]"
-     :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
+<div
+    class="m-phonefield"
+    :class="[{
+        'm--is-disabled': isDisabled,
+        'm--is-waiting': isWaiting,
+        'm--is-readonly': isReadonly,
+        'm--has-error': hasPhonefieldError,
+        'm--is-valid': isPhonefieldValid,
+        'm--has-validation-message': hasValidationMessage
+    }]"
+    :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+>
     <div class="m-phonefield__wrapper">
-        <m-select-virtual-scroll class="m-phonefield__country"
-                                 :value="countryModel"
-                                 :options="isoCountries"
-                                 :disabled="isDisabled || isWaiting"
-                                 :readonly="isReadonly"
-                                 :error="hasPhonefieldError"
-                                 :valid="isPhonefieldValid"
-                                 :label-up="true"
-                                 :label="i18nCountryLabel"
-                                 :clearable="false"
-                                 width="auto"
-                                 :list-min-width="listMinWidth"
-                                 @select-item="onContryChanged"
-                                 @focus="onSelectFocus"
-                                 @blur="onSelectBlur">
-            <div class="m-phonefield__flag-wrapper">
-                <svg class="m-phonefield__flag"
-                     width="27px"
-                     height="20px">
-                    <use :xlink:href="spriteId(countryModel)"
-                         aria-hidden="true"></use>
-                </svg>
-            </div>
-            <template #outer-items="{item, index, props, handlers}">
-                <m-select-item v-if="item"
-                               class="m-phonefield__item-country-list"
-                               :class="{'m--is-last-priority-iso-countrie': isLastPriorityIsoCountrie(item)}"
-                               :key="index"
-                               v-bind="props"
-                               v-on="handlers">
-                    <template>
-                        <div class="m-phonefield__item-wrapper">
-                            <div class="m-phonefield__item-flag-wrapper">
-                                <svg width="27px"
-                                     height="20px">
-                                    <use :xlink:href="spriteId(item)"
-                                         aria-hidden="true"></use>
-                                </svg>
-                            </div>
-                            <span class="m-phonefield__item-name">{{ countriesSorted[index].name }}</span>
-                            <span class="m-phonefield__item-dialCode">+{{ countriesSorted[index].dialCode }}</span>
-                        </div>
-                    </template>
+        <m-select-virtual-scroll
+            class="m-phonefield__country"
+            :value="countryModel"
+            :options="isoCountries"
+            :disabled="isDisabled"
+            :readonly="isReadonly || isWaiting"
+            :error="hasPhonefieldError"
+            :valid="isPhonefieldValid"
+            :label-up="true"
+            :label="i18nCountryLabel"
+            :clearable="false"
+            :list-min-width="listMinWidth"
+            @select-item="onContryChanged"
+            @open="focusInputSelect"
+            @close="focusInput"
+        >
+            <template #default="{propsAndHandlers}">
+                <div role="button"
+                    class="m-phonefield__country-field"
+                    aria-haspopup="listbox"
+                    ref="inputSelect"
+                    :tabindex="isDisabled || isReadonly || isWaiting ? -1 : 0"
+                    :aria-activedescendant="propsAndHandlers.ariaActivedescendant"
+                    :aria-controls="propsAndHandlers.ariaControls"
+                    :aria-labelleby="valueDropdownCountryId"
+                    @keydown.up.prevent="propsAndHandlers.keyUp"
+                    @keydown.down.prevent="propsAndHandlers.keyDown"
+                    @keydown.home.prevent="propsAndHandlers.keyHome"
+                    @keydown.end.prevent="propsAndHandlers.keyEnd"
+                    @keydown.enter.prevent="propsAndHandlers.keyEnter"
+                    @keydown.space.prevent="propsAndHandlers.keyEnter"
+                    @keydown.tab.prevent="onKeydownTab(propsAndHandlers.keyTab)"
+                    @keydown.prevent="propsAndHandlers.keyLetter"
+                    @focus="propsAndHandlers.focus()"
+                    @blur="propsAndHandlers.blur()"
+                >
+                    <span
+                        :id="valueDropdownCountryId"
+                        class="m-phonefield__hidden"
+                    >
+                        {{$i18n.translate('m-phonefield:country-code')}}: {{countryModel}}
+                    </span>
+                    <svg class="m-phonefield__flag-wrapper"
+                        aria-hidden="true"
+                            width="27px"
+                            height="20px">
+                        <use :xlink:href="spriteId(countryModel)"
+                                aria-hidden="true"></use>
+                    </svg>
+                </div>
+
+            </template>
+            <template #outer-item="{item, index, props, handlers}">
+                <m-select-item
+                    v-if="item"
+                    class="m-phonefield__item-country-list"
+                    :class="{'m--is-last-priority-iso-countrie': isLastPriorityIsoCountrie(item)}"
+                    :key="index"
+                    v-bind="props"
+                    v-on="handlers"
+                >
+                    <div class="m-phonefield__item-wrapper">
+                        <svg class="m-phonefield__item-flag-wrapper" width="27px" height="20px">
+                            <use :xlink:href="spriteId(item)"aria-hidden="true"></use>
+                        </svg>
+                        <span class="m-phonefield__item-name">{{ countriesSorted[index].name }}</span>
+                        <span class="m-phonefield__item-dialCode">+{{ countriesSorted[index].dialCode }}</span>
+                    </div>
                 </m-select-item>
             </template>
         </m-select-virtual-scroll>
-        <m-input-style class="m-phonefield__number"
-                       :disabled="isDisabled"
-                       :waiting="isWaiting"
-                       :error="hasPhonefieldError"
-                       :valid="isPhonefieldValid"
-                       :label="propLabel"
-                       :label-for="id"
-                       :focus="isFocus"
-                       :label-up="true"
-                       :empty="isEmpty"
-                       :readonly="isReadonly"
-                       :required-marker="requiredMarker"
-                       :tag-style="tagStyle"
-                       width="100%">
-            <m-input-mask ref="inputMask"
-                          :value="internalValue"
-                          :id="id"
-                          :disabled="isDisabled || isWaiting"
-                          :placeholder="placeholder"
-                          :readonly="isReadonly"
-                          :autocomplete="autocomplete"
-                          :options="inputMaskOptions"
-                          @input="inputChanged($event)"
-                          @focus="onFocus"
-                          @blur="onBlur"
-                          @keyup="onKeyup"
-                          @change="onChange"></m-input-mask>
+        <m-input-style
+            class="m-phonefield__number"
+            :disabled="isDisabled"
+            :waiting="isWaiting"
+            :error="hasPhonefieldError"
+            :valid="isPhonefieldValid"
+            :label="propLabel"
+            :label-for="id"
+            :focus="isFocus"
+            :label-up="true"
+            :empty="isEmpty"
+            :readonly="isReadonly"
+            :required-marker="requiredMarker"
+            :tag-style="tagStyle"
+            width="100%"
+        >
+            <m-input-mask
+                ref="inputMask"
+                :value="internalValue"
+                :id="id"
+                :disabled="isDisabled"
+                :readonly="isReadonly || isWaiting"
+                :placeholder="placeholder"
+                :autocomplete="autocomplete"
+                :options="inputMaskOptions"
+                :aria-invalid="hasPhonefieldError"
+                :aria-describedby="validationMessageId"
+                :required="required || requiredMarker"
+                type="tel"
+                @input="inputChanged($event)"
+                @focus="onFocus"
+                @blur="onBlur"
+                @keyup="onKeyup"
+                @change="onChange"
+            />
         </m-input-style>
     </div>
-    <p class="m-phonefield__example"
-       x-ms-format-detection="none">{{ i18nExample }}{{ example }}</p>
-    <div class="m-phonefield__validation">
-        <m-validation-message class="m-phonefield__validation-message"
-                              :disabled="isDisabled"
-                              :waiting="isWaiting"
-                              :error="hasPhonefieldError"
-                              :error-message="errorMessage"
-                              :valid="isPhonefieldValid"
-                              :valid-message="validMessage"
-                              :helper-message="helperMessage"></m-validation-message>
+    <div
+        :id="validationMessageId"
+        class="m-phonefield__validation"
+    >
+        <m-validation-message
+            class="m-phonefield__validation-message"
+            :disabled="isDisabled"
+            :waiting="isWaiting"
+            :error="hasPhonefieldError"
+            :error-message="errorMessage"
+            :valid="isPhonefieldValid"
+            :valid-message="validMessage"
+            :helper-message="helperMessage || `${i18nExample} ${example}`"
+        />
     </div>
-
 </div>

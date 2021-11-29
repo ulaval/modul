@@ -110,6 +110,7 @@ exports[`Storyshots modul-components|m-integerfield Error 1`] = `
           >
              
             <input
+              aria-invalid="true"
               class="m-integerfield__input"
               id="mIntegerfield-fakeId"
               inputmode="decimal"
@@ -140,6 +141,7 @@ exports[`Storyshots modul-components|m-integerfield Error 1`] = `
       class="m-validation-message m-integerfield__validation__message"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg

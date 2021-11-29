@@ -10,7 +10,10 @@ exports[`Storyshots modul-components|/m-address/m-address-autocomplete-field def
         class="m-address-lookup-field"
       >
         <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
           class="m-dropdown"
+          role="combobox"
           style="width: 100%; max-width: 288px;"
         >
           <div
@@ -50,13 +53,14 @@ exports[`Storyshots modul-components|/m-address/m-address-autocomplete-field def
                     <!---->
                      
                     <input
-                      aria-controls="mDropdown-fakeId-controls"
-                      aria-haspopup="true"
+                      aria-autocomplete="both"
+                      aria-haspopup="listbox"
                       autocomplete="new-password"
                       class="m-dropdown__input"
                       id="mDropdown-fakeId"
                       placeholder="Entrez une adresse à rechercher"
                       readonly="readonly"
+                      role="button"
                       type="text"
                     />
                      

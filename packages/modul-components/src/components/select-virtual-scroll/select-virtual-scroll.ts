@@ -32,7 +32,7 @@ export class MSelectVirtualScroll extends ModulVue {
     @Prop({ default: 52 }) // 208px / 4 -> base-select.scss
     public virtualScrollItemHeight: string;
 
-    get bindData(): any {
+    public get bindData(): any {
         return Object.assign({}, this.$props || {}, this.$attrs || {});
     }
 }

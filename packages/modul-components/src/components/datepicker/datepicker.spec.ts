@@ -4,15 +4,10 @@ import { resetModulPlugins } from '../../../tests/helpers/component';
 import { PortalStub } from '../../../tests/helpers/render';
 import ModulPlugin from '../../utils/modul/modul';
 import uuid from '../../utils/uuid/uuid';
-import { MCalendar } from '../calendar/calendar';
 import DatepickerPlugin, { MDatepicker } from './datepicker';
-
-
 
 jest.mock('../../utils/uuid/uuid');
 (uuid.generate as jest.Mock).mockReturnValue('uuid');
-
-
 
 describe('MDatepicker', () => {
     let localVue: VueConstructor<Vue>;
@@ -38,9 +33,6 @@ describe('MDatepicker', () => {
 
         expect(wrapper.emitted().click).toBeTruthy();
         expect(wrapper.emitted().focus).toBeTruthy();
-
-        const calendar: any = wrapper.find('.m-calendar');
-        expect(calendar.is(MCalendar)).toBe(true);
     });
 
     it('When a invalid date is typed the model is cleared and error is shown', async () => {
@@ -60,7 +52,7 @@ describe('MDatepicker', () => {
         expect(wrapper.emitted().change).toBeTruthy();
         expect(wrapper.emitted().change[0]).toEqual(['']);
 
-        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation__message');
+        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation-message');
 
         expect(validationMessage.props().error).toBe(true);
         expect(validationMessage.props().errorMessage).toBe('m-datepicker:format-error');
@@ -85,7 +77,7 @@ describe('MDatepicker', () => {
         expect(wrapper.emitted().change).toBeTruthy();
         expect(wrapper.emitted().change[0]).toEqual(['']);
 
-        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation__message');
+        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation-message');
 
         expect(validationMessage.props().error).toBe(false);
         expect(validationMessage.props().errorMessage).toBe('');
@@ -104,7 +96,7 @@ describe('MDatepicker', () => {
         expect(wrapper.emitted().change).toBeTruthy();
         expect(wrapper.emitted().change[0]).toEqual(['2019-06-06']);
 
-        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation__message');
+        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation-message');
 
         expect(validationMessage.props().error).toBe(false);
         expect(validationMessage.props().errorMessage).toBe('');

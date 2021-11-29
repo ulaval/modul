@@ -12,15 +12,13 @@ import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import ModulDate, { DatePrecision } from '../../utils/modul-date/modul-date';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MButton } from '../button/button';
 import { MCalendar } from '../calendar/calendar';
 import { MBaseCalendarType, MBaseCalendarView } from '../calendar/calendar-renderer/base-calendar/base-calendar';
-import { BUTTON_NAME, CALENDAR_NAME, DATEPICKER_NAME, I18N_NAME, ICON_BUTTON_NAME, INPUT_MASK_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { DATEPICKER_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
 import { MInputStyle } from '../input-style/input-style';
-import { MPopper } from '../popper/popper';
 import { MPopup } from '../popup/popup';
 import { MValidationMessage } from '../validation-message/validation-message';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from './../../directives/directive-names';
@@ -36,14 +34,13 @@ export enum MDatepickerDefaultView {
 @WithRender
 @Component({
     components: {
-        [INPUT_MASK_NAME]: MInputMask,
-        [BUTTON_NAME]: MButton,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [POPUP_NAME]: MPopup,
-        [CALENDAR_NAME]: MCalendar
+        MInputMask,
+        MInputStyle,
+        MIconButton,
+        MI18n,
+        MValidationMessage,
+        MPopup,
+        MCalendar
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
@@ -60,42 +57,45 @@ export class MDatepicker extends ModulVue {
 
     @Model('change')
     @Prop()
-    public value: DatePickerSupportedTypes;
+    public readonly value: DatePickerSupportedTypes;
 
     @Prop()
-    public label: string;
+    public readonly label: string;
 
     @Prop({
         default: MBaseCalendarView.DAYS,
         validator: value => Enums.toValueArray(MBaseCalendarView).includes(value)
     })
-    public initialView: MBaseCalendarView;
+    public readonly initialView: MBaseCalendarView;
 
     @Prop({
         default: MBaseCalendarType.FULL_DATE,
         validator: value => Enums.toValueArray(MBaseCalendarType).includes(value)
     })
-    public type: MBaseCalendarType;
+    public readonly type: MBaseCalendarType;
 
     @Prop({ default: () => { return new ModulDate().subtract(10, DatePrecision.YEAR); } })
-    public min: DatePickerSupportedTypes;
+    public readonly min: DatePickerSupportedTypes;
 
     @Prop({ default: () => { return new ModulDate().add(10, DatePrecision.YEAR); } })
-    public max: DatePickerSupportedTypes;
+    public readonly max: DatePickerSupportedTypes;
 
     @Prop()
-    public placeholder: string;
+    public readonly placeholder: string;
 
     @Prop({ default: InputMaxWidth.Small })
-    public maxWidth: string;
+    public readonly maxWidth: string;
 
     @Prop({ default: false })
-    public hideInternalErrorMessage: boolean;
+    public readonly hideInternalErrorMessage: boolean;
 
     @Prop({ default: false })
-    public skipInputValidation: boolean;
+    public readonly skipInputValidation: boolean;
 
-    public id: string = `mDatepicker-${uuid.generate()}`;
+    @Prop({ default: () => `mDatepicker-${uuid.generate()}` })
+    public readonly id: string;
+
+    public readonly validationMessageId: string = uuid.generate();
     public $refs: {
         input: MInputMask;
     };
@@ -191,11 +191,8 @@ export class MDatepicker extends ModulVue {
 
     @Emit('open')
     public async onOpen(): Promise<void> {
-        // dont set the focus on less than tablet
-        if (!this.isLessThanTablet) {
-            let inputMask: MInputMask = this.$refs.input;
-            inputMask.focusAndSelectAll();
-        }
+        const inputMask: MInputMask = this.$refs.input;
+        inputMask?.focusAndSelectAll();
     }
 
     @Emit('close')
@@ -230,6 +227,7 @@ export class MDatepicker extends ModulVue {
         this.model = this.convertValueToModel(selectedDate);
         this.inputModel = this.internalDateModel;
         this.open = false;
+        this.as<InputManagement>().focusInput();
     }
 
     public inputDate(inputValue: string): void {
@@ -287,7 +285,9 @@ export class MDatepicker extends ModulVue {
     }
 
     public togglePopup(event: Event): void {
-        this.open = !this.open;
+        if (this.as<InputState>().active) {
+            this.open = !this.open;
+        }
         // stop event propagation to parent.
         event.stopPropagation();
     }
@@ -318,10 +318,6 @@ export class MDatepicker extends ModulVue {
 
     // override from InputManagement
     public onFocus(event: FocusEvent): void {
-        if (!this.open) { // open on focus
-            this.open = true;
-        }
-
         this.as<InputManagement>().internalIsFocus = this.as<InputStateMixin>().active;
         if (this.as<InputManagement>().internalIsFocus) {
             this.$emit('focus', event);
@@ -331,9 +327,8 @@ export class MDatepicker extends ModulVue {
     // override from InputManagement
     public onClick(event: MouseEvent): void {
         this.as<InputManagement>().internalIsFocus = this.as<InputStateMixin>().active;
-        let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (this.as<InputManagement>().internalIsFocus && inputEl) {
-            inputEl.focus();
+        if (this.as<InputManagement>().internalIsFocus) {
+            this.as<InputManagement>().focusInput();
         }
         this.emitClick(event);
     }

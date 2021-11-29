@@ -1,16 +1,18 @@
-<div class="vue-froala"
-     @click="onClick"
-     @mousedown.capture="isDirty = !disabled"
-     @touchstart.capture="isDirty = !disabled"
-     :style="{ 'min-height': minHeight }"
-     :class="{
+<div
+    class="vue-froala"
+    :class="{
         'm--is-focus': isFocused,
         'm--is-collapsed': collapsed,
         'm--is-anim-ready': isInitialized,
         'm--is-dirty': isDirty,
         'm--is-readonly' : readonly,
         'm--is-disabled' : disabled
-    }">
+    }"
+    :style="{ 'min-height': minHeight }"
+    @click="onClick"
+    @mousedown.capture="isDirty = !disabled"
+    @touchstart.capture="isDirty = !disabled"
+>
     <component ref="editor"
                :is="tag"></component>
     <m-file-upload :open.sync="isFileUploadOpen"

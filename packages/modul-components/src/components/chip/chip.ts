@@ -25,7 +25,10 @@ export enum MChipSize {
 })
 export class MChip extends Vue {
     @Prop()
-    disabled: boolean;
+    public readonly disabled: boolean;
+
+    @Prop()
+    public readonly tabindex: string;
 
     @Prop({
         default: MChipMode.Add,
@@ -33,7 +36,7 @@ export class MChip extends Vue {
             value === MChipMode.Add ||
             value === MChipMode.Delete
     })
-    mode: MChipMode;
+    public readonly mode: MChipMode;
 
     @Prop({
         default: MChipSize.Large,
@@ -41,13 +44,13 @@ export class MChip extends Vue {
             value === MChipSize.Large ||
             value === MChipSize.Small
     })
-    size: MChipSize;
+    public readonly size: MChipSize;
 
     @Emit('click')
-    public emitClick(): void { }
+    public emitClick(_event: MouseEvent): void { }
 
     @Emit('add')
-    public emitAdd(): void { }
+    public emitAdd(_event: MouseEvent): void { }
 
     @Emit('delete')
     public emitDelete(): void { }

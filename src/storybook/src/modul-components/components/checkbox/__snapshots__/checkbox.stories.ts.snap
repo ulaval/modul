@@ -10,8 +10,6 @@ exports[`Storyshots modul-components|m-checkbox aria-label 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     aria-label="Text prop aria-label"
     class="m-checkbox__wrap"
@@ -48,8 +46,6 @@ exports[`Storyshots modul-components|m-checkbox default 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -92,8 +88,6 @@ exports[`Storyshots modul-components|m-checkbox disabled 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -129,12 +123,11 @@ exports[`Storyshots modul-components|m-checkbox error 1`] = `
   class="m-checkbox m--is-checkbox-left m--has-error"
 >
   <input
+    aria-invalid="true"
     class="m-checkbox__hidden"
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -171,12 +164,11 @@ exports[`Storyshots modul-components|m-checkbox error-message 1`] = `
   class="m-checkbox m--is-checkbox-left m--has-error m--has-validation-message"
 >
   <input
+    aria-invalid="true"
     class="m-checkbox__hidden"
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -202,6 +194,7 @@ exports[`Storyshots modul-components|m-checkbox error-message 1`] = `
     class="m-validation-message m-checkbox__message"
   >
     <p
+      aria-live="polite"
       class="m-validation-message__error"
     >
       <svg
@@ -242,8 +235,6 @@ exports[`Storyshots modul-components|m-checkbox focus 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -283,8 +274,6 @@ exports[`Storyshots modul-components|m-checkbox indeterminate 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -327,8 +316,6 @@ exports[`Storyshots modul-components|m-checkbox label 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -369,8 +356,6 @@ exports[`Storyshots modul-components|m-checkbox position=right 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -405,8 +390,6 @@ exports[`Storyshots modul-components|m-checkbox readonly 1`] = `
 <div
   class="m-checkbox m--is-checkbox-left m--is-readonly"
 >
-  <!---->
-   
   <input
     id="mCheckbox-fakeId"
     type="hidden"
@@ -453,8 +436,6 @@ exports[`Storyshots modul-components|m-checkbox valid 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -494,8 +475,6 @@ exports[`Storyshots modul-components|m-checkbox value 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -537,8 +516,6 @@ exports[`Storyshots modul-components|m-checkbox verticalAlign=center 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -579,8 +556,6 @@ exports[`Storyshots modul-components|m-checkbox verticalAlign=top 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -620,8 +595,6 @@ exports[`Storyshots modul-components|m-checkbox/position=right default 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -664,8 +637,6 @@ exports[`Storyshots modul-components|m-checkbox/position=right disabled 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -701,12 +672,11 @@ exports[`Storyshots modul-components|m-checkbox/position=right error 1`] = `
   class="m-checkbox m--is-checkbox-right m--has-error"
 >
   <input
+    aria-invalid="true"
     class="m-checkbox__hidden"
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -743,12 +713,11 @@ exports[`Storyshots modul-components|m-checkbox/position=right error-message 1`]
   class="m-checkbox m--is-checkbox-right m--has-error m--has-validation-message"
 >
   <input
+    aria-invalid="true"
     class="m-checkbox__hidden"
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -774,6 +743,7 @@ exports[`Storyshots modul-components|m-checkbox/position=right error-message 1`]
     class="m-validation-message m-checkbox__message"
   >
     <p
+      aria-live="polite"
       class="m-validation-message__error"
     >
       <svg
@@ -813,8 +783,6 @@ exports[`Storyshots modul-components|m-checkbox/position=right focus 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -856,8 +824,6 @@ exports[`Storyshots modul-components|m-checkbox/position=right indeterminate 1`]
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -892,8 +858,6 @@ exports[`Storyshots modul-components|m-checkbox/position=right readonly 1`] = `
 <div
   class="m-checkbox m--is-checkbox-right m--is-readonly"
 >
-  <!---->
-   
   <input
     id="mCheckbox-fakeId"
     type="hidden"
@@ -940,8 +904,6 @@ exports[`Storyshots modul-components|m-checkbox/position=right valid 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -981,8 +943,6 @@ exports[`Storyshots modul-components|m-checkbox/position=right value 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -1025,8 +985,6 @@ exports[`Storyshots modul-components|m-checkbox/value disabled 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -1062,12 +1020,11 @@ exports[`Storyshots modul-components|m-checkbox/value error 1`] = `
   class="m-checkbox m--is-checkbox-left m--is-checked m--has-error"
 >
   <input
+    aria-invalid="true"
     class="m-checkbox__hidden"
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -1104,12 +1061,11 @@ exports[`Storyshots modul-components|m-checkbox/value error-message 1`] = `
   class="m-checkbox m--is-checkbox-left m--is-checked m--has-error m--has-validation-message"
 >
   <input
+    aria-invalid="true"
     class="m-checkbox__hidden"
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -1135,6 +1091,7 @@ exports[`Storyshots modul-components|m-checkbox/value error-message 1`] = `
     class="m-validation-message m-checkbox__message"
   >
     <p
+      aria-live="polite"
       class="m-validation-message__error"
     >
       <svg
@@ -1174,8 +1131,6 @@ exports[`Storyshots modul-components|m-checkbox/value focus 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"
@@ -1217,8 +1172,6 @@ exports[`Storyshots modul-components|m-checkbox/value indeterminate 1`] = `
     type="checkbox"
   />
    
-  <!---->
-   
   <label
     class="m-checkbox__wrap"
     for="mCheckbox-fakeId"
@@ -1253,8 +1206,6 @@ exports[`Storyshots modul-components|m-checkbox/value readonly 1`] = `
 <div
   class="m-checkbox m--is-checkbox-left m--is-checked m--is-readonly"
 >
-  <!---->
-   
   <input
     id="mCheckbox-fakeId"
     type="hidden"
@@ -1300,8 +1251,6 @@ exports[`Storyshots modul-components|m-checkbox/value valid 1`] = `
     id="mCheckbox-fakeId"
     type="checkbox"
   />
-   
-  <!---->
    
   <label
     class="m-checkbox__wrap"

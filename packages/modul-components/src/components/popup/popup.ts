@@ -132,6 +132,9 @@ export class MPopup extends ModulVue {
     @Emit('portal-after-open')
     public emitPortalAfterOpen(): void { }
 
+    @Emit('portal-after-close')
+    public emitPortalAfterClose(): void { }
+
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
         if (this.disabled) {

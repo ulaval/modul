@@ -14,6 +14,10 @@ $m-timepicker--height-multiplier: 5;
         }
     }
 
+    &__validation-message {
+        transition: margin-top $m-transition-duration ease;
+    }
+
     &__header,
     &__body,
     &__footer {
@@ -93,9 +97,5 @@ $m-timepicker--height-multiplier: 5;
         @media (min-width: #{$m-mq--min--s}) {
             border-bottom: $m-border-width--s solid $m-color--border;
         }
-    }
-
-    &__validation-message {
-        transition: margin-top $m-transition-duration ease;
     }
 }

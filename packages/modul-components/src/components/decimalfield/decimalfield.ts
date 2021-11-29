@@ -30,33 +30,36 @@ import WithRender from './decimalfield.html?style=./decimalfield.scss';
 })
 export class MDecimalfield extends ModulVue {
     @Prop()
-    public value: number;
+    public readonly value: number;
 
     @Prop({
         default: 2
     })
-    public rounding: number;
+    public readonly rounding: number;
 
     @Prop({
         default: 14
     })
-    public precision: number;
+    public readonly precision: number;
 
     @Prop({ default: false })
-    public forceRoundingFormat: boolean;
+    public readonly forceRoundingFormat: boolean;
 
-    protected id: string = `mDecimalfield-${uuid.generate()}`;
-    private text: string = '';
+    @Prop({ default: () => `mDecimalfield-${uuid.generate()}` })
+    public readonly id: string;
 
-    private get hasDecimalfieldError(): boolean {
+    public readonly validationMessageId: string = uuid.generate();
+    public text: string = '';
+
+    public get hasDecimalfieldError(): boolean {
         return this.as<InputState>().hasError;
     }
 
-    private get isDecimalfieldValid(): boolean {
+    public get isDecimalfieldValid(): boolean {
         return this.as<InputState>().isValid;
     }
 
-    private get inputMaskOptions(): InputMaskOptions {
+    public get inputMaskOptions(): InputMaskOptions {
         const decimalFormat: MDecimalFormat = this.$l10n.getDecimalFormat(this.currentLocale);
         return {
             numeral: true,
@@ -72,15 +75,15 @@ export class MDecimalfield extends ModulVue {
         };
     }
 
-    get currentLocale(): string {
+    public get currentLocale(): string {
         return (this as ModulVue).$i18n.currentLocale;
     }
 
-    private get model(): string {
+    public get model(): string {
         return this.text;
     }
 
-    private set model(value: string) {
+    public set model(value: string) {
         this.text = value;
         const valueAsNumber: number = Number.parseFloat(value);
         this.emitNewValue(valueAsNumber);
@@ -95,7 +98,7 @@ export class MDecimalfield extends ModulVue {
     }
 
     @Emit('input')
-    emitNewValue(_newValue: number): void { }
+    public emitNewValue(_newValue: number): void { }
 }
 
 const DecimalfieldPlugin: PluginObject<any> = {

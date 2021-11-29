@@ -3,8 +3,6 @@ import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { POPUP_NAME as DIRECTIVE_POPUP_NAME } from '../../directives/directive-names';
 import { MPopupDirective } from '../../directives/popup/popup';
-import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
-import { i18nFilter } from '../../filters/i18n/i18n';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputPopup } from '../../mixins/input-popup/input-popup';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
@@ -15,8 +13,7 @@ import { normalizeString } from '../../utils/str/str';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import uuid from '../../utils/uuid/uuid';
 import { MButton } from '../button/button';
-import { BUTTON_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, POPUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
@@ -31,20 +28,16 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_NAME]: MIcon,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [POPUP_NAME]: MPopup,
-        [DROPDOWN_ITEM_NAME]: MDropdownItem
+        MButton,
+        MInputStyle,
+        MIcon,
+        MIconButton,
+        MValidationMessage,
+        MPopup,
+        MDropdownItem
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
-    },
-    filters: {
-        [FILTER_I18N_NAME]: i18nFilter
     },
     mixins: [
         InputState,
@@ -58,31 +51,49 @@ const DROPDOWN_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Model('change')
     @Prop()
-    public value: any;
+    public readonly value: any;
+
     @Prop()
-    public filterable: boolean;
+    public readonly filterable: boolean;
+
     @Prop()
     public textNoData: string;
+
     @Prop()
-    public textNoMatch: string;
+    public readonly textNoMatch: string;
+
     @Prop()
     public listMinWidth: string;
+
     @Prop()
-    public focus: boolean;
+    public readonly focus: boolean;
+
     @Prop()
-    public forceOpen: boolean;
+    public readonly forceOpen: boolean;
+
     @Prop()
-    public maxLength: number;
+    public readonly maxLength: number;
+
     @Prop({ default: true })
-    public showArrowIcon: boolean;
+    public readonly showArrowIcon: boolean;
+
     @Prop({ default: true })
-    public enableAnimation: boolean;
+    public readonly enableAnimation: boolean;
+
     @Prop({ default: true })
-    public includeFilterableStatusItems: boolean;
+    public readonly includeFilterableStatusItems: boolean;
+
     @Prop({ default: false })
-    public clearInvalidSelectionOnClose: boolean;
+    public readonly clearInvalidSelectionOnClose: boolean;
+
     @Prop({ default: false })
-    public clearModelOnSelectedText: boolean;
+    public readonly clearModelOnSelectedText: boolean;
+
+    @Prop({ default: () => `mDropdown-${uuid.generate()}` })
+    public readonly id: string;
+
+    @Prop({ default: uuid.generate() })
+    public readonly inputAriaDescribedby: string;
 
     public $refs: {
         popup: MPopup;
@@ -91,6 +102,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         mInputStyle: MInputStyle;
         researchInput: HTMLInputElement;
     };
+
+    public readonly listboxId: string = `listboxId-${uuid.generate()}`;
+    public readonly popupId: string = `popup-${uuid.generate()}`;
 
     private internalFilter: string = '';
     private internalFilterRegExp: RegExp = / /;
@@ -104,13 +118,16 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     private internalOpen: boolean = false;
     private dirty: boolean = false;
-    private id: string = `mDropdown-${uuid.generate()}`;
 
     @Watch('forceOpen')
     public onForceOpenUpdate(): void {
         if (this.forceOpen) {
             this.internalOpen = this.forceOpen;
         }
+    }
+
+    public get inputAriaActivedescendant(): string {
+        return this.focusedIndex >= 0 && this.open ? this.internalNavigationItems[this.focusedIndex].id : '';
     }
 
     public matchFilter(text: string | undefined): boolean {
@@ -172,14 +189,16 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Emit('open')
     private async onOpen(): Promise<void> {
         await this.$nextTick();
-
-        let inputEl: any = this.$refs.input;
-
-        setTimeout(() => { // Need timeout to set focus on input
+        requestAnimationFrame(() => {
+            const inputEl: HTMLElement = this.$refs.input;
+            const researchInputEl: HTMLElement = this.$refs.researchInput;
             if (!(this.filterable && this.as<MediaQueries>().isMqMaxS)) {
+                this.as<InputManagement>().internalIsFocus = true;
                 inputEl.focus();
+            } else if (researchInputEl) {
+                researchInputEl.focus();
             }
-        }, 200);
+        });
 
         this.focusSelected();
         this.scrollToFocused();
@@ -210,7 +229,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             if (!this.isAndroid) {
                 this.$refs.input.blur();
             }
-            this.internalOpen = false;
+            this.open = false;
         }
     }
 
@@ -247,7 +266,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         }
         this.dirty = false;
         if (value !== '') {
-            this.internalOpen = false;
+            this.open = false;
         }
 
         this.setInputWidth();
@@ -368,10 +387,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         return this.internalItems.length > 0;
     }
 
-    private get ariaControls(): string {
-        return this.id + '-controls';
-    }
-
     public get inactive(): boolean {
         return this.as<InputState>().isDisabled || this.as<InputState>().isReadonly || this.as<InputState>().isWaiting;
     }
@@ -380,12 +395,25 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         return !!this.$slots.footer;
     }
 
-    private onKeydownUp($event: KeyboardEvent): void {
-        if (!this.open) {
-            this.open = true;
-        } else {
-            this.focusPreviousItem();
+    public onKeydownHome($event: KeyboardEvent): void {
+        if (!this.hasItems || this.focusedIndex < 0 || !this.open) {
+            return;
         }
+        this.focusedIndex = 0;
+        this.scrollToFocused();
+    }
+
+    public onKeydownEnd($event: KeyboardEvent): void {
+        if (!this.hasItems || this.focusedIndex < 0 || !this.open) {
+            return;
+        }
+        this.focusedIndex = this.internalNavigationItems.length - 1;
+        this.scrollToFocused();
+    }
+
+    private onKeydownUp($event: KeyboardEvent): void {
+        if (!this.open) return;
+        this.focusPreviousItem();
     }
 
     private onKeydownDown($event: KeyboardEvent): void {
@@ -401,7 +429,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             this.open = true;
         }
         if (this.focusedIndex > -1) {
-            let item: MDropdownItem = this.internalNavigationItems[this.focusedIndex];
+            const item: MDropdownItem = this.internalNavigationItems[this.focusedIndex];
             this.model = item.value;
         }
         this.selectText();
@@ -464,7 +492,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (this.focusedIndex > -1) {
             this.focusedIndex++;
             if (this.focusedIndex >= this.internalNavigationItems.length) {
-                this.focusedIndex = 0;
+                this.focusedIndex = this.internalNavigationItems.length - 1;
             }
         } else {
             this.focusedIndex = this.internalNavigationItems.length === 0 ? -1 : 0;
@@ -479,7 +507,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (this.focusedIndex > -1) {
             this.focusedIndex--;
             if (this.focusedIndex < 0) {
-                this.focusedIndex = this.internalNavigationItems.length - 1;
+                this.focusedIndex = 0;
             }
         } else {
             this.focusedIndex = this.internalNavigationItems.length - 1;
@@ -488,79 +516,82 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private scrollToFocused(): void {
-        if (!this.hasItems) {
+        if (!this.hasItems || this.focusedIndex < 0) {
             return;
         }
-        if (this.focusedIndex > -1 && this.as<MediaQueriesMixin>().isMqMinS) {
-            this.$nextTick(() => {
-                let container: HTMLElement = this.$refs.items;
-                if (container) {
-                    let focusedItem: MDropdownItem = this.internalNavigationItems[this.focusedIndex];
-                    let top: number = (focusedItem.$el as HTMLElement).offsetTop;
-                    let bottom: number = (focusedItem.$el as HTMLElement).offsetTop + (focusedItem.$el as HTMLElement).offsetHeight;
-                    let viewRectTop: number = container.scrollTop;
-                    let viewRectBottom: number = viewRectTop + container.clientHeight;
 
-                    if (top < viewRectTop) {
-                        container.scrollTop = top;
-                    } else if (bottom > viewRectBottom) {
-                        container.scrollTop = bottom - container.clientHeight;
-                    }
+        const sidebarBody = this.as<MediaQueriesMixin>().isMqMaxS ?
+            document.querySelector(`#${this.popupId} .m-sidebar__body`)
+            : undefined;
+        const refUl: HTMLElement = this.$refs.items as HTMLElement;
+        const container = sidebarBody || refUl;
+        if (container) {
+            const element: HTMLElement = refUl.children[this.focusedIndex] as HTMLElement;
+
+            if (element) {
+                const top: number = element.offsetTop;
+                const bottom: number = element.offsetTop + element.offsetHeight;
+                const viewRectTop: number = container.scrollTop;
+                const viewRectBottom: number = viewRectTop + container.clientHeight;
+                if (top < viewRectTop) {
+                    container.scrollTop = top;
+                } else if (bottom > viewRectBottom) {
+                    container.scrollTop = bottom - container.clientHeight;
                 }
-            });
+            }
         }
     }
 
     private transitionEnter(el: HTMLElement, done: any): void {
         this.$nextTick(() => {
-            el.style.opacity = '0';
-            el.style.width = this.$el.clientWidth + 'px';
-            setTimeout(() => {
-                if (this.as<MediaQueriesMixin>().isMqMinS) {
-                    let height: number = el.clientHeight;
-                    // tslint:disable-next-line: deprecation
-                    el.style.webkitTransition = DROPDOWN_STYLE_TRANSITION;
-                    el.style.transition = DROPDOWN_STYLE_TRANSITION;
-                    el.style.overflowY = 'hidden';
-                    if (this.enableAnimation) {
-                        el.style.maxHeight = '0';
-                    }
-                    el.style.width = this.$el.clientWidth + 'px';
+            if (this.as<MediaQueriesMixin>().isMqMinS) {
+                let height: number = el.clientHeight;
+                el.style.transition = DROPDOWN_STYLE_TRANSITION;
+                el.style.overflowY = 'hidden';
+                el.style.width = this.$el.clientWidth + 'px';
+                if (this.listMinWidth) {
                     el.style.minWidth = this.listMinWidth;
-                    el.style.removeProperty('opacity');
-                    setTimeout(() => {
-                        if (this.enableAnimation) {
-                            el.style.maxHeight = height + 'px';
-                        }
+                }
+                if (this.enableAnimation) {
+                    el.style.maxHeight = '0';
+                    requestAnimationFrame(() => {
+                        el.style.maxHeight = height + 'px';
                         done();
-                    }, 0);
+                    });
                 } else {
                     done();
                 }
-            }, 0);
-        });
-    }
 
-    private transitionLeave(el: HTMLElement, done: any): void {
-        this.$nextTick(() => {
-            if (this.as<MediaQueriesMixin>().isMqMinS) {
-                let height: number = el.clientHeight;
-                el.style.width = this.$el.clientWidth + 'px';
-                el.style.minWidth = this.listMinWidth;
-                if (this.enableAnimation) {
-                    el.style.maxHeight = height + 'px';
-                    el.style.maxHeight = '0';
-                }
-                setTimeout(() => {
-                    if (this.enableAnimation) {
-                        el.style.maxHeight = 'none';
-                    }
-                    done();
-                }, 300);
             } else {
                 done();
             }
         });
+    }
+
+    private transitionLeave(el: HTMLElement, done: any): void {
+        if (this.enableAnimation) {
+            if (this.filterable && this.as<MediaQueriesMixin>().isMqMinS) {
+                el.style.maxHeight = 'none';
+                done();
+            } else {
+                this.$nextTick(() => {
+                    const height: number = el.clientHeight;
+                    if (this.as<MediaQueriesMixin>().isMqMinS) {
+                        el.style.maxHeight = height + 'px';
+                        el.style.maxHeight = '0';
+
+                        setTimeout(() => {
+                            el.style.maxHeight = 'none';
+                            done();
+                        }, 300);
+                    } else {
+                        done();
+                    }
+                });
+            }
+        } else {
+            done();
+        }
     }
 
     private get hasPointer(): boolean {

@@ -179,6 +179,11 @@ export const toastMessageCountForFormGroup = () => ({
             ClearErrorToast
         ]
     }),
+    methods: {
+        reset: () => {
+            console.log('form reset')
+        }
+    },
     computed: {
         nameControl(): FormControl<string> {
             return this.$data.formGroup.getControl('name') as FormControl<string>;
@@ -227,8 +232,8 @@ export const toastMessageCountForFormGroup = () => ({
             </m-textfield> <br />
         </m-input-group>
         <p>
-            <m-button type="submit">submit</m-button>
-            <m-button type="reset">reset</m-button>
+            <m-button type="submit">Submit</m-button>
+            <m-button type="reset">Reset</m-button>
         </p>
     </m-form>
     `

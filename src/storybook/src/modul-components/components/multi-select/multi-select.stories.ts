@@ -147,8 +147,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
             options: optionsObjects
         }),
         template: `<div><m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1" label="Facultés">
-            <template v-slot:chips="{ item , index }">{{ item.abbr }}</template>
-            <template v-slot:items="{ item , index }">{{ item.nomLong }} ({{ item.abbr }})</template>
+            <template #chips="{ item , index }">{{ item.abbr }}</template>
+            <template #items="{ item , index }">{{ item.nomLong }} ({{ item.abbr }})</template>
         </m-multi-select><br /><br /><br /><br /><br /><br /><br />Value: {{model1}}</div>`
     })
     );
@@ -200,7 +200,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
             model1: [optionsLionKing[0]],
             options: optionsLionKing
         }),
-        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:chips="{item , index }"> {{ index }} - {{ item }} </template></m-multi-select>`
+        template: `<m-multi-select @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"><template v-slot:chips="{item , index }"> {{ index + 1 }} - {{ item }} </template></m-multi-select>`
     })
     );
 

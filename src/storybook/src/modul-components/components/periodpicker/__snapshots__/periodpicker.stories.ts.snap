@@ -66,9 +66,11 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
                     class="m-input-style__suffix"
                   >
                     <button
-                      aria-controls="mDatepicker-fakeId"
+                      aria-hidden="true"
                       class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
                       style="width: 22px; height: 22px;"
+                      tabindex="-1"
+                      title="Ouvrir le calendrier"
                       type="button"
                     >
                       <svg
@@ -176,9 +178,11 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
                     class="m-input-style__suffix"
                   >
                     <button
-                      aria-controls="mDatepicker-fakeId"
+                      aria-hidden="true"
                       class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
                       style="width: 22px; height: 22px;"
+                      tabindex="-1"
+                      title="Ouvrir le calendrier"
                       type="button"
                     >
                       <svg

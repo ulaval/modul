@@ -181,9 +181,12 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
                 </span>
                  
                 <sup
+                  aria-hidden="true"
                   class="m-input-style__required-marker"
                 >
-                  *
+                  
+                        *
+                    
                 </sup>
               </span>
             </label>
@@ -201,6 +204,7 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
                   class="m-decimalfield__input"
                   id="mDecimalfield-fakeId"
                   inputmode="decimal"
+                  required="required"
                 />
                   
                 <!---->
@@ -301,6 +305,7 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
           class="m-validation-message m-decimalfield__validation__message"
         >
           <p
+            aria-live="polite"
             class="m-validation-message__valid"
           >
             <svg
@@ -444,6 +449,7 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
               >
                  
                 <input
+                  aria-invalid="true"
                   class="m-decimalfield__input"
                   id="mDecimalfield-fakeId"
                   inputmode="decimal"
@@ -474,6 +480,7 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
           class="m-validation-message m-decimalfield__validation__message"
         >
           <p
+            aria-live="polite"
             class="m-validation-message__error"
           >
             <svg

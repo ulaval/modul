@@ -5,10 +5,10 @@
     flex-direction: column;
 
     &:focus {
-        outline: 0 solid transparent;
+        outline: none;
     }
 
-    &:not(.m--is-disabled) {
+    &:not(.m--is-disabled):not(.m--is-readonly) {
         .m-multi-select__arrow {
             cursor: pointer;
         }
@@ -17,14 +17,21 @@
     &__arrow {
         display: flex;
         cursor: pointer;
+        color: $m-color--grey;
 
-        &__icon {
+        &-icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
         }
 
         &.m--is-open {
-            .m-multi-select__arrow__icon {
+            .m-multi-select__arrow-icon {
                 transform: rotate(-180deg);
+            }
+        }
+
+        &.m--is-focus {
+            .m-multi-select__arrow-icon {
+                color: $m-color--interactive;
             }
         }
     }
@@ -37,33 +44,37 @@
         }
     }
 
+    &.m--is-disabled,
+    &.m--is-readonly {
+        .m-multi-select__arrow {
+            cursor: default;
+        }
+
+        .m-multi-select__arrow-icon {
+            color: $m-input-style--color-disabled;
+        }
+    }
+
     &__chips {
         min-height: 24px; // Magic number
+        outline: none;
     }
 
     &__chip {
         margin: $m-margin--xs/2 $m-margin--xs $m-margin--xs/2 0;
     }
 
-    &__popup-header {
-        border-bottom: 1px solid $m-color--grey-light;
-        color: $m-color--interactive-darker;
-
-        &.m--is-item-active {
-            &.m--is-focus,
-            &:hover {
-                background: none;
-
-                span {
-                    text-decoration: underline;
-                }
-            }
-        }
+    &__all-check {
+        border-bottom: 1px solid $m-color--border;
     }
 
     &__more {
         white-space: nowrap;
         font-size: 12px;
+    }
+
+    &__visually-hidden {
+        @include m-visually-hidden();
     }
 
     /deep/ .m-input-style__body {

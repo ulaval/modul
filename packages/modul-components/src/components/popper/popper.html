@@ -12,7 +12,7 @@
                     @leave="onLeave"
                     @after-leave="onAfterLeave"
                     @leave-cancelled="onLeaveCancelled">
-            <article v-show="propOpen"
+            <div v-show="propOpen"
                      v-if="portalMounted"
                      ref="popper"
                      class="m-popper__article"
@@ -51,7 +51,7 @@
                         }">
                     <slot name="footer" />
                 </footer>
-            </article>
+            </div>
         </transition>
     </portal>
 </div>

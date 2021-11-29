@@ -8,13 +8,13 @@
     --m-input-style--valid-color: #{ $m-color--success };
     --m-input-style--waiting-color: #{ $m-color--active };
     --m-input-style--disabled-color: #{ $m-color--disabled };
-    --m-input-style--label-up-color: #{ $m-color--grey };
+    --m-input-style--label-up-color: #{ $m-color--grey-dark };
     --m-input-style--label-up-border-color: #{ $m-color--grey };
     // core
     --m-input-style--box-shadow: none;
     --m-input-style--font-weight: #{ $m-font-weight--light };
     --m-input-style--input-color: #{ $m-color--text};
-    --m-input-style--label-color: #{ $m-color--grey };
+    --m-input-style--label-color: #{ $m-color--grey-dark };
     --m-input-style--border-color: #{ $m-color--grey-light };
     --m-input-style--buttons-color: #{ $m-color--grey };
     --m-input-style--background-color: white;
@@ -22,6 +22,7 @@
 }
 
 @mixin input-style-cursor($cursor: default) {
+
     &,
     .m-input-style__label,
     .m-input-style__input,
@@ -194,9 +195,13 @@
         margin-left: $m-spacing--s;
     }
 
+    &__validation {
+        transition: margin-top $m-transition-duration ease;
+    }
+
     // modifiers
 
-    &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus):not(.m--is-readonly) {
+    &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus) {
         --m-input-style--label-color: var(--m-input-style--hover-color);
         --m-input-style--border-color: var(--m-input-style--hover-color);
     }
@@ -248,16 +253,13 @@
     }
 
     &.m--is-disabled,
-    &.m--is-waiting {
+    &.m--is-waiting,
+    &.m--is-readonly {
         --m-input-style--label-color: var(--m-input-style--disabled-color);
         --m-input-style--border-color: var(--m-input-style--disabled-color);
         --m-input-style--buttons-color: var(--m-input-style--disabled-color);
         --m-input-style--input-color: var(--m-input-style--disabled-color);
-    }
 
-    &.m--is-disabled,
-    &.m--is-waiting,
-    &.m--is-readonly {
         .m-input-style__main {
             border-style: dashed;
         }
@@ -295,6 +297,7 @@
     &.m--is-tag-h4,
     &.m--is-tag-h5,
     &.m--is-tag-h6 {
+
         input,
         textarea,
         ::placeholder,
@@ -306,6 +309,7 @@
     }
 
     &.m--is-tag-p {
+
         input,
         textarea,
         ::placeholder,
@@ -338,6 +342,12 @@
 
         &h6 {
             @include m-h6-font-style();
+        }
+    }
+
+    &.m--has-validation-message {
+        .m-input-style__validation {
+            margin-top: $m-spacing--xs;
         }
     }
 }

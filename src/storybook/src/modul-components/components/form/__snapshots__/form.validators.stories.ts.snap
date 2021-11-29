@@ -151,7 +151,7 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
     default validationType =  correction
   </p>
    
-  <div
+  <fieldset
     class="m-input-group"
     legend="compare two field"
   >
@@ -336,7 +336,7 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
         </div>
       </div>
     </div>
-  </div>
+  </fieldset>
    
   <p
     class="m-u--margin-bottom--l"
@@ -454,9 +454,11 @@ exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mDatepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le calendrier"
                 type="button"
               >
                 <svg
@@ -621,9 +623,11 @@ exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mDatepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le calendrier"
                 type="button"
               >
                 <svg

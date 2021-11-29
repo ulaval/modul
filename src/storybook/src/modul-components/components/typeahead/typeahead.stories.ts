@@ -33,17 +33,32 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             <p v-html="results"></p>
         </div>`
     }))
-    .add('popup-footer-slot', () => ({
+    .add('popup-footer slot', () => ({
         data: () => ({
             label: 'Fruits and vegetables',
             results: RESULTS,
             value: ''
         }),
-        template: `<div>
-            <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" @keydown="keydown" @keyup="keyup" @paste="paste" v-model="value" :label="label" :results="results">
-                <template slot="popup-footer">footer slot here</template>
-            </m-typeahead>
-        </div>`
+        template: `<m-typeahead
+            v-model="value"
+            :label="label"
+            :results="results"
+        >
+            <template slot="popup-footer">footer slot here</template>
+        </m-typeahead>`
+    }))
+    .add('list-max-height 110px', () => ({
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: ''
+        }),
+        template: `<m-typeahead
+            v-model="value"
+            :label="label"
+            :results="results"
+            list-max-height="110px"
+        />`
     }))
     .add('max-results', () => ({
         data: () => ({
@@ -102,6 +117,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             onFilter(): void {
                 let _this: any = this as any;
                 _this.loddingResults = true;
+                _this.filterResult = [];
                 setTimeout(() => {
                     _this.filterResult = _this.results.filter(r => {
                         if (_this.value) {

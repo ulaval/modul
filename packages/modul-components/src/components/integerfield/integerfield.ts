@@ -47,17 +47,20 @@ export class MIntegerfield extends ModulVue {
     })
     public maxLength: number;
 
-    protected id: string = `mIntegerfield-${uuid.generate()}`;
+    @Prop({ default: () => `mIntegerfield-${uuid.generate()}` })
+    public readonly id: string;
 
-    private get hasDecimalfieldError(): boolean {
+    public readonly validationMessageId: string = uuid.generate();
+
+    public get hasDecimalfieldError(): boolean {
         return this.as<InputState>().hasError;
     }
 
-    private get isDecimalfieldValid(): boolean {
+    public get isDecimalfieldValid(): boolean {
         return this.as<InputState>().isValid;
     }
 
-    private get inputMaskOptions(): InputMaskOptions {
+    public get inputMaskOptions(): InputMaskOptions {
         return {
             numeral: true,
             numeralThousandsGroupStyle: 'none',
@@ -70,21 +73,21 @@ export class MIntegerfield extends ModulVue {
         };
     }
 
-    get currentLocale(): string {
+    public get currentLocale(): string {
         return (this as ModulVue).$i18n.currentLocale;
     }
 
-    private get model(): string {
+    public get model(): string {
         return (!this.value && this.value !== 0 ? '' : this.value).toString();
     }
 
-    private set model(value: string) {
+    public set model(value: string) {
         const valueAsNumber: number = Number.parseFloat(value);
         this.emitNewValue(valueAsNumber);
     }
 
     @Emit('input')
-    emitNewValue(_newValue: number): void { }
+    public emitNewValue(_newValue: number): void { }
 }
 
 const IntegerfieldPlugin: PluginObject<any> = {

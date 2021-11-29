@@ -69,10 +69,9 @@ export class InputManagement extends ModulVue
     }
 
     focusInput(): void {
-        let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (inputEl) {
-            inputEl.focus();
-        }
+        const inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
+        if (!inputEl) return;
+        inputEl.focus();
     }
 
     get hasValue(): boolean {
@@ -142,7 +141,7 @@ export class InputManagement extends ModulVue
     }
 
     @Watch('value', { immediate: true })
-    private onValueChange(value: string): void {
+    public onValueChange(value: string): void {
         this.internalValue = this.getTrimValue(this.value || '');
     }
 

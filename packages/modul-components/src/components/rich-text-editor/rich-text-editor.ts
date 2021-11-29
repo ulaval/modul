@@ -99,6 +99,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     @Prop()
     public imageUploadCustomValidation?: FileUploadCustomValidation;
 
+    @Prop({ default: () => `mRichText-${uuid.generate()}` })
+    public readonly id: string;
+
     public $refs: {
         input: HTMLElement
     };
@@ -107,8 +110,6 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         'Update': this.$i18n.translate('m-inplace-edit:modify'),
         'URL': this.$i18n.translate('m-rich-text-editor:URL')
     };
-
-    protected id: string = `mrich-text-${uuid.generate()}`;
 
     private i18nHeaderTitle: string = this.$i18n.translate('m-rich-text-editor:title');
     private i18nHeaderSubtitle: string = this.$i18n.translate('m-rich-text-editor:subtitle');

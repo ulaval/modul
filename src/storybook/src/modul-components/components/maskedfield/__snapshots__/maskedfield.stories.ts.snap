@@ -259,6 +259,7 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label I
           >
              
             <input
+              aria-invalid="true"
               id="mMaskedfield-fakeId"
             />
               
@@ -287,6 +288,7 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label I
       class="m-validation-message m-maskedfield__validation-message"
     >
       <p
+        aria-live="polite"
         class="m-validation-message__error"
       >
         <svg

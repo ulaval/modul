@@ -1,14 +1,13 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Mixins, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
-import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
+import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
-import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_NAME, INPUT_STYLE_NAME, MULTI_SELECT_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { MULTI_SELECT_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
@@ -24,19 +23,13 @@ import WithRender from './multi-select.html?style=./multi-select.scss';
         MBaseSelect,
         MSelectItem,
         MChipDelete,
-        [I18N_NAME]: MI18n,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [ICON_NAME]: MIcon,
-        [INPUT_STYLE_NAME]: MInputStyle
+        MI18n,
+        MValidationMessage,
+        MIcon,
+        MInputStyle
     },
-    mixins: [
-        InputState,
-        MediaQueries,
-        InputWidth,
-        InputLabel
-    ]
 })
-export class MMultiSelect extends ModulVue {
+export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, MediaQueries) {
     @Model('input')
     @Prop({
         validator: value => Array.isArray(value)
@@ -69,61 +62,95 @@ export class MMultiSelect extends ModulVue {
     @Prop()
     public placeholder: string;
 
-    public id: string = `${MULTI_SELECT_NAME}-${uuid.generate()}`;
+    @Prop({ default: () => `${MULTI_SELECT_NAME}-${uuid.generate()}` })
+    public readonly id: string;
+
+    public readonly inputAriaDescribedby: string = uuid.generate();
+    public readonly selectedValueId: string = uuid.generate();
     public internalValue: any[] = [];
-    public internalIsFocus: boolean = false;
-    public selectAllFocused: boolean = false;
+    public internalFocus: boolean = false;
     public open: boolean = false;
+    public internalOptions: any[] = [];
+    public allSelectedCheckboxIsChecked: boolean = false;
+
+    @Ref('input')
+    public readonly refInput?: HTMLElement;
+
+    @Ref('baseSelect')
+    public readonly refBaseSelect: MBaseSelect;
+
+    @Emit('open')
+    public async emitOpen(): Promise<void> {
+        await this.$nextTick();
+        this.refBaseSelect.focusFirstSelected();
+    }
+
+    @Emit('close')
+    public emitClose(): void { }
+
+    @Emit('blur')
+    public onBlur($event: FocusEvent): void {
+        this.internalFocus = false;
+    }
+
+    @Emit('select-item')
+    public onSelect(option: any, index: number, $event: Event): void {
+        let positionInModel: number = this.model.indexOf(option);
+        if (this.linkSelectAll && index === 0) {
+            this.onToggleAll();
+        } else {
+            if (positionInModel === -1) {
+                this.model = [...this.model, (this.internalOptions[index])];
+            } else {
+                this.onDelete(option);
+            }
+
+            this.update();
+        }
+
+        if ($event.type === 'click') {
+            this.refBaseSelect.focusedIndex = -1;
+        }
+    }
 
     public $refs: {
         baseSelect: MBaseSelect;
     };
 
-    created(): void {
-        if (!Array.isArray(this.value)) {
-            this.$log.error('MMultiSelect - The model must be an array');
-        }
-    }
-
-    mounted(): void {
-        if (this.focus) {
-            this.focusChanged(this.focus);
-        }
-    }
-
-    set model(value: any[]) {
+    public set model(value: any[]) {
         this.internalValue = value;
-        this.$emit('input', this.internalValue);
+        if (this.linkSelectAll && this.internalValue.some(v => v === this.internalOptions[0])) {
+            this.$emit('input', this.internalValue.filter(v => v !== this.internalOptions[0]));
+        } else {
+            this.$emit('input', this.internalValue);
+        }
     }
 
-    get model(): any[] {
+    public get model(): any[] {
         return this.internalValue;
     }
 
-    get selectedItems(): any[] {
-        if (this.value) {
-            return this.value;
-        }
-        return [];
+    public get selectedItems(): any[] {
+        return this.value || [];
     }
 
-    get numberOfItemsSelected(): number {
+    public get numberOfItemsSelected(): number {
         return this.selectedItems.length;
     }
 
-    get isEmpty(): boolean {
+    public get isEmpty(): boolean {
         return this.hasValue || (this.open) ? false : true;
     }
 
-    get hasValue(): boolean {
+    public get hasValue(): boolean {
         return !!(this.model && this.model.length > 0);
     }
 
-    get allSelected(): boolean {
-        return this.options && this.options.length > 0 && this.options.length === this.value.length;
+    public get allSelected(): boolean {
+        return this.options && this.options.length === this.selectedItems.length;
     }
 
-    get chipsDisplayMode(): number {
+    public get chipsDisplayMode(): number {
         if (this.allSelected) {
             return 1;
         } else if (this.numberOfItemsSelected > this.maxVisibleChips) {
@@ -132,125 +159,161 @@ export class MMultiSelect extends ModulVue {
         return -1;
     }
 
-    get textNumberOfSelectedItems(): string {
-        return this.$i18n.translate('m-multi-select:all-selected', [this.numberOfItemsSelected], undefined, undefined,false, FormatMode.Default);
+    public get textNumberOfSelectedItems(): string {
+        return this.$i18n.translate('m-multi-select:all-selected', [this.numberOfItemsSelected], undefined, undefined, false, FormatMode.Default);
     }
 
-    get textNumberOfUnselectedItemsLeft(): string {
-        return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined,false, FormatMode.Default);
+    public get textNumberOfUnselectedItemsLeft(): string {
+        return this.$i18n.translate('m-multi-select:more', [this.numberOfItemsSelected - this.maxVisibleChips], undefined, undefined, false, FormatMode.Default);
+    }
+
+    public get hiddenTextSelectedValue(): string {
+        let text = this.$i18n.translate('m-multi-select:selected-items', [this.numberOfItemsSelected], this.numberOfItemsSelected);
+        if (this.numberOfItemsSelected) {
+            text += `: ${this.selectedItems.join(', ')}`;
+        }
+        return text;
+    }
+
+    public onPortalAfterClose(): void {
+        this.focusInput();
+    }
+
+    public onClickOnItem(): void {
+        this.focusInput();
     }
 
     public toggle(): void {
-        this.selectAllFocused = false;
-        this.$refs.baseSelect.togglePopup();
+        this.refBaseSelect.togglePopup();
     }
 
-    @Emit('select-item')
-    onSelect(option: any, index: number, $event: Event): void {
-        let positionInModel: number = this.model.indexOf(option);
-        if (positionInModel === -1) {
-            this.model = [...this.model, (this.options[index])];
-        } else {
-            this.onDelete(positionInModel);
-        }
-        this.$refs.baseSelect.update();
+    public onInputStyleClick(callbackToggle: any): void {
+        callbackToggle();
 
-        if ($event.type === 'click') {
-            this.$refs.baseSelect.focusedIndex = -1;
+        if (this.open) {
+            this.focusInput();
         }
     }
 
-    onDelete(index: number): void {
-        this.model = this.model.slice(0, index).concat(this.model.slice(index + 1));
-        this.$refs.baseSelect.update();
+    public focusInput(): void {
+        if (
+            this.refInput && document.activeElement !== this.refInput
+        ) {
+            this.refInput.focus();
+        }
     }
 
-    onDeleteAll(): void {
+    public onDelete(option: any): void {
+        this.model = this.model.filter(m => m !== option);
+        this.update();
+        this.focusInput();
+    }
+
+    public onDeleteAll(): void {
         this.model = [];
-        this.$refs.baseSelect.update();
+        this.update();
+        this.focusInput();
     }
 
-    onFocus($event: FocusEvent): void {
-        this.internalIsFocus = this.as<InputStateMixin>().active;
-        if (this.internalIsFocus) {
+    public onFocus($event: FocusEvent): void {
+        this.internalFocus = this.active;
+        if (this.internalFocus) {
             this.$emit('focus', $event);
         }
     }
 
-    @Emit('blur')
-    onBlur($event: FocusEvent): void {
-        this.internalIsFocus = false;
+    public onKeydownDown($event: KeyboardEvent): void {
+        if (this.internalOptions) {
+            if (!this.open) {
+                this.open = true;
+            }
+            this.refBaseSelect.onKeydownDown($event);
+        }
     }
 
-    onKeydownDown($event: KeyboardEvent): void {
-        if (this.options) {
-            if (this.$refs.baseSelect.focusedIndex === this.options.length - 1 && this.linkSelectAll) {
-                this.$refs.baseSelect.focusedIndex = -1;
-                this.selectAllFocused = true;
-            } else {
-                this.selectAllFocused = false;
-                this.$refs.baseSelect.focusNextItem();
+    public onKeydownUp($event: KeyboardEvent): void {
+        if (this.internalOptions) {
+            this.refBaseSelect.onKeydownUp($event);
+        }
+    }
+
+    public onKeydownEnter($event: KeyboardEvent): void {
+        if (this.internalOptions) {
+            if (!this.open) {
+                this.open = true;
+            }
+            if (this.refBaseSelect.focusedIndex > -1) {
+                this.refBaseSelect.emitSelectItem(this.refBaseSelect.items[this.refBaseSelect.focusedIndex], this.refBaseSelect.focusedIndex, $event);
             }
         }
     }
 
-    onKeydownUp($event: KeyboardEvent): void {
-        if (this.options) {
-            if (this.$refs.baseSelect.focusedIndex === 0 && this.linkSelectAll) {
-                this.$refs.baseSelect.focusedIndex = -1;
-                this.selectAllFocused = true;
-            } else {
-                this.selectAllFocused = false;
-                this.$refs.baseSelect.focusPreviousItem();
+    public onKeydownSpace($event: KeyboardEvent): void {
+        if (this.internalOptions) {
+            if (!this.open) {
+                this.open = true;
             }
+            this.refBaseSelect.onKeydownSpace($event);
         }
     }
 
-    onKeydownEnter($event: KeyboardEvent): void {
-        if (this.options) {
-            if (this.$refs.baseSelect.focusedIndex > -1) {
-                this.$refs.baseSelect.select(this.$refs.baseSelect.items[this.$refs.baseSelect.focusedIndex], this.$refs.baseSelect.focusedIndex, $event);
-            } else if (this.selectAllFocused) {
-                this.onToggleAll();
-            }
-        }
+    public update(): void {
+        this.refBaseSelect.update();
     }
 
-    onKeydownSpace($event: KeyboardEvent): void {
-        if (this.options) {
-            this.selectAllFocused = false;
-            this.$refs.baseSelect.onKeydownSpace($event);
-        }
-    }
-
-    onToggleAll(): void {
-        if (this.allSelected) {
+    public onToggleAll(): void {
+        if (this.selectedItems.length >= this.options.length) {
             this.model = [];
         } else {
-            this.model = [...this.options];
+            this.model = [...this.internalOptions];
+        }
+        this.update();
+    }
+
+    public getChipLabel(item: any): string {
+        const ellipsis: string = item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
+        return `${item.toString().substring(0, this.defaultChipCharsTrunk)}${ellipsis}`;
+    }
+
+    protected created(): void {
+        if (!Array.isArray(this.value)) {
+            this.$log.error('MMultiSelect - The model must be an array');
         }
     }
 
-    getChipLabel(item: any): string {
-        let ellipsis: string = item.toString().length > this.defaultChipCharsTrunk ? '...' : '';
-        return `${item.toString().substring(0, this.defaultChipCharsTrunk)}${ellipsis}`;
+    protected mounted(): void {
+        if (this.focus) {
+            this.focusChanged(this.focus);
+        }
+    }
+
+    @Watch('options', { immediate: true })
+    private onOptionsChange(): void {
+        if (!this.options) return;
+        if (this.linkSelectAll) {
+            this.internalOptions = ['linkSelectAll', ...this.options];
+            return;
+        }
+        this.internalOptions = [...this.options];
     }
 
     @Watch('value', { immediate: true })
     private onValueChange(value: any[]): void {
-        this.internalValue = this.value;
+        if (this.linkSelectAll && !this.value.some(v => v === this.internalOptions[0])) {
+            this.internalValue = [this.internalOptions[0], ...value]
+        } else {
+            this.internalValue = value;
+        }
     }
 
     @Watch('focus')
     private focusChanged(focus: boolean): void {
-        this.internalIsFocus = focus && this.as<InputStateMixin>().active;
-        let inputEl: HTMLElement | undefined = this.as<InputStateMixin>().getInput();
-        if (inputEl) {
-            if (this.internalIsFocus) {
-                inputEl.focus();
-            } else {
-                inputEl.blur();
-            }
+        this.internalFocus = focus && this.active;
+        if (!this.refInput) return;
+        if (this.internalFocus) {
+            this.focusInput();
+        } else {
+            this.refInput.blur();
         }
     }
 }

@@ -4,7 +4,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -33,7 +33,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -41,7 +40,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -61,7 +59,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -69,7 +66,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -89,7 +85,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -97,7 +92,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -114,7 +108,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -122,7 +116,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -151,7 +145,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -159,7 +152,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -178,10 +170,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -189,7 +179,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -209,7 +198,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -217,7 +205,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -234,7 +221,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -242,7 +229,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -270,10 +257,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -281,7 +266,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -300,10 +284,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -311,7 +293,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -330,10 +311,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -341,7 +320,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -358,7 +336,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled False All Childrens 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -366,7 +344,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
 <div
   class="m-radio-group m--is-disabled"
 >
-  <div
+  <fieldset
     class="m-input-group m--is-disabled"
   >
     <!---->
@@ -394,10 +372,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -405,7 +381,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -424,10 +399,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -435,7 +408,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -454,10 +426,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -465,7 +435,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -482,7 +451,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -490,7 +459,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
 <div
   class="m-radio-group m--is-disabled"
 >
-  <div
+  <fieldset
     class="m-input-group m--is-disabled"
   >
     <!---->
@@ -518,10 +487,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -529,7 +496,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -548,10 +514,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -559,7 +523,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -578,10 +541,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -589,7 +550,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -606,7 +566,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -614,7 +574,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
 <div
   class="m-radio-group m--is-disabled"
 >
-  <div
+  <fieldset
     class="m-input-group m--is-disabled"
   >
     <!---->
@@ -642,10 +602,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -653,7 +611,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -672,10 +629,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -683,7 +638,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -702,10 +656,8 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
             class="m-radio m--is-disabled"
           >
             <input
-              aria-hidden="true"
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -713,7 +665,6 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -730,7 +681,7 @@ exports[`Storyshots modul-components|m-radio-group Disabled True All Childrens D
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -738,7 +689,7 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
 <div
   class="m-radio-group m--has-error"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error"
   >
     <!---->
@@ -766,8 +717,8 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -775,7 +726,6 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -794,8 +744,8 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -803,7 +753,6 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -822,8 +771,8 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -831,7 +780,6 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -848,7 +796,7 @@ exports[`Storyshots modul-components|m-radio-group Error 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -856,7 +804,7 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
 <div
   class="m-radio-group m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message"
   >
     <!---->
@@ -866,9 +814,9 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -897,7 +845,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
       </div>
        
       <div
-        aria-describedby="fakeId"
         class="m-input-group__content"
       >
          
@@ -909,8 +856,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -918,7 +865,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -937,8 +883,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -946,7 +892,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -965,8 +910,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -974,7 +919,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -991,7 +935,7 @@ exports[`Storyshots modul-components|m-radio-group Error Message 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -999,27 +943,28 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
 <div
   class="m-radio-group m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -1048,8 +993,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
       </div>
        
       <div
-        aria-describedby="fakeId"
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -1061,8 +1004,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1070,7 +1013,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1089,8 +1031,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1098,7 +1040,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1117,8 +1058,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -1126,7 +1067,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1143,7 +1083,7 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label 1`] =
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -1151,27 +1091,28 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
 <div
   class="m-radio-group m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -1200,8 +1141,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
       </div>
        
       <div
-        aria-describedby="fakeId"
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -1213,8 +1152,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1222,7 +1161,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1241,8 +1179,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1250,7 +1188,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1269,8 +1206,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -1278,7 +1215,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1295,7 +1231,7 @@ exports[`Storyshots modul-components|m-radio-group Error Message And Label Radio
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -1303,7 +1239,7 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
 <div
   class="m-radio-group m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message"
   >
     <!---->
@@ -1313,9 +1249,9 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -1344,7 +1280,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
       </div>
        
       <div
-        aria-describedby="fakeId"
         class="m-input-group__content"
       >
          
@@ -1356,8 +1291,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1365,7 +1300,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1384,8 +1318,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1393,7 +1327,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1412,8 +1345,8 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -1421,7 +1354,6 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1438,7 +1370,7 @@ exports[`Storyshots modul-components|m-radio-group Error Message Radio Position 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -1446,7 +1378,7 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
 <div
   class="m-radio-group m--has-error"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error"
   >
     <!---->
@@ -1474,8 +1406,8 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1483,7 +1415,6 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1502,8 +1433,8 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1511,7 +1442,6 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1530,8 +1460,8 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
             class="m-radio m--is-error m--is-input-right"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -1539,7 +1469,6 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1556,7 +1485,7 @@ exports[`Storyshots modul-components|m-radio-group Error Radio Position Right 1`
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -1564,7 +1493,7 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -1593,7 +1522,6 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1601,7 +1529,6 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1621,7 +1548,6 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1629,7 +1555,6 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1649,7 +1574,6 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -1657,7 +1581,6 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1674,7 +1597,7 @@ exports[`Storyshots modul-components|m-radio-group Focus 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -1682,7 +1605,7 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -1711,7 +1634,6 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1719,7 +1641,6 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1739,7 +1660,6 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1747,7 +1667,6 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1767,7 +1686,6 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -1775,7 +1693,6 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1792,7 +1709,7 @@ exports[`Storyshots modul-components|m-radio-group Focus Radio Position Right 1`
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -1800,7 +1717,7 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -1829,7 +1746,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1837,7 +1753,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1857,7 +1772,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1865,7 +1779,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1885,7 +1798,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -1893,7 +1805,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1910,7 +1821,7 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -1918,7 +1829,7 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -1947,7 +1858,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -1955,7 +1865,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -1975,7 +1884,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -1983,7 +1891,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2003,7 +1910,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2011,7 +1917,6 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2028,7 +1933,7 @@ exports[`Storyshots modul-components|m-radio-group Focus With Model Radio Positi
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2036,14 +1941,15 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <span
         class="m-input-group__icon"
       >
@@ -2063,7 +1969,7 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
       </span>
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
@@ -2077,7 +1983,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
       </div>
        
       <div
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -2090,7 +1995,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2098,7 +2002,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2118,7 +2021,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2126,7 +2028,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2146,7 +2047,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2154,7 +2054,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2171,7 +2070,7 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2179,14 +2078,15 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <span
         class="m-input-group__icon"
       >
@@ -2206,7 +2106,7 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
       </span>
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
@@ -2220,7 +2120,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
       </div>
        
       <div
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -2233,7 +2132,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2241,7 +2139,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2261,7 +2158,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2269,7 +2165,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2289,7 +2184,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2297,7 +2191,6 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2314,7 +2207,7 @@ exports[`Storyshots modul-components|m-radio-group Icon Slot Radio Position Righ
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2322,7 +2215,7 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
 <div
   class="m-radio-group m--is-inline"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -2351,7 +2244,6 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2359,7 +2251,6 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2379,7 +2270,6 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2387,7 +2277,6 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2407,7 +2296,6 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2415,7 +2303,6 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2432,7 +2319,7 @@ exports[`Storyshots modul-components|m-radio-group Inline 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2440,7 +2327,7 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
 <div
   class="m-radio-group m--is-inline"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -2469,7 +2356,6 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2477,7 +2363,6 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2497,7 +2382,6 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2505,7 +2389,6 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2525,7 +2408,6 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2533,7 +2415,6 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2550,7 +2431,7 @@ exports[`Storyshots modul-components|m-radio-group Inline Radio Position Right 1
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2558,18 +2439,19 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
@@ -2583,7 +2465,6 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
       </div>
        
       <div
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -2596,7 +2477,6 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2604,7 +2484,6 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2624,7 +2503,6 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2632,7 +2510,6 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2652,7 +2529,6 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2660,7 +2536,6 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2677,7 +2552,7 @@ exports[`Storyshots modul-components|m-radio-group Label 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2685,18 +2560,19 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
@@ -2710,7 +2586,6 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
       </div>
        
       <div
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -2723,7 +2598,6 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2731,7 +2605,6 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2751,7 +2624,6 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2759,7 +2631,6 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2779,7 +2650,6 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2787,7 +2657,6 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2804,7 +2673,7 @@ exports[`Storyshots modul-components|m-radio-group Label Radio Position Right 1`
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2812,7 +2681,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -2841,7 +2710,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2849,7 +2717,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2870,7 +2737,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2878,7 +2744,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2899,7 +2764,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -2907,7 +2771,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2925,7 +2788,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px 1`] =
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -2933,7 +2796,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -2962,7 +2825,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -2970,7 +2832,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -2991,7 +2852,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -2999,7 +2859,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3020,7 +2879,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3028,7 +2886,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3046,7 +2903,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Margin Top 10 Px Radio
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3054,7 +2911,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3083,7 +2940,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3091,7 +2947,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3111,7 +2966,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3119,7 +2973,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3139,7 +2992,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3147,7 +2999,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3164,7 +3015,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3172,7 +3023,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3201,7 +3052,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3209,7 +3059,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3229,7 +3078,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3237,7 +3085,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3257,7 +3104,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3265,7 +3111,6 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3282,7 +3127,7 @@ exports[`Storyshots modul-components|m-radio-group Radios Vertical Align Center 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3290,7 +3135,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3319,7 +3164,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3327,7 +3171,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3347,7 +3190,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3355,7 +3197,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3375,7 +3216,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3383,7 +3223,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3400,7 +3239,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3408,7 +3247,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3437,7 +3276,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3445,7 +3283,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3466,7 +3303,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3474,7 +3310,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3494,7 +3329,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3502,7 +3336,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3519,7 +3352,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3527,7 +3360,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3557,7 +3390,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3565,7 +3397,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3586,7 +3417,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3594,7 +3424,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3615,7 +3444,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3623,7 +3451,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3640,7 +3467,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly False All Childrens 
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3648,7 +3475,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3677,7 +3504,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3685,7 +3511,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3705,7 +3530,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3713,7 +3537,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3733,7 +3556,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3741,7 +3563,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3758,7 +3579,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3766,7 +3587,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3795,7 +3616,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3803,7 +3623,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3824,7 +3643,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3832,7 +3650,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3852,7 +3669,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3860,7 +3676,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3877,7 +3692,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -3885,7 +3700,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -3915,7 +3730,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -3923,7 +3737,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3944,7 +3757,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -3952,7 +3764,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3973,7 +3784,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
             <input
               class="m-radio__hidden"
               disabled="disabled"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -3981,7 +3791,6 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -3998,7 +3807,7 @@ exports[`Storyshots modul-components|m-radio-group Readonly True All Childrens R
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4006,14 +3815,15 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <sup
@@ -4021,7 +3831,7 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
       >
         *
       </sup>
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
@@ -4035,7 +3845,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
       </div>
        
       <div
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -4048,7 +3857,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -4056,7 +3864,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4076,7 +3883,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -4084,7 +3890,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4104,7 +3909,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -4112,7 +3916,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4129,7 +3932,7 @@ exports[`Storyshots modul-components|m-radio-group Required Marker 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4137,14 +3940,15 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <sup
@@ -4152,7 +3956,7 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
       >
         *
       </sup>
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
@@ -4166,7 +3970,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
       </div>
        
       <div
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -4179,7 +3982,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -4187,7 +3989,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4207,7 +4008,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -4215,7 +4015,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4235,7 +4034,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -4243,7 +4041,6 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4260,7 +4057,7 @@ exports[`Storyshots modul-components|m-radio-group Required Marker Radio Positio
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4268,7 +4065,7 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
 <div
   class="m-radio-group m--is-valid"
 >
-  <div
+  <fieldset
     class="m-input-group m--is-valid"
   >
     <!---->
@@ -4297,7 +4094,6 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -4305,7 +4101,6 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4325,7 +4120,6 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -4333,7 +4127,6 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4353,7 +4146,6 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -4361,7 +4153,6 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4378,7 +4169,7 @@ exports[`Storyshots modul-components|m-radio-group Valid 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4386,7 +4177,7 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
 <div
   class="m-radio-group m--is-valid"
 >
-  <div
+  <fieldset
     class="m-input-group m--is-valid"
   >
     <!---->
@@ -4415,7 +4206,6 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -4423,7 +4213,6 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4443,7 +4232,6 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -4451,7 +4239,6 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4471,7 +4258,6 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -4479,7 +4265,6 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4496,7 +4281,7 @@ exports[`Storyshots modul-components|m-radio-group Valid Radio Position Right 1`
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4504,27 +4289,28 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
 <div
   class="m-radio-group m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message m--is-validation-message-position-bottom"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -4553,8 +4339,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
       </div>
        
       <div
-        aria-describedby="fakeId"
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -4566,8 +4350,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -4575,7 +4359,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4594,8 +4377,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -4603,7 +4386,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4622,8 +4404,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -4631,7 +4413,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4648,7 +4429,7 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4656,27 +4437,28 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
 <div
   class="m-radio-group m--is-inline m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message m--is-validation-message-position-bottom"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -4705,8 +4487,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
       </div>
        
       <div
-        aria-describedby="fakeId"
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -4718,8 +4498,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
             class="m-radio m--is-error m--is-inline"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -4727,7 +4507,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4746,8 +4525,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
             class="m-radio m--is-error m--is-inline"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -4755,7 +4534,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4774,8 +4552,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
             class="m-radio m--is-error m--is-inline"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -4783,7 +4561,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4800,7 +4577,7 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position B
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4808,27 +4585,28 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
 <div
   class="m-radio-group m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -4857,8 +4635,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
       </div>
        
       <div
-        aria-describedby="fakeId"
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -4870,8 +4646,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -4879,7 +4655,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4898,8 +4673,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -4907,7 +4682,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4926,8 +4700,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
             class="m-radio m--is-error"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -4935,7 +4709,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -4952,7 +4725,7 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -4960,27 +4733,28 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
 <div
   class="m-radio-group m--is-inline m--has-error m--has-validation-message"
 >
-  <div
+  <fieldset
     class="m-input-group m--has-error m--has-validation-message"
   >
-    <p
+    <legend
       class="m-input-group__label"
-      id="fakeId"
     >
-      This is a label
+      
+        This is a label
+        
       <!---->
        
       <!---->
-    </p>
+    </legend>
      
     <div
       class="m-input-group__body"
     >
       <div
         class="m-validation-message m-input-group__message"
-        id="fakeId"
       >
         <p
+          aria-live="polite"
           class="m-validation-message__error"
         >
           <svg
@@ -5009,8 +4783,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
       </div>
        
       <div
-        aria-describedby="fakeId"
-        aria-labelledby="fakeId"
         class="m-input-group__content"
       >
          
@@ -5022,8 +4794,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
             class="m-radio m--is-error m--is-inline"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -5031,7 +4803,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -5050,8 +4821,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
             class="m-radio m--is-error m--is-inline"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -5059,7 +4830,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -5078,8 +4848,8 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
             class="m-radio m--is-error m--is-inline"
           >
             <input
+              aria-invalid="true"
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -5087,7 +4857,6 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -5104,7 +4873,7 @@ exports[`Storyshots modul-components|m-radio-group Validation Message Position T
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;
 
@@ -5112,7 +4881,7 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
 <div
   class="m-radio-group"
 >
-  <div
+  <fieldset
     class="m-input-group"
   >
     <!---->
@@ -5141,7 +4910,6 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="1"
@@ -5149,7 +4917,6 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -5169,7 +4936,6 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="2"
@@ -5177,7 +4943,6 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -5197,7 +4962,6 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
           >
             <input
               class="m-radio__hidden"
-              id="fakeId"
               name="fakeId"
               type="radio"
               value="3"
@@ -5205,7 +4969,6 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
              
             <label
               class="m-radio__wrap"
-              for="fakeId"
             >
               <span
                 aria-hidden="true"
@@ -5222,6 +4985,6 @@ exports[`Storyshots modul-components|m-radio-group default 1`] = `
         </ul>
       </div>
     </div>
-  </div>
+  </fieldset>
 </div>
 `;

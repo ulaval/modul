@@ -22,7 +22,10 @@ exports[`Storyshots modul-components|m-form/all fields Autocomplete 1`] = `
   />
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown m--has-placeholder-icon"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -48,9 +51,12 @@ exports[`Storyshots modul-components|m-form/all fields Autocomplete 1`] = `
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -78,12 +84,15 @@ exports[`Storyshots modul-components|m-form/all fields Autocomplete 1`] = `
               </svg>
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-autocomplete="both"
+                aria-haspopup="listbox"
+                aria-required="true"
                 autocomplete="new-password"
                 class="m-dropdown__input"
                 id="mDropdown-fakeId"
                 readonly="readonly"
+                required="required"
+                role="button"
                 type="text"
               />
                
@@ -200,8 +209,6 @@ exports[`Storyshots modul-components|m-form/all fields Checkbox 1`] = `
       id="mCheckbox-fakeId"
       type="checkbox"
     />
-     
-    <!---->
      
     <label
       class="m-checkbox__wrap"
@@ -326,9 +333,12 @@ exports[`Storyshots modul-components|m-form/all fields Datepicker 1`] = `
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -346,6 +356,7 @@ exports[`Storyshots modul-components|m-form/all fields Datepicker 1`] = `
                 autocomplete="off"
                 id="mDatepicker-fakeId"
                 placeholder="AAAA-MM-JJ"
+                required="required"
               />
                 
               <!---->
@@ -357,9 +368,11 @@ exports[`Storyshots modul-components|m-form/all fields Datepicker 1`] = `
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mDatepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le calendrier"
                 type="button"
               >
                 <svg
@@ -539,9 +552,11 @@ exports[`Storyshots modul-components|m-form/all fields Daterangepicker 1`] = `
                     class="m-input-style__suffix"
                   >
                     <button
-                      aria-controls="mDatepicker-fakeId"
+                      aria-hidden="true"
                       class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
                       style="width: 22px; height: 22px;"
+                      tabindex="-1"
+                      title="Ouvrir le calendrier"
                       type="button"
                     >
                       <svg
@@ -649,9 +664,11 @@ exports[`Storyshots modul-components|m-form/all fields Daterangepicker 1`] = `
                     class="m-input-style__suffix"
                   >
                     <button
-                      aria-controls="mDatepicker-fakeId"
+                      aria-hidden="true"
                       class="m-icon-button m-datepicker__icon m--is-skin-light m--has-ripple"
                       style="width: 22px; height: 22px;"
+                      tabindex="-1"
+                      title="Ouvrir le calendrier"
                       type="button"
                     >
                       <svg
@@ -805,9 +822,12 @@ exports[`Storyshots modul-components|m-form/all fields Decimalfield 1`] = `
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -825,6 +845,7 @@ exports[`Storyshots modul-components|m-form/all fields Decimalfield 1`] = `
                 class="m-decimalfield__input"
                 id="mDecimalfield-fakeId"
                 inputmode="decimal"
+                required="required"
               />
                 
               <!---->
@@ -926,7 +947,10 @@ exports[`Storyshots modul-components|m-form/all fields Dropdown 1`] = `
   />
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-dropdown"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -952,9 +976,12 @@ exports[`Storyshots modul-components|m-form/all fields Dropdown 1`] = `
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -970,11 +997,13 @@ exports[`Storyshots modul-components|m-form/all fields Dropdown 1`] = `
               <!---->
                
               <input
-                aria-controls="mDropdown-fakeId-controls"
-                aria-haspopup="true"
+                aria-haspopup="listbox"
+                aria-required="true"
                 class="m-dropdown__input"
                 id="mDropdown-fakeId"
                 readonly="readonly"
+                required="required"
+                role="button"
                 type="text"
               />
                
@@ -993,6 +1022,7 @@ exports[`Storyshots modul-components|m-form/all fields Dropdown 1`] = `
               >
                 <svg
                   aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
                   class="m-icon m-dropdown__arrow__icon"
                   height="12px"
                   width="12px"
@@ -1125,9 +1155,12 @@ exports[`Storyshots modul-components|m-form/all fields Integerfield 1`] = `
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -1145,6 +1178,7 @@ exports[`Storyshots modul-components|m-form/all fields Integerfield 1`] = `
                 class="m-integerfield__input"
                 id="mIntegerfield-fakeId"
                 inputmode="decimal"
+                required="required"
               />
                 
               <!---->
@@ -1276,9 +1310,12 @@ exports[`Storyshots modul-components|m-form/all fields Moneyfield 1`] = `
                 </span>
                  
                 <sup
+                  aria-hidden="true"
                   class="m-input-style__required-marker"
                 >
-                  *
+                  
+                        *
+                    
                 </sup>
               </span>
             </label>
@@ -1296,6 +1333,7 @@ exports[`Storyshots modul-components|m-form/all fields Moneyfield 1`] = `
                   class="m-decimalfield__input"
                   id="mDecimalfield-fakeId"
                   inputmode="decimal"
+                  required="required"
                 />
                   
                 <!---->
@@ -1405,99 +1443,116 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
   />
    
   <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
     class="m-base-select"
     input-max-width="288px"
+    multiselect="true"
+    role="combobox"
     style="width: 100%; max-width: 288px;"
   >
     <div
       class="m-base-select__popup"
     >
       <div
-        class="m-multi-select"
-        style="width: 100%; max-width: 288px;"
-        tabindex="0"
+        class="m-input-style m-multi-select m--has-cursor-pointer m--has-label m--is-tag-default"
+        style="width: 100%; margin-top: 10px; max-width: 288px;"
       >
         <div
-          class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-          style="margin-top: 10px;"
+          class="m-input-style__main"
         >
           <div
-            class="m-input-style__main"
+            class="m-input-style__body"
           >
-            <div
-              class="m-input-style__body"
+            <label
+              class="m-input-style__label"
+              for="m-multi-select-fakeId"
+              style="margin-right: 0px;"
             >
-              <label
-                class="m-input-style__label"
-                for="m-multi-select-fakeId"
-                style="margin-right: 0px;"
+              <span
+                class="m-input-style__text"
               >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    La famille Von Trapp
-                  </span>
-                   
-                  <sup
-                    class="m-input-style__required-marker"
-                  >
-                    *
-                  </sup>
+                <span>
+                  La famille Von Trapp
                 </span>
-              </label>
+                 
+                <sup
+                  aria-hidden="true"
+                  class="m-input-style__required-marker"
+                >
+                  
+                        *
+                    
+                </sup>
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
                
               <div
-                class="m-input-style__input"
+                class="m-input-style__content"
               >
+                <div
+                  aria-describedby="undefined undefined"
+                  aria-haspopup="listbox"
+                  aria-hidden="true"
+                  aria-required="true"
+                  class="m-multi-select__chips"
+                  role="button"
+                  tabindex="0"
+                >
+                  <input
+                    readonly="readonly"
+                    tabindex="-1"
+                    type="text"
+                  />
+                    
+                  <div
+                    aria-hidden="true"
+                    class="m-multi-select__visually-hidden"
+                  >
+                    
+                    
+                
+                  </div>
+                </div>
+                  
                 <!---->
                  
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
                 <div
-                  class="m-input-style__content"
+                  class="m-multi-select__arrow"
                 >
-                  <div
-                    class="m-multi-select__chips"
+                  <svg
+                    aria-hidden="true"
+                    class="m-icon m-multi-select__arrow-icon"
+                    height="12px"
+                    title="Ouvrir la liste déroulante"
+                    width="12px"
                   >
-                    <input
-                      readonly="readonly"
-                      type="text"
-                    />
+                    <!---->
                      
-                  </div>
-                    
-                  <!---->
-                   
-                  <!---->
+                    <use
+                      aria-hidden="true"
+                      class=""
+                    />
+                  </svg>
                 </div>
                  
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <div
-                    class="m-multi-select__arrow"
-                  >
-                    <svg
-                      aria-hidden="true"
-                      class="m-icon m-multi-select__arrow__icon"
-                      height="16px"
-                      width="16px"
-                    >
-                      <!---->
-                       
-                      <use
-                        aria-hidden="true"
-                        class=""
-                      />
-                    </svg>
-                  </div>
-                   
-                  <!---->
-                </div>
+                <!---->
               </div>
             </div>
-             
-            <!---->
           </div>
+           
+          <!---->
         </div>
       </div>
     </div>
@@ -1588,18 +1643,19 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
   <div
     class="m-radio-group"
   >
-    <div
+    <fieldset
       class="m-input-group"
     >
-      <p
+      <legend
         class="m-input-group__label"
-        id="fakeId"
       >
+        
         Style de coupe
+        
         <!---->
          
         <!---->
-      </p>
+      </legend>
        
       <div
         class="m-input-group__body"
@@ -1613,7 +1669,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
         </div>
          
         <div
-          aria-labelledby="fakeId"
           class="m-input-group__content"
         >
            
@@ -1626,7 +1681,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
             >
               <input
                 class="m-radio__hidden"
-                id="fakeId"
                 name="fakeId"
                 type="radio"
                 value="régulière"
@@ -1634,7 +1688,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
                
               <label
                 class="m-radio__wrap"
-                for="fakeId"
               >
                 <span
                   aria-hidden="true"
@@ -1653,7 +1706,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
             >
               <input
                 class="m-radio__hidden"
-                id="fakeId"
                 name="fakeId"
                 type="radio"
                 value="julienne"
@@ -1661,7 +1713,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
                
               <label
                 class="m-radio__wrap"
-                for="fakeId"
               >
                 <span
                   aria-hidden="true"
@@ -1680,7 +1731,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
             >
               <input
                 class="m-radio__hidden"
-                id="fakeId"
                 name="fakeId"
                 type="radio"
                 value="ondulé"
@@ -1688,7 +1738,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
                
               <label
                 class="m-radio__wrap"
-                for="fakeId"
               >
                 <span
                   aria-hidden="true"
@@ -1705,7 +1754,7 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
           </ul>
         </div>
       </div>
-    </div>
+    </fieldset>
   </div>
    
   <p
@@ -2236,9 +2285,12 @@ exports[`Storyshots modul-components|m-form/all fields Timepicker 1`] = `
               </span>
                
               <sup
+                aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                *
+                
+                        *
+                    
               </sup>
             </span>
           </label>
@@ -2252,13 +2304,12 @@ exports[`Storyshots modul-components|m-form/all fields Timepicker 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-controls="mTimepicker-fakeId-controls"
-                aria-haspopup="true"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="23:59"
                 min="00:00"
                 placeholder="HH:MM"
+                required="required"
                 step="300"
                 type="text"
               />
@@ -2272,9 +2323,11 @@ exports[`Storyshots modul-components|m-form/all fields Timepicker 1`] = `
               class="m-input-style__suffix"
             >
               <button
-                aria-controls="mTimepicker-fakeId"
+                aria-hidden="true"
                 class="m-icon-button m--is-skin-light m--has-ripple"
                 style="width: 22px; height: 22px;"
+                tabindex="-1"
+                title="Ouvrir le sélecteur d'heure"
                 type="button"
               >
                 <svg

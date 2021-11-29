@@ -9,23 +9,30 @@
               'm--is-valid' : isValid,
               'm--has-label': hasLabel,
               'm--has-value': hasValue,
-              'm--is-anim-ready': animReady },
+              'm--is-anim-ready': animReady,
+              'm--has-validation-message': hasValidationMessage },
               'm--is-tag-' + tagStyle]"
      @click="onClick"
      @mousedown="onMousedown"
      @mouseup="onMouseup"
-     ref="root"
-     :style="{ width: width, marginTop: labelOffset }">
-    <div class="m-input-style__main">
+     ref="root">
+    <div class="m-input-style__main"
+        :style="{ width: width, marginTop: labelOffset }">
         <div class="m-input-style__body">
             <label v-if="hasLabel"
+                   ref="label"
+                   :id="labelId"
                    class="m-input-style__label"
                    :style="{ marginRight: suffixOffset }"
-                   :for="labelFor"
-                   ref="label">
+                   :for="labelFor">
                 <span class="m-input-style__text">
-                    <span>{{ label }}</span>&nbsp;<sup v-if="requiredMarker"
-                         class="m-input-style__required-marker">*</sup>
+                    <span>{{ label }}</span>&nbsp;<sup
+                        v-if="requiredMarker"
+                        class="m-input-style__required-marker"
+                        aria-hidden="true"
+                    >
+                        *
+                    </sup>
                 </span>
             </label>
 
@@ -47,11 +54,14 @@
                 </div>
 
                 <div class="m-input-style__content">
-                    <slot></slot>
-                    <m-i18n v-if="!hasDefaultSlot"
-                            class="m-input-style__transparent-text"
-                            k="m-input-style:empty-value"
-                            aria-hidden="true"></m-i18n>
+                    <slot />
+                    <span
+                        v-if="!hasDefaultSlot"
+                        class="m-input-style__transparent-text"
+                        aria-hidden="true"
+                    >
+                        {{ $i18n.translate('m-input-style:empty-value') }}
+                    </span>
                     <div v-if="hasAdjustWidthAutoSlot"
                          class="m-input-style__adjust-width-auto"
                          aria-hidden="true"
@@ -63,18 +73,21 @@
                 <div class="m-input-style__suffix"
                      ref="suffix">
 
-                    <slot name="suffix"></slot>
-
+                    <slot name="suffix" />
                     <m-spinner v-if="isWaiting"
                                class="m-input-style__spinner"
-                               size="small"></m-spinner>
+                               size="small" />
                 </div>
             </div>
         </div>
         <div v-if="append"
              ref="append"
              class="m-input-style__append">
-            <slot name="append"></slot>
+            <slot name="append" />
         </div>
+    </div>
+    <slot name="popup"></slot>
+    <div v-if="$slots['validation']" class="m-input-style__validation">
+        <slot name="validation" />
     </div>
 </div>

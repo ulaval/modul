@@ -13,16 +13,6 @@ $m-phonefiled--width-flag-dropdown: 88px;
         }
     }
 
-    &.m--is-country-focus {
-        .m-phonefield {
-            &__number:not(.m--has-error) {
-                /deep/ .m-input-style__main {
-                    border-left-color: $m-color--interactive;
-                }
-            }
-        }
-    }
-
     &__wrapper {
         display: grid;
         grid-template-columns: #{$m-phonefiled--width-flag-dropdown} auto;
@@ -56,8 +46,7 @@ $m-phonefiled--width-flag-dropdown: 88px;
 
     &__item-wrapper {
         display: flex;
-        align-items: left;
-        width: 300px;
+        align-items: center;
         position: relative;
     }
 
@@ -75,13 +64,6 @@ $m-phonefiled--width-flag-dropdown: 88px;
                 background: $m-color--grey-lighter;
             }
         }
-    }
-
-    &__flag {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        outline: none;
     }
 
     &__item-flag-wrapper {
@@ -110,20 +92,23 @@ $m-phonefiled--width-flag-dropdown: 88px;
         }
     }
 
-    &__example {
-        margin-top: $m-spacing--xs;
-        margin-left: calc(#{$m-phonefiled--width-flag-dropdown} + #{$m-input-style--padding} + #{$m-border-width--s});
-        color: $m-color--grey-dark;
-        font-size: $m-font-size--xs;
-    }
-
     &__validation {
         transition: margin-top $m-transition-duration ease;
         display: flex;
         justify-content: flex-end;
+        margin-top: $m-spacing--xs;
+        margin-left: calc(#{$m-phonefiled--width-flag-dropdown} + #{$m-input-style--padding});
     }
 
     &__validation-message {
         flex: 1 1 auto;
+    }
+
+    &__country-field {
+        outline: none;
+    }
+
+    &__hidden {
+        @include m-visually-hidden();
     }
 }

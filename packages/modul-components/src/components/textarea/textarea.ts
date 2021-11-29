@@ -1,17 +1,16 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Mixins, Prop } from 'vue-property-decorator';
 import { TEXTAREA_AUTO_HEIGHT } from '../../directives/directive-names';
 import { MTextareaAutoHeight } from '../../directives/textarea-auto-height/textarea-auto-height';
 import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { InputLabel } from '../../mixins/input-label/input-label';
-import { InputManagement, InputManagementData } from '../../mixins/input-management/input-management';
+import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import uuid from '../../utils/uuid/uuid';
-import { ModulVue } from '../../utils/vue/vue';
 import { MCharacterCount } from '../character-count/character-count';
-import { CHARACTER_COUNT_NAME, INPUT_STYLE_NAME, TEXTAREA_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { TEXTAREA_NAME } from '../component-names';
 import { MInputStyle } from '../input-style/input-style';
 import { MValidationMessage } from '../validation-message/validation-message';
 import WithRender from './textarea.html?style=./textarea.scss';
@@ -20,30 +19,47 @@ import WithRender from './textarea.html?style=./textarea.scss';
 @WithRender
 @Component({
     components: {
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [CHARACTER_COUNT_NAME]: MCharacterCount
+        MInputStyle,
+        MValidationMessage,
+        MCharacterCount
     },
     directives: {
         [TEXTAREA_AUTO_HEIGHT]: MTextareaAutoHeight
     },
-    mixins: [
-        InputState,
-        InputManagement,
-        InputWidth,
-        InputLabel,
-        ElementQueries
-    ]
 })
-export class MTextarea extends ModulVue implements InputManagementData {
+export class MTextarea extends Mixins(
+    InputState,
+    InputManagement,
+    InputWidth,
+    InputLabel,
+    ElementQueries
+) {
     @Prop()
     public characterCount: boolean;
+
     @Prop({ default: 0 })
     public maxLength: number;
+
     @Prop({ default: true })
     public lengthOverflow: boolean;
+
     @Prop({ default: 0 })
     public characterCountThreshold: number;
+
+    @Prop({ default: () => `mTextarea-${uuid.generate()}` })
+    public id: string;
+
+    @Prop({ default: () => uuid.generate() })
+    public inputAriaDescribedby: string;
+
+    @Prop()
+    public inputAriaActivedescendant?: string;
+
+    @Prop()
+    public inputAriaAutocomplete?: string;
+
+    @Prop()
+    public inputAriaControls?: string;
 
     public $refs: {
         input: HTMLElement
@@ -51,7 +67,6 @@ export class MTextarea extends ModulVue implements InputManagementData {
 
     readonly internalValue: string;
     private internalTextareaHeight: string = '0';
-    private id: string = `mTextarea-${uuid.generate()}`;
 
     private get valueLength(): number {
         return this.internalValue.length;
@@ -62,11 +77,11 @@ export class MTextarea extends ModulVue implements InputManagementData {
     }
 
     private get hasTextareaError(): boolean {
-        return this.as<InputState>().hasError;
+        return this.hasError;
     }
 
     private get isTextareaValid(): boolean {
-        return this.as<InputState>().isValid;
+        return this.isValid;
     }
 }
 
