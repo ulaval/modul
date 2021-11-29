@@ -121,7 +121,9 @@ export class HttpService implements RestAdapter {
             axiosConfig.data = config.data;
         }
 
-        axiosConfig.paramsSerializer = params => serializeParams(params);
+        if (!config.ignoreParamsSerializer) {
+            axiosConfig.paramsSerializer = params => serializeParams(params);
+        }
 
         return axiosConfig;
     }
