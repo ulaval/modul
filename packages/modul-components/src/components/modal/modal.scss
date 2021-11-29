@@ -198,20 +198,9 @@ $m-modal--max-width--s: 420px !default;
 
     &__footer {
         position: relative;
+        display: flex;
+        align-items: center;
         border-top: 1px solid $m-color--border;
-        animation: fadeIn 0.5s linear forwards;
         padding: var(--m-modal--footer-padding);
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            z-index: -1;
-        }
-
-        100% {
-            opacity: 1;
-            z-index: 1;
-        }
     }
 }
