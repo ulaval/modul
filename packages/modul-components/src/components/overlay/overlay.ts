@@ -69,7 +69,7 @@ export class MOverlay extends ModulVue {
     }
 
     private isFocusableTextBox(element: HTMLElement): boolean {
-        const type = element.getAttribute('type');
+        const type: string | null = element.getAttribute('type');
         return (element.tagName === 'INPUT'
             && type !== 'checkbox'
             && type !== 'radio'
