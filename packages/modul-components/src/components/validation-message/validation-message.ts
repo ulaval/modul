@@ -42,8 +42,10 @@ export class MValidationMessage extends Mixins(InputState) {
     }
 
     protected created(): void {
-        this.$svgSprite.addSvg(ModulIconName.Error, require('./../../assets/icons/svg/error.svg'));
-        this.$svgSprite.addSvg(ModulIconName.Confirmation, require('./../../assets/icons/svg/confirmation.svg'));
+        if (this.$svgSprite) {
+            this.$svgSprite.addSvg(ModulIconName.Error, require('./../../assets/icons/svg/error.svg'));
+            this.$svgSprite.addSvg(ModulIconName.Confirmation, require('./../../assets/icons/svg/confirmation.svg'));
+        }
     }
 }
 

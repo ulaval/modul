@@ -4,6 +4,7 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -13,10 +14,11 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -24,6 +26,7 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -46,8 +49,10 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -55,7 +60,8 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -97,11 +103,14 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -121,6 +130,7 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -130,10 +140,11 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -141,6 +152,7 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -170,8 +182,10 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 aria-required="true"
                 class="m-select__input"
                 id="m-select-fakeId"
@@ -180,7 +194,8 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -222,11 +237,14 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -246,6 +264,7 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -255,10 +274,11 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -266,6 +286,7 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -295,8 +316,10 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 aria-required="true"
                 class="m-select__input"
                 id="m-select-fakeId"
@@ -305,7 +328,8 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -347,11 +371,14 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -371,6 +398,7 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -380,10 +408,11 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -391,6 +420,7 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -413,17 +443,27 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
+                aria-placeholder="Choose a fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder="Choose a fruit"
                 role="button"
                 tabindex="0"
               >
                 
                     
-                
+                    
+                <input
+                  aria-hidden="true"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
+                  role="none"
+                  tabindex="-1"
+                  type="text"
+                />
               </div>
                
               <!---->
@@ -465,11 +505,14 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -489,6 +532,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -498,10 +542,11 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
   >
     <div
       class="m-input-style m-select m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default m--is-disabled"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -509,6 +554,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -531,9 +577,11 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-disabled="true"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -541,7 +589,8 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -584,11 +633,14 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -608,6 +660,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -617,10 +670,11 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
   >
     <div
       class="m-input-style m-select m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default m--is-disabled"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -628,6 +682,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -650,9 +705,11 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-disabled="true"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -660,7 +717,8 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -703,11 +761,14 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -727,6 +788,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -736,10 +798,11 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
   >
     <div
       class="m-input-style m-select m--is-disabled m--is-tag-default m--is-disabled"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -764,9 +827,11 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-disabled="true"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -774,7 +839,8 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -817,11 +883,14 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -841,6 +910,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -850,10 +920,11 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
   >
     <div
       class="m-input-style m-select m--is-disabled m--is-tag-default m--is-disabled"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -878,18 +949,28 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-disabled="true"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
+                aria-placeholder="Choose a fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder="Choose a fruit"
                 role="button"
                 tabindex="-1"
               >
                 
                     
-                
+                    
+                <input
+                  aria-hidden="true"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
+                  role="none"
+                  tabindex="-1"
+                  type="text"
+                />
               </div>
                
               <!---->
@@ -932,11 +1013,14 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -956,6 +1040,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -965,10 +1050,11 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
   >
     <div
       class="m-input-style m-select m--is-disabled m--has-label m--is-tag-default m--is-disabled"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -976,6 +1062,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -998,9 +1085,11 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-disabled="true"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1008,7 +1097,8 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -1051,11 +1141,14 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -1075,6 +1168,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -1084,10 +1178,11 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
   >
     <div
       class="m-input-style m-select m--is-disabled m--has-label m--is-tag-default m--is-disabled"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1095,6 +1190,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -1117,18 +1213,28 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-disabled="true"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
+                aria-placeholder="Choose a fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder="Choose a fruit"
                 role="button"
                 tabindex="-1"
               >
                 
                     
-                
+                    
+                <input
+                  aria-hidden="true"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
+                  role="none"
+                  tabindex="-1"
+                  type="text"
+                />
               </div>
                
               <!---->
@@ -1171,11 +1277,14 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -1195,6 +1304,7 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -1204,10 +1314,11 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-error m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1232,9 +1343,11 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
                 aria-invalid="true"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1242,7 +1355,8 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -1284,29 +1398,27 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message m--has-validation-message"
+    id="fakeId"
   >
     <p
       aria-live="polite"
       class="m-validation-message__error"
     >
       <svg
-        class="m-icon m-validation-message__icon"
+        class="m-svg m-validation-message__icon"
         height="1em"
         width="1em"
       >
         <title>
           Erreur
         </title>
-         
-        <use
-          aria-hidden="true"
-          class=""
-        />
       </svg>
        
       <span
@@ -1332,6 +1444,7 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -1341,10 +1454,11 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1369,8 +1483,10 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1378,7 +1494,8 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -1420,11 +1537,14 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -1444,6 +1564,7 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%;"
@@ -1453,10 +1574,11 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
   >
     <div
       class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: none;"
+      style="width: 100%; max-width: none;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1464,6 +1586,7 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -1486,8 +1609,10 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1495,7 +1620,8 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -1559,11 +1685,14 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -1583,6 +1712,7 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -1592,10 +1722,11 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1603,6 +1734,7 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -1625,8 +1757,10 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1634,7 +1768,8 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -1676,11 +1811,14 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -1700,6 +1838,7 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -1709,10 +1848,11 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
   >
     <div
       class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1720,6 +1860,7 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -1742,8 +1883,10 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1751,7 +1894,8 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -1793,11 +1937,14 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -1817,6 +1964,7 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -1826,10 +1974,11 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1854,8 +2003,10 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1863,7 +2014,8 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -1905,11 +2057,14 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -1929,6 +2084,7 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -1938,10 +2094,11 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1949,6 +2106,7 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -1971,8 +2129,10 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -1980,7 +2140,8 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -2022,11 +2183,14 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2046,6 +2210,7 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 500px;"
@@ -2055,10 +2220,11 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
   >
     <div
       class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: 500px;"
+      style="width: 100%; max-width: 500px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2066,6 +2232,7 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -2088,8 +2255,10 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -2097,7 +2266,8 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -2161,11 +2331,14 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2185,6 +2358,7 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 896px;"
@@ -2194,10 +2368,11 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
   >
     <div
       class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: large;"
+      style="width: 100%; max-width: large;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2205,6 +2380,7 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -2227,8 +2403,10 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -2236,7 +2414,8 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -2300,11 +2479,14 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2324,6 +2506,7 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -2333,10 +2516,11 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2361,17 +2545,27 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
+                aria-placeholder="Choose a Fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder="Choose a Fruit"
                 role="button"
                 tabindex="0"
               >
                 
                     
-                
+                    
+                <input
+                  aria-hidden="true"
+                  placeholder="Choose a Fruit"
+                  readonly="readonly"
+                  role="none"
+                  tabindex="-1"
+                  type="text"
+                />
               </div>
                
               <!---->
@@ -2413,11 +2607,14 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2437,6 +2634,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -2446,10 +2644,11 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
   >
     <div
       class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default m--is-readonly"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2457,6 +2656,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -2479,18 +2679,20 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder=""
                 role="button"
                 tabindex="0"
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -2533,11 +2735,14 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2557,6 +2762,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -2566,10 +2772,11 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
   >
     <div
       class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default m--is-readonly"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2577,6 +2784,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -2599,18 +2807,20 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder=""
                 role="button"
                 tabindex="0"
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -2653,11 +2863,14 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2677,6 +2890,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -2686,10 +2900,11 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
   >
     <div
       class="m-input-style m-select m--is-readonly m--is-tag-default m--is-readonly"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2714,18 +2929,20 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder=""
                 role="button"
                 tabindex="0"
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -2768,11 +2985,14 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2792,6 +3012,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -2801,10 +3022,11 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
   >
     <div
       class="m-input-style m-select m--is-readonly m--is-tag-default m--is-readonly"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2829,18 +3051,28 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
+                aria-placeholder="Choose a fruit"
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder=""
                 role="button"
                 tabindex="0"
               >
                 
                     
-                
+                    
+                <input
+                  aria-hidden="true"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
+                  role="none"
+                  tabindex="-1"
+                  type="text"
+                />
               </div>
                
               <!---->
@@ -2883,11 +3115,14 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -2907,6 +3142,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -2916,10 +3152,11 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
   >
     <div
       class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--is-tag-default m--is-readonly"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2927,6 +3164,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -2949,18 +3187,20 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder=""
                 role="button"
                 tabindex="0"
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -3003,11 +3243,14 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -3027,6 +3270,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -3036,10 +3280,11 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
   >
     <div
       class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--is-tag-default m--is-readonly"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -3047,6 +3292,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -3069,18 +3315,28 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
+                aria-placeholder="Choose a fruit"
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                placeholder=""
                 role="button"
                 tabindex="0"
               >
                 
                     
-                
+                    
+                <input
+                  aria-hidden="true"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
+                  role="none"
+                  tabindex="-1"
+                  type="text"
+                />
               </div>
                
               <!---->
@@ -3123,11 +3379,14 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -3147,6 +3406,7 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -3156,10 +3416,11 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -3167,6 +3428,7 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -3196,8 +3458,10 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 aria-required="true"
                 class="m-select__input"
                 id="m-select-fakeId"
@@ -3206,7 +3470,8 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
               >
                 
                     
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -3248,11 +3513,14 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -3272,6 +3540,7 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -3281,10 +3550,11 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
   >
     <div
       class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -3292,6 +3562,7 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
           <label
             class="m-input-style__label"
             for="m-select-fakeId"
+            id="fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -3314,8 +3585,10 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -3323,7 +3596,8 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
               >
                 
                     banana
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -3387,11 +3661,14 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -3411,6 +3688,7 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
   style="width: 100%; max-width: 288px;"
@@ -3420,10 +3698,11 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
   >
     <div
       class="m-input-style m-select m--has-cursor-pointer m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px; max-width: regular;"
+      style="width: 100%; max-width: regular;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -3448,8 +3727,10 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
               class="m-input-style__content"
             >
               <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
                 aria-haspopup="listbox"
-                aria-labelledby="undefined m-select-fakeId"
+                aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
                 role="button"
@@ -3457,7 +3738,8 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
               >
                 
                     banane
-                
+                    
+                <!---->
               </div>
                
               <!---->
@@ -3521,11 +3803,14 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
           </div>
         </div>
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-validation-message m-select__validation-message"
+    id="fakeId"
   >
     <!---->
      
@@ -3541,4 +3826,144 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `<!---->`;
+exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
+<div
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
+  class="m-base-select"
+  role="combobox"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-input-style m-select m--has-cursor-pointer m--has-value m--is-tag-default"
+      style="width: 100%; max-width: regular;"
+    >
+      <div
+        class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+              <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
+                aria-haspopup="listbox"
+                aria-labelledby="fakeId m-select-fakeId"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
+              >
+                
+                    banane
+                    
+                <!---->
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <button
+            aria-describedby="m-select-fakeId"
+            class="m-icon-button m--is-skin-light m--has-ripple"
+            style="width: 44px; height: 44px;"
+            title="Supprimer la sélection"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="11px"
+              width="11px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+        
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+    id="fakeId"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popper m-popup"
+  >
+     
+    <!---->
+  </div>
+</div>
+`;

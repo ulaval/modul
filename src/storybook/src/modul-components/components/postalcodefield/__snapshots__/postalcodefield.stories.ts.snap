@@ -2,72 +2,73 @@
 
 exports[`Storyshots modul-components|m-postalcodefield Default 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--has-value m--is-tag-default"
   postalcodeformat="ca"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            id="mPostalcodefield-fakeId"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -75,72 +76,73 @@ exports[`Storyshots modul-components|m-postalcodefield Default 1`] = `
 
 exports[`Storyshots modul-components|m-postalcodefield France 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--has-value m--is-tag-default"
   postalcodeformat="fr"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            id="mPostalcodefield-fakeId"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -148,72 +150,73 @@ exports[`Storyshots modul-components|m-postalcodefield France 1`] = `
 
 exports[`Storyshots modul-components|m-postalcodefield Other 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--has-value m--is-tag-default"
   postalcodeformat="other"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            id="mPostalcodefield-fakeId"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -221,72 +224,73 @@ exports[`Storyshots modul-components|m-postalcodefield Other 1`] = `
 
 exports[`Storyshots modul-components|m-postalcodefield United States 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--has-value m--is-tag-default"
   postalcodeformat="us"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            id="mPostalcodefield-fakeId"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -294,102 +298,98 @@ exports[`Storyshots modul-components|m-postalcodefield United States 1`] = `
 
 exports[`Storyshots modul-components|m-postalcodefield With Label And Error 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield m--has-error m--has-label m--has-validation-message"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--is-label-up m--has-error m--has-label m--has-value m--has-validation-message m--is-tag-default"
   postalcodeformat="ca"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mPostalcodefield-fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mMaskedfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Postal code
-            </span>
-             
-            <!---->
+          <span>
+            Postal code
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+           
+          <input
+            aria-describedby="fakeId"
+            aria-invalid="true"
+            id="mPostalcodefield-fakeId"
+          />
+             
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              aria-invalid="true"
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <p
-        aria-live="polite"
-        class="m-validation-message__error"
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
       >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
+        <p
+          aria-live="polite"
+          class="m-validation-message__error"
         >
-          <title>
-            Erreur
-          </title>
+          <svg
+            class="m-svg m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+          </svg>
            
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
+          <span
+            class="m-validation-message__text"
+          >
+            Invalid postal code with a long long long long long message error
+          </span>
+        </p>
          
-        <span
-          class="m-validation-message__text"
-        >
-          Invalid postal code with a long long long long long message error
-        </span>
-      </p>
-       
-      <!---->
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -397,77 +397,78 @@ exports[`Storyshots modul-components|m-postalcodefield With Label And Error 1`] 
 
 exports[`Storyshots modul-components|m-postalcodefield With Label Up And Full Width 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield m--has-label"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--is-label-up m--has-label m--is-tag-default"
   postalcodeformat="ca"
   style="width: 100%; max-width: 100%;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--is-label-up m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mPostalcodefield-fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mMaskedfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Postal code
-            </span>
-             
-            <!---->
+          <span>
+            Postal code
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+           
+          <input
+            aria-describedby="fakeId"
+            id="mPostalcodefield-fakeId"
+          />
+             
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -475,72 +476,73 @@ exports[`Storyshots modul-components|m-postalcodefield With Label Up And Full Wi
 
 exports[`Storyshots modul-components|m-postalcodefield With Not Postal Code Default Value 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--has-value m--is-tag-default"
   postalcodeformat="ca"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            id="mPostalcodefield-fakeId"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -548,72 +550,73 @@ exports[`Storyshots modul-components|m-postalcodefield With Not Postal Code Defa
 
 exports[`Storyshots modul-components|m-postalcodefield With Value 1`] = `
 <div
-  class="m-maskedlfield m-postalcodefield"
-  id="mPostalcodefield-fakeId"
+  class="m-input-style m-maskedlfield m-postalcodefield m--has-value m--is-tag-default"
   postalcodeformat="ca"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m-maskedfield__input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            id="mPostalcodefield-fakeId"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              id="mMaskedfield-fakeId"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-maskedfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-maskedfield__validation-message"
+      class="m-maskedfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-maskedfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>

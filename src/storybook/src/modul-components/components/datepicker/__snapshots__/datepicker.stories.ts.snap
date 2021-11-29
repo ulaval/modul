@@ -8,10 +8,10 @@ exports[`Storyshots modul-components|m-datepicker date big min and max limit 1`]
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -36,12 +36,14 @@ exports[`Storyshots modul-components|m-datepicker date big min and max limit 1`]
               class="m-input-style__content"
             >
               <input
-                aria-haspopup="true"
+                aria-describedby="fakeId"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2250-12-31"
+                min="1901-01-01"
                 placeholder="AAAA-MM-JJ"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -82,23 +84,22 @@ exports[`Storyshots modul-components|m-datepicker date big min and max limit 1`]
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-datepicker__validation"
-    >
+       
       <div
-        class="m-validation-message m-datepicker__validation__message"
+        class="m-popper m-popup"
       >
-        <!---->
          
         <!---->
       </div>
+       
+      <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-datepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -110,15 +111,15 @@ exports[`Storyshots modul-components|m-datepicker date big min and max limit 1`]
 exports[`Storyshots modul-components|m-datepicker date format invalid 1`] = `
 <div>
   <div
-    class="m-datepicker m--has-error m--has-validation-message"
+    class="m-datepicker m--has-validation-message"
     style="width: 100%; max-width: 136px;"
   >
     <div
       class="m-input-style m--has-error m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -143,13 +144,15 @@ exports[`Storyshots modul-components|m-datepicker date format invalid 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-haspopup="true"
+                aria-describedby="fakeId"
                 aria-invalid="true"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2014-12-31"
+                min="2008-01-01"
                 placeholder="AAAA-MM-JJ"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -190,47 +193,41 @@ exports[`Storyshots modul-components|m-datepicker date format invalid 1`] = `
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-datepicker__validation"
-    >
+       
       <div
-        class="m-validation-message m-datepicker__validation__message"
+        class="m-popper m-popup"
       >
-        <p
-          aria-live="polite"
-          class="m-validation-message__error"
-        >
-          <svg
-            class="m-icon m-validation-message__icon"
-            height="1em"
-            width="1em"
-          >
-            <title>
-              Erreur
-            </title>
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
-          <span
-            class="m-validation-message__text"
-          >
-            Entrez une date au format AAAA-MM-JJ
-          </span>
-        </p>
          
         <!---->
       </div>
+       
+      <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-datepicker__validation-message"
+      id="fakeId"
     >
+      <p
+        aria-live="polite"
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-svg m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Entrez une date au format AAAA-MM-JJ
+        </span>
+      </p>
        
       <!---->
     </div>
@@ -242,15 +239,15 @@ exports[`Storyshots modul-components|m-datepicker date format invalid 1`] = `
 exports[`Storyshots modul-components|m-datepicker date off limit  max 1`] = `
 <div>
   <div
-    class="m-datepicker m--has-error m--has-validation-message"
+    class="m-datepicker m--has-validation-message"
     style="width: 100%; max-width: 136px;"
   >
     <div
       class="m-input-style m--has-error m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -275,13 +272,15 @@ exports[`Storyshots modul-components|m-datepicker date off limit  max 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-haspopup="true"
+                aria-describedby="fakeId"
                 aria-invalid="true"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2014-12-31"
+                min="2008-01-01"
                 placeholder="AAAA-MM-JJ"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -322,47 +321,41 @@ exports[`Storyshots modul-components|m-datepicker date off limit  max 1`] = `
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-datepicker__validation"
-    >
+       
       <div
-        class="m-validation-message m-datepicker__validation__message"
+        class="m-popper m-popup"
       >
-        <p
-          aria-live="polite"
-          class="m-validation-message__error"
-        >
-          <svg
-            class="m-icon m-validation-message__icon"
-            height="1em"
-            width="1em"
-          >
-            <title>
-              Erreur
-            </title>
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
-          <span
-            class="m-validation-message__text"
-          >
-            Date hors limites
-          </span>
-        </p>
          
         <!---->
       </div>
+       
+      <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-datepicker__validation-message"
+      id="fakeId"
     >
+      <p
+        aria-live="polite"
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-svg m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Date hors limites
+        </span>
+      </p>
        
       <!---->
     </div>
@@ -374,15 +367,15 @@ exports[`Storyshots modul-components|m-datepicker date off limit  max 1`] = `
 exports[`Storyshots modul-components|m-datepicker date off limit min 1`] = `
 <div>
   <div
-    class="m-datepicker m--has-error m--has-validation-message"
+    class="m-datepicker m--has-validation-message"
     style="width: 100%; max-width: 136px;"
   >
     <div
       class="m-input-style m--has-error m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -407,13 +400,15 @@ exports[`Storyshots modul-components|m-datepicker date off limit min 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-haspopup="true"
+                aria-describedby="fakeId"
                 aria-invalid="true"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2014-12-31"
+                min="2008-01-01"
                 placeholder="AAAA-MM-JJ"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -454,47 +449,41 @@ exports[`Storyshots modul-components|m-datepicker date off limit min 1`] = `
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-datepicker__validation"
-    >
+       
       <div
-        class="m-validation-message m-datepicker__validation__message"
+        class="m-popper m-popup"
       >
-        <p
-          aria-live="polite"
-          class="m-validation-message__error"
-        >
-          <svg
-            class="m-icon m-validation-message__icon"
-            height="1em"
-            width="1em"
-          >
-            <title>
-              Erreur
-            </title>
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-           
-          <span
-            class="m-validation-message__text"
-          >
-            Date hors limites
-          </span>
-        </p>
          
         <!---->
       </div>
+       
+      <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-datepicker__validation-message"
+      id="fakeId"
     >
+      <p
+        aria-live="polite"
+        class="m-validation-message__error"
+      >
+        <svg
+          class="m-svg m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+        </svg>
+         
+        <span
+          class="m-validation-message__text"
+        >
+          Date hors limites
+        </span>
+      </p>
        
       <!---->
     </div>
@@ -510,10 +499,10 @@ exports[`Storyshots modul-components|m-datepicker default 1`] = `
 >
   <div
     class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -538,12 +527,14 @@ exports[`Storyshots modul-components|m-datepicker default 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -584,23 +575,22 @@ exports[`Storyshots modul-components|m-datepicker default 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -609,15 +599,15 @@ exports[`Storyshots modul-components|m-datepicker default 1`] = `
 
 exports[`Storyshots modul-components|m-datepicker disabled 1`] = `
 <div
-  class="m-datepicker m--is-disabled"
+  class="m-datepicker"
   style="width: 100%; max-width: 136px;"
 >
   <div
     class="m-input-style m--is-disabled m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -642,13 +632,15 @@ exports[`Storyshots modul-components|m-datepicker disabled 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               disabled="disabled"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -690,23 +682,22 @@ exports[`Storyshots modul-components|m-datepicker disabled 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -715,15 +706,15 @@ exports[`Storyshots modul-components|m-datepicker disabled 1`] = `
 
 exports[`Storyshots modul-components|m-datepicker error-message 1`] = `
 <div
-  class="m-datepicker m--has-error m--has-validation-message"
+  class="m-datepicker m--has-validation-message"
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--has-error m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m--has-error m--has-validation-message m--is-tag-default"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -748,13 +739,15 @@ exports[`Storyshots modul-components|m-datepicker error-message 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               aria-invalid="true"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -795,47 +788,41 @@ exports[`Storyshots modul-components|m-datepicker error-message 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <p
-        aria-live="polite"
-        class="m-validation-message__error"
-      >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
-        >
-          <title>
-            Erreur
-          </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
-        <span
-          class="m-validation-message__text"
-        >
-          this is an error
-        </span>
-      </p>
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <p
+      aria-live="polite"
+      class="m-validation-message__error"
+    >
+      <svg
+        class="m-svg m-validation-message__icon"
+        height="1em"
+        width="1em"
+      >
+        <title>
+          Erreur
+        </title>
+      </svg>
+       
+      <span
+        class="m-validation-message__text"
+      >
+        this is an error
+      </span>
+    </p>
      
     <!---->
   </div>
@@ -857,10 +844,10 @@ exports[`Storyshots modul-components|m-datepicker events 1`] = `
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -885,12 +872,14 @@ exports[`Storyshots modul-components|m-datepicker events 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-haspopup="true"
+                aria-describedby="fakeId"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2019-05-24"
+                min="2019-05-10"
                 placeholder="AAAA-MM-JJ"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -931,23 +920,22 @@ exports[`Storyshots modul-components|m-datepicker events 1`] = `
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-datepicker__validation"
-    >
+       
       <div
-        class="m-validation-message m-datepicker__validation__message"
+        class="m-popper m-popup"
       >
-        <!---->
          
         <!---->
       </div>
+       
+      <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-datepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -978,6 +966,7 @@ exports[`Storyshots modul-components|m-datepicker events 1`] = `
       class="m-checkbox m--is-checkbox-left m--is-checked"
     >
       <input
+        aria-describedby="fakeId"
         class="m-checkbox__hidden"
         id="mCheckbox-fakeId"
         type="checkbox"
@@ -1005,6 +994,7 @@ exports[`Storyshots modul-components|m-datepicker events 1`] = `
        
       <div
         class="m-validation-message m-checkbox__message"
+        id="fakeId"
       >
         <!---->
          
@@ -1021,11 +1011,11 @@ exports[`Storyshots modul-components|m-datepicker helper-message 1`] = `
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m--has-validation-message m--is-tag-default"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1050,12 +1040,14 @@ exports[`Storyshots modul-components|m-datepicker helper-message 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1096,44 +1088,43 @@ exports[`Storyshots modul-components|m-datepicker helper-message 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
-      <p
-        class="m-validation-message__helper"
-      >
-        AAAA-MM-JJ
-      </p>
+      <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-popper m-popup"
-  >
      
     <!---->
+  </div>
+   
+  <div
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
+  >
+    <!---->
+     
+    <p
+      class="m-validation-message__helper"
+    >
+      AAAA-MM-JJ
+    </p>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-datepicker hide-internal-error-message 1`] = `
 <div
-  class="m-datepicker m--has-error m--has-validation-message"
+  class="m-datepicker m--has-validation-message"
   style="width: 100%; max-width: 136px;"
 >
   <div
     class="m-input-style m--has-error m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1158,13 +1149,15 @@ exports[`Storyshots modul-components|m-datepicker hide-internal-error-message 1`
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               aria-invalid="true"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1205,23 +1198,22 @@ exports[`Storyshots modul-components|m-datepicker hide-internal-error-message 1`
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -1235,10 +1227,10 @@ exports[`Storyshots modul-components|m-datepicker label 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1268,12 +1260,14 @@ exports[`Storyshots modul-components|m-datepicker label 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1314,23 +1308,22 @@ exports[`Storyshots modul-components|m-datepicker label 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -1344,10 +1337,10 @@ exports[`Storyshots modul-components|m-datepicker label-up 1`] = `
 >
   <div
     class="m-input-style m--is-label-up m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1377,12 +1370,14 @@ exports[`Storyshots modul-components|m-datepicker label-up 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1423,23 +1418,22 @@ exports[`Storyshots modul-components|m-datepicker label-up 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -1475,10 +1469,10 @@ exports[`Storyshots modul-components|m-datepicker min and max 1`] = `
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1503,12 +1497,14 @@ exports[`Storyshots modul-components|m-datepicker min and max 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-haspopup="true"
+                aria-describedby="fakeId"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2008-03-20"
+                min="2000-01-10"
                 placeholder="AAAA-MM-JJ"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -1549,23 +1545,22 @@ exports[`Storyshots modul-components|m-datepicker min and max 1`] = `
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-datepicker__validation"
-    >
+       
       <div
-        class="m-validation-message m-datepicker__validation__message"
+        class="m-popper m-popup"
       >
-        <!---->
          
         <!---->
       </div>
+       
+      <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-datepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -1644,10 +1639,10 @@ exports[`Storyshots modul-components|m-datepicker placeholder 1`] = `
 >
   <div
     class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1672,12 +1667,14 @@ exports[`Storyshots modul-components|m-datepicker placeholder 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="Lorem Ipsum"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1718,23 +1715,22 @@ exports[`Storyshots modul-components|m-datepicker placeholder 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -1743,15 +1739,15 @@ exports[`Storyshots modul-components|m-datepicker placeholder 1`] = `
 
 exports[`Storyshots modul-components|m-datepicker readonly 1`] = `
 <div
-  class="m-datepicker m--is-readonly"
+  class="m-datepicker"
   style="width: 100%; max-width: 136px;"
 >
   <div
     class="m-input-style m--is-readonly m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1776,13 +1772,15 @@ exports[`Storyshots modul-components|m-datepicker readonly 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
               readonly="readonly"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1824,23 +1822,22 @@ exports[`Storyshots modul-components|m-datepicker readonly 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -1854,10 +1851,10 @@ exports[`Storyshots modul-components|m-datepicker required-marker 1`] = `
 >
   <div
     class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1894,13 +1891,15 @@ exports[`Storyshots modul-components|m-datepicker required-marker 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
               required="required"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1941,23 +1940,22 @@ exports[`Storyshots modul-components|m-datepicker required-marker 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -1972,10 +1970,10 @@ exports[`Storyshots modul-components|m-datepicker skip-input-validation=true 1`]
   >
     <div
       class="m-input-style m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2000,12 +1998,14 @@ exports[`Storyshots modul-components|m-datepicker skip-input-validation=true 1`]
               class="m-input-style__content"
             >
               <input
-                aria-haspopup="true"
+                aria-describedby="fakeId"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2014-12-31"
+                min="2008-01-01"
                 placeholder="AAAA-MM-JJ"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -2046,23 +2046,22 @@ exports[`Storyshots modul-components|m-datepicker skip-input-validation=true 1`]
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-datepicker__validation"
-    >
+       
       <div
-        class="m-validation-message m-datepicker__validation__message"
+        class="m-popper m-popup"
       >
-        <!---->
          
         <!---->
       </div>
+       
+      <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-datepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -2073,15 +2072,15 @@ exports[`Storyshots modul-components|m-datepicker skip-input-validation=true 1`]
 
 exports[`Storyshots modul-components|m-datepicker valid 1`] = `
 <div
-  class="m-datepicker m--is-valid"
+  class="m-datepicker"
   style="width: 100%; max-width: 136px;"
 >
   <div
     class="m-input-style m--is-valid m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2106,12 +2105,14 @@ exports[`Storyshots modul-components|m-datepicker valid 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -2152,23 +2153,22 @@ exports[`Storyshots modul-components|m-datepicker valid 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -2177,15 +2177,15 @@ exports[`Storyshots modul-components|m-datepicker valid 1`] = `
 
 exports[`Storyshots modul-components|m-datepicker waiting 1`] = `
 <div
-  class="m-datepicker m--is-waiting"
+  class="m-datepicker"
   style="width: 100%; max-width: 136px;"
 >
   <div
     class="m-input-style m--is-waiting m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2210,13 +2210,15 @@ exports[`Storyshots modul-components|m-datepicker waiting 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
-              disabled="disabled"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
+              readonly="readonly"
             />
-              
+               
             <!---->
              
             <!---->
@@ -2264,23 +2266,22 @@ exports[`Storyshots modul-components|m-datepicker waiting 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -2294,10 +2295,10 @@ exports[`Storyshots modul-components|m-datepicker/initial-view days 1`] = `
 >
   <div
     class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2322,12 +2323,14 @@ exports[`Storyshots modul-components|m-datepicker/initial-view days 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -2368,23 +2371,22 @@ exports[`Storyshots modul-components|m-datepicker/initial-view days 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -2397,11 +2399,11 @@ exports[`Storyshots modul-components|m-datepicker/initial-view years-months 1`] 
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m--has-validation-message m--is-tag-default"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2426,12 +2428,14 @@ exports[`Storyshots modul-components|m-datepicker/initial-view years-months 1`] 
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2030-12-31"
+              min="2000-01-31"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -2472,29 +2476,28 @@ exports[`Storyshots modul-components|m-datepicker/initial-view years-months 1`] 
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
-      <p
-        class="m-validation-message__helper"
-      >
-        Range between 2000 and 2030
-      </p>
+      <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-popper m-popup"
-  >
      
     <!---->
+  </div>
+   
+  <div
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
+  >
+    <!---->
+     
+    <p
+      class="m-validation-message__helper"
+    >
+      Range between 2000 and 2030
+    </p>
   </div>
 </div>
 `;
@@ -2505,11 +2508,11 @@ exports[`Storyshots modul-components|m-datepicker/initial-view years-months-birt
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m--has-label m--has-validation-message m--is-tag-default"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2539,12 +2542,14 @@ exports[`Storyshots modul-components|m-datepicker/initial-view years-months-birt
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2000-12-31"
+              min="1900-01-31"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -2585,29 +2590,28 @@ exports[`Storyshots modul-components|m-datepicker/initial-view years-months-birt
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
-      <p
-        class="m-validation-message__helper"
-      >
-        Range between 1900 and 2000
-      </p>
+      <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-popper m-popup"
-  >
      
     <!---->
+  </div>
+   
+  <div
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
+  >
+    <!---->
+     
+    <p
+      class="m-validation-message__helper"
+    >
+      Range between 1900 and 2000
+    </p>
   </div>
 </div>
 `;
@@ -2619,10 +2623,10 @@ exports[`Storyshots modul-components|m-datepicker/type full-date 1`] = `
 >
   <div
     class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2647,12 +2651,14 @@ exports[`Storyshots modul-components|m-datepicker/type full-date 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM-JJ"
             />
-              
+               
             <!---->
              
             <!---->
@@ -2693,23 +2699,22 @@ exports[`Storyshots modul-components|m-datepicker/type full-date 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -2723,10 +2728,10 @@ exports[`Storyshots modul-components|m-datepicker/type years-months 1`] = `
 >
   <div
     class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2751,12 +2756,14 @@ exports[`Storyshots modul-components|m-datepicker/type years-months 1`] = `
             class="m-input-style__content"
           >
             <input
-              aria-haspopup="true"
+              aria-describedby="fakeId"
               autocomplete="off"
               id="mDatepicker-fakeId"
+              max="2031-11-29"
+              min="2011-11-29"
               placeholder="AAAA-MM"
             />
-              
+               
             <!---->
              
             <!---->
@@ -2797,23 +2804,22 @@ exports[`Storyshots modul-components|m-datepicker/type years-months 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-datepicker__validation"
-  >
+     
     <div
-      class="m-validation-message m-datepicker__validation__message"
+      class="m-popper m-popup"
     >
-      <!---->
        
       <!---->
     </div>
+     
+    <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-datepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>

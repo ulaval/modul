@@ -10,18 +10,19 @@ exports[`Storyshots modul-components|/m-address/m-address-autocomplete-field def
         class="m-address-lookup-field"
       >
         <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
           class="m-dropdown"
-          role="combobox"
           style="width: 100%; max-width: 288px;"
         >
           <div
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-owns="listboxId-fakeId"
             class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
-            style="width: 100%; margin-top: 10px;"
+            role="combobox"
           >
             <div
               class="m-input-style__main"
+              style="width: 100%; margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -29,6 +30,7 @@ exports[`Storyshots modul-components|/m-address/m-address-autocomplete-field def
                 <label
                   class="m-input-style__label"
                   for="mDropdown-fakeId"
+                  id="fakeId"
                   style="margin-right: 0px;"
                 >
                   <span
@@ -53,7 +55,9 @@ exports[`Storyshots modul-components|/m-address/m-address-autocomplete-field def
                     <!---->
                      
                     <input
+                      aria-activedescendant=""
                       aria-autocomplete="both"
+                      aria-describedby="fakeId"
                       aria-haspopup="listbox"
                       autocomplete="new-password"
                       class="m-dropdown__input"
@@ -67,7 +71,7 @@ exports[`Storyshots modul-components|/m-address/m-address-autocomplete-field def
                     <!---->
                      
                     <!---->
-                     
+                      
                     <!---->
                      
                     <!---->
@@ -84,19 +88,23 @@ exports[`Storyshots modul-components|/m-address/m-address-autocomplete-field def
                
               <!---->
             </div>
-          </div>
-           
-          <div
-            class="m-validation-message m-dropdown__validation-message"
-          >
-            <!---->
+             
+            <div
+              class="m-popper m-popup"
+            >
+               
+              <!---->
+            </div>
              
             <!---->
           </div>
            
           <div
-            class="m-popper m-popup"
+            class="m-validation-message m-dropdown__validation-message"
+            id="fakeId"
+            slot="validation"
           >
+            <!---->
              
             <!---->
           </div>

@@ -1,5 +1,263 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots modul-components|m-select-virtual-scroll Default 1`] = `<!---->`;
+exports[`Storyshots modul-components|m-select-virtual-scroll Default 1`] = `
+<div
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
+  class="m-base-select m-select-virtual-scroll"
+  role="combobox"
+  style="width: 100%; max-width: 288px;"
+  virtualscrollitemheight="52"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; max-width: regular;"
+    >
+      <div
+        class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="m-select-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Fruits
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
+                aria-haspopup="listbox"
+                aria-labelledby="fakeId m-select-fakeId"
+                aria-placeholder="Choose a fruit"
+                class="m-select__input"
+                id="m-select-fakeId"
+                role="button"
+                tabindex="0"
+              >
+                
+                    
+                    
+                <input
+                  aria-hidden="true"
+                  placeholder="Choose a fruit"
+                  readonly="readonly"
+                  role="none"
+                  tabindex="-1"
+                  type="text"
+                />
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+        
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+    id="fakeId"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popper m-popup"
+  >
+     
+    <!---->
+  </div>
+</div>
+`;
 
-exports[`Storyshots modul-components|m-select-virtual-scroll Virtual Scroll 1`] = `<!---->`;
+exports[`Storyshots modul-components|m-select-virtual-scroll Virtual Scroll 1`] = `
+<div
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
+  class="m-base-select m-select-virtual-scroll"
+  role="combobox"
+  style="width: 100%; max-width: 288px;"
+  virtualscrollitemheight="52"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      style="width: 100%; max-width: regular;"
+    >
+      <div
+        class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="id"
+            id="fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Longlist
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <div
+                aria-activedescendant=""
+                aria-describedby="fakeId"
+                aria-haspopup="listbox"
+                aria-labelledby="fakeId id"
+                class="m-select__input"
+                id="id"
+                role="button"
+                tabindex="0"
+              >
+                
+                    
+                    
+                <!---->
+              </div>
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <!---->
+           
+          <div
+            class="m-select__arrow"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Ouvrir la liste déroulante"
+              class="m-icon m-select__arrow-icon"
+              height="12px"
+              width="12px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+        
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-select__validation-message"
+    id="fakeId"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popper m-popup"
+  >
+     
+    <!---->
+  </div>
+</div>
+`;

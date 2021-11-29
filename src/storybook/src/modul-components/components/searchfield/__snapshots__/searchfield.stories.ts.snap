@@ -2,623 +2,619 @@
 
 exports[`Storyshots modul-components|m-searchfield Custom Visual 1`] = `
 <div
-  class="m-searchfield m-searchfield-stories"
+  class="m-input-style m-searchfield m-searchfield-stories m--has-label m--is-tag-default"
   style="width: 100%; max-width: 288px;"
+  word-wrap="true"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
-    word-wrap="true"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mSearchfield-fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mSearchfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Search
-            </span>
-             
-            <!---->
+          <span>
+            Search
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
+        >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mSearchfield-fakeId"
+            type="search"
+          />
+              
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-input-style__append"
+    >
+      <button
+        aria-controls="mSearchfield-fakeId"
+        class="m-searchfield__search-button"
+        title="Rechercher"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-searchfield__search-button-icon"
+          height="22px"
+          width="22px"
         >
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mSearchfield-fakeId"
-              type="search"
-            />
-               
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
-        </div>
-      </div>
-       
-      <div
-        class="m-input-style__append"
-      >
-        <button
-          aria-controls="mSearchfield-fakeId"
-          class="m-searchfield__search-button"
-          title="Rechercher"
-        >
-          <svg
+          <use
             aria-hidden="true"
-            class="m-icon m-searchfield__search-button-icon"
-            height="22px"
-            width="22px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-        </button>
-      </div>
+            class=""
+          />
+        </svg>
+      </button>
     </div>
   </div>
-   
+    
   <div
-    class="m-validation-message m-searchfield__validation"
-    id="validationMessageId"
+    class="m-input-style__validation"
   >
-    <!---->
-     
-    <!---->
+    <div
+      class="m-validation-message m-searchfield__validation"
+      id="validationMessageId"
+    >
+      <!---->
+       
+      <!---->
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-searchfield Error 1`] = `
 <div
-  class="m-searchfield m--has-error m--has-validation-message"
+  class="m-input-style m-searchfield m--has-error m--has-label m--has-validation-message m--is-tag-default"
   style="width: 100%; max-width: 288px;"
+  word-wrap="true"
 >
   <div
-    class="m-input-style m--has-error m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
-    word-wrap="true"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mSearchfield-fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mSearchfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Search
-            </span>
-             
-            <!---->
+          <span>
+            Search
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
+        >
+          <input
+            aria-describedby="fakeId"
+            aria-invalid="true"
+            class="m-textfield__input"
+            id="mSearchfield-fakeId"
+            type="search"
+          />
+              
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-input-style__append"
+    >
+      <button
+        aria-controls="mSearchfield-fakeId"
+        class="m-searchfield__search-button"
+        title="Rechercher"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-searchfield__search-button-icon"
+          height="22px"
+          width="22px"
         >
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              aria-invalid="true"
-              class="m-textfield__input"
-              id="mSearchfield-fakeId"
-              type="search"
-            />
-               
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
-        </div>
-      </div>
-       
-      <div
-        class="m-input-style__append"
-      >
-        <button
-          aria-controls="mSearchfield-fakeId"
-          class="m-searchfield__search-button"
-          title="Rechercher"
-        >
-          <svg
+          <use
             aria-hidden="true"
-            class="m-icon m-searchfield__search-button-icon"
-            height="22px"
-            width="22px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-        </button>
-      </div>
+            class=""
+          />
+        </svg>
+      </button>
     </div>
   </div>
-   
+    
   <div
-    class="m-validation-message m-searchfield__validation"
-    id="validationMessageId"
+    class="m-input-style__validation"
   >
-    <p
-      aria-live="polite"
-      class="m-validation-message__error"
+    <div
+      class="m-validation-message m-searchfield__validation"
+      id="validationMessageId"
     >
-      <svg
-        class="m-icon m-validation-message__icon"
-        height="1em"
-        width="1em"
+      <p
+        aria-live="polite"
+        class="m-validation-message__error"
       >
-        <title>
-          Erreur
-        </title>
+        <svg
+          class="m-svg m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Erreur
+          </title>
+        </svg>
          
-        <use
-          aria-hidden="true"
-          class=""
-        />
-      </svg>
+        <span
+          class="m-validation-message__text"
+        >
+          Error message
+        </span>
+      </p>
        
-      <span
-        class="m-validation-message__text"
-      >
-        Error message
-      </span>
-    </p>
-     
-    <!---->
+      <!---->
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-searchfield Label 1`] = `
 <div
-  class="m-searchfield"
+  class="m-input-style m-searchfield m--has-label m--is-tag-default"
   n=""
   style="width: 100%; max-width: 288px;"
+  word-wrap="true"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
-    word-wrap="true"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mSearchfield-fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mSearchfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Search
-            </span>
-             
-            <!---->
+          <span>
+            Search
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
+        >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mSearchfield-fakeId"
+            type="search"
+          />
+              
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-input-style__append"
+    >
+      <button
+        aria-controls="mSearchfield-fakeId"
+        class="m-searchfield__search-button"
+        title="Rechercher"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-searchfield__search-button-icon"
+          height="22px"
+          width="22px"
         >
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mSearchfield-fakeId"
-              type="search"
-            />
-               
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
-        </div>
-      </div>
-       
-      <div
-        class="m-input-style__append"
-      >
-        <button
-          aria-controls="mSearchfield-fakeId"
-          class="m-searchfield__search-button"
-          title="Rechercher"
-        >
-          <svg
+          <use
             aria-hidden="true"
-            class="m-icon m-searchfield__search-button-icon"
-            height="22px"
-            width="22px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-        </button>
-      </div>
+            class=""
+          />
+        </svg>
+      </button>
     </div>
   </div>
-   
+    
   <div
-    class="m-validation-message m-searchfield__validation"
-    id="validationMessageId"
+    class="m-input-style__validation"
   >
-    <!---->
-     
-    <!---->
+    <div
+      class="m-validation-message m-searchfield__validation"
+      id="validationMessageId"
+    >
+      <!---->
+       
+      <!---->
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-searchfield Placeholder 1`] = `
 <div
-  class="m-searchfield"
+  class="m-input-style m-searchfield m--is-tag-default"
   style="width: 100%; max-width: 288px;"
+  word-wrap="true"
 >
   <div
-    class="m-input-style m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
-    word-wrap="true"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
-         
-        <div
-          class="m-input-style__input"
-        >
-          <div
-            class="m-input-style__prefix"
-          />
-           
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mSearchfield-fakeId"
-              placeholder="placeholder"
-              type="search"
-            />
-               
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
-        </div>
-      </div>
+          class="m-input-style__text"
+        />
+      </span>
        
       <div
-        class="m-input-style__append"
+        class="m-input-style__input"
       >
-        <button
-          aria-controls="mSearchfield-fakeId"
-          class="m-searchfield__search-button"
-          title="Rechercher"
+        <div
+          class="m-input-style__prefix"
+        />
+         
+        <div
+          class="m-input-style__content"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-searchfield__search-button-icon"
-            height="22px"
-            width="22px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-        </button>
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mSearchfield-fakeId"
+            placeholder="placeholder"
+            type="search"
+          />
+              
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+           
+          <!---->
+        </div>
       </div>
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-searchfield__validation"
-    id="validationMessageId"
-  >
-    <!---->
      
-    <!---->
+    <div
+      class="m-input-style__append"
+    >
+      <button
+        aria-controls="mSearchfield-fakeId"
+        class="m-searchfield__search-button"
+        title="Rechercher"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-searchfield__search-button-icon"
+          height="22px"
+          width="22px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-validation-message m-searchfield__validation"
+      id="validationMessageId"
+    >
+      <!---->
+       
+      <!---->
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-searchfield Valid 1`] = `
 <div
-  class="m-searchfield m--is-valid m--has-validation-message"
+  class="m-input-style m-searchfield m--is-valid m--has-label m--has-validation-message m--is-tag-default"
   style="width: 100%; max-width: 288px;"
+  word-wrap="true"
 >
   <div
-    class="m-input-style m--is-valid m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
-    word-wrap="true"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mSearchfield-fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mSearchfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Search
-            </span>
-             
-            <!---->
+          <span>
+            Search
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
+        >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mSearchfield-fakeId"
+            type="search"
+          />
+              
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="m-input-style__append"
+    >
+      <button
+        aria-controls="mSearchfield-fakeId"
+        class="m-searchfield__search-button"
+        title="Rechercher"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-searchfield__search-button-icon"
+          height="22px"
+          width="22px"
         >
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mSearchfield-fakeId"
-              type="search"
-            />
-               
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
-        </div>
-      </div>
-       
-      <div
-        class="m-input-style__append"
-      >
-        <button
-          aria-controls="mSearchfield-fakeId"
-          class="m-searchfield__search-button"
-          title="Rechercher"
-        >
-          <svg
+          <use
             aria-hidden="true"
-            class="m-icon m-searchfield__search-button-icon"
-            height="22px"
-            width="22px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-        </button>
-      </div>
+            class=""
+          />
+        </svg>
+      </button>
     </div>
   </div>
-   
+    
   <div
-    class="m-validation-message m-searchfield__validation"
-    id="validationMessageId"
+    class="m-input-style__validation"
   >
-    <p
-      aria-live="polite"
-      class="m-validation-message__valid"
+    <div
+      class="m-validation-message m-searchfield__validation"
+      id="validationMessageId"
     >
-      <svg
-        class="m-icon m-validation-message__icon"
-        height="1em"
-        width="1em"
+      <p
+        aria-live="polite"
+        class="m-validation-message__valid"
       >
-        <title>
-          Valide
-        </title>
+        <svg
+          class="m-svg m-validation-message__icon"
+          height="1em"
+          width="1em"
+        >
+          <title>
+            Valide
+          </title>
+        </svg>
          
-        <use
-          aria-hidden="true"
-          class=""
-        />
-      </svg>
+        <span
+          class="m-validation-message__text"
+        >
+          Valid message
+        </span>
+      </p>
        
-      <span
-        class="m-validation-message__text"
-      >
-        Valid message
-      </span>
-    </p>
-     
-    <!---->
+      <!---->
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-searchfield default 1`] = `
 <div
-  class="m-searchfield"
+  class="m-input-style m-searchfield m--is-tag-default"
   style="width: 100%; max-width: 288px;"
+  word-wrap="true"
 >
   <div
-    class="m-input-style m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
-    word-wrap="true"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
-         
-        <div
-          class="m-input-style__input"
-        >
-          <div
-            class="m-input-style__prefix"
-          />
-           
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mSearchfield-fakeId"
-              type="search"
-            />
-               
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
-        </div>
-      </div>
+          class="m-input-style__text"
+        />
+      </span>
        
       <div
-        class="m-input-style__append"
+        class="m-input-style__input"
       >
-        <button
-          aria-controls="mSearchfield-fakeId"
-          class="m-searchfield__search-button"
-          title="Rechercher"
+        <div
+          class="m-input-style__prefix"
+        />
+         
+        <div
+          class="m-input-style__content"
         >
-          <svg
-            aria-hidden="true"
-            class="m-icon m-searchfield__search-button-icon"
-            height="22px"
-            width="22px"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
-        </button>
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mSearchfield-fakeId"
+            type="search"
+          />
+              
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+           
+          <!---->
+        </div>
       </div>
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-searchfield__validation"
-    id="validationMessageId"
-  >
-    <!---->
      
-    <!---->
+    <div
+      class="m-input-style__append"
+    >
+      <button
+        aria-controls="mSearchfield-fakeId"
+        class="m-searchfield__search-button"
+        title="Rechercher"
+      >
+        <svg
+          aria-hidden="true"
+          class="m-icon m-searchfield__search-button-icon"
+          height="22px"
+          width="22px"
+        >
+          <!---->
+           
+          <use
+            aria-hidden="true"
+            class=""
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-validation-message m-searchfield__validation"
+      id="validationMessageId"
+    >
+      <!---->
+       
+      <!---->
+    </div>
   </div>
 </div>
 `;

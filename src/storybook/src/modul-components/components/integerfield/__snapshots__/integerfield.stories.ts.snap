@@ -2,73 +2,75 @@
 
 exports[`Storyshots modul-components|m-integerfield Autocomplete 1`] = `
 <div
-  class="m-integerfield"
+  class="m-input-style m-integerfield m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            autocomplete="home tel-extension"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              autocomplete="home tel-extension"
-              class="m-integerfield__input"
-              id="mIntegerfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-integerfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-integerfield__validation__message"
+      class="m-integerfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-integerfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -76,97 +78,94 @@ exports[`Storyshots modul-components|m-integerfield Autocomplete 1`] = `
 
 exports[`Storyshots modul-components|m-integerfield Error 1`] = `
 <div
-  class="m-integerfield m--has-error m--has-validation-message"
+  class="m-input-style m-integerfield m--has-error m--has-validation-message m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-error m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            aria-invalid="true"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              aria-invalid="true"
-              class="m-integerfield__input"
-              id="mIntegerfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-integerfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-integerfield__validation__message"
+      class="m-integerfield__validation"
+      id="fakeId"
     >
-      <p
-        aria-live="polite"
-        class="m-validation-message__error"
+      <div
+        class="m-validation-message m-integerfield__validation-message"
       >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
+        <p
+          aria-live="polite"
+          class="m-validation-message__error"
         >
-          <title>
-            Erreur
-          </title>
+          <svg
+            class="m-svg m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+          </svg>
            
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
+          <span
+            class="m-validation-message__text"
+          >
+            Invalide number
+          </span>
+        </p>
          
-        <span
-          class="m-validation-message__text"
-        >
-          Invalide number
-        </span>
-      </p>
-       
-      <!---->
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -174,77 +173,79 @@ exports[`Storyshots modul-components|m-integerfield Error 1`] = `
 
 exports[`Storyshots modul-components|m-integerfield Label 1`] = `
 <div
-  class="m-integerfield m--has-label"
+  class="m-input-style m-integerfield m--has-label m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mIntegerfield-fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mIntegerfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              Extension
-            </span>
-             
-            <!---->
+          <span>
+            Extension
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
+          />
+             
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-integerfield__input"
-              id="mIntegerfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-integerfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-integerfield__validation__message"
+      class="m-integerfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-integerfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -252,73 +253,75 @@ exports[`Storyshots modul-components|m-integerfield Label 1`] = `
 
 exports[`Storyshots modul-components|m-integerfield Readonly 1`] = `
 <div
-  class="m-integerfield m--is-readonly"
+  class="m-input-style m-integerfield m--is-readonly m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-readonly m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
+            readonly="readonly"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-integerfield__input"
-              id="mIntegerfield-fakeId"
-              inputmode="decimal"
-              readonly="readonly"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-integerfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-integerfield__validation__message"
+      class="m-integerfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-integerfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -326,72 +329,74 @@ exports[`Storyshots modul-components|m-integerfield Readonly 1`] = `
 
 exports[`Storyshots modul-components|m-integerfield Value 1`] = `
 <div
-  class="m-integerfield"
+  class="m-input-style m-integerfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-integerfield__input"
-              id="mIntegerfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-integerfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-integerfield__validation__message"
+      class="m-integerfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-integerfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -399,79 +404,81 @@ exports[`Storyshots modul-components|m-integerfield Value 1`] = `
 
 exports[`Storyshots modul-components|m-integerfield Waiting 1`] = `
 <div
-  class="m-integerfield m--is-waiting"
+  class="m-input-style m-integerfield m--is-waiting m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-waiting m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
+            readonly="readonly"
           />
+             
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
           <div
-            class="m-input-style__content"
+            class="m-spinner m-input-style__spinner"
           >
-             
-            <input
-              class="m-integerfield__input"
-              disabled="disabled"
-              id="mIntegerfield-fakeId"
-              inputmode="decimal"
-            />
-              
             <!---->
              
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <div
-              class="m-spinner m-input-style__spinner"
-            >
-              <!---->
-               
-              <div />
-            </div>
+            <div />
           </div>
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-integerfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-integerfield__validation__message"
+      class="m-integerfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-integerfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -479,72 +486,74 @@ exports[`Storyshots modul-components|m-integerfield Waiting 1`] = `
 
 exports[`Storyshots modul-components|m-integerfield default 1`] = `
 <div
-  class="m-integerfield"
+  class="m-input-style m-integerfield m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-integerfield__input"
-              id="mIntegerfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-integerfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-integerfield__validation__message"
+      class="m-integerfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-integerfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>

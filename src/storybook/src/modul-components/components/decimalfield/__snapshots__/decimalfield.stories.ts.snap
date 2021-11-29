@@ -4,150 +4,74 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
 <div>
   <div>
     <div
-      class="m-decimalfield"
+      class="m-input-style m-decimalfield m--is-tag-default"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
+              class="m-input-style__text"
+            />
+          </span>
            
-          <!---->
-        </div>
-      </div>
-       
-      <div
-        class="m-decimalfield__validation"
-      >
-        <div
-          class="m-validation-message m-decimalfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="m-decimalfield m--has-label"
-      style="width: 100%; max-width: 288px;"
-    >
-      <div
-        class="m-input-style m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
-      >
-        <div
-          class="m-input-style__main"
-        >
           <div
-            class="m-input-style__body"
+            class="m-input-style__input"
           >
-            <label
-              class="m-input-style__label"
-              for="mDecimalfield-fakeId"
-              style="margin-right: 0px;"
-            >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Label
-                </span>
-                 
-                <!---->
-              </span>
-            </label>
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+              />
+                 
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
                
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
           </div>
-           
-          <!---->
         </div>
+         
+        <!---->
       </div>
-       
+        
       <div
-        class="m-decimalfield__validation"
+        class="m-input-style__validation"
       >
         <div
-          class="m-validation-message m-decimalfield__validation__message"
+          class="m-decimalfield__validation"
+          id="fakeId"
         >
-          <!---->
-           
-          <!---->
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -155,85 +79,167 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
    
   <div>
     <div
-      class="m-decimalfield m--has-label"
+      class="m-input-style m-decimalfield m--has-label m--is-tag-default"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDecimalfield-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Label
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+              />
+                 
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-decimalfield__validation"
+          id="fakeId"
         >
           <div
-            class="m-input-style__body"
+            class="m-validation-message m-decimalfield__validation-message"
           >
-            <label
-              class="m-input-style__label"
-              for="mDecimalfield-fakeId"
-              style="margin-right: 0px;"
+            <!---->
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="m-input-style m-decimalfield m--has-label m--is-tag-default"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style__main"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDecimalfield-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
+              <span>
+                Required label
+              </span>
+               
+              <sup
+                aria-hidden="true"
+                class="m-input-style__required-marker"
               >
-                <span>
-                  Required label
-                </span>
-                 
-                <sup
-                  aria-hidden="true"
-                  class="m-input-style__required-marker"
-                >
-                  
+                
                         *
                     
-                </sup>
-              </span>
-            </label>
+              </sup>
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+                required="required"
+              />
+                 
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                  required="required"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
                
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
           </div>
-           
-          <!---->
         </div>
+         
+        <!---->
       </div>
-       
+        
       <div
-        class="m-decimalfield__validation"
+        class="m-input-style__validation"
       >
         <div
-          class="m-validation-message m-decimalfield__validation__message"
+          class="m-decimalfield__validation"
+          id="fakeId"
         >
-          <!---->
-           
-          <!---->
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -241,350 +247,348 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
    
   <div>
     <div
-      class="m-decimalfield m--is-valid m--has-validation-message"
+      class="m-input-style m-decimalfield m--is-valid m--has-validation-message m--is-tag-default"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--is-valid m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
-              <div
-                class="m-input-style__prefix"
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
               />
-               
-              <div
-                class="m-input-style__content"
-              >
                  
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
-           
-          <!---->
-        </div>
-      </div>
-       
-      <div
-        class="m-decimalfield__validation"
-      >
-        <div
-          class="m-validation-message m-decimalfield__validation__message"
-        >
-          <p
-            aria-live="polite"
-            class="m-validation-message__valid"
-          >
-            <svg
-              class="m-icon m-validation-message__icon"
-              height="1em"
-              width="1em"
-            >
-              <title>
-                Valide
-              </title>
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-validation-message__text"
-            >
-              Valid message
-            </span>
-          </p>
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="m-decimalfield m--has-validation-message"
-      style="width: 100%; max-width: 288px;"
-    >
-      <div
-        class="m-input-style m--is-tag-default"
-        style="margin-top: 10px;"
-      >
-        <div
-          class="m-input-style__main"
-        >
-          <div
-            class="m-input-style__body"
-          >
-            <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
-           
-          <!---->
-        </div>
-      </div>
-       
-      <div
-        class="m-decimalfield__validation"
-      >
-        <div
-          class="m-validation-message m-decimalfield__validation__message"
-        >
-          <!---->
-           
-          <p
-            class="m-validation-message__helper"
-          >
-            Helper message
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="m-decimalfield m--has-error m--has-validation-message"
-      style="width: 100%; max-width: 288px;"
-    >
-      <div
-        class="m-input-style m--has-error m--is-tag-default"
-        style="margin-top: 10px;"
-      >
-        <div
-          class="m-input-style__main"
-        >
-          <div
-            class="m-input-style__body"
-          >
-            <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <div
-                class="m-input-style__prefix"
-              />
-               
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  aria-invalid="true"
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
-           
-          <!---->
-        </div>
-      </div>
-       
-      <div
-        class="m-decimalfield__validation"
-      >
-        <div
-          class="m-validation-message m-decimalfield__validation__message"
-        >
-          <p
-            aria-live="polite"
-            class="m-validation-message__error"
-          >
-            <svg
-              class="m-icon m-validation-message__icon"
-              height="1em"
-              width="1em"
-            >
-              <title>
-                Erreur
-              </title>
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <span
-              class="m-validation-message__text"
-            >
-              Error message
-            </span>
-          </p>
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="m-decimalfield m--has-label"
-      style="width: 100%; max-width: 288px;"
-    >
-      <div
-        class="m-input-style m--is-label-up m--has-label m--is-tag-default"
-        style="margin-top: 10px;"
-      >
-        <div
-          class="m-input-style__main"
-        >
-          <div
-            class="m-input-style__body"
-          >
-            <label
-              class="m-input-style__label"
-              for="mDecimalfield-fakeId"
-              style="margin-right: 0px;"
-            >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Label
-                </span>
-                 
-                <!---->
-              </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                  placeholder="Enter a decimal number"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
                
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
           </div>
-           
-          <!---->
         </div>
+         
+        <!---->
       </div>
-       
+        
       <div
-        class="m-decimalfield__validation"
+        class="m-input-style__validation"
       >
         <div
-          class="m-validation-message m-decimalfield__validation__message"
+          class="m-decimalfield__validation"
+          id="fakeId"
         >
-          <!---->
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <p
+              aria-live="polite"
+              class="m-validation-message__valid"
+            >
+              <svg
+                class="m-svg m-validation-message__icon"
+                height="1em"
+                width="1em"
+              >
+                <title>
+                  Valide
+                </title>
+              </svg>
+               
+              <span
+                class="m-validation-message__text"
+              >
+                Valid message
+              </span>
+            </p>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="m-input-style m-decimalfield m--has-validation-message m--is-tag-default"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style__main"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
            
-          <!---->
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+              />
+                 
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-decimalfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <!---->
+             
+            <p
+              class="m-validation-message__helper"
+            >
+              Helper message
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="m-input-style m-decimalfield m--has-error m--has-validation-message m--is-tag-default"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style__main"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                aria-describedby="fakeId"
+                aria-invalid="true"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+              />
+                 
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-decimalfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <p
+              aria-live="polite"
+              class="m-validation-message__error"
+            >
+              <svg
+                class="m-svg m-validation-message__icon"
+                height="1em"
+                width="1em"
+              >
+                <title>
+                  Erreur
+                </title>
+              </svg>
+               
+              <span
+                class="m-validation-message__text"
+              >
+                Error message
+              </span>
+            </p>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="m-input-style m-decimalfield m--is-label-up m--has-label m--is-tag-default"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style__main"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDecimalfield-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Label
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+                placeholder="Enter a decimal number"
+              />
+                 
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-decimalfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -594,72 +598,74 @@ exports[`Storyshots modul-components|m-decimalfield Basic 1`] = `
 
 exports[`Storyshots modul-components|m-decimalfield Custom precision 1`] = `
 <div
-  class="m-decimalfield"
+  class="m-input-style m-decimalfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-decimalfield__input"
+            id="mDecimalfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-decimalfield__input"
-              id="mDecimalfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-decimalfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-decimalfield__validation__message"
+      class="m-decimalfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-decimalfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -667,72 +673,74 @@ exports[`Storyshots modul-components|m-decimalfield Custom precision 1`] = `
 
 exports[`Storyshots modul-components|m-decimalfield Default precision 1`] = `
 <div
-  class="m-decimalfield"
+  class="m-input-style m-decimalfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-decimalfield__input"
+            id="mDecimalfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-decimalfield__input"
-              id="mDecimalfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-decimalfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-decimalfield__validation__message"
+      class="m-decimalfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-decimalfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -740,72 +748,74 @@ exports[`Storyshots modul-components|m-decimalfield Default precision 1`] = `
 
 exports[`Storyshots modul-components|m-decimalfield Localization 1`] = `
 <div
-  class="m-decimalfield"
+  class="m-input-style m-decimalfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-decimalfield__input"
+            id="mDecimalfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-decimalfield__input"
-              id="mDecimalfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-decimalfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-decimalfield__validation__message"
+      class="m-decimalfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-decimalfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -815,74 +825,76 @@ exports[`Storyshots modul-components|m-decimalfield States 1`] = `
 <div>
   <div>
     <div
-      class="m-decimalfield m--is-disabled"
+      class="m-input-style m-decimalfield m--is-disabled m--is-tag-default"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--is-disabled m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
-              <div
-                class="m-input-style__prefix"
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                disabled="disabled"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+                placeholder="Disabled"
               />
+                 
+              <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  disabled="disabled"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                  placeholder="Disabled"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
                
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
           </div>
-           
-          <!---->
         </div>
+         
+        <!---->
       </div>
-       
+        
       <div
-        class="m-decimalfield__validation"
+        class="m-input-style__validation"
       >
         <div
-          class="m-validation-message m-decimalfield__validation__message"
+          class="m-decimalfield__validation"
+          id="fakeId"
         >
-          <!---->
-           
-          <!---->
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -890,74 +902,76 @@ exports[`Storyshots modul-components|m-decimalfield States 1`] = `
    
   <div>
     <div
-      class="m-decimalfield m--is-readonly"
+      class="m-input-style m-decimalfield m--is-readonly m--is-tag-default"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--is-readonly m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
-              <div
-                class="m-input-style__prefix"
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+                placeholder="Read-only"
+                readonly="readonly"
               />
+                 
+              <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                  placeholder="Read-only"
-                  readonly="readonly"
-                />
-                  
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
                
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
           </div>
-           
-          <!---->
         </div>
+         
+        <!---->
       </div>
-       
+        
       <div
-        class="m-decimalfield__validation"
+        class="m-input-style__validation"
       >
         <div
-          class="m-validation-message m-decimalfield__validation__message"
+          class="m-decimalfield__validation"
+          id="fakeId"
         >
-          <!---->
-           
-          <!---->
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -965,80 +979,82 @@ exports[`Storyshots modul-components|m-decimalfield States 1`] = `
    
   <div>
     <div
-      class="m-decimalfield m--is-waiting"
+      class="m-input-style m-decimalfield m--is-waiting m--is-tag-default"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--is-waiting m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
           >
             <span
-              class="m-input-style__label"
-              style="z-index: -1;"
-            >
-              <span
-                class="m-input-style__text"
-              />
-            </span>
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
-              <div
-                class="m-input-style__prefix"
+               
+              <input
+                aria-describedby="fakeId"
+                class="m-decimalfield__input"
+                id="mDecimalfield-fakeId"
+                inputmode="decimal"
+                placeholder="Waiting"
+                readonly="readonly"
               />
+                 
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
                
               <div
-                class="m-input-style__content"
+                class="m-spinner m-input-style__spinner"
               >
-                 
-                <input
-                  class="m-decimalfield__input"
-                  disabled="disabled"
-                  id="mDecimalfield-fakeId"
-                  inputmode="decimal"
-                  placeholder="Waiting"
-                />
-                  
                 <!---->
                  
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                 
-                <div
-                  class="m-spinner m-input-style__spinner"
-                >
-                  <!---->
-                   
-                  <div />
-                </div>
+                <div />
               </div>
             </div>
           </div>
-           
-          <!---->
         </div>
+         
+        <!---->
       </div>
-       
+        
       <div
-        class="m-decimalfield__validation"
+        class="m-input-style__validation"
       >
         <div
-          class="m-validation-message m-decimalfield__validation__message"
+          class="m-decimalfield__validation"
+          id="fakeId"
         >
-          <!---->
-           
-          <!---->
+          <div
+            class="m-validation-message m-decimalfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -1048,72 +1064,74 @@ exports[`Storyshots modul-components|m-decimalfield States 1`] = `
 
 exports[`Storyshots modul-components|m-decimalfield With initial value (0) 1`] = `
 <div
-  class="m-decimalfield"
+  class="m-input-style m-decimalfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-decimalfield__input"
+            id="mDecimalfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-decimalfield__input"
-              id="mDecimalfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-decimalfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-decimalfield__validation__message"
+      class="m-decimalfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-decimalfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>
@@ -1121,72 +1139,74 @@ exports[`Storyshots modul-components|m-decimalfield With initial value (0) 1`] =
 
 exports[`Storyshots modul-components|m-decimalfield With initial value 1`] = `
 <div
-  class="m-decimalfield"
+  class="m-input-style m-decimalfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-decimalfield__input"
+            id="mDecimalfield-fakeId"
+            inputmode="decimal"
           />
+             
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-             
-            <input
-              class="m-decimalfield__input"
-              id="mDecimalfield-fakeId"
-              inputmode="decimal"
-            />
-              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
-       
-      <!---->
     </div>
+     
+    <!---->
   </div>
-   
+    
   <div
-    class="m-decimalfield__validation"
+    class="m-input-style__validation"
   >
     <div
-      class="m-validation-message m-decimalfield__validation__message"
+      class="m-decimalfield__validation"
+      id="fakeId"
     >
-      <!---->
-       
-      <!---->
+      <div
+        class="m-validation-message m-decimalfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
     </div>
   </div>
 </div>

@@ -5,6 +5,7 @@ exports[`Storyshots modul-components|m-typeahead Default 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-owns="listbox-fakeId"
     class="m-base-select m-typeahead"
     input-max-width="288px"
     role="combobox"
@@ -14,86 +15,90 @@ exports[`Storyshots modul-components|m-typeahead Default 1`] = `
       class="m-base-select__popup"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
+        class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
         cursor-pointer="true"
-        id="m-typeahead-fakeId"
-        input-aria-autocomplete="list"
         style="width: 100%; max-width: 288px;"
       >
         <div
-          class="m-input-style m--has-label m--is-tag-default"
+          class="m-input-style__main"
           style="margin-top: 10px;"
         >
           <div
-            class="m-input-style__main"
+            class="m-input-style__body"
           >
-            <div
-              class="m-input-style__body"
+            <label
+              class="m-input-style__label"
+              for="m-typeahead-fakeId"
+              id="fakeId"
+              style="margin-right: 0px;"
             >
-              <label
-                class="m-input-style__label"
-                for="mTextfield-fakeId"
-                style="margin-right: 0px;"
+              <span
+                class="m-input-style__text"
               >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    Fruits and vegetables
-                  </span>
-                   
-                  <!---->
+                <span>
+                  Fruits and vegetables
                 </span>
-              </label>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
                
               <div
-                class="m-input-style__input"
+                class="m-input-style__content"
               >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-controls="listbox-fakeId"
+                  aria-describedby="fakeId"
+                  class="m-textfield__input"
+                  id="m-typeahead-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                  
                 <!---->
                  
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
               </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
             </div>
              
             <!---->
           </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
         </div>
       </div>
     </div>
@@ -150,6 +155,7 @@ exports[`Storyshots modul-components|m-typeahead custom results 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-owns="listbox-fakeId"
     class="m-base-select m-typeahead"
     input-max-width="288px"
     role="combobox"
@@ -159,86 +165,90 @@ exports[`Storyshots modul-components|m-typeahead custom results 1`] = `
       class="m-base-select__popup"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
+        class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
         cursor-pointer="true"
-        id="m-typeahead-fakeId"
-        input-aria-autocomplete="list"
         style="width: 100%; max-width: 288px;"
       >
         <div
-          class="m-input-style m--has-label m--is-tag-default"
+          class="m-input-style__main"
           style="margin-top: 10px;"
         >
           <div
-            class="m-input-style__main"
+            class="m-input-style__body"
           >
-            <div
-              class="m-input-style__body"
+            <label
+              class="m-input-style__label"
+              for="m-typeahead-fakeId"
+              id="fakeId"
+              style="margin-right: 0px;"
             >
-              <label
-                class="m-input-style__label"
-                for="mTextfield-fakeId"
-                style="margin-right: 0px;"
+              <span
+                class="m-input-style__text"
               >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    Fruits and vegetables
-                  </span>
-                   
-                  <!---->
+                <span>
+                  Fruits and vegetables
                 </span>
-              </label>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
                
               <div
-                class="m-input-style__input"
+                class="m-input-style__content"
               >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-controls="listbox-fakeId"
+                  aria-describedby="fakeId"
+                  class="m-textfield__input"
+                  id="m-typeahead-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                  
                 <!---->
                  
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
               </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
             </div>
              
             <!---->
           </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
         </div>
       </div>
     </div>
@@ -267,6 +277,7 @@ exports[`Storyshots modul-components|m-typeahead error-message 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-owns="listbox-fakeId"
     class="m-base-select m-typeahead"
     input-max-width="288px"
     role="combobox"
@@ -276,87 +287,91 @@ exports[`Storyshots modul-components|m-typeahead error-message 1`] = `
       class="m-base-select__popup"
     >
       <div
-        class="m-textfield m--has-error m--has-label m--is-type-text"
+        class="m-input-style m-textfield m--has-error m--has-label m--is-tag-default m--is-type-text"
         cursor-pointer="true"
-        id="m-typeahead-fakeId"
-        input-aria-autocomplete="list"
         style="width: 100%; max-width: 288px;"
       >
         <div
-          class="m-input-style m--has-error m--has-label m--is-tag-default"
+          class="m-input-style__main"
           style="margin-top: 10px;"
         >
           <div
-            class="m-input-style__main"
+            class="m-input-style__body"
           >
-            <div
-              class="m-input-style__body"
+            <label
+              class="m-input-style__label"
+              for="m-typeahead-fakeId"
+              id="fakeId"
+              style="margin-right: 0px;"
             >
-              <label
-                class="m-input-style__label"
-                for="mTextfield-fakeId"
-                style="margin-right: 0px;"
+              <span
+                class="m-input-style__text"
               >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    Fruits and vegetables
-                  </span>
-                   
-                  <!---->
+                <span>
+                  Fruits and vegetables
                 </span>
-              </label>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
                
               <div
-                class="m-input-style__input"
+                class="m-input-style__content"
               >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-controls="listbox-fakeId"
+                  aria-describedby="fakeId"
+                  aria-invalid="true"
+                  class="m-textfield__input"
+                  id="m-typeahead-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                  
                 <!---->
                  
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    aria-invalid="true"
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
               </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
             </div>
              
             <!---->
           </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
         </div>
       </div>
     </div>
@@ -370,18 +385,13 @@ exports[`Storyshots modul-components|m-typeahead error-message 1`] = `
         class="m-validation-message__error"
       >
         <svg
-          class="m-icon m-validation-message__icon"
+          class="m-svg m-validation-message__icon"
           height="1em"
           width="1em"
         >
           <title>
             Erreur
           </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
         </svg>
          
         <span
@@ -437,6 +447,7 @@ exports[`Storyshots modul-components|m-typeahead filter-results-manually 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-owns="listbox-fakeId"
     class="m-base-select m-typeahead"
     input-max-width="288px"
     role="combobox"
@@ -446,82 +457,85 @@ exports[`Storyshots modul-components|m-typeahead filter-results-manually 1`] = `
       class="m-base-select__popup"
     >
       <div
-        class="m-textfield m--is-type-text"
+        class="m-input-style m-textfield m--is-tag-default m--is-type-text"
         cursor-pointer="true"
-        id="m-typeahead-fakeId"
-        input-aria-autocomplete="list"
         style="width: 100%; max-width: 288px;"
       >
         <div
-          class="m-input-style m--is-tag-default"
+          class="m-input-style__main"
           style="margin-top: 10px;"
         >
           <div
-            class="m-input-style__main"
+            class="m-input-style__body"
           >
-            <div
-              class="m-input-style__body"
+            <span
+              class="m-input-style__label"
+              style="z-index: -1;"
             >
               <span
-                class="m-input-style__label"
-                style="z-index: -1;"
-              >
-                <span
-                  class="m-input-style__text"
-                />
-              </span>
+                class="m-input-style__text"
+              />
+            </span>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <div
+                class="m-input-style__prefix"
+              />
                
               <div
-                class="m-input-style__input"
+                class="m-input-style__content"
               >
-                <div
-                  class="m-input-style__prefix"
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-controls="listbox-fakeId"
+                  aria-describedby="fakeId"
+                  class="m-textfield__input"
+                  id="m-typeahead-fakeId"
+                  maxlength="Infinity"
+                  placeholder="Fruits and vegetables"
+                  type="text"
                 />
+                   
+                <!---->
+                  
+                <!---->
                  
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    placeholder="Fruits and vegetables"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
               </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
             </div>
              
             <!---->
           </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
         </div>
       </div>
     </div>
@@ -569,11 +583,132 @@ exports[`Storyshots modul-components|m-typeahead filter-results-manually 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-typeahead list-max-height 110px 1`] = `
+<div
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
+  class="m-base-select m-typeahead"
+  input-max-width="288px"
+  role="combobox"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-base-select__popup"
+  >
+    <div
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+      cursor-pointer="true"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style__main"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="m-typeahead-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Fruits and vegetables
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-controls="listbox-fakeId"
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="m-typeahead-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-typeahead__validation-message"
+    id="validationMessageId"
+  >
+    <!---->
+     
+    <!---->
+  </div>
+   
+  <div
+    class="m-popper m-popup"
+  >
+     
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-typeahead max-results 1`] = `
 <div>
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-owns="listbox-fakeId"
     class="m-base-select m-typeahead"
     input-max-width="288px"
     role="combobox"
@@ -583,86 +718,90 @@ exports[`Storyshots modul-components|m-typeahead max-results 1`] = `
       class="m-base-select__popup"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
+        class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
         cursor-pointer="true"
-        id="m-typeahead-fakeId"
-        input-aria-autocomplete="list"
         style="width: 100%; max-width: 288px;"
       >
         <div
-          class="m-input-style m--has-label m--is-tag-default"
+          class="m-input-style__main"
           style="margin-top: 10px;"
         >
           <div
-            class="m-input-style__main"
+            class="m-input-style__body"
           >
-            <div
-              class="m-input-style__body"
+            <label
+              class="m-input-style__label"
+              for="m-typeahead-fakeId"
+              id="fakeId"
+              style="margin-right: 0px;"
             >
-              <label
-                class="m-input-style__label"
-                for="mTextfield-fakeId"
-                style="margin-right: 0px;"
+              <span
+                class="m-input-style__text"
               >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    Fruits and vegetables
-                  </span>
-                   
-                  <!---->
+                <span>
+                  Fruits and vegetables
                 </span>
-              </label>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
                
               <div
-                class="m-input-style__input"
+                class="m-input-style__content"
               >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-controls="listbox-fakeId"
+                  aria-describedby="fakeId"
+                  class="m-textfield__input"
+                  id="m-typeahead-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                  
                 <!---->
                  
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
               </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
             </div>
              
             <!---->
           </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
         </div>
       </div>
     </div>
@@ -714,93 +853,96 @@ exports[`Storyshots modul-components|m-typeahead max-results 1`] = `
 </div>
 `;
 
-exports[`Storyshots modul-components|m-typeahead popup-footer-slot 1`] = `
-<div>
+exports[`Storyshots modul-components|m-typeahead popup-footer slot 1`] = `
+<div
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-owns="listbox-fakeId"
+  class="m-base-select m-typeahead"
+  input-max-width="288px"
+  role="combobox"
+  style="width: 100%; max-width: 288px;"
+>
   <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    class="m-base-select m-typeahead"
-    input-max-width="288px"
-    role="combobox"
-    style="width: 100%; max-width: 288px;"
+    class="m-base-select__popup"
   >
     <div
-      class="m-base-select__popup"
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+      cursor-pointer="true"
+      style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
-        cursor-pointer="true"
-        id="m-typeahead-fakeId"
-        input-aria-autocomplete="list"
-        style="width: 100%; max-width: 288px;"
+        class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
-          class="m-input-style m--has-label m--is-tag-default"
-          style="margin-top: 10px;"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__main"
+          <label
+            class="m-input-style__label"
+            for="m-typeahead-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
-            <div
-              class="m-input-style__body"
+            <span
+              class="m-input-style__text"
             >
-              <label
-                class="m-input-style__label"
-                for="mTextfield-fakeId"
-                style="margin-right: 0px;"
-              >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    Fruits and vegetables
-                  </span>
-                   
-                  <!---->
-                </span>
-              </label>
+              <span>
+                Fruits and vegetables
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="list"
+                aria-controls="listbox-fakeId"
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="m-typeahead-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
+              <!---->
                
-              <div
-                class="m-input-style__input"
-              >
-                <!---->
-                 
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
+              <!---->
             </div>
              
-            <!---->
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
           </div>
         </div>
          
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
         <div
           class="m-textfield__validation"
+          id="fakeId"
         >
           <div
-            class="m-validation-message m-textfield__validation__message"
+            class="m-validation-message m-textfield__validation-message"
           >
             <!---->
              
@@ -811,22 +953,22 @@ exports[`Storyshots modul-components|m-typeahead popup-footer-slot 1`] = `
         </div>
       </div>
     </div>
+  </div>
+   
+  <div
+    class="m-validation-message m-typeahead__validation-message"
+    id="validationMessageId"
+  >
+    <!---->
      
-    <div
-      class="m-validation-message m-typeahead__validation-message"
-      id="validationMessageId"
-    >
-      <!---->
-       
-      <!---->
-    </div>
+    <!---->
+  </div>
+   
+  <div
+    class="m-popper m-popup"
+  >
      
-    <div
-      class="m-popper m-popup"
-    >
-       
-      <!---->
-    </div>
+    <!---->
   </div>
 </div>
 `;
@@ -836,6 +978,7 @@ exports[`Storyshots modul-components|m-typeahead/mobile iphone6 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-owns="listbox-fakeId"
     class="m-base-select m-typeahead"
     input-max-width="288px"
     role="combobox"
@@ -845,86 +988,90 @@ exports[`Storyshots modul-components|m-typeahead/mobile iphone6 1`] = `
       class="m-base-select__popup"
     >
       <div
-        class="m-textfield m--has-label m--is-type-text"
+        class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
         cursor-pointer="true"
-        id="m-typeahead-fakeId"
-        input-aria-autocomplete="list"
         style="width: 100%; max-width: 288px;"
       >
         <div
-          class="m-input-style m--has-label m--is-tag-default"
+          class="m-input-style__main"
           style="margin-top: 10px;"
         >
           <div
-            class="m-input-style__main"
+            class="m-input-style__body"
           >
-            <div
-              class="m-input-style__body"
+            <label
+              class="m-input-style__label"
+              for="m-typeahead-fakeId"
+              id="fakeId"
+              style="margin-right: 0px;"
             >
-              <label
-                class="m-input-style__label"
-                for="mTextfield-fakeId"
-                style="margin-right: 0px;"
+              <span
+                class="m-input-style__text"
               >
-                <span
-                  class="m-input-style__text"
-                >
-                  <span>
-                    Fruits and vegetables
-                  </span>
-                   
-                  <!---->
+                <span>
+                  Fruits and vegetables
                 </span>
-              </label>
+                 
+                <!---->
+              </span>
+            </label>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <!---->
                
               <div
-                class="m-input-style__input"
+                class="m-input-style__content"
               >
+                <input
+                  aria-activedescendant=""
+                  aria-autocomplete="list"
+                  aria-controls="listbox-fakeId"
+                  aria-describedby="fakeId"
+                  class="m-textfield__input"
+                  id="m-typeahead-fakeId"
+                  maxlength="Infinity"
+                  type="text"
+                />
+                   
+                <!---->
+                  
                 <!---->
                  
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
+                <!---->
               </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
             </div>
              
             <!---->
           </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
         </div>
       </div>
     </div>

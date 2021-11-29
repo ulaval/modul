@@ -11,11 +11,12 @@ exports[`Storyshots modul-components|m-timepicker Hide internal error messages 1
     style="width: 100%; max-width: 136px;"
   >
     <div
-      class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
+      class="m-input-style m-timepicker m--is-label-up m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; max-width: 136px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -45,6 +46,7 @@ exports[`Storyshots modul-components|m-timepicker Hide internal error messages 1
               class="m-input-style__content"
             >
               <input
+                aria-describedby="fakeId"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="15:15"
@@ -53,7 +55,7 @@ exports[`Storyshots modul-components|m-timepicker Hide internal error messages 1
                 step="300"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -94,19 +96,22 @@ exports[`Storyshots modul-components|m-timepicker Hide internal error messages 1
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-validation-message m-timepicker__validation-message"
-    >
-      <!---->
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
        
       <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-timepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -126,11 +131,12 @@ exports[`Storyshots modul-components|m-timepicker Skip internal validations 1`] 
     style="width: 100%; max-width: 136px;"
   >
     <div
-      class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="margin-top: 10px;"
+      class="m-input-style m-timepicker m--is-label-up m--has-label m--has-value m--is-tag-default"
+      style="width: 100%; max-width: 136px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -160,6 +166,7 @@ exports[`Storyshots modul-components|m-timepicker Skip internal validations 1`] 
               class="m-input-style__content"
             >
               <input
+                aria-describedby="fakeId"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="15:15"
@@ -168,7 +175,7 @@ exports[`Storyshots modul-components|m-timepicker Skip internal validations 1`] 
                 step="300"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -209,19 +216,22 @@ exports[`Storyshots modul-components|m-timepicker Skip internal validations 1`] 
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-validation-message m-timepicker__validation-message"
-    >
-      <!---->
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
        
       <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-timepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -237,11 +247,12 @@ exports[`Storyshots modul-components|m-timepicker default 1`] = `
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-timepicker m--is-tag-default"
+    style="width: 100%; max-width: 136px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -266,6 +277,7 @@ exports[`Storyshots modul-components|m-timepicker default 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -274,7 +286,7 @@ exports[`Storyshots modul-components|m-timepicker default 1`] = `
               step="300"
               type="text"
             />
-              
+               
             <!---->
              
             <!---->
@@ -315,19 +327,22 @@ exports[`Storyshots modul-components|m-timepicker default 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-timepicker__validation-message"
-  >
-    <!---->
+     
+    <div
+      class="m-popper m-popup"
+    >
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-timepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -340,11 +355,12 @@ exports[`Storyshots modul-components|m-timepicker label 1`] = `
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-timepicker m--has-label m--is-tag-default"
+    style="width: 100%; max-width: 288px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -374,6 +390,7 @@ exports[`Storyshots modul-components|m-timepicker label 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -382,7 +399,7 @@ exports[`Storyshots modul-components|m-timepicker label 1`] = `
               step="300"
               type="text"
             />
-              
+               
             <!---->
              
             <!---->
@@ -423,19 +440,22 @@ exports[`Storyshots modul-components|m-timepicker label 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-timepicker__validation-message"
-  >
-    <!---->
+     
+    <div
+      class="m-popper m-popup"
+    >
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-timepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -448,11 +468,12 @@ exports[`Storyshots modul-components|m-timepicker label-up 1`] = `
   style="width: 100%; max-width: 592px;"
 >
   <div
-    class="m-input-style m--is-label-up m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-timepicker m--is-label-up m--has-label m--is-tag-default"
+    style="width: 100%; max-width: 592px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -482,6 +503,7 @@ exports[`Storyshots modul-components|m-timepicker label-up 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -490,7 +512,7 @@ exports[`Storyshots modul-components|m-timepicker label-up 1`] = `
               step="300"
               type="text"
             />
-              
+               
             <!---->
              
             <!---->
@@ -531,19 +553,22 @@ exports[`Storyshots modul-components|m-timepicker label-up 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-timepicker__validation-message"
-  >
-    <!---->
+     
+    <div
+      class="m-popper m-popup"
+    >
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-timepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -556,11 +581,12 @@ exports[`Storyshots modul-components|m-timepicker max widht 1`] = `
   style="width: 100%; max-width: 896px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-timepicker m--is-tag-default"
+    style="width: 100%; max-width: 896px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -585,6 +611,7 @@ exports[`Storyshots modul-components|m-timepicker max widht 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -593,7 +620,7 @@ exports[`Storyshots modul-components|m-timepicker max widht 1`] = `
               step="300"
               type="text"
             />
-              
+               
             <!---->
              
             <!---->
@@ -634,19 +661,22 @@ exports[`Storyshots modul-components|m-timepicker max widht 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-timepicker__validation-message"
-  >
-    <!---->
+     
+    <div
+      class="m-popper m-popup"
+    >
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-timepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -659,11 +689,12 @@ exports[`Storyshots modul-components|m-timepicker min 8:45 / max 15:15 1`] = `
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-timepicker m--has-value m--is-tag-default"
+    style="width: 100%; max-width: 136px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -688,6 +719,7 @@ exports[`Storyshots modul-components|m-timepicker min 8:45 / max 15:15 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="15:15"
@@ -696,7 +728,7 @@ exports[`Storyshots modul-components|m-timepicker min 8:45 / max 15:15 1`] = `
               step="300"
               type="text"
             />
-              
+               
             <!---->
              
             <!---->
@@ -737,19 +769,22 @@ exports[`Storyshots modul-components|m-timepicker min 8:45 / max 15:15 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-timepicker__validation-message"
-  >
-    <!---->
+     
+    <div
+      class="m-popper m-popup"
+    >
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-timepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -763,11 +798,12 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
     style="width: 100%; max-width: 136px;"
   >
     <div
-      class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
+      class="m-input-style m-timepicker m--is-tag-default"
+      style="width: 100%; max-width: 136px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -792,6 +828,7 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
               class="m-input-style__content"
             >
               <input
+                aria-describedby="fakeId"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="23:59"
@@ -800,7 +837,7 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
                 step="300"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -841,19 +878,22 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-validation-message m-timepicker__validation-message"
-    >
-      <!---->
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
        
       <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-timepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -864,11 +904,12 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
     style="width: 100%; max-width: 136px;"
   >
     <div
-      class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
+      class="m-input-style m-timepicker m--is-tag-default"
+      style="width: 100%; max-width: 136px;"
     >
       <div
         class="m-input-style__main"
+        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -893,6 +934,7 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
               class="m-input-style__content"
             >
               <input
+                aria-describedby="fakeId"
                 id="mTimepicker-fakeId"
                 inputmode="decimal"
                 max="23:59"
@@ -901,7 +943,7 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
                 step="300"
                 type="text"
               />
-                
+                 
               <!---->
                
               <!---->
@@ -942,19 +984,22 @@ exports[`Storyshots modul-components|m-timepicker reactivity 1`] = `
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-validation-message m-timepicker__validation-message"
-    >
-      <!---->
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
        
       <!---->
     </div>
      
     <div
-      class="m-popper m-popup"
+      class="m-validation-message m-timepicker__validation-message"
+      id="fakeId"
     >
+      <!---->
        
       <!---->
     </div>
@@ -968,11 +1013,12 @@ exports[`Storyshots modul-components|m-timepicker required 1`] = `
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-timepicker m--has-label m--is-tag-default"
+    style="width: 100%; max-width: 136px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1009,6 +1055,7 @@ exports[`Storyshots modul-components|m-timepicker required 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -1018,7 +1065,7 @@ exports[`Storyshots modul-components|m-timepicker required 1`] = `
               step="300"
               type="text"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1059,19 +1106,22 @@ exports[`Storyshots modul-components|m-timepicker required 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-timepicker__validation-message"
-  >
-    <!---->
+     
+    <div
+      class="m-popper m-popup"
+    >
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-timepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>
@@ -1084,11 +1134,12 @@ exports[`Storyshots modul-components|m-timepicker step 15m 1`] = `
   style="width: 100%; max-width: 136px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-timepicker m--is-tag-default"
+    style="width: 100%; max-width: 136px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1113,6 +1164,7 @@ exports[`Storyshots modul-components|m-timepicker step 15m 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               id="mTimepicker-fakeId"
               inputmode="decimal"
               max="23:59"
@@ -1121,7 +1173,7 @@ exports[`Storyshots modul-components|m-timepicker step 15m 1`] = `
               step="900"
               type="text"
             />
-              
+               
             <!---->
              
             <!---->
@@ -1162,19 +1214,22 @@ exports[`Storyshots modul-components|m-timepicker step 15m 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-validation-message m-timepicker__validation-message"
-  >
-    <!---->
+     
+    <div
+      class="m-popper m-popup"
+    >
+       
+      <!---->
+    </div>
      
     <!---->
   </div>
    
   <div
-    class="m-popper m-popup"
+    class="m-validation-message m-timepicker__validation-message"
+    id="fakeId"
   >
+    <!---->
      
     <!---->
   </div>

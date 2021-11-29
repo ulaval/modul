@@ -7,374 +7,12 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
       class="m-copy-to-clipboard"
     >
       <div
-        class="m-textfield m--is-readonly m--is-type-text"
+        class="m-input-style m-textfield m--is-readonly m--is-tag-default m--is-type-text"
         style="width: 100%;"
-      >
-        <div
-          class="m-input-style m--is-readonly m--is-tag-default"
-          style="margin-top: 10px;"
-        >
-          <div
-            class="m-input-style__main"
-          >
-            <div
-              class="m-input-style__body"
-            >
-              <span
-                class="m-input-style__label"
-                style="z-index: -1;"
-              >
-                <span
-                  class="m-input-style__text"
-                />
-              </span>
-               
-              <div
-                class="m-input-style__input"
-              >
-                <div
-                  class="m-input-style__prefix"
-                />
-                 
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    placeholder="Disabled"
-                    readonly="readonly"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </div>
-             
-            <!---->
-          </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="m-copy-to-clipboard"
-    >
-      <div
-        class="m-textfield m--is-readonly m--is-type-text"
-        style="width: 100%;"
-      >
-        <div
-          class="m-input-style m--is-readonly m--is-tag-default"
-          style="margin-top: 10px;"
-        >
-          <div
-            class="m-input-style__main"
-          >
-            <div
-              class="m-input-style__body"
-            >
-              <span
-                class="m-input-style__label"
-                style="z-index: -1;"
-              >
-                <span
-                  class="m-input-style__text"
-                />
-              </span>
-               
-              <div
-                class="m-input-style__input"
-              >
-                <div
-                  class="m-input-style__prefix"
-                />
-                 
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    placeholder="Read-only"
-                    readonly="readonly"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <!---->
-                </div>
-              </div>
-            </div>
-             
-            <div
-              class="m-input-style__append"
-            >
-              <button
-                class="m-copy-to-clipboard__button"
-              >
-                Copier
-              </button>
-            </div>
-          </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-   
-  <div>
-    <div
-      class="m-copy-to-clipboard"
-    >
-      <div
-        class="m-textfield m--is-waiting m--is-type-text"
-        style="width: 100%;"
-      >
-        <div
-          class="m-input-style m--is-waiting m--is-tag-default"
-          style="margin-top: 10px;"
-        >
-          <div
-            class="m-input-style__main"
-          >
-            <div
-              class="m-input-style__body"
-            >
-              <span
-                class="m-input-style__label"
-                style="z-index: -1;"
-              >
-                <span
-                  class="m-input-style__text"
-                />
-              </span>
-               
-              <div
-                class="m-input-style__input"
-              >
-                <div
-                  class="m-input-style__prefix"
-                />
-                 
-                <div
-                  class="m-input-style__content"
-                >
-                  <input
-                    class="m-textfield__input"
-                    disabled="disabled"
-                    id="mTextfield-fakeId"
-                    maxlength="Infinity"
-                    placeholder="Waiting"
-                    type="text"
-                  />
-                     
-                  <!---->
-                   
-                  <!---->
-                   
-                  <!---->
-                </div>
-                 
-                <div
-                  class="m-input-style__suffix"
-                >
-                  <!---->
-                   
-                  <div
-                    class="m-spinner m-input-style__spinner"
-                  >
-                    <!---->
-                     
-                    <div />
-                  </div>
-                </div>
-              </div>
-            </div>
-             
-            <!---->
-          </div>
-        </div>
-         
-        <div
-          class="m-textfield__validation"
-        >
-          <div
-            class="m-validation-message m-textfield__validation__message"
-          >
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-copy-to-clipboard custom 1`] = `
-<div>
-  <div
-    class="m-copy-to-clipboard"
-  >
-    <div
-      class="m-textfield m--is-readonly m--has-label m--is-type-text"
-      style="width: 100%; max-width: 288px;"
-    >
-      <div
-        class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__main"
-        >
-          <div
-            class="m-input-style__body"
-          >
-            <label
-              class="m-input-style__label"
-              for="mTextfield-fakeId"
-              style="margin-right: 0px;"
-            >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  some label
-                </span>
-                 
-                <!---->
-              </span>
-            </label>
-             
-            <div
-              class="m-input-style__input"
-            >
-              <!---->
-               
-              <div
-                class="m-input-style__content"
-              >
-                <input
-                  class="m-textfield__input"
-                  id="mTextfield-fakeId"
-                  maxlength="Infinity"
-                  readonly="readonly"
-                  type="text"
-                />
-                   
-                <!---->
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
-            </div>
-          </div>
-           
-          <!---->
-        </div>
-      </div>
-       
-      <div
-        class="m-textfield__validation"
-      >
-        <div
-          class="m-validation-message m-textfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <button>
-      Some button
-    </button>
-  </div>
-   
-  <div
-    class="m-copy-to-clipboard"
-  >
-    <div
-      class="m-textfield m--is-readonly m--is-type-text"
-      style="width: 100%;"
-    >
-      <div
-        class="m-input-style m--is-readonly m--has-value m--is-tag-default"
-        style="margin-top: 10px;"
-      >
-        <div
-          class="m-input-style__main"
+          style="margin-top: 10px;"
         >
           <div
             class="m-input-style__body"
@@ -399,15 +37,17 @@ exports[`Storyshots modul-components|m-copy-to-clipboard custom 1`] = `
                 class="m-input-style__content"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-textfield__input"
                   id="mTextfield-fakeId"
                   maxlength="Infinity"
+                  placeholder="Disabled"
                   readonly="readonly"
                   type="text"
                 />
                    
                 <!---->
-                 
+                  
                 <!---->
                  
                 <!---->
@@ -417,7 +57,93 @@ exports[`Storyshots modul-components|m-copy-to-clipboard custom 1`] = `
                 class="m-input-style__suffix"
               >
                 <!---->
+                  
+                <!---->
+              </div>
+            </div>
+          </div>
+           
+          <!---->
+        </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="m-copy-to-clipboard"
+    >
+      <div
+        class="m-input-style m-textfield m--is-readonly m--is-tag-default m--is-type-text"
+        style="width: 100%;"
+      >
+        <div
+          class="m-input-style__main"
+          style="margin-top: 10px;"
+        >
+          <div
+            class="m-input-style__body"
+          >
+            <span
+              class="m-input-style__label"
+              style="z-index: -1;"
+            >
+              <span
+                class="m-input-style__text"
+              />
+            </span>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <div
+                class="m-input-style__prefix"
+              />
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  aria-describedby="fakeId"
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  placeholder="Read-only"
+                  readonly="readonly"
+                  type="text"
+                />
+                   
+                <!---->
+                  
+                <!---->
                  
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
                 <!---->
               </div>
             </div>
@@ -426,25 +152,310 @@ exports[`Storyshots modul-components|m-copy-to-clipboard custom 1`] = `
           <div
             class="m-input-style__append"
           >
-            <button>
-              Some button
+            <button
+              class="m-copy-to-clipboard__button"
+            >
+              Copier
             </button>
           </div>
         </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <!---->
+          </div>
+        </div>
       </div>
-       
+    </div>
+  </div>
+   
+  <div>
+    <div
+      class="m-copy-to-clipboard"
+    >
       <div
-        class="m-textfield__validation"
+        class="m-input-style m-textfield m--is-waiting m--is-tag-default m--is-type-text"
+        style="width: 100%;"
       >
         <div
-          class="m-validation-message m-textfield__validation__message"
+          class="m-input-style__main"
+          style="margin-top: 10px;"
         >
-          <!---->
+          <div
+            class="m-input-style__body"
+          >
+            <span
+              class="m-input-style__label"
+              style="z-index: -1;"
+            >
+              <span
+                class="m-input-style__text"
+              />
+            </span>
+             
+            <div
+              class="m-input-style__input"
+            >
+              <div
+                class="m-input-style__prefix"
+              />
+               
+              <div
+                class="m-input-style__content"
+              >
+                <input
+                  aria-describedby="fakeId"
+                  class="m-textfield__input"
+                  id="mTextfield-fakeId"
+                  maxlength="Infinity"
+                  placeholder="Waiting"
+                  readonly="readonly"
+                  type="text"
+                />
+                   
+                <!---->
+                  
+                <!---->
+                 
+                <!---->
+              </div>
+               
+              <div
+                class="m-input-style__suffix"
+              >
+                <!---->
+                  
+                <div
+                  class="m-spinner m-input-style__spinner"
+                >
+                  <!---->
+                   
+                  <div />
+                </div>
+              </div>
+            </div>
+          </div>
            
           <!---->
         </div>
+          
+        <div
+          class="m-input-style__validation"
+        >
+          <div
+            class="m-textfield__validation"
+            id="fakeId"
+          >
+            <div
+              class="m-validation-message m-textfield__validation-message"
+            >
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-copy-to-clipboard custom 1`] = `
+<div>
+  <div
+    class="m-copy-to-clipboard"
+  >
+    <div
+      class="m-input-style m-textfield m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default m--is-type-text"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-input-style__main"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mTextfield-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                some label
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                readonly="readonly"
+                type="text"
+              />
+                 
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
          
         <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <button>
+      Some button
+    </button>
+  </div>
+   
+  <div
+    class="m-copy-to-clipboard"
+  >
+    <div
+      class="m-input-style m-textfield m--is-readonly m--has-value m--is-tag-default m--is-type-text"
+      style="width: 100%;"
+    >
+      <div
+        class="m-input-style__main"
+        style="margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <span
+            class="m-input-style__label"
+            style="z-index: -1;"
+          >
+            <span
+              class="m-input-style__text"
+            />
+          </span>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <div
+              class="m-input-style__prefix"
+            />
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                readonly="readonly"
+                type="text"
+              />
+                 
+              <!---->
+                
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <div
+          class="m-input-style__append"
+        >
+          <button>
+            Some button
+          </button>
+        </div>
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <!---->
+        </div>
       </div>
     </div>
   </div>
@@ -456,87 +467,89 @@ exports[`Storyshots modul-components|m-copy-to-clipboard custom user feedback 1`
   class="m-copy-to-clipboard"
 >
   <div
-    class="m-textfield m--is-readonly m--is-type-text"
+    class="m-input-style m-textfield m--is-readonly m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%;"
   >
     <div
-      class="m-input-style m--is-readonly m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <div
-              class="m-input-style__prefix"
-            />
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                readonly="readonly"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
+            class="m-input-style__text"
+          />
+        </span>
          
         <div
-          class="m-input-style__append"
+          class="m-input-style__input"
         >
-          <button
-            class="m-copy-to-clipboard__button"
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
           >
-            Copier
-          </button>
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              readonly="readonly"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
         </div>
       </div>
+       
+      <div
+        class="m-input-style__append"
+      >
+        <button
+          class="m-copy-to-clipboard__button"
+        >
+          Copier
+        </button>
+      </div>
     </div>
-     
+      
     <div
-      class="m-textfield__validation"
+      class="m-input-style__validation"
     >
       <div
-        class="m-validation-message m-textfield__validation__message"
+        class="m-textfield__validation"
+        id="fakeId"
       >
-        <!---->
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
          
         <!---->
       </div>
-       
-      <!---->
     </div>
   </div>
 </div>
@@ -547,87 +560,89 @@ exports[`Storyshots modul-components|m-copy-to-clipboard default 1`] = `
   class="m-copy-to-clipboard"
 >
   <div
-    class="m-textfield m--is-readonly m--is-type-text"
+    class="m-input-style m-textfield m--is-readonly m--is-tag-default m--is-type-text"
     style="width: 100%;"
   >
     <div
-      class="m-input-style m--is-readonly m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <div
-              class="m-input-style__prefix"
-            />
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                readonly="readonly"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
+            class="m-input-style__text"
+          />
+        </span>
          
         <div
-          class="m-input-style__append"
+          class="m-input-style__input"
         >
-          <button
-            class="m-copy-to-clipboard__button"
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
           >
-            Copier
-          </button>
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              readonly="readonly"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
         </div>
       </div>
+       
+      <div
+        class="m-input-style__append"
+      >
+        <button
+          class="m-copy-to-clipboard__button"
+        >
+          Copier
+        </button>
+      </div>
     </div>
-     
+      
     <div
-      class="m-textfield__validation"
+      class="m-input-style__validation"
     >
       <div
-        class="m-validation-message m-textfield__validation__message"
+        class="m-textfield__validation"
+        id="fakeId"
       >
-        <!---->
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
          
         <!---->
       </div>
-       
-      <!---->
     </div>
   </div>
 </div>
@@ -638,87 +653,89 @@ exports[`Storyshots modul-components|m-copy-to-clipboard default with value 1`] 
   class="m-copy-to-clipboard"
 >
   <div
-    class="m-textfield m--is-readonly m--is-type-text"
+    class="m-input-style m-textfield m--is-readonly m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%;"
   >
     <div
-      class="m-input-style m--is-readonly m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <div
-              class="m-input-style__prefix"
-            />
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                readonly="readonly"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
+            class="m-input-style__text"
+          />
+        </span>
          
         <div
-          class="m-input-style__append"
+          class="m-input-style__input"
         >
-          <button
-            class="m-copy-to-clipboard__button"
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
           >
-            Copier
-          </button>
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              readonly="readonly"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
         </div>
       </div>
+       
+      <div
+        class="m-input-style__append"
+      >
+        <button
+          class="m-copy-to-clipboard__button"
+        >
+          Copier
+        </button>
+      </div>
     </div>
-     
+      
     <div
-      class="m-textfield__validation"
+      class="m-input-style__validation"
     >
       <div
-        class="m-validation-message m-textfield__validation__message"
+        class="m-textfield__validation"
+        id="fakeId"
       >
-        <!---->
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
          
         <!---->
       </div>
-       
-      <!---->
     </div>
   </div>
 </div>
@@ -729,87 +746,89 @@ exports[`Storyshots modul-components|m-copy-to-clipboard user feedback 1`] = `
   class="m-copy-to-clipboard"
 >
   <div
-    class="m-textfield m--is-readonly m--is-type-text"
+    class="m-input-style m-textfield m--is-readonly m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%;"
   >
     <div
-      class="m-input-style m--is-readonly m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <div
-              class="m-input-style__prefix"
-            />
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                readonly="readonly"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
+            class="m-input-style__text"
+          />
+        </span>
          
         <div
-          class="m-input-style__append"
+          class="m-input-style__input"
         >
-          <button
-            class="m-copy-to-clipboard__button"
+          <div
+            class="m-input-style__prefix"
+          />
+           
+          <div
+            class="m-input-style__content"
           >
-            Copier
-          </button>
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              readonly="readonly"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
         </div>
       </div>
+       
+      <div
+        class="m-input-style__append"
+      >
+        <button
+          class="m-copy-to-clipboard__button"
+        >
+          Copier
+        </button>
+      </div>
     </div>
-     
+      
     <div
-      class="m-textfield__validation"
+      class="m-input-style__validation"
     >
       <div
-        class="m-validation-message m-textfield__validation__message"
+        class="m-textfield__validation"
+        id="fakeId"
       >
-        <!---->
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
          
         <!---->
       </div>
-       
-      <!---->
     </div>
   </div>
 </div>

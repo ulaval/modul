@@ -2,53 +2,133 @@
 
 exports[`Storyshots modul-components|m-textfield custom styles 1`] = `
 <div
-  class="m-textfield m-textfield-stories m--has-label m--is-type-text"
+  class="m-input-style m-textfield m-textfield-stories m--is-label-up m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-label-up m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
+      class="m-input-style__body"
+    >
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
+      >
+        <span
+          class="m-input-style__text"
+        >
+          <span>
+            label
+          </span>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
+         
+        <div
+          class="m-input-style__content"
+        >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            placeholder="placeholder"
+            type="text"
+          />
+             
+          <!---->
+            
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-textfield default 1`] = `
+<div>
+  <div
+    class="m-input-style m-textfield m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
       >
-        <label
+        <span
           class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+          style="z-index: -1;"
         >
           <span
             class="m-input-style__text"
-          >
-            <span>
-              label
-            </span>
-             
-            <!---->
-          </span>
-        </label>
+          />
+        </span>
          
         <div
           class="m-input-style__input"
         >
-          <!---->
+          <div
+            class="m-input-style__prefix"
+          />
            
           <div
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               class="m-textfield__input"
               id="mTextfield-fakeId"
               maxlength="Infinity"
-              placeholder="placeholder"
               type="text"
             />
                
             <!---->
-             
+              
             <!---->
              
             <!---->
@@ -58,7 +138,7 @@ exports[`Storyshots modul-components|m-textfield custom styles 1`] = `
             class="m-input-style__suffix"
           >
             <!---->
-             
+              
             <!---->
           </div>
         </div>
@@ -66,99 +146,24 @@ exports[`Storyshots modul-components|m-textfield custom styles 1`] = `
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
+      
     <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-textfield default 1`] = `
-<div>
-  <div
-    class="m-textfield m--is-type-text"
-    style="width: 100%; max-width: 288px;"
-  >
-    <div
-      class="m-input-style m--is-tag-default"
-      style="margin-top: 10px;"
+      class="m-input-style__validation"
     >
       <div
-        class="m-input-style__main"
+        class="m-textfield__validation"
+        id="fakeId"
       >
         <div
-          class="m-input-style__body"
+          class="m-validation-message m-textfield__validation-message"
         >
-          <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
+          <!---->
            
-          <div
-            class="m-input-style__input"
-          >
-            <div
-              class="m-input-style__prefix"
-            />
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
+          <!---->
         </div>
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
     </div>
   </div>
   <br />
@@ -168,1273 +173,1295 @@ exports[`Storyshots modul-components|m-textfield default 1`] = `
 
 exports[`Storyshots modul-components|m-textfield disabled 1`] = `
 <div
-  class="m-textfield m--is-disabled m--is-type-text"
+  class="m-input-style m-textfield m--is-disabled m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-disabled m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            disabled="disabled"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              disabled="disabled"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield error 1`] = `
 <div
-  class="m-textfield m--has-error m--is-type-tel"
+  class="m-input-style m-textfield m--has-error m--has-value m--is-tag-default m--is-type-tel"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-error m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            aria-invalid="true"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="tel"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              aria-invalid="true"
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="tel"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield error-message 1`] = `
 <div
-  class="m-textfield m--has-error m--has-validation-message m--is-type-tel"
+  class="m-input-style m-textfield m--has-error m--has-value m--has-validation-message m--is-tag-default m--is-type-tel"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-error m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            aria-invalid="true"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="tel"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              aria-invalid="true"
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="tel"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <p
+          aria-live="polite"
+          class="m-validation-message__error"
+        >
+          <svg
+            class="m-svg m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Erreur
+            </title>
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            This is an Error
+          </span>
+        </p>
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <p
-        aria-live="polite"
-        class="m-validation-message__error"
-      >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
-        >
-          <title>
-            Erreur
-          </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
-        <span
-          class="m-validation-message__text"
-        >
-          This is an Error
-        </span>
-      </p>
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield focus 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              label
-            </span>
-             
-            <!---->
+          <span>
+            label
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            placeholder="placeholder"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              placeholder="placeholder"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield helper-message 1`] = `
 <div
-  class="m-textfield m--has-validation-message m--is-type-tel"
+  class="m-input-style m-textfield m--has-value m--has-validation-message m--is-tag-default m--is-type-tel"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="tel"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="tel"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <p
+          class="m-validation-message__helper"
+        >
+          This message is here to help you
+        </p>
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <p
-        class="m-validation-message__helper"
-      >
-        This message is here to help you
-      </p>
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield label 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              A Label
-            </span>
-             
-            <!---->
+          <span>
+            A Label
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield label-up 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--is-label-up m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-label-up m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              label
-            </span>
-             
-            <!---->
+          <span>
+            label
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            placeholder="placeholder"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              placeholder="placeholder"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield placeholder 1`] = `
 <div
-  class="m-textfield m--is-type-text"
+  class="m-input-style m-textfield m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            placeholder="A placeholder"
+            type="text"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              placeholder="A placeholder"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield readonly 1`] = `
 <div
-  class="m-textfield m--is-readonly m--is-type-text"
+  class="m-input-style m-textfield m--is-readonly m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-readonly m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            readonly="readonly"
+            type="text"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              readonly="readonly"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield required-marker 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
+          <span>
+            Label
+          </span>
+           
+          <sup
+            aria-hidden="true"
+            class="m-input-style__required-marker"
           >
-            <span>
-              Label
-            </span>
-             
-            <sup
-              aria-hidden="true"
-              class="m-input-style__required-marker"
-            >
-              
+            
                         *
                     
-            </sup>
-          </span>
-        </label>
+          </sup>
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            aria-required="true"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            required="required"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              aria-required="true"
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              required="required"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield valid 1`] = `
 <div
-  class="m-textfield m--is-valid m--is-type-tel"
+  class="m-input-style m-textfield m--is-valid m--has-value m--is-tag-default m--is-type-tel"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-valid m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="tel"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="tel"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield valid-message 1`] = `
 <div
-  class="m-textfield m--is-valid m--has-validation-message m--is-type-tel"
+  class="m-input-style m-textfield m--is-valid m--has-value m--has-validation-message m--is-tag-default m--is-type-tel"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-valid m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="tel"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="tel"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <p
+          aria-live="polite"
+          class="m-validation-message__valid"
+        >
+          <svg
+            class="m-svg m-validation-message__icon"
+            height="1em"
+            width="1em"
+          >
+            <title>
+              Valide
+            </title>
+          </svg>
+           
+          <span
+            class="m-validation-message__text"
+          >
+            This is not an Error
+          </span>
+        </p>
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <p
-        aria-live="polite"
-        class="m-validation-message__valid"
-      >
-        <svg
-          class="m-icon m-validation-message__icon"
-          height="1em"
-          width="1em"
-        >
-          <title>
-            Valide
-          </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
-        </svg>
-         
-        <span
-          class="m-validation-message__text"
-        >
-          This is not an Error
-        </span>
-      </p>
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield value 1`] = `
 <div
-  class="m-textfield m--is-type-text"
+  class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield waiting 1`] = `
 <div
-  class="m-textfield m--is-waiting m--is-type-text"
+  class="m-input-style m-textfield m--is-waiting m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-waiting m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            readonly="readonly"
+            type="text"
           />
-           
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              disabled="disabled"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
              
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
+            
+          <!---->
            
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
           <div
-            class="m-input-style__suffix"
+            class="m-spinner m-input-style__spinner"
           >
             <!---->
              
-            <div
-              class="m-spinner m-input-style__spinner"
-            >
-              <!---->
-               
-              <div />
-            </div>
+            <div />
           </div>
         </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield word-wrap 1`] = `
 <div
-  class="m-textfield m--is-waiting m--has-word-wrap m--is-type-text"
+  class="m-input-style m-textfield m--is-waiting m--has-value m--is-tag-default m--has-word-wrap m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-waiting m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <!---->
+             
+          <textarea
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            readonly="readonly"
+            rows="1"
           />
+            
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
            
           <div
-            class="m-input-style__content"
+            class="m-spinner m-input-style__spinner"
           >
             <!---->
              
-            <!---->
-              
-            <textarea
-              class="m-textfield__input"
-              disabled="disabled"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              rows="1"
-            />
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <div
-              class="m-spinner m-input-style__spinner"
-            >
-              <!---->
-               
-              <div />
-            </div>
+            <div />
           </div>
         </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
@@ -1442,87 +1469,90 @@ exports[`Storyshots modul-components|m-textfield word-wrap 1`] = `
 exports[`Storyshots modul-components|m-textfield/Counter all props 1`] = `
 <div>
   <div
-    class="m-textfield m--has-label m--is-type-text"
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--has-label m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
         >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
+          <span
+            class="m-input-style__text"
           >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                Enter a value
-              </span>
-               
-              <!---->
+            <span>
+              Enter a value
             </span>
-          </label>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
            
           <div
-            class="m-input-style__input"
+            class="m-input-style__content"
           >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="20"
+              placeholder="change knobs to further test"
+              type="text"
+            />
+               
+            <!---->
+              
             <!---->
              
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="20"
-                placeholder="change knobs to further test"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
           </div>
         </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
       </div>
        
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
       <div
-        class="m-character-count m-textfield__validation__character-count"
+        class="m-textfield__validation"
+        id="fakeId"
       >
-        <!---->
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-character-count m-textfield__validation-character-count"
+        >
+          <!---->
+        </div>
       </div>
     </div>
   </div>
@@ -1590,90 +1620,92 @@ exports[`Storyshots modul-components|m-textfield/Counter all props 1`] = `
 exports[`Storyshots modul-components|m-textfield/Counter character-count 1`] = `
 <div>
   <div
-    class="m-textfield m--is-type-text"
+    class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
            
           <div
-            class="m-input-style__input"
+            class="m-input-style__content"
           >
-            <div
-              class="m-input-style__prefix"
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              placeholder="Enter a value"
+              type="text"
             />
+               
+            <!---->
+              
+            <!---->
              
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                placeholder="Enter a value"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
           </div>
         </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
       </div>
        
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
       <div
-        class="m-character-count m-textfield__validation__character-count"
+        class="m-textfield__validation"
+        id="fakeId"
       >
         <div
-          aria-hidden="true"
-          aria-live="polite"
-          class="m-character-count__wrap"
+          class="m-validation-message m-textfield__validation-message"
         >
-          <span>
-            15
-          </span>
-          /20
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-character-count m-textfield__validation-character-count"
+        >
+          <div
+            aria-hidden="true"
+            aria-live="polite"
+            class="m-character-count__wrap"
+          >
+            <span>
+              15
+            </span>
+            /20
+          </div>
         </div>
       </div>
     </div>
@@ -1714,90 +1746,92 @@ exports[`Storyshots modul-components|m-textfield/Counter character-count 1`] = `
 exports[`Storyshots modul-components|m-textfield/Counter character-count-threshold="10" 1`] = `
 <div>
   <div
-    class="m-textfield m--is-type-text"
+    class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
            
           <div
-            class="m-input-style__input"
+            class="m-input-style__content"
           >
-            <div
-              class="m-input-style__prefix"
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              placeholder="Enter a value"
+              type="text"
             />
+               
+            <!---->
+              
+            <!---->
              
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                placeholder="Enter a value"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
           </div>
         </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
       </div>
        
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
       <div
-        class="m-character-count m-textfield__validation__character-count"
+        class="m-textfield__validation"
+        id="fakeId"
       >
         <div
-          aria-hidden="true"
-          aria-live="polite"
-          class="m-character-count__wrap"
+          class="m-validation-message m-textfield__validation-message"
         >
-          <span>
-            15
-          </span>
-          /20
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-character-count m-textfield__validation-character-count"
+        >
+          <div
+            aria-hidden="true"
+            aria-live="polite"
+            class="m-character-count__wrap"
+          >
+            <span>
+              15
+            </span>
+            /20
+          </div>
         </div>
       </div>
     </div>
@@ -1852,79 +1886,81 @@ exports[`Storyshots modul-components|m-textfield/Counter character-count-thresho
 exports[`Storyshots modul-components|m-textfield/Counter length-overflow="true" 1`] = `
 <div>
   <div
-    class="m-textfield m--is-type-text"
+    class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
            
           <div
-            class="m-input-style__input"
+            class="m-input-style__content"
           >
-            <div
-              class="m-input-style__prefix"
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              placeholder="Enter a value"
+              type="text"
             />
+               
+            <!---->
+              
+            <!---->
              
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                placeholder="Enter a value"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
+            <!---->
           </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
         </div>
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
     </div>
   </div>
    
@@ -1963,79 +1999,81 @@ exports[`Storyshots modul-components|m-textfield/Counter length-overflow="true" 
 exports[`Storyshots modul-components|m-textfield/Counter max-length="20" 1`] = `
 <div>
   <div
-    class="m-textfield m--is-type-text"
+    class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
            
           <div
-            class="m-input-style__input"
+            class="m-input-style__content"
           >
-            <div
-              class="m-input-style__prefix"
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="20"
+              placeholder="Enter a value"
+              type="text"
             />
+               
+            <!---->
+              
+            <!---->
              
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="20"
-                placeholder="Enter a value"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
+            <!---->
           </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
         </div>
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
     </div>
   </div>
    
@@ -2074,80 +2112,80 @@ exports[`Storyshots modul-components|m-textfield/Counter max-length="20" 1`] = `
 exports[`Storyshots modul-components|m-textfield/Counter max-length="200" and :word-wrap="true" 1`] = `
 <div>
   <div
-    class="m-textfield m--has-word-wrap m--is-type-text"
+    class="m-input-style m-textfield m--has-value m--is-tag-default m--has-word-wrap m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
-      class="m-input-style m--has-value m--is-tag-default"
+      class="m-input-style__main"
       style="margin-top: 10px;"
     >
       <div
-        class="m-input-style__main"
+        class="m-input-style__body"
       >
-        <div
-          class="m-input-style__body"
+        <span
+          class="m-input-style__label"
+          style="z-index: -1;"
         >
           <span
-            class="m-input-style__label"
-            style="z-index: -1;"
-          >
-            <span
-              class="m-input-style__text"
-            />
-          </span>
+            class="m-input-style__text"
+          />
+        </span>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <div
+            class="m-input-style__prefix"
+          />
            
           <div
-            class="m-input-style__input"
+            class="m-input-style__content"
           >
-            <div
-              class="m-input-style__prefix"
+            <!---->
+               
+            <textarea
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="200"
+              placeholder="Enter a value"
+              rows="1"
             />
+              
+            <!---->
              
-            <div
-              class="m-input-style__content"
-            >
-              <!---->
-               
-              <!---->
-                
-              <textarea
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="200"
-                placeholder="Enter a value"
-                rows="1"
-              />
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-               
-              <!---->
-            </div>
+            <!---->
           </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+             
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
         </div>
          
         <!---->
       </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
     </div>
   </div>
    
@@ -2199,332 +2237,344 @@ exports[`Storyshots modul-components|m-textfield/Counter max-length="200" and :w
 
 exports[`Storyshots modul-components|m-textfield/max-width all max-width presets 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              regular
-            </span>
-             
-            <!---->
+          <span>
+            regular
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/max-width custom width 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 333px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              width='333px' / max-width='none'
-            </span>
-             
-            <!---->
+          <span>
+            width='333px' / max-width='none'
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/max-width large 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 896px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              large
-            </span>
-             
-            <!---->
+          <span>
+            large
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/max-width medium 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 592px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              medium
-            </span>
-             
-            <!---->
+          <span>
+            medium
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
@@ -2532,836 +2582,12 @@ exports[`Storyshots modul-components|m-textfield/max-width medium 1`] = `
 exports[`Storyshots modul-components|m-textfield/max-width pyramid 1`] = `
 <div>
   <div
-    class="m-textfield m--has-label m--is-type-text"
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 60px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                xs
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 60px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                xs
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 60px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                xs
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 60px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                xs
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <br />
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 136px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                small
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 136px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                small
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <br />
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 288px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                regular
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 288px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                regular
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <br />
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 592px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                medium
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-   
-  <br />
-   
-  <div
-    class="m-textfield m--has-label m--is-type-text"
-    style="width: 100%; max-width: 896px;"
-  >
-    <div
-      class="m-input-style m--has-label m--is-tag-default"
-      style="margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mTextfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                large
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                class="m-textfield__input"
-                id="mTextfield-fakeId"
-                maxlength="Infinity"
-                type="text"
-              />
-                 
-              <!---->
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-              <!---->
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-     
-    <div
-      class="m-textfield__validation"
-    >
-      <div
-        class="m-validation-message m-textfield__validation__message"
-      >
-        <!---->
-         
-        <!---->
-      </div>
-       
-      <!---->
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-textfield/max-width regular 1`] = `
-<div
-  class="m-textfield m--has-label m--is-type-text"
-  style="width: 100%; max-width: 288px;"
->
-  <div
-    class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -3369,13 +2595,14 @@ exports[`Storyshots modul-components|m-textfield/max-width regular 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-fakeId"
+          id="fakeId"
           style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
           >
             <span>
-              regular
+              xs
             </span>
              
             <!---->
@@ -3391,6 +2618,7 @@ exports[`Storyshots modul-components|m-textfield/max-width regular 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               class="m-textfield__input"
               id="mTextfield-fakeId"
               maxlength="Infinity"
@@ -3398,7 +2626,7 @@ exports[`Storyshots modul-components|m-textfield/max-width regular 1`] = `
             />
                
             <!---->
-             
+              
             <!---->
              
             <!---->
@@ -3408,7 +2636,7 @@ exports[`Storyshots modul-components|m-textfield/max-width regular 1`] = `
             class="m-input-style__suffix"
           >
             <!---->
-             
+              
             <!---->
           </div>
         </div>
@@ -3416,35 +2644,34 @@ exports[`Storyshots modul-components|m-textfield/max-width regular 1`] = `
        
       <!---->
     </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
   </div>
    
   <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-textfield/max-width small 1`] = `
-<div
-  class="m-textfield m--has-label m--is-type-text"
-  style="width: 100%; max-width: 136px;"
->
-  <div
-    class="m-input-style m--has-label m--is-tag-default"
-    style="margin-top: 10px;"
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 60px;"
   >
     <div
       class="m-input-style__main"
+      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -3452,6 +2679,261 @@ exports[`Storyshots modul-components|m-textfield/max-width small 1`] = `
         <label
           class="m-input-style__label"
           for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              xs
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 60px;"
+  >
+    <div
+      class="m-input-style__main"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              xs
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 60px;"
+  >
+    <div
+      class="m-input-style__main"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              xs
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <br />
+   
+  <div
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 136px;"
+  >
+    <div
+      class="m-input-style__main"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
           style="margin-right: 0px;"
         >
           <span
@@ -3474,6 +2956,7 @@ exports[`Storyshots modul-components|m-textfield/max-width small 1`] = `
             class="m-input-style__content"
           >
             <input
+              aria-describedby="fakeId"
               class="m-textfield__input"
               id="mTextfield-fakeId"
               maxlength="Infinity"
@@ -3481,7 +2964,7 @@ exports[`Storyshots modul-components|m-textfield/max-width small 1`] = `
             />
                
             <!---->
-             
+              
             <!---->
              
             <!---->
@@ -3491,7 +2974,7 @@ exports[`Storyshots modul-components|m-textfield/max-width small 1`] = `
             class="m-input-style__suffix"
           >
             <!---->
-             
+              
             <!---->
           </div>
         </div>
@@ -3499,765 +2982,1390 @@ exports[`Storyshots modul-components|m-textfield/max-width small 1`] = `
        
       <!---->
     </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
   </div>
    
   <div
-    class="m-textfield__validation"
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 136px;"
   >
     <div
-      class="m-validation-message m-textfield__validation__message"
+      class="m-input-style__main"
+      style="margin-top: 10px;"
     >
-      <!---->
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              small
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
        
       <!---->
     </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <br />
+   
+  <div
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style__main"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              regular
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      class="m-input-style__main"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              regular
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <br />
+   
+  <div
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 592px;"
+  >
+    <div
+      class="m-input-style__main"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              medium
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+   
+  <br />
+   
+  <div
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    style="width: 100%; max-width: 896px;"
+  >
+    <div
+      class="m-input-style__main"
+      style="margin-top: 10px;"
+    >
+      <div
+        class="m-input-style__body"
+      >
+        <label
+          class="m-input-style__label"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
+        >
+          <span
+            class="m-input-style__text"
+          >
+            <span>
+              large
+            </span>
+             
+            <!---->
+          </span>
+        </label>
+         
+        <div
+          class="m-input-style__input"
+        >
+          <!---->
+           
+          <div
+            class="m-input-style__content"
+          >
+            <input
+              aria-describedby="fakeId"
+              class="m-textfield__input"
+              id="mTextfield-fakeId"
+              maxlength="Infinity"
+              type="text"
+            />
+               
+            <!---->
+              
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-input-style__suffix"
+          >
+            <!---->
+              
+            <!---->
+          </div>
+        </div>
+      </div>
+       
+      <!---->
+    </div>
+      
+    <div
+      class="m-input-style__validation"
+    >
+      <div
+        class="m-textfield__validation"
+        id="fakeId"
+      >
+        <div
+          class="m-validation-message m-textfield__validation-message"
+        >
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-textfield/max-width regular 1`] = `
+<div
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style__main"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__body"
+    >
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
+      >
+        <span
+          class="m-input-style__text"
+        >
+          <span>
+            regular
+          </span>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
+         
+        <div
+          class="m-input-style__content"
+        >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
      
     <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-textfield/max-width small 1`] = `
+<div
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+  style="width: 100%; max-width: 136px;"
+>
+  <div
+    class="m-input-style__main"
+    style="margin-top: 10px;"
+  >
+    <div
+      class="m-input-style__body"
+    >
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
+      >
+        <span
+          class="m-input-style__text"
+        >
+          <span>
+            small
+          </span>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
+         
+        <div
+          class="m-input-style__content"
+        >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
+          <!---->
+           
+          <!---->
+        </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/max-width x-small 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 60px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              x-small
-            </span>
-             
-            <!---->
+          <span>
+            x-small
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/tag-style all tag styles 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--is-label-up m--has-label m--has-value m--is-tag-h3 m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-h3"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              h3
-            </span>
-             
-            <!---->
+          <span>
+            h3
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/type all types 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-text"
+  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-label m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              text
-            </span>
-             
-            <!---->
+          <span>
+            text
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            placeholder="text"
+            type="text"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              placeholder="text"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/type type="email" 1`] = `
 <div
-  class="m-textfield m--is-type-email"
+  class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-email"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="email"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="email"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/type type="number" 1`] = `
 <div
-  class="m-textfield m--is-type-number"
+  class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-number"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="number"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="number"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/type type="password" 1`] = `
 <div
-  class="m-textfield m--has-label m--is-type-password"
+  class="m-input-style m-textfield m--is-label-up m--has-label m--has-value m--is-tag-default m--is-type-password"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--is-label-up m--has-label m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <label
+        class="m-input-style__label"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
-        <label
-          class="m-input-style__label"
-          for="mTextfield-fakeId"
-          style="margin-right: 0px;"
+        <span
+          class="m-input-style__text"
         >
-          <span
-            class="m-input-style__text"
-          >
-            <span>
-              lsdhfasdj khgjkd fhjkghj kadfhgf jkdghdfjk ghdfjkg hdfjk ghd fjkghdj k gh djh
-            </span>
-             
-            <!---->
+          <span>
+            lsdhfasdj khgjkd fhjkghj kadfhgf jkdghdfjk ghdfjkg hdfjk ghd fjkghdj k gh djh
           </span>
-        </label>
+           
+          <!---->
+        </span>
+      </label>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="password"
+          />
+             
+          <!---->
+            
           <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="password"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <button
-              aria-controls="mTextfield-fakeId"
-              class="m-icon-button m-textfield__icon-password m--is-skin-light m--has-ripple"
-              style="width: 22px; height: 22px;"
-              title="Afficher le mot de passe"
-              type="button"
-            >
-              <svg
-                aria-hidden="true"
-                class="m-icon m-icon-button__icon"
-                height="20px"
-                width="20px"
-              >
-                <!---->
-                 
-                <use
-                  aria-hidden="true"
-                  class=""
-                />
-              </svg>
-               
-              <!---->
-            </button>
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <button
+            aria-controls="mTextfield-fakeId"
+            class="m-icon-button m-textfield__icon-password m--is-skin-light m--has-ripple"
+            style="width: 22px; height: 22px;"
+            title="Afficher le mot de passe"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="m-icon m-icon-button__icon"
+              height="20px"
+              width="20px"
+            >
+              <!---->
+               
+              <use
+                aria-hidden="true"
+                class=""
+              />
+            </svg>
+             
+            <!---->
+          </button>
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/type type="tel" 1`] = `
 <div
-  class="m-textfield m--is-type-tel"
+  class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-tel"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="tel"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="tel"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/type type="text" 1`] = `
 <div
-  class="m-textfield m--is-type-text"
+  class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="text"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="text"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-textfield/type type="url" 1`] = `
 <div
-  class="m-textfield m--is-type-url"
+  class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-url"
   style="width: 100%; max-width: 288px;"
 >
   <div
-    class="m-input-style m--has-value m--is-tag-default"
+    class="m-input-style__main"
     style="margin-top: 10px;"
   >
     <div
-      class="m-input-style__main"
+      class="m-input-style__body"
     >
-      <div
-        class="m-input-style__body"
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
       >
         <span
-          class="m-input-style__label"
-          style="z-index: -1;"
-        >
-          <span
-            class="m-input-style__text"
-          />
-        </span>
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <div
+          class="m-input-style__prefix"
+        />
          
         <div
-          class="m-input-style__input"
+          class="m-input-style__content"
         >
-          <div
-            class="m-input-style__prefix"
+          <input
+            aria-describedby="fakeId"
+            class="m-textfield__input"
+            id="mTextfield-fakeId"
+            maxlength="Infinity"
+            type="url"
           />
+             
+          <!---->
+            
+          <!---->
            
-          <div
-            class="m-input-style__content"
-          >
-            <input
-              class="m-textfield__input"
-              id="mTextfield-fakeId"
-              maxlength="Infinity"
-              type="url"
-            />
-               
-            <!---->
-             
-            <!---->
-             
-            <!---->
-          </div>
-           
-          <div
-            class="m-input-style__suffix"
-          >
-            <!---->
-             
-            <!---->
-          </div>
+          <!---->
         </div>
+         
+        <div
+          class="m-input-style__suffix"
+        >
+          <!---->
+            
+          <!---->
+        </div>
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-textfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-textfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
       </div>
        
       <!---->
     </div>
-  </div>
-   
-  <div
-    class="m-textfield__validation"
-  >
-    <div
-      class="m-validation-message m-textfield__validation__message"
-    >
-      <!---->
-       
-      <!---->
-    </div>
-     
-    <!---->
   </div>
 </div>
 `;

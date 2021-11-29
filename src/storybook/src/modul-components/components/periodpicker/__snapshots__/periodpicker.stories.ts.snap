@@ -18,10 +18,10 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
         >
           <div
             class="m-input-style m--has-label m--is-tag-default"
-            style="margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
+              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -51,12 +51,14 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
                     class="m-input-style__content"
                   >
                     <input
-                      aria-haspopup="true"
+                      aria-describedby="fakeId"
                       autocomplete="off"
                       id="mDatepicker-fakeId"
+                      max="2031-11-29"
+                      min="2011-11-29"
                       placeholder="AAAA-MM-JJ"
                     />
-                      
+                       
                     <!---->
                      
                     <!---->
@@ -97,23 +99,22 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
                
               <!---->
             </div>
-          </div>
-           
-          <div
-            class="m-datepicker__validation"
-          >
+             
             <div
-              class="m-validation-message m-datepicker__validation__message"
+              class="m-popper m-popup"
             >
-              <!---->
                
               <!---->
             </div>
+             
+            <!---->
           </div>
            
           <div
-            class="m-popper m-popup"
+            class="m-validation-message m-datepicker__validation-message"
+            id="fakeId"
           >
+            <!---->
              
             <!---->
           </div>
@@ -130,10 +131,10 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
         >
           <div
             class="m-input-style m--has-label m--is-tag-default"
-            style="margin-top: 10px;"
           >
             <div
               class="m-input-style__main"
+              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -163,12 +164,14 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
                     class="m-input-style__content"
                   >
                     <input
-                      aria-haspopup="true"
+                      aria-describedby="fakeId"
                       autocomplete="off"
                       id="mDatepicker-fakeId"
+                      max="2031-11-29"
+                      min="2011-11-29"
                       placeholder="AAAA-MM-JJ"
                     />
-                      
+                       
                     <!---->
                      
                     <!---->
@@ -209,23 +212,22 @@ exports[`Storyshots modul-components|m-periodpicker default 1`] = `
                
               <!---->
             </div>
-          </div>
-           
-          <div
-            class="m-datepicker__validation"
-          >
+             
             <div
-              class="m-validation-message m-datepicker__validation__message"
+              class="m-popper m-popup"
             >
-              <!---->
                
               <!---->
             </div>
+             
+            <!---->
           </div>
            
           <div
-            class="m-popper m-popup"
+            class="m-validation-message m-datepicker__validation-message"
+            id="fakeId"
           >
+            <!---->
              
             <!---->
           </div>

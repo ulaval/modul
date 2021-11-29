@@ -69,7 +69,7 @@ export class MSvg extends ModulVue {
     }
 
     public get svg(): string {
-        if (!this.name) {
+        if (!this.name || !this.$svgSprite) {
             return '';
         }
 

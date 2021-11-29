@@ -14,9 +14,7 @@ exports[`MRichTextEditor should render correctly 1`] = `
     </div>
   </div>
   <div class="m-input-style__validation">
-    <div class="m-validation-message m-rich-text__validation-message">
-      <div aria-live="polite"></div>
-    </div>
+    <div class="m-validation-message m-rich-text__validation-message"> </div>
   </div>
 </div>
 `;

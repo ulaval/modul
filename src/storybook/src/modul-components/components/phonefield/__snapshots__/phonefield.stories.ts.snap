@@ -8,143 +8,82 @@ exports[`Storyshots modul-components|m-phonefield Autocomplete Work Phone 1`] = 
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
-     
-    <div
-      class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
-    >
-      <div
-        class="m-input-style__main"
-      >
-        <div
-          class="m-input-style__body"
-        >
-          <label
-            class="m-input-style__label"
-            for="mIntegerfield-fakeId"
-            style="margin-right: 0px;"
-          >
-            <span
-              class="m-input-style__text"
-            >
-              <span>
-                Numéro de téléphone
-              </span>
-               
-              <!---->
-            </span>
-          </label>
-           
-          <div
-            class="m-input-style__input"
-          >
-            <!---->
-             
-            <div
-              class="m-input-style__content"
-            >
-              <input
-                autocomplete="work tel"
-                id="mIntegerfield-fakeId"
-                type="tel"
-              />
-               
-              <!---->
-               
-              <!---->
-            </div>
-             
-            <div
-              class="m-input-style__suffix"
-            >
-               
-              <!---->
-            </div>
-          </div>
-        </div>
-         
-        <!---->
-      </div>
-    </div>
-  </div>
-   
-  <div
-    class="m-phonefield__validation"
-  >
-    <div
-      class="m-validation-message m-phonefield__validation-message"
-    >
-      <!---->
-       
-      <p
-        class="m-validation-message__helper"
-      >
-        Ex. :  +1 506 234 5678
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
-<div>
-  <div>
-    <p>
-      Choisir un numéro de téléphone
-    </p>
-     
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      class="m-base-select"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
       style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
     >
       <div
         class="m-base-select__popup"
       >
         <div
-          class="m-input-style m-select m--has-cursor-pointer m--has-value m--is-tag-default"
-          style="width: 100%; margin-top: 10px; max-width: regular;"
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
         >
           <div
             class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
           >
             <div
               class="m-input-style__body"
             >
-              <span
+              <label
                 class="m-input-style__label"
-                style="z-index: -1;"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
               >
                 <span
                   class="m-input-style__text"
-                />
-              </span>
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
                
               <div
                 class="m-input-style__input"
               >
-                <div
-                  class="m-input-style__prefix"
-                />
+                <!---->
                  
                 <div
                   class="m-input-style__content"
                 >
                   <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
                     aria-haspopup="listbox"
-                    aria-labelledby="undefined m-select-fakeId"
-                    aria-required="true"
-                    class="m-select__input"
-                    id="m-select-fakeId"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
                     role="button"
                     tabindex="0"
                   >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
                     
-                    +14188753893
-                
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
                   </div>
                    
                   <!---->
@@ -186,11 +125,221 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
               </div>
             </div>
           </div>
+            
+          <!---->
         </div>
       </div>
        
       <div
         class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
+     
+    <div
+      class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
+    >
+      <div
+        class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mPhonefield-fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Numéro de téléphone
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <input
+                aria-describedby="fakeId"
+                autocomplete="work tel"
+                id="mPhonefield-fakeId"
+                type="tel"
+              />
+               
+              <!---->
+               
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="m-phonefield__validation"
+    id="fakeId"
+  >
+    <div
+      class="m-validation-message m-phonefield__validation-message"
+    >
+      <!---->
+       
+      <p
+        class="m-validation-message__helper"
+      >
+        Ex. :  +1 506 234 5678
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
+<div>
+  <div>
+    <p>
+      Choisir un numéro de téléphone
+    </p>
+     
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--has-cursor-pointer m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <span
+                class="m-input-style__label"
+                style="z-index: -1;"
+              >
+                <span
+                  class="m-input-style__text"
+                />
+              </span>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <div
+                  class="m-input-style__prefix"
+                />
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-describedby="fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    aria-required="true"
+                    class="m-select__input"
+                    id="m-select-fakeId"
+                    role="button"
+                    tabindex="0"
+                  >
+                    
+                    +14188753893
+                    
+                    <!---->
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
       >
         <!---->
          
@@ -228,21 +377,158 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
       <div
         class="m-phonefield__wrapper"
       >
-        <!---->
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="listbox-fakeId"
+          class="m-base-select m-select-virtual-scroll m-phonefield__country"
+          role="combobox"
+          style="width: 100%; max-width: 288px;"
+          virtualscrollitemheight="52"
+        >
+          <div
+            class="m-base-select__popup"
+          >
+            <div
+              class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+              style="width: 100%; max-width: regular;"
+            >
+              <div
+                class="m-input-style__main"
+                style="width: 100%; margin-top: 10px;"
+              >
+                <div
+                  class="m-input-style__body"
+                >
+                  <label
+                    class="m-input-style__label"
+                    for="m-select-fakeId"
+                    id="fakeId"
+                    style="margin-right: 0px;"
+                  >
+                    <span
+                      class="m-input-style__text"
+                    >
+                      <span>
+                        Pays
+                      </span>
+                       
+                      <!---->
+                    </span>
+                  </label>
+                   
+                  <div
+                    class="m-input-style__input"
+                  >
+                    <!---->
+                     
+                    <div
+                      class="m-input-style__content"
+                    >
+                      <div
+                        aria-activedescendant=""
+                        aria-controls="listbox-fakeId"
+                        aria-haspopup="listbox"
+                        aria-labelleby="fakeId"
+                        class="m-phonefield__country-field"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <span
+                          class="m-phonefield__hidden"
+                          id="fakeId"
+                        >
+                          
+                        Code pays: ca
+                    
+                        </span>
+                         
+                        <svg
+                          aria-hidden="true"
+                          class="m-phonefield__flag-wrapper"
+                          height="20px"
+                          width="27px"
+                        >
+                          <use
+                            aria-hidden="true"
+                          />
+                        </svg>
+                      </div>
+                       
+                      <!---->
+                       
+                      <!---->
+                    </div>
+                     
+                    <div
+                      class="m-input-style__suffix"
+                    >
+                       
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                 
+                <div
+                  class="m-input-style__append"
+                >
+                  <!---->
+                   
+                  <div
+                    class="m-select__arrow"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Ouvrir la liste déroulante"
+                      class="m-icon m-select__arrow-icon"
+                      height="12px"
+                      width="12px"
+                    >
+                      <!---->
+                       
+                      <use
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+                
+              <!---->
+            </div>
+          </div>
+           
+          <div
+            class="m-validation-message m-select__validation-message"
+            id="fakeId"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-popper m-popup"
+          >
+             
+            <!---->
+          </div>
+        </div>
          
         <div
           class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-          style="width: 100%; margin-top: 10px;"
         >
           <div
             class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
           >
             <div
               class="m-input-style__body"
             >
               <label
                 class="m-input-style__label"
-                for="mIntegerfield-fakeId"
+                for="mPhonefield-fakeId"
                 style="margin-right: 0px;"
               >
                 <span
@@ -265,7 +551,8 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
                   class="m-input-style__content"
                 >
                   <input
-                    id="mIntegerfield-fakeId"
+                    aria-describedby="fakeId"
+                    id="mPhonefield-fakeId"
                     type="tel"
                   />
                    
@@ -285,11 +572,14 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
              
             <!---->
           </div>
+            
+          <!---->
         </div>
       </div>
        
       <div
         class="m-phonefield__validation"
+        id="fakeId"
       >
         <div
           class="m-validation-message m-phonefield__validation-message"
@@ -324,21 +614,159 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default m--is-disabled"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -361,8 +789,9 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
               class="m-input-style__content"
             >
               <input
+                aria-describedby="fakeId"
                 disabled="disabled"
-                id="mIntegerfield-fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -382,11 +811,14 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -407,21 +839,158 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-error m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -444,8 +1013,9 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
               class="m-input-style__content"
             >
               <input
+                aria-describedby="fakeId"
                 aria-invalid="true"
-                id="mIntegerfield-fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -465,11 +1035,14 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -494,21 +1067,158 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-error m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-error m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -531,8 +1241,9 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
               class="m-input-style__content"
             >
               <input
+                aria-describedby="fakeId"
                 aria-invalid="true"
-                id="mIntegerfield-fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -552,11 +1263,14 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -566,18 +1280,13 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
         class="m-validation-message__error"
       >
         <svg
-          class="m-icon m-validation-message__icon"
+          class="m-svg m-validation-message__icon"
           height="1em"
           width="1em"
         >
           <title>
             Erreur
           </title>
-           
-          <use
-            aria-hidden="true"
-            class=""
-          />
         </svg>
          
         <span
@@ -605,21 +1314,158 @@ exports[`Storyshots modul-components|m-phonefield Full Width 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -642,7 +1488,8 @@ exports[`Storyshots modul-components|m-phonefield Full Width 1`] = `
               class="m-input-style__content"
             >
               <input
-                id="mIntegerfield-fakeId"
+                aria-describedby="fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -662,11 +1509,14 @@ exports[`Storyshots modul-components|m-phonefield Full Width 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -691,21 +1541,158 @@ exports[`Storyshots modul-components|m-phonefield Max Width 500 Px 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -728,7 +1715,8 @@ exports[`Storyshots modul-components|m-phonefield Max Width 500 Px 1`] = `
               class="m-input-style__content"
             >
               <input
-                id="mIntegerfield-fakeId"
+                aria-describedby="fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -748,11 +1736,14 @@ exports[`Storyshots modul-components|m-phonefield Max Width 500 Px 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -777,21 +1768,158 @@ exports[`Storyshots modul-components|m-phonefield Max Width Large 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -814,7 +1942,8 @@ exports[`Storyshots modul-components|m-phonefield Max Width Large 1`] = `
               class="m-input-style__content"
             >
               <input
-                id="mIntegerfield-fakeId"
+                aria-describedby="fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -834,11 +1963,14 @@ exports[`Storyshots modul-components|m-phonefield Max Width Large 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -863,21 +1995,158 @@ exports[`Storyshots modul-components|m-phonefield Other Default Country 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: fr
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -900,7 +2169,8 @@ exports[`Storyshots modul-components|m-phonefield Other Default Country 1`] = `
               class="m-input-style__content"
             >
               <input
-                id="mIntegerfield-fakeId"
+                aria-describedby="fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -920,11 +2190,14 @@ exports[`Storyshots modul-components|m-phonefield Other Default Country 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -949,21 +2222,158 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -986,7 +2396,8 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
               class="m-input-style__content"
             >
               <input
-                id="mIntegerfield-fakeId"
+                aria-describedby="fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -1006,11 +2417,14 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -1035,21 +2449,158 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -1072,7 +2623,8 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
               class="m-input-style__content"
             >
               <input
-                id="mIntegerfield-fakeId"
+                aria-describedby="fakeId"
+                id="mPhonefield-fakeId"
                 type="tel"
               />
                
@@ -1092,11 +2644,14 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"
@@ -1121,21 +2676,159 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
   <div
     class="m-phonefield__wrapper"
   >
-    <!---->
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="listbox-fakeId"
+      class="m-base-select m-select-virtual-scroll m-phonefield__country"
+      role="combobox"
+      style="width: 100%; max-width: 288px;"
+      virtualscrollitemheight="52"
+    >
+      <div
+        class="m-base-select__popup"
+      >
+        <div
+          class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default m--is-readonly"
+          style="width: 100%; max-width: regular;"
+        >
+          <div
+            class="m-input-style__main"
+            style="width: 100%; margin-top: 10px;"
+          >
+            <div
+              class="m-input-style__body"
+            >
+              <label
+                class="m-input-style__label"
+                for="m-select-fakeId"
+                id="fakeId"
+                style="margin-right: 0px;"
+              >
+                <span
+                  class="m-input-style__text"
+                >
+                  <span>
+                    Pays
+                  </span>
+                   
+                  <!---->
+                </span>
+              </label>
+               
+              <div
+                class="m-input-style__input"
+              >
+                <!---->
+                 
+                <div
+                  class="m-input-style__content"
+                >
+                  <div
+                    aria-activedescendant=""
+                    aria-controls="listbox-fakeId"
+                    aria-haspopup="listbox"
+                    aria-labelleby="fakeId"
+                    class="m-phonefield__country-field"
+                    role="button"
+                    tabindex="-1"
+                  >
+                    <span
+                      class="m-phonefield__hidden"
+                      id="fakeId"
+                    >
+                      
+                        Code pays: ca
+                    
+                    </span>
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="m-phonefield__flag-wrapper"
+                      height="20px"
+                      width="27px"
+                    >
+                      <use
+                        aria-hidden="true"
+                      />
+                    </svg>
+                  </div>
+                   
+                  <!---->
+                   
+                  <!---->
+                </div>
+                 
+                <div
+                  class="m-input-style__suffix"
+                >
+                   
+                  <!---->
+                </div>
+              </div>
+            </div>
+             
+            <div
+              class="m-input-style__append"
+            >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+            
+          <!---->
+        </div>
+      </div>
+       
+      <div
+        class="m-validation-message m-select__validation-message"
+        id="fakeId"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+    </div>
      
     <div
       class="m-input-style m-phonefield__number m--is-label-up m--is-waiting m--has-label m--has-value m--is-tag-default"
-      style="width: 100%; margin-top: 10px;"
     >
       <div
         class="m-input-style__main"
+        style="width: 100%; margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
         >
           <label
             class="m-input-style__label"
-            for="mIntegerfield-fakeId"
+            for="mPhonefield-fakeId"
             style="margin-right: 0px;"
           >
             <span
@@ -1158,8 +2851,9 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
               class="m-input-style__content"
             >
               <input
-                disabled="disabled"
-                id="mIntegerfield-fakeId"
+                aria-describedby="fakeId"
+                id="mPhonefield-fakeId"
+                readonly="readonly"
                 type="tel"
               />
                
@@ -1185,11 +2879,14 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
          
         <!---->
       </div>
+        
+      <!---->
     </div>
   </div>
    
   <div
     class="m-phonefield__validation"
+    id="fakeId"
   >
     <div
       class="m-validation-message m-phonefield__validation-message"

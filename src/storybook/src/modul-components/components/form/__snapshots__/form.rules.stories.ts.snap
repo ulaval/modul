@@ -19,83 +19,86 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
     <!---->
      
     <div
-      class="m-textfield m--has-label m--is-type-text"
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="mTextfield-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="mTextfield-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Username
-                </span>
-                 
-                <!---->
+              <span>
+                Username
               </span>
-            </label>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                <input
-                  class="m-textfield__input"
-                  id="mTextfield-fakeId"
-                  maxlength="Infinity"
-                  type="text"
-                />
-                   
-                <!---->
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
           </div>
            
           <!---->
         </div>
-      </div>
-       
-      <div
-        class="m-textfield__validation"
-      >
-        <div
-          class="m-validation-message m-textfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-         
-        <!---->
       </div>
     </div>
      
@@ -179,6 +182,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
         >
           <div
             class="m-validation-message m-input-group__message"
+            id="fakeId"
           >
             <!---->
              
@@ -186,6 +190,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
           </div>
            
           <div
+            aria-describedby="fakeId"
             class="m-input-group__content"
           >
             <li>
@@ -193,6 +198,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                 class="m-checkbox m--is-checkbox-left"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-checkbox__hidden"
                   id="mCheckbox-fakeId"
                   type="checkbox"
@@ -221,6 +227,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                  
                 <div
                   class="m-validation-message m-checkbox__message"
+                  id="fakeId"
                 >
                   <!---->
                    
@@ -233,6 +240,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                 class="m-checkbox m--is-checkbox-left"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-checkbox__hidden"
                   id="mCheckbox-fakeId"
                   type="checkbox"
@@ -261,6 +269,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                  
                 <div
                   class="m-validation-message m-checkbox__message"
+                  id="fakeId"
                 >
                   <!---->
                    
@@ -273,6 +282,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                 class="m-checkbox m--is-checkbox-left"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-checkbox__hidden"
                   id="mCheckbox-fakeId"
                   type="checkbox"
@@ -301,6 +311,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                  
                 <div
                   class="m-validation-message m-checkbox__message"
+                  id="fakeId"
                 >
                   <!---->
                    
@@ -313,6 +324,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                 class="m-checkbox m--is-checkbox-left"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-checkbox__hidden"
                   id="mCheckbox-fakeId"
                   type="checkbox"
@@ -341,6 +353,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                  
                 <div
                   class="m-validation-message m-checkbox__message"
+                  id="fakeId"
                 >
                   <!---->
                    
@@ -353,6 +366,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                 class="m-checkbox m--is-checkbox-left"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-checkbox__hidden"
                   id="mCheckbox-fakeId"
                   type="checkbox"
@@ -381,6 +395,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                  
                 <div
                   class="m-validation-message m-checkbox__message"
+                  id="fakeId"
                 >
                   <!---->
                    
@@ -393,6 +408,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                 class="m-checkbox m--is-checkbox-left"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-checkbox__hidden"
                   id="mCheckbox-fakeId"
                   type="checkbox"
@@ -421,6 +437,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                  
                 <div
                   class="m-validation-message m-checkbox__message"
+                  id="fakeId"
                 >
                   <!---->
                    
@@ -433,6 +450,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                 class="m-checkbox m--is-checkbox-left"
               >
                 <input
+                  aria-describedby="fakeId"
                   class="m-checkbox__hidden"
                   id="mCheckbox-fakeId"
                   type="checkbox"
@@ -461,6 +479,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                  
                 <div
                   class="m-validation-message m-checkbox__message"
+                  id="fakeId"
                 >
                   <!---->
                    
@@ -539,83 +558,86 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
     <!---->
      
     <div
-      class="m-textfield m--has-label m--is-type-text"
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="mTextfield-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="mTextfield-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Course code (ex. : MAT-1000)
-                </span>
-                 
-                <!---->
+              <span>
+                Course code (ex. : MAT-1000)
               </span>
-            </label>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                <input
-                  class="m-textfield__input"
-                  id="mTextfield-fakeId"
-                  maxlength="Infinity"
-                  type="text"
-                />
-                   
-                <!---->
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
           </div>
            
           <!---->
         </div>
-      </div>
-       
-      <div
-        class="m-textfield__validation"
-      >
-        <div
-          class="m-validation-message m-textfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-         
-        <!---->
       </div>
     </div>
      
@@ -691,6 +713,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
       >
         <div
           class="m-validation-message m-input-group__message"
+          id="fakeId"
         >
           <!---->
            
@@ -698,167 +721,174 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
         </div>
          
         <div
+          aria-describedby="fakeId"
           class="m-input-group__content"
         >
           <div
-            class="m-textfield m--has-label m--is-type-text"
+            class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
             style="width: 100%; max-width: 288px;"
           >
             <div
-              class="m-input-style m--has-label m--is-tag-default"
+              class="m-input-style__main"
               style="margin-top: 10px;"
             >
               <div
-                class="m-input-style__main"
+                class="m-input-style__body"
               >
-                <div
-                  class="m-input-style__body"
+                <label
+                  class="m-input-style__label"
+                  for="mTextfield-fakeId"
+                  id="fakeId"
+                  style="margin-right: 0px;"
                 >
-                  <label
-                    class="m-input-style__label"
-                    for="mTextfield-fakeId"
-                    style="margin-right: 0px;"
+                  <span
+                    class="m-input-style__text"
                   >
-                    <span
-                      class="m-input-style__text"
-                    >
-                      <span>
-                        Email
-                      </span>
-                       
-                      <!---->
+                    <span>
+                      Email
                     </span>
-                  </label>
+                     
+                    <!---->
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-input-style__input"
+                >
+                  <!---->
                    
                   <div
-                    class="m-input-style__input"
+                    class="m-input-style__content"
                   >
+                    <input
+                      aria-describedby="fakeId"
+                      class="m-textfield__input"
+                      id="mTextfield-fakeId"
+                      maxlength="Infinity"
+                      type="text"
+                    />
+                       
+                    <!---->
+                      
                     <!---->
                      
-                    <div
-                      class="m-input-style__content"
-                    >
-                      <input
-                        class="m-textfield__input"
-                        id="mTextfield-fakeId"
-                        maxlength="Infinity"
-                        type="text"
-                      />
-                         
-                      <!---->
-                       
-                      <!---->
-                       
-                      <!---->
-                    </div>
-                     
-                    <div
-                      class="m-input-style__suffix"
-                    >
-                      <!---->
-                       
-                      <!---->
-                    </div>
+                    <!---->
                   </div>
+                   
+                  <div
+                    class="m-input-style__suffix"
+                  >
+                    <!---->
+                      
+                    <!---->
+                  </div>
+                </div>
+              </div>
+               
+              <!---->
+            </div>
+              
+            <div
+              class="m-input-style__validation"
+            >
+              <div
+                class="m-textfield__validation"
+                id="fakeId"
+              >
+                <div
+                  class="m-validation-message m-textfield__validation-message"
+                >
+                  <!---->
+                   
+                  <!---->
                 </div>
                  
                 <!---->
               </div>
-            </div>
-             
-            <div
-              class="m-textfield__validation"
-            >
-              <div
-                class="m-validation-message m-textfield__validation__message"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <!---->
             </div>
           </div>
            
           <div
-            class="m-textfield m--has-label m--is-type-text"
+            class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
             style="width: 100%; max-width: 288px;"
           >
             <div
-              class="m-input-style m--has-label m--is-tag-default"
+              class="m-input-style__main"
               style="margin-top: 10px;"
             >
               <div
-                class="m-input-style__main"
+                class="m-input-style__body"
               >
-                <div
-                  class="m-input-style__body"
+                <label
+                  class="m-input-style__label"
+                  for="mTextfield-fakeId"
+                  id="fakeId"
+                  style="margin-right: 0px;"
                 >
-                  <label
-                    class="m-input-style__label"
-                    for="mTextfield-fakeId"
-                    style="margin-right: 0px;"
+                  <span
+                    class="m-input-style__text"
                   >
-                    <span
-                      class="m-input-style__text"
-                    >
-                      <span>
-                        Email confirmation
-                      </span>
-                       
-                      <!---->
+                    <span>
+                      Email confirmation
                     </span>
-                  </label>
+                     
+                    <!---->
+                  </span>
+                </label>
+                 
+                <div
+                  class="m-input-style__input"
+                >
+                  <!---->
                    
                   <div
-                    class="m-input-style__input"
+                    class="m-input-style__content"
                   >
+                    <input
+                      aria-describedby="fakeId"
+                      class="m-textfield__input"
+                      id="mTextfield-fakeId"
+                      maxlength="Infinity"
+                      type="text"
+                    />
+                       
+                    <!---->
+                      
                     <!---->
                      
-                    <div
-                      class="m-input-style__content"
-                    >
-                      <input
-                        class="m-textfield__input"
-                        id="mTextfield-fakeId"
-                        maxlength="Infinity"
-                        type="text"
-                      />
-                         
-                      <!---->
-                       
-                      <!---->
-                       
-                      <!---->
-                    </div>
-                     
-                    <div
-                      class="m-input-style__suffix"
-                    >
-                      <!---->
-                       
-                      <!---->
-                    </div>
+                    <!---->
                   </div>
+                   
+                  <div
+                    class="m-input-style__suffix"
+                  >
+                    <!---->
+                      
+                    <!---->
+                  </div>
+                </div>
+              </div>
+               
+              <!---->
+            </div>
+              
+            <div
+              class="m-input-style__validation"
+            >
+              <div
+                class="m-textfield__validation"
+                id="fakeId"
+              >
+                <div
+                  class="m-validation-message m-textfield__validation-message"
+                >
+                  <!---->
+                   
+                  <!---->
                 </div>
                  
                 <!---->
               </div>
-            </div>
-             
-            <div
-              class="m-textfield__validation"
-            >
-              <div
-                class="m-validation-message m-textfield__validation__message"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <!---->
             </div>
           </div>
         </div>
@@ -927,83 +957,86 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
     <!---->
      
     <div
-      class="m-textfield m--has-label m--is-type-text"
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="mTextfield-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="mTextfield-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Email
-                </span>
-                 
-                <!---->
+              <span>
+                Email
               </span>
-            </label>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                <input
-                  class="m-textfield__input"
-                  id="mTextfield-fakeId"
-                  maxlength="Infinity"
-                  type="text"
-                />
-                   
-                <!---->
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
           </div>
            
           <!---->
         </div>
-      </div>
-       
-      <div
-        class="m-textfield__validation"
-      >
-        <div
-          class="m-validation-message m-textfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-         
-        <!---->
       </div>
     </div>
      
@@ -1069,83 +1102,86 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
     <!---->
      
     <div
-      class="m-textfield m--has-label m--is-type-text"
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="mTextfield-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="mTextfield-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Postal code
-                </span>
-                 
-                <!---->
+              <span>
+                Postal code
               </span>
-            </label>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                <input
-                  class="m-textfield__input"
-                  id="mTextfield-fakeId"
-                  maxlength="Infinity"
-                  type="text"
-                />
-                   
-                <!---->
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
           </div>
            
           <!---->
         </div>
-      </div>
-       
-      <div
-        class="m-textfield__validation"
-      >
-        <div
-          class="m-validation-message m-textfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-         
-        <!---->
       </div>
     </div>
      
@@ -1218,6 +1254,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
       >
         <legend
           class="m-input-group__label"
+          id="fakeId"
         >
           
         Select a role :
@@ -1232,6 +1269,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
         >
           <div
             class="m-validation-message m-input-group__message"
+            id="fakeId"
           >
             <!---->
              
@@ -1239,6 +1277,8 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
           </div>
            
           <div
+            aria-describedby="fakeId"
+            aria-labelledby="fakeId"
             class="m-input-group__content"
           >
              
@@ -1251,6 +1291,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
+                  id="mRadio-fakeId"
                   name="fakeId"
                   type="radio"
                   value="Sys admin"
@@ -1258,6 +1299,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
+                  for="mRadio-fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1277,6 +1319,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
+                  id="mRadio-fakeId"
                   name="fakeId"
                   type="radio"
                   value="Unit admin"
@@ -1284,6 +1327,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
+                  for="mRadio-fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1303,6 +1347,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
+                  id="mRadio-fakeId"
                   name="fakeId"
                   type="radio"
                   value="Conceptor"
@@ -1310,6 +1355,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
+                  for="mRadio-fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1329,6 +1375,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
+                  id="mRadio-fakeId"
                   name="fakeId"
                   type="radio"
                   value="Assistant"
@@ -1336,6 +1383,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
+                  for="mRadio-fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1355,6 +1403,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
               >
                 <input
                   class="m-radio__hidden"
+                  id="mRadio-fakeId"
                   name="fakeId"
                   type="radio"
                   value="Student"
@@ -1362,6 +1411,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                  
                 <label
                   class="m-radio__wrap"
+                  for="mRadio-fakeId"
                 >
                   <span
                     aria-hidden="true"
@@ -1443,83 +1493,86 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
     <!---->
      
     <div
-      class="m-textfield m--has-label m--is-type-text"
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="mTextfield-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="mTextfield-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Security answer
-                </span>
-                 
-                <!---->
+              <span>
+                Security answer
               </span>
-            </label>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                <input
-                  class="m-textfield__input"
-                  id="mTextfield-fakeId"
-                  maxlength="Infinity"
-                  type="text"
-                />
-                   
-                <!---->
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
             </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
+        <div
+          class="m-textfield__validation"
+          id="fakeId"
+        >
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
           </div>
            
           <!---->
         </div>
-      </div>
-       
-      <div
-        class="m-textfield__validation"
-      >
-        <div
-          class="m-validation-message m-textfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
-        </div>
-         
-        <!---->
       </div>
     </div>
      
@@ -1585,86 +1638,89 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
     <!---->
      
     <div
-      class="m-textfield m--has-label m--is-type-text"
+      class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
     >
       <div
-        class="m-input-style m--has-label m--is-tag-default"
+        class="m-input-style__main"
         style="margin-top: 10px;"
       >
         <div
-          class="m-input-style__main"
+          class="m-input-style__body"
         >
-          <div
-            class="m-input-style__body"
+          <label
+            class="m-input-style__label"
+            for="mTextfield-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
-            <label
-              class="m-input-style__label"
-              for="mTextfield-fakeId"
-              style="margin-right: 0px;"
+            <span
+              class="m-input-style__text"
             >
-              <span
-                class="m-input-style__text"
-              >
-                <span>
-                  Title
-                </span>
-                 
-                <!---->
+              <span>
+                Title
               </span>
-            </label>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
              
             <div
-              class="m-input-style__input"
+              class="m-input-style__content"
             >
+              <input
+                aria-describedby="fakeId"
+                class="m-textfield__input"
+                id="mTextfield-fakeId"
+                maxlength="Infinity"
+                type="text"
+              />
+                 
+              <!---->
+                
               <!---->
                
-              <div
-                class="m-input-style__content"
-              >
-                <input
-                  class="m-textfield__input"
-                  id="mTextfield-fakeId"
-                  maxlength="Infinity"
-                  type="text"
-                />
-                   
-                <!---->
-                 
-                <!---->
-                 
-                <!---->
-              </div>
-               
-              <div
-                class="m-input-style__suffix"
-              >
-                <!---->
-                 
-                <!---->
-              </div>
+              <!---->
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <!---->
+                
+              <!---->
             </div>
           </div>
-           
-          <!---->
-        </div>
-      </div>
-       
-      <div
-        class="m-textfield__validation"
-      >
-        <div
-          class="m-validation-message m-textfield__validation__message"
-        >
-          <!---->
-           
-          <!---->
         </div>
          
+        <!---->
+      </div>
+        
+      <div
+        class="m-input-style__validation"
+      >
         <div
-          class="m-character-count m-textfield__validation__character-count"
+          class="m-textfield__validation"
+          id="fakeId"
         >
-          <!---->
+          <div
+            class="m-validation-message m-textfield__validation-message"
+          >
+            <!---->
+             
+            <!---->
+          </div>
+           
+          <div
+            class="m-character-count m-textfield__validation-character-count"
+          >
+            <!---->
+          </div>
         </div>
       </div>
     </div>
