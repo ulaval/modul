@@ -125,11 +125,10 @@ export class Portal extends ModulVue implements PortalMixin {
             if (el) {
                 let x: number = window.pageXOffset; // AEL-53
                 let y: number = window.pageYOffset; // AEL-53
-                el.setAttribute('tabindex', '0');
+                el.setAttribute('tabindex', '-1');
                 el.focus();
                 window.scrollTo(x, y); // AEL-53
                 el.blur();
-                el.removeAttribute('tabindex');
             }
         }
     }

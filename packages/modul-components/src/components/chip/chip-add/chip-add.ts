@@ -52,6 +52,5 @@ export default class MChipAdd extends Vue {
         }
         this.emitClick();
         this.emitAdd();
-        (this.$el as HTMLElement).blur();
     }
 }
