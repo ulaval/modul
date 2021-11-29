@@ -111,7 +111,7 @@
     .m-navbar-item {
         margin: 0;
 
-        + .m-navbar-item {
+        +.m-navbar-item {
             margin-left: $m-spacing--l;
         }
 
@@ -131,7 +131,7 @@
 
         &.m--is-selected:not(.m--is-disabled) {
             .m-navbar-item__contents {
-                color: var(--m-navbar-item--color);
+                color: var(--m-navbar-item--selected-color);
             }
         }
 
@@ -142,7 +142,7 @@
         }
 
         &__contents {
-            padding: $m-spacing 0 $m-spacing + $m-border-width 0;
+            padding: $m-spacing--m 0 ($m-spacing--m + $m-border-width) 0;
 
             &::after {
                 position: absolute;
@@ -287,7 +287,7 @@
 // Darkest skin styles
 .m-navbar.m--is-skin-nav-sub {
     .m-navbar-item {
-        + .m-navbar-item {
+        +.m-navbar-item {
             &::before {
                 position: absolute;
                 height: calc(100% - #{$m-spacing * 2});
@@ -350,7 +350,7 @@
                 background: var(--m-navbar-item--selected-background);
             }
 
-            + .m-navbar-item .m-navbar-item__contents::before {
+            +.m-navbar-item .m-navbar-item__contents::before {
                 display: none;
             }
         }
@@ -407,7 +407,7 @@
         }
 
         &__contents {
-            padding: $m-spacing 0 #{$m-spacing + 6px} 0;
+            padding: $m-spacing--m 0 ($m-spacing--m + 8px) 0;
         }
     }
 }
@@ -493,7 +493,7 @@
     }
 
     .m-navbar-item {
-        + .m-navbar-item {
+        +.m-navbar-item {
             border-left: 1px solid var(--m-navbar-item--selected-background);
         }
 
@@ -543,6 +543,7 @@
 
         &:not(.m--is-selected):not(.m--is-disabled) {
             .m-navbar-item__contents {
+
                 &:hover,
                 &:focus {
                     background: var(--m-navbar-item--hover-background);

@@ -198,7 +198,6 @@ export class MLink extends ModulVue {
     }
 
     public onClick(event): void {
-        (this.$el as HTMLElement).blur();
         if (this.isButton || this.disabled) {
             event.preventDefault();
         }

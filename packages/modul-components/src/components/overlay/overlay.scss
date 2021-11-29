@@ -31,6 +31,7 @@
         }
 
         &.m--is-leave-active {
+
             &,
             .m-overlay__article {
                 transition-duration: $m-transition-duration--xl;
@@ -121,20 +122,9 @@
 
     &__footer {
         border-top: $m-border-width--s solid $m-color--border;
-        animation: fadeIn 0.5s linear forwards;
     }
 
     &__save-button {
         margin-right: $m-spacing;
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-        }
     }
 }
