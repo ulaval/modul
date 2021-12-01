@@ -1,99 +1,82 @@
-<div
-    class="m-datepicker"
-    :class="{
+<div class="m-datepicker"
+     :class="{
         'm--has-validation-message': hasValidationMessage
     }"
-    :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
-    @click="onClick"
->
-    <m-input-style
-        v-m-popup:popup
-        :disabled="isDisabled"
-        :label="label"
-        :label-for="id"
-        :readonly="isReadonly"
-        :required-marker="requiredMarker"
-        :waiting="isWaiting"
-        :focus="isFocus"
-        :label-up="labelUp"
-        :empty="isEmpty"
-        :error="hasCalandarError"
-        :valid="isValid"
-        :error-message="errorMessage"
-        :valid-message="validMessage"
-        :helper-message="helperMessage"
-    >
-        <m-input-mask
-            ref="input"
-            :id="id"
-            :required="required || requiredMarker"
-            :disabled="isDisabled"
-            :readonly="isReadonly || isWaiting"
-            :options="inputOptions"
-            :placeholder="propPlaceholder"
-            :raw="false"
-            :value="inputModel"
-            :aria-invalid="hasCalandarError"
-            :aria-describedby="validationMessageId"
-            :min="minModulDate"
-            :max="maxModulDate"
-            autocomplete="off"
-            @focus="onFocus"
-            @blur="onBlur"
-            @input="inputDate($event)"
-            @keyup="onKeyup"
-            @keydown="onKeydown"
-            @keydown.esc="open = false"
-        />
-        <m-icon-button
-            class="m-datepicker__icon"
-            slot="suffix"
-            button-size="22px"
-            :disabled="!active"
-            tabindex="-1"
-            :aria-hidden="true"
-            icon-name="m-svg__calendar"
-            :title="!open ? $i18n.translate('m-datepicker:open') : $i18n.translate('m-datepicker:close')"
-            @click="togglePopup($event)"
-        />
-        <m-popup
-            slot="popup"
-            ref="popup"
-            :open.sync="open"
-            :disabled="!active"
-            :close-on-backdrop="true"
-            :focus-management="false"
-            open-trigger="manual"
-            :padding="false"
-            placement="bottom"
-            @open="onOpen"
-            @close="onClose"
-        >
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+     @click="onClick">
+    <m-input-style v-m-popup:popup
+                   :disabled="isDisabled"
+                   :label="label"
+                   :label-for="id"
+                   :readonly="isReadonly"
+                   :required-marker="requiredMarker"
+                   :waiting="isWaiting"
+                   :focus="isFocus"
+                   :label-up="labelUp"
+                   :empty="isEmpty"
+                   :error="hasCalandarError"
+                   :valid="isValid"
+                   :error-message="errorMessage"
+                   :valid-message="validMessage"
+                   :helper-message="helperMessage">
+
+        <m-input-mask ref="input"
+                      :id="id"
+                      :required="required || requiredMarker"
+                      :disabled="isDisabled"
+                      :readonly="isReadonly || isWaiting"
+                      :options="inputOptions"
+                      :placeholder="propPlaceholder"
+                      :raw="false"
+                      :value="inputModel"
+                      :aria-invalid="hasCalandarError"
+                      :aria-describedby="validationMessageId"
+                      autocomplete="off"
+                      @focus="onFocus"
+                      @blur="onBlur"
+                      @input="inputDate($event)"
+                      @keyup="onKeyup"
+                      @keydown="onKeydown"
+                      @keydown.esc="open = false" />
+        <m-icon-button class="m-datepicker__icon"
+                       slot="suffix"
+                       button-size="22px"
+                       :disabled="!active"
+                       tabindex="-1"
+                       :aria-hidden="true"
+                       icon-name="m-svg__calendar"
+                       :title="!open ? $i18n.translate('m-datepicker:open') : $i18n.translate('m-datepicker:close')"
+                       @click="togglePopup($event)" />
+        <m-popup slot="popup"
+                 ref="popup"
+                 :open.sync="open"
+                 :disabled="!active"
+                 :close-on-backdrop="true"
+                 :focus-management="false"
+                 open-trigger="manual"
+                 :padding="false"
+                 placement="bottom"
+                 @open="onOpen"
+                 @close="onClose">
             <h2 v-if="label && isMqMaxS"
                 class="m-datepicker__header-label"
                 slot="header">{{label}}</h2>
-            <m-calendar
-                :min-date="minDateString"
-                :max-date="maxDateString"
-                :type="type"
-                :visible="open"
-                :initial-view="initialView"
-                :show-month-before-after="false"
-                :value="formattedDate"
-                @input="selectDate"
-            />
+            <m-calendar :min-date="minDateString"
+                        :max-date="maxDateString"
+                        :type="type"
+                        :visible="open"
+                        :initial-view="initialView"
+                        :show-month-before-after="false"
+                        :value="formattedDate"
+                        @input="selectDate" />
         </m-popup>
     </m-input-style>
-    <m-validation-message
-        :id="validationMessageId"
-        class="m-datepicker__validation-message"
-        :disabled="isDisabled"
-        :waiting="isWaiting"
-        :error="hasCalandarError"
-        :error-message="calandarErrorMessage"
-        :valid-message="validMessage"
-        :helper-message="helperMessage"
-    />
+    <m-validation-message :id="validationMessageId"
+                          class="m-datepicker__validation-message"
+                          :disabled="isDisabled"
+                          :waiting="isWaiting"
+                          :error="hasCalandarError"
+                          :error-message="calandarErrorMessage"
+                          :valid-message="validMessage"
+                          :helper-message="helperMessage" />
 </div>
-
-
