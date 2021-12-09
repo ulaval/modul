@@ -1,4 +1,7 @@
-<div class="m-periodpicker">
+<div class="m-periodpicker"
+     :class="{
+        'm--has-validation-message': hasValidationMessage
+     }">
     <div class="m-periodpicker__body">
         <div class="m-periodpicker__item"
              :style="{ width: inputWidth, maxWidth: inputMaxWidth }">
@@ -14,11 +17,15 @@
         </div>
     </div>
 
-    <m-validation-message :disabled="isDisabled"
-                          :waiting="isWaiting"
-                          :error="hasTextfieldError"
-                          :error-message="errorMessage"
-                          :valid="isTextfieldValid"
-                          :valid-message="validMessage"
-                          :helper-message="helperMessage"></m-validation-message>
+    <m-validation-message
+        :id="validationMessageId"
+        class="m-periodpicker__validation-message"
+        :disabled="isDisabled"
+        :waiting="isWaiting"
+        :error="hasTextfieldError"
+        :error-message="errorMessage"
+        :valid="isTextfieldValid"
+        :valid-message="validMessage"
+        :helper-message="helperMessage"
+    />
 </div>

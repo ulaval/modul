@@ -32,7 +32,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
 
             }
         },
-        template: '<div><m-textfield v-model="model" @input="model = onInputChange($event)" @focus="onFocus" @blur="onBlur"></m-textfield><br/>model value = {{model}}</div>'
+        template: '<div><m-textfield v-model="model" label="Label" @input="model = onInputChange($event)" @focus="onFocus" @blur="onBlur"></m-textfield><br/>model value = {{model}}</div>'
     }))
     .add('placeholder', () => ({
         props: {
@@ -40,7 +40,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
                 default: text('Placeholder', 'A placeholder')
             }
         },
-        template: '<m-textfield :placeholder="placeholder"></m-textfield>'
+        template: '<m-textfield label="Label" :placeholder="placeholder"></m-textfield>'
     }))
     .add('label', () => ({
         props: {
@@ -93,7 +93,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
         template: '<m-textfield label="label" focus="true" placeholder="placeholder"></m-textfield>'
     }))
     .add('label-up', () => ({
-        template: '<m-textfield label="label" label-up="true" placeholder="placeholder"></m-textfield>'
+        template: '<m-textfield label="label" label-up="true"></m-textfield>'
     }))
     .add('custom styles', () => ({
         template: '<m-textfield class="m-textfield-stories" label="label" label-up="true" placeholder="placeholder"></m-textfield>'

@@ -133,7 +133,7 @@ export class InputManagement extends ModulVue
     }
 
     get isEmpty(): boolean {
-        return this.isFocus || this.hasValue ? false : true;
+        return !this.isFocus && !this.hasValue && !Boolean(this.placeholder);
     }
 
     get isFocus(): boolean {

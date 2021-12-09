@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Mixins, Model, Prop, Ref, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -8,6 +8,7 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import uuid from '../../utils/uuid/uuid';
+import { ModulVue } from '../../utils/vue/vue';
 import { TYPEAHEAD_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MInputStyle } from '../input-style/input-style';
@@ -25,9 +26,16 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
         MValidationMessage,
         MIconButton,
         MSpinner
-    }
+    },
+    mixins: [
+        InputLabel,
+        InputState,
+        InputWidth,
+        InputManagement,
+        MediaQueries
+    ]
 })
-export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, MediaQueries, InputManagement) {
+export class MTypeahead extends ModulVue {
     @Model('input')
     @Prop({
         required: true
@@ -121,7 +129,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
 
     @Watch('isResultsPopupOpen')
     public onBaseSelectOpen(newValue: boolean): void {
-        if (newValue && this.isMqMaxS) {
+        if (newValue && this.as<MediaQueries>().isMqMaxS) {
             setTimeout(() => {
                 this.refResearchInput.focus();
             });
@@ -141,7 +149,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
     }
 
     public get resultsCouldBeDisplay(): boolean {
-        return this.hasFilteredResults && this.hasTextfieldValue && this.active && this.isResultsPopupOpen;
+        return this.hasFilteredResults && this.hasTextfieldValue && this.as<InputState>().active && this.isResultsPopupOpen;
     }
 
     public get hasSomeAResultSelected(): boolean {
@@ -171,7 +179,7 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
         if (
             refInput && document.activeElement !== refInput
         ) {
-            this.focusInput();
+            this.as<InputManagement>().focusInput();
         }
     }
 
@@ -248,14 +256,14 @@ export class MTypeahead extends Mixins(InputLabel, InputState, InputWidth, Media
             clearTimeout(this.throttleTimeout as NodeJS.Timeout);
             this.createThrottleTimeout();
         } else {
-            this.isResultsPopupOpen = this.isMqMaxS;
+            this.isResultsPopupOpen = this.as<MediaQueries>().isMqMaxS;
             this.throttleTimeoutActive = true;
             this.createThrottleTimeout();
         }
     }
 
     public onKeydownEnter($event: KeyboardEvent): void {
-        if (this.resultsCouldBeDisplay && this.isMqMinS) {
+        if (this.resultsCouldBeDisplay && this.as<MediaQueries>().isMqMinS) {
             this.refBaseSelect.selectFocusedItem($event);
         }
         this.refBaseSelect.closePopup();

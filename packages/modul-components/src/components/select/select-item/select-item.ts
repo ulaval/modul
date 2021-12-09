@@ -1,5 +1,6 @@
-import { Component, Emit, Mixins, Prop } from 'vue-property-decorator';
+import { Component, Emit, Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
+import { ModulVue } from '../../../utils/vue/vue';
 import { MCheckbox } from '../../checkbox/checkbox';
 import { MRadioStyle } from '../../radio-style/radio-style';
 import WithRender from './select-item.html?style=./select-item.scss';
@@ -9,9 +10,10 @@ import WithRender from './select-item.html?style=./select-item.scss';
     components: {
         MRadioStyle,
         MCheckbox
-    }
+    },
+    mixins: [MediaQueries]
 })
-export class MSelectItem extends Mixins(MediaQueries) {
+export class MSelectItem extends ModulVue {
     @Prop()
     public readonly label: string;
 

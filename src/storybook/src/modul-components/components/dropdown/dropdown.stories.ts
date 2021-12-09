@@ -6,7 +6,6 @@ import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
-
     .add('default', () => ({
         data: () => ({
             model1: ''
@@ -48,7 +47,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}`, module)
         data: () => ({
             model5: ''
         }),
-        template: `<m-dropdown :label-up="true" label="Name" v-model="model5" placeholder="placeholder">
+        template: `<m-dropdown :label-up="true" label="Name" v-model="model5">
                         <m-dropdown-item value="james" label="James"></m-dropdown-item>
                         <m-dropdown-item value="yvan" label="Yvan"></m-dropdown-item>
                     </m-dropdown>`

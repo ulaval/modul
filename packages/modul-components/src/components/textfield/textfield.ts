@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Mixins, Prop, Ref, Watch } from 'vue-property-decorator';
+import { Prop, Ref, Watch } from 'vue-property-decorator';
 import { TEXTAREA_AUTO_HEIGHT } from '../../directives/directive-names';
 import { MTextareaAutoHeight } from '../../directives/textarea-auto-height/textarea-auto-height';
 import { InputLabel } from '../../mixins/input-label/input-label';
@@ -9,6 +9,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { changeSelection, InputSelectable } from '../../utils/input/input';
 import uuid from '../../utils/uuid/uuid';
+import { ModulVue } from '../../utils/vue/vue';
 import { MCharacterCount } from '../character-count/character-count';
 import { TEXTFIELD_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
@@ -39,14 +40,15 @@ const ICON_NAME_PASSWORD_HIDDEN: string = 'm-svg__hide';
     },
     directives: {
         [TEXTAREA_AUTO_HEIGHT]: MTextareaAutoHeight
-    }
+    },
+    mixins: [
+        InputState,
+        InputManagement,
+        InputWidth,
+        InputLabel
+    ]
 })
-export class MTextfield extends Mixins(
-    InputState,
-    InputManagement,
-    InputWidth,
-    InputLabel
-) implements InputSelectable {
+export class MTextfield extends ModulVue implements InputSelectable {
     @Prop({
         default: MTextfieldType.Text,
         validator: value =>
@@ -118,7 +120,7 @@ export class MTextfield extends Mixins(
     }
 
     protected mounted(): void {
-        this.trimWordWrap = this.hasWordWrap;
+        this.as<InputManagement>().trimWordWrap = this.hasWordWrap;
     }
 
     @Watch('type')
@@ -128,12 +130,12 @@ export class MTextfield extends Mixins(
 
     @Watch('inputType')
     private inputTypeChanged(value: string): void {
-        this.trimWordWrap = this.hasWordWrap;
+        this.as<InputManagement>().trimWordWrap = this.hasWordWrap;
     }
 
     @Watch('wordWrap')
     private wordWrapChanged(wordWrap: boolean): void {
-        this.trimWordWrap = this.hasWordWrap;
+        this.as<InputManagement>().trimWordWrap = this.hasWordWrap;
     }
 
     private togglePasswordVisibility(event): void {
@@ -150,7 +152,7 @@ export class MTextfield extends Mixins(
     }
 
     private get passwordIcon(): boolean {
-        return this.icon && this.type === MTextfieldType.Password && this.active;
+        return this.icon && this.type === MTextfieldType.Password && this.as<InputState>().active;
     }
 
     private get passwordIconName(): string {
@@ -178,15 +180,15 @@ export class MTextfield extends Mixins(
     }
 
     private get hasTextfieldError(): boolean {
-        return this.hasError;
+        return this.as<InputState>().hasError;
     }
 
     private get isTextfieldValid(): boolean {
-        return this.isValid;
+        return this.as<InputState>().isValid;
     }
 
     private get hasCounterTransition(): boolean {
-        return !this.hasErrorMessage;
+        return !this.as<InputState>().hasErrorMessage;
     }
 
     private resetModel(): void {
@@ -195,7 +197,7 @@ export class MTextfield extends Mixins(
 
     @Watch('selection')
     updateSelection(): void {
-        changeSelection(this.getInput() as HTMLInputElement, this.selection);
+        changeSelection(this.as<InputState>().getInput() as HTMLInputElement, this.selection);
     }
 }
 

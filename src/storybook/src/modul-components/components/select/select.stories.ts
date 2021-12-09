@@ -75,7 +75,21 @@ export const defaultStory = () => ({
         options: OPTIONS_2,
         model: ''
     }),
-    template: `<m-select v-model="model" :options="options" :clearable="isClearable" :label="textLabel" :label-up="isLabelUp" :placeholder="textPlaceholder" :disabled="isDisabled" :readonly="isReadonly"  @open="open" @close="close" @focus="focus" @select-item="select" @blur="blur"></m-select>`
+    template: `<m-select
+        v-model="model"
+        :options="options"
+        :clearable="isClearable"
+        :label="textLabel"
+        :label-up="isLabelUp"
+        :placeholder="textPlaceholder"
+        :disabled="isDisabled"
+        :readonly="isReadonly"
+        @open="open"
+        @close="close"
+        @focus="focus"
+        @select-item="select"
+        @blur="blur"
+    />`
 });
 
 defaultStory.story = {

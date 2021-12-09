@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Mixins, Model, Prop, Ref } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -8,6 +8,7 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import uuid from '../../utils/uuid/uuid';
+import { ModulVue } from '../../utils/vue/vue';
 import { SELECT_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
@@ -16,7 +17,6 @@ import { MOpacityTransition } from '../transitions/opacity-transition/opacity-tr
 import { MValidationMessage } from '../validation-message/validation-message';
 import { MBaseSelect, MBaseSelectItem } from './base-select/base-select';
 import WithRender from './select.html?style=./select.scss';
-
 
 @WithRender
 @Component({
@@ -27,9 +27,16 @@ import WithRender from './select.html?style=./select.scss';
         MIcon,
         MValidationMessage,
         MIconButton
-    }
+    },
+    mixins: [
+        InputState,
+        MediaQueries,
+        InputManagement,
+        InputWidth,
+        InputLabel
+    ]
 })
-export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, InputWidth, InputLabel) {
+export class MSelect extends ModulVue {
 
     @Model('input')
     @Prop()
@@ -87,11 +94,19 @@ export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, I
     }
 
     public get isEmpty(): boolean {
-        return this.hasValue || (this.open) ? false : true;
+        return !this.as<InputManagement>().hasValue && !this.open && !Boolean(this.as<InputManagement>().placeholder);
     }
 
     public get isClearable(): boolean {
-        return this.clearable !== undefined ? this.clearable && this.hasItems && this.hasValue && this.isSelectable : this.hasItems && this.hasValue && this.isSelectable && !this.requiredMarker;
+        return this.clearable !== undefined ?
+            this.clearable
+            && this.hasItems
+            && this.as<InputManagement>().hasValue
+            && this.isSelectable
+            : this.hasItems
+            && this.as<InputManagement>().hasValue
+            && this.isSelectable
+            && !this.as<InputLabel>().requiredMarker;
     }
 
     public get selectedItems(): any {
@@ -102,12 +117,8 @@ export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, I
     }
 
     public get isSelectable(): boolean {
-        return !this.isDisabled &&
-            !this.isReadonly;
-    }
-
-    public get internalLabelUp(): boolean {
-        return !this.isReadonly ? this.labelUp : true;
+        return !this.as<InputState>().isDisabled &&
+            !this.as<InputState>().isReadonly;
     }
 
     public get optionsAreStringArray(): boolean {
@@ -136,11 +147,11 @@ export class MSelect extends Mixins(InputState, MediaQueries, InputManagement, I
 
     public onSelect(option: MBaseSelectItem<unknown> | string, index: number, $event: Event): void {
         this.emitSelectItem(option, index, $event);
-        this.model = this.refBaseSelect.focusValue;
+        this.as<InputManagement>().model = this.refBaseSelect.focusValue;
     }
 
     public onReset(): void {
-        this.model = '';
+        this.as<InputManagement>().model = '';
         this.refInput?.focus();
     }
 

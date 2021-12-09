@@ -34,7 +34,7 @@
             :raw="false"
             :value="inputModel"
             :aria-invalid="hasCalandarError"
-            :aria-describedby="validationMessageId"
+            :aria-describedby="`${validationMessageId} ${ariaDescribedby}`"
             :min="minModulDate"
             :max="maxModulDate"
             autocomplete="off"

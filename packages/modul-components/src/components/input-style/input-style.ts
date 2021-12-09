@@ -1,7 +1,8 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Mixins, Prop, Watch } from 'vue-property-decorator';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
+import { ModulVue } from '../../utils/vue/vue';
 import { INPUT_STYLE_NAME } from '../component-names';
 import { MSpinner } from '../spinner/spinner';
 import WithRender from './input-style.html';
@@ -13,9 +14,10 @@ export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
 @Component({
     components: {
         MSpinner
-    }
+    },
+    mixins: [InputState]
 })
-export class MInputStyle extends Mixins(InputState) {
+export class MInputStyle extends ModulVue {
     @Prop({ default: '' })
     public label: string;
 
@@ -77,7 +79,7 @@ export class MInputStyle extends Mixins(InputState) {
         // This is not very VueJs friendly.  It should be replaced by :style or something similar.
         this.$nextTick(() => {
             const labelEl: HTMLElement = this.$refs.label;
-            const inputEl: HTMLElement | undefined = this.getInput();
+            const inputEl: HTMLElement | undefined = this.as<InputState>().getInput();
             const adjustWidthAutoEl: HTMLElement = this.$refs.adjustWidthAuto;
             if (this.width === 'auto' && this.hasAdjustWidthAutoSlot) {
                 setTimeout(() => {
@@ -139,7 +141,7 @@ export class MInputStyle extends Mixins(InputState) {
     }
 
     public get isFocus(): boolean {
-        const focus: boolean = this.focus && this.active;
+        const focus: boolean = this.focus && this.as<InputState>().active;
         this.$emit('focus', focus);
         return focus;
     }

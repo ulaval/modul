@@ -1,12 +1,13 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Mixins, Model, Prop, Ref, Watch } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
+import { ModulVue } from '../../utils/vue/vue';
 import { MULTI_SELECT_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import { MIcon } from '../icon/icon';
@@ -27,9 +28,12 @@ import WithRender from './multi-select.html?style=./multi-select.scss';
         MValidationMessage,
         MIcon,
         MInputStyle
-    }
+    },
+    mixins: [
+        InputState, InputWidth, InputLabel, MediaQueries
+    ]
 })
-export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, MediaQueries) {
+export class MMultiSelect extends ModulVue {
     @Model('input')
     @Prop({
         validator: value => Array.isArray(value)
@@ -139,7 +143,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
     }
 
     public get isEmpty(): boolean {
-        return this.hasValue || (this.open) ? false : true;
+        return !this.hasValue && !this.open && !Boolean(this.placeholder);
     }
 
     public get hasValue(): boolean {
@@ -216,7 +220,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
     }
 
     public onFocus($event: FocusEvent): void {
-        this.internalFocus = this.active;
+        this.internalFocus = this.as<InputState>().active;
         if (this.internalFocus) {
             this.$emit('focus', $event);
         }
@@ -308,7 +312,7 @@ export class MMultiSelect extends Mixins(InputState, InputWidth, InputLabel, Med
 
     @Watch('focus')
     private focusChanged(focus: boolean): void {
-        this.internalFocus = focus && this.active;
+        this.internalFocus = focus && this.as<InputState>().active;
         if (!this.refInput) { return; }
         if (this.internalFocus) {
             this.focusInput();

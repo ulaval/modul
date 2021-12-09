@@ -256,7 +256,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MULTI_SELECT_NAME}`, module
             model1: [],
             options: optionsVonTrapp
         }),
-        template: `<m-multi-select placeholder="A very very very very very very looooong" @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select>`
+        template: `<m-multi-select placeholder="A very very very very very very looooong" label="Label" @open="open" @close="close" @focus="focus" @blur="blur" @select-item="select" :options="options" v-model="model1"></m-multi-select>`
     })
     );
 

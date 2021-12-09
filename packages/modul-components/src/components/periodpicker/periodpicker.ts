@@ -5,6 +5,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import ModulDate from '../../utils/modul-date/modul-date';
+import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { PERIODPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { DatePickerSupportedTypes } from '../datepicker/datepicker';
@@ -49,6 +50,7 @@ interface MPeriodpickerFromProps {
     error: boolean;
     valid: boolean;
     readonly: boolean;
+    ariaDescribedby?: string;
 }
 
 interface MPeriodpickerFromHandlers {
@@ -68,6 +70,7 @@ interface MPeriodpickerToProps {
     error: boolean;
     valid: boolean;
     readonly: boolean;
+    ariaDescribedby?: string;
 }
 
 interface MPeriodpickerToHandlers {
@@ -100,18 +103,20 @@ export interface MPeriodpickerProps {
 })
 export class MPeriodpicker extends ModulVue implements MPeriodpickerProps {
     @Prop()
-    value: MDateRange;
+    public readonly value: MDateRange;
 
     @Prop()
-    min: DatePickerSupportedTypes;
+    public readonly min: DatePickerSupportedTypes;
 
     @Prop()
-    max: DatePickerSupportedTypes;
+    public readonly max: DatePickerSupportedTypes;
 
     @Prop({
         default: true
     })
-    convertToIso: boolean;
+    public readonly convertToIso: boolean;
+
+    public readonly validationMessageId: string = uuid.generate();
 
     @Emit('input')
     emitNewValue(newValue: MDateRange): void { }
@@ -133,7 +138,8 @@ export class MPeriodpicker extends ModulVue implements MPeriodpickerProps {
                 waiting: this.as<InputState>().isWaiting,
                 error: this.as<InputState>().hasError,
                 valid: this.as<InputState>().isValid,
-                readonly: this.as<InputState>().readonly
+                readonly: this.as<InputState>().readonly,
+                ariaDescribedby: this.validationMessageId
             },
             handlers: {
                 change: (newValue: DatePickerSupportedTypes) => this.onDateFromChange(newValue),
@@ -158,7 +164,8 @@ export class MPeriodpicker extends ModulVue implements MPeriodpickerProps {
                 waiting: this.as<InputState>().isWaiting,
                 error: this.as<InputState>().hasError,
                 valid: this.as<InputState>().isValid,
-                readonly: this.as<InputState>().readonly
+                readonly: this.as<InputState>().readonly,
+                ariaDescribedby: this.validationMessageId
             },
             handlers: {
                 change: (newValue: DatePickerSupportedTypes) => this.onDateToChange(newValue),

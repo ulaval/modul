@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Mixins, Prop } from 'vue-property-decorator';
+import { Prop } from 'vue-property-decorator';
 import { MediaQueries } from '../../../mixins/media-queries/media-queries';
 import { normalizeString } from '../../../utils/str/str';
 import uuid from '../../../utils/uuid/uuid';
@@ -25,9 +25,10 @@ export abstract class BaseDropdownGroup extends ModulVue {
 @Component({
     components: {
         MRadioStyle
-    }
+    },
+    mixins: [MediaQueries]
 })
-export class MDropdownItem extends Mixins(MediaQueries) {
+export class MDropdownItem extends ModulVue {
     @Prop()
     public label: string;
 

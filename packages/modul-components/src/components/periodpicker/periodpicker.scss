@@ -1,9 +1,22 @@
 @import 'commons';
 
 .m-periodpicker {
+    display: inline-flex;
+    flex-direction: column;
+
     &__body {
-        display: flex;
+        display: inline-flex;
         flex-wrap: wrap;
         gap: $m-spacing;
+    }
+
+    &.m--has-validation-message {
+        .m-periodpicker__validation-message {
+            margin-top: $m-spacing--xs;
+        }
+    }
+
+    &__validation-message {
+        transition: margin-top $m-transition-duration ease;
     }
 }

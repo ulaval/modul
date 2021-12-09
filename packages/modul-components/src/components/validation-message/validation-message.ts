@@ -1,8 +1,9 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Mixins, Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
+import { ModulVue } from '../../utils/vue/vue';
 import { VALIDATION_MESSAGE_NAME } from '../component-names';
 import MSvgPlugin, { MSvg } from '../svg/svg';
 import AccordionTransitionPlugin, { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
@@ -12,9 +13,10 @@ import WithRender from './validation-message.html?style=./validation-message.scs
     components: {
         MSvg,
         MAccordionTransition
-    }
+    },
+    mixins: [InputState]
 })
-export class MValidationMessage extends Mixins(InputState) {
+export class MValidationMessage extends ModulVue {
     @Prop({ default: true })
     public transition: boolean;
 
@@ -26,18 +28,18 @@ export class MValidationMessage extends Mixins(InputState) {
     public onClick(event: Event): void { }
 
     public get message(): string | undefined {
-        if (this.hasErrorMessage && this.hasError) {
+        if (this.as<InputState>().hasErrorMessage && this.as<InputState>().hasError) {
             this.classMessage = 'error';
             this.svgTitle = this.$i18n.translate('m-validation-message:title-error-icon');
             this.iconName = ModulIconName.Error;
-            return this.errorMessage;
+            return this.as<InputState>().errorMessage;
         }
 
-        if (this.hasValidMessage && this.isValid) {
+        if (this.as<InputState>().hasValidMessage && this.as<InputState>().isValid) {
             this.classMessage = 'valid';
             this.svgTitle = this.$i18n.translate('m-validation-message:title-valid-icon');
             this.iconName = ModulIconName.Confirmation;
-            return this.validMessage;
+            return this.as<InputState>().validMessage;
         }
     }
 

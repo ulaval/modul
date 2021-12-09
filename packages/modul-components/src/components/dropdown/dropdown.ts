@@ -273,19 +273,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     private get internalPlaceholder(): string {
-        if (this.as<InputState>().isReadonly) {
-            return '';
-        } else {
-            return this.as<InputManagement>().placeholder;
-        }
-    }
-
-    private get internallLabelUp(): boolean {
-        if (this.as<InputState>().isReadonly) {
-            return true;
-        } else {
-            return this.as<InputLabel>().labelUp;
-        }
+        return this.as<InputState>().isReadonly ? '' : this.as<InputManagement>().placeholder;
     }
 
     private portalMounted(): void {
@@ -352,7 +340,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     public get isEmpty(): boolean {
-        return (this.filterable && this.open) || this.as<InputManagement>().hasValue || (this.as<InputPopup>().hasPlaceholder() && this.open) ? false : true;
+        return !this.open && !this.as<InputManagement>().hasValue && !Boolean(this.internalPlaceholder);
     }
 
     private buildItemsMap(): void {

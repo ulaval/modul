@@ -92,6 +92,9 @@ export class MDatepicker extends ModulVue {
     @Prop({ default: false })
     public readonly skipInputValidation: boolean;
 
+    @Prop()
+    public readonly ariaDescribedby: string;
+
     @Prop({ default: () => `mDatepicker-${uuid.generate()}` })
     public readonly id: string;
 
