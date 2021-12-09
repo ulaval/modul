@@ -2,7 +2,7 @@
 
 exports[`Storyshots modul-components|m-textfield custom styles 1`] = `
 <div
-  class="m-input-style m-textfield m-textfield-stories m--is-label-up m--has-label m--is-tag-default m--is-type-text"
+  class="m-input-style m-textfield m-textfield-stories m--is-label-up m--has-label m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -90,7 +90,7 @@ exports[`Storyshots modul-components|m-textfield custom styles 1`] = `
 exports[`Storyshots modul-components|m-textfield default 1`] = `
 <div>
   <div
-    class="m-input-style m-textfield m--is-tag-default m--is-type-text"
+    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -100,21 +100,27 @@ exports[`Storyshots modul-components|m-textfield default 1`] = `
       <div
         class="m-input-style__body"
       >
-        <span
+        <label
           class="m-input-style__label"
-          style="z-index: -1;"
+          for="mTextfield-fakeId"
+          id="fakeId"
+          style="margin-right: 0px;"
         >
           <span
             class="m-input-style__text"
-          />
-        </span>
+          >
+            <span>
+              Label
+            </span>
+             
+            <!---->
+          </span>
+        </label>
          
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -435,7 +441,7 @@ exports[`Storyshots modul-components|m-textfield error-message 1`] = `
 
 exports[`Storyshots modul-components|m-textfield focus 1`] = `
 <div
-  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+  class="m-input-style m-textfield m--is-label-up m--has-label m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -732,7 +738,6 @@ exports[`Storyshots modul-components|m-textfield label-up 1`] = `
             class="m-textfield__input"
             id="mTextfield-fakeId"
             maxlength="Infinity"
-            placeholder="placeholder"
             type="text"
           />
              
@@ -779,7 +784,7 @@ exports[`Storyshots modul-components|m-textfield label-up 1`] = `
 
 exports[`Storyshots modul-components|m-textfield placeholder 1`] = `
 <div
-  class="m-input-style m-textfield m--is-tag-default m--is-type-text"
+  class="m-input-style m-textfield m--is-label-up m--has-label m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div
@@ -789,21 +794,27 @@ exports[`Storyshots modul-components|m-textfield placeholder 1`] = `
     <div
       class="m-input-style__body"
     >
-      <span
+      <label
         class="m-input-style__label"
-        style="z-index: -1;"
+        for="mTextfield-fakeId"
+        id="fakeId"
+        style="margin-right: 0px;"
       >
         <span
           class="m-input-style__text"
-        />
-      </span>
+        >
+          <span>
+            Label
+          </span>
+           
+          <!---->
+        </span>
+      </label>
        
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -1469,7 +1480,7 @@ exports[`Storyshots modul-components|m-textfield word-wrap 1`] = `
 exports[`Storyshots modul-components|m-textfield/Counter all props 1`] = `
 <div>
   <div
-    class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+    class="m-input-style m-textfield m--is-label-up m--has-label m--has-value m--is-tag-default m--is-type-text"
     style="width: 100%; max-width: 288px;"
   >
     <div
@@ -3777,7 +3788,7 @@ exports[`Storyshots modul-components|m-textfield/tag-style all tag styles 1`] = 
 
 exports[`Storyshots modul-components|m-textfield/type all types 1`] = `
 <div
-  class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
+  class="m-input-style m-textfield m--is-label-up m--has-label m--has-value m--is-tag-default m--is-type-text"
   style="width: 100%; max-width: 288px;"
 >
   <div

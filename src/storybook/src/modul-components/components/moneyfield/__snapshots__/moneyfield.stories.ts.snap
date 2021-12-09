@@ -856,7 +856,7 @@ exports[`Storyshots modul-components|m-moneyfield States 1`] = `
       style="width: 100%; max-width: 136px;"
     >
       <div
-        class="m-input-style m-decimalfield m--is-disabled m--is-tag-default"
+        class="m-input-style m-decimalfield m--is-disabled m--has-value m--is-tag-default"
         style="width: 100%; max-width: 136px;"
       >
         <div
@@ -945,7 +945,7 @@ exports[`Storyshots modul-components|m-moneyfield States 1`] = `
       style="width: 100%; max-width: 136px;"
     >
       <div
-        class="m-input-style m-decimalfield m--is-readonly m--is-tag-default"
+        class="m-input-style m-decimalfield m--is-readonly m--has-value m--is-tag-default"
         style="width: 100%; max-width: 136px;"
       >
         <div
@@ -1034,7 +1034,7 @@ exports[`Storyshots modul-components|m-moneyfield States 1`] = `
       style="width: 100%; max-width: 136px;"
     >
       <div
-        class="m-input-style m-decimalfield m--is-waiting m--has-label m--is-tag-default"
+        class="m-input-style m-decimalfield m--is-label-up m--is-waiting m--has-label m--has-value m--is-tag-default"
         style="width: 100%; max-width: 136px;"
       >
         <div

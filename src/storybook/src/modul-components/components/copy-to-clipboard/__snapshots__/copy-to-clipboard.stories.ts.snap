@@ -7,7 +7,7 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
       class="m-copy-to-clipboard"
     >
       <div
-        class="m-input-style m-textfield m--is-readonly m--is-tag-default m--is-type-text"
+        class="m-input-style m-textfield m--is-readonly m--has-value m--is-tag-default m--is-type-text"
         style="width: 100%;"
       >
         <div
@@ -93,7 +93,7 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
       class="m-copy-to-clipboard"
     >
       <div
-        class="m-input-style m-textfield m--is-readonly m--is-tag-default m--is-type-text"
+        class="m-input-style m-textfield m--is-readonly m--has-value m--is-tag-default m--is-type-text"
         style="width: 100%;"
       >
         <div
@@ -187,7 +187,7 @@ exports[`Storyshots modul-components|m-copy-to-clipboard States 1`] = `
       class="m-copy-to-clipboard"
     >
       <div
-        class="m-input-style m-textfield m--is-waiting m--is-tag-default m--is-type-text"
+        class="m-input-style m-textfield m--is-waiting m--has-value m--is-tag-default m--is-type-text"
         style="width: 100%;"
       >
         <div

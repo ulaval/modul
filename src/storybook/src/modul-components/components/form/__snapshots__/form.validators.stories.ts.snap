@@ -449,9 +449,11 @@ exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-describedby="fakeId"
+                aria-describedby="fakeId undefined"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2019-05-30"
+                min="2008-01-01"
                 placeholder="AAAA-MM-JJ"
               />
                  
@@ -617,9 +619,11 @@ exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
               class="m-input-style__content"
             >
               <input
-                aria-describedby="fakeId"
+                aria-describedby="fakeId undefined"
                 autocomplete="off"
                 id="mDatepicker-fakeId"
+                max="2031-12-09"
+                min="2011-12-09"
                 placeholder="AAAA-MM-JJ"
               />
                  
@@ -1477,7 +1481,7 @@ exports[`Storyshots modul-components|m-form/validators Phone Validator 1`] = `
   />
    
   <div
-    class="m-input-style m-textfield m--is-tag-default m--is-type-text"
+    class="m-input-style m-textfield m--has-value m--is-tag-default m--is-type-text"
     skip-input-validation="true"
     style="width: 100%; max-width: 288px;"
   >

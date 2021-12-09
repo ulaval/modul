@@ -315,7 +315,6 @@ exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
               aria-haspopup="listbox"
               class="m-dropdown__input"
               id="mDropdown-fakeId"
-              placeholder="placeholder"
               readonly="readonly"
               role="button"
               type="text"
@@ -758,7 +757,7 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, no label,
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="listboxId-fakeId"
-      class="m-input-style m--is-disabled m--is-tag-default"
+      class="m-input-style m--is-disabled m--has-value m--is-tag-default"
       role="combobox"
     >
       <div
@@ -1261,7 +1260,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-owns="listboxId-fakeId"
-    class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
+    class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
     role="combobox"
   >
     <div
@@ -1752,7 +1751,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="listboxId-fakeId"
-      class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
+      class="m-input-style m--is-readonly m--has-label m--is-tag-default"
       role="combobox"
     >
       <div
@@ -1878,7 +1877,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-owns="listboxId-fakeId"
-      class="m-input-style m--is-readonly m--is-label-up m--has-label m--is-tag-default"
+      class="m-input-style m--is-readonly m--has-label m--is-tag-default"
       role="combobox"
     >
       <div

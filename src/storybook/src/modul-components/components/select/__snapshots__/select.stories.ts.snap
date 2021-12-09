@@ -407,7 +407,7 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      class="m-input-style m-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
       style="width: 100%; max-width: regular;"
     >
       <div
@@ -919,7 +919,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--is-disabled m--is-tag-default m--is-disabled"
+      class="m-input-style m-select m--is-disabled m--has-value m--is-tag-default m--is-disabled"
       style="width: 100%; max-width: regular;"
     >
       <div
@@ -1177,7 +1177,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--is-disabled m--has-label m--is-tag-default m--is-disabled"
+      class="m-input-style m-select m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default m--is-disabled"
       style="width: 100%; max-width: regular;"
     >
       <div
@@ -2515,7 +2515,7 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
+      class="m-input-style m-select m--has-cursor-pointer m--has-value m--is-tag-default"
       style="width: 100%; max-width: regular;"
     >
       <div
@@ -3021,7 +3021,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--is-readonly m--is-tag-default m--is-readonly"
+      class="m-input-style m-select m--is-readonly m--has-value m--is-tag-default m--is-readonly"
       style="width: 100%; max-width: regular;"
     >
       <div
@@ -3151,7 +3151,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--is-tag-default m--is-readonly"
+      class="m-input-style m-select m--is-readonly m--has-label m--is-tag-default m--is-readonly"
       style="width: 100%; max-width: regular;"
     >
       <div
@@ -3279,7 +3279,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--is-tag-default m--is-readonly"
+      class="m-input-style m-select m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default m--is-readonly"
       style="width: 100%; max-width: regular;"
     >
       <div

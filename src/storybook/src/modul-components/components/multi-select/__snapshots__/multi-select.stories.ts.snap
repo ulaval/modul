@@ -1835,7 +1835,7 @@ exports[`Storyshots modul-components|m-multi-select placeholder 1`] = `
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-multi-select m--has-cursor-pointer m--is-tag-default"
+      class="m-input-style m-multi-select m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
       style="width: 100%; max-width: 288px;"
     >
       <div
@@ -1845,21 +1845,27 @@ exports[`Storyshots modul-components|m-multi-select placeholder 1`] = `
         <div
           class="m-input-style__body"
         >
-          <span
+          <label
             class="m-input-style__label"
-            style="z-index: -1;"
+            for="m-multi-select-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
           >
             <span
               class="m-input-style__text"
-            />
-          </span>
+            >
+              <span>
+                Label
+              </span>
+               
+              <!---->
+            </span>
+          </label>
            
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -1870,6 +1876,7 @@ exports[`Storyshots modul-components|m-multi-select placeholder 1`] = `
                 aria-describedby="fakeId fakeId"
                 aria-haspopup="listbox"
                 aria-hidden="true"
+                aria-labelledby="fakeId"
                 aria-placeholder="A very very very very very very looooong"
                 class="m-multi-select__chips"
                 role="button"
