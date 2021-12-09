@@ -1,6 +1,5 @@
-<div
-    class="m-datepicker"
-    :class="{
+<div class="m-datepicker"
+     :class="{
         'm--has-validation-message': hasValidationMessage
     }"
     :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
@@ -72,28 +71,22 @@
             <h2 v-if="label && isMqMaxS"
                 class="m-datepicker__header-label"
                 slot="header">{{label}}</h2>
-            <m-calendar
-                :min-date="minDateString"
-                :max-date="maxDateString"
-                :type="type"
-                :visible="open"
-                :initial-view="initialView"
-                :show-month-before-after="false"
-                :value="formattedDate"
-                @input="selectDate"
-            />
+            <m-calendar :min-date="minDateString"
+                        :max-date="maxDateString"
+                        :type="type"
+                        :visible="open"
+                        :initial-view="initialView"
+                        :show-month-before-after="false"
+                        :value="formattedDate"
+                        @input="selectDate" />
         </m-popup>
     </m-input-style>
-    <m-validation-message
-        :id="validationMessageId"
-        class="m-datepicker__validation-message"
-        :disabled="isDisabled"
-        :waiting="isWaiting"
-        :error="hasCalandarError"
-        :error-message="calandarErrorMessage"
-        :valid-message="validMessage"
-        :helper-message="helperMessage"
-    />
+    <m-validation-message :id="validationMessageId"
+                          class="m-datepicker__validation-message"
+                          :disabled="isDisabled"
+                          :waiting="isWaiting"
+                          :error="hasCalandarError"
+                          :error-message="calandarErrorMessage"
+                          :valid-message="validMessage"
+                          :helper-message="helperMessage" />
 </div>
-
-
