@@ -321,12 +321,12 @@ export class MBaseSelect extends ModulVue {
     public onKeydownDown($event: KeyboardEvent): void {
         if (!this.popupOpen) {
             this.togglePopup();
-        } else {
-            this.focusNextItem();
-            this.scrollToFocused();
-            if (!this.multiselect) {
-                this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
-            }
+        }
+
+        this.focusNextItem();
+        this.scrollToFocused();
+        if (!this.multiselect) {
+            this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
     }
 
