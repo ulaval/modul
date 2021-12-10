@@ -61,7 +61,7 @@
             @blur="onBlur"
             @paste="onPaste"
         >
-            <template #suffix v-if="waitingResults">
+            <template #suffix v-if="isWaitingResults">
                 <m-spinner class="m-input-style__spinner" size="small" />
             </template>
         </m-textfield>
@@ -125,7 +125,7 @@
         </div>
     </template>
 
-    <template #outer-items v-if="waitingResults && isMqMaxS">
+    <template #outer-items v-if="isWaitingResults && isMqMaxS">
         <div class="m-typeahead__mobile-spinner">
             <m-spinner class="m-input-style__spinner"/>
         </div>

@@ -208,12 +208,11 @@ export class MBaseSelect extends ModulVue {
 
                 this.focusedIndex = findSelectedItem ? items.indexOf(findSelectedItem) : 0;
             }
-        } else {
-            this.focusedIndex = 0;
         }
 
         if (
-            !this.itemsAreStringArray
+            this.focusedIndex !== -1
+            && !this.itemsAreStringArray
             && this.items
             && this.items.length > 0
             && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
@@ -225,7 +224,7 @@ export class MBaseSelect extends ModulVue {
     }
 
     public focusNextItem(): void {
-        if (this.focusedIndex < 0 || this.focusedIndex >= this.items.length - 1) { return; }
+        if (this.focusedIndex >= this.items.length - 1) { return; }
         if (this.itemsAreStringArray) {
             this.focusedIndex++;
         } else {

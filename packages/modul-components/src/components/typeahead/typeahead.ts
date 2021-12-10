@@ -51,7 +51,7 @@ export class MTypeahead extends ModulVue {
     @Prop()
     public readonly filterResultsManually: boolean;
 
-    @Prop({ default: 200 })
+    @Prop({ default: 0 })
     public readonly throttle: number;
 
     @Prop({ default: 0 })
@@ -170,6 +170,12 @@ export class MTypeahead extends ModulVue {
         return typeof this.results[0] === 'string';
     }
 
+    public get isWaitingResults(): boolean {
+        return (this.waitingResults || this.throttleTimeoutActive)
+            && this.textfieldValue.length > 0
+            && !this.as<InputState>().isWaiting;
+    }
+
     public onOpen(): void {
         this.firstSelection = true;
     }
@@ -272,6 +278,7 @@ export class MTypeahead extends ModulVue {
     public onKeydownDown($event: KeyboardEvent): void {
         if (this.resultsCouldBeDisplay) {
             if (this.firstSelection) {
+                if (this.refBaseSelect.focusedIndex === -1) { this.refBaseSelect.focusedIndex = 0; }
                 this.refBaseSelect.focusFirstSelected();
                 this.onSelect({}, this.refBaseSelect.focusedIndex);
                 this.firstSelection = false;
@@ -312,17 +319,27 @@ export class MTypeahead extends ModulVue {
     }
 
     private createThrottleTimeout(): void {
-        this.throttleTimeout = window.setTimeout(() => {
+        if (this.throttle > 0) {
+            this.throttleTimeout = window.setTimeout(() => {
+                this.throttleTimeoutActive = false;
+
+                this.updateResults();
+            }, this.throttle);
+        } else {
             this.throttleTimeoutActive = false;
+            this.updateResults();
+        }
+    }
 
-            this.onFilterResults();
+    private updateResults(): void {
+        this.onFilterResults();
 
-            if (!this.isResultsPopupOpen) {
-                this.openResultsPopup();
-            }
+        if (!this.isResultsPopupOpen) {
+            this.openResultsPopup();
+        }
 
-            this.emitFilterResults();
-        }, this.throttle);
+        this.refBaseSelect.focusedIndex = -1;
+        this.emitFilterResults();
     }
 }
 

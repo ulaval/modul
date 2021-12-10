@@ -17,7 +17,7 @@
     --m-input-style--label-color: #{ $m-color--grey-dark };
     --m-input-style--border-color: #{ $m-color--grey-light };
     --m-input-style--buttons-color: #{ $m-color--grey };
-    --m-input-style--background-color: white;
+    --m-input-style--background-color: #{ $m-color--white };
     --m-input-style--placeholder-color: #{ $m-input-style--color-disabled };
 }
 
@@ -90,7 +90,7 @@
         left: 0;
         position: relative;
         display: inline-block;
-        background-color: var(--m-input-style--background-color);
+        background: linear-gradient(360deg, var(--m-input-style--background-color) 51%, rgba(250, 250, 250, 0) 100%) 54%;
         transition: background $m-transition-duration ease, padding $m-transition-duration ease, left $m-transition-duration ease;
     }
 
