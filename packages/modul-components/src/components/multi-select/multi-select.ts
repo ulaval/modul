@@ -83,12 +83,6 @@ export class MMultiSelect extends ModulVue {
     @Ref('baseSelect')
     public readonly refBaseSelect: MBaseSelect;
 
-    @Emit('open')
-    public async emitOpen(): Promise<void> {
-        await this.$nextTick();
-        this.refBaseSelect.focusFirstSelected();
-    }
-
     @Emit('close')
     public emitClose(): void { }
 
@@ -96,6 +90,9 @@ export class MMultiSelect extends ModulVue {
     public onBlur($event: FocusEvent): void {
         this.internalFocus = false;
     }
+
+    @Emit('open')
+    public async emitOpen(): Promise<void> { }
 
     @Emit('select-item')
     public onSelect(option: any, index: number, $event: Event): void {
@@ -221,35 +218,30 @@ export class MMultiSelect extends ModulVue {
 
     public onFocus($event: FocusEvent): void {
         this.internalFocus = this.as<InputState>().active;
-        if (this.internalFocus) {
-            this.$emit('focus', $event);
-        }
+        if (!this.internalFocus) { return; }
+        this.$emit('focus', $event);
     }
 
     public onKeydownDown($event: KeyboardEvent): void {
-        if (this.internalOptions) {
-            if (!this.open) {
-                this.open = true;
-            }
-            this.refBaseSelect.onKeydownDown($event);
-        }
+        if (!this.internalOptions) { return; }
+        this.refBaseSelect.onKeydownDown($event);
     }
 
     public onKeydownUp($event: KeyboardEvent): void {
-        if (this.internalOptions) {
-            this.refBaseSelect.onKeydownUp($event);
-        }
+        if (!this.internalOptions) { return; }
+        this.refBaseSelect.onKeydownUp($event);
     }
 
     public onKeydownEnter($event: KeyboardEvent): void {
-        if (this.internalOptions) {
-            if (!this.open) {
-                this.open = true;
-            }
-            if (this.refBaseSelect.focusedIndex > -1) {
-                this.refBaseSelect.emitSelectItem(this.refBaseSelect.items[this.refBaseSelect.focusedIndex], this.refBaseSelect.focusedIndex, $event);
-            }
+        if (!this.internalOptions) { return; }
+        if (!this.open) {
+            this.open = true;
+            return;
         }
+        if (this.refBaseSelect.focusedIndex > -1) {
+            this.refBaseSelect.emitSelectItem(this.refBaseSelect.items[this.refBaseSelect.focusedIndex], this.refBaseSelect.focusedIndex, $event);
+        }
+
     }
 
     public onKeydownSpace($event: KeyboardEvent): void {

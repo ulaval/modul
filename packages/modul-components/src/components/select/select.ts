@@ -77,10 +77,7 @@ export class MSelect extends ModulVue {
     public open: boolean = false;
 
     @Emit('open')
-    public async onOpen(): Promise<void> {
-        await this.$nextTick();
-        this.refBaseSelect.focusFirstSelected();
-    }
+    public async onOpen(): Promise<void> { }
 
     @Emit('close')
     public onClose(): void { }

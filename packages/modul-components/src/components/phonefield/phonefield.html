@@ -24,28 +24,11 @@
             :clearable="false"
             :list-min-width="listMinWidth"
             @select-item="onContryChanged"
-            @open="focusInputSelect"
-            @close="focusInput"
         >
             <template #default="{propsAndHandlers}">
-                <div role="button"
+                <div
                     class="m-phonefield__country-field"
-                    aria-haspopup="listbox"
                     ref="inputSelect"
-                    :tabindex="isDisabled || isReadonly || isWaiting ? -1 : 0"
-                    :aria-activedescendant="propsAndHandlers.ariaActivedescendant"
-                    :aria-controls="propsAndHandlers.ariaControls"
-                    :aria-labelleby="valueDropdownCountryId"
-                    @keydown.up.prevent="propsAndHandlers.keyUp"
-                    @keydown.down.prevent="propsAndHandlers.keyDown"
-                    @keydown.home.prevent="propsAndHandlers.keyHome"
-                    @keydown.end.prevent="propsAndHandlers.keyEnd"
-                    @keydown.enter.prevent="propsAndHandlers.keyEnter"
-                    @keydown.space.prevent="propsAndHandlers.keyEnter"
-                    @keydown.tab.prevent="onKeydownTab(propsAndHandlers.keyTab)"
-                    @keydown.prevent="propsAndHandlers.keyLetter"
-                    @focus="propsAndHandlers.focus()"
-                    @blur="propsAndHandlers.blur()"
                 >
                     <span
                         :id="valueDropdownCountryId"

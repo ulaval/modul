@@ -68,7 +68,7 @@ exports[`Storyshots modul-components|m-multi-select 500px width 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -204,7 +204,7 @@ exports[`Storyshots modul-components|m-multi-select Full width 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -341,7 +341,7 @@ exports[`Storyshots modul-components|m-multi-select Large width 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -478,7 +478,7 @@ exports[`Storyshots modul-components|m-multi-select complete 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -601,8 +601,6 @@ exports[`Storyshots modul-components|m-multi-select custom chip info 1`] = `
                 role="button"
                 tabindex="0"
               >
-                <!---->
-                 
                 <div
                   class="m-chip-delete m-multi-select__chip m--is-small"
                 >
@@ -766,8 +764,6 @@ exports[`Storyshots modul-components|m-multi-select custom select-item 1`] = `
                 role="button"
                 tabindex="0"
               >
-                <!---->
-                 
                 <div
                   class="m-chip-delete m-multi-select__chip m--is-small"
                 >
@@ -933,8 +929,6 @@ exports[`Storyshots modul-components|m-multi-select default 1`] = `
                 role="button"
                 tabindex="0"
               >
-                <!---->
-                 
                 <div
                   class="m-chip-delete m-multi-select__chip m--is-small"
                 >
@@ -1109,49 +1103,6 @@ exports[`Storyshots modul-components|m-multi-select empty 1`] = `
                 />
                  
                 <div
-                  class="m-chip-delete m-multi-select__chip m--is-small"
-                >
-                  <div
-                    class="m-chip-delete__body"
-                  >
-                    <span
-                      class="m-chip-delete__text"
-                      id="mChipDeleteText-fakeId"
-                    >
-                      <span
-                        class="m-chip-delete__hidden-text"
-                      >
-                        Supprimer : 
-                      </span>
-                       
-                        Tous les choix (0)
-                    
-                    </span>
-                     
-                    <button
-                      aria-labelledby="mChipDeleteText-fakeId"
-                      class="m-chip-delete__button"
-                      tabindex="-1"
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden="true"
-                        class="m-icon m-chip-delete__icon"
-                        height="8px"
-                        width="8px"
-                      >
-                        <!---->
-                         
-                        <use
-                          aria-hidden="true"
-                          class=""
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                 
-                <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
                   id="fakeId"
@@ -1281,7 +1232,7 @@ exports[`Storyshots modul-components|m-multi-select error-message 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -1430,8 +1381,6 @@ exports[`Storyshots modul-components|m-multi-select label 1`] = `
                 role="button"
                 tabindex="0"
               >
-                <!---->
-                 
                 <div
                   class="m-chip-delete m-multi-select__chip m--is-small"
                 >
@@ -1612,7 +1561,7 @@ exports[`Storyshots modul-components|m-multi-select object as options 1`] = `
                     tabindex="-1"
                     type="text"
                   />
-                    
+                   
                   <div
                     aria-hidden="true"
                     class="m-multi-select__visually-hidden"
@@ -1751,7 +1700,7 @@ exports[`Storyshots modul-components|m-multi-select options undefined 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -1890,7 +1839,7 @@ exports[`Storyshots modul-components|m-multi-select placeholder 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -2013,8 +1962,6 @@ exports[`Storyshots modul-components|m-multi-select select all link 1`] = `
                 role="button"
                 tabindex="0"
               >
-                <!---->
-                 
                 <div
                   class="m-chip-delete m-multi-select__chip m--is-small"
                 >
@@ -2187,7 +2134,7 @@ exports[`Storyshots modul-components|m-multi-select/mobile iphone6 - select all 
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
@@ -2317,7 +2264,7 @@ exports[`Storyshots modul-components|m-multi-select/mobile iphone6 1`] = `
                   tabindex="-1"
                   type="text"
                 />
-                  
+                 
                 <div
                   aria-hidden="true"
                   class="m-multi-select__visually-hidden"
