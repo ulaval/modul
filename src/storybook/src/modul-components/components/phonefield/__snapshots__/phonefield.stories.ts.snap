@@ -58,32 +58,37 @@ exports[`Storyshots modul-components|m-phonefield Autocomplete Work Phone 1`] = 
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -427,32 +432,37 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
                     >
                       <div
                         aria-activedescendant=""
-                        aria-controls="listbox-fakeId"
+                        aria-describedby="fakeId"
                         aria-haspopup="listbox"
-                        aria-labelleby="fakeId"
-                        class="m-phonefield__country-field"
+                        aria-labelledby="fakeId m-select-fakeId"
+                        class="m-select__input"
+                        id="m-select-fakeId"
                         role="button"
                         tabindex="0"
                       >
-                        <span
-                          class="m-phonefield__hidden"
-                          id="fakeId"
+                        <div
+                          class="m-phonefield__country-field"
                         >
-                          
+                          <span
+                            class="m-phonefield__hidden"
+                            id="fakeId"
+                          >
+                            
                         Code pays: ca
                     
-                        </span>
-                         
-                        <svg
-                          aria-hidden="true"
-                          class="m-phonefield__flag-wrapper"
-                          height="20px"
-                          width="27px"
-                        >
-                          <use
+                          </span>
+                           
+                          <svg
                             aria-hidden="true"
-                          />
-                        </svg>
+                            class="m-phonefield__flag-wrapper"
+                            height="20px"
+                            width="27px"
+                          >
+                            <use
+                              aria-hidden="true"
+                            />
+                          </svg>
+                        </div>
                       </div>
                        
                       <!---->
@@ -664,32 +674,38 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
+                    aria-disabled="true"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="-1"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -889,32 +905,38 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-invalid="true"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -1117,32 +1139,38 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-invalid="true"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -1364,32 +1392,37 @@ exports[`Storyshots modul-components|m-phonefield Full Width 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -1591,32 +1624,37 @@ exports[`Storyshots modul-components|m-phonefield Max Width 500 Px 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -1818,32 +1856,37 @@ exports[`Storyshots modul-components|m-phonefield Max Width Large 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -2045,32 +2088,37 @@ exports[`Storyshots modul-components|m-phonefield Other Default Country 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: fr
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -2272,32 +2320,37 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -2499,32 +2552,37 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
                     tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
@@ -2726,32 +2784,38 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
                 >
                   <div
                     aria-activedescendant=""
-                    aria-controls="listbox-fakeId"
+                    aria-describedby="fakeId"
                     aria-haspopup="listbox"
-                    aria-labelleby="fakeId"
-                    class="m-phonefield__country-field"
+                    aria-labelledby="fakeId m-select-fakeId"
+                    aria-readonly="true"
+                    class="m-select__input"
+                    id="m-select-fakeId"
                     role="button"
-                    tabindex="-1"
+                    tabindex="0"
                   >
-                    <span
-                      class="m-phonefield__hidden"
-                      id="fakeId"
+                    <div
+                      class="m-phonefield__country-field"
                     >
-                      
+                      <span
+                        class="m-phonefield__hidden"
+                        id="fakeId"
+                      >
+                        
                         Code pays: ca
                     
-                    </span>
-                     
-                    <svg
-                      aria-hidden="true"
-                      class="m-phonefield__flag-wrapper"
-                      height="20px"
-                      width="27px"
-                    >
-                      <use
+                      </span>
+                       
+                      <svg
                         aria-hidden="true"
-                      />
-                    </svg>
+                        class="m-phonefield__flag-wrapper"
+                        height="20px"
+                        width="27px"
+                      >
+                        <use
+                          aria-hidden="true"
+                        />
+                      </svg>
+                    </div>
                   </div>
                    
                   <!---->
