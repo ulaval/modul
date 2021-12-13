@@ -157,11 +157,6 @@ export class MPhonefield extends ModulVue {
         }
     }
 
-    public onKeydownTab(callbackTab: Function, event: KeyboardEvent): void {
-        callbackTab();
-        this.focusInput();
-    }
-
     public isLastPriorityIsoCountrie(iso: MCountryCodeISO2): boolean {
         return this.priorityIsoCountries[this.priorityIsoCountries.length - 1] === iso;
     }
