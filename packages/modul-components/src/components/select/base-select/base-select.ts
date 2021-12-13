@@ -99,12 +99,12 @@ export class MBaseSelect extends ModulVue {
     public async emitOpen(): Promise<void> { }
 
     @Emit('close')
-    public emitClose(): void {
-        this.focusedIndex = -1;
-    }
+    public emitClose(): void { }
 
     @Emit('portal-after-close')
-    public emitPortalAfterClose(): void { }
+    public emitPortalAfterClose(): void {
+        this.focusedIndex = -1;
+    }
 
     public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
         this.$emit('select-item', option, index, event);
@@ -112,14 +112,15 @@ export class MBaseSelect extends ModulVue {
 
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
-        if (open !== this.internalOpen) {
-            this.internalOpen = open;
-        }
+        if (open === this.internalOpen) { return; }
+        this.internalOpen = open;
+        this.focusFirstSelected();
     }
 
     public set popupOpen(open: boolean) {
         this.internalOpen = open;
         this.emitUpdateOpen(open);
+        this.focusFirstSelected();
     }
 
     public get popupOpen(): boolean {
@@ -190,37 +191,18 @@ export class MBaseSelect extends ModulVue {
         this.popupOpen = false;
     }
 
-    public setFocusedIndex(index): void {
-        this.focusedIndex = index;
-    }
-
     public selectFocusedItem($event: Event): void {
         this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
     }
 
     public focusFirstSelected(): void {
-        if (this.items && this.items.length > 0 && this.selectedItems && this.selectedItems.length > 0) {
-            if (this.itemsAreStringArray) {
-                this.focusedIndex = (this.items as string[]).indexOf((this.selectedItems as string[])[0]);
-            } else {
-                const items: MBaseSelectItem<unknown>[] = this.items as MBaseSelectItem<unknown>[];
-                const findSelectedItem: MBaseSelectItem<unknown> | undefined = items.find((items) => items.value === this.selectedItems[0]);
-
-                this.focusedIndex = findSelectedItem ? items.indexOf(findSelectedItem) : 0;
-            }
-        }
-
-        if (
-            this.focusedIndex !== -1
-            && !this.itemsAreStringArray
-            && this.items
-            && this.items.length > 0
-            && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled
-        ) {
+        this.setCurrentFocusedIndex();
+        if (!this.popupOpen || this.focusedIndex === -1) { return; }
+        if (this.items && this.items.length > 0 && (this.items as MBaseSelectItem<unknown>[])[this.focusedIndex].disabled) {
             this.focusNextItem();
-        } else {
-            this.scrollToFocused();
+            return;
         }
+        this.scrollToFocused();
     }
 
     public focusNextItem(): void {
@@ -324,8 +306,7 @@ export class MBaseSelect extends ModulVue {
         }
 
         this.focusNextItem();
-        this.scrollToFocused();
-        if (!this.multiselect) {
+        if (!this.multiselect && this.items) {
             this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
     }
@@ -333,7 +314,7 @@ export class MBaseSelect extends ModulVue {
     public onKeydownUp($event: KeyboardEvent): void {
         if (!this.popupOpen) { return; }
         this.focusPreviousItem();
-        if (!this.multiselect) {
+        if (!this.multiselect && this.items) {
             this.emitSelectItem(this.items[this.focusedIndex], this.focusedIndex, $event);
         }
     }
@@ -406,8 +387,10 @@ export class MBaseSelect extends ModulVue {
         }
     }
 
-    private scrollToFocused(): void {
+    private async scrollToFocused(): Promise<void> {
         if (this.focusedIndex < 0) { return; }
+
+        await this.$nextTick();
 
         const sidebarBody: HTMLElement | undefined = this.as<MediaQueries>().isMqMaxS ?
             document.querySelector(`#${this.popupId} .m-sidebar__body`) as HTMLElement
@@ -493,5 +476,18 @@ export class MBaseSelect extends ModulVue {
             return item.disabled ? false : this.selectedItems.some(i => i === item);
         }
         return false;
+    }
+
+    private setCurrentFocusedIndex(): void {
+        if (!(this.items && this.items.length > 0 && this.selectedItems && this.selectedItems.length > 0 && this.popupOpen)) { return; }
+
+        if (this.itemsAreStringArray) {
+            this.focusedIndex = (this.items as string[]).indexOf((this.selectedItems as string[])[0]);
+            return;
+        }
+        const items: MBaseSelectItem<unknown>[] = this.items as MBaseSelectItem<unknown>[];
+        const findSelectedItem: MBaseSelectItem<unknown> | undefined = items.find((items) => items.value === this.selectedItems[0]);
+
+        this.focusedIndex = findSelectedItem ? items.indexOf(findSelectedItem) : 0;
     }
 }

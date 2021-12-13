@@ -122,18 +122,17 @@ export class MTypeahead extends ModulVue {
 
     @Watch('internalIsFocus')
     public onFocusChanged(newValue: boolean): void {
-        if (newValue) {
-            this.onFilterResults();
-        }
+        if (!newValue) { return; }
+        this.onFilterResults();
+
     }
 
     @Watch('isResultsPopupOpen')
     public onBaseSelectOpen(newValue: boolean): void {
-        if (newValue && this.as<MediaQueries>().isMqMaxS) {
-            setTimeout(() => {
-                this.refResearchInput.focus();
-            });
-        }
+        if (!newValue || this.as<MediaQueries>().isMqMinS) { return; }
+        requestAnimationFrame(() => {
+            this.refResearchInput.focus();
+        });
     }
 
     public get hasResults(): boolean {
