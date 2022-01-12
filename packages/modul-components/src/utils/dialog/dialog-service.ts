@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { MDialog, MDialogState, MDialogWidth } from '../../components/dialog/dialog';
+import { MDialog, MDialogMessageStyle, MDialogState, MDialogWidth } from '../../components/dialog/dialog';
 
 
 export class DialogService {
@@ -43,9 +43,9 @@ export class DialogService {
         document.body.appendChild(confirmInstance.$el);
         confirmInstance.message = message;
         confirmInstance.state = MDialogState.Confirmation;
-        confirmInstance.title = title ? title : '';
-        confirmInstance.okLabel = okLabel ? okLabel : undefined;
-        confirmInstance.cancelLabel = cancelLabel ? cancelLabel : undefined;
+        confirmInstance.title = title || '';
+        confirmInstance.okLabel = okLabel || undefined;
+        confirmInstance.cancelLabel = cancelLabel || undefined;
 
         return this.show(confirmInstance).then((result) => {
             confirmInstance.$destroy();
@@ -55,6 +55,7 @@ export class DialogService {
 
     /**
      *
+     * @param options all configuration options
      * @param message the message of the confirmation dialog
      * @param state the dialog state
      * @param title a title label if any
@@ -66,23 +67,70 @@ export class DialogService {
      * @param cancelLabel a cancel label if any
      * @param width the width of the dialog if any
      */
-    public generic(message: string, state?: MDialogState, title?: string, okLabel?: string, secBtn?: boolean, secBtnLabel?: string, btnWidth?: string, negativeLink?: boolean, cancelLabel?: string, width?: MDialogWidth): Promise<boolean> {
-        let genericInstance: MDialog = new MDialog({
-            el: document.createElement('div')
-        });
+    public generic(options: {
+        message: string;
+        messageStyle?: MDialogMessageStyle;
+        title?: string;
+        state?: MDialogState;
+        okLabel?: string;
+        secBtn?: boolean;
+        secBtnLabel?: string;
+        btnWidth?: string;
+        negativeLink?: boolean;
+        cancelLabel?: string;
+        width?: MDialogWidth;
+    }): Promise<boolean>;
+    public generic(
+        message: string,
+        state?: MDialogState,
+        title?: string,
+        okLabel?: string,
+        secBtn?: boolean,
+        secBtnLabel?: string,
+        btnWidth?: string,
+        negativeLink?: boolean,
+        cancelLabel?: string,
+        width?: MDialogWidth,
+        messageStyle?: MDialogMessageStyle
+    ): Promise<boolean>;
+    public generic(...args: any): Promise<boolean> {
+        let genericInstance: MDialog;
+
+        if (typeof args[0] === 'string') {
+            genericInstance = new MDialog({
+                el: document.createElement('div'),
+                propsData: {
+                    message: args[0],
+                    state: args[1] || MDialogState.Default,
+                    title: args[2],
+                    okLabel: args[3],
+                    secBtn: args[4] || false,
+                    secBtnLabel: args[5],
+                    btnWidth: args[6],
+                    negativeLink: args[7] || true,
+                    cancelLabel: args[8],
+                    width: args[9] || MDialogWidth.Default,
+                    messageStyle: args[10]
+                }
+            });
+        } else {
+            genericInstance = new MDialog({
+                el: document.createElement('div'),
+                propsData: {
+                    ...{
+                        state: MDialogState.Default,
+                        title: '',
+                        secBtn: false,
+                        btnWidth: undefined,
+                        negativeLink: true,
+                        width: MDialogWidth.Default
+                    },
+                    ...args[0]
+                }
+            });
+        }
 
         document.body.appendChild(genericInstance.$el);
-        genericInstance.message = message;
-        genericInstance.state = state ? state : MDialogState.Default;
-        genericInstance.title = title ? title : '';
-        genericInstance.okLabel = okLabel ? okLabel : undefined;
-        genericInstance.secBtn = secBtn ? secBtn : false;
-        genericInstance.secBtnLabel = secBtnLabel ? secBtnLabel : undefined;
-        genericInstance.btnWidth = btnWidth ? btnWidth : '100%';
-        genericInstance.negativeLink = negativeLink ? negativeLink : true;
-        genericInstance.cancelLabel = cancelLabel ? cancelLabel : undefined;
-        genericInstance.width = width ? width : MDialogWidth.Default;
-
 
         return this.show(genericInstance).then((result) => {
             genericInstance.$destroy();

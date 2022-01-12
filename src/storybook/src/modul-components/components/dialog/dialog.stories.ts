@@ -1,11 +1,10 @@
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import { DIALOG_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import { MDialogMessageStyle } from '@ulaval/modul-components/dist/lib';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${DIALOG_NAME}`, module)
-
-
     .add('default', () => ({
         props: {
             text: {
@@ -106,6 +105,14 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DIALOG_NAME}`, module)
         }),
         template: `<m-dialog :open.sync="openProp" btnWidth="328px">
                         A Dialog with a specified Btn Width of 328px
+                   </m-dialog>`
+    }))
+    .add(`messageStyle="${MDialogMessageStyle.Regular}"`, () => ({
+        data: () => ({
+            openProp: true
+        }),
+        template: `<m-dialog :open.sync="openProp" messageStyle="${MDialogMessageStyle.Regular}">
+                        A Dialog with messageStyle="${MDialogMessageStyle.Regular}"
                    </m-dialog>`
     }));
 

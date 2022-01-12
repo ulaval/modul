@@ -3,6 +3,7 @@ import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import DialogServicePlugin from '../../utils/dialog/dialog-service.plugin';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton, MButtonSkin } from '../button/button';
 import { BUTTON_NAME, DIALOG_NAME, I18N_NAME, ICON_NAME, LINK_NAME, MESSAGE_NAME } from '../component-names';
@@ -25,6 +26,11 @@ export enum MDialogState {
     Error = 'error'
 }
 
+export enum MDialogMessageStyle {
+    LargeAndCenter = 'large-and-center',
+    Regular = 'regular'
+}
+
 @WithRender
 @Component({
     components: {
@@ -38,47 +44,60 @@ export enum MDialogState {
 })
 export class MDialog extends ModulVue implements PortalMixinImpl {
     @Prop()
-    public title: string;
+    public readonly title: string;
+
     @Prop()
-    public message: string;
+    public readonly message: string;
+
     @Prop()
-    public okLabel: string | undefined;
+    public readonly okLabel?: string;
+
     @Prop()
-    public okPrecision: string | undefined;
+    public readonly okPrecision?: string;
+
     @Prop({ default: MButtonSkin.Primary })
-    public okButtonSkin: MButtonSkin;
+    public readonly okButtonSkin: MButtonSkin;
+
     @Prop({ default: false })
-    public secBtn: boolean;
+    public readonly secBtn: boolean;
+
     @Prop()
-    public secBtnLabel: string | undefined;
+    public readonly secBtnLabel: string | undefined;
+
     @Prop()
-    public secBtnPrecision: string | undefined;
+    public readonly secBtnPrecision: string | undefined;
+
     @Prop({ default: '100%' })
-    public btnWidth: string;
+    public readonly btnWidth: string;
+
     @Prop()
     public cancelLabel: string | undefined;
+
     @Prop({ default: true })
-    public negativeLink: boolean;
+    public readonly negativeLink: boolean;
+
     @Prop()
-    public hint: string;
+    public readonly hint: string;
+
     @Prop({
         default: MDialogWidth.Default,
         validator: value =>
             value === MDialogWidth.Default ||
             value === MDialogWidth.Large
     })
-    public width: string;
+    public readonly width: string;
 
     @Prop({
         default: MDialogState.Default,
-        validator: value =>
-            value === MDialogState.Default ||
-            value === MDialogState.Warning ||
-            value === MDialogState.Confirmation ||
-            value === MDialogState.Information ||
-            value === MDialogState.Error
+        validator: value => Enums.toValueArray(MDialogState).includes(value)
     })
-    public state: MDialogState;
+    public readonly state: MDialogState;
+
+    @Prop({
+        default: MDialogMessageStyle.LargeAndCenter,
+        validator: value => Enums.toValueArray(MDialogMessageStyle).includes(value)
+    })
+    public readonly messageStyle: MDialogMessageStyle;
 
     public handlesFocus(): boolean {
         return true;
@@ -101,87 +120,46 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
     }
 
     @Emit('ok')
-    onOk(event: Event): void {
+    public onOk(event: Event): void {
         this.as<PortalMixin>().propOpen = false;
     }
 
     @Emit('secondaryBtn')
-    onSecondaryBtn(event: Event): void {
+    public onSecondaryBtn(event: Event): void {
         this.as<PortalMixin>().propOpen = false;
     }
 
     @Emit('cancel')
-    onCancel(event: Event): void {
+    public onCancel(event: Event): void {
         this.as<PortalMixin>().propOpen = false;
     }
 
-    private get hasDefaultSlot(): boolean {
-        return !!this.$slots.default;
-    }
-
-    private get hasFooterSlot(): boolean {
-        return !!this.$slots.footer;
-    }
-
-    private get hasHint(): boolean {
-        return !!this.hint;
-    }
-
-    private get hasTitle(): boolean {
-        return !!this.title;
-    }
-
-    private get hasMessage(): boolean {
-        return !!this.message;
-    }
-
-    private get hasOkLabel(): boolean {
-        return !!this.okLabel;
-    }
-
-    private get hasOkPrecision(): boolean {
-        return !!this.okPrecision;
-    }
-
-    private get hasSecBtnLabel(): boolean {
-        return !!this.secBtnLabel;
-    }
-
-    private get hasSecBtnPrecision(): boolean {
-        return !!this.secBtnPrecision;
-    }
-
-    private get dialogStyles(): { width: string } {
+    public get dialogStyles(): { width: string } {
         return { 'width': this.btnWidth };
     }
 
-    private get hasCancelLabel(): boolean {
-        return !!this.cancelLabel;
+    public get isMessageStyleLargeAndCenter(): boolean {
+        return this.messageStyle === MDialogMessageStyle.LargeAndCenter;
     }
 
-    private get hasWidthLarge(): boolean {
+    public get hasWidthLarge(): boolean {
         return this.width === MDialogWidth.Large;
     }
 
-    private get getState(): string {
-        let state: string = '';
+    public get getState(): string {
         switch (this.state) {
             case MDialogState.Confirmation:
-                state = 'confirmation';
-                break;
+                return 'confirmation';
             case MDialogState.Information:
-                state = 'information';
+                return 'information';
                 break;
             case MDialogState.Warning:
-                state = 'warning';
-                break;
+                return 'warning';
             case MDialogState.Error:
-                state = 'error';
-                break;
+                return 'error';
             default:
-                break;
+                return '';
         }
-        return state;
     }
 
 }
