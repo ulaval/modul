@@ -11,7 +11,7 @@ export class DialogService {
      * @param okLabel a cancel label if any
      */
     public alert(message: string, title?: string, okLabel?: string): Promise<boolean> {
-        let alertInstance: MDialog = new MDialog({
+        const alertInstance: MDialog = new MDialog({
             el: document.createElement('div'),
             propsData: {
                 message,
@@ -22,7 +22,6 @@ export class DialogService {
         });
 
         document.body.appendChild(alertInstance.$el);
-
 
         return this.show(alertInstance).then((result) => {
             alertInstance.$destroy();
@@ -39,7 +38,7 @@ export class DialogService {
      * @param cancelLabel a cancel label if any
      */
     public confirm(message: string, title?: string, okLabel?: string, cancelLabel?: string): Promise<boolean> {
-        let confirmInstance: MDialog = new MDialog({
+        const confirmInstance: MDialog = new MDialog({
             el: document.createElement('div'),
             propsData: {
                 message,
