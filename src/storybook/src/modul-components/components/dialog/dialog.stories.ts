@@ -1,7 +1,7 @@
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
 import { DIALOG_NAME } from '@ulaval/modul-components/dist/components/component-names';
-import { MDialogMessageStyle } from '@ulaval/modul-components/dist/lib';
+import { MDialogMessageStyle } from '@ulaval/modul-components/dist/components/dialog/dialog';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${DIALOG_NAME}`, module)
