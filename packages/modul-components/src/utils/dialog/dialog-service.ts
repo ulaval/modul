@@ -12,14 +12,17 @@ export class DialogService {
      */
     public alert(message: string, title?: string, okLabel?: string): Promise<boolean> {
         let alertInstance: MDialog = new MDialog({
-            el: document.createElement('div')
+            el: document.createElement('div'),
+            propsData: {
+                message,
+                title,
+                okLabel,
+                negativeLink: false
+            }
         });
 
         document.body.appendChild(alertInstance.$el);
-        alertInstance.message = message;
-        alertInstance.okLabel = okLabel ? okLabel : undefined;
-        alertInstance.title = title ? title : '';
-        alertInstance.negativeLink = false;
+
 
         return this.show(alertInstance).then((result) => {
             alertInstance.$destroy();
@@ -37,15 +40,17 @@ export class DialogService {
      */
     public confirm(message: string, title?: string, okLabel?: string, cancelLabel?: string): Promise<boolean> {
         let confirmInstance: MDialog = new MDialog({
-            el: document.createElement('div')
+            el: document.createElement('div'),
+            propsData: {
+                message,
+                state: MDialogState.Confirmation,
+                title,
+                okLabel,
+                cancelLabel
+            }
         });
 
         document.body.appendChild(confirmInstance.$el);
-        confirmInstance.message = message;
-        confirmInstance.state = MDialogState.Confirmation;
-        confirmInstance.title = title || '';
-        confirmInstance.okLabel = okLabel || undefined;
-        confirmInstance.cancelLabel = cancelLabel || undefined;
 
         return this.show(confirmInstance).then((result) => {
             confirmInstance.$destroy();
@@ -120,9 +125,7 @@ export class DialogService {
                 propsData: {
                     ...{
                         state: MDialogState.Default,
-                        title: '',
                         secBtn: false,
-                        btnWidth: undefined,
                         negativeLink: true,
                         width: MDialogWidth.Default
                     },
@@ -147,8 +150,7 @@ export class DialogService {
      */
     public show(mDialogInstance: MDialog, rejectOnCancel?: boolean): Promise<boolean> {
         return new Promise((resolve, reject) => {
-
-            let onOk: () => void = () => {
+            const onOk: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
                 }
@@ -158,7 +160,7 @@ export class DialogService {
                 });
             };
 
-            let onCancel: () => void = () => {
+            const onCancel: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
                 }
@@ -168,7 +170,7 @@ export class DialogService {
                 });
             };
 
-            let onSecondaryBtn: () => void = () => {
+            const onSecondaryBtn: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
                 }
@@ -178,7 +180,7 @@ export class DialogService {
                 });
             };
 
-            let hook: () => void = () => {
+            const hook: () => void = () => {
                 if (mDialogInstance) {
                     mDialogInstance.$on('ok', onOk);
                     mDialogInstance.$on('cancel', onCancel);
@@ -188,7 +190,7 @@ export class DialogService {
                 }
             };
 
-            let unhook: () => void = () => {
+            const unhook: () => void = () => {
                 if (mDialogInstance) {
                     mDialogInstance.$off('ok', onOk);
                     mDialogInstance.$off('cancel', onCancel);
