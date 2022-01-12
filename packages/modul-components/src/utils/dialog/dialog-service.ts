@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { MDialog, MDialogState, MDialogWidth } from '../../components/dialog/dialog';
+import { MDialog, MDialogMessageStyle, MDialogState, MDialogWidth } from '../../components/dialog/dialog';
 
 
 export class DialogService {
@@ -11,15 +11,17 @@ export class DialogService {
      * @param okLabel a cancel label if any
      */
     public alert(message: string, title?: string, okLabel?: string): Promise<boolean> {
-        let alertInstance: MDialog = new MDialog({
-            el: document.createElement('div')
+        const alertInstance: MDialog = new MDialog({
+            el: document.createElement('div'),
+            propsData: {
+                message,
+                title,
+                okLabel,
+                negativeLink: false
+            }
         });
 
         document.body.appendChild(alertInstance.$el);
-        alertInstance.message = message;
-        alertInstance.okLabel = okLabel ? okLabel : undefined;
-        alertInstance.title = title ? title : '';
-        alertInstance.negativeLink = false;
 
         return this.show(alertInstance).then((result) => {
             alertInstance.$destroy();
@@ -36,16 +38,18 @@ export class DialogService {
      * @param cancelLabel a cancel label if any
      */
     public confirm(message: string, title?: string, okLabel?: string, cancelLabel?: string): Promise<boolean> {
-        let confirmInstance: MDialog = new MDialog({
-            el: document.createElement('div')
+        const confirmInstance: MDialog = new MDialog({
+            el: document.createElement('div'),
+            propsData: {
+                message,
+                state: MDialogState.Confirmation,
+                title,
+                okLabel,
+                cancelLabel
+            }
         });
 
         document.body.appendChild(confirmInstance.$el);
-        confirmInstance.message = message;
-        confirmInstance.state = MDialogState.Confirmation;
-        confirmInstance.title = title ? title : '';
-        confirmInstance.okLabel = okLabel ? okLabel : undefined;
-        confirmInstance.cancelLabel = cancelLabel ? cancelLabel : undefined;
 
         return this.show(confirmInstance).then((result) => {
             confirmInstance.$destroy();
@@ -55,6 +59,7 @@ export class DialogService {
 
     /**
      *
+     * @param options all configuration options
      * @param message the message of the confirmation dialog
      * @param state the dialog state
      * @param title a title label if any
@@ -65,24 +70,70 @@ export class DialogService {
      * @param negativeLink negativeLink if any
      * @param cancelLabel a cancel label if any
      * @param width the width of the dialog if any
+     * @param messageStyle Ssyle applied to the message
      */
-    public generic(message: string, state?: MDialogState, title?: string, okLabel?: string, secBtn?: boolean, secBtnLabel?: string, btnWidth?: string, negativeLink?: boolean, cancelLabel?: string, width?: MDialogWidth): Promise<boolean> {
-        let genericInstance: MDialog = new MDialog({
-            el: document.createElement('div')
-        });
+    public generic(options: {
+        message: string;
+        messageStyle?: MDialogMessageStyle;
+        title?: string;
+        state?: MDialogState;
+        okLabel?: string;
+        secBtn?: boolean;
+        secBtnLabel?: string;
+        btnWidth?: string;
+        negativeLink?: boolean;
+        cancelLabel?: string;
+        width?: MDialogWidth;
+    }): Promise<boolean>;
+    public generic(
+        message: string,
+        state?: MDialogState,
+        title?: string,
+        okLabel?: string,
+        secBtn?: boolean,
+        secBtnLabel?: string,
+        btnWidth?: string,
+        negativeLink?: boolean,
+        cancelLabel?: string,
+        width?: MDialogWidth,
+        messageStyle?: MDialogMessageStyle
+    ): Promise<boolean>;
+    public generic(...args: any): Promise<boolean> {
+        let genericInstance: MDialog;
+
+        if (typeof args[0] === 'string') {
+            genericInstance = new MDialog({
+                el: document.createElement('div'),
+                propsData: {
+                    message: args[0],
+                    state: args[1] || MDialogState.Default,
+                    title: args[2],
+                    okLabel: args[3],
+                    secBtn: args[4] || false,
+                    secBtnLabel: args[5],
+                    btnWidth: args[6],
+                    negativeLink: args[7] || true,
+                    cancelLabel: args[8],
+                    width: args[9] || MDialogWidth.Default,
+                    messageStyle: args[10]
+                }
+            });
+        } else {
+            genericInstance = new MDialog({
+                el: document.createElement('div'),
+                propsData: {
+                    ...{
+                        state: MDialogState.Default,
+                        secBtn: false,
+                        negativeLink: true,
+                        width: MDialogWidth.Default
+                    },
+                    ...args[0]
+                }
+            });
+        }
 
         document.body.appendChild(genericInstance.$el);
-        genericInstance.message = message;
-        genericInstance.state = state ? state : MDialogState.Default;
-        genericInstance.title = title ? title : '';
-        genericInstance.okLabel = okLabel ? okLabel : undefined;
-        genericInstance.secBtn = secBtn ? secBtn : false;
-        genericInstance.secBtnLabel = secBtnLabel ? secBtnLabel : undefined;
-        genericInstance.btnWidth = btnWidth ? btnWidth : '100%';
-        genericInstance.negativeLink = negativeLink ? negativeLink : true;
-        genericInstance.cancelLabel = cancelLabel ? cancelLabel : undefined;
-        genericInstance.width = width ? width : MDialogWidth.Default;
-
 
         return this.show(genericInstance).then((result) => {
             genericInstance.$destroy();
@@ -98,8 +149,7 @@ export class DialogService {
      */
     public show(mDialogInstance: MDialog, rejectOnCancel?: boolean): Promise<boolean> {
         return new Promise((resolve, reject) => {
-
-            let onOk: () => void = () => {
+            const onOk: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
                 }
@@ -109,7 +159,7 @@ export class DialogService {
                 });
             };
 
-            let onCancel: () => void = () => {
+            const onCancel: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
                 }
@@ -119,7 +169,7 @@ export class DialogService {
                 });
             };
 
-            let onSecondaryBtn: () => void = () => {
+            const onSecondaryBtn: () => void = () => {
                 if (mDialogInstance) {
                     unhook();
                 }
@@ -129,7 +179,7 @@ export class DialogService {
                 });
             };
 
-            let hook: () => void = () => {
+            const hook: () => void = () => {
                 if (mDialogInstance) {
                     mDialogInstance.$on('ok', onOk);
                     mDialogInstance.$on('cancel', onCancel);
@@ -139,7 +189,7 @@ export class DialogService {
                 }
             };
 
-            let unhook: () => void = () => {
+            const unhook: () => void = () => {
                 if (mDialogInstance) {
                     mDialogInstance.$off('ok', onOk);
                     mDialogInstance.$off('cancel', onCancel);

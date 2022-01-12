@@ -48,6 +48,18 @@ exports[`Storyshots modul-components|m-dialog hint 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-dialog messageStyle="regular" 1`] = `
+<div
+  class="m-dialog"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
+</div>
+`;
+
 exports[`Storyshots modul-components|m-dialog negativeLink="false" 1`] = `
 <div
   class="m-dialog"

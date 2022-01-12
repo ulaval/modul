@@ -10,9 +10,12 @@
                  :class="[{ 'm--is-disabled': disabled }, className ]"
                  ref="modalWrap">
                 <article class="m-dialog__article"
-                         :class="{ 'm--has-width-large': hasWidthLarge }"
+                         :class="{
+                             'm--has-width-large': hasWidthLarge,
+                             'm--is-message-style-large-and-center': isMessageStyleLargeAndCenter
+                         }"
                          ref="article">
-                    <header v-if="hasTitle"
+                    <header v-if="title"
                             class="m-dialog__header">
                         <h2>{{ title }}</h2>
                     </header>
@@ -23,14 +26,14 @@
                                        :state="getState"
                                        skin="page-light"></m-message>
                         </div>
-                        <div v-if="hasDefaultSlot || hasMessage"
+                        <div v-if="$slots.default || message"
                              class="m-dialog__message">
-                            <p v-if="hasMessage"
+                            <p v-if="message"
                                v-html="message"></p>
                             <slot></slot>
                         </div>
                         <div class="m-dialog__hint"
-                             v-if="hasHint">
+                             v-if="hint">
                             <div class="m-dialog__hint-body">
                                 <div class="m-dialog__hint-icon">
                                     <m-icon name="m-svg__hint"
@@ -45,14 +48,14 @@
                     <footer class="m-dialog__footer">
                         <slot name="footer"></slot>
                         <nav class="m-dialog__footer__nav"
-                             v-if="!hasFooterSlot">
+                             v-if="!$slots.footer">
                             <m-button @click="onOk()"
                                       :style="dialogStyles"
                                       :skin="okButtonSkin">
-                                <template v-if="hasOkLabel">{{ okLabel }}</template>
+                                <template v-if="okLabel">{{ okLabel }}</template>
                                 <m-i18n v-else
                                         k="m-dialog:ok"></m-i18n>
-                                <template v-if="hasOkPrecision"
+                                <template v-if="okPrecision"
                                           slot="precision">{{ okPrecision }}
                                 </template>
                             </m-button>
@@ -60,17 +63,17 @@
                                       :style="dialogStyles"
                                       @click="onSecondaryBtn()"
                                       skin="secondary">
-                                <template v-if="hasSecBtnLabel">{{ secBtnLabel }}</template>
+                                <template v-if="secBtnLabel">{{ secBtnLabel }}</template>
                                 <m-i18n v-else
                                         k="m-dialog:cancel"></m-i18n>
-                                <template v-if="hasSecBtnPrecision"
+                                <template v-if="secBtnPrecision"
                                           slot="precision">{{ secBtnPrecision }}
                                 </template>
                             </m-button>
                             <m-link v-if="negativeLink"
                                     @click="onCancel()"
                                     mode="button">
-                                <template v-if="hasCancelLabel">{{ cancelLabel }}</template>
+                                <template v-if="cancelLabel">{{ cancelLabel }}</template>
                                 <m-i18n v-else
                                         k="m-dialog:cancel"></m-i18n>
                             </m-link>

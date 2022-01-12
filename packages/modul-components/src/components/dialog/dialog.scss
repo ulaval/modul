@@ -65,6 +65,21 @@ $m-dialog--max-width--l: 500px !default;
         &.m--has-width-large {
             max-width: $m-dialog--max-width--l;
         }
+
+        &.m--is-message-style-large-and-center {
+            .m-dialog__body {
+                text-align: center;
+            }
+
+            .m-dialog__message {
+                font-size: $m-font-size--l;
+
+                @media (min-width: $m-mq--min--s) {
+                    font-size: $m-font-size--h5;
+                }
+            }
+
+        }
     }
 
     &__header,
@@ -108,8 +123,6 @@ $m-dialog--max-width--l: 500px !default;
     }
 
     &__body {
-        text-align: center;
-
         &:not(.m--no-padding) {
             padding: $m-spacing--m $m-spacing;
 
@@ -120,19 +133,13 @@ $m-dialog--max-width--l: 500px !default;
 
         @include m-scrollbar();
 
-        ~ .m-dialog__footer {
+        ~.m-dialog__footer {
             padding-top: 0;
         }
     }
 
     &__message {
-        font-size: 18px;
-
-        @media (min-width: $m-mq--min--s) {
-            font-size: $m-font-size--h5;
-        }
-
-        + .m-dialog__hint {
+        +.m-dialog__hint {
             margin-top: $m-spacing;
 
             @media (min-width: $m-mq--min--s) {
@@ -223,7 +230,7 @@ $m-dialog--max-width--l: 500px !default;
         }
 
         .m-button {
-            + .m-button {
+            +.m-button {
                 margin-top: $m-margin;
             }
         }

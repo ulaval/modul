@@ -1,10 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import { Component } from 'vue-property-decorator';
-import DialogPlugin, { MDialog, MDialogState } from '../../../../../../../packages/modul-components/src/components/dialog/dialog';
+import DialogPlugin, { MDialog, MDialogMessageStyle, MDialogState } from '../../../../../../../packages/modul-components/src/components/dialog/dialog';
 import WithRender from './dialog-service.sandbox.html';
-
-
-
 
 @WithRender
 @Component
@@ -27,6 +24,17 @@ export class MDialogServiceSandbox extends Vue {
     onConfirmService(): void {
 
         this.$dialog.confirm('Please Confirm Me').then((result) => {
+            if (result) {
+                this.$log.info('confirmed!');
+            } else {
+                this.$log.info('cancelled');
+            }
+
+        });
+    }
+
+    onConfirmGenericServiceWithOptions(): void {
+        this.$dialog.generic({ message: 'Please do an action', title: 'Title', negativeLink: false, messageStyle: MDialogMessageStyle.Regular }).then((result) => {
             if (result) {
                 this.$log.info('confirmed!');
             } else {
