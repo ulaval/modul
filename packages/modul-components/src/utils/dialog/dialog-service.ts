@@ -66,6 +66,7 @@ export class DialogService {
      * @param negativeLink negativeLink if any
      * @param cancelLabel a cancel label if any
      * @param width the width of the dialog if any
+     * @param messageStyle Ssyle applied to the message
      */
     public generic(options: {
         message: string;
