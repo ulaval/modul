@@ -59,25 +59,39 @@ export class ElementQueries extends ModulVue implements ElementQueriesMixin {
 
     private resizeSensor: ResizeSensor | undefined;
     private doneResizeEvent: any;
+    private resizeObserver: ResizeObserver | undefined;
 
     protected mounted(): void {
-        this.resizeElement(this.$el as HTMLElement);
-        this.resizeSensor = new ResizeSensor(this.$el, () => this.resizeElement(this.$el as HTMLElement));
+        if (window.ResizeObserver) {
+            this.resizeObserver = new ResizeObserver(this.resizeElement.bind(this));
+            this.resizeObserver.observe(this.$el);
+        } else {
+            this.resizeSensor = new ResizeSensor(this.$el, () => this.resizeElement());
+        }
+        this.resizeElement();
     }
 
     protected beforeDestroy(): void {
-        if (this.resizeSensor !== undefined) {
-            this.resizeSensor.detach();
-            this.resizeSensor = undefined;
-            delete this.resizeSensor;
+        if (window.ResizeObserver) {
+            if (this.resizeObserver !== undefined) {
+                this.resizeObserver.disconnect();
+                this.resizeObserver = undefined;
+                delete this.resizeObserver;
+            }
+        } else {
+            if (this.resizeSensor !== undefined) {
+                this.resizeSensor.detach();
+                this.resizeSensor = undefined;
+                delete this.resizeSensor;
+            }
         }
         this.$off('resize');
         this.$off('resizeDone');
     }
 
-    private resizeElement(el: HTMLElement): void {
+    private resizeElement(): void {
         if (this.eqActive) {
-            const elWidth: number = el.clientWidth;
+            const elWidth: number = this.$el.clientWidth;
             requestAnimationFrame(() => {
                 this.setEqMin(elWidth);
                 this.setEqMax(elWidth);
