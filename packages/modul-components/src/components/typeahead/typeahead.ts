@@ -11,7 +11,6 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { TYPEAHEAD_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
-import { MInputStyle } from '../input-style/input-style';
 import { MBaseSelect, MBaseSelectItem } from '../select/base-select/base-select';
 import { MSpinner } from '../spinner/spinner';
 import { MTextfield } from '../textfield/textfield';
@@ -22,7 +21,7 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
 @Component({
     components: {
         MBaseSelect,
-        MInputStyle,
+        MTextfield,
         MValidationMessage,
         MIconButton,
         MSpinner
