@@ -1,17 +1,17 @@
 .m-u--font {
     &-size {
-        font-size: $m-font-size;
+        @include m-font-size();
 
         &--l {
-            font-size: $m-font-size--l;
+            @include m-font-size('md');
         }
 
         &--s {
-            font-size: $m-font-size--s;
+            @include m-font-size('sm');
         }
 
         &--xs {
-            font-size: $m-font-size--xs;
+            @include m-font-size('xs');
         }
     }
 
@@ -27,33 +27,34 @@
 
     &-weight {
         &--black {
-            font-weight: $m-font-weight--black;
+            font-weight: $m-font-weight-black;
         }
 
         &--bold {
-            font-weight: $m-font-weight--bold;
+            font-weight: $m-font-weight-bold;
         }
 
         &--semi-bold {
-            font-weight: $m-font-weight--semi-bold;
+            font-weight: $m-font-weight-semi-bold;
         }
 
         &--regular {
-            font-weight: $m-font-weight--regular;
+            font-weight: $m-font-weight-regular;
         }
 
         &--light {
-            font-weight: $m-font-weight--light;
+            font-weight: $m-font-weight-light;
         }
     }
 }
 
 .m-u--typo {
     &--precision {
+
         &,
         &-italic {
-            font-size: $m-font-size--s;
-            color: $m-color--text-light;
+            @include m-font-size('sm');
+            color: $m-color-text-light;
         }
 
         &-italic {
@@ -63,9 +64,9 @@
 
     &--highlighting {
         display: inline;
-        font-size: $m-font-size--s;
-        font-weight: $m-font-weight--semi-bold;
-        background: $m-color--warning-lightest;
-        box-shadow: 0 0 0 2px $m-color--warning-lightest;
+        @include m-font-size('sm');
+        font-weight: $m-font-weight-semi-bold;
+        background: $m-color-warning-lightest;
+        box-shadow: 0 0 0 2px $m-color-warning-lightest;
     }
 }

@@ -40,7 +40,7 @@ $m-fr-icon-size: 14px !default;
     ul,
     ol,
     table {
-        margin-top: $m-margin;
+        margin-top: $m-space-sm;
         margin-bottom: 0;
     }
 
@@ -67,10 +67,10 @@ $m-fr-icon-size: 14px !default;
         }
     }
 
-    .fr-btn > svg,
-    .fr-sub-menu > svg {
+    .fr-btn>svg,
+    .fr-sub-menu>svg {
         width: $m-fr-icon-size;
         height: $m-fr-icon-size;
-        margin: $m-margin;
+        margin: $m-space-sm;
     }
 }

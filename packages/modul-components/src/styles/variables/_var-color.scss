@@ -1,143 +1,142 @@
 // ======================================================================
 //  Official color of Université Laval
 // ======================================================================
-$m-color--ul-blue: #09f;
-$m-color--ul-yellow: #ffc103;
-$m-color--ul-red: #e30513;
+$m-color-ul-blue: #{var(--m-color-ul-blue)};
+$m-color-ul-yellow: #{var(--m-color-ul-yellow)};
+$m-color-ul-red: #{var(--m-color-ul-red)};
 
 // ======================================================================
 //  Seven Shades of Grey
 // ======================================================================
-
-$m-color--grey-black: #1f1f1f !default;
-$m-color--grey-darkest: #2e2e2e !default;
-$m-color--grey-darker: #3d3d3d !default;
-$m-color--grey-dark: #696969 !default;
-$m-color--grey: #929292 !default;
-$m-color--grey-light: #d7d7d7 !default;
-$m-color--grey-lighter: #f4f4f4 !default;
-$m-color--grey-lightest: #f9f9f9 !default;
+$m-color-grey-black: #{var(--m-color-grey-black)} !default;
+$m-color-grey-darkest: #{var(--m-color-grey-darkest)} !default;
+$m-color-grey-darker: #{var(--m-color-grey-darker)} !default;
+$m-color-grey-dark: #{var(--m-color-grey-dark)} !default;
+$m-color-grey: #{var(--m-color-grey)} !default;
+$m-color-grey-light: #{var(--m-color-grey-light)} !default;
+$m-color-grey-lighter: #{var(--m-color-grey-lighter)} !default;
+$m-color-grey-lightest: #{var(--m-color-grey-lightest)} !default;
 
 // ======================================================================
 //  General color
 // ======================================================================
-$m-color--black: #000;
-$m-color--text: $m-color--black;
-$m-color--text-light: #757575 !default;
-$m-color--white: #fff;
+$m-color-black: #{var(--m-color-black)};
+$m-color-text: #{var(--m-color-text)};
+$m-color-text-light: #{var(--m-color-text-light)} !default;
+$m-color-white: #{var(--m-color-white)};
 
 // ======================================================================
 //  Success colors
 // ======================================================================
-$m-color--success-dark: #009962 !default;
-$m-color--success: #00c77f !default;
-$m-color--success-light: #cdf3e3 !default;
-$m-color--success-lightest: #eaf9f1 !default;
+$m-color-success-dark: #{var(--m-color-success-dark)} !default;
+$m-color-success: #{var(--m-color-success)} !default;
+$m-color-success-light: #{var(--m-color-success-light)} !default;
+$m-color-success-lightest: #{var(--m-color-success-lightest)} !default;
 
 // ======================================================================
 //  Warning colors
 // ======================================================================
-$m-color--warning: $m-color--ul-yellow !default;
-$m-color--warning-lightest: #fff8e6 !default;
+$m-color-warning: #{var(--m-color-warning)} !default;
+$m-color-warning-lightest: #{var(--m-color-warning-lightest)} !default;
 
 // ======================================================================
 //  Error colors
 // ======================================================================
-$m-color--error-dark: #b3040f !default;
-$m-color--error: $m-color--ul-red !default;
-$m-color--error-lightest: #fcf2f3 !default;
+$m-color-error-dark: #{var(--m-color-error-dark)} !default;
+$m-color-error: #{var(--m-color-error)} !default;
+$m-color-error-lightest: #{var(--m-color-error-lightest)} !default;
 
 // ======================================================================
 //  Hint colors
 // ======================================================================
-$m-color--hint: #00cb78 !default;
+$m-color-hint: $m-color-success !default;
 
 // ======================================================================
 //  Interactive colors
 // ======================================================================
-$m-color--interactive-darker: #1854be !default;
-$m-color--interactive-dark: #1854be !default;
-$m-color--interactive: #096edf !default;
-$m-color--interactive-light: $m-color--ul-blue !default;
-$m-color--interactive-lighter: #6ed2ff !default;
-$m-color--interactive-lightest: #dffaff !default;
-$m-color--information: #eaf5ff !default;
+$m-color-interactive-darker: #{var(--m-color-interactive-darker)} !default;
+$m-color-interactive-dark: #{var(--m-color-interactive-dark)} !default;
+$m-color-interactive: #{var(--m-color-interactive)} !default;
+$m-color-interactive-light: #{var(--m-color-interactive-light)} !default;
+$m-color-interactive-lighter: #{var(--m-color-interactive-lighter)} !default;
+$m-color-interactive-lightest: #{var(--m-color-interactive-lightest)} !default;
+$m-color-information: #{var(--m-color-information)} !default;
 
 // ======================================================================
 //  Accent colors
 // ======================================================================
-$m-color--accent-dark: #ed8514 !default;
-$m-color--accent: #f39612 !default;
-$m-color--accent-light: #ffaa26 !default;
-$m-color--accent-lightest: #ffeecf !default;
+$m-color-accent-dark: #{var(--m-color-accent-dark)} !default;
+$m-color-accent: #{var(--m-color-accent)} !default;
+$m-color-accent-light: #{var(--m-color-accent-light)} !default;
+$m-color-accent-lightest: #{var(--m-color-accent-lightest)} !default;
 
 // ======================================================================
 //  Active colors
 // ======================================================================
-$m-color--active: $m-color--ul-yellow !default;
+$m-color-active: #{var(--m-color-active)} !default;
 
 // ======================================================================
 //  disabled colors
 // ======================================================================
-$m-color--disabled: $m-color--grey !default;
-$m-color--disabled-light: $m-color--grey-light !default;
+$m-color-disabled: #{var(--m-color-disabled)} !default;
+$m-color-disabled-light: #{var(--m-color-disabled-light)} !default;
 
 // ======================================================================
 //  Scrollbar colors
 // ======================================================================
-$m-color--scrollbar: $m-color--grey !default;
-$m-color--scrollbar-light: $m-color--grey-light !default;
+$m-color-scrollbar: #{var(--m-color-scrollbar)} !default;
+$m-color-scrollbar-light: #{var(--m-color-scrollbar-light)} !default;
 
 // ======================================================================
 //  Boder colors
 // ======================================================================
-$m-color--border-dark: $m-color--grey-dark !default;
-$m-color--border: $m-color--grey-light !default;
-$m-color--border-light: $m-color--grey-lighter !default;
+$m-color-border-dark: #{var(--m-color-border-dark)} !default;
+$m-color-border:#{var(--m-color-border)} !default;
+$m-color-border-light: #{var(--m-color-border-light)} !default;
 
 // ======================================================================
 //  map variable to be used with m-color function
 //  all colors must have a base value.
 // ======================================================================
-$m-color-map: (black : (base : $m-color--black),
-    white : (base : $m-color--white),
-    active : (base : $m-color--active),
-    text : (base : $m-color--grey-darker,
-        light : $m-color--grey),
-    grey : (base : $m-color--grey,
-        black : $m-color--grey-black,
-        darkest : $m-color--grey-darkest,
-        darker : $m-color--grey-darker,
-        dark : $m-color--grey-dark,
-        light : $m-color--grey-light,
-        lighter : $m-color--grey-lighter,
-        lightest : $m-color--grey-lightest),
-    ul : (blue : $m-color--ul-blue,
-        yellow : $m-color--ul-yellow,
-        red : $m-color--ul-red),
-    success : (base : $m-color--success,
-        dark : $m-color--success-dark,
-        light : $m-color--success-light,
-        lightest : $m-color--success-lightest),
-    disabled : (base : $m-color--disabled,
-        light : $m-color--disabled-light),
-    warning : (base : $m-color--warning,
-        lightest : $m-color--warning-lightest),
-    scrollbar : (base : $m-color--scrollbar,
-        light : $m-color--scrollbar-light),
-    border : (base : $m-color--border,
-        dark : $m-color--border-dark,
-        light : $m-color--border-light),
-    error : (base : $m-color--warning,
-        dark : $m-color--error-dark,
-        lightest : $m-color--error-lightest),
-    interactive : (base : $m-color--interactive,
-        darker : $m-color--interactive-darker,
-        dark : $m-color--interactive-dark,
-        light : $m-color--interactive-light,
-        lighter : $m-color--interactive-lighter,
-        lightest : $m-color--interactive-lightest),
-    accent : (base : $m-color--accent,
-        dark : $m-color--accent-dark,
-        light : $m-color--accent-light,
-        lightest : $m-color--accent-lightest));
+$m-color-map: (black : (base : $m-color-black),
+    white : (base : $m-color-white),
+    active : (base : $m-color-active),
+    text : (base : $m-color-grey-darker,
+        light : $m-color-grey),
+    grey : (base : $m-color-grey,
+        black : $m-color-grey-black,
+        darkest : $m-color-grey-darkest,
+        darker : $m-color-grey-darker,
+        dark : $m-color-grey-dark,
+        light : $m-color-grey-light,
+        lighter : $m-color-grey-lighter,
+        lightest : $m-color-grey-lightest),
+    ul : (blue : $m-color-ul-blue,
+        yellow : $m-color-ul-yellow,
+        red : $m-color-ul-red),
+    success : (base : $m-color-success,
+        dark : $m-color-success-dark,
+        light : $m-color-success-light,
+        lightest : $m-color-success-lightest),
+    disabled : (base : $m-color-disabled,
+        light : $m-color-disabled-light),
+    warning : (base : $m-color-warning,
+        lightest : $m-color-warning-lightest),
+    scrollbar : (base : $m-color-scrollbar,
+        light : $m-color-scrollbar-light),
+    border : (base : $m-color-border,
+        dark : $m-color-border-dark,
+        light : $m-color-border-light),
+    error : (base : $m-color-warning,
+        dark : $m-color-error-dark,
+        lightest : $m-color-error-lightest),
+    interactive : (base : $m-color-interactive,
+        darker : $m-color-interactive-darker,
+        dark : $m-color-interactive-dark,
+        light : $m-color-interactive-light,
+        lighter : $m-color-interactive-lighter,
+        lightest : $m-color-interactive-lightest),
+    accent : (base : $m-color-accent,
+        dark : $m-color-accent-dark,
+        light : $m-color-accent-light,
+        lightest : $m-color-accent-lightest));

@@ -14,23 +14,23 @@ $m-fr-btn-popup-size: 38px;
     display: block;
 
     &.m--fr-image-block-left {
-        margin: $m-spacing;
+        margin: $m-space;
         margin-left: 0;
     }
 
     &.m--fr-image-block-center {
-        margin: $m-spacing auto;
+        margin: $m-space auto;
     }
 
     &.m--fr-image-float-left {
         float: left;
-        margin: $m-spacing;
+        margin: $m-space;
         margin-left: 0;
     }
 
     &.m--fr-image-float-right {
         float: right;
-        margin: $m-spacing;
+        margin: $m-space;
         margin-right: 0;
     }
 }
@@ -57,7 +57,7 @@ div[id*="dropdown-menu-align"] .fr-dropdown-wrapper.fr-dropdown-wrapper .fr-drop
 
     li {
         a {
-            padding: $m-margin;
+            padding: $m-space-sm;
         }
     }
 }

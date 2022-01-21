@@ -6,12 +6,12 @@
     background-color: $modul-color--black-grey-dark;
 
     &.mw--is-large-footer {
-        padding: $m-spacing--xxl;
+        padding: $m-space-xxl;
         text-align: center;
 
         a {
             width: 130px;
-            margin: $m-spacing auto 0 auto;
+            margin: $m-space auto 0 auto;
         }
     }
 
@@ -19,12 +19,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: $m-spacing;
-        font-size: $m-font-size--s;
+        padding: $m-space;
+        @include m-font-size('sm');
 
         a {
             width: 80px;
-            margin-left: $m-spacing--s;
+            margin-left: $m-space-xs;
         }
     }
 

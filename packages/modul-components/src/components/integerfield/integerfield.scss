@@ -2,8 +2,6 @@
 
 .m-integerfield {
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
 
     @include m-input-inline-spacing();
 

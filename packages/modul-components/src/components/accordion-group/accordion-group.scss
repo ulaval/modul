@@ -3,7 +3,7 @@
 .m-accordion-group {
     &__header {
         display: flex;
-        padding: 0 $m-padding $m-margin $m-padding;
+        padding: 0 $m-space $m-space-sm 0;
 
         &.m--no-title {
             justify-content: flex-end;

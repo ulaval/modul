@@ -34,6 +34,7 @@
         }
 
         &.m--is-origin {
+
             &-top,
             &-right,
             &-left {
@@ -44,6 +45,7 @@
             }
 
             &-top {
+
                 &.m--is-enter,
                 &.m--is-leave-to {
                     .m-sidebar__article {
@@ -68,6 +70,7 @@
             }
 
             &-right {
+
                 &.m--is-enter,
                 &.m--is-leave-to {
                     .m-sidebar__article {
@@ -77,6 +80,7 @@
             }
 
             &-left {
+
                 &.m--is-enter,
                 &.m--is-leave-to {
                     .m-sidebar__article {
@@ -98,7 +102,7 @@
         width: 100%;
         min-height: $m-touch-size--l;
         max-height: 100%;
-        background: $m-color--white;
+        background: $m-color-white;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
         cursor: auto;
     }
@@ -108,11 +112,11 @@
         position: absolute;
         top: 0;
         right: 0;
-        padding: $m-margin $m-padding;
+        padding: $m-space-sm $m-space;
         background: none;
         border: none;
-        font-size: $m-font-size;
-        color: $m-color--white;
+        @include m-font-size();
+        color: $m-color-white;
         cursor: pointer;
         outline: none;
         text-decoration: none;
@@ -121,7 +125,7 @@
 
         &:hover,
         &:focus {
-            color: $m-color--grey;
+            color: $m-color-grey;
         }
     }
 
@@ -144,7 +148,7 @@
     }
 
     &__header {
-        padding: $m-margin $m-padding;
+        padding: $m-space-sm $m-space;
         width: 100%;
 
         &.m--has-close-button-right {
@@ -180,13 +184,13 @@
         h5,
         h6 {
             margin: 0;
-            font-size: $m-font-size--h2;
-            font-weight: $m-font-weight--semi-bold;
+            @include m-font-size('h2');
+            font-weight: $m-font-weight-semi-bold;
         }
     }
 
     &__body {
-        padding: $m-padding;
+        padding: $m-space;
         flex: 1 1 auto;
         overflow: auto;
         user-select: text;
@@ -195,6 +199,6 @@
     }
 
     &__footer {
-        padding: $m-margin $m-padding;
+        padding: $m-space-sm $m-space;
     }
 }

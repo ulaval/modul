@@ -8,17 +8,17 @@
         margin: 0;
         text-transform: uppercase;
         border-bottom: 1px solid $modul-color--black-grey-dark;
-        padding-bottom: $m-spacing;
-        font-weight: $m-font-weight--black;
+        padding-bottom: $m-space;
+        font-weight: $m-font-weight-black;
         color: $modul-color--black-grey-dark;
     }
 
     &__preview {
         background-color: #f9f9f9;
-        padding: $m-padding--l $m-padding;
+        padding: $m-space-lg $m-space;
 
         @media (min-width: $m-mq--min--s) {
-            padding: $m-padding--l $m-margin--l;
+            padding: $m-space-lg $m-space-md;
         }
     }
 
@@ -28,7 +28,7 @@
     }
 
     &__body {
-        padding-top: $m-spacing;
+        padding-top: $m-space;
     }
 
     .modul-u--navbar {

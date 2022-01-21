@@ -26,21 +26,21 @@
     //  formulaire
     // ======================================================================
     .m-u--label {
-        font-size: $m-font-size;
-        font-weight: $m-font-weight--semi-bold;
+        @include m-font-size();
+        font-weight: $m-font-weight-semi-bold;
     }
 
     // ======================================================================
     //  asterisk
     // ======================================================================
     .m-u--asterisk {
-        color: $m-color--accent;
-        font-weight: $m-font-weight--bold;
+        color: $m-color-accent;
+        font-weight: $m-font-weight-bold;
     }
 
     .m-u--require {
-        margin-top: -$m-spacing !important;
-        // margin-bottom: $m-spacing;
+        margin-top: calc(-1 * $m-space) !important;
+        // margin-bottom: $m-space;
         float: right;
     }
 }

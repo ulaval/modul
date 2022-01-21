@@ -8,8 +8,9 @@
                 #{$prop}#{$direction}: 0;
             }
 
-            @each $size, $spacing in $m-spacing-map {
-                @if ( $size == 'base') {
+            @each $size,
+            $spacing in $m-space-map {
+                @if ($size=='base') {
                     &--#{$prop}#{$direction} {
                         #{$prop}#{$direction}: $spacing;
                     }
@@ -26,15 +27,15 @@
 }
 
 @function m-spacing($size: 'base') {
-    $m-map: $m-spacing-map;
-    $m-spacing-multiplier: 8;
+    $m-map: $m-space-map;
+    $m-space-multiplier: 8;
 
     @if map-has-key($m-map, $size) {
         @return map-get($m-map, $size);
     }
 
     @else if(is-number($size)) {
-        @return round($size * $m-spacing-multiplier) + px;
+        @return round($size * $m-space-multiplier)+px;
     }
 
     @error "Unknown spacing size '#{$size}', valide sizes are : '#{$m-map}' or a number";

@@ -16,12 +16,13 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         outline: none;
         border: 0;
         transition: background-color $m-transition-duration--l ease, color $m-transition-duration--l ease;
-        color: $m-color--grey-light;
+        color: $m-color-grey-light;
 
         &:not(:disabled) {
+
             &:hover,
             &:focus {
-                color: $m-color--white;
+                color: $m-color-white;
                 background: $m-option-mixed-bgc--hover;
                 cursor: pointer;
             }
@@ -39,9 +40,9 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         max-height: 213px; // Magic number: height of 4 items
         overflow-x: hidden;
         overflow-y: auto;
-        border: 1px solid $m-color--border;
+        border: 1px solid $m-color-border;
         border-radius: $m-border-radius--s;
-        background: $m-color--white;
+        background: $m-color-white;
         box-shadow: $m-box-shadow;
 
         @include m-scrollbar();

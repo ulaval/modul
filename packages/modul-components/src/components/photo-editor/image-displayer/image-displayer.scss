@@ -3,8 +3,8 @@
 .m-image-selector {
     position: relative;
     width: 100%;
-    padding: $m-spacing--m 0;
-    background-color: $m-color--grey-lighter;
+    padding: $m-space-md 0;
+    background-color: $m-color-grey-lighter;
 
     .m-avatar {
         margin-left: auto;
@@ -23,8 +23,8 @@
 
         &.m-icon-button {
             border-radius: 0;
-            color: $m-color--white;
-            background-color: rgba($m-color--grey-darker, 0.6);
+            color: $m-color-white;
+            background-color: rgba(#3d3d3d, 0.6);
         }
     }
 }

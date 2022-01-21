@@ -12,11 +12,11 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 }
 
 @mixin m-calendar-button__today() {
-    font-weight: $m-font-weight--bold;
+    font-weight: $m-font-weight-bold;
 
     &::before {
-        background-color: $m-color--grey-light;
-        border-color: $m-color--grey-light;
+        background-color: $m-color-grey-light;
+        border-color: $m-color-grey-light;
 
         @include m-calendar-button__show-indicator();
     }
@@ -57,6 +57,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     // mouse only, to avoid sticky hover on mobile
     @media (pointer: fine) {
         &:not(.m--is-disabled):not(.m--is-selected) {
+
             &:hover,
             &:focus {
                 color: m-color(interactive);
@@ -88,6 +89,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     }
 
     &.m--is-today:not(.m--is-selected) {
+
         // today style shouldn't be visible on hover
         &:not(:hover) {
             @include m-calendar-button__today();
@@ -101,13 +103,13 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
         &.m--is-disabled {
             @include m-calendar-button__today();
 
-            color: $m-color--white;
+            color: $m-color-white;
         }
     }
 
     &.m--is-selected {
-        color: $m-color--white;
-        font-weight: $m-font-weight--bold;
+        color: $m-color-white;
+        font-weight: $m-font-weight-bold;
         border-radius: 50%;
 
         &::before {
@@ -119,7 +121,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 
     &.m--is-disabled {
         background-color: transparent;
-        color: $m-color--grey-light;
+        color: $m-color-grey-light;
         cursor: default;
     }
 }

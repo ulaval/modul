@@ -7,11 +7,11 @@ $m-tree-node--child-indentation: 20px;
 
     &__error {
         .m-icon {
-            color: $m-color--error-dark;
+            color: $m-color-error-dark;
         }
 
-        + .m-tree__content {
-            margin-top: $m-margin;
+        +.m-tree__content {
+            margin-top: $m-space-sm;
         }
     }
 
@@ -28,7 +28,7 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        > .m-tree-node:only-child {
+        >.m-tree-node:only-child {
             margin-left: 0;
 
             &::before {
@@ -36,7 +36,7 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        > .m-tree-node:not(.m--is-single) /deep/ > .m-tree-node__item {
+        >.m-tree-node:not(.m--is-single) /deep/>.m-tree-node__item {
             &::before {
                 content: "";
                 position: absolute;
@@ -44,11 +44,11 @@ $m-tree-node--child-indentation: 20px;
                 top: 50%;
                 width: $m-tree-node--child-indentation;
                 height: 1px;
-                background-color: $m-color--interactive;
+                background-color: $m-color-interactive;
             }
         }
 
-        > .m-tree-node:not(.m--is-single) {
+        >.m-tree-node:not(.m--is-single) {
             &::after {
                 content: "";
                 position: absolute;
@@ -56,7 +56,7 @@ $m-tree-node--child-indentation: 20px;
                 top: -26px; // Magic number
                 width: 1px;
                 bottom: 0;
-                background-color: $m-color--interactive;
+                background-color: $m-color-interactive;
             }
 
             &:first-child::after {
@@ -68,23 +68,23 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        > .m-tree-node:not(.m--is-single):not(.m-tree-node.m--has-children) {
+        >.m-tree-node:not(.m--is-single):not(.m-tree-node.m--has-children) {
             &::after {
                 top: -23px; // Magic number
             }
         }
 
-        > .m-tree-node:first-child:not(.m--is-single):not(.m-tree-node.m--has-children) {
+        >.m-tree-node:first-child:not(.m--is-single):not(.m-tree-node.m--has-children) {
             &::after {
                 top: 16px; // Magic number
                 height: 39px; // Magic number
             }
 
-            + .m-tree-node:not(.m--is-single)::after {
+            +.m-tree-node:not(.m--is-single)::after {
                 top: -22px; // Magic number
             }
 
-            + .m-tree-node:last-child:not(.m--is-single)::after {
+            +.m-tree-node:last-child:not(.m--is-single)::after {
                 display: none;
             }
         }

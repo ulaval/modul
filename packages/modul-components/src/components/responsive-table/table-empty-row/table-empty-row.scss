@@ -1,6 +1,7 @@
 @import 'commons';
 
 .m-table-empty-row {
+
     &,
     td {
         padding: 0;
@@ -8,6 +9,6 @@
     }
 
     &.m--is-background-style-light {
-        background: $m-color--grey-lightest;
+        background: $m-color-grey-lightest;
     }
 }

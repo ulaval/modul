@@ -11,36 +11,36 @@
         &:not(.m--is-validation-message-position-bottom) {
             .m-input-group__label {
                 ~.m-input-group__body {
-                    margin-top: $m-spacing--xs;
+                    margin-top: $m-space-xxs;
                 }
             }
 
             .m-input-group__content {
-                margin-top: $m-spacing--s;
+                margin-top: $m-space-xs;
             }
         }
 
         &.m--is-validation-message-position-bottom {
             .m-input-group__body {
                 flex-direction: column-reverse;
-                margin-top: $m-spacing--xs;
+                margin-top: $m-space-xxs;
             }
 
             .m-input-group__message {
-                margin-top: $m-spacing--xs;
+                margin-top: $m-space-xxs;
             }
         }
     }
 
     &__label {
         margin: 0;
-        font-size: $m-font-size;
-        font-weight: $m-font-weight--semi-bold;
+        @include m-font-size();
+        font-weight: $m-font-weight-semi-bold;
         display: flex;
         align-items: center;
 
         ~.m-input-group__body {
-            margin-top: $m-spacing--s;
+            margin-top: $m-space-xs;
         }
     }
 
@@ -48,13 +48,13 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        margin-left: $m-margin--xs;
+        margin-left: 3px;
     }
 
     &__required-marker {
-        color: $m-color--accent;
+        color: $m-color-accent;
         font-size: inherit;
-        font-weight: $m-font-weight--bold;
+        font-weight: $m-font-weight-bold;
         vertical-align: baseline;
     }
 

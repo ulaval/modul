@@ -10,16 +10,16 @@
         /deep/ .m-radio {
             display: inline;
 
-            + .m-radio {
-                margin-left: $m-spacing--s;
+            +.m-radio {
+                margin-left: $m-space-xs;
             }
         }
     }
 
     &:not(.m--is-inline) {
         /deep/ .m-radio {
-            + .m-radio {
-                margin-top: $m-spacing--s;
+            +.m-radio {
+                margin-top: $m-space-xs;
             }
 
             &-group__body {

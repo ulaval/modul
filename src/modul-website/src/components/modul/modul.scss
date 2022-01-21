@@ -16,7 +16,7 @@
     position: relative;
     transition: transform 0.3s ease;
     text-decoration: none;
-    color: $m-color--text;
+    color: $m-color-text;
     display: flex;
     min-height: 100px;
     cursor: pointer;
@@ -26,7 +26,7 @@
     &:hover {
         .modul-search-card {
             &__img {
-                background-color: $m-color--interactive-light;
+                background-color: $m-color-interactive-light;
             }
         }
     }
@@ -35,7 +35,7 @@
     &:focus {
         .modul-search-card {
             &__img {
-                background-color: $m-color--interactive-dark;
+                background-color: $m-color-interactive-dark;
             }
         }
     }
@@ -45,8 +45,8 @@
     }
 
     &__content {
-        padding: $m-padding--l $m-padding;
-        border-bottom: 1px solid $m-color--grey-light;
+        padding: $m-space-lg $m-space;
+        border-bottom: 1px solid $m-color-grey-light;
         flex: 1;
 
         &__category,
@@ -56,8 +56,8 @@
         }
 
         &__tagname {
-            font-size: $m-font-size--s;
-            color: $m-color--grey-darker;
+            @include m-font-size('sm');
+            color: $m-color-grey-darker;
             font-style: italic;
         }
     }
@@ -68,12 +68,13 @@
         align-items: center;
         justify-content: center;
         flex: 0 1 100px;
-        background: $m-color--interactive;
+        background: $m-color-interactive;
         border-bottom: 1px solid #006698;
-        padding: $m-padding;
+        padding: $m-space;
     }
 
     &.modul--is {
+
         &-enter-active,
         &-leave-active {
             transition: transform 0.45s ease, opacity 0.3s linear;
@@ -82,7 +83,7 @@
         &-enter,
         &-leave-to {
             opacity: 0;
-            transform: translate3d(-$m-margin, 0, 0);
+            transform: translate3d(calc(-1 * $m-space-sm), 0, 0);
         }
     }
 }

@@ -3,7 +3,7 @@
 
 .mw-logo {
     font-size: var(--mw-logo-font-size);
-    color: $m-color--white;
+    color: $m-color-white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,10 +35,10 @@
         font-size: 18px;
         font-weight: 300;
         text-transform: uppercase;
-        margin-top: $m-spacing;
+        margin-top: $m-space;
 
         @media (min-width: $m-mq--min--s) {
-            margin-top: $m-spacing--m;
+            margin-top: $m-space-md;
             font-size: 32px;
         }
     }

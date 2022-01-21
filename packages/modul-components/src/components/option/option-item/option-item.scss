@@ -1,7 +1,7 @@
 @import 'commons';
-$m-option-item--color-hover: $m-color--interactive-lightest !default;
-$m-option-item--color-select: $m-color--grey-lighter !default;
-$m-option-item--color-active: $m-color--grey-lightest !default;
+$m-option-item--color-hover: $m-color-interactive-lightest !default;
+$m-option-item--color-select: $m-color-grey-lighter !default;
+$m-option-item--color-active: $m-color-grey-lightest !default;
 
 .m-option-item {
     display: flex;
@@ -9,7 +9,7 @@ $m-option-item--color-active: $m-color--grey-lightest !default;
 
     &:not(.m--has-no-border) {
         &:not(:last-child) {
-            border-bottom: 1px solid $m-color--border;
+            border-bottom: 1px solid $m-color-border;
         }
     }
 
@@ -25,30 +25,31 @@ $m-option-item--color-active: $m-color--grey-lightest !default;
     &__text {
         display: flex;
         align-items: center;
-        padding-top: $m-padding;
-        padding-bottom: $m-padding;
+        padding-top: $m-space;
+        padding-bottom: $m-space;
     }
 
     &__icon {
         transition: color $m-transition-duration ease;
-        color: $m-color--grey;
-        padding-left: $m-padding;
+        color: $m-color-grey;
+        padding-left: $m-space;
     }
 
     &__text {
         flex: 1 1 auto;
-        color: $m-color--text;
-        padding-right: $m-padding;
-        padding-left: $m-padding--s;
+        color: $m-color-text;
+        padding-right: $m-space;
+        padding-left: $m-space-xs;
     }
 
     &.m--is-disabled {
         cursor: default;
 
         .m-option-item {
+
             &__text,
             &__icon {
-                color: $m-color--disabled;
+                color: $m-color-disabled;
             }
         }
     }
@@ -62,7 +63,7 @@ $m-option-item--color-active: $m-color--grey-lightest !default;
             background: $m-option-item--color-hover;
 
             .m-option-item__icon {
-                color: $m-color--text;
+                color: $m-color-text;
             }
         }
 

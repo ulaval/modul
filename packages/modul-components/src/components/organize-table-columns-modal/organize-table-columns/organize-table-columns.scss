@@ -2,15 +2,15 @@
 
 .m-organize-table-columns {
     &__loading {
-        margin-top: $m-margin--l;
+        margin-top: $m-space-md;
     }
 
     &__header {
-        padding: $m-spacing--m $m-spacing $m-spacing;
-        background-color: $m-color--grey-lighter;
+        padding: $m-space-md $m-space $m-space;
+        background-color: $m-color-grey-lighter;
 
         p {
-            margin: $m-spacing 0 0 0;
+            margin: $m-space 0 0 0;
         }
     }
 
@@ -39,11 +39,11 @@
     }
 
     &__item-title-text {
-        margin-left: $m-margin--s;
+        margin-left: 6px;
     }
 
     &__list-item {
-        padding-top: $m-padding;
-        padding-bottom: $m-padding;
+        padding-top: $m-space;
+        padding-bottom: $m-space;
     }
 }

@@ -9,7 +9,7 @@ $m-datepicker--item-dimension: $m-touch-size !default;
 
     &.m--has-validation-message {
         .m-datepicker__validation-message {
-            margin-top: $m-spacing--xs;
+            margin-top: $m-space-xxs;
         }
     }
 
@@ -19,10 +19,10 @@ $m-datepicker--item-dimension: $m-touch-size !default;
 
     &__header-label {
         margin: 0;
-        padding: $m-padding--s $m-padding;
-        font-size: $m-font-size--s;
-        font-weight: $m-font-weight--semi-bold;
-        color: $m-color--white;
-        background: $m-color--interactive;
+        padding: $m-space-xs $m-space;
+        @include m-font-size('sm');
+        font-weight: $m-font-weight-semi-bold;
+        color: $m-color-white;
+        background: $m-color-interactive;
     }
 }

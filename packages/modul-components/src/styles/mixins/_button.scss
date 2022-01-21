@@ -2,7 +2,7 @@
     transition-property: background, border-color, color;
     transition-duration: $m-transition-duration;
     transition-timing-function: ease;
-    border: 1px solid $m-color--interactive;
+    border: 1px solid $m-color-interactive;
     appearance: none;
     outline: none;
     user-select: none;
@@ -12,27 +12,27 @@
 }
 
 @mixin m-button--primary() {
-    color: $m-color--white;
-    background: $m-color--interactive;
+    color: $m-color-white;
+    background: $m-color-interactive;
 }
 
 @mixin m-button--secondary() {
-    color: $m-color--interactive;
-    background: $m-color--white;
+    color: $m-color-interactive;
+    background: $m-color-white;
 }
 
 @mixin m-button--waiting() {
     cursor: progress;
-    color: $m-color--white;
-    background: $m-color--interactive-lighter;
-    border-color: $m-color--interactive-lighter;
+    color: $m-color-white;
+    background: $m-color-interactive-lighter;
+    border-color: $m-color-interactive-lighter;
 }
 
 @mixin m-button--disabled() {
     cursor: default;
-    color: $m-color--disabled;
-    background: $m-color--white;
-    border-color: $m-color--disabled;
+    color: $m-color-disabled;
+    background: $m-color-white;
+    border-color: $m-color-disabled;
 }
 
 @mixin m-button--hover() {
@@ -40,9 +40,9 @@
 
     &:hover,
     &:focus {
-        color: $m-color--white;
-        background: $m-color--interactive-light;
-        border-color: $m-color--interactive-light;
+        color: $m-color-white;
+        background: $m-color-interactive-light;
+        border-color: $m-color-interactive-light;
     }
 
     &:active {
@@ -51,7 +51,7 @@
 }
 
 @mixin m-button--active() {
-    color: $m-color--white;
-    background: $m-color--interactive-dark;
-    border-color: $m-color--interactive-dark;
+    color: $m-color-white;
+    background: $m-color-interactive-dark;
+    border-color: $m-color-interactive-dark;
 }

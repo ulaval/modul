@@ -1,23 +1,23 @@
 @import 'commons';
-$m-dropdown-item--color-hover: $m-color--interactive-lightest !default;
-$m-dropdown-item--color-select: $m-color--grey-lighter !default;
-$m-dropdown-item--color-active: $m-color--grey-lightest !default;
+$m-dropdown-item--color-hover: $m-color-interactive-lightest !default;
+$m-dropdown-item--color-select: $m-color-grey-lighter !default;
+$m-dropdown-item--color-active: $m-color-grey-lightest !default;
 
 .m-dropdown-item {
     transition: background $m-transition-duration ease;
     display: inline-block;
     width: 100%;
-    padding: $m-padding;
+    padding: $m-space;
     margin: 0;
-    color: $m-color--text;
-    font-size: $m-font-size;
+    color: $m-color-text;
+    @include m-font-size();
     text-decoration: none;
     outline: none;
 
     @include m-word-wrap();
 
     @media (min-width: $m-mq--min--s) {
-        padding: $m-padding $m-padding--s;
+        padding: $m-space $m-space-xs;
         line-height: 20px;
 
         &:not(.m--is-disabled) {
@@ -40,7 +40,7 @@ $m-dropdown-item--color-active: $m-color--grey-lightest !default;
 
         &.m--is-disabled {
             cursor: default;
-            color: $m-color--disabled;
+            color: $m-color-disabled;
         }
 
         &.m--is-selected {

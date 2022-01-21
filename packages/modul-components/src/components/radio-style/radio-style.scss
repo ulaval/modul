@@ -1,7 +1,7 @@
 @import 'commons';
 $m-radio--width: 17px !default;
-$m-radio--color-disabled: $m-color--grey-darker !default;
-$m-radio--color-disabled-light: $m-color--grey !default;
+$m-radio--color-disabled: $m-color-grey-darker !default;
+$m-radio--color-disabled-light: $m-color-grey !default;
 
 .m-radio-style {
     display: inline-flex;
@@ -15,12 +15,12 @@ $m-radio--color-disabled-light: $m-color--grey !default;
         &.m--is-focus {
             .m-radio-style {
                 &__input {
-                    border-color: $m-color--interactive;
-                    background: $m-color--interactive-lightest;
+                    border-color: $m-color-interactive;
+                    background: $m-color-interactive-lightest;
                 }
 
                 &__label {
-                    color: $m-color--interactive;
+                    color: $m-color-interactive;
                 }
             }
         }
@@ -28,11 +28,11 @@ $m-radio--color-disabled-light: $m-color--grey !default;
         &:active {
             .m-radio-style {
                 &__input {
-                    border-color: $m-color--interactive-dark;
+                    border-color: $m-color-interactive-dark;
                 }
 
                 &__label {
-                    color: $m-color--interactive-dark;
+                    color: $m-color-interactive-dark;
                 }
             }
         }
@@ -43,17 +43,17 @@ $m-radio--color-disabled-light: $m-color--grey !default;
 
         .m-radio-style {
             &__input {
-                border-color: $m-color--disabled;
+                border-color: $m-color-disabled;
             }
 
             &__label {
-                color: $m-color--disabled;
+                color: $m-color-disabled;
             }
         }
 
         &.m--is-checked {
             .m-radio-style__input::before {
-                background: $m-color--disabled;
+                background: $m-color-disabled;
             }
         }
     }
@@ -61,7 +61,7 @@ $m-radio--color-disabled-light: $m-color--grey !default;
     &:not(.m--is-input-right) {
         .m-radio-style {
             &__input {
-                margin-right: $m-margin--s;
+                margin-right: $m-space-xs;
             }
         }
     }
@@ -71,7 +71,7 @@ $m-radio--color-disabled-light: $m-color--grey !default;
 
         .m-radio-style {
             &__input {
-                margin-left: $m-margin--s;
+                margin-left: $m-space-xs;
             }
         }
     }
@@ -94,7 +94,7 @@ $m-radio--color-disabled-light: $m-color--grey !default;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background: $m-color--white;
+        background: $m-color-white;
         border-width: 1px;
         border-style: solid;
         border-radius: 50%;
@@ -104,7 +104,7 @@ $m-radio--color-disabled-light: $m-color--grey !default;
             transition: transform $m-transition-duration ease-out;
             content: '';
             display: block;
-            background: $m-color--interactive;
+            background: $m-color-interactive;
             border-radius: 50%;
             visibility: hidden;
             transform: scale(0);

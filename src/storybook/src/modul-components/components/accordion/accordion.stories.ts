@@ -67,11 +67,14 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_NAME}/padding`, m
     .add('default', () => ({
         template: '<m-accordion :padding="true"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
     }))
+    .add('padding="false"', () => ({
+        template: '<m-accordion :padding="false"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
+    }))
     .add('padding-header="false"', () => ({
-        template: '<m-accordion :padding="false" :padding-header="false"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
+        template: '<m-accordion :padding-header="false"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
     }))
     .add('padding-body="false"', () => ({
-        template: '<m-accordion :padding="false" :padding-body="false"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
+        template: '<m-accordion :padding-body="false"><h3 class="m-u--no-margin" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
     }));
 
 

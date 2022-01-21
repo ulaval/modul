@@ -25,7 +25,7 @@
     &.m--is-rounded {
         .m-button {
             border-radius: 25px; // magic number
-            margin: 0 $m-spacing--xs $m-spacing--s 0;
+            margin: 0 $m-space-xxs $m-space-xs 0;
         }
     }
 }

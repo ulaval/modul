@@ -11,21 +11,21 @@
 
 @mixin group-header-style-light() {
     th {
-        background: $m-color--grey-lighter;
+        background: $m-color-grey-lighter;
 
         .m-table-group-header__accordion-icon {
-            color: $m-color--interactive;
+            color: $m-color-interactive;
         }
     }
 }
 
 @mixin group-header-style-dark() {
     th {
-        background: $m-color--grey-darker;
-        color: $m-color--white;
+        background: $m-color-grey-darker;
+        color: $m-color-white;
 
         .m-table-group-header__accordion-icon {
-            color: $m-color--ul-yellow;
+            color: $m-color-ul-yellow;
         }
     }
 }
@@ -48,8 +48,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        font-size: $m-font-size;
-        font-weight: $m-font-weight--bold;
+        font-size: inherit;
+        font-weight: $m-font-weight-bold;
     }
 
     &.m--is-group-header-style-light {
@@ -63,7 +63,7 @@
     &.m--is-group-header-style-light,
     &.m--is-group-header-style-dark {
         .m-table-group-header__cell {
-            padding: $m-spacing;
+            padding: $m-space;
         }
     }
 
@@ -83,12 +83,12 @@
 }
 
 .m-table-group-header.m--is-disabled {
-    color: $m-color--disabled;
+    color: $m-color-disabled;
 }
 
 .m-table-group-header.m--is-accordion-icon-position-left {
     .m-table-group-header__accordion-icon {
-        margin-right: $m-spacing;
+        margin-right: $m-space;
     }
 }
 
@@ -98,7 +98,7 @@
     }
 
     .m-table-group-header__accordion-icon {
-        margin-left: $m-spacing;
+        margin-left: $m-space;
     }
 }
 

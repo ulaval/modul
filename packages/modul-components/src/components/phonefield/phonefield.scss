@@ -9,7 +9,7 @@ $m-phonefiled--width-flag-dropdown: 88px;
 
     &.m--has-validation-message {
         .m-phonefield__validation {
-            margin-top: $m-spacing--xs;
+            margin-top: $m-space-xxs;
         }
     }
 
@@ -41,7 +41,7 @@ $m-phonefiled--width-flag-dropdown: 88px;
         position: relative;
         display: flex;
         align-items: center;
-        margin-right: $m-spacing--s;
+        margin-right: $m-space-xs;
     }
 
     &__item-wrapper {
@@ -57,11 +57,11 @@ $m-phonefiled--width-flag-dropdown: 88px;
             &::after {
                 content: '';
                 position: absolute;
-                right: $m-spacing--s;
+                right: $m-space-xs;
                 bottom: -1px;
-                left: $m-spacing--s;
+                left: $m-space-xs;
                 height: 2px;
-                background: $m-color--grey-lighter;
+                background: $m-color-grey-lighter;
             }
         }
     }
@@ -69,12 +69,12 @@ $m-phonefiled--width-flag-dropdown: 88px;
     &__item-flag-wrapper {
         width: 27px;
         height: 20px;
-        margin-right: $m-spacing--s;
+        margin-right: $m-space-xs;
     }
 
     &__item-dialCode {
-        margin-left: $m-spacing--s;
-        color: $m-color--grey;
+        margin-left: $m-space-xs;
+        color: $m-color-grey;
         white-space: nowrap;
     }
 
@@ -96,7 +96,7 @@ $m-phonefiled--width-flag-dropdown: 88px;
         transition: margin-top $m-transition-duration ease;
         display: flex;
         justify-content: flex-end;
-        margin-top: $m-spacing--xs;
+        margin-top: $m-space-xxs;
         margin-left: calc(#{$m-phonefiled--width-flag-dropdown} + #{$m-input-style--padding});
     }
 

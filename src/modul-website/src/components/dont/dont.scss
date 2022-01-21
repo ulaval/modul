@@ -2,10 +2,10 @@
 @import '../../styles/components/do-dont';
 
 .modul-dont {
-    border-color: $m-color--error;
+    border-color: $m-color-error;
 
     &__header {
-        color: $m-color--error !important;
+        color: $m-color-error !important;
     }
 
     ul {
@@ -15,13 +15,13 @@
             &::before {
                 position: absolute;
                 top: 9px; //Magic number
-                left: -$m-spacing;
+                left: calc(-1 * $m-space);
 
-                @include m-triangle(right, $m-color--error, 10px);
+                @include m-triangle(right, $m-color-error, 10px);
             }
 
-            + li {
-                margin-top: $m-spacing--s;
+            +li {
+                margin-top: $m-space-xs;
             }
         }
     }

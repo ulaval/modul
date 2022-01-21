@@ -1,7 +1,7 @@
 @import '../../styles/commons';
 
 $modul-menu--list-max-width: 300px;
-$modul-menu-offset-left: $m-padding--s + 2;
+$modul-menu-offset-left: calc(var(m-space-xs) + 2);
 $modul-menu-beta-width: 24px;
 $modul-menu-transition-duration: 0.7s;
 
@@ -22,14 +22,14 @@ $modul-menu-transition-duration: 0.7s;
         list-style: none;
         break-inside: avoid;
         page-break-inside: avoid;
-        padding: 0 $m-padding $m-padding--xl $m-padding;
+        padding: 0 $m-space $m-space-xxxxl $m-space;
 
         &:last-child {
             margin-right: 0;
         }
 
         ul {
-            margin: $m-margin 0 0 0;
+            margin: $m-space-sm 0 0 0;
         }
     }
 
@@ -38,15 +38,15 @@ $modul-menu-transition-duration: 0.7s;
         position: relative;
         display: block;
         border-left: 2px solid transparent;
-        padding: $m-padding--s $m-padding;
+        padding: $m-space-xs $m-space;
         background-color: transparent;
-        color: $m-color--white;
+        color: $m-color-white;
         text-decoration: none;
         outline: none;
 
         @media (min-width: #{$m-mq--min--s}) {
-            left: -$modul-menu-offset-left;
-            padding: $m-padding--s $modul-menu-offset-left $m-padding--s;
+            left: calc(-1 * #{$modul-menu-offset-left});
+            padding: $m-space-xs $modul-menu-offset-left $m-space-xs;
         }
 
         &::after {
@@ -57,18 +57,18 @@ $modul-menu-transition-duration: 0.7s;
             right: 0;
             top: 0;
             bottom: 0;
-            background: linear-gradient(to right, rgba($modul-color--black-grey, 0) 0%, rgba($modul-color--black-grey, 100%) 100%);
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, $modul-color--black-grey 100%);
             z-index: 1;
         }
 
         &:hover,
         &:focus {
             left: 0;
-            border-left-color: $m-color--white;
+            border-left-color: $m-color-white;
             background-color: $modul-color--black-grey-dark;
 
             .mw-mega-menu__label {
-                color: $m-color--white;
+                color: $m-color-white;
             }
 
             .mw-mega-menu__tag {
@@ -76,11 +76,11 @@ $modul-menu-transition-duration: 0.7s;
             }
 
             .mw-mega-menu__beta-tag {
-                background: $m-color--ul-yellow;
+                background: $m-color-ul-yellow;
             }
 
             .mw-mega-menu__new-tag {
-                background: $m-color--hint;
+                background: $m-color-hint;
             }
         }
     }
@@ -99,7 +99,7 @@ $modul-menu-transition-duration: 0.7s;
 
     &__tag {
         font-style: italic;
-        font-size: $m-font-size--s;
+        @include m-font-size('sm');
         color: $modul-color--grey-darker;
         transition: color $modul-menu-transition-duration ease;
         position: relative;
@@ -122,6 +122,7 @@ $modul-menu-transition-duration: 0.7s;
     height: 100%;
 
     &.mw--is {
+
         &-enter-active,
         &-leave-active {
             transition: transform $m-transition-duration--l ease;
@@ -151,7 +152,7 @@ $modul-menu-transition-duration: 0.7s;
     }
 
     &__header {
-        padding: $m-padding;
+        padding: $m-space;
     }
 
     &__body {
@@ -163,8 +164,8 @@ $modul-menu-transition-duration: 0.7s;
     &__title,
     &__accordion-title,
     &__link {
-        font-size: 18px;
-        color: $m-color--white;
+        @include m-font-size('md');
+        color: $m-color-white;
         text-decoration: none;
         line-height: 1.3;
     }
@@ -172,7 +173,7 @@ $modul-menu-transition-duration: 0.7s;
     &__title,
     &__accordion-title {
         text-transform: uppercase;
-        font-weight: $m-font-weight--black;
+        font-weight: $m-font-weight-black;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -185,7 +186,7 @@ $modul-menu-transition-duration: 0.7s;
     &__link {
         display: block;
         width: 100%;
-        padding: $m-spacing $m-spacing--s $m-spacing 50px;
+        padding: $m-space $m-space-xs $m-space 50px;
         background: $modul-color--black-grey;
     }
 
@@ -194,7 +195,7 @@ $modul-menu-transition-duration: 0.7s;
     }
 
     .mw-mega-menu__new-tag {
-        background: $m-color--hint;
+        background: $m-color-hint;
     }
 
     &__elem {
@@ -204,7 +205,7 @@ $modul-menu-transition-duration: 0.7s;
 
         &.mw--is-accordion {
             /deep/ .m-accordion__header {
-                padding: $m-spacing;
+                padding: $m-space;
             }
         }
     }

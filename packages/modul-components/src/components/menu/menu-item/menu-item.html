@@ -24,7 +24,9 @@
           :class="{ 'm--is-disabled': isDisabled,
                     'm--is-custom-content': $slots['content']}"
           @click="onClick"
-          @keypress.enter="onClick"
+          @keydown.enter="onClick"
+          @keydown.space="onClick"
+          :role="isDisabled ? undefined : 'button'"
           :tabindex="isDisabled ? '-1' : '0'"
           :aria-selected="selected"
           :aria-haspopup="group"

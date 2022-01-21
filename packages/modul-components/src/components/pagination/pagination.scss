@@ -8,7 +8,7 @@ $m-pagination--touch-size: 40px !default; // Magic number, 44px trop large pour 
     text-align: center;
 
     &__status {
-        color: $m-color--grey;
+        color: $m-color-grey;
     }
 
     &__nav {
@@ -27,7 +27,7 @@ $m-pagination--touch-size: 40px !default; // Magic number, 44px trop large pour 
         width: 100%;
         height: $m-pagination--indicator-height;
         margin-top: $m-pagination--indicator-margin;
-        background: $m-color--grey-lighter;
+        background: $m-color-grey-lighter;
     }
 
     &__item {
@@ -51,7 +51,7 @@ $m-pagination--touch-size: 40px !default; // Magic number, 44px trop large pour 
                 right: 0;
                 height: $m-pagination--indicator-height;
                 width: 100%;
-                background: $m-color--grey;
+                background: $m-color-grey;
             }
         }
     }
@@ -63,12 +63,12 @@ $m-pagination--touch-size: 40px !default; // Magic number, 44px trop large pour 
     }
 
     &.m--is-loading {
-        color: $m-color--disabled;
+        color: $m-color-disabled;
 
         .m-pagination__item {
             &.m--is-active {
                 &::before {
-                    background: $m-color--grey-light;
+                    background: $m-color-grey-light;
                 }
             }
         }

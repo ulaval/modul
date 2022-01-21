@@ -4,14 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: $m-spacing;
+    margin-bottom: $m-space;
 
     &__spacer {
         flex: 1 1 auto;
-        min-width: $m-spacing;
+        min-width: $m-space;
     }
 
     &__add-btn.m--has-margin {
-        margin-left: $m-spacing;
+        margin-left: $m-space;
     }
 }

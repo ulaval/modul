@@ -1,0 +1,25 @@
+@mixin m-var-font() {
+    // Fonts property
+    --m-font-family: 'Source Sans Variable', 'Source Sans Pro', Arial, sans-serif;
+    --m-font-family-fallback: 'Source Sans Pro', Arial, sans-serif;
+
+    // Font size
+    --m-font-size-xl: 22;
+    --m-font-size-lg: 20;
+    --m-font-size-md: 18;
+    --m-font-size: 16;
+    --m-font-size-sm: 14;
+    --m-font-size-xs: 12;
+
+    // Font weight
+    --m-font-weight-black: 650;
+    --m-font-weight-bold: 575;
+    --m-font-weight-semi-bold: 500;
+    --m-font-weight-regular: 425;
+    --m-font-weight: 425;
+    --m-font-weight-light: 350;
+    --m-font-weight-heading: var(--m-font-weight-semi-bold);
+
+    // Line height
+    --m-line-height: 1.3;
+}

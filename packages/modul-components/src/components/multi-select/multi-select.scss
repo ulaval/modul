@@ -17,7 +17,7 @@
     &__arrow {
         display: flex;
         cursor: pointer;
-        color: $m-color--grey;
+        color: $m-color-grey;
 
         &-icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
@@ -31,7 +31,7 @@
 
         &.m--is-focus {
             .m-multi-select__arrow-icon {
-                color: $m-color--interactive;
+                color: $m-color-interactive;
             }
         }
     }
@@ -40,7 +40,7 @@
         transition: margin-top $m-transition-duration ease;
 
         &.m--has-validation-message {
-            margin-top: $m-spacing--xs;
+            margin-top: $m-space-xxs;
         }
     }
 
@@ -61,16 +61,16 @@
     }
 
     &__chip {
-        margin: $m-margin--xs/2 $m-margin--xs $m-margin--xs/2 0;
+        margin: 2px 3px 2px 0;
     }
 
     &__all-check {
-        border-bottom: 1px solid $m-color--border;
+        border-bottom: 1px solid $m-color-border;
     }
 
     &__more {
         white-space: nowrap;
-        font-size: 12px;
+        @include m-font-size('xs');
     }
 
     &__visually-hidden {

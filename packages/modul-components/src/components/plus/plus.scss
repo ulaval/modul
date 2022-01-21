@@ -20,28 +20,31 @@ $m-plus--icon-height: 1px !default;
     }
 
     &.m--is-skin-light {
+
         &::before,
         &::after {
-            background: $m-color--white;
+            background: $m-color-white;
         }
 
         &.m--has-border {
-            border-color: $m-color--white;
+            border-color: $m-color-white;
         }
     }
 
     &.m--is-skin-default {
+
         &::before,
         &::after {
-            background: $m-color--interactive;
+            background: $m-color-interactive;
         }
 
         &.m--has-border {
-            border-color: $m-color--interactive;
+            border-color: $m-color-interactive;
         }
     }
 
     &.m--is-skin-current-color {
+
         &::before,
         &::after {
             background: currentColor;
@@ -54,29 +57,32 @@ $m-plus--icon-height: 1px !default;
 
     &.m--is-disabled {
         &.m--is-skin-light {
+
             &::before,
             &::after {
-                background: rgba($m-color--white, 0.6);
+                background: rgba(255, 255, 255, 0.6);
             }
 
             &.m--has-border {
-                border-color: rgba($m-color--white, 0.6);
+                border-color: rgba(255, 255, 255, 0.6);
             }
         }
 
         &:not(.m--is-skin-light) {
+
             &::before,
             &::after {
-                background: $m-color--disabled;
+                background: $m-color-disabled;
             }
 
             &.m--has-border {
-                border-color: $m-color--disabled;
+                border-color: $m-color-disabled;
             }
         }
     }
 
     &.m--is-open {
+
         &::before,
         &::after {
             transform: translate3d(-50%, -50%, 0) rotate(90deg);

@@ -1,0 +1,12 @@
+@mixin m-var-border {
+    --m-border-width-xxl: 8px;
+    --m-border-width-xl: 6px;
+    --m-border-width-lg: 4px;
+    --m-border-width-md: 3px;
+    --m-border-width: 2px;
+    --m-border-width-sm: 1px;
+
+    --m-border-radius-lg: 8px;
+    --m-border-radius: 6px;
+    --m-border-radius-sm: 3px;
+}

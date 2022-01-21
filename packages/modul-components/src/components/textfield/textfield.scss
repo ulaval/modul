@@ -2,13 +2,11 @@
 
 .m-textfield {
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
 
     @include m-input-inline-spacing();
 
     &__icon-password {
-        margin-left: $m-spacing;
+        margin-left: $m-space;
     }
 
     &__reset,

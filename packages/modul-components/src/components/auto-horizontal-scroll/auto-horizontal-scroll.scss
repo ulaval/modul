@@ -33,14 +33,14 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
         background: var(--m-auto-horizontal-scroll--button-background);
         opacity: 1;
 
-        $transparent-color: rgba($m-color--white, 0);
+        $transparent-color: rgba(255, 255, 255, 0);
 
         &.m--is-left {
             left: 0;
 
             &::before {
                 transition: left $m-transition-duration linear;
-                right: -$m-spacing;
+                right: calc(-1 * #{$m-space});
                 background-image: linear-gradient(90deg, var(--m-auto-horizontal-scroll--button-background), $transparent-color);
             }
         }
@@ -50,7 +50,7 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
 
             &::after {
                 transition: right $m-transition-duration linear;
-                left: -$m-spacing;
+                left: calc(-1 * #{$m-space});
                 background-image: linear-gradient(90deg, $transparent-color, var(--m-auto-horizontal-scroll--button-background));
             }
         }
@@ -62,7 +62,7 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
             top: 0;
             bottom: 0;
             z-index: -1;
-            width: $m-spacing;
+            width: $m-space;
         }
 
         &.m--is-enter-active,
@@ -115,31 +115,31 @@ $m-defilement-horizontal-automatique--largueur-bouton: 22px;
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-white {
-    --m-auto-horizontal-scroll--button-background: #{ $m-color--white };
+    --m-auto-horizontal-scroll--button-background: #{ $m-color-white };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-light {
-    --m-auto-horizontal-scroll--button-background: #{ $m-color--grey-light };
+    --m-auto-horizontal-scroll--button-background: #{ $m-color-grey-light };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-dark {
-    --m-auto-horizontal-scroll--button-background: #{ $m-color--grey-darkest };
+    --m-auto-horizontal-scroll--button-background: #{ $m-color-grey-darkest };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-interactive {
-    --m-auto-horizontal-scroll--button-background: #{ $m-color--interactive };
+    --m-auto-horizontal-scroll--button-background: #{ $m-color-interactive };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-grey-black {
-    --m-auto-horizontal-scroll--button-background: #{ $m-color--grey-black };
+    --m-auto-horizontal-scroll--button-background: #{ $m-color-grey-black };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-interactive-dark {
-    --m-auto-horizontal-scroll--button-background: #{ $m-color--interactive-dark };
+    --m-auto-horizontal-scroll--button-background: #{ $m-color-interactive-dark };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-interactive-darker {
-    --m-auto-horizontal-scroll--button-background: #{ $m-color--interactive-darker };
+    --m-auto-horizontal-scroll--button-background: #{ $m-color-interactive-darker };
 }
 
 .m-auto-horizontal-scroll.m--is-gradient-style-current-color {

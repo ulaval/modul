@@ -25,7 +25,7 @@
         padding-left: $mw-header-padding;
 
         @media (min-width: $m-mq--min--s) {
-            padding-left: $m-spacing--l;
+            padding-left: $m-space-lg;
             min-height: $mw-header-height;
         }
     }
@@ -69,12 +69,12 @@
     }
 
     &__link {
-        font-weight: $m-font-weight--black;
+        font-weight: $m-font-weight-black;
         text-transform: uppercase;
         text-decoration: none;
         transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
         outline: none;
-        margin-right: $m-margin--l;
+        margin-right: $m-space-md;
 
         &,
         &:visited {
@@ -84,15 +84,15 @@
         &:hover,
         &:focus,
         &.router-link-active {
-            color: $m-color--white;
+            color: $m-color-white;
         }
 
         &.router-link-active::after {
-            background-color: $m-color--active;
+            background-color: $m-color-active;
         }
 
         &:hover::after {
-            background-color: $m-color--black;
+            background-color: $m-color-black;
         }
     }
 
@@ -116,7 +116,7 @@
 
     &__link-version {
         white-space: nowrap;
-        font-size: $m-font-size--xs;
-        margin-right: $m-spacing--s;
+        @include m-font-size('xs');
+        margin-right: $m-space-xs;
     }
 }

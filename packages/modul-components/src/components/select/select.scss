@@ -17,11 +17,11 @@
     &__arrow {
         cursor: pointer;
         height: $m-touch-size;
-        width: calc(#{$m-touch-size} - #{$m-spacing});
+        width: calc(#{$m-touch-size} - #{$m-space});
         display: flex;
         align-items: center;
         justify-content: left;
-        color: $m-color--grey;
+        color: $m-color-grey;
 
         &-icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
@@ -30,7 +30,7 @@
         &.m--is-open,
         &.m--is-focus {
             .m-select__arrow-icon {
-                color: $m-color--interactive;
+                color: $m-color-interactive;
             }
         }
 
@@ -57,7 +57,7 @@
         transition: margin-top $m-transition-duration ease;
 
         &.m--has-validation-message {
-            margin-top: $m-spacing--xs;
+            margin-top: $m-space-xxs;
         }
     }
 

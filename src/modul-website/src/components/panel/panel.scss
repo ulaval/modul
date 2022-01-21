@@ -1,7 +1,7 @@
 @import '../../styles/commons';
 
 $modul-menu--list-max-width: 300px;
-$modul-menu-offset-left: $m-padding--s + 2;
+$modul-menu-offset-left: calc(var(m-space-xs) + 2);
 $modul-menu-beta-width: 24px;
 $modul-menu-transition-duration: 0.7s;
 
@@ -24,12 +24,12 @@ $modul-menu-transition-duration: 0.7s;
     }
 
     @media (min-width: #{$m-mq--min--s}) {
-        padding: $m-padding--xl $m-padding 0 $m-padding;
+        padding: $m-space-xxxxl $m-space 0 $m-space;
     }
 
     @media (min-width: #{$m-mq--min--l}) {
-        padding-left: $m-padding--xl*2;
-        padding-right: $m-padding--xl*2;
+        padding-left: $m-space-xxxxl*2;
+        padding-right: $m-space-xxxxl*2;
     }
 
     &.mw--is {

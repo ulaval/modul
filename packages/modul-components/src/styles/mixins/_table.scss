@@ -4,43 +4,44 @@
     table-layout: fixed; // AEL-33
 
     th {
-        padding: 0 $m-padding--s $m-margin--s;
-        font-weight: $m-font-weight--semi-bold;
-        color: $m-color--black;
-        border-bottom: 2px solid $m-color--border;
+        padding: 0 $m-space-xs 6px;
+        font-weight: $m-font-weight-semi-bold;
+        color: $m-color-black;
+        border-bottom: 2px solid $m-color-border;
         text-align: left;
 
         &:first-child {
-            padding-left: $m-padding;
+            padding-left: $m-space;
         }
 
         &:last-child {
-            padding-right: $m-padding;
+            padding-right: $m-space;
         }
     }
 
     tbody {
         tr {
-            border-bottom: 1px solid $m-color--border;
+            border-bottom: 1px solid $m-color-border;
         }
     }
 
     td {
-        padding: $m-padding $m-padding--s;
+        padding: $m-space $m-space-xs;
         margin: 1px 0;
         vertical-align: top;
         text-align: left;
 
         &:first-child {
-            padding-left: $m-padding;
+            padding-left: $m-space;
         }
 
         &:last-child {
-            padding-right: $m-padding;
+            padding-right: $m-space;
         }
     }
 
     &.m-u--has-icon {
+
         th,
         td {
             &:last-child:not(:only-child) {

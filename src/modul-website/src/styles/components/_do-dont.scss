@@ -1,11 +1,11 @@
 .modul-do,
 .modul-dont {
-    padding: 0 0 0 $m-padding;
+    padding: 0 0 0 $m-space;
     border-left: $m-border-width--l solid;
-    margin-top: $m-margin--l;
+    margin-top: $m-space-md;
 
     ul {
-        padding-left: $m-padding;
+        padding-left: $m-space;
 
         li {
             &::before {
@@ -19,13 +19,14 @@
     &__header {
         margin: 0;
         text-transform: uppercase !important;
-        font-size: $m-font-size--xs !important;
+        @include m-font-size('xs');
     }
 
     &__body {
-        margin-top: $m-margin--s;
+        margin-top: $m-space-xs;
 
         > :first-child {
+
             &,
             > :first-child {
                 margin-top: 0;

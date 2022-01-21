@@ -1,0 +1,13 @@
+@import 'color.mixin';
+@import 'font.mixin';
+@import 'space.mixin';
+@import 'heading.mixin';
+@import 'border.mixin';
+
+@mixin m-all-custom-properties {
+    @include m-var-color();
+    @include m-var-font();
+    @include m-var-space();
+    @include m-var-heading();
+    @include m-var-border();
+}

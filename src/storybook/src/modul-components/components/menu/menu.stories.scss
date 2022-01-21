@@ -3,13 +3,15 @@
 .m-menu-stories {
     --m-menu--color: #{ lighten(#2b3455, 20%) };
     --m-menu--hover-color: #2b3455;
-    --m-menu--hover-indicator-color: #{ $m-color--grey-light };
+    --m-menu--hover-indicator-color: #{ $m-color-grey-light };
     --m-menu--border: 1px solid white;
-    --m-menu--background-color: #{ $m-color--grey-lighter };
-    --m-menu--selected-indicator: #{ $m-color--ul-yellow };
+    --m-menu--background-color: #{ $m-color-grey-lighter };
+    --m-menu--item-background-color: #{ $m-color-grey-light };
+    --m-menu--selected-indicator: #{ $m-color-ul-yellow };
+    //
     --m-menu--box-shadow: none;
     //
     --m-menu--group-indicator: var(--m-menu--background-color);
-    --m-menu--group-hover-indicator-color: #{ $m-color--grey-light };
-    --m-menu--group-background-color: #{ $m-color--grey-lightest };
+    --m-menu--group-hover-indicator-color: #{ $m-color-grey-light };
+    --m-menu--group-background-color: #{ $m-color-grey-lightest };
 }

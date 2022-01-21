@@ -3,8 +3,6 @@ $m-line-height-rich-text: 21px !default;
 
 .m-rich-text {
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
 
     /deep/ .m-input-style {
         &__label {

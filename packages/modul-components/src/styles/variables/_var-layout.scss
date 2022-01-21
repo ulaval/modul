@@ -15,48 +15,30 @@ $m-min-width: 320px !default;
 $m-box--min-height: 80px !default;
 
 // ======================================================================
-//  Margin
-// ======================================================================
-$m-margin--xl: 48px !default;
-$m-margin--l: 24px !default;
-$m-margin: 12px !default;
-$m-margin--s: 6px !default;
-$m-margin--xs: 3px !default;
-
-// ======================================================================
-//  Padding
-// ======================================================================
-$m-padding--xl: 64px !default;
-$m-padding--l: 32px !default;
-$m-padding: 16px !default;
-$m-padding--s: 8px !default;
-$m-padding--xs: 4px !default;
-
-// ======================================================================
 //  spacing
 // ======================================================================
 
-$m-spacing--xxxxl: 64px !default;
-$m-spacing--xxxl: 56px !default;
-$m-spacing--xxl: 48px !default;
-$m-spacing--xl: 40px !default;
-$m-spacing--l: 32px !default;
-$m-spacing--m: 24px !default;
-$m-spacing: 16px !default;
-$m-spacing--s: 8px !default;
-$m-spacing--xs: 4px !default;
+$m-space-xxxxl: #{var(--m-space-xxxxl)} !default;
+$m-space-xxxl: #{var(--m-space-xxxl)} !default;
+$m-space-xxl: #{var(--m-space-xxl)} !default;
+$m-space-xl: #{var(--m-space-xl)} !default;
+$m-space-lg: #{var(--m-space-lg)} !default;
+$m-space-md: #{var(--m-space-md)} !default;
+$m-space: #{var(--m-space)} !default;
+$m-space-sm: #{var(--m-space-sm)} !default;
+$m-space-xs: #{var(--m-space-xs)} !default;
+$m-space-xxs: #{var(--m-space-xxs)} !default;
 
 // ======================================================================
-//  map variable to be used with m-spacing function
+//  map variable to be used with m-space function
 // ======================================================================
-$m-spacing-map: (
-    xxxxl: $m-spacing--xxxxl,
-    xxxl: $m-spacing--xxxl,
-    xxl: $m-spacing--xxl,
-    xl: $m-spacing--xl,
-    l: $m-spacing--l,
-    m: $m-spacing--m,
-    base : $m-spacing,
-    s: $m-spacing--s,
-    xs: $m-spacing--xs
-);
+$m-space-map: (xxxxl: $m-space-xxxxl,
+    xxxl: $m-space-xxxl,
+    xxl: $m-space-xxl,
+    xl: $m-space-xl,
+    lg: $m-space-lg,
+    md: $m-space-md,
+    base : $m-space,
+    sm: $m-space-sm,
+    xs: $m-space-xs,
+    xxs: $m-space-xxs);

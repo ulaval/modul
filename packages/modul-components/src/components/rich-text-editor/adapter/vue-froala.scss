@@ -1,6 +1,7 @@
 @import 'commons';
 @import '../rte-theme.scss';
-@import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css'); /* FA CSS import */
+@import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+/* FA CSS import */
 $m-collapsed-input-style--margin: 16px !default;
 $m-froala-toolbar-btn-width: 38px !default;
 $m-froala-toolbar-btn-height: 38px !default;
@@ -63,10 +64,10 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-view {
-            color: $m-color--disabled;
+            color: $m-color-disabled;
 
             /deep/ a {
-                color: $m-color--disabled;
+                color: $m-color-disabled;
                 cursor: default;
             }
         }
@@ -93,7 +94,7 @@ $m-froala-toolbar-btn-height: 38px !default;
 
         .fr-box.fr-basic .fr-element {
             padding: unset;
-            font-weight: $m-font-weight--light;
+            font-weight: $m-font-weight-light;
             word-wrap: break-word;
             -moz-user-select: text; // Dirty fix for text selection in firefox if the rich-text is in a draggable container.
             border-left: 0 transparent;
@@ -101,40 +102,40 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-box.fr-basic.fr-top .fr-wrapper {
-            background: $m-color--white;
+            background: $m-color-white;
         }
 
         .fr-toolbar {
             display: none;
         }
 
-        .fr-sticky-dummy + .fr-sticky-dummy {
+        .fr-sticky-dummy+.fr-sticky-dummy {
             height: 0 !important; // Fix flicking problem with multiple editors on page and https://github.com/froala/wysiwyg-editor/issues/2818
         }
     }
 
     &.m--is-focus /deep/ {
         .fr-placeholder {
-            color: $m-color--disabled;
-            font-weight: $m-font-weight--semi-bold;
+            color: $m-color-disabled;
+            font-weight: $m-font-weight-semi-bold;
             position: absolute;
             top: 22px; // Magic number
         }
 
         .fr-box.fr-basic .fr-element {
-            font-weight: $m-font-weight--light;
+            font-weight: $m-font-weight-light;
             word-wrap: break-word;
             -moz-user-select: text; // Dirty fix for text selection in firefox if the rich-text is in a draggable container.
         }
 
         .fr-box.fr-basic.fr-top .fr-wrapper {
-            background: $m-color--white;
+            background: $m-color-white;
             transition: margin $m-transition-duration--l ease;
         }
 
         .fr-box.fr-basic.fr-top.fr-toolbar-open .fr-wrapper {
             transition: margin $m-transition-duration--l ease;
-            margin-top: $m-margin--xl;
+            margin-top: $m-space-xxl;
         }
 
         .fr-toolbar {
@@ -151,11 +152,11 @@ $m-froala-toolbar-btn-height: 38px !default;
             &::before,
             &::after {
                 .m-rich-text.m--has-error & {
-                    background-color: $m-color--error;
+                    background-color: $m-color-error;
                 }
 
                 .m-rich-text.m--is-valid & {
-                    background-color: $m-color--success;
+                    background-color: $m-color-success;
                 }
             }
 
@@ -164,7 +165,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             }
         }
 
-        .fr-sticky-dummy + .fr-sticky-dummy {
+        .fr-sticky-dummy+.fr-sticky-dummy {
             height: 0 !important; // Fix flicking problem with multiple editors on page and https://github.com/froala/wysiwyg-editor/issues/2818
         }
     }
@@ -173,7 +174,7 @@ $m-froala-toolbar-btn-height: 38px !default;
         @include m-commons-rte-styles();
 
         .fr-box.fr-basic.fr-top .fr-wrapper {
-            background: rgba($m-color--white, 0);
+            background: rgba(255, 255, 255, 0);
             box-shadow: unset;
             border: 0;
         }
@@ -194,10 +195,10 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-view {
-            color: $m-color--text;
+            color: $m-color-text;
             width: 100%;
 
-            & > :first-child {
+            &> :first-child {
                 margin-top: 0 !important;
             }
         }
@@ -212,16 +213,16 @@ $m-froala-toolbar-btn-height: 38px !default;
             border-left: 0;
 
             button {
-                color: $m-color--grey-darker;
+                color: $m-color-grey-darker;
 
                 svg {
-                    fill: $m-color--grey-darker;
+                    fill: $m-color-grey-darker;
                 }
             }
 
             button[data-cmd*='specialCharacters'] {
                 :not(.fr-sr-only) {
-                    font-size: 16px;
+                    @include m-font-size();
                 }
             }
 
@@ -233,7 +234,7 @@ $m-froala-toolbar-btn-height: 38px !default;
                     height: 0;
                     border-left: 4px solid transparent;
                     border-right: 4px solid transparent;
-                    border-top: 4px solid $m-color--grey-darker;
+                    border-top: 4px solid $m-color-grey-darker;
                     right: 4px;
                     top: 17px;
                     content: '';
@@ -254,8 +255,8 @@ $m-froala-toolbar-btn-height: 38px !default;
 
                     &:first-child {
                         a {
-                            font-weight: $m-font-weight--light;
-                            font-size: $m-font-size;
+                            font-weight: $m-font-weight-light;
+                            font-size: inherit;
                         }
                     }
                 }
@@ -264,60 +265,62 @@ $m-froala-toolbar-btn-height: 38px !default;
 
         .fr-popup {
             border-radius: 0;
-            border-top-color: $m-color--grey-darker;
+            border-top-color: $m-color-grey-darker;
         }
 
         .fr-arrow {
-            border-bottom-color: $m-color--grey-darker;
+            border-bottom-color: $m-color-grey-darker;
         }
 
         .fr-input-line {
+
             input[type='text'],
             textarea {
                 transition: border-color $m-transition-duration ease;
                 position: relative;
                 font-family: inherit;
-                font-size: $m-font-size;
-                font-weight: $m-font-weight--semi-bold;
-                color: $m-color--text;
-                border-bottom-color: $m-color--grey;
+                font-size: inherit;
+                font-weight: $m-font-weight-semi-bold;
+                color: $m-color-text;
+                border-bottom-color: $m-color-grey;
 
                 &::placeholder {
-                    color: $m-color--disabled;
-                    font-weight: $m-font-weight--semi-bold;
+                    color: $m-color-disabled;
+                    font-weight: $m-font-weight-semi-bold;
                 }
 
                 &:disabled {
-                    color: $m-color--disabled;
-                    border-bottom: 1px dashed $m-color--disabled;
+                    color: $m-color-disabled;
+                    border-bottom: 1px dashed $m-color-disabled;
                 }
 
                 &:not(:disabled) {
                     &:hover {
-                        border-bottom-color: $m-color--grey-darker;
+                        border-bottom-color: $m-color-grey-darker;
                     }
 
                     &:focus {
-                        border-bottom-color: $m-color--interactive;
+                        border-bottom-color: $m-color-interactive;
                     }
                 }
 
-                &.fr-not-empty:focus + label {
-                    color: $m-color--interactive;
+                &.fr-not-empty:focus+label {
+                    color: $m-color-interactive;
                 }
             }
         }
 
         p[class^='rte-h'] {
+
             b,
             strong {
-                font-weight: $m-font-weight--black;
+                font-weight: $m-font-weight-black;
             }
         }
 
         b,
         strong {
-            font-weight: $m-font-weight--bold;
+            font-weight: $m-font-weight-bold;
         }
 
         .second-toolbar {
@@ -330,9 +333,9 @@ $m-froala-toolbar-btn-height: 38px !default;
             margin: 0 2px;
 
             &.fr-open {
-                background-color: $m-color--grey-lighter;
+                background-color: $m-color-grey-lighter;
 
-                > .fr-sub-menu {
+                >.fr-sub-menu {
                     &::after {
                         border-top: 0;
                         border-bottom: 4px solid #222;
@@ -341,7 +344,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             }
 
             &.fr-active {
-                color: $m-color--interactive;
+                color: $m-color-interactive;
             }
 
             .fr-sub-menu {

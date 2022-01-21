@@ -13,7 +13,7 @@ $m-tooltip--max-height: 280px !default;
     }
 
     &.m--is-mode-definition {
-        .m-tooltip__link /deep/ .m-link__text > :first-child {
+        .m-tooltip__link /deep/ .m-link__text> :first-child {
             border-bottom: 1px dotted currentColor;
         }
     }
@@ -28,12 +28,12 @@ $m-tooltip--max-height: 280px !default;
 
     &__icon {
         transition: color $m-transition-duration ease;
-        color: $m-color--interactive-light;
+        color: $m-color-interactive-light;
         cursor: pointer;
 
         &:hover,
         &:focus {
-            color: $m-color--interactive;
+            color: $m-color-interactive;
         }
 
         &:active {
@@ -45,11 +45,11 @@ $m-tooltip--max-height: 280px !default;
             min-height: auto;
             width: $m-font-size;
             height: $m-font-size;
-            color: $m-color--interactive-light;
+            color: $m-color-interactive-light;
 
             &:hover,
             &:focus {
-                color: $m-color--interactive;
+                color: $m-color-interactive;
             }
         }
     }
@@ -61,8 +61,8 @@ $m-tooltip--max-height: 280px !default;
     }
 
     &__body {
-        padding: $m-spacing $m-spacing--xl $m-spacing $m-spacing;
-        background: $m-color--information;
+        padding: $m-space $m-space-xl $m-space $m-space;
+        background: $m-color-information;
         word-break: break-word;
         user-select: text;
 
@@ -75,7 +75,7 @@ $m-tooltip--max-height: 280px !default;
         }
 
         @media (max-height: $m-tooltip--max-height) {
-            --m-tooltip--max-height: calc(100vh - #{ $m-margin--l });
+            --m-tooltip--max-height: calc(100vh - #{ $m-space-md });
 
             min-height: $m-touch-size;
         }
@@ -89,7 +89,7 @@ $m-tooltip--max-height: 280px !default;
         position: relative;
 
         .m-tooltip__body {
-            padding-right: $m-padding--l;
+            padding-right: $m-space-lg;
         }
     }
 
@@ -103,10 +103,10 @@ $m-tooltip--max-height: 280px !default;
 
     &:not(.m--is-mode-icon) {
         .m-tooltip__body {
-            background: $m-color--white;
+            background: $m-color-white;
 
             @media (min-width: $m-mq--min--s) {
-                border: 1px solid $m-color--grey-light;
+                border: 1px solid $m-color-grey-light;
             }
         }
     }
@@ -123,21 +123,21 @@ $m-tooltip--max-height: 280px !default;
                     left: 0;
                     content: '';
                     height: 1px;
-                    background: $m-color--interactive;
+                    background: $m-color-interactive;
                 }
             }
 
             @media (min-width: $m-mq--min--s) {
-                border: 1px solid $m-color--interactive;
+                border: 1px solid $m-color-interactive;
             }
         }
 
         .m-tooltip__close-button {
-            color: $m-color--interactive;
+            color: $m-color-interactive;
 
             &:hover,
             &:focus {
-                color: $m-color--interactive-darker;
+                color: $m-color-interactive-darker;
             }
         }
     }

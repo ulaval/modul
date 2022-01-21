@@ -3,10 +3,10 @@
 $m-tree-node--child-indentation: 20px;
 
 .m-tree-icon {
-    background-color: $m-color--interactive;
+    background-color: $m-color-interactive;
     border-radius: 50%;
     left: -8px; // Magic number
-    border: 3px solid $m-color--interactive;
+    border: 3px solid $m-color-interactive;
     box-sizing: content-box;
     position: absolute;
 

@@ -4,10 +4,10 @@
     text-align: left;
 
     &__stacktrace {
-        margin-top: $m-margin;
+        margin-top: $m-space-sm;
         max-height: 120px;
         overflow: auto;
-        padding: $m-padding;
+        padding: $m-space;
 
         @include m-scrollbar();
 

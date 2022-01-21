@@ -8,10 +8,10 @@ $m-button--border-radius: 4px !default;
     align-items: center;
     text-align: center;
     vertical-align: middle;
-    font-size: $m-font-size;
+    font-size: inherit;
     border-radius: $m-button--border-radius;
-    padding: 11px $m-padding 11px $m-padding; // Magic number
-    font-weight: $m-font-weight--semi-bold;
+    padding: 11px $m-space 11px $m-space; // Magic number
+    font-weight: $m-font-weight-semi-bold;
 
     @include m-button();
 
@@ -48,7 +48,7 @@ $m-button--border-radius: 4px !default;
     }
 
     .m-icon {
-        font-size: 12px;
+        @include m-font-size('xs');
         stroke-width: 2px;
     }
 
@@ -66,23 +66,23 @@ $m-button--border-radius: 4px !default;
     &__icon {
         position: relative;
         z-index: 2;
-        font-size: $m-font-size;
+        font-size: inherit;
         height: $m-font-size;
 
         &.m--is-left {
-            margin-right: $m-margin;
+            margin-right: $m-space-sm
         }
 
         &.m--is-right {
-            margin-left: $m-margin;
+            margin-left: $m-space-sm;
         }
     }
 
     &__precision {
         display: block;
-        font-size: $m-font-size--s;
-        font-weight: $m-font-weight--light;
-        margin-top: $m-margin--xs;
+        @include m-font-size('sm');
+        font-weight: $m-font-weight-light;
+        margin-top: 3px;
 
         &:empty {
             display: none;

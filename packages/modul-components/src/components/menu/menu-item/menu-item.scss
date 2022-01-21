@@ -1,18 +1,14 @@
 @import 'commons';
 
 .m-menu-item {
-    --m-menu--indicator-width: 0;
-    --m-menu--selected-indicator-width: #{ $m-border-width--l };
-
     position: relative;
 
-    &.m--is-selected:not(.m--is-custom-content) {
+    &.m--is-selected {
         --m-menu--font-weight: var(--m-menu--selected-font-weight);
 
         &:not(.m--is-group) {
             --m-menu--color: var(--m-menu--selected-color);
             --m-menu--indicator: var(--m-menu--selected-indicator);
-            --m-menu--indicator-width: var(--m-menu--selected-indicator-width);
 
             stroke-width: 1.5px;
         }
@@ -21,24 +17,25 @@
     &.m--is-inside-group {
         --m-menu--color: var(--m-menu--group-color);
         --m-menu--border: var(--m-menu--group-border);
-        --m-menu--background-color: var(--m-menu--group-background-color);
+        --m-menu--item-background-color: var(--m-menu--group-background-color);
         --m-menu--text-transform: var(--m-menu--group-text-transform);
         --m-menu--font-weight: var(--m-menu--group-font-weight);
         --m-menu--indicator: var(--m-menu--group-indicator);
         --m-menu--hover-indicator-color: var(--m-menu--group-hover-indicator-color);
 
-        &.m--is-selected:not(.m--is-custom-content) {
-            --m-menu--color: var(--m-menu--group-selected-color);
+        &.m--is-selected {
             --m-menu--indicator: var(--m-menu--group-selected-indicator);
             --m-menu--font-weight: var(--m-menu--group-selected-font-weight);
         }
     }
 
-    &__link.m-menu-item__link { // must double specificity to compensate the stupid issue with m-u--app-body
-        outline: none;
-        display: flex;
+    &__link.m-menu-item__link {
+        // must double specificity to compensate the stupid issue with m-u--app-body
+        transition: color $m-transition-duration ease, font-weight $m-transition-duration ease, border-color $m-transition-duration ease;
         position: relative;
+        display: flex;
         align-items: center;
+        gap: var(--m-space-xs);
         text-decoration: none;
         color: var(--m-menu--color);
         padding: var(--m-menu--padding);
@@ -46,45 +43,28 @@
         border-top: var(--m-menu--border);
         font-weight: var(--m-menu--font-weight);
         text-transform: var(--m-menu--text-transform);
-        background-color: var(--m-menu--background-color);
-        transition: color $m-transition-duration ease, font-weight $m-transition-duration ease;
+        background-color: var(--m-menu--item-background-color);
+        border-left: var(--m-border-width-lg) solid var(--m-menu--indicator);
+        outline-color: var(--m-color-grey-black);
+    }
 
-        &:not(.m--is-disabled):not(.m--is-custom-content) {
-            &:hover,
-            &:focus {
-                --m-menu--color: var(--m-menu--hover-color);
+    &:not(.m--is-selected) {
+        .m-menu-item__link {
+            &:not(.m--is-disabled) {
 
-                &::before {
-                    background-color: var(--m-menu--hover-indicator-color);
+                &:hover,
+                &:focus {
+                    --m-menu--color: var(--m-menu--hover-color);
+                    border-color: var(--m-menu--hover-indicator-color);
                 }
+
             }
-        }
-
-        &::before,
-        &::after {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            content: '';
-            background: var(--m-menu--indicator);
-            transition: width $m-transition-duration ease, background-color $m-transition-duration ease;
-            background-color: var(--m-menu--indicator);
-        }
-
-        &::before {
-            width: var(--m-menu--selected-indicator-width);
-        }
-
-        &::after {
-            width: var(--m-menu--indicator-width);
         }
     }
 
     &__icon {
-        font-size: 20px; // Magic number
+        @include m-font-size('lg');
         stroke-width: inherit;
-        margin-right: $m-spacing--s;
     }
 
     &__label {

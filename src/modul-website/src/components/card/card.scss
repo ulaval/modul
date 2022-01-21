@@ -2,7 +2,7 @@
 
 .mw-card {
     background-color: $modul-color--black-grey-dark;
-    padding: $m-spacing--xl;
+    padding: $m-space-xl;
     text-align: center;
 
     &__link,
@@ -11,13 +11,13 @@
     }
 
     &__content {
-        margin-top: $m-spacing--l;
+        margin-top: $m-space-lg;
     }
 
     &__link {
-        margin-top: $m-spacing--l;
+        margin-top: $m-space-lg;
         display: grid;
-        grid-gap: $m-spacing--s;
+        grid-gap: $m-space-xs;
         justify-items: center;
     }
 }

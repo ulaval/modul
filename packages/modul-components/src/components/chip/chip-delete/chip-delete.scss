@@ -4,19 +4,19 @@
     @include m-chip-base-style();
 
     display: inline-block;
-    border: 1px solid $m-color--grey;
-    background: $m-color--grey-lighter;
+    border: 1px solid $m-color-grey;
+    background: $m-color-grey-lighter;
 
     &:not(.m--is-disabled) {
 
         &.m--is-hover,
         &.m--is-focused {
-            color: $m-color--white;
-            background: $m-color--interactive-light;
-            border-color: $m-color--interactive-light;
+            color: $m-color-white;
+            background: $m-color-interactive-light;
+            border-color: $m-color-interactive-light;
 
             .m-chip-delete__icon {
-                color: $m-color--white;
+                color: $m-color-white;
             }
 
         }
@@ -29,10 +29,10 @@
     &.m--is-small {
         @include m-chip-small-style();
 
-        border-color: $m-color--grey-light;
-        background: $m-color--grey-lighter;
+        border-color: $m-color-grey-light;
+        background: $m-color-grey-lighter;
         font-size: 0.75em;
-        font-weight: $m-font-weight--semi-bold;
+        font-weight: $m-font-weight-semi-bold;
 
         .m-chip-delete__button {
             $m-chip-delete--button-width: 20px;
@@ -55,12 +55,12 @@
     }
 
     &.m--is-disabled {
-        border: 1px solid $m-color--disabled;
-        background: $m-color--grey-lightest;
+        border: 1px solid $m-color-disabled;
+        background: $m-color-grey-lightest;
 
         &,
         .m-chip-delete__button {
-            color: $m-color--disabled;
+            color: $m-color-disabled;
         }
     }
 
@@ -79,12 +79,12 @@
         width: $m-chip-delete--button-width;
         height: $m-chip-delete--button-width;
         padding: 0;
-        margin: 0 $m-spacing--xs;
+        margin: 0 $m-space-xxs;
         appearance: none;
         border: none;
         font-size: 1em;
         font-family: $m-font-family;
-        color: $m-color--interactive;
+        color: $m-color-interactive;
         background: none;
         outline: none;
     }

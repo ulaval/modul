@@ -1,8 +1,9 @@
 .modul-u--dropdown-light.modul-u--dropdown-light,
 .modul-u--dropdown-dark.modul-u--dropdown-dark {
+
     .m-dropdown__input.m-dropdown__input,
     .m-input-style__body.m-input-style__body {
-        padding-right: $m-padding--s;
+        padding-right: $m-space-xs;
 
         @include modul-page-title();
     }
@@ -55,14 +56,14 @@
         }
 
         &::before {
-            border-color: $m-color--ul-yellow !important;
+            border-color: $m-color-ul-yellow !important;
         }
     }
 
     &:not(.m--is-open) {
         .m-dropdown__arrow {
             .m-icon-button.m-icon-button {
-                color: $m-color--ul-yellow !important;
+                color: $m-color-ul-yellow !important;
             }
         }
     }

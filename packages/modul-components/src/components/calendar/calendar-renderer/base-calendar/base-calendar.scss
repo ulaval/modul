@@ -3,9 +3,9 @@
 $m-base-calendar--week-length: 7 !default;
 $m-base-calendar--dimension: $m-touch-size !default;
 $m-base-calendar--weekday-height: 41px !default; // magic number
-$m-base-calendar--width: $m-base-calendar--dimension * $m-base-calendar--week-length + $m-spacing--m * 2 !default;
-$m-base-calendar--min-height: ($m-base-calendar--dimension * 5) + $m-base-calendar--weekday-height + $m-spacing;
-$m-base-calendar--max-height: ($m-base-calendar--dimension * 6) + $m-base-calendar--weekday-height + $m-spacing;
+$m-base-calendar--width: calc(#{$m-base-calendar--dimension * $m-base-calendar--week-length} + var(--m-space-md) * 2) !default;
+$m-base-calendar--min-height: calc(#{($m-base-calendar--dimension * 5) + $m-base-calendar--weekday-height} + var(--m-space));
+$m-base-calendar--max-height: calc(#{($m-base-calendar--dimension * 6) + $m-base-calendar--weekday-height} + var(--m-space));
 $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 
 @mixin m-base-calendar__show-indicator() {
@@ -14,22 +14,22 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 }
 
 @mixin m-base-calendar__today() {
-    font-weight: $m-font-weight--bold;
+    font-weight: $m-font-weight-bold;
 
     &::before {
-        background-color: $m-color--grey-light;
-        border-color: $m-color--grey-light;
+        background-color: $m-color-grey-light;
+        border-color: $m-color-grey-light;
 
         @include m-base-calendar__show-indicator();
     }
 }
 
 @mixin m-base-calendar__today() {
-    font-weight: $m-font-weight--semi-bold;
+    font-weight: $m-font-weight-semi-bold;
 
     &::before {
-        background-color: $m-color--grey-light;
-        border-color: $m-color--grey-light;
+        background-color: $m-color-grey-light;
+        border-color: $m-color-grey-light;
 
         @include m-base-calendar__show-indicator();
     }
@@ -54,7 +54,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     overflow: hidden;
 
     @media (min-width: $m-mq--min--s) {
-        border: $m-border-width--s solid $m-color--border;
+        border: $m-border-width--s solid $m-color-border;
         width: $m-base-calendar--width;
     }
 
@@ -80,7 +80,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     &__header,
     &__body {
         width: 100%;
-        background: $m-color--white;
+        background: $m-color-white;
 
         @media (max-width: $m-mq--max--s) {
             min-width: $m-base-calendar--width;
@@ -94,29 +94,29 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
         justify-content: space-between;
         width: 100%;
         min-height: 68px; //Magic number
-        padding: $m-spacing--s $m-spacing;
+        padding: $m-space-xs $m-space;
 
         @media (min-width: $m-mq--min--s) {
-            padding-right: $m-spacing--m;
-            padding-left: $m-spacing--m;
+            padding-right: $m-space-md;
+            padding-left: $m-space-md;
         }
 
         &::after {
             transition: transform $m-transition-duration--l ease;
             position: absolute;
             z-index: 3;
-            right: $m-spacing;
+            right: $m-space;
             bottom: 0;
-            left: $m-spacing;
+            left: $m-space;
             content: '';
             height: 1px;
-            background: $m-color--border;
+            background: $m-color-border;
             transform: translate(0, $m-base-calendar--max-height);
             visibility: hidden;
 
             @media (min-width: $m-mq--min--s) {
-                right: $m-spacing--m;
-                left: $m-spacing--m;
+                right: $m-space-md;
+                left: $m-space-md;
             }
         }
     }
@@ -142,6 +142,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 
     &.m--is-max-row {
         .m-base-calendar {
+
             &__days-view,
             &__years-months-view {
                 height: $m-base-calendar--max-height;
@@ -151,9 +152,9 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 
     &__days-view,
     &__years-months-view {
-        padding-right: $m-spacing;
-        padding-left: $m-spacing;
-        padding-bottom: $m-spacing;
+        padding-right: $m-space;
+        padding-left: $m-space;
+        padding-bottom: $m-space;
         width: 100%;
         height: $m-base-calendar--min-height;
 
@@ -162,8 +163,8 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
         @media (min-width: $m-mq--min--s) {
             // for animation purpose
             transition: height $m-transition-duration ease;
-            padding-right: $m-spacing--m;
-            padding-left: $m-spacing--m;
+            padding-right: $m-space-md;
+            padding-left: $m-space-md;
         }
     }
 
@@ -181,8 +182,8 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
         transition: transform $m-transition-duration--l ease;
         position: relative;
         z-index: 2;
-        padding-top: $m-spacing;
-        background: $m-color--white;
+        padding-top: $m-space;
+        background: $m-color-white;
         overflow-y: auto;
 
         &.m--is-enter,
@@ -193,19 +194,19 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 
     &__year-title {
         transition: color $m-transition-duration ease;
-        font-size: $m-font-size--h4;
-        color: $m-color--grey;
+        @include m-font-size('h4');
+        color: $m-color-grey;
 
         &:first-child {
             margin: 0;
         }
 
         &:not(:first-child) {
-            margin-top: $m-spacing--l;
+            margin-top: $m-space-lg;
         }
 
         &.m--is-current {
-            color: $m-color--black;
+            color: $m-color-black;
         }
     }
 
@@ -217,20 +218,20 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
         @include m-base-calendar__grid($height: auto);
 
         align-items: center;
-        border-bottom: $m-border-width--s solid $m-color--border;
+        border-bottom: $m-border-width--s solid $m-color-border;
         padding: 0 0 m-spacing(xs) 0;
         margin: 0;
     }
 
     &__weekday {
-        font-weight: $m-font-weight--semi-bold;
+        font-weight: $m-font-weight-semi-bold;
         color: m-color(grey);
     }
 
     &__days-grid {
         @include m-base-calendar__grid();
 
-        margin-top: $m-spacing;
+        margin-top: $m-space;
     }
 
     &__day-content {
@@ -251,8 +252,9 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
 
     // for left to right range selection visual
     .m--is-selection-start {
-        & + .m--is-highlighted,
-        &:nth-child(7n) + .m--is-highlighted {
+
+        &+.m--is-highlighted,
+        &:nth-child(7n)+.m--is-highlighted {
             z-index: 0;
 
             &::after {
@@ -267,13 +269,13 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
             }
         }
 
-        & + .m--is-highlighted {
+        &+.m--is-highlighted {
             &::after {
                 transform: translate3d(0, 50%, 0);
             }
         }
 
-        &:nth-child(7n) + .m--is-highlighted {
+        &:nth-child(7n)+.m--is-highlighted {
             &::after {
                 transform: translate3d(700%, -50%, 0);
             }
@@ -281,7 +283,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     }
 
     // for right to left range selection visual
-    .m--is-highlighted + .m--is-selection-start {
+    .m--is-highlighted+.m--is-selection-start {
         border-radius: 0 50% 50% 0;
     }
 }

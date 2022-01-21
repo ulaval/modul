@@ -6,9 +6,9 @@
     @include m-input-inline-spacing();
 
     &__currency-symbol {
-        color: $m-color--grey;
-        margin-left: $m-margin--xs;
-        margin-right: $m-margin--xs;
+        color: $m-color-grey;
+        margin-left: 3px;
+        margin-right: 3px;
         white-space: nowrap;
     }
 }

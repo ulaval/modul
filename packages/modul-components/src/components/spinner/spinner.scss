@@ -27,9 +27,10 @@ $m-loading-speed: 0.7s;
         &.m--is-light,
         &.m--is-lighter {
             .m-spinner {
+
                 &__title,
                 &__description {
-                    color: $m-color--white;
+                    color: $m-color-white;
                 }
             }
         }
@@ -37,7 +38,7 @@ $m-loading-speed: 0.7s;
         &.m--is-light {
             .m-spinner {
                 &__icon {
-                    border-color: $m-color--active $m-color--white $m-color--white $m-color--white;
+                    border-color: $m-color-active $m-color-white $m-color-white $m-color-white;
                 }
             }
         }
@@ -45,7 +46,7 @@ $m-loading-speed: 0.7s;
         &.m--is-lighter {
             .m-spinner {
                 &__icon {
-                    border-color: $m-color--white rgba($m-color--white, 0.5) rgba($m-color--white, 0.5) rgba($m-color--white, 0.5);
+                    border-color: $m-color-white rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.5);
                 }
             }
         }
@@ -53,7 +54,7 @@ $m-loading-speed: 0.7s;
         &.m--is-dark {
             .m-spinner {
                 &__icon {
-                    border-color: $m-color--active $m-color--grey $m-color--grey $m-color--grey;
+                    border-color: $m-color-active $m-color-grey $m-color-grey $m-color-grey;
                 }
             }
         }
@@ -61,18 +62,18 @@ $m-loading-speed: 0.7s;
 
     &__title {
         margin: 0;
-        font-size: $m-font-size--l;
-        font-weight: $m-font-weight--semi-bold;
+        @include m-font-size('md');
+        font-weight: $m-font-weight-semi-bold;
         white-space: pre-line;
 
-        + .m-spinner__description {
-            margin-top: $m-spacing--xs;
+        +.m-spinner__description {
+            margin-top: $m-space-xxs;
         }
     }
 
     &__description {
         margin: 0;
-        font-size: $m-font-size--s;
+        @include m-font-size('sm');
     }
 
     &__icon {
@@ -82,7 +83,7 @@ $m-loading-speed: 0.7s;
         height: 46px;
         background: none;
         border: $m-border-width--l solid;
-        border-color: $m-color--active $m-color--grey-light $m-color--grey-light $m-color--grey-light;
+        border-color: $m-color-active $m-color-grey-light $m-color-grey-light $m-color-grey-light;
         border-radius: 50%;
 
         &.m--is-small {
@@ -91,9 +92,9 @@ $m-loading-speed: 0.7s;
             border-width: $m-border-width;
         }
 
-        + .m-spinner__description,
-        + .m-spinner__title {
-            margin-top: $m-spacing;
+        +.m-spinner__description,
+        +.m-spinner__title {
+            margin-top: $m-space;
         }
     }
 }

@@ -15,15 +15,15 @@
 .modul-u--h4,
 .modul-u--h5,
 .modul-u--h6 {
-    font-size: 16px;
-    margin: $m-margin--l 0 0 0;
+    @include m-font-size();
+    margin: $m-space-md 0 0 0;
 }
 
 .modul-u--h1,
 .modul-u--h2 {
     text-transform: uppercase;
-    font-weight: $m-font-weight--black;
-    font-size: 24px;
+    font-weight: $m-font-weight-black;
+    @include m-font-size('h3');
 }
 
 .modul-u--h1 {
@@ -31,20 +31,20 @@
 }
 
 .modul-u--h2 {
-    margin: $m-padding--l 0 0 0;
+    margin: $m-space-lg 0 0 0;
 }
 
 .modul-u--h3 {
-    font-size: 22px;
-    margin: $m-padding--l 0 0 0;
+    @include m-font-size('h4');
+    margin: $m-space-lg 0 0 0;
 }
 
 .modul-u--h4 {
-    font-weight: $m-font-weight--black;
+    font-weight: $m-font-weight-black;
 }
 
 .modul-u--h5 {
-    font-weight: $m-font-weight--bold;
+    font-weight: $m-font-weight-bold;
 }
 
 // ======================================================================
@@ -59,9 +59,9 @@
     cursor: pointer;
     outline: none;
 
-    > a {
+    >a {
         text-decoration: none;
-        color: $m-color--white;
+        color: $m-color-white;
         outline: none;
     }
 

@@ -1,15 +1,17 @@
-<div class="m-menu"
+<nav class="m-menu"
      :class="[ 'm--is-skin-' + skin,
                { 'm--is-open': propOpen,
                  'm--is-disabled': propDisabled }]">
     <div v-if="$slots.trigger"
          class="m-menu__trigger"
          :class="{'m--is-disabled': propDisabled }"
+         role="button"
          :tabindex="propDisabled ? '-1' : '0'"
          :aria-controls="idAriaControls"
          :aria-expanded="propOpen"
          @click="toggleMenu"
-         @keypress.enter="toggleMenu"
+         @keydown.enter="toggleMenu"
+         @keydown.space="toggleMenu"
          aria-haspopup="true"
          ref="buttonMenu">
         <m-plus class="m-menu__trigger__plus"
@@ -39,4 +41,4 @@
             <slot></slot>
         </ul>
     </m-accordion-transition>
-</div>
+</nav>
