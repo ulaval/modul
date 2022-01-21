@@ -1,7 +1,7 @@
 @import '../../styles/commons';
 
 .mw-header {
-    $mw-header-padding: m-spacing();
+    $mw-header-padding: $m-space;
 
     min-height: $mw-header-height--s;
 

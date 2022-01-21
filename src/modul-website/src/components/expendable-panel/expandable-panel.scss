@@ -35,7 +35,7 @@ $w-content-max-width: $mw-max-width;
 
     &__search {
         background-color: $modul-color--black-grey;
-        padding: m-spacing(l);
+        padding: $m-space-lg;
     }
 
     &__content {

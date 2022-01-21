@@ -181,7 +181,7 @@ $modul-menu-transition-duration: 0.7s;
     }
 
     &__title {
-        padding: m-spacing();
+        padding: $m-space;
     }
 
     &__link {
