@@ -19,16 +19,21 @@
 }
 
 @mixin m-font-size($font-size: 'base') {
-    $base-font-size: map-get($m-font-size-map, 'base');
-    $size: $font-size;
-
-    @if type-of($font-size)=='string' {
-        $size: map-get($m-font-size-map, $font-size);
+    @if $font-size=='base' {
+        font-size: 1rem;
     }
 
-    // font-size: calc(#{$size} * 1px); // Fallback: px font-size
-    // Rem font-size
-    font-size: calc(#{$size} / #{$base-font-size} * 1rem);
+    @else {
+        $base-font-size: map-get($m-font-size-map, 'base');
+        $size: $font-size;
+
+        @if type-of($font-size)=='string' {
+            $size: map-get($m-font-size-map, $font-size);
+        }
+
+        font-size: calc(#{$size} / #{$base-font-size} * 1rem);
+    }
+
 }
 
 @mixin m-commons-title-styles() {
