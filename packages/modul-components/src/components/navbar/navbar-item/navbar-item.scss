@@ -350,7 +350,7 @@
                 background: var(--m-navbar-item--selected-background);
             }
 
-            +.m-navbar-item .m-navbar-item__contents::before {
+            + .m-navbar-item .m-navbar-item__contents::before {
                 display: none;
             }
         }
