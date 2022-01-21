@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
+@import '~@ulaval/modul-components/dist/styles/custom-properties';
 
-@import 'custom-properties';
 // ======================================================================
 //  local commons
 // ======================================================================
@@ -18,12 +18,12 @@
 // ======================================================================
 
 @import 'utils/base',
-'utils/badge',
-'utils/typography',
-'utils/animations',
-'utils/dropdown',
-'utils/preview-img',
-'utils/navbar';
+    'utils/badge',
+    'utils/typography',
+    'utils/animations',
+    'utils/dropdown',
+    'utils/preview-img',
+    'utils/navbar';
 
 // ======================================================================
 //  Layout

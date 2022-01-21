@@ -37,8 +37,9 @@
 }
 
 .modul-u--h3 {
-    @include m-font-size('h4');
     margin: $m-space-lg 0 0 0;
+
+    @include m-font-size('h4');
 }
 
 .modul-u--h4 {

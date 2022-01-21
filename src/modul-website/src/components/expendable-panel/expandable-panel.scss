@@ -56,9 +56,10 @@ $w-content-max-width: $mw-max-width;
     }
 
     &__sidemenu-title {
-        font-size: $m-font-size-md;
         text-transform: uppercase;
         font-weight: $m-font-weight-black;
+
+        @include m-font-size('md');
     }
 
     &__sidemenu-sub-title {
