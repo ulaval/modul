@@ -10,7 +10,7 @@ $m-tree-node--child-indentation: 20px;
             color: $m-color-error-dark;
         }
 
-        +.m-tree__content {
+        + .m-tree__content {
             margin-top: $m-space-sm;
         }
     }
@@ -80,11 +80,11 @@ $m-tree-node--child-indentation: 20px;
                 height: 39px; // Magic number
             }
 
-            +.m-tree-node:not(.m--is-single)::after {
+            + .m-tree-node:not(.m--is-single)::after {
                 top: -22px; // Magic number
             }
 
-            +.m-tree-node:last-child:not(.m--is-single)::after {
+            + .m-tree-node:last-child:not(.m--is-single)::after {
                 display: none;
             }
         }

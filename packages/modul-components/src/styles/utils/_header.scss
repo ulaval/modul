@@ -44,11 +44,11 @@
         }
     }
 
-    &+ul {
+    & + ul {
         margin-top: 0;
     }
 
-    &+.m-u--table {
+    & + .m-u--table {
         th {
             padding-top: $m-space;
         }

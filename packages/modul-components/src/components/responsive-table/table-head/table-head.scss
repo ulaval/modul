@@ -32,7 +32,7 @@ $m-sort-icon-size: 14px;
         position: relative;
         z-index: 1;
 
-        +.m-table-head__sort-icon {
+        + .m-table-head__sort-icon {
             margin-left: $m-space-xxs;
         }
     }

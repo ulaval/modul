@@ -111,7 +111,7 @@
     .m-navbar-item {
         margin: 0;
 
-        +.m-navbar-item {
+        + .m-navbar-item {
             margin-left: $m-space-lg;
         }
 
@@ -287,7 +287,7 @@
 // Darkest skin styles
 .m-navbar.m--is-skin-nav-sub {
     .m-navbar-item {
-        +.m-navbar-item {
+        + .m-navbar-item {
             &::before {
                 position: absolute;
                 height: calc(100% - #{$m-space} * 2);
@@ -493,7 +493,7 @@
     }
 
     .m-navbar-item {
-        +.m-navbar-item {
+        + .m-navbar-item {
             border-left: 1px solid var(--m-navbar-item--selected-background);
         }
 

@@ -253,8 +253,8 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     // for left to right range selection visual
     .m--is-selection-start {
 
-        &+.m--is-highlighted,
-        &:nth-child(7n)+.m--is-highlighted {
+        & + .m--is-highlighted,
+        &:nth-child(7n) + .m--is-highlighted {
             z-index: 0;
 
             &::after {
@@ -269,13 +269,13 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
             }
         }
 
-        &+.m--is-highlighted {
+        & + .m--is-highlighted {
             &::after {
                 transform: translate3d(0, 50%, 0);
             }
         }
 
-        &:nth-child(7n)+.m--is-highlighted {
+        &:nth-child(7n) + .m--is-highlighted {
             &::after {
                 transform: translate3d(700%, -50%, 0);
             }
@@ -283,7 +283,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     }
 
     // for right to left range selection visual
-    .m--is-highlighted+.m--is-selection-start {
+    .m--is-highlighted + .m--is-selection-start {
         border-radius: 0 50% 50% 0;
     }
 }

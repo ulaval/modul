@@ -10,7 +10,7 @@
         /deep/ .m-radio {
             display: inline;
 
-            +.m-radio {
+            + .m-radio {
                 margin-left: $m-space-xs;
             }
         }
@@ -18,7 +18,7 @@
 
     &:not(.m--is-inline) {
         /deep/ .m-radio {
-            +.m-radio {
+            + .m-radio {
                 margin-top: $m-space-xs;
             }
 

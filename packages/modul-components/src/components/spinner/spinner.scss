@@ -66,7 +66,7 @@ $m-loading-speed: 0.7s;
         font-weight: $m-font-weight-semi-bold;
         white-space: pre-line;
 
-        +.m-spinner__description {
+        + .m-spinner__description {
             margin-top: $m-space-xxs;
         }
     }
@@ -92,8 +92,8 @@ $m-loading-speed: 0.7s;
             border-width: $m-border-width;
         }
 
-        +.m-spinner__description,
-        +.m-spinner__title {
+        + .m-spinner__description,
+        + .m-spinner__title {
             margin-top: $m-space;
         }
     }

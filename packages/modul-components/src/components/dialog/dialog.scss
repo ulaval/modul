@@ -139,7 +139,7 @@ $m-dialog--max-width--l: 500px !default;
     }
 
     &__message {
-        +.m-dialog__hint {
+        + .m-dialog__hint {
             margin-top: $m-space;
 
             @media (min-width: $m-mq--min--s) {
@@ -230,7 +230,7 @@ $m-dialog--max-width--l: 500px !default;
         }
 
         .m-button {
-            +.m-button {
+            + .m-button {
                 margin-top: $m-space-sm;
             }
         }

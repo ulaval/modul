@@ -42,8 +42,8 @@ $m-tree-node--child-indentation: 20px;
         top: -25px; // Magic number
     }
 
-    &+&,
-    &__children>& {
+    & + &,
+    &__children > & {
         margin-top: 6px;
     }
 
