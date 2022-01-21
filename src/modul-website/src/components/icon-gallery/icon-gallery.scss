@@ -182,13 +182,15 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
 
     &__label {
         margin: 0;
-        @include m-font-size('sm');
         line-height: 1;
+
+        @include m-font-size('sm');
     }
 
     &__link {
-        @include m-font-size('xs');
         line-height: 1;
+
+        @include m-font-size('xs');
     }
 
     &__preview {

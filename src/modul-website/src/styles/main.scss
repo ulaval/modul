@@ -1,11 +1,12 @@
 @charset 'utf-8';
 
+
+@import 'custom-properties';
 // ======================================================================
 //  local commons
 // ======================================================================
 
-@import
-    'commons';
+@import 'commons';
 
 // ======================================================================
 //  vendor / plugins
@@ -16,23 +17,20 @@
 //  utils
 // ======================================================================
 
-@import
-    'utils/base',
-    'utils/badge',
-    'utils/typography',
-    'utils/animations',
-    'utils/dropdown',
-    'utils/preview-img',
-    'utils/navbar';
+@import 'utils/base',
+'utils/badge',
+'utils/typography',
+'utils/animations',
+'utils/dropdown',
+'utils/preview-img',
+'utils/navbar';
 
 // ======================================================================
 //  Layout
 // ======================================================================
-@import
-    'layout/footer';
+@import 'layout/footer';
 
 // ======================================================================
 //  global components
 // ======================================================================
-@import
-    'components/demo';
+@import 'components/demo';

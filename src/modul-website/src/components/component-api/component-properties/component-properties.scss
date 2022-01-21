@@ -5,8 +5,9 @@
 
     &__default-value {
         font-style: italic;
-        @include m-font-size('sm');
         color: $modul-color--grey-darker;
         margin-top: 3px;
+
+        @include m-font-size('sm');
     }
 }

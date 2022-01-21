@@ -74,10 +74,10 @@
 
     &__headline-button-link {
         border-radius: 0;
-        @include m-font-size();
         margin-top: $m-space-xs;
         padding: 10px $m-space; // Magic number
 
+        @include m-font-size();
         @include m-button();
         @include m-button--hover();
         @include m-button--primary();

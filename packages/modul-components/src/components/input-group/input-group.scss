@@ -10,7 +10,7 @@
     &.m--has-validation-message {
         &:not(.m--is-validation-message-position-bottom) {
             .m-input-group__label {
-                ~.m-input-group__body {
+                ~ .m-input-group__body {
                     margin-top: $m-space-xxs;
                 }
             }
@@ -39,7 +39,7 @@
         display: flex;
         align-items: center;
 
-        ~.m-input-group__body {
+        ~ .m-input-group__body {
             margin-top: $m-space-xs;
         }
     }

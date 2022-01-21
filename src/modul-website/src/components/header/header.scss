@@ -116,7 +116,8 @@
 
     &__link-version {
         white-space: nowrap;
-        @include m-font-size('xs');
         margin-right: $m-space-xs;
+
+        @include m-font-size('xs');
     }
 }

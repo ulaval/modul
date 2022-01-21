@@ -60,7 +60,7 @@
     }
 
     &.m--is-first-column-fixed {
-        &.m--has-header tr:nth-child(odd):not(.m-table-group__header)>.m-table-group__cell:first-child {
+        &.m--has-header tr:nth-child(odd):not(.m-table-group__header) > .m-table-group__cell:first-child {
             background: $m-color-grey-lightest;
 
             &::after {
@@ -78,7 +78,7 @@
     }
 
     &.m--is-first-column-fixed {
-        &:not(.m--has-header) tr:nth-child(even):not(.m-table-group__header)>.m-table-group__cell:first-child {
+        &:not(.m--has-header) tr:nth-child(even):not(.m-table-group__header) > .m-table-group__cell:first-child {
             background: $m-color-grey-lightest;
 
             &::after {

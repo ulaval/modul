@@ -24,7 +24,7 @@ $m-validation-message--margin: $m-space-xxs !default;
         display: inline-flex;
         align-items: flex-start;
 
-        ~.m-validation-message__helper {
+        ~ .m-validation-message__helper {
             margin-top: 2px; // Magic number
         }
     }

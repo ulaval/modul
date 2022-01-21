@@ -133,7 +133,7 @@ $m-sortable-icon-size: 14px;
         &.m--is-text-align-center {
             text-align: center;
 
-            >* {
+            > * {
                 text-align: center;
             }
         }
@@ -141,7 +141,7 @@ $m-sortable-icon-size: 14px;
         &.m--is-text-align-left {
             text-align: left;
 
-            >* {
+            > * {
                 text-align: left;
             }
         }
@@ -149,7 +149,7 @@ $m-sortable-icon-size: 14px;
         &.m--is-text-align-right {
             text-align: right;
 
-            >* {
+            > * {
                 text-align: right;
             }
         }
@@ -228,7 +228,7 @@ $m-sortable-icon-size: 14px;
         }
     }
 
-    &__loading.m-table__loading>td {
+    &__loading.m-table__loading > td {
         padding: 0;
         height: auto;
     }

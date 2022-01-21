@@ -10,9 +10,9 @@ $modul-color--bp: 590px;
         display: flex;
     }
 
-    +.modul-color {
+    + .modul-color {
         @media (min-width: $modul-color--bp) {
-            margin-top: 3^x;
+            margin-top: 3px;
         }
     }
 
@@ -25,8 +25,9 @@ $modul-color--bp: 590px;
     &__header {
         width: 100%;
         justify-content: center;
-        @include m-font-size('sm');
         padding: $m-space-lg 0;
+
+        @include m-font-size('sm');
 
         @media (min-width: $modul-color--bp) {
             width: 33.33%;

@@ -56,9 +56,10 @@
         }
 
         &__tagname {
-            @include m-font-size('sm');
             color: $m-color-grey-darker;
             font-style: italic;
+
+            @include m-font-size('sm');
         }
     }
 
@@ -74,7 +75,6 @@
     }
 
     &.modul--is {
-
         &-enter-active,
         &-leave-active {
             transition: transform 0.45s ease, opacity 0.3s linear;

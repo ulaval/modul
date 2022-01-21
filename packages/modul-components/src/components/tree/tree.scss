@@ -28,7 +28,7 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        >.m-tree-node:only-child {
+        > .m-tree-node:only-child {
             margin-left: 0;
 
             &::before {
@@ -36,7 +36,7 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        >.m-tree-node:not(.m--is-single) /deep/>.m-tree-node__item {
+        > .m-tree-node:not(.m--is-single) /deep/>.m-tree-node__item {
             &::before {
                 content: "";
                 position: absolute;
@@ -48,7 +48,7 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        >.m-tree-node:not(.m--is-single) {
+        > .m-tree-node:not(.m--is-single) {
             &::after {
                 content: "";
                 position: absolute;
@@ -68,13 +68,13 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        >.m-tree-node:not(.m--is-single):not(.m-tree-node.m--has-children) {
+        > .m-tree-node:not(.m--is-single):not(.m-tree-node.m--has-children) {
             &::after {
                 top: -23px; // Magic number
             }
         }
 
-        >.m-tree-node:first-child:not(.m--is-single):not(.m-tree-node.m--has-children) {
+        > .m-tree-node:first-child:not(.m--is-single):not(.m-tree-node.m--has-children) {
             &::after {
                 top: 16px; // Magic number
                 height: 39px; // Magic number

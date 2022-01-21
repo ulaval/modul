@@ -133,7 +133,7 @@ $m-dialog--max-width--l: 500px !default;
 
         @include m-scrollbar();
 
-        ~.m-dialog__footer {
+        ~ .m-dialog__footer {
             padding-top: 0;
         }
     }

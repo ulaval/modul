@@ -198,7 +198,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             color: $m-color-text;
             width: 100%;
 
-            &> :first-child {
+            & > :first-child {
                 margin-top: 0 !important;
             }
         }
@@ -335,7 +335,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             &.fr-open {
                 background-color: $m-color-grey-lighter;
 
-                >.fr-sub-menu {
+                > .fr-sub-menu {
                     &::after {
                         border-top: 0;
                         border-bottom: 4px solid #222;

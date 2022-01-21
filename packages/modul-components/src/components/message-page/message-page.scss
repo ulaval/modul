@@ -78,7 +78,7 @@ $m-message-page--shadow-height: 5px;
     }
 
     &__header {
-        ~.m-message-page__body {
+        ~ .m-message-page__body {
             padding-top: $m-space;
         }
     }
@@ -88,7 +88,7 @@ $m-message-page--shadow-height: 5px;
         font-weight: $m-font-weight-bold;
         margin: 0;
 
-        ~.m-message-page__icon-container {
+        ~ .m-message-page__icon-container {
             margin-top: $m-space;
         }
     }

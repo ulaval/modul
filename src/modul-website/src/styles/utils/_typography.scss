@@ -15,14 +15,16 @@
 .modul-u--h4,
 .modul-u--h5,
 .modul-u--h6 {
-    @include m-font-size();
     margin: $m-space-md 0 0 0;
+
+    @include m-font-size();
 }
 
 .modul-u--h1,
 .modul-u--h2 {
     text-transform: uppercase;
     font-weight: $m-font-weight-black;
+
     @include m-font-size('h3');
 }
 
@@ -59,7 +61,7 @@
     cursor: pointer;
     outline: none;
 
-    >a {
+    > a {
         text-decoration: none;
         color: $m-color-white;
         outline: none;

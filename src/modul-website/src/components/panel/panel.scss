@@ -28,8 +28,8 @@ $modul-menu-transition-duration: 0.7s;
     }
 
     @media (min-width: #{$m-mq--min--l}) {
-        padding-left: $m-space-xxxxl*2;
-        padding-right: $m-space-xxxxl*2;
+        padding-left: calc(var(--m-space-xxxxl) * 2);
+        padding-right: calc(var(--m-space-xxxxl) * 2);
     }
 
     &.mw--is {

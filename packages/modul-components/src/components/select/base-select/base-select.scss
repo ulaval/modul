@@ -28,7 +28,7 @@
     }
 
     &__list.m--is-virtual-scroll {
-        >div {
+        > div {
             @include m-scrollbar();
         }
     }
