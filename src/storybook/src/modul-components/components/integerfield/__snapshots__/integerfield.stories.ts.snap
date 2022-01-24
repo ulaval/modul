@@ -7,7 +7,6 @@ exports[`Storyshots modul-components|m-integerfield Autocomplete 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -24,9 +23,7 @@ exports[`Storyshots modul-components|m-integerfield Autocomplete 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -39,18 +36,10 @@ exports[`Storyshots modul-components|m-integerfield Autocomplete 1`] = `
             id="mIntegerfield-fakeId"
             inputmode="decimal"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -83,7 +72,6 @@ exports[`Storyshots modul-components|m-integerfield Error 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -100,9 +88,7 @@ exports[`Storyshots modul-components|m-integerfield Error 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -115,18 +101,10 @@ exports[`Storyshots modul-components|m-integerfield Error 1`] = `
             id="mIntegerfield-fakeId"
             inputmode="decimal"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -178,7 +156,6 @@ exports[`Storyshots modul-components|m-integerfield Label 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -214,18 +191,10 @@ exports[`Storyshots modul-components|m-integerfield Label 1`] = `
             id="mIntegerfield-fakeId"
             inputmode="decimal"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -258,7 +227,6 @@ exports[`Storyshots modul-components|m-integerfield Readonly 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -275,9 +243,7 @@ exports[`Storyshots modul-components|m-integerfield Readonly 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -290,18 +256,10 @@ exports[`Storyshots modul-components|m-integerfield Readonly 1`] = `
             inputmode="decimal"
             readonly="readonly"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -334,7 +292,6 @@ exports[`Storyshots modul-components|m-integerfield Value 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -351,9 +308,7 @@ exports[`Storyshots modul-components|m-integerfield Value 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -365,18 +320,10 @@ exports[`Storyshots modul-components|m-integerfield Value 1`] = `
             id="mIntegerfield-fakeId"
             inputmode="decimal"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -409,7 +356,6 @@ exports[`Storyshots modul-components|m-integerfield Waiting 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -426,9 +372,7 @@ exports[`Storyshots modul-components|m-integerfield Waiting 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -441,10 +385,7 @@ exports[`Storyshots modul-components|m-integerfield Waiting 1`] = `
             inputmode="decimal"
             readonly="readonly"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
         <div
@@ -491,7 +432,6 @@ exports[`Storyshots modul-components|m-integerfield default 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -508,9 +448,7 @@ exports[`Storyshots modul-components|m-integerfield default 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -522,18 +460,10 @@ exports[`Storyshots modul-components|m-integerfield default 1`] = `
             id="mIntegerfield-fakeId"
             inputmode="decimal"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      

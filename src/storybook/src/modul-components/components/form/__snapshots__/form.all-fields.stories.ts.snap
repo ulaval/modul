@@ -34,7 +34,7 @@ exports[`Storyshots modul-components|m-form/all fields Autocomplete 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -100,19 +100,9 @@ exports[`Storyshots modul-components|m-form/all fields Autocomplete 1`] = `
                
               <!---->
                
-              <!---->
-                
-              <!---->
-               
-              <!---->
             </div>
              
-            <div
-              class="m-input-style__suffix"
-            >
-               
-              <!---->
-            </div>
+            <!---->
           </div>
         </div>
          
@@ -323,7 +313,6 @@ exports[`Storyshots modul-components|m-form/all fields Datepicker 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -364,10 +353,7 @@ exports[`Storyshots modul-components|m-form/all fields Datepicker 1`] = `
                 placeholder="AAAA-MM-JJ"
                 required="required"
               />
-                 
-              <!---->
-               
-              <!---->
+                
             </div>
              
             <div
@@ -512,7 +498,6 @@ exports[`Storyshots modul-components|m-form/all fields Daterangepicker 1`] = `
           >
             <div
               class="m-input-style__main"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -547,10 +532,7 @@ exports[`Storyshots modul-components|m-form/all fields Daterangepicker 1`] = `
                       id="mDatepicker-fakeId"
                       placeholder="AAAA-MM-JJ"
                     />
-                       
-                    <!---->
-                     
-                    <!---->
+                      
                   </div>
                    
                   <div
@@ -623,7 +605,6 @@ exports[`Storyshots modul-components|m-form/all fields Daterangepicker 1`] = `
           >
             <div
               class="m-input-style__main"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -658,10 +639,7 @@ exports[`Storyshots modul-components|m-form/all fields Daterangepicker 1`] = `
                       id="mDatepicker-fakeId"
                       placeholder="AAAA-MM-JJ"
                     />
-                       
-                    <!---->
-                     
-                    <!---->
+                      
                   </div>
                    
                   <div
@@ -805,7 +783,6 @@ exports[`Storyshots modul-components|m-form/all fields Decimalfield 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -847,18 +824,10 @@ exports[`Storyshots modul-components|m-form/all fields Decimalfield 1`] = `
               inputmode="decimal"
               required="required"
             />
-               
-            <!---->
-             
-            <!---->
+              
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -963,7 +932,7 @@ exports[`Storyshots modul-components|m-form/all fields Dropdown 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1012,12 +981,7 @@ exports[`Storyshots modul-components|m-form/all fields Dropdown 1`] = `
                 role="button"
                 type="text"
               />
-               
-              <!---->
-                 
-              <!---->
-               
-              <!---->
+                
             </div>
              
             <div
@@ -1144,7 +1108,6 @@ exports[`Storyshots modul-components|m-form/all fields Integerfield 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1186,18 +1149,10 @@ exports[`Storyshots modul-components|m-form/all fields Integerfield 1`] = `
               inputmode="decimal"
               required="required"
             />
-               
-            <!---->
-             
-            <!---->
+              
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -1299,7 +1254,6 @@ exports[`Storyshots modul-components|m-form/all fields Moneyfield 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1341,10 +1295,7 @@ exports[`Storyshots modul-components|m-form/all fields Moneyfield 1`] = `
                 inputmode="decimal"
                 required="required"
               />
-                 
-              <!---->
-               
-              <!---->
+                
             </div>
              
             <div
@@ -1472,7 +1423,6 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
       >
         <div
           class="m-input-style__main"
-          style="margin-top: 10px;"
         >
           <div
             class="m-input-style__body"
@@ -1537,10 +1487,7 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
                 
                   </div>
                 </div>
-                  
-                <!---->
                  
-                <!---->
               </div>
                
               <div
@@ -1980,7 +1927,6 @@ exports[`Storyshots modul-components|m-form/all fields Textarea 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2017,18 +1963,10 @@ exports[`Storyshots modul-components|m-form/all fields Textarea 1`] = `
               maxlength="Infinity"
               rows="1"
             />
-              
-            <!---->
              
-            <!---->
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -2150,7 +2088,6 @@ exports[`Storyshots modul-components|m-form/all fields Textfield 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -2189,10 +2126,7 @@ exports[`Storyshots modul-components|m-form/all fields Textfield 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -2305,7 +2239,6 @@ exports[`Storyshots modul-components|m-form/all fields Timepicker 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -2350,10 +2283,7 @@ exports[`Storyshots modul-components|m-form/all fields Timepicker 1`] = `
                 step="300"
                 type="text"
               />
-                 
-              <!---->
-               
-              <!---->
+                
             </div>
              
             <div

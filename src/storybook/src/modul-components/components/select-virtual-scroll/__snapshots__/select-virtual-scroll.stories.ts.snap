@@ -19,7 +19,7 @@ exports[`Storyshots modul-components|m-select-virtual-scroll Default 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -72,45 +72,38 @@ exports[`Storyshots modul-components|m-select-virtual-scroll Default 1`] = `
                   type="text"
                 />
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -154,7 +147,7 @@ exports[`Storyshots modul-components|m-select-virtual-scroll Virtual Scroll 1`] 
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -199,45 +192,38 @@ exports[`Storyshots modul-components|m-select-virtual-scroll Virtual Scroll 1`] 
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
