@@ -16,13 +16,13 @@
             &::before {
                 position: absolute;
                 top: 9px; //Magic number
-                left: calc(-1 * $m-space);
+                left: calc(-1 * #{ $m-space });
 
                 @include m-triangle(right, $m-color-success, 10px);
             }
 
             + li {
-                margin-top: $m-space-xs;
+                margin-top: $m-space-sm;
             }
         }
     }

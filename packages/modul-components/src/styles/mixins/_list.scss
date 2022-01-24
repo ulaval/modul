@@ -29,22 +29,22 @@
     li {
         position: relative;
         list-style: none;
-        margin: 0 0 $m-space-xxs 0;
+        margin: $m-space-sm 0 0;
 
         &::before {
             position: absolute;
-            top: 8px; // Magic number
-            left: calc(-1 * $m-space-sm); // Magic number
+            top: 12px; // Magic number
+            left: calc(-1 * #{ $m-space-sm }); // Magic number
             content: '';
             transform: translate3d(-50%, 0, 0);
         }
 
-        &:last-child {
+        &:first-child {
             margin: 0;
         }
 
         > ul {
-            margin: $m-space-xxs 0 0 0;
+            margin: $m-space-sm 0 0;
         }
     }
 

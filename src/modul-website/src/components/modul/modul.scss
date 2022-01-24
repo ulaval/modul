@@ -83,7 +83,7 @@
         &-enter,
         &-leave-to {
             opacity: 0;
-            transform: translate3d(calc(-1 * $m-space-sm), 0, 0);
+            transform: translate3d(calc(-1 * #{ $m-space-sm }), 0, 0);
         }
     }
 }

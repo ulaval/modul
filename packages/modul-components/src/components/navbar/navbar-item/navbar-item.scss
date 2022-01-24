@@ -407,7 +407,7 @@
         }
 
         &__contents {
-            padding: $m-space-md 0 ($m-space-md + 8px) 0;
+            padding: $m-space-md 0 calc(#{ $m-space-md } + 8px) 0;
         }
     }
 }

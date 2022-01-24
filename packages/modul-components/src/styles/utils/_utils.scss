@@ -39,7 +39,7 @@
     }
 
     .m-u--require {
-        margin-top: calc(-1 * $m-space) !important;
+        margin-top: calc(-1 * #{ $m-space }) !important;
         // margin-bottom: $m-space;
         float: right;
     }

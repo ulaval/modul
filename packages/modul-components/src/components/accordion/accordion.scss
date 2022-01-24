@@ -26,11 +26,6 @@ $m-accordion--color-default: $m-color-interactive !default;
         align-items: center;
         cursor: pointer;
 
-        &:hover,
-        &:active {
-            outline: none;
-        }
-
         &:not(.m--is-plain) {
             text-decoration: none;
         }

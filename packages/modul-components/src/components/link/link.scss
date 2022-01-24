@@ -46,12 +46,12 @@
             }
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             color: var(--m-link--color-hover);
         }
 
-        &:active {
+        &:active,
+        &:focus:not(:hover) {
             color: var(--m-link--color-active);
         }
 

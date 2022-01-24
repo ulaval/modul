@@ -1,14 +1,16 @@
 @mixin m-button() {
-    transition-property: background, border-color, color;
+    transition-property: background-color, border-color, color, outline;
     transition-duration: $m-transition-duration;
     transition-timing-function: ease;
     border: 1px solid $m-color-interactive;
-    appearance: none;
-    outline: none;
-    user-select: none;
-    text-decoration: none;
-    line-height: 1;
     font-family: inherit;
+    line-height: 1;
+    text-decoration: none;
+    appearance: none;
+    outline-color: $m-color-interactive-darker;
+    outline-offset: 2px;
+    outline-width: 1px;
+    user-select: none;
 }
 
 @mixin m-button--primary() {
@@ -24,8 +26,8 @@
 @mixin m-button--waiting() {
     cursor: progress;
     color: $m-color-white;
-    background: $m-color-interactive-lighter;
-    border-color: $m-color-interactive-lighter;
+    background: $m-color-interactive-light;
+    border-color: $m-color-interactive-light;
 }
 
 @mixin m-button--disabled() {
@@ -38,14 +40,14 @@
 @mixin m-button--hover() {
     cursor: pointer;
 
-    &:hover,
-    &:focus {
+    &:hover {
         color: $m-color-white;
         background: $m-color-interactive-light;
         border-color: $m-color-interactive-light;
     }
 
-    &:active {
+    &:active,
+    &:focus:not(:hover) {
         @include m-button--active();
     }
 }
