@@ -33,11 +33,9 @@ const FrenchPlugin: PluginObject<any> = {
                 require('../components/form/form.lang.fr.json'),
                 require('../components/icon-file/icon-file.lang.fr.json'),
                 require('../components/inplace-edit/inplace-edit.lang.fr.json'),
-                require('../components/input-style/input-style.lang.fr.json'),
                 require('../components/link/link.lang.fr.json'),
                 require('../components/limit-elements/limit-elements.lang.fr.json'),
                 require('../components/limit-text/limit-text.lang.fr.json'),
-
                 require('../components/menu/menu.lang.fr.json'),
                 require('../components/message/message.lang.fr.json'),
                 require('../components/modal/modal.lang.fr.json'),

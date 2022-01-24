@@ -36,7 +36,6 @@
             :empty="isEmpty"
             :error="hasError"
             :cursor-pointer="isSelectable"
-            :append="true"
             :valid="isValid"
             :required-marker="requiredMarker"
             :tag-style="tagStyle"
@@ -99,12 +98,13 @@
                     />
                 </slot>
             </div>
-            <template #append>
+            <template #suffix>
                 <m-opacity-transition>
                     <m-icon-button
                         v-if="isClearable"
-                        key="resetIcon"
+                        class="m-select__clear-button"
                         icon-size="11px"
+                        button-size="16px"
                         icon-name="m-svg__close-clear"
                         :title="$i18n.translate('m-select:delete')"
                         :aria-describedby="id"

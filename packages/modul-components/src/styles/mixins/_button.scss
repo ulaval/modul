@@ -4,7 +4,6 @@
     transition-timing-function: ease;
     border: 1px solid $m-color-interactive;
     font-family: inherit;
-    line-height: 1;
     text-decoration: none;
     appearance: none;
     outline-color: $m-color-interactive-darker;
@@ -26,8 +25,8 @@
 @mixin m-button--waiting() {
     cursor: progress;
     color: $m-color-white;
-    background: $m-color-interactive-light;
-    border-color: $m-color-interactive-light;
+    background: $m-color-interactive-lighter;
+    border-color: $m-color-interactive-lighter;
 }
 
 @mixin m-button--disabled() {

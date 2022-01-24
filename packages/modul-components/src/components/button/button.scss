@@ -10,8 +10,9 @@ $m-button--border-radius: 4px !default;
     vertical-align: middle;
     font-size: inherit;
     border-radius: $m-button--border-radius;
-    padding: 11px $m-space 11px $m-space; // Magic number
+    padding: 10px $m-space;
     font-weight: $m-font-weight-semi-bold;
+    min-height: 44px;
 
     @include m-button();
 

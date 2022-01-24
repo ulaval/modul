@@ -14,10 +14,12 @@
         }
     }
 
+    &__clear-button {
+        margin-right: $m-space-sm;
+    }
+
     &__arrow {
         cursor: pointer;
-        height: $m-touch-size;
-        width: calc(#{$m-touch-size} - #{$m-space});
         display: flex;
         align-items: center;
         justify-content: left;

@@ -268,8 +268,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         if (value !== '') {
             this.open = false;
         }
-
-        this.setInputWidth();
     }
 
     private get internalPlaceholder(): string {
@@ -287,14 +285,6 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
             // todo: mobile
             this.observer.observe(this.$refs.items, { subtree: true, childList: true });
         }
-    }
-
-    private setInputWidth(): void {
-        this.$nextTick(() => {
-            if (this.$refs.mInputStyle) {
-                this.$refs.mInputStyle.setInputWidth();
-            }
-        });
     }
 
     private get inputStyletWidth(): string {

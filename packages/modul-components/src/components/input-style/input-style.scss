@@ -68,8 +68,9 @@
         flex: 1;
         display: inherit;
         flex-direction: column;
-        padding: $m-input-style--padding;
+        padding: 10px $m-input-style--padding;
         transition: margin-top $m-transition-duration ease;
+        min-height: 44px;
     }
 
     &__label {
@@ -96,14 +97,14 @@
     }
 
     &__input {
-        display: inherit;
         position: relative;
+        display: flex;
         align-items: center;
-        flex: 1 1 auto;
+        flex: auto;
         width: 100%;
         font-weight: $m-font-weight-light;
         min-height: $m-input-style--base-height;
-        margin-top: -$m-input-style--base-height;
+        margin: -$m-input-style--base-height 0 0;
 
         .m-icon-button.m-icon-button,
         .m-icon.m-icon {
@@ -132,6 +133,7 @@
         text-align: left;
         background: none;
         border: none;
+        appearance: none;
         color: var(--m-input-style--input-color);
     }
 
@@ -140,6 +142,7 @@
         overflow: hidden;
         width: 100%;
         padding: 0;
+        margin: 0;
         font-size: inherit;
         font-weight: $m-font-weight-light;
         line-height: inherit;
@@ -168,7 +171,8 @@
     }
 
     &__content {
-        flex: 1;
+        display: flex;
+        flex: auto;
         max-width: 100%;
         position: relative;
     }
@@ -184,14 +188,6 @@
         user-select: none;
     }
 
-    &__adjust-width-auto {
-        height: 0;
-        opacity: 0;
-        user-select: none;
-        white-space: nowrap;
-        padding-right: $m-input-style--padding;
-    }
-
     &__spinner {
         margin-left: $m-space-xs;
     }
@@ -201,7 +197,6 @@
     }
 
     // modifiers
-
     &:hover:not(.m--is-disabled):not(.m--is-waiting):not(.m--has-error):not(.m--is-valid):not(.m--is-focus) {
         --m-input-style--label-color: var(--m-input-style--hover-color);
         --m-input-style--border-color: var(--m-input-style--hover-color);
@@ -235,7 +230,7 @@
         --m-input-style--border-color: var(--m-input-style--label-up-border-color);
 
         .m-input-style__label {
-            transform: translate3d(0, calc((-50% * 0.8) - #{$m-input-style--padding}), 0) scale(0.8);
+            transform: translate3d(0, calc(-50% - 10px), 0) scale(0.8);
         }
 
         .m-input-style__text {

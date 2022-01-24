@@ -86,7 +86,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
         template: '<m-textfield helper-message="This message is here to help you" type="tel" value="12345"></m-textfield>'
     }))
     .add('word-wrap', () => ({
-        template: `<m-textfield value="abcdefghijklmnopqrstuvwxyz-123456789123456789123456789" word-wrap="true" waiting="true">
+        template: `<m-textfield value="abcdefghijklmnopqrstuvwxyz-123456789123456789123456789" word-wrap="true">
         </m-textfield>`
     }))
     .add('focus', () => ({
