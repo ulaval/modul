@@ -5,7 +5,7 @@ $m-checkbox--width: 16px;
     display: inline-flex;
     flex-direction: column;
     user-select: none;
-    line-height: 1;
+    line-height: 1.2;
 
     &:not(.m--is-disabled) {
         .m-checkbox {
@@ -267,7 +267,7 @@ $m-checkbox--width: 16px;
 
     &.m--has-validation-message {
         .m-checkbox__message {
-            margin-top: 3px;
+            margin-top: 8px;
         }
     }
 
