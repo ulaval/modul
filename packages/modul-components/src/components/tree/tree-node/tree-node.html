@@ -7,13 +7,13 @@
             'm--has-file-icons' : useFilesIcons }">
     <div class="m-tree-node__item"
          :class="{ 'm--no-hover': moveSelectionZoneToCheckbox }"
+         ref="item"
          :tabindex="isDisabled || (withCheckboxes && !isFolder) ? '-1' : 0"
+         role="button"
          :aria-selected="isSelected && !isDisabled"
          @click="onClick"
          @keypress.enter="onClick"
-         @keypress.space.prevent="onClick"
-         ref="item"
-         role="button">
+         @keypress.space.prevent="onClick">
         <m-tree-icon v-if="useFilesIcons"
                      :is-folder-open="internalOpen"
                      :is-folder="isFolder"></m-tree-icon>
