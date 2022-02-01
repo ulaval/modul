@@ -197,8 +197,6 @@ export const getModulConfig = (isTestMode = false): PluginObject<any> => {
             Vue.use(TableGroupPlugin);
             Vue.use(TableGroupHeaderPlugin);
             Vue.use(TableHeadPlugin);
-
-
             Vue.use(MoneyFieldPlugin);
             Vue.use(DecimalfieldPlugin);
             Vue.use(IntegerfieldPlugin);
