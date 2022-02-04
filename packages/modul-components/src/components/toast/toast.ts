@@ -1,13 +1,12 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
-import { i18nFilter } from '../../filters/i18n/i18n';
 import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
+import { Enums } from '../../utils/enums/enums';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_BUTTON_NAME, ICON_NAME, LINK_NAME, TOAST } from '../component-names';
+import { TOAST } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
 import { MLink, MLinkMode } from '../link/link';
@@ -49,78 +48,61 @@ export enum MToastDuration {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [LINK_NAME]: MLink
-    },
-    filters: {
-        [FILTER_I18N_NAME]: i18nFilter
+        MIcon,
+        MIconButton,
+        MLink
     },
     mixins: [MediaQueries, Portal]
 })
 export class MToast extends ModulVue implements PortalMixinImpl {
     @Prop({
         default: MToastState.Confirmation,
-        validator: value =>
-            value === MToastState.Confirmation ||
-            value === MToastState.Information ||
-            value === MToastState.Warning ||
-            value === MToastState.Error
+        validator: value => Enums.toValueArray(MToastState).includes(value)
     })
-    public state: MToastState;
+    public readonly state: MToastState;
 
     @Prop({
         default: MToastPosition.BottomRight,
-        validator: value =>
-            value === MToastPosition.TopRight ||
-            value === MToastPosition.TopCenter ||
-            value === MToastPosition.TopLeft ||
-            value === MToastPosition.BottomLeft ||
-            value === MToastPosition.BottomCenter ||
-            value === MToastPosition.BottomRight
+        validator: value => Enums.toValueArray(MToastPosition).includes(value)
     })
-    public position: MToastPosition;
+    public readonly position: MToastPosition;
 
     @Prop({
         default: MToastTimeout.none,
-        validator: value =>
-            value === MToastTimeout.none ||
-            value === MToastTimeout.xshort ||
-            value === MToastTimeout.short ||
-            value === MToastTimeout.long
+        validator: value => Enums.toValueArray(MToastTimeout).includes(value)
     })
-    public timeout: MToastTimeout;
+    public readonly timeout: MToastTimeout;
 
     @Prop()
-    public open: boolean;
+    public readonly open: boolean;
 
     @Prop()
-    public actionLabel: string;
+    public readonly actionLabel: string;
 
     @Prop({
         default: true
     })
-    public icon: boolean;
+    public readonly icon: boolean;
 
     @Prop({
         default: '0'
     })
-    public offset: string;
+    public readonly offset: string;
 
     @Prop({
         default: true
     })
-    public closeButton: boolean;
+    public readonly closeButton: boolean;
 
     public $refs: {
         toast: HTMLElement
     };
 
-    private buttonMode: MLinkMode = MLinkMode.Button;
+    public readonly buttonMode: MLinkMode = MLinkMode.Button;
+    public showScreenReaderText: boolean = false;
     private timerCloseToast: any;
     private internalTimeout: number;
     private instantTimeoutStart: number;
-    public showScreenReaderText: boolean = false;
 
     public get i18nTypeMessage(): string {
         switch (this.state) {
