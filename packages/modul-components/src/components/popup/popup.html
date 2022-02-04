@@ -32,7 +32,8 @@
           @close="emitClose"
           @portal-mounted="emitPortalMounted"
           @portal-after-open="emitPortalAfterOpen"
-          @portal-after-close="emitPortalAfterClose">
+          @portal-after-close="emitPortalAfterClose"
+          @click-outside="emitClickOutside">
     <div v-if="$slots.trigger"
          slot="trigger">
         <slot name="trigger" />

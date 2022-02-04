@@ -11,9 +11,13 @@
                  ref="modalWrap"
                  v-show="propOpen"
                  v-if="portalMounted">
-                <section class="m-overlay__article"
-                         ref="article">
-                    <header class="m-overlay__header"
+                <article class="m-overlay__article"
+                         ref="article"
+                         role="dialog"
+                         :aria-labelledby="titleId"
+                         tabindex="-1">
+                    <header :id="titleId"
+                            class="m-overlay__header"
                             :class="{'m--no-padding': !padding || !paddingHeader}">
                         <div class="m-overlay__header-left">
                             <slot name="header" />
@@ -71,7 +75,7 @@
                             </m-button>
                         </slot>
                     </footer>
-                </section>
+                </article>
             </div>
         </transition>
     </portal>
