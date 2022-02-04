@@ -1,9 +1,10 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Ref } from 'vue-property-decorator';
 import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
 import { i18nFilter } from '../../filters/i18n/i18n';
-import { BackdropMode, Portal, PortalMixin, PortalTransitionDuration } from '../../mixins/portal/portal';
+import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
+import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
@@ -19,7 +20,7 @@ import WithRender from './overlay.html?style=./overlay.scss';
     filters: {
         [I18N_FILTER_NAME]: i18nFilter
     },
-    mixins: [Portal]
+    mixins: [Portal, MFocusTrap]
 })
 export class MOverlay extends ModulVue {
 
@@ -43,6 +44,9 @@ export class MOverlay extends ModulVue {
 
     public hasKeyboard: boolean = false;
 
+    @Ref('article')
+    public refArticle?: HTMLElement;
+
     public $refs: {
         dialogWrap: HTMLElement,
         body: HTMLElement,
@@ -55,6 +59,24 @@ export class MOverlay extends ModulVue {
 
     @Emit('cancel')
     emitCancel(event: MouseEvent): void { }
+
+    public get titleId(): string {
+        return `${this.as<Portal>().propId}-title`;
+    }
+
+    public setFocusToPortal(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus() || !this.refArticle) {
+            return;
+        }
+        this.as<MFocusTrap>().setFocusTrap(this.refArticle);
+    }
+
+    public setFocusToTrigger(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus()) {
+            return;
+        }
+        this.as<MFocusTrap>().removeFocusTrap();
+    }
 
     protected mounted(): void {
         this.as<Portal>().transitionDuration = PortalTransitionDuration.Regular + PortalTransitionDuration.XSlow;
