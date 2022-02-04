@@ -5,7 +5,7 @@ import { ModulVue } from '../../utils/vue/vue';
 
 
 @Component
-export class WindowFocusTrap extends ModulVue {
+export class MFocusTrap extends ModulVue {
     private focusTrap?: FocusTrap;
 
     public setFocusTrap(el: HTMLElement, options: {
