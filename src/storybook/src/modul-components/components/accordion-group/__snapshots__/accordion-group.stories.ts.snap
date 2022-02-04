@@ -14,7 +14,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -42,7 +42,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -70,7 +70,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -118,7 +118,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent With No Direct
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
+            aria-expanded="false"
             class="m-accordion__header m--has-padding"
             id="fakeId"
             role="button"
@@ -142,7 +142,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent With No Direct
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
+            aria-expanded="false"
             class="m-accordion__header m--has-padding"
             id="fakeId"
             role="button"
@@ -166,7 +166,7 @@ exports[`Storyshots modul-components|m-accordion-group Concurrent With No Direct
         >
           <div
             aria-controls="fakeId-body-wrap"
-            aria-label="Afficher le contenu"
+            aria-expanded="false"
             class="m-accordion__header m--has-padding"
             id="fakeId"
             role="button"
@@ -257,7 +257,7 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -285,7 +285,7 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -313,7 +313,7 @@ exports[`Storyshots modul-components|m-accordion-group Header 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -410,6 +410,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -429,7 +430,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -453,7 +454,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -477,7 +478,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -501,6 +502,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -520,6 +522,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -539,6 +542,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -558,7 +562,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -582,6 +586,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -601,7 +606,7 @@ exports[`Storyshots modul-components|m-accordion-group Mixed Content With No Con
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -695,6 +700,7 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -714,6 +720,7 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -733,6 +740,7 @@ exports[`Storyshots modul-components|m-accordion-group No Content 1`] = `
       >
         <div
           aria-controls="fakeId-body-wrap"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -826,7 +834,7 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -854,7 +862,7 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -882,7 +890,7 @@ exports[`Storyshots modul-components|m-accordion-group Secondary Content 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -980,7 +988,7 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -1008,7 +1016,7 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -1036,7 +1044,7 @@ exports[`Storyshots modul-components|m-accordion-group Title 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -1128,7 +1136,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -1224,7 +1232,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -1323,7 +1331,7 @@ exports[`Storyshots modul-components|m-accordion-group Toggle Link Left 1`] = `
       >
         <div
           aria-controls="fakeId-body-wrap"
-          aria-label="Afficher le contenu"
+          aria-expanded="false"
           class="m-accordion__header m--has-padding"
           id="fakeId"
           role="button"
@@ -1415,7 +1423,7 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -1439,7 +1447,7 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"
@@ -1463,7 +1471,7 @@ exports[`Storyshots modul-components|m-accordion-group With Content 1`] = `
     >
       <div
         aria-controls="fakeId-body-wrap"
-        aria-label="Afficher le contenu"
+        aria-expanded="false"
         class="m-accordion__header m--has-padding"
         id="fakeId"
         role="button"

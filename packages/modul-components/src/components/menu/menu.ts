@@ -69,6 +69,7 @@ export class MMenu extends BaseMenu implements Menu {
         transition: MAccordionTransition
     };
 
+    public id: string = `mMenu-${uuid.generate()}`;
     public animReady: boolean = false;
     public closeOnSelectionInAction: boolean = false;
     public titleMenuOpen: string = this.$i18n.translate('m-menu:open');
@@ -161,7 +162,6 @@ export class MMenu extends BaseMenu implements Menu {
     public toggleMenu(event: Event): void {
         if (!this.propDisabled) {
             this.propOpen = !this.propOpen;
-            this.$refs.buttonMenu.blur();
             this.onClick(event, '');
         }
     }

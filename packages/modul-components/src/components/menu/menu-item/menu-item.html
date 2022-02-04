@@ -6,13 +6,12 @@
              'm--is-custom-content': $slots['content'],
              'm--is-inside-group': insideGroup}"
     role="none">
-    <router-link class="m-menu-item__link"
+    <router-link v-if="isUrl" class="m-menu-item__link"
                  :class="{'m--is-disabled': isDisabled}"
                  :to="url"
-                 @click="onClick"
-                 :aria-selected="selected"
+                 :aria-selected="selected ? 'page' : undefined"
                  role="menuitem"
-                 v-if="isUrl">
+                 @click="onClick">
         <m-icon class="m-menu-item__icon"
                 v-if="iconName"
                 :name="iconName"
@@ -20,17 +19,19 @@
                 ref="icon"></m-icon>
         <span class="m-menu-item__label">{{ label }}</span>
     </router-link>
-    <span class="m-menu-item__link"
+    <span v-else
+          :id="id"
+          class="m-menu-item__link"
           :class="{ 'm--is-disabled': isDisabled,
                     'm--is-custom-content': $slots['content']}"
-          @click="onClick"
-          @keypress.enter="onClick"
+          role="button"
           :tabindex="isDisabled ? '-1' : '0'"
           :aria-selected="selected"
-          :aria-haspopup="group"
           :aria-controls="group ? ariaControls : undefined"
-          :aria-expanded="group ? propOpen : undefined"
-          v-else>
+          :aria-expanded="group ? (propOpen ? 'true' : 'false') : undefined"
+          @click="onClick"
+          @keydown.enter="onClick"
+          @keydown.space="onClick">
         <slot name="content">
             <m-icon class="m-menu-item__icon"
                     v-if="iconName"
@@ -48,11 +49,11 @@
     </span>
     <m-accordion-transition :disabled="!animReady || isDisabled"
                             ref="transition">
-        <ul :id="ariaControls"
-            class="m-menu-item__group"
+        <ul v-show="propOpen"
+            :id="ariaControls"
             ref="group"
-            :aria-hidden="!propOpen"
-            v-show="propOpen">
+            class="m-menu-item__group"
+            :aria-labelledby="id">
             <slot></slot>
         </ul>
     </m-accordion-transition>

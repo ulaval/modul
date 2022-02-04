@@ -158,13 +158,6 @@ export class MAccordion extends ModulVue implements AccordionGateway {
         return this.propDisabled || !this.hasContent() ? undefined : 0;
     }
 
-    public get headerAriaLabel(): string | undefined {
-        return !this.propDisabled && this.hasContent() ?
-            this.$i18n.translate(`m-accordion:${this.propOpen ? 'close' : 'open'}`)
-            : undefined;
-
-    }
-
     public get isIconPositionLeft(): boolean {
         return this.iconPosition === MAccordionIconPosition.Left;
     }
@@ -230,7 +223,6 @@ export class MAccordion extends ModulVue implements AccordionGateway {
                 this.internalGroupRef.closeAllAccordions();
             }
 
-            this.refAccordionHeader.blur();
             this.propOpen = !initialState;
             this.emitClick(event);
         }
