@@ -120,6 +120,18 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     private timerCloseToast: any;
     private internalTimeout: number;
     private instantTimeoutStart: number;
+    public showScreenReaderText: boolean = false;
+
+    public get i18nTypeMessage(): string {
+        switch (this.state) {
+            case MToastState.Error:
+                return this.$i18n.translate('m-toast:error');
+            case MToastState.Warning:
+                return this.$i18n.translate('m-toast:warning');
+            default:
+                return '';
+        }
+    }
 
     public doCustomPropOpen(value: boolean, el: HTMLElement): boolean {
         el.style.position = 'absolute';
@@ -130,6 +142,11 @@ export class MToast extends ModulVue implements PortalMixinImpl {
 
             this.internalTimeout = this.convertTimeout(this.timeout);
             this.startCloseToast();
+            requestAnimationFrame(() => {
+                this.showScreenReaderText = true;
+            });
+        } else {
+            this.showScreenReaderText = false;
         }
         return true;
     }
@@ -138,10 +155,9 @@ export class MToast extends ModulVue implements PortalMixinImpl {
         this.instantTimeoutStart = Date.now();
 
         if (this.internalTimeout > 0) {
-            this.timerCloseToast
-                = setTimeout(() => {
-                    this.onClose();
-                }, this.internalTimeout);
+            this.timerCloseToast = setTimeout(() => {
+                this.onClose();
+            }, this.internalTimeout);
         }
     }
 
@@ -228,24 +244,18 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     }
 
     private getIcon(): string {
-        let icon: string = '';
         switch (this.state) {
             case MToastState.Confirmation:
-                icon = 'm-svg__confirmation';
-                break;
+                return 'm-svg__confirmation';
             case MToastState.Information:
-                icon = 'm-svg__information';
-                break;
+                return 'm-svg__information';
             case MToastState.Warning:
-                icon = 'm-svg__warning';
-                break;
+                return 'm-svg__warning';
             case MToastState.Error:
-                icon = 'm-svg__error';
-                break;
+                return 'm-svg__error';
             default:
-                break;
+                return '';
         }
-        return icon;
     }
 
     public mouseEnterToast(): void {
