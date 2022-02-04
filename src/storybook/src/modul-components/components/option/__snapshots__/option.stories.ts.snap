@@ -10,6 +10,7 @@ exports[`Storyshots modul-components|m-option default 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple"
         id="mOption-fakeId"
@@ -50,6 +51,7 @@ exports[`Storyshots modul-components|m-option max-width 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple"
         id="mOption-fakeId"
@@ -90,6 +92,7 @@ exports[`Storyshots modul-components|m-option option-separator 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple"
         id="mOption-fakeId"
@@ -130,6 +133,7 @@ exports[`Storyshots modul-components|m-option option-title & separator 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple"
         id="mOption-fakeId"
@@ -170,6 +174,7 @@ exports[`Storyshots modul-components|m-option option-title 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple"
         id="mOption-fakeId"
@@ -210,6 +215,7 @@ exports[`Storyshots modul-components|m-option scroll 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple"
         id="mOption-fakeId"
@@ -250,6 +256,7 @@ exports[`Storyshots modul-components|m-option/disabled skin="over-dark" 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-dark m--has-ripple m--is-disabled"
         disabled="disabled"
@@ -291,6 +298,7 @@ exports[`Storyshots modul-components|m-option/disabled skin="over-light" 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple m--is-disabled"
         disabled="disabled"
@@ -332,6 +340,7 @@ exports[`Storyshots modul-components|m-option/disabled skin="over-mixed" 1`] = `
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-option__button"
         disabled="disabled"
@@ -372,6 +381,7 @@ exports[`Storyshots modul-components|m-option/skin skin="over-dark" 1`] = `
       <div>
         <button
           aria-controls="mOption-fakeId-controls"
+          aria-expanded="false"
           aria-haspopup="true"
           class="m-icon-button m--is-skin-dark m--has-ripple"
           id="mOption-fakeId"
@@ -413,6 +423,7 @@ exports[`Storyshots modul-components|m-option/skin skin="over-light" (default) 1
     <div>
       <button
         aria-controls="mOption-fakeId-controls"
+        aria-expanded="false"
         aria-haspopup="true"
         class="m-icon-button m--is-skin-light m--has-ripple"
         id="mOption-fakeId"
@@ -457,6 +468,7 @@ exports[`Storyshots modul-components|m-option/skin skin="over-mixed" 1`] = `
       <div>
         <button
           aria-controls="mOption-fakeId-controls"
+          aria-expanded="false"
           aria-haspopup="true"
           class="m-option__button"
           id="mOption-fakeId"

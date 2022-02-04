@@ -52,6 +52,7 @@ export class MMenuItem extends BaseMenuItem implements MenuItem {
     public selected: boolean = false;
     public insideGroup = false;
     public animReady: boolean = false;
+    public id: string = `mMenuItem-${uuid.generate()}`;
     public ariaControls: string = `mMenuItem-${uuid.generate()}-controls`;
     // tslint:disable-next-line:no-null-keyword
     public menuRoot: Menu | null = null;
