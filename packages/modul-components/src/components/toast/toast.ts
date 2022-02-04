@@ -74,7 +74,7 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     public readonly timeout: MToastTimeout;
 
     @Prop()
-    public readonly open: boolean;
+    public open: boolean;
 
     @Prop()
     public readonly actionLabel: string;
@@ -87,7 +87,7 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     @Prop({
         default: '0'
     })
-    public readonly offset: string;
+    public offset: string;
 
     @Prop({
         default: true
