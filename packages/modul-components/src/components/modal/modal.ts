@@ -1,8 +1,9 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Prop, Ref } from 'vue-property-decorator';
 import { MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
+import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
 import { ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
@@ -22,7 +23,7 @@ export enum MModalSize {
     components: {
         [ICON_BUTTON_NAME]: MIconButton
     },
-    mixins: [Portal]
+    mixins: [Portal, MFocusTrap]
 })
 export class MModal extends ModulVue implements PortalMixinImpl {
     @Prop({
@@ -51,6 +52,10 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     @Prop({ default: true })
     public paddingBody: boolean;
 
+    @Ref('article')
+    public readonly refArticle?: HTMLElement;
+
+    public readonly closeTitle: string = this.$i18n.translate('m-modal:close');
     public hasKeyboard: boolean = false;
 
     $refs: {
@@ -59,7 +64,23 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         article: HTMLElement;
     };
 
-    private closeTitle: string = this.$i18n.translate('m-modal:close');
+    public get titleId(): string | undefined {
+        return this.title ? `${this.as<Portal>().propId}-title` : undefined;
+    }
+
+    public setFocusToPortal(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus() || !this.refArticle) {
+            return;
+        }
+        this.as<MFocusTrap>().setFocusTrap(this.refArticle);
+    }
+
+    public setFocusToTrigger(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus()) {
+            return;
+        }
+        this.as<MFocusTrap>().removeFocusTrap();
+    }
 
     public closeModal(): void {
         this.as<PortalMixin>().tryClose();
@@ -80,7 +101,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     }
 
     public get sizeFullSceen(): boolean {
-        let fullScreen: boolean = !this.as<MediaQueriesMixin>().isMqMinS
+        const fullScreen: boolean = !this.as<MediaQueriesMixin>().isMqMinS
             ? true
             : this.size === MModalSize.FullScreen
                 ? true

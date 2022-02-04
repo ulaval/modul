@@ -16,16 +16,20 @@
                  @click.self="backdropClick()"
                  ref="modalWrap">
                 <article class="m-modal__article"
-                         ref="article">
-                    <header class="m-modal__header">
-                        <h2 v-if="title">{{ title }}</h2>
+                         ref="article"
+                         role="dialog"
+                         aria-modal="true"
+                         :aria-labelledby="titleId"
+                         tabindex="-1">
+                    <header class="m-modal__header" >
+                        <h2 :id="titleId" v-if="title">{{ title }}</h2>
                         <slot name="header" />
                         <slot name="header-bouton">
-                            <m-icon-button @click="closeModal()"
-                                           icon-name="m-svg__close-clear"
+                            <m-icon-button icon-name="m-svg__close-clear"
                                            skin="dark"
                                            class="m-modal__close-button"
-                                           :title="closeTitle"></m-icon-button>
+                                           :title="closeTitle"
+                                           @click="closeModal()" />
                         </slot>
                     </header>
                     <div class="m-modal__body"
