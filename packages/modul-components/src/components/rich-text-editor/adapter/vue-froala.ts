@@ -8,7 +8,6 @@ import 'froala-editor/js/plugins.pkgd.min.js';
 import $ from 'jquery';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { ElementQueries } from '../../../mixins/element-queries/element-queries';
 import { replaceTags } from '../../../utils/clean/htmlClean';
 import { MFile } from '../../../utils/file/file';
 import { ScrollToDuration } from '../../../utils/scroll-to/scroll-to';
@@ -82,9 +81,6 @@ const SCROLL_TO_OFFSET: number = -50;
 
 @WithRender
 @Component({
-    mixins: [
-        ElementQueries
-    ],
     components: {
         FroalaEditor
     }

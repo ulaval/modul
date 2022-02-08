@@ -2,7 +2,6 @@
 
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement, InputManagementData } from '../../mixins/input-management/input-management';
 import { InputState, InputStateInputSelector } from '../../mixins/input-state/input-state';
@@ -32,8 +31,7 @@ const RICH_TEXT_LICENSE_KEY: string = 'm-rich-text-license-key';
         InputState,
         InputManagement,
         InputWidth,
-        InputLabel,
-        ElementQueries
+        InputLabel
     ]
 })
 export class MRichTextEditor extends ModulVue implements InputManagementData, InputStateInputSelector {
