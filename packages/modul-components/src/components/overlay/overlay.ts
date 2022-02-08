@@ -22,22 +22,27 @@ import WithRender from './overlay.html?style=./overlay.scss';
     mixins: [Portal, MFocusTrap]
 })
 export class MOverlay extends ModulVue {
-
     @Prop({ default: true })
     public focusManagement: boolean;
 
     @Prop({ default: true })
     public padding: boolean;
+
     @Prop({ default: true })
     public paddingHeader: boolean;
+
     @Prop({ default: true })
     public paddingBody: boolean;
+
     @Prop({ default: true })
     public paddingFooter: boolean;
+
     @Prop({ default: false })
     public disableSaveButton: boolean;
+
     @Prop({ default: false })
     public waiting: boolean;
+
     @Prop({ default: false })
     public hideFooter: boolean;
 

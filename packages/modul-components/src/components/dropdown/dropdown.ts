@@ -105,6 +105,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
 
     public readonly listboxId: string = `listboxId-${uuid.generate()}`;
     public readonly popupId: string = `popup-${uuid.generate()}`;
+    public initialFocusElement: HTMLElement | null = null;
 
     private internalFilter: string = '';
     private internalFilterRegExp: RegExp = / /;
@@ -196,7 +197,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
                 this.as<InputManagement>().internalIsFocus = true;
                 inputEl.focus();
             } else if (researchInputEl) {
-                researchInputEl.focus();
+                this.initialFocusElement = researchInputEl;
             }
         });
 
@@ -433,8 +434,9 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         }
     }
 
-    private onKeydownEsc(): void {
+    private onKeydownEsc(event: KeyboardEvent): void {
         this.open = false;
+        event.stopPropagation();
     }
 
     private onInput(value: Event): void {
