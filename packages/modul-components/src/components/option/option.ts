@@ -155,6 +155,20 @@ export class MOption extends BaseOption implements MOptionInterface {
                 throw new Error('skin not supported!');
         }
     }
+
+    protected mounted(): void {
+        document.addEventListener('keydown', this.closeOnEscape);
+    }
+
+    protected beforeDestroy (): void {
+        document.removeEventListener('keydown', this.closeOnEscape);
+    }
+
+    private closeOnEscape(event: KeyboardEvent): void {
+        if (!(event.key === 'Escape' && this.open)) return;
+        this.close();
+        event.stopPropagation();
+    }
 }
 
 const OptionPlugin: PluginObject<any> = {

@@ -35,8 +35,11 @@ export class MPopup extends ModulVue {
     @Prop()
     public readonly closeOnBackdrop: boolean;
 
-    @Prop({ default: true })
+    @Prop({ default: false })
     public readonly focusManagement: boolean;
+
+    @Prop()
+    public readonly initialFocusElement?: HTMLElement;
 
     @Prop({
         default: 'auto',

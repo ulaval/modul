@@ -25,7 +25,6 @@ export interface MBaseSelectItem<T> {
     components: {
         MSelectItem,
         MPopup
-
     },
     directives: {
         [DIRECTIVE_POPUP_NAME]: MPopupDirective
@@ -75,6 +74,12 @@ export class MBaseSelect extends ModulVue {
     @Prop()
     public readonly listboxAriaLabelledby?: string;
 
+    @Prop()
+    public readonly focusManagement: boolean;
+
+    @Prop()
+    public readonly initialFocusElement?: HTMLElement;
+
     @Ref('items')
     public readonly refItems: HTMLUListElement;
 
@@ -91,6 +96,9 @@ export class MBaseSelect extends ModulVue {
 
     @Emit('update:open')
     public emitUpdateOpen(_open: boolean): void { }
+
+    @Emit('click')
+    public emitClick(_event: MouseEvent): void { }
 
     @Emit('click-on-item')
     public emitClickOnItem(_event: MouseEvent): void { }
@@ -334,6 +342,7 @@ export class MBaseSelect extends ModulVue {
 
     public onKeydownEsc($event: KeyboardEvent): void {
         this.closePopup();
+        $event.stopPropagation();
     }
 
     public onKeydownEnter($event: KeyboardEvent): void {

@@ -6,6 +6,7 @@ import { InputManagement } from '../../mixins/input-management/input-management'
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
+import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
@@ -31,7 +32,8 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
         InputState,
         InputWidth,
         InputManagement,
-        MediaQueries
+        MediaQueries,
+        MFocusTrap,
     ]
 })
 export class MTypeahead extends ModulVue {
@@ -97,6 +99,7 @@ export class MTypeahead extends ModulVue {
 
     public isResultsPopupOpen: boolean = false;
     public textfieldValue: string = '';
+    public initialFocusElement: HTMLElement | null = null;
 
     public filteredResults: MBaseSelectItem<unknown>[] | string[] = [];
     public throttleTimeoutActive: boolean = false;
@@ -109,6 +112,14 @@ export class MTypeahead extends ModulVue {
     @Emit('filter-results')
     public emitFilterResults(): void { }
 
+    @Emit('click')
+    public emitClick(): void {
+        if (this.as<MediaQueries>().isMqMaxS) {
+            this.isResultsPopupOpen = true;
+            this.initialFocusElement = this.refResearchInput;
+        }
+    }
+
     @Watch('results', { immediate: true })
     public onResultsChange(): void {
         this.onFilterResults();
@@ -116,7 +127,9 @@ export class MTypeahead extends ModulVue {
 
     @Watch('value', { immediate: true })
     public onValueChange(value: string): void {
-        this.textfieldValue = value;
+        if (this.value != this.textfieldValue) {
+            this.textfieldValue = value;
+        }
     }
 
     @Watch('internalIsFocus')
@@ -124,14 +137,6 @@ export class MTypeahead extends ModulVue {
         if (!newValue) { return; }
         this.onFilterResults();
 
-    }
-
-    @Watch('isResultsPopupOpen')
-    public onBaseSelectOpen(newValue: boolean): void {
-        if (!newValue || this.as<MediaQueries>().isMqMinS) { return; }
-        requestAnimationFrame(() => {
-            this.refResearchInput.focus();
-        });
     }
 
     public get hasResults(): boolean {
@@ -172,6 +177,10 @@ export class MTypeahead extends ModulVue {
         return (this.waitingResults || this.throttleTimeoutActive)
             && this.textfieldValue.length > 0
             && !this.as<InputState>().isWaiting;
+    }
+
+    public get focusManagement(): boolean {
+        return this.as<MediaQueries>().isMqMaxS;
     }
 
     public onOpen(): void {
@@ -251,6 +260,7 @@ export class MTypeahead extends ModulVue {
     }
 
     public onInput(event: string): void {
+        if (this.value === event) return;
         this.textfieldValue = event;
         this.emitInput(event);
 
@@ -260,7 +270,12 @@ export class MTypeahead extends ModulVue {
             clearTimeout(this.throttleTimeout as NodeJS.Timeout);
             this.createThrottleTimeout();
         } else {
-            this.isResultsPopupOpen = this.as<MediaQueries>().isMqMaxS;
+            if (this.as<MediaQueries>().isMqMaxS) {
+                this.isResultsPopupOpen = true;
+                this.initialFocusElement = this.refResearchInput;
+            } else {
+                this.isResultsPopupOpen = false;
+            }
             this.throttleTimeoutActive = true;
             this.createThrottleTimeout();
         }
@@ -299,9 +314,7 @@ export class MTypeahead extends ModulVue {
     }
 
     public onKeydownEsc($event: KeyboardEvent): void {
-        if (this.resultsCouldBeDisplay) {
-            this.refBaseSelect.onKeydownEsc($event);
-        }
+        this.refBaseSelect.onKeydownEsc($event);
     }
 
     public onKeydownHome($event: KeyboardEvent): void {

@@ -121,7 +121,7 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
     }
 
     public setFocusToPortal(): void {
-        if (!this.as<PortalMixinImpl>().handlesFocus() || !this.refArticle) {
+        if (!this.refArticle) {
             return;
         }
 
@@ -137,9 +137,6 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
     }
 
     public setFocusToTrigger(): void {
-        if (!this.as<PortalMixinImpl>().handlesFocus()) {
-            return;
-        }
         this.as<MFocusTrap>().removeFocusTrap();
     }
 

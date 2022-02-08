@@ -4,7 +4,6 @@ import { Prop, Ref } from 'vue-property-decorator';
 import { MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
 import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
-import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
 import { ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
@@ -132,43 +131,22 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         if (!this.title && !Boolean(this.$slots.header)) {
             this.$log.warn('<m-modal> needs a header slot or title prop.');
         }
+        window.addEventListener('keydown', this.closeModalOnEscape);
+    }
+
+    protected beforeDestroy() {
+        window.removeEventListener('keydown', this.closeModalOnEscape);
+    }
+
+    private closeModalOnEscape(event: KeyboardEvent): void {
+        if (event.key !== 'Escape') return;
+        this.closeModal();
     }
 
     private backdropClick(): void {
         if (this.closeOnBackdrop) {
             this.as<PortalMixin>().tryClose();
         }
-    }
-
-    private get isAndroid(): boolean {
-        return UserAgentUtil.isAndroid();
-    }
-
-    private isFocusableTextBox(element: HTMLElement): boolean {
-        const type: string | null = element.getAttribute('type');
-        return (element.tagName === 'INPUT'
-            && type !== 'checkbox'
-            && type !== 'radio'
-            && type !== 'button'
-            && type !== 'reset'
-            && type !== 'file') || element.tagName === 'TEXTAREA';
-    }
-
-    private onFocusIn(event: FocusEvent): void {
-        if (
-            this.isAndroid
-            && this.isFocusableTextBox(event.target as HTMLElement)
-        ) {
-            this.hasKeyboard = true;
-        }
-    }
-
-    private onFocusOut(event: FocusEvent): void {
-        if (!this.isAndroid) {
-            return;
-        }
-
-        this.hasKeyboard = false;
     }
 }
 

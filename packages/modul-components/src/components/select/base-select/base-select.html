@@ -8,6 +8,7 @@
     :aria-owns="listboxId"
     :aria-expanded="popupOpen === true ? 'true' : 'false'"
     aria-haspopup="listbox"
+    @click="emitClick"
 >
     <div
         v-m-popup:popup
@@ -38,7 +39,8 @@
         :padding="false"
         :preload="true"
         :lazy="false"
-        :focus-management="false"
+        :focus-management="focusManagement"
+        :initial-focus-element="initialFocusElement"
         :close-on-backdrop="true"
         :open-trigger="'manual'"
         :sidebar-full-height="sidebarFullHeight"

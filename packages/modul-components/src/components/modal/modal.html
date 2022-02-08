@@ -22,7 +22,7 @@
                          :aria-labelledby="titleId"
                          tabindex="-1">
                     <header class="m-modal__header" >
-                        <h2 :id="titleId" v-if="title">{{ title }}</h2>
+                        <h2 v-if="title" :id="titleId">{{ title }}</h2>
                         <slot name="header" />
                         <slot name="header-bouton">
                             <m-icon-button icon-name="m-svg__close-clear"
@@ -32,23 +32,12 @@
                                            @click="closeModal()" />
                         </slot>
                     </header>
-                    <div class="m-modal__body"
-                         ref="body"
-                         :class="{'m--is-android': hasKeyboard}">
-                        <div class="m-modal__content"
-                             :class="{ 'm--has-no-padding': !paddingBody }"
-                             @focusin="onFocusIn"
-                             @focusout="onFocusOut"
-                             v-if="$slots.default">
-                            <slot />
-                        </div>
-                        <footer v-if="hasKeyboard && $slots.footer"
-                                class="m-modal__footer">
-                            <slot name="footer" />
-                        </footer>
+                    <div ref="body"
+                         class="m-modal__body"
+                         :class="{ 'm--has-no-padding': !paddingBody }">
+                        <slot />
                     </div>
-
-                    <footer v-if="!hasKeyboard && $slots.footer"
+                    <footer v-if="$slots.footer"
                             class="m-modal__footer">
                         <slot name="footer" />
                     </footer>

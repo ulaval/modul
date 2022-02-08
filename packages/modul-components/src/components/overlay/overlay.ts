@@ -5,7 +5,6 @@ import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
 import { i18nFilter } from '../../filters/i18n/i18n';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
 import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
-import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
 import { BUTTON_NAME, I18N_NAME, OVERLAY_NAME } from '../component-names';
@@ -84,37 +83,6 @@ export class MOverlay extends ModulVue {
 
     private get popupBody(): any {
         return (this.$refs.article).querySelector('.m-popup__body');
-    }
-
-    private get isAndroid(): boolean {
-        return UserAgentUtil.isAndroid();
-    }
-
-    private isFocusableTextBox(element: HTMLElement): boolean {
-        const type: string | null = element.getAttribute('type');
-        return (element.tagName === 'INPUT'
-            && type !== 'checkbox'
-            && type !== 'radio'
-            && type !== 'button'
-            && type !== 'reset'
-            && type !== 'file') || element.tagName === 'TEXTAREA';
-    }
-
-    private onFocusIn(event: FocusEvent): void {
-        if (
-            this.isAndroid
-            && this.isFocusableTextBox(event.target as HTMLElement)
-        ) {
-            this.hasKeyboard = true;
-        }
-    }
-
-    private onFocusOut(event: FocusEvent): void {
-        if (!this.isAndroid) {
-            return;
-        }
-
-        this.hasKeyboard = false;
     }
 
     private handlesFocus(): boolean {
