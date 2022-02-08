@@ -15,7 +15,6 @@ export enum MPlusSkin {
 @WithRender
 @Component
 export class MPlus extends ModulVue {
-
     @Prop()
     public titleOpen: string;
 
