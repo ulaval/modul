@@ -19,11 +19,12 @@
                  @click.self="backdropClick"
                  ref="modalWrap">
                 <article class="m-sidebar__article"
+                         ref="article"
                          :style="{
                              width: propWidth,
                              'margin-left': marginLeft
                          }"
-                         ref="article">
+                         tabindex="-1">
                     <button v-if="closeButton && origin === 'bottom'"
                             class="m-sidebar__close-button"
                             type="button"

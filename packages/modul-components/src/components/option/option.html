@@ -1,45 +1,50 @@
-<div class="m-option">
-    <m-popup :open.sync="open"
-             :padding="false"
-             :placement="placement"
-             :disabled="disabled"
-             :close-on-backdrop="true"
-             :background="false"
-             :shadow="false"
-             :focus-management="focusManagement"
-             @open="onOpen"
-             @close="onClose">
-        <button v-if="isSkinMixed"
-                class="m-option__button"
-                @click="onClick"
-                :id="id"
-                aria-haspopup="true"
-                :aria-controls="ariaControls"
-                :aria-expanded="open ? 'true' : 'false'"
-                :disabled="disabled"
-                slot="trigger">
-            <m-icon :title="propTitle"
-                    name="m-svg__options">
-            </m-icon>
-        </button>
-        <m-icon-button :id="id"
-                       v-else
-                       aria-haspopup="true"
-                       :aria-controls="ariaControls"
-                       :aria-expanded="open ? 'true' : 'false'"
-                       slot="trigger"
-                       :skin="iconButtonSkin"
-                       :title="propTitle"
-                       icon-name="m-svg__options"
-                       :disabled="disabled"
-                       :button-size="size"
-                       @click="onClick" />
-        <ul :id="ariaControls"
-            class="m-option__list"
+<m-popup ref="popup"
+        class="m-option"
+        :open.sync="open"
+        :padding="false"
+        :placement="placement"
+        :disabled="disabled"
+        :close-on-backdrop="true"
+        :background="false"
+        :shadow="false"
+        :focus-management="false"
+        @open="emitOpen"
+        @close="emitClose"
+        @click-outside="onClickOutside">
+    <button v-if="isSkinMixed"
+            :id="id"
+            class="m-option__button"
+            aria-haspopup="dialog"
+            :aria-expanded="open ? 'true': 'false'"
+            :disabled="disabled"
+            slot="trigger"
+            @click="emitClick">
+        <m-icon :title="title"
+                name="m-svg__options" />
+    </button>
+    <m-icon-button :id="id"
+                    v-else
+                    aria-haspopup="dialog"
+                    :aria-expanded="open ? 'true': 'false'"
+                    slot="trigger"
+                    :skin="iconButtonSkin"
+                    :title="title"
+                    icon-name="m-svg__options"
+                    :disabled="disabled"
+                    :button-size="size"
+                    @click="emitClick" />
+    <div class="m-option__dialog" role="dialog" ref="menu" tabindex="-1">
+        <ul class="m-option__list"
             :style="{ maxHeight: menuMaxHeight, maxWidth: optionMaxWidth }"
-            :aria-labelledby="id"
-            ref="menu">
+            :aria-labelledby="id">
             <slot></slot>
+            <li class="m-option__close-menu-item" :class="{'m--is-visible': isCloseButtonVisible }">
+                <button class="m-option__close-menu-button"
+                        @focus="onCloseButtonFocus"
+                        @blur="onCloseButtonBlur"
+                        @click="close">{{ $i18n.translate('m-option:close') }}</button>
+            </li>
         </ul>
-    </m-popup>
-</div>
+    </div>
+</m-popup>
+

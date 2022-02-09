@@ -1,11 +1,13 @@
 import { actions } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/vue';
 import { TYPEAHEAD_NAME } from '@ulaval/modul-components/dist/components/component-names';
+import ModalPlugin from '@ulaval/modul-components/dist/components/modal/modal';
 import TypeaheadPlugin from '@ulaval/modul-components/dist/components/typeahead/typeahead';
 import Vue from 'vue';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 Vue.use(TypeaheadPlugin);
+Vue.use(ModalPlugin);
 
 const RESULTS: string[] = ['Tomato', 'Celery', 'Apple', 'Bannana', 'Patate', 'Carrot', 'Avocados', 'Eggplant', 'Beet', 'Pineapple', 'Lemon', 'Pumpkin', 'Kiwi'];
 
@@ -32,6 +34,26 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             <h2 class="m-u--h5">Values</h2>
             <p v-html="results"></p>
         </div>`
+    }))
+    .add('Inside m-modal', () => ({
+        methods: actions(
+            'input',
+            'focus',
+            'blur',
+            'filter',
+            'keydown',
+            'keyup',
+            'paste'
+        ),
+        data: () => ({
+            label: 'Fruits and vegetables',
+            results: RESULTS,
+            value: ''
+        }),
+        template: `<m-modal :open="true">
+            <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" @keydown="keydown" @keyup="keyup" @paste="paste" v-model="value" :label="label" :results="results"></m-typeahead>
+            <p>v-model = {{ value }}</p>
+        </m-modal>`
     }))
     .add('popup-footer slot', () => ({
         data: () => ({

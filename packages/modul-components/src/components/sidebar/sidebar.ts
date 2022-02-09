@@ -1,7 +1,8 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Prop, Ref } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
+import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 import { I18N_NAME, ICON_BUTTON_NAME, SIDEBAR_NAME } from '../component-names';
@@ -27,7 +28,7 @@ export enum MSidebarCloseButtonPosition {
         [ICON_BUTTON_NAME]: MIconButton
 
     },
-    mixins: [Portal]
+    mixins: [Portal, MFocusTrap]
 })
 export class MSidebar extends ModulVue implements PortalMixinImpl {
     @Prop({
@@ -70,7 +71,13 @@ export class MSidebar extends ModulVue implements PortalMixinImpl {
     public readonly paddingFooter: boolean;
 
     @Prop({ default: false })
-    public fullHeight: boolean;
+    public readonly fullHeight: boolean;
+
+    @Prop()
+    public readonly initialFocusElement?: HTMLElement;
+
+    @Ref('article')
+    public readonly refArticle?: HTMLElement;
 
     public $refs: {
         baseWindow: HTMLElement;
@@ -78,6 +85,20 @@ export class MSidebar extends ModulVue implements PortalMixinImpl {
         modalWrap: HTMLElement;
         body: HTMLElement;
     };
+
+    public setFocusToPortal(): void {
+        if (!this.handlesFocus() || !this.refArticle) {
+            return;
+        }
+        this.as<MFocusTrap>().setFocusTrap(this.refArticle, { initialFocus: this.initialFocusElement || this.refArticle });
+    }
+
+    public setFocusToTrigger(): void {
+        if (!this.handlesFocus()) {
+            return;
+        }
+        this.as<MFocusTrap>().removeFocusTrap();
+    }
 
     public get popupBody(): HTMLElement {
         return this.$refs.article.querySelector('.m-popup__body') as HTMLElement;

@@ -1,21 +1,25 @@
 <li class="m-option-item"
     :class="{ 'm--is-disabled' : disabled,
-              'm--has-icon-spacing': hasIcon,
-              'm--has-no-border' : !hasBorder, }"
-    ref="m-option-item"
-    :tabindex="disabled ? '-1' : '0'"
-    role="option"
-    @keydown.enter.prevent="onClick"
-    @click.prevent="onClick">
-    <span v-if="hasIcon"
-          class="m-option-item__icon"
-          ref="icon">
-        <m-icon v-if="hasIconNameProp"
-                :name="iconName"
-                size="20px" />
-    </span>
-    <span class="m-option-item__text"
-          ref="text">
-        <slot />
-    </span>
+              'm--has-icon-spacing': hasIcon }"
+    >
+    <div class="m-option-item__button"
+         ref="button"
+         role="button"
+         :tabindex="disabled ? '-1' : '0'"
+         :aria-disabled="disabled"
+         @keydown.enter.prevent="onClick"
+         @keydown.space.prevent="onClick"
+         @click.prevent="onClick">
+        <span v-if="hasIcon"
+            class="m-option-item__icon"
+            ref="icon">
+            <m-icon v-if="hasIconNameProp"
+                    :name="iconName"
+                    size="18px" />
+        </span>
+        <span class="m-option-item__text"
+            ref="text">
+            <slot />
+        </span>
+    </div>
 </li>

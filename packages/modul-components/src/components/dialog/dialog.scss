@@ -57,6 +57,7 @@ $m-dialog--max-width--l: 500px !default;
         max-width: $m-dialog--max-width;
         background: $m-color--white;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+        outline: none;
 
         @include m-is-ie() {
             margin: 60px auto;
