@@ -3,6 +3,7 @@
 exports[`Storyshots modul-components|m-limit-text Custom Label 4 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -69,6 +70,28 @@ exports[`Storyshots modul-components|m-limit-text Custom Label 4 Lines 1`] = `
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
@@ -96,6 +119,7 @@ exports[`Storyshots modul-components|m-limit-text Dynamic Text 2 Lines 1`] = `
    
   <div
     class="m-limit-text"
+    style="position: relative;"
   >
     <div
       aria-hidden="true"
@@ -122,6 +146,28 @@ exports[`Storyshots modul-components|m-limit-text Dynamic Text 2 Lines 1`] = `
     />
      
     <!---->
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -129,6 +175,7 @@ exports[`Storyshots modul-components|m-limit-text Dynamic Text 2 Lines 1`] = `
 exports[`Storyshots modul-components|m-limit-text Multi Paragraph 4 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -219,12 +266,35 @@ exports[`Storyshots modul-components|m-limit-text Multi Paragraph 4 Lines 1`] = 
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-limit-text Only Text 2 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -291,6 +361,28 @@ exports[`Storyshots modul-components|m-limit-text Only Text 2 Lines 1`] = `
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
@@ -318,6 +410,7 @@ exports[`Storyshots modul-components|m-limit-text Open With Props 1`] = `
    
   <div
     class="m-limit-text"
+    style="position: relative;"
   >
     <div
       aria-hidden="true"
@@ -384,6 +477,28 @@ exports[`Storyshots modul-components|m-limit-text Open With Props 1`] = `
     />
      
     <!---->
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -391,6 +506,7 @@ exports[`Storyshots modul-components|m-limit-text Open With Props 1`] = `
 exports[`Storyshots modul-components|m-limit-text Paragraph And Title 4 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -495,12 +611,35 @@ exports[`Storyshots modul-components|m-limit-text Paragraph And Title 4 Lines 1`
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-limit-text Short Text 10 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -539,12 +678,35 @@ exports[`Storyshots modul-components|m-limit-text Short Text 10 Lines 1`] = `
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-limit-text Text With Bold Text 2 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -611,12 +773,35 @@ exports[`Storyshots modul-components|m-limit-text Text With Bold Text 2 Lines 1`
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-limit-text Text With Link 2 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -701,12 +886,35 @@ exports[`Storyshots modul-components|m-limit-text Text With Link 2 Lines 1`] = `
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-limit-text Title 2 Lines 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -739,12 +947,35 @@ exports[`Storyshots modul-components|m-limit-text Title 2 Lines 1`] = `
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-limit-text With Raw Html Data 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -851,12 +1082,35 @@ exports[`Storyshots modul-components|m-limit-text With Raw Html Data 1`] = `
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-limit-text default 1`] = `
 <div
   class="m-limit-text"
+  style="position: relative;"
 >
   <div
     aria-hidden="true"
@@ -923,5 +1177,27 @@ exports[`Storyshots modul-components|m-limit-text default 1`] = `
   />
    
   <!---->
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;

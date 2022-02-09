@@ -6,7 +6,7 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -119,6 +119,28 @@ exports[`Storyshots modul-components|m-navbar Multiline 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -129,7 +151,7 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -262,6 +284,28 @@ exports[`Storyshots modul-components|m-navbar No Multiline 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -272,7 +316,7 @@ exports[`Storyshots modul-components|m-navbar Prop Button Gradient Style 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-interactive-darker"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -753,6 +797,28 @@ exports[`Storyshots modul-components|m-navbar Prop Button Gradient Style 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -765,7 +831,7 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -1248,6 +1314,28 @@ exports[`Storyshots modul-components|m-navbar Scroll To Last Item 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -1258,7 +1346,7 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -1509,6 +1597,28 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Main 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -1522,7 +1632,7 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-interactive"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -1773,6 +1883,28 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Soft 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -1785,7 +1917,7 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-grey-black"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -2036,6 +2168,28 @@ exports[`Storyshots modul-components|m-navbar Skin Nav Sub 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -2048,7 +2202,7 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -2301,6 +2455,28 @@ exports[`Storyshots modul-components|m-navbar Skin Plain 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -2311,7 +2487,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -2567,6 +2743,28 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Arrow 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -2577,7 +2775,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -2828,6 +3026,28 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Dark Main 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -2840,7 +3060,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-light"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -3091,6 +3311,28 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Light Main 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -3103,7 +3345,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -3356,6 +3598,28 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Soft 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -3366,7 +3630,7 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-white"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -3622,6 +3886,28 @@ exports[`Storyshots modul-components|m-navbar Skin Tab Underline 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -3632,7 +3918,7 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -3722,6 +4008,28 @@ exports[`Storyshots modul-components|m-navbar Slot Left Contain 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>
@@ -3734,7 +4042,7 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -3826,6 +4134,28 @@ exports[`Storyshots modul-components|m-navbar Slot Right Contain 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -3836,7 +4166,7 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -3927,6 +4257,28 @@ exports[`Storyshots modul-components|m-navbar Url 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -3937,7 +4289,7 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
 >
   <div
     class="m-auto-horizontal-scroll m-navbar__wrap m--is-gradient-style-dark"
-    style="max-width: 1200px;"
+    style="max-width: 1200px; position: relative;"
   >
     <!---->
      
@@ -4099,6 +4451,28 @@ exports[`Storyshots modul-components|m-navbar default 1`] = `
            
           <!---->
         </ul>
+      </div>
+    </div>
+    <div
+      class="resize-sensor"
+      dir="ltr"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        class="resize-sensor-expand"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+        />
+      </div>
+      <div
+        class="resize-sensor-shrink"
+        style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+      >
+        <div
+          style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+        />
       </div>
     </div>
   </div>

@@ -3,6 +3,7 @@
 exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -609,12 +610,35 @@ exports[`Storyshots modul-components|m-responsive-table Complex Head Rows 1`] = 
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -994,12 +1018,35 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Row Groups Spacing Top 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -1970,12 +2017,35 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups Spacing Top 1
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Row Groups With Accordion 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -2302,12 +2372,35 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Accordio
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Row Groups With Header 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -2847,6 +2940,28 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header 1
          
         <!---->
       </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
     </div>
   </div>
 </div>
@@ -2855,6 +2970,7 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header 1
 exports[`Storyshots modul-components|m-responsive-table Row Groups With Header Cell 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -3492,12 +3608,35 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Header C
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -4383,12 +4522,35 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Sortable 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -4748,12 +4910,35 @@ exports[`Storyshots modul-components|m-responsive-table Sortable 1`] = `
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Table With Data 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -4963,12 +5148,35 @@ exports[`Storyshots modul-components|m-responsive-table Table With Data 1`] = `
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Table Without Data 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -5113,12 +5321,35 @@ exports[`Storyshots modul-components|m-responsive-table Table Without Data 1`] =
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Table Without Head 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -5278,12 +5509,35 @@ exports[`Storyshots modul-components|m-responsive-table Table Without Head 1`] =
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Waiting 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -5511,12 +5765,35 @@ exports[`Storyshots modul-components|m-responsive-table Waiting 1`] = `
       </table>
     </div>
   </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Storyshots modul-components|m-responsive-table Waiting Without Data 1`] = `
 <div
   class="m-auto-horizontal-scroll m-responsive-table m--is-gradient-style-white"
+  style="position: relative;"
 >
   <!---->
    
@@ -5643,6 +5920,28 @@ exports[`Storyshots modul-components|m-responsive-table Waiting Without Data 1`]
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <div
+    class="resize-sensor"
+    dir="ltr"
+    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+  >
+    <div
+      class="resize-sensor-expand"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
+      />
+    </div>
+    <div
+      class="resize-sensor-shrink"
+      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
+    >
+      <div
+        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
+      />
     </div>
   </div>
 </div>
