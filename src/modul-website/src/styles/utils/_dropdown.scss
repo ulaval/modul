@@ -1,5 +1,6 @@
 .modul-u--dropdown-light.modul-u--dropdown-light,
 .modul-u--dropdown-dark.modul-u--dropdown-dark {
+
     .m-dropdown__input.m-dropdown__input,
     .m-input-style__body.m-input-style__body {
         padding-right: $m-space-xs;
@@ -11,13 +12,13 @@
         &::before {
             border-width: 2px;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 border-width: 3px;
             }
         }
 
         &::after {
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 height: 3px;
             }
         }

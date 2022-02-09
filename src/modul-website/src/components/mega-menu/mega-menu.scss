@@ -44,7 +44,7 @@ $modul-menu-transition-duration: 0.7s;
         text-decoration: none;
         outline: none;
 
-        @media (min-width: #{$m-mq--min--s}) {
+        @media (min-width: #{$m-mq-min-sm}) {
             left: calc(-1 * #{$modul-menu-offset-left});
             padding: $m-space-xs $modul-menu-offset-left $m-space-xs;
         }
@@ -123,9 +123,10 @@ $modul-menu-transition-duration: 0.7s;
     height: 100%;
 
     &.mw--is {
+
         &-enter-active,
         &-leave-active {
-            transition: transform $m-transition-duration--l ease;
+            transition: transform $m-transition-duration-lg ease;
             position: absolute;
             width: 100%;
         }

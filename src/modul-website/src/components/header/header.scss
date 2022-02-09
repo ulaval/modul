@@ -5,7 +5,7 @@
 
     min-height: $mw-header-height--s;
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         min-height: $mw-header-height;
     }
 
@@ -24,7 +24,7 @@
         background: $modul-color--black-grey-dark;
         padding-left: $mw-header-padding;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             padding-left: $m-space-lg;
             min-height: $mw-header-height;
         }
@@ -52,7 +52,7 @@
     &__logo {
         width: 100%;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-width: 304px;
         }
 
@@ -101,7 +101,7 @@
         width: $mw-header-height--s;
         align-self: stretch;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             width: $mw-header-height;
             min-height: $mw-header-height;
         }

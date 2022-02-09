@@ -16,6 +16,6 @@
     }
 
     &:not(.m--no-animation) {
-        transition: transform $m-transition-duration--xl;
+        transition: transform $m-transition-duration-xl;
     }
 }

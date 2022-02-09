@@ -61,7 +61,7 @@ $m-option-item--color-active: $m-color-grey-lightest !default;
         }
     }
 
-    @media (max-width: $m-mq--min--s) {
+    @media (max-width: $m-mq-min-sm) {
         width: 100%;
     }
 }

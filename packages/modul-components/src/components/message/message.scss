@@ -3,7 +3,7 @@
 @mixin m-message-skin-default($color) {
     .m-message {
         &__wrap {
-            border-left: $m-border-width--l solid $color;
+            border-left: $m-border-width-lg solid $color;
         }
 
         &__icon,
@@ -30,7 +30,7 @@
         @include m-message-skin-default($m-color-error);
     }
 
-    + .m-message {
+    +.m-message {
         margin-top: $m-space;
     }
 
@@ -77,7 +77,7 @@
         &__title {
             @include m-font-size('md');
 
-            + .m-message__text {
+            +.m-message__text {
                 margin-top: $m-space-xxs;
             }
         }
@@ -101,7 +101,7 @@
         color: $m-color-error;
     }
 
-    + .m-message {
+    +.m-message {
         margin-top: $m-space-xxs;
     }
 

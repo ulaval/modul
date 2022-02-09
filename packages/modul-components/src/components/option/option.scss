@@ -15,7 +15,7 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         background: $m-option-mixed-bgc;
         outline: none;
         border: 0;
-        transition: background-color $m-transition-duration--l ease, color $m-transition-duration--l ease;
+        transition: background-color $m-transition-duration-lg ease, color $m-transition-duration-lg ease;
         color: $m-color-grey-light;
 
         &:not(:disabled) {
@@ -44,12 +44,12 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         overflow-x: hidden;
         overflow-y: auto;
         border: 1px solid $m-color-border;
-        border-radius: $m-border-radius--s;
+        border-radius: $m-border-radius-sm;
         background: $m-color-white;
         box-shadow: $m-box-shadow;
         list-style: none;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-height: 243px; // Magic number: height of 4 items
         }
 
@@ -65,7 +65,7 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
             width: 100%;
             padding: $m-space-xxs $m-space $m-space-xs $m-space;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 position: absolute;
                 bottom: 0;
                 padding: $m-space-xs;

@@ -12,7 +12,7 @@ $m-crop-image-icon-size--l: 28px;
         min-height: 200px;
         margin-bottom: calc(#{$m-crop-image-slider-height} + (#{$m-space} * 2));
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             min-height: 240px;
         }
 

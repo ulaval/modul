@@ -43,7 +43,7 @@ $m-froala-toolbar-btn-height: 38px !default;
 
     &.m--is-anim-ready /deep/ {
         .fr-toolbar {
-            transition: margin-top $m-transition-duration--l ease, opacity $m-transition-duration ease;
+            transition: margin-top $m-transition-duration-lg ease, opacity $m-transition-duration ease;
         }
     }
 
@@ -106,7 +106,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             display: none;
         }
 
-        .fr-sticky-dummy + .fr-sticky-dummy {
+        .fr-sticky-dummy+.fr-sticky-dummy {
             height: 0 !important; // Fix flicking problem with multiple editors on page and https://github.com/froala/wysiwyg-editor/issues/2818
         }
     }
@@ -125,11 +125,11 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-box.fr-basic.fr-top .fr-wrapper {
-            transition: margin $m-transition-duration--l ease;
+            transition: margin $m-transition-duration-lg ease;
         }
 
         .fr-box.fr-basic.fr-top.fr-toolbar-open .fr-wrapper {
-            transition: margin $m-transition-duration--l ease;
+            transition: margin $m-transition-duration-lg ease;
             margin-top: $m-space-xxl;
         }
 
@@ -160,7 +160,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             }
         }
 
-        .fr-sticky-dummy + .fr-sticky-dummy {
+        .fr-sticky-dummy+.fr-sticky-dummy {
             height: 0 !important; // Fix flicking problem with multiple editors on page and https://github.com/froala/wysiwyg-editor/issues/2818
         }
     }
@@ -175,7 +175,7 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-box.fr-basic .fr-element {
-            transition: padding $m-transition-duration--l ease;
+            transition: padding $m-transition-duration-lg ease;
             min-height: unset;
             overflow-x: unset;
             font-family: unset;
@@ -193,7 +193,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             color: $m-color-text;
             width: 100%;
 
-            & > :first-child {
+            &> :first-child {
                 margin-top: 0 !important;
             }
         }
@@ -330,7 +330,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             &.fr-open {
                 background-color: $m-color-grey-lighter;
 
-                > .fr-sub-menu {
+                >.fr-sub-menu {
                     &::after {
                         border-top: 0;
                         border-bottom: 4px solid #222;

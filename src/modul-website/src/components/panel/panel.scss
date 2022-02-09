@@ -17,17 +17,17 @@ $modul-menu-transition-duration: 0.7s;
     background: $modul-color--black-grey;
     color: $modul-color--grey-light;
     outline: none;
-    box-shadow: $m-box-shadow--l;
+    box-shadow: $m-box-shadow-lg;
 
-    @media (min-width: #{$m-mq--min--s}) {
+    @media (min-width: #{$m-mq-min-sm}) {
         top: $mw-header-height;
     }
 
-    @media (min-width: #{$m-mq--min--s}) {
+    @media (min-width: #{$m-mq-min-sm}) {
         padding: $m-space-xxxxl $m-space 0 $m-space;
     }
 
-    @media (min-width: #{$m-mq--min--l}) {
+    @media (min-width: #{$m-mq-min-lg}) {
         padding-left: calc(var(--m-space-xxxxl) * 2);
         padding-right: calc(var(--m-space-xxxxl) * 2);
     }
@@ -52,7 +52,7 @@ $modul-menu-transition-duration: 0.7s;
         top: 0;
         right: 0;
 
-        @media (max-width: #{$m-mq--min--s}) {
+        @media (max-width: #{$m-mq-min-sm}) {
             display: none;
         }
     }

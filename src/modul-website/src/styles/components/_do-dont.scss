@@ -1,7 +1,7 @@
 .modul-do,
 .modul-dont {
     padding: 0 0 0 $m-space;
-    border-left: $m-border-width--l solid;
+    border-left: $m-border-width-lg solid;
     margin-top: $m-space-md;
 
     ul {
@@ -27,6 +27,7 @@
         margin-top: $m-space-xs;
 
         > :first-child {
+
             &,
             > :first-child {
                 margin-top: 0;

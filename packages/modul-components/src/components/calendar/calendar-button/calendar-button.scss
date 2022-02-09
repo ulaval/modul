@@ -38,7 +38,7 @@ $m-base-calendar--border-focus: 1px solid m-color(interactive, darker);
     padding: 0;
 
     &::before {
-        transition: transform $m-transition-duration--l ease, opacity $m-transition-duration ease, background-color $m-transition-duration ease, border-color $m-transition-duration ease;
+        transition: transform $m-transition-duration-lg ease, opacity $m-transition-duration ease, background-color $m-transition-duration ease, border-color $m-transition-duration ease;
         content: '';
         position: absolute;
         top: 50%;

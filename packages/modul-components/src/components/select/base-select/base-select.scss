@@ -11,7 +11,7 @@
         overflow-x: hidden;
         overflow-y: hidden;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-height: 208px;
             overflow-x: hidden;
             overflow-y: hidden;
@@ -21,14 +21,14 @@
     &__list:not(.m--is-virtual-scroll) {
         @include m-scrollbar();
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             overflow-x: hidden;
             overflow-y: auto;
         }
     }
 
     &__list.m--is-virtual-scroll {
-        > div {
+        >div {
             @include m-scrollbar();
         }
     }

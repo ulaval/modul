@@ -2,9 +2,9 @@
 
 .m-slide-transition {
     position: relative;
-    transition: height $m-transition-duration--l ease;
+    transition: height $m-transition-duration-lg ease;
 
-    &.m--is-left-to-right-transition > {
+    &.m--is-left-to-right-transition> {
         .m--is-enter {
             transform: translate3d(-110%, 0, 0);
         }
@@ -15,7 +15,8 @@
     }
 }
 
-.m-slide-transition > {
+.m-slide-transition> {
+
     .m--is-enter-active,
     .m--is-leave-active {
         cursor: not-allowed;
@@ -32,11 +33,11 @@
     }
 
     .m--is-enter-active {
-        transition: transform $m-transition-duration--l ease, opacity $m-transition-duration--l ease;
+        transition: transform $m-transition-duration-lg ease, opacity $m-transition-duration-lg ease;
     }
 
     .m--is-leave-active {
-        transition: transform $m-transition-duration--l ease, opacity $m-transition-duration--l ease;
+        transition: transform $m-transition-duration-lg ease, opacity $m-transition-duration-lg ease;
         position: absolute;
     }
 }

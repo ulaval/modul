@@ -31,7 +31,7 @@
         &::after {
             content: '';
             border: solid $m-color-interactive;
-            border-width: 0 $m-border-width--s $m-border-width--s 0;
+            border-width: 0 $m-border-width-sm $m-border-width-sm 0;
             display: inline-block;
             padding: $m-space-xxs;
             transform: rotate(-45deg);

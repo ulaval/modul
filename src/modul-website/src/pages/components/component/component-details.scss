@@ -17,7 +17,7 @@
         background-color: #f9f9f9;
         padding: $m-space-lg $m-space;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             padding: $m-space-lg $m-space-md;
         }
     }
@@ -34,7 +34,7 @@
     .modul-u--navbar {
         padding: 0;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             padding: 0;
         }
     }

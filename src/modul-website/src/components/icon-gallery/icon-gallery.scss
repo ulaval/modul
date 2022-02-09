@@ -29,7 +29,7 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
         &__size-field {
             margin-right: 0;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 margin-right: $m-space-md;
             }
         }
@@ -63,14 +63,14 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
                 page-break-inside: avoid;
                 margin-bottom: $m-space-sm;
                 margin-right: $m-space-sm;
-                border: $m-border-width--s solid $m-color-border;
+                border: $m-border-width-sm solid $m-color-border;
                 cursor: pointer;
 
                 &:nth-child(4n) {
                     margin-right: 0;
                 }
 
-                @media (min-width: $m-mq--min--m) {
+                @media (min-width: $m-mq-min-md) {
                     min-width: calc(20% - 9.6px);
 
                     &:nth-child(4n) {
@@ -109,7 +109,7 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
                 border-color: rgba(255, 255, 255, 0);
 
                 &:not(:last-child) {
-                    border-bottom: $m-border-width--s solid $m-color-border;
+                    border-bottom: $m-border-width-sm solid $m-color-border;
                 }
 
                 &:hover,
@@ -121,7 +121,7 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
             &__label {
                 margin: 0 0 0 $m-space-sm;
 
-                @media (min-width: $m-mq--min--s) {
+                @media (min-width: $m-mq-min-sm) {
                     margin: 0 0 0 $m-space-md;
                 }
             }
@@ -170,7 +170,7 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
         margin-bottom: $m-space-sm;
         max-width: 158px;
 
-        @media (min-width: $m-mq--min--m) {
+        @media (min-width: $m-mq-min-md) {
             max-width: 144px;
         }
     }
@@ -198,7 +198,7 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
         align-items: center;
         flex-direction: column;
 
-        @media (max-width: $m-mq--max--s) {
+        @media (max-width: $m-mq-max-sm) {
             position: absolute;
             top: $m-space;
             right: $m-space;
@@ -216,7 +216,7 @@ $modul-icon-gallery--color-active: $m-color-grey-lightest !default;
             background: $m-color-grey-lightest;
             min-height: 100px;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 min-height: 230px;
             }
         }

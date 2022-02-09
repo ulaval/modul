@@ -3,7 +3,7 @@
 .m-inplace-edit {
     padding: 0;
     background: $m-color-white;
-    transition: padding $m-transition-duration ease, background $m-transition-duration--s linear;
+    transition: padding $m-transition-duration ease, background $m-transition-duration-sm linear;
 
     &.m--is-edit-mode {
         padding: $m-space;

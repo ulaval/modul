@@ -10,7 +10,7 @@
             bottom: $m-space-lg;
             z-index: 1;
 
-            @media (max-width: $m-mq--min--s) {
+            @media (max-width: $m-mq-min-sm) {
                 display: none;
             }
         }
@@ -21,7 +21,7 @@
         height: 28px;
         background-color: $m-color-grey-darker;
         border: none;
-        border-radius: $m-border-radius--s;
+        border-radius: $m-border-radius-sm;
         opacity: 0.5;
         cursor: pointer;
         transition: transform 0.3s ease,

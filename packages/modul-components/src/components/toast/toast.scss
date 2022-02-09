@@ -123,7 +123,7 @@ $m-toast-max-width: 768px;
         top: 0;
 
         .m-toast__wrap {
-            border-bottom: $m-border-width--l solid;
+            border-bottom: $m-border-width-lg solid;
         }
 
         &.m--is-enter-active {
@@ -135,7 +135,7 @@ $m-toast-max-width: 768px;
 
     &.m--is-bottom {
         .m-toast__wrap {
-            border-top: $m-border-width--l solid;
+            border-top: $m-border-width-lg solid;
         }
 
         &.m--is-enter-active {

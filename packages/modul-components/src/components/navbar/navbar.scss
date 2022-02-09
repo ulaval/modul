@@ -33,7 +33,7 @@
     }
 
     &.m--is-skin-tab-underline {
-        --m-navbar--tab-border-bottom-width: #{ $m-border-width--l };
+        --m-navbar--tab-border-bottom-width: #{ $m-border-width-lg };
         //
         --m-navbar-item--color: #{ $m-color-grey-dark };
         --m-navbar-item--hover-color: #{ $m-color-black };

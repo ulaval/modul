@@ -38,17 +38,17 @@
         align-items: center;
         justify-content: space-between;
 
-        @media screen and (max-width: $m-mq--max--s) {
+        @media screen and (max-width: $m-mq-max-sm) {
             flex-direction: column;
             align-items: flex-start;
         }
     }
 
-    & + ul {
+    &+ul {
         margin-top: 0;
     }
 
-    & + .m-u--table {
+    &+.m-u--table {
         th {
             padding-top: $m-space;
         }

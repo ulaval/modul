@@ -27,7 +27,7 @@
     white-space: pre-wrap;
     font-family: Menlo, Monaco, Consolas, Courier, monospace;
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         padding: $m-space-lg $m-space-md;
     }
 

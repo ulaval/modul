@@ -37,7 +37,7 @@ $m-select-item--color-active: $m-color-grey-lightest !default;
 
     @include m-word-wrap();
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         @include m-select-item();
 
         &.m--is-item-active {
@@ -55,7 +55,7 @@ $m-select-item--color-active: $m-color-grey-lightest !default;
         }
     }
 
-    @media (max-width: $m-mq--max--s) {
+    @media (max-width: $m-mq-max-sm) {
         &.m--without-radio {
             @include m-select-item();
         }

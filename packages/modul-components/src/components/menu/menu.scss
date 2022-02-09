@@ -53,7 +53,7 @@
         outline: none;
         display: flex;
         align-items: center;
-        gap: var(--m-space-sm);
+        gap: $m-space-sm;
         text-decoration: none;
         padding: var(--m-menu--padding);
         min-height: var(--m-menu--min-height);

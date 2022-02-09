@@ -35,7 +35,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        gap: var(--m-space-xs);
+        gap: $m-space-xs;
         text-decoration: none;
         color: var(--m-menu--color);
         padding: var(--m-menu--padding);
@@ -44,7 +44,7 @@
         font-weight: var(--m-menu--font-weight);
         text-transform: var(--m-menu--text-transform);
         background-color: var(--m-menu--item-background-color);
-        border-left: var(--m-border-width-lg) solid var(--m-menu--indicator);
+        border-left: $m-border-width-lg solid var(--m-menu--indicator);
         outline-color: var(--m-color-grey-black);
     }
 

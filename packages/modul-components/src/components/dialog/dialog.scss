@@ -25,7 +25,7 @@ $m-dialog--max-width--l: 500px !default;
             display: block;
         }
 
-        @media (max-width: $m-mq--max--s) {
+        @media (max-width: $m-mq-max-sm) {
             padding-left: $m-space-xs;
             padding-right: $m-space-xs;
         }
@@ -35,7 +35,7 @@ $m-dialog--max-width--l: 500px !default;
             transition-duration: $m-transition-duration;
 
             .m-dialog__article {
-                transition: transform $m-transition-duration ease, opacity $m-transition-duration--s linear;
+                transition: transform $m-transition-duration ease, opacity $m-transition-duration-sm linear;
             }
         }
 
@@ -75,7 +75,7 @@ $m-dialog--max-width--l: 500px !default;
             .m-dialog__message {
                 @include m-font-size('md');
 
-                @media (min-width: $m-mq--min--s) {
+                @media (min-width: $m-mq-min-sm) {
                     @include m-font-size('h5');
                 }
             }
@@ -117,7 +117,7 @@ $m-dialog--max-width--l: 500px !default;
         &:not(.m--no-padding) {
             padding: $m-space;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 padding: 28px $m-space-md 26px;
             }
         }
@@ -127,23 +127,23 @@ $m-dialog--max-width--l: 500px !default;
         &:not(.m--no-padding) {
             padding: $m-space-md $m-space;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 padding: $m-space-lg $m-space-md;
             }
         }
 
         @include m-scrollbar();
 
-        ~ .m-dialog__footer {
+        ~.m-dialog__footer {
             padding-top: 0;
         }
     }
 
     &__message {
-        + .m-dialog__hint {
+        +.m-dialog__hint {
             margin-top: $m-space;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 margin-top: $m-space-md;
             }
         }
@@ -155,7 +155,7 @@ $m-dialog--max-width--l: 500px !default;
                 margin-top: calc(-1 * #{$m-space-xs});
                 margin-bottom: $m-space;
 
-                @media (min-width: $m-mq--min--s) {
+                @media (min-width: $m-mq-min-sm) {
                     margin-top: calc(-1 * #{$m-space});
                 }
             }
@@ -215,7 +215,7 @@ $m-dialog--max-width--l: 500px !default;
         &:not(.m--no-padding) {
             padding: 0 $m-space $m-space;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 padding: 0 $m-space-md 28px;
             }
         }
@@ -231,7 +231,7 @@ $m-dialog--max-width--l: 500px !default;
         }
 
         .m-button {
-            + .m-button {
+            +.m-button {
                 margin-top: $m-space-sm;
             }
         }

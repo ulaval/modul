@@ -73,7 +73,7 @@ $m-dropdown--margin: $m-space-xxs !default;
         text-align: left;
         background: $m-color-white;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-height: 208px;
         }
 

@@ -55,7 +55,7 @@
         border: 1px solid var(--m-input-style--border-color);
         background-color: var(--m-input-style--background-color);
         outline: 1px solid rgba(255, 255, 255, 0);
-        transition: border-color $m-transition-duration--l linear, box-shadow $m-transition-duration linear;
+        transition: border-color $m-transition-duration-lg linear, box-shadow $m-transition-duration linear;
     }
 
     &__append {
@@ -281,7 +281,7 @@
     &.m--is-anim-ready {
         .m-input-style__label {
             transition-property: color, transform, top;
-            transition-duration: $m-transition-duration--l;
+            transition-duration: $m-transition-duration-lg;
             transition-timing-function: ease;
         }
 

@@ -13,7 +13,7 @@ $m-tooltip--max-height: 280px !default;
     }
 
     &.m--is-mode-definition {
-        .m-tooltip__link /deep/ .m-link__text > :first-child {
+        .m-tooltip__link /deep/ .m-link__text> :first-child {
             border-bottom: 1px dotted currentColor;
         }
     }
@@ -66,12 +66,12 @@ $m-tooltip--max-height: 280px !default;
         word-break: break-word;
         user-select: text;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-height: var(--m-tooltip--max-height);
             width: $m-tooltip--width;
             overflow-x: hidden;
             overflow-y: auto;
-            border-radius: $m-border-radius--s;
+            border-radius: $m-border-radius-sm;
         }
 
         @media (max-height: $m-tooltip--max-height) {
@@ -95,7 +95,7 @@ $m-tooltip--max-height: 280px !default;
 
     &.m--is-size-large {
         .m-tooltip__body {
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 width: $m-tooltip--width--l;
             }
         }
@@ -105,7 +105,7 @@ $m-tooltip--max-height: 280px !default;
         .m-tooltip__body {
             background: $m-color-white;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 border: 1px solid $m-color-grey-light;
             }
         }
@@ -113,7 +113,7 @@ $m-tooltip--max-height: 280px !default;
 
     &.m--is-mode-icon {
         .m-tooltip__body {
-            @media (max-width: $m-mq--max--s) {
+            @media (max-width: $m-mq-max-sm) {
                 position: relative;
 
                 &::after {
@@ -127,7 +127,7 @@ $m-tooltip--max-height: 280px !default;
                 }
             }
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 border: 1px solid $m-color-interactive;
             }
         }

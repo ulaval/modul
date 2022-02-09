@@ -49,7 +49,7 @@ $m-checkbox--width: 16px;
 
                     &::before {
                         bottom: 0;
-                        transition: width $m-transition-duration--xs ease;
+                        transition: width $m-transition-duration-xs ease;
                         transition-delay: 0;
                         transform: rotate(-20deg);
                         width: 0;
@@ -58,8 +58,8 @@ $m-checkbox--width: 16px;
 
                     &::after {
                         top: 0;
-                        transition: height $m-transition-duration--xs ease;
-                        transition-delay: $m-transition-duration--xs;
+                        transition: height $m-transition-duration-xs ease;
+                        transition-delay: $m-transition-duration-xs;
                         width: 2px;
                         height: 0;
                     }
@@ -287,7 +287,7 @@ $m-checkbox--width: 16px;
         width: $m-checkbox--width;
         height: $m-checkbox--width;
         background: $m-color-white;
-        border-width: $m-border-width--s;
+        border-width: $m-border-width-sm;
         border-style: solid;
         border-radius: $m-border-width;
         border-color: $m-color-text;

@@ -122,7 +122,7 @@ $m-circle-transition-speed: cubic-bezier(0.25, 0.8, 0.25, 1);
                 }
 
                 .m-progress__slot {
-                    transition: opacity $m-transition-duration--l;
+                    transition: opacity $m-transition-duration-lg;
                 }
             }
 

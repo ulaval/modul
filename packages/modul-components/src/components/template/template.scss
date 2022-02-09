@@ -119,7 +119,7 @@ $m-template--column-color: $m-color-grey-light;
     }
 }
 
-@media (max-width: $m-mq--max--s) {
+@media (max-width: $m-mq-max-sm) {
     .m-template {
 
         &__header,
@@ -132,7 +132,7 @@ $m-template--column-color: $m-color-grey-light;
     }
 }
 
-@media (min-width: $m-mq--min--s) {
+@media (min-width: $m-mq-min-sm) {
     .m-template {
 
         &__body,

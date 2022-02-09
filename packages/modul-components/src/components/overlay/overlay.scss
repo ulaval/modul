@@ -25,8 +25,8 @@
             transition-duration: $m-transition-duration;
 
             .m-overlay__article {
-                transition-delay: $m-transition-duration--s;
-                transition-duration: $m-transition-duration--xl;
+                transition-delay: $m-transition-duration-sm;
+                transition-duration: $m-transition-duration-xl;
             }
         }
 
@@ -34,7 +34,7 @@
 
             &,
             .m-overlay__article {
-                transition-duration: $m-transition-duration--xl;
+                transition-duration: $m-transition-duration-xl;
             }
         }
 
@@ -113,7 +113,7 @@
     }
 
     &__footer {
-        border-top: $m-border-width--s solid $m-color-border;
+        border-top: $m-border-width-sm solid $m-color-border;
     }
 
     &__save-button {

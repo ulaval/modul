@@ -34,7 +34,7 @@ $m-steppers-item--line-width: 2px;
         z-index: 1;
 
         &.m--is-anim-active {
-            transition: width $m-transition-duration--xl ease;
+            transition: width $m-transition-duration-xl ease;
         }
     }
 

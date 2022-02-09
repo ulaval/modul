@@ -92,7 +92,7 @@
     }
 
     &__article {
-        transition: transform $m-transition-duration--l ease-in-out;
+        transition: transform $m-transition-duration-lg ease-in-out;
         position: absolute;
         right: 0;
         left: 0;
@@ -100,7 +100,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        min-height: $m-touch-size--l;
+        min-height: $m-touch-size-lg;
         max-height: 100%;
         background: $m-color-white;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
@@ -109,7 +109,7 @@
     }
 
     &__close-button {
-        transition: color $m-transition-duration--l ease, background $m-transition-duration--l ease;
+        transition: color $m-transition-duration-lg ease, background $m-transition-duration-lg ease;
         position: absolute;
         top: 0;
         right: 0;

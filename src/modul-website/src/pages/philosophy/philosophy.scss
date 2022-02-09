@@ -9,7 +9,7 @@
     color: $m-color-white;
     padding: $m-space-xl $m-space;
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         padding: $m-space-xxxxl $m-space-lg;
     }
 
@@ -36,16 +36,16 @@
     padding: $m-space;
     color: $m-color-white;
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         padding: $m-space-lg;
     }
 
-    > div {
+    >div {
         flex: 1;
     }
 
     &__article {
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -57,7 +57,7 @@
             display: flex;
             justify-content: flex-end;
 
-            // @media (max-width: $m-mq--max--s) {
+            // @media (max-width: $m-mq-max-sm) {
             //     max-width: $modul-home-design--max-width;
             //     margin: 0 auto;
             //     justify-content: center;

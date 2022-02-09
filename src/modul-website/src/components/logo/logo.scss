@@ -14,7 +14,7 @@
             width: 260px;
             user-select: none;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 width: 460px;
             }
         }
@@ -24,7 +24,7 @@
         .mw-logo__img {
             width: 95px;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 width: 130px;
             }
         }
@@ -37,7 +37,7 @@
         text-transform: uppercase;
         margin-top: $m-space;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             margin-top: $m-space-md;
             font-size: 32px;
         }
