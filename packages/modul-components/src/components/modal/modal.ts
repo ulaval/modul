@@ -1,9 +1,9 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Prop, Ref } from 'vue-property-decorator';
 import { MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
-import UserAgentUtil from '../../utils/user-agent/user-agent';
+import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import { ModulVue } from '../../utils/vue/vue';
 import { ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
@@ -22,7 +22,7 @@ export enum MModalSize {
     components: {
         [ICON_BUTTON_NAME]: MIconButton
     },
-    mixins: [Portal]
+    mixins: [Portal, MFocusTrap]
 })
 export class MModal extends ModulVue implements PortalMixinImpl {
     @Prop({
@@ -51,6 +51,10 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     @Prop({ default: true })
     public paddingBody: boolean;
 
+    @Ref('article')
+    public readonly refArticle?: HTMLElement;
+
+    public readonly closeTitle: string = this.$i18n.translate('m-modal:close');
     public hasKeyboard: boolean = false;
 
     $refs: {
@@ -59,7 +63,23 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         article: HTMLElement;
     };
 
-    private closeTitle: string = this.$i18n.translate('m-modal:close');
+    public get titleId(): string | undefined {
+        return this.title ? `${this.as<Portal>().propId}-title` : undefined;
+    }
+
+    public setFocusToPortal(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus() || !this.refArticle) {
+            return;
+        }
+        this.as<MFocusTrap>().setFocusTrap(this.refArticle);
+    }
+
+    public setFocusToTrigger(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus()) {
+            return;
+        }
+        this.as<MFocusTrap>().removeFocusTrap();
+    }
 
     public closeModal(): void {
         this.as<PortalMixin>().tryClose();
@@ -80,7 +100,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     }
 
     public get sizeFullSceen(): boolean {
-        let fullScreen: boolean = !this.as<MediaQueriesMixin>().isMqMinS
+        const fullScreen: boolean = !this.as<MediaQueriesMixin>().isMqMinS
             ? true
             : this.size === MModalSize.FullScreen
                 ? true
@@ -111,43 +131,22 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         if (!this.title && !Boolean(this.$slots.header)) {
             this.$log.warn('<m-modal> needs a header slot or title prop.');
         }
+        window.addEventListener('keydown', this.closeModalOnEscape);
+    }
+
+    protected beforeDestroy(): void {
+        window.removeEventListener('keydown', this.closeModalOnEscape);
+    }
+
+    private closeModalOnEscape(event: KeyboardEvent): void {
+        if (event.key !== 'Escape') { return; }
+        this.closeModal();
     }
 
     private backdropClick(): void {
         if (this.closeOnBackdrop) {
             this.as<PortalMixin>().tryClose();
         }
-    }
-
-    private get isAndroid(): boolean {
-        return UserAgentUtil.isAndroid();
-    }
-
-    private isFocusableTextBox(element: HTMLElement): boolean {
-        const type: string | null = element.getAttribute('type');
-        return (element.tagName === 'INPUT'
-            && type !== 'checkbox'
-            && type !== 'radio'
-            && type !== 'button'
-            && type !== 'reset'
-            && type !== 'file') || element.tagName === 'TEXTAREA';
-    }
-
-    private onFocusIn(event: FocusEvent): void {
-        if (
-            this.isAndroid
-            && this.isFocusableTextBox(event.target as HTMLElement)
-        ) {
-            this.hasKeyboard = true;
-        }
-    }
-
-    private onFocusOut(event: FocusEvent): void {
-        if (!this.isAndroid) {
-            return;
-        }
-
-        this.hasKeyboard = false;
     }
 }
 

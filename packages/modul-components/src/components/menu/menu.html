@@ -3,22 +3,21 @@
                { 'm--is-open': propOpen,
                  'm--is-disabled': propDisabled }]">
     <div v-if="$slots.trigger"
+         :id="id"
          class="m-menu__trigger"
          :class="{'m--is-disabled': propDisabled }"
+         ref="buttonMenu"
          role="button"
          :tabindex="propDisabled ? '-1' : '0'"
          :aria-controls="idAriaControls"
-         :aria-expanded="propOpen"
+         :aria-expanded="propOpen ? 'true' : 'false'"
          @click="toggleMenu"
          @keydown.enter="toggleMenu"
-         @keydown.space="toggleMenu"
-         aria-haspopup="true"
-         ref="buttonMenu">
+         @keydown.space="toggleMenu">
+
         <m-plus class="m-menu__trigger__plus"
                 :large="true"
                 :open="propOpen"
-                :title-open="titleMenuOpen"
-                :title-close="titleMenuClose"
                 skin="current-color"></m-plus>
         <slot name="trigger"></slot>
     </div>
@@ -34,10 +33,9 @@
                             :disabled="!animReady || propDisabled">
         <ul v-show="propOpen"
             :id="idAriaControls"
+            ref="menu"
             class="m-menu__body"
-            :aria-hidden="!propOpen"
-            role="menu"
-            ref="menu">
+            :aria-labelledby="id">
             <slot></slot>
         </ul>
     </m-accordion-transition>

@@ -1,10 +1,10 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Ref } from 'vue-property-decorator';
 import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
 import { i18nFilter } from '../../filters/i18n/i18n';
-import { BackdropMode, Portal, PortalMixin, PortalTransitionDuration } from '../../mixins/portal/portal';
-import UserAgentUtil from '../../utils/user-agent/user-agent';
+import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
+import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
 import { BUTTON_NAME, I18N_NAME, OVERLAY_NAME } from '../component-names';
@@ -19,29 +19,37 @@ import WithRender from './overlay.html?style=./overlay.scss';
     filters: {
         [I18N_FILTER_NAME]: i18nFilter
     },
-    mixins: [Portal]
+    mixins: [Portal, MFocusTrap]
 })
 export class MOverlay extends ModulVue {
-
     @Prop({ default: true })
     public focusManagement: boolean;
 
     @Prop({ default: true })
     public padding: boolean;
+
     @Prop({ default: true })
     public paddingHeader: boolean;
+
     @Prop({ default: true })
     public paddingBody: boolean;
+
     @Prop({ default: true })
     public paddingFooter: boolean;
+
     @Prop({ default: false })
     public disableSaveButton: boolean;
+
     @Prop({ default: false })
     public waiting: boolean;
+
     @Prop({ default: false })
     public hideFooter: boolean;
 
     public hasKeyboard: boolean = false;
+
+    @Ref('article')
+    public refArticle?: HTMLElement;
 
     public $refs: {
         dialogWrap: HTMLElement,
@@ -56,43 +64,30 @@ export class MOverlay extends ModulVue {
     @Emit('cancel')
     emitCancel(event: MouseEvent): void { }
 
+    public get titleId(): string {
+        return `${this.as<Portal>().propId}-title`;
+    }
+
+    public setFocusToPortal(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus() || !this.refArticle) {
+            return;
+        }
+        this.as<MFocusTrap>().setFocusTrap(this.refArticle);
+    }
+
+    public setFocusToTrigger(): void {
+        if (!this.as<PortalMixinImpl>().handlesFocus()) {
+            return;
+        }
+        this.as<MFocusTrap>().removeFocusTrap();
+    }
+
     protected mounted(): void {
         this.as<Portal>().transitionDuration = PortalTransitionDuration.Regular + PortalTransitionDuration.XSlow;
     }
 
     private get popupBody(): any {
         return (this.$refs.article).querySelector('.m-popup__body');
-    }
-
-    private get isAndroid(): boolean {
-        return UserAgentUtil.isAndroid();
-    }
-
-    private isFocusableTextBox(element: HTMLElement): boolean {
-        const type: string | null = element.getAttribute('type');
-        return (element.tagName === 'INPUT'
-            && type !== 'checkbox'
-            && type !== 'radio'
-            && type !== 'button'
-            && type !== 'reset'
-            && type !== 'file') || element.tagName === 'TEXTAREA';
-    }
-
-    private onFocusIn(event: FocusEvent): void {
-        if (
-            this.isAndroid
-            && this.isFocusableTextBox(event.target as HTMLElement)
-        ) {
-            this.hasKeyboard = true;
-        }
-    }
-
-    private onFocusOut(event: FocusEvent): void {
-        if (!this.isAndroid) {
-            return;
-        }
-
-        this.hasKeyboard = false;
     }
 
     private handlesFocus(): boolean {

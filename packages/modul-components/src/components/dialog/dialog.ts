@@ -1,7 +1,8 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Ref } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
+import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import DialogServicePlugin from '../../utils/dialog/dialog-service.plugin';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
@@ -40,7 +41,7 @@ export enum MDialogMessageStyle {
         [ICON_NAME]: MIcon,
         [I18N_NAME]: MI18n
     },
-    mixins: [Portal]
+    mixins: [Portal, MFocusTrap]
 })
 export class MDialog extends ModulVue implements PortalMixinImpl {
     @Prop()
@@ -98,6 +99,46 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
         validator: value => Enums.toValueArray(MDialogMessageStyle).includes(value)
     })
     public readonly messageStyle: MDialogMessageStyle;
+
+    @Ref('article')
+    public readonly refArticle?: HTMLElement;
+
+    @Ref('buttonOk')
+    public readonly refButtonOk?: MButton;
+
+    @Ref('butonSecondary')
+    public readonly refButonSecondary?: MButton;
+
+    @Ref('link')
+    public readonly refLink?: MLink;
+
+    public get titleId(): string | undefined {
+        return this.title ? `${this.as<Portal>().propId}-title` : undefined;
+    }
+
+    public get messageId(): string {
+        return `${this.as<Portal>().propId}-message`;
+    }
+
+    public setFocusToPortal(): void {
+        if (!this.refArticle) {
+            return;
+        }
+
+        let initialFocusElement: HTMLElement = this.refButtonOk?.$el as HTMLElement;
+        if (!initialFocusElement) {
+            if (this.refButonSecondary?.$el) {
+                initialFocusElement = this.refButonSecondary.$el as HTMLElement;
+            } else if (this.refLink?.$el) {
+                initialFocusElement = this.refLink.$el as HTMLElement;
+            }
+        }
+        this.as<MFocusTrap>().setFocusTrap(this.refArticle, { initialFocus: initialFocusElement });
+    }
+
+    public setFocusToTrigger(): void {
+        this.as<MFocusTrap>().removeFocusTrap();
+    }
 
     public handlesFocus(): boolean {
         return true;

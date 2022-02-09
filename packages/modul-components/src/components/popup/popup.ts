@@ -35,8 +35,11 @@ export class MPopup extends ModulVue {
     @Prop()
     public readonly closeOnBackdrop: boolean;
 
-    @Prop({ default: true })
+    @Prop({ default: false })
     public readonly focusManagement: boolean;
+
+    @Prop()
+    public readonly initialFocusElement?: HTMLElement;
 
     @Prop({
         default: 'auto',
@@ -134,6 +137,9 @@ export class MPopup extends ModulVue {
 
     @Emit('portal-after-close')
     public emitPortalAfterClose(): void { }
+
+    @Emit('click-outside')
+    public emitClickOutside(): void { }
 
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {

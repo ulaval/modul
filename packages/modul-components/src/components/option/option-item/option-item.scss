@@ -7,18 +7,10 @@ $m-option-item--color-active: $m-color-grey-lightest !default;
     display: flex;
     text-decoration: none;
 
-    &:not(.m--has-no-border) {
-        &:not(:last-child) {
-            border-bottom: 1px solid $m-color-border;
-        }
-    }
-
-    .m--has-icon-spacing {
-        .m-option-item {
-            &__text {
-                padding-left: 10px;
-            }
-        }
+    &__button {
+        width: 100%;
+        display: flex;
+        outline: none;
     }
 
     &__icon,
@@ -31,7 +23,6 @@ $m-option-item--color-active: $m-color-grey-lightest !default;
 
     &__icon {
         transition: color $m-transition-duration ease;
-        color: $m-color-grey;
         padding-left: $m-space;
     }
 
@@ -39,7 +30,7 @@ $m-option-item--color-active: $m-color-grey-lightest !default;
         flex: 1 1 auto;
         color: $m-color-text;
         padding-right: $m-space;
-        padding-left: $m-space-xs;
+        padding-left: $m-space;
     }
 
     &.m--is-disabled {
@@ -55,25 +46,19 @@ $m-option-item--color-active: $m-color-grey-lightest !default;
     }
 
     &:not(.m--is-disabled) {
-        transition: background $m-transition-duration ease;
-        cursor: pointer;
+        .m-option-item__button {
+            transition: background $m-transition-duration ease;
+            cursor: pointer;
 
-        &:hover,
-        &:focus {
-            background: $m-option-item--color-hover;
+            &:hover,
+            &:focus {
+                background: $m-option-item--color-hover;
+            }
 
-            .m-option-item__icon {
-                color: $m-color-text;
+            &:active {
+                background: $m-option-item--color-active;
             }
         }
-
-        &:active {
-            background: $m-option-item--color-active;
-        }
-    }
-
-    &:focus {
-        outline: 0;
     }
 
     @media (max-width: $m-mq--min--s) {

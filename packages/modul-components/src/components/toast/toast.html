@@ -1,6 +1,7 @@
 <portal v-if="portalCreated"
         :target-el="portalTargetSelector"
-        open-trigger="manual">
+        open-trigger="manual"
+        >
     <transition name="m--is">
         <div v-show="portalMounted && propOpen"
              class="m-toast"
@@ -14,17 +15,24 @@
                     'm--is-center': isCenter,
                     'm--is-right': isRight,
                     'm--is-mobile': isMqMaxS,
-                    'm--is-desktop': !isMqMaxS}"
+                    'm--is-desktop': !isMqMaxS }"
              @mouseover="mouseEnterToast"
              @mouseleave="mouseLeaveToast"
              ref="toast">
+            <div role="alert" class="m-toast__sreen-reader-only">
+                <template v-if="showScreenReaderText">
+                    {{ i18nTypeMessage }} <slot></slot>
+                    <m-link v-if="actionLabel" :mode="buttonMode"
+                            @click="onAction">{{ actionLabel }}</m-link>
+                </template>
+            </div>
             <div class="m-toast__wrap">
                 <div v-if="icon"
                      class="m-toast__icon">
                     <m-icon :name="getIcon()"
-                            size="1em"></m-icon>
+                            size="1em" />
                 </div>
-                <div class="m-toast__body">
+                <div class="m-toast__body" aria-hidden="true">
                     <div class="m-toast__text">
                         <slot></slot>
                     </div>
@@ -36,7 +44,7 @@
                 </div>
                 <m-icon-button class="m-toast__close-button"
                                v-if="closeButton"
-                               :title="'m-toast:close' | f-m-i18n"
+                               :title="$i18n.translate('m-toast:close')"
                                @click="onClose"
                                icon-name="m-svg__close-clear"
                                iconSize="12px"

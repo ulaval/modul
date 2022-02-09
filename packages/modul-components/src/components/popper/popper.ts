@@ -1,7 +1,7 @@
 import Popper from 'popper.js';
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
@@ -103,6 +103,9 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     public internalOpen: boolean = false;
     public isHidden: boolean = false;
     private observer: MutationObserver;
+
+    @Emit('click-outside')
+    public emitClickOutside(): void { }
 
     public get popupBody(): HTMLElement {
         return this.$refs.body;
@@ -260,17 +263,22 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     }
 
     private onDocumentClick(event: MouseEvent): void {
-        if (this.as<PortalMixin>().propOpen) {
-            let trigger: HTMLElement | undefined = this.as<PortalMixin>().getTrigger();
-            const element: HTMLElement = this.as<PortalMixin>().getPortalElement();
-            if (this.closeOnClickOutside
-                && !(element && element.contains(event.target as Node)
-                    || this.$el.contains(event.target as HTMLElement) ||
-                    (trigger && trigger.contains(event.target as HTMLElement)))
-            ) {
-                this.as<PortalMixin>().propOpen = false;
-            }
+        if (!this.as<PortalMixin>().propOpen) { return; }
+
+        const trigger: HTMLElement | undefined = this.as<PortalMixin>().getTrigger();
+        const element: HTMLElement = this.as<PortalMixin>().getPortalElement();
+        if (element && element.contains(event.target as Node)
+                || this.$el.contains(event.target as HTMLElement) ||
+                (trigger && trigger.contains(event.target as HTMLElement))
+        ) {
+            return;
         }
+
+        this.emitClickOutside();
+
+        if (!this.closeOnClickOutside) { return; }
+        this.as<PortalMixin>().propOpen = false;
+
     }
 
     private destroyPopper(): void {

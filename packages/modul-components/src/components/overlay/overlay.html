@@ -11,9 +11,13 @@
                  ref="modalWrap"
                  v-show="propOpen"
                  v-if="portalMounted">
-                <section class="m-overlay__article"
-                         ref="article">
-                    <header class="m-overlay__header"
+                <article class="m-overlay__article"
+                         ref="article"
+                         role="dialog"
+                         :aria-labelledby="titleId"
+                         tabindex="-1">
+                    <header :id="titleId"
+                            class="m-overlay__header"
                             :class="{'m--no-padding': !padding || !paddingHeader}">
                         <div class="m-overlay__header-left">
                             <slot name="header" />
@@ -23,36 +27,13 @@
                             <slot name="header-right" />
                         </div>
                     </header>
-                    <div class="m-overlay__body"
-                         :class="{'m--is-android': hasKeyboard}">
-                        <div class="m-overlay__content"
-                             ref="body"
-                             @focusin="onFocusIn"
-                             @focusout="onFocusOut"
-                             :class="{ 'm--no-padding': !padding || !paddingBody }">
-                            <slot />
-                        </div>
-                        <footer v-if="hasKeyboard && !hideFooter"
-                                class="m-overlay__footer"
-                                ref="footer"
-                                :class="{ 'm--no-padding': !padding || !paddingFooter }">
-                            <slot name="footer">
-                                <m-button @click="save()"
-                                          :disabled="isSaveButtonDisabled"
-                                          :waiting="isWaiting"
-                                          class="m-overlay__save-button">
-                                    {{ 'm-overlay:save' | f-m-i18n }}
-                                </m-button>
-                                <m-button @click="cancel()"
-                                          skin="secondary"
-                                          :disabled="isWaiting">
-                                    {{ 'm-overlay:cancel' | f-m-i18n }}
-                                </m-button>
-                            </slot>
-                        </footer>
+                    <div ref="body"
+                         class="m-overlay__body"
+                         :class="{ 'm--no-padding': !padding || !paddingBody }">
+                        <slot />
                     </div>
-                    <footer v-if="!hasKeyboard && !hideFooter"
-                            class="m-overlay__footer m--no-keyboard"
+                    <footer v-if="!hideFooter"
+                            class="m-overlay__footer"
                             ref="footer"
                             :class="{
                                 'm--no-padding': !padding || !paddingFooter,
@@ -71,7 +52,7 @@
                             </m-button>
                         </slot>
                     </footer>
-                </section>
+                </article>
             </div>
         </transition>
     </portal>

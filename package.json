@@ -28,6 +28,9 @@
         "test:update": "lerna run --stream --sort test:update",
         "storybook": "lerna run storybook --scope storybook --stream"
     },
+    "dependencies": {
+        "focus-trap": "^6.7.1"
+    },
     "devDependencies": {
         "@types/node": "^14.17.31",
         "copyfiles": "^1.2.0",

@@ -146,6 +146,18 @@ exports[`Storyshots modul-components|m-typeahead Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots modul-components|m-typeahead Inside m-modal 1`] = `
+<div
+  class="m-modal"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
+</div>
+`;
+
 exports[`Storyshots modul-components|m-typeahead custom results 1`] = `
 <div>
   <div

@@ -1,4 +1,4 @@
-import ResizeSensor from 'css-element-queries/src/ResizeSensor';
+import ResizeObserver from 'resize-observer-polyfill';
 import Component from 'vue-class-component';
 import { ModulVue } from '../../utils/vue/vue';
 
@@ -36,7 +36,6 @@ export interface ElementQueriesMixin {
     isEqM: boolean;
     isEqL: boolean;
 }
-
 @Component
 export class ElementQueries extends ModulVue implements ElementQueriesMixin {
     public isEqMinXL: boolean = false;
@@ -57,27 +56,28 @@ export class ElementQueries extends ModulVue implements ElementQueriesMixin {
 
     public eqActive: boolean = true;
 
-    private resizeSensor: ResizeSensor | undefined;
     private doneResizeEvent: any;
+    private resizeObserver: ResizeObserver | undefined;
 
     protected mounted(): void {
-        this.resizeElement(this.$el as HTMLElement);
-        this.resizeSensor = new ResizeSensor(this.$el, () => this.resizeElement(this.$el as HTMLElement));
+        this.resizeObserver = new ResizeObserver(this.resizeElement.bind(this));
+        this.resizeObserver.observe(this.$el);
+        this.resizeElement();
     }
 
     protected beforeDestroy(): void {
-        if (this.resizeSensor !== undefined) {
-            this.resizeSensor.detach();
-            this.resizeSensor = undefined;
-            delete this.resizeSensor;
+        if (this.resizeObserver !== undefined) {
+            this.resizeObserver.disconnect();
+            this.resizeObserver = undefined;
+            delete this.resizeObserver;
         }
         this.$off('resize');
         this.$off('resizeDone');
     }
 
-    private resizeElement(el: HTMLElement): void {
+    private resizeElement(): void {
         if (this.eqActive) {
-            const elWidth: number = el.clientWidth;
+            const elWidth: number = this.$el.clientWidth;
             requestAnimationFrame(() => {
                 this.setEqMin(elWidth);
                 this.setEqMax(elWidth);

@@ -3,7 +3,6 @@
 exports[`Storyshots modul-components|m-steppers Default 1`] = `
 <div
   class="m-steppers"
-  style="position: relative;"
 >
   <div
     class="m-steppers__overflow-wrapper"
@@ -144,28 +143,6 @@ exports[`Storyshots modul-components|m-steppers Default 1`] = `
         </div>
       </li>
     </ul>
-  </div>
-  <div
-    class="resize-sensor"
-    dir="ltr"
-    style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-  >
-    <div
-      class="resize-sensor-expand"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s;"
-      />
-    </div>
-    <div
-      class="resize-sensor-shrink"
-      style="pointer-events: none; position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"
-    >
-      <div
-        style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 200%; height: 200%;"
-      />
-    </div>
   </div>
 </div>
 `;

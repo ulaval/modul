@@ -6,7 +6,7 @@ $m-modal--max-width--s: 420px !default;
 
 :root {
     --m-modal--top: 0;
-    --m-modal--min-height: 120px;
+    --m-modal--min-height: 160px;
     --m-modal--header-padding: #{ $m-space };
     --m-modal--header-justify-content: space-between;
     --m-modal--body-padding: #{ $m-space-xl  $m-space };
@@ -137,6 +137,7 @@ $m-modal--max-width--s: 420px !default;
         display: flex;
         flex-direction: column;
         max-height: 100%;
+        outline: none;
 
         @include m-is-ie() {
             margin: calc(var(--m-space-lg) * 2) auto;
@@ -178,13 +179,10 @@ $m-modal--max-width--s: 420px !default;
         flex: 1 1 auto;
         width: 100%;
         -webkit-overflow-scrolling: touch;
-
-        @include m-scrollbar();
-    }
-
-    &__content {
         min-height: var(--m-modal--min-height);
         padding: var(--m-modal--body-padding);
+
+        @include m-scrollbar();
 
         @include m-is-ie() {
             flex: none;

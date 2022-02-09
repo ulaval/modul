@@ -15,15 +15,15 @@
          :class="{
             'm--has-padding': paddingHeader && padding
          }"
-         :aria-expanded="propOpen"
+         role="button"
+         :aria-expanded="propOpen ? 'true' : 'false'"
          :aria-controls="idBodyWrap"
          :tabindex="headerTabindex"
-         :aria-label="headerAriaLabel"
          :aria-disabled="propDisabled"
-         role="button"
          ref="accordionHeader"
          @click.prevent="toggleAccordion"
-         @keyup.self.enter="toggleAccordion">
+         @keyup.self.enter="toggleAccordion"
+         @keydown.space="toggleAccordion">
         <div class="m-accordion__header-content">
             <slot name="header" />
         </div>
@@ -38,27 +38,29 @@
                 :skin="plusSkin"
                 aria-hidden="true" />
     </div>
-    <m-accordion-transition v-if="hasContent()"
+    <m-accordion-transition v-if="$slots.default"
                             :height-delta="deltaHeight">
         <!-- Replace v-if / else with keep-alive. -->
         <template v-if="!keepContentAlive">
             <div v-if="propOpen"
-                 :id="idBodyWrap"
-                 class="m-accordion__body-wrap"
-                 :aria-labelledby="propId">
+                :id="idBodyWrap"
+                class="m-accordion__body-wrap"
+                role="region"
+                :aria-labelledby="propId">
                 <div class="m-accordion__body"
-                     :class="classBody">
+                    :class="classBody">
                     <slot />
                 </div>
             </div>
         </template>
         <template v-else>
             <div v-show="propOpen"
-                 :id="idBodyWrap"
-                 class="m-accordion__body-wrap"
-                 :aria-labelledby="propId">
+                :id="idBodyWrap"
+                class="m-accordion__body-wrap"
+                role="region"
+                :aria-labelledby="propId">
                 <div class="m-accordion__body"
-                     :class="classBody">
+                    :class="classBody">
                     <slot />
                 </div>
             </div>

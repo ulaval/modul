@@ -6,7 +6,6 @@ import { STEPPERS_ITEM_NAME, STEPPERS_NAME } from '../component-names';
 import { BaseSteppers, MSteppersItem, MSteppersItemState } from './steppers-item/steppers-item';
 import WithRender from './steppers.html?style=./steppers.scss';
 
-
 @WithRender
 @Component({
     mixins: [ElementQueries]

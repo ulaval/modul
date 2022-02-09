@@ -16,9 +16,12 @@
     :sidebar-full-height="true"
     :enable-animation="false"
     :listbox-aria-labelledby="label ? labelId : undefined"
+    :focus-management="focusManagement"
+    :initial-focus-element="initialFocusElement"
     @select-item="onSelect"
     @open="onOpen"
     @portal-after-close="onPortalAfterClose"
+    @click="emitClick"
 >
     <template #default="scope">
         <m-textfield
@@ -118,8 +121,7 @@
             <m-icon-button
                 class="m-typeahead__research-button-popup"
                 icon-name="m-svg__search"
-                :title="$i18n.translate('m-typeahead:research')"
-                tabindex="-1"
+                :title="$i18n.translate('m-typeahead:research')"a
                 @click="focusOnResearchInput"
             />
         </div>

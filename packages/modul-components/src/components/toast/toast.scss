@@ -29,6 +29,10 @@ $m-toast-max-width: 768px;
         transition: transform $m-transition-duration ease;
     }
 
+    &__sreen-reader-only {
+        @include m-visually-hidden();
+    }
+
     &__icon {
         display: flex;
         padding: $m-space 0 $m-space $m-space;

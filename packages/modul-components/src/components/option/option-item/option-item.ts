@@ -1,5 +1,5 @@
 import Component from 'vue-class-component';
-import { Emit, Prop } from 'vue-property-decorator';
+import { Emit, Prop, Ref } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ICON_NAME } from '../../component-names';
 import { BaseOption, MOptionInterface } from '../option';
@@ -15,15 +15,19 @@ import WithRender from './option-item.html?style=./option-item.scss';
 export class MOptionItem extends ModulVue {
 
     @Prop()
-    public iconName: string;
+    public readonly iconName: string;
+
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
+
+    @Ref('button')
+    public readonly refButton?: HTMLElement;
 
     public root: MOptionInterface; // Menu component
     private hasRoot: boolean = false;
 
     protected mounted(): void {
-        let rootNode: BaseOption | undefined = this.getParent<BaseOption>(p => p instanceof BaseOption);
+        const rootNode: BaseOption | undefined = this.getParent<BaseOption>(p => p instanceof BaseOption);
 
         if (rootNode) {
             this.root = (rootNode as any) as MOptionInterface;
@@ -57,14 +61,6 @@ export class MOptionItem extends ModulVue {
             return (this.root).hasIcon;
         }
         return false;
-    }
-
-    public get hasBorder(): boolean {
-        if (this.hasRoot) {
-            (this.root).checkBorder();
-            return (this.root).hasItemBorder;
-        }
-        return true;
     }
 
     public get hasDefaultSlot(): boolean {

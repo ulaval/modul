@@ -18,13 +18,13 @@
                 <h2 class="m-spinner__title"
                     v-if="titleMessage || (title && processing) || title">
                     <template v-if="titleMessage">{{ titleMessage }}</template>
-                    <template v-else-if="title && processing">{{'m-spinner:processing' | f-m-i18n }}</template>
-                    <template v-else-if="title">{{'m-spinner:loading' | f-m-i18n }}</template>
+                    <template v-else-if="title && processing">{{$i18n.translate('m-spinner:processing')}}</template>
+                    <template v-else-if="title">{{$i18n.translate('m-spinner:loading')}}</template>
                 </h2>
                 <p class="m-spinner__description"
                    v-if="description || descriptionMessage">
                     <template v-if="descriptionMessage">{{ descriptionMessage }}</template>
-                    <template v-else>{{ 'm-spinner:description' | f-m-i18n }}</template>
+                    <template v-else>{{ $i18n.translate('m-spinner:description') }}</template>
                 </p>
             </div>
         </portal>

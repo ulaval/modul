@@ -3,7 +3,6 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { TEXTAREA_AUTO_HEIGHT } from '../../directives/directive-names';
 import { MTextareaAutoHeight } from '../../directives/textarea-auto-height/textarea-auto-height';
-import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -30,8 +29,7 @@ import WithRender from './textarea.html?style=./textarea.scss';
         InputState,
         InputManagement,
         InputWidth,
-        InputLabel,
-        ElementQueries
+        InputLabel
     ]
 })
 export class MTextarea extends ModulVue {
