@@ -61,7 +61,7 @@ export class MOption extends BaseOption implements MOptionInterface {
     })
     public skin: MOptionsSkin;
 
-    @Prop({ default: function () { return this.$i18n.translate('m-option:show-more') }})
+    @Prop({ default: function(): string { return this.$i18n.translate('m-option:show-more'); } })
     public title: string;
 
     @Prop()
@@ -109,10 +109,10 @@ export class MOption extends BaseOption implements MOptionInterface {
     }
 
     @Emit('click')
-    public emitClick(event: MouseEvent): void {}
+    public emitClick(event: MouseEvent): void { }
 
     public checkIcon(icon: boolean): void {
-        if (!icon) return;
+        if (!icon) { return; }
         this.hasIcon = true;
     }
 
@@ -160,12 +160,14 @@ export class MOption extends BaseOption implements MOptionInterface {
         document.addEventListener('keydown', this.closeOnEscape);
     }
 
-    protected beforeDestroy (): void {
+    protected beforeDestroy(): void {
         document.removeEventListener('keydown', this.closeOnEscape);
+        // if (!this.as<MFocusTrap>().focusTrap) { return; }
+        // this.as<MFocusTrap>().focusTrap.deactivate();
     }
 
     private closeOnEscape(event: KeyboardEvent): void {
-        if (!(event.key === 'Escape' && this.open)) return;
+        if (!(event.key === 'Escape' && this.open)) { return; }
         this.close();
         event.stopPropagation();
     }

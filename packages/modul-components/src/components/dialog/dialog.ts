@@ -125,7 +125,7 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
             return;
         }
 
-        let initialFocusElement = this.refButtonOk?.$el as HTMLElement;
+        let initialFocusElement: HTMLElement = this.refButtonOk?.$el as HTMLElement;
         if (!initialFocusElement) {
             if (this.refButonSecondary?.$el) {
                 initialFocusElement = this.refButonSecondary.$el as HTMLElement;
@@ -133,7 +133,7 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
                 initialFocusElement = this.refLink.$el as HTMLElement;
             }
         }
-        this.as<MFocusTrap>().setFocusTrap(this.refArticle, {initialFocus: initialFocusElement});
+        this.as<MFocusTrap>().setFocusTrap(this.refArticle, { initialFocus: initialFocusElement });
     }
 
     public setFocusToTrigger(): void {

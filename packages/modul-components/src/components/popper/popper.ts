@@ -263,7 +263,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     }
 
     private onDocumentClick(event: MouseEvent): void {
-        if (!this.as<PortalMixin>().propOpen) return;
+        if (!this.as<PortalMixin>().propOpen) { return; }
 
         const trigger: HTMLElement | undefined = this.as<PortalMixin>().getTrigger();
         const element: HTMLElement = this.as<PortalMixin>().getPortalElement();
@@ -276,7 +276,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
 
         this.emitClickOutside();
 
-        if (!this.closeOnClickOutside) return;
+        if (!this.closeOnClickOutside) { return; }
         this.as<PortalMixin>().propOpen = false;
 
     }

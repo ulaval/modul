@@ -33,7 +33,7 @@ import WithRender from './typeahead.html?style=./typeahead.scss';
         InputWidth,
         InputManagement,
         MediaQueries,
-        MFocusTrap,
+        MFocusTrap
     ]
 })
 export class MTypeahead extends ModulVue {
@@ -127,7 +127,7 @@ export class MTypeahead extends ModulVue {
 
     @Watch('value', { immediate: true })
     public onValueChange(value: string): void {
-        if (this.value != this.textfieldValue) {
+        if (this.value !== this.textfieldValue) {
             this.textfieldValue = value;
         }
     }
@@ -260,7 +260,7 @@ export class MTypeahead extends ModulVue {
     }
 
     public onInput(event: string): void {
-        if (this.value === event) return;
+        if (this.value === event) { return; }
         this.textfieldValue = event;
         this.emitInput(event);
 

@@ -134,12 +134,12 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         window.addEventListener('keydown', this.closeModalOnEscape);
     }
 
-    protected beforeDestroy() {
+    protected beforeDestroy(): void {
         window.removeEventListener('keydown', this.closeModalOnEscape);
     }
 
     private closeModalOnEscape(event: KeyboardEvent): void {
-        if (event.key !== 'Escape') return;
+        if (event.key !== 'Escape') { return; }
         this.closeModal();
     }
 
