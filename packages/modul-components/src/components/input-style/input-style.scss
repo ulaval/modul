@@ -234,7 +234,7 @@
         }
 
         .m-input-style__text {
-            left: calc(-1 * #{$m-space-xxs}); // Magic number: align label with text zone
+            left: - $m-space-xxs; // Magic number: align label with text zone
             padding-left: $m-space-xxs;
         }
     }

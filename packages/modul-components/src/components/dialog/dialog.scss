@@ -152,11 +152,11 @@ $m-dialog--max-width--l: 500px !default;
     &__state-icon {
         .m-message {
             &.m--is-skin-page-light {
-                margin-top: calc(-1 * #{$m-space-xs});
+                margin-top: - $m-space-xs;
                 margin-bottom: $m-space;
 
                 @media (min-width: $m-mq-min-sm) {
-                    margin-top: calc(-1 * #{$m-space});
+                    margin-top: - $m-space;
                 }
             }
         }

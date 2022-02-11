@@ -34,7 +34,7 @@
         &::before {
             position: absolute;
             top: 12px; // Magic number
-            left: calc(-1 * #{ $m-space-sm }); // Magic number
+            left: - $m-space-sm; // Magic number
             content: '';
             transform: translate3d(-50%, 0, 0);
         }

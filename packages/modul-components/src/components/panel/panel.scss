@@ -58,9 +58,9 @@ $m-panel--screen--min: 640px;
 
         &.m--has-border-large {
             &::before {
-                right: calc(-1 * #{ $m-border-width-lg });
-                left: calc(-1 * #{ $m-border-width-lg });
-                width: calc(100% + #{ $m-border-width-xxl}); // Magic number
+                right: - $m-border-width-lg;
+                left: - $m-border-width-lg;
+                width: calc(100% + #{ $m-border-width-lg * 2}); // Magic number
             }
         }
 

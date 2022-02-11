@@ -4,7 +4,6 @@
 
 @mixin m-all-custom-properties {
     @include m-var-color();
-    @include m-var-space();
     @include m-var-font();
     @include m-var-heading();
 }
