@@ -76,7 +76,7 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
     &__close-menu-button {
         @include m-button();
         width: 100%;
-        font-size: 0.9rem;
+        font-size: $m-font-size--s;
         font-family: inherit;
         appearance: none;
         padding: $m-spacing--s;
