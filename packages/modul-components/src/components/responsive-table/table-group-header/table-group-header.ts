@@ -29,14 +29,14 @@ export class MTableGroupHeader extends ModulVue {
 
     public mPlusSkin: MPlusSkin = MPlusSkin.CurrentColor;
 
-    public get role(): string |undefined {
+    public get role(): string | undefined {
         return !this.as<MTableGroupMixin>().hasAccordion ||
-        this.as<MTableGroupMixin>().isAccordionDisabled
-        ? undefined
-        : 'button';
+            this.as<MTableGroupMixin>().isAccordionDisabled
+            ? undefined
+            : 'button';
     }
 
-    public get ariaExpanded(): string |undefined {
+    public get ariaExpanded(): string | undefined {
         if (!this.as<MTableGroupMixin>().hasAccordion || this.as<MTableGroupMixin>().isAccordionDisabled) {
             return undefined;
         }
