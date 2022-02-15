@@ -38,6 +38,7 @@
         "src/**/*"
     ],
     "exclude": [
+        "**/*.ignore.ts",
         "src/**/*.spec.*",
         "src/**/*.sandbox.*",
         "src/**/*.stories.*"

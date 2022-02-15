@@ -13,7 +13,7 @@
         "copyfiles": "cpx \"./src/**/*.{json,html,scss,css,svg}\" dist",
         "assetsToDist": "cpx \"./src/assets/**/*\" dist/assets",
         "start": "webpack --config conf/webpack.config.js --env.openshift && http-server \"./dist\" -p 8080 -a 0.0.0.0",
-        "test": "jest --verbose",
+        "test": "jest --verbose --unhandled-rejections=warn",
         "test:update": "jest --verbose --silent --updateSnapshot",
         "unitwatch": "jest --watch --verbose --silent",
         "metagen": "meta-generator --dest ./dist --package package.json --tsconfig tsconfig.json",
