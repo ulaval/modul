@@ -230,7 +230,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-any"
+            role="button"
             tabindex="0"
           >
             <th
@@ -325,7 +327,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-any"
+            role="button"
             tabindex="0"
           >
             <th
@@ -1085,7 +1089,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-dark"
+            role="button"
             tabindex="0"
           >
             <th
@@ -1189,7 +1195,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-dark"
+            role="button"
             tabindex="0"
           >
             <th
@@ -1976,7 +1984,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th
@@ -2080,7 +2090,9 @@ exports[`Storyshots modul-components|m-responsive-table/Prop group-header-style 
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th

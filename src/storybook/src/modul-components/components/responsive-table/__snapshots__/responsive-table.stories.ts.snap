@@ -701,7 +701,9 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th
@@ -811,7 +813,9 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups Empty 1`] = `
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-alternate-background"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th
@@ -2062,7 +2066,9 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Accordio
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th
@@ -2269,7 +2275,9 @@ exports[`Storyshots modul-components|m-responsive-table Row Groups With Accordio
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
           <tr
+            aria-expanded="false"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th
@@ -3734,7 +3742,9 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th
@@ -3838,7 +3848,9 @@ exports[`Storyshots modul-components|m-responsive-table Sandbox 1`] = `
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-light"
+            role="button"
             tabindex="0"
           >
             <th

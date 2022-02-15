@@ -13,7 +13,9 @@
         groupHeaderClassName
     ]"
     :style="[rowsGroup.header.style]"
+    :role="role"
     :tabindex="tabindexEnteteAccordeon"
+    :aria-expanded="ariaExpanded"
     @click="toggleAccordeon($event)"
     @keyup.self.enter="toggleAccordeon($event)">
     <th v-if="hasHeaderWithoutCell ||

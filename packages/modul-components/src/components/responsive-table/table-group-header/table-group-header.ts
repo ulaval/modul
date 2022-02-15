@@ -29,6 +29,21 @@ export class MTableGroupHeader extends ModulVue {
 
     public mPlusSkin: MPlusSkin = MPlusSkin.CurrentColor;
 
+    public get role(): string |undefined {
+        return !this.as<MTableGroupMixin>().hasAccordion ||
+        this.as<MTableGroupMixin>().isAccordionDisabled
+        ? undefined
+        : 'button';
+    }
+
+    public get ariaExpanded(): string |undefined {
+        if (!this.as<MTableGroupMixin>().hasAccordion || this.as<MTableGroupMixin>().isAccordionDisabled) {
+            return undefined;
+        }
+
+        return this.as<MTableGroupMixin>().rowsGroup.accordion!.open ? 'true' : 'false';
+    }
+
     public get tabindexEnteteAccordeon(): string | undefined {
         return !this.as<MTableGroupMixin>().hasAccordion ||
             this.as<MTableGroupMixin>().isAccordionDisabled
@@ -146,9 +161,6 @@ export class MTableGroupHeader extends ModulVue {
             return;
         }
         this.as<MTableGroupMixin>().rowsGroup.accordion!.open = !this.as<MTableGroupMixin>().rowsGroup.accordion!.open;
-        if (event.currentTarget) {
-            (event.currentTarget as HTMLElement).blur();
-        }
 
         if (this.as<MTableGroupMixin>().rowsGroup.accordion!.open) {
             this.as<MTableGroupMixin>().emitOpenAccordion(this.as<MTableGroupMixin>().rowsGroup);
