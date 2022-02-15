@@ -236,33 +236,6 @@ export const decimalfield = () => ({
     </form-builder>`
 });
 
-export const moneyfield = () => ({
-    components: { FormBuilder },
-    data: () => ({
-        formGroup: new FormGroup(
-            {
-                'money': new FormControl<string>(
-                    [
-                        RequiredValidator({ controlLabel: 'Price' })
-                    ]
-                )
-            }
-        )
-    }),
-    template: `
-    <form-builder :form-group="formGroup">
-        <template v-slot="{ control }">
-            <m-moneyfield v-m-control="control"
-                        v-model="control.value"
-                        label="Price"
-                        :required-marker="true"
-                        :error="control.hasError()"
-                        :error-message="control.errorMessage"></m-moneyfield>
-        </template>
-    </form-builder>`
-
-});
-
 export const integerfield = () => ({
     components: { FormBuilder },
     data: () => ({

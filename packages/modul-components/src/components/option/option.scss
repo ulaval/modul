@@ -77,11 +77,11 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
     &__close-menu-button {
         @include m-button();
         width: 100%;
-        font-size: 0.9rem;
         font-family: inherit;
         appearance: none;
         padding: $m-space-xs;
 
+        @include m-font-size('sm');
         @include m-button--secondary();
         @include m-button--hover();
     }

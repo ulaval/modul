@@ -12,7 +12,6 @@ jest.mock('./navbar-item-helper', () => ({
     isRouterLinkActive: jest.fn(() => mockIsRouterLinkActive)
 }));
 
-
 class MockedMNavbar extends BaseNavbar {
 
     public autoSelect: boolean = false;

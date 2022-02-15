@@ -65,8 +65,9 @@ $w-content-max-width: $mw-max-width;
     &__sidemenu-sub-title {
         margin-top: 16px;
         margin-bottom: 8px;
-        font-size: $m-font-size-md;
         font-weight: $m-font-weight-black;
+
+        @include m-font-size('md');
     }
 
     &__sidemenu-item {
@@ -77,10 +78,11 @@ $w-content-max-width: $mw-max-width;
             padding: $m-space $m-space $m-space 12px;
             border-left: 2px solid $m-color-grey-light;
             margin-left: 1px;
-            font-size: $m-font-size;
             font-weight: $m-font-weight;
             text-decoration: none;
             color: $m-color-text;
+
+            @include m-font-size();
 
             &:hover,
             &:focus {

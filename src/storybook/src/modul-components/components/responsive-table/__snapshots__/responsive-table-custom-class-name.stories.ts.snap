@@ -219,7 +219,9 @@ exports[`Storyshots modul-components|m-responsive-table/Custom class-name Group 
           class="m-table-group m--has-header m--has-row-highlighted-on-hover m--is-rows-style-borders"
         >
           <tr
+            aria-expanded="true"
             class="m-table-group-header m-table-group__header m--has-accordion m--is-accordion-icon-position-left m--is-group-header-style-any test-group-header-custom-class-name"
+            role="button"
             tabindex="0"
           >
             <th

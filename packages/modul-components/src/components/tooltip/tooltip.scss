@@ -43,8 +43,8 @@ $m-tooltip--max-height: 280px !default;
         &.m-icon-button.m-icon-button {
             min-width: auto;
             min-height: auto;
-            width: $m-font-size;
-            height: $m-font-size;
+            width: calc($m-font-size * 1px);
+            height: calc($m-font-size * 1px);
             color: $m-color-interactive-light;
 
             &:hover,
