@@ -45,7 +45,11 @@ module.exports = {
                 loader: "sass-loader",
                 options: {
                     sourceMap: true,
-                    includePaths: ["../../node_modules/@ulaval/modul-components/dist/styles"]
+                    sassOptions: {
+                        includePaths: [
+                            '../../node_modules/@ulaval/modul-components/dist/styles'
+                        ],
+                    },
                 }
             },
             {

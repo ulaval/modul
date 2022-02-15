@@ -18,9 +18,9 @@
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
         "strictNullChecks": true,
-        "typeRoots": [
-            "../../node_modules/@types"
-        ]
+        // "typeRoots": [
+        //     "../../node_modules/@types"
+        // ]
     },
     "plugins": [
         {
@@ -31,6 +31,7 @@
         "src/**/*"
     ],
     "exclude": [
-        "src/**/*.spec.*"
+        "src/**/*.spec.*",
+        "**/node_modules/@types/node/**/*"
     ]
 }

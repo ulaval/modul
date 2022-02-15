@@ -77,7 +77,7 @@ export class MTree extends ModulVue {
     @Prop()
     public disabledNodes: string[];
 
-    public propSelectedNodes: string[] = this.selectedNodes || [];
+    public propSelectedNodes: string[];
 
     public errorTree: boolean = false;
 
@@ -100,6 +100,7 @@ export class MTree extends ModulVue {
     }
 
     protected created(): void {
+        this.propSelectedNodes = this.selectedNodes || [];
         this.browseTree();
     }
 

@@ -58,7 +58,7 @@ export class MCalendar extends ModulVue {
     })
     initialView: MBaseCalendarView;
 
-    innerValue: SingleDate | RangeDate = this.value;
+    innerValue: SingleDate | RangeDate;
     id: string = `m-calendar-${uuid.generate()}`;
 
     @Watch('value')
@@ -68,6 +68,7 @@ export class MCalendar extends ModulVue {
     }
 
     created(): void {
+        this.innerValue = this.value;
         this.validateInputModel();
     }
 

@@ -91,7 +91,7 @@ export class ScrollTo {
         };
 
         return {
-            promise: new Promise((resolve, reject) => {
+            promise: new Promise<void>((resolve, reject) => {
                 // This is to keep track of where the element's scrollTop is
                 // supposed to be, based on what we're doing
                 let previousTop: number = window.pageYOffset;
@@ -122,7 +122,7 @@ export class ScrollTo {
                         window.pageYOffset === previousTop &&
                         window.pageYOffset !== frameTop
                     ) {
-                        resolve();
+                        resolve(undefined);
                         return;
                     }
                     previousTop = window.pageYOffset;

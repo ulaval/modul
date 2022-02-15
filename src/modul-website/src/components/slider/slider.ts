@@ -18,12 +18,13 @@ export class MSlider extends ModulWebsite {
     public step: number;
 
     private internalValue: number = 50;
-    private range: number = this.max - this.min;
+    private range: number;
     private setElOffset: any;
     private offsetLeft: number;
     private offsetRatio: number;
 
     protected mounted(): void {
+        this.range = this.max - this.min;
         this.model = this.value;
         this.setElOffset = window.setInterval(() => {
             this.offsetLeft = this.$el.getBoundingClientRect().left;

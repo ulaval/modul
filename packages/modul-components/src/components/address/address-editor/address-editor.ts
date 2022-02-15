@@ -42,7 +42,7 @@ export default class MAddressEditor extends ModulVue {
     i18nPostalCode: string = this.$i18n.translate('m-address-editor:postal-code');
 
 
-    currentAddress: Address = copyAddress(this.address);
+    currentAddress: Address;
     private errors: { [field: string]: string[] } = {
         [AddressField.BUILDING_NUMBER]: [],
         [AddressField.STREET]: [],
@@ -64,6 +64,7 @@ export default class MAddressEditor extends ModulVue {
     };
 
     mounted(): void {
+        this.currentAddress = copyAddress(this.address);
         this.isValid();
     }
 

@@ -50,17 +50,19 @@ export default class MAddressAutocompleteField extends ModulVue implements Addre
     @Prop({ default: () => ({}) }) // validators to apply on form
     readonly validations: { [field: string]: AddressEditorValidator[] };
 
-    editAddress: Address = this.address;
+    editAddress: Address;
 
     editing: boolean = false;
     error: string = '';
     editFormTitle: string = 'Edit address !translation';
     currentProvinces: Province[] = [];
 
-    private current: Address = copyAddress(this.address);
+    private current: Address;
     private canSubmit: boolean = true;
 
     mounted(): void {
+        this.editAddress == this.address;
+        this.current == copyAddress(this.address);
         if (this.address && this.address.country) {
             this.onCountryChange(this.address.country.countryIso2);
         }

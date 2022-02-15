@@ -53,7 +53,11 @@ module.exports = function (isLib) {
                     loader: 'sass-loader',
                     options: {
                         sourceMap: true,
-                        includePaths: ['../../packages/modul-components/src/styles']
+                        sassOptions: {
+                            includePaths: [
+                                '../../packages/modul-components/src/styles'
+                            ],
+                        },
                     }
                 },
                 {

@@ -96,9 +96,9 @@ export class MTimepicker extends ModulVue {
         minutes: HTMLElement;
     };
 
-    public i18nButton: string = this.$i18n.translate('m-timepicker:button-ok');
-    public i18nPlaceHolder: string = this.$i18n.translate('m-timepicker:placeholder');
-    public i18nOutOfBoundsError: string = this.$i18n.translate('m-timepicker:out-of-bounds-error', { min: this.min, max: this.max }, undefined, undefined, undefined, FormatMode.Sprintf);
+    public i18nButton: string;
+    public i18nPlaceHolder: string;
+    public i18nOutOfBoundsError: string;
 
     private hours: number[] = [];
     private minutes: number[] = [];
@@ -117,6 +117,12 @@ export class MTimepicker extends ModulVue {
     private emitClick(event: Event): void { }
 
     private created(): void {
+
+        this.i18nButton = this.$i18n.translate('m-timepicker:button-ok');
+        this.i18nPlaceHolder = this.$i18n.translate('m-timepicker:placeholder');
+        this.i18nOutOfBoundsError = this.$i18n.translate('m-timepicker:out-of-bounds-error', { min: this.min, max: this.max }, undefined, undefined, undefined, FormatMode.Sprintf);
+
+
         this.internalTime = this.value;
         this.updatePopupTime(this.internalTime);
     }
