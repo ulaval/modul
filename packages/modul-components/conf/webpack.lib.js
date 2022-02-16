@@ -103,7 +103,12 @@ module.exports = {
                     loader: 'sass-loader',
                     options: {
                         sourceMap: true,
-                        includePaths: ['./src/styles']
+                        sassOptions: {
+                            includePaths: [
+                                './src/styles'
+                            ],
+                        },
+
                     }
                 }]
             },

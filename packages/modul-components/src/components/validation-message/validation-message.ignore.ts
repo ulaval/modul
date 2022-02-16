@@ -2,7 +2,7 @@ import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import { addMessages } from '../../../tests/helpers/lang';
 import { renderComponent } from '../../../tests/helpers/render';
-import ValidationMessagePlugin, { MValidationMessage } from '../validation-message/validation-message';
+import ValidationMessagePlugin, { MValidationMessage } from './validation-message';
 
 
 describe('MValidationMessage', () => {

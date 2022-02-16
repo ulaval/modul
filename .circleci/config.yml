@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:14
+      - image: circleci/node:16
 
     working_directory: ~/repo
 
@@ -12,7 +12,7 @@ jobs:
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
-            - yarn-packages-2-{{ checksum "yarn.lock" }}
+            - yarn-packages-4-{{ checksum "yarn.lock" }}
 
       - run: yarn install --frozen-lockfile
 
@@ -36,7 +36,7 @@ jobs:
 
       - save_cache:
           name: Save Yarn Package Cache
-          key: yarn-packages-2-{{ checksum "yarn.lock" }}
+          key: yarn-packages-4-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
   publish_image:
