@@ -123,7 +123,6 @@ $modul-menu-transition-duration: 0.7s;
     height: 100%;
 
     &.mw--is {
-
         &-enter-active,
         &-leave-active {
             transition: transform $m-transition-duration-lg ease;
