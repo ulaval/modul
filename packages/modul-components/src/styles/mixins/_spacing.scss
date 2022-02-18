@@ -26,19 +26,3 @@
     }
 }
 
-@function m-spacing($size: 'base') {
-    $m-map: $m-space-map;
-    $m-space-multiplier: 8;
-
-    @if map-has-key($m-map, $size) {
-        @return map-get($m-map, $size);
-    }
-
-    @else if(is-number($size)) {
-        @return round($size * $m-space-multiplier)+px;
-    }
-
-    @error "Unknown spacing size '#{$size}', valide sizes are : '#{$m-map}' or a number";
-
-    @return null;
-}

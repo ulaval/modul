@@ -21,7 +21,9 @@
 @mixin m-font-size($font-size: 'base') {
     @if $font-size=='base' {
         font-size: 1rem;
-    } @else {
+    }
+
+    @else {
         $base-font-size: map-get($m-font-size-map, 'base');
         $size: $font-size;
 
@@ -35,8 +37,8 @@
 }
 
 @mixin m-commons-title-styles() {
-    font-weight: var(--m-font-weight-heading);
-    line-height: var(--m-line-height-heading);
+    font-weight: $m-font-weight-heading;
+    line-height: $m-line-height-heading;
 }
 
 @mixin m-h1-font-style() {
@@ -82,42 +84,42 @@
 
     h1,
     .m-u--h1 {
-        margin: var(--m-margin-h1);
+        margin: $m-margin-h1;
 
         @include m-h1-font-style();
     }
 
     h2,
     .m-u--h2 {
-        margin: var(--m-margin-h2);
+        margin: $m-margin-h2;
 
         @include m-h2-font-style();
     }
 
     h3,
     .m-u--h3 {
-        margin: var(--m-margin-h3);
+        margin: $m-margin-h3;
 
         @include m-h3-font-style();
     }
 
     h4,
     .m-u--h4 {
-        margin: var(--m-margin-h4);
+        margin: $m-margin-h4;
 
         @include m-h4-font-style();
     }
 
     h5,
     .m-u--h5 {
-        margin: var(--m-margin-h5);
+        margin: $m-margin-h5;
 
         @include m-h5-font-style();
     }
 
     h6,
     .m-u--h6 {
-        margin: var(--m-margin-h6);
+        margin: $m-margin-h6;
 
         @include m-h6-font-style();
     }
@@ -127,7 +129,7 @@
 
     p,
     .m-u--p {
-        margin: var(--m-margin-paragraph);
+        margin: $m-margin-paragraph;
     }
 
     b,

@@ -70,7 +70,7 @@ $m-accordion--color-default: $m-color-interactive !default;
 
         .m-accordion.m--is-dark-b.m--is-open > & {
             &::after {
-                background: m-color(ul, yellow);
+                background: $m-color-ul-yellow;
             }
         }
 
@@ -177,7 +177,7 @@ $m-accordion--color-default: $m-color-interactive !default;
         }
 
         .m-accordion.m--is-dark-b.m--is-open & {
-            color: m-color(ul, yellow);
+            color: $m-color-ul-yellow;
         }
     }
 

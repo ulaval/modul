@@ -20,6 +20,15 @@
     --m-color-text: var(--m-color-black);
     --m-color-text-light: #757575;
 
+    // Interactive colors
+    --m-color-interactive-darker: #0b46ac;
+    --m-color-interactive-dark: #1854be;
+    --m-color-interactive: #096edf;
+    --m-color-interactive-light: var(--m-color-ul-blue);
+    --m-color-interactive-lighter: #6ed2ff;
+    --m-color-interactive-lightest: #dffaff;
+    --m-color-information: #eaf5ff;
+
     // Success colors
     --m-color-success-dark: #009962;
     --m-color-success: #00c77f;
@@ -34,15 +43,6 @@
     --m-color-error-dark: #b3040f;
     --m-color-error: var(--m-color-ul-red);
     --m-color-error-lightest: #fcf2f3;
-
-    // Interactive colors
-    --m-color-interactive-darker: #0b46ac;
-    --m-color-interactive-dark: #1854be;
-    --m-color-interactive: #096edf;
-    --m-color-interactive-light: var(--m-color-ul-blue);
-    --m-color-interactive-lighter: #6ed2ff;
-    --m-color-interactive-lightest: #dffaff;
-    --m-color-information: #eaf5ff;
 
     // Accent colors
     --m-color-accent-dark: #ed8514;

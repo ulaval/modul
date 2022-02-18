@@ -80,7 +80,7 @@
         @include m-font-size();
         transform: translate3d(0, 0, 0);
         color: var(--m-input-style--label-color);
-        font-weight: var(--m-font-weight-semi-bold);
+        font-weight: $m-font-weight-semi-bold;
 
         .m-icon {
             font-size: 85%;
