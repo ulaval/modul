@@ -69,7 +69,7 @@
 
                 .m-button__icon .m-icon {
                     @include m-font-size('xs');
-                    height: calc($m-font-size-xs * 1px);
+                    height: #{$m-font-size-xs * 1px};
                 }
             }
         }
@@ -119,7 +119,7 @@
 
             .m-icon {
                 @include m-font-size('md');
-                width: calc($m-font-size-md * 1px);
+                width: #{$m-font-size-md * 1px};
             }
         }
 

@@ -73,7 +73,7 @@ $m-toast-max-width: 768px;
         .m-button__icon .m-icon {
             @include m-font-size('sm');
 
-            height: calc($m-font-size-sm * 1px);
+            height: #{$m-font-size-sm * 1px};
             color: $m-color-interactive-light;
         }
     }

@@ -5,8 +5,8 @@
 
     border: 1px solid $m-color-interactive;
     background: none;
-    font-size: 1em;
-    font-family: $m-font-family;
+    font-size: inherit;
+    font-family: inherit;
 
     &.m--is-small {
         @include m-chip-small-style();

@@ -68,7 +68,7 @@ $m-button--border-radius: 4px !default;
         position: relative;
         z-index: 2;
         font-size: inherit;
-        height: calc($m-font-size * 1px);
+        height: #{$m-font-size * 1px};
 
         &.m--is-left {
             margin-right: $m-space-sm

@@ -2,16 +2,14 @@
 // Fonts property
 $m-font-path: '../assets/fonts/' !default;
 $m-font-name: 'Source Sans Variable' !default;
-$m-font-family: 'Source Sans Variable', Arial, sans-serif !default;
-$m-font-family--fallback: 'Source Sans Pro', Arial, sans-serif !default;
 
 // App font size
-$m-font-size-xl: #{var(--m-font-size-xl)} !default;
-$m-font-size-lg: #{var(--m-font-size-lg)} !default;
-$m-font-size-md: #{var(--m-font-size-md)} !default;
-$m-font-size: #{var(--m-font-size)} !default;
-$m-font-size-sm: #{var(--m-font-size-sm)} !default;
-$m-font-size-xs: #{var(--m-font-size-xs)} !default;
+$m-font-size-xl: 22 !default;
+$m-font-size-lg: 20 !default;
+$m-font-size-md: 18 !default;
+$m-font-size: 16 !default;
+$m-font-size-sm: 14 !default;
+$m-font-size-xs: 12 !default;
 
 // Titles font size
 $m-font-size-h1: #{var(--m-font-size-h1)} !default;

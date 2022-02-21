@@ -10,7 +10,7 @@
     --m-font-size-h5: 18;
     --m-font-size-h6: 16;
 
-    @media (min-width: 768px) {
+    @media (min-width: $m-mq-min-sm) {
         // Desktop font size
         --m-font-size-h1: 36;
         --m-font-size-h2: 32;

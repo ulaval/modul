@@ -82,8 +82,8 @@
         margin: 0 $m-space-xxs;
         appearance: none;
         border: none;
-        font-size: 1em;
-        font-family: $m-font-family;
+        font-size: inherit;
+        font-family: inherit;
         color: $m-color-interactive;
         background: none;
         outline: none;

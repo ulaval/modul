@@ -245,7 +245,7 @@ $m-froala-toolbar-btn-height: 38px !default;
                 li {
                     a {
                         margin-top: 0;
-                        font-family: $m-font-family;
+                        font-family: var(--m-font-family);
                     }
 
                     &:first-child {
