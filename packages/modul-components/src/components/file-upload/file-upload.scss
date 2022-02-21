@@ -33,8 +33,9 @@ $m-file-upload-max-height--s: 72px;
 
         &__error {
             margin-top: 0;
-            @include m-font-size('xs');
             color: $m-color-error;
+
+            @include m-font-size('xs');
         }
     }
 

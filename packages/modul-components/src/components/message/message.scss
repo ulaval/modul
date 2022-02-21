@@ -118,8 +118,9 @@
             min-width: 18px; // Magic number
 
             .m-icon {
-                @include m-font-size('md');
                 width: #{$m-font-size-md * 1px};
+
+                @include m-font-size('md');
             }
         }
 

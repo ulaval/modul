@@ -49,8 +49,9 @@ $m-button--border-radius: 4px !default;
     }
 
     .m-icon {
-        @include m-font-size('xs');
         stroke-width: 2px;
+
+        @include m-font-size('xs');
     }
 
     &__precision,
@@ -81,9 +82,10 @@ $m-button--border-radius: 4px !default;
 
     &__precision {
         display: block;
-        @include m-font-size('sm');
-        font-weight: $m-font-weight-light;
         margin-top: 3px;
+        font-weight: $m-font-weight-light;
+
+        @include m-font-size('sm');
 
         &:empty {
             display: none;
