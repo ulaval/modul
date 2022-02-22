@@ -5,19 +5,19 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
   <h2>
     Live check username availability (async)
   </h2>
-
+   
   <p>
     'John', 'Jane' and 'Doe' are reserved
   </p>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
@@ -44,12 +44,12 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
               <!---->
             </span>
           </label>
-
+           
           <div
             class="m-input-style__input"
           >
             <!---->
-
+             
             <div
               class="m-input-style__content"
             >
@@ -60,24 +60,24 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
                 maxlength="Infinity"
                 type="text"
               />
-
+                 
               <!---->
-
+               
             </div>
-
+             
             <div
               class="m-input-style__suffix"
             >
               <!---->
-
+                
               <!---->
             </div>
           </div>
         </div>
-
+         
         <!---->
       </div>
-
+        
       <div
         class="m-input-style__validation"
       >
@@ -89,15 +89,15 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
             class="m-validation-message m-textfield__validation-message"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <!---->
         </div>
       </div>
     </div>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -106,38 +106,38 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -150,21 +150,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
   <h2>
     Checkbox 2 to 5 selections
   </h2>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <p>
       <strong>
         Select 2 to 5 roles :
       </strong>
     </p>
-
+     
     <ul
       class="mu-no-m"
     >
@@ -172,7 +172,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
         class="m-input-group"
       >
         <!---->
-
+         
         <div
           class="m-input-group__body"
         >
@@ -181,10 +181,10 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
             id="fakeId"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <div
             aria-describedby="fakeId"
             class="m-input-group__content"
@@ -199,7 +199,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-
+                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -212,21 +212,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                       class="m-checkbox__input__icon"
                     />
                   </span>
-
+                   
                   <div
                     class="m-checkbox__label"
                   >
-
+                    
                             Sys admin
                   </div>
                 </label>
-
+                 
                 <div
                   class="m-validation-message m-checkbox__message"
                   id="fakeId"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
               </div>
@@ -241,7 +241,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-
+                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -254,21 +254,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                       class="m-checkbox__input__icon"
                     />
                   </span>
-
+                   
                   <div
                     class="m-checkbox__label"
                   >
-
+                    
                             Unit admin
                   </div>
                 </label>
-
+                 
                 <div
                   class="m-validation-message m-checkbox__message"
                   id="fakeId"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
               </div>
@@ -283,7 +283,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-
+                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -296,21 +296,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                       class="m-checkbox__input__icon"
                     />
                   </span>
-
+                   
                   <div
                     class="m-checkbox__label"
                   >
-
+                    
                             Conceptor
                   </div>
                 </label>
-
+                 
                 <div
                   class="m-validation-message m-checkbox__message"
                   id="fakeId"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
               </div>
@@ -325,7 +325,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-
+                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -338,21 +338,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                       class="m-checkbox__input__icon"
                     />
                   </span>
-
+                   
                   <div
                     class="m-checkbox__label"
                   >
-
+                    
                             Assitant
                   </div>
                 </label>
-
+                 
                 <div
                   class="m-validation-message m-checkbox__message"
                   id="fakeId"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
               </div>
@@ -367,7 +367,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-
+                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -380,21 +380,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                       class="m-checkbox__input__icon"
                     />
                   </span>
-
+                   
                   <div
                     class="m-checkbox__label"
                   >
-
+                    
                             Moderator
                   </div>
                 </label>
-
+                 
                 <div
                   class="m-validation-message m-checkbox__message"
                   id="fakeId"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
               </div>
@@ -409,7 +409,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-
+                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -422,21 +422,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                       class="m-checkbox__input__icon"
                     />
                   </span>
-
+                   
                   <div
                     class="m-checkbox__label"
                   >
-
+                    
                             Student
                   </div>
                 </label>
-
+                 
                 <div
                   class="m-validation-message m-checkbox__message"
                   id="fakeId"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
               </div>
@@ -451,7 +451,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                   id="mCheckbox-fakeId"
                   type="checkbox"
                 />
-
+                 
                 <label
                   class="m-checkbox__wrap"
                   for="mCheckbox-fakeId"
@@ -464,21 +464,21 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
                       class="m-checkbox__input__icon"
                     />
                   </span>
-
+                   
                   <div
                     class="m-checkbox__label"
                   >
-
+                    
                             Invited
                   </div>
                 </label>
-
+                 
                 <div
                   class="m-validation-message m-checkbox__message"
                   id="fakeId"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
               </div>
@@ -487,7 +487,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
         </div>
       </fieldset>
     </ul>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -496,38 +496,38 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -540,19 +540,19 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
   <h2>
     More than one validations (course code)
   </h2>
-
+   
   <p>
     'MAT-0000' and 'MAT-0001' are reserved
   </p>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
@@ -579,12 +579,12 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
               <!---->
             </span>
           </label>
-
+           
           <div
             class="m-input-style__input"
           >
             <!---->
-
+             
             <div
               class="m-input-style__content"
             >
@@ -595,24 +595,24 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
                 maxlength="Infinity"
                 type="text"
               />
-
+                 
               <!---->
-
+               
             </div>
-
+             
             <div
               class="m-input-style__suffix"
             >
               <!---->
-
+                
               <!---->
             </div>
           </div>
         </div>
-
+         
         <!---->
       </div>
-
+        
       <div
         class="m-input-style__validation"
       >
@@ -624,15 +624,15 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
             class="m-validation-message m-textfield__validation-message"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <!---->
         </div>
       </div>
     </div>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -641,38 +641,38 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -685,21 +685,21 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
   <h2>
     Email confirmation
   </h2>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <fieldset
       class="m-input-group"
       legend=""
     >
       <!---->
-
+       
       <div
         class="m-input-group__body"
       >
@@ -708,10 +708,10 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
           id="fakeId"
         >
           <!---->
-
+           
           <!---->
         </div>
-
+         
         <div
           aria-describedby="fakeId"
           class="m-input-group__content"
@@ -742,12 +742,12 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                     <!---->
                   </span>
                 </label>
-
+                 
                 <div
                   class="m-input-style__input"
                 >
                   <!---->
-
+                   
                   <div
                     class="m-input-style__content"
                   >
@@ -758,24 +758,24 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                       maxlength="Infinity"
                       type="text"
                     />
-
+                       
                     <!---->
-
+                     
                   </div>
-
+                   
                   <div
                     class="m-input-style__suffix"
                   >
                     <!---->
-
+                      
                     <!---->
                   </div>
                 </div>
               </div>
-
+               
               <!---->
             </div>
-
+              
             <div
               class="m-input-style__validation"
             >
@@ -787,15 +787,15 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                   class="m-validation-message m-textfield__validation-message"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
-
+                 
                 <!---->
               </div>
             </div>
           </div>
-
+           
           <div
             class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
             style="width: 100%; max-width: 288px;"
@@ -822,12 +822,12 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                     <!---->
                   </span>
                 </label>
-
+                 
                 <div
                   class="m-input-style__input"
                 >
                   <!---->
-
+                   
                   <div
                     class="m-input-style__content"
                   >
@@ -838,24 +838,24 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                       maxlength="Infinity"
                       type="text"
                     />
-
+                       
                     <!---->
-
+                     
                   </div>
-
+                   
                   <div
                     class="m-input-style__suffix"
                   >
                     <!---->
-
+                      
                     <!---->
                   </div>
                 </div>
               </div>
-
+               
               <!---->
             </div>
-
+              
             <div
               class="m-input-style__validation"
             >
@@ -867,10 +867,10 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                   class="m-validation-message m-textfield__validation-message"
                 >
                   <!---->
-
+                   
                   <!---->
                 </div>
-
+                 
                 <!---->
               </div>
             </div>
@@ -878,7 +878,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
         </div>
       </div>
     </fieldset>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -887,38 +887,38 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -931,15 +931,15 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
   <h2>
     Format without fixed max characters (email)
   </h2>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
@@ -966,12 +966,12 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
               <!---->
             </span>
           </label>
-
+           
           <div
             class="m-input-style__input"
           >
             <!---->
-
+             
             <div
               class="m-input-style__content"
             >
@@ -982,24 +982,24 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
                 maxlength="Infinity"
                 type="text"
               />
-
+                 
               <!---->
-
+               
             </div>
-
+             
             <div
               class="m-input-style__suffix"
             >
               <!---->
-
+                
               <!---->
             </div>
           </div>
         </div>
-
+         
         <!---->
       </div>
-
+        
       <div
         class="m-input-style__validation"
       >
@@ -1011,15 +1011,15 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
             class="m-validation-message m-textfield__validation-message"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <!---->
         </div>
       </div>
     </div>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -1028,38 +1028,38 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -1072,15 +1072,15 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
   <h2>
     Format with fixed max characters (postal code)
   </h2>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
@@ -1107,12 +1107,12 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
               <!---->
             </span>
           </label>
-
+           
           <div
             class="m-input-style__input"
           >
             <!---->
-
+             
             <div
               class="m-input-style__content"
             >
@@ -1123,24 +1123,24 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
                 maxlength="Infinity"
                 type="text"
               />
-
+                 
               <!---->
-
+               
             </div>
-
+             
             <div
               class="m-input-style__suffix"
             >
               <!---->
-
+                
               <!---->
             </div>
           </div>
         </div>
-
+         
         <!---->
       </div>
-
+        
       <div
         class="m-input-style__validation"
       >
@@ -1152,15 +1152,15 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
             class="m-validation-message m-textfield__validation-message"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <!---->
         </div>
       </div>
     </div>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -1169,38 +1169,38 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -1213,15 +1213,15 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
   <h2>
     Radio button required
   </h2>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="m-radio-group"
     >
@@ -1232,14 +1232,14 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
           class="m-input-group__label"
           id="fakeId"
         >
-
+          
         Select a role :
-
+        
           <!---->
            
           <!---->
         </legend>
-
+         
         <div
           class="m-input-group__body"
         >
@@ -1248,16 +1248,16 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
             id="fakeId"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <div
             aria-describedby="fakeId"
             aria-labelledby="fakeId"
             class="m-input-group__content"
           >
-
+             
             <ul
               class="m-radio-group__body"
               role="radiogroup"
@@ -1272,7 +1272,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   type="radio"
                   value="Sys admin"
                 />
-
+                 
                 <label
                   class="m-radio__wrap"
                   for="mRadio-fakeId"
@@ -1281,7 +1281,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                     aria-hidden="true"
                     class="m-radio__input"
                   />
-
+                   
                   <span
                     class="m-radio__label"
                   >
@@ -1289,7 +1289,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   </span>
                 </label>
               </li>
-
+               
               <li
                 class="m-radio"
               >
@@ -1300,7 +1300,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   type="radio"
                   value="Unit admin"
                 />
-
+                 
                 <label
                   class="m-radio__wrap"
                   for="mRadio-fakeId"
@@ -1309,7 +1309,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                     aria-hidden="true"
                     class="m-radio__input"
                   />
-
+                   
                   <span
                     class="m-radio__label"
                   >
@@ -1317,7 +1317,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   </span>
                 </label>
               </li>
-
+               
               <li
                 class="m-radio"
               >
@@ -1328,7 +1328,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   type="radio"
                   value="Conceptor"
                 />
-
+                 
                 <label
                   class="m-radio__wrap"
                   for="mRadio-fakeId"
@@ -1337,7 +1337,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                     aria-hidden="true"
                     class="m-radio__input"
                   />
-
+                   
                   <span
                     class="m-radio__label"
                   >
@@ -1345,7 +1345,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   </span>
                 </label>
               </li>
-
+               
               <li
                 class="m-radio"
               >
@@ -1356,7 +1356,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   type="radio"
                   value="Assistant"
                 />
-
+                 
                 <label
                   class="m-radio__wrap"
                   for="mRadio-fakeId"
@@ -1365,7 +1365,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                     aria-hidden="true"
                     class="m-radio__input"
                   />
-
+                   
                   <span
                     class="m-radio__label"
                   >
@@ -1373,7 +1373,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   </span>
                 </label>
               </li>
-
+               
               <li
                 class="m-radio"
               >
@@ -1384,7 +1384,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                   type="radio"
                   value="Student"
                 />
-
+                 
                 <label
                   class="m-radio__wrap"
                   for="mRadio-fakeId"
@@ -1393,7 +1393,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
                     aria-hidden="true"
                     class="m-radio__input"
                   />
-
+                   
                   <span
                     class="m-radio__label"
                   >
@@ -1406,7 +1406,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
         </div>
       </fieldset>
     </div>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -1415,38 +1415,38 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -1459,15 +1459,15 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
   <h2>
     Required and 5 characters min
   </h2>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
@@ -1494,12 +1494,12 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
               <!---->
             </span>
           </label>
-
+           
           <div
             class="m-input-style__input"
           >
             <!---->
-
+             
             <div
               class="m-input-style__content"
             >
@@ -1510,24 +1510,24 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
                 maxlength="Infinity"
                 type="text"
               />
-
+                 
               <!---->
-
+               
             </div>
-
+             
             <div
               class="m-input-style__suffix"
             >
               <!---->
-
+                
               <!---->
             </div>
           </div>
         </div>
-
+         
         <!---->
       </div>
-
+        
       <div
         class="m-input-style__validation"
       >
@@ -1539,15 +1539,15 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
             class="m-validation-message m-textfield__validation-message"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <!---->
         </div>
       </div>
     </div>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -1556,38 +1556,38 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>
@@ -1600,15 +1600,15 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
   <h2>
     Required and 20 characters max
   </h2>
-
+   
   <form
     class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
-
+     
     <!---->
-
+     
     <div
       class="m-input-style m-textfield m--has-label m--is-tag-default m--is-type-text"
       style="width: 100%; max-width: 288px;"
@@ -1635,12 +1635,12 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
               <!---->
             </span>
           </label>
-
+           
           <div
             class="m-input-style__input"
           >
             <!---->
-
+             
             <div
               class="m-input-style__content"
             >
@@ -1651,24 +1651,24 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
                 maxlength="Infinity"
                 type="text"
               />
-
+                 
               <!---->
-
+               
             </div>
-
+             
             <div
               class="m-input-style__suffix"
             >
               <!---->
-
+                
               <!---->
             </div>
           </div>
         </div>
-
+         
         <!---->
       </div>
-
+        
       <div
         class="m-input-style__validation"
       >
@@ -1680,10 +1680,10 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
             class="m-validation-message m-textfield__validation-message"
           >
             <!---->
-
+             
             <!---->
           </div>
-
+           
           <div
             class="m-character-count m-textfield__validation-character-count"
           >
@@ -1692,7 +1692,7 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
         </div>
       </div>
     </div>
-
+     
     <p
       class="mu-mb-lg"
     >
@@ -1701,38 +1701,38 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
         type="submit"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Submit
+          Submit 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
-
+       
       <button
         class="m-button m--is-skin-secondary"
         type="reset"
       >
         <!---->
-
+         
         <!---->
-
+         
         <span
           class="m-button__text"
         >
-          Reset
+          Reset 
           <!---->
         </span>
-
+         
         <!---->
-
+         
         <!---->
       </button>
     </p>

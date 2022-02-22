@@ -13,13 +13,13 @@ exports[`Storyshots modul-components|m-table Custom Header 1`] = `
       >
         NAME, USERNAME
       </th>
-
+       
       <th>
         AGE
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -27,7 +27,7 @@ exports[`Storyshots modul-components|m-table Custom Header 1`] = `
       >
         Jonathan - jonathan.25
       </td>
-
+       
       <td>
         25
       </td>
@@ -38,7 +38,7 @@ exports[`Storyshots modul-components|m-table Custom Header 1`] = `
       >
         Carl - carl.30
       </td>
-
+       
       <td>
         30
       </td>
@@ -49,7 +49,7 @@ exports[`Storyshots modul-components|m-table Custom Header 1`] = `
       >
         Jacob - jacob.26
       </td>
-
+       
       <td>
         26
       </td>
@@ -60,7 +60,7 @@ exports[`Storyshots modul-components|m-table Custom Header 1`] = `
       >
         Vincent - vincent.34
       </td>
-
+       
       <td>
         34
       </td>
@@ -71,13 +71,13 @@ exports[`Storyshots modul-components|m-table Custom Header 1`] = `
       >
         Manon - manon.34
       </td>
-
+       
       <td>
         28
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -113,7 +113,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
         class=""
         scope="col"
       >
-         AGE
+         AGE 
       </th>
       <th
         class=""
@@ -136,7 +136,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -151,7 +151,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
             id="mCheckbox-fakeId"
             type="checkbox"
           />
-
+           
           <label
             class="m-checkbox__wrap"
             for="mCheckbox-fakeId"
@@ -164,16 +164,16 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 class="m-checkbox__input__icon"
               />
             </span>
-
+             
             <!---->
           </label>
-
+           
           <div
             class="m-validation-message m-checkbox__message"
             id="fakeId"
           >
             <!---->
-
+             
             <!---->
           </div>
         </div>
@@ -186,7 +186,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
       <td
         class=""
       >
-         25 ans
+         25 ans 
       </td>
       <td
         class=""
@@ -216,17 +216,17 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
@@ -244,7 +244,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
             id="mCheckbox-fakeId"
             type="checkbox"
           />
-
+           
           <label
             class="m-checkbox__wrap"
             for="mCheckbox-fakeId"
@@ -257,16 +257,16 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 class="m-checkbox__input__icon"
               />
             </span>
-
+             
             <!---->
           </label>
-
+           
           <div
             class="m-validation-message m-checkbox__message"
             id="fakeId"
           >
             <!---->
-
+             
             <!---->
           </div>
         </div>
@@ -279,7 +279,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
       <td
         class=""
       >
-         30 ans
+         30 ans 
       </td>
       <td
         class=""
@@ -309,17 +309,17 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
@@ -337,7 +337,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
             id="mCheckbox-fakeId"
             type="checkbox"
           />
-
+           
           <label
             class="m-checkbox__wrap"
             for="mCheckbox-fakeId"
@@ -350,16 +350,16 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 class="m-checkbox__input__icon"
               />
             </span>
-
+             
             <!---->
           </label>
-
+           
           <div
             class="m-validation-message m-checkbox__message"
             id="fakeId"
           >
             <!---->
-
+             
             <!---->
           </div>
         </div>
@@ -372,7 +372,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
       <td
         class=""
       >
-         26 ans
+         26 ans 
       </td>
       <td
         class=""
@@ -402,17 +402,17 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
@@ -430,7 +430,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
             id="mCheckbox-fakeId"
             type="checkbox"
           />
-
+           
           <label
             class="m-checkbox__wrap"
             for="mCheckbox-fakeId"
@@ -443,16 +443,16 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 class="m-checkbox__input__icon"
               />
             </span>
-
+             
             <!---->
           </label>
-
+           
           <div
             class="m-validation-message m-checkbox__message"
             id="fakeId"
           >
             <!---->
-
+             
             <!---->
           </div>
         </div>
@@ -465,7 +465,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
       <td
         class=""
       >
-         34 ans
+         34 ans 
       </td>
       <td
         class=""
@@ -495,17 +495,17 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
@@ -523,7 +523,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
             id="mCheckbox-fakeId"
             type="checkbox"
           />
-
+           
           <label
             class="m-checkbox__wrap"
             for="mCheckbox-fakeId"
@@ -536,16 +536,16 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 class="m-checkbox__input__icon"
               />
             </span>
-
+             
             <!---->
           </label>
-
+           
           <div
             class="m-validation-message m-checkbox__message"
             id="fakeId"
           >
             <!---->
-
+             
             <!---->
           </div>
         </div>
@@ -558,7 +558,7 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
       <td
         class=""
       >
-         28 ans
+         28 ans 
       </td>
       <td
         class=""
@@ -588,23 +588,23 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
     </tr>
   </tbody>
-
+   
   <tfoot>
     <tr>
       <td
@@ -617,9 +617,9 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
           type="button"
         >
           <!---->
-
+           
           <!---->
-
+           
           <span
             class="m-button__text"
           >
@@ -628,16 +628,16 @@ exports[`Storyshots modul-components|m-table Custom cell 1`] = `
             >
               Show more results
             </p>
-
+             
             <span>
               1-5 of 45
             </span>
-
+             
             <!---->
           </span>
-
+           
           <!---->
-
+           
           <!---->
         </button>
       </td>
@@ -677,7 +677,7 @@ exports[`Storyshots modul-components|m-table Custom columns class 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -728,7 +728,7 @@ exports[`Storyshots modul-components|m-table Custom columns class 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -791,23 +791,23 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td />
-
+       
       <td>
          Jonathan
       </td>
-
+       
       <td
         colspan="2"
       >
-
+        
                                 25 ans - jonathan.25
-
+                            
       </td>
-
+       
       <td>
         <div
           class="m-popper m-popup m-option m--is-inline"
@@ -829,36 +829,36 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
     </tr>
     <tr>
       <td />
-
+       
       <td>
          Carl
       </td>
-
+       
       <td
         colspan="2"
       >
-
+        
                                 30 ans - carl.30
-
+                            
       </td>
-
+       
       <td>
         <div
           class="m-popper m-popup m-option m--is-inline"
@@ -880,36 +880,36 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
     </tr>
     <tr>
       <td />
-
+       
       <td>
          Jacob
       </td>
-
+       
       <td
         colspan="2"
       >
-
+        
                                 26 ans - jacob.26
-
+                            
       </td>
-
+       
       <td>
         <div
           class="m-popper m-popup m-option m--is-inline"
@@ -931,36 +931,36 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
     </tr>
     <tr>
       <td />
-
+       
       <td>
          Vincent
       </td>
-
+       
       <td
         colspan="2"
       >
-
+        
                                 34 ans - vincent.34
-
+                            
       </td>
-
+       
       <td>
         <div
           class="m-popper m-popup m-option m--is-inline"
@@ -982,36 +982,36 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
     </tr>
     <tr>
       <td />
-
+       
       <td>
          Manon
       </td>
-
+       
       <td
         colspan="2"
       >
-
+        
                                 28 ans - manon.28
-
+                            
       </td>
-
+       
       <td>
         <div
           class="m-popper m-popup m-option m--is-inline"
@@ -1033,23 +1033,23 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
                 width="20px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
-
+           
           <!---->
         </div>
       </td>
     </tr>
   </tbody>
-
+   
   <tfoot>
     <tr>
       <td
@@ -1062,9 +1062,9 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
           type="button"
         >
           <!---->
-
+           
           <!---->
-
+           
           <span
             class="m-button__text"
           >
@@ -1073,16 +1073,16 @@ exports[`Storyshots modul-components|m-table Custom row 1`] = `
             >
               Show more results
             </p>
-
+             
             <span>
               1-5 of 45
             </span>
-
+             
             <!---->
           </span>
-
+           
           <!---->
-
+           
           <!---->
         </button>
       </td>
@@ -1131,7 +1131,7 @@ exports[`Storyshots modul-components|m-table Default 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -1219,7 +1219,7 @@ exports[`Storyshots modul-components|m-table Default 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -1264,7 +1264,7 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr
       class="m-table__placeholder"
@@ -1275,7 +1275,7 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
         style="position: absolute;"
       >
         <!---->
-
+         
         <div
           class="m-table__placeholder-message"
           style="width: 100%;"
@@ -1284,17 +1284,17 @@ exports[`Storyshots modul-components|m-table Empty table - custom slot 1`] = `
             class="m-table-sandbox__empty__cell"
             colspan="3"
           >
-
+            
                                 Empty table
-
+                            
           </td>
-
+           
           <!---->
         </div>
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -1339,7 +1339,7 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr
       class="m-table__placeholder"
@@ -1350,7 +1350,7 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
         style="position: absolute;"
       >
         <!---->
-
+         
         <div
           class="m-table__placeholder-message"
           style="width: 100%;"
@@ -1358,13 +1358,13 @@ exports[`Storyshots modul-components|m-table Empty table - default slot 1`] = `
           <p>
             Aucune donnée à afficher
           </p>
-
+           
           <!---->
         </div>
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -1409,7 +1409,7 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr
       class="m-table__placeholder"
@@ -1427,20 +1427,20 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
             class="m-progress__bar"
             style="width: 0%; border-bottom-left-radius: initial; border-top-left-radius: initial;"
           />
-
+           
           <!---->
         </div>
-
+         
         <div
           class="m-table__placeholder-message"
           style="width: 100%;"
         >
           <!---->
-
+           
           <p>
             Chargement en cours
           </p>
-
+           
           <p
             class="m-table__placeholder-precision"
           >
@@ -1450,7 +1450,7 @@ exports[`Storyshots modul-components|m-table Loading 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -1478,7 +1478,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
             >
               Name
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -1492,13 +1492,13 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1519,7 +1519,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
             >
               Age
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
               style="width: 14px; height: 14px;"
@@ -1533,13 +1533,13 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1560,7 +1560,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
             >
               Username
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -1574,13 +1574,13 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1588,7 +1588,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -1676,7 +1676,7 @@ exports[`Storyshots modul-components|m-table Sortable 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -1699,7 +1699,7 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
           <div
             class="m-table__sortable-icon-wrap"
           >
-            NAME (custom)
+            NAME (custom) 
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -1713,13 +1713,13 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1735,7 +1735,7 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
           <div
             class="m-table__sortable-icon-wrap"
           >
-            AGE (custom)
+            AGE (custom) 
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
               style="width: 14px; height: 14px;"
@@ -1749,13 +1749,13 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1771,7 +1771,7 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
           <div
             class="m-table__sortable-icon-wrap"
           >
-            USERNAME (custom)
+            USERNAME (custom) 
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -1785,13 +1785,13 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1799,7 +1799,7 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -1853,7 +1853,7 @@ exports[`Storyshots modul-components|m-table Sortable width custom header cell 1
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -1881,7 +1881,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
             >
               Name
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -1895,13 +1895,13 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1922,7 +1922,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
             >
               Age
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple m--is-sort-desc"
               style="width: 14px; height: 14px;"
@@ -1936,13 +1936,13 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1963,7 +1963,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
             >
               Username
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -1977,13 +1977,13 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -1991,7 +1991,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -2079,7 +2079,7 @@ exports[`Storyshots modul-components|m-table Sortable with unsorting 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -2107,7 +2107,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
             >
               Name
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2121,13 +2121,13 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2148,7 +2148,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
             >
               Age
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2162,13 +2162,13 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2189,7 +2189,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
             >
               Username
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2203,13 +2203,13 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2217,7 +2217,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -2305,7 +2305,7 @@ exports[`Storyshots modul-components|m-table Text align center - Sortable 1`] = 
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -2350,7 +2350,7 @@ exports[`Storyshots modul-components|m-table Text align center 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -2438,7 +2438,7 @@ exports[`Storyshots modul-components|m-table Text align center 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -2466,7 +2466,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
             >
               Name
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2480,13 +2480,13 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2507,7 +2507,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
             >
               Age
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2521,13 +2521,13 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2548,7 +2548,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
             >
               Username
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2562,13 +2562,13 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2576,7 +2576,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -2664,7 +2664,7 @@ exports[`Storyshots modul-components|m-table Text align left - Sortable 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -2709,7 +2709,7 @@ exports[`Storyshots modul-components|m-table Text align left 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -2797,7 +2797,7 @@ exports[`Storyshots modul-components|m-table Text align left 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -2825,7 +2825,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
             >
               Name
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2839,13 +2839,13 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2866,7 +2866,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
             >
               Age
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2880,13 +2880,13 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2907,7 +2907,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
             >
               Username
             </div>
-
+             
             <button
               class="m-icon-button m-table__sortable-icon m--is-skin-bold m--has-ripple"
               style="width: 14px; height: 14px;"
@@ -2921,13 +2921,13 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
                 width="12px"
               >
                 <!---->
-
+                 
                 <use
                   aria-hidden="true"
                   class=""
                 />
               </svg>
-
+               
               <!---->
             </button>
           </div>
@@ -2935,7 +2935,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -3023,7 +3023,7 @@ exports[`Storyshots modul-components|m-table Text align right - Sortable 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -3068,7 +3068,7 @@ exports[`Storyshots modul-components|m-table Text align right 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td
@@ -3156,7 +3156,7 @@ exports[`Storyshots modul-components|m-table Text align right 1`] = `
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
@@ -3204,7 +3204,7 @@ exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
         </th>
       </tr>
     </thead>
-
+     
     <tbody>
       <tr
         class="m-table__placeholder"
@@ -3215,7 +3215,7 @@ exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
           style="position: sticky;"
         >
           <!---->
-
+           
           <div
             class="m-table__placeholder-message"
             style="width: 500px;"
@@ -3223,13 +3223,13 @@ exports[`Storyshots modul-components|m-table Width placeholer 1`] = `
             <p>
               Aucune donnée à afficher
             </p>
-
+             
             <!---->
           </div>
         </td>
       </tr>
     </tbody>
-
+     
     <!---->
   </table>
 </div>
@@ -3266,13 +3266,13 @@ exports[`Storyshots modul-components|m-table skin="simple" 1`] = `
       </th>
     </tr>
   </thead>
-
+   
   <tbody>
     <tr>
       <td>
         Jonathan - jonathan.25
       </td>
-
+       
       <td>
         25
       </td>
@@ -3281,7 +3281,7 @@ exports[`Storyshots modul-components|m-table skin="simple" 1`] = `
       <td>
         Carl - carl.30
       </td>
-
+       
       <td>
         30
       </td>
@@ -3290,7 +3290,7 @@ exports[`Storyshots modul-components|m-table skin="simple" 1`] = `
       <td>
         Jacob - jacob.26
       </td>
-
+       
       <td>
         26
       </td>
@@ -3299,13 +3299,13 @@ exports[`Storyshots modul-components|m-table skin="simple" 1`] = `
       <td>
         Vincent - vincent.34
       </td>
-
+       
       <td>
         34
       </td>
     </tr>
   </tbody>
-
+   
   <!---->
 </table>
 `;
