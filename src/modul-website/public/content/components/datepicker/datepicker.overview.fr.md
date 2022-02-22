@@ -4,7 +4,7 @@ Le sélecteur de date est utilisé pour permettre à l'utilisateur de sélection
 
 ### Format de la date
 Le format de date retenu pour la saisie et la modification est le suivant&nbsp;: **AAAA-MM-JJ**. Il doit être utilisé chaque fois qu'une date peut être inscrite ou modifiée par un utilisateur. Ce format est automatiquement appliqué lorsque l'utilisateur passe par le sélecteur de date.
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p>2018-12-15</p>
 </m-panel>
 

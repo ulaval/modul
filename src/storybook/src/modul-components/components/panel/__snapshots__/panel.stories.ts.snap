@@ -2,7 +2,7 @@
 
 exports[`Storyshots modul-components|m-panel default 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -17,22 +17,22 @@ exports[`Storyshots modul-components|m-panel default 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -46,7 +46,7 @@ exports[`Storyshots modul-components|m-panel default 1`] = `
 
 exports[`Storyshots modul-components|m-panel highlighted="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border m--is-highlighted"
@@ -61,22 +61,22 @@ exports[`Storyshots modul-components|m-panel highlighted="true" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -90,7 +90,7 @@ exports[`Storyshots modul-components|m-panel highlighted="true" 1`] = `
 
 exports[`Storyshots modul-components|m-panel shadow="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-shadow m--has-border"
@@ -105,22 +105,22 @@ exports[`Storyshots modul-components|m-panel shadow="true" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -134,7 +134,7 @@ exports[`Storyshots modul-components|m-panel shadow="true" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -149,22 +149,22 @@ exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -173,64 +173,64 @@ exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`
       </p>
     </footer>
   </article>
-   
+
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
-     
+
     <!---->
-     
+
     <span
       class="m-button__text"
     >
-      Toogle $slot.header 
+      Toogle $slot.header
       <!---->
     </span>
-     
+
     <!---->
-     
+
     <!---->
   </button>
-   
+
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
-     
+
     <!---->
-     
+
     <span
       class="m-button__text"
     >
-      Toogle $slot.default 
+      Toogle $slot.default
       <!---->
     </span>
-     
+
     <!---->
-     
+
     <!---->
   </button>
-   
+
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
-     
+
     <!---->
-     
+
     <span
       class="m-button__text"
     >
-      Toogle $slot.footer 
+      Toogle $slot.footer
       <!---->
     </span>
-     
+
     <!---->
-     
+
     <!---->
   </button>
 </div>
@@ -238,7 +238,7 @@ exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`
 
 exports[`Storyshots modul-components|m-panel/border border="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light"
@@ -253,22 +253,22 @@ exports[`Storyshots modul-components|m-panel/border border="false" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -282,7 +282,7 @@ exports[`Storyshots modul-components|m-panel/border border="false" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/border border-large="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border m--has-border-large"
@@ -297,22 +297,22 @@ exports[`Storyshots modul-components|m-panel/border border-large="true" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -326,7 +326,7 @@ exports[`Storyshots modul-components|m-panel/border border-large="true" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/padding padding="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -341,22 +341,22 @@ exports[`Storyshots modul-components|m-panel/padding padding="false" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--no-padding"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer m--no-padding"
     >
@@ -370,7 +370,7 @@ exports[`Storyshots modul-components|m-panel/padding padding="false" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/padding padding-body="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -385,22 +385,22 @@ exports[`Storyshots modul-components|m-panel/padding padding-body="false" 1`] = 
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--no-padding"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -414,7 +414,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-body="false" 1`] = 
 
 exports[`Storyshots modul-components|m-panel/padding padding-footer="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -429,22 +429,22 @@ exports[`Storyshots modul-components|m-panel/padding padding-footer="false" 1`] 
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer m--no-padding"
     >
@@ -458,7 +458,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-footer="false" 1`] 
 
 exports[`Storyshots modul-components|m-panel/padding padding-header="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -473,22 +473,22 @@ exports[`Storyshots modul-components|m-panel/padding padding-header="false" 1`] 
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -502,7 +502,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-header="false" 1`] 
 
 exports[`Storyshots modul-components|m-panel/padding padding-large="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border m--has-padding-large"
@@ -517,22 +517,22 @@ exports[`Storyshots modul-components|m-panel/padding padding-large="true" 1`] = 
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -546,7 +546,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-large="true" 1`] = 
 
 exports[`Storyshots modul-components|m-panel/skin skin="dark" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-dark m--has-border"
@@ -561,22 +561,22 @@ exports[`Storyshots modul-components|m-panel/skin skin="dark" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -590,7 +590,7 @@ exports[`Storyshots modul-components|m-panel/skin skin="dark" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/skin skin="darker" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-darker m--has-border"
@@ -605,22 +605,22 @@ exports[`Storyshots modul-components|m-panel/skin skin="darker" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >
@@ -634,7 +634,7 @@ exports[`Storyshots modul-components|m-panel/skin skin="darker" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/skin skin="light" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -649,22 +649,22 @@ exports[`Storyshots modul-components|m-panel/skin skin="light" 1`] = `
           I am a header
         </h2>
       </div>
-       
+
       <!---->
-       
+
       <!---->
     </header>
-     
+
     <div
       class="m-panel__body m--has-padding-bottom"
     >
-       
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.
       </p>
-       
+
     </div>
-     
+
     <footer
       class="m-panel__footer"
     >

@@ -142,7 +142,7 @@ export const PropButtonType: () => Component = (): Component => ({
             @button-click="emitButtonClick"
         />
         <${EMPTY_AREA_NAME}
-            class="m-u--margin-top--l"
+            class="mu-mt-lg"
             button-text="Prop button-type = ${MEmptyAreaButtonType.AddButton}"
             button-type="${MEmptyAreaButtonType.AddButton}"
             @button-click="emitButtonClick"
@@ -160,7 +160,7 @@ export const PropDisplayMode: () => Component = (): Component => ({
             button-text="Add"
         />
         <${EMPTY_AREA_NAME}
-            class="m-u--margin-top--l"
+            class="mu-mt-lg"
             title="Prop display-mode = '${MEmptyAreaDisplayMode.Block}'"
             svg-name="${ModulIconName.Folder}"
             display-mode="${MEmptyAreaDisplayMode.Block}"
@@ -178,7 +178,7 @@ export const PropMinHeight: () => Component = (): Component => ({
             button-text="Add"
         />
         <${EMPTY_AREA_NAME}
-            class="m-u--margin-top--l"
+            class="mu-mt-lg"
             title="Prop min-height = '400px'"
             min-height="400px"
             svg-name="${ModulIconName.Folder}"
@@ -195,13 +195,13 @@ export const PropSvgSize: () => Component = (): Component => ({
             svg-size="30px"
         />
         <${EMPTY_AREA_NAME}
-            class="m-u--margin-top--l"
+            class="mu-mt-lg"
             title="Prop svg-size = '80px'"
             svg-name="${ModulIconName.Folder}"
             svg-size="80px"
         />
         <${EMPTY_AREA_NAME}
-            class="m-u--margin-top--l"
+            class="mu-mt-lg"
             title="Prop svg-size = '1em'"
             svg-name="${ModulIconName.Folder}"
             svg-size="1em"

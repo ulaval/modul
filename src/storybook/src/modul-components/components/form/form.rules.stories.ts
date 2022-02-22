@@ -47,7 +47,7 @@ export const requiredAnd20CaractersMax = () => ({
     template: `
         <div>
         <h2>Required and 20 characters max</h2>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-textfield label="Title"
                         v-model.trim="requiredMax20.value"
@@ -57,7 +57,7 @@ export const requiredAnd20CaractersMax = () => ({
                         :error-message="requiredMax20.errors.length > 0 ? requiredMax20.errors[0].message : null"
                         v-m-control="requiredMax20">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -100,14 +100,14 @@ export const requiredAnd5CaractersMin = () => ({
     template: `
         <div>
         <h2>Required and 5 characters min</h2>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-textfield label="Security answer"
                         v-model.trim="requiredMin5.value"
                         :error-message="requiredMin5.errors.length > 0 ? requiredMin5.errors[0].message : null"
                         v-m-control="requiredMin5">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -149,14 +149,14 @@ export const PostalCodeExample = () => ({
     template: `
         <div>
         <h2>Format with fixed max characters (postal code)</h2>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-textfield label="Postal code"
                         v-model.trim="postalCode.value"
                         :error-message="postalCode.errors.length > 0 ? postalCode.errors[0].message : null"
                         v-m-control="postalCode">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -195,14 +195,14 @@ export const EmailExample = () => ({
     template: `
         <div>
         <h2>Format without fixed max characters (email)</h2>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-textfield label="Email"
                         v-model.trim="email.value"
                         :error-message="email.errors.length > 0 ? email.errors[0].message : null"
                         v-m-control="email">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -257,14 +257,14 @@ export const CustomValidation = () => ({
         <div>
         <h2>More than one validations (course code)</h2>
         <p>'MAT-0000' and 'MAT-0001' are reserved</p>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-textfield label="Course code (ex. : MAT-1000)"
                         v-model.trim="courseCode.value"
                         :error-message="courseCode.errors.length > 0 ? courseCode.errors[0].message : null"
                         v-m-control="courseCode">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -324,7 +324,7 @@ export const AsyncValidation = () => ({
         <div>
         <h2>Live check username availability (async)</h2>
         <p>'John', 'Jane' and 'Doe' are reserved</p>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-textfield label="Username"
                         v-model.trim="username.value"
@@ -334,7 +334,7 @@ export const AsyncValidation = () => ({
                         :waiting="username.waiting"
                         v-m-control="username">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -369,7 +369,7 @@ export const RadioButtonRequired = () => ({
     template: `
         <div>
         <h2>Radio button required</h2>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-radio-group label="Select a role :"
                             v-model.trim="radioRequired.value"
@@ -382,7 +382,7 @@ export const RadioButtonRequired = () => ({
                 <m-radio value="Student">Student</m-radio>
             </m-radio-group>
 
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -432,10 +432,10 @@ export const checkbox2to5selections = () => ({
     template: `
         <div>
         <h2>Checkbox 2 to 5 selections</h2>
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <p><strong>Select 2 to 5 roles :</strong></p>
-            <ul class="m-u--no-margin">
+            <ul class="mu-no-m">
                 <m-input-group :error-message="roles.errors.length > 0 ? roles.errors[0].message : null"
                 v-m-control="roles"
                 :visible="false">
@@ -449,7 +449,7 @@ export const checkbox2to5selections = () => ({
     </m-input-group>
             </ul>
 
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -519,7 +519,7 @@ export const emailConfirmation = () => ({
         <div>
         <h2>Email confirmation</h2>
         <m-form :form-group="formGroup"
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-input-group :error-message="formGroup.errors.length > 0 ? formGroup.errors[0].message : null"
                            legend=""
@@ -539,7 +539,7 @@ export const emailConfirmation = () => ({
 
             </m-input-group>
 
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>

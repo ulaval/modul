@@ -3,7 +3,7 @@
 La ponctuation répond à un besoin de logique. Elle permet d’avoir des rapports syntaxiques entre les éléments d’une phrase (séparation, regroupement) et de diviser logiquement un texte (transition, explication, opposition). Ainsi, la ponctuation facilite la lecture et la compréhension d’un contenu.
 
 ### Tableau des espacements avant et après les signes de ponctuation
-<table class="m-u--margin-top m-u--table">
+<table class="mu-mt mu-table">
     <thead>
         <tr>
             <th>Nom</th>
@@ -217,7 +217,7 @@ Lors de l'utilisation d'une énumération verticale, il est important&nbsp;:
 * D'utiliser les deux-points **(:)**
 * Si les éléments sont des phrases complètes, chacun commence par une lettre majuscule et se termine par un point&nbsp;:
 
-<m-panel class="m-u--margin-top m-u--margin-left--l m-u--margin-bottom--l">
+<m-panel class="mu-mt mu-ml-lg mu-mb-lg">
     <p>Pour qu’un site soit considéré « Complet », tous les éléments suivants doivent faire partie du site de cours&nbsp;: </p>
     <ul>
         <li>La sous-section «&nbsp;Coordonnées et disponibilités&nbsp;» ne doit pas être vide.</li>
@@ -232,7 +232,7 @@ Lors de l'utilisation d'une énumération verticale, il est important&nbsp;:
 
 * Si l’ensemble des éléments forme une phrase, chaque élément commence par une minuscule et se termine par un point-virgule, sauf le dernier qui prend un point&nbsp;:
 
-<m-panel class="m-u--margin-top m-u--margin-left--l m-u--margin-bottom--l">
+<m-panel class="mu-mt mu-ml-lg mu-mb-lg">
     <p>Vous devez vous adresser au Bureau du registraire dans les cas suivants&nbsp;:</p>
     <ul>
         <li>l'attestation d'inscription officielle standard ne répond pas à toutes vos exigences;</li>
@@ -243,7 +243,7 @@ Lors de l'utilisation d'une énumération verticale, il est important&nbsp;:
 
 * Si les éléments sont très courts, ils peuvent se passer de ponctuation&nbsp;:
 
-<m-panel class="m-u--margin-top m-u--margin-left--l">
+<m-panel class="mu-mt mu-ml-lg">
     <p>Où et quand l'utiliser?</p>
     <ul>
         <li>Au PEPS</li>

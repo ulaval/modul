@@ -57,13 +57,13 @@ $m-fr-icon-size: 14px !default;
     }
 
     a {
-        @extend .m-u--link;
+        @extend .mu-link;
 
         display: inline;
 
         &:hover,
         &:focus {
-            @extend %m-u--link-text--hover-focus;
+            @extend %mu-link-text--hover-focus;
         }
     }
 

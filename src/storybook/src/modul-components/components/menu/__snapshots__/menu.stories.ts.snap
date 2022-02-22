@@ -15,18 +15,18 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -44,22 +44,22 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -67,7 +67,7 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -79,16 +79,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -96,7 +96,7 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -108,16 +108,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -125,7 +125,7 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -137,16 +137,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -164,16 +164,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -181,7 +181,7 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -193,16 +193,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -210,7 +210,7 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -222,16 +222,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -241,7 +241,7 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         </li>
       </ul>
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -253,16 +253,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -280,16 +280,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 4
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -297,7 +297,7 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -309,16 +309,16 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 5
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -347,18 +347,18 @@ exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item m--is-custom-content"
       role="none"
@@ -374,22 +374,22 @@ exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
           type="button"
         >
           <!---->
-           
+
           <!---->
-           
+
           <span
             class="m-button__text"
           >
-            custom content 
+            custom content
             <!---->
           </span>
-           
+
           <!---->
-           
+
           <!---->
         </button>
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -397,7 +397,7 @@ exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -409,16 +409,16 @@ exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -426,7 +426,7 @@ exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -438,16 +438,16 @@ exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -474,19 +474,19 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
     style="display: none;"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -504,22 +504,22 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -527,7 +527,7 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -539,16 +539,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -556,7 +556,7 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -568,16 +568,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -585,7 +585,7 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -597,16 +597,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -624,16 +624,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -641,7 +641,7 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -653,16 +653,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -670,7 +670,7 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -682,16 +682,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -701,7 +701,7 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         </li>
       </ul>
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -713,16 +713,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -740,16 +740,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 4
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -757,7 +757,7 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -769,16 +769,16 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 5
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -807,18 +807,18 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -836,22 +836,22 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -859,7 +859,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -871,16 +871,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -888,7 +888,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -900,16 +900,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -917,7 +917,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -929,16 +929,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -956,16 +956,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -973,7 +973,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -985,16 +985,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1002,7 +1002,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1014,16 +1014,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1033,7 +1033,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         </li>
       </ul>
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1045,16 +1045,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1072,16 +1072,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 4
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1089,7 +1089,7 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1101,16 +1101,16 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 5
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1139,18 +1139,18 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="ariaTest"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1168,22 +1168,22 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1191,7 +1191,7 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1203,16 +1203,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1220,7 +1220,7 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1232,16 +1232,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1249,7 +1249,7 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1261,16 +1261,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1288,16 +1288,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1305,7 +1305,7 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1317,16 +1317,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1334,7 +1334,7 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1346,16 +1346,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1365,7 +1365,7 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         </li>
       </ul>
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1377,16 +1377,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1404,16 +1404,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 4
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1421,7 +1421,7 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1433,16 +1433,16 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 5
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1471,18 +1471,18 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1500,22 +1500,22 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1523,7 +1523,7 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1535,16 +1535,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1552,7 +1552,7 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1564,16 +1564,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1581,7 +1581,7 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1593,16 +1593,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1620,16 +1620,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1637,7 +1637,7 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1649,16 +1649,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1666,7 +1666,7 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1678,16 +1678,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1697,7 +1697,7 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         </li>
       </ul>
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1709,16 +1709,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1736,16 +1736,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 4
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1753,7 +1753,7 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1765,16 +1765,16 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 5
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1803,18 +1803,18 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1832,22 +1832,22 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1855,7 +1855,7 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1867,16 +1867,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1884,7 +1884,7 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1896,16 +1896,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1913,7 +1913,7 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -1925,16 +1925,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -1952,16 +1952,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1969,7 +1969,7 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -1981,16 +1981,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -1998,7 +1998,7 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -2010,16 +2010,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2029,7 +2029,7 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         </li>
       </ul>
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2041,16 +2041,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2068,16 +2068,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 4
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2085,7 +2085,7 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -2097,16 +2097,16 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 5
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2135,19 +2135,19 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
     style="display: none;"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2165,22 +2165,22 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2188,7 +2188,7 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2200,16 +2200,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2217,7 +2217,7 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2229,16 +2229,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2246,7 +2246,7 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2258,16 +2258,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2285,16 +2285,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2302,7 +2302,7 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -2314,16 +2314,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2331,7 +2331,7 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -2343,16 +2343,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2362,7 +2362,7 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         </li>
       </ul>
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2374,16 +2374,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2401,16 +2401,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 4
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2418,7 +2418,7 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -2430,16 +2430,16 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 5
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -2469,18 +2469,18 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
       <span
         class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
       />
-       
+
       <div>
         Menu
       </div>
     </div>
-     
+
     <ul
       aria-labelledby="mMenu-fakeId"
       class="m-menu__body"
       id="mMenu-fakeId-controls"
     >
-       
+
       <li
         class="m-menu-item"
         role="none"
@@ -2492,16 +2492,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-menu-item__label"
           >
             Item 1
           </span>
-           
+
           <!---->
         </span>
-         
+
         <ul
           aria-labelledby="mMenuItem-fakeId"
           class="m-menu-item__group"
@@ -2509,7 +2509,7 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           style="display: none;"
         />
       </li>
-       
+
       <li
         class="m-menu-item"
         role="none"
@@ -2521,16 +2521,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-menu-item__label"
           >
             Item 2
           </span>
-           
+
           <!---->
         </span>
-         
+
         <ul
           aria-labelledby="mMenuItem-fakeId"
           class="m-menu-item__group"
@@ -2538,7 +2538,7 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           style="display: none;"
         />
       </li>
-       
+
       <li
         class="m-menu-item"
         role="none"
@@ -2550,16 +2550,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-menu-item__label"
           >
             Item 3
           </span>
-           
+
           <!---->
         </span>
-         
+
         <ul
           aria-labelledby="mMenuItem-fakeId"
           class="m-menu-item__group"
@@ -2577,16 +2577,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
               tabindex="0"
             >
               <!---->
-               
+
               <span
                 class="m-menu-item__label"
               >
                 Subitem 1
               </span>
-               
+
               <!---->
             </span>
-             
+
             <ul
               aria-labelledby="mMenuItem-fakeId"
               class="m-menu-item__group"
@@ -2594,7 +2594,7 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
               style="display: none;"
             />
           </li>
-           
+
           <li
             class="m-menu-item"
             role="none"
@@ -2606,16 +2606,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
               tabindex="0"
             >
               <!---->
-               
+
               <span
                 class="m-menu-item__label"
               >
                 Subitem 2
               </span>
-               
+
               <!---->
             </span>
-             
+
             <ul
               aria-labelledby="mMenuItem-fakeId"
               class="m-menu-item__group"
@@ -2623,30 +2623,30 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
               style="display: none;"
             />
           </li>
-           
+
           <!---->
         </ul>
       </li>
     </ul>
   </nav>
-   
+
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
-     
+
     <!---->
-     
+
     <span
       class="m-button__text"
     >
-      Add subitem 3 to item 3 
+      Add subitem 3 to item 3
       <!---->
     </span>
-     
+
     <!---->
-     
+
     <!---->
   </button>
 </div>
@@ -2668,18 +2668,18 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
       <span
         class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
       />
-       
+
       <div>
         Menu
       </div>
     </div>
-     
+
     <ul
       aria-labelledby="mMenu-fakeId"
       class="m-menu__body"
       id="mMenu-fakeId-controls"
     >
-       
+
       <li
         class="m-menu-item"
         role="none"
@@ -2691,16 +2691,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-menu-item__label"
           >
             Item 1
           </span>
-           
+
           <!---->
         </span>
-         
+
         <ul
           aria-labelledby="mMenuItem-fakeId"
           class="m-menu-item__group"
@@ -2708,7 +2708,7 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           style="display: none;"
         />
       </li>
-       
+
       <li
         class="m-menu-item"
         role="none"
@@ -2720,16 +2720,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-menu-item__label"
           >
             Item 2
           </span>
-           
+
           <!---->
         </span>
-         
+
         <ul
           aria-labelledby="mMenuItem-fakeId"
           class="m-menu-item__group"
@@ -2737,7 +2737,7 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           style="display: none;"
         />
       </li>
-       
+
       <li
         class="m-menu-item"
         role="none"
@@ -2749,16 +2749,16 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
           tabindex="0"
         >
           <!---->
-           
+
           <span
             class="m-menu-item__label"
           >
             Item 3
           </span>
-           
+
           <!---->
         </span>
-         
+
         <ul
           aria-labelledby="mMenuItem-fakeId"
           class="m-menu-item__group"
@@ -2768,24 +2768,24 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
       </li>
     </ul>
   </nav>
-   
+
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
-     
+
     <!---->
-     
+
     <span
       class="m-button__text"
     >
-      Add 2 subitems to item 3 
+      Add 2 subitems to item 3
       <!---->
     </span>
-     
+
     <!---->
-     
+
     <!---->
   </button>
 </div>
@@ -2806,18 +2806,18 @@ exports[`Storyshots modul-components|m-menu/menuItem default 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2835,22 +2835,22 @@ exports[`Storyshots modul-components|m-menu/menuItem default 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2877,18 +2877,18 @@ exports[`Storyshots modul-components|m-menu/menuItem disabled 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item m--is-disabled"
       role="none"
@@ -2900,16 +2900,16 @@ exports[`Storyshots modul-components|m-menu/menuItem disabled 1`] = `
         tabindex="-1"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -2936,18 +2936,18 @@ exports[`Storyshots modul-components|m-menu/menuItem iconName 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -2965,22 +2965,22 @@ exports[`Storyshots modul-components|m-menu/menuItem iconName 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3007,18 +3007,18 @@ exports[`Storyshots modul-components|m-menu/menuItem label 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -3030,16 +3030,16 @@ exports[`Storyshots modul-components|m-menu/menuItem label 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           label1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3066,18 +3066,18 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -3095,22 +3095,22 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
           width="1em"
         >
           <!---->
-           
+
           <use
             aria-hidden="true"
             class=""
           />
         </svg>
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3118,7 +3118,7 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -3130,16 +3130,16 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 2
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3147,7 +3147,7 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -3159,16 +3159,16 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 3
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3176,7 +3176,7 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
         style="display: none;"
       />
     </li>
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -3188,16 +3188,16 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item group 1 - :open='true'
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3215,16 +3215,16 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 1
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -3232,7 +3232,7 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -3244,16 +3244,16 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 2
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -3261,7 +3261,7 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
             style="display: none;"
           />
         </li>
-         
+
         <li
           class="m-menu-item"
           role="none"
@@ -3273,16 +3273,16 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
             tabindex="0"
           >
             <!---->
-             
+
             <span
               class="m-menu-item__label"
             >
               Subitem 3
             </span>
-             
+
             <!---->
           </span>
-           
+
           <ul
             aria-labelledby="mMenuItem-fakeId"
             class="m-menu-item__group"
@@ -3311,18 +3311,18 @@ exports[`Storyshots modul-components|m-menu/menuItem readonly 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       readonly="readonly"
@@ -3335,16 +3335,16 @@ exports[`Storyshots modul-components|m-menu/menuItem readonly 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3371,18 +3371,18 @@ exports[`Storyshots modul-components|m-menu/menuItem url (router-link) 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -3393,14 +3393,14 @@ exports[`Storyshots modul-components|m-menu/menuItem url (router-link) 1`] = `
         role="menuitem"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
       </a>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"
@@ -3427,18 +3427,18 @@ exports[`Storyshots modul-components|m-menu/menuItem value 1`] = `
     <span
       class="m-plus m-menu__trigger__plus m--is-skin-current-color m--is-open m--is-large"
     />
-     
+
     <div>
       Menu
     </div>
   </div>
-   
+
   <ul
     aria-labelledby="mMenu-fakeId"
     class="m-menu__body"
     id="mMenu-fakeId-controls"
   >
-     
+
     <li
       class="m-menu-item"
       role="none"
@@ -3450,16 +3450,16 @@ exports[`Storyshots modul-components|m-menu/menuItem value 1`] = `
         tabindex="0"
       >
         <!---->
-         
+
         <span
           class="m-menu-item__label"
         >
           Item 1
         </span>
-         
+
         <!---->
       </span>
-       
+
       <ul
         aria-labelledby="mMenuItem-fakeId"
         class="m-menu-item__group"

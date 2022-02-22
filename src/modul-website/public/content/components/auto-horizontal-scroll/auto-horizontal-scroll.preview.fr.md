@@ -16,7 +16,7 @@
                     marginRight: item < 18 ? '16px' : undefined,
                 }"
             >
-                <p class="m-u--no-margin">Boîte <b>{{ item }}</b></p>
+                <p class="mu-no-m">Boîte <b>{{ item }}</b></p>
             </article>
         </div>
     </m-auto-horizontal-scroll>

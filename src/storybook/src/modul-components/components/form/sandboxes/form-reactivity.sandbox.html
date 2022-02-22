@@ -1,5 +1,5 @@
 <div class="m-add-sandbox">
-    <h2 class="m-u--no-margin">Test reactivity of MForm</h2>
+    <h2 class="mu-no-m">Test reactivity of MForm</h2>
     <span v-model="name">Welcome {{ name }} !</span>
     <br />
 
@@ -8,7 +8,7 @@
             @reset="reset()"
             @submit="submit()">
 
-        <h4 class="m-u--h6">Step 1 : click on submit to display error message (you can leave blank or type anything other the "poulet")</h4>
+        <h4 class="mu-h6">Step 1 : click on submit to display error message (you can leave blank or type anything other the "poulet")</h4>
 
         <m-textarea v-m-control="descriptionField"
                     v-model="descriptionField.value"
@@ -19,7 +19,7 @@
                     :label="name + '\'s Favorite food'">
         </m-textarea> <br />
 
-        <p class="m-u--margin-top--l m-u--margin-bottom--l">
+        <p class="mu-mt-lg mu-mb-lg">
             <m-button type="submit"
                       :waiting="pendingSubmit">Submit</m-button>
             <m-button type="reset"
@@ -31,7 +31,7 @@
             @reset="reset()"
             @submit="submit()">
 
-        <h4 class="m-u--h6">Step 2: change the name and submit - should change the error message and the greeting at the top</h4>
+        <h4 class="mu-h6">Step 2: change the name and submit - should change the error message and the greeting at the top</h4>
 
         <m-textfield v-m-control="nameField"
                      v-model="nameField.value"
@@ -41,7 +41,7 @@
                      :character-count="true"
                      label="New Name">
         </m-textfield>
-        <p class="m-u--margin-top--l m-u--margin-bottom--l">
+        <p class="mu-mt-lg mu-mb-lg">
             <m-button type="submit"
                       :waiting="pendingSubmit">Submit</m-button>
             <m-button type="reset"

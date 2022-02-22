@@ -353,7 +353,7 @@ export const slotLeftContain = () => ({
             label="Clock"
         >
             <m-icon
-                class="m-u--margin-right--s"
+                class="mu-mr-xs"
                 slot="leftContain"
                 name="m-svg__clock" />
         </${NAVBAR_ITEM_NAME}>
@@ -362,7 +362,7 @@ export const slotLeftContain = () => ({
             label="Logout"
         >
             <m-icon
-                class="m-u--margin-right--s"
+                class="mu-mr-xs"
                 slot="leftContain"
                 name="m-svg__logout" />
         </${NAVBAR_ITEM_NAME}>
@@ -382,7 +382,7 @@ export const slotRightContain = () => ({
             label="Clock"
         >
             <m-icon
-                class="m-u--margin-left--s"
+                class="mu-ml-s"
                 slot="rightContain"
                 name="m-svg__clock" />
         </${NAVBAR_ITEM_NAME}>
@@ -391,7 +391,7 @@ export const slotRightContain = () => ({
             label="Logout"
         >
             <m-icon
-                class="m-u--margin-left--s"
+                class="mu-ml-s"
                 slot="rightContain"
                 name="m-svg__logout" />
         </${NAVBAR_ITEM_NAME}>

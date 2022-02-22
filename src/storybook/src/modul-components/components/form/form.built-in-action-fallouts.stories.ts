@@ -30,14 +30,14 @@ export const defaultFallout = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup">
             <m-textfield v-model.trim="nameField.value"
                         :error-message="nameField.errors.length > 0 ? nameField.errors[0].message : null"
                         :label="nameField.name"
                         v-m-control="nameField">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -78,7 +78,7 @@ export const toastAndClear = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup"
                 :action-fallouts="actionFallouts">
             <m-textfield v-model.trim="nameControl.value"
@@ -93,7 +93,7 @@ export const toastAndClear = () => ({
                         :label="emailControl.name"
                         v-m-control="emailControl">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -122,7 +122,7 @@ export const focusFirstError = () => ({
         }
     },
     template:
-        ` <m-form class="m-u--margin-top"
+        ` <m-form class="mu-mt"
                 :form-group="formGroup"
                 :action-fallouts="actionFallouts">
             <m-textfield v-model.trim="nameField.value"
@@ -130,7 +130,7 @@ export const focusFirstError = () => ({
                         :label="nameField.name"
                         v-m-control="nameField">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -160,7 +160,7 @@ export const messageSummaryAndClear = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup"
                 :action-fallouts="actionFallouts">
             <m-textfield v-model.trim="nameField.value"
@@ -168,7 +168,7 @@ export const messageSummaryAndClear = () => ({
                         :label="nameField.name"
                         v-m-control="nameField">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>

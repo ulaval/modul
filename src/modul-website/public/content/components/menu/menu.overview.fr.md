@@ -27,7 +27,7 @@ Il est important d'associer les actions à la bonne icône et au bon libélé. L
 
 </modul-demo>
 
-<small class="m-u--display--block m-u--margin-top--s">À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.</small>
+<small class="mu-d-block mu-mt-xs">À noter que les actions d'ajout, modification et suppression doivent toujours être présentées dans cet ordre.</small>
 
 ### Ouverture
 Le menu d'options apparaît toujours sous forme de *<modul-go url="fenetre-contextuelle"></modul-go>*, sauf pour les petits écrans. Dans ce cas, il prends la forme d'un *m-sidebar* qui s'affiche dans le bas de la fenêtre d'affichage (viewport) et la hauteur est automatiquement ajustée en fonction du contenu du menu.

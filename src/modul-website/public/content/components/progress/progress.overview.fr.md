@@ -14,7 +14,7 @@ L'indicateur de progression peut prendre la forme d'une barre horizontale ou d'u
 <modul-demo>
 
 ```html
-<div class="m-u--display--flex" style="justify-content: space-between;">
+<div class="mu-d-flex" style="justify-content: space-between;">
     <div style="width: 50%; padding-top:40px;"><m-progress value="25"></m-progress></div>
     <div style="width: 25%"><m-progress circle="true" value="67"></m-progress></div>
 </div>
@@ -35,11 +35,11 @@ L'indicateur de progression devrait indiquer le pourcentage d'avancement lorsque
 <modul-demo>
 
 ```html
-<div class="m-u--display--flex" style="justify-content: space-between;">
+<div class="mu-d-flex" style="justify-content: space-between;">
     <div style="width: 50%; padding-top:40px;"><m-progress value="25"></m-progress></div>
     <div style="width: 25%"><m-progress circle="true" value="67"></m-progress></div>
 </div>
-<div class="m-u--display--flex" style="justify-content: space-between;">
+<div class="mu-d-flex" style="justify-content: space-between;">
     <div style="width: 50%; padding-top:40px;"><m-progress indeterminate="true"></m-progress></div>
     <div style="width: 25%"><m-progress indeterminate="true" circle="true"></m-progress></div>
 </div>

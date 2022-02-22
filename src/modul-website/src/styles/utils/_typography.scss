@@ -54,11 +54,11 @@
 //  links
 // ======================================================================
 
-.m-u--app-body .mw-u--highlighted-title {
+.mu-app-root .mw-u--highlighted-title {
     @include mw-highlighted-title();
 }
 
-.m-u--app-body .mw-u--highlighted-title-link {
+.mu-app-root .mw-u--highlighted-title-link {
     cursor: pointer;
     outline: none;
 

@@ -108,7 +108,7 @@ export const sandbox = () => ({
         @portal-after-open="emitPortalAfterOpen"
         @portal-after-close="emitPortalAfterClose"
     >
-        <p v-if="slotDefault" class="m-u--no-margin">Slot default</p>
+        <p v-if="slotDefault" class="mu-no-m">Slot default</p>
         <div v-if="slotHeader" slot="header">(Slot header)</div>
         <div v-if="slotFooter" slot="footer">(Slot footer)</div>
     </${OVERLAY_NAME}>`
@@ -123,7 +123,7 @@ export const overflowContent = () => ({
                 <p>Native input</p>
                 <input type="text" />
                 <input type="text" />
-                <p class="m-u--margin-top--l">modUL input</p>
+                <p class="mu-mt-lg">modUL input</p>
                 <p style="margin:0;">
                     <m-textfield label="Lorem ipsum dolor sit amet"></m-textfield>
                 </p>

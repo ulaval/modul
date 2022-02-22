@@ -26,11 +26,11 @@ La voix active est recommandée pour la rédaction des messages destinés aux ut
 
 Dans une phrase à la voix active, le sujet fait l'action alors que dans une phrase à la voix passive, il la subit.
 
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p><strong>Voix active</strong> <br>Vous avez satisfait à toutes les exigences du programme.</p>
 </m-panel>
 
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p><strong>Voix passive</strong> <br>Toutes les exigences de votre programme ont été satisfaites.</p>
 </m-panel>
 
@@ -49,11 +49,11 @@ Une phrase courte avec une seule idée est souvent plus claire et facile à comp
 ## Éviter le jargon
 Utiliser un vocabulaire simple et compréhensible pour tous.
 
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p><strong>Exemple simple</strong> <br>L’application ne répond plus!</p>
 </m-panel>
 
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p><strong>Jargon</strong> <br>L’application a lagué!</p>
 </m-panel>
 
@@ -62,11 +62,11 @@ De manière générale, la forme négative (ne ... pas, ne ... plus, etc.) est �
 
 Toutefois, la forme négative est à privilégier lorsqu'elle permet d'atténuer des opinions qui, à l'affirmative, pourraient sembler trop catégoriques ou manquant de délicatesse.
 
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p><strong>Forme négative</strong> <br>Je n'aime pas...</p>
 </m-panel>
 
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p><strong>Forme positive</strong> <br>Je déteste...</p>
 </m-panel>
 

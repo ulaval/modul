@@ -7,60 +7,60 @@
         @include m-bullet-list();
     }
 
-    h1:not(.m-u--h1):not([class]),
-    h2:not(.m-u--h2):not([class]),
-    h3:not(.m-u--h3):not([class]),
-    h4:not(.m-u--h4):not([class]) {
+    h1:not(.mu-h1):not([class]),
+    h2:not(.mu-h2):not([class]),
+    h3:not(.mu-h3):not([class]),
+    h4:not(.mu-h4):not([class]) {
         color: $modul-color--black-grey-dark;
     }
 
-    h1:not(.m-u--h1):not([class]),
-    h2:not(.m-u--h2):not([class]) {
+    h1:not(.mu-h1):not([class]),
+    h2:not(.mu-h2):not([class]) {
         text-transform: uppercase;
         font-weight: $m-font-weight-black;
 
-        + h2:not(.m-u--h2):not([class]),
-        + h3:not(.m-u--h3):not([class]),
-        + h4:not(.m-u--h4):not([class]),
-        + h5:not(.m-u--h5):not([class]),
-        + h6:not(.m-u--h6):not([class]) {
+        + h2:not(.mu-h2):not([class]),
+        + h3:not(.mu-h3):not([class]),
+        + h4:not(.mu-h4):not([class]),
+        + h5:not(.mu-h5):not([class]),
+        + h6:not(.mu-h6):not([class]) {
             margin-top: 12px;
         }
     }
 
-    h2:not(.m-u--h2):not([class]) {
+    h2:not(.mu-h2):not([class]) {
         @include m-font-size('h3');
     }
 
-    h3:not(.m-u--h3):not([class]) {
+    h3:not(.mu-h3):not([class]) {
         @include m-font-size('h4');
 
-        + h4:not(.m-u--h4):not([class]),
-        + h5:not(.m-u--h5):not([class]),
-        + h6:not(.m-u--h6):not([class]) {
+        + h4:not(.mu-h4):not([class]),
+        + h5:not(.mu-h5):not([class]),
+        + h6:not(.mu-h6):not([class]) {
             margin-top: 12px;
         }
     }
 
-    h4:not(.m-u--h4):not([class]),
-    h5:not(.m-u--h5):not([class]),
-    h6:not(.m-u--h6):not([class]) {
+    h4:not(.mu-h4):not([class]),
+    h5:not(.mu-h5):not([class]),
+    h6:not(.mu-h6):not([class]) {
         font-size: 1rem !important;
     }
 
-    h4:not(.m-u--h4):not([class]) {
+    h4:not(.mu-h4):not([class]) {
         font-weight: $m-font-weight-black;
 
-        + h5:not(.m-u--h5):not([class]),
-        + h6:not(.m-u--h6):not([class]) {
+        + h5:not(.mu-h5):not([class]),
+        + h6:not(.mu-h6):not([class]) {
             margin-top: 12px;
         }
     }
 
-    h5:not(.m-u--h5):not([class]) {
+    h5:not(.mu-h5):not([class]) {
         font-weight: $m-font-weight-bold;
 
-        + h6:not(.m-u--h6):not([class]) {
+        + h6:not(.mu-h6):not([class]) {
             margin-top: 12px;
         }
     }

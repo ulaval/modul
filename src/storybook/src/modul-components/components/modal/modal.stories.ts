@@ -75,7 +75,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
             @close="emitClose"
             @portal-after-open="emitPortalAfterOpen"
             @portal-after-close="emitPortalAfterClose">
-            <p v-if="slotDefault" class="m-u--no-margin">Slot default</p>
+            <p v-if="slotDefault" class="mu-no-m">Slot default</p>
             <div v-if="slotHeader" slot="header">(Slot header)</div>
             <div v-if="slotFooter" slot="footer">(Slot footer)</div>
         </${MODAL_NAME}>`

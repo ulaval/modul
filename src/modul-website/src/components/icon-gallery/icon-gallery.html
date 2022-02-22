@@ -28,12 +28,12 @@
                 :title="$i18n.translate('modul:grid-view-mode')"
                 @click="toggleViewMode()">
             </m-icon-button>
-            <m-icon class="modul-icon-gallery__header__view-mode-button m-u--margin-left--s"
+            <m-icon class="modul-icon-gallery__header__view-mode-button mu-ml-s"
                 v-if="isMqMinS && !isViewModeBlock"
                 size="28px"
                 name="m-svg__list-filled">
             </m-icon>
-            <m-icon-button class="modul-icon-gallery__header__view-mode-button m-u--margin-left--s"
+            <m-icon-button class="modul-icon-gallery__header__view-mode-button mu-ml-s"
                 v-if="isMqMinS && isViewModeBlock"
                 icon-size="28px"
                 icon-name="m-svg__list"

@@ -38,25 +38,25 @@ Le composant *icône cliquable* offre plusieurs traitements visuels.
         <span class="icon-list-padding">
             <m-icon-button class="icon-list-padding" skin="light" icon-name="search"  title="Rechercher une personne">Recherche</m-icon-button>
         </span>
-        <span class="m-u--font-weight--bold m-u--margin-left">Lumineux&nbsp;:</span> traitement par defaut utilisé lorsque l'arrière-plan est pâle.
+        <span class="mu-font-weight-bold mu-ml">Lumineux&nbsp;:</span> traitement par defaut utilisé lorsque l'arrière-plan est pâle.
     </li>
     <li>
         <span class="icon-list-padding dark">
             <m-icon-button skin="dark" icon-name="search"  title="Rechercher une personne">Recherche</m-icon-button>
         </span>
-        <span class="m-u--font-weight--bold m-u--margin-left">Sombre&nbsp;:</span> utilisé lorsque l'arrière-plan est foncé.
+        <span class="mu-font-weight-bold mu-ml">Sombre&nbsp;:</span> utilisé lorsque l'arrière-plan est foncé.
     </li>
     <li>
         <span class="icon-list-padding">
             <m-icon-button skin="primary" icon-name="search"  title="Rechercher une personne">Recherche</m-icon-button>
         </span>
-        <span class="m-u--font-weight--bold m-u--margin-left">Primaire&nbsp;:</span> utilisé pour mettre l'emphase sur la tâche ou l'action principale.
+        <span class="mu-font-weight-bold mu-ml">Primaire&nbsp;:</span> utilisé pour mettre l'emphase sur la tâche ou l'action principale.
     </li>
     <li>
         <span class="icon-list-padding">
             <m-icon-button skin="secondary" icon-name="search"  title="Rechercher une personne">Recherche</m-icon-button>
         </span>
-        <span class="m-u--font-weight--bold m-u--margin-left">Secondaire&nbsp;:</span> utilisé pour une des tâches ou actions secondaires.
+        <span class="mu-font-weight-bold mu-ml">Secondaire&nbsp;:</span> utilisé pour une des tâches ou actions secondaires.
     </li>
 </ul>
 

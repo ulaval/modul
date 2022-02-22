@@ -69,7 +69,7 @@ export const Skin = () => ({
         <${MESSAGE_PAGE_NAME}
             v-for="(skin, index) in skins"
             :key="index"
-            :class="{ 'm-u--margin-top--l': index > 0 }"
+            :class="{ 'mu-mt-lg': index > 0 }"
             :skin="skin"
             :title="'Prop skin = ' + skin"
         />
@@ -85,7 +85,7 @@ export const State = () => ({
         <${MESSAGE_PAGE_NAME}
             v-for="(state, index) in states"
             :key="index"
-            :class="{ 'm-u--margin-top--xl': index > 0 }"
+            :class="{ 'mu-mt-xl': index > 0 }"
             :state="state"
             :title="'Prop state = ' + state"
         />

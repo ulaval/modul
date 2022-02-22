@@ -6,7 +6,7 @@ export const FormBuilder: Component = Vue.extend({
         formGroup: FormGroup
     },
     template: `
-    <m-form class="m-u--margin-top"
+    <m-form class="mu-mt"
     :form-group="formGroup">
         <template v-for="control in formGroup.controls">
             <p>validationType =  {{ control.validators[0].validationType }}</p>
@@ -22,7 +22,7 @@ export const FormBuilder: Component = Vue.extend({
                 </m-textfield>
             </slot>
         </template>
-        <p class="m-u--margin-bottom--l">
+        <p class="mu-mb-lg">
             <m-button type="submit">Submit</m-button>
             <m-button type="reset"
                         skin="secondary">Reset</m-button>

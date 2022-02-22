@@ -63,7 +63,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_TRANSITION_NAME}`
                 <m-button @click="toggleOpen()">
                     {{open ? 'Close' : 'Open'}} accordion
                 </m-button>
-                <m-button class="m-u--margin-left"
+                <m-button class="mu-ml"
                           :skin="buttonSkin"
                           @click="toggleDisabledTransition()">
                     {{disabledTransition ? 'Enabled' : 'Disabled'}} transition

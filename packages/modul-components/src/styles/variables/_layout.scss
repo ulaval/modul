@@ -1,14 +1,14 @@
 // Max and min width
-$m-max-width--xl: 1400px !default;
-$m-max-width--l: 1200px !default;
+$m-max-width-xl: 1400px !default;
+$m-max-width-lg: 1200px !default;
 $m-max-width: 1000px !default;
-$m-max-width--s: 800px !default;
-$m-max-width--xs: 400px !default;
-$m-max-width--text: 720px !default;
+$m-max-width-sm: 800px !default;
+$m-max-width-xs: 400px !default;
+$m-max-width-text: 720px !default;
 $m-min-width: 320px !default;
 
 // Box min-height and min width
-$m-box--min-height: 80px !default;
+$m-min-height-box: 80px !default;
 
 // Space
 $m-space-xxxxl: 64px !default;
@@ -33,7 +33,8 @@ $m-margin-h6: $m-space-md 0 0;
 $m-margin-paragraph: $m-space-sm 0 0;
 
 // map variable to be used with m-space function
-$m-space-map: (xxxxl: $m-space-xxxxl,
+$m-space-map: (
+    xxxxl: $m-space-xxxxl,
     xxxl: $m-space-xxxl,
     xxl: $m-space-xxl,
     xl: $m-space-xl,
@@ -42,4 +43,5 @@ $m-space-map: (xxxxl: $m-space-xxxxl,
     base : $m-space,
     sm: $m-space-sm,
     xs: $m-space-xs,
-    xxs: $m-space-xxs);
+    xxs: $m-space-xxs
+);

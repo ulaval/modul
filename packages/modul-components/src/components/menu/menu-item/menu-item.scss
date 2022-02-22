@@ -30,7 +30,7 @@
     }
 
     &__link.m-menu-item__link {
-        // must double specificity to compensate the stupid issue with m-u--app-body
+        // must double specificity to compensate the stupid issue with mu-app-root
         transition: color $m-transition-duration ease, font-weight $m-transition-duration ease, border-color $m-transition-duration ease;
         position: relative;
         display: flex;

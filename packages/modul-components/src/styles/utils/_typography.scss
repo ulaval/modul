@@ -1,55 +1,59 @@
-.m-u--font {
+.mu-font {
     &-size {
         @include m-font-size();
 
-        &--l {
+        &-lg {
+            @include m-font-size('lg');
+        }
+
+        &-md {
             @include m-font-size('md');
         }
 
-        &--s {
+        &-sm {
             @include m-font-size('sm');
         }
 
-        &--xs {
+        &-xs {
             @include m-font-size('xs');
         }
     }
 
     &-style {
-        &--normal {
+        &-normal {
             font-style: normal;
         }
 
-        &--italic {
+        &-italic {
             font-style: italic;
         }
     }
 
     &-weight {
-        &--black {
+        &-black {
             font-weight: $m-font-weight-black;
         }
 
-        &--bold {
+        &-bold {
             font-weight: $m-font-weight-bold;
         }
 
-        &--semi-bold {
+        &-semi-bold {
             font-weight: $m-font-weight-semi-bold;
         }
 
-        &--regular {
+        &-regular {
             font-weight: $m-font-weight-regular;
         }
 
-        &--light {
+        &-light {
             font-weight: $m-font-weight-light;
         }
     }
 }
 
-.m-u--typo {
-    &--precision {
+.mu-typo {
+    &-precision {
 
         &,
         &-italic {
@@ -62,7 +66,7 @@
         }
     }
 
-    &--highlighting {
+    &-highlighting {
         display: inline;
         @include m-font-size('sm');
         font-weight: $m-font-weight-semi-bold;

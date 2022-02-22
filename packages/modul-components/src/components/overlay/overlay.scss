@@ -51,7 +51,7 @@
     &__article {
         transform: translate3d(0, 0, 0);
         cursor: auto;
-        max-width: $m-max-width--l;
+        max-width: $m-max-width-lg;
         margin: 0 auto;
         background: $m-color-white;
         box-shadow: $m-box-shadow;
@@ -72,7 +72,7 @@
 
     &__header,
     &__footer {
-        min-height: $m-box--min-height;
+        min-height: $m-min-height-box;
         display: flex;
         align-items: center;
 

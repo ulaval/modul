@@ -1,7 +1,7 @@
 // ======================================================================
 //  header (list, table)
 // ======================================================================
-.m-u--header {
+.mu-header {
     @include m-font-size('md');
     font-weight: $m-font-weight-semi-bold;
     padding: $m-space;
@@ -44,11 +44,11 @@
         }
     }
 
-    &+ul {
+    & + ul {
         margin-top: 0;
     }
 
-    &+.m-u--table {
+    & + .mu-table {
         th {
             padding-top: $m-space;
         }

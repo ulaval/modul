@@ -3,53 +3,53 @@
 exports[`Storyshots modul-components|m-opacity-transition Default 1`] = `
 <div>
   <div
-    class="m-u--margin-bottom"
+    class="mu-mb"
   >
     <button
       class="m-button m--is-skin-primary"
       type="button"
     >
       <!---->
-       
+
       <!---->
-       
+
       <span
         class="m-button__text"
       >
-        
+
                     Hide icon
-                 
+
         <!---->
       </span>
-       
+
       <!---->
-       
+
       <!---->
     </button>
-     
+
     <button
-      class="m-button m-u--margin-left m--is-skin-secondary"
+      class="m-button mu-ml m--is-skin-secondary"
       type="button"
     >
       <!---->
-       
+
       <!---->
-       
+
       <span
         class="m-button__text"
       >
-        
+
                     Disabled transition
-                 
+
         <!---->
       </span>
-       
+
       <!---->
-       
+
       <!---->
     </button>
   </div>
-   
+
   <svg
     aria-hidden="true"
     class="m-icon"
@@ -57,13 +57,13 @@ exports[`Storyshots modul-components|m-opacity-transition Default 1`] = `
     width="20px"
   >
     <!---->
-     
+
     <use
       aria-hidden="true"
       class=""
     />
   </svg>
-   
+
   <!---->
 </div>
 `;
@@ -76,32 +76,32 @@ exports[`Storyshots modul-components|m-opacity-transition zoom-effect="false" 1`
       type="button"
     >
       <!---->
-       
+
       <!---->
-       
+
       <span
         class="m-button__text"
       >
-        
+
                     Hide icon
-                 
+
         <!---->
       </span>
-       
+
       <!---->
-       
+
       <!---->
     </button>
   </div>
-   
+
   <svg
     aria-hidden="true"
-    class="m-icon m-u--margin-top"
+    class="m-icon mu-mt"
     height="20px"
     width="20px"
   >
     <!---->
-     
+
     <use
       aria-hidden="true"
       class=""

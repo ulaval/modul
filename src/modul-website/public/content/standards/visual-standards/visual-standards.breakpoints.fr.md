@@ -8,7 +8,7 @@ Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture
 
 ## Liste des points de rupture
 
-<div class="m-u--header m-u--margin-top">
+<div class="mu-header mu-mt">
     <h3>Largeur minimale</h3>
 </div>
 <table>
@@ -41,7 +41,7 @@ Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture
         </tr>
     </tbody>
 </table>
-<div class="m-u--header">
+<div class="mu-header">
     <h3>Largeur maximale</h3>
 </div>
 <table>
@@ -74,7 +74,7 @@ Un site adaptatif est donc conçu à l'aide d'une grille et de points de rupture
         </tr>
     </tbody>
 </table>
-<div class="m-u--header">
+<div class="mu-header">
     <h3>Largeur limite</h3>
 </div>
 <table>

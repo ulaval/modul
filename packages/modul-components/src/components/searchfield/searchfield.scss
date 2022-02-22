@@ -88,7 +88,7 @@
     }
 }
 
-// override stupid .m-u--app-body specificity issue
+// override stupid .mu-app-root specificity issue
 .m-searchfield__search-button.m-searchfield__search-button {
     border-radius: 0 $m-input-style--border-radius $m-input-style--border-radius 0;
 }

@@ -1,12 +1,12 @@
 <div class="m-add-sandbox">
-    <h2 class="m-u--no-margin">Test for MForm with external validations example</h2>
+    <h2 class="mu-no-m">Test for MForm with external validations example</h2>
     <br />
     <m-form :form-group="formGroup"
             :ref="refMForm"
             @reset="reset()"
             @submit="submit()">
 
-        <h3 class="m-u--h6">General</h3>
+        <h3 class="mu-h6">General</h3>
 
         <m-textfield v-m-control="nameField"
                      v-model="nameField.value"
@@ -29,7 +29,7 @@
                     helper-message="Required field validated through external call (backend server for example)">
         </m-textarea> <br />
 
-        <p class="m-u--margin-top--l m-u--margin-bottom--l">
+        <p class="mu-mt-lg mu-mb-lg">
             <m-button type="submit"
                       :waiting="pendingSubmit">Submit</m-button>
             <m-button type="reset"

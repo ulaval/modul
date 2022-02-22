@@ -48,52 +48,52 @@
     h4,
     h5,
     h6,
-    .m-u--h1,
-    .m-u--h2,
-    .m-u--h3,
-    .m-u--h4,
-    .m-u--h5,
-    .m-u--h6 {
+    .mu-h1,
+    .mu-h2,
+    .mu-h3,
+    .mu-h4,
+    .mu-h5,
+    .mu-h6 {
         @include m-commons-title-styles();
     }
 
     h1,
-    .m-u--h1 {
+    .mu-h1 {
         margin: $m-margin-h1;
 
         @include m-font-size('h1');
     }
 
     h2,
-    .m-u--h2 {
+    .mu-h2 {
         margin: $m-margin-h2;
 
         @include m-font-size('h2');
     }
 
     h3,
-    .m-u--h3 {
+    .mu-h3 {
         margin: $m-margin-h3;
 
         @include m-font-size('h3');
     }
 
     h4,
-    .m-u--h4 {
+    .mu-h4 {
         margin: $m-margin-h4;
 
         @include m-font-size('h4');
     }
 
     h5,
-    .m-u--h5 {
+    .mu-h5 {
         margin: $m-margin-h5;
 
         @include m-font-size('h5');
     }
 
     h6,
-    .m-u--h6 {
+    .mu-h6 {
         margin: $m-margin-h6;
 
         @include m-font-size('h6');
@@ -103,7 +103,7 @@
 @mixin m-text-styles() {
 
     p,
-    .m-u--p {
+    .mu-p {
         margin: $m-margin-paragraph;
     }
 
