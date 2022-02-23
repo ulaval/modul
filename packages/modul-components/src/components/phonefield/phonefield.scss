@@ -1,5 +1,5 @@
 @import 'commons';
-$m-phonefiled--width-flag-dropdown: 75px;
+$m-phonefiled--width-flag-dropdown: 74px;
 
 .m-phonefield {
     display: inline-flex;
@@ -15,7 +15,7 @@ $m-phonefiled--width-flag-dropdown: 75px;
 
     &__wrapper {
         display: grid;
-        grid-template-columns: #{$m-phonefiled--width-flag-dropdown} auto;
+        grid-template-columns: auto 1fr;
     }
 
     &__country {
