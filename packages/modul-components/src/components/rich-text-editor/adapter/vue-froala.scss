@@ -21,7 +21,7 @@ $m-froala-toolbar-btn-height: 38px !default;
 
     // to overcome input-style base padding, minus space for the label.
     .m-input-style.m--is-label-up.m--is-focus & {
-        margin-top: -4px; // magic number
+        margin: 0; // magic number
     }
 
     // basic body padding for all states
@@ -37,13 +37,19 @@ $m-froala-toolbar-btn-height: 38px !default;
         float: right;
     }
 
-    &.m--is-dirty {
+    &.m--is-dirty:not(.m--is-disabled):not(.m--is-readonly) {
         overflow: unset;
-    }
 
-    &.m--is-anim-ready /deep/ {
-        .fr-toolbar {
-            transition: margin-top $m-transition-duration-lg ease, opacity $m-transition-duration ease;
+        /deep/ .fr-element.fr-view {
+            padding: $m-space 0 $m-space-xs;
+        }
+
+        &.fr-fullscreen-wrapper {
+
+            /deep/ .fr-element.fr-view {
+                padding: $m-space-md;
+                background: $m-color-white;
+            }
         }
     }
 
@@ -94,7 +100,6 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-box.fr-basic .fr-element {
-            padding: unset;
             font-weight: $m-font-weight-light;
             word-wrap: break-word;
             -moz-user-select: text; // Dirty fix for text selection in firefox if the rich-text is in a draggable container.
@@ -106,7 +111,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             display: none;
         }
 
-        .fr-sticky-dummy+.fr-sticky-dummy {
+        .fr-sticky-dummy + .fr-sticky-dummy {
             height: 0 !important; // Fix flicking problem with multiple editors on page and https://github.com/froala/wysiwyg-editor/issues/2818
         }
     }
@@ -175,7 +180,6 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-box.fr-basic .fr-element {
-            transition: padding $m-transition-duration-lg ease;
             min-height: unset;
             overflow-x: unset;
             font-family: unset;
@@ -256,6 +260,11 @@ $m-froala-toolbar-btn-height: 38px !default;
                     }
                 }
             }
+        }
+
+        .fr-newline {
+            margin-left: 0;
+            margin-right: 0;
         }
 
         .fr-popup {
