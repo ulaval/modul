@@ -173,6 +173,8 @@ $m-froala-toolbar-btn-height: 38px !default;
     /deep/ {
         @include m-commons-rte-styles();
 
+        overflow-wrap: break-word;
+
         .fr-box.fr-basic.fr-top .fr-wrapper {
             background: rgba(255, 255, 255, 0);
             box-shadow: unset;
