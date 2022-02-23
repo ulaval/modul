@@ -32,7 +32,7 @@
 
         &::before {
             position: absolute;
-            top: 12px; // Magic number
+            top: 10px; // Magic number
             left: - $m-space-sm; // Magic number
             content: '';
             transform: translate3d(-50%, 0, 0);
