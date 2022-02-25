@@ -151,7 +151,7 @@ $m-toast-max-width: 768px;
     }
 
     &.m--is-state-information {
-        @include m-toast-skin-default($m-color-interactive, $m-color-interactive-lightest);
+        @include m-toast-skin-default($m-color-interactive, $m-color-information);
     }
 
     &.m--is-state-warning {
