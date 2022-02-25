@@ -4,7 +4,7 @@
     transition: color $m-transition-duration ease;
     margin-top: 2px; // Magic number
     @include m-font-size('xs');
-    padding-left: $m-space-xxs;
+    padding-left: $m-space-2xs;
     color: currentColor;
 
     span {

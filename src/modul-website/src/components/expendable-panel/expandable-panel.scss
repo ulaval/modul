@@ -40,7 +40,7 @@ $w-content-max-width: $mw-max-width;
 
     &__content {
         margin: 0 auto;
-        padding: $m-space-xxxxl $m-space;
+        padding: $m-space-4xl $m-space;
         max-width: $w-content-max-width;
 
         @media (min-width: $m-mq-min-sm) {

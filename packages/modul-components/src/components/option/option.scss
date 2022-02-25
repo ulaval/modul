@@ -63,7 +63,7 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
 
         &.m--is-visible {
             width: 100%;
-            padding: $m-space-xxs $m-space $m-space-xs $m-space;
+            padding: $m-space-2xs $m-space $m-space-xs $m-space;
 
             @media (min-width: $m-mq-min-sm) {
                 position: absolute;

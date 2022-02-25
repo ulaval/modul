@@ -3,7 +3,7 @@ $m-dropdown--color-hover: $m-color-grey-lightest !default;
 $m-dropdown--color-select: $m-color-grey-lighter !default;
 $m-dropdown--color-focus: $m-color-interactive-lightest !default;
 $m-dropdown--color-active: $m-color-interactive-lightest !default;
-$m-dropdown--margin: $m-space-xxs !default;
+$m-dropdown--margin: $m-space-2xs !default;
 
 .m-dropdown {
     position: relative;
@@ -14,7 +14,7 @@ $m-dropdown--margin: $m-space-xxs !default;
 
     &.m--has-validation-message {
         .m-dropdown__validation-message {
-            margin-top: $m-space-xxs;
+            margin-top: $m-space-2xs;
         }
     }
 
@@ -25,7 +25,7 @@ $m-dropdown--margin: $m-space-xxs !default;
     &.m--has-placeholder-icon {
         .m-dropdown__input {
             &::placeholder {
-                padding-left: calc(#{$m-space} + #{$m-space-xxs});
+                padding-left: calc(#{$m-space} + #{$m-space-2xs});
             }
         }
     }

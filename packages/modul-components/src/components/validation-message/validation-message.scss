@@ -3,7 +3,7 @@
 $m-validation-message--color-error: $m-color-error !default;
 $m-validation-message--color-success: $m-color-success !default;
 $m-validation-message--color-helper: $m-color-text-light !default;
-$m-validation-message--margin: $m-space-xxs !default;
+$m-validation-message--margin: $m-space-2xs !default;
 
 .m-validation-message {
     display: flex;
@@ -16,7 +16,7 @@ $m-validation-message--margin: $m-space-xxs !default;
         top: 1px; // Magic number: align icon with text
         flex-shrink: 0;
         @include m-font-size('sm');
-        margin-right: $m-space-xxs;
+        margin-right: $m-space-2xs;
     }
 
     &__error,

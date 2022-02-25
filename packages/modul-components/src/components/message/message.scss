@@ -78,7 +78,7 @@
             @include m-font-size('md');
 
             +.m-message__text {
-                margin-top: $m-space-xxs;
+                margin-top: $m-space-2xs;
             }
         }
     }
@@ -102,7 +102,7 @@
     }
 
     +.m-message {
-        margin-top: $m-space-xxs;
+        margin-top: $m-space-2xs;
     }
 
     .m-message {

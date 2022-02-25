@@ -44,7 +44,7 @@
         transition: margin-top $m-transition-duration ease;
 
         &.m--has-validation-message {
-            margin-top: $m-space-xxs;
+            margin-top: $m-space-2xs;
         }
     }
 }

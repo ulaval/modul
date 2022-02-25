@@ -68,7 +68,7 @@ $m-toast-max-width: 768px;
 
     &__close-button {
         align-self: flex-start;
-        margin: $m-space-xxs $m-space-xxs 0 0;
+        margin: $m-space-2xs $m-space-2xs 0 0;
 
         .m-button__icon .m-icon {
             @include m-font-size('sm');

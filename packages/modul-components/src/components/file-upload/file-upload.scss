@@ -163,7 +163,7 @@ $m-file-upload-max-height--s: 72px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: $m-space-xxs;
+            padding-bottom: $m-space-2xs;
         }
 
         &__name,
@@ -175,7 +175,7 @@ $m-file-upload-max-height--s: 72px;
             font-weight: $m-font-weight-semi-bold;
             word-break: break-all;
             flex: 1 0 0;
-            padding-right: $m-space-xxs;
+            padding-right: $m-space-2xs;
         }
 
         &__error-message {
@@ -262,7 +262,7 @@ $m-file-upload-max-height--s: 72px;
 
         &__infos-label {
             font-weight: $m-font-weight-semi-bold;
-            padding-bottom: $m-space-xxs;
+            padding-bottom: $m-space-2xs;
             word-break: break-all;
         }
 

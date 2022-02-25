@@ -9,7 +9,7 @@ $m-phonefiled--width-flag-dropdown: 74px;
 
     &.m--has-validation-message {
         .m-phonefield__validation {
-            margin-top: $m-space-xxs;
+            margin-top: $m-space-2xs;
         }
     }
 
@@ -96,7 +96,7 @@ $m-phonefiled--width-flag-dropdown: 74px;
         transition: margin-top $m-transition-duration ease;
         display: flex;
         justify-content: flex-end;
-        margin-top: $m-space-xxs;
+        margin-top: $m-space-2xs;
         margin-left: calc(#{$m-phonefiled--width-flag-dropdown} + #{$m-input-style--padding});
     }
 

@@ -10,7 +10,7 @@
         align-items: center;
         width: 100%;
         overflow-y: auto;
-        padding: $m-space-lg $m-space $m-space-xxxxl $m-space;
+        padding: $m-space-lg $m-space $m-space-4xl $m-space;
         background-color: $modul-color--black-grey-dark;
         background-image: url(./grid.svg);
         background-position: 0 0;
@@ -91,7 +91,7 @@
         padding: $m-space-xl $m-space;
 
         @media (min-width: $m-mq-min-sm) {
-            padding: #{$m-space-xxxxl + $m-space-lg} $m-space-lg;
+            padding: #{$m-space-4xl + $m-space-lg} $m-space-lg;
         }
     }
 

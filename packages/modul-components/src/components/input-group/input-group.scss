@@ -11,7 +11,7 @@
         &:not(.m--is-validation-message-position-bottom) {
             .m-input-group__label {
                 ~ .m-input-group__body {
-                    margin-top: $m-space-xxs;
+                    margin-top: $m-space-2xs;
                 }
             }
 
@@ -23,11 +23,11 @@
         &.m--is-validation-message-position-bottom {
             .m-input-group__body {
                 flex-direction: column-reverse;
-                margin-top: $m-space-xxs;
+                margin-top: $m-space-2xs;
             }
 
             .m-input-group__message {
-                margin-top: $m-space-xxs;
+                margin-top: $m-space-2xs;
             }
         }
     }
