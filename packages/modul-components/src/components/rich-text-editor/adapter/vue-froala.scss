@@ -37,6 +37,10 @@ $m-froala-toolbar-btn-height: 38px !default;
         float: right;
     }
 
+    /deep/ .fr-box.fr-fullscreen {
+        width: 100vw !important;
+    }
+
     &.m--is-dirty:not(.m--is-disabled):not(.m--is-readonly) {
         overflow: unset;
 
