@@ -2,7 +2,7 @@
 
 exports[`Storyshots modul-components|m-form/validators Beteen Number 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -27,7 +27,6 @@ exports[`Storyshots modul-components|m-form/validators Beteen Number 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -44,9 +43,7 @@ exports[`Storyshots modul-components|m-form/validators Beteen Number 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -58,18 +55,10 @@ exports[`Storyshots modul-components|m-form/validators Beteen Number 1`] = `
               id="mIntegerfield-fakeId"
               inputmode="decimal"
             />
-               
-            <!---->
-             
-            <!---->
+              
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -95,7 +84,7 @@ exports[`Storyshots modul-components|m-form/validators Beteen Number 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -142,7 +131,7 @@ exports[`Storyshots modul-components|m-form/validators Beteen Number 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -182,7 +171,6 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
           >
             <div
               class="m-input-style__main"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -221,10 +209,7 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
                     />
                        
                     <!---->
-                      
-                    <!---->
                      
-                    <!---->
                   </div>
                    
                   <div
@@ -266,7 +251,6 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
           >
             <div
               class="m-input-style__main"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -305,10 +289,7 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
                     />
                        
                     <!---->
-                      
-                    <!---->
                      
-                    <!---->
                   </div>
                    
                   <div
@@ -349,7 +330,7 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
   </fieldset>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -396,7 +377,7 @@ exports[`Storyshots modul-components|m-form/validators Compare Fields 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -424,7 +405,6 @@ exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -441,9 +421,7 @@ exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -454,10 +432,7 @@ exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
                 id="mDatepicker-fakeId"
                 placeholder="AAAA-MM-JJ"
               />
-                 
-              <!---->
-               
-              <!---->
+                
             </div>
              
             <div
@@ -517,7 +492,7 @@ exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -564,7 +539,7 @@ exports[`Storyshots modul-components|m-form/validators Date Between 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -592,7 +567,6 @@ exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -609,9 +583,7 @@ exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -622,10 +594,7 @@ exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
                 id="mDatepicker-fakeId"
                 placeholder="AAAA-MM-JJ"
               />
-                 
-              <!---->
-               
-              <!---->
+                
             </div>
              
             <div
@@ -685,7 +654,7 @@ exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -732,7 +701,7 @@ exports[`Storyshots modul-components|m-form/validators Date Format 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Email 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -757,7 +726,6 @@ exports[`Storyshots modul-components|m-form/validators Email 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -774,9 +742,7 @@ exports[`Storyshots modul-components|m-form/validators Email 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -790,10 +756,7 @@ exports[`Storyshots modul-components|m-form/validators Email 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -830,7 +793,7 @@ exports[`Storyshots modul-components|m-form/validators Email 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -877,7 +840,7 @@ exports[`Storyshots modul-components|m-form/validators Email 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Max Length 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -902,7 +865,6 @@ exports[`Storyshots modul-components|m-form/validators Max Length 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -919,9 +881,7 @@ exports[`Storyshots modul-components|m-form/validators Max Length 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -935,10 +895,7 @@ exports[`Storyshots modul-components|m-form/validators Max Length 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -975,7 +932,7 @@ exports[`Storyshots modul-components|m-form/validators Max Length 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -1022,7 +979,7 @@ exports[`Storyshots modul-components|m-form/validators Max Length 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Max Number 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -1047,7 +1004,6 @@ exports[`Storyshots modul-components|m-form/validators Max Number 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1064,9 +1020,7 @@ exports[`Storyshots modul-components|m-form/validators Max Number 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -1080,10 +1034,7 @@ exports[`Storyshots modul-components|m-form/validators Max Number 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -1120,7 +1071,7 @@ exports[`Storyshots modul-components|m-form/validators Max Number 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -1167,7 +1118,7 @@ exports[`Storyshots modul-components|m-form/validators Max Number 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Min Length 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -1192,7 +1143,6 @@ exports[`Storyshots modul-components|m-form/validators Min Length 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1209,9 +1159,7 @@ exports[`Storyshots modul-components|m-form/validators Min Length 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -1225,10 +1173,7 @@ exports[`Storyshots modul-components|m-form/validators Min Length 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -1265,7 +1210,7 @@ exports[`Storyshots modul-components|m-form/validators Min Length 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -1312,7 +1257,7 @@ exports[`Storyshots modul-components|m-form/validators Min Length 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Min Number 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -1337,7 +1282,6 @@ exports[`Storyshots modul-components|m-form/validators Min Number 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1354,9 +1298,7 @@ exports[`Storyshots modul-components|m-form/validators Min Number 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -1370,10 +1312,7 @@ exports[`Storyshots modul-components|m-form/validators Min Number 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -1410,7 +1349,7 @@ exports[`Storyshots modul-components|m-form/validators Min Number 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -1457,7 +1396,7 @@ exports[`Storyshots modul-components|m-form/validators Min Number 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Phone Validator 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -1483,7 +1422,6 @@ exports[`Storyshots modul-components|m-form/validators Phone Validator 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1500,9 +1438,7 @@ exports[`Storyshots modul-components|m-form/validators Phone Validator 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -1517,10 +1453,7 @@ exports[`Storyshots modul-components|m-form/validators Phone Validator 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -1557,7 +1490,7 @@ exports[`Storyshots modul-components|m-form/validators Phone Validator 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -1604,7 +1537,7 @@ exports[`Storyshots modul-components|m-form/validators Phone Validator 1`] = `
 
 exports[`Storyshots modul-components|m-form/validators Required 1`] = `
 <form
-  class="m-form m-u--margin-top"
+  class="m-form mu-mt"
   novalidate="novalidate"
 >
   <!---->
@@ -1629,7 +1562,6 @@ exports[`Storyshots modul-components|m-form/validators Required 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -1646,9 +1578,7 @@ exports[`Storyshots modul-components|m-form/validators Required 1`] = `
         <div
           class="m-input-style__input"
         >
-          <div
-            class="m-input-style__prefix"
-          />
+          <!---->
            
           <div
             class="m-input-style__content"
@@ -1662,10 +1592,7 @@ exports[`Storyshots modul-components|m-form/validators Required 1`] = `
             />
                
             <!---->
-              
-            <!---->
              
-            <!---->
           </div>
            
           <div
@@ -1702,7 +1629,7 @@ exports[`Storyshots modul-components|m-form/validators Required 1`] = `
   </div>
    
   <p
-    class="m-u--margin-bottom--l"
+    class="mu-mb-lg"
   >
     <button
       class="m-button m--is-skin-primary"

@@ -1,8 +1,8 @@
 <div class="m-rich-text-editor-sandbox">
     <!-- Sandbox template -->
     <h3>Froala Text Editor</h3>
-    <h5 class="m-u--margin-bottom">fonctionne sans option spécifiée</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">fonctionne sans option spécifiée</h5>
+    <div class="mu-mb">
         <div>
             Error message: <input type="text"
                    v-model="errorMessage" />
@@ -28,7 +28,7 @@
             <m-checkbox v-model="readonly">ReadOnly</m-checkbox>
         </div>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text with placeholder'"
                             :max-width="'large'"
@@ -42,7 +42,7 @@
                             :disabled="disabled"
                             :readonly="readonly"></m-rich-text-editor>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text with placeholder'"
                             :max-width="'large'"
@@ -56,13 +56,13 @@
                             :disabled="disabled"
                             :readonly="readonly"></m-rich-text-editor>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>Résultat dans le lecteur</h5>
         <div>
             <m-rich-text :value="initializedModel"></m-rich-text>
         </div>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>With IMAGE option</h5>
         <m-rich-text-editor v-model="imageModel"
                             :show-image-button="true"
@@ -76,7 +76,7 @@
     <div>
         <m-rich-text :value="imageModel"></m-rich-text>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>With IMAGE_HIDE_FLOAT_LAYOUT option</h5>
         <m-rich-text-editor v-model="imageNoLayoutModel"
                             :show-image-button="true"
@@ -87,7 +87,7 @@
                             @image-added="imageAdded"
                             @image-removed="imageRemoved"></m-rich-text-editor>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>With IMAGE and custom validation (filename must include 'John')</h5>
         <m-rich-text-editor v-model="imageNoLayoutModel"
                             :show-image-button="true"
@@ -99,7 +99,7 @@
                             @image-added="imageAdded"
                             @image-removed="imageRemoved"></m-rich-text-editor>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>One title</h5>
         <div>
             <m-rich-text-editor v-model="modelTitle1"
@@ -110,7 +110,7 @@
                                 last-header-level="1"></m-rich-text-editor>
         </div>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>Title and subtitle</h5>
         <div>
             <m-rich-text-editor v-model="modelTitle2"
@@ -121,7 +121,7 @@
                                 last-header-level="3"></m-rich-text-editor>
         </div>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>Multiple titles</h5>
         <div>
             <m-rich-text-editor v-model="modelTitle3"
@@ -132,14 +132,14 @@
                                 last-header-level="6"></m-rich-text-editor>
         </div>
     </div>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <h5>Résultat dans le lecteur</h5>
         <div>
             <m-rich-text :value="model"></m-rich-text>
         </div>
     </div>
-    <h5 class="m-u--margin-bottom">fonctionne quand le modèle est déjà initialisé</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">fonctionne quand le modèle est déjà initialisé</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="initializedModel"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -153,13 +153,13 @@
                             :disabled="disabled"></m-rich-text-editor>
     </div>
     <div>
-        <h5 class="m-u--margin-bottom">fonctionne dans un formulaire pleine page</h5>
+        <h5 class="mu-mb">fonctionne dans un formulaire pleine page</h5>
         <button @click="afficherFormulairePleinePage = !afficherFormulairePleinePage">Afficher formulaire pleine page</button>
         <m-overlay id="overlayPleinePage"
                    :open.sync="afficherFormulairePleinePage"
                    @cancel="resetModelPleinePage()">
             <template slot="header">
-                <span class="m-u--h2 m-u--font-weight--bold">
+                <span class="mu-h2 mu-font-weight-bold">
                     <m-i18n k="texte:texte"></m-i18n>
                 </span>
             </template>
@@ -174,7 +174,7 @@
         </m-overlay>
     </div>
     <div>
-        <h5 class="m-u--margin-bottom">RTE dans un formulaire modal</h5>
+        <h5 class="mu-mb">RTE dans un formulaire modal</h5>
         <m-modal id="idModal"
                  title="Modal title"
                  :size="modalSize">
@@ -190,8 +190,8 @@
             <div slot="footer">Footer</div>
         </m-modal>
     </div>
-    <h5 class="m-u--margin-bottom">placeholder vide n'affiche rien</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">placeholder vide n'affiche rien</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -204,17 +204,17 @@
                             :disabled="disabled"></m-rich-text-editor>
     </div>
 
-    <h5 class="m-u--margin-bottom">peut focuser avec une fonction (à partir de input management, sans prop)</h5>
+    <h5 class="mu-mb">peut focuser avec une fonction (à partir de input management, sans prop)</h5>
     <p>
         <button @click="focusEditor">Focus the editor</button>
     </p>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             ref="rteTestFocus"></m-rich-text-editor>
     </div>
 
-    <h5 class="m-u--margin-bottom">Tests de la case à cocher « Ouvrir dans un nouvel onglet » d'un lien externe</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">Tests de la case à cocher « Ouvrir dans un nouvel onglet » d'un lien externe</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="linksOpenInNewWindowModel"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -227,9 +227,9 @@
                             :disabled="disabled"
                             :placeholder="'some placeholder'"></m-rich-text-editor>
     </div>
-    <h5 class="m-u--margin-bottom">peut focuser / clicker différents éléments à la suite du rich-text après avoir focus
+    <h5 class="mu-mb">peut focuser / clicker différents éléments à la suite du rich-text après avoir focus
         le rich-text</h5>
-    <div class="m-u--margin-bottom">
+    <div class="mu-mb">
         <div>
             <select v-model="inputFocusTestInputType">
                 <option v-if="!inputFocusTestInputType"
@@ -300,7 +300,7 @@
     </div>
 
     <div>
-        <h5 class="m-u--margin-bottom">Réutilisation d'un RTE</h5>
+        <h5 class="mu-mb">Réutilisation d'un RTE</h5>
         <p>Si on change la valeur du model dans le JS, le changement est rapporté dans le RTE</p>
         <div>
             <h6>Current todo</h6>
@@ -340,7 +340,7 @@
         </div>
     </div>
 
-    <m-radio-group class="m-u--margin-top"
+    <m-radio-group class="mu-mt"
                    v-model="radioValue">
         <m-radio value="1">Option 1</m-radio>
         <m-rich-text-editor v-model="model"
@@ -349,8 +349,8 @@
         <m-radio value="2">Option 2</m-radio>
     </m-radio-group>
 
-    <h5 class="m-u--margin-bottom">Nombre de charactères maximum</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">Nombre de charactères maximum</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -364,8 +364,8 @@
                             character-count-max="20"></m-rich-text-editor>
     </div>
 
-    <h5 class="m-u--margin-bottom">Afficher boutons alignement du texte</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">Afficher boutons alignement du texte</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -379,8 +379,8 @@
                             :show-paragraph-alignment-buttons="true"></m-rich-text-editor>
     </div>
 
-    <h5 class="m-u--margin-bottom">Afficher bouton soulignement du texte</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">Afficher bouton soulignement du texte</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -394,8 +394,8 @@
                             :show-underline-button="true"></m-rich-text-editor>
     </div>
 
-    <h5 class="m-u--margin-bottom">Afficher bouton texte barré</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">Afficher bouton texte barré</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -409,8 +409,8 @@
                             :show-strike-through-button="true"></m-rich-text-editor>
     </div>
 
-    <h5 class="m-u--margin-bottom">Avec tous les boutons</h5>
-    <div class="m-u--margin-bottom">
+    <h5 class="mu-mb">Avec tous les boutons</h5>
+    <div class="mu-mb">
         <m-rich-text-editor v-model="model"
                             :label="'rich text'"
                             :max-width="'large'"
@@ -427,8 +427,8 @@
                             :show-image-button="true"
                             :show-image-float-layout="true"></m-rich-text-editor>
 
-        <div class="m-u--margin-bottom">
-            <h5 class="m-u--margin-bottom">RTE avec une taille par taille minimum de 5</h5>
+        <div class="mu-mb">
+            <h5 class="mu-mb">RTE avec une taille par taille minimum de 5</h5>
             <m-rich-text-editor v-model="model"
                                 :label="'rich text with placeholder'"
                                 :max-width="'large'"

@@ -1,15 +1,15 @@
 @import 'commons';
-$m-select-item--color-hover: $m-color--interactive-lightest !default;
-$m-select-item--color-select: $m-color--grey-lighter !default;
-$m-select-item--color-active: $m-color--grey-lightest !default;
+$m-select-item--color-hover: $m-color-interactive-lightest !default;
+$m-select-item--color-select: $m-color-grey-lighter !default;
+$m-select-item--color-active: $m-color-grey-lightest !default;
 
 @mixin m-select-item() {
-    padding: $m-spacing $m-spacing--s;
+    padding: $m-space $m-space-xs;
     line-height: 20px;
 
     &.m--is-disabled {
         cursor: default;
-        color: $m-color--disabled;
+        color: $m-color-disabled;
     }
 
     &.m--is-selected {
@@ -27,17 +27,17 @@ $m-select-item--color-active: $m-color--grey-lightest !default;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: $m-spacing;
+    padding: $m-space;
     margin: 0;
-    color: $m-color--text;
-    font-size: $m-font-size;
+    color: $m-color-text;
+    font-size: inherit;
     text-decoration: none;
     outline: none;
     min-height: 52px;
 
     @include m-word-wrap();
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         @include m-select-item();
 
         &.m--is-item-active {
@@ -55,7 +55,7 @@ $m-select-item--color-active: $m-color--grey-lightest !default;
         }
     }
 
-    @media (max-width: $m-mq--max--s) {
+    @media (max-width: $m-mq-max-sm) {
         &.m--without-radio {
             @include m-select-item();
         }
@@ -64,20 +64,20 @@ $m-select-item--color-active: $m-color--grey-lightest !default;
     &:not(.m--is-disabled).m--is-waiting {
         animation: SelectItemWaiting 0.6s infinite;
         animation-direction: alternate-reverse;
-        color: $m-color--disabled;
-        background: $m-color--grey-lightest;
+        color: $m-color-disabled;
+        background: $m-color-grey-lightest;
         cursor: wait;
     }
 }
 
 @keyframes SelectItemWaiting {
     0% {
-        color: $m-color--disabled;
-        background: $m-color--grey-lightest;
+        color: $m-color-disabled;
+        background: $m-color-grey-lightest;
     }
 
     100% {
-        color: $m-color--grey-lighter;
-        background: $m-color--white;
+        color: $m-color-grey-lighter;
+        background: $m-color-white;
     }
 }

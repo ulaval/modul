@@ -2,14 +2,12 @@
 
 .m-textarea {
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
 
     @include m-input-inline-spacing();
 
     &__label {
-        font-size: $m-font-size;
-        font-weight: $m-font-weight--semi-bold;
+        @include m-font-size();
+        font-weight: $m-font-weight-semi-bold;
     }
 
     &__validation {

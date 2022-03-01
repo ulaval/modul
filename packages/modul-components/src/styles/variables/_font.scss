@@ -1,0 +1,47 @@
+
+// Fonts property
+$m-font-path: '../assets/fonts/' !default;
+$m-font-name: 'Source Sans Variable' !default;
+
+// App font size
+$m-font-size-xl: 22 !default;
+$m-font-size-lg: 20 !default;
+$m-font-size-md: 18 !default;
+$m-font-size: 16 !default;
+$m-font-size-sm: 14 !default;
+$m-font-size-xs: 12 !default;
+
+// Titles font size
+$m-font-size-h1: #{var(--m-font-size-h1)} !default;
+$m-font-size-h2: #{var(--m-font-size-h2)} !default;
+$m-font-size-h3: #{var(--m-font-size-h3)} !default;
+$m-font-size-h4: #{var(--m-font-size-h4)} !default;
+$m-font-size-h5: #{var(--m-font-size-h5)} !default;
+$m-font-size-h6: #{var(--m-font-size-h6)} !default;
+
+// Font weight
+$m-font-weight-range: 200 900;
+$m-font-weight-black: 650 !default;
+$m-font-weight-bold: 575 !default;
+$m-font-weight-semi-bold: 500 !default;
+$m-font-weight-regular: 425 !default;
+$m-font-weight: 425 !default; // À supprimer une fois les remplacements de variables fait dans Brio
+$m-font-weight-light: 350 !default;
+$m-font-weight-heading: $m-font-weight-semi-bold !default;
+
+// Line height
+$m-line-height: #{var(--m-line-height)} !default;
+$m-line-height-heading: 1.1;
+
+$m-font-size-map: ('h1': $m-font-size-h1,
+    'h2': $m-font-size-h2,
+    'h3': $m-font-size-h3,
+    'h4': $m-font-size-h4,
+    'h5': $m-font-size-h5,
+    'h6': $m-font-size-h6,
+    'base': $m-font-size,
+    'xl': $m-font-size-xl,
+    'lg': $m-font-size-lg,
+    'md': $m-font-size-md,
+    'sm': $m-font-size-sm,
+    'xs': $m-font-size-xs)

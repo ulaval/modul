@@ -32,7 +32,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DATEPICKER_NAME}`, module)
 
             }
         },
-        template: `<div><p class="m-u--no-margin">Model value = "{{model}}"<br>skipInputValidation = "{{skipInputValidation}}"</p><m-datepicker class="m-u--margin-top" :value="model" @change="model = onInputChange($event)" @focus="onFocus" @blur="onBlur" min="2019-05-10" max="2019-05-24" :skip-input-validation="skipInputValidation"></m-datepicker><p><m-button @click="onResetModel">Reset model</m-button></p><p><m-checkbox v-model="skipInputValidation">skipInputValidation</m-checkbox></p></div>`
+        template: `<div><p class="mu-no-m">Model value = "{{model}}"<br>skipInputValidation = "{{skipInputValidation}}"</p><m-datepicker class="mu-mt" :value="model" @change="model = onInputChange($event)" @focus="onFocus" @blur="onBlur" min="2019-05-10" max="2019-05-24" :skip-input-validation="skipInputValidation"></m-datepicker><p><m-button @click="onResetModel">Reset model</m-button></p><p><m-checkbox v-model="skipInputValidation">skipInputValidation</m-checkbox></p></div>`
     }))
     .add('label', () => ({
         template: `<m-datepicker label="Date label"></m-datepicker>`
@@ -68,11 +68,11 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DATEPICKER_NAME}`, module)
             <p><strong>Model value:</strong> {{value}}</p>
             <p><strong>Date min:</strong> {{dateMin}}</p>
             <p><strong>Date max:</strong> {{dateMax}}</p>
-            <m-datepicker v-model="value" class="m-u--margin-top" :min="dateMin" :max="dateMax"></m-datepicker>
-            <div class="m-u--margin-top">
-                <m-button class="m-u--margin-right" @click="resetValue()">Reset value</m-button>
-                <m-button class="m-u--margin-right" skin="secondary" @click="setValueInRange()">Date in the range</m-button>
-                <m-button class="m-u--margin-right" skin="secondary" @click="setValueOutOfRange()">Date out de range</m-button>
+            <m-datepicker v-model="value" class="mu-mt" :min="dateMin" :max="dateMax"></m-datepicker>
+            <div class="mu-mt">
+                <m-button class="mu-mr" @click="resetValue()">Reset value</m-button>
+                <m-button class="mu-mr" skin="secondary" @click="setValueInRange()">Date in the range</m-button>
+                <m-button class="mu-mr" skin="secondary" @click="setValueOutOfRange()">Date out de range</m-button>
             </div>
         </div>`
     }))

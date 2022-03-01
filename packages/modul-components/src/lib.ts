@@ -122,7 +122,7 @@ export * from './components/typeahead/typeahead';
 export * from './components/validation-message/validation-message';
 export * from './directives/badge/badge';
 /**
- * directives
+ * Directives
  */
 export { default as DirectivesPlugin } from './directives/directives-plugin';
 export * from './directives/i18n/i18n';

@@ -1,59 +1,64 @@
-.m-u--font {
+.mu-font {
     &-size {
-        font-size: $m-font-size;
+        @include m-font-size();
 
-        &--l {
-            font-size: $m-font-size--l;
+        &-lg {
+            @include m-font-size('lg');
         }
 
-        &--s {
-            font-size: $m-font-size--s;
+        &-md {
+            @include m-font-size('md');
         }
 
-        &--xs {
-            font-size: $m-font-size--xs;
+        &-sm {
+            @include m-font-size('sm');
+        }
+
+        &-xs {
+            @include m-font-size('xs');
         }
     }
 
     &-style {
-        &--normal {
+        &-normal {
             font-style: normal;
         }
 
-        &--italic {
+        &-italic {
             font-style: italic;
         }
     }
 
     &-weight {
-        &--black {
-            font-weight: $m-font-weight--black;
+        &-black {
+            font-weight: $m-font-weight-black;
         }
 
-        &--bold {
-            font-weight: $m-font-weight--bold;
+        &-bold {
+            font-weight: $m-font-weight-bold;
         }
 
-        &--semi-bold {
-            font-weight: $m-font-weight--semi-bold;
+        &-semi-bold {
+            font-weight: $m-font-weight-semi-bold;
         }
 
-        &--regular {
-            font-weight: $m-font-weight--regular;
+        &-regular {
+            font-weight: $m-font-weight-regular;
         }
 
-        &--light {
-            font-weight: $m-font-weight--light;
+        &-light {
+            font-weight: $m-font-weight-light;
         }
     }
 }
 
-.m-u--typo {
-    &--precision {
+.mu-typo {
+    &-precision {
+
         &,
         &-italic {
-            font-size: $m-font-size--s;
-            color: $m-color--text-light;
+            @include m-font-size('sm');
+            color: $m-color-text-light;
         }
 
         &-italic {
@@ -61,11 +66,11 @@
         }
     }
 
-    &--highlighting {
+    &-highlighting {
         display: inline;
-        font-size: $m-font-size--s;
-        font-weight: $m-font-weight--semi-bold;
-        background: $m-color--warning-lightest;
-        box-shadow: 0 0 0 2px $m-color--warning-lightest;
+        @include m-font-size('sm');
+        font-weight: $m-font-weight-semi-bold;
+        background: $m-color-warning-lightest;
+        box-shadow: 0 0 0 2px $m-color-warning-lightest;
     }
 }

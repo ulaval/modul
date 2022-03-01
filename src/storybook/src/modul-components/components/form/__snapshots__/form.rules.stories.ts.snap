@@ -11,7 +11,7 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
   </p>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -24,7 +24,6 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -63,10 +62,7 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
               />
                  
               <!---->
-                
-              <!---->
                
-              <!---->
             </div>
              
             <div
@@ -103,7 +99,7 @@ exports[`Storyshots modul-components|m-form/rules Async Validation 1`] = `
     </div>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -156,7 +152,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
   </h2>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -170,7 +166,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
     </p>
      
     <ul
-      class="m-u--no-margin"
+      class="mu-no-m"
     >
       <fieldset
         class="m-input-group"
@@ -493,7 +489,7 @@ exports[`Storyshots modul-components|m-form/rules Checkbox 2 To 5 Selections 1`]
     </ul>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -550,7 +546,7 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
   </p>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -563,7 +559,6 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -602,10 +597,7 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
               />
                  
               <!---->
-                
-              <!---->
                
-              <!---->
             </div>
              
             <div
@@ -642,7 +634,7 @@ exports[`Storyshots modul-components|m-form/rules Custom Validation 1`] = `
     </div>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -695,7 +687,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
   </h2>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -730,7 +722,6 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
           >
             <div
               class="m-input-style__main"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -769,10 +760,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                     />
                        
                     <!---->
-                      
-                    <!---->
                      
-                    <!---->
                   </div>
                    
                   <div
@@ -814,7 +802,6 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
           >
             <div
               class="m-input-style__main"
-              style="margin-top: 10px;"
             >
               <div
                 class="m-input-style__body"
@@ -853,10 +840,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
                     />
                        
                     <!---->
-                      
-                    <!---->
                      
-                    <!---->
                   </div>
                    
                   <div
@@ -896,7 +880,7 @@ exports[`Storyshots modul-components|m-form/rules Email Confirmation 1`] = `
     </fieldset>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -949,7 +933,7 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
   </h2>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -962,7 +946,6 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1001,10 +984,7 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
               />
                  
               <!---->
-                
-              <!---->
                
-              <!---->
             </div>
              
             <div
@@ -1041,7 +1021,7 @@ exports[`Storyshots modul-components|m-form/rules Email Example 1`] = `
     </div>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -1094,7 +1074,7 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
   </h2>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -1107,7 +1087,6 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1146,10 +1125,7 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
               />
                  
               <!---->
-                
-              <!---->
                
-              <!---->
             </div>
              
             <div
@@ -1186,7 +1162,7 @@ exports[`Storyshots modul-components|m-form/rules Postal Code Example 1`] = `
     </div>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -1239,7 +1215,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
   </h2>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -1432,7 +1408,7 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
     </div>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -1485,7 +1461,7 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
   </h2>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -1498,7 +1474,6 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1537,10 +1512,7 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
               />
                  
               <!---->
-                
-              <!---->
                
-              <!---->
             </div>
              
             <div
@@ -1577,7 +1549,7 @@ exports[`Storyshots modul-components|m-form/rules Required And 5 Caracters Min 1
     </div>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"
@@ -1630,7 +1602,7 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
   </h2>
    
   <form
-    class="m-form m-u--margin-top"
+    class="m-form mu-mt"
     novalidate="novalidate"
   >
     <!---->
@@ -1643,7 +1615,6 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
     >
       <div
         class="m-input-style__main"
-        style="margin-top: 10px;"
       >
         <div
           class="m-input-style__body"
@@ -1682,10 +1653,7 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
               />
                  
               <!---->
-                
-              <!---->
                
-              <!---->
             </div>
              
             <div
@@ -1726,7 +1694,7 @@ exports[`Storyshots modul-components|m-form/rules Required And 20 Caracters Max 
     </div>
      
     <p
-      class="m-u--margin-bottom--l"
+      class="mu-mb-lg"
     >
       <button
         class="m-button m--is-skin-primary"

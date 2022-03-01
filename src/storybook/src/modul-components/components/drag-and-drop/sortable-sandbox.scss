@@ -7,13 +7,13 @@
     }
 
     .m-drag-handle {
-        margin-right: $m-margin;
+        margin-right: $m-space-sm;
     }
 
     &__item {
-        padding: $m-padding;
+        padding: $m-space;
         display: flex;
         align-items: center;
-        border-bottom: 2px solid $m-color--grey-light;
+        border-bottom: 2px solid $m-color-grey-light;
     }
 }

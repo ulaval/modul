@@ -3,7 +3,7 @@
 
 .mw-logo {
     font-size: var(--mw-logo-font-size);
-    color: $m-color--white;
+    color: $m-color-white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,7 @@
             width: 260px;
             user-select: none;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 width: 460px;
             }
         }
@@ -24,7 +24,7 @@
         .mw-logo__img {
             width: 95px;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 width: 130px;
             }
         }
@@ -35,10 +35,10 @@
         font-size: 18px;
         font-weight: 300;
         text-transform: uppercase;
-        margin-top: $m-spacing;
+        margin-top: $m-space;
 
-        @media (min-width: $m-mq--min--s) {
-            margin-top: $m-spacing--m;
+        @media (min-width: $m-mq-min-sm) {
+            margin-top: $m-space-md;
             font-size: 32px;
         }
     }

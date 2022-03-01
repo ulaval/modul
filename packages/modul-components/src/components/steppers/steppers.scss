@@ -30,11 +30,11 @@ $m-steppers-item--line-width: 2px;
         width: 0;
         content: '';
         height: $m-steppers-item--line-width;
-        background: $m-color--ul-blue;
+        background: $m-color-interactive;
         z-index: 1;
 
         &.m--is-anim-active {
-            transition: width $m-transition-duration--xl ease;
+            transition: width $m-transition-duration-xl ease;
         }
     }
 
@@ -45,7 +45,7 @@ $m-steppers-item--line-width: 2px;
         right: 0;
         content: '';
         height: $m-steppers-item--line-width;
-        background: $m-color--grey;
+        background: $m-color-grey;
         z-index: 1;
     }
 

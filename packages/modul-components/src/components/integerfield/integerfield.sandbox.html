@@ -1,7 +1,7 @@
 <div>
 
     <h2>Input integer</h2>
-    <h3 class="m-u--h6">No limit (should be max-length 16 by default)</h3>
+    <h3 class="mu-h6">No limit (should be max-length 16 by default)</h3>
     <m-integerfield label="number"
                     v-model="model1"
                     placeholder="Put a number"></m-integerfield>
@@ -12,7 +12,7 @@
         value should be: {{ definedModel }}
     </div>
 
-    <h3 class="m-u--h6">2 numbers limit</h3>
+    <h3 class="mu-h6">2 numbers limit</h3>
     <m-integerfield label="number"
                     v-model="model2"
                     :max-length="2"
@@ -21,25 +21,25 @@
     <p> model = {{ model2 }} </p>
 
     <h2>Messages</h2>
-    <h3 class="m-u--h6">Static error (default)</h3>
+    <h3 class="mu-h6">Static error (default)</h3>
     <m-integerfield label="label"
                     value="10"
                     v-model="model3"
                     error-message="this field is in error">
     </m-integerfield>
 
-    <h3 class="m-u--h6">Valid message</h3>
+    <h3 class="mu-h6">Valid message</h3>
     <m-integerfield label="label"
                     value="10"
                     v-model="model4"
                     valid-message="Valid textfield"></m-integerfield>
 
     <h2>Readonly</h2>
-    <h3 class="m-u--h6">Placehoder</h3>
+    <h3 class="mu-h6">Placehoder</h3>
     <m-integerfield label="label"
                     placeholder="Put a number"
                     :readonly="true"></m-integerfield>
-    <h3 class="m-u--h6">Value</h3>
+    <h3 class="mu-h6">Value</h3>
     <m-integerfield label="label"
                     value="10"
                     :readonly="true"></m-integerfield>

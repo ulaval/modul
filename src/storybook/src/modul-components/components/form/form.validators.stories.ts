@@ -233,7 +233,7 @@ export const compareFields = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup"
                 @submit="submit()">
             <p>default validationType =  {{ formGroup.validators[0].validationType }}</p>
@@ -258,7 +258,7 @@ export const compareFields = () => ({
                     </m-textfield>
                 </div>
             </m-input-group>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>

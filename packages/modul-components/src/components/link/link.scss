@@ -1,16 +1,16 @@
 @import 'commons';
 
 .m-link {
-    --m-link--color-visited: #{$m-color--interactive-darker};
-    --m-link--color-active: #{$m-color--interactive-dark};
-    --m-link--color: #{$m-color--interactive};
-    --m-link--color-hover: #{$m-color--interactive-light};
+    --m-link--color-visited: #{$m-color-interactive-darker};
+    --m-link--color-active: #{$m-color-interactive-dark};
+    --m-link--color: #{$m-color-interactive};
+    --m-link--color-hover: #{$m-color-interactive-light};
 
     transition: color $m-transition-duration ease;
     position: relative;
     display: inline-flex;
     align-items: center;
-    font-weight: $m-font-weight--semi-bold;
+    font-weight: $m-font-weight-semi-bold;
     color: var(--m-link--color);
     text-decoration: none;
 
@@ -23,13 +23,13 @@
         flex-direction: row-reverse;
 
         .m-link__icon {
-            margin-left: $m-margin--s;
+            margin-left: $m-space-xs;
         }
     }
 
     &.m--has-left-icon.m--has-content {
         .m-link__icon {
-            margin-right: $m-margin--s;
+            margin-right: $m-space-xs;
         }
     }
 
@@ -37,6 +37,7 @@
         cursor: pointer;
 
         &:not(.m--no-underline) {
+
             &:hover,
             &:focus {
                 .m-link__text {
@@ -45,12 +46,12 @@
             }
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             color: var(--m-link--color-hover);
         }
 
-        &:active {
+        &:active,
+        &:focus:not(:hover) {
             color: var(--m-link--color-active);
         }
 
@@ -60,22 +61,22 @@
     }
 
     &.m--is-disabled {
-        color: $m-color--disabled;
+        color: $m-color-disabled;
         cursor: default;
     }
 
     &.m--is-skin-text {
-        --m-link--color-visited: #{$m-color--text};
-        --m-link--color-active: #{$m-color--black};
-        --m-link--color: #{$m-color--text};
-        --m-link--color-hover: #{$m-color--grey-dark};
+        --m-link--color-visited: #{$m-color-text};
+        --m-link--color-active: #{$m-color-black};
+        --m-link--color: #{$m-color-text};
+        --m-link--color-hover: #{$m-color-grey-dark};
     }
 
     &.m--is-skin-light {
-        --m-link--color-visited: #{$m-color--white};
-        --m-link--color-active: #{$m-color--grey-light};
-        --m-link--color: #{$m-color--white};
-        --m-link--color-hover: #{$m-color--grey-lighter};
+        --m-link--color-visited: #{$m-color-white};
+        --m-link--color-active: #{$m-color-grey-light};
+        --m-link--color: #{$m-color-white};
+        --m-link--color-hover: #{$m-color-grey-lighter};
     }
 
     &:focus {

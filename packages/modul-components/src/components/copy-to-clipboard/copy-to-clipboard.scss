@@ -1,6 +1,6 @@
 @import 'commons';
 
-$m-searchfield-color: $m-color--grey-lightest;
+$m-searchfield-color: $m-color-grey-lightest;
 
 .m-copy-to-clipboard {
     &__button {
@@ -10,7 +10,7 @@ $m-searchfield-color: $m-color--grey-lightest;
         background-color: inherit;
         border-radius: 0 $m-input-style--border-radius $m-input-style--border-radius 0;
         width: 100%;
-        color: $m-color--interactive;
+        color: $m-color-interactive;
         padding: 0 $m-input-style--padding;
         white-space: nowrap;
 

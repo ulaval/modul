@@ -6,7 +6,7 @@
             Selected file : none</br>
             Open folder : Title 3
         </p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="tree"
                 selection-mode="none"></m-tree>
     </div>
@@ -17,7 +17,7 @@
             Selected file : /Title 1/Subtitle 1</br>
             Open folder : Title 3
         </p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="tree"
                 :selected-nodes="currentFile2"
                 @select="onSelect"></m-tree>
@@ -29,7 +29,7 @@
     <div style="width: 50%; float: left;">
         <h3>Selection disabled</h3>
         <p>
-            <m-tree class="m-u--margin-top"
+            <m-tree class="mu-mt"
                     :tree="fileTree"
                     selection-mode="none"
                     :use-files-icons="true"></m-tree>
@@ -42,7 +42,7 @@
             Selected file : /folder 1/folder 2/index.html</br>
             Open folder : none
         </p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="fileTree"
                 selection-mode="single"
                 :selected-nodes="currentFile"
@@ -59,7 +59,7 @@
         <p>
             Selected Leaves : {{currentNodesBasic}}</br>
         </p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="multiNodeTree"
                 selection-mode="multiple"
                 :use-files-icons="true"
@@ -80,7 +80,7 @@
         <p>
             Selected Leaves : {{currentNodesCheckboxes}}</br>
         </p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="multiNodeTree"
                 checkboxes="with-checkbox-auto-select"
                 selection-mode="multiple"
@@ -102,7 +102,7 @@
         <p>
             Selected Leaves : {{currentNodesCheckboxesParent}}</br>
         </p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="multiNodeTree"
                 checkboxes="with-parent-auto-select"
                 selection-mode="multiple"
@@ -122,7 +122,7 @@
             <li>:use-files-icons="true"</li>
         </ul>
         <p>Selected Leaves : {{currentNodesCheckboxesButtonAutoselect}}</p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="multiNodeTree"
                 selection-mode="multiple"
                 checkboxes="with-button-auto-select"
@@ -146,7 +146,7 @@
         <p>
             Selected Leaves : {{currentNodesCheckboxesNone}}</br>
         </p>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="multiNodeTree"
                 selection-mode="multiple"
                 checkboxes="true"
@@ -161,13 +161,13 @@
 
     <div style="width: 50%; float: left;">
         <h3>Nodes error</h3>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="errorTree"></m-tree>
     </div>
 
     <div style="width: 50%; float: left;">
         <h3>Empty tree</h3>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="emptyTree"></m-tree>
     </div>
 
@@ -176,7 +176,7 @@
     <div style="width: 50%; float: left;">
         <h3>Selected node not found</h3>
         <span>Console error</span>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="tree"
                 :selected-nodes="wrongCurrentFile"
                 @select="onSelect"></m-tree>
@@ -185,7 +185,7 @@
 
     <div style="width: 50%; float: left;">
         <h3>Read only mode</h3>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="multiNodeTree"
                 selection-mode="readonly"
                 :disabled-nodes="disabledNodesCheckboxesNone"
@@ -206,7 +206,7 @@
 
     <div style="width: 50%; float: left;">
         <h3>Tree in a modal window</h3>
-        <m-modal class="m-u--margin-top"
+        <m-modal class="mu-mt"
                  title="Modal title">
             <m-button slot="trigger">Open the modal</m-button>
             <m-tree :tree="fileTree"
@@ -219,7 +219,7 @@
 
     <div style="width: 50%; float: left;">
         <h3>Read only mode</h3>
-        <m-tree class="m-u--margin-top"
+        <m-tree class="mu-mt"
                 :tree="tree2"
                 selection-mode="readonly"
                 @select="onSelect"></m-tree>

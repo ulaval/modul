@@ -2,36 +2,36 @@
 
 .m-empty-area {
     position: relative;
-    padding: $m-spacing;
+    padding: $m-space;
 
 
-    @media (min-width: $m-mq--min--s) {
-        padding: $m-spacing--l;
+    @media (min-width: $m-mq-min-sm) {
+        padding: $m-space-lg;
     }
 
     &__content-area {
         width: 100%;
-        color: $m-color--grey-dark;
+        color: $m-color-grey-dark;
     }
 
     .m-empty-area__title {
         margin-top: 0;
-        font-weight: $m-font-weight--bold;
-        font-size: $m-font-size--l;
+        font-weight: $m-font-weight-bold;
+        @include m-font-size('md');
 
-        + .m-empty-area__subtitle {
-            margin-top: $m-spacing--xs;
+        +.m-empty-area__subtitle {
+            margin-top: $m-space-2xs;
         }
     }
 
     &__subtitle {
         font-weight: $m-font-weight;
-        font-size: $m-font-size--s;
+        @include m-font-size('sm');
     }
 }
 
 .m-empty-area.m--is-background-style-light {
-    background: $m-color--grey-lightest;
+    background: $m-color-grey-lightest;
 }
 
 .m-empty-area.m--is-display-mode-inline {
@@ -42,7 +42,7 @@
 
     &.m--has-content-area {
         .m-empty-area__button {
-            margin-top: $m-spacing--s;
+            margin-top: $m-space-xs;
         }
     }
 
@@ -58,8 +58,8 @@
         }
 
         &__icon {
-            + .m-empty-area__title-area {
-                margin-left: $m-spacing--s  * 1.5;
+            +.m-empty-area__title-area {
+                margin-left: calc(#{$m-space-xs} * 1.5);
                 text-align: left;
             }
         }
@@ -84,16 +84,16 @@
         }
 
         &__icon {
-            + .m-empty-area__title-area {
-                margin-top: $m-spacing--s * 1.5;
+            +.m-empty-area__title-area {
+                margin-top: calc(#{$m-space-xs} * 1.5);
             }
         }
 
         &__button {
             align-self: flex-start;
 
-            + .m-empty-area__content-area {
-                margin-top: $m-spacing--s;
+            +.m-empty-area__content-area {
+                margin-top: $m-space-xs;
             }
         }
     }

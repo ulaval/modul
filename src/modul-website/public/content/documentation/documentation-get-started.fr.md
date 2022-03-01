@@ -85,11 +85,11 @@ $m-font-path: '~@ulaval/modul-components/dist/assets/fonts/';
 @import "~@ulaval/modul-components/dist/styles/main.scss";
 
 ```
-Ensuite la classe m-u--app-body doit être appliquée à la balise HTML de base qui englobe l’application MODUL où on veut utiliser les styles.
+Ensuite la classe mu-app-root doit être appliquée à la balise HTML de base qui englobe l’application MODUL où on veut utiliser les styles.
 
 ```html
 <template>
-  <div id="app" class="m-u--app-body">
+  <div id="app" class="mu-app-root">
       ...
   </div>
 </template>

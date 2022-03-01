@@ -1,21 +1,21 @@
-.m-u--button-primary {
+.mu-button-primary {
     @include m-button();
     @include m-button--primary();
     @include m-button--hover();
 }
 
-.m-u--button-secondary {
+.mu-button-secondary {
     @include m-button();
     @include m-button--secondary();
     @include m-button--hover();
 }
 
-.m-u--button-disabled {
+.mu-button-disabled {
     @include m-button();
     @include m-button--disabled();
 }
 
-.m-u--button-waiting {
+.mu-button-waiting {
     @include m-button();
     @include m-button--waiting();
 }

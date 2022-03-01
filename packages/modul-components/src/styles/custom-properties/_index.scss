@@ -1,0 +1,5 @@
+@import 'all-custom-properties.mixin';
+
+:root {
+    @include m-all-custom-properties();
+}

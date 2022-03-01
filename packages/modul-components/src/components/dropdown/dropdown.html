@@ -74,8 +74,6 @@
             @focusout="onFocusOut"
             @input="onInput"
         />
-        <template slot="adjust-width-auto"
-                    v-if="width === 'auto'">{{ selectedText }}</template>
         <div class="m-dropdown__arrow"
                 :class="{ 'm--is-open': open }"
                 v-if="showArrowIcon"

@@ -6,10 +6,10 @@ $w-sidebar-max-width--s: 100%;
 $w-content-max-width: $mw-max-width;
 
 .mw-expandable-panel {
-    background-color: $m-color--white;
+    background-color: $m-color-white;
 
     &__sidemenu-body {
-        padding: $m-spacing--l;
+        padding: $m-space-lg;
     }
 
     &,
@@ -35,17 +35,17 @@ $w-content-max-width: $mw-max-width;
 
     &__search {
         background-color: $modul-color--black-grey;
-        padding: m-spacing(l);
+        padding: $m-space-lg;
     }
 
     &__content {
         margin: 0 auto;
-        padding: $m-spacing--xxxxl $m-spacing;
+        padding: $m-space-4xl $m-space;
         max-width: $w-content-max-width;
 
-        @media (min-width: $m-mq--min--s) {
-            padding-left: $m-spacing--l;
-            padding-right: $m-spacing--l;
+        @media (min-width: $m-mq-min-sm) {
+            padding-left: $m-space-lg;
+            padding-right: $m-space-lg;
         }
     }
 
@@ -56,39 +56,42 @@ $w-content-max-width: $mw-max-width;
     }
 
     &__sidemenu-title {
-        font-size: $m-font-size--l;
         text-transform: uppercase;
-        font-weight: $m-font-weight--black;
+        font-weight: $m-font-weight-black;
+
+        @include m-font-size('md');
     }
 
     &__sidemenu-sub-title {
         margin-top: 16px;
         margin-bottom: 8px;
-        font-size: $m-font-size--l;
-        font-weight: $m-font-weight--black;
+        font-weight: $m-font-weight-black;
+
+        @include m-font-size('md');
     }
 
     &__sidemenu-item {
         a {
-            transition: font-weight $m-transition-duration--s linear;
+            transition: font-weight $m-transition-duration-sm linear;
             display: block;
             line-height: 1.3;
-            padding: $m-spacing $m-spacing $m-spacing 12px;
-            border-left: 2px solid $m-color--grey-light;
+            padding: $m-space $m-space $m-space 12px;
+            border-left: 2px solid $m-color-grey-light;
             margin-left: 1px;
-            font-size: $m-font-size;
             font-weight: $m-font-weight;
             text-decoration: none;
-            color: $m-color--text;
+            color: $m-color-text;
+
+            @include m-font-size();
 
             &:hover,
             &:focus {
-                font-weight: $m-font-weight--bold;
+                font-weight: $m-font-weight-bold;
             }
 
             &.router-link-active {
-                font-weight: $m-font-weight--black;
-                border-left: 4px solid $m-color--ul-yellow;
+                font-weight: $m-font-weight-black;
+                border-left: 4px solid $m-color-ul-yellow;
                 margin-left: 0;
             }
         }

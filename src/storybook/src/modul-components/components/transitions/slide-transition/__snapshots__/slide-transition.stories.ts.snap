@@ -198,10 +198,10 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
     class="m-slide-transition m--is-left-to-right-transition"
   >
     <div
-      class="m-u--margin-top"
+      class="mu-mt"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         Tab 1
       </h3>
@@ -270,7 +270,7 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
   </div>
    
   <div
-    class="m-u--margin-top--m"
+    class="mu-mt-md"
   >
     <button
       class="m-button m--is-skin-primary"
@@ -293,7 +293,7 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
     </button>
      
     <button
-      class="m-button m-u--margin-left m--is-skin-secondary"
+      class="m-button mu-ml m--is-skin-secondary"
       type="button"
     >
       <!---->
@@ -313,7 +313,7 @@ exports[`Storyshots modul-components|m-slide-transition Tabs example 1`] = `
     </button>
      
     <button
-      class="m-button m-u--margin-left m--is-skin-secondary"
+      class="m-button mu-ml m--is-skin-secondary"
       type="button"
     >
       <!---->
@@ -443,10 +443,10 @@ exports[`Storyshots modul-components|m-slide-transition automatic-scroll=false 1
     class="m-slide-transition m--is-left-to-right-transition"
   >
     <div
-      class="m-u--margin-top"
+      class="mu-mt"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         Tab 1
       </h3>

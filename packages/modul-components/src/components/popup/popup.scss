@@ -11,11 +11,11 @@
         position: relative;
 
         &.m--has-padding {
-            padding: $m-padding;
+            padding: $m-space;
         }
 
         &.m--has--background {
-            background: $m-color--white;
+            background: $m-color-white;
         }
     }
 }

@@ -2,29 +2,29 @@
 
 .m-inplace-edit {
     padding: 0;
-    background: $m-color--white;
-    transition: padding $m-transition-duration ease, background $m-transition-duration--s linear;
+    background: $m-color-white;
+    transition: padding $m-transition-duration ease, background $m-transition-duration-sm linear;
 
     &.m--is-edit-mode {
-        padding: $m-spacing;
-        background: $m-color--information;
+        padding: $m-space;
+        background: $m-color-information;
     }
 
     &.m--has-erreur {
-        background: $m-color--error-lightest;
+        background: $m-color-error-lightest;
     }
 
     &__buttons {
-        margin-top: $m-margin--l;
+        margin-top: $m-space-md;
 
         > :first-child {
-            margin-right: $m-margin--s;
+            margin-right: 6px;
         }
     }
 }
 
 .m-edit-inplace__title {
     margin: 0;
-    font-size: $m-font-size--h4;
-    font-weight: $m-font-weight--semi-bold;
+    @include m-font-size('h4');
+    font-weight: $m-font-weight-semi-bold;
 }

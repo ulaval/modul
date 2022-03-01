@@ -7,12 +7,12 @@
     &__body {
         display: inline-flex;
         flex-wrap: wrap;
-        gap: $m-spacing;
+        gap: $m-space;
     }
 
     &.m--has-validation-message {
         .m-periodpicker__validation-message {
-            margin-top: $m-spacing--xs;
+            margin-top: $m-space-2xs;
         }
     }
 

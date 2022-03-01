@@ -86,21 +86,21 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, mo
                 <div v-for="index in nbTab"
                      :key="index"
                      v-if="selectedTabIndex === index"
-                     class="m-u--margin-top">
-                    <h3 class="m-u--no-margin">Tab {{index}}</h3>
+                     class="mu-mt">
+                    <h3 class="mu-no-m">Tab {{index}}</h3>
                     <p v-for="index in nbParagraphe"
                        :key="index">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A laudantium odio ipsum, quae quos cum dolor, omnis perferendis, veritatis deleniti iusto consectetur? Impedit tempora quam ab laborum maiores sapiente earum?</p>
                 </div>
             </m-slide-transition>
-            <div class="m-u--margin-top--m">
+            <div class="mu-mt-md">
                 <m-button @click="nbTab++"
                           :disabled="nbTab === 12">Add tab</m-button>
                 <m-button :skin="buttonSkin"
-                          class="m-u--margin-left"
+                          class="mu-ml"
                           :disabled="nbTab === 2"
                           @click="nbTab--">Delete tab</m-button>
                 <m-button :skin="buttonSkin"
-                          class="m-u--margin-left"
+                          class="mu-ml"
                           @click="disabledTransition = !disabledTransition">{{disabledTransition ? 'Enabled' : 'Disabled'}} transition</m-button>
             </div>
             <p v-if="transitionEmit">Last transition emit: {{transitionEmit}}</p>
@@ -138,8 +138,8 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${SLIDE_TRANSITION_NAME}`, mo
                 <div v-for="index in nbTab"
                      :key="index"
                      v-if="selectedTabIndex === index"
-                     class="m-u--margin-top">
-                    <h3 class="m-u--no-margin">Tab {{index}}</h3>
+                     class="mu-mt">
+                    <h3 class="mu-no-m">Tab {{index}}</h3>
                     <p v-for="index in nbParagraphe"
                        :key="index">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A laudantium odio ipsum, quae quos cum dolor, omnis perferendis, veritatis deleniti iusto consectetur? Impedit tempora quam ab laborum maiores sapiente earum?</p>
                 </div>

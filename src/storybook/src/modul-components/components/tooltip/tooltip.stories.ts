@@ -44,7 +44,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOOLTIP_NAME}/mode`, module
         template: `<span>Spicy jalapeno
                         <m-tooltip mode="link" :open="openProp">
                         <span slot="link">bacon ipsum</span>
-                        <p class="m-u--no-margin">What is Bacon Ipsum?</p>
+                        <p class="mu-no-m">What is Bacon Ipsum?</p>
                         <p>Simply put, it’s a take on the lorem ipsum filler text used when doing design mockups.
                          I was mocking up a web design one day and needed a few words to fill out a link. “Lorem ipsum
                          bacon” popped into my head, so I plugged that into my HTML. Later that day, it hit me.
@@ -62,7 +62,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOOLTIP_NAME}/mode`, module
         template: `<span>Spicy jalapeno
                         <m-tooltip mode="definition" :open="openProp">
                         <span slot="link">bacon ipsum</span>
-                        <p class="m-u--no-margin">What is Bacon Ipsum?</p>
+                        <p class="mu-no-m">What is Bacon Ipsum?</p>
                         <p>Simply put, it’s a take on the lorem ipsum filler text used when doing design mockups.
                          I was mocking up a web design one day and needed a few words to fill out a link. “Lorem ipsum
                          bacon” popped into my head, so I plugged that into my HTML. Later that day, it hit me.

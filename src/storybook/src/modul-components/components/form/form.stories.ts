@@ -35,7 +35,7 @@ export const defaultStory = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                 :form-group="formGroup"
                 @reset="reset()"
                 @submit="submit()">
@@ -45,7 +45,7 @@ export const defaultStory = () => ({
                         :label="nameField.name"
                         v-m-control="nameField">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -76,7 +76,7 @@ export const submitOutsideForm = () => ({
     }),
     template: `
         <div>
-            <m-form class="m-u--margin-top"
+            <m-form class="mu-mt"
                 id="123-456"
                 :form-group="formGroup"
                 @reset="reset()"
@@ -87,7 +87,7 @@ export const submitOutsideForm = () => ({
                         v-m-control="formGroup.getControl('name')">
             </m-textfield>
             </m-form>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit"
                         form="123-456">Submit</m-button>
                 <m-button type="reset"
@@ -124,7 +124,7 @@ export const reactiveInitialValue = () => ({
     },
     template: `
             <div>
-                <m-form class="m-u--margin-top"
+                <m-form class="mu-mt"
                     :form-group="formGroup"
                     @reset="reset()"
                     @submit="submit(formGroup.getControl('name').value)">
@@ -133,7 +133,7 @@ export const reactiveInitialValue = () => ({
                             :label="formGroup.getControl('name').name"
                             v-m-control="formGroup.getControl('name')">
                 </m-textfield>
-                <p class="m-u--margin-bottom--l">
+                <p class="mu-mb-lg">
                     <m-button type="submit">Submit</m-button>
                     <m-button type="reset"
                             >Reset</m-button>
@@ -196,7 +196,7 @@ export const toastMessageCountForFormGroup = () => ({
         <m-form :form-group="formGroup"
             @reset="reset()"
             @submit="submit()">
-        <h4 class="m-u--h6">General</h4>
+        <h4 class="mu-h6">General</h4>
         <m-textfield v-for="(control, index) in formGroup.controls.slice(0, 3)"
                     :key="index + 'A'"
                     v-m-control="control"

@@ -83,7 +83,7 @@ const getTemplate = (
         <div v-if="slotDefault"
             style="background: #1f1f1f; padding: 32px; color: #fff; width: 100%;"
         >
-            <p class="m-u--no-margin">Adjust the width of your browser to <strong>{{ parseInt(minWidth, 10) - 80 }}px</strong> to be able to test the component.</p>
+            <p class="mu-no-m">Adjust the width of your browser to <strong>{{ parseInt(minWidth, 10) - 80 }}px</strong> to be able to test the component.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>

@@ -5,6 +5,7 @@ $m-message-page--shadow-height: 5px;
 
 @mixin m-message-page-state($color, $color-background) {
     .m-message-page {
+
         &__title,
         &__icon {
             color: $color;
@@ -18,25 +19,25 @@ $m-message-page--shadow-height: 5px;
 
 .m-message-page {
     &.m--is-state-confirmation {
-        @include m-message-page-state($m-color--success, $m-color--success-lightest);
+        @include m-message-page-state($m-color-success, $m-color-success-lightest);
     }
 
     &.m--is-state-information {
-        @include m-message-page-state($m-color--interactive, $m-color--interactive-lightest);
+        @include m-message-page-state($m-color-interactive, $m-color-interactive-lightest);
     }
 
     &.m--is-state-error {
-        @include m-message-page-state($m-color--error, $m-color--error-lightest);
+        @include m-message-page-state($m-color-error, $m-color-error-lightest);
     }
 
     &.m--is-state-warning {
-        @include m-message-page-state($m-color--warning, $m-color--warning-lightest);
+        @include m-message-page-state($m-color-warning, $m-color-warning-lightest);
     }
 
     &.m--is-skin-default {
         .m-message-page {
             &__title {
-                font-size: $m-font-size--h3;
+                @include m-font-size('h3');
             }
 
             &__icon-container {
@@ -57,7 +58,7 @@ $m-message-page--shadow-height: 5px;
     &.m--is-skin-light {
         .m-message-page {
             &__title {
-                font-size: $m-font-size--h4;
+                @include m-font-size('h4');
             }
 
             &__icon-container {
@@ -78,17 +79,17 @@ $m-message-page--shadow-height: 5px;
 
     &__header {
         ~ .m-message-page__body {
-            padding-top: $m-spacing;
+            padding-top: $m-space;
         }
     }
 
     &__title {
         text-align: center;
-        font-weight: $m-font-weight--bold;
+        font-weight: $m-font-weight-bold;
         margin: 0;
 
         ~ .m-message-page__icon-container {
-            margin-top: $m-spacing;
+            margin-top: $m-space;
         }
     }
 
@@ -101,7 +102,7 @@ $m-message-page--shadow-height: 5px;
 
         &::before {
             position: absolute;
-            top: calc(50% - #{$m-spacing--s - $m-message-page--shadow-height}); // Magic number: align this backgroun with icon
+            top: calc(50% - #{$m-space-xs} - #{$m-message-page--shadow-height}); // Magic number: align this backgroun with icon
             z-index: 0;
             content: '';
             display: block;
@@ -111,8 +112,8 @@ $m-message-page--shadow-height: 5px;
             content: '';
             height: $m-message-page--shadow-height;
             border-radius: 50%;
-            background: $m-color--grey-lighter;
-            margin-top: $m-spacing--s;
+            background: $m-color-grey-lighter;
+            margin-top: $m-space-xs;
         }
 
         &__svg {
@@ -125,10 +126,10 @@ $m-message-page--shadow-height: 5px;
     }
 
     &__stacktrace {
-        margin-top: $m-margin;
+        margin-top: $m-space-sm;
         max-height: 120px;
         overflow: auto;
-        padding: $m-padding;
+        padding: $m-space;
 
         @include m-scrollbar();
 
@@ -142,7 +143,7 @@ $m-message-page--shadow-height: 5px;
         text-align: left; // needed when inside a popup
 
         .m-error-technical-difficulty & {
-            font-size: $m-font-size;
+            @include m-font-size();
         }
     }
 
@@ -154,7 +155,7 @@ $m-message-page--shadow-height: 5px;
         }
 
         + .m-message-page__hints {
-            margin-top: $m-margin;
+            margin-top: $m-space-sm;
         }
     }
 
@@ -162,7 +163,7 @@ $m-message-page--shadow-height: 5px;
         margin: 0;
 
         &:not(:first-child) {
-            margin: $m-spacing 0 0 0;
+            margin: $m-space 0 0 0;
         }
     }
 
@@ -172,7 +173,7 @@ $m-message-page--shadow-height: 5px;
         padding: 0;
 
         &:not(:first-child) {
-            margin: $m-spacing 0 0 0;
+            margin: $m-space 0 0 0;
         }
     }
 }

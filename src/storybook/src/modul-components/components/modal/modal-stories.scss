@@ -7,7 +7,7 @@
 }
 
 .m-modal-stories--offset {
-    @media (max-width: $m-mq--min--s) {
+    @media (max-width: $m-mq-min-sm) {
         --m-modal--top: 44px;
     }
 }

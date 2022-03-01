@@ -30,7 +30,7 @@ La couleur par défaut des icônes est le gris. Lorsqu'elles sont utilisées ave
 
 ```html
 <a name="demo-colored-icon"></a>
-<m-link class="m-u--margin-top m--is-unvisited" mode="link"  icon="true" icon-name="file-audio" iconPosition="left" icon-size="24px" url="#demo-colored-icon">Balado de la semaine 2</m-link><br/>
+<m-link class="mu-mt m--is-unvisited" mode="link"  icon="true" icon-name="file-audio" iconPosition="left" icon-size="24px" url="#demo-colored-icon">Balado de la semaine 2</m-link><br/>
 <m-link class="m--is-unvisited" mode="link"  icon="true" icon-name="file-pdf" iconPosition="left" icon-size="24px"url="#demo-colored-icon">Règlement des études</m-link><br/>
 
 ```
@@ -48,8 +48,8 @@ Une pastille est un petit disque de couleur que l'on superpose à une icône pou
 
 ```html
 <m-icon name="m-svg__calendar" v-m-badge="{ state: 'completed'}" size="30px"></m-icon>
-<m-icon name="m-svg__calendar" v-m-badge="{ state: 'warning'}" size="30px" class="m-u--margin-left"></m-icon>
-<m-icon name="m-svg__calendar" v-m-badge="{ state: 'error'}" size="30px" class="m-u--margin-left"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'warning'}" size="30px" class="mu-ml"></m-icon>
+<m-icon name="m-svg__calendar" v-m-badge="{ state: 'error'}" size="30px" class="mu-ml"></m-icon>
 
 ```
 

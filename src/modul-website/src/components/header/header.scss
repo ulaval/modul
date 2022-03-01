@@ -1,11 +1,11 @@
 @import '../../styles/commons';
 
 .mw-header {
-    $mw-header-padding: m-spacing();
+    $mw-header-padding: $m-space;
 
     min-height: $mw-header-height--s;
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         min-height: $mw-header-height;
     }
 
@@ -24,8 +24,8 @@
         background: $modul-color--black-grey-dark;
         padding-left: $mw-header-padding;
 
-        @media (min-width: $m-mq--min--s) {
-            padding-left: $m-spacing--l;
+        @media (min-width: $m-mq-min-sm) {
+            padding-left: $m-space-lg;
             min-height: $mw-header-height;
         }
     }
@@ -52,7 +52,7 @@
     &__logo {
         width: 100%;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-width: 304px;
         }
 
@@ -69,12 +69,12 @@
     }
 
     &__link {
-        font-weight: $m-font-weight--black;
+        font-weight: $m-font-weight-black;
         text-transform: uppercase;
         text-decoration: none;
         transition: color #{$modul-CSS_ANIMATION_HEADER_DURATION} ease;
         outline: none;
-        margin-right: $m-margin--l;
+        margin-right: $m-space-md;
 
         &,
         &:visited {
@@ -84,15 +84,15 @@
         &:hover,
         &:focus,
         &.router-link-active {
-            color: $m-color--white;
+            color: $m-color-white;
         }
 
         &.router-link-active::after {
-            background-color: $m-color--active;
+            background-color: $m-color-active;
         }
 
         &:hover::after {
-            background-color: $m-color--black;
+            background-color: $m-color-black;
         }
     }
 
@@ -101,7 +101,7 @@
         width: $mw-header-height--s;
         align-self: stretch;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             width: $mw-header-height;
             min-height: $mw-header-height;
         }
@@ -116,7 +116,8 @@
 
     &__link-version {
         white-space: nowrap;
-        font-size: $m-font-size--xs;
-        margin-right: $m-spacing--s;
+        margin-right: $m-space-xs;
+
+        @include m-font-size('xs');
     }
 }

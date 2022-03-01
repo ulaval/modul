@@ -4,11 +4,12 @@ $m-sortable-line-height: 3px;
 $m-sortable-dot-height: 9px;
 
 :root {
-    --m-sortable-color: #{$m-color--success};
+    --m-sortable-color: #{$m-color-success};
 }
 
 @mixin m-sortable-line() {
     &:not(.m--cant-sort):not(.m--is-sortable-placeholder) {
+
         &.m--is-sortbefore,
         &.m--is-sortafter {
             &::after {
@@ -34,6 +35,7 @@ $m-sortable-dot-height: 9px;
 
 @mixin m-sortable-dot() {
     &:not(.m--cant-sort):not(.m--is-sortable-placeholder) {
+
         &.m--is-sortbefore,
         &.m--is-sortafter {
             &::before {

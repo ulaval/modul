@@ -1,21 +1,19 @@
 @import 'commons';
 
 :root {
-    --m-searchfield--color-icon: #{ $m-color--interactive-light };
+    --m-searchfield--color-icon: #{ $m-color-interactive-light };
     --m-searchfield--color-icon-hover: white;
     --m-searchfield--color-button: transparent;
-    --m-searchfield--color-button-hover: #{ $m-color--interactive-light };
-    --m-searchfield--color-button-active: #{ $m-color--interactive-dark };
+    --m-searchfield--color-button-hover: #{ $m-color-interactive-light };
+    --m-searchfield--color-button-active: #{ $m-color-interactive-dark };
 }
 
 .m-searchfield {
-    --m-input-style--hover-color: #{ $m-color--interactive-light };
-    --m-input-style--border-color: #{ $m-color--grey-lightest };
-    --m-input-style--background-color: #{ $m-color--grey-lightest };
+    --m-input-style--hover-color: #{ $m-color-interactive-light };
+    --m-input-style--border-color: #{ $m-color-grey-lightest };
+    --m-input-style--background-color: #{ $m-color-grey-lightest };
 
     position: relative;
-    display: inline-flex;
-    flex-direction: column;
 
     @include m-input-inline-spacing();
 
@@ -62,7 +60,7 @@
     }
 
     &__reset {
-        margin-left: $m-spacing--s;
+        margin-left: $m-space-xs;
     }
 
     &__validation {
@@ -70,7 +68,7 @@
         display: flex;
 
         .m-searchfield.m--has-validation-message & {
-            margin-top: $m-spacing--xs;
+            margin-top: $m-space-2xs;
         }
     }
 
@@ -90,7 +88,7 @@
     }
 }
 
-// override stupid .m-u--app-body specificity issue
+// override stupid .mu-app-root specificity issue
 .m-searchfield__search-button.m-searchfield__search-button {
     border-radius: 0 $m-input-style--border-radius $m-input-style--border-radius 0;
 }

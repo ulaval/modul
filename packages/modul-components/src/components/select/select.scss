@@ -14,14 +14,16 @@
         }
     }
 
+    &__clear-button {
+        margin-right: $m-space-sm;
+    }
+
     &__arrow {
         cursor: pointer;
-        height: $m-touch-size;
-        width: calc(#{$m-touch-size} - #{$m-spacing});
         display: flex;
         align-items: center;
         justify-content: left;
-        color: $m-color--grey;
+        color: $m-color-grey;
 
         &-icon {
             transition: transform $m-transition-duration ease, color $m-transition-duration ease !important;
@@ -30,14 +32,13 @@
         &.m--is-open,
         &.m--is-focus {
             .m-select__arrow-icon {
-                color: $m-color--interactive;
+                color: $m-color-interactive;
             }
         }
 
         &.m--is-open {
             .m-select__arrow-icon {
                 transform: rotate(-180deg);
-
             }
         }
     }
@@ -57,7 +58,7 @@
         transition: margin-top $m-transition-duration ease;
 
         &.m--has-validation-message {
-            margin-top: $m-spacing--xs;
+            margin-top: $m-space-2xs;
         }
     }
 

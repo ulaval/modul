@@ -1,4 +1,4 @@
-<p class="m-u--typo--precision">Pour plus d'informations sur l'utilisation des icônes, veuillez vous référer aux composants <modul-go url="icone">icône</modul-go> et <modul-go url="icone-cliquable">icône cliquable</modul-go>.</p>
+<p class="mu-typo-precision">Pour plus d'informations sur l'utilisation des icônes, veuillez vous référer aux composants <modul-go url="icone">icône</modul-go> et <modul-go url="icone-cliquable">icône cliquable</modul-go>.</p>
 
 ## Ajout d'icônes personnalisées
 Bien que l'utilisation d'icônes de la librairie existante soit à privilégier, de nouvelles icônes peuvent être créées pour répondre à des besoins spécifiques.
@@ -43,7 +43,7 @@ Les identifiants SVG des icônes de la librairie MOD<strong>UL</strong> sont en 
 <m-icon name="m-svg__chevron-circle--up" size="24px"></m-icon>
 
 ### Pastille
-Une pastille permet d'associer un état à la notion représentée par l'icône (voir <modul-go name="m-icon"></modul-go>). Si votre nouvelle icône est succeptible d'afficher un état, il est recommandé de définir ses coordonnées exactes à même le format SVG en utilisant l'attribut <pre class="m-u--display--inline">data-badge-coordonates</pre> en prenant comme origine le coin haut gauche de l'icône.
+Une pastille permet d'associer un état à la notion représentée par l'icône (voir <modul-go name="m-icon"></modul-go>). Si votre nouvelle icône est succeptible d'afficher un état, il est recommandé de définir ses coordonnées exactes à même le format SVG en utilisant l'attribut <pre class="mu-d-inline">data-badge-coordonates</pre> en prenant comme origine le coin haut gauche de l'icône.
 <pre>
 &lt;svg&gt;
    &lt;symbol id="m-edit" viewBox="0 0 24 24" data-badge-coordonates="20 23"&gt;&lt;/symbol&gt;

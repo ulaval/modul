@@ -8,7 +8,7 @@ import { MSpinner } from '../spinner/spinner';
 import WithRender from './input-style.html';
 import './input-style.scss';
 
-export const CSS_LABEL_DEFAULT_MARGIN: number = 10;
+export const CSS_LABEL_DEFAULT_MARGIN: number = 12;
 
 @WithRender
 @Component({
@@ -55,19 +55,17 @@ export class MInputStyle extends ModulVue {
         root: HTMLElement,
         label: HTMLElement,
         body: HTMLElement,
-        adjustWidthAuto: HTMLElement,
         suffix: HTMLElement
     };
 
-    public labelOffset: string | undefined = CSS_LABEL_DEFAULT_MARGIN + 'px';
+    public labelOffset: string = '';
     public suffixOffset: string | undefined = '0px';
     public animReady: boolean = false;
 
     protected created(): void {
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             this.animReady = true;
-            this.setInputWidth();
-        }, 0);
+        });
     }
 
     protected mounted(): void {
@@ -75,43 +73,13 @@ export class MInputStyle extends ModulVue {
         this.computeSuffixOffset();
     }
 
-    public setInputWidth(): void {
-        // This is not very VueJs friendly.  It should be replaced by :style or something similar.
-        this.$nextTick(() => {
-            const labelEl: HTMLElement = this.$refs.label;
-            const inputEl: HTMLElement | undefined = this.as<InputState>().getInput();
-            const adjustWidthAutoEl: HTMLElement = this.$refs.adjustWidthAuto;
-            if (this.width === 'auto' && this.hasAdjustWidthAutoSlot) {
-                setTimeout(() => {
-                    if (inputEl !== undefined) {
-                        inputEl.style.width = '0px';
-                        setTimeout(() => {
-                            if (inputEl !== null) {
-                                let width: number = adjustWidthAutoEl.clientWidth < 50 ? 50 : adjustWidthAutoEl.clientWidth;
-                                if (this.hasLabel) {
-                                    width = !this.isLabelUp && (labelEl.clientWidth > width) ? labelEl.clientWidth : width;
-                                }
-                                inputEl.style.width = width + 'px';
-                            }
-                        }, 0);
-                    }
-                }, 0);
-
-            } else if (inputEl) {
-                if (inputEl.style.width) {
-                    inputEl.style.removeProperty('width');
-                }
-            }
-        });
-    }
-
     @Watch('isLabelUp')
     private computeLabelOffset(): void {
         if (this.label) {
-            let labelOffset: number = this.$refs.label.clientHeight / 2;
-            this.labelOffset = this.isLabelUp && labelOffset > CSS_LABEL_DEFAULT_MARGIN ? `${labelOffset}px` : `${CSS_LABEL_DEFAULT_MARGIN}px`;
+            const labelOffset: number = this.$refs.label.clientHeight / 2;
+            this.labelOffset = this.isLabelUp && labelOffset > CSS_LABEL_DEFAULT_MARGIN ? `${labelOffset}px` : '';
         } else {
-            this.labelOffset = undefined;
+            this.labelOffset = '';
         }
     }
 
@@ -148,10 +116,6 @@ export class MInputStyle extends ModulVue {
 
     public get hasDefaultSlot(): boolean {
         return !!this.$slots.default;
-    }
-
-    public get hasAdjustWidthAutoSlot(): boolean {
-        return !!this.$slots['adjust-width-auto'];
     }
 
     @Emit('click')

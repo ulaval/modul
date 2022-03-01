@@ -2,12 +2,11 @@
 
 exports[`Storyshots modul-components|m-maskedfield Default 1`] = `
 <div
-  class="m-input-style m-maskedlfield m--is-tag-default"
+  class="m-input-style m-maskedfield m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -24,9 +23,7 @@ exports[`Storyshots modul-components|m-maskedfield Default 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -36,18 +33,10 @@ exports[`Storyshots modul-components|m-maskedfield Default 1`] = `
             aria-describedby="fakeId"
             id="mMaskedfield-fakeId"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -75,12 +64,11 @@ exports[`Storyshots modul-components|m-maskedfield Default 1`] = `
 
 exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
 <div
-  class="m-input-style m-maskedlfield m--has-value m--is-tag-default"
+  class="m-input-style m-maskedfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -97,9 +85,7 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -109,18 +95,10 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
             aria-describedby="fakeId"
             id="mMaskedfield-fakeId"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -148,12 +126,11 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask 1`] = `
 
 exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label 1`] = `
 <div
-  class="m-input-style m-maskedlfield m--is-label-up m--has-label m--has-value m--is-tag-default"
+  class="m-input-style m-maskedfield m--is-label-up m--has-label m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -187,18 +164,10 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label 1
             aria-describedby="fakeId"
             id="mMaskedfield-fakeId"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -226,12 +195,11 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label 1
 
 exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label In Error 1`] = `
 <div
-  class="m-input-style m-maskedlfield m--is-label-up m--has-error m--has-label m--has-value m--has-validation-message m--is-tag-default"
+  class="m-input-style m-maskedfield m--is-label-up m--has-error m--has-label m--has-value m--has-validation-message m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -266,18 +234,10 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label I
             aria-invalid="true"
             id="mMaskedfield-fakeId"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -324,12 +284,11 @@ exports[`Storyshots modul-components|m-maskedfield Postal Code Mask With Label I
 
 exports[`Storyshots modul-components|m-maskedfield Telephone Mask 1`] = `
 <div
-  class="m-input-style m-maskedlfield m--has-value m--is-tag-default"
+  class="m-input-style m-maskedfield m--has-value m--is-tag-default"
   style="width: 100%; max-width: 288px;"
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -346,9 +305,7 @@ exports[`Storyshots modul-components|m-maskedfield Telephone Mask 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
@@ -358,18 +315,10 @@ exports[`Storyshots modul-components|m-maskedfield Telephone Mask 1`] = `
             aria-describedby="fakeId"
             id="mMaskedfield-fakeId"
           />
-             
-          <!---->
-           
-          <!---->
+            
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      

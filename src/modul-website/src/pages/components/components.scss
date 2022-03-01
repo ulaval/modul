@@ -5,8 +5,8 @@
 
     &__component-navigation {
         display: flex;
-        margin-top: $m-spacing--xxl;
-        color: $m-color--interactive-light;
+        margin-top: $m-space-2xl;
+        color: $m-color-interactive-light;
     }
 
     &__component-navigation-prev,
@@ -17,24 +17,24 @@
         flex-grow: 1;
         flex-shrink: 0;
         width: 50%;
-        border-color: $m-color--interactive;
+        border-color: $m-color-interactive;
         text-align: center;
         text-decoration: none;
-        font-weight: $m-font-weight--semi-bold;
+        font-weight: $m-font-weight-semi-bold;
         line-height: 24px;
-        background: $m-color--white;
+        background: $m-color-white;
         outline: none;
 
         &:hover,
         &:focus {
-            background: $m-color--interactive-light;
-            border-color: $m-color--interactive-light;
-            color: $m-color--white;
+            background: $m-color-interactive-light;
+            border-color: $m-color-interactive-light;
+            color: $m-color-white;
         }
 
         &:active {
-            background: $m-color--interactive-dark;
-            border-color: $m-color--interactive-dark;
+            background: $m-color-interactive-dark;
+            border-color: $m-color-interactive-dark;
         }
     }
 

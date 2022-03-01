@@ -1,0 +1,8 @@
+@mixin m-var-font() {
+    // Fonts property
+    --m-font-family: 'Source Sans Variable', 'Source Sans Pro', Arial, sans-serif;
+    --m-font-family-fallback: 'Source Sans Pro', Arial, sans-serif;
+
+    // Line height
+    --m-line-height: 1.3;
+}

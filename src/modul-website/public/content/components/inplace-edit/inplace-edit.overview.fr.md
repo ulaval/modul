@@ -155,16 +155,16 @@ Dans les autres cas, considérer l'importance de l'action d'éditer par rapport 
     <div slot="readMode" title="Modifier la section" class="modul-demo__inplace-edit-zone" @click="onClick('title')">
         <div class="modul-demo__inplace-edit-read-mode" @click.stop="onClick('title')">
             <m-icon-button class="modul-demo__inplace-edit-button" icon-name="m-edit"></m-icon-button>
-            <h3 class="modul-demo__inplace-edit-title m-u--no-margin">La déforestation des espaces protégés</h3>
+            <h3 class="modul-demo__inplace-edit-title mu-no-m">La déforestation des espaces protégés</h3>
         </div>
-        <div class="m-u--margin-top" @click.stop="onClick('desc')">
+        <div class="mu-mt" @click.stop="onClick('desc')">
             <p>Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
         </div>
     </div>
     <div slot="editMode">
       <!-- pour :focus ==> ajouter isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile -->
         <m-textfield max-width="none" value="La déforestation des espaces protégés" tag-style="h3" :focus="isFocusTitle"></m-textfield>
-        <m-textarea max-width="none" class="m-u--margin-top" :value="text" :focus="isFocusDesc"></m-textarea>
+        <m-textarea max-width="none" class="mu-mt" :value="text" :focus="isFocusDesc"></m-textarea>
     </div>
 </m-inplace-edit>
 
@@ -240,7 +240,7 @@ Quelque soit le nombre de champs utilisés (il devrait être de 3 ou moins), les
 ```html
 <m-inplace-edit :editMode.sync="editMode" :save-fn="onSave" class="modul-demo__inplace-edit-component">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
-        <div class="m-u--margin-top modul-demo__inplace-edit-title" @click.stop="onClick('desc')">
+        <div class="mu-mt modul-demo__inplace-edit-title" @click.stop="onClick('desc')">
             <p class="modul-demo__inplace-edit-title">info@ulaval.ca</p>
         </div>
         <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier le courriel"></m-icon-button>
@@ -264,7 +264,7 @@ Pour éviter la perte de données, un message d'avertissement devrait-être affi
 ```html
 <m-inplace-edit :editMode="true" :error="true" class="modul-demo__inplace-edit-component">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
-        <h3 class="modul-demo__inplace-edit-title m-u--no-margin">Je suis un sous-titre</h3>
+        <h3 class="modul-demo__inplace-edit-title mu-no-m">Je suis un sous-titre</h3>
     </div>
     <div slot="editMode">
         <m-textfield error-message="Ce champ est requis." max-width="none" placeholder="Je suis un sous-titre" tag-style="h3"></m-textfield>
@@ -282,7 +282,7 @@ Pour éviter la perte de données, un message d'avertissement devrait-être affi
 ```html
 <m-inplace-edit :editMode="true" :waiting="true" class="modul-demo__inplace-edit-component">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
-        <h3 class="modul-demo__inplace-edit-title m-u--no-margin">Je suis un sous-titre</h3>
+        <h3 class="modul-demo__inplace-edit-title mu-no-m">Je suis un sous-titre</h3>
     </div>
     <div slot="editMode">
         <m-textfield waiting="true" max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" ></m-textfield>
@@ -342,7 +342,7 @@ Lors de l'édition d'un champ vide, il est recommandé d'utiliser un texte de re
 ```html
 <m-inplace-edit :editMode.sync="editMode" :save-fn="onSave" class="modul-demo__inplace-edit-component">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
-        <h3 class="modul-demo__inplace-edit-title m-u--no-margin">Je suis un sous-titre</h3>
+        <h3 class="modul-demo__inplace-edit-title mu-no-m">Je suis un sous-titre</h3>
         <m-icon-button @click="editMode = true" icon-name="m-edit" title="Modifier le sous-titre" class="modul-demo__inplace-edit-button"></m-icon-button>
     </div>
     <div slot="editMode">
@@ -403,12 +403,12 @@ Lors de l'édition de plusieurs éléments dont un est facultatif, le champ peut
 <m-inplace-edit :editMode.sync="editMode" :save-fn="onSave">
     <div slot="readMode" class="modul-demo__inplace-edit-read-mode">
         <m-icon-button class="modul-demo__inplace-edit-button" @click="editMode = true" icon-name="m-edit" title="Modifier le titre de la section"></m-icon-button>
-        <p class="modul-demo__inplace-edit-title m-u--padding">Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
+        <p class="modul-demo__inplace-edit-title mu-p">Depuis une dizaine d’années, les surfaces déforestées en Amazonie diminuent chaque année et le déboisement en 2014 a représenté moins de 20 % de celui de 2004. Doit-on en déduire que le Brésil maîtrise désormais le phénomène de déforestation ? Répondre à cette question implique d’exposer la complexité du phénomène de déforestation.</p>
     </div>
     <div slot="editMode">
       <!-- pour :focus ==> utiliser isMqMinS pour ne pas mettre le focus automatique lorsque l'affichage est en mode mobile (au lieu de true en tout temps) -->
         <m-textfield max-width="none" placeholder="Je suis un sous-titre" tag-style="h3" :focus="true"></m-textfield>
-        <m-textarea max-width="none" class="m-u--margin-top" v-model="text"></m-textarea>
+        <m-textarea max-width="none" class="mu-mt" v-model="text"></m-textarea>
     </div>
 </m-inplace-edit>
 

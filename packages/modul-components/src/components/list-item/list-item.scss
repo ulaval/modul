@@ -7,28 +7,28 @@
     padding-right: 0;
     padding-left: 0;
 
-    @media (min-width: $m-mq--min--s + 1) {
-        padding-right: $m-spacing;
-        padding-left: $m-spacing;
+    @media (min-width: $m-mq-min-sm + 1) {
+        padding-right: $m-space;
+        padding-left: $m-space;
     }
 
-    + .m-list-item {
-        padding-top: $m-spacing;
+    +.m-list-item {
+        padding-top: $m-space;
     }
 
     &:not(:last-child),
     &.m--has-border-bottom:last-child {
-        border-bottom: $m-border-width solid $m-color--border-light;
-        padding-bottom: $m-spacing;
+        border-bottom: $m-border-width solid $m-color-border-light;
+        padding-bottom: $m-space;
     }
 
     &.m--has-border-top:first-child {
-        border-top: $m-border-width solid $m-color--border-light;
-        padding-top: $m-spacing;
+        border-top: $m-border-width solid $m-color-border-light;
+        padding-top: $m-space;
     }
 
     &.m--is-disabled {
-        color: $m-color--disabled;
+        color: $m-color-disabled;
         cursor: default;
     }
 

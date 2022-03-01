@@ -116,7 +116,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                         <template slot="footer">
                             <td class="m-table-sandbox__show-more" colspan="4" style="text-align: center;">
                                 <m-button class="m-table-sandbox__show-more-button">
-                                    <p class="m-u--no-margin">Show more results</p>
+                                    <p class="mu-no-m">Show more results</p>
                                     <span>1-5 of 45</span>
                                 </m-button>
                             </td>
@@ -161,7 +161,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TABLE_NAME}`, module)
                         <template slot="footer">
                             <td class="m-table-sandbox__show-more" colspan="4" style="text-align: center;">
                                 <m-button class="m-table-sandbox__show-more-button">
-                                    <p class="m-u--no-margin">Show more results</p>
+                                    <p class="mu-no-m">Show more results</p>
                                     <span>1-5 of 45</span>
                                 </m-button>
                             </td>

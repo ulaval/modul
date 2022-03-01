@@ -5,48 +5,40 @@
         font-style: $font-style;
 
         @if $extensionOTF {
-            src:
-                url('#{$m-font-path}#{$url}.otf.woff2') format('woff2'),
-                url('#{$m-font-path}#{$url}.ttf.woff2') format('woff2'),
-                url('#{$m-font-path}#{$url}.otf.woff') format('woff'),
-                url('#{$m-font-path}#{$url}.ttf.woff') format('woff');
+            src: url('#{$m-font-path}#{$url}.otf.woff2') format('woff2'),
+            url('#{$m-font-path}#{$url}.ttf.woff2') format('woff2'),
+            url('#{$m-font-path}#{$url}.otf.woff') format('woff'),
+            url('#{$m-font-path}#{$url}.ttf.woff') format('woff');
         }
 
         @else {
-            src:
-                url('#{$m-font-path}#{$url}.ttf.woff2') format('woff2'),
-                url('#{$m-font-path}#{$url}.ttf.woff') format('woff');
+            src: url('#{$m-font-path}#{$url}.ttf.woff2') format('woff2'),
+            url('#{$m-font-path}#{$url}.ttf.woff') format('woff');
         }
     }
 }
 
+@mixin m-font-size($font-size: 'base') {
+    @if $font-size=='base' {
+        font-size: 1rem;
+    }
+
+    @else {
+        $base-font-size: map-get($m-font-size-map, 'base');
+        $size: $font-size;
+
+        @if type-of($font-size)=='string' {
+            $size: map-get($m-font-size-map, $font-size);
+        }
+
+        font-size: calc(#{$size} / #{$base-font-size} * 1rem);
+    }
+
+}
+
 @mixin m-commons-title-styles() {
-    font-weight: var(--m-base-headings--font-weight);
-    line-height: var(--m-base-headings--line-height);
-}
-
-@mixin m-h1-font-style() {
-    font-size: var(--m-base-h1--font-size);
-}
-
-@mixin m-h2-font-style() {
-    font-size: var(--m-base-h2--font-size);
-}
-
-@mixin m-h3-font-style() {
-    font-size: var(--m-base-h3--font-size);
-}
-
-@mixin m-h4-font-style() {
-    font-size: var(--m-base-h4--font-size);
-}
-
-@mixin m-h5-font-style() {
-    font-size: var(--m-base-h5--font-size);
-}
-
-@mixin m-h6-font-style() {
-    font-size: var(--m-base-h6--font-size);
+    font-weight: $m-font-weight-heading;
+    line-height: $m-line-height-heading;
 }
 
 @mixin m-titles-styles() {
@@ -56,67 +48,68 @@
     h4,
     h5,
     h6,
-    .m-u--h1,
-    .m-u--h2,
-    .m-u--h3,
-    .m-u--h4,
-    .m-u--h5,
-    .m-u--h6 {
+    .mu-h1,
+    .mu-h2,
+    .mu-h3,
+    .mu-h4,
+    .mu-h5,
+    .mu-h6 {
         @include m-commons-title-styles();
     }
 
     h1,
-    .m-u--h1 {
-        margin: var(--m-base-h1--margin);
+    .mu-h1 {
+        margin: $m-margin-h1;
 
-        @include m-h1-font-style();
+        @include m-font-size('h1');
     }
 
     h2,
-    .m-u--h2 {
-        margin: var(--m-base-h2--margin);
+    .mu-h2 {
+        margin: $m-margin-h2;
 
-        @include m-h2-font-style();
+        @include m-font-size('h2');
     }
 
     h3,
-    .m-u--h3 {
-        margin: var(--m-base-h3--margin);
+    .mu-h3 {
+        margin: $m-margin-h3;
 
-        @include m-h3-font-style();
+        @include m-font-size('h3');
     }
 
     h4,
-    .m-u--h4 {
-        margin: var(--m-base-h4--margin);
+    .mu-h4 {
+        margin: $m-margin-h4;
 
-        @include m-h4-font-style();
+        @include m-font-size('h4');
     }
 
     h5,
-    .m-u--h5 {
-        margin: var(--m-base-h5--margin);
+    .mu-h5 {
+        margin: $m-margin-h5;
 
-        @include m-h5-font-style();
+        @include m-font-size('h5');
     }
 
     h6,
-    .m-u--h6 {
-        margin: var(--m-base-h6--margin);
+    .mu-h6 {
+        margin: $m-margin-h6;
 
-        @include m-h6-font-style();
+        @include m-font-size('h6');
     }
 }
 
 @mixin m-text-styles() {
+
     p,
-    .m-u--p {
-        margin: var(--m-base-p--margin);
+    .mu-p {
+        margin: $m-margin-paragraph;
     }
 
     b,
     strong {
-        font-weight: $m-font-weight--semi-bold;
+        font-weight: $m-font-weight-semi-bold;
     }
 
     i,
@@ -125,16 +118,17 @@
     }
 
     small {
-        font-size: $m-font-size--s;
+        @include m-font-size('sm');
     }
 
     pre,
     code {
         word-break: break-all;
         word-wrap: break-word;
-        font-size: $m-font-size--s;
-        font-weight: $m-font-weight--light;
-        color: $m-color--text;
+        font-weight: $m-font-weight-light;
+        color: $m-color-text;
+
+        @include m-font-size('sm');
     }
 }
 

@@ -10,7 +10,7 @@
         outline: none;
         min-width: $m-min-width;
         overflow: hidden;
-        background: $m-color--grey-lightest;
+        background: $m-color-grey-lightest;
 
         &.m--is-enter-active,
         &.m--is-leave-active {
@@ -25,8 +25,8 @@
             transition-duration: $m-transition-duration;
 
             .m-overlay__article {
-                transition-delay: $m-transition-duration--s;
-                transition-duration: $m-transition-duration--xl;
+                transition-delay: $m-transition-duration-sm;
+                transition-duration: $m-transition-duration-xl;
             }
         }
 
@@ -34,13 +34,13 @@
 
             &,
             .m-overlay__article {
-                transition-duration: $m-transition-duration--xl;
+                transition-duration: $m-transition-duration-xl;
             }
         }
 
         &.m--is-enter,
         &.m--is-leave-to {
-            background: rgba($m-color--grey-lightest, 0);
+            background: rgba(255, 255, 255, 0);
 
             .m-overlay__article {
                 transform: translate3d(0, 110%, 0);
@@ -51,9 +51,9 @@
     &__article {
         transform: translate3d(0, 0, 0);
         cursor: auto;
-        max-width: $m-max-width--l;
+        max-width: $m-max-width-lg;
         margin: 0 auto;
-        background: $m-color--white;
+        background: $m-color-white;
         box-shadow: $m-box-shadow;
         height: 100%;
         flex-direction: column;
@@ -64,7 +64,7 @@
     &__footer,
     &__article {
         width: 100%;
-        background: $m-color--white;
+        background: $m-color-white;
         display: flex;
         align-items: center;
         position: relative;
@@ -72,16 +72,16 @@
 
     &__header,
     &__footer {
-        min-height: $m-box--min-height;
+        min-height: $m-min-height-box;
         display: flex;
         align-items: center;
 
-        @include m-box-padding($m-spacing, $m-spacing--l, $m-spacing, $m-spacing);
+        @include m-box-padding($m-space, $m-space-lg, $m-space, $m-space);
     }
 
     &__header {
-        color: $m-color--white;
-        background-color: $m-color--grey-black;
+        color: $m-color-white;
+        background-color: $m-color-grey-black;
 
         h1,
         h2,
@@ -90,8 +90,8 @@
         h5,
         h6 {
             margin: 0;
-            font-size: $m-font-size--h2;
-            font-weight: $m-font-weight--semi-bold;
+            @include m-font-size('h2');
+            font-weight: $m-font-weight-semi-bold;
         }
     }
 
@@ -113,10 +113,10 @@
     }
 
     &__footer {
-        border-top: $m-border-width--s solid $m-color--border;
+        border-top: $m-border-width-sm solid $m-color-border;
     }
 
     &__save-button {
-        margin-right: $m-spacing;
+        margin-right: $m-space;
     }
 }

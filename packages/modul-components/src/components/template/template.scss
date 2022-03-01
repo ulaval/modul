@@ -1,6 +1,6 @@
 @import 'commons';
 $m-template--column-width: 370px;
-$m-template--column-color: $m-color--grey-light;
+$m-template--column-color: $m-color-grey-light;
 
 .m-template {
     position: relative;
@@ -12,6 +12,7 @@ $m-template--column-color: $m-color--grey-light;
     &__body-footer,
     &__column {
         > :first-child {
+
             &,
             > :first-child {
                 margin-top: 0;
@@ -28,7 +29,7 @@ $m-template--column-color: $m-color--grey-light;
         &-container {
             width: 100%;
             display: block;
-            background-color: $m-color--grey-lighter;
+            background-color: $m-color-grey-lighter;
         }
 
         > :first-child:not(:only-child):not(.m-link) {
@@ -48,8 +49,8 @@ $m-template--column-color: $m-color--grey-light;
         h5,
         h6 {
             margin: 0;
-            font-size: $m-font-size--h1;
-            font-weight: $m-font-weight--light;
+            @include m-font-size('h1');
+            font-weight: $m-font-weight-light;
         }
     }
 
@@ -62,7 +63,7 @@ $m-template--column-color: $m-color--grey-light;
     &__main {
         width: 100%;
         flex: 1 1 auto;
-        background: $m-color--white;
+        background: $m-color-white;
 
         &-content {
             display: flex;
@@ -118,30 +119,32 @@ $m-template--column-color: $m-color--grey-light;
     }
 }
 
-@media (max-width: $m-mq--max--s) {
+@media (max-width: $m-mq-max-sm) {
     .m-template {
+
         &__header,
         &__body,
         &__column {
             &:not(.m--no-padding) {
-                padding: $m-padding;
+                padding: $m-space;
             }
         }
     }
 }
 
-@media (min-width: $m-mq--min--s) {
+@media (min-width: $m-mq-min-sm) {
     .m-template {
+
         &__body,
         &__column {
             &:not(.m--no-padding) {
-                padding: $m-padding--l;
+                padding: $m-space-lg;
             }
         }
 
         &__header {
             &:not(.m--no-padding) {
-                padding: $m-margin--l $m-padding--l;
+                padding: $m-space-md $m-space-lg;
             }
         }
     }

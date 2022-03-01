@@ -271,7 +271,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}/Add dynamically 
                             </template>
                         </m-menu-item>
                  </m-menu>
-                 <m-button class="m-u--margin-top" @click="toggleSubitems">{{hasSubitems ? 'Delete' : 'Add'}} 2 subitems to item 3</m-button>
+                 <m-button class="mu-mt" @click="toggleSubitems">{{hasSubitems ? 'Delete' : 'Add'}} 2 subitems to item 3</m-button>
                  </div>`
     }))
     .add('Edit subitem', () => ({
@@ -299,6 +299,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MENU_NAME}/Add dynamically 
                             <m-menu-item v-if="hasSubitem" value="subitem3" label="Subitem 3"></m-menu-item>
                         </m-menu-item>
                  </m-menu>
-                 <m-button class="m-u--margin-top" @click="toggleSubitem3">{{hasSubitem ? 'Delete' : 'Add'}} subitem 3 to item 3</m-button>
+                 <m-button class="mu-mt" @click="toggleSubitem3">{{hasSubitem ? 'Delete' : 'Add'}} subitem 3 to item 3</m-button>
                  </div>`
     }));

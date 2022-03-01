@@ -3,11 +3,11 @@
 .m-character-count__wrap {
     transition: color $m-transition-duration ease;
     margin-top: 2px; // Magic number
-    font-size: $m-font-size--xs;
-    padding-left: $m-padding--xs;
+    @include m-font-size('xs');
+    padding-left: $m-space-2xs;
     color: currentColor;
 
     span {
-        font-weight: $m-font-weight--semi-bold;
+        font-weight: $m-font-weight-semi-bold;
     }
 }

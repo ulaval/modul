@@ -3,15 +3,15 @@
 .m-chip-add {
     @include m-chip-base-style();
 
-    border: 1px solid $m-color--interactive;
+    border: 1px solid $m-color-interactive;
     background: none;
-    font-size: 1em;
-    font-family: $m-font-family;
+    font-size: inherit;
+    font-family: inherit;
 
     &.m--is-small {
         @include m-chip-small-style();
 
-        font-weight: $m-font-weight--semi-bold;
+        font-weight: $m-font-weight-semi-bold;
         font-size: 0.75em;
     }
 
@@ -22,17 +22,17 @@
         &:focus,
         &:active {
             .m-chip-add__icon {
-                color: $m-color--white;
+                color: $m-color-white;
             }
         }
     }
 
     &.m--is-disabled {
-        border: 1px solid $m-color--disabled;
+        border: 1px solid $m-color-disabled;
 
         &,
         .m-chip-add__icon {
-            color: $m-color--disabled;
+            color: $m-color-disabled;
         }
     }
 
@@ -42,8 +42,8 @@
 
     &__icon {
         transition: color $m-transition-duration ease;
-        margin-left: $m-spacing--s;
-        color: $m-color--interactive;
+        margin-left: $m-space-xs;
+        color: $m-color-interactive;
         stroke-width: 2;
     }
 

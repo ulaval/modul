@@ -10,20 +10,20 @@
         align-items: center;
         width: 100%;
         overflow-y: auto;
-        padding: $m-padding--l $m-padding $m-padding--xl $m-padding;
+        padding: $m-space-lg $m-space $m-space-4xl $m-space;
         background-color: $modul-color--black-grey-dark;
         background-image: url(./grid.svg);
         background-position: 0 0;
         background-attachment: fixed;
-        color: $m-color--white;
+        color: $m-color-white;
         min-height: calc(110vh - #{$mw-header-height--s});
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             // position: fixed;
             top: 0;
             bottom: 0;
-            padding-right: $m-padding--l;
-            padding-left: $m-padding--l;
+            padding-right: $m-space-lg;
+            padding-left: $m-space-lg;
             min-height: calc(110vh - #{$mw-header-height});
         }
 
@@ -41,7 +41,7 @@
     }
 
     &__logo-modul {
-        transition: margin-top $m-transition-duration--xs ease;
+        transition: margin-top $m-transition-duration-xs ease;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -69,50 +69,50 @@
 
     &__headline-button-arrow {
         position: relative;
-        color: $m-color--ul-blue;
+        color: $m-color-interactive;
     }
 
     &__headline-button-link {
         border-radius: 0;
-        font-size: 16px;
-        margin-top: $m-spacing--s;
-        padding: 10px $m-padding; // Magic number
+        margin-top: $m-space-xs;
+        padding: 10px $m-space; // Magic number
 
+        @include m-font-size();
         @include m-button();
         @include m-button--hover();
         @include m-button--primary();
     }
 
     &__body {
-        color: $m-color--white;
+        color: $m-color-white;
         z-index: 2;
         position: relative;
         background-color: $modul-color--black-grey;
-        padding: $m-spacing--xl $m-spacing;
+        padding: $m-space-xl $m-space;
 
-        @media (min-width: $m-mq--min--s) {
-            padding: #{$m-spacing--xxxxl + $m-spacing--l} $m-spacing--l;
+        @media (min-width: $m-mq-min-sm) {
+            padding: #{$m-space-4xl + $m-space-lg} $m-space-lg;
         }
     }
 
     &__body-wrap {
-        max-width: $m-max-width--xl;
+        max-width: $m-max-width-xl;
         margin: 0 auto;
     }
 
     &__cards-wrap {
         display: grid;
-        grid-gap: $m-spacing--l;
+        grid-gap: $m-space-lg;
         grid-template-columns: 100%;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
         }
     }
 
     &__icon {
         display: block;
-        margin: 0 auto m-spacing(8);
+        margin: 0 auto $m-space-xs;
     }
 }
 

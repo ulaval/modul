@@ -20,15 +20,15 @@
 
 .hljs {
     display: block;
-    padding: $m-padding--l $m-padding;
+    padding: $m-space-lg $m-space;
     margin: 0;
     background: $modul-color--black-grey;
     color: white;
     white-space: pre-wrap;
     font-family: Menlo, Monaco, Consolas, Courier, monospace;
 
-    @media (min-width: $m-mq--min--s) {
-        padding: $m-padding--l $m-margin--l;
+    @media (min-width: $m-mq-min-sm) {
+        padding: $m-space-lg $m-space-md;
     }
 
     max-height: 400px;

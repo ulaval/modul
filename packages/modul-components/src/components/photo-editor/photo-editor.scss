@@ -4,15 +4,15 @@
     position: relative;
 
     &__message {
-        margin-bottom: $m-spacing;
+        margin-bottom: $m-space;
     }
 
     &__file-name {
         margin-top: 0;
-        font-weight: $m-font-weight--regular;
+        font-weight: $m-font-weight-regular;
     }
 
     &__cancel {
-        margin-top: $m-spacing;
+        margin-top: $m-space;
     }
 }

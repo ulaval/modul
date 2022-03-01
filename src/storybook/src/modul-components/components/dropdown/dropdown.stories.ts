@@ -127,7 +127,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/readonly`, m
             model6: ''
         }),
         template: `<div>
-                    <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">No selection, no label</p>
+                    <p class="mu-font-weight-semi-bold mu-pb-xs">No selection, no label</p>
                     <m-dropdown :readonly="true" v-model="model6">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" label="Hulk"></m-dropdown-item>
@@ -143,7 +143,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/readonly`, m
             model7: ''
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">No selection, with label</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">No selection, with label</p>
                         <m-dropdown :readonly="true" label="Avenger" v-model="model7">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" label="Hulk"></m-dropdown-item>
@@ -159,7 +159,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/readonly`, m
             model71: ''
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">No selection, with label, with placeholder</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">No selection, with label, with placeholder</p>
                         <m-dropdown :readonly="true" label="Avenger" placeholder="Select your avenger" v-model="model71">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" label="Hulk"></m-dropdown-item>
@@ -175,7 +175,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/readonly`, m
             model72: ''
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">No selection, no label, with placeholder</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">No selection, no label, with placeholder</p>
                         <m-dropdown :readonly="true" placeholder="Select your avenger" v-model="model72">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" label="Hulk"></m-dropdown-item>
@@ -192,7 +192,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/readonly`, m
             model8: 'f'
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Item selected, with label</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">Item selected, with label</p>
                         <m-dropdown :readonly="true" label="Avenger" v-model="model8">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" label="Hulk"></m-dropdown-item>
@@ -212,7 +212,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/disabled`, m
             model9: ''
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">No selection, no label</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">No selection, no label</p>
                         <m-dropdown :disabled="true" v-model="model9">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" slectec label="Hulk"></m-dropdown-item>
@@ -229,7 +229,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/disabled`, m
             model91: ''
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">No selection, no label, with placeholder</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">No selection, no label, with placeholder</p>
                         <m-dropdown :disabled="true" placeholder="Select your avenger" v-model="model91">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" label="Hulk"></m-dropdown-item>
@@ -246,7 +246,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/disabled`, m
             model10: ''
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">No selection, with label</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">No selection, with label</p>
                         <m-dropdown :disabled="true" label="Avenger" v-model="model10">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" slectec label="Hulk"></m-dropdown-item>
@@ -263,7 +263,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/disabled`, m
             model11: 'f'
         }),
         template: `<div>
-                        <p class="m-u--font-weight--semi-bold m-u--padding-bottom--s">Item selected, with label</p>
+                        <p class="mu-font-weight-semi-bold mu-pb-xs">Item selected, with label</p>
                         <m-dropdown :disabled="true" label="Avenger" v-model="model11">
                         <m-dropdown-item value="a" label="Iron Man"></m-dropdown-item>
                         <m-dropdown-item value="b" slectec label="Hulk"></m-dropdown-item>

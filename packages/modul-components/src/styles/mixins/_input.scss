@@ -1,7 +1,7 @@
 @mixin m-input-inline-spacing() {
     &:not(:last-child):not(:only-child) {
         // magic number
-        // visually aligned with inline intrinsic space to equal $m-spacing (16px)
+        // visually aligned with inline intrinsic space to equal $m-space (16px)
         margin-right: 13px;
     }
 }

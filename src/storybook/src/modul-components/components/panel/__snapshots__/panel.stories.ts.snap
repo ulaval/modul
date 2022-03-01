@@ -2,7 +2,7 @@
 
 exports[`Storyshots modul-components|m-panel default 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -46,7 +46,7 @@ exports[`Storyshots modul-components|m-panel default 1`] = `
 
 exports[`Storyshots modul-components|m-panel highlighted="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border m--is-highlighted"
@@ -90,7 +90,7 @@ exports[`Storyshots modul-components|m-panel highlighted="true" 1`] = `
 
 exports[`Storyshots modul-components|m-panel shadow="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-shadow m--has-border"
@@ -134,7 +134,7 @@ exports[`Storyshots modul-components|m-panel shadow="true" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -175,7 +175,7 @@ exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`
   </article>
    
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
@@ -195,7 +195,7 @@ exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`
   </button>
    
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
@@ -215,7 +215,7 @@ exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`
   </button>
    
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
@@ -238,7 +238,7 @@ exports[`Storyshots modul-components|m-panel/$slots example $slots reactivity 1`
 
 exports[`Storyshots modul-components|m-panel/border border="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light"
@@ -282,7 +282,7 @@ exports[`Storyshots modul-components|m-panel/border border="false" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/border border-large="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border m--has-border-large"
@@ -326,7 +326,7 @@ exports[`Storyshots modul-components|m-panel/border border-large="true" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/padding padding="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -370,7 +370,7 @@ exports[`Storyshots modul-components|m-panel/padding padding="false" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/padding padding-body="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -414,7 +414,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-body="false" 1`] = 
 
 exports[`Storyshots modul-components|m-panel/padding padding-footer="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -458,7 +458,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-footer="false" 1`] 
 
 exports[`Storyshots modul-components|m-panel/padding padding-header="false" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"
@@ -502,7 +502,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-header="false" 1`] 
 
 exports[`Storyshots modul-components|m-panel/padding padding-large="true" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border m--has-padding-large"
@@ -546,7 +546,7 @@ exports[`Storyshots modul-components|m-panel/padding padding-large="true" 1`] = 
 
 exports[`Storyshots modul-components|m-panel/skin skin="dark" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-dark m--has-border"
@@ -590,7 +590,7 @@ exports[`Storyshots modul-components|m-panel/skin skin="dark" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/skin skin="darker" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-darker m--has-border"
@@ -634,7 +634,7 @@ exports[`Storyshots modul-components|m-panel/skin skin="darker" 1`] = `
 
 exports[`Storyshots modul-components|m-panel/skin skin="light" 1`] = `
 <div
-  class="m-u--padding--m"
+  class="mu-p-md"
 >
   <article
     class="m-panel m--is-skin-light m--has-border"

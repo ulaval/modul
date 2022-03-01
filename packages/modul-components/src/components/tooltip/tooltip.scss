@@ -13,7 +13,7 @@ $m-tooltip--max-height: 280px !default;
     }
 
     &.m--is-mode-definition {
-        .m-tooltip__link /deep/ .m-link__text > :first-child {
+        .m-tooltip__link /deep/ .m-link__text> :first-child {
             border-bottom: 1px dotted currentColor;
         }
     }
@@ -28,12 +28,12 @@ $m-tooltip--max-height: 280px !default;
 
     &__icon {
         transition: color $m-transition-duration ease;
-        color: $m-color--interactive-light;
+        color: $m-color-interactive-light;
         cursor: pointer;
 
         &:hover,
         &:focus {
-            color: $m-color--interactive;
+            color: $m-color-interactive;
         }
 
         &:active {
@@ -43,13 +43,13 @@ $m-tooltip--max-height: 280px !default;
         &.m-icon-button.m-icon-button {
             min-width: auto;
             min-height: auto;
-            width: $m-font-size;
-            height: $m-font-size;
-            color: $m-color--interactive-light;
+            width: #{$m-font-size * 1px};
+            height: #{$m-font-size * 1px};
+            color: $m-color-interactive-light;
 
             &:hover,
             &:focus {
-                color: $m-color--interactive;
+                color: $m-color-interactive;
             }
         }
     }
@@ -61,21 +61,21 @@ $m-tooltip--max-height: 280px !default;
     }
 
     &__body {
-        padding: $m-spacing $m-spacing--xl $m-spacing $m-spacing;
-        background: $m-color--information;
+        padding: $m-space $m-space-xl $m-space $m-space;
+        background: $m-color-information;
         word-break: break-word;
         user-select: text;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-height: var(--m-tooltip--max-height);
             width: $m-tooltip--width;
             overflow-x: hidden;
             overflow-y: auto;
-            border-radius: $m-border-radius--s;
+            border-radius: $m-border-radius-sm;
         }
 
         @media (max-height: $m-tooltip--max-height) {
-            --m-tooltip--max-height: calc(100vh - #{ $m-margin--l });
+            --m-tooltip--max-height: calc(100vh - #{ $m-space-md });
 
             min-height: $m-touch-size;
         }
@@ -89,13 +89,13 @@ $m-tooltip--max-height: 280px !default;
         position: relative;
 
         .m-tooltip__body {
-            padding-right: $m-padding--l;
+            padding-right: $m-space-lg;
         }
     }
 
     &.m--is-size-large {
         .m-tooltip__body {
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 width: $m-tooltip--width--l;
             }
         }
@@ -103,17 +103,17 @@ $m-tooltip--max-height: 280px !default;
 
     &:not(.m--is-mode-icon) {
         .m-tooltip__body {
-            background: $m-color--white;
+            background: $m-color-white;
 
-            @media (min-width: $m-mq--min--s) {
-                border: 1px solid $m-color--grey-light;
+            @media (min-width: $m-mq-min-sm) {
+                border: 1px solid $m-color-grey-light;
             }
         }
     }
 
     &.m--is-mode-icon {
         .m-tooltip__body {
-            @media (max-width: $m-mq--max--s) {
+            @media (max-width: $m-mq-max-sm) {
                 position: relative;
 
                 &::after {
@@ -123,21 +123,21 @@ $m-tooltip--max-height: 280px !default;
                     left: 0;
                     content: '';
                     height: 1px;
-                    background: $m-color--interactive;
+                    background: $m-color-interactive;
                 }
             }
 
-            @media (min-width: $m-mq--min--s) {
-                border: 1px solid $m-color--interactive;
+            @media (min-width: $m-mq-min-sm) {
+                border: 1px solid $m-color-interactive;
             }
         }
 
         .m-tooltip__close-button {
-            color: $m-color--interactive;
+            color: $m-color-interactive;
 
             &:hover,
             &:focus {
-                color: $m-color--interactive-darker;
+                color: $m-color-interactive-darker;
             }
         }
     }

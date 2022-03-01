@@ -1,9 +1,9 @@
 @import 'commons';
 
-$m-validation-message--color-error: $m-color--error !default;
-$m-validation-message--color-success: $m-color--success !default;
-$m-validation-message--color-helper: $m-color--text-light !default;
-$m-validation-message--margin: $m-padding--xs !default;
+$m-validation-message--color-error: $m-color-error !default;
+$m-validation-message--color-success: $m-color-success !default;
+$m-validation-message--color-helper: $m-color-text-light !default;
+$m-validation-message--margin: $m-space-2xs !default;
 
 .m-validation-message {
     display: flex;
@@ -15,8 +15,8 @@ $m-validation-message--margin: $m-padding--xs !default;
         position: relative;
         top: 1px; // Magic number: align icon with text
         flex-shrink: 0;
-        font-size: $m-font-size--s;
-        margin-right: $m-padding--xs;
+        @include m-font-size('sm');
+        margin-right: $m-space-2xs;
     }
 
     &__error,
@@ -49,6 +49,6 @@ $m-validation-message--margin: $m-padding--xs !default;
     p {
         transition: opacity $m-transition-duration ease;
         margin: 0;
-        font-size: $m-font-size--s;
+        @include m-font-size('sm');
     }
 }

@@ -33,7 +33,7 @@ $m-sortable-icon-size: 14px;
             }
 
             tr:hover:not(.m-table__message):not(.m-table__loading) {
-                background-color: $m-color--interactive-lightest;
+                background-color: $m-color-interactive-lightest;
             }
         }
     }
@@ -42,30 +42,30 @@ $m-sortable-icon-size: 14px;
         text-align: left;
 
         tr {
-            background-color: rgba($m-color--grey-light, 0.3);
+            background-color: #F3F3F3;
         }
 
         th {
-            color: $m-color--grey;
-            font-weight: $m-font-weight--semi-bold;
+            color: $m-color-grey;
+            font-weight: $m-font-weight-semi-bold;
 
             &.m--is-sortable {
                 cursor: pointer;
 
                 &:hover {
-                    color: $m-color--grey-darker;
+                    color: $m-color-grey-darker;
 
                     .m-table__sortable-icon {
-                        color: $m-color--grey;
+                        color: $m-color-grey;
                         opacity: 1;
                     }
                 }
 
                 &.m--is-sorted {
-                    color: $m-color--grey-darker;
+                    color: $m-color-grey-darker;
 
                     .m-table__sortable-icon {
-                        color: $m-color--grey-darker;
+                        color: $m-color-grey-darker;
 
                         @include m-table-sortable-icon-select();
                     }
@@ -105,29 +105,29 @@ $m-sortable-icon-size: 14px;
     }
 
     tbody {
-        color: $m-color--grey-darker;
+        color: $m-color-grey-darker;
     }
 
     th,
     td {
         box-sizing: content-box;
-        padding-top: $m-spacing;
-        padding-bottom: $m-spacing;
+        padding-top: $m-space;
+        padding-bottom: $m-space;
 
         &:first-child {
-            padding-left: $m-spacing;
+            padding-left: $m-space;
         }
 
         &:last-child {
-            padding-right: $m-spacing;
+            padding-right: $m-space;
         }
 
         &:not(:first-child) {
-            padding-left: $m-spacing--s;
+            padding-left: $m-space-xs;
         }
 
         &:not(:last-child) {
-            padding-right: $m-spacing--s;
+            padding-right: $m-space-xs;
         }
 
         &.m--is-text-align-center {
@@ -159,28 +159,28 @@ $m-sortable-icon-size: 14px;
         &:first-child {
             &.m--is-sortable {
                 &.m--is-text-align-center {
-                    padding-left: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
+                    padding-left: calc(#{$m-sortable-icon-size} + #{$m-space-2xs} + #{$m-space});
                 }
             }
         }
 
         &:last-child {
             &.m--is-sortable {
-                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-space-2xs} + #{$m-space});
             }
         }
 
         &:not(:first-child) {
             &.m--is-sortable {
                 &.m--is-text-align-center {
-                    padding-left: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
+                    padding-left: calc(#{$m-sortable-icon-size} + #{$m-space-2xs} + #{$m-space-xs});
                 }
             }
         }
 
         &:not(:last-child) {
             &.m--is-sortable {
-                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-space-2xs} + #{$m-space-xs});
             }
         }
     }
@@ -188,13 +188,13 @@ $m-sortable-icon-size: 14px;
     td {
         &:last-child {
             &.m--is-sortable.m--is-text-align-right {
-                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing});
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-space-2xs} + #{$m-space});
             }
         }
 
         &:not(:last-child) {
             &.m--is-sortable.m--is-text-align-right {
-                padding-right: calc(#{$m-sortable-icon-size} + #{$m-spacing--xs} + #{$m-spacing--s});
+                padding-right: calc(#{$m-sortable-icon-size} + #{$m-space-2xs} + #{$m-space-xs});
             }
         }
     }
@@ -218,12 +218,12 @@ $m-sortable-icon-size: 14px;
     .m-table__sortable-icon {
         transition: transform $m-transition-duration ease, opacity $m-transition-duration ease;
         position: absolute;
-        right: calc((#{$m-sortable-icon-size} + #{$m-spacing--xs}) * -1);
+        right: calc((#{$m-sortable-icon-size} + #{$m-space-2xs}) * -1);
         z-index: 0;
         opacity: 0;
 
         &:focus {
-            color: $m-color--text;
+            color: $m-color-text;
             opacity: 1;
         }
     }
@@ -242,7 +242,7 @@ $m-sortable-icon-size: 14px;
         position: sticky;
         right: 0;
         left: 0;
-        background-color: $m-color--grey-lightest;
+        background-color: $m-color-grey-lightest;
 
         &.m-table__placeholder-container {
             .m-table & {
@@ -258,11 +258,11 @@ $m-sortable-icon-size: 14px;
         justify-content: center;
         align-items: center;
         height: 100%;
-        padding: $m-spacing;
+        padding: $m-space;
         min-width: 200px;
-        color: $m-color--grey;
-        font-weight: $m-font-weight--semi-bold;
-        font-size: $m-font-size--l;
+        color: $m-color-grey;
+        font-weight: $m-font-weight-semi-bold;
+        @include m-font-size('md');
         text-align: center;
 
         > :first-child {
@@ -271,9 +271,9 @@ $m-sortable-icon-size: 14px;
     }
 
     &__placeholder-precision {
-        margin: $m-spacing--xs 0 0 0;
-        font-size: $m-font-size;
-        font-weight: $m-font-weight--light;
+        margin: $m-space-2xs 0 0 0;
+        @include m-font-size();
+        font-weight: $m-font-weight-light;
     }
 }
 
@@ -281,7 +281,7 @@ $m-sortable-icon-size: 14px;
     tbody {
         tr {
             &:nth-child(even) {
-                background-color: $m-color--grey-lightest;
+                background-color: $m-color-grey-lightest;
             }
         }
     }
@@ -290,7 +290,7 @@ $m-sortable-icon-size: 14px;
 .m-table.m--is-skin-simple {
     tbody {
         tr:not(:first-child) {
-            border-top: 1px solid $m-color--grey-lighter;
+            border-top: 1px solid $m-color-grey-lighter;
         }
     }
 }

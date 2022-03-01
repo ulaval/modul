@@ -4,7 +4,7 @@ Le sélecteur de temps est utilisé pour permettre à l'utilisateur de sélectio
 
 ### Format du temps
 Le format retenu pour l'heure est basé sur une période de 24 h. Il est affiché de la façon suivante&nbsp;: **HH:MM**.
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p>10:20</p>
 </m-panel>
 

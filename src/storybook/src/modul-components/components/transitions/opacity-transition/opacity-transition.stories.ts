@@ -61,11 +61,11 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${OPACITY_TRANSITION_NAME}`, 
         },
         template: `
         <div>
-            <div class="m-u--margin-bottom">
+            <div class="mu-mb">
                 <m-button @click="toggleDisplay()">
                     {{open ? 'Hide' : 'Show'}} icon
                 </m-button>
-                <m-button class="m-u--margin-left"
+                <m-button class="mu-ml"
                           :skin="buttonSkin"
                           @click="toggleDisabledTransition()">
                     {{disabledTransition ? 'Enabled' : 'Disabled'}} transition
@@ -103,7 +103,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${OPACITY_TRANSITION_NAME}`, 
                 </m-button>
             </div>
             <m-opacity-transition :zoom-effect="false">
-                <m-icon v-if="open" class="m-u--margin-top" name="m-svg__clock"></m-icon>
+                <m-icon v-if="open" class="mu-mt" name="m-svg__clock"></m-icon>
             </m-opacity-transition>
         </div>`
     }));

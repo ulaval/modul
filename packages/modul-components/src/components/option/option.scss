@@ -15,13 +15,14 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         background: $m-option-mixed-bgc;
         outline: none;
         border: 0;
-        transition: background-color $m-transition-duration--l ease, color $m-transition-duration--l ease;
-        color: $m-color--grey-light;
+        transition: background-color $m-transition-duration-lg ease, color $m-transition-duration-lg ease;
+        color: $m-color-grey-light;
 
         &:not(:disabled) {
+
             &:hover,
             &:focus {
-                color: $m-color--white;
+                color: $m-color-white;
                 background: $m-option-mixed-bgc--hover;
                 cursor: pointer;
             }
@@ -42,13 +43,13 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         padding: 0;
         overflow-x: hidden;
         overflow-y: auto;
-        border: 1px solid $m-color--border;
-        border-radius: $m-border-radius--s;
-        background: $m-color--white;
+        border: 1px solid $m-color-border;
+        border-radius: $m-border-radius-sm;
+        background: $m-color-white;
         box-shadow: $m-box-shadow;
         list-style: none;
 
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             max-height: 243px; // Magic number: height of 4 items
         }
 
@@ -62,12 +63,12 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
 
         &.m--is-visible {
             width: 100%;
-            padding: $m-spacing--xs $m-spacing $m-spacing--s $m-spacing;
+            padding: $m-space-2xs $m-space $m-space-xs $m-space;
 
-            @media (min-width: $m-mq--min--s) {
+            @media (min-width: $m-mq-min-sm) {
                 position: absolute;
                 bottom: 0;
-                padding: $m-spacing--s;
+                padding: $m-space-xs;
                 transform: translateY(100%);
             }
         }
@@ -76,11 +77,11 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
     &__close-menu-button {
         @include m-button();
         width: 100%;
-        font-size: $m-font-size--s;
         font-family: inherit;
         appearance: none;
-        padding: $m-spacing--s;
+        padding: $m-space-xs;
 
+        @include m-font-size('sm');
         @include m-button--secondary();
         @include m-button--hover();
     }

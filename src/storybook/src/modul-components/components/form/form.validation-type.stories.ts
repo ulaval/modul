@@ -31,7 +31,7 @@ export const atExit = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
                  :form-group="formGroup">
             <p>edition context: {{email['_editionContext']}}</p>
             <m-textfield v-model.trim="email.value"
@@ -39,7 +39,7 @@ export const atExit = () => ({
                         :label="email.name"
                         v-m-control="email">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -64,7 +64,7 @@ export const correction = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
         :form-group="formGroup">
             <p>edition context: {{email['_editionContext']}}</p>
             <m-textfield v-model.trim="email.value"
@@ -72,7 +72,7 @@ export const correction = () => ({
                         :label="email.name"
                         v-m-control="email">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -102,7 +102,7 @@ export const modification = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
         :form-group="formGroup">
             <p>edition context: {{email['_editionContext']}}</p>
             <m-textfield v-model.trim="email.value"
@@ -110,7 +110,7 @@ export const modification = () => ({
                         :label="email.name"
                         v-m-control="email">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>
@@ -141,7 +141,7 @@ export const onGoing = () => ({
         }
     },
     template: `
-        <m-form class="m-u--margin-top"
+        <m-form class="mu-mt"
         :form-group="formGroup">
             <p>edition context: {{email['_editionContext']}}</p>
             <m-textfield v-model.trim="email.value"
@@ -149,7 +149,7 @@ export const onGoing = () => ({
                         :label="email.name"
                         v-m-control="email">
             </m-textfield>
-            <p class="m-u--margin-bottom--l">
+            <p class="mu-mb-lg">
                 <m-button type="submit">Submit</m-button>
                 <m-button type="reset"
                             skin="secondary">Reset</m-button>

@@ -18,7 +18,7 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -63,45 +63,38 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -144,7 +137,7 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -166,9 +159,7 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
                 aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                
-                        *
-                    
+                *
               </sup>
             </span>
           </label>
@@ -197,45 +188,38 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -278,7 +262,7 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -300,9 +284,7 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
                 aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                
-                        *
-                    
+                *
               </sup>
             </span>
           </label>
@@ -331,45 +313,38 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -412,7 +387,7 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -465,45 +440,38 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
                   type="text"
                 />
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -546,7 +514,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -592,46 +560,39 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -674,7 +635,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -720,46 +681,39 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -802,7 +756,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -819,9 +773,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -842,46 +794,39 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -924,7 +869,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -941,9 +886,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -972,46 +915,39 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
                   type="text"
                 />
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1054,7 +990,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1100,46 +1036,39 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1182,7 +1111,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1236,46 +1165,39 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
                   type="text"
                 />
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1318,7 +1240,7 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1335,9 +1257,7 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -1358,45 +1278,38 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1458,7 +1371,7 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1475,9 +1388,7 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -1497,45 +1408,38 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1578,7 +1482,7 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1623,67 +1527,60 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <button
+                aria-describedby="m-select-fakeId"
+                class="m-icon-button m-select__clear-button m--is-skin-light m--has-ripple"
+                style="width: 16px; height: 16px;"
+                title="Supprimer la sélection"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="11px"
+                  width="11px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <button
-            aria-describedby="m-select-fakeId"
-            class="m-icon-button m--is-skin-light m--has-ripple"
-            style="width: 44px; height: 44px;"
-            title="Supprimer la sélection"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="11px"
-              width="11px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1726,7 +1623,7 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1771,45 +1668,38 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1852,7 +1742,7 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1897,45 +1787,38 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -1978,7 +1861,7 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -1995,9 +1878,7 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -2017,45 +1898,38 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -2098,7 +1972,7 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -2143,45 +2017,38 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -2224,7 +2091,7 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -2269,67 +2136,60 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <button
+                aria-describedby="m-select-fakeId"
+                class="m-icon-button m-select__clear-button m--is-skin-light m--has-ripple"
+                style="width: 16px; height: 16px;"
+                title="Supprimer la sélection"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="11px"
+                  width="11px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <button
-            aria-describedby="m-select-fakeId"
-            class="m-icon-button m--is-skin-light m--has-ripple"
-            style="width: 44px; height: 44px;"
-            title="Supprimer la sélection"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="11px"
-              width="11px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -2372,7 +2232,7 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -2417,67 +2277,60 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <button
+                aria-describedby="m-select-fakeId"
+                class="m-icon-button m-select__clear-button m--is-skin-light m--has-ripple"
+                style="width: 16px; height: 16px;"
+                title="Supprimer la sélection"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="11px"
+                  width="11px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <button
-            aria-describedby="m-select-fakeId"
-            class="m-icon-button m--is-skin-light m--has-ripple"
-            style="width: 44px; height: 44px;"
-            title="Supprimer la sélection"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="11px"
-              width="11px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -2520,7 +2373,7 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -2537,9 +2390,7 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -2567,45 +2418,38 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
                   type="text"
                 />
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -2648,7 +2492,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -2694,46 +2538,39 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -2776,7 +2613,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -2822,46 +2659,39 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -2904,7 +2734,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -2921,9 +2751,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -2944,46 +2772,39 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -3026,7 +2847,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -3043,9 +2864,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -3074,46 +2893,39 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
                   type="text"
                 />
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -3156,7 +2968,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -3202,46 +3014,39 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -3284,7 +3089,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -3338,46 +3143,39 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
                   type="text"
                 />
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  disabled="disabled"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              disabled="disabled"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -3420,7 +3218,7 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -3442,9 +3240,7 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
                 aria-hidden="true"
                 class="m-input-style__required-marker"
               >
-                
-                        *
-                    
+                *
               </sup>
             </span>
           </label>
@@ -3473,45 +3269,38 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <!---->
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <!---->
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -3554,7 +3343,7 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -3599,67 +3388,60 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <button
+                aria-describedby="m-select-fakeId"
+                class="m-icon-button m-select__clear-button m--is-skin-light m--has-ripple"
+                style="width: 16px; height: 16px;"
+                title="Supprimer la sélection"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="11px"
+                  width="11px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <button
-            aria-describedby="m-select-fakeId"
-            class="m-icon-button m--is-skin-light m--has-ripple"
-            style="width: 44px; height: 44px;"
-            title="Supprimer la sélection"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="11px"
-              width="11px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -3702,7 +3484,7 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -3719,9 +3501,7 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -3741,67 +3521,60 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <button
+                aria-describedby="m-select-fakeId"
+                class="m-icon-button m-select__clear-button m--is-skin-light m--has-ripple"
+                style="width: 16px; height: 16px;"
+                title="Supprimer la sélection"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="11px"
+                  width="11px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <button
-            aria-describedby="m-select-fakeId"
-            class="m-icon-button m--is-skin-light m--has-ripple"
-            style="width: 44px; height: 44px;"
-            title="Supprimer la sélection"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="11px"
-              width="11px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->
@@ -3844,7 +3617,7 @@ exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
     >
       <div
         class="m-input-style__main"
-        style="width: 100%; margin-top: 10px;"
+        style="width: 100%;"
       >
         <div
           class="m-input-style__body"
@@ -3861,9 +3634,7 @@ exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
           <div
             class="m-input-style__input"
           >
-            <div
-              class="m-input-style__prefix"
-            />
+            <!---->
              
             <div
               class="m-input-style__content"
@@ -3883,67 +3654,60 @@ exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
                     
                 <!---->
               </div>
-               
-              <!---->
-               
-              <!---->
             </div>
              
             <div
               class="m-input-style__suffix"
             >
+              <button
+                aria-describedby="m-select-fakeId"
+                class="m-icon-button m-select__clear-button m--is-skin-light m--has-ripple"
+                style="width: 16px; height: 16px;"
+                title="Supprimer la sélection"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="m-icon m-icon-button__icon"
+                  height="11px"
+                  width="11px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+                 
+                <!---->
+              </button>
+               
+              <div
+                class="m-select__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-select__arrow-icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
                
               <!---->
             </div>
           </div>
         </div>
          
-        <div
-          class="m-input-style__append"
-        >
-          <button
-            aria-describedby="m-select-fakeId"
-            class="m-icon-button m--is-skin-light m--has-ripple"
-            style="width: 44px; height: 44px;"
-            title="Supprimer la sélection"
-            type="button"
-          >
-            <svg
-              aria-hidden="true"
-              class="m-icon m-icon-button__icon"
-              height="11px"
-              width="11px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-             
-            <!---->
-          </button>
-           
-          <div
-            class="m-select__arrow"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="Ouvrir la liste déroulante"
-              class="m-icon m-select__arrow-icon"
-              height="12px"
-              width="12px"
-            >
-              <!---->
-               
-              <use
-                aria-hidden="true"
-                class=""
-              />
-            </svg>
-          </div>
-        </div>
+        <!---->
       </div>
         
       <!---->

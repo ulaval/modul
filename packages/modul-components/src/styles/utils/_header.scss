@@ -1,11 +1,11 @@
 // ======================================================================
 //  header (list, table)
 // ======================================================================
-.m-u--header {
-    font-size: $m-font-size--l;
-    font-weight: $m-font-weight--semi-bold;
-    padding: $m-padding;
-    background-color: $m-color--grey-lighter;
+.mu-header {
+    @include m-font-size('md');
+    font-weight: $m-font-weight-semi-bold;
+    padding: $m-space;
+    background-color: $m-color-grey-lighter;
     position: relative;
 
     p,
@@ -17,8 +17,8 @@
     h6 {
         margin-top: 0;
         margin-bottom: 0;
-        font-size: $m-font-size--l;
-        font-weight: $m-font-weight--semi-bold;
+        @include m-font-size('md');
+        font-weight: $m-font-weight-semi-bold;
     }
 
     &.m-u--has-icon {
@@ -38,7 +38,7 @@
         align-items: center;
         justify-content: space-between;
 
-        @media screen and (max-width: $m-mq--max--s) {
+        @media screen and (max-width: $m-mq-max-sm) {
             flex-direction: column;
             align-items: flex-start;
         }
@@ -48,9 +48,9 @@
         margin-top: 0;
     }
 
-    & + .m-u--table {
+    & + .mu-table {
         th {
-            padding-top: $m-padding;
+            padding-top: $m-space;
         }
     }
 }

@@ -42,7 +42,7 @@ exports[`Storyshots modul-components|m-accordion disabled and closed 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -74,7 +74,7 @@ exports[`Storyshots modul-components|m-accordion disabled and open 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -116,7 +116,7 @@ exports[`Storyshots modul-components|m-accordion empty $slots.default 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -145,7 +145,7 @@ exports[`Storyshots modul-components|m-accordion header 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         Value specified in header slot for this example and all others to follow
       </h3>
@@ -177,7 +177,7 @@ exports[`Storyshots modul-components|m-accordion icon-border="true" 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -209,7 +209,7 @@ exports[`Storyshots modul-components|m-accordion id 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -241,7 +241,7 @@ exports[`Storyshots modul-components|m-accordion open 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -284,7 +284,7 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" default 1
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -316,7 +316,7 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-bord
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -348,7 +348,7 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-size
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -380,7 +380,7 @@ exports[`Storyshots modul-components|m-accordion/icon-position="right" icon-size
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -412,7 +412,7 @@ exports[`Storyshots modul-components|m-accordion/icon-size="small" default 1`] =
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -444,7 +444,7 @@ exports[`Storyshots modul-components|m-accordion/icon-size="small" icon-border="
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -476,7 +476,7 @@ exports[`Storyshots modul-components|m-accordion/keepContentAlive default 1`] = 
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -508,7 +508,7 @@ exports[`Storyshots modul-components|m-accordion/keepContentAlive keep-content-a
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -552,7 +552,39 @@ exports[`Storyshots modul-components|m-accordion/padding default 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
+      >
+        An Accordion Title
+      </h3>
+    </div>
+     
+    <span
+      aria-hidden="true"
+      class="m-plus m-accordion__header-icon m--is-skin-default m--is-large m--is-left"
+    />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots modul-components|m-accordion/padding padding="false" 1`] = `
+<div
+  class="m-accordion m--is-default m--is-closed m--has-icon-left m--has-icon-large"
+>
+  <div
+    aria-controls="fakeId-body-wrap"
+    aria-expanded="false"
+    class="m-accordion__header"
+    id="fakeId"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="m-accordion__header-content"
+    >
+      <h3
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -575,7 +607,7 @@ exports[`Storyshots modul-components|m-accordion/padding padding-body="false" 1`
   <div
     aria-controls="fakeId-body-wrap"
     aria-expanded="false"
-    class="m-accordion__header"
+    class="m-accordion__header m--has-padding"
     id="fakeId"
     role="button"
     tabindex="0"
@@ -584,7 +616,7 @@ exports[`Storyshots modul-components|m-accordion/padding padding-body="false" 1`
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -616,7 +648,7 @@ exports[`Storyshots modul-components|m-accordion/padding padding-header="false" 
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -648,7 +680,7 @@ exports[`Storyshots modul-components|m-accordion/skin dark 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -680,7 +712,7 @@ exports[`Storyshots modul-components|m-accordion/skin dark-b 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -712,7 +744,7 @@ exports[`Storyshots modul-components|m-accordion/skin default 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -744,7 +776,7 @@ exports[`Storyshots modul-components|m-accordion/skin light 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>
@@ -776,7 +808,7 @@ exports[`Storyshots modul-components|m-accordion/skin plain 1`] = `
       class="m-accordion__header-content"
     >
       <h3
-        class="m-u--no-margin"
+        class="mu-no-m"
       >
         An Accordion Title
       </h3>

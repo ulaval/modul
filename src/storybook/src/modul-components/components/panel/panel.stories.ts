@@ -7,7 +7,7 @@ import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}`, module)
     .add('default', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel>
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -16,7 +16,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}`, module)
                 </div>`
     }))
     .add('highlighted="true"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :highlighted="true">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -25,7 +25,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}`, module)
                 </div>`
     }))
     .add('shadow="true"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :shadow="true">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -36,7 +36,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}`, module)
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/skin`, module)
     .add(`skin="${MPanelSkin.Light}"`, () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel skin="${MPanelSkin.Light}">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -45,7 +45,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/skin`, module)
                 </div>`
     }))
     .add(`skin="${MPanelSkin.Dark}"`, () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel skin="${MPanelSkin.Dark}">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -54,7 +54,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/skin`, module)
                 </div>`
     }))
     .add(`skin="${MPanelSkin.Darker}"`, () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel skin="${MPanelSkin.Darker}">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -65,7 +65,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/skin`, module)
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/border`, module)
     .add('border="false"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :border="false">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -74,7 +74,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/border`, module
                 </div>`
     }))
     .add('border-large="true"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :border-large="true">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -85,7 +85,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/border`, module
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/padding`, module)
     .add('padding="false"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :padding="false">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -94,7 +94,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/padding`, modul
                 </div>`
     }))
     .add('padding-large="true"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :padding-large="true">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -103,7 +103,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/padding`, modul
                 </div>`
     }))
     .add('padding-header="false"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :padding-header="false">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -112,7 +112,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/padding`, modul
                 </div>`
     }))
     .add('padding-body="false"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :padding-body="false">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -121,7 +121,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/padding`, modul
                 </div>`
     }))
     .add('padding-footer="false"', () => ({
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel :padding-footer="false">
                         <h2 slot="header">I am a header</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
@@ -140,14 +140,14 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${PANEL_NAME}/$slots example`
                 return value ? MButtonSkin.Primary : MButtonSkin.Secondary;
             }
         }),
-        template: `<div class="m-u--padding--m">
+        template: `<div class="mu-p-md">
                     <m-panel>
                         <h2 v-if="hasHeader" slot="header">I am a header</h2>
                         <p v-if="hasBody">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Earum voluptas quis corporis fugit nobis beatae vel, quia at consequuntur.</p>
                         <p v-if="hasFooter" slot="footer">I am footer</p>
                     </m-panel>
-                    <m-button class="m-u--margin-top" :skin="getSkinButton(hasHeader)"@click="hasHeader = !hasHeader">Toogle $slot.header</m-button>
-                    <m-button class="m-u--margin-top":skin="getSkinButton(hasBody)"@click="hasBody = !hasBody">Toogle $slot.default</m-button>
-                    <m-button class="m-u--margin-top":skin="getSkinButton(hasFooter)"@click="hasFooter = !hasFooter">Toogle $slot.footer</m-button>
+                    <m-button class="mu-mt" :skin="getSkinButton(hasHeader)"@click="hasHeader = !hasHeader">Toogle $slot.header</m-button>
+                    <m-button class="mu-mt":skin="getSkinButton(hasBody)"@click="hasBody = !hasBody">Toogle $slot.default</m-button>
+                    <m-button class="mu-mt":skin="getSkinButton(hasFooter)"@click="hasFooter = !hasFooter">Toogle $slot.footer</m-button>
                 </div>`
     }));

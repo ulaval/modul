@@ -2,7 +2,7 @@
 
 @mixin m-chip-base-style() {
     transition: background $m-transition-duration ease, color $m-transition-duration ease, border-color $m-transition-duration ease;
-    padding: ($m-spacing--s + $m-spacing--xs/2) $m-spacing;
+    padding: calc(#{$m-space-xs} + #{$m-space-2xs} / 2) $m-space;
     border-radius: 25px;
     outline: none;
     user-select: none;
@@ -11,7 +11,7 @@
 }
 
 @mixin m-chip-small-style() {
-    padding: ($m-spacing--s + $m-spacing--xs/2)/2 3px ($m-spacing--s + $m-spacing--xs/2)/2 7px; // Magic number: padding-side
+    padding: calc((#{$m-space-xs} + #{$m-space-2xs} / 2) / 2) 3px calc((#{$m-space-xs} + #{$m-space-2xs} / 2) / 2) 7px; // Magic number: padding-side
     border-radius: 12px;
     height: 20px; // Magic number: chip height;
 }

@@ -2,12 +2,12 @@
 
 .m-searchfield-stories {
     --m-searchfield--color-icon: white;
-    --m-searchfield--color-button: #{ $m-color--ul-yellow };
-    --m-searchfield--color-button-hover: #{ lighten($m-color--ul-yellow, 15%) };
-    --m-searchfield--color-button-active: #{ darken($m-color--ul-yellow, 15%) };
+    --m-searchfield--color-button: #{ $m-color-ul-yellow };
+    --m-searchfield--color-button-hover: rgb(247, 220, 103);
+    --m-searchfield--color-button-active: rgb(218, 183, 28);
     --m-input-style--box-shadow: #{ $m-box-shadow };
     --m-input-style--background-color: white;
-    --m-input-style--hover-color: #{ $m-color--ul-yellow };
-    --m-input-style--focus-color: #{ $m-color--ul-yellow };
-    --m-input-style--label-up-color: #{ $m-color--ul-yellow };
+    --m-input-style--hover-color: #{ $m-color-ul-yellow };
+    --m-input-style--focus-color: #{ $m-color-ul-yellow };
+    --m-input-style--label-up-color: #{ $m-color-ul-yellow };
 }

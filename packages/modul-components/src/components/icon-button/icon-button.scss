@@ -27,7 +27,7 @@
         &.m--is-skin-bold,
         &.m--is-skin-dark {
             &::before {
-                transition: width $m-transition-duration ease, height $m-transition-duration ease, opacity $m-transition-duration--s linear;
+                transition: width $m-transition-duration ease, height $m-transition-duration ease, opacity $m-transition-duration-sm linear;
                 transition-delay: 0.3s;
                 transform: translate(-50%, -50%);
                 position: absolute;
@@ -53,39 +53,39 @@
         }
 
         &.m--is-skin-dark {
-            color: $m-color--grey-light;
+            color: $m-color-grey-light;
 
             &:hover {
-                color: $m-color--white;
+                color: $m-color-white;
             }
 
             &::before {
-                background: $m-color--grey-darker;
+                background: $m-color-grey-darker;
             }
         }
 
         &.m--is-skin-light,
         &.m--is-skin-bold {
-            color: $m-color--grey-dark;
+            color: $m-color-grey-dark;
 
             &:hover {
-                color: $m-color--black;
+                color: $m-color-black;
             }
 
             &::before {
-                background: $m-color--interactive-lightest;
+                background: $m-color-interactive-lightest;
             }
 
             &.m-textfield__search-icon {
-                color: $m-color--ul-blue;
+                color: $m-color-interactive;
 
                 &:hover {
-                    color: $m-color--white;
+                    color: $m-color-white;
                     stroke-width: 2;
                 }
 
                 &::before {
-                    background: $m-color--ul-blue;
+                    background: $m-color-interactive;
                     border-radius: 0 3px 3px 0;
                     width: $m-touch-size;
                     height: $m-touch-size;
@@ -107,20 +107,20 @@
         }
 
         &.m--is-skin-link {
-            color: $m-color--interactive;
+            color: $m-color-interactive;
             stroke-width: 2;
 
             &:hover,
             &:focus {
-                color: $m-color--interactive-light;
+                color: $m-color-interactive-light;
             }
 
             &:active {
-                color: $m-color--interactive-dark;
+                color: $m-color-interactive-dark;
             }
 
             &::before {
-                background: $m-color--interactive-lightest;
+                background: $m-color-interactive-lightest;
             }
         }
 
@@ -139,15 +139,16 @@
     }
 
     &.m--is-disabled {
+
         &.m--is-skin-light,
         &.m--is-skin-link,
         &.m--is-skin-dark,
         &.m--is-skin-bold {
             cursor: default;
-            color: $m-color--disabled;
+            color: $m-color-disabled;
 
             &.m-textfield__search-icon {
-                color: $m-color--ul-blue;
+                color: $m-color-interactive;
             }
         }
 

@@ -12,7 +12,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${INPUT_GROUP_NAME}`, module)
                             <m-checkbox>Checkbox 2</m-checkbox>
                             <m-checkbox>Checkbox 3</m-checkbox>
                         </m-input-group>
-                        <m-input-group class="m-u--margin-top--l">
+                        <m-input-group class="mu-mt-lg">
                             <m-textfield label="Texfield 1"></m-textfield>
                             <m-textfield label="Texfield 2"></m-textfield>
                         </m-input-group>

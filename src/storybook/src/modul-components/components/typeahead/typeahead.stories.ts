@@ -31,7 +31,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
         template: `<div>
             <m-typeahead @input="input" @focus="focus" @blur="blur"  @filter-results="filter" @keydown="keydown" @keyup="keyup" @paste="paste" v-model="value" :label="label" :results="results"></m-typeahead>
             <p>v-model = {{ value }}</p>
-            <h2 class="m-u--h5">Values</h2>
+            <h2 class="mu-h5">Values</h2>
             <p v-html="results"></p>
         </div>`
     }))
@@ -92,7 +92,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
         template: `<div>
             <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results"></m-typeahead>
             <p>maxResult = {{ maxResults}}</p>
-            <h2 class="m-u--h5">Values</h2>
+            <h2 class="mu-h5">Values</h2>
             <p v-html="results"></p>
         </div>`
     }))
@@ -106,7 +106,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
         template: `<div>
             <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results" error-message="Error message"></m-typeahead>
             <p>maxResult = {{ maxResults}}</p>
-            <h2 class="m-u--h5">Values</h2>
+            <h2 class="mu-h5">Values</h2>
             <p v-html="results"></p>
         </div>`
     }))
@@ -121,7 +121,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
             <m-typeahead v-model="value" :label="label" :max-results="maxResults" :results="results">
                 <template  v-slot:items="{item , index, highlight }">
                    <span v-html="highlight"/><br/>
-                   <em class="m-u--typo--precision">{{item}} in the uk</em>
+                   <em class="mu-typo-precision">{{item}} in the uk</em>
                 </template>
             </m-typeahead>
 
@@ -152,7 +152,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}`, module)
         },
         template: `<div>
             <m-typeahead v-model="value" :filter-results-manually="true" :throttle="500" :placeholder="placeholder" :results="filterResult" :waiting-results="loddingResults" @filter-results="onFilter"></m-typeahead>
-            <h2 class="m-u--h5">Results</h2>
+            <h2 class="mu-h5">Results</h2>
             <p v-html="results"></p>
         </div>`
     }));
@@ -167,7 +167,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TYPEAHEAD_NAME}/mobile`, mo
         }),
         template: `<div>
             <m-typeahead v-model="value" :label="label" :results="results"></m-typeahead>
-            <h2 class="m-u--h5">Results</h2>
+            <h2 class="mu-h5">Results</h2>
             <p v-html="results"></p>
         </div>`
     })

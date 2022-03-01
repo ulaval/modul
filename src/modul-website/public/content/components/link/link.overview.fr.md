@@ -106,7 +106,7 @@ Dans certains cas, le texte d'un lien peut s'avérer peu explicite, par exemple 
 <p>
     <m-link mode="link" url="#">
         <span aria-hidden="true">X</span>
-        <span class="m-u--visually-hidden">Fermer la fenêtre</span>
+        <span class="mu-visually-hidden">Fermer la fenêtre</span>
     </m-link>
 </p>
 ```

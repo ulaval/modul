@@ -1,11 +1,11 @@
 <div class="m-add-sandbox">
-    <h2 class="m-u--no-margin">Test for MForm complex example</h2>
+    <h2 class="mu-no-m">Test for MForm complex example</h2>
     <br />
     <m-form :form-group="formGroup"
             @reset="reset()"
             @submit="submit()">
 
-        <h4 class="m-u--h6">General</h4>
+        <h4 class="mu-h6">General</h4>
 
         <m-textfield v-m-control="nameField"
                      v-model="nameField.value"
@@ -63,7 +63,7 @@
                             :error="richTextField.hasError()"
                             :error-message="richTextField.errorMessage"></m-rich-text-editor>
 
-        <h4 class="m-u--h6">Nested formgroup</h4>
+        <h4 class="mu-h6">Nested formgroup</h4>
 
         <m-checkbox v-m-control="champSupplActive"
                     v-model="champSupplActive.value">Activer les champs supplementaires ?</m-checkbox><br />
@@ -92,7 +92,7 @@
         </m-textfield> <br />
 
 
-        <h4 class="m-u--h6">Formarray</h4>
+        <h4 class="mu-h6">Formarray</h4>
         <m-add @click="addItem()">Add Cart (max 24 fruits, max total 24 bananas)</m-add>
         <div v-for="(control, index) in itemsArray.controls"
              :key="index">
@@ -122,21 +122,21 @@
         <m-validation-message :error="itemsArray.hasError()"
                               :error-message="itemsArray.errorMessage"></m-validation-message>
 
-        <p class="m-u--margin-top--l m-u--margin-bottom--l">
+        <p class="mu-mt-lg mu-mb-lg">
             <m-button type="submit"
                       :waiting="pendingSubmit">Submit</m-button>
             <m-button type="reset"
                       skin="secondary">Reset</m-button>
         </p>
 
-        <h4 class="m-u--h6">Form Values</h4>
+        <h4 class="mu-h6">Form Values</h4>
 
         <p>{{ formGroup.value }}</p>
 
-        <h4 class="m-u--h6">Form Errors</h4>
+        <h4 class="mu-h6">Form Errors</h4>
 
         <p>{{ formGroup.errorsDeep }}</p>
-        <h4 class="m-u--h6">Form Validity = {{ formGroup.valid }} / Form Waiting = {{ formGroup.waiting }} / Form Enabled = {{ formGroup.enabled }} / Form Readonly = {{ formGroup.readonly }}</h4>
+        <h4 class="mu-h6">Form Validity = {{ formGroup.valid }} / Form Waiting = {{ formGroup.waiting }} / Form Enabled = {{ formGroup.enabled }} / Form Readonly = {{ formGroup.readonly }}</h4>
         <p>
             <m-button skin="secondary"
                       @click="loadValue()">Load form initial data</m-button>

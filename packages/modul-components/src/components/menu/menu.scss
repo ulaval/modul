@@ -1,35 +1,36 @@
 @import 'commons';
 
 :root {
-    --m-menu--color: #{ $m-color--grey-light };
+    --m-menu--color: #{ $m-color-grey-light };
     --m-menu--border: none;
-    --m-menu--padding: #{ $m-spacing--s $m-spacing };
-    --m-menu--indicator: transparent;
-    --m-menu--min-height: #{ $m-touch-size };
-    --m-menu--box-shadow: 0 1px 2px  #{ rgba($m-color--black, 0.5) };
-    --m-menu--font-weight: #{ $m-font-weight--light };
-    --m-menu--background-color: #{ $m-color--grey-darkest };
+    --m-menu--padding: #{ $m-space };
+    --m-menu--indicator: rgba(0, 0, 0, 0);
+    --m-menu--min-height: 56px;
+    --m-menu--box-shadow: 0 1px 2px #{ rgba(0, 0, 0, 0.5) };
+    --m-menu--font-weight: #{ $m-font-weight-light };
+    --m-menu--background-color: #{ $m-color-grey-darker };
+    --m-menu--item-background-color: #{ $m-color-grey-darkest };
     --m-menu--text-transform: uppercase;
     //
-    --m-menu--hover-color: white;
-    --m-menu--hover-indicator-color: transparent;
+    --m-menu--hover-color: #{ $m-color-white };
+    --m-menu--hover-indicator-color: rgba(255, 255, 255, 0.8);
     //
-    --m-menu--selected-color: inherit;
-    --m-menu--selected-indicator: transparent;
-    --m-menu--selected-font-weight: #{ $m-font-weight--bold };
+    --m-menu--selected-color: #{ $m-color-white };
+    --m-menu--selected-indicator: #{ $m-color-active };
+    --m-menu--selected-font-weight: #{ $m-font-weight-bold };
     //
     --m-menu--group-color: inherit;
     --m-menu--group-border: none;
-    --m-menu--group-indicator: var(--m-menu--background-color);
-    --m-menu--group-font-weight: #{ $m-font-weight--light };
-    --m-menu--group-text-transform: lowercase;
-    --m-menu--group-background-color: #{ $m-color--grey-black };
+    --m-menu--group-indicator: var(--m-menu--item-background-color);
+    --m-menu--group-font-weight: #{ $m-font-weight-light };
+    --m-menu--group-text-transform: none;
+    --m-menu--group-background-color: #{ $m-color-grey-black };
     //
-    --m-menu--group-selected-color: inherit;
-    --m-menu--group-selected-indicator: #{ $m-color--ul-yellow };
-    --m-menu--group-selected-font-weight: #{ $m-font-weight--bold };
+    --m-menu--group-selected-color: #{ $m-color-white };
+    --m-menu--group-selected-indicator: #{ $m-color-active };
+    --m-menu--group-selected-font-weight: #{ $m-font-weight-bold };
     //
-    --m-menu--group-hover-indicator-color: #{ $m-color--grey-darker };
+    --m-menu--group-hover-indicator-color: #{ --m-menu--hover-indicator-color };
 }
 
 .m-menu {
@@ -47,11 +48,12 @@
 
     &__trigger {
         transition: color $m-transition-duration ease, font-weight $m-transition-duration ease;
+        position: relative;
         z-index: 1;
         outline: none;
         display: flex;
-        position: relative;
         align-items: center;
+        gap: $m-space-sm;
         text-decoration: none;
         padding: var(--m-menu--padding);
         min-height: var(--m-menu--min-height);
@@ -60,14 +62,11 @@
         box-shadow: var(--m-menu--box-shadow);
 
         &:not(.m--is-disabled) {
+
             &:hover,
             &:focus {
                 color: var(--m-menu--hover-color);
             }
-        }
-
-        &__plus {
-            margin-right: $m-spacing--s;
         }
     }
 
@@ -80,12 +79,12 @@
     }
 
     &.m--is-skin-light {
-        --m-menu--color: #{ rgba($m-color--white, 0.7) };
-        --m-menu--background-color: #{ $m-color--ul-blue };
-        --m-menu--box-shadow: 0 1px 2px  #{ rgba($m-color--black, 0.1) };
+        --m-menu--color: #{ $m-color-white };
+        --m-menu--background-color: #{ $m-color-interactive };
+        --m-menu--item-background-color: #{ $m-color-interactive-dark };
+        --m-menu--box-shadow: 0 1px 2px #{ rgba(0, 0, 0, 0.1) };
         // group
-        --m-menu--group-indicator: var(--m-menu--background-color);
-        --m-menu--group-hover-indicator-color: #{ $m-color--interactive-light };
-        --m-menu--group-background-color: #{ $m-color--interactive-dark };
+        --m-menu--group-indicator: var(--m-menu--item-background-color);
+        --m-menu--group-background-color: #{ $m-color-interactive-darker };
     }
 }

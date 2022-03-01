@@ -8,8 +8,7 @@
     }
 
     &__button {
-        margin-top: $m-margin--s;
-        font-size: 14px;
+        margin-top: $m-space-xs;
         font-weight: 400;
         color: $modul-color--grey-dark;
         text-transform: uppercase;
@@ -19,6 +18,8 @@
         outline: none;
         transition: color $m-transition-duration ease;
 
+        @include m-font-size('sm');
+
         &:hover,
         &:focus {
             color: $modul-color--black-grey-dark;
@@ -27,7 +28,7 @@
 
     &__code {
         position: relative;
-        padding: $m-margin--l $m-margin--l;
+        padding: $m-space-md $m-space-md;
         background: $modul-color--black-grey-light;
         border: 1px solid $modul-color--grey-dark;
         border-top: none;
@@ -52,9 +53,8 @@
             list-style: none;
 
             &__button {
-                padding: $m-padding--s $m-margin;
-                margin: 0 $m-margin--s 0 0;
-                font-size: 14px;
+                padding: $m-space-xs $m-space-sm;
+                margin: 0 $m-space-xs 0 0;
                 font-weight: 400;
                 color: $modul-color--grey-dark;
                 text-transform: uppercase;
@@ -63,6 +63,8 @@
                 cursor: pointer;
                 outline: none;
                 transition: background-color $m-transition-duration ease;
+
+                @include m-font-size('sm');
 
                 &.active,
                 &:hover,
@@ -97,7 +99,7 @@
     }
 
     &__preview {
-        padding: $m-margin--l;
+        padding: $m-space-md;
         background: $modul-color--grey-light;
     }
 }

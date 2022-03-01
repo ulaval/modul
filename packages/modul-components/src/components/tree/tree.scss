@@ -7,11 +7,11 @@ $m-tree-node--child-indentation: 20px;
 
     &__error {
         .m-icon {
-            color: $m-color--error-dark;
+            color: $m-color-error-dark;
         }
 
         + .m-tree__content {
-            margin-top: $m-margin;
+            margin-top: $m-space-sm;
         }
     }
 
@@ -36,7 +36,7 @@ $m-tree-node--child-indentation: 20px;
             }
         }
 
-        > .m-tree-node:not(.m--is-single) /deep/ > .m-tree-node__item {
+        > .m-tree-node:not(.m--is-single) /deep/>.m-tree-node__item {
             &::before {
                 content: "";
                 position: absolute;
@@ -44,7 +44,7 @@ $m-tree-node--child-indentation: 20px;
                 top: 50%;
                 width: $m-tree-node--child-indentation;
                 height: 1px;
-                background-color: $m-color--interactive;
+                background-color: $m-color-interactive;
             }
         }
 
@@ -56,7 +56,7 @@ $m-tree-node--child-indentation: 20px;
                 top: -26px; // Magic number
                 width: 1px;
                 bottom: 0;
-                background-color: $m-color--interactive;
+                background-color: $m-color-interactive;
             }
 
             &:first-child::after {

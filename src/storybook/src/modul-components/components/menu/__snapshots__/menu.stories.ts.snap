@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -329,11 +329,11 @@ exports[`Storyshots modul-components|m-menu closeOnSelection="false" 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
-<div
+<nav
   class="m-menu m-menu-stories m--is-skin-dark m--is-open"
 >
   <div
@@ -456,11 +456,11 @@ exports[`Storyshots modul-components|m-menu custom visual and content 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu default 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark"
 >
   <div
@@ -789,11 +789,11 @@ exports[`Storyshots modul-components|m-menu default 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu disabled 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open m--is-disabled"
 >
   <div
@@ -1121,11 +1121,11 @@ exports[`Storyshots modul-components|m-menu disabled 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -1453,11 +1453,11 @@ exports[`Storyshots modul-components|m-menu idAriaControls="ariaTest" 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu open 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -1785,11 +1785,11 @@ exports[`Storyshots modul-components|m-menu open 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-light m--is-open"
 >
   <div
@@ -2117,11 +2117,11 @@ exports[`Storyshots modul-components|m-menu skin=light" 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark"
 >
   <div
@@ -2450,12 +2450,12 @@ exports[`Storyshots modul-components|m-menu trigger (slot) 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subitem 1`] = `
 <div>
-  <div
+  <nav
     class="m-menu m--is-skin-dark m--is-open"
   >
     <div
@@ -2628,10 +2628,10 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
         </ul>
       </li>
     </ul>
-  </div>
+  </nav>
    
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
@@ -2654,7 +2654,7 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
 
 exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subitems group 1`] = `
 <div>
-  <div
+  <nav
     class="m-menu m--is-skin-dark m--is-open"
   >
     <div
@@ -2767,10 +2767,10 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
         />
       </li>
     </ul>
-  </div>
+  </nav>
    
   <button
-    class="m-button m-u--margin-top m--is-skin-primary"
+    class="m-button mu-mt m--is-skin-primary"
     type="button"
   >
     <!---->
@@ -2792,7 +2792,7 @@ exports[`Storyshots modul-components|m-menu/Add dynamically subitems Edit subite
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem default 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -2859,11 +2859,11 @@ exports[`Storyshots modul-components|m-menu/menuItem default 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem disabled 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -2918,11 +2918,11 @@ exports[`Storyshots modul-components|m-menu/menuItem disabled 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem iconName 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -2989,11 +2989,11 @@ exports[`Storyshots modul-components|m-menu/menuItem iconName 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem label 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -3048,11 +3048,11 @@ exports[`Storyshots modul-components|m-menu/menuItem label 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -3293,11 +3293,11 @@ exports[`Storyshots modul-components|m-menu/menuItem open 1`] = `
       </ul>
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem readonly 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -3353,11 +3353,11 @@ exports[`Storyshots modul-components|m-menu/menuItem readonly 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem url (router-link) 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -3409,11 +3409,11 @@ exports[`Storyshots modul-components|m-menu/menuItem url (router-link) 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;
 
 exports[`Storyshots modul-components|m-menu/menuItem value 1`] = `
-<div
+<nav
   class="m-menu m--is-skin-dark m--is-open"
 >
   <div
@@ -3468,5 +3468,5 @@ exports[`Storyshots modul-components|m-menu/menuItem value 1`] = `
       />
     </li>
   </ul>
-</div>
+</nav>
 `;

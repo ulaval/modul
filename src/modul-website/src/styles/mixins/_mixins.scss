@@ -4,28 +4,28 @@
 
 @mixin modul-page-title() {
     font-size: 34px; // magic number
-    font-weight: $m-font-weight--black;
+    font-weight: $m-font-weight-black;
     text-transform: uppercase;
 
-    @media (min-width: $m-mq--min--s) {
+    @media (min-width: $m-mq-min-sm) {
         font-size: 36px; // magic number
     }
 }
 
 @mixin mw-highlighted-title() {
     margin: 0;
-    color: $m-color--white;
+    color: $m-color-white;
     position: relative;
     text-decoration: none;
     outline: none;
     text-transform: uppercase;
-    font-weight: $m-font-weight--black;
+    font-weight: $m-font-weight-black;
     font-size: 24px;
 
     &::before {
         content: '';
         display: block;
-        margin-bottom: $m-spacing--s;
+        margin-bottom: $m-space-xs;
         width: 32px;
         height: 4px;
         background-color: $modul-color--yellow;

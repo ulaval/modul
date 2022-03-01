@@ -1,7 +1,7 @@
 @import 'commons';
 @import 'm-popper';
 $m-popper--scale: 0.96 !default;
-$m-popper--margin: $m-margin !default;
+$m-popper--margin: $m-space-sm !default;
 
 .m-popper {
     display: inline-flex;
@@ -17,7 +17,7 @@ $m-popper--margin: $m-margin !default;
         }
 
         &.m--has-background {
-            background: $m-color--white;
+            background: $m-color-white;
         }
 
         &.m--is-hidden {
@@ -25,6 +25,7 @@ $m-popper--margin: $m-margin !default;
         }
 
         &.m--is-default-anim {
+
             &.m--is-enter-active,
             &.m--is-leave-active {
                 transition-property: transform, opacity;
@@ -39,7 +40,7 @@ $m-popper--margin: $m-margin !default;
                 &.m--is-placement-top,
                 &.m--is-placement-top-start,
                 &.m--is-placement-top-end {
-                    transform: translate3d(0, -$m-popper--margin, 0) scale($m-popper--scale);
+                    transform: translate3d(0, calc(-1 * #{ $m-popper--margin }), 0) scale($m-popper--scale);
                 }
 
                 &.m--is-placement-right,
@@ -57,12 +58,13 @@ $m-popper--margin: $m-margin !default;
                 &.m--is-placement-left,
                 &.m--is-placement-left-start,
                 &.m--is-placement-left-end {
-                    transform: translate3d(-$m-popper--margin, 0, 0) scale($m-popper--scale);
+                    transform: translate3d(calc(-1 * #{ $m-popper--margin }), 0, 0) scale($m-popper--scale);
                 }
             }
         }
 
         > :first-child {
+
             &,
             > :first-child {
                 margin-top: 0;
@@ -76,7 +78,7 @@ $m-popper--margin: $m-margin !default;
         position: relative;
 
         &:not(.m--no-padding) {
-            padding: $m-padding;
+            padding: $m-space;
         }
 
         > :first-child {

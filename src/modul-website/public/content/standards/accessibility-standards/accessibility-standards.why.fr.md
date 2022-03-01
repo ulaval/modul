@@ -10,7 +10,7 @@ Mettre en évidence un élément interactif dans le <abbr title="HyperText Marku
 ### Étiquetage des éléments de formulaire
 Uniformiser l’étiquetage par la «&nbsp;méthode consécutive&nbsp;»&nbsp;:
 
-<m-panel class="m-u--margin-top">
+<m-panel class="mu-mt">
     <p>&lt;label <b>for="nom"</b>&gt; Nom complet &lt;&nbsp;/label&gt;</p>
     <p>&lt;input type="text" name="nom" <b>id="nom"</b>&nbsp;/&gt;</p>
 </m-panel>

@@ -92,7 +92,7 @@ const getCarouselTemplate = (
                     height: crouselItemSize + 'px',
                 }"
             >
-                <p class="m-u--no-margin">Carousel item #{{ index }}</p>
+                <p class="mu-no-m">Carousel item #{{ index }}</p>
             </article>
         </div>
     </${AUTO_HORIZONTAL_SCROLL}>`

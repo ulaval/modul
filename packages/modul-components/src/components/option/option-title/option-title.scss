@@ -3,8 +3,9 @@
 .m-option-title {
     display: flex;
     text-decoration: none;
-    font-weight: $m-font-weight--bold;
-    font-size: $m-font-size--s;
-    color: $m-color--grey;
-    padding:$m-spacing $m-spacing $m-spacing--s $m-spacing;
+    font-weight: $m-font-weight-bold;
+    color: $m-color-grey;
+    padding: $m-space $m-space $m-space-sm $m-space;
+
+    @include m-font-size('sm');
 }

@@ -6,17 +6,17 @@
 .mw-philosophy {
     max-width: $mw-max-width;
     margin: 0 auto;
-    color: $m-color--white;
-    padding: $m-spacing--xl $m-spacing;
+    color: $m-color-white;
+    padding: $m-space-xl $m-space;
 
-    @media (min-width: $m-mq--min--s) {
-        padding: $m-spacing--xxxxl $m-spacing--l;
+    @media (min-width: $m-mq-min-sm) {
+        padding: $m-space-4xl $m-space-lg;
     }
 
     &__title {
         margin-top: 0;
         text-transform: uppercase;
-        font-weight: $m-font-weight--black;
+        font-weight: $m-font-weight-black;
     }
 
     &__description {
@@ -33,11 +33,11 @@
 .modul-home-design {
 
     // background: $modul-color--black-grey;
-    padding: $m-padding;
-    color: $m-color--white;
+    padding: $m-space;
+    color: $m-color-white;
 
-    @media (min-width: $m-mq--min--s) {
-        padding: $m-padding--l;
+    @media (min-width: $m-mq-min-sm) {
+        padding: $m-space-lg;
     }
 
     > div {
@@ -45,7 +45,7 @@
     }
 
     &__article {
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -57,7 +57,7 @@
             display: flex;
             justify-content: flex-end;
 
-            // @media (max-width: $m-mq--max--s) {
+            // @media (max-width: $m-mq-max-sm) {
             //     max-width: $modul-home-design--max-width;
             //     margin: 0 auto;
             //     justify-content: center;
@@ -80,29 +80,30 @@
 
             &-logo {
                 color: $modul-color--yellow;
-                font-size: 18px;
+
+                @include m-font-size('md');
             }
         }
 
         &__body {
             display: flex;
-            margin: $m-margin 0;
+            margin: $m-space-sm 0;
 
             &-content,
             &-aside {
-                background: rgba($m-color--white, 0.2);
+                background: rgba(255, 255, 255, 0.2);
                 border: 1px solid $modul-color--yellow;
                 border-radius: 4px;
-                padding: $m-margin;
+                padding: $m-space-sm;
                 height: 200px;
             }
 
             &-content {
-                width: calc(70% - #{$m-margin});
+                width: calc(70% - #{$m-space-sm});
             }
 
             &-aside {
-                margin-left: $m-margin;
+                margin-left: $m-space-sm;
                 width: 30%;
             }
         }
@@ -136,8 +137,8 @@
                     }
 
                     &-aside {
-                        margin: $m-margin 0 0 0;
-                        height: 70px - $m-margin;
+                        margin: $m-space-sm 0 0 0;
+                        height: calc(70px - #{$m-space-sm});
                     }
                 }
             }

@@ -35,10 +35,10 @@ $m-toast-max-width: 768px;
 
     &__icon {
         display: flex;
-        padding: $m-padding 0 $m-padding $m-padding;
+        padding: $m-space 0 $m-space $m-space;
 
         .m-icon {
-            font-size: $m-toast-icon-size;
+            @include m-font-size('h2');
         }
     }
 
@@ -46,13 +46,13 @@ $m-toast-max-width: 768px;
         display: flex;
         flex: 1 0 50%;
         flex-flow: wrap;
-        padding: $m-padding;
+        padding: $m-space;
     }
 
     &__actions {
         display: flex;
         flex: 1 0 100%;
-        padding: $m-margin 0 0;
+        padding: $m-space-sm 0 0;
         text-transform: uppercase;
     }
 
@@ -68,16 +68,18 @@ $m-toast-max-width: 768px;
 
     &__close-button {
         align-self: flex-start;
-        margin: $m-padding--xs $m-padding--xs 0 0;
+        margin: $m-space-2xs $m-space-2xs 0 0;
 
         .m-button__icon .m-icon {
-            font-size: $m-font-size--s;
-            height: $m-font-size--s;
-            color: $m-color--interactive-light;
+            @include m-font-size('sm');
+
+            height: #{$m-font-size-sm * 1px};
+            color: $m-color-interactive-light;
         }
     }
 
     &.m--is-leave-active {
+
         &,
         .m-toast__wrap {
             opacity: 0;
@@ -105,7 +107,7 @@ $m-toast-max-width: 768px;
         }
 
         &.m--is-bottom {
-            bottom: $m-spacing--m;
+            bottom: $m-space-md;
         }
     }
 
@@ -122,7 +124,7 @@ $m-toast-max-width: 768px;
         top: 0;
 
         .m-toast__wrap {
-            border-bottom: $m-border-width--l solid;
+            border-bottom: $m-border-width-lg solid;
         }
 
         &.m--is-enter-active {
@@ -134,7 +136,7 @@ $m-toast-max-width: 768px;
 
     &.m--is-bottom {
         .m-toast__wrap {
-            border-top: $m-border-width--l solid;
+            border-top: $m-border-width-lg solid;
         }
 
         &.m--is-enter-active {
@@ -145,18 +147,18 @@ $m-toast-max-width: 768px;
     }
 
     &.m--is-state-confirmation {
-        @include m-toast-skin-default($m-color--success, $m-color--success-lightest);
+        @include m-toast-skin-default($m-color-success, $m-color-success-lightest);
     }
 
     &.m--is-state-information {
-        @include m-toast-skin-default($m-color--interactive, $m-color--interactive-lightest);
+        @include m-toast-skin-default($m-color-interactive, $m-color-information);
     }
 
     &.m--is-state-warning {
-        @include m-toast-skin-default($m-color--warning, $m-color--warning-lightest);
+        @include m-toast-skin-default($m-color-warning, $m-color-warning-lightest);
     }
 
     &.m--is-state-error {
-        @include m-toast-skin-default($m-color--error, $m-color--error-lightest);
+        @include m-toast-skin-default($m-color-error, $m-color-error-lightest);
     }
 }

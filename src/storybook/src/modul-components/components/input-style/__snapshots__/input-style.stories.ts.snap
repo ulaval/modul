@@ -6,7 +6,6 @@ exports[`Storyshots modul-components|m-input-style cursorPointer 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -34,18 +33,10 @@ exports[`Storyshots modul-components|m-input-style cursorPointer 1`] = `
         <div
           class="m-input-style__content"
         >
-          Cursor pointer (true) 
-          <!---->
-           
-          <!---->
+          Cursor pointer (true)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -62,7 +53,6 @@ exports[`Storyshots modul-components|m-input-style default 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -79,25 +69,15 @@ exports[`Storyshots modul-components|m-input-style default 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
         >
-           
-          <!---->
-           
-          <!---->
+          
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -114,7 +94,6 @@ exports[`Storyshots modul-components|m-input-style disabled 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -142,18 +121,10 @@ exports[`Storyshots modul-components|m-input-style disabled 1`] = `
         <div
           class="m-input-style__content"
         >
-          Disabled (true) 
-          <!---->
-           
-          <!---->
+          Disabled (true)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -170,7 +141,6 @@ exports[`Storyshots modul-components|m-input-style empty 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -198,18 +168,10 @@ exports[`Storyshots modul-components|m-input-style empty 1`] = `
         <div
           class="m-input-style__content"
         >
-          Empty (false) 
-          <!---->
-           
-          <!---->
+          Empty (false)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -227,7 +189,6 @@ exports[`Storyshots modul-components|m-input-style error 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -255,18 +216,10 @@ exports[`Storyshots modul-components|m-input-style error 1`] = `
           <div
             class="m-input-style__content"
           >
-            Error (true) 
-            <!---->
-             
-            <!---->
+            Error (true)
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -290,7 +243,6 @@ exports[`Storyshots modul-components|m-input-style error 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -318,18 +270,10 @@ exports[`Storyshots modul-components|m-input-style error 1`] = `
           <div
             class="m-input-style__content"
           >
-            Hello 
-            <!---->
-             
-            <!---->
+            Hello
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -347,7 +291,6 @@ exports[`Storyshots modul-components|m-input-style focus 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -370,25 +313,15 @@ exports[`Storyshots modul-components|m-input-style focus 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
         >
-          Focus (true) 
-          <!---->
-           
-          <!---->
+          Focus (true)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -405,7 +338,6 @@ exports[`Storyshots modul-components|m-input-style label 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -432,26 +364,9 @@ exports[`Storyshots modul-components|m-input-style label 1`] = `
          
         <div
           class="m-input-style__content"
-        >
-           
-          <span
-            aria-hidden="true"
-            class="m-input-style__transparent-text"
-          >
-            
-                        Aucune valeur
-                    
-          </span>
-           
-          <!---->
-        </div>
+        />
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -471,7 +386,6 @@ exports[`Storyshots modul-components|m-input-style labelFor 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -499,26 +413,9 @@ exports[`Storyshots modul-components|m-input-style labelFor 1`] = `
            
           <div
             class="m-input-style__content"
-          >
-             
-            <span
-              aria-hidden="true"
-              class="m-input-style__transparent-text"
-            >
-              
-                        Aucune valeur
-                    
-            </span>
-             
-            <!---->
-          </div>
+          />
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -547,7 +444,6 @@ exports[`Storyshots modul-components|m-input-style readonly 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -575,18 +471,10 @@ exports[`Storyshots modul-components|m-input-style readonly 1`] = `
         <div
           class="m-input-style__content"
         >
-          Readonly (true) 
-          <!---->
-           
-          <!---->
+          Readonly (true)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -603,7 +491,6 @@ exports[`Storyshots modul-components|m-input-style requiredMarker 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -623,9 +510,7 @@ exports[`Storyshots modul-components|m-input-style requiredMarker 1`] = `
             aria-hidden="true"
             class="m-input-style__required-marker"
           >
-            
-                        *
-                    
+            *
           </sup>
         </span>
       </label>
@@ -638,18 +523,10 @@ exports[`Storyshots modul-components|m-input-style requiredMarker 1`] = `
         <div
           class="m-input-style__content"
         >
-          Required marker (true) 
-          <!---->
-           
-          <!---->
+          Required marker (true)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -673,7 +550,6 @@ exports[`Storyshots modul-components|m-input-style tagStyle 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -701,18 +577,10 @@ exports[`Storyshots modul-components|m-input-style tagStyle 1`] = `
         <div
           class="m-input-style__content"
         >
-          Title (h1) 
-          <!---->
-           
-          <!---->
+          Title (h1)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -729,7 +597,7 @@ exports[`Storyshots modul-components|m-input-style testAllProps 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="width: 150px; margin-top: 10px;"
+    style="width: 150px;"
   >
     <div
       class="m-input-style__body"
@@ -757,18 +625,10 @@ exports[`Storyshots modul-components|m-input-style testAllProps 1`] = `
         <div
           class="m-input-style__content"
         >
-           
-          <!---->
-           
-          <!---->
+          
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      
@@ -786,7 +646,6 @@ exports[`Storyshots modul-components|m-input-style valid 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -814,18 +673,10 @@ exports[`Storyshots modul-components|m-input-style valid 1`] = `
           <div
             class="m-input-style__content"
           >
-            Valid (true) 
-            <!---->
-             
-            <!---->
+            Valid (true)
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -849,7 +700,6 @@ exports[`Storyshots modul-components|m-input-style valid 1`] = `
   >
     <div
       class="m-input-style__main"
-      style="margin-top: 10px;"
     >
       <div
         class="m-input-style__body"
@@ -877,18 +727,10 @@ exports[`Storyshots modul-components|m-input-style valid 1`] = `
           <div
             class="m-input-style__content"
           >
-            Hello 
-            <!---->
-             
-            <!---->
+            Hello
           </div>
            
-          <div
-            class="m-input-style__suffix"
-          >
-             
-            <!---->
-          </div>
+          <!---->
         </div>
       </div>
        
@@ -906,7 +748,6 @@ exports[`Storyshots modul-components|m-input-style waiting 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="margin-top: 10px;"
   >
     <div
       class="m-input-style__body"
@@ -934,10 +775,7 @@ exports[`Storyshots modul-components|m-input-style waiting 1`] = `
         <div
           class="m-input-style__content"
         >
-          Waiting (true) 
-          <!---->
-           
-          <!---->
+          Waiting (true)
         </div>
          
         <div
@@ -968,7 +806,7 @@ exports[`Storyshots modul-components|m-input-style width 1`] = `
 >
   <div
     class="m-input-style__main"
-    style="width: 150px; margin-top: 10px;"
+    style="width: 150px;"
   >
     <div
       class="m-input-style__body"
@@ -991,25 +829,15 @@ exports[`Storyshots modul-components|m-input-style width 1`] = `
       <div
         class="m-input-style__input"
       >
-        <div
-          class="m-input-style__prefix"
-        />
+        <!---->
          
         <div
           class="m-input-style__content"
         >
-          Width (150px) 
-          <!---->
-           
-          <!---->
+          Width (150px)
         </div>
          
-        <div
-          class="m-input-style__suffix"
-        >
-           
-          <!---->
-        </div>
+        <!---->
       </div>
     </div>
      

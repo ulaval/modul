@@ -7,15 +7,15 @@ $m-modal--max-width--s: 420px !default;
 :root {
     --m-modal--top: 0;
     --m-modal--min-height: 160px;
-    --m-modal--header-padding: #{ $m-spacing };
+    --m-modal--header-padding: #{ $m-space };
     --m-modal--header-justify-content: space-between;
-    --m-modal--body-padding: #{ $m-spacing--xl  $m-spacing };
-    --m-modal--footer-padding: #{ $m-spacing };
+    --m-modal--body-padding: #{ $m-space-xl  $m-space };
+    --m-modal--footer-padding: #{ $m-space };
 
-    @media (min-width: $m-mq--min--s) {
-        --m-modal--header-padding: #{ $m-spacing $m-spacing--l };
-        --m-modal--body-padding: #{ $m-spacing--xl  $m-spacing--l };
-        --m-modal--footer-padding: #{ $m-spacing $m-spacing--l };
+    @media (min-width: $m-mq-min-sm) {
+        --m-modal--header-padding: #{ $m-space $m-space-lg };
+        --m-modal--body-padding: #{ $m-space-xl  $m-space-lg };
+        --m-modal--footer-padding: #{ $m-space $m-space-lg };
     }
 }
 
@@ -35,7 +35,7 @@ $m-modal--max-width--s: 420px !default;
 
         // MODUL-20, MODUL-87, ENA2-760
         // the mq must stay sync with the component template and TS file
-        @media (min-width: $m-mq--min--s) {
+        @media (min-width: $m-mq-min-sm) {
             justify-content: center;
         }
 
@@ -46,8 +46,8 @@ $m-modal--max-width--s: 420px !default;
         h5,
         h6 {
             margin: 0;
-            font-size: $m-font-size--h4;
-            font-weight: $m-font-weight--semi-bold;
+            @include m-font-size('h4');
+            font-weight: $m-font-weight-semi-bold;
         }
 
         @include m-is-ie() {
@@ -62,7 +62,7 @@ $m-modal--max-width--s: 420px !default;
         &.m--is-enter-active,
         &.m--is-leave-active {
             &.m--is-full-screen {
-                transition-duration: $m-transition-duration--xl;
+                transition-duration: $m-transition-duration-xl;
             }
 
             &:not(.m--is-full-screen) {
@@ -74,7 +74,7 @@ $m-modal--max-width--s: 420px !default;
         &.m--is-leave-to {
             &:not(.m--is-full-screen) {
                 .m-modal__article {
-                    transform: translate3d(0, $m-padding--l, 0) scale(0.98);
+                    transform: translate3d(0, $m-space-lg, 0) scale(0.98);
                     opacity: 0;
                 }
             }
@@ -87,10 +87,10 @@ $m-modal--max-width--s: 420px !default;
         }
 
         &:not(.m--is-full-screen) {
-            padding: 0 $m-padding--l 0 $m-padding--l;
+            padding: 0 $m-space-lg 0 $m-space-lg;
 
             .m-modal__article {
-                transition: transform $m-transition-duration ease, opacity $m-transition-duration--s linear;
+                transition: transform $m-transition-duration ease, opacity $m-transition-duration-sm linear;
                 margin-top: auto;
                 margin-bottom: auto;
                 max-width: $m-modal--max-width;
@@ -100,7 +100,7 @@ $m-modal--max-width--s: 420px !default;
 
         &.m--is-full-screen {
             .m-modal__article {
-                transition: transform $m-transition-duration--xl ease;
+                transition: transform $m-transition-duration-xl ease;
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -122,7 +122,7 @@ $m-modal--max-width--s: 420px !default;
 
         &.m--has-body-max-width {
             .m-modal__body {
-                max-width: $m-max-width--l;
+                max-width: $m-max-width-lg;
                 margin: 0 auto;
             }
         }
@@ -131,7 +131,7 @@ $m-modal--max-width--s: 420px !default;
     &__article {
         cursor: auto;
         width: 100%;
-        background: $m-color--white;
+        background: $m-color-white;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
         overflow: hidden;
         display: flex;
@@ -140,7 +140,7 @@ $m-modal--max-width--s: 420px !default;
         outline: none;
 
         @include m-is-ie() {
-            margin: $m-padding--l * 2 auto;
+            margin: calc(#{$m-space-lg} * 2) auto;
         }
     }
 
@@ -155,13 +155,13 @@ $m-modal--max-width--s: 420px !default;
     &__header,
     &__footer {
         flex-shrink: 0;
-        min-height: $m-box--min-height;
+        min-height: $m-min-height-box;
     }
 
     &__header {
         position: relative;
-        background-color: $m-color--grey-black;
-        color: $m-color--white;
+        background-color: $m-color-grey-black;
+        color: $m-color-white;
         display: flex;
         align-items: center;
         justify-content: var(--m-modal--header-justify-content);
@@ -183,6 +183,7 @@ $m-modal--max-width--s: 420px !default;
         padding: var(--m-modal--body-padding);
 
         @include m-scrollbar();
+
         @include m-is-ie() {
             flex: none;
         }
@@ -197,7 +198,7 @@ $m-modal--max-width--s: 420px !default;
         position: relative;
         display: flex;
         align-items: center;
-        border-top: 1px solid $m-color--border;
+        border-top: 1px solid $m-color-border;
         padding: var(--m-modal--footer-padding);
     }
 }
