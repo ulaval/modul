@@ -1,11 +1,4 @@
 .mu-app-root {
-    @import 'button', 'header', 'typography', 'layout', 'link';
-
-    // Visually hidden
-    .mu-visually-hidden {
-        @include m-visually-hidden();
-    }
-
     // List
     .mu-bullet-list {
         @include m-bullet-list();
@@ -16,8 +9,8 @@
         @include m-table();
     }
 
-    // Formulaire
-    .mu-label {
+     // Formulaire
+     .mu-label {
         @include m-font-size();
 
         font-weight: $m-font-weight-semi-bold;
@@ -32,5 +25,13 @@
     .mu-require {
         margin-top: - $m-space !important;
         float: right;
+    }
+
+    @import 'button', 'link', 'header', 'typography', 'layout';
+
+
+    // Visually hidden
+    .mu-visually-hidden {
+        @include m-visually-hidden();
     }
 }
