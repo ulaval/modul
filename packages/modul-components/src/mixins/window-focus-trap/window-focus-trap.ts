@@ -11,7 +11,7 @@ export class MFocusTrap extends ModulVue {
         returnFocusOnDeactivate?: boolean
     } = {}): void {
         this.focusTrap = createFocusTrap(el, {
-            escapeDeactivates: true,
+            escapeDeactivates: false,
             allowOutsideClick: true,
             initialFocus: options.initialFocus || el,
             returnFocusOnDeactivate: options.returnFocusOnDeactivate === undefined ? true : options.returnFocusOnDeactivate,
