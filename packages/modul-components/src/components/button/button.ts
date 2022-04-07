@@ -1,7 +1,8 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { BUTTON_NAME, ICON_NAME, SPINNER_NAME } from '../component-names';
+import { Enums } from '../../utils/enums/enums';
+import { BUTTON_NAME } from '../component-names';
 import { MIcon } from '../icon/icon';
 import { MSpinner } from '../spinner/spinner';
 import WithRender from './button.html?style=./button.scss';
@@ -14,7 +15,8 @@ export enum MButtonType {
 
 export enum MButtonSkin {
     Primary = 'primary',
-    Secondary = 'secondary'
+    Secondary = 'secondary',
+    Tertiary = 'tertiary'
 }
 
 export enum MButtonIconPosition {
@@ -25,100 +27,102 @@ export enum MButtonIconPosition {
 @WithRender
 @Component({
     components: {
-        [SPINNER_NAME]: MSpinner,
-        [ICON_NAME]: MIcon
+        MSpinner,
+        MIcon
     }
-}
-)
+})
 export class MButton extends Vue {
-
     @Prop({
         default: MButtonType.Button,
-        validator: value =>
-            value === MButtonType.Button ||
-            value === MButtonType.Submit ||
-            value === MButtonType.Reset
+        validator: value => Enums.toValueArray(MButtonType).includes(value)
     })
-    public type: MButtonType;
+    public readonly type!: MButtonType;
+
     @Prop({
         default: MButtonSkin.Primary,
-        validator: value =>
-            value === MButtonSkin.Primary ||
-            value === MButtonSkin.Secondary
+        validator: value => Enums.toValueArray(MButtonSkin).includes(value)
     })
-    public skin: MButtonSkin;
+    public readonly skin!: MButtonSkin;
 
     @Prop()
-    public precision: string;
+    public readonly precision: string;
+
+    @Prop({ default: false })
+    public readonly disabled!: boolean;
+
+    @Prop({ default: false })
+    public readonly waiting!: boolean;
+
+    @Prop({ default: false })
+    public readonly fullSize!: boolean;
+
     @Prop()
-    public disabled: boolean;
-    @Prop()
-    public waiting: boolean;
-    @Prop()
-    public fullSize: boolean;
-    @Prop()
-    public iconName: string;
+    public readonly iconName?: string;
+
     @Prop({
         default: MButtonIconPosition.Left,
-        validator: value =>
-            value === MButtonIconPosition.Left ||
-            value === MButtonIconPosition.Right
+        validator: value => Enums.toValueArray(MButtonIconPosition).includes(value)
     })
-    public iconPosition: MButtonIconPosition;
+    public readonly iconPosition!: MButtonIconPosition;
+
     @Prop({ default: '12px' })
-    public iconSize: string;
+    public readonly iconSize: string;
 
     @Emit('click')
-    onClick(event: Event): void { }
+    public onClick(event: Event): void { }
 
     @Emit('mousedown')
-    onMousedown(event: MouseEvent): void { }
+    public onMousedown(event: MouseEvent): void { }
 
     @Emit('touchstart')
-    onTouchstart(event: TouchEvent): void { }
+    public onTouchstart(event: TouchEvent): void { }
 
     @Emit('touchend')
-    onTouchend(event: TouchEvent): void { }
+    public onTouchend(event: TouchEvent): void { }
 
     @Emit('focus')
-    onFocus(event: FocusEvent): void { }
+    public onFocus(event: FocusEvent): void { }
 
     @Emit('blur')
-    onBlur(event: FocusEvent): void { }
+    public onBlur(event: FocusEvent): void { }
 
-    private get isSkinPrimary(): boolean {
+    public get isSkinPrimary(): boolean {
         return this.skin === MButtonSkin.Primary;
     }
 
-    private get isSkinSecondary(): boolean {
+    public get isSkinSecondary(): boolean {
         return this.skin === MButtonSkin.Secondary;
     }
 
-    private get isWaiting(): boolean {
+    public get isSkinTertiary(): boolean {
+        return this.skin === MButtonSkin.Tertiary;
+    }
+
+    public get isWaiting(): boolean {
         return !this.disabled ? this.waiting : false;
     }
 
-    private get hasIcone(): boolean {
-        return !!this.iconName;
+    public get hasIcone(): boolean {
+        return Boolean(this.iconName);
     }
 
-    private get hasIconLeft(): boolean {
+    public get hasIconLeft(): boolean {
         return this.iconPosition === MButtonIconPosition.Left && this.hasIcone && !this.waiting;
     }
 
-    private get hasIconRight(): boolean {
+    public get hasIconRight(): boolean {
         return this.iconPosition === MButtonIconPosition.Right && this.hasIcone && !this.waiting;
     }
 
-    private get hasWaitingIconLeft(): boolean {
+    public get hasWaitingIconLeft(): boolean {
         return this.iconPosition === MButtonIconPosition.Left && this.waiting;
     }
 
-    private get hasWaitingIconRight(): boolean {
+    public get hasWaitingIconRight(): boolean {
         return this.iconPosition === MButtonIconPosition.Right && this.waiting;
     }
 
-    private get hasPrecision(): boolean {
+    public get hasPrecision(): boolean {
         return !!this.precision || !!this.$slots.precision;
     }
 }
