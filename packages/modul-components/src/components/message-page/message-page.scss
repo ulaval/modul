@@ -5,8 +5,6 @@ $m-message-page--shadow-height: 5px;
 
 @mixin m-message-page-state($color, $color-background) {
     .m-message-page {
-
-        &__title,
         &__icon {
             color: $color;
         }
@@ -102,7 +100,7 @@ $m-message-page--shadow-height: 5px;
 
         &::before {
             position: absolute;
-            top: calc(50% - #{$m-space-xs} - #{$m-message-page--shadow-height}); // Magic number: align this backgroun with icon
+            top: calc(50% - #{$m-space-2xs} - #{$m-message-page--shadow-height}); // Magic number: align this backgroun with icon
             z-index: 0;
             content: '';
             display: block;
@@ -155,7 +153,7 @@ $m-message-page--shadow-height: 5px;
         }
 
         + .m-message-page__hints {
-            margin-top: $m-space-sm;
+            margin-top: $m-space;
         }
     }
 
@@ -163,7 +161,7 @@ $m-message-page--shadow-height: 5px;
         margin: 0;
 
         &:not(:first-child) {
-            margin: $m-space 0 0 0;
+            margin: $m-space-md 0 0 0;
         }
     }
 
@@ -173,7 +171,7 @@ $m-message-page--shadow-height: 5px;
         padding: 0;
 
         &:not(:first-child) {
-            margin: $m-space 0 0 0;
+            margin: $m-space-md 0 0 0;
         }
     }
 }

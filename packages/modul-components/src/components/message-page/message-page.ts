@@ -1,14 +1,13 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_NAME, LINK_NAME, MESSAGE_PAGE_NAME, SVG_NAME } from '../component-names';
-import { MIcon } from '../icon/icon';
+import { MESSAGE_PAGE_NAME } from '../component-names';
 import { MLink } from '../link/link';
 import { MSvg } from './../svg/svg';
 import WithRender from './message-page.html?style=./message-page.scss';
-
 
 /**
  * Utility class to manage the properties related to the link displayed in the error pages.
@@ -44,48 +43,48 @@ export enum MMessagePageState {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon,
-        [LINK_NAME]: MLink,
-        [SVG_NAME]: MSvg
+        MLink,
+        MSvg
     }
 })
 export class MMessagePage extends ModulVue {
-
     @Prop({
         default: 'error',
-        validator: value =>
-            value === MMessagePageState.Information ||
-            value === MMessagePageState.Warning ||
-            value === MMessagePageState.Confirmation ||
-            value === MMessagePageState.Error
+        validator: value => Enums.toValueArray(MMessagePageState).includes(value)
     })
-    public state: MMessagePageState;
+    public readonly state: MMessagePageState;
 
     @Prop({
         default: MMessagePageSkin.Default,
-        validator: value =>
-            value === MMessagePageSkin.Default ||
-            value === MMessagePageSkin.Light
+        validator: value => Enums.toValueArray(MMessagePageSkin).includes(value)
     })
-    public skin: string;
+    public readonly skin: string;
 
     @Prop()
-    public iconName: string;
-
-    @Prop({})
-    public svgName: string;
+    public readonly iconName: string;
 
     @Prop()
-    public imageSize: string;
+    public readonly svgName: string;
 
     @Prop()
-    public title: string;
+    public readonly imageSize: string;
+
+    @Prop()
+    public readonly title: string;
 
     @Prop({ default: () => [] })
-    public hints: string[];
+    public readonly hints: string[];
 
     @Prop({ default: () => [] })
-    public links: Link[];
+    public readonly links: Link[];
+
+
+    protected beforeCreate(): void {
+        this.$svgSprite.addSvg(ModulIconName.ConfirmationWhiteFilled, require('../../assets/icons/svg/confirmation-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.InformationWhiteFilled, require('../../assets/icons/svg/information-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.WarningWhiteFilled, require('../../assets/icons/svg/warning-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.ErrorWhiteFilled, require('../../assets/icons/svg/error-white-filled.svg'));
+    }
 
     public get hasHints(): boolean {
         return this.hints.length > 0;
@@ -100,10 +99,6 @@ export class MMessagePage extends ModulVue {
             return this.imageSize;
         }
         return this.isSkinLight ? MMessagePageImageSize.Small : MMessagePageImageSize.Default;
-    }
-
-    public isTargetExternal(isExternal: boolean): string {
-        return isExternal ? '_blank' : '';
     }
 
     public get hasLinksAndSlot(): boolean {
@@ -141,18 +136,21 @@ export class MMessagePage extends ModulVue {
     public get iconNameProp(): string {
         if (this.iconName) {
             return this.iconName;
-        } else {
-            switch (this.state) {
-                case MMessagePageState.Confirmation:
-                    return ModulIconName.ConfirmationWhiteFilled;
-                case MMessagePageState.Information:
-                    return ModulIconName.InformationWhiteFilled;
-                case MMessagePageState.Warning:
-                    return ModulIconName.WarningWhiteFilled;
-                default:
-                    return ModulIconName.ErrorWhiteFilled;
-            }
         }
+        switch (this.state) {
+            case MMessagePageState.Confirmation:
+                return ModulIconName.ConfirmationWhiteFilled;
+            case MMessagePageState.Information:
+                return ModulIconName.InformationWhiteFilled;
+            case MMessagePageState.Warning:
+                return ModulIconName.WarningWhiteFilled;
+            default:
+                return ModulIconName.ErrorWhiteFilled;
+        }
+    }
+
+    public isTargetExternal(isExternal: boolean): string {
+        return isExternal ? '_blank' : '';
     }
 }
 
