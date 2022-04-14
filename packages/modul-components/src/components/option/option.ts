@@ -9,6 +9,7 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { OPTION_ITEM_ADD_NAME, OPTION_ITEM_ARCHIVE_NAME, OPTION_ITEM_DELETE_NAME, OPTION_ITEM_EDIT_NAME, OPTION_ITEM_NAME, OPTION_NAME, OPTION_SEPARATOR, OPTION_TITLE } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
+import { MIcon } from '../icon/icon';
 import { MPopperPlacement } from '../popper/popper';
 import { MPopup } from '../popup/popup';
 import { MOptionItem } from './option-item/option-item';
@@ -41,7 +42,8 @@ export enum MOptionsSkin {
 @Component({
     components: {
         MPopup,
-        MIconButton
+        MIconButton,
+        MIcon
     },
     mixins: [
         MediaQueries,
@@ -53,25 +55,28 @@ export class MOption extends BaseOption implements MOptionInterface {
         default: MPopperPlacement.Bottom,
         validator: value => Enums.toValueArray(MPopperPlacement).includes(value)
     })
-    public placement: MPopperPlacement;
+    public readonly placement: MPopperPlacement;
 
     @Prop({
         default: MOptionsSkin.Light,
         validator: value => Enums.toValueArray(MOptionsSkin).includes(value)
     })
-    public skin: MOptionsSkin;
+    public readonly skin: MOptionsSkin;
 
     @Prop({ default: function(): string { return this.$i18n.translate('m-option:show-more'); } })
-    public title: string;
+    public readonly title: string;
 
     @Prop()
-    public disabled: boolean;
+    public readonly ariaLabel?: string;
+
+    @Prop()
+    public readonly disabled: boolean;
 
     @Prop({ default: '44px' })
-    public size: string;
+    public readonly size: string;
 
     @Prop({ default: true })
-    public scroll: boolean;
+    public readonly scroll: boolean;
 
     @Prop({ default: '260px' })
     public maxWidth: string;
@@ -175,7 +180,6 @@ export class MOption extends BaseOption implements MOptionInterface {
 
 const OptionPlugin: PluginObject<any> = {
     install(v, options): void {
-
         v.use(MediaQueriesPlugin);
         v.component(OPTION_ITEM_NAME, MOptionItem);
         v.component(OPTION_ITEM_ARCHIVE_NAME, MOptionItemArchive);
@@ -185,7 +189,6 @@ const OptionPlugin: PluginObject<any> = {
         v.component(OPTION_TITLE, MOptionTitle);
         v.component(OPTION_SEPARATOR, MOptionSeparator);
         v.component(OPTION_NAME, MOption);
-
     }
 };
 
