@@ -16,17 +16,10 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-session-expired defa
         >
           <svg
             aria-hidden="true"
-            class="m-icon"
+            class="m-svg"
             height="1em"
             width="1em"
-          >
-            <!---->
-             
-            <use
-              aria-hidden="true"
-              class=""
-            />
-          </svg>
+          />
         </div>
          
         <div
@@ -37,11 +30,11 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-session-expired defa
           <div
             class="m-message__text"
           >
-            <span
-              class="m-i18n"
-            >
-              Votre session de travail est expirée.
-            </span>
+            <p>
+              
+           Votre session de travail est expirée.
+       
+            </p>
           </div>
         </div>
          
@@ -50,38 +43,36 @@ exports[`Storyshots modul-components|/m-error-pages/m-error-session-expired defa
     </div>
      
     <p>
-      <span
-        class="m-i18n"
-      >
+      
         En raison d'une trop grande période d'inactivité ou parce que vous vous êtes déconnecté d’un système partenaire, votre session de travail a été interrompue.
-      </span>
+    
     </p>
      
     <p>
-      <span
-        class="m-i18n"
-      >
+      
         Vous devrez peut-être vous connecter de nouveau.
-      </span>
+    
     </p>
      
-    <a
-      class="m-link m--has-content"
-      href="/"
-      tabindex="0"
-    >
-      <!---->
-       
-      <span
-        class="m-link__text"
+    <p>
+      <a
+        class="m-link m--has-content"
+        href="/"
+        tabindex="0"
       >
+        <!---->
+         
+        <span
+          class="m-link__text"
+        >
+          
+            Retour au portail
         
-        Retour au portail
-    
-      </span>
-       
-      <!---->
-    </a>
+        </span>
+         
+        <!---->
+      </a>
+    </p>
   </div>
 </div>
 `;
