@@ -78,8 +78,10 @@ export class MMessagePage extends ModulVue {
     @Prop({ default: () => [] })
     public readonly links: Link[];
 
-
     protected beforeCreate(): void {
+        if (!this.$svgSprite) {
+            return;
+        }
         this.$svgSprite.addSvg(ModulIconName.ConfirmationWhiteFilled, require('../../assets/icons/svg/confirmation-white-filled.svg'));
         this.$svgSprite.addSvg(ModulIconName.InformationWhiteFilled, require('../../assets/icons/svg/information-white-filled.svg'));
         this.$svgSprite.addSvg(ModulIconName.WarningWhiteFilled, require('../../assets/icons/svg/warning-white-filled.svg'));

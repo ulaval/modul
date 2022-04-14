@@ -2,6 +2,7 @@ import { createLocalVue, mount, Wrapper } from '@vue/test-utils';
 import Vue, { VueConstructor } from 'vue';
 import { addMessages } from '../../../tests/helpers/lang';
 import { renderComponent } from '../../../tests/helpers/render';
+import SvgSpritesPlugin from '../../utils/svg/svg-sprite';
 import MessagePlugin, { MMessage } from './message';
 
 
@@ -11,6 +12,7 @@ describe('MMessage', () => {
     beforeEach(() => {
         localVue = createLocalVue();
         localVue.use(MessagePlugin);
+        localVue.use(SvgSpritesPlugin);
         addMessages(localVue, ['components/message/message.lang.en.json']);
     });
 
@@ -24,11 +26,6 @@ describe('MMessage', () => {
 
         return expect(renderComponent(msg.vm)).resolves.toEqual('');
     });
-
-
-
-
-
 
 
     it('should render nothing after close button is clicked', async () => {

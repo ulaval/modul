@@ -51,7 +51,7 @@ export enum MToastDuration {
     components: {
         MIconButton,
         MLink,
-        MSvg,
+        MSvg
     },
     mixins: [MediaQueries, Portal]
 })
@@ -159,6 +159,9 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     }
 
     protected beforeCreate(): void {
+        if (!this.$svgSprite) {
+            return;
+        }
         this.$svgSprite.addSvg(ModulIconName.ConfirmationWhiteFilled, require('../../assets/icons/svg/confirmation-white-filled.svg'));
         this.$svgSprite.addSvg(ModulIconName.InformationWhiteFilled, require('../../assets/icons/svg/information-white-filled.svg'));
         this.$svgSprite.addSvg(ModulIconName.WarningWhiteFilled, require('../../assets/icons/svg/warning-white-filled.svg'));

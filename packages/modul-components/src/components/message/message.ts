@@ -1,9 +1,10 @@
 
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ModulIconName } from '../../utils/modul-icons/modul-icons';
+import { ModulVue } from '../../utils/vue/vue';
 import { MESSAGE_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MMessagePage, MMessagePageSkin } from '../message-page/message-page';
@@ -32,7 +33,7 @@ export enum MMessageSkin {
         MMessagePage
     }
 })
-export class MMessage extends Vue {
+export class MMessage extends ModulVue {
     @Prop({
         default: MMessageState.Confirmation,
         validator: value => Enums.toValueArray(MMessageState).includes(value)
@@ -69,6 +70,9 @@ export class MMessage extends Vue {
     public emitUpdateVisible(_isVisible: Boolean): void { }
 
     protected beforeCreate(): void {
+        if (!this.$svgSprite) {
+            return;
+        }
         this.$svgSprite.addSvg(ModulIconName.ConfirmationWhiteFilled, require('../../assets/icons/svg/confirmation-white-filled.svg'));
         this.$svgSprite.addSvg(ModulIconName.InformationWhiteFilled, require('../../assets/icons/svg/information-white-filled.svg'));
         this.$svgSprite.addSvg(ModulIconName.WarningWhiteFilled, require('../../assets/icons/svg/warning-white-filled.svg'));
