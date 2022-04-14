@@ -46,14 +46,15 @@ $m-sortable-icon-size: 14px;
         }
 
         th {
-            color: $m-color-grey;
+            color: $m-color-text;
             font-weight: $m-font-weight-semi-bold;
 
             &.m--is-sortable {
+                transition: color $m-transition-duration ease;
                 cursor: pointer;
 
                 &:hover {
-                    color: $m-color-grey-darker;
+                    color: $m-color-grey-dark;
 
                     .m-table__sortable-icon {
                         color: $m-color-grey;
