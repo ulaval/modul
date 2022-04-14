@@ -28,8 +28,9 @@
             <div class="m-toast__wrap">
                 <div v-if="icon"
                      class="m-toast__icon">
-                    <m-icon :name="getIcon()"
-                            size="1em" />
+                    <m-svg :name="getIcon()"
+                            width="1em"
+                            height="1em" />
                 </div>
                 <div class="m-toast__body" aria-hidden="true">
                     <div class="m-toast__text">

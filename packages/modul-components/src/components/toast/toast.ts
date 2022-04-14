@@ -9,8 +9,8 @@ import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../utils/vue/vue';
 import { TOAST } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
-import { MIcon } from '../icon/icon';
 import { MLink, MLinkMode } from '../link/link';
+import { MSvg } from '../svg/svg';
 import WithRender from './toast.html?style=./toast.scss';
 
 export enum MToastTimeout {
@@ -49,9 +49,9 @@ export enum MToastDuration {
 @WithRender
 @Component({
     components: {
-        MIcon,
         MIconButton,
-        MLink
+        MLink,
+        MSvg,
     },
     mixins: [MediaQueries, Portal]
 })
@@ -156,6 +156,13 @@ export class MToast extends ModulVue implements PortalMixinImpl {
 
     public handlesFocus(): boolean {
         return false;
+    }
+
+    protected beforeCreate(): void {
+        this.$svgSprite.addSvg(ModulIconName.ConfirmationWhiteFilled, require('../../assets/icons/svg/confirmation-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.InformationWhiteFilled, require('../../assets/icons/svg/information-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.WarningWhiteFilled, require('../../assets/icons/svg/warning-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.ErrorWhiteFilled, require('../../assets/icons/svg/error-white-filled.svg'));
     }
 
     protected mounted(): void {

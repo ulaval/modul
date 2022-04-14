@@ -40,7 +40,7 @@ $m-toast-max-width: 768px;
         display: flex;
         padding: $m-space 0 $m-space $m-space;
 
-        .m-icon {
+        svg {
             @include m-font-size('h2');
         }
     }
