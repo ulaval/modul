@@ -1,17 +1,21 @@
 <div>
     <m-message state="information">
-        <m-i18n k="m-session-expired:message"></m-i18n>
+       <p>
+           {{ $i18n.translate('m-session-expired:message') }}
+       </p>
     </m-message>
     <p>
-        <m-i18n k="m-session-expired:directions-1"></m-i18n>
+        {{ $i18n.translate('m-session-expired:directions-1') }}
     </p>
     <p>
-        <m-i18n k="m-session-expired:directions-2"></m-i18n>
+        {{ $i18n.translate('m-session-expired:directions-2') }}
     </p>
-    <m-link mode="link"
+    <p>
+        <m-link mode="link"
             :url="url"
             :target="target"
             @click="onClick">
-        {{backToLabel}}
-    </m-link>
+            {{ backToLabel }}
+        </m-link>
+    </p>
 </div>

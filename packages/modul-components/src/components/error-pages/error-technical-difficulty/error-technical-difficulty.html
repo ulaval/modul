@@ -7,18 +7,20 @@
     <m-accordion skin="light"
                  icon-size="small"
                  :open="openAccordion">
-        <m-i18n slot="header" k="m-error-technical-difficulty:details"></m-i18n>
-        <p class="m-error-technical-difficulty__browser"><strong>{{'m-error-technical-difficulty:browser' | f-m-i18n}}: </strong>{{userAgent}}</p>
-        <p v-if="!!errorReferenceNumber"><strong>{{'m-error-technical-difficulty:reference-number' | f-m-i18n}}: </strong>{{errorReferenceNumber}}</p>
-        <p v-if="!!system"><strong>{{'m-error-technical-difficulty:system' | f-m-i18n}}: </strong>{{system}}</p>
+        <span slot="header">
+            {{ $i18n.translate('m-error-technical-difficulty:details') }}
+        </span>
+        <p class="m-error-technical-difficulty__browser"><strong>{{ $i18n.translate('m-error-technical-difficulty:browser') }}: </strong>{{ userAgent }}</p>
+        <p v-if="!!errorReferenceNumber"><strong>{{ $i18n.translate('m-error-technical-difficulty:reference-number') }}: </strong>{{ errorReferenceNumber }}</p>
+        <p v-if="!!system"><strong>{{ $i18n.translate('m-error-technical-difficulty:system') }}: </strong>{{ system }}</p>
         <p>
-            {{'m-error-technical-difficulty:date.primary' | f-m-i18n}}
+            {{ $i18n.translate('m-error-technical-difficulty:date.primary') }}
             <strong>{{formattedDate}}</strong>
-            {{'m-error-technical-difficulty:date.secondary' | f-m-i18n}}
-            <strong>{{formattedTime}}</strong>
+            {{ $i18n.translate('m-error-technical-difficulty:date.secondary') }}
+            <strong>{{ formattedTime }}</strong>
         </p>
         <m-panel  class="m-error-technical-difficulty__stacktrace" :padding="false" v-if="propStacktrace">
-            <pre>{{error.stack}}</pre>
+            <pre>{{ error.stack }}</pre>
         </m-panel>
     </m-accordion>
 </m-message-page>

@@ -2,44 +2,41 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_PAGE_NOT_FOUND_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
+import { ERROR_PAGE_NOT_FOUND_NAME } from '../../component-names';
 import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-page-not-found.html';
 
-
 @WithRender
 @Component({
     components: {
-        [MESSAGE_PAGE_NAME]: MMessagePage
+        MMessagePage
     }
 })
 export class MErrorPageNotFound extends ModulVue {
-
     @Prop({
         default: () => (Vue.prototype).$i18n.translate('m-error-page-not-found:title')
     })
-    public title: string;
+    public readonly title: string;
 
     @Prop({
         default: () => [
             new Link((Vue.prototype).$i18n.translate('m-error-page-not-found:home-label'), `\\`)]
     })
-    public links: Link[];
+    public readonly links: Link[];
 
     @Prop({
         default: () => [
             (Vue.prototype).$i18n.translate('m-error-page-not-found:hint.primary')]
     })
-    public hints: string[];
+    public readonly hints: string[];
 
-    readonly state: string = MMessageState.Warning;
+    public readonly state: string = MMessageState.Warning;
+    public readonly svgName: string = 'message-error-page-not-found';
 
-    beforeCreate(): void {
+    public beforeCreate(): void {
         this.$svgSprite.addSvg('message-error-page-not-found', require('./message-error-page-not-found.svg'));
     }
-
-    readonly svgName: string = 'message-error-page-not-found';
 }
 
 const ErrorPageNotFoundPlugin: PluginObject<any> = {
