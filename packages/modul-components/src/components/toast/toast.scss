@@ -100,8 +100,8 @@ $m-toast-max-width: 768px;
 
         &.m--is-center {
             max-width: $m-toast-max-width;
-            left: 0;
-            right: 0;
+            left: $m-space;
+            right: $m-space;
             margin: 0 auto;
         }
 
