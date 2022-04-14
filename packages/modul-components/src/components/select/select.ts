@@ -37,7 +37,6 @@ import WithRender from './select.html?style=./select.scss';
     ]
 })
 export class MSelect extends ModulVue {
-
     @Model('input')
     @Prop()
     public readonly value: string;
