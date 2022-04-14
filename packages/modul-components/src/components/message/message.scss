@@ -59,7 +59,7 @@
         &__icon {
             justify-content: center;
 
-            .m-svg {
+            svg {
                 @include m-font-size('h2');
             }
         }
