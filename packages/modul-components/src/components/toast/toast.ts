@@ -5,9 +5,10 @@ import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/medi
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl } from '../../mixins/portal/portal';
 import { Enums } from '../../utils/enums/enums';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
+import { ModulIconName } from '../../utils/modul-icons/modul-icons';
 import { ModulVue } from '../../utils/vue/vue';
 import { TOAST } from '../component-names';
-import { MIconButton } from '../icon-button/icon-button';
+import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
 import { MLink, MLinkMode } from '../link/link';
 import WithRender from './toast.html?style=./toast.scss';
@@ -99,6 +100,8 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     };
 
     public readonly buttonMode: MLinkMode = MLinkMode.Button;
+    public readonly closeButtonSkin: MIconButtonSkin = MIconButtonSkin.Light;
+    public readonly closeButtonIconeName: ModulIconName = ModulIconName.CloseClear;
     public showScreenReaderText: boolean = false;
     private timerCloseToast: any;
     private internalTimeout: number;
@@ -161,7 +164,7 @@ export class MToast extends ModulVue implements PortalMixinImpl {
         }
     }
 
-    private convertTimeout(timeout: MToastTimeout): number {
+    public convertTimeout(timeout: MToastTimeout): number {
         switch (timeout) {
             case MToastTimeout.long:
                 return this.isMobile ? MToastDuration.MobileLong : MToastDuration.DesktopLong;
@@ -176,27 +179,27 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     }
 
     @Emit('action-button')
-    private onAction(event: Event): void {
+    public onAction(event: Event): void {
         this.onClose();
     }
 
-    private onClose(): void {
+    public onClose(): void {
         this.as<PortalMixin>().propOpen = false;
     }
 
-    private get isStateInformation(): boolean {
+    public get isStateInformation(): boolean {
         return this.state === MToastState.Information;
     }
 
-    private get isStateWarning(): boolean {
+    public get isStateWarning(): boolean {
         return this.state === MToastState.Warning;
     }
 
-    private get isStateError(): boolean {
+    public get isStateError(): boolean {
         return this.state === MToastState.Error;
     }
 
-    private get isStateConfirmation(): boolean {
+    public get isStateConfirmation(): boolean {
         return this.state === MToastState.Confirmation;
     }
 
@@ -206,35 +209,35 @@ export class MToast extends ModulVue implements PortalMixinImpl {
             this.position === MToastPosition.TopRight;
     }
 
-    private get isLeft(): boolean {
+    public get isLeft(): boolean {
         return this.position === MToastPosition.TopLeft ||
             this.position === MToastPosition.BottomLeft;
     }
 
-    private get isCenter(): boolean {
+    public get isCenter(): boolean {
         return this.position === MToastPosition.TopCenter ||
             this.position === MToastPosition.BottomCenter;
     }
 
-    private get isRight(): boolean {
+    public get isRight(): boolean {
         return this.position === MToastPosition.TopRight ||
             this.position === MToastPosition.BottomRight;
     }
 
-    private get isMobile(): boolean {
+    public get isMobile(): boolean {
         return this.as<MediaQueriesMixin>().isMqMaxS;
     }
 
-    private getIcon(): string {
+    public getIcon(): string {
         switch (this.state) {
             case MToastState.Confirmation:
-                return 'm-svg__confirmation';
+                return ModulIconName.ConfirmationWhiteFilled;
             case MToastState.Information:
-                return 'm-svg__information';
+                return ModulIconName.InformationWhiteFilled;
             case MToastState.Warning:
-                return 'm-svg__warning';
+                return ModulIconName.WarningWhiteFilled;
             case MToastState.Error:
-                return 'm-svg__error';
+                return ModulIconName.ErrorWhiteFilled;
             default:
                 return '';
         }
@@ -248,17 +251,16 @@ export class MToast extends ModulVue implements PortalMixinImpl {
         }
     }
 
-    private restoreTimeout(): void {
-        let instantTimeoutStop: number = Date.now();
-        this.internalTimeout -= (instantTimeoutStop - this.instantTimeoutStart);
-    }
-
     public mouseLeaveToast(): void {
         if (!this.isMobile) {
             this.startCloseToast();
         }
     }
 
+    private restoreTimeout(): void {
+        let instantTimeoutStop: number = Date.now();
+        this.internalTimeout -= (instantTimeoutStop - this.instantTimeoutStart);
+    }
 }
 
 const ToastPlugin: PluginObject<any> = {
