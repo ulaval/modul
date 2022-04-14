@@ -14,10 +14,6 @@ describe('MMessage', () => {
         addMessages(localVue, ['components/message/message.lang.en.json']);
     });
 
-
-
-
-
     it('should render nothing if not visible', () => {
         const msg: Wrapper<MMessage> = mount(MMessage, {
             localVue: localVue,

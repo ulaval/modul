@@ -12,24 +12,25 @@
          v-if="isNotSkinPage">
         <div class="m-message__icon"
              v-if="icon">
-            <m-icon :name="getIcon()"
-                    size="1em"></m-icon>
+            <m-svg :name="getIcon()"
+                    width="1em"
+                    height="1em" />
         </div>
         <div class="m-message__body"
              :class="{'m--has-close-button': closeButton}">
             <h2 class="m-message__title"
-                v-if="title">{{title}}</h2>
+                v-if="title">{{ title }}</h2>
             <div class="m-message__text"
                  v-if="$slots.default">
-                <slot></slot>
+                <slot />
             </div>
         </div>
         <m-icon-button class="m-message__body__close-button"
                        v-if="showCloseButton"
                        icon-name="m-svg__close-clear"
                        icon-size="10px"
-                       @click="onClose">
-            {{'m-message:close' | f-m-i18n}}
+                       @click="emitClose">
+            {{ $i18n.translate('m-message:close') }}
         </m-icon-button>
     </div>
     <m-message-page class="m-message__page"
@@ -37,6 +38,6 @@
                     :state="state"
                     :skin="skinPageValue"
                     :title="title">
-        <slot></slot>
+        <slot />
     </m-message-page>
 </div>
