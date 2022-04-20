@@ -268,8 +268,7 @@ export class MToast extends ModulVue implements PortalMixinImpl {
     }
 
     private restoreTimeout(): void {
-        let instantTimeoutStop: number = Date.now();
-        this.internalTimeout -= (instantTimeoutStop - this.instantTimeoutStart);
+        this.internalTimeout -= (Date.now() - this.instantTimeoutStart);
     }
 }
 
