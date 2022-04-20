@@ -38,7 +38,7 @@
     <div class="m-option__dialog" role="dialog" ref="menu" tabindex="-1">
         <ul class="m-option__list"
             :style="{ maxHeight: menuMaxHeight, maxWidth: optionMaxWidth }"
-            :aria-labelledby="id">
+            :aria-label="ariaLabel">
             <slot />
             <li class="m-option__close-menu-item" :class="{'m--is-visible': isCloseButtonVisible }">
                 <button class="m-option__close-menu-button"
