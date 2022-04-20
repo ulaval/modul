@@ -1,7 +1,6 @@
 <portal v-if="portalCreated"
         :target-el="portalTargetSelector"
-        open-trigger="manual"
-        >
+        open-trigger="manual">
     <transition name="m--is">
         <div v-show="portalMounted && propOpen"
              class="m-toast"
@@ -29,8 +28,9 @@
             <div class="m-toast__wrap">
                 <div v-if="icon"
                      class="m-toast__icon">
-                    <m-icon :name="getIcon()"
-                            size="1em" />
+                    <m-svg :name="getIcon()"
+                            width="1em"
+                            height="1em" />
                 </div>
                 <div class="m-toast__body" aria-hidden="true">
                     <div class="m-toast__text">
@@ -45,12 +45,11 @@
                 <m-icon-button class="m-toast__close-button"
                                v-if="closeButton"
                                :title="$i18n.translate('m-toast:close')"
-                               @click="onClose"
-                               icon-name="m-svg__close-clear"
-                               iconSize="12px"
+                               :skin="closeButtonSkin"
+                               :icon-name="closeButtonIconeName"
+                               icon-size="12px"
                                ref="toastclose"
-                               skin="link">
-                </m-icon-button>
+                               @click="onClose" />
             </div>
         </div>
     </transition>

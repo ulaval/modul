@@ -39,6 +39,16 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${OPTION_NAME}`, module)
                        <m-option-item-delete></m-option-item-delete>
                    </m-option>`
     }))
+    .add('aria-label', () => ({
+        data: () => ({
+            model1: ''
+        }),
+        template: `<m-option aria-label="Option - Test aria-label">
+                       <m-option-item-add></m-option-item-add>
+                       <m-option-item-archive></m-option-item-archive>
+                       <m-option-item-delete></m-option-item-delete>
+                   </m-option>`
+    }))
     .add('option-title & separator', () => ({
         data: () => ({
             model1: ''

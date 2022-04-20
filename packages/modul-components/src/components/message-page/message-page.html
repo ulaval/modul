@@ -11,15 +11,10 @@
             v-html="title"></h2>
         <div class="m-message-page__icon-container"
              aria-hidden="true">
-            <m-svg v-if="svgName"
-                   class="m-message-page__icon"
+            <m-svg class="m-message-page__icon"
                    :width="propImageSize"
                    :height="propImageSize"
-                   :name="svgName" />
-            <m-icon v-else
-                    class="m-message-page__icon"
-                    :name="iconNameProp"
-                    :size="propImageSize" />
+                   :name="svgName || iconNameProp" />
         </div>
     </header>
     <div class="m-message-page__body"

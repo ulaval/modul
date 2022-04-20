@@ -7,6 +7,8 @@
         'm--has-validation-message': hasValidationMessage,
         'm--is-validation-message-position-bottom': isValidationMessagePositionBottom
     }"
+    @focusin="emitFocusin"
+    @focusout="emitFocusout"
 >
     <legend
         v-if="hasLabel"

@@ -1449,132 +1449,128 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
     style="width: 300px; margin-bottom: 5px; border-bottom: 1px solid black; display: flex; padding-bottom: 10px;"
   />
    
-  <div
-    class="m-radio-group"
+  <fieldset
+    class="m-input-group m-radio-group"
   >
-    <fieldset
-      class="m-input-group"
+    <legend
+      class="m-input-group__label"
+      id="fakeId"
     >
-      <legend
-        class="m-input-group__label"
-        id="fakeId"
-      >
-        
+      
         Style de coupe
         
+      <!---->
+       
+      <!---->
+    </legend>
+     
+    <div
+      class="m-input-group__body"
+    >
+      <div
+        class="m-validation-message m-input-group__message"
+        id="fakeId"
+      >
         <!---->
-         
+         
         <!---->
-      </legend>
+      </div>
        
       <div
-        class="m-input-group__body"
+        aria-describedby="fakeId"
+        aria-labelledby="fakeId"
+        class="m-input-group__content"
       >
-        <div
-          class="m-validation-message m-input-group__message"
-          id="fakeId"
-        >
-          <!---->
-           
-          <!---->
-        </div>
          
-        <div
-          aria-describedby="fakeId"
-          aria-labelledby="fakeId"
-          class="m-input-group__content"
+        <ul
+          class="m-radio-group__body"
+          role="radiogroup"
         >
-           
-          <ul
-            class="m-radio-group__body"
-            role="radiogroup"
+          <li
+            class="m-radio"
           >
-            <li
-              class="m-radio"
+            <input
+              class="m-radio__hidden"
+              id="mRadio-fakeId"
+              name="fakeId"
+              type="radio"
+              value="régulière"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="mRadio-fakeId"
             >
-              <input
-                class="m-radio__hidden"
-                id="mRadio-fakeId"
-                name="fakeId"
-                type="radio"
-                value="régulière"
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
               />
                
-              <label
-                class="m-radio__wrap"
-                for="mRadio-fakeId"
+              <span
+                class="m-radio__label"
               >
-                <span
-                  aria-hidden="true"
-                  class="m-radio__input"
-                />
-                 
-                <span
-                  class="m-radio__label"
-                >
-                  régulière
-                </span>
-              </label>
-            </li>
-            <li
-              class="m-radio"
+                régulière
+              </span>
+            </label>
+          </li>
+          <li
+            class="m-radio"
+          >
+            <input
+              class="m-radio__hidden"
+              id="mRadio-fakeId"
+              name="fakeId"
+              type="radio"
+              value="julienne"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="mRadio-fakeId"
             >
-              <input
-                class="m-radio__hidden"
-                id="mRadio-fakeId"
-                name="fakeId"
-                type="radio"
-                value="julienne"
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
               />
                
-              <label
-                class="m-radio__wrap"
-                for="mRadio-fakeId"
+              <span
+                class="m-radio__label"
               >
-                <span
-                  aria-hidden="true"
-                  class="m-radio__input"
-                />
-                 
-                <span
-                  class="m-radio__label"
-                >
-                  julienne
-                </span>
-              </label>
-            </li>
-            <li
-              class="m-radio"
+                julienne
+              </span>
+            </label>
+          </li>
+          <li
+            class="m-radio"
+          >
+            <input
+              class="m-radio__hidden"
+              id="mRadio-fakeId"
+              name="fakeId"
+              type="radio"
+              value="ondulé"
+            />
+             
+            <label
+              class="m-radio__wrap"
+              for="mRadio-fakeId"
             >
-              <input
-                class="m-radio__hidden"
-                id="mRadio-fakeId"
-                name="fakeId"
-                type="radio"
-                value="ondulé"
+              <span
+                aria-hidden="true"
+                class="m-radio__input"
               />
                
-              <label
-                class="m-radio__wrap"
-                for="mRadio-fakeId"
+              <span
+                class="m-radio__label"
               >
-                <span
-                  aria-hidden="true"
-                  class="m-radio__input"
-                />
-                 
-                <span
-                  class="m-radio__label"
-                >
-                  ondulé
-                </span>
-              </label>
-            </li>
-          </ul>
-        </div>
+                ondulé
+              </span>
+            </label>
+          </li>
+        </ul>
       </div>
-    </fieldset>
-  </div>
+    </div>
+  </fieldset>
    
   <p
     class="mu-mb-lg"

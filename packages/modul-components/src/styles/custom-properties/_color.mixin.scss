@@ -29,26 +29,26 @@
     --m-color-interactive-lightest: #dffaff;
     --m-color-information: #eaf5ff;
 
+    // Accent colors
+    --m-color-accent-dark: #ad6300;
+    --m-color-accent: #ce8400;
+    --m-color-accent-light: #ffaa26;
+    --m-color-accent-lightest: #ffeecf;
+
     // Success colors
-    --m-color-success-dark: #009962;
-    --m-color-success: #00c77f;
-    --m-color-success-light: #cdf3e3;
-    --m-color-success-lightest: #eaf9f1;
+    --m-color-success-dark: #086c30;
+    --m-color-success: #0a873c;
+    --m-color-success-light: #baebc7;
+    --m-color-success-lightest: #e8feef;
 
     // Warning colors
-    --m-color-warning: var(--m-color-ul-yellow);
-    --m-color-warning-lightest: #fff8e6;
+    --m-color-warning: var(--m-color-accent);
+    --m-color-warning-lightest: var(--m-color-accent-lightest);
 
     // Error colors
     --m-color-error-dark: #b3040f;
     --m-color-error: var(--m-color-ul-red);
     --m-color-error-lightest: #fcf2f3;
-
-    // Accent colors
-    --m-color-accent-dark: #ed8514;
-    --m-color-accent: #f39612;
-    --m-color-accent-light: #ffaa26;
-    --m-color-accent-lightest: #ffeecf;
 
     // Active colors
     --m-color-active: var(--m-color-ul-yellow);

@@ -1,4 +1,4 @@
-<div
+<m-input-group
     class="m-radio-group"
     :class="{
         'm--is-inline': inline,
@@ -7,27 +7,24 @@
         'm--is-valid': isValid,
         'm--has-validation-message': hasValidationMessage
     }"
+    :label="label"
+    :required-marker="requiredMarker"
+    :validation-message-id="validationMessageId"
+    :disabled="isDisabled"
+    :waiting="isWaiting"
+    :error="hasError"
+    :error-message="errorMessage"
+    :valid="isValid"
+    :valid-message="validMessage"
+    :helper-message="helperMessage"
+    :validationMessagePosition="validationMessagePosition"
     @focusin="onFocus"
     @focusout="onBlur"
 >
-    <m-input-group
-        :label="label"
-        :required-marker="requiredMarker"
-        :validation-message-id="validationMessageId"
-        :disabled="isDisabled"
-        :waiting="isWaiting"
-        :error="hasError"
-        :error-message="errorMessage"
-        :valid="isValid"
-        :valid-message="validMessage"
-        :helper-message="helperMessage"
-        :validationMessagePosition="validationMessagePosition"
-    >
-        <slot name="icon" slot="icon" />
+    <slot name="icon" slot="icon" />
 
-        <ul class="m-radio-group__body"
-            role="radiogroup">
-            <slot />
-        </ul>
-    </m-input-group>
-</div>
+    <ul class="m-radio-group__body"
+        role="radiogroup">
+        <slot />
+    </ul>
+</m-input-group>

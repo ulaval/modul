@@ -4,11 +4,10 @@ $m-toast-icon-size: 32px;
 $m-toast-min-width: 340px;
 $m-toast-max-width: 768px;
 
-@mixin m-toast-skin-default($color, $background-color) {
+@mixin m-toast-skin-default($color) {
     .m-toast {
         &__wrap {
             border-color: $color;
-            background: $background-color;
         }
 
         &__icon {
@@ -22,11 +21,15 @@ $m-toast-max-width: 768px;
     position: fixed;
 
     &__wrap {
+        transition: transform $m-transition-duration ease;
         position: relative;
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        transition: transform $m-transition-duration ease;
+        background: $m-color-grey-lightest;
+        box-shadow: $m-box-shadow;
+        border-top: $m-border-width-lg solid;
+        border-radius: 0 0 $m-border-radius $m-border-radius;
     }
 
     &__sreen-reader-only {
@@ -37,7 +40,7 @@ $m-toast-max-width: 768px;
         display: flex;
         padding: $m-space 0 $m-space $m-space;
 
-        .m-icon {
+        svg {
             @include m-font-size('h2');
         }
     }
@@ -92,18 +95,18 @@ $m-toast-max-width: 768px;
         max-width: $m-toast-min-width;
 
         &.m--is-left {
-            left: 1%;
+            left: $m-space;
         }
 
         &.m--is-center {
             max-width: $m-toast-max-width;
-            left: 0;
-            right: 0;
+            left: $m-space;
+            right: $m-space;
             margin: 0 auto;
         }
 
         &.m--is-right {
-            right: 1%;
+            right: $m-space;
         }
 
         &.m--is-bottom {
@@ -112,20 +115,16 @@ $m-toast-max-width: 768px;
     }
 
     &.m--is-mobile {
-        left: 1vw;
-        right: 1vw;
+        left: $m-space;
+        right: $m-space;
 
         &.m--is-bottom {
-            bottom: 2vh;
+            bottom: $m-space;
         }
     }
 
     &.m--is-top {
         top: 0;
-
-        .m-toast__wrap {
-            border-bottom: $m-border-width-lg solid;
-        }
 
         &.m--is-enter-active {
             .m-toast__wrap {
@@ -135,10 +134,6 @@ $m-toast-max-width: 768px;
     }
 
     &.m--is-bottom {
-        .m-toast__wrap {
-            border-top: $m-border-width-lg solid;
-        }
-
         &.m--is-enter-active {
             .m-toast__wrap {
                 transform: translateY(130%);
@@ -147,18 +142,18 @@ $m-toast-max-width: 768px;
     }
 
     &.m--is-state-confirmation {
-        @include m-toast-skin-default($m-color-success, $m-color-success-lightest);
+        @include m-toast-skin-default($m-color-success);
     }
 
     &.m--is-state-information {
-        @include m-toast-skin-default($m-color-interactive, $m-color-information);
+        @include m-toast-skin-default($m-color-interactive);
     }
 
     &.m--is-state-warning {
-        @include m-toast-skin-default($m-color-warning, $m-color-warning-lightest);
+        @include m-toast-skin-default($m-color-warning);
     }
 
     &.m--is-state-error {
-        @include m-toast-skin-default($m-color-error, $m-color-error-lightest);
+        @include m-toast-skin-default($m-color-error);
     }
 }

@@ -1,13 +1,14 @@
 
-import Vue, { PluginObject } from 'vue';
+import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { I18N_NAME } from '../../filters/filter-names';
-import { i18nFilter } from '../../filters/i18n/i18n';
-import { ICON_BUTTON_NAME, ICON_NAME, MESSAGE_NAME, MESSAGE_PAGE_NAME } from '../component-names';
+import { Enums } from '../../utils/enums/enums';
+import { ModulIconName } from '../../utils/modul-icons/modul-icons';
+import { ModulVue } from '../../utils/vue/vue';
+import { MESSAGE_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
-import { MIcon } from '../icon/icon';
 import { MMessagePage, MMessagePageSkin } from '../message-page/message-page';
+import { MSvg } from '../svg/svg';
 import WithRender from './message.html?style=./message.scss';
 
 export enum MMessageState {
@@ -27,53 +28,55 @@ export enum MMessageSkin {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [MESSAGE_PAGE_NAME]: MMessagePage
-    },
-    filters: {
-        [I18N_NAME]: i18nFilter
+        MSvg,
+        MIconButton,
+        MMessagePage
     }
 })
-export class MMessage extends Vue {
+export class MMessage extends ModulVue {
     @Prop({
         default: MMessageState.Confirmation,
-        validator: value =>
-            value === MMessageState.Confirmation ||
-            value === MMessageState.Information ||
-            value === MMessageState.Warning ||
-            value === MMessageState.Error
+        validator: value => Enums.toValueArray(MMessageState).includes(value)
     })
-    public state: MMessageState;
+    public readonly state!: MMessageState;
 
     @Prop({
         default: MMessageSkin.Default,
-        validator: value =>
-            value === MMessageSkin.Default ||
-            value === MMessageSkin.Light ||
-            value === MMessageSkin.PageLight ||
-            value === MMessageSkin.Page
+        validator: value => Enums.toValueArray(MMessageSkin).includes(value)
     })
-    public skin: MMessageSkin;
+    public readonly skin!: MMessageSkin;
 
     @Prop({ default: true })
-    public icon: boolean;
+    public readonly icon!: boolean;
 
     @Prop()
-    public title: string;
+    public readonly title: string;
 
     @Prop()
-    public closeButton: boolean;
+    public readonly closeButton: boolean;
 
     @Prop({ default: true })
-    public visible: boolean;
+    public readonly visible: boolean;
 
+    public animReady: boolean = false;
     private internalVisible: boolean = true;
-    private animReady: boolean = false;
 
     @Emit('close')
-    onClose(event: Event): void {
+    public emitClose(_event: Event): void {
         this.propVisible = false;
+    }
+
+    @Emit('update:visible')
+    public emitUpdateVisible(_isVisible: Boolean): void { }
+
+    protected beforeCreate(): void {
+        if (!this.$svgSprite) {
+            return;
+        }
+        this.$svgSprite.addSvg(ModulIconName.ConfirmationWhiteFilled, require('../../assets/icons/svg/confirmation-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.InformationWhiteFilled, require('../../assets/icons/svg/information-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.WarningWhiteFilled, require('../../assets/icons/svg/warning-white-filled.svg'));
+        this.$svgSprite.addSvg(ModulIconName.ErrorWhiteFilled, require('../../assets/icons/svg/error-white-filled.svg'));
     }
 
     protected mounted(): void {
@@ -84,82 +87,76 @@ export class MMessage extends Vue {
     }
 
     @Watch('visible')
-    private onVisibleChange(value: boolean): void {
+    public onVisibleChange(value: boolean): void {
         this.propVisible = value;
     }
 
-    private get propVisible(): boolean {
+    public get propVisible(): boolean {
         return this.internalVisible;
     }
 
-    private set propVisible(visible: boolean) {
+    public set propVisible(visible: boolean) {
         this.internalVisible = visible === undefined ? true : visible;
-        this.$emit('update:visible', this.internalVisible);
+        this.emitUpdateVisible(this.internalVisible);
     }
 
-    private getIcon(): string {
-        let icon: string = '';
-        switch (this.state) {
-            case MMessageState.Confirmation:
-                icon = 'm-svg__confirmation';
-                break;
-            case MMessageState.Information:
-                icon = 'm-svg__information';
-                break;
-            case MMessageState.Warning:
-                icon = 'm-svg__warning';
-                break;
-            case MMessageState.Error:
-                icon = 'm-svg__error';
-                break;
-            default:
-                break;
-        }
-        return icon;
-    }
-
-    private get isSkinDefault(): boolean {
+    public get isSkinDefault(): boolean {
         return this.skin === MMessageSkin.Default;
     }
 
-    private get isSkinLight(): boolean {
+    public get isSkinLight(): boolean {
         return this.skin === MMessageSkin.Light;
     }
 
-    private get isNotSkinPage(): boolean {
+    public get isNotSkinPage(): boolean {
         return !this.isSkinPage && !this.isSkinPageLight;
     }
 
-    private get skinPageValue(): string {
+    public get skinPageValue(): string {
         return this.isSkinPage ? MMessagePageSkin.Default : MMessagePageSkin.Light;
     }
 
-    private get isSkinPage(): boolean {
+    public get isSkinPage(): boolean {
         return this.skin === MMessageSkin.Page;
     }
 
-    private get isSkinPageLight(): boolean {
+    public get isSkinPageLight(): boolean {
         return this.skin === MMessageSkin.PageLight;
     }
 
-    private get isStateInformation(): boolean {
+    public get isStateInformation(): boolean {
         return this.state === MMessageState.Information;
     }
 
-    private get isStateWarning(): boolean {
+    public get isStateWarning(): boolean {
         return this.state === MMessageState.Warning;
     }
 
-    private get isStateError(): boolean {
+    public get isStateError(): boolean {
         return this.state === MMessageState.Error;
     }
 
-    private get isStateConfirmation(): boolean {
+    public get isStateConfirmation(): boolean {
         return this.state === MMessageState.Confirmation;
     }
 
-    private get showCloseButton(): boolean {
+    public get showCloseButton(): boolean {
         return this.skin === MMessageSkin.Default && this.closeButton;
+    }
+
+    public getIcon(): string {
+        switch (this.state) {
+            case MMessageState.Confirmation:
+                return ModulIconName.ConfirmationWhiteFilled;
+            case MMessageState.Information:
+                return ModulIconName.InformationWhiteFilled;
+            case MMessageState.Warning:
+                return ModulIconName.WarningWhiteFilled;
+            case MMessageState.Error:
+                return ModulIconName.ErrorWhiteFilled;
+            default:
+                return '';
+        }
     }
 }
 

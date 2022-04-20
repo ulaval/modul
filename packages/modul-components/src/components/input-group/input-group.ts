@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Emit, Prop } from 'vue-property-decorator';
 import uuid from '../../utils/uuid/uuid';
 import { INPUT_GROUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
 import { MValidationMessage } from '../validation-message/validation-message';
@@ -31,11 +31,11 @@ export interface MInputGroupProps {
     ]
 })
 export class MInputGroup extends ModulVue implements MInputGroupProps {
+    @Prop()
+    public readonly label!: string;
 
     @Prop()
-    readonly label!: string;
-    @Prop()
-    readonly requiredMarker!: boolean;
+    public readonly requiredMarker!: boolean;
 
     @Prop({
         default: MMInputGroupValidationMessagePosition.Top,
@@ -43,22 +43,28 @@ export class MInputGroup extends ModulVue implements MInputGroupProps {
             value === MMInputGroupValidationMessagePosition.Top ||
             value === MMInputGroupValidationMessagePosition.Bottom
     })
-    public validationMessagePosition: MMInputGroupValidationMessagePosition;
+    public readonly validationMessagePosition: MMInputGroupValidationMessagePosition;
 
     @Prop({
         default: () => uuid.generate()
     })
-    public validationMessageId?: string;
+    public readonly validationMessageId?: string;
 
-    get hasLabel(): boolean {
+    @Emit('focusin')
+    public emitFocusin(_event: FocusEvent): void { }
+
+    @Emit('focusout')
+    public emitFocusout(_event: FocusEvent): void { }
+
+    public get hasLabel(): boolean {
         return !!this.label;
     }
 
-    get isValidationMessagePositionBottom(): boolean {
+    public get isValidationMessagePositionBottom(): boolean {
         return this.validationMessagePosition === MMInputGroupValidationMessagePosition.Bottom;
     }
 
-    get labelId(): string | undefined {
+    public get labelId(): string | undefined {
         return this.hasLabel ? uuid.generate() : undefined;
     }
 }

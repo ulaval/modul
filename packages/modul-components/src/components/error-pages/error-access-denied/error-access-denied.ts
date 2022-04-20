@@ -2,7 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_ACCESS_DENIED_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
+import { ERROR_ACCESS_DENIED_NAME } from '../../component-names';
 import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-access-denied.html';
@@ -11,7 +11,7 @@ import WithRender from './error-access-denied.html';
 @WithRender
 @Component({
     components: {
-        [MESSAGE_PAGE_NAME]: MMessagePage
+        MMessagePage
     }
 })
 export class MErrorAccessDenied extends ModulVue {
@@ -19,24 +19,23 @@ export class MErrorAccessDenied extends ModulVue {
     @Prop({
         default: () => (Vue.prototype).$i18n.translate('m-error-access-denied:title')
     })
-    public title: string;
+    public readonly title: string;
 
     @Prop()
-    public links: Link[];
+    public readonly links: Link[];
 
     @Prop({
         default: () => [
             (Vue.prototype).$i18n.translate('m-error-access-denied:hint.primary')]
     })
-    public hints: string[];
+    public readonly hints: string[];
 
-    readonly state: string = MMessageState.Information;
+    public readonly state: string = MMessageState.Information;
+    public readonly svgName: string = 'message-error-access-denied';
 
-    beforeCreate(): void {
+    public beforeCreate(): void {
         this.$svgSprite.addSvg('message-error-access-denied', require('./message-error-access-denied.svg'));
     }
-
-    readonly svgName: string = 'message-error-access-denied';
 }
 
 const ErrorAccessDeniedPlugin: PluginObject<any> = {

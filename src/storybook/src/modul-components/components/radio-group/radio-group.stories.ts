@@ -21,7 +21,7 @@ export const defaultStory = () => ({
         'focus',
         'blur'
     ),
-    template: `<m-radio-group @change="change" @focus="focus" @blur="blur" v-model="model">` + RADIOS
+    template: `<m-radio-group @change="change" @focus="focus" @blur="blur" v-model="model">${RADIOS}`
 });
 
 defaultStory.story = {
@@ -32,28 +32,28 @@ export const inline = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :inline="true">` + RADIOS
+    template: `<m-radio-group v-model="model" :inline="true">${RADIOS}`
 });
 
 export const radiosVerticalAlignCenter = () => ({
     data: () => ({
         model: '1'
     }),
-    template: `<m-radio-group v-model="model" radios-vertical-align="center">` + RADIOS
+    template: `<m-radio-group v-model="model" radios-vertical-align="center">${RADIOS}`
 });
 
 export const radiosMarginTop10px = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" radios-margin-top="10px">` + RADIOS
+    template: `<m-radio-group v-model="model" radios-margin-top="10px">${RADIOS}`
 });
 
 export const label = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" label="This is a label">` + RADIOS
+    template: `<m-radio-group v-model="model" label="This is a label">${RADIOS}`
 });
 
 export const iconSlot = () => ({
@@ -63,84 +63,91 @@ export const iconSlot = () => ({
     template: `<m-radio-group v-model="model" label="This is a label">
                     <template #icon>
                         <m-icon name="m-svg__add-circle" />
-                    </template>` + RADIOS
+                    </template>${RADIOS}`
 });
 
 export const focus = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :focus="true">` + RADIOS
+    template: `<m-radio-group v-model="model" :focus="true">${RADIOS}`
 });
 
 export const focusWithModel = () => ({
     data: () => ({
         model: '2'
     }),
-    template: `<m-radio-group v-model="model" :focus="true">` + RADIOS
+    template: `<m-radio-group v-model="model" :focus="true">${RADIOS}`
 });
 
 export const error = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :error="true">` + RADIOS
+    template: `<m-radio-group v-model="model" :error="true">${RADIOS}`
 });
 
 export const valid = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :valid="true">` + RADIOS
+    template: `<m-radio-group v-model="model" :valid="true">${RADIOS}`
 });
 
 export const errorMessage = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" error-message="This is an error message">` + RADIOS
+    template: `<m-radio-group v-model="model" error-message="This is an error message">${RADIOS}`
 });
 
 export const errorMessageAndLabel = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label">` + RADIOS
+    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label">${RADIOS}`
+});
+
+export const ariaLabelledby = () => ({
+    data: () => ({
+        model: ''
+    }),
+    template: `<div><div id="ariaLabelledbyId">Label</div><m-radio-group aria-labelledby="ariaLabelledbyId" v-model="model">${RADIOS}</div>`
 });
 
 export const requiredMarker = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :required-marker="true" label="This is a label">` + RADIOS
+    template: `<m-radio-group v-model="model" :required-marker="true" label="This is a label">${RADIOS}`
 });
 
 export const inlineRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :inline="true" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" :inline="true" radios-position="right">${RADIOS}`
 });
 
 export const radiosVerticalAlignCenterRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" radios-vertical-align="center" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" radios-vertical-align="center" radios-position="right">${RADIOS}`
 });
 
 export const radiosMarginTop10pxRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" radios-margin-top="10px" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" radios-margin-top="10px" radios-position="right">${RADIOS}`
 });
 
 export const labelRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" label="This is a label" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" label="This is a label" radios-position="right">${RADIOS}`
 });
 
 export const iconSlotRadioPositionRight = () => ({
@@ -150,56 +157,56 @@ export const iconSlotRadioPositionRight = () => ({
     template: `<m-radio-group v-model="model" label="This is a label" radios-position="right">
                     <template #icon>
                         <m-icon name="m-svg__add-circle" />
-                    </template>` + RADIOS
+                    </template>${RADIOS}`
 });
 
 export const focusRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :focus="true" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" :focus="true" radios-position="right">${RADIOS}`
 });
 
 export const focusWithModelRadioPositionRight = () => ({
     data: () => ({
         model: '2'
     }),
-    template: `<m-radio-group v-model="model" :focus="true" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" :focus="true" radios-position="right">${RADIOS}`
 });
 
 export const errorRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :error="true" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" :error="true" radios-position="right">${RADIOS}`
 });
 
 export const validRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :valid="true" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" :valid="true" radios-position="right">${RADIOS}`
 });
 
 export const errorMessageRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" error-message="This is an error message" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" error-message="This is an error message" radios-position="right">${RADIOS}`
 });
 
 export const errorMessageAndLabelRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" radios-position="right">${RADIOS}`
 });
 
 export const requiredMarkerRadioPositionRight = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :required-marker="true" label="This is a label" radios-position="right">` + RADIOS
+    template: `<m-radio-group v-model="model" :required-marker="true" label="This is a label" radios-position="right">${RADIOS}`
 });
 
 export const readonlyFalseAllChildrensReadonlyFalse = () => ({
@@ -338,26 +345,26 @@ export const validationMessagePositionBottom = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" validation-message-position="bottom">` + RADIOS
+    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" validation-message-position="bottom">${RADIOS}`
 });
 
 export const validationMessagePositionTop = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" validation-message-position="top">` + RADIOS
+    template: `<m-radio-group v-model="model" error-message="This is an error message" label="This is a label" validation-message-position="top">${RADIOS}`
 });
 
 export const validationMessagePositionBottomInline = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :inline="true" error-message="This is an error message" label="This is a label" validation-message-position="bottom">` + RADIOS
+    template: `<m-radio-group v-model="model" :inline="true" error-message="This is an error message" label="This is a label" validation-message-position="bottom">${RADIOS}`
 });
 
 export const validationMessagePositionTopInline = () => ({
     data: () => ({
         model: ''
     }),
-    template: `<m-radio-group v-model="model" :inline="true" error-message="This is an error message" label="This is a label" validation-message-position="top">` + RADIOS
+    template: `<m-radio-group v-model="model" :inline="true" error-message="This is an error message" label="This is a label" validation-message-position="top">${RADIOS}`
 });

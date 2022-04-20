@@ -16,28 +16,30 @@
             class="m-option__button"
             aria-haspopup="dialog"
             :aria-expanded="open ? 'true': 'false'"
+            :aria-label="ariaLabel"
             :disabled="disabled"
+            :title="title"
             slot="trigger"
             @click="emitClick">
-        <m-icon :title="title"
-                name="m-svg__options" />
+        <m-icon name="m-svg__options" />
     </button>
     <m-icon-button :id="id"
                     v-else
                     aria-haspopup="dialog"
                     :aria-expanded="open ? 'true': 'false'"
-                    slot="trigger"
+                    :aria-label="ariaLabel"
                     :skin="iconButtonSkin"
                     :title="title"
                     icon-name="m-svg__options"
                     :disabled="disabled"
                     :button-size="size"
+                    slot="trigger"
                     @click="emitClick" />
     <div class="m-option__dialog" role="dialog" ref="menu" tabindex="-1">
         <ul class="m-option__list"
             :style="{ maxHeight: menuMaxHeight, maxWidth: optionMaxWidth }"
-            :aria-labelledby="id">
-            <slot></slot>
+            :aria-label="ariaLabel">
+            <slot />
             <li class="m-option__close-menu-item" :class="{'m--is-visible': isCloseButtonVisible }">
                 <button class="m-option__close-menu-button"
                         @focus="onCloseButtonFocus"

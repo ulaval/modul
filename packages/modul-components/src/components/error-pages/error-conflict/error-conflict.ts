@@ -2,7 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ERROR_CONFLICT_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
+import { ERROR_CONFLICT_NAME } from '../../component-names';
 import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-conflict.html';
@@ -10,32 +10,30 @@ import WithRender from './error-conflict.html';
 @WithRender
 @Component({
     components: {
-        [MESSAGE_PAGE_NAME]: MMessagePage
+        MMessagePage
     }
 })
 export class MErrorOperationFailed extends ModulVue {
-
     @Prop({
         default: () => (Vue.prototype).$i18n.translate('m-error-conflict:title')
     })
-    public title: string;
+    public readonly title: string;
 
     @Prop()
-    public links: Link[];
+    public readonly links: Link[];
 
     @Prop({
         default: () => [
             (Vue.prototype).$i18n.translate('m-error-conflict:hint.primary')]
     })
-    public hints: string[];
+    public readonly hints: string[];
 
-    readonly state: string = MMessageState.Warning;
+    public readonly state: string = MMessageState.Warning;
+    public readonly svgName: string = 'message-error-conflict';
 
-    beforeCreate(): void {
+    public beforeCreate(): void {
         this.$svgSprite.addSvg('message-error-conflict', require('./message-error-conflict.svg'));
     }
-
-    readonly svgName: string = 'message-error-conflict';
 }
 
 const ErrorOperationFailedPlugin: PluginObject<any> = {
