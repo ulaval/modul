@@ -4,7 +4,7 @@
     transition: background $m-transition-duration ease, color $m-transition-duration ease, border-color $m-transition-duration ease;
     padding: calc(#{$m-space-xs} + #{$m-space-2xs} / 2) $m-space;
     border-radius: 25px;
-    outline: none;
+    outline-color: $m-color-interactive;
     user-select: none;
     appearance: none;
     height: 42px; // Magic number: chip height;
