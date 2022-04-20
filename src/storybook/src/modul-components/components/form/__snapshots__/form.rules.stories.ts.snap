@@ -1222,190 +1222,186 @@ exports[`Storyshots modul-components|m-form/rules Radio Button Required 1`] = `
      
     <!---->
      
-    <div
-      class="m-radio-group"
+    <fieldset
+      class="m-input-group m-radio-group"
     >
-      <fieldset
-        class="m-input-group"
+      <legend
+        class="m-input-group__label"
+        id="fakeId"
       >
-        <legend
-          class="m-input-group__label"
-          id="fakeId"
-        >
-          
+        
         Select a role :
         
+        <!---->
+         
+        <!---->
+      </legend>
+       
+      <div
+        class="m-input-group__body"
+      >
+        <div
+          class="m-validation-message m-input-group__message"
+          id="fakeId"
+        >
           <!---->
-           
+           
           <!---->
-        </legend>
+        </div>
          
         <div
-          class="m-input-group__body"
+          aria-describedby="fakeId"
+          aria-labelledby="fakeId"
+          class="m-input-group__content"
         >
-          <div
-            class="m-validation-message m-input-group__message"
-            id="fakeId"
-          >
-            <!---->
-             
-            <!---->
-          </div>
            
-          <div
-            aria-describedby="fakeId"
-            aria-labelledby="fakeId"
-            class="m-input-group__content"
+          <ul
+            class="m-radio-group__body"
+            role="radiogroup"
           >
-             
-            <ul
-              class="m-radio-group__body"
-              role="radiogroup"
+            <li
+              class="m-radio"
             >
-              <li
-                class="m-radio"
-              >
-                <input
-                  class="m-radio__hidden"
-                  id="mRadio-fakeId"
-                  name="fakeId"
-                  type="radio"
-                  value="Sys admin"
-                />
-                 
-                <label
-                  class="m-radio__wrap"
-                  for="mRadio-fakeId"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="m-radio__input"
-                  />
-                   
-                  <span
-                    class="m-radio__label"
-                  >
-                    Sys admin
-                  </span>
-                </label>
-              </li>
+              <input
+                class="m-radio__hidden"
+                id="mRadio-fakeId"
+                name="fakeId"
+                type="radio"
+                value="Sys admin"
+              />
                
-              <li
-                class="m-radio"
+              <label
+                class="m-radio__wrap"
+                for="mRadio-fakeId"
               >
-                <input
-                  class="m-radio__hidden"
-                  id="mRadio-fakeId"
-                  name="fakeId"
-                  type="radio"
-                  value="Unit admin"
+                <span
+                  aria-hidden="true"
+                  class="m-radio__input"
                 />
                  
-                <label
-                  class="m-radio__wrap"
-                  for="mRadio-fakeId"
+                <span
+                  class="m-radio__label"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="m-radio__input"
-                  />
-                   
-                  <span
-                    class="m-radio__label"
-                  >
-                    Unit admin
-                  </span>
-                </label>
-              </li>
+                  Sys admin
+                </span>
+              </label>
+            </li>
+             
+            <li
+              class="m-radio"
+            >
+              <input
+                class="m-radio__hidden"
+                id="mRadio-fakeId"
+                name="fakeId"
+                type="radio"
+                value="Unit admin"
+              />
                
-              <li
-                class="m-radio"
+              <label
+                class="m-radio__wrap"
+                for="mRadio-fakeId"
               >
-                <input
-                  class="m-radio__hidden"
-                  id="mRadio-fakeId"
-                  name="fakeId"
-                  type="radio"
-                  value="Conceptor"
+                <span
+                  aria-hidden="true"
+                  class="m-radio__input"
                 />
                  
-                <label
-                  class="m-radio__wrap"
-                  for="mRadio-fakeId"
+                <span
+                  class="m-radio__label"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="m-radio__input"
-                  />
-                   
-                  <span
-                    class="m-radio__label"
-                  >
-                    Conceptor
-                  </span>
-                </label>
-              </li>
+                  Unit admin
+                </span>
+              </label>
+            </li>
+             
+            <li
+              class="m-radio"
+            >
+              <input
+                class="m-radio__hidden"
+                id="mRadio-fakeId"
+                name="fakeId"
+                type="radio"
+                value="Conceptor"
+              />
                
-              <li
-                class="m-radio"
+              <label
+                class="m-radio__wrap"
+                for="mRadio-fakeId"
               >
-                <input
-                  class="m-radio__hidden"
-                  id="mRadio-fakeId"
-                  name="fakeId"
-                  type="radio"
-                  value="Assistant"
+                <span
+                  aria-hidden="true"
+                  class="m-radio__input"
                 />
                  
-                <label
-                  class="m-radio__wrap"
-                  for="mRadio-fakeId"
+                <span
+                  class="m-radio__label"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="m-radio__input"
-                  />
-                   
-                  <span
-                    class="m-radio__label"
-                  >
-                    Assistant
-                  </span>
-                </label>
-              </li>
+                  Conceptor
+                </span>
+              </label>
+            </li>
+             
+            <li
+              class="m-radio"
+            >
+              <input
+                class="m-radio__hidden"
+                id="mRadio-fakeId"
+                name="fakeId"
+                type="radio"
+                value="Assistant"
+              />
                
-              <li
-                class="m-radio"
+              <label
+                class="m-radio__wrap"
+                for="mRadio-fakeId"
               >
-                <input
-                  class="m-radio__hidden"
-                  id="mRadio-fakeId"
-                  name="fakeId"
-                  type="radio"
-                  value="Student"
+                <span
+                  aria-hidden="true"
+                  class="m-radio__input"
                 />
                  
-                <label
-                  class="m-radio__wrap"
-                  for="mRadio-fakeId"
+                <span
+                  class="m-radio__label"
                 >
-                  <span
-                    aria-hidden="true"
-                    class="m-radio__input"
-                  />
-                   
-                  <span
-                    class="m-radio__label"
-                  >
-                    Student
-                  </span>
-                </label>
-              </li>
-            </ul>
-          </div>
+                  Assistant
+                </span>
+              </label>
+            </li>
+             
+            <li
+              class="m-radio"
+            >
+              <input
+                class="m-radio__hidden"
+                id="mRadio-fakeId"
+                name="fakeId"
+                type="radio"
+                value="Student"
+              />
+               
+              <label
+                class="m-radio__wrap"
+                for="mRadio-fakeId"
+              >
+                <span
+                  aria-hidden="true"
+                  class="m-radio__input"
+                />
+                 
+                <span
+                  class="m-radio__label"
+                >
+                  Student
+                </span>
+              </label>
+            </li>
+          </ul>
         </div>
-      </fieldset>
-    </div>
+      </div>
+    </fieldset>
      
     <p
       class="mu-mb-lg"
