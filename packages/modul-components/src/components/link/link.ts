@@ -4,8 +4,7 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { Location } from 'vue-router';
 import { KeyCode } from '../../utils/keycode/keycode';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_NAME, LINK_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { LINK_NAME } from '../component-names';
 import { MIcon } from '../icon/icon';
 import WithRender from './link.html?style=./link.scss';
 
@@ -31,8 +30,7 @@ const ICON_NAME_CHEVRON: string = 'm-svg__chevron--right';
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon,
-        [I18N_NAME]: MI18n
+        MIcon
     }
 })
 export class MLink extends ModulVue {

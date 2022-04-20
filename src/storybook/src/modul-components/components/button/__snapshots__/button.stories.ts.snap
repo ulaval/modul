@@ -240,13 +240,12 @@ exports[`Storyshots modul-components|m-button Icon Precision 1`] = `
   <span
     class="m-button__text"
   >
-    A Button  
+    A Button
+     
     <span
       class="m-button__precision"
     >
       Button precision
-      <!---->
-      
         
     </span>
   </span>
@@ -304,8 +303,6 @@ exports[`Storyshots modul-components|m-button Precision 1`] = `
       class="m-button__precision"
     >
       Button precision
-      <!---->
-      
         
     </span>
   </span>
@@ -490,8 +487,6 @@ exports[`Storyshots modul-components|m-button Secondary Precision 1`] = `
       class="m-button__precision"
     >
       Button precision
-      <!---->
-      
         
     </span>
   </span>
@@ -536,6 +531,28 @@ exports[`Storyshots modul-components|m-button Submit 1`] = `
 <button
   class="m-button m--is-skin-primary"
   type="submit"
+>
+  <!---->
+   
+  <!---->
+   
+  <span
+    class="m-button__text"
+  >
+    A Button 
+    <!---->
+  </span>
+   
+  <!---->
+   
+  <!---->
+</button>
+`;
+
+exports[`Storyshots modul-components|m-button Tertiary Default 1`] = `
+<button
+  class="m-button m--is-skin-tertiary"
+  type="button"
 >
   <!---->
    

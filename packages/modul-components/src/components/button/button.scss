@@ -33,6 +33,10 @@ $m-button--border-radius: 4px !default;
             @include m-button--secondary();
         }
 
+        &.m--is-skin-tertiary {
+            @include m-button--tertiary();
+        }
+
         @include m-button--hover();
     }
 

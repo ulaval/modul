@@ -13,6 +13,7 @@
     font-weight: $m-font-weight-semi-bold;
     color: var(--m-link--color);
     text-decoration: none;
+    outline-color: $m-color-interactive;
 
     &.m--has-icon {
         display: inline-flex;
@@ -77,10 +78,6 @@
         --m-link--color-active: #{$m-color-grey-light};
         --m-link--color: #{$m-color-white};
         --m-link--color-hover: #{$m-color-grey-lighter};
-    }
-
-    &:focus {
-        outline: none;
     }
 
     &__text {

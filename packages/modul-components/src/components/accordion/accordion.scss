@@ -25,6 +25,7 @@ $m-accordion--color-default: $m-color-interactive !default;
         display: flex;
         align-items: center;
         cursor: pointer;
+        outline-color: $m-color-interactive;
 
         &:not(.m--is-plain) {
             text-decoration: none;

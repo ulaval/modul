@@ -22,11 +22,17 @@
     background: $m-color-white;
 }
 
+@mixin m-button--tertiary() {
+    color: $m-color-interactive;
+    background: $m-color-grey-lighter;
+    border-color: $m-color-grey-lighter;
+}
+
 @mixin m-button--waiting() {
     cursor: progress;
     color: $m-color-white;
-    background: $m-color-interactive-lighter;
-    border-color: $m-color-interactive-lighter;
+    background: $m-color-interactive-light;
+    border-color: $m-color-interactive-light;
 }
 
 @mixin m-button--disabled() {

@@ -5,9 +5,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
-
-
 const storyRouterDecorator: any = (links = {}, routerProps = {}): any => {
     return story => {
         const router: VueRouter = new VueRouter(routerProps);
@@ -93,7 +90,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${LINK_NAME}`, module)
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${LINK_NAME}/skin="light"`, module)
-
     .add('default', () => ({
         template: `<div style="background: grey;">
                         <m-link mode="link" url="#" skin="light">A link</m-link>
@@ -120,9 +116,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${LINK_NAME}/skin="light"`, m
                    </div>`
     }));
 
-
 storiesOf(`${modulComponentsHierarchyRootSeparator}${LINK_NAME}/skin="text"`, module)
-
     .add('default', () => ({
         template: '<m-link mode="link" url="#" skin="text">A link</m-link>'
     }))
@@ -140,7 +134,6 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${LINK_NAME}/skin="text"`, mo
     }));
 
 storiesOf(`${modulComponentsHierarchyRootSeparator}${LINK_NAME}/mode`, module)
-
     .addDecorator(storyRouterDecorator())
     .add('default (router-link)', () => ({
         data: () => ({

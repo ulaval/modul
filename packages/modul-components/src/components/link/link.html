@@ -23,11 +23,11 @@
             :class="{ 'm--has-large-stroke': iconHasLargeStroke }"
             :name="propIconName"
             :size="propIconSize"
-            aria-hidden="true"></m-icon>
+            aria-hidden="true" />
     <span class="m-link__text">
-        <slot></slot>
+        <slot />
     </span>
-    <m-i18n v-if="isTargetBlank"
-            class="m-link__hidden"
-            k="m-link:open-new-tab"></m-i18n>
+    <span v-if="isTargetBlank" class="m-link__hidden">
+        &nbsp;-&nbsp;{{ $i18n.translate('m-link:open-new-tab') }}
+    </span>
 </component>
