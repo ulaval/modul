@@ -2,6 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
+import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { CHECKBOX_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
@@ -27,37 +28,33 @@ export enum MCheckboxVerticalAlignement {
 export class MCheckbox extends ModulVue {
     @Model('change')
     @Prop()
-    public value: boolean;
+    public readonly value: boolean;
 
     @Prop({
         default: () => `mCheckbox-${uuid.generate()}`
     })
-    public id: string;
+    public readonly id: string;
 
     @Prop({ default: false })
     public indeterminate: boolean;
 
     @Prop({
         default: MCheckboxPosition.Left,
-        validator: value =>
-            value === MCheckboxPosition.Left ||
-            value === MCheckboxPosition.Right
+        validator: value => Enums.toValueArray(MCheckboxPosition).includes(value)
     })
-    public position: MCheckboxPosition;
+    public readonly position: MCheckboxPosition;
 
     @Prop({
         default: MCheckboxVerticalAlignement.Center,
-        validator: value =>
-            value === MCheckboxVerticalAlignement.Center ||
-            value === MCheckboxVerticalAlignement.Top
+        validator: value => Enums.toValueArray(MCheckboxVerticalAlignement).includes(value)
     })
-    public verticalAlign: MCheckboxVerticalAlignement;
+    public readonly verticalAlign: MCheckboxVerticalAlignement;
 
     @Prop()
-    public ariaLabel: string;
+    public readonly ariaLabel: string;
 
     @Prop()
-    public focused: boolean;
+    public readonly focused: boolean;
 
     public readonly validationMessageId: string = uuid.generate();
 
