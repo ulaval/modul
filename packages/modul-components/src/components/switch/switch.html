@@ -8,39 +8,39 @@
                 'm--is-checked': propChecked,
                 'm--is-focus': isFocus,
                 'm--no-state-text': !stateText }">
-    <input class="m-switch__hidden"
+    <input v-model="propChecked"
+           :id="id"
+           class="m-switch__hidden"
            ref="switch"
            :disabled="isDisabled || isWaiting"
            type="checkbox"
-           :id="id"
            @click="onClick"
-           @focus="isFocus=true"
-           @blur="isFocus=false"
-           v-model="propChecked" />
+           @focus="isFocus = true"
+           @blur="isFocus = false"/>
     <label class="m-switch__body"
            :for="id"
-           :aria-hidden="!label">
+           :aria-hidden="!$slots.default">
         <span class="m-switch__input"
               aria-hidden="true">
             <span class="m-switch__button"></span>
             <span class="m-switch__text"
                   v-if="stateText">
-                <span v-if="propChecked">
-                    <m-i18n k="m-switch:yes"></m-i18n>
-                </span>
-                <span v-if="!propChecked">
-                    <m-i18n k="m-switch:no"></m-i18n>
-                </span>
+                <template v-if="propChecked">
+                    {{ $i18n.translate('m-switch:yes') }}
+                </template>
+                <template v-else>
+                    {{ $i18n.translate('m-switch:no') }}
+                </template>
             </span>
         </span>
         <span class="m-switch__label"
-              v-if="label">
-            <slot></slot>
+              v-if="$slots.default">
+            <slot/>
         </span>
     </label>
     <m-validation-message :disabled="isDisabled"
                           :waiting="isWaiting"
                           :error-message="errorMessage"
                           :valid-message="validMessage"
-                          :helper-message="helperMessage"></m-validation-message>
+                          :helper-message="helperMessage" />
 </div>
