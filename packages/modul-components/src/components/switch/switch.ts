@@ -29,10 +29,10 @@ export class MSwitch extends ModulVue {
         default: MSwitchPosition.Left,
         validator: value => Enums.toValueArray(MSwitchPosition).includes(value)
     })
-    public readonly position: string;
+    public position: string;
 
     @Prop({ default: true })
-    public readonly stateText: boolean;
+    public stateText: boolean;
 
     public isFocus = false;
     public id: string = `switch${uuid.generate()}`;
