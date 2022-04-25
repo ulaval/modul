@@ -29,6 +29,9 @@ export class MResponsiveTable extends ModulVue {
     public readonly id?: string;
 
     @Prop()
+    public readonly role?: string;
+
+    @Prop()
     public readonly headRows?: MTableHeadRows;
 
     @Prop()
