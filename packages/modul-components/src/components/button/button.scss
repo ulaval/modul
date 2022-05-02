@@ -20,10 +20,6 @@ $m-button--border-radius: 4px !default;
         display: inline;
     }
 
-    span:not(.m-button__hidden) {
-        position: relative;
-    }
-
     &:not(.m--is-waiting):not(.m--is-disabled) {
         &.m--is-skin-primary {
             @include m-button--primary();
@@ -56,6 +52,11 @@ $m-button--border-radius: 4px !default;
         stroke-width: 2px;
 
         @include m-font-size('xs');
+    }
+
+    &__text,
+    &__precision {
+        position: relative;
     }
 
     &__precision,
