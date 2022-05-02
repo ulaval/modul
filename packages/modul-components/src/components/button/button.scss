@@ -96,8 +96,4 @@ $m-button--border-radius: 4px !default;
             display: none;
         }
     }
-
-    &__hidden {
-        @include m-visually-hidden;
-    }
 }
