@@ -15,7 +15,8 @@
                           @next-button-click="emitNextButtonClick($event)">
     <table id="idTable"
            class="m-responsive-table__table"
-           cellspacing="0">
+           cellspacing="0"
+           :role="role">
         <m-table-head v-if="displayTableHead"
                       id="idTable"
                       :head-rows.sync="headRowsFilterAndSort"

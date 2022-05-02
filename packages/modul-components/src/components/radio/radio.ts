@@ -2,6 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputState, InputStateMixin } from '../../mixins/input-state/input-state';
+import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { RADIO_NAME } from '../component-names';
@@ -40,72 +41,68 @@ export abstract class BaseRadioGroup extends ModulVue {
 export class MRadio extends ModulVue {
     @Prop()
     @Model('change')
-    public modelValue: string;
+    public readonly modelValue: string;
 
     @Prop()
-    public value: string;
+    public readonly value: string;
 
     @Prop()
-    public name: string;
+    public readonly name: string;
 
     @Prop({
         default: MRadioPosition.Left,
-        validator: value =>
-            value === MRadioPosition.Left ||
-            value === MRadioPosition.Right
+        validator: value => Enums.toValueArray(MRadioPosition).includes(value)
     })
-    public radioPosition: MRadioPosition;
+    public readonly radioPosition: MRadioPosition;
 
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
 
     @Prop({
         default: MRadioVerticalAlignement.Top,
-        validator: value =>
-            value === MRadioVerticalAlignement.Top ||
-            value === MRadioVerticalAlignement.Center
+        validator: value => Enums.toValueArray(MRadioVerticalAlignement).includes(value)
     })
-    public radioVerticalAlign: MRadioVerticalAlignement;
+    public readonly radioVerticalAlign: MRadioVerticalAlignement;
 
     @Prop()
-    public radioMarginTop: string;
+    public readonly radioMarginTop: string;
 
     @Prop({
         default: () => `mRadio-${uuid.generate()}`
     })
-    public id: string;
+    public readonly id: string;
 
     @Prop()
-    public focus: boolean;
+    public readonly focus: boolean;
 
     @Prop()
-    public inputAriaDescribedby: string;
+    public readonly inputAriaDescribedby: string;
 
     $refs: {
         radioInput: HTMLInputElement;
     };
 
-    private hasFocus: boolean = false;
-    private hasParentGroup: boolean | undefined = undefined;
-    private parentGroup: RadioGroup;
+    public hasFocus: boolean = false;
+    public hasParentGroup: boolean | undefined = undefined;
+    public parentGroup: RadioGroup;
 
-    private internalDisabled: boolean = false;
+    public internalDisabled: boolean = false;
 
     @Emit('change')
-    private onChange(value: any): void { }
+    public onChange(value: any): void { }
 
     @Emit('focus')
-    private onFocus(event: Event): void {
+    public onFocus(event: Event): void {
         this.hasFocus = true;
     }
 
     @Emit('blur')
-    private onBlur(event: Event): void {
+    public onBlur(event: Event): void {
         this.hasFocus = false;
     }
 
     @Watch('focus')
-    private focusChanged(focus: boolean): void {
+    public focusChanged(focus: boolean): void {
         if (focus) {
             this.$refs.radioInput.focus();
         } else {
