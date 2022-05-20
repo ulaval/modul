@@ -1,9 +1,7 @@
 @import 'commons';
-$m-switch-size: 25px;
+$m-switch-size: 28px;
 
 .m-switch {
-    line-height: 1;
-
     &:not(.m--is-disabled):not(.m--is-waiting) {
         .m-switch__body {
             cursor: pointer;
@@ -35,7 +33,7 @@ $m-switch-size: 25px;
 
             .m-switch__text {
                 color: $m-color-white;
-                left: 0;
+                left: 2px;
             }
         }
 
@@ -119,8 +117,7 @@ $m-switch-size: 25px;
         transition-timing-function: ease;
         position: relative;
         display: inline-flex;
-        width: 100%;
-        min-width: 54px;
+        width: 56px;
         height: $m-switch-size;
         color: $m-color-grey-dark;
         background: $m-color-grey-lighter;
@@ -147,20 +144,20 @@ $m-switch-size: 25px;
     &__text {
         transition: color $m-transition-duration ease, left $m-transition-duration ease-in-out;
         position: absolute;
+        left: calc(100% - #{$m-switch-size});
         z-index: 1;
         display: flex;
-        user-select: none;
-        height: 100%;
-        width: calc(100% - #{$m-switch-size});
-        left: calc(100% - (100% - #{$m-switch-size}));
         align-items: center;
         justify-content: center;
-        text-align: center;
+        width: calc(100% - #{$m-switch-size});
+        height: 100%;
         color: currentColor;
         font-size: 9px;
         font-weight: $m-font-weight-semi-bold;
         line-height: 0;
+        text-align: center;
         text-transform: uppercase;
+        user-select: none;
     }
 
     &__label {
