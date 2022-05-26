@@ -29,9 +29,8 @@
         :min-rows="minRows"
         :required="required || requiredMarker"
         @input="refreshModel"
-        @focus="onFocus"
-        @blur="onBlur"
-        @change="onChange"
+        @focus="onFroalaFocus"
+        @blur="onFroalaBlur"
         @keypress.enter.prevent
         @keyup="onKeyup"
         @keydown="onKeydown"

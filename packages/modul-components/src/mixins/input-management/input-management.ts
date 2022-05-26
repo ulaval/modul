@@ -111,7 +111,7 @@ export class InputManagement extends ModulVue
         }
     }
 
-    onChange(event: Event): void {
+    onChange(): void {
         this.emitChange(this.model);
     }
 

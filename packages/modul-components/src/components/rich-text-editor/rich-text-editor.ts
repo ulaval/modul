@@ -35,21 +35,17 @@ const RICH_TEXT_LICENSE_KEY: string = 'm-rich-text-license-key';
     ]
 })
 export class MRichTextEditor extends ModulVue implements InputManagementData, InputStateInputSelector {
-
-    selector: string = '.fr-element.fr-view';
-    internalValue: string;
-
     @Prop({ default: '' })
-    public value: string;
+    public readonly value: string;
 
     @Prop({ default: 1 })
-    public minRows: number;
+    public readonly minRows: number;
 
     @Prop({ default: '0' })
-    public toolbarStickyOffset: string;
+    public readonly toolbarStickyOffset: string;
 
     @Prop()
-    public scrollableContainer: string | undefined;
+    public readonly scrollableContainer: string | undefined;
 
     @Prop({
         default: 5,
@@ -57,7 +53,7 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             return level >= 1 && level <= 6;
         }
     })
-    public firstHeaderLevel: number;
+    public readonly firstHeaderLevel: number;
 
     @Prop({
         default: 6,
@@ -65,37 +61,37 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             return level >= 1 && level <= 6;
         }
     })
-    public lastHeaderLevel: number;
+    public readonly lastHeaderLevel: number;
 
     @Prop({ default: false })
-    public showCharacterCount: boolean;
+    public readonly showCharacterCount: boolean;
 
     @Prop()
-    public characterCountMax: number;
+    public readonly characterCountMax: number;
 
     @Prop({ default: false })
-    public showParagraphAlignmentButtons: boolean;
+    public readonly showParagraphAlignmentButtons: boolean;
 
     @Prop({ default: false })
-    public showUnderlineButton: boolean;
+    public readonly showUnderlineButton: boolean;
 
     @Prop({ default: false })
-    public showStrikeThroughButton: boolean;
+    public readonly showStrikeThroughButton: boolean;
 
     @Prop({ default: false })
-    public showImageButton: boolean;
+    public readonly showImageButton: boolean;
 
     @Prop({ default: false })
-    public showImageFloatLayout: boolean;
+    public readonly showImageFloatLayout: boolean;
 
     @Prop({ default: false })
-    public titleAvailable: boolean; // temporary
+    public readonly titleAvailable: boolean; // temporary
 
     /**
      * Prop required to enable custom validation on images uploaded into the rich text.
      */
     @Prop()
-    public imageUploadCustomValidation?: FileUploadCustomValidation;
+    public readonly imageUploadCustomValidation?: FileUploadCustomValidation;
 
     @Prop({ default: () => `mRichText-${uuid.generate()}` })
     public readonly id: string;
@@ -104,6 +100,8 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
         input: HTMLElement
     };
 
+    public selector: string = '.fr-element.fr-view';
+    public internalValue: string;
     public customTranslations: { [key: string]: string } = {
         'Update': this.$i18n.translate('m-inplace-edit:modify'),
         'URL': this.$i18n.translate('m-rich-text-editor:URL')
@@ -111,13 +109,26 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
     private i18nHeaderTitle: string = this.$i18n.translate('m-rich-text-editor:title');
     private i18nHeaderSubtitle: string = this.$i18n.translate('m-rich-text-editor:subtitle');
+    private currentModelValueOnFocus: string = '';
 
-    mounted(): void {
+    public mounted(): void {
         this.testSelectorProps();
 
         if (!this.headerLevelValid) {
             throw new Error(`${RICH_TEXT_EDITOR_NAME}: first-header-level must be inferior or equal to last-header-level`);
         }
+    }
+
+    public onFroalaFocus(event: FocusEvent): void {
+        this.as<InputManagement>().onFocus(event);
+        this.currentModelValueOnFocus = this.as<InputManagement>().model;
+    }
+
+    public onFroalaBlur(event: FocusEvent): void {
+        if (this.currentModelValueOnFocus !== this.as<InputManagement>().model) {
+            this.as<InputManagement>().onChange();
+        }
+        this.as<InputManagement>().onBlur(event);
     }
 
     public get internalOptions(): any {
