@@ -122,11 +122,7 @@ export class MAccordion extends ModulVue implements AccordionGateway {
     }
 
     public get propDisabled(): boolean {
-        if (!this.internalGroupRef) {
-            return false;
-        }
-
-        return this.internalGroupRef.disabled || this.disabled;
+        return this.disabled || (this.internalGroupRef?.disabled ?? false);
     }
 
     public get propId(): string {
