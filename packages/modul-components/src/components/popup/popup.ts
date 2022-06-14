@@ -106,6 +106,9 @@ export class MPopup extends ModulVue {
     public readonly preload: boolean;
 
     @Prop()
+    public readonly reference: HTMLElement;
+
+    @Prop()
     public readonly trigger: HTMLElement;
 
     @Prop({ default: true })
@@ -188,7 +191,6 @@ export class MPopup extends ModulVue {
             this.$refs.popper.update();
         }
     }
-
 
     public get isSidebarUsed(): boolean {
         // Use a sidebar instead when in mobile
