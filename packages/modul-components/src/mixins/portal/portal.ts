@@ -11,6 +11,7 @@ export interface PortalMixin {
     preload: boolean;
     loaded: boolean;
     getPortalElement(): HTMLElement;
+    getReference(): HTMLElement | undefined;
     getTrigger(): HTMLElement | undefined;
     setFocusToPortal(): void;
     setFocusToTrigger(): void;
@@ -50,28 +51,31 @@ export class Portal extends ModulVue implements PortalMixin {
             value === MOpenTrigger.Manual ||
             value === MOpenTrigger.MouseDown
     })
-    public openTrigger: MOpenTrigger;
+    public readonly openTrigger: MOpenTrigger;
 
     @Prop()
-    public open: boolean;
+    public readonly open: boolean;
 
     @Prop()
-    public id: string;
+    public readonly id: string;
 
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
 
     @Prop()
-    public trigger: HTMLElement;
+    public readonly reference: HTMLElement;
 
     @Prop()
-    public className: string;
+    public readonly trigger: HTMLElement;
 
     @Prop()
-    public preload: boolean;
+    public readonly className: string;
+
+    @Prop()
+    public readonly preload: boolean;
 
     @Prop({ default: true })
-    public lazy: boolean;
+    public readonly lazy: boolean;
 
     public loaded: boolean = false;
 
@@ -119,12 +123,16 @@ export class Portal extends ModulVue implements PortalMixin {
         this.manageOpeningAndClosing(open);
     }
 
-    public setFocusToPortal(): void {}
+    public setFocusToPortal(): void { }
 
-    public setFocusToTrigger(): void {}
+    public setFocusToTrigger(): void { }
 
     public getPortalElement(): HTMLElement {
         return this.portalTargetEl;
+    }
+
+    public getReference(): HTMLElement | undefined {
+        return this.reference || this.internalTrigger;
     }
 
     public getTrigger(): HTMLElement | undefined {
