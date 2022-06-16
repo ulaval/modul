@@ -137,7 +137,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     public doCustomPropOpen(value: boolean, el: HTMLElement): boolean {
         if (value) {
             if (this.popper === undefined) {
-                let options: object = {
+                const options: object = {
                     placement: this.placement,
                     eventsEnabled: true,
                     onUpdate: (data: Popper.Data) => {
@@ -149,7 +149,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
                         }
                     }
                 };
-                let reference: Element = this.as<PortalMixin>().getTrigger() as Element;
+                let reference: Element = this.as<PortalMixin>().getReference() as Element;
                 if (!reference) {
                     reference = document.getElementsByTagName('body')[0];
                 }
@@ -161,6 +161,13 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         return true;
     }
 
+    public updateReference(): void {
+        const reference: Element = this.as<PortalMixin>().getReference() as Element;
+        if (reference && this.popper) {
+            this.popper.reference = reference;
+        }
+    }
+
     public update(): void {
         if (this.popper !== undefined) {
             this.popper.scheduleUpdate();
@@ -168,6 +175,7 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     }
 
     public onBeforeEnter(el: HTMLElement): void {
+        this.updateReference();
         if (this.beforeEnter) {
             this.beforeEnter(el.children[0]);
         }
@@ -268,8 +276,8 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
         const trigger: HTMLElement | undefined = this.as<PortalMixin>().getTrigger();
         const element: HTMLElement = this.as<PortalMixin>().getPortalElement();
         if (element && element.contains(event.target as Node)
-                || this.$el.contains(event.target as HTMLElement) ||
-                (trigger && trigger.contains(event.target as HTMLElement))
+            || this.$el.contains(event.target as HTMLElement) ||
+            (trigger && trigger.contains(event.target as HTMLElement))
         ) {
             return;
         }
