@@ -24,10 +24,10 @@ export enum InputMaxWidthValues {
 @Component
 export class InputWidth extends ModulVue {
     @Prop({ default: '100%' })
-    public width: string;
+    public readonly width: string;
 
     @Prop({ default: InputMaxWidth.Regular })
-    public maxWidth: InputMaxWidth | string;
+    public readonly maxWidth: InputMaxWidth | string;
 
     private get inputMaxWidth(): string | undefined {
         let maxWidth: string | undefined;

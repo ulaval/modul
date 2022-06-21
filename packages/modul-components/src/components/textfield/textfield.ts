@@ -7,6 +7,7 @@ import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
+import { Enums } from '../../utils/enums/enums';
 import { changeSelection, InputSelectable } from '../../utils/input/input';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
@@ -51,63 +52,57 @@ const ICON_NAME_PASSWORD_HIDDEN: string = 'm-svg__hide';
 export class MTextfield extends ModulVue implements InputSelectable {
     @Prop({
         default: MTextfieldType.Text,
-        validator: value =>
-            value === MTextfieldType.Email ||
-            value === MTextfieldType.Password ||
-            value === MTextfieldType.Telephone ||
-            value === MTextfieldType.Text ||
-            value === MTextfieldType.Url ||
-            value === MTextfieldType.Number
+        validator: value => Enums.toValueArray(MTextfieldType).includes(value)
     })
-    public type: MTextfieldType;
+    public readonly type: MTextfieldType;
 
     @Prop({ default: true })
-    public icon: boolean;
+    public readonly icon: boolean;
 
     @Prop({ default: false })
-    public wordWrap: boolean;
+    public readonly wordWrap: boolean;
 
     @Prop()
-    public characterCount: boolean;
+    public readonly characterCount: boolean;
 
     @Prop({ default: 0 })
-    public maxLength: number;
+    public readonly maxLength: number;
 
     @Prop({ default: true })
-    public lengthOverflow: boolean;
+    public readonly lengthOverflow: boolean;
 
     @Prop({ default: 0 })
-    public characterCountThreshold: number;
+    public readonly characterCountThreshold: number;
 
     @Prop({ default: '' })
-    public selection: string;
+    public readonly selection: string;
 
     @Prop({ default: () => `mTextfield-${uuid.generate()}` })
-    public id: string;
+    public readonly id: string;
 
     @Prop({ default: () => uuid.generate() })
-    public inputAriaDescribedby: string;
+    public readonly inputAriaDescribedby: string;
 
     @Prop()
-    public inputAriaActivedescendant?: string;
+    public readonly inputAriaActivedescendant?: string;
 
     @Prop()
-    public inputAriaAutocomplete?: string;
+    public readonly inputAriaAutocomplete?: string;
 
     @Prop()
-    public inputAriaControls?: string;
+    public readonly inputAriaControls?: string;
 
     @Prop({ default: false })
-    public append: boolean;
+    public readonly append: boolean;
 
     @Ref('input')
-    public refInput?: HTMLInputElement;
+    public readonly refInput?: HTMLInputElement;
 
     public $refs: {
         input: HTMLElement
     };
 
-    readonly internalValue: string;
+    public readonly internalValue: string;
 
     private passwordAsText: boolean = false;
     private iconDescriptionShowPassword: string = this.$i18n.translate('m-textfield:show-password');

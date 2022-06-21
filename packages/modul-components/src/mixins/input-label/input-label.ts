@@ -5,16 +5,16 @@ import { ModulVue } from '../../utils/vue/vue';
 @Component
 export class InputLabel extends ModulVue {
     @Prop()
-    public label: string;
+    public readonly label: string;
 
     @Prop()
-    public labelUp: boolean;
+    public readonly labelUp: boolean;
 
     @Prop({ default: () => uuid.generate() })
-    public labelId?: string;
+    public readonly labelId?: string;
 
     @Prop()
-    public requiredMarker: boolean;
+    public readonly requiredMarker: boolean;
 
     private get hasLabel(): boolean {
         return !!this.label;

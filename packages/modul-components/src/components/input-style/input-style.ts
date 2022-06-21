@@ -19,37 +19,37 @@ export const CSS_LABEL_DEFAULT_MARGIN: number = 12;
 })
 export class MInputStyle extends ModulVue {
     @Prop({ default: '' })
-    public label: string;
+    public readonly label: string;
 
     @Prop()
-    public labelFor: string;
+    public readonly labelFor: string;
 
     @Prop({ default: false })
-    public labelUp: boolean;
+    public readonly labelUp: boolean;
 
     @Prop()
-    public labelId?: string;
+    public readonly labelId?: string;
 
     @Prop({ default: false })
-    public focus: boolean;
+    public readonly focus: boolean;
 
     @Prop({ default: false })
-    public append: boolean;
+    public readonly append: boolean;
 
     @Prop({ default: true })
-    public empty: boolean;
+    public readonly empty: boolean;
 
     @Prop()
-    public width: string;
+    public readonly width: string;
 
     @Prop()
-    public requiredMarker: boolean;
+    public readonly requiredMarker: boolean;
 
     @Prop()
-    public readonly: boolean;
+    public readonly readonly: boolean;
 
     @Prop({ default: false })
-    public cursorPointer: boolean;
+    public readonly cursorPointer: boolean;
 
     public $refs: {
         root: HTMLElement,
@@ -74,7 +74,7 @@ export class MInputStyle extends ModulVue {
     }
 
     @Watch('isLabelUp')
-    private computeLabelOffset(): void {
+    public computeLabelOffset(): void {
         if (this.label) {
             const labelOffset: number = this.$refs.label.clientHeight / 2;
             this.labelOffset = this.isLabelUp && labelOffset > CSS_LABEL_DEFAULT_MARGIN ? `${labelOffset}px` : '';

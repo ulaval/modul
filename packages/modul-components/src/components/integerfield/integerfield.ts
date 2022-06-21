@@ -29,7 +29,7 @@ import WithRender from './integerfield.html?style=./integerfield.scss';
 })
 export class MIntegerfield extends ModulVue {
     @Prop()
-    public value: number;
+    public readonly value: number;
 
     @Prop({
         default: 16,
@@ -45,7 +45,7 @@ export class MIntegerfield extends ModulVue {
             return false;
         }
     })
-    public maxLength: number;
+    public readonly maxLength: number;
 
     @Prop({ default: () => `mIntegerfield-${uuid.generate()}` })
     public readonly id: string;

@@ -24,13 +24,16 @@ export class InputManagement extends ModulVue
 
     @Prop()
     @Model('input')
-    public value: string;
+    public readonly value: string;
+
     @Prop()
-    public placeholder: string;
+    public readonly placeholder: string;
+
     @Prop()
-    public autocomplete: string;
+    public readonly autocomplete: string;
+
     @Prop()
-    public focus: boolean;
+    public readonly focus: boolean;
 
     public trimWordWrap: boolean = false;
 

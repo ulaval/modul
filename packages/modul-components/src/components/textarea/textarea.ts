@@ -34,52 +34,52 @@ import WithRender from './textarea.html?style=./textarea.scss';
 })
 export class MTextarea extends ModulVue {
     @Prop()
-    public characterCount: boolean;
+    public readonly characterCount: boolean;
 
     @Prop({ default: 0 })
-    public maxLength: number;
+    public readonly maxLength: number;
 
     @Prop({ default: true })
-    public lengthOverflow: boolean;
+    public readonly lengthOverflow: boolean;
 
     @Prop({ default: 0 })
-    public characterCountThreshold: number;
+    public readonly characterCountThreshold: number;
 
     @Prop({ default: () => `mTextarea-${uuid.generate()}` })
-    public id: string;
+    public readonly id: string;
 
     @Prop({ default: () => uuid.generate() })
-    public inputAriaDescribedby: string;
+    public readonly inputAriaDescribedby: string;
 
     @Prop()
-    public inputAriaActivedescendant?: string;
+    public readonly inputAriaActivedescendant?: string;
 
     @Prop()
-    public inputAriaAutocomplete?: string;
+    public readonly inputAriaAutocomplete?: string;
 
     @Prop()
-    public inputAriaControls?: string;
+    public readonly inputAriaControls?: string;
 
     public $refs: {
         input: HTMLElement
     };
 
-    readonly internalValue: string;
+    public readonly internalValue: string;
     private internalTextareaHeight: string = '0';
 
-    private get valueLength(): number {
+    public get valueLength(): number {
         return this.internalValue.length;
     }
 
-    private get maxLengthNumber(): number {
+    public get maxLengthNumber(): number {
         return !this.lengthOverflow && this.maxLength > 0 ? this.maxLength : Infinity;
     }
 
-    private get hasTextareaError(): boolean {
+    public get hasTextareaError(): boolean {
         return this.as<InputState>().hasError;
     }
 
-    private get isTextareaValid(): boolean {
+    public get isTextareaValid(): boolean {
         return this.as<InputState>().isValid;
     }
 }

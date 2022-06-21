@@ -2,6 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Location } from 'vue-router';
+import { Enums } from '../../utils/enums/enums';
 import { KeyCode } from '../../utils/keycode/keycode';
 import { ModulVue } from '../../utils/vue/vue';
 import { LINK_NAME } from '../component-names';
@@ -35,59 +36,52 @@ const ICON_NAME_CHEVRON: string = 'm-svg__chevron--right';
 })
 export class MLink extends ModulVue {
     @Prop({ default: '/' })
-    public url: string | Location;
+    public readonly url: string | Location;
 
     @Prop({
         default: MLinkMode.RouterLink,
-        validator: value =>
-            value === MLinkMode.RouterLink ||
-            value === MLinkMode.Link ||
-            value === MLinkMode.Button
+        validator: value => Enums.toValueArray(MLinkMode).includes(value)
     })
-    public mode: MLinkMode;
+    public readonly mode: MLinkMode;
 
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
 
     @Prop()
-    public unvisited: boolean;
+    public readonly unvisited: boolean;
 
     @Prop({ default: true })
-    public underline: boolean;
+    public readonly underline: boolean;
 
     @Prop({
         default: MLinkSkin.Default,
-        validator: value =>
-            value === MLinkSkin.Default ||
-            value === MLinkSkin.Light ||
-            value === MLinkSkin.Text
+        validator: value => Enums.toValueArray(MLinkSkin).includes(value)
     })
-    public skin: MLinkSkin;
+    public readonly skin: MLinkSkin;
 
     @Prop()
-    public target: string;
+    public readonly target: string;
 
     @Prop()
-    public bulletPoint: boolean;
+    public readonly bulletPoint: boolean;
 
     @Prop()
-    public iconName: string;
+    public readonly iconName: string;
 
     @Prop({
         default: MLinkIconPosition.Left,
-        validator: value =>
-            value === MLinkIconPosition.Left || value === MLinkIconPosition.Right
+        validator: value => Enums.toValueArray(MLinkIconPosition).includes(value)
     })
-    public iconPosition: MLinkIconPosition;
+    public readonly iconPosition: MLinkIconPosition;
 
     @Prop({ default: '1em' })
-    public iconSize: string;
+    public readonly iconSize: string;
 
     @Prop({ default: '0' })
-    public tabindex: string;
+    public readonly tabindex: string;
 
     @Emit('click')
-    private emitClick(event: Event): void { }
+    public emitClick(_event: Event): void { }
 
     public get isRouterLink(): boolean {
         return this.mode === MLinkMode.RouterLink;
