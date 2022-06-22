@@ -1,6 +1,7 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 
 import { ModulVue } from '../../utils/vue/vue';
 import { RADIO_STYLE_NAME } from '../component-names';
@@ -23,30 +24,32 @@ export interface RadioGroup {
 @WithRender
 @Component
 export class MRadioStyle extends ModulVue {
-
     @Prop({
         default: MRadioStylePosition.Right,
-        validator: value =>
-            value === MRadioStylePosition.Left ||
-            value === MRadioStylePosition.Right
+        validator: value => Enums.toValueArray(MRadioStylePosition).includes(value)
     })
-    public radioPosition: MRadioStylePosition;
-    @Prop({ default: '1em' })
-    public inputSize: string;
-    @Prop()
-    public focus: boolean;
-    @Prop()
-    public checked: boolean;
-    @Prop()
-    public disabled: boolean;
-    @Prop()
-    public fullWidth: boolean;
+    public readonly radioPosition: MRadioStylePosition;
 
-    private get isInputRight(): boolean {
+    @Prop({ default: '1em' })
+    public readonly inputSize: string;
+
+    @Prop()
+    public readonly focus: boolean;
+
+    @Prop()
+    public readonly checked: boolean;
+
+    @Prop()
+    public readonly disabled: boolean;
+
+    @Prop()
+    public readonly fullWidth: boolean;
+
+    public get isInputRight(): boolean {
         return this.radioPosition === MRadioStylePosition.Right;
     }
 
-    private onClick(event: MouseEvent): void {
+    public onClick(event: MouseEvent): void {
         if (!this.disabled) {
             this.$emit('click', event);
         }

@@ -5,7 +5,7 @@ import { InputStateTagStyle } from '../../mixins/input-state/input-state';
 import { InputMaxWidth } from '../../mixins/input-width/input-width';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
-import { AUTOCOMPLETE_NAME, DROPDOWN_ITEM_NAME, DROPDOWN_NAME } from '../component-names';
+import { AUTOCOMPLETE_NAME } from '../component-names';
 import { MDropdown } from '../dropdown/dropdown';
 import { MDropdownItem } from '../dropdown/dropdown-item/dropdown-item';
 import WithRender from './autocomplete.html?style=./autocomplete.scss';
@@ -18,55 +18,73 @@ export interface MAutoCompleteResult {
 @WithRender
 @Component({
     components: {
-        [DROPDOWN_NAME]: MDropdown,
-        [DROPDOWN_ITEM_NAME]: MDropdownItem
+        MDropdown,
+        MDropdownItem
     }
 })
 export class MAutocomplete extends ModulVue {
-
     @Model('change')
-    model: string;
+    public readonly model: string;
+
     @Prop({ default: (): [] => [] })
-    results: MAutoCompleteResult[];
+    public readonly results: MAutoCompleteResult[];
+
     @Prop({ default: 250 })
-    throttle: number;
+    public readonly throttle: number;
+
     @Prop({ default: 1 })
-    minimumChars: number;
+    public readonly minimumChars: number;
+
     @Prop()
-    textNoMatch: string;
+    public readonly textNoMatch: string;
+
     @Prop()
-    maxLength: number;
+    public readonly maxLength: number;
+
     @Prop()
-    placeholder: string;
+    public readonly placeholder: string;
+
     @Prop()
-    focus: boolean;
+    public readonly focus: boolean;
+
     @Prop({ default: true })
-    clearInvalidSelectionOnClose: boolean;
+    public readonly clearInvalidSelectionOnClose: boolean;
+
     @Prop()
-    open: boolean;
+    public readonly open: boolean;
+
     @Prop()
-    labelUp: boolean;
+    public readonly labelUp: boolean;
+
     @Prop()
-    disabled: boolean;
+    public readonly disabled: boolean;
+
     @Prop()
-    errorMessage: string;
+    public readonly errorMessage: string;
+
     @Prop()
-    validMessage: string;
+    public readonly validMessage: string;
+
     @Prop()
-    helperMessage: string;
+    public readonly helperMessage: string;
+
     @Prop({ default: '100%' })
-    width: string;
+    public readonly width: string;
+
     @Prop({ default: InputMaxWidth.Regular })
-    maxWidth: string;
+    public readonly maxWidth: string;
+
     @Prop()
     label: string;
+
     @Prop()
-    requiredMarker: boolean;
+    public readonly requiredMarker: boolean;
+
     @Prop({
         default: InputStateTagStyle.Default,
         validator: value => Enums.toValueArray(InputStateTagStyle).indexOf(value) !== -1
     })
-    tagStyle: string;
+    public readonly tagStyle: string;
 
     selection: string = '';
     inputText: string = '';

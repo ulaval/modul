@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { ACCORDION_CLOSEST_ELEMENTS } from '../../accordion/accordion';
-import { PLUS_NAME, TABLE_GROUP_HEADER_NAME } from '../../component-names';
+import { TABLE_GROUP_HEADER_NAME } from '../../component-names';
 import { MPlus, MPlusSkin } from '../../plus/plus';
 import { getCellAlignmentClass, getTotalColumnsLength, MTableAccordionIconPosition, MTableCell, MTableColspan, MTableColumn, MTableRowsGroup } from '../responsive-table-commons';
 import { MTableGroupMixin } from '../table-group/table-group-mixin';
@@ -12,7 +12,7 @@ import WithRender from './table-group-header.html?style=./table-group-header.scs
 @WithRender
 @Component({
     components: {
-        [PLUS_NAME]: MPlus
+        MPlus
     },
     mixins: [MTableGroupMixin]
 })

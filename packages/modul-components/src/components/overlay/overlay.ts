@@ -8,6 +8,7 @@ import { MButton } from '../button/button';
 import { OVERLAY_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import WithRender from './overlay.html?style=./overlay.scss';
+
 @WithRender
 @Component({
     components: {

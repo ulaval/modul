@@ -2,7 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import uuid from '../../utils/uuid/uuid';
-import { INPUT_GROUP_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { INPUT_GROUP_NAME } from '../component-names';
 import { MValidationMessage } from '../validation-message/validation-message';
 import { InputManagement } from './../../mixins/input-management/input-management';
 import { InputState } from './../../mixins/input-state/input-state';
@@ -23,7 +23,7 @@ export interface MInputGroupProps {
 @WithRender
 @Component({
     components: {
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+        MValidationMessage
     },
     mixins: [
         InputState,

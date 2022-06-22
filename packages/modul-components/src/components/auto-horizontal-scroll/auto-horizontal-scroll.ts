@@ -4,7 +4,7 @@ import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
-import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME } from '../component-names';
+import { AUTO_HORIZONTAL_SCROLL } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
 import './auto-horizontal-scroll-unscoped.scss';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
@@ -36,7 +36,7 @@ export interface MAutoHorizontalScrollResizeProperties {
             'en': require('./auto-horizontal-scroll.lang.en.json')
         }
     },
-    components: { [ICON_BUTTON_NAME]: MIconButton },
+    components: { MIconButton },
     mixins: [ElementQueries]
 })
 export class MAutoHorizontalScroll extends ModulVue {

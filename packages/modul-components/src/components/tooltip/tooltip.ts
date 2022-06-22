@@ -2,10 +2,11 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
+import { Enums } from '../../utils/enums/enums';
 import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_BUTTON_NAME, LINK_NAME, POPUP_NAME, TOOLTIP_NAME } from '../component-names';
+import { TOOLTIP_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MLink } from '../link/link';
 import { MPopperPlacement } from '../popper/popper';
@@ -27,59 +28,51 @@ export enum MTooltipSize {
 @WithRender
 @Component({
     components: {
-        [POPUP_NAME]: MPopup,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [LINK_NAME]: MLink
+        MPopup,
+        MIconButton,
+        MLink
     },
     mixins: [MediaQueries]
 })
 export class MTooltip extends ModulVue {
     @Prop()
-    public open: boolean;
+    public readonly open: boolean;
+
     @Prop({
         default: MTooltipMode.Icon,
-        validator: value =>
-            value === MTooltipMode.Icon ||
-            value === MTooltipMode.Link ||
-            value === MTooltipMode.Definition
+        validator: value => Enums.toValueArray(MTooltipMode).includes(value)
     })
-    public mode: MTooltipMode;
+    public readonly mode: MTooltipMode;
+
     @Prop({
         default: MPopperPlacement.Bottom,
-        validator: value =>
-            value === MPopperPlacement.Bottom ||
-            value === MPopperPlacement.BottomEnd ||
-            value === MPopperPlacement.BottomStart ||
-            value === MPopperPlacement.Left ||
-            value === MPopperPlacement.LeftEnd ||
-            value === MPopperPlacement.LeftStart ||
-            value === MPopperPlacement.Right ||
-            value === MPopperPlacement.RightEnd ||
-            value === MPopperPlacement.RightStart ||
-            value === MPopperPlacement.Top ||
-            value === MPopperPlacement.TopEnd ||
-            value === MPopperPlacement.TopStart
+        validator: value => Enums.toValueArray(MPopperPlacement).includes(value)
     })
-    public placement: MPopperPlacement;
+    public readonly placement: MPopperPlacement;
+
     @Prop({ default: true })
-    public closeButton: boolean;
+    public readonly closeButton: boolean;
+
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
+
     @Prop()
-    public openTitle: string;
+    public readonly openTitle: string;
+
     @Prop()
-    public closeTitle: string;
+    public readonly closeTitle: string;
+
     @Prop()
-    public className: string;
+    public readonly className: string;
+
     @Prop({
         default: MTooltipSize.Small,
-        validator: value =>
-            value === MTooltipSize.Large ||
-            value === MTooltipSize.Small
+        validator: value => Enums.toValueArray(MTooltipSize).includes(value)
     })
-    public size: MTooltipSize;
+    public readonly size: MTooltipSize;
+
     @Prop({ default: 'm-svg__information' })
-    public iconName: string;
+    public readonly iconName: string;
 
     public tooltipId: string = `mTooltip-${uuid.generate()}`;
 
@@ -134,16 +127,16 @@ export class MTooltip extends ModulVue {
     }
 
     @Watch('open')
-    private openChanged(open: boolean): void {
+    public openChanged(open: boolean): void {
         this.propOpen = open;
     }
 
     @Emit('open')
-    private onOpen(): void {
+    public onOpen(): void {
     }
 
     @Emit('close')
-    private onClose(): void {
+    public onClose(): void {
     }
 }
 

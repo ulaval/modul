@@ -3,7 +3,6 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Location } from 'vue-router';
 import uuid from '../../../utils/uuid/uuid';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ACCORDION_TRANSITION_NAME, ICON_NAME, PLUS_NAME } from '../../component-names';
 import { MIcon } from '../../icon/icon';
 import { MPlus } from '../../plus/plus';
 import { MAccordionTransition } from '../../transitions/accordion-transition/accordion-transition';
@@ -24,26 +23,31 @@ export interface MenuItem {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon,
-        [PLUS_NAME]: MPlus,
-        [ACCORDION_TRANSITION_NAME]: MAccordionTransition
+        MIcon,
+        MPlus,
+        MAccordionTransition
     }
 })
 export class MMenuItem extends BaseMenuItem implements MenuItem {
     @Prop()
-    public open: boolean;
-    @Prop()
-    public value: string;
-    @Prop()
-    public label: string;
-    @Prop()
-    public url: string | Location;
-    @Prop()
-    public iconName: string;
-    @Prop()
-    public disabled: boolean;
+    public readonly open: boolean;
 
-    $refs: {
+    @Prop()
+    public readonly value: string;
+
+    @Prop()
+    public readonly label: string;
+
+    @Prop()
+    public readonly url: string | Location;
+
+    @Prop()
+    public readonly iconName: string;
+
+    @Prop()
+    public readonly disabled: boolean;
+
+    public $refs: {
         transition: MAccordionTransition;
         group: HTMLElement;
     };

@@ -4,7 +4,7 @@ import { Emit, Prop } from 'vue-property-decorator';
 import { FormatMode } from '../../utils/i18n/i18n';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton, MButtonSkin } from '../button/button';
-import { BUTTON_NAME, PROGRESS_NAME, SHOW_MORE_NAME } from '../component-names';
+import { SHOW_MORE_NAME } from '../component-names';
 import { MProgress, MProgressSkin } from '../progress/progress';
 import WithRender from './show-more.html?style=./show-more.scss';
 
@@ -12,22 +12,22 @@ import WithRender from './show-more.html?style=./show-more.scss';
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [PROGRESS_NAME]: MProgress
+        MButton,
+        MProgress
     }
 })
 export class MShowMore extends ModulVue {
     @Prop({ default: 0 })
-    nbVisible: number;
+    public readonly nbVisible: number;
 
     @Prop({ required: true })
-    nbTotal: number;
+    public readonly nbTotal: number;
 
     @Prop({ default: false })
-    loading: boolean;
+    public readonly loading: boolean;
 
     @Prop()
-    public skin: MProgressSkin;
+    public readonly skin: MProgressSkin;
 
     get isVisible(): boolean {
         return this.nbTotal !== undefined && this.nbTotal > 0;

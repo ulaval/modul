@@ -39,24 +39,24 @@ export interface InputMaskOptions extends InternalCleaveOptions {
 @WithRender
 @Component
 export class MInputMask extends ModulVue {
-    public $refs: {
-        input: HTMLInputElement;
-    };
-
     @Prop()
-    public maxLength: number;
+    public readonly maxLength: number;
 
     @Prop()
     @Model('input')
-    value: string;
+    public readonly value: string;
 
     @Prop({ default: true })
-    public raw: boolean;
+    public readonly raw: boolean;
 
     // https://github.com/nosir/cleave.js/blob/master/doc/options.md
     @Prop()
-    public options: InputMaskOptions;
+    public readonly options: InputMaskOptions;
 
+
+    public $refs: {
+        input: HTMLInputElement;
+    };
     private cleave: Cleave;
 
 

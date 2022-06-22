@@ -1,9 +1,10 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { ACCORDION_TRANSITION_NAME, MENU_ITEM_NAME, MENU_NAME, PLUS_NAME } from '../component-names';
+import { MENU_ITEM_NAME, MENU_NAME } from '../component-names';
 import { MPlus } from '../plus/plus';
 import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import { MMenuItem } from './menu-item/menu-item';
@@ -38,30 +39,31 @@ export enum MMenuSkin {
 @WithRender
 @Component({
     components: {
-        [PLUS_NAME]: MPlus,
-        [ACCORDION_TRANSITION_NAME]: MAccordionTransition
+        MPlus,
+        MAccordionTransition
     }
 })
 export class MMenu extends BaseMenu implements Menu {
     @Prop()
-    public selected: string;
+    public readonly selected: string;
+
     @Prop()
-    public open: boolean;
+    public readonly open: boolean;
 
     @Prop({ default: true })
-    public closeOnSelection: boolean;
+    public readonly closeOnSelection: boolean;
 
     @Prop({
         default: MMenuSkin.Dark,
-        validator: value =>
-            value === MMenuSkin.Light ||
-            value === MMenuSkin.Dark
+        validator: value => Enums.toValueArray(MMenuSkin).includes(value)
     })
-    public skin: MMenuSkin;
+    public readonly skin: MMenuSkin;
+
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
+
     @Prop({ default: `mMenu-${uuid.generate()}-controls` })
-    public idAriaControls: string;
+    public readonly idAriaControls: string;
 
     public $refs: {
         menu: HTMLElement;

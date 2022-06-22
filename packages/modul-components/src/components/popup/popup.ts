@@ -6,7 +6,7 @@ import { MOpenTrigger, OpenTrigger, OpenTriggerMixin } from '../../mixins/open-t
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
-import { POPPER_NAME, POPUP_NAME, SIDEBAR_NAME } from '../component-names';
+import { POPUP_NAME } from '../component-names';
 import { MPopper, MPopperPlacement } from '../popper/popper';
 import { MSidebar } from '../sidebar/sidebar';
 import WithRender from './popup.html?style=./popup.scss';
@@ -14,8 +14,8 @@ import WithRender from './popup.html?style=./popup.scss';
 @WithRender
 @Component({
     components: {
-        [POPPER_NAME]: MPopper,
-        [SIDEBAR_NAME]: MSidebar
+        MPopper,
+        MSidebar
     },
     mixins: [MediaQueries, OpenTrigger]
 })

@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_BUTTON_NAME, PROGRESS_NAME, TABLE_NAME } from '../component-names';
+import { TABLE_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MProgress } from '../progress/progress';
 import WithRender from './table.html?style=./table.scss';
@@ -49,8 +49,8 @@ interface MColumnTableInternal extends MColumnTable {
 @WithRender
 @Component({
     components: {
-        [PROGRESS_NAME]: MProgress,
-        [ICON_BUTTON_NAME]: MIconButton
+        MProgress,
+        MIconButton
     }
 })
 export class MTable extends ModulVue {

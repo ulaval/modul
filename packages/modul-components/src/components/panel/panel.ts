@@ -1,6 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import { PANEL_NAME } from '../component-names';
 import WithRender from './panel.html?style=./panel.scss';
 
@@ -15,39 +16,36 @@ export enum MPanelSkin {
 export class MPanel extends Vue {
     @Prop({
         default: MPanelSkin.Light,
-        validator: value =>
-            value === MPanelSkin.Light ||
-            value === MPanelSkin.Dark ||
-            value === MPanelSkin.Darker
+        validator: value => Enums.toValueArray(MPanelSkin).includes(value)
     })
-    public skin: MPanelSkin;
+    public readonly skin: MPanelSkin;
 
     @Prop()
-    public highlighted: boolean;
+    public readonly highlighted: boolean;
 
     @Prop()
-    public shadow: boolean;
+    public readonly shadow: boolean;
 
     @Prop({ default: true })
-    public border: boolean;
+    public readonly border: boolean;
 
     @Prop()
-    public borderLarge: boolean;
+    public readonly borderLarge: boolean;
 
     @Prop({ default: true })
-    public padding: boolean;
+    public readonly padding: boolean;
 
     @Prop()
-    public paddingLarge: boolean;
+    public readonly paddingLarge: boolean;
 
     @Prop({ default: true })
-    public paddingHeader: boolean;
+    public readonly paddingHeader: boolean;
 
     @Prop({ default: true })
-    public paddingBody: boolean;
+    public readonly paddingBody: boolean;
 
     @Prop({ default: true })
-    public paddingFooter: boolean;
+    public readonly paddingFooter: boolean;
 
     @Emit('click')
     onClick(): void { }

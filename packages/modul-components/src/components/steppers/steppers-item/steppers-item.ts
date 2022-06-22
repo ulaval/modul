@@ -1,7 +1,6 @@
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ICON_NAME } from '../../component-names';
 import { MIcon } from '../../icon/icon';
 import WithRender from './steppers-item.html?style=./steppers-item.scss';
 
@@ -20,7 +19,7 @@ export abstract class BaseSteppers extends ModulVue {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon
+        MIcon
     }
 })
 export class MSteppersItem extends ModulVue {
@@ -32,12 +31,16 @@ export class MSteppersItem extends ModulVue {
             value === MSteppersItemState.Disabled
     })
     public state: MSteppersItemState;
+
     @Prop()
     public iconName: string;
+
     @Prop()
     public iconTitle: string;
+
     @Prop({ default: false })
     public completed: boolean;
+
     @Prop()
     url: string;
 

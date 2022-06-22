@@ -4,7 +4,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
-import { AUTO_HORIZONTAL_SCROLL, ICON_BUTTON_NAME, NAVBAR_ITEM_NAME, NAVBAR_NAME } from '../component-names';
+import { NAVBAR_ITEM_NAME, NAVBAR_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MAutoHorizontalScroll, MAutoHorizontalScrollGradientStyle, MAutoHorizontalScrollResizeProperties } from './../auto-horizontal-scroll/auto-horizontal-scroll';
 import { MNavbarItem } from './navbar-item/navbar-item';
@@ -48,8 +48,8 @@ export enum MNavbarMaxWidth {
 @WithRender
 @Component({
     components: {
-        [ICON_BUTTON_NAME]: MIconButton,
-        [AUTO_HORIZONTAL_SCROLL]: MAutoHorizontalScroll
+        MIconButton,
+        MAutoHorizontalScroll
     }
 })
 export class MNavbar extends BaseNavbar implements Navbar {
@@ -193,7 +193,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
             switch (this.skin) {
                 case MNavbarSkin.NavMain:
                 case MNavbarSkin.TabDark:
-                case MNavbarSkin.TabDarkMain :
+                case MNavbarSkin.TabDarkMain:
                     return MAutoHorizontalScrollGradientStyle.Dark;
                 case MNavbarSkin.NavSub:
                     return MAutoHorizontalScrollGradientStyle.GreyBlack;
@@ -274,7 +274,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
     private get selectedNavbarItem(): MNavbarItem | undefined {
         return this.navbarItemsInterne.length > 0 ?
             this.navbarItemsInterne.find(i => i && i.$props.value === this.model) :
-                undefined;
+            undefined;
     }
 
     private resizeComponant(properties?: MAutoHorizontalScrollResizeProperties): void {
@@ -287,11 +287,11 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
     private setSelectedIndicatorPosition(): void {
         const navbarItemElement: HTMLElement | undefined = this.selectedNavbarItem && this.selectedNavbarItem.$el ?
-                this.selectedNavbarItem.$el as HTMLElement :
-                    undefined;
+            this.selectedNavbarItem.$el as HTMLElement :
+            undefined;
         const localRef: HTMLElement | undefined = this.skin && this.$refs[this.skin] ?
             this.$refs[this.skin] :
-                undefined;
+            undefined;
         if (
             !(this.isTabUnderlineSkin || this.isTabArrowSkin) ||
             !(navbarItemElement && localRef)
@@ -322,7 +322,7 @@ export class MNavbar extends BaseNavbar implements Navbar {
 
         const navbarItemSelectedEl: HTMLElement | undefined = this.selectedNavbarItem && this.selectedNavbarItem.$el ?
             this.selectedNavbarItem.$el as HTMLElement :
-                undefined;
+            undefined;
 
         if (navbarItemSelectedEl) {
             const componentWidth: number = parseInt(this.componentWidth, 10);

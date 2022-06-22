@@ -38,33 +38,33 @@ export class MMultiSelect extends ModulVue {
     @Prop({
         validator: value => Array.isArray(value)
     })
-    public value: any[];
+    public readonly value: any[];
 
     @Prop({
         validator: value => Array.isArray(value)
     })
-    public options: any[];
+    public readonly options: any[];
 
     @Prop()
-    public focus: boolean;
+    public readonly focus: boolean;
 
     @Prop({
         default: false
     })
-    public linkSelectAll: boolean;
+    public readonly linkSelectAll: boolean;
 
     @Prop({
         default: 5
     })
-    public maxVisibleChips: number;
+    public readonly maxVisibleChips: number;
 
     @Prop({
         default: 12
     })
-    public defaultChipCharsTrunk: number;
+    public readonly defaultChipCharsTrunk: number;
 
     @Prop()
-    public placeholder: string;
+    public readonly placeholder: string;
 
     @Prop({ default: () => `${MULTI_SELECT_NAME}-${uuid.generate()}` })
     public readonly id: string;

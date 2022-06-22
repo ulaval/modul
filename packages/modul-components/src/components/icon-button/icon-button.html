@@ -19,8 +19,7 @@
             class="m-icon-button__icon"
             :name="iconName"
             :size="iconSize" />
-    <span class="m-icon-button__hidden"
-          v-if="hasSlot">
-        <slot></slot>
+    <span v-if="$slots.default" class="m-icon-button__hidden">
+        <slot />
     </span>
 </button>

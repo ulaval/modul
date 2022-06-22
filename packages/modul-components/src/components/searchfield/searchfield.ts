@@ -7,7 +7,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_BUTTON_NAME, ICON_NAME, INPUT_STYLE_NAME, SEARCHFIELD_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { SEARCHFIELD_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
 import { MInputStyle } from '../input-style/input-style';
@@ -18,10 +18,10 @@ import './searchfield.scss';
 @WithRender
 @Component({
     components: {
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [ICON_NAME]: MIcon,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+        MInputStyle,
+        MIconButton,
+        MIcon,
+        MValidationMessage
     },
     mixins: [
         InputState,

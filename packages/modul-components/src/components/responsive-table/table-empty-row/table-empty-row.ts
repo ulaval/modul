@@ -3,7 +3,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
-import { EMPTY_AREA_NAME, TABLE_EMPTY_ROW_NAME } from '../../component-names';
+import { TABLE_EMPTY_ROW_NAME } from '../../component-names';
 import { MTableEmptyArea } from '../responsive-table-commons';
 import { MEmptyArea, MEmptyAreaBackgroundStyle, MEmptyAreaDisplayMode } from './../../empty-area/empty-area';
 import WithRender from './table-empty-row.html?style=./table-empty-row.scss';
@@ -17,7 +17,7 @@ import WithRender from './table-empty-row.html?style=./table-empty-row.scss';
         }
     },
     components: {
-        [EMPTY_AREA_NAME]: MEmptyArea
+        MEmptyArea
     }
 })
 export class MTableEmptyRow extends ModulVue {

@@ -1,11 +1,11 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 import { PROGRESS_NAME } from '../component-names';
 import WithRender from './progress.html?style=./progress.scss';
 import INDETERMINATE_ANIMATION_TEMPLATE from './progressSpinnerAnimation';
-
 
 export enum MProgressState {
     Completed = 'completed',
@@ -23,25 +23,30 @@ export enum MProgressSkin {
 export class MProgress extends ModulVue {
     @Prop()
     public value: number;
+
     @Prop()
     public indeterminate: boolean;
+
     @Prop({ default: 6 })
     public size: number;
+
     @Prop()
     public circle: boolean;
+
     @Prop({ default: 50 })
     public diameter: number;
+
     @Prop({ default: 4 })
     public stroke: number;
+
     @Prop({
-        validator: value =>
-            value === MProgressState.Completed ||
-            value === MProgressState.InProgress ||
-            value === MProgressState.Error
+        validator: value => Enums.toValueArray(MProgressState).includes(value)
     })
     public state: MProgressState;
+
     @Prop({ default: true })
     public borderRadius: boolean;
+
     @Prop({ default: MProgressSkin.Default })
     public skin: MProgressSkin;
 

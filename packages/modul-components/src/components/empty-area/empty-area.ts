@@ -3,7 +3,7 @@ import { Component, Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
-import { ADD_NAME, BUTTON_NAME, EMPTY_AREA_NAME, SVG_NAME } from '../component-names';
+import { EMPTY_AREA_NAME } from '../component-names';
 import { MAdd } from './../add/add';
 import {
     MButton,
@@ -30,9 +30,9 @@ export enum MEmptyAreaDisplayMode {
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [ADD_NAME]: MAdd,
-        [SVG_NAME]: MSvg
+        MButton,
+        MAdd,
+        MSvg
     }
 })
 export class MEmptyArea extends ModulVue {
