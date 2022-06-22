@@ -39,7 +39,7 @@ let showStack: boolean;
 const getStubs: any = () => {
     return {
         [MESSAGE_PAGE_NAME]: '<div><slot /></div>',
-        [ACCORDION_NAME]: '<div id="accordionDiv"><slot /></div>',
+        [ACCORDION_NAME]: '<div id="accordionDiv"><slot /></div>'
     };
 };
 
