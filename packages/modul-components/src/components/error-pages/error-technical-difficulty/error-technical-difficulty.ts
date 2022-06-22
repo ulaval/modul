@@ -2,7 +2,7 @@
 import moment from 'moment';
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Prop } from 'vue-property-decorator';
+import { Prop, Ref } from 'vue-property-decorator';
 import { ModulVue } from '../../../utils/vue/vue';
 import { MAccordion } from '../../accordion/accordion';
 import { ERROR_TECHNICAL_DIFFICULTY_NAME } from '../../component-names';
@@ -72,6 +72,9 @@ export class MErrorTechnicalDifficulty extends ModulVue {
         default: false
     })
     public readonly openAccordion?: boolean;
+
+    @Ref('stacktrace')
+    public readonly refStacktrace?: HTMLElement;
 
     public readonly state: string = MMessageState.Error;
     public readonly svgName: string = 'message-error-technical-difficulty';

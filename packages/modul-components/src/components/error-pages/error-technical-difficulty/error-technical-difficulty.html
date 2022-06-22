@@ -20,6 +20,7 @@
             <strong>{{ formattedTime }}</strong>
         </p>
         <pre v-if="propStacktrace"
+            ref="stacktrace"
             class="m-error-technical-difficulty__stacktrace">{{ error.stack }}</pre>
     </m-accordion>
 </m-message-page>
