@@ -7,7 +7,6 @@ import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
 import WithRender from './error-access-denied.html';
 
-
 @WithRender
 @Component({
     components: {
@@ -15,7 +14,6 @@ import WithRender from './error-access-denied.html';
     }
 })
 export class MErrorAccessDenied extends ModulVue {
-
     @Prop({
         default: () => (Vue.prototype).$i18n.translate('m-error-access-denied:title')
     })

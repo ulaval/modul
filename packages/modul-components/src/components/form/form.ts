@@ -8,8 +8,6 @@ import { ControlValidator } from '../../utils/form/validators/control-validator'
 import { FormatMode } from '../../utils/i18n/i18n';
 import { getString } from '../../utils/str/str';
 import { ModulVue } from '../../utils/vue/vue';
-import { ACCORDION_TRANSITION_NAME, I18N_NAME, MESSAGE_NAME, TOAST } from '../component-names';
-import { MI18n } from '../i18n/i18n';
 import { MMessage } from '../message/message';
 import { MToast } from '../toast/toast';
 import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
@@ -20,10 +18,9 @@ import WithRender from './form.html?style=./form.scss';
 @WithRender
 @Component({
     components: {
-        [ACCORDION_TRANSITION_NAME]: MAccordionTransition,
-        [TOAST]: MToast,
-        [MESSAGE_NAME]: MMessage,
-        [I18N_NAME]: MI18n
+        MAccordionTransition,
+        MToast,
+        MMessage
     }
 })
 export class MForm extends ModulVue {
@@ -31,11 +28,12 @@ export class MForm extends ModulVue {
         required: true
     })
     public readonly formGroup!: FormGroup;
-    public displaySummary: boolean = false;
-    public displayToast: boolean = false;
 
     @Prop({ default: () => ModulVue.prototype.$form.formActionFallouts || [] })
-    public actionFallouts: FormActionFallout[];
+    public readonly actionFallouts: FormActionFallout[];
+
+    public displaySummary: boolean = false;
+    public displayToast: boolean = false;
 
     @Emit('submit')
     public emitSubmit(): void { }

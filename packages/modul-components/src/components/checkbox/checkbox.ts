@@ -5,7 +5,7 @@ import { InputState, InputStateMixin } from '../../mixins/input-state/input-stat
 import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { CHECKBOX_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { CHECKBOX_NAME } from '../component-names';
 import { MValidationMessage } from '../validation-message/validation-message';
 import WithRender from './checkbox.html?style=./checkbox.scss';
 
@@ -21,7 +21,7 @@ export enum MCheckboxVerticalAlignement {
 @WithRender
 @Component({
     components: {
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+        MValidationMessage
     },
     mixins: [InputState]
 })

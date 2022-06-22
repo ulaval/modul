@@ -1,8 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { I18N_NAME, ICON_BUTTON_NAME, LIST_ITEM_NAME, SPINNER_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { LIST_ITEM_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MSpinner } from '../spinner/spinner';
 import WithRender from './list-item.html?style=./list-item.scss';
@@ -10,38 +9,43 @@ import WithRender from './list-item.html?style=./list-item.scss';
 @WithRender
 @Component({
     components: {
-        [I18N_NAME]: MI18n,
-        [SPINNER_NAME]: MSpinner,
-        [ICON_BUTTON_NAME]: MIconButton
+        MSpinner,
+        MIconButton
     }
 })
 export class MListItem extends Vue {
+    @Prop()
+    public readonly iconName: string;
 
     @Prop()
-    public iconName: string;
+    public readonly iconHiddenText: string;
+
     @Prop()
-    public iconHiddenText: string;
+    public readonly disabled: boolean;
+
     @Prop()
-    public disabled: boolean;
-    @Prop()
-    public waiting: boolean;
+    public readonly waiting: boolean;
+
     @Prop({ default: false })
-    public fullWidth: boolean;
+    public readonly fullWidth: boolean;
+
     @Prop({ default: false })
-    public fullHeight: boolean;
+    public readonly fullHeight: boolean;
+
     @Prop({ default: false })
-    public borderTop: boolean;
+    public readonly borderTop: boolean;
+
     @Prop({ default: false })
-    public borderBottom: boolean;
+    public readonly borderBottom: boolean;
 
     @Emit('click')
-    click(event: Event): void { }
+    public click(event: Event): void { }
 
-    private get hasIcon(): boolean {
+    public get hasIcon(): boolean {
         return this.iconName !== '' && this.iconName !== undefined;
     }
 
-    private get isWaiting(): boolean {
+    public get isWaiting(): boolean {
         return this.waiting && !this.disabled;
     }
 

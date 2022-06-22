@@ -15,7 +15,7 @@
 
         <div class="m-list-item__icon" v-if="hasIcon && !isWaiting" >
             <m-icon-button :icon-name="iconName" @click="click($event)">
-                <m-i18n :k="iconHiddenText"></m-i18n>
+                {{ $i18n.translate(iconHiddenText) }}
             </m-icon-button>
         </div>
 
@@ -28,7 +28,7 @@
         </div>
 
         <div class="m-list-item__icon" v-if="isWaiting">
-            <m-spinner size="small"></m-spinner>
+            <m-spinner size="small" />
         </div>
     </template>
 </li>
