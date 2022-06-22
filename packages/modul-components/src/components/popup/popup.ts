@@ -6,7 +6,7 @@ import { MOpenTrigger, OpenTrigger, OpenTriggerMixin } from '../../mixins/open-t
 import { Enums } from '../../utils/enums/enums';
 import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-validation';
 import { ModulVue } from '../../utils/vue/vue';
-import { POPPER_NAME, POPUP_NAME, SIDEBAR_NAME } from '../component-names';
+import { POPUP_NAME } from '../component-names';
 import { MPopper, MPopperPlacement } from '../popper/popper';
 import { MSidebar } from '../sidebar/sidebar';
 import WithRender from './popup.html?style=./popup.scss';
@@ -14,8 +14,8 @@ import WithRender from './popup.html?style=./popup.scss';
 @WithRender
 @Component({
     components: {
-        [POPPER_NAME]: MPopper,
-        [SIDEBAR_NAME]: MSidebar
+        MPopper,
+        MSidebar
     },
     mixins: [MediaQueries, OpenTrigger]
 })
@@ -73,28 +73,28 @@ export class MPopup extends ModulVue {
     public readonly background: boolean;
 
     @Prop()
-    public readonly beforeEnter: any;
+    public readonly beforeEnter: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly enter: any;
+    public readonly enter: (el: HTMLElement, done: Function) => void;
 
     @Prop()
-    public readonly afterEnter: any;
+    public readonly afterEnter: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly enterCancelled: any;
+    public readonly enterCancelled: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly beforeLeave: any;
+    public readonly beforeLeave: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly leave: any;
+    public readonly leave: (el: HTMLElement, done: Function) => void;
 
     @Prop()
-    public readonly afterLeave: any;
+    public readonly afterLeave: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly leaveCancelled: any;
+    public readonly leaveCancelled: (el: HTMLElement) => void;
 
     @Prop()
     public readonly desktopOnly: boolean;
@@ -131,6 +131,9 @@ export class MPopup extends ModulVue {
 
     @Emit('close')
     public emitClose(): void { }
+
+    @Emit('after-enter')
+    public emitAfterEnter(_el: HTMLElement): void { }
 
     @Emit('portal-mounted')
     public emitPortalMounted(): void { }
