@@ -54,7 +54,13 @@ exports[`Storyshots modul-components|m-pagination default 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page précédente
+        
+      </span>
     </button>
      
     <ul
@@ -180,7 +186,13 @@ exports[`Storyshots modul-components|m-pagination default 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page suivante
+        
+      </span>
     </button>
   </div>
 </div>
@@ -224,7 +236,13 @@ exports[`Storyshots modul-components|m-pagination items-per-page="14" 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page précédente
+        
+      </span>
     </button>
      
     <ul
@@ -350,7 +368,13 @@ exports[`Storyshots modul-components|m-pagination items-per-page="14" 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page suivante
+        
+      </span>
     </button>
   </div>
 </div>
@@ -394,7 +418,13 @@ exports[`Storyshots modul-components|m-pagination loading 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page précédente
+        
+      </span>
     </button>
      
     <ul
@@ -521,7 +551,13 @@ exports[`Storyshots modul-components|m-pagination loading 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page suivante
+        
+      </span>
     </button>
   </div>
 </div>
@@ -580,7 +616,13 @@ exports[`Storyshots modul-components|m-pagination value 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page précédente
+        
+      </span>
     </button>
      
     <ul
@@ -715,7 +757,13 @@ exports[`Storyshots modul-components|m-pagination value 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Page suivante
+        
+      </span>
     </button>
   </div>
 </div>

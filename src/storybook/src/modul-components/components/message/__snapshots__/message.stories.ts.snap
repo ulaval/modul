@@ -49,7 +49,13 @@ exports[`Storyshots modul-components|m-message close-button 1`] = `
         />
       </svg>
        
-      <!---->
+      <span
+        class="m-icon-button__hidden"
+      >
+        
+            Fermer
+        
+      </span>
     </button>
   </div>
 </div>
