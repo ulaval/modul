@@ -67,28 +67,28 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     public readonly width: string;
 
     @Prop()
-    public readonly beforeEnter: any;
+    public readonly beforeEnter: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly enter: any;
+    public readonly enter: (el: HTMLElement, done: Function) => void;
 
     @Prop()
-    public readonly afterEnter: any;
+    public readonly afterEnter: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly enterCancelled: any;
+    public readonly enterCancelled: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly beforeLeave: any;
+    public readonly beforeLeave: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly leave: any;
+    public readonly leave: (el: HTMLElement, done: Function) => void;
 
     @Prop()
-    public readonly afterLeave: any;
+    public readonly afterLeave: (el: HTMLElement) => void;
 
     @Prop()
-    public readonly leaveCancelled: any;
+    public readonly leaveCancelled: (el: HTMLElement) => void;
 
     @Prop()
     public readonly boundariesElement: string;
@@ -106,6 +106,9 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
 
     @Emit('click-outside')
     public emitClickOutside(): void { }
+
+    @Emit('after-enter')
+    public emitAfterEnter(_el: HTMLElement): void { }
 
     public get popupBody(): HTMLElement {
         return this.$refs.body;
@@ -177,17 +180,17 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
     public onBeforeEnter(el: HTMLElement): void {
         this.updateReference();
         if (this.beforeEnter) {
-            this.beforeEnter(el.children[0]);
+            this.beforeEnter(el.children[0] as HTMLElement);
         }
     }
 
-    public onEnter(el: HTMLElement, done): void {
+    public onEnter(el: HTMLElement, done: Function): void {
         this.$nextTick(() => {
             this.update();
             if (this.enter) {
-                this.enter(el.children[0], done);
+                this.enter(el.children[0] as HTMLElement, done);
             } else {
-                let transitionDuration: number = (window.getComputedStyle(el).getPropertyValue('transition-duration').slice(1, -1) as any) * 1000;
+                const transitionDuration: number = (window.getComputedStyle(el).getPropertyValue('transition-duration').slice(1, -1) as any) * 1000;
                 setTimeout(() => {
                     this.defaultAnimOpen = true;
                     done();
@@ -198,10 +201,10 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
 
     public onAfterEnter(el: HTMLElement): void {
         if (this.afterEnter) {
-            this.afterEnter(el.children[0]);
+            this.afterEnter(el.children[0] as HTMLElement);
         }
-        this.$emit('after-enter', el);
         this.as<PortalMixin>().setFocusToPortal();
+        this.emitAfterEnter(el);
     }
 
     public onEnterCancelled(el: HTMLElement): void {
@@ -212,13 +215,13 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
 
     public onBeforeLeave(el: HTMLElement): void {
         if (this.beforeLeave) {
-            this.beforeLeave(el.children[0]);
+            this.beforeLeave(el.children[0] as HTMLElement);
         }
     }
 
     public onLeave(el: HTMLElement, done): void {
         if (this.leave) {
-            this.leave(el.children[0], done);
+            this.leave(el.children[0] as HTMLElement, done);
         } else {
             this.defaultAnimOpen = false;
             setTimeout(done, 300);
@@ -227,14 +230,14 @@ export class MPopper extends ModulVue implements PortalMixinImpl {
 
     public onAfterLeave(el: HTMLElement): void {
         if (this.afterLeave) {
-            this.afterLeave(el.children[0]);
+            this.afterLeave(el.children[0] as HTMLElement);
         }
         this.as<PortalMixin>().setFocusToTrigger();
     }
 
     public onLeaveCancelled(el: HTMLElement): void {
         if (this.leaveCancelled) {
-            this.leaveCancelled(el.children[0]);
+            this.leaveCancelled(el.children[0] as HTMLElement);
         }
     }
 

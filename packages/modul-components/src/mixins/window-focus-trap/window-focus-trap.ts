@@ -7,14 +7,15 @@ export class MFocusTrap extends ModulVue {
     private focusTrap?: FocusTrap;
 
     public setFocusTrap(el: HTMLElement, options: {
+        escapeActive?: boolean,
         initialFocus?: HTMLElement,
         returnFocusOnDeactivate?: boolean
     } = {}): void {
         this.focusTrap = createFocusTrap(el, {
-            escapeDeactivates: false,
+            escapeDeactivates: options?.escapeActive ?? false,
             allowOutsideClick: true,
-            initialFocus: options.initialFocus || el,
-            returnFocusOnDeactivate: options.returnFocusOnDeactivate === undefined ? true : options.returnFocusOnDeactivate,
+            initialFocus: options?.initialFocus ?? el,
+            returnFocusOnDeactivate: options?.returnFocusOnDeactivate ?? true,
             preventScroll: true
         });
         this.focusTrap.activate();
