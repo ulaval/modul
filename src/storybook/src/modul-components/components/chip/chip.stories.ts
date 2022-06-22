@@ -1,7 +1,6 @@
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/vue';
-import { MChipMode } from '@ulaval/modul-components/dist/components/chip/chip';
-import MChipDelete from '@ulaval/modul-components/dist/components/chip/chip-delete/chip-delete';
+import { MChip, MChipMode } from '@ulaval/modul-components/dist/components/chip/chip';
 import { CHIP_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
@@ -12,7 +11,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_NAME}`, module)
 
     .add('default', () => ({
         components: {
-            MChipDelete
+            MChip
         },
         props: {
             text: {
@@ -31,7 +30,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_NAME}`, module)
     }))
     .add('disabled', () => ({
         components: {
-            MChipDelete
+            MChip
         },
         methods: {
             onAdd(): void {
@@ -45,7 +44,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_NAME}`, module)
     }))
     .add('mode="add"', () => ({
         components: {
-            MChipDelete
+            MChip
         },
         props: {
             mode: {
@@ -64,7 +63,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_NAME}`, module)
     }))
     .add('mode="delete"', () => ({
         components: {
-            MChipDelete
+            MChip
         },
         props: {
             mode: {
@@ -84,7 +83,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_NAME}`, module)
 
     .add('size="small" - add', () => ({
         components: {
-            MChipDelete
+            MChip
         },
         props: {
             mode: {
@@ -103,7 +102,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_NAME}`, module)
     }))
     .add('size="small" - delete', () => ({
         components: {
-            MChipDelete
+            MChip
         },
         props: {
             mode: {

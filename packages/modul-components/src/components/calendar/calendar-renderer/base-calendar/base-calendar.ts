@@ -2,7 +2,6 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import { Enums } from '../../../../utils/enums/enums';
 import { KeyCode } from '../../../../utils/keycode/keycode';
 import uuid from '../../../../utils/uuid/uuid';
-import { CALENDAR_BUTTON_NAME, ICON_BUTTON_NAME, LINK_NAME } from '../../../component-names';
 import { MIconButton } from '../../../icon-button/icon-button';
 import { MLink, MLinkMode } from '../../../link/link';
 import { MCalendarButton } from '../../calendar-button/calendar-button';
@@ -56,21 +55,20 @@ export enum MBaseCalendarType {
 @WithRender
 @Component({
     components: {
-        [LINK_NAME]: MLink,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [CALENDAR_BUTTON_NAME]: MCalendarButton
+        MLink,
+        MIconButton,
+        MCalendarButton
     }
 })
 export default class MBaseCalendar extends MAbstractCalendarRenderer {
-
     @Prop({
         default: MBaseCalendarView.DAYS,
         validator: value => Enums.toValueArray(MBaseCalendarView).includes(value)
     })
-    initialView: MBaseCalendarView;
+    public readonly initialView: MBaseCalendarView;
 
     @Prop({ default: true })
-    showMonthBeforeAfter: boolean;
+    public readonly showMonthBeforeAfter: boolean;
 
     @Prop({
         default: () => {
@@ -81,7 +79,7 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
             });
         }
     })
-    monthsNames: string[];
+    public readonly monthsNames: string[];
 
     @Prop({
         default: () => {
@@ -92,7 +90,7 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
             });
         }
     })
-    monthsNamesLong: string[];
+    public readonly monthsNamesLong: string[];
 
     @Prop({
         default: () => {
@@ -103,35 +101,35 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
             });
         }
     })
-    daysNames: string[];
+    public readonly daysNames: string[];
 
     @Prop({
         default: MBaseCalendarType.FULL_DATE,
         validator: value => Enums.toValueArray(MBaseCalendarType).includes(value)
     })
-    type: MBaseCalendarType;
+    public readonly type: MBaseCalendarType;
 
     @Prop({ default: true })
-    visible: boolean;
+    public readonly visible: boolean;
 
-    mBaseCalendarView = MBaseCalendarView;
-    previousMonthLabel: string = this.$i18n.translate('m-calendar:previous.month');
-    nextMonthLabel: string = this.$i18n.translate('m-calendar:next.month');
-    previousYearLabel: string = this.$i18n.translate('m-calendar:previous.year');
-    nextYearLabel: string = this.$i18n.translate('m-calendar:next.year');
-    id: string = `m-simple-calendar-${uuid.generate()}`;
+    public mBaseCalendarView = MBaseCalendarView;
+    public previousMonthLabel: string = this.$i18n.translate('m-calendar:previous.month');
+    public nextMonthLabel: string = this.$i18n.translate('m-calendar:next.month');
+    public previousYearLabel: string = this.$i18n.translate('m-calendar:previous.year');
+    public nextYearLabel: string = this.$i18n.translate('m-calendar:next.year');
+    public id: string = `m-simple-calendar-${uuid.generate()}`;
 
-    $refs: {
+    public $refs: {
         body: HTMLElement;
         yearsMonthsView: HTMLElement;
     };
 
     public modeLinkCurrentMonthAndYear: MLinkMode = MLinkMode.Button;
-    animReady: boolean = false;
+    public animReady: boolean = false;
     private internalCurrentView: MBaseCalendarView = MBaseCalendarView.DAYS;
 
     @Watch('visible', { immediate: true })
-    visibleChanged(visible: boolean): void {
+    public visibleChanged(visible: boolean): void {
         const isInYearView: boolean = this.isTypeYearsMonths || this.initialView === MBaseCalendarView.YEARS_MONTHS;
 
         if (visible && isInYearView) {
@@ -143,11 +141,11 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         this.currentView = this.initialView; // Set currentView value in created() to hide animation when the component is diplayed for the firt time
     }
 
-    onToogleView(): void {
+    public onToogleView(): void {
         this.currentView === MBaseCalendarView.DAYS ? this.currentView = MBaseCalendarView.YEARS_MONTHS : this.currentView = MBaseCalendarView.DAYS;
     }
 
-    onYearMonthSelect(year: YearState, month: MonthState): void {
+    public onYearMonthSelect(year: YearState, month: MonthState): void {
         if (!month.isDisabled) {
             month.isCurrent = true;
 
@@ -165,38 +163,38 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         }
     }
 
-    onYearMonthSelectKeyup($event: KeyboardEvent, year: YearState, month: MonthState): void {
+    public onYearMonthSelectKeyup($event: KeyboardEvent, year: YearState, month: MonthState): void {
         // tslint:disable-next-line: deprecation
         if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
             this.onYearMonthSelect(year, month);
         }
     }
 
-    onYearNext(event: Event): void {
+    public onYearNext(event: Event): void {
         super.onYearNext(event);
     }
 
-    onYearPrevious(event: Event): void {
+    public onYearPrevious(event: Event): void {
         super.onYearPrevious(event);
     }
 
-    onMonthNext(event: Event): void {
+    public onMonthNext(event: Event): void {
         super.onMonthNext(event);
     }
 
-    onMonthPrevious(event: Event): void {
+    public onMonthPrevious(event: Event): void {
         super.onMonthPrevious(event);
     }
 
-    onDaySelect(day: DayState): void {
+    public onDaySelect(day: DayState): void {
         super.onDaySelect(day);
     }
 
-    onDayMouseEnter(day: DayState): void {
+    public onDayMouseEnter(day: DayState): void {
         super.onDayMouseEnter(day);
     }
 
-    onKeyUp($event: KeyboardEvent, day: DayState): void {
+    public onKeyUp($event: KeyboardEvent, day: DayState): void {
         // tslint:disable-next-line: deprecation
         if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
             super.onDaySelect(day);
@@ -207,36 +205,36 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         }
     }
 
-    onDayMouseLeave(day: DayState): void {
+    public onDayMouseLeave(day: DayState): void {
         super.onDayMouseLeave(day);
     }
 
-    isDateInFuture(day: DayState): boolean {
+    public isDateInFuture(day: DayState): boolean {
         return !!this.calendar.type && this.calendar.type === CalendarType.DATE_RANGE
             && !!this.calendar.value && !!(this.calendar.value as RangeDate).begin
             && day.date.isAfter(new ModulDate((this.calendar.value as RangeDate).begin));
     }
 
-    isInsideRange(day: DayState): boolean {
+    public isInsideRange(day: DayState): boolean {
         return !!this.calendar.type && this.calendar.type === CalendarType.DATE_RANGE
             && !!this.calendar.value && !!(this.calendar.value as RangeDate).begin
             && !!this.calendar.value && !!(this.calendar.value as RangeDate).end
             && day.isHighlighted;
     }
 
-    isSelectionStart(day: DayState): boolean {
+    public isSelectionStart(day: DayState): boolean {
         return day.isSelectionStart && !this.hideDay(day);
     }
 
-    isSelectionEnd(day: DayState): boolean {
+    public isSelectionEnd(day: DayState): boolean {
         return day.isSelectionEnd && !this.hideDay(day);
     }
 
-    hideDay(day: DayState): boolean {
+    public hideDay(day: DayState): boolean {
         return (day.isInNextMonth || day.isInPreviousMonth) && !this.showMonthBeforeAfter;
     }
 
-    buildRef(refPrefix: MBaseCalendarView, year: number, month: number, day?: number): string {
+    public buildRef(refPrefix: MBaseCalendarView, year: number, month: number, day?: number): string {
         let refName: string = `${refPrefix}-${this.padString(year, 4)}-${this.padString(month, 2)}`;
         if (refPrefix === MBaseCalendarView.DAYS) {
             return `${refName}-${this.padString(day, 2)}`;
@@ -244,11 +242,11 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         return refName;
     }
 
-    monthIndexToShortName(index: number): string {
+    public monthIndexToShortName(index: number): string {
         return this.monthsNames[index];
     }
 
-    scrollToCurrentYear(): void {
+    public scrollToCurrentYear(): void {
         this.$nextTick(() => {
             let yearsMonthsViewEl: HTMLElement = this.$refs.yearsMonthsView;
             const spacingBeforeCurrentYear: number = 16;
@@ -258,7 +256,7 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         });
     }
 
-    set currentView(view: MBaseCalendarView) {
+    public set currentView(view: MBaseCalendarView) {
         if (this.isTypeYearsMonths) {
             this.internalCurrentView = MBaseCalendarView.YEARS_MONTHS;
         } else {
@@ -266,71 +264,71 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         }
     }
 
-    get currentView(): MBaseCalendarView {
+    public get currentView(): MBaseCalendarView {
         return this.internalCurrentView;
     }
 
-    get isTypeYearsMonths(): boolean {
+    public get isTypeYearsMonths(): boolean {
         return this.type === MBaseCalendarType.YEARS_MONTHS;
     }
 
-    get currentYear(): number {
+    public get currentYear(): number {
         return this.calendar.dates.current.fullYear();
     }
 
-    get currentMonth(): number {
+    public get currentMonth(): number {
         return this.calendar.dates.current.month();
     }
 
-    get currentMonthName(): string {
+    public get currentMonthName(): string {
         return this.monthsNamesLong[this.currentMonth];
     }
 
-    get weekdaysLabels(): string[] {
+    public get weekdaysLabels(): string[] {
         return this.daysNames;
     }
 
-    get years(): {} {
+    public get years(): {} {
         return this.calendar.years;
     }
 
-    get yearsMonths(): {} {
+    public get yearsMonths(): {} {
         return this.calendar.yearsMonths;
     }
 
-    get months(): {} {
+    public get months(): {} {
         return this.calendar.months;
     }
 
-    get days(): {} {
+    public get days(): {} {
         return this.calendar.days;
     }
 
-    get isYearsMonthsView(): boolean {
+    public get isYearsMonthsView(): boolean {
         return this.currentView === MBaseCalendarView.YEARS_MONTHS;
     }
 
-    get isDaysView(): boolean {
+    public get isDaysView(): boolean {
         return this.currentView === MBaseCalendarView.DAYS;
     }
 
-    get isMinYear(): boolean {
+    public get isMinYear(): boolean {
         return this.currentYear === Math.min(...this.calendar.years.map((year: YearState) => year.year));
     }
 
-    get isMaxYear(): boolean {
+    public get isMaxYear(): boolean {
         return this.currentYear === Math.max(...this.calendar.years.map((year: YearState) => year.year));
     }
 
-    get isMinMonth(): boolean {
+    public get isMinMonth(): boolean {
         return this.calendar.dates.current.isSameOrBefore(this.calendar.dates.min, DatePrecision.MONTH);
     }
 
-    get isMaxMonth(): boolean {
+    public get isMaxMonth(): boolean {
         return this.calendar.dates.current.isSameOrAfter(this.calendar.dates.max, DatePrecision.MONTH);
     }
 
-    get isMaxRow(): boolean {
+    public get isMaxRow(): boolean {
         if (this.isTypeYearsMonths) {
             return false;
         }
@@ -338,7 +336,7 @@ export default class MBaseCalendar extends MAbstractCalendarRenderer {
         return numberOfDays / 7 > 5 ? true : false;
     }
 
-    get isButtonToogleViewDisabled(): boolean {
+    public get isButtonToogleViewDisabled(): boolean {
         return this.isMinMonth && this.isMaxYear || this.isTypeYearsMonths;
     }
 

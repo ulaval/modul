@@ -4,8 +4,6 @@ import MChipAdd from '@ulaval/modul-components/dist/components/chip/chip-add/chi
 import { CHIP_ADD_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../../utils';
 
-
-
 storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_ADD_NAME}`, module)
 
     .add('default', () => ({
@@ -42,6 +40,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${CHIP_ADD_NAME}`, module)
         template: '<m-chip-add disabled="true" @add="onAdd()" @click="onClick()">Disabled</m-chip-add>'
     }))
     .add('icon=false', () => ({
+        components: {
+            MChipAdd
+        },
         template: '<m-chip-add :icon="false">Chip</m-chip-add>'
     }))
     .add('small', () => ({

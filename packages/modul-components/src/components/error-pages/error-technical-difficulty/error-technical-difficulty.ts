@@ -9,15 +9,13 @@ import { ERROR_TECHNICAL_DIFFICULTY_NAME } from '../../component-names';
 import { MLink } from '../../link/link';
 import { Link, MMessagePage } from '../../message-page/message-page';
 import { MMessageState } from '../../message/message';
-import { MPanel } from '../../panel/panel';
 import WithRender from './error-technical-difficulty.html?style=./error-technical-difficulty.scss';
 @WithRender
 @Component({
     components: {
         MMessagePage,
         MLink,
-        MAccordion,
-        MPanel
+        MAccordion
     }
 })
 export class MErrorTechnicalDifficulty extends ModulVue {

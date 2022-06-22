@@ -4,16 +4,16 @@
     text-align: left;
 
     &__stacktrace {
-        margin-top: $m-space-sm;
-        max-height: 120px;
+        margin: $m-space 0 0;
+        min-height: 60px;
+        max-height: 200px;
+        resize: vertical;
         overflow: auto;
         padding: $m-space;
+        border-radius: $m-border-radius-sm;
+        background-color: $m-color-grey-lightest;
 
         @include m-scrollbar();
-
-        pre {
-            margin: 0;
-        }
     }
 
     &__browser {

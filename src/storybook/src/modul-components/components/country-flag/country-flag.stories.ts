@@ -79,8 +79,8 @@ export const AllCountries = () => ({
     }),
     template: `<div>
         <div
-            v-for="code in codesAllCounties"
-            :key="code"
+            v-for="(code, index) in codesAllCounties"
+            :key="index"
             style="display: inline-flex; flex-direction: column; align-items: center; margin: 0 8px 12px 0;"
         >
             <${COUNTRY_FLAG_NAME}
@@ -95,6 +95,6 @@ export const AllCountries = () => ({
             >
                 {{ code }}
             </span>
-        <div>
+        </div>
     </div>`
 });

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { Enums } from '../../../utils/enums/enums';
 import uuid from '../../../utils/uuid/uuid';
-import { ICON_NAME } from '../../component-names';
 import { MIcon } from '../../icon/icon';
 import WithRender from './chip-delete.html?style=./chip-delete.scss';
 
@@ -14,7 +14,7 @@ enum MChipSize {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon
+        MIcon
     },
     modul: {
         i18n: {
@@ -32,9 +32,7 @@ export default class MChipDelete extends Vue {
 
     @Prop({
         default: MChipSize.Large,
-        validator: value =>
-            value === MChipSize.Large ||
-            value === MChipSize.Small
+        validator: value => Enums.toValueArray(MChipSize).includes(value)
     })
     public readonly size: MChipSize;
 
@@ -58,7 +56,6 @@ export default class MChipDelete extends Vue {
         }
         this.emitClick(event);
         this.emitDelete(event);
-        (event.currentTarget as HTMLElement).blur();
     }
 
     public onFocus(): void {
@@ -69,11 +66,11 @@ export default class MChipDelete extends Vue {
         this.focused = false;
     }
 
-    public onMouseOver(event: Event): void {
+    public onMouseOver(): void {
         this.iconHover = true;
     }
 
-    public onMouseLeave(event: Event): void {
+    public onMouseLeave(): void {
         this.iconHover = false;
     }
 }

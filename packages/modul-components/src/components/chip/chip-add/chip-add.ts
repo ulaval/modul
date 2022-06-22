@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { ICON_NAME } from '../../component-names';
+import { Enums } from '../../../utils/enums/enums';
 import { MIcon } from '../../icon/icon';
 import WithRender from './chip-add.html?style=./chip-add.scss';
 
@@ -13,7 +13,7 @@ enum MChipSize {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon
+        MIcon
     },
     modul: {
         i18n: {
@@ -34,9 +34,7 @@ export default class MChipAdd extends Vue {
 
     @Prop({
         default: MChipSize.Large,
-        validator: value =>
-            value === MChipSize.Large ||
-            value === MChipSize.Small
+        validator: value => Enums.toValueArray(MChipSize).includes(value)
     })
     public readonly size: MChipSize;
 
@@ -56,6 +54,5 @@ export default class MChipAdd extends Vue {
         }
         this.emitClick(event);
         this.emitAdd(event);
-        (this.$el as HTMLElement).blur();
     }
 }
