@@ -1,16 +1,15 @@
 <m-modal :title="title"
          ref="modal"
          :open.sync="propOpen"
+         :close-on-backdrop="false"
+         :padding-body="false"
          @open="onOpen"
          @close="onClose"
-         @portal-after-open="onPortalAfterOpen"
-         :close-on-backdrop="false"
-         :padding-body="false">
+         @portal-after-open="onPortalAfterOpen">
 
-    <span slot="trigger">
-        <slot></slot>
-    </span>
-
+    <template slot="trigger">
+        <slot />
+    </template>
     <div class="m-file-upload"
          v-m-file-drop.keep-store="storeName">
 
@@ -44,7 +43,7 @@
                     </p>
                     <p class="m-file-upload__error-message__error"
                        v-else-if="hasCustomValidationRejection(file)">
-                        {{customValidation.message}}
+                        {{ customValidation.message }}
                     </p>
                 </li>
             </ul>

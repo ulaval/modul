@@ -1,13 +1,10 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
-import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
-import { i18nFilter } from '../../filters/i18n/i18n';
 import { MediaQueries, MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { FormatMode } from '../../utils/i18n/i18n';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_BUTTON_NAME, ICON_NAME, LINK_NAME, PAGINATION_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { PAGINATION_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIcon } from '../icon/icon';
 import { MLink } from '../link/link';
@@ -27,32 +24,28 @@ interface PaginationItem {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon,
-        [LINK_NAME]: MLink,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [I18N_NAME]: MI18n
-    },
-    filters: {
-        [I18N_FILTER_NAME]: i18nFilter
+        MIcon,
+        MLink,
+        MIconButton
     },
     mixins: [MediaQueries]
 })
 export class MPagination extends ModulVue {
     @Model('change')
     @Prop({ default: FIRST_PAGE })
-    public value: number;
+    public readonly value: number;
 
     @Prop({ required: true })
-    public itemsTotal: number;
+    public readonly itemsTotal: number;
 
     @Prop({ default: 20 })
-    public itemsPerPage: number;
+    public readonly itemsPerPage: number;
 
     @Prop({ default: false })
-    loading: boolean;
+    public readonly loading: boolean;
 
     @Emit('change')
-    goToPage(value: number): void { }
+    public goToPage(value: number): void { }
 
     public get pagesTotal(): number {
         return Math.ceil(this.itemsTotal / this.itemsPerPage);

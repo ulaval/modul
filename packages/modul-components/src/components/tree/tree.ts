@@ -1,12 +1,10 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { I18N_NAME as FILTER_I18N_NAME } from '../../filters/filter-names';
-import { i18nFilter } from '../../filters/i18n/i18n';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
-import { MESSAGE_NAME, TREE_NAME } from '../component-names';
+import { TREE_NAME } from '../component-names';
 import { MMessage } from '../message/message';
-import { TREE_NODE_NAME } from './component-names';
 import { MTreeNode } from './tree-node/tree-node';
 import WithRender from './tree.html?style=./tree.scss';
 export interface TreeNode {
@@ -36,46 +34,34 @@ export enum MCheckboxes {
 @WithRender
 @Component({
     components: {
-        [TREE_NODE_NAME]: MTreeNode,
-        [MESSAGE_NAME]: MMessage
-    },
-    filters: {
-        [FILTER_I18N_NAME]: i18nFilter
+        MTreeNode,
+        MMessage
     }
 })
 export class MTree extends ModulVue {
     @Prop()
-    public tree: TreeNode[];
+    public readonly tree: TreeNode[];
 
     @Prop({
         default: MSelectionMode.Single,
-        validator: value =>
-            value === MSelectionMode.None ||
-            value === MSelectionMode.Single ||
-            value === MSelectionMode.Multiple ||
-            value === MSelectionMode.Readonly
+        validator: value => Enums.toValueArray(MSelectionMode).includes(value)
     })
-    public selectionMode: MSelectionMode;
+    public readonly selectionMode: MSelectionMode;
 
     @Prop({
         default: MCheckboxes.False,
-        validator: value =>
-            value === MCheckboxes.False ||
-            value === MCheckboxes.True ||
-            value === MCheckboxes.WithButtonAutoSelect ||
-            value === MCheckboxes.WithCheckboxAutoSelect ||
-            value === MCheckboxes.WithParentAutoSelect
+        validator: value => Enums.toValueArray(MCheckboxes).includes(value)
     })
-    public checkboxes: MCheckboxes;
+    public readonly checkboxes: MCheckboxes;
 
     @Prop()
-    public selectedNodes: string[];
+    public readonly selectedNodes: string[];
 
     @Prop()
-    public useFilesIcons: boolean;
+    public readonly useFilesIcons: boolean;
 
     @Prop()
-    public disabledNodes: string[];
+    public readonly disabledNodes: string[];
 
     public propSelectedNodes: string[] = this.selectedNodes || [];
 

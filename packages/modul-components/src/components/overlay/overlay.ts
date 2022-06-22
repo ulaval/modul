@@ -1,55 +1,50 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop, Ref } from 'vue-property-decorator';
-import { I18N_NAME as I18N_FILTER_NAME } from '../../filters/filter-names';
-import { i18nFilter } from '../../filters/i18n/i18n';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
 import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
-import { BUTTON_NAME, I18N_NAME, OVERLAY_NAME } from '../component-names';
+import { OVERLAY_NAME } from '../component-names';
 import { MI18n } from '../i18n/i18n';
 import WithRender from './overlay.html?style=./overlay.scss';
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [I18N_NAME]: MI18n
-    },
-    filters: {
-        [I18N_FILTER_NAME]: i18nFilter
+        MButton,
+        MI18n
     },
     mixins: [Portal, MFocusTrap]
 })
 export class MOverlay extends ModulVue {
     @Prop({ default: true })
-    public focusManagement: boolean;
+    public readonly focusManagement: boolean;
 
     @Prop({ default: true })
-    public padding: boolean;
+    public readonly padding: boolean;
 
     @Prop({ default: true })
-    public paddingHeader: boolean;
+    public readonly paddingHeader: boolean;
 
     @Prop({ default: true })
-    public paddingBody: boolean;
+    public readonly paddingBody: boolean;
 
     @Prop({ default: true })
-    public paddingFooter: boolean;
+    public readonly paddingFooter: boolean;
 
     @Prop({ default: false })
-    public disableSaveButton: boolean;
+    public readonly disableSaveButton: boolean;
 
     @Prop({ default: false })
-    public waiting: boolean;
+    public readonly waiting: boolean;
 
     @Prop({ default: false })
-    public hideFooter: boolean;
+    public readonly hideFooter: boolean;
 
-    public hasKeyboard: boolean = false;
+    public readonly hasKeyboard: boolean = false;
 
     @Ref('article')
-    public refArticle?: HTMLElement;
+    public readonly refArticle?: HTMLElement;
 
     public $refs: {
         dialogWrap: HTMLElement,
@@ -59,10 +54,10 @@ export class MOverlay extends ModulVue {
     };
 
     @Emit('save')
-    emitSave(event: MouseEvent): void { }
+    public emitSave(event: MouseEvent): void { }
 
     @Emit('cancel')
-    emitCancel(event: MouseEvent): void { }
+    public emitCancel(event: MouseEvent): void { }
 
     public get titleId(): string {
         return `${this.as<Portal>().propId}-title`;

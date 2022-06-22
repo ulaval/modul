@@ -2,6 +2,7 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
 import { BackdropMode } from '../../mixins/portal/portal';
+import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { SPINNER_NAME } from '../component-names';
@@ -26,37 +27,31 @@ const SPINNER_ID: string = 'MSpinner';
 @Component
 export class MSpinner extends ModulVue {
     @Prop()
-    public title: boolean;
+    public readonly title: boolean;
 
     @Prop()
-    public titleMessage: string;
+    public readonly titleMessage: string;
 
     @Prop()
-    public description: boolean;
+    public readonly description: boolean;
 
     @Prop()
-    public descriptionMessage: string;
+    public readonly descriptionMessage: string;
 
     @Prop({
         default: MSpinnerStyle.Regular,
-        validator: value =>
-            value === MSpinnerStyle.Dark ||
-            value === MSpinnerStyle.Light ||
-            value === MSpinnerStyle.Lighter ||
-            value === MSpinnerStyle.Regular
+        validator: value => Enums.toValueArray(MSpinnerStyle).includes(value)
     })
-    public skin: MSpinnerStyle;
+    public readonly skin: MSpinnerStyle;
 
     @Prop({
         default: MSpinnerSize.Large,
-        validator: value =>
-            value === MSpinnerSize.Large ||
-            value === MSpinnerSize.Small
+        validator: value => Enums.toValueArray(MSpinnerSize).includes(value)
     })
-    public size: MSpinnerSize;
+    public readonly size: MSpinnerSize;
 
     @Prop()
-    public processing: boolean;
+    public readonly processing: boolean;
 
     private spinnerId: string = SPINNER_ID + '-' + uuid.generate();
     private portalTargetEl: HTMLElement | undefined = {} as HTMLElement; // initialized to be responsive
@@ -73,7 +68,7 @@ export class MSpinner extends ModulVue {
     }
 
     @Watch('processing')
-    private onProcessingChange(value: boolean): void {
+    public onProcessingChange(value: boolean): void {
         if (value) {
             this.openProcessingPortal();
         } else {

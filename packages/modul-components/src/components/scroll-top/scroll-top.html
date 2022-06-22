@@ -4,9 +4,9 @@
         <button v-if="show"
                 class="m-scroll-top__button"
                 :class="{'m--is-position-fixed': isPositionFixed}"
-                :title="'m-scroll-top:top' | f-m-i18n"
-                @click="onClick"
-                ref="scrollButton">
+                :title="$i18n.translate('m-scroll-top:top')"
+                ref="scrollButton"
+                @click="onClick">
             <m-icon name="m-svg__chevron--right"
                     size="16px"></m-icon>
         </button>

@@ -4,8 +4,9 @@ import { Prop, Ref } from 'vue-property-decorator';
 import { MediaQueriesMixin } from '../../mixins/media-queries/media-queries';
 import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDuration } from '../../mixins/portal/portal';
 import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
-import { ICON_BUTTON_NAME, MODAL_NAME } from '../component-names';
+import { MODAL_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import WithRender from './modal.html';
 import './modal.scss';
@@ -20,36 +21,32 @@ export enum MModalSize {
 @WithRender
 @Component({
     components: {
-        [ICON_BUTTON_NAME]: MIconButton
+        MIconButton
     },
     mixins: [Portal, MFocusTrap]
 })
 export class MModal extends ModulVue implements PortalMixinImpl {
     @Prop({
         default: MModalSize.Regular,
-        validator: value =>
-            value === MModalSize.Regular ||
-            value === MModalSize.FullScreen ||
-            value === MModalSize.Large ||
-            value === MModalSize.Small
+        validator: value => Enums.toValueArray(MModalSize).includes(value)
     })
-    public size: MModalSize;
+    public readonly size: MModalSize;
 
     @Prop({ default: true })
-    public closeOnBackdrop: boolean;
+    public readonly closeOnBackdrop: boolean;
 
     @Prop({ default: true })
-    public focusManagement: boolean;
+    public readonly focusManagement: boolean;
 
     @Prop()
     public title: string;
 
     @Prop({ default: true })
-    public bodyMaxWidth: boolean;
+    public readonly bodyMaxWidth: boolean;
 
     /** @deprecated will be removed in v2, please use css variables to customize visuals. */
     @Prop({ default: true })
-    public paddingBody: boolean;
+    public readonly paddingBody: boolean;
 
     @Ref('article')
     public readonly refArticle?: HTMLElement;
@@ -57,7 +54,7 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     public readonly closeTitle: string = this.$i18n.translate('m-modal:close');
     public hasKeyboard: boolean = false;
 
-    $refs: {
+    public $refs: {
         body: HTMLElement;
         modalWrap: HTMLElement;
         article: HTMLElement;
@@ -127,6 +124,12 @@ export class MModal extends ModulVue implements PortalMixinImpl {
         return this.$refs.article;
     }
 
+    public backdropClick(): void {
+        if (this.closeOnBackdrop) {
+            this.as<PortalMixin>().tryClose();
+        }
+    }
+
     protected mounted(): void {
         if (!this.title && !Boolean(this.$slots.header)) {
             this.$log.warn('<m-modal> needs a header slot or title prop.');
@@ -141,12 +144,6 @@ export class MModal extends ModulVue implements PortalMixinImpl {
     private closeModalOnEscape(event: KeyboardEvent): void {
         if (event.key !== 'Escape') { return; }
         this.closeModal();
-    }
-
-    private backdropClick(): void {
-        if (this.closeOnBackdrop) {
-            this.as<PortalMixin>().tryClose();
-        }
     }
 }
 

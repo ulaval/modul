@@ -14,7 +14,6 @@ import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MCalendarButton } from '../calendar/calendar-button/calendar-button';
 import { TIMEPICKER_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { InternalCleaveOptions, MInputMask } from '../input-mask/input-mask';
 import { MInputStyle } from '../input-style/input-style';
@@ -48,7 +47,6 @@ function validateTimeString(value: string): boolean {
         MValidationMessage,
         MLink,
         MInputStyle,
-        MI18n,
         MInputMask,
         MCalendarButton
     },
@@ -65,25 +63,25 @@ function validateTimeString(value: string): boolean {
 })
 export class MTimepicker extends ModulVue {
     @Model('input')
-    public value: string;
+    public readonly value: string;
 
     @Prop({ default: '00:00' })
-    public min: string;
+    public readonly min: string;
 
     @Prop({ default: '23:59' })
-    public max: string;
+    public readonly max: string;
 
     @Prop({ default: 5 })
-    public step: number;
+    public readonly step: number;
 
     @Prop({ default: InputMaxWidth.Small })
-    public maxWidth: string;
+    public readonly maxWidth: string;
 
     @Prop({ default: false })
-    public hideInternalErrorMessage: boolean;
+    public readonly hideInternalErrorMessage: boolean;
 
     @Prop({ default: false })
-    public skipInputValidation: boolean;
+    public readonly skipInputValidation: boolean;
 
     @Prop({ default: () => `mTimepicker-${uuid.generate()}` })
     public readonly id: string;
@@ -114,9 +112,9 @@ export class MTimepicker extends ModulVue {
     private internalTimeErrorMessage: string = '';
 
     @Emit('click')
-    private emitClick(event: Event): void { }
+    public emitClick(event: Event): void { }
 
-    private created(): void {
+    protected created(): void {
         this.internalTime = this.value;
         this.updatePopupTime(this.internalTime);
     }

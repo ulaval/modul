@@ -5,8 +5,7 @@ import { BackdropMode, Portal, PortalMixin, PortalMixinImpl, PortalTransitionDur
 import { MFocusTrap } from '../../mixins/window-focus-trap/window-focus-trap';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, ICON_BUTTON_NAME, SIDEBAR_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { SIDEBAR_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import WithRender from './sidebar.html?style=./sidebar.scss';
 
@@ -24,9 +23,7 @@ export enum MSidebarCloseButtonPosition {
 @WithRender
 @Component({
     components: {
-        [I18N_NAME]: MI18n,
-        [ICON_BUTTON_NAME]: MIconButton
-
+        MIconButton
     },
     mixins: [Portal, MFocusTrap]
 })

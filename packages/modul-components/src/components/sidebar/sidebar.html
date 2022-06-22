@@ -29,7 +29,7 @@
                             class="m-sidebar__close-button"
                             type="button"
                             @click="closeModal()">
-                        <m-i18n k="m-sidebar:close" />
+                        {{ $i18n.translate('m-sidebar:close') }}
                     </button>
                     <header v-if="$slots.header || hasHeader"
                             class="m-sidebar__header"
@@ -45,7 +45,7 @@
                                        class="m-sidebar__header__close-button"
                                        icon-name="m-svg__close-clear"
                                        @click="closeModal">
-                            <m-i18n k="m-sidebar:close" />
+                            {{ $i18n.translate('m-sidebar:close') }}
                         </m-icon-button>
                     </header>
                     <div v-if="$slots.default"

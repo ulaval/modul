@@ -40,7 +40,9 @@ export class MAdd extends ModulVue {
     public emitClick(): void { }
 
     public onClick(): void {
-        if (this.disabled) return;
+        if (this.disabled) {
+            return;
+        }
         this.emitClick();
     }
 }
