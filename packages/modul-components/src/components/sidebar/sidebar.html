@@ -6,6 +6,7 @@
         <transition name="m--is">
             <div v-show="propOpen"
                  v-if="portalMounted"
+                 ref="modalWrap"
                  class="m-sidebar__wrap"
                  :class="[
                     {
@@ -15,9 +16,8 @@
                     },
                     'm--is-origin-' + origin,
                     className
-                ]"
-                 @click.self="backdropClick"
-                 ref="modalWrap">
+                 ]"
+                 @click.self="backdropClick">
                 <article class="m-sidebar__article"
                          ref="article"
                          :style="{

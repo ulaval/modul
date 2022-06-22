@@ -1,5 +1,6 @@
 import Component from 'vue-class-component';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import { MouseButtons } from '../../utils/mouse/mouse';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
@@ -45,11 +46,7 @@ export enum PortalTransitionDuration {
 export class Portal extends ModulVue implements PortalMixin {
     @Prop({
         default: MOpenTrigger.Click,
-        validator: value =>
-            value === MOpenTrigger.Click ||
-            value === MOpenTrigger.Hover ||
-            value === MOpenTrigger.Manual ||
-            value === MOpenTrigger.MouseDown
+        validator: value => Enums.toValueArray(MOpenTrigger).includes(value)
     })
     public readonly openTrigger: MOpenTrigger;
 
@@ -109,6 +106,9 @@ export class Portal extends ModulVue implements PortalMixin {
 
     @Emit('portal-after-close')
     public emitPortalAfterClose(): void { }
+
+    @Emit('after-enter')
+    public emitAfterEnter(_el: HTMLElement): void { }
 
     @Emit('click')
     public emitClick(event: MouseEvent): void { }
@@ -211,6 +211,7 @@ export class Portal extends ModulVue implements PortalMixin {
                         this.opening = true;
                         setTimeout(() => {
                             this.emitPortalAfterOpen();
+                            this.emitAfterEnter(this.portalTargetEl.children[0] as HTMLElement);
                             this.setFocusToPortal();
                             this.opening = false;
                         }, this.transitionDuration);
