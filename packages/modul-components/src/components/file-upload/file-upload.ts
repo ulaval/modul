@@ -201,7 +201,7 @@ export class MFileUpload extends ModulVue {
         });
     }
 
-    ppublicrivate onMessageClose(): void {
+    public onMessageClose(): void {
         for (const f of this.rejectedFiles) {
             this.$file.remove(f.uid, this.storeName);
         }

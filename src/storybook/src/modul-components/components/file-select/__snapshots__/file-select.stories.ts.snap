@@ -16,11 +16,9 @@ exports[`Storyshots modul-components|m-file-select default 1`] = `
     class="m-file-select__hidden"
     for="mFileSelect-fakeId"
   >
-    <span
-      class="m-i18n"
-    >
-      Parcourir
-    </span>
+    
+        Parcourir
+    
   </label>
    
   <button
@@ -35,12 +33,9 @@ exports[`Storyshots modul-components|m-file-select default 1`] = `
     <span
       class="m-button__text"
     >
-      <span
-        class="m-i18n"
-      >
+      
         Parcourir
-      </span>
-       
+     
       <!---->
     </span>
      

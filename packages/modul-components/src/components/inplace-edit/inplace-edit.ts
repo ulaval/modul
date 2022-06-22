@@ -37,7 +37,7 @@ export class MInplaceEdit extends ModulVue {
     @Prop({
         default: () => (Vue.prototype).$i18n.translate('m-inplace-edit:modify')
     })
-    public readonly title: string;
+    public title: string;
 
     private internalEditMode: boolean = false;
     private mqMounted: boolean;
