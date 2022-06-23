@@ -142,7 +142,8 @@
                         </div>
                         <div class="m-file-upload__completed-list__infos">
                             <p class="m-file-upload__completed-list__infos-label">
-                                <m-link v-if="file.url":url="file.url"
+                                <m-link v-if="file.url"
+                                        :url="file.url"
                                         mode="link"
                                         target="_blank">{{file.name}}</m-link>
                                 <template v-else>{{file.name}}</template>

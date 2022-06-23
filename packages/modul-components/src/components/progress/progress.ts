@@ -22,33 +22,33 @@ export enum MProgressSkin {
 @Component
 export class MProgress extends ModulVue {
     @Prop()
-    public value: number;
+    public readonly value: number;
 
     @Prop()
-    public indeterminate: boolean;
+    public readonly indeterminate: boolean;
 
     @Prop({ default: 6 })
-    public size: number;
+    public readonly size: number;
 
     @Prop()
-    public circle: boolean;
+    public readonly circle: boolean;
 
     @Prop({ default: 50 })
-    public diameter: number;
+    public readonly diameter: number;
 
     @Prop({ default: 4 })
-    public stroke: number;
+    public readonly stroke: number;
 
     @Prop({
         validator: value => Enums.toValueArray(MProgressState).includes(value)
     })
-    public state: MProgressState;
+    public readonly state: MProgressState;
 
     @Prop({ default: true })
-    public borderRadius: boolean;
+    public readonly borderRadius: boolean;
 
     @Prop({ default: MProgressSkin.Default })
-    public skin: MProgressSkin;
+    public readonly skin: MProgressSkin;
 
     private mode: string;
     private styleTag: HTMLElement | null;
@@ -58,11 +58,11 @@ export class MProgress extends ModulVue {
     }
 
     @Watch('diameter')
-    private setAttachStyleTag(): void {
+    public setAttachStyleTag(): void {
         this.attachStyleTag();
     }
 
-    private attachStyleTag(): void {
+    public attachStyleTag(): void {
 
         if (!this.styleTag) {
             this.styleTag = document.getElementById('m-progress-spinner-styles');
@@ -84,33 +84,33 @@ export class MProgress extends ModulVue {
 
     }
 
-    private get animationCSS(): string {
+    public get animationCSS(): string {
         return INDETERMINATE_ANIMATION_TEMPLATE
             .replace(/START_VALUE/g, `${0.95 * this.circleCircumference}`)
             .replace(/END_VALUE/g, `${0.2 * this.circleCircumference}`)
             .replace(/DIAMETER/g, `${this.diameter}`);
     }
 
-    private get propSize(): string {
+    public get propSize(): string {
         return this.circle ? '100%' : this.size + 'px';
     }
 
-    private get propState(): MProgressState {
+    public get propState(): MProgressState {
         return this.state ? this.state : this.value >= 100 ? MProgressState.Completed : MProgressState.InProgress;
     }
 
-    private get radiusSize(): string {
+    public get radiusSize(): string {
         return this.circle || !this.borderRadius ? 'initial' : this.size / 2 + 'px';
     }
 
-    private get styleObject(): { [name: string]: string } {
+    public get styleObject(): { [name: string]: string } {
         return {
             height: this.propSize,
             borderRadius: this.radiusSize
         };
     }
 
-    private get barStyleObject(): { [name: string]: string } {
+    public get barStyleObject(): { [name: string]: string } {
         return this.value >= 100 ? {
             width: this.stringValue,
             borderRadius: this.radiusSize
@@ -122,7 +122,7 @@ export class MProgress extends ModulVue {
             };
     }
 
-    private get stringValue(): string {
+    public get stringValue(): string {
         if (!this.indeterminate) {
             if (this.value < 0) {
                 return '0%';
@@ -138,7 +138,7 @@ export class MProgress extends ModulVue {
         }
     }
 
-    private get numberValue(): number {
+    public get numberValue(): number {
         if (!this.indeterminate) {
             if (this.value < 0) {
                 return 0;
@@ -152,21 +152,21 @@ export class MProgress extends ModulVue {
         }
     }
 
-    private get isDeterminate(): boolean {
+    public get isDeterminate(): boolean {
         if (this.circle === false) {
             this.mode = 'determinate';
         }
         return this.circle === false;
     }
 
-    private get isIndeterminate(): boolean {
+    public get isIndeterminate(): boolean {
         if (this.circle === true) {
             this.mode = 'indeterminate';
         }
         return this.circle === true;
     }
 
-    private get progressClasses(): { [name: string]: boolean } {
+    public get progressClasses(): { [name: string]: boolean } {
         let animationClass: string = 'm-progress-spinner-indeterminate';
 
         return {
@@ -175,11 +175,11 @@ export class MProgress extends ModulVue {
         };
     }
 
-    private get svgViewbox(): string {
+    public get svgViewbox(): string {
         return `0 0 ${this.diameter} ${this.diameter}`;
     }
 
-    private get svgStyles(): { [name: string]: string } {
+    public get svgStyles(): { [name: string]: string } {
         const circleSize: string = `${this.diameter}px`;
 
         return {
@@ -188,7 +188,7 @@ export class MProgress extends ModulVue {
         };
     }
 
-    private get circleStyles(): { [name: string]: number | string } {
+    public get circleStyles(): { [name: string]: number | string } {
         return {
             'stroke-dashoffset': this.circleStrokeDashOffset,
             'stroke-dasharray': this.circleStrokeDashArray,
@@ -197,7 +197,7 @@ export class MProgress extends ModulVue {
         };
     }
 
-    private get backgroundCircleStyles(): { [name: string]: string } {
+    public get backgroundCircleStyles(): { [name: string]: string } {
         return {
             'stroke-dasharray': this.circleStrokeDashArray,
             'stroke-width': this.circleStrokeWidth,
@@ -205,23 +205,23 @@ export class MProgress extends ModulVue {
         };
     }
 
-    private get circleRadius(): number {
+    public get circleRadius(): number {
         return (this.diameter - this.stroke) / 2;
     }
 
-    private get circleStrokeWidth(): string {
+    public get circleStrokeWidth(): string {
         return this.stroke + 'px';
     }
 
-    private get circleCircumference(): number {
+    public get circleCircumference(): number {
         return 2 * Math.PI * this.circleRadius;
     }
 
-    private get circleStrokeDashArray(): string {
+    public get circleStrokeDashArray(): string {
         return this.circleCircumference + 'px';
     }
 
-    private get circleStrokeDashOffset(): string {
+    public get circleStrokeDashOffset(): string {
         if (!this.indeterminate) {
             return this.circleCircumference * (100 - this.numberValue) / 100 + 'px';
         } else if (this.indeterminate) {
@@ -230,7 +230,7 @@ export class MProgress extends ModulVue {
         return '0px';
     }
 
-    private get isMonochrome(): boolean {
+    public get isMonochrome(): boolean {
         return this.skin === MProgressSkin.Monochrome;
     }
 }
