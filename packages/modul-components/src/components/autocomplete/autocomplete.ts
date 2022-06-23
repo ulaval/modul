@@ -75,7 +75,7 @@ export class MAutocomplete extends ModulVue {
     public readonly maxWidth: string;
 
     @Prop()
-    label: string;
+    public readonly label: string;
 
     @Prop()
     public readonly requiredMarker: boolean;

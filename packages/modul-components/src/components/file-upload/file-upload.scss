@@ -108,8 +108,9 @@ $m-file-upload-max-height--s: 72px;
     }
 
     &__title {
-        border-bottom: $m-border-width-sm solid $m-color-grey-light;
+        margin-top: $m-space-md;
         padding-bottom: 8px;
+        border-bottom: $m-border-width-sm solid $m-color-grey-light;
     }
 
     &__import-list {

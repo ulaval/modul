@@ -12,14 +12,19 @@ import WithRender from './i18n.html';
 export class MI18n extends ModulVue {
     @Prop()
     public k: string;
+
     @Prop({ default: () => [] })
     public params: any;
+
     @Prop()
     public nb?: number;
+
     @Prop()
     public modifier: string;
+
     @Prop({ default: true })
     public htmlEncode: boolean;
+
     @Prop()
     public formatMode?: FormatMode;
 

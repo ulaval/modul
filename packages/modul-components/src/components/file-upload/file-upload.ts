@@ -14,7 +14,6 @@ import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
 import { FILE_UPLOAD_NAME } from '../component-names';
 import { MFileSelect } from '../file-select/file-select';
-import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIconFile } from '../icon-file/icon-file';
 import { MLink } from '../link/link';
@@ -54,7 +53,6 @@ const defaultDragEvent: (e: DragEvent) => void = (e: DragEvent) => {
         MButton,
         MModal,
         MMessage,
-        MI18n,
         MFileSelect,
         MIconFile,
         MIconButton,

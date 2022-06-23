@@ -12,76 +12,66 @@
     </template>
     <div class="m-file-upload"
          v-m-file-drop.keep-store="storeName">
-
-        <m-message class="m-file-upload__error-message"
+        <m-message v-if="hasRejectedFiles"
+                   class="m-file-upload__error-message"
                    state="error"
-                   v-if="hasRejectedFiles"
                    :close-button="true"
-                   @close="onMessageClose"
-                   ref="message">
+                   ref="message"
+                   @close="onMessageClose">
             <p class="m-file-upload__error-message__title">
-                <m-i18n :nb="rejectedFiles.length"
-                        k="m-file-upload:rejectFileMsg"></m-i18n>
+                {{ $i18n.translate('m-file-upload:rejectFileMsg', [], rejectedFiles.length) }}
             </p>
             <ul class="m-file-upload__error-message__list">
                 <li v-for="file in rejectedFiles"
                     :key="file.uid">
                     <p class="m-file-upload__error-message__file-name">{{file.name}}</p>
-                    <p class="m-file-upload__error-message__error"
-                       v-if="hasExtensionsRejection(file)">
-                        <m-i18n k="m-file-upload:extensionFileMsg"></m-i18n>
+                    <p v-if="hasExtensionsRejection(file)"
+                       class="m-file-upload__error-message__error">
+                        {{ $i18n.translate('m-file-upload:extensionFileMsg') }}
                     </p>
-                    <p class="m-file-upload__error-message__error"
-                       v-else-if="hasSizeRejection(file)">
-                        <m-i18n k="m-file-upload:maxSizeMsg"></m-i18n> ({{maxSizeKb * 1024 | f-m-filesize}}).
+                    <p v-else-if="hasSizeRejection(file)"
+                       class="m-file-upload__error-message__error">
+                       {{ $i18n.translate('m-file-upload:maxSizeMsg') }} ({{maxSizeKb * 1024 | f-m-filesize}}).
                     </p>
-                    <p class="m-file-upload__error-message__error"
-                       v-else-if="hasMaxFilesRejection(file)">
-                        <m-i18n k="m-file-upload:maxNumberMsg"></m-i18n> ({{propMaxFiles}}
-                        <m-i18n :nb="propMaxFiles"
-                                k="m-file-upload:file"></m-i18n>)
+                    <p v-else-if="hasMaxFilesRejection(file)"
+                       class="m-file-upload__error-message__error">
+                        {{ $i18n.translate('m-file-upload:maxNumberMsg') }} ({{propMaxFiles}} {{ $i18n.translate('m-file-upload:file', [], propMaxFiles) }})
                     </p>
-                    <p class="m-file-upload__error-message__error"
-                       v-else-if="hasCustomValidationRejection(file)">
+                    <p v-else-if="hasCustomValidationRejection(file)"
+                       class="m-file-upload__error-message__error">
                         {{ customValidation.message }}
                     </p>
                 </li>
             </ul>
         </m-message>
 
-        <slot name="header"></slot>
+        <slot name="header" />
 
-        <div class="m-file-upload__drop-zone"
-             v-if="isDropZoneEnabled">
+        <div v-if="isDropZoneEnabled" class="m-file-upload__drop-zone">
             <div class="m-file-upload__drop-zone__instructions">
                 <h3 class="m-file-upload__drop-zone__instructions__title">
                     <m-icon name="m-svg__arrow--down"
-                            size="32px"></m-icon>
-                    <m-i18n k="m-file-upload:dropFile"
-                            :nb="propMaxFiles"></m-i18n>
+                            size="32px" />
+                    <span>{{ $i18n.translate('m-file-upload:dropFile', [], propMaxFiles) }}</span>
                 </h3>
                 <m-file-select class="m-file-upload__drop-zone__instructions__button"
                                skin="secondary"
                                :multiple="multipleSelection"
                                :store-name="storeName"
                                keep-store="true"
-                               :allowed-extensions="allowedExtensions"></m-file-select>
+                               :allowed-extensions="allowedExtensions" />
             </div>
-            <p class="m-file-upload__drop-zone__format"
-               v-if="hasAllowedExtensions">
-                <m-i18n class="m-file-upload__drop-zone__format__label"
-                        k="m-file-upload:format"
-                        :nb="allowedExtensions.length"
-                        format-mode="vsprintf"></m-i18n>: {{fileAllowedExtensions}}
+            <p v-if="hasAllowedExtensions"
+               class="m-file-upload__drop-zone__format">
+                <span class="m-file-upload__drop-zone__format__label">{{ $i18n.translate('m-file-upload:format', [], allowedExtensions.length, '', true, 'vsprintf') }}</span>: {{fileAllowedExtensions}}
             </p>
-            <p class="m-file-upload__drop-zone__format"
-               v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
+            <p v-if="selectionHelpMessage"
+               class="m-file-upload__drop-zone__format">{{ selectionHelpMessage }}</p>
         </div>
-        <div class="m-file-upload__no-drop-zone"
-             v-else>
+        <div v-else
+             class="m-file-upload__no-drop-zone">
             <h3 class="m-file-upload__no-drop-zone__title">
-                <m-i18n k="m-file-upload:selectFile"
-                        :nb="propMaxFiles"></m-i18n>
+                {{ $i18n.translate('m-file-upload:selectFile', [], propMaxFiles) }}
             </h3>
             <m-file-select class="m-file-upload__no-drop-zone__instructions__button"
                            skin="primary"
@@ -89,30 +79,23 @@
                            :store-name="storeName"
                            keep-store="true"
                            :allowed-extensions="allowedExtensions"></m-file-select>
-            <p class="m-file-upload__no-drop-zone__format"
-               v-if="hasAllowedExtensions">
-                <m-i18n class="m-file-upload__no-drop-zone__format__label"
-                        k="m-file-upload:format"
-                        :nb="allowedExtensions.length"></m-i18n>: {{fileAllowedExtensions}}
+            <p v-if="hasAllowedExtensions"
+               class="m-file-upload__no-drop-zone__format">
+                <span class="m-file-upload__no-drop-zone__format__label">{{ $i18n.translate('m-file-upload:format', [], allowedExtensions.length) }}</span>: {{fileAllowedExtensions}}
             </p>
-            <p class="m-file-upload__drop-zone__format"
-               v-if="selectionHelpMessage">{{ selectionHelpMessage }} </p>
+            <p v-if="selectionHelpMessage"
+               class="m-file-upload__drop-zone__format">{{ selectionHelpMessage }} </p>
         </div>
 
-        <h3 class="m-file-upload__title"
-            v-if="!hasUploadingFiles">
-            <m-i18n k="m-file-upload:import"></m-i18n> ({{uploadingFiles.length}}
-            <m-i18n :nb="uploadingFiles.length"
-                    k="m-file-upload:file"></m-i18n>)
+        <h3 v-if="!hasUploadingFiles" class="m-file-upload__title">
+            {{ $i18n.translate('m-file-upload:import') }} ({{uploadingFiles.length}} {{ $i18n.translate('m-file-upload:file', [], uploadingFiles.length) }})
         </h3>
 
-        <div class="m-file-upload__import-list"
-             v-if="!hasUploadingFiles">
+        <div v-if="!hasUploadingFiles" class="m-file-upload__import-list">
             <transition-group class="m-file-upload__import-list__wrap"
                               name="m--is"
                               tag="ul">
-                <li v-for="(file, index) in uploadingFiles"
-                    :key="file.uid">
+                <li v-for="(file, index) in uploadingFiles" :key="file.uid">
                     <div class="m-file-upload__import-list__content">
                         <div class="m-file-upload__import-list__file-icon">
                             <m-icon-file v-m-badge="{ state: getBadgeState(file) }"
@@ -126,9 +109,9 @@
                             </div>
                             <m-progress :value="file.progress"
                                         :state="getFileStatus(file)"></m-progress>
-                            <p class="m-file-upload__import-list__error-message"
-                               v-if="getFileStatus(file) === 'error'">
-                                <m-i18n k="m-file-upload:errorMsg"></m-i18n>
+                            <p v-if="getFileStatus(file) === 'error'"
+                               class="m-file-upload__import-list__error-message">
+                                {{ $i18n.translate('m-file-upload:errorMsg') }}
                             </p>
                         </div>
                         <div class="m-file-upload__import-list__delete">
@@ -144,15 +127,13 @@
                 </li>
             </transition-group>
         </div>
-
-        <div class="m-file-upload__completed-list"
-             v-if="!hasCompletedFiles"
+        <div v-if="!hasCompletedFiles"
+             class="m-file-upload__completed-list"
              :class="{ 'm--has-border': !hasUploadingFiles }">
             <transition-group class="m-file-upload__completed-list__wrap"
                               name="m--is"
                               tag="ul">
-                <li v-for="(file, index) in completedFiles"
-                    :key="file.uid">
+                <li v-for="(file, index) in completedFiles" :key="file.uid">
                     <div class="m-file-upload__completed-list__content">
                         <div class="m-file-upload__completed-list__file-icon">
                             <m-icon-file v-m-badge="{ state: getBadgeState(file) }"
@@ -161,10 +142,9 @@
                         </div>
                         <div class="m-file-upload__completed-list__infos">
                             <p class="m-file-upload__completed-list__infos-label">
-                                <m-link :url="file.url"
+                                <m-link v-if="file.url":url="file.url"
                                         mode="link"
-                                        target="_blank"
-                                        v-if="file.url">{{file.name}}</m-link>
+                                        target="_blank">{{file.name}}</m-link>
                                 <template v-else>{{file.name}}</template>
                             </p>
                             <p class="m-file-upload__completed-list__infos-size">{{file.file.size | f-m-filesize}}</p>
@@ -182,28 +162,23 @@
                 </li>
             </transition-group>
         </div>
-
     </div>
     <template slot="footer">
         <div :style="buttonCompletedStyle">
-            <m-button @click="onAddClick"
+            <m-button class="m-file-upload__footer-add"
                       :disabled="!isAddBtnEnabled"
-                      class="m-file-upload__footer-add"
-                      ref="modalConfirmButton">{{ buttonAdd }}
+                      ref="modalConfirmButton"
+                      @click="onAddClick">{{ buttonAdd }}
                 <span slot="precision"
                       v-show="completedFiles.length > 0">
-                    <span>{{completedFiles.length}}
-                        <m-i18n :nb="completedFiles.length"
-                                k="m-file-upload:file"></m-i18n>
-                    </span>
+                    <span>{{completedFiles.length}} {{ $i18n.translate('m-file-upload:file', [], completedFiles.length) }}</span>
                 </span>
-
             </m-button>
-            <m-button @click="onCancelClick"
-                      skin="secondary"
+            <m-button skin="secondary"
                       class="m-file-upload__footer-cancel"
-                      ref="modalCancelButton">
-                <m-i18n k="m-file-upload:cancel"></m-i18n>
+                      ref="modalCancelButton"
+                      @click="onCancelClick">
+                {{ $i18n.translate('m-file-upload:cancel') }}
             </m-button>
         </div>
     </template>
