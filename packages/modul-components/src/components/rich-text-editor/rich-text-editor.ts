@@ -81,6 +81,9 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
     @Prop({ default: false })
     public readonly showImageButton: boolean;
 
+    @Prop({ default: true })
+    public readonly showFullscreenButton: boolean;
+
     @Prop({ default: false })
     public readonly showImageFloatLayout: boolean;
 
@@ -192,10 +195,19 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
             richTextEditorOptions.toolbarButtons.moreParagraph.buttons.splice(0, 0, 'align');
             // for mobile devices
             richTextEditorOptions.toolbarButtonsXS.moreParagraph.buttons.splice(0, 0, 'align');
+
         }
 
         if (this.showCharacterCount || this.characterCountMax) {
             richTextEditorOptions.pluginsEnabled.push('charCounter');
+        }
+
+        if (!this.showFullscreenButton) {
+            ['toolbarButtons', 'toolbarButtonsXS'].forEach((element) => {
+                const currentMoreMiscButtons: [] = richTextEditorOptions[element].moreMisc.buttons;
+                richTextEditorOptions[element].moreMisc.buttons = currentMoreMiscButtons.filter(b => b !== 'fullscreen');
+            });
+
         }
 
         return richTextEditorOptions;
@@ -231,6 +243,16 @@ export class MRichTextEditor extends ModulVue implements InputManagementData, In
 
     public getSelectorErrorMsg(prop: string): string {
         return `${RICH_TEXT_EDITOR_NAME}: No element has been found with the selector given in the ${prop} prop.`;
+    }
+
+    public keydown(event: any): void {
+        const ENTER_CODE: number = 13;
+
+        if (event.keyCode === ENTER_CODE) {
+            event.preventDefault();
+        }
+
+        this.as<InputManagement>().onKeydown(event);
     }
 
     protected refreshModel(newValue: string): void {

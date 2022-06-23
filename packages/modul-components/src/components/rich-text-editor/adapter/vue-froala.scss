@@ -39,6 +39,7 @@ $m-froala-toolbar-btn-height: 38px !default;
 
     /deep/ .fr-box.fr-fullscreen {
         width: 100vw !important;
+        background-color: $m-color-white;
     }
 
     &.m--is-dirty:not(.m--is-disabled):not(.m--is-readonly) {
@@ -115,7 +116,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             display: none;
         }
 
-        .fr-sticky-dummy + .fr-sticky-dummy {
+        .fr-sticky-dummy+.fr-sticky-dummy {
             height: 0 !important; // Fix flicking problem with multiple editors on page and https://github.com/froala/wysiwyg-editor/issues/2818
         }
     }
