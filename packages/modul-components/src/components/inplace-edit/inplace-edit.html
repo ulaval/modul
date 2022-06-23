@@ -19,13 +19,13 @@
                                       ref="confirm-control"
                                       skin="primary"
                                       @click.stop="onConfirm">
-                                <m-i18n k="m-inplace-edit:save"></m-i18n>
+                                {{ $i18n.translate('m-inplace-edit:save')}}
                             </m-button>
                             <m-button :disabled="waiting"
                                       ref="cancel-control"
                                       skin="secondary"
                                       @click.stop="onCancel">
-                                <m-i18n k="m-inplace-edit:cancel"></m-i18n>
+                                {{ $i18n.translate('m-inplace-edit:cancel')}}
                             </m-button>
                         </div>
                     </div>

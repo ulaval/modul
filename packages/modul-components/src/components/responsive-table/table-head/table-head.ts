@@ -3,7 +3,7 @@ import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../../utils/enums/enums';
 import { ModulVue } from '../../../utils/vue/vue';
-import { ICON_BUTTON_NAME, TABLE_HEAD_NAME } from '../../component-names';
+import { TABLE_HEAD_NAME } from '../../component-names';
 import { MIconButton, MIconButtonSkin } from '../../icon-button/icon-button';
 import { getCellAlignmentClass, getCellWidthStyle, MTableColumn, MTableHeadRows, MTableHeadStyle, MTableSortDirection } from '../responsive-table-commons';
 import WithRender from './table-head.html?style=./table-head.scss';
@@ -15,7 +15,7 @@ interface MTableColumnInternal extends MTableColumn {
 @WithRender
 @Component({
     components: {
-        [ICON_BUTTON_NAME]: MIconButton
+        MIconButton
     }
 })
 export class MTableHead extends ModulVue {

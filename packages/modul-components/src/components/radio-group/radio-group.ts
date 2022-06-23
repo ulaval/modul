@@ -2,8 +2,9 @@ import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
 import { InputState } from '../../mixins/input-state/input-state';
+import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
-import { INPUT_GROUP_NAME, RADIO_GROUP_NAME } from '../component-names';
+import { RADIO_GROUP_NAME } from '../component-names';
 import { MInputGroup, MMInputGroupValidationMessagePosition } from '../input-group/input-group';
 import RadioPlugin, { BaseRadioGroup, MRadioPosition, MRadioVerticalAlignement, RadioGroup } from '../radio/radio';
 import WithRender from './radio-group.html?style=./radio-group.scss';
@@ -13,56 +14,50 @@ const FOCUS_OUT_TIMEOUT_MS: number = 200;
 @WithRender
 @Component({
     components: {
-        [INPUT_GROUP_NAME]: MInputGroup
+        MInputGroup
     },
     mixins: [InputState]
 })
 export class MRadioGroup extends BaseRadioGroup implements RadioGroup {
     @Model('change')
     @Prop()
-    public value: any;
+    public readonly value: any;
 
     @Prop({
         default: MRadioPosition.Left,
-        validator: value =>
-            value === MRadioPosition.Left ||
-            value === MRadioPosition.Right
+        validator: value => Enums.toValueArray(MRadioPosition).includes(value)
     })
-    public radiosPosition: MRadioPosition;
+    public readonly radiosPosition: MRadioPosition;
 
     @Prop()
-    public inline: boolean;
+    public readonly inline: boolean;
 
     @Prop()
-    public label: string;
+    public readonly label: string;
 
     @Prop()
-    public requiredMarker: boolean;
+    public readonly requiredMarker: boolean;
 
     @Prop({
         default: MRadioVerticalAlignement.Top,
-        validator: value =>
-            value === MRadioVerticalAlignement.Top ||
-            value === MRadioVerticalAlignement.Center
+        validator: value => Enums.toValueArray(MRadioVerticalAlignement).includes(value)
     })
-    public radiosVerticalAlign: MRadioVerticalAlignement;
+    public readonly radiosVerticalAlign: MRadioVerticalAlignement;
 
     @Prop()
-    public radiosMarginTop: string;
+    public readonly radiosMarginTop: string;
 
     @Prop()
-    public focus: boolean;
+    public readonly focus: boolean;
 
     @Prop({
         default: MMInputGroupValidationMessagePosition.Top,
-        validator: value =>
-            value === MMInputGroupValidationMessagePosition.Top ||
-            value === MMInputGroupValidationMessagePosition.Bottom
+        validator: value => Enums.toValueArray(MMInputGroupValidationMessagePosition).includes(value)
     })
-    public validationMessagePosition: MMInputGroupValidationMessagePosition;
+    public readonly validationMessagePosition: MMInputGroupValidationMessagePosition;
 
     @Prop()
-    public validationMessageId?: string;
+    public readonly validationMessageId?: string;
 
     public name: string = uuid.generate();
     private internalValue: any | undefined = '';

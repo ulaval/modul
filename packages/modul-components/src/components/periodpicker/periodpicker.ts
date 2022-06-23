@@ -7,7 +7,7 @@ import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import ModulDate from '../../utils/modul-date/modul-date';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { PERIODPICKER_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { PERIODPICKER_NAME } from '../component-names';
 import { DatePickerSupportedTypes } from '../datepicker/datepicker';
 import { MValidationMessage } from '../validation-message/validation-message';
 import WithRender from './periodpicker.html?style=./periodpicker.scss';
@@ -93,7 +93,7 @@ export interface MPeriodpickerProps {
 @WithRender
 @Component({
     components: {
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+        MValidationMessage
     },
     mixins: [
         MediaQueries,

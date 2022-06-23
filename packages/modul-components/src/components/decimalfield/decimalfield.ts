@@ -8,7 +8,7 @@ import { InputWidth } from '../../mixins/input-width/input-width';
 import L10nPlugin, { MDecimalFormat } from '../../utils/l10n/l10n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { DECIMALFIELD_NAME, INPUT_MASK_NAME, INPUT_STYLE_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { DECIMALFIELD_NAME } from '../component-names';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
 import { MInputStyle } from '../input-style/input-style';
 import { MValidationMessage } from '../validation-message/validation-message';
@@ -23,9 +23,9 @@ import WithRender from './decimalfield.html?style=./decimalfield.scss';
         InputManagement
     ],
     components: {
-        [INPUT_MASK_NAME]: MInputMask,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage,
-        [INPUT_STYLE_NAME]: MInputStyle
+        MInputMask,
+        MValidationMessage,
+        MInputStyle
     }
 })
 export class MDecimalfield extends ModulVue {

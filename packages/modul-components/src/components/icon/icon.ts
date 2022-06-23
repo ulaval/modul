@@ -9,26 +9,34 @@ import WithRender from './icon.html?style=./icon.scss';
 @Component
 export class MIcon extends Vue {
     @Prop({ required: true })
-    public name: string;
+    public readonly name: string;
+
     @Prop()
-    public svgTitle: string;
+    public readonly svgTitle: string;
+
     @Prop({ default: '20px' })
-    public size: string;
+    public readonly size: string;
 
     @Prop({ default: false })
-    public showNameAsClass: boolean;
+    public readonly showNameAsClass: boolean;
 
     @Emit('click')
-    onClick(event: MouseEvent): void { }
+    public onClick(event: MouseEvent): void { }
 
     @Emit('keydown')
-    onKeydown(event: KeyboardEvent): void { }
+    public onKeydown(event: KeyboardEvent): void { }
 
-    private get hasSvgTitle(): boolean {
+    @Emit('mouseover')
+    public onMouseOver(event: Event): void { }
+
+    @Emit('mouseleave')
+    public onMouseLeave(event: Event): void { }
+
+    public get hasSvgTitle(): boolean {
         return !!this.svgTitle;
     }
 
-    private get spriteId(): string | undefined {
+    public get spriteId(): string | undefined {
         const svg: SpritesService = this.$svg;
 
         if (document.getElementById(this.name)) {
@@ -44,15 +52,9 @@ export class MIcon extends Vue {
         }
     }
 
-    private get showNameAsClassInHtml(): string {
+    public get showNameAsClassInHtml(): string {
         return this.showNameAsClass ? this.name : '';
     }
-
-    @Emit('mouseover')
-    public onMouseOver(event: Event): void { }
-
-    @Emit('mouseleave')
-    public onMouseLeave(event: Event): void { }
 }
 
 const IconPlugin: PluginObject<any> = {

@@ -7,7 +7,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { INPUT_STYLE_NAME, INTEGERFIELD_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { INTEGERFIELD_NAME } from '../component-names';
 import { InputMaskOptions, MInputMask } from '../input-mask/input-mask';
 import { MInputStyle } from '../input-style/input-style';
 import { MValidationMessage } from '../validation-message/validation-message';
@@ -23,13 +23,13 @@ import WithRender from './integerfield.html?style=./integerfield.scss';
     ],
     components: {
         MInputMask,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+        MInputStyle,
+        MValidationMessage
     }
 })
 export class MIntegerfield extends ModulVue {
     @Prop()
-    public value: number;
+    public readonly value: number;
 
     @Prop({
         default: 16,
@@ -45,7 +45,7 @@ export class MIntegerfield extends ModulVue {
             return false;
         }
     })
-    public maxLength: number;
+    public readonly maxLength: number;
 
     @Prop({ default: () => `mIntegerfield-${uuid.generate()}` })
     public readonly id: string;

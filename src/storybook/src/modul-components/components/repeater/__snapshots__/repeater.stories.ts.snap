@@ -103,7 +103,11 @@ exports[`Storyshots modul-components|m-repeater With items (Custom item template
           />
         </svg>
          
-        <!---->
+        <span
+          class="m-icon-button__hidden"
+        >
+          Supprimer
+        </span>
       </button>
     </li>
     <li
@@ -137,7 +141,11 @@ exports[`Storyshots modul-components|m-repeater With items (Custom item template
           />
         </svg>
          
-        <!---->
+        <span
+          class="m-icon-button__hidden"
+        >
+          Supprimer
+        </span>
       </button>
     </li>
     <li

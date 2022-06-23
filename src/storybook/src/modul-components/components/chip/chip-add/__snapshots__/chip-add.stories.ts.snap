@@ -64,9 +64,22 @@ exports[`Storyshots modul-components|m-chip-add disabled 1`] = `
 `;
 
 exports[`Storyshots modul-components|m-chip-add icon=false 1`] = `
-<m-chip-add>
-  Chip
-</m-chip-add>
+<button
+  class="m-chip-add"
+  type="button"
+>
+  <div
+    class="m-chip-add__body"
+  >
+    <span
+      class="m-chip-add__hidden-text"
+    >
+      Ajouter : 
+    </span>
+     Chip 
+    <!---->
+  </div>
+</button>
 `;
 
 exports[`Storyshots modul-components|m-chip-add small 1`] = `

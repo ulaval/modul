@@ -43,12 +43,12 @@
                                       :disabled="isSaveButtonDisabled"
                                       :waiting="isWaiting"
                                       class="m-overlay__save-button">
-                                {{ 'm-overlay:save' | f-m-i18n }}
+                                {{ $i18n.translate('m-overlay:save') }}
                             </m-button>
                             <m-button @click="cancel()"
                                       skin="secondary"
                                       :disabled="isWaiting">
-                                {{ 'm-overlay:cancel' | f-m-i18n }}
+                                {{ $i18n.translate('m-overlay:cancel') }}
                             </m-button>
                         </slot>
                     </footer>

@@ -4,46 +4,46 @@ import { Calendar, CalendarEvent, DayState, MonthState, YearState } from '../cal
 
 export abstract class MAbstractCalendarRenderer extends ModulVue {
     @Prop({ required: true })
-    calendar: Calendar;
+    public calendar: Calendar;
 
     @Emit(CalendarEvent.DAY_SELECT)
-    onDaySelect(day: DayState): void {
+    public onDaySelect(day: DayState): void {
     }
 
     @Emit(CalendarEvent.DAY_MOUSE_ENTER)
-    onDayMouseEnter(day: DayState): void {
+    public onDayMouseEnter(day: DayState): void {
     }
 
     @Emit(CalendarEvent.DAY_MOUSE_LEAVE)
-    onDayMouseLeave(day: DayState): void {
+    public onDayMouseLeave(day: DayState): void {
     }
 
     @Emit(CalendarEvent.DAY_KEYBOARD_TAB)
-    onDayKeyboardTab(day: DayState): void {
+    public onDayKeyboardTab(day: DayState): void {
     }
 
     @Emit(CalendarEvent.MONTH_SELECT)
-    onMonthSelect(month: MonthState): void {
+    public onMonthSelect(month: MonthState): void {
     }
 
     @Emit(CalendarEvent.MONTH_NEXT)
-    onMonthNext(event: Event): void {
+    public onMonthNext(event: Event): void {
     }
 
     @Emit(CalendarEvent.MONTH_PREVIOUS)
-    onMonthPrevious(event: Event): void {
+    public onMonthPrevious(event: Event): void {
     }
 
     @Emit(CalendarEvent.YEAR_SELECT)
-    onYearSelect(year: YearState): void {
+    public onYearSelect(year: YearState): void {
     }
 
     @Emit(CalendarEvent.YEAR_MONTH_SELECT)
-    onYearMonthSelect(year: YearState, month: MonthState): void {
+    public onYearMonthSelect(year: YearState, month: MonthState): void {
     }
 
     @Emit(CalendarEvent.YEAR_NEXT)
-    onYearNext(event: Event): void {
+    public onYearNext(event: Event): void {
     }
 
     @Emit(CalendarEvent.YEAR_PREVIOUS)

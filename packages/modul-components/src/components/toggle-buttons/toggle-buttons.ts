@@ -2,7 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
 import { MButton, MButtonSkin } from '../button/button';
-import { BUTTON_NAME, TOGGLE_BUTTONS_NAME } from '../component-names';
+import { TOGGLE_BUTTONS_NAME } from '../component-names';
 import WithRender from './toggle-buttons.html?style=./toggle-buttons.scss';
 
 export interface MToggleButton {
@@ -19,19 +19,19 @@ export enum MToggleButtonSkin {
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton
+        MButton
     }
 })
 export class MToggleButtons extends Vue {
     @Model('change')
     @Prop({ default: () => [] })
-    buttons: MToggleButton[];
+    public readonly buttons: MToggleButton[];
 
     @Prop({ default: true })
-    multiple: boolean;
+    public readonly multiple: boolean;
 
     @Prop({ default: false })
-    disabled: boolean;
+    public readonly disabled: boolean;
 
     @Prop({
         default: MToggleButtonSkin.SQUARED,
@@ -39,7 +39,7 @@ export class MToggleButtons extends Vue {
             value === MToggleButtonSkin.SQUARED ||
             value === MToggleButtonSkin.ROUNDED
     })
-    skin: MToggleButtonSkin;
+    public readonly skin: MToggleButtonSkin;
 
     public toggle(button: MToggleButton): void {
         this.$emit('change', this.buttons.map(b => b.id !== button.id ?

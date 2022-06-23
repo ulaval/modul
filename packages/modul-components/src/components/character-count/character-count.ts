@@ -1,21 +1,20 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { ACCORDION_TRANSITION_NAME, CHARACTER_COUNT_NAME } from '../component-names';
+import { CHARACTER_COUNT_NAME } from '../component-names';
 import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './character-count.html?style=./character-count.scss';
-
 
 @WithRender
 @Component({
     components: {
-        [ACCORDION_TRANSITION_NAME]: MAccordionTransition
+        MAccordionTransition
     }
 })
 export class MCharacterCount extends Vue {
-
     @Prop()
-    public valueLength: number;
+    public readonly valueLength: number;
+
     @Prop({
         required: true, validator: value => {
             if (value === undefined) {
@@ -25,11 +24,13 @@ export class MCharacterCount extends Vue {
             return value !== undefined;
         }
     })
-    public maxLength: number;
+    public readonly maxLength: number;
+
     @Prop({ default: 0 })
-    public threshold: number;
+    public readonly threshold: number;
+
     @Prop({ default: true })
-    public transition: boolean;
+    public readonly transition: boolean;
 
     public get hasCounter(): boolean {
         return this.maxLength > 0 && this.valueLength >= Math.max(0, Math.min(this.threshold, this.maxLength));

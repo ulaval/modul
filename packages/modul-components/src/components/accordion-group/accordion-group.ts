@@ -4,16 +4,14 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import AccordionPlugin, { AccordionGateway, AccordionGroupGateway, MAccordionSkin } from '../accordion/accordion';
 import { MAccordionGroupAPI } from '../accordion/accordion.models';
-import { ACCORDION_GROUP_NAME, I18N_NAME, LINK_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { ACCORDION_GROUP_NAME } from '../component-names';
 import { MLink, MLinkMode } from '../link/link';
 import WithRender from './accordion-group.html?style=./accordion-group.scss';
 
 @WithRender
 @Component({
     components: {
-        [LINK_NAME]: MLink,
-        [I18N_NAME]: MI18n
+        MLink
     }
 })
 export class MAccordionGroup extends Vue implements AccordionGroupGateway, MAccordionGroupAPI {

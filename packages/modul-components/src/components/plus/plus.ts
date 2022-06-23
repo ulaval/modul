@@ -1,10 +1,10 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 import { PLUS_NAME } from '../component-names';
 import WithRender from './plus.html?style=./plus.scss';
-
 
 export enum MPlusSkin {
     Default = 'default',
@@ -16,31 +16,28 @@ export enum MPlusSkin {
 @Component
 export class MPlus extends ModulVue {
     @Prop()
-    public titleOpen: string;
+    public readonly titleOpen: string;
 
     @Prop()
-    public titleClose: string;
+    public readonly titleClose: string;
 
     @Prop()
-    public open: boolean;
+    public readonly open: boolean;
 
     @Prop()
-    public large: boolean;
+    public readonly large: boolean;
 
     @Prop()
-    public border: boolean;
+    public readonly border: boolean;
 
     @Prop({
         default: MPlusSkin.Default,
-        validator: value =>
-            value === MPlusSkin.Default ||
-            value === MPlusSkin.Light ||
-            value === MPlusSkin.CurrentColor
+        validator: value => Enums.toValueArray(MPlusSkin).includes(value)
     })
-    public skin: string;
+    public readonly skin: string;
 
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
 
     public get title(): string {
         return this.open ? this.titleClose : this.titleOpen;

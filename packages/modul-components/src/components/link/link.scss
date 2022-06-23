@@ -28,6 +28,10 @@
         }
     }
 
+    &.m--has-bullet-point {
+        align-items: baseline;
+    }
+
     &.m--has-left-icon.m--has-content {
         .m-link__icon {
             margin-right: $m-space-xs;

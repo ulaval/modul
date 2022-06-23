@@ -4,7 +4,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { AUTO_HORIZONTAL_SCROLL, PROGRESS_NAME, RESPONSIVE_TABLE_NAME, TABLE_EMPTY_ROW_NAME, TABLE_GROUP_NAME, TABLE_HEAD_NAME } from '../component-names';
+import { RESPONSIVE_TABLE_NAME } from '../component-names';
 import { REGEX_CSS_NUMBER_VALUE } from './../../utils/props-validation/props-validation';
 import { MAutoHorizontalScroll, MAutoHorizontalScrollGradientStyle, MAutoHorizontalScrollResizeProperties } from './../auto-horizontal-scroll/auto-horizontal-scroll';
 import { MProgress } from './../progress/progress';
@@ -17,11 +17,11 @@ import { MTableHead } from './table-head/table-head';
 @WithRender
 @Component({
     components: {
-        [AUTO_HORIZONTAL_SCROLL]: MAutoHorizontalScroll,
-        [TABLE_HEAD_NAME]: MTableHead,
-        [TABLE_GROUP_NAME]: MTableGroup,
-        [TABLE_EMPTY_ROW_NAME]: MTableEmptyRow,
-        [PROGRESS_NAME]: MProgress
+        MAutoHorizontalScroll,
+        MTableHead,
+        MTableGroup,
+        MTableEmptyRow,
+        MProgress
     }
 })
 export class MResponsiveTable extends ModulVue {

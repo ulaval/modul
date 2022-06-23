@@ -3,16 +3,14 @@ import { PluginObject } from 'vue';
 import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { FormatMode } from '../../utils/i18n/i18n';
 import { ModulVue } from '../../utils/vue/vue';
-import { I18N_NAME, LIMIT_ELEMENTS, LINK_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { LIMIT_ELEMENTS } from '../component-names';
 import { MLink, MLinkMode } from '../link/link';
 import WithRender from './limit-elements.html?style=./limit-elements.scss';
 
 @WithRender
 @Component({
     components: {
-        [LINK_NAME]: MLink,
-        [I18N_NAME]: MI18n
+        MLink
     }
 })
 export class MLimitElements extends ModulVue {
@@ -31,50 +29,50 @@ export class MLimitElements extends ModulVue {
     @Prop()
     readonly closeLabel!: string;
 
-    internalOpen: boolean = this.open;
+    public internalOpen: boolean = this.open;
 
-    readonly mLinkModeButton: MLinkMode = MLinkMode.Button;
-    readonly i18nCloseLabelDefault: string = this.$i18n.translate('m-limit-elements:show-less-label');
+    public readonly mLinkModeButton: MLinkMode = MLinkMode.Button;
+    public readonly i18nCloseLabelDefault: string = this.$i18n.translate('m-limit-elements:show-less-label');
 
     @Emit('list-opened')
-    onListOpened(): void { }
+    public onListOpened(): void { }
 
     @Emit('list-closed')
-    onListClosed(): void { }
+    public onListClosed(): void { }
 
-    get i18nOpenLabel(): string {
+    public get i18nOpenLabel(): string {
         return this.openLabel || this.$i18n.translate('m-limit-elements:show-more-label', { nbElements: this.numberOfExtraElements }, undefined, undefined, undefined, FormatMode.Sprintf);
     }
 
-    get i18nCloseLabel(): string {
+    public get i18nCloseLabel(): string {
         return this.closeLabel || this.i18nCloseLabelDefault;
     }
 
-    get i18nLinkLabel(): string {
+    public get i18nLinkLabel(): string {
         return this.internalOpen ? this.i18nCloseLabel : this.i18nOpenLabel;
     }
 
-    get limitedElements(): any[] {
+    public get limitedElements(): any[] {
         return this.isLinkDisplay ? this.elements.slice(0, this.limit) : this.elements.slice(0, this.limit + 1);
     }
 
-    get numberOfExtraElements(): number {
+    public get numberOfExtraElements(): number {
         return this.elements.length - this.limit;
     }
 
-    get isLimitedElementDisplay(): boolean {
+    public get isLimitedElementDisplay(): boolean {
         return !this.internalOpen;
     }
 
-    get isExtraElementDisplay(): boolean {
+    public get isExtraElementDisplay(): boolean {
         return this.internalOpen && this.isLinkDisplay;
     }
 
-    get isLinkDisplay(): boolean {
+    public get isLinkDisplay(): boolean {
         return this.elements.length > this.limit + 1;
     }
 
-    toggleOpen(): void {
+    public toggleOpen(): void {
         this.internalOpen = !this.internalOpen;
         this.$emit('update:open', this.internalOpen);
         if (this.internalOpen) {
@@ -85,7 +83,7 @@ export class MLimitElements extends ModulVue {
     }
 
     @Watch('open')
-    updateOpen(): void {
+    public updateOpen(): void {
         this.internalOpen = this.open;
     }
 }

@@ -12,9 +12,8 @@ import MediaQueriesPlugin from '../../utils/media-queries/media-queries';
 import UserAgentUtil from '../../utils/user-agent/user-agent';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
-import { BUTTON_NAME, FILE_SELECT_NAME, FILE_UPLOAD_NAME, I18N_NAME, ICON_BUTTON_NAME, ICON_FILE_NAME, LINK_NAME, MESSAGE_NAME, MODAL_NAME, PROGRESS_NAME } from '../component-names';
+import { FILE_UPLOAD_NAME } from '../component-names';
 import { MFileSelect } from '../file-select/file-select';
-import { MI18n } from '../i18n/i18n';
 import { MIconButton } from '../icon-button/icon-button';
 import { MIconFile } from '../icon-file/icon-file';
 import { MLink } from '../link/link';
@@ -51,15 +50,14 @@ const defaultDragEvent: (e: DragEvent) => void = (e: DragEvent) => {
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [MODAL_NAME]: MModal,
-        [MESSAGE_NAME]: MMessage,
-        [I18N_NAME]: MI18n,
-        [FILE_SELECT_NAME]: MFileSelect,
-        [ICON_FILE_NAME]: MIconFile,
-        [ICON_BUTTON_NAME]: MIconButton,
-        [PROGRESS_NAME]: MProgress,
-        [LINK_NAME]: MLink
+        MButton,
+        MModal,
+        MMessage,
+        MFileSelect,
+        MIconFile,
+        MIconButton,
+        MProgress,
+        MLink
     },
     directives: {
         [FILE_DROP_NAME]: MFileDropDirective,
@@ -75,44 +73,52 @@ const defaultDragEvent: (e: DragEvent) => void = (e: DragEvent) => {
 })
 export class MFileUpload extends ModulVue {
     @Prop({ default: () => [] })
-    public allowedExtensions: string[];
+    public readonly allowedExtensions: string[];
+
     @Prop({ default: () => [] })
-    public rejectedExtensions: string[];
+    public readonly rejectedExtensions: string[];
+
     @Prop()
-    public maxSizeKb?: number;
+    public readonly maxSizeKb?: number;
+
     @Prop()
-    public maxFiles?: number;
+    public readonly maxFiles?: number;
+
     @Prop()
-    public selectionHelpMessage?: string;
+    public readonly selectionHelpMessage?: string;
+
     @Prop({
         default: DEFAULT_STORE_NAME
     })
-    public storeName: string;
+    public readonly storeName: string;
+
     @Prop()
-    public open: boolean;
+    public readonly open: boolean;
+
     @Prop({ default: false })
-    public fileReplacement: boolean;
+    public readonly fileReplacement: boolean;
 
     @Prop()
-    public customValidation?: FileUploadCustomValidation;
+    public readonly customValidation?: FileUploadCustomValidation;
 
-    $refs: {
+    public $refs: {
         modal: MModal;
     };
+
+    public tooltipCancel: string = this.$i18n.translate('m-file-upload:cancelFileUpload');
+    public tooltipDelete: string = this.$i18n.translate('m-file-upload:deleteUploadedFile');
+    private internalOpen: boolean = false;
 
     public get isDropZoneEnabled(): boolean {
         return UserAgentUtil.isDesktop() && this.$mq.state.isMqMinS;
     }
 
-    private internalOpen: boolean = false;
-    private tooltipCancel: string = this.$i18n.translate('m-file-upload:cancelFileUpload');
-    private tooltipDelete: string = this.$i18n.translate('m-file-upload:deleteUploadedFile');
 
-    private created(): void {
+    protected created(): void {
         this.updateValidationOptions();
     }
 
-    private destroyed(): void {
+    protected destroyed(): void {
         this.$file.destroy(this.storeName);
     }
 
@@ -121,7 +127,7 @@ export class MFileUpload extends ModulVue {
     @Watch('maxSizeKb')
     @Watch('maxFiles')
     @Watch('customValidation')
-    private updateValidationOptions(): void {
+    public updateValidationOptions(): void {
         this.$file.setValidationOptions(
             {
                 allowedExtensions: this.allowedExtensions,
@@ -135,12 +141,12 @@ export class MFileUpload extends ModulVue {
     }
 
     @Watch('open')
-    private openChanged(open: boolean): void {
+    public openChanged(open: boolean): void {
         this.internalOpen = open;
     }
 
     @Watch('readyFiles')
-    private onFilesChanged(): void {
+    public onFilesChanged(): void {
         const newReadyFiles: MFileExt[] = [];
 
         for (const f of this.readyFiles) {
@@ -156,7 +162,7 @@ export class MFileUpload extends ModulVue {
     }
 
     @Watch('freshlyCompletedFiles')
-    private onFreshlyCompletedFilesChanged(): void {
+    public onFreshlyCompletedFilesChanged(): void {
         if (this.freshlyCompletedFiles.length > 0) {
             setTimeout(() => {
                 for (const f of this.freshlyCompletedFiles) {
@@ -167,7 +173,7 @@ export class MFileUpload extends ModulVue {
     }
 
     @Watch('rejectedFiles')
-    private onFilesRejected(): void {
+    public onFilesRejected(): void {
         const nbNewRejection: number = this.rejectedFiles.reduce((cnt, f) => {
             let nbNewRejection: number = 0;
             if (!f.isOldRejection) {
@@ -187,46 +193,46 @@ export class MFileUpload extends ModulVue {
         }
     }
 
-    private onPortalAfterOpen(): void {
+    public onPortalAfterOpen(): void {
         this.dropEvents.forEach((evt) => {
             this.$refs.modal.$refs.modalWrap.addEventListener(evt, defaultDragEvent);
         });
     }
 
-    private onMessageClose(): void {
+    public onMessageClose(): void {
         for (const f of this.rejectedFiles) {
             this.$file.remove(f.uid, this.storeName);
         }
     }
 
-    private onAddClick(): void {
+    public onAddClick(): void {
         this.$emit('done', this.completedFiles);
         this.$refs.modal.closeModal();
     }
 
-    private onCancelClick(): void {
+    public onCancelClick(): void {
         this.$emit('cancel');
         this.$refs.modal.closeModal();
     }
 
-    private onUploadCancel(file: MFile): void {
+    public onUploadCancel(file: MFile): void {
         file.status === MFileStatus.UPLOADING
             ? this.$emit('file-upload-cancel', file)
             : this.onFileRemove(file);
     }
 
-    private onFileRemove(file: MFile): void {
+    public onFileRemove(file: MFile): void {
         this.$emit('file-remove', file);
         this.$file.remove(file.uid, this.storeName);
     }
 
-    private onOpen(): void {
+    public onOpen(): void {
         this.$emit('open');
         this.propOpen = true;
         this.updateValidationOptions();
     }
 
-    private onClose(): void {
+    public onClose(): void {
         this.propOpen = false;
         this.$emit('close');
         this.allFiles
@@ -238,7 +244,7 @@ export class MFileUpload extends ModulVue {
         });
     }
 
-    private getFileStatus(file): string {
+    public getFileStatus(file): string {
         switch (file.status) {
             case MFileStatus.FAILED:
                 return MProgressState.Error;
@@ -249,7 +255,7 @@ export class MFileUpload extends ModulVue {
         }
     }
 
-    private getBadgeState(file): string | undefined {
+    public getBadgeState(file): string | undefined {
         switch (file.status) {
             case MFileStatus.FAILED:
                 return MBadgeState.Error;
@@ -260,15 +266,15 @@ export class MFileUpload extends ModulVue {
         }
     }
 
-    private hasExtensionsRejection(file): boolean {
+    public hasExtensionsRejection(file): boolean {
         return file.rejection === MFileRejectionCause.FILE_TYPE;
     }
 
-    private hasSizeRejection(file): boolean {
+    public hasSizeRejection(file): boolean {
         return file.rejection === MFileRejectionCause.FILE_SIZE;
     }
 
-    private hasMaxFilesRejection(file): boolean {
+    public hasMaxFilesRejection(file): boolean {
         return file.rejection === MFileRejectionCause.MAX_FILES;
     }
 
@@ -284,27 +290,27 @@ export class MFileUpload extends ModulVue {
         return this.fileReplacement ? this.$i18n.translate('m-file-upload:replace') : this.$i18n.translate('m-file-upload:add');
     }
 
-    private get fileAllowedExtensions(): string {
+    public get fileAllowedExtensions(): string {
         return this.allowedExtensions.join(', ');
     }
 
-    private get isAddBtnEnabled(): boolean {
+    public get isAddBtnEnabled(): boolean {
         return (
             this.completedFiles.length > 0 && this.uploadingFilesOnly.length === 0
         );
     }
 
-    private get readyFiles(): MFileExt[] {
+    public get readyFiles(): MFileExt[] {
         return this.allFiles.filter(f => f.status === MFileStatus.READY);
     }
 
-    private get freshlyCompletedFiles(): MFileExt[] {
+    public get freshlyCompletedFiles(): MFileExt[] {
         return this.allFiles.filter(
             f => f.status === MFileStatus.COMPLETED && !f.completeHinted
         );
     }
 
-    private get uploadingFilesOnly(): MFileExt[] {
+    public get uploadingFilesOnly(): MFileExt[] {
         return this.allFiles.filter(
             f =>
                 f.status === MFileStatus.UPLOADING ||
@@ -312,7 +318,7 @@ export class MFileUpload extends ModulVue {
         );
     }
 
-    private get uploadingFiles(): MFileExt[] {
+    public get uploadingFiles(): MFileExt[] {
         return this.allFiles.filter(
             f =>
                 f.status === MFileStatus.UPLOADING ||
@@ -321,60 +327,60 @@ export class MFileUpload extends ModulVue {
         );
     }
 
-    private get completedFiles(): MFileExt[] {
+    public get completedFiles(): MFileExt[] {
         return this.allFiles.filter(
             f => f.status === MFileStatus.COMPLETED && f.completeHinted
         );
     }
 
-    private get rejectedFiles(): MFileExt[] {
+    public get rejectedFiles(): MFileExt[] {
         return this.allFiles.filter(f => f.status === MFileStatus.REJECTED);
     }
 
-    private get allFiles(): MFileExt[] {
+    public get allFiles(): MFileExt[] {
         return this.$file.files(this.storeName) as MFileExt[];
     }
 
-    private get hasUploadingFiles(): boolean {
+    public get hasUploadingFiles(): boolean {
         return this.uploadingFiles.length === 0;
     }
 
-    private get hasCompletedFiles(): boolean {
+    public get hasCompletedFiles(): boolean {
         return this.completedFiles.length === 0;
     }
 
-    private get buttonCompletedStyle(): string | undefined {
+    public get buttonCompletedStyle(): string | undefined {
         return !this.hasCompletedFiles ? 'display: flex;' : undefined;
     }
 
-    private get hasRejectedFiles(): boolean {
+    public get hasRejectedFiles(): boolean {
         return this.rejectedFiles.length !== 0;
     }
 
-    private get hasAllowedExtensions(): boolean {
+    public get hasAllowedExtensions(): boolean {
         return this.allowedExtensions.length > 0;
     }
 
-    private get propOpen(): boolean {
+    public get propOpen(): boolean {
         return this.open ? this.open : this.internalOpen;
     }
 
-    private set propOpen(value) {
+    public set propOpen(value) {
         if (value !== this.internalOpen) {
             this.internalOpen = value;
             this.$emit('update:open', value);
         }
     }
 
-    private get propMaxFiles(): number | undefined {
+    public get propMaxFiles(): number | undefined {
         return this.fileReplacement ? 1 : this.maxFiles;
     }
 
-    private get multipleSelection(): boolean {
+    public get multipleSelection(): boolean {
         return this.propMaxFiles !== undefined && this.propMaxFiles > 1;
     }
 
-    private get dropEvents(): string[] {
+    public get dropEvents(): string[] {
         return ['drag', 'dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'];
     }
 }

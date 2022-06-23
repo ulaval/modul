@@ -3,8 +3,7 @@ import { Component, Emit, Prop, Watch } from 'vue-property-decorator';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton } from '../button/button';
-import { ACCORDION_TRANSITION_NAME, BUTTON_NAME, I18N_NAME, INPLACE_EDIT_NAME, OVERLAY_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { INPLACE_EDIT_NAME } from '../component-names';
 import { MOverlay } from '../overlay/overlay';
 import { MAccordionTransition } from '../transitions/accordion-transition/accordion-transition';
 import WithRender from './inplace-edit.html?style=./inplace-edit.scss';
@@ -12,29 +11,28 @@ import WithRender from './inplace-edit.html?style=./inplace-edit.scss';
 @WithRender
 @Component({
     components: {
-        [ACCORDION_TRANSITION_NAME]: MAccordionTransition,
-        [BUTTON_NAME]: MButton,
-        [I18N_NAME]: MI18n,
-        [OVERLAY_NAME]: MOverlay
+        MAccordionTransition,
+        MButton,
+        MOverlay
     },
     mixins: [MediaQueries]
 })
 export class MInplaceEdit extends ModulVue {
 
     @Prop()
-    public editMode: boolean;
+    public readonly editMode: boolean;
 
     @Prop()
-    public error: boolean;
+    public readonly error: boolean;
 
     @Prop()
-    public waiting: boolean;
+    public readonly waiting: boolean;
 
     @Prop()
-    public padding: string;
+    public readonly padding: string;
 
     @Prop()
-    public editModePadding: string;
+    public readonly editModePadding: string;
 
     @Prop({
         default: () => (Vue.prototype).$i18n.translate('m-inplace-edit:modify')
@@ -45,27 +43,27 @@ export class MInplaceEdit extends ModulVue {
     private mqMounted: boolean;
 
     @Emit('ok')
-    emitOk(event: MouseEvent): void { }
+    public emitOk(event: MouseEvent): void { }
 
     @Emit('cancel')
-    emitCancel(event: MouseEvent): void { }
+    public emitCancel(event: MouseEvent): void { }
 
     @Emit('click')
-    emitClick(event: MouseEvent): void { }
+    public emitClick(event: MouseEvent): void { }
 
     @Emit('mobile-after-open')
-    emitMobileAfterOpen(): void { }
+    public emitMobileAfterOpen(): void { }
 
     @Emit('mobile-after-close')
-    emitMobileAfterClose(): void { }
+    public emitMobileAfterClose(): void { }
 
     @Watch('editMode', { immediate: true })
-    onEditModeChange(value: boolean): void {
+    public onEditModeChange(value: boolean): void {
         this.internalEditMode = value;
     }
 
     @Watch('isMqMaxS')
-    onIsMqMaxSChange(value: boolean, old: boolean): void {
+    public onIsMqMaxSChange(value: boolean, old: boolean): void {
         if (this.mqMounted) {
             this.propEditMode = false;
         }
@@ -76,16 +74,16 @@ export class MInplaceEdit extends ModulVue {
         this.$nextTick(() => this.mqMounted = true);
     }
 
-    get propEditMode(): boolean {
+    public get propEditMode(): boolean {
         return this.internalEditMode;
     }
 
-    set propEditMode(value: boolean) {
+    public set propEditMode(value: boolean) {
         this.internalEditMode = value;
         this.$emit('update:editMode', value);
     }
 
-    get propPadding(): string {
+    public get propPadding(): string {
         if (!this.propEditMode && this.padding) {
             return `padding: ${this.padding}`;
         } else if (this.propEditMode && this.editModePadding) {
@@ -95,13 +93,13 @@ export class MInplaceEdit extends ModulVue {
         }
     }
 
-    onConfirm(event: MouseEvent): void {
+    public onConfirm(event: MouseEvent): void {
         if (this.propEditMode) {
             this.emitOk(event);
         }
     }
 
-    onCancel(event: MouseEvent): void {
+    public onCancel(event: MouseEvent): void {
         if (this.propEditMode) {
             this.propEditMode = false;
             this.emitCancel(event);

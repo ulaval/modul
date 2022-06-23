@@ -7,8 +7,7 @@ import DialogServicePlugin from '../../utils/dialog/dialog-service.plugin';
 import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton, MButtonSkin } from '../button/button';
-import { BUTTON_NAME, DIALOG_NAME, I18N_NAME, ICON_NAME, LINK_NAME, MESSAGE_NAME } from '../component-names';
-import { MI18n } from '../i18n/i18n';
+import { DIALOG_NAME } from '../component-names';
 import { MIcon } from '../icon/icon';
 import { MLink } from '../link/link';
 import { MMessage } from '../message/message';
@@ -35,11 +34,10 @@ export enum MDialogMessageStyle {
 @WithRender
 @Component({
     components: {
-        [BUTTON_NAME]: MButton,
-        [LINK_NAME]: MLink,
-        [MESSAGE_NAME]: MMessage,
-        [ICON_NAME]: MIcon,
-        [I18N_NAME]: MI18n
+        MButton,
+        MLink,
+        MMessage,
+        MIcon
     },
     mixins: [Portal, MFocusTrap]
 })
@@ -82,9 +80,7 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
 
     @Prop({
         default: MDialogWidth.Default,
-        validator: value =>
-            value === MDialogWidth.Default ||
-            value === MDialogWidth.Large
+        validator: value => Enums.toValueArray(MDialogWidth).includes(value)
     })
     public readonly width: string;
 

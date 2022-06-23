@@ -1,7 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop, Watch } from 'vue-property-decorator';
-import { CAROUSEL_ITEM_NAME, CAROUSEL_NAME, TOUCH_NAME } from '../component-names';
+import { CAROUSEL_ITEM_NAME, CAROUSEL_NAME } from '../component-names';
 import TouchPlugin, { MTouch } from '../touch/touch';
 import { MCarouselItem } from './carousel-item/carousel-item';
 import WithRender from './carousel.html?style=./carousel.scss';
@@ -10,25 +10,25 @@ import WithRender from './carousel.html?style=./carousel.scss';
 @WithRender
 @Component({
     components: {
-        [TOUCH_NAME]: MTouch,
-        [CAROUSEL_ITEM_NAME]: MCarouselItem
+        MTouch,
+        MCarouselItem
     }
 })
 export class MCarousel extends Vue {
     @Prop()
-    public index: number;
+    public readonly index: number;
 
     @Prop({ default: 0 })
-    public interval: number;
+    public readonly interval: number;
 
     @Prop()
-    public keyboardNavigable: boolean;
+    public readonly keyboardNavigable: boolean;
 
     @Prop({ default: 0 })
-    margin: number;
+    public readonly margin: number;
 
     @Prop({ default: false })
-    swipeDisabled: boolean;
+    public readonly swipeDisabled: boolean;
 
     private items: MCarouselItem[] = [];
     private internalIndex: number = 0;

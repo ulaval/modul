@@ -1,8 +1,9 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
-import { ADD_NAME, LINK_NAME } from '../component-names';
+import { ADD_NAME } from '../component-names';
 import { MLink, MLinkIconPosition, MLinkSkin } from '../link/link';
 import WithRender from './add.html';
 import './add.scss';
@@ -10,43 +11,38 @@ import './add.scss';
 @WithRender
 @Component({
     components: {
-        [LINK_NAME]: MLink
+        MLink
     }
 })
 export class MAdd extends ModulVue {
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
 
     @Prop({ default: true })
-    public underline: boolean;
+    public readonly underline: boolean;
 
     @Prop({
         default: MLinkSkin.Default,
-        validator: value =>
-            value === MLinkSkin.Default ||
-            value === MLinkSkin.Light ||
-            value === MLinkSkin.Text
+        validator: value => Enums.toValueArray(MLinkSkin).includes(value)
     })
-    public skin: MLinkSkin;
+    public readonly skin: MLinkSkin;
 
     @Prop({
         default: MLinkIconPosition.Left,
-        validator: value =>
-            value === MLinkIconPosition.Left || value === MLinkIconPosition.Right
+        validator: value => Enums.toValueArray(MLinkIconPosition).includes(value)
     })
-    public iconPosition: MLinkIconPosition;
+    public readonly iconPosition: MLinkIconPosition;
 
     @Prop({ default: '24px' })
-    public iconSize: string;
+    public readonly iconSize: string;
 
     @Emit('click')
     public emitClick(): void { }
 
-    private onClick(): void {
+    public onClick(): void {
         if (this.disabled) {
             return;
         }
-
         this.emitClick();
     }
 }

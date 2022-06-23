@@ -7,7 +7,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputMaxWidth, InputWidth } from '../../mixins/input-width/input-width';
 import L10nPlugin, { MCurrency } from '../../utils/l10n/l10n';
 import { ModulVue } from '../../utils/vue/vue';
-import { DECIMALFIELD_NAME, MONEYFIELD_NAME } from '../component-names';
+import { MONEYFIELD_NAME } from '../component-names';
 import { MDecimalfield } from '../decimalfield/decimalfield';
 import WithRender from './moneyfield.html?style=./moneyfield.scss';
 
@@ -17,7 +17,7 @@ import WithRender from './moneyfield.html?style=./moneyfield.scss';
 @Component({
     inheritAttrs: false,
     components: {
-        [DECIMALFIELD_NAME]: MDecimalfield
+        MDecimalfield
     },
     mixins: [
         InputState,
@@ -28,25 +28,25 @@ import WithRender from './moneyfield.html?style=./moneyfield.scss';
 })
 export class MMoneyfield extends ModulVue {
     @Prop()
-    value: number;
+    public readonly value: number;
 
     @Prop({ default: InputMaxWidth.Small })
-    public maxWidth: string;
+    public readonly maxWidth: string;
 
     @Prop({
         default: 11
     })
-    precision: number;
+    public readonly precision: number;
 
     get currencyDetail(): MCurrency {
         return (this as ModulVue).$l10n.getCurrencyDetail(this.currentLocale);
     }
 
-    get currentLocale(): string {
+    public get currentLocale(): string {
         return (this as ModulVue).$i18n.currentLocale;
     }
 
-    get bindData(): any {
+    public get bindData(): any {
         return Object.assign({}, this.$props || {}, this.$attrs || {});
     }
 }

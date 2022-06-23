@@ -1,6 +1,6 @@
 <div class="m-dialog"
      ref="baseWindow">
-    <slot name="trigger"></slot>
+    <slot name="trigger" />
     <portal v-if="portalCreated"
             :target-el="portalTargetSelector">
         <transition name="m--is">
@@ -35,7 +35,7 @@
                              class="m-dialog__message">
                             <p v-if="message"
                                v-html="message"></p>
-                            <slot></slot>
+                            <slot />
                         </div>
                         <div class="m-dialog__hint"
                              v-if="hint">
@@ -45,7 +45,7 @@
                                             size="32px"></m-icon>
                                 </div>
                                 <div class="m-dialog__hint-text">
-                                    <span>{{ hint }}</span>
+                                    {{ hint }}
                                 </div>
                             </div>
                         </div>
@@ -58,9 +58,8 @@
                                       :style="dialogStyles"
                                       :skin="okButtonSkin"
                                       @click="onOk()">
-                                <template v-if="okLabel">{{ okLabel }}</template>
-                                <m-i18n v-else
-                                        k="m-dialog:ok"></m-i18n>
+                                {{ okLabel || $i18n.translate('m-dialog:ok') }}
+
                                 <template v-if="okPrecision"
                                           slot="precision">{{ okPrecision }}
                                 </template>
@@ -70,9 +69,7 @@
                                       ref="buttonSecondary"
                                       skin="secondary"
                                       @click="onSecondaryBtn()">
-                                <template v-if="secBtnLabel">{{ secBtnLabel }}</template>
-                                <m-i18n v-else
-                                        k="m-dialog:cancel"></m-i18n>
+                                {{ secBtnLabel || $i18n.translate('m-dialog:cancel') }}
                                 <template v-if="secBtnPrecision"
                                           slot="precision">{{ secBtnPrecision }}
                                 </template>
@@ -81,9 +78,7 @@
                                     @click="onCancel()"
                                     ref="link"
                                     mode="button">
-                                <template v-if="cancelLabel">{{ cancelLabel }}</template>
-                                <m-i18n v-else
-                                        k="m-dialog:cancel"></m-i18n>
+                                {{ cancelLabel || $i18n.translate('m-dialog:cancel') }}
                             </m-link>
                         </div>
                     </footer>

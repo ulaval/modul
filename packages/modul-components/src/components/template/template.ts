@@ -13,6 +13,7 @@ import WithRender from './template.html?style=./template.scss';
 export class MTemplate extends Vue {
     @Prop()
     public footerFullWidth: boolean;
+
     @Prop({ default: true })
     public paddingBody: boolean;
 }

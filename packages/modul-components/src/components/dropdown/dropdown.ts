@@ -57,13 +57,13 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     public readonly filterable: boolean;
 
     @Prop()
-    public textNoData: string;
+    public readonly textNoData: string;
 
     @Prop()
     public readonly textNoMatch: string;
 
     @Prop()
-    public listMinWidth: string;
+    public readonly listMinWidth: string;
 
     @Prop()
     public readonly focus: boolean;

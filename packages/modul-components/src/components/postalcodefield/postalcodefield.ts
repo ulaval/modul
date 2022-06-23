@@ -7,7 +7,7 @@ import { InputState } from '../../mixins/input-state/input-state';
 import { InputWidth } from '../../mixins/input-width/input-width';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { MASKEDFIELD_NAME, POSTALCODEFIELD_NAME } from '../component-names';
+import { POSTALCODEFIELD_NAME } from '../component-names';
 import { InputMaskOptions } from '../input-mask/input-mask';
 import { MMaskedfield } from '../maskedfield/maskedfield';
 import WithRender from './postalcodefield.html';
@@ -22,7 +22,7 @@ export enum MPostalCodeCountry {
 @WithRender
 @Component({
     components: {
-        [MASKEDFIELD_NAME]: MMaskedfield
+        MMaskedfield
     },
     mixins: [
         InputState,
@@ -34,7 +34,7 @@ export enum MPostalCodeCountry {
 export class MPostalcodefield extends ModulVue {
 
     @Prop({ default: MPostalCodeCountry.CA })
-    public postalCodeFormat: MPostalCodeCountry;
+    public readonly postalCodeFormat: MPostalCodeCountry;
 
     protected id: string = `mPostalcodefield-${uuid.generate()}`;
 

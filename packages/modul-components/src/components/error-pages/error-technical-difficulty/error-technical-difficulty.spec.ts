@@ -3,7 +3,7 @@ import { shallowMount, Wrapper } from '@vue/test-utils';
 import moment from 'moment';
 import Vue from 'vue';
 import SvgSpritesPlugin from '../../../utils/svg/svg-sprite';
-import { ACCORDION_NAME, I18N_NAME, MESSAGE_PAGE_NAME, PANEL_NAME } from '../../component-names';
+import { ACCORDION_NAME, MESSAGE_PAGE_NAME } from '../../component-names';
 import { Link } from '../../message-page/message-page';
 import { MErrorTechnicalDifficulty } from './error-technical-difficulty';
 
@@ -39,9 +39,7 @@ let showStack: boolean;
 const getStubs: any = () => {
     return {
         [MESSAGE_PAGE_NAME]: '<div><slot /></div>',
-        [ACCORDION_NAME]: '<div id="accordionDiv"><slot /></div>',
-        [I18N_NAME]: '<span>{{ $attrs["k"] }}</span>',
-        [PANEL_NAME]: '<div id="panel"><slot /></div>'
+        [ACCORDION_NAME]: '<div id="accordionDiv"><slot /></div>'
     };
 };
 
@@ -138,9 +136,7 @@ describe(`MErrorTechnicalDifficulty - test`, () => {
                 it(`Should not show stack block`, () => {
                     initializeShallowWrapper();
 
-                    let stackBlock: Wrapper<Vue> = wrapper.find('#panel');
-
-                    expect(stackBlock.exists()).toBeFalsy();
+                    expect(wrapper.find({ ref: 'stacktrace' }).exists()).toBeFalsy();
                 });
                 it(`Should return propStacktrace as false`, () => {
                     initializeShallowWrapper();
@@ -154,9 +150,7 @@ describe(`MErrorTechnicalDifficulty - test`, () => {
                     error.stack = undefined;
                     initializeShallowWrapper();
 
-                    let stackBlock: Wrapper<Vue> = wrapper.find('#panel');
-
-                    expect(stackBlock.exists()).toBeTruthy();
+                    expect(wrapper.find({ ref: 'stacktrace' })).toBeTruthy();
                 });
                 it(`Should return propStacktrace as true`, () => {
                     showStack = true;
@@ -173,9 +167,7 @@ describe(`MErrorTechnicalDifficulty - test`, () => {
                     error.stack = STACKTRACE;
                     initializeShallowWrapper();
 
-                    let stackBlock: Wrapper<Vue> = wrapper.find('#panel');
-
-                    expect(stackBlock.exists()).toBeFalsy();
+                    expect(wrapper.find({ ref: 'stacktrace' }).exists()).toBeFalsy();
                 });
                 it(`Should return propStacktrace as false`, () => {
                     error.stack = STACKTRACE;
@@ -190,9 +182,7 @@ describe(`MErrorTechnicalDifficulty - test`, () => {
                     showStack = true;
                     initializeShallowWrapper();
 
-                    let stackBlock: Wrapper<Vue> = wrapper.find('#panel');
-
-                    expect(stackBlock.exists()).toBeTruthy();
+                    expect(wrapper.find({ ref: 'stacktrace' }).exists()).toBeTruthy();
                 });
                 it(`Should return propStacktrace as true`, () => {
                     error.stack = STACKTRACE;

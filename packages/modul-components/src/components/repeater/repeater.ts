@@ -2,7 +2,7 @@ import { PluginObject } from 'vue';
 import { Component, Emit, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
 import { MAdd } from '../add/add';
-import { ADD_NAME, ICON_BUTTON_NAME, REPEATER_NAME } from '../component-names';
+import { REPEATER_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import WithRender from './repeater.html?style=./repeater.scss';
 
@@ -29,32 +29,32 @@ export interface MRepeaterRowListeners {
 @WithRender
 @Component({
     components: {
-        [ICON_BUTTON_NAME]: MIconButton,
-        [ADD_NAME]: MAdd
+        MIconButton,
+        MAdd
     }
 })
 export class MRepeater extends ModulVue {
     @Prop({
         required: true
     })
-    list: MRepeaterItem[];
+    public readonly list: MRepeaterItem[];
 
     @Prop()
-    addButtonLabel?: string;
+    public readonly addButtonLabel?: string;
 
     @Prop()
-    deleteButtonLabel?: string;
+    public readonly deleteButtonLabel?: string;
 
     @Prop()
-    emptyMessage?: string;
+    public readonly emptyMessage?: string;
 
     @Prop({
         default: 'ul'
     })
-    tag: string;
+    public readonly tag: string;
 
     @Prop()
-    itemKey?: string;
+    public readonly itemKey?: string;
 
     @Prop({
         default: (): MRepeaterOperations => ({
@@ -62,17 +62,17 @@ export class MRepeater extends ModulVue {
             canDelete: true
         })
     })
-    operations: MRepeaterOperations;
+    public readonly operations: MRepeaterOperations;
 
     @Prop({
         default: 0
     })
-    minItemCount: number;
+    public readonly minItemCount: number;
 
     @Prop({
         default: Infinity
     })
-    maxItemCount: number;
+    public readonly maxItemCount: number;
 
     mounted(): void {
         if (!this.$scopedSlots.row && !this.$scopedSlots.item) {

@@ -2,7 +2,7 @@ import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
 import { Enums } from '../../utils/enums/enums';
-import { ICON_BUTTON_NAME, ICON_NAME } from '../component-names';
+import { ICON_BUTTON_NAME } from '../component-names';
 import IconPlugin, { MIcon } from '../icon/icon';
 import WithRender from './icon-button.html?style=./icon-button.scss';
 
@@ -18,7 +18,7 @@ export enum MIconButtonSkin {
 @WithRender
 @Component({
     components: {
-        [ICON_NAME]: MIcon
+        MIcon
     }
 })
 export class MIconButton extends Vue {
@@ -26,65 +26,64 @@ export class MIconButton extends Vue {
         default: MIconButtonSkin.Light,
         validator: value => Enums.toValueArray(MIconButtonSkin).indexOf(value) !== -1
     })
-    public skin: MIconButtonSkin;
+    public readonly skin: MIconButtonSkin;
+
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
+
     @Prop({ default: '44px' })
-    public buttonSize: string;
+    public readonly buttonSize: string;
+
     @Prop({ default: 'm-svg__close-clear' })
-    public iconName: string;
+    public readonly iconName: string;
+
     @Prop({ default: '20px' })
-    public iconSize: string;
+    public readonly iconSize: string;
+
     @Prop({ default: true })
-    public ripple: boolean;
+    public readonly ripple: boolean;
+
     @Prop()
-    public title: string;
+    public readonly title: string;
 
     private hasSlot: boolean = false;
 
     @Emit('keydown')
-    onKeydown(event: KeyboardEvent): void { }
+    public onKeydown(event: KeyboardEvent): void { }
 
-    protected mounted(): void {
-        this.hasSlot = !!this.$slots.default;
-        if (!this.hasSlot) {
-            // Vue.prototype.$log.warn('<' + ICON_BUTTON_NAME + '> needs a text in its default slot that will describe its function. This text will be hidden and only read by the screen readers.');
-        }
-    }
-
-    private onClick(event: Event): void {
+    public onClick(event: Event): void {
         this.$emit('click', event);
     }
 
-    private onFocus(event: Event): void {
+    public onFocus(event: Event): void {
         this.$emit('focus');
     }
 
-    private onBlur(event: Event): void {
+    public onBlur(event: Event): void {
         this.$emit('blur');
     }
 
-    private get isSkinLight(): boolean {
+    public get isSkinLight(): boolean {
         return this.skin === MIconButtonSkin.Light;
     }
 
-    private get isSkinDark(): boolean {
+    public get isSkinDark(): boolean {
         return this.skin === MIconButtonSkin.Dark;
     }
 
-    private get isSkinPrimary(): boolean {
+    public get isSkinPrimary(): boolean {
         return this.skin === MIconButtonSkin.Primary;
     }
 
-    private get isSkinSecondary(): boolean {
+    public get isSkinSecondary(): boolean {
         return this.skin === MIconButtonSkin.Secondary;
     }
 
-    private get isSkinLink(): boolean {
+    public get isSkinLink(): boolean {
         return this.skin === MIconButtonSkin.Link;
     }
 
-    private get isSkinBold(): boolean {
+    public get isSkinBold(): boolean {
         return this.skin === MIconButtonSkin.Bold;
     }
 }

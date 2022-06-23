@@ -1,5 +1,6 @@
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
+import { Enums } from '../../utils/enums/enums';
 import { ModulVue } from '../../utils/vue/vue';
 
 export enum InputStateValue {
@@ -51,36 +52,37 @@ export interface InputStateInputSelector {
 @Component
 export class InputState extends ModulVue implements InputStateMixin {
     @Prop()
-    public disabled: boolean;
+    public readonly disabled: boolean;
+
     @Prop()
-    public waiting: boolean;
+    public readonly waiting: boolean;
+
     @Prop()
-    public error: boolean;
+    public readonly error: boolean;
+
     @Prop()
-    public valid: boolean;
+    public readonly valid: boolean;
+
     @Prop()
-    public errorMessage: string;
+    public readonly errorMessage: string;
+
     @Prop()
-    public validMessage: string;
+    public readonly validMessage: string;
+
     @Prop()
-    public helperMessage: string;
+    public readonly helperMessage: string;
+
     @Prop({
         default: InputStateTagStyle.Default,
-        validator: value =>
-            value === InputStateTagStyle.Default ||
-            value === InputStateTagStyle.H1 ||
-            value === InputStateTagStyle.H2 ||
-            value === InputStateTagStyle.H3 ||
-            value === InputStateTagStyle.H4 ||
-            value === InputStateTagStyle.H5 ||
-            value === InputStateTagStyle.H6 ||
-            value === InputStateTagStyle.P
+        validator: value => Enums.toValueArray(InputStateTagStyle).includes(value)
     })
-    public tagStyle: string;
+    public readonly tagStyle: string;
+
     @Prop()
-    public readonly: boolean;
+    public readonly readonly: boolean;
+
     @Prop()
-    public required: boolean;
+    public readonly required: boolean;
 
     public get active(): boolean {
         return !this.isDisabled && !this.isWaiting && !this.readonly;

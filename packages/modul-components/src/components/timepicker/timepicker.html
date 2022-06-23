@@ -69,10 +69,8 @@
         >
             <div slot="header"
                 class="m-timepicker__header">
-                <m-i18n k="m-timepicker:hours"
-                        class="m-timepicker__header__hours"></m-i18n>:
-                <m-i18n k="m-timepicker:minutes"
-                        class="m-timepicker__header__minutes"></m-i18n>
+                <span class="m-timepicker__header__hours">{{ $i18n.translate('m-timepicker:hours') }}</span>:
+                <span class="m-timepicker__header__minutes">{{ $i18n.translate('m-timepicker:minutes') }}</span>
             </div>
             <div
                 class="m-timepicker__body"

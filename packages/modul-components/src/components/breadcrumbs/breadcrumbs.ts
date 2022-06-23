@@ -1,7 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Prop } from 'vue-property-decorator';
-import { BREADCRUMBS_NAME, LINK_NAME } from '../component-names';
+import { BREADCRUMBS_NAME } from '../component-names';
 import { MLink, MLinkIconPosition, MLinkMode } from '../link/link';
 import WithRender from './breadcrumbs.html?style=./breadcrumbs.scss';
 
@@ -23,19 +23,18 @@ export interface BreadcrumbsProps {
 @WithRender
 @Component({
     components: {
-        [LINK_NAME]: MLink
+        MLink
     }
 })
 export class MBreadcrumbs extends Vue implements BreadcrumbsProps {
-
     @Prop({ default: [] })
-    public items!: BreadcrumbItem[];
+    public readonly items!: BreadcrumbItem[];
 
     @Prop({ default: '/' })
-    public divider!: string;
+    public readonly divider!: string;
 
     @Prop({ default: false })
-    public disabled!: boolean;
+    public readonly disabled!: boolean;
 
     get definedItems(): BreadcrumbItem[] {
         return this.items.filter((item: BreadcrumbItem) => item.text || item.iconName);

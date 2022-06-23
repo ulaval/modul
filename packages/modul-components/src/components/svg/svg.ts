@@ -11,10 +11,7 @@ import WithRender from './svg.html';
 @WithRender
 @Component
 export class MSvg extends ModulVue {
-
-    @Prop({
-        required: true
-    })
+    @Prop({ required: true })
     public readonly name!: string;
 
     @Prop({

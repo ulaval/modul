@@ -5,12 +5,12 @@
                state="warning"
                skin="light"
                ref="error-tree-txt">
-        {{'m-tree:error' | f-m-i18n}}
+        {{ $i18n.translate('m-tree:error') }}
     </m-message>
     <p class="m-tree__empty"
        v-if="propTreeEmpty"
        ref="empty-tree-txt">
-        {{'m-tree:empty' | f-m-i18n}}
+        {{ $i18n.translate('m-tree:empty')}}
     </p>
     <ul class="m-tree__content"
         v-else>

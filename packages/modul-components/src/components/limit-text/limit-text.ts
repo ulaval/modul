@@ -5,9 +5,8 @@ import { ElementQueries } from '../../mixins/element-queries/element-queries';
 import { MediaQueries } from '../../mixins/media-queries/media-queries';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { DYNAMIC_TEMPLATE_NAME, I18N_NAME, LIMIT_TEXT_NAME, LINK_NAME } from '../component-names';
+import { LIMIT_TEXT_NAME, LINK_NAME } from '../component-names';
 import { MDynamicTemplate } from '../dynamic-template/dynamic-template';
-import { MI18n } from '../i18n/i18n';
 import { MLink, MLinkMode } from '../link/link';
 import WithRender from './limit-text.html?style=./limit-text.scss';
 
@@ -15,23 +14,26 @@ import WithRender from './limit-text.html?style=./limit-text.scss';
 @WithRender
 @Component({
     components: {
-        [I18N_NAME]: MI18n,
-        [LINK_NAME]: MLink,
-        [DYNAMIC_TEMPLATE_NAME]: MDynamicTemplate
+        MLink,
+        MDynamicTemplate
     },
     mixins: [MediaQueries, ElementQueries]
 })
 export class MLimitText extends ModulVue {
     @Prop()
-    public open: boolean;
+    public readonly open: boolean;
+
     @Prop({ default: 4 })
-    public lines: number;
+    public readonly lines: number;
+
     @Prop()
-    public openLabel: string;
+    public readonly openLabel: string;
+
     @Prop()
-    public closeLabel: string;
+    public readonly closeLabel: string;
+
     @Prop()
-    public html: string;
+    public readonly html: string;
 
     private reduceContent: string = '';
     private testingContent: string = '';

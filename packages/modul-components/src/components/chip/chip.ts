@@ -1,7 +1,8 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
-import { CHIP_ADD_NAME, CHIP_DELETE_NAME, CHIP_NAME } from '../component-names';
+import { Enums } from '../../utils/enums/enums';
+import { CHIP_NAME } from '../component-names';
 import MChipAdd from './chip-add/chip-add';
 import MChipDelete from './chip-delete/chip-delete';
 import WithRender from './chip.html';
@@ -19,8 +20,8 @@ export enum MChipSize {
 @WithRender
 @Component({
     components: {
-        [CHIP_ADD_NAME]: MChipAdd,
-        [CHIP_DELETE_NAME]: MChipDelete
+        MChipAdd,
+        MChipDelete
     }
 })
 export class MChip extends Vue {
@@ -32,17 +33,13 @@ export class MChip extends Vue {
 
     @Prop({
         default: MChipMode.Add,
-        validator: value =>
-            value === MChipMode.Add ||
-            value === MChipMode.Delete
+        validator: value => Enums.toValueArray(MChipMode).includes(value)
     })
     public readonly mode: MChipMode;
 
     @Prop({
         default: MChipSize.Large,
-        validator: value =>
-            value === MChipSize.Large ||
-            value === MChipSize.Small
+        validator: value => Enums.toValueArray(MChipSize).includes(value)
     })
     public readonly size: MChipSize;
 

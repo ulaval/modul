@@ -10,7 +10,7 @@ import { MFile } from '../../utils/file/file';
 import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
-import { INPUT_STYLE_NAME, RICH_TEXT_EDITOR_NAME, VALIDATION_MESSAGE_NAME } from '../component-names';
+import { RICH_TEXT_EDITOR_NAME } from '../component-names';
 import { FileUploadCustomValidation } from '../file-upload/file-upload';
 import { MInputStyle } from '../input-style/input-style';
 import { MValidationMessage } from '../validation-message/validation-message';
@@ -24,8 +24,8 @@ const RICH_TEXT_LICENSE_KEY: string = 'm-rich-text-license-key';
 @Component({
     components: {
         Froala: VueFroala,
-        [INPUT_STYLE_NAME]: MInputStyle,
-        [VALIDATION_MESSAGE_NAME]: MValidationMessage
+        MInputStyle,
+        MValidationMessage
     },
     mixins: [
         InputState,

@@ -5,7 +5,6 @@ import { FormatMode } from '../../utils/i18n/i18n';
 import uuid from '../../utils/uuid/uuid';
 import { ModulVue } from '../../utils/vue/vue';
 import { MButton, MButtonSkin } from '../button/button';
-import { BUTTON_NAME, FILE_SELECT_NAME, MODAL_NAME } from '../component-names';
 import { MFileSelect } from '../file-select/file-select';
 import { MMessage, MMessageState } from '../message/message';
 import { MModal, MModalSize } from '../modal/modal';
@@ -24,13 +23,12 @@ export enum MPhotoEditorMode {
         MMessage,
         MImageDisplayer,
         MCropImage,
-        [FILE_SELECT_NAME]: MFileSelect,
-        [BUTTON_NAME]: MButton,
-        [MODAL_NAME]: MModal
+        MFileSelect,
+        MButton,
+        MModal
     }
 })
 export class MPhotoEditor extends ModulVue {
-
     @Prop({ default: '' })
     urlPhoto: string;
 

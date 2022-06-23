@@ -29,62 +29,62 @@ export enum MCalendarType {
 export class MCalendar extends ModulVue {
 
     @Prop({ default: '' })
-    value: SingleDate | RangeDate;
+    public readonly value: SingleDate | RangeDate;
 
     @Prop({ default: CalendarMode.SINGLE_DATE })
-    mode: CalendarMode;
+    public readonly mode: CalendarMode;
 
     @Prop({
         default: MBaseCalendarType.FULL_DATE,
         validator: value => Enums.toValueArray(MBaseCalendarType).includes(value)
     })
-    type: MBaseCalendarType;
+    public readonly type: MBaseCalendarType;
 
     @Prop()
-    minDate: string;
+    public readonly minDate: string;
 
     @Prop()
-    maxDate: string;
+    public readonly maxDate: string;
 
     @Prop({ default: true })
-    showMonthBeforeAfter: string;
+    public readonly showMonthBeforeAfter: string;
 
     @Prop({ default: true })
-    visible: boolean;
+    public readonly visible: boolean;
 
     @Prop({
         default: MBaseCalendarView.DAYS,
         validator: value => Enums.toValueArray(MBaseCalendarView).includes(value)
     })
-    initialView: MBaseCalendarView;
+    public readonly initialView: MBaseCalendarView;
 
-    innerValue: SingleDate | RangeDate = this.value;
-    id: string = `m-calendar-${uuid.generate()}`;
+    public innerValue: SingleDate | RangeDate = this.value;
+    public id: string = `m-calendar-${uuid.generate()}`;
 
     @Watch('value')
-    refreshValue(): void {
+    public refreshValue(): void {
         this.validateInputModel();
         this.innerValue = this.value;
     }
 
-    created(): void {
+    protected created(): void {
         this.validateInputModel();
     }
 
     @Emit('input')
-    onInput(): SingleDate | RangeDate {
+    public onInput(): SingleDate | RangeDate {
         return this.innerValue;
     }
 
-    get isSingleDate(): boolean {
+    public get isSingleDate(): boolean {
         return this.mode === CalendarMode.SINGLE_DATE;
     }
 
-    get isDateRange(): boolean {
+    public get isDateRange(): boolean {
         return this.mode === CalendarMode.DATE_RANGE;
     }
 
-    validateInputModel(): void {
+    public validateInputModel(): void {
         switch (this.mode) {
             case CalendarMode.SINGLE_DATE:
                 if (typeof this.value !== 'string') {

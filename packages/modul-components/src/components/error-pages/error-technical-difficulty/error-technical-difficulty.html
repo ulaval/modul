@@ -19,8 +19,8 @@
             {{ $i18n.translate('m-error-technical-difficulty:date.secondary') }}
             <strong>{{ formattedTime }}</strong>
         </p>
-        <m-panel  class="m-error-technical-difficulty__stacktrace" :padding="false" v-if="propStacktrace">
-            <pre>{{ error.stack }}</pre>
-        </m-panel>
+        <pre v-if="propStacktrace"
+            ref="stacktrace"
+            class="m-error-technical-difficulty__stacktrace">{{ error.stack }}</pre>
     </m-accordion>
 </m-message-page>

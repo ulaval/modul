@@ -1,7 +1,7 @@
 <div class="m-organize-table-columns">
     <div class="m-organize-table-columns__header">
-        <h2 class="m-organize-table-columns__title">{{'m-organize-table-columns:title' | f-m-i18n}}</h2>
-        <p>{{'m-organize-table-columns:helper-1' | f-m-i18n}} ({{ numberDisplayedColumns }})</p>
+        <h2 class="m-organize-table-columns__title">{{ $i18n.translate('m-organize-table-columns:title') }}</h2>
+        <p>{{ $i18n.translate('m-organize-table-columns:helper-1') }} ({{ numberDisplayedColumns }})</p>
     </div>
 
     <ul class="m-organize-table-columns__visible-columns"
@@ -34,7 +34,7 @@
 
     <template v-if="numberHiddenColumns > 0">
         <div class="m-organize-table-columns__header">
-            <p>{{'m-organize-table-columns:helper-2' | f-m-i18n}}</p>
+            <p>{{ $i18n.translate('m-organize-table-columns:helper-2') }}</p>
         </div>
 
         <ul class="m-organize-table-columns__hidden-columns">
@@ -44,11 +44,11 @@
                 <div class="m-organize-table-columns__item">
                     <div class="m-organize-table-columns__item-title">
                         <span class="m-organize-table-columns__item-title-text">
-                            {{column.title}}
+                            {{ column.title }}
                         </span>
                     </div>
                     <m-add @click="addColumn(column)"
-                           :title="'m-organize-table-columns:add-column' | f-m-i18n" />
+                           :title="$i18n.translate('m-organize-table-columns:add-column')" />
                 </div>
             </m-list-item>
         </ul>
