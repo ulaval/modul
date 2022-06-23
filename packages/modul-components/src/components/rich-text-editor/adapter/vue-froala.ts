@@ -322,10 +322,10 @@ const SCROLL_TO_OFFSET: number = -50;
                     if (this.currentConfig.immediateVueModelUpdate) {
                         this.updateModel();
                     }
-                    this.$emit('keyup');
+                    this.$emit('keyup', key);
                 },
                 [froalaEvents.KeyDown]: (key: any) => {
-                    this.$emit('keydown');
+                    this.$emit('keydown', key);
                     this.isDirty = true;
                     if (key.keyCode === ENTER_KEYCODE) {
                         this.froalaEditor.paragraphStyle.apply('');
