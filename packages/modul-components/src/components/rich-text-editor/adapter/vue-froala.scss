@@ -10,23 +10,8 @@ $m-froala-toolbar-btn-height: 38px !default;
     overflow: hidden;
     width: 100%;
 
-    // to overcome input-style base padding.
     .m-input-style & {
-        margin: -#{$m-input-style--padding};
-    }
-
-    .m-input-style &.m--is-collapsed {
-        margin: -#{$m-collapsed-input-style--margin};
-    }
-
-    // to overcome input-style base padding, minus space for the label.
-    .m-input-style.m--is-label-up.m--is-focus & {
-        margin: 0; // magic number
-    }
-
-    // basic body padding for all states
-    /deep/ .fr-element.fr-view {
-        padding: $m-input-style--padding;
+        margin: 0;
     }
 
     /deep/ .fas {
@@ -42,31 +27,34 @@ $m-froala-toolbar-btn-height: 38px !default;
         background-color: $m-color-white;
     }
 
+
+    /deep/ .fr-element.fr-view {
+        padding: 0;
+    }
+
+    /deep/ .fr-placeholder {
+        padding: 0 !important;
+    }
+
     &.m--is-dirty:not(.m--is-disabled):not(.m--is-readonly) {
         overflow: unset;
-
-        /deep/ .fr-element.fr-view {
-            padding: $m-space 0 $m-space-xs;
-        }
 
         &.fr-fullscreen-wrapper {
 
             /deep/ .fr-element.fr-view {
-                padding: $m-space-md;
+                padding: $m-space-md $m-space  !important;
                 background: $m-color-white;
+
+                @media (min-width: $m-mq-min-sm) {
+                    padding: $m-space-md  !important;
+                }
             }
         }
     }
 
     &.m--is-collapsed /deep/ {
         .fr-box.fr-basic .fr-element {
-            padding: 0;
             min-height: unset;
-            height: 0;
-        }
-
-        .fr-wrapper.show-placeholder .fr-placeholder {
-            display: none;
         }
     }
 
@@ -121,6 +109,15 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
     }
 
+    &.m--is-focus:not(.m--is-readonly) /deep/ {
+
+        .fr-element.fr-view,
+        .fr-placeholder {
+            padding-top: $m-space  !important;
+            padding-bottom: $m-space-xs;
+        }
+    }
+
     &.m--is-focus /deep/ {
         .fr-placeholder {
             color: $m-color-disabled;
@@ -139,8 +136,8 @@ $m-froala-toolbar-btn-height: 38px !default;
         }
 
         .fr-box.fr-basic.fr-top.fr-toolbar-open .fr-wrapper {
-            transition: margin $m-transition-duration-lg ease;
-            margin-top: $m-space-2xl;
+            // transition: margin $m-transition-duration-lg ease;
+            // margin-top: $m-space-2xl;
         }
 
         .fr-toolbar {
@@ -150,7 +147,7 @@ $m-froala-toolbar-btn-height: 38px !default;
             }
 
             height: 40px;
-            margin-top: 0;
+            // margin-top: 0;
             padding: 0;
             opacity: 1;
 
@@ -213,10 +210,12 @@ $m-froala-toolbar-btn-height: 38px !default;
             cursor: default;
             opacity: 0;
             box-shadow: unset;
+            margin: 0;
             border-radius: 0;
             border-top: 0;
             border-right: 0;
             border-left: 0;
+            height: 0;
 
             button {
                 color: $m-color-grey-darker;
