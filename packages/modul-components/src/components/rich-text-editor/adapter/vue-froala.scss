@@ -32,6 +32,10 @@ $m-froala-toolbar-btn-height: 38px !default;
         padding: 0;
     }
 
+    /deep/ .fr-placeholder {
+        padding: 0 !important;
+    }
+
     &.m--is-dirty:not(.m--is-disabled):not(.m--is-readonly) {
         overflow: unset;
 
