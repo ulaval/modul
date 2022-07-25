@@ -35,6 +35,7 @@ exports[`Storyshots modul-components|m-integerfield Autocomplete 1`] = `
             class="m-integerfield__input"
             id="mIntegerfield-fakeId"
             inputmode="decimal"
+            type="number"
           />
             
         </div>
@@ -100,6 +101,7 @@ exports[`Storyshots modul-components|m-integerfield Error 1`] = `
             class="m-integerfield__input"
             id="mIntegerfield-fakeId"
             inputmode="decimal"
+            type="number"
           />
             
         </div>
@@ -190,6 +192,74 @@ exports[`Storyshots modul-components|m-integerfield Label 1`] = `
             class="m-integerfield__input"
             id="mIntegerfield-fakeId"
             inputmode="decimal"
+            type="number"
+          />
+            
+        </div>
+         
+        <!---->
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+    
+  <div
+    class="m-input-style__validation"
+  >
+    <div
+      class="m-integerfield__validation"
+      id="fakeId"
+    >
+      <div
+        class="m-validation-message m-integerfield__validation-message"
+      >
+        <!---->
+         
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-integerfield Min 10 Max 20 1`] = `
+<div
+  class="m-input-style m-integerfield m--has-value m--is-tag-default"
+  style="width: 100%; max-width: 288px;"
+>
+  <div
+    class="m-input-style__main"
+  >
+    <div
+      class="m-input-style__body"
+    >
+      <span
+        class="m-input-style__label"
+        style="z-index: -1;"
+      >
+        <span
+          class="m-input-style__text"
+        />
+      </span>
+       
+      <div
+        class="m-input-style__input"
+      >
+        <!---->
+         
+        <div
+          class="m-input-style__content"
+        >
+           
+          <input
+            aria-describedby="fakeId"
+            class="m-integerfield__input"
+            id="mIntegerfield-fakeId"
+            inputmode="decimal"
+            max="20"
+            min="10"
+            type="number"
           />
             
         </div>
@@ -255,6 +325,7 @@ exports[`Storyshots modul-components|m-integerfield Readonly 1`] = `
             id="mIntegerfield-fakeId"
             inputmode="decimal"
             readonly="readonly"
+            type="number"
           />
             
         </div>
@@ -319,6 +390,7 @@ exports[`Storyshots modul-components|m-integerfield Value 1`] = `
             class="m-integerfield__input"
             id="mIntegerfield-fakeId"
             inputmode="decimal"
+            type="number"
           />
             
         </div>
@@ -384,6 +456,7 @@ exports[`Storyshots modul-components|m-integerfield Waiting 1`] = `
             id="mIntegerfield-fakeId"
             inputmode="decimal"
             readonly="readonly"
+            type="number"
           />
             
         </div>
@@ -459,6 +532,7 @@ exports[`Storyshots modul-components|m-integerfield default 1`] = `
             class="m-integerfield__input"
             id="mIntegerfield-fakeId"
             inputmode="decimal"
+            type="number"
           />
             
         </div>

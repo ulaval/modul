@@ -31,17 +31,17 @@ export class MIntegerfield extends ModulVue {
     @Prop()
     public readonly value: number;
 
+    @Prop()
+    public readonly min?: number;
+
+    @Prop()
+    public readonly max?: number;
+
     @Prop({
         default: 16,
         validator(value: any): boolean {
-            if (!(typeof value === 'number')) {
-                return false;
-            }
-
-            if (!isNaN(value) && value <= 16) {
-                return true;
-            }
-
+            if (!(typeof value === 'number')) { return false; }
+            if (!isNaN(value) && value <= 16) { return true; }
             return false;
         }
     })
@@ -73,6 +73,32 @@ export class MIntegerfield extends ModulVue {
         };
     }
 
+
+    @Emit('input')
+    public emitInput(_value: number): void { }
+
+    @Emit('update:value')
+    public emitUpdateValue(_value: number): void { }
+
+    @Emit('change')
+    public emitChange(_event: Event): void { }
+
+    public onChange(event: Event): void {
+        this.clamp();
+        this.emitChange(event);
+    }
+
+    public clamp(): void {
+        let value: number = Number.parseFloat(this.model);
+        if (this.min && value < this.min) {
+            value = this.min;
+        } else if (this.max && value > this.max) {
+            value = this.max;
+        }
+        this.model = value.toString();
+        this.emitUpdateValue(value);
+    }
+
     public get currentLocale(): string {
         return (this as ModulVue).$i18n.currentLocale;
     }
@@ -82,12 +108,12 @@ export class MIntegerfield extends ModulVue {
     }
 
     public set model(value: string) {
-        const valueAsNumber: number = Number.parseFloat(value);
-        this.emitNewValue(valueAsNumber);
+        this.emitInput(Number.parseFloat(value));
     }
 
-    @Emit('input')
-    public emitNewValue(_newValue: number): void { }
+    protected created(): void {
+        this.clamp();
+    }
 }
 
 const IntegerfieldPlugin: PluginObject<any> = {
