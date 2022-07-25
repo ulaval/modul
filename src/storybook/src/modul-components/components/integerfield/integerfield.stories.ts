@@ -7,29 +7,34 @@ export default {
     parameters: { fileName: __filename }
 };
 
-export const defaultStory = () => ({
-    props: {
-    },
+export const DefaultStory = () => ({
     methods: actions(
         'click',
         'focus',
         'blur'
     ),
-    template: '<m-integerfield @click="click" @focus="focus" @blur="blur"></m-integerfield>'
+    template: '<m-integerfield @click="click" @focus="focus" @blur="blur"/>'
 });
 
-defaultStory.story = {
+DefaultStory.story = {
     name: 'default'
 };
 
-export const label = () => '<m-integerfield label="Extension"></m-integerfield>';
+export const Label = () => '<m-integerfield label="Extension"/>';
 
-export const value = () => '<m-integerfield value="1234"></m-integerfield>';
+export const Value = () => '<m-integerfield value="1234" />';
 
-export const waiting = () => '<m-integerfield :waiting="true"></m-integerfield>';
+export const Waiting = () => '<m-integerfield :waiting="true"/>';
 
-export const readonly = () => '<m-integerfield :readonly="true"></m-integerfield>';
+export const Readonly = () => '<m-integerfield :readonly="true"/>';
 
-export const error = () => '<m-integerfield :error="true" error-message="Invalide number"></m-integerfield>';
+export const Error = () => '<m-integerfield :error="true" error-message="Invalide number"/>';
 
-export const autocomplete = () => '<m-integerfield autocomplete="home tel-extension"></m-integerfield>';
+export const Autocomplete = () => '<m-integerfield autocomplete="home tel-extension"/>';
+
+export const Min10Max20 = () => ({
+    data: () => ({
+        value: '5'
+    }),
+    template: '<m-integerfield v-model="value" min="10" max="20"/>'
+});

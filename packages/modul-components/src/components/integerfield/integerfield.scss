@@ -16,11 +16,13 @@
     }
 
     &__input {
-        appearance: textfield;
+        appearance: none;
 
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
-            appearance: textfield;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
     }
 }
