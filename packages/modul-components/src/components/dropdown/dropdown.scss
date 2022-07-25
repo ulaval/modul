@@ -1,9 +1,9 @@
 @import 'commons';
-$m-dropdown--color-hover: $m-color-grey-lightest !default;
-$m-dropdown--color-select: $m-color-grey-lighter !default;
-$m-dropdown--color-focus: $m-color-interactive-lightest !default;
-$m-dropdown--color-active: $m-color-interactive-lightest !default;
-$m-dropdown--margin: $m-space-2xs !default;
+$m-dropdown--color-hover: $m-color-grey-lightest  !default;
+$m-dropdown--color-select: $m-color-grey-lighter  !default;
+$m-dropdown--color-focus: $m-color-interactive-lightest  !default;
+$m-dropdown--color-active: $m-color-interactive-lightest  !default;
+$m-dropdown--margin: $m-space-2xs  !default;
 
 .m-dropdown {
     position: relative;
@@ -48,6 +48,7 @@ $m-dropdown--margin: $m-space-2xs !default;
 
             &-input {
                 width: 100%;
+                font-family: inherit;
                 font-size: inherit;
                 font-weight: $m-font-weight-light;
                 border: none;
@@ -120,7 +121,7 @@ $m-dropdown--margin: $m-space-2xs !default;
         left: 0;
         top: calc(50% + 2px); // magic number
         transform: translateY(-50%);
-        color: $m-color-disabled !important;
+        color: $m-color-disabled  !important;
     }
 
     .m-input-style {
