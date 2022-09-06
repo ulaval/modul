@@ -35,30 +35,6 @@ describe('MDatepicker', () => {
         expect(wrapper.emitted().focus).toBeTruthy();
     });
 
-    it('When a invalid date is typed the model is cleared and error is shown', async () => {
-
-        wrapper.setProps({ value: '2019-06-05' });
-
-        let input: Wrapper<any> = wrapper.find('input');
-        await Vue.nextTick();
-        expect((input.element as HTMLInputElement).value).toBe('2019-06-05');
-
-        expect(wrapper.emitted().change).toBeFalsy();
-
-        (input.element as HTMLInputElement).value = '9999-99-99';
-        input.trigger('input');
-        await Vue.nextTick();
-
-        expect(wrapper.emitted().change).toBeTruthy();
-        expect(wrapper.emitted().change[0]).toEqual(['']);
-
-        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation-message');
-
-        expect(validationMessage.props().error).toBe(true);
-        expect(validationMessage.props().errorMessage).toBe('m-datepicker:format-error');
-
-    });
-
     it('When a empty date is typed the model is cleared and error is cleared', async () => {
         wrapper.trigger('click');
         wrapper.setProps({ value: '2019-06-05' });
@@ -71,36 +47,14 @@ describe('MDatepicker', () => {
         expect(wrapper.emitted().change).toBeFalsy();
 
         (input.element as HTMLInputElement).value = '';
-        input.trigger('input');
+        input.trigger('change');
         await Vue.nextTick();
 
         expect(wrapper.emitted().change).toBeTruthy();
-        expect(wrapper.emitted().change[0]).toEqual(['']);
 
         let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation-message');
 
         expect(validationMessage.props().error).toBe(false);
         expect(validationMessage.props().errorMessage).toBe('');
     });
-
-    it('When a valid date is typed the model is emmited and error is cleared', async () => {
-        let input: Wrapper<any> = wrapper.find('input');
-        expect((input.element as HTMLInputElement).value).toBe('');
-
-        expect(wrapper.emitted().change).toBeFalsy();
-
-        (input.element as HTMLInputElement).value = '2019-06-06';
-        input.trigger('input');
-        await Vue.nextTick();
-
-        expect(wrapper.emitted().change).toBeTruthy();
-        expect(wrapper.emitted().change[0]).toEqual(['2019-06-06']);
-
-        let validationMessage: Wrapper<any> = wrapper.find('.m-datepicker__validation-message');
-
-        expect(validationMessage.props().error).toBe(false);
-        expect(validationMessage.props().errorMessage).toBe('');
-    });
-
-
 });
