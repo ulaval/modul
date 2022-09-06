@@ -152,9 +152,8 @@ export class MDatepicker extends ModulVue {
     public get calandarErrorMessage(): string {
         if (this.internalCalendarErrorMessage && !this.hideInternalErrorMessage) {
             return this.internalCalendarErrorMessage;
-        } else {
-            return this.as<InputState>().errorMessage !== undefined ? this.as<InputState>().errorMessage : '';
         }
+        return this.as<InputState>().errorMessage !== undefined ? this.as<InputState>().errorMessage : '';
 
     }
 
@@ -206,12 +205,11 @@ export class MDatepicker extends ModulVue {
         }
     }
 
+    @Emit('change')
+    public emitChange(value: DatePickerSupportedTypes): void { }
+
     @Emit('blur')
-    private emitBlur(): void {
-        if (!this.skipInputValidation) {
-            this.showErrorMessage(this.inputModel);
-        }
-    }
+    private emitBlur(): void { }
 
     @Emit('click')
     private emitClick(event: Event): void { }
@@ -231,6 +229,7 @@ export class MDatepicker extends ModulVue {
         this.inputModel = this.internalDateModel;
         this.open = false;
         this.as<InputManagement>().focusInput();
+        this.onChange();
     }
 
     public inputDate(inputValue: string): void {
@@ -239,22 +238,24 @@ export class MDatepicker extends ModulVue {
         if (!inputValue || inputValue === '') {
             this.model = '';
             this.clearErrorMessage();
-        } else {
-
-            if (this.open) {
-                this.open = false;
-            }
-
-            if (this.skipInputValidation) {
-                this.model = inputValue;
-            } else {
-                if (inputValue.length === this.maxInputLenght && this.showErrorMessage(inputValue)) {
-                    this.model = this.inputModel;
-                } else {
-                    this.model = '';
-                }
-            }
+            return;
         }
+
+        if (this.open) {
+            this.open = false;
+        }
+
+        if (this.skipInputValidation) {
+            this.model = inputValue;
+            return;
+        }
+
+        if (inputValue.length === this.maxInputLenght && this.showErrorMessage(inputValue)) {
+            this.model = this.inputModel;
+            return;
+        }
+
+        this.model = '';
     }
 
     // Model management
@@ -265,7 +266,7 @@ export class MDatepicker extends ModulVue {
         if (this.internalDateModel !== this.convertModelToString(value)) {
             this.internalDateModel = this.convertModelToString(value);
 
-            this.inputModel = this.internalDateModel ? this.internalDateModel : '';
+            this.inputModel = this.internalDateModel || '';
             this.showErrorMessage(this.inputModel);
         }
     }
@@ -274,7 +275,6 @@ export class MDatepicker extends ModulVue {
     public set model(value: string) {
         if (this.internalDateModel !== value) {
             this.internalDateModel = value;
-            this.emitChange();
         }
     }
 
@@ -293,10 +293,6 @@ export class MDatepicker extends ModulVue {
         }
         // stop event propagation to parent.
         event.stopPropagation();
-    }
-
-    public emitChange(): void {
-        this.$emit('change', this.convertStringToModel(this.internalDateModel));
     }
 
     public onKeydown(event: KeyboardEvent): void {
@@ -345,6 +341,14 @@ export class MDatepicker extends ModulVue {
         }
     }
 
+    public onChange(): void {
+        if (!this.skipInputValidation) {
+            this.showErrorMessage(this.inputModel);
+        }
+
+        this.emitChange(this.convertStringToModel(this.internalDateModel));
+    }
+
     // override from Input-management
     public get isFocus(): boolean {
         return this.as<InputManagement>().internalIsFocus || this.open;
@@ -367,22 +371,23 @@ export class MDatepicker extends ModulVue {
 
     private convertStringToModel(newValue: string): DatePickerSupportedTypes {
         if (newValue && this.value instanceof Date) {
-            return new Date(newValue);
-        } else {
-            return newValue;
+            const dateParts: number[] = newValue.split('-').map((p) => Number(p));
+            return new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
         }
+        return newValue;
+
     }
 
     private convertModelToString(value: DatePickerSupportedTypes): string {
         if (value instanceof Date) {
             return new ModulDate(value.toISOString()).toString();
-        } else {
-            if (value) {
-                return value;
-            } else {
-                return '';
-            }
         }
+        if (value) {
+            return value;
+        }
+        return '';
+
+
     }
 
     private clearErrorMessage(): void {
