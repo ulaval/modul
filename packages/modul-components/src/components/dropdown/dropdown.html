@@ -1,83 +1,76 @@
-<div
-    class="m-dropdown"
-    :class="{
+<div class="m-dropdown"
+     :class="{
         'm--is-open': open,
         'm--has-placeholder-icon': hasPlaceholderIcon,
         'm--has-validation-message': hasValidationMessage
     }"
-    :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
-    @click="onOpen"
->
-    <m-input-style
-        v-m-popup:popup
-        role="combobox"
-        :aria-owns="listboxId"
-        aria-haspopup="listbox"
-        :aria-expanded="open === true ? 'true' : 'false'"
-        ref="mInputStyle"
-        :label="label"
-        :labelId="labelId"
-        :label-for="id"
-        :disabled="isDisabled"
-        :readonly="isReadonly"
-        :waiting="isWaiting"
-        :focus="internalIsFocus"
-        :label-up="labelUp"
-        :empty="isEmpty"
-        :error="hasError"
-        :cursor-pointer="hasPointer"
-        :valid="isValid"
-        :required-marker="requiredMarker"
-        :width="inputStyletWidth"
-        :tag-style="tagStyle"
-        :error-message="errorMessage"
-        :valid-message="validMessage"
-        :helper-message="helperMessage"
-    >
-        <m-icon
-            v-if="hasPlaceholderIcon"
-            class="m-dropdown__placeholder-icon"
-            aria-hidden="true"
-            name="m-svg__search"
-            size="16px"
-        />
-        <input
-            v-model.trim="selectedText"
-            :id="id"
-            class="m-dropdown__input"
-            type="text"
-            ref="input"
-            :disabled="disabled"
-            :readonly="!filterableDesktop || readonly"
-            :role="!filterableDesktop ? 'button' : undefined"
-            :aria-haspopup="!filterableDesktop ? 'listbox' : undefined"
-            :placeholder="internalPlaceholder"
-            :maxlength="maxLength"
-            :autocomplete="autocomplete"
-            :aria-invalid="hasError"
-            :aria-describedby="inputAriaDescribedby"
-            :aria-activedescendant="inputAriaActivedescendant"
-            :aria-autocomplete="filterable ? 'both' : undefined"
-            :required="required || requiredMarker"
-            :aria-required="required || requiredMarker"
-            @keydown.enter.prevent="onKeydownEnter"
-            @keydown.return.prevent="onKeydownEnter"
-            @keydown.space.prevent="onKeydownEnter"
-            @keydown.esc="onKeydownEsc"
-            @keydown.up.prevent="onKeydownUp"
-            @keydown.down.prevent="onKeydownDown"
-            @keydown.home.prevent="onKeydownHome"
-            @keydown.end.prevent="onKeydownEnd"
-            @keydown.tab="onKeydownTab"
-            @keydown="filterable ? inputOnKeydown($event) : undefined"
-            @focusin="onFocusIn"
-            @focusout="onFocusOut"
-            @input="onInput"
-        />
+     :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+     @click="onOpen">
+    <m-input-style v-m-popup:popup
+                   role="combobox"
+                   :aria-owns="listboxId"
+                   aria-haspopup="listbox"
+                   :aria-expanded="open === true ? 'true' : 'false'"
+                   ref="mInputStyle"
+                   :label="label"
+                   :labelId="labelId"
+                   :label-for="id"
+                   :disabled="isDisabled"
+                   :readonly="isReadonly"
+                   :waiting="isWaiting"
+                   :focus="internalIsFocus"
+                   :label-up="labelUp"
+                   :empty="isEmpty"
+                   :error="hasError"
+                   :cursor-pointer="hasPointer"
+                   :valid="isValid"
+                   :required-marker="requiredMarker"
+                   :width="inputStyletWidth"
+                   :tag-style="tagStyle"
+                   :error-message="errorMessage"
+                   :valid-message="validMessage"
+                   :helper-message="helperMessage">
+        <m-icon v-if="hasPlaceholderIcon"
+                class="m-dropdown__placeholder-icon"
+                aria-hidden="true"
+                name="m-svg__search"
+                size="16px" />
+        <input v-model.trim="selectedText"
+               :id="id"
+               class="m-dropdown__input"
+               type="text"
+               ref="input"
+               :disabled="disabled"
+               :readonly="!filterableDesktop || readonly"
+               :role="!filterableDesktop ? 'button' : undefined"
+               :aria-haspopup="!filterableDesktop ? 'listbox' : undefined"
+               :placeholder="internalPlaceholder"
+               :maxlength="maxLength"
+               :autocomplete="autocomplete"
+               :aria-invalid="hasError"
+               :aria-label="inputAriaLabel"
+               :aria-describedby="inputAriaDescribedby"
+               :aria-activedescendant="inputAriaActivedescendant"
+               :aria-autocomplete="filterable ? 'both' : undefined"
+               :required="required || requiredMarker"
+               :aria-required="required || requiredMarker"
+               @keydown.enter.prevent="onKeydownEnter"
+               @keydown.return.prevent="onKeydownEnter"
+               @keydown.space.prevent="onKeydownEnter"
+               @keydown.esc="onKeydownEsc"
+               @keydown.up.prevent="onKeydownUp"
+               @keydown.down.prevent="onKeydownDown"
+               @keydown.home.prevent="onKeydownHome"
+               @keydown.end.prevent="onKeydownEnd"
+               @keydown.tab="onKeydownTab"
+               @keydown="filterable ? inputOnKeydown($event) : undefined"
+               @focusin="onFocusIn"
+               @focusout="onFocusOut"
+               @input="onInput" />
         <div class="m-dropdown__arrow"
-                :class="{ 'm--is-open': open }"
-                v-if="showArrowIcon"
-                slot="suffix">
+             :class="{ 'm--is-open': open }"
+             v-if="showArrowIcon"
+             slot="suffix">
             <m-icon class="m-dropdown__arrow__icon"
                     ref="arrow"
                     name="m-svg__arrow-head-filled--down"
@@ -87,60 +80,57 @@
                     @keydown.enter.prevent="open = active">
             </m-icon>
         </div>
-        <m-popup
-            :id="popupId"
-            slot="popup"
-            ref="popup"
-            width="100%"
-            placement="bottom-start"
-            :open.sync="open"
-            :disabled="!active"
-            :enter="transitionEnter"
-            :leave="transitionLeave"
-            :padding="false"
-            :focus-management="isMqMaxS && filterable"
-            :initial-focus-element="initialFocusElement"
-            :close-on-backdrop="true"
-            :preload="true"
-            open-trigger="mousedown"
-            :lazy="false"
-            :sidebar-full-height="filterable"
-            @open="onOpen"
-            @close="onClose"
-            @portal-mounted="portalMounted"
-        >
+        <m-popup :id="popupId"
+                 slot="popup"
+                 ref="popup"
+                 width="100%"
+                 placement="bottom-start"
+                 :open.sync="open"
+                 :disabled="!active"
+                 :enter="transitionEnter"
+                 :leave="transitionLeave"
+                 :padding="false"
+                 :focus-management="isMqMaxS && filterable"
+                 :initial-focus-element="initialFocusElement"
+                 :close-on-backdrop="true"
+                 :preload="true"
+                 open-trigger="mousedown"
+                 :lazy="false"
+                 :sidebar-full-height="filterable"
+                 @open="onOpen"
+                 @close="onClose"
+                 @portal-mounted="portalMounted">
             <template slot="header"
-                    v-if="isMqMaxS && (hasLabel || filterable)">
+                      v-if="isMqMaxS && (hasLabel || filterable)">
                 <h2 class="m-dropdown__header__label"
                     v-if="hasLabel">{{ label }}</h2>
                 <div class="m-dropdown__header__research"
-                    v-if="filterable">
+                     v-if="filterable">
                     <input class="m-dropdown__header__research-input"
-                        type="text"
-                        :placeholder="$i18n.translate('m-dropdown:search')"
-                        ref="researchInput"
-                        v-model.trim="selectedText"
-                        :maxlength="maxLength"
-                        :autocomplete="autocomplete"
-                        :aria-describedby="inputAriaDescribedby"
-                        :aria-activedescendant="inputAriaActivedescendant"
-                        @input="onInput"
-                        @keydown.enter.prevent="onKeydownEnter"
-                        @keydown.return.prevent="onKeydownEnter"
-                        @keydown.space.prevent="onKeydownEnter"
-                        @keydown.esc="onKeydownEsc"
-                        @keydown.up.prevent="onKeydownUp"
-                        @keydown.down.prevent="onKeydownDown"
-                        @keydown.home.prevent="onKeydownHome"
-                        @keydown.end.prevent="onKeydownEnd"
-                        @keydown.tab="onKeydownTab" />
-                    <m-icon-button
-                        class="m-dropdown__header__research-button"
-                        icon-name="m-svg__search"
-                        tabindex="-1"
-                        :title="$i18n.translate('m-dropdown:research')"
-                        @click="focusOnResearchInput"
-                    />
+                           type="text"
+                           :placeholder="$i18n.translate('m-dropdown:search')"
+                           ref="researchInput"
+                           v-model.trim="selectedText"
+                           :maxlength="maxLength"
+                           :autocomplete="autocomplete"
+                           :aria-label="inputAriaLabel"
+                           :aria-describedby="inputAriaDescribedby"
+                           :aria-activedescendant="inputAriaActivedescendant"
+                           @input="onInput"
+                           @keydown.enter.prevent="onKeydownEnter"
+                           @keydown.return.prevent="onKeydownEnter"
+                           @keydown.space.prevent="onKeydownEnter"
+                           @keydown.esc="onKeydownEsc"
+                           @keydown.up.prevent="onKeydownUp"
+                           @keydown.down.prevent="onKeydownDown"
+                           @keydown.home.prevent="onKeydownHome"
+                           @keydown.end.prevent="onKeydownEnd"
+                           @keydown.tab="onKeydownTab" />
+                    <m-icon-button class="m-dropdown__header__research-button"
+                                   icon-name="m-svg__search"
+                                   tabindex="-1"
+                                   :title="$i18n.translate('m-dropdown:research')"
+                                   @click="focusOnResearchInput" />
                 </div>
             </template>
             <ul :id="listboxId"
@@ -152,30 +142,26 @@
                 @mouseup="selectText">
                 <slot></slot>
                 <m-dropdown-item v-if="!hasItems && !dirty && includeFilterableStatusItems"
-                                :readonly="true">{{ propTextNoData }}</m-dropdown-item>
+                                 :readonly="true">{{ propTextNoData }}</m-dropdown-item>
                 <m-dropdown-item v-if="!hasItems && dirty && includeFilterableStatusItems"
-                                :readonly="true">{{ propTextNoMatch }}</m-dropdown-item>
+                                 :readonly="true">{{ propTextNoMatch }}</m-dropdown-item>
             </ul>
 
             <template slot="footer"
-                    v-if="hasFooterSlot">
+                      v-if="hasFooterSlot">
                 <slot name="footer"></slot>
             </template>
         </m-popup>
 
     </m-input-style>
-    <m-validation-message
-        slot="validation"
-        :id="inputAriaDescribedby"
-        class="m-dropdown__validation-message"
-        :disabled="isDisabled"
-        :waiting="isWaiting"
-        :error="hasError"
-        :valid="isValid"
-        :error-message="errorMessage"
-        :valid-message="validMessage"
-        :helper-message="helperMessage"
-    />
+    <m-validation-message slot="validation"
+                          :id="inputAriaDescribedby"
+                          class="m-dropdown__validation-message"
+                          :disabled="isDisabled"
+                          :waiting="isWaiting"
+                          :error="hasError"
+                          :valid="isValid"
+                          :error-message="errorMessage"
+                          :valid-message="validMessage"
+                          :helper-message="helperMessage" />
 </div>
-
-

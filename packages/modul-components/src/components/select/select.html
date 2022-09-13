@@ -1,166 +1,144 @@
-<m-base-select
-    ref="baseSelect"
-    :active="active"
-    :items="options"
-    :selected-items="selectedItems"
-    :open.sync="open"
-    :width="width"
-    :max-width="maxWidth"
-    :list-min-width="listMinWidth"
-    :list-max-height="listMaxHeight"
-    :virtual-scroll="virtualScroll"
-    :listbox-aria-labelledby="label ? labelId : undefined"
-    @open="onOpen"
-    @close="onClose"
-    @select-item="onSelect"
-    @portal-after-close="onPortalAfterClose"
->
+<m-base-select ref="baseSelect"
+               :active="active"
+               :items="options"
+               :selected-items="selectedItems"
+               :open.sync="open"
+               :width="width"
+               :max-width="maxWidth"
+               :list-min-width="listMinWidth"
+               :list-max-height="listMaxHeight"
+               :virtual-scroll="virtualScroll"
+               :listbox-aria-labelledby="label ? labelId : undefined"
+               @open="onOpen"
+               @close="onClose"
+               @select-item="onSelect"
+               @portal-after-close="onPortalAfterClose">
     <template #default="scope">
-        <m-input-style
-            class="m-select"
-            :class="{
+        <m-input-style class="m-select"
+                       :class="{
                 'm--is-open': open,
                 'm--is-disabled': disabled,
                 'm--is-readonly': readonly,
                 'm--is-waiting': isWaiting,
             }"
-            :style="{ width: width, maxWidth: maxWidth }"
-            :label="label"
-            :label-id="labelId"
-            :label-for="id"
-            :label-up="labelUp"
-            :disabled="disabled"
-            :readonly="readonly"
-            :waiting="isWaiting"
-            :focus="internalIsFocus"
-            :empty="isEmpty"
-            :error="hasError"
-            :cursor-pointer="isSelectable"
-            :valid="isValid"
-            :required-marker="requiredMarker"
-            :tag-style="tagStyle"
-            :width="inputWidth"
-            @click.prevent="onInputStyleClick(scope.toggle)"
-        >
-            <div
-                class="m-select__input"
-                ref="input"
-                :id="id"
-                role="button"
-                :tabindex="disabled ? '-1' : '0'"
-                :aria-invalid="hasError"
-                :aria-activedescendant="scope.ariaActivedescendant"
-                aria-haspopup="listbox"
-                :aria-labelledby="`${labelId} ${id}`"
-                :aria-describedby="inputAriaDescribedby"
-                :aria-disabled="disabled"
-                :aria-readonly="readonly"
-                :aria-required="required || requiredMarker"
-                :aria-placeholder="placeholder"
-                @focus="onFocus"
-                @blur="onBlur"
-                @keydown.up.prevent="scope.keyUp"
-                @keydown.down.prevent="scope.keyDown"
-                @keydown.enter.prevent="scope.keyEnter"
-                @keydown.return.prevent="scope.keyEnter"
-                @keydown.esc="scope.keyEsc"
-                @keydown.tab="scope.keyTab"
-                @keydown.space.prevent="scope.keySpace"
-                @keydown.delete.prevent="onKeyDownDelete"
-                @keydown.home.prevent="scope.keyHome"
-                @keydown.end.prevent="scope.keyEnd"
-                @keydown="scope.keyLetter"
-            >
-                <slot
-                    :key-up="scope.keyUp"
-                    :key-down="scope.keyDown"
-                    :key-tab="scope.keyTab"
-                    :key-esc="scope.keyEsc"
-                    :key-enter="scope.keyEnter"
-                    :key-space="scope.keySpace"
-                    :key-home="scope.keyHome"
-                    :key-end="scope.keyEnd"
-                    :key-letter="scope.keyLetter"
-                    :aria-activedescendant="scope.ariaActivedescendant"
-                    :aria-controls="scope.ariaControls"
-                    :focus="onFocus"
-                    :blur="onBlur"
-                >
+                       :style="{ width: width, maxWidth: maxWidth }"
+                       :label="label"
+                       :label-id="labelId"
+                       :label-for="id"
+                       :label-up="labelUp"
+                       :disabled="disabled"
+                       :readonly="readonly"
+                       :waiting="isWaiting"
+                       :focus="internalIsFocus"
+                       :empty="isEmpty"
+                       :error="hasError"
+                       :cursor-pointer="isSelectable"
+                       :valid="isValid"
+                       :required-marker="requiredMarker"
+                       :tag-style="tagStyle"
+                       :width="inputWidth"
+                       @click.prevent="onInputStyleClick(scope.toggle)">
+            <div class="m-select__input"
+                 ref="input"
+                 :id="id"
+                 role="button"
+                 :tabindex="disabled ? '-1' : '0'"
+                 :aria-invalid="hasError"
+                 :aria-activedescendant="scope.ariaActivedescendant"
+                 aria-haspopup="listbox"
+                 :aria-label="inputAriaLabel"
+                 :aria-describedby="inputAriaDescribedby"
+                 :aria-disabled="disabled"
+                 :aria-readonly="readonly"
+                 :aria-required="required || requiredMarker"
+                 :aria-placeholder="placeholder"
+                 @focus="onFocus"
+                 @blur="onBlur"
+                 @keydown.up.prevent="scope.keyUp"
+                 @keydown.down.prevent="scope.keyDown"
+                 @keydown.enter.prevent="scope.keyEnter"
+                 @keydown.return.prevent="scope.keyEnter"
+                 @keydown.esc="scope.keyEsc"
+                 @keydown.tab="scope.keyTab"
+                 @keydown.space.prevent="scope.keySpace"
+                 @keydown.delete.prevent="onKeyDownDelete"
+                 @keydown.home.prevent="scope.keyHome"
+                 @keydown.end.prevent="scope.keyEnd"
+                 @keydown="scope.keyLetter">
+                <slot :key-up="scope.keyUp"
+                      :key-down="scope.keyDown"
+                      :key-tab="scope.keyTab"
+                      :key-esc="scope.keyEsc"
+                      :key-enter="scope.keyEnter"
+                      :key-space="scope.keySpace"
+                      :key-home="scope.keyHome"
+                      :key-end="scope.keyEnd"
+                      :key-letter="scope.keyLetter"
+                      :aria-activedescendant="scope.ariaActivedescendant"
+                      :aria-controls="scope.ariaControls"
+                      :focus="onFocus"
+                      :blur="onBlur">
                     {{ internalValue }}
-                    <input
-                        v-if="!internalValue && placeholder"
-                        :placeholder="placeholder"
-                        role="none"
-                        type="text"
-                        readonly
-                        tabindex="-1"
-                        aria-hidden="true"
-                    />
+                    <input v-if="!internalValue && placeholder"
+                           :placeholder="placeholder"
+                           role="none"
+                           type="text"
+                           readonly
+                           tabindex="-1"
+                           aria-hidden="true" />
                 </slot>
             </div>
             <template #suffix>
                 <m-opacity-transition>
-                    <m-icon-button
-                        v-if="isClearable"
-                        class="m-select__clear-button"
-                        icon-size="11px"
-                        button-size="16px"
-                        icon-name="m-svg__close-clear"
-                        :title="$i18n.translate('m-select:delete')"
-                        :aria-describedby="id"
-                        @click.stop="onReset"
-                    />
+                    <m-icon-button v-if="isClearable"
+                                   class="m-select__clear-button"
+                                   icon-size="11px"
+                                   button-size="16px"
+                                   icon-name="m-svg__close-clear"
+                                   :title="$i18n.translate('m-select:delete')"
+                                   :aria-describedby="id"
+                                   @click.stop="onReset" />
                 </m-opacity-transition>
 
-                <div
-                    class="m-select__arrow"
-                    :class="{
+                <div class="m-select__arrow"
+                     :class="{
                         'm--is-open': open,
                         'm--is-focus': internalIsFocus
-                    }"
-                >
-                    <m-icon
-                        class="m-select__arrow-icon"
-                        ref="arrow"
-                        name="m-svg__arrow-head-filled--down"
-                        :aria-label="!open ? $i18n.translate('m-select:open') : $i18n.translate('m-select:close')"
-                        size="12px"
-                        :disabled="!active"
-                    />
+                    }">
+                    <m-icon class="m-select__arrow-icon"
+                            ref="arrow"
+                            name="m-svg__arrow-head-filled--down"
+                            :aria-label="!open ? $i18n.translate('m-select:open') : $i18n.translate('m-select:close')"
+                            size="12px"
+                            :disabled="!active" />
                 </div>
             </template>
         </m-input-style>
     </template>
 
     <template #validation-message>
-        <m-validation-message
-            :id="inputAriaDescribedby"
-            class="m-select__validation-message"
-            :class="{ 'm--has-validation-message': hasValidationMessage }"
-            :disabled="isDisabled"
-            :waiting="isWaiting"
-            :error="hasError"
-            :valid="isValid"
-            :error-message="errorMessage"
-            :valid-message="validMessage"
-            :helper-message="helperMessage"
-        />
+        <m-validation-message :id="inputAriaDescribedby"
+                              class="m-select__validation-message"
+                              :class="{ 'm--has-validation-message': hasValidationMessage }"
+                              :disabled="isDisabled"
+                              :waiting="isWaiting"
+                              :error="hasError"
+                              :valid="isValid"
+                              :error-message="errorMessage"
+                              :valid-message="validMessage"
+                              :helper-message="helperMessage" />
     </template>
 
     <template #outer-items="{items, getItemProps, getItemHandlers}">
-        <slot
-            name="outer-items"
-            :items="items"
-            :get-item-props="getItemProps"
-            :get-item-handlers="getItemHandlers"
-        />
+        <slot name="outer-items"
+              :items="items"
+              :get-item-props="getItemProps"
+              :get-item-handlers="getItemHandlers" />
     </template>
     <template #items="{item , index }">
-        <slot
-            name="items"
-            :item="item"
-            :index="index"
-        >
+        <slot name="items"
+              :item="item"
+              :index="index">
             <span v-html="optionsAreStringArray ? item : item.value"></span>
         </slot>
     </template>

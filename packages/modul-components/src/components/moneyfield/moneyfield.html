@@ -3,7 +3,8 @@
     <m-decimalfield v-bind="bindData"
                     v-on="$listeners"
                     :force-rounding-format="true"
-                    :precision="precision">
+                    :precision="precision"
+                    :input-aria-label="inputAriaLabel">
         <!-- content should stay inline to avoid adding useless white space -->
         <template v-if="currencyDetail.symbolPosition === 'before'"
                   slot="prefix">

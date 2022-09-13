@@ -8,6 +8,9 @@ export class InputLabel extends ModulVue {
     public readonly label: string;
 
     @Prop()
+    public readonly inputAriaLabel: string;
+
+    @Prop()
     public readonly labelUp: boolean;
 
     @Prop({ default: () => uuid.generate() })
@@ -16,7 +19,8 @@ export class InputLabel extends ModulVue {
     @Prop()
     public readonly requiredMarker: boolean;
 
-    private get hasLabel(): boolean {
+
+    public get hasLabel(): boolean {
         return !!this.label;
     }
 }
