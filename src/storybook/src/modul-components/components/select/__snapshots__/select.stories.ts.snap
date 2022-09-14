@@ -48,6 +48,8 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -172,6 +174,8 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -297,6 +301,8 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -417,6 +423,8 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -544,6 +552,8 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -665,6 +675,8 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -778,6 +790,8 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -891,6 +905,8 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1020,6 +1036,8 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1141,6 +1159,8 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1262,6 +1282,8 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1393,6 +1415,8 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1512,6 +1536,8 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1653,6 +1679,8 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1772,6 +1800,8 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1883,6 +1913,8 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -1967,7 +1999,7 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
     class="m-base-select__popup"
   >
     <div
-      class="m-input-style m-select m--has-cursor-pointer m--has-label m--is-tag-default"
+      class="m-input-style m-select m--has-cursor-pointer m--is-tag-default"
       style="width: 100%; max-width: regular;"
     >
       <div
@@ -1977,22 +2009,14 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
         <div
           class="m-input-style__body"
         >
-          <label
+          <span
             class="m-input-style__label"
-            for="m-select-fakeId"
-            id="fakeId"
-            style="margin-right: 0px;"
+            style="z-index: -1;"
           >
             <span
               class="m-input-style__text"
-            >
-              <span>
-                Fruits
-              </span>
-               
-              <!---->
-            </span>
-          </label>
+            />
+          </span>
            
           <div
             class="m-input-style__input"
@@ -2002,6 +2026,13 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
             <div
               class="m-input-style__content"
             >
+              <label
+                class="m-select__hidden-label"
+                id="fakeId"
+              >
+                Fruits
+              </label>
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2121,6 +2152,8 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2262,6 +2295,8 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2395,6 +2430,8 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2522,6 +2559,8 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2643,6 +2682,8 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2756,6 +2797,8 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2869,6 +2912,8 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -2998,6 +3043,8 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -3119,6 +3166,8 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -3253,6 +3302,8 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -3373,6 +3424,8 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -3506,6 +3559,8 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
@@ -3639,6 +3694,8 @@ exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
             <div
               class="m-input-style__content"
             >
+              <!---->
+               
               <div
                 aria-activedescendant=""
                 aria-describedby="fakeId"
