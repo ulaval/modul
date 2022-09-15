@@ -33,7 +33,7 @@ export interface TimeObject {
     seconde?: number;
 }
 
-const validateTimeString = (value: string): boolean => {
+const validateTimeString: (value: string) => boolean = (value: string): boolean => {
     const regex: RegExp = /(\d\d):(\d\d)/g;
     return !(value || '').length || value.match(regex) ? true : false;
 }
@@ -378,9 +378,9 @@ export class MTimepicker extends ModulVue {
     }
 
     private validateMinute(value: string): boolean {
-        const time = this.timeStringToNumber(value);
-        const timeMin = this.timeStringToNumber(this.min);
-        const timeMax = this.timeStringToNumber(this.max);
+        const time: TimeObject = this.timeStringToNumber(value);
+        const timeMin: TimeObject = this.timeStringToNumber(this.min);
+        const timeMax: TimeObject = this.timeStringToNumber(this.max);
         if (time.hour === timeMin.hour) {
             return time.minute >= timeMin.minute;
         } else if (time.hour === timeMax.hour) {
