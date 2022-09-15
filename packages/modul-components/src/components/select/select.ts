@@ -41,8 +41,8 @@ export class MSelect extends ModulVue {
     @Prop()
     public readonly value: string;
 
-    @Prop()
-    public readonly options: MBaseSelectItem<unknown>[] | string[];
+    @Prop({ default: [] })
+    public readonly options!: MBaseSelectItem<unknown>[] | string[];
 
     @Prop()
     public readonly clearable: boolean;
@@ -91,6 +91,13 @@ export class MSelect extends ModulVue {
 
     public get isEmpty(): boolean {
         return !this.as<InputManagement>().hasValue && !this.open && !Boolean(this.as<InputManagement>().placeholder);
+    }
+
+    public get displayedValue(): string {
+        if (this.optionsAreStringArray || !this.hasItems) {
+            return this.as<InputManagement>().internalValue;
+        }
+        return (this.options as MBaseSelectItem<unknown>[]).find((o) => o.value === this.as<InputManagement>().internalValue)?.label || this.as<InputManagement>().internalValue;
     }
 
     public get isClearable(): boolean {
@@ -155,6 +162,13 @@ export class MSelect extends ModulVue {
         if (event.key === 'Delete' && this.isClearable) {
             this.onReset();
         }
+    }
+
+    public getItemLabel(item: MBaseSelectItem<unknown> | string): string {
+        if (this.optionsAreStringArray) {
+            return item as string;
+        }
+        return (item as MBaseSelectItem<unknown>).label || (item as MBaseSelectItem<unknown>).value;
     }
 }
 

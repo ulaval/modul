@@ -15,6 +15,7 @@ const BASE_SELECT_STYLE_TRANSITION: string = 'max-height 0.3s ease';
 
 export interface MBaseSelectItem<T> {
     value: string;
+    label?: string;
     disabled?: boolean;
     hideRadioButtonMobile?: boolean;
     data?: T;
