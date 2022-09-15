@@ -1,4 +1,3 @@
-
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop, Watch } from 'vue-property-decorator';
@@ -34,7 +33,7 @@ export interface TimeObject {
     seconde?: number;
 }
 
-function validateTimeString(value: string): boolean {
+const validateTimeString = (value: string): boolean => {
     const regex: RegExp = /(\d\d):(\d\d)/g;
     return !(value || '').length || value.match(regex) ? true : false;
 }
@@ -62,7 +61,8 @@ function validateTimeString(value: string): boolean {
     ]
 })
 export class MTimepicker extends ModulVue {
-    @Model('input')
+    @Model('change')
+    @Prop({ default: '' })
     public readonly value: string;
 
     @Prop({ default: '00:00' })
@@ -87,6 +87,7 @@ export class MTimepicker extends ModulVue {
     public readonly id: string;
 
     public readonly validationMessageId: string = uuid.generate();
+    public open: boolean = false;
 
     public $refs: {
         input: MInputMask;
@@ -108,15 +109,88 @@ export class MTimepicker extends ModulVue {
     private isMousedown: boolean = false;
     private scrollTimeout;
 
-    private internalOpen: boolean = false;
     private internalTimeErrorMessage: string = '';
 
-    @Emit('click')
-    public emitClick(event: Event): void { }
+    public get currentTime(): string {
+        return this.internalTime;
+    }
 
-    protected created(): void {
-        this.internalTime = this.value;
-        this.updatePopupTime(this.internalTime);
+    public set currentTime(value: string) {
+        const hourParts: string[] = (value || '').split(':');
+        const newValue: string = hourParts.length > 1 ? `${hourParts[0]}:${hourParts[1]}` : '';
+
+        const oldTime: string = this.internalTime;
+
+        // When the user type in something we close de popup.
+        this.open = false;
+
+        if (this.value && this.skipInputValidation) {
+            this.internalTime = this.getFormatTime(newValue);
+        } else if (this.value && this.validateTime(value) && validateTimeString(value)) {
+            this.updatePopupTime(newValue);
+            if (newValue !== oldTime) {
+                this.internalTime = this.getFormatTime(newValue);
+            }
+        } else {
+            this.resetPopupTime();
+            this.internalTime = newValue;
+        }
+    }
+
+    public get currentHour(): number {
+        return this.internalHour;
+    }
+
+    public get currentMinute(): number {
+        return this.internalMinute;
+    }
+
+    public get currentfilteredHours(): number[] {
+        return this.internalFilteredHours = this.hours.filter(x => (x >= this.timeStringToNumber(this.min).hour) && (x <= this.timeStringToNumber(this.max).hour));
+    }
+
+    public get currentFilteredMinutes(): number[] {
+        return this.internalFilteredMinutes.filter(x => (x % this.step === 0));
+    }
+
+    public get currentStep(): number {
+        return this.step * MINUTE_SECONDS;
+    }
+
+    public get timeError(): boolean {
+        return this.internalTimeErrorMessage !== '' || this.as<InputState>().hasError;
+    }
+
+    private get timeErrorMessage(): string {
+        if (this.hideInternalErrorMessage) {
+            return '';
+        }
+
+        return this.internalTimeErrorMessage || this.as<InputState>().errorMessage;
+    }
+
+    public get inputMaskOptions(): InternalCleaveOptions {
+        return {
+            time: true,
+            timePattern: ['h', 'm']
+        };
+    }
+
+    @Emit('change')
+    public emitChange(_time: string): void { }
+
+    @Emit('click')
+    public emitClick(_event: Event): void { }
+
+    @Emit('open')
+    public emitOpen(): void { }
+
+    @Emit('close')
+    public emitClose(): void { }
+
+    @Watch('value')
+    public updateInternalTime(value: string): void {
+        this.internalTime = this.getFormatTime(value);
     }
 
     public togglePopup(event: Event): void {
@@ -137,7 +211,104 @@ export class MTimepicker extends ModulVue {
         this.emitClick(event);
     }
 
-    private mounted(): void {
+    public onScroll(event: Event): void {
+        if (this.isMousedown) { return; }
+
+        clearTimeout(this.scrollTimeout);
+        this.scrollTimeout = setTimeout(() => {
+
+            // tslint:disable-next-line: deprecation
+            if (event.srcElement) {
+                // tslint:disable-next-line: deprecation
+                this.setPositionScroll((event as any).srcElement);
+            }
+        }, 300);
+
+    }
+
+    public onSelectHour(hour: number): void {
+        this.internalHour = hour;
+
+        // change available minutes in function of min/max value
+        if (hour === this.timeStringToNumber(this.min).hour) {
+            this.internalFilteredMinutes = this.minutes.filter(x => (x >= this.timeStringToNumber(this.min).minute));
+        } else if (hour === this.timeStringToNumber(this.max).hour) {
+            this.internalFilteredMinutes = this.minutes.filter(x => (x <= this.timeStringToNumber(this.max).minute));
+        } else {
+            this.internalFilteredMinutes = this.minutes;
+        }
+    }
+
+    public onSelectHourKeyup($event: KeyboardEvent, hour: number): void {
+        // tslint:disable-next-line: deprecation
+        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
+            this.onSelectHour(hour);
+        }
+    }
+
+    public onSelectMinute(minute: number): void {
+        this.internalMinute = minute;
+
+        if (isNaN(this.internalHour)) { return; }
+
+        this.emitChange(this.formatTimeString());
+        this.open = false;
+        this.as<InputManagement>().focusInput();
+    }
+
+    public onSelectMinuteKeyup(event: KeyboardEvent, minute: number): void {
+        // tslint:disable-next-line: deprecation
+        if (event.keyCode === KeyCode.M_ENTER || event.keyCode === KeyCode.M_RETURN) {
+            this.onSelectMinute(minute);
+        }
+    }
+
+    public onMousedown(event: Event): void {
+        this.isMousedown = true;
+    }
+
+    public onMouseup(event: Event): void {
+        this.isMousedown = false;
+        // tslint:disable-next-line: deprecation
+        if (event.srcElement) {
+            // tslint:disable-next-line: deprecation
+            this.setPositionScroll((event as any).srcElement);
+        }
+    }
+
+    public onOk(): void {
+        if (!isNaN(this.internalHour) && !isNaN(this.internalMinute)) {
+            this.emitChange(this.formatTimeString())
+        }
+        this.open = false;
+        this.as<InputManagement>().focusInput();
+    }
+
+    public onOpen(): void {
+        this.as<InputManagement>().focusInput();
+        requestAnimationFrame(() => {
+            this.scrollToSelection(this.$refs.hours);
+            this.scrollToSelection(this.$refs.minutes);
+        })
+        this.emitOpen();
+    }
+
+    public onClose(): void {
+        if (isNaN(this.internalHour) || isNaN(this.internalMinute)) {
+            this.resetPopupTime();
+        } else {
+            this.updatePopupTime(this.internalTime);
+        }
+
+        this.emitClose();
+    }
+
+    protected created(): void {
+        this.internalTime = this.getFormatTime(this.value);
+        this.updatePopupTime(this.internalTime);
+    }
+
+    protected mounted(): void {
         // create hours
         for (let i: number = -1; i < MAXIMUM_HOURS; i++) {
             this.hours.push(i + 1);
@@ -149,6 +320,27 @@ export class MTimepicker extends ModulVue {
         }
 
         this.internalFilteredMinutes = this.minutes;
+    }
+
+    private updatePopupTime(value: string): void {
+        if (value) {
+            this.internalHour = this.timeStringToNumber(value).hour;
+            this.internalMinute = this.timeStringToNumber(value).minute;
+        } else {
+            this.resetPopupTime();
+        }
+    }
+
+    private resetPopupTime(): void {
+        this.internalHour = NaN;
+        this.internalMinute = NaN;
+    }
+
+    private getFormatTime(time: string): string {
+        if (!time) { return ''; }
+
+        const hourParts: string[] = time.split(':');
+        return hourParts.length > 1 ? `${hourParts[0]}:${hourParts[1]}` : '';
     }
 
     private timeStringToNumber(value: string): TimeObject {
@@ -186,13 +378,15 @@ export class MTimepicker extends ModulVue {
     }
 
     private validateMinute(value: string): boolean {
-        if (this.timeStringToNumber(value).hour === this.timeStringToNumber(this.min).hour) {
-            return this.timeStringToNumber(value).minute >= this.timeStringToNumber(this.min).minute;
-        } else if (this.timeStringToNumber(value).hour === this.timeStringToNumber(this.max).hour) {
-            return this.timeStringToNumber(value).minute <= this.timeStringToNumber(this.max).minute;
-        } else {
-            return true;
+        const time = this.timeStringToNumber(value);
+        const timeMin = this.timeStringToNumber(this.min);
+        const timeMax = this.timeStringToNumber(this.max);
+        if (time.hour === timeMin.hour) {
+            return time.minute >= timeMin.minute;
+        } else if (time.hour === timeMax.hour) {
+            return time.minute <= timeMax.minute;
         }
+        return true;
     }
 
     private formatTimeString(): string {
@@ -204,7 +398,7 @@ export class MTimepicker extends ModulVue {
     }
 
     private scrollToSelection(container: HTMLElement): void {
-        let selectedElement: Element | null = container.querySelector('.m--is-selected');
+        const selectedElement: Element | null = container.querySelector('.m--is-selected');
         setTimeout(function(): void {
             if (selectedElement) {
                 container.scrollTop = selectedElement['offsetTop'] - container.clientHeight / 2 + selectedElement.clientHeight / 2;
@@ -212,204 +406,8 @@ export class MTimepicker extends ModulVue {
         }, 10);
     }
 
-    private positionScroll(el: Element): void {
+    private setPositionScroll(el: HTMLElement): void {
         el.scrollTop = Math.round(el.scrollTop / 44) * 44;
-    }
-
-    ///////////////////////////////////////
-
-    @Watch('value')
-    private updateInternalTime(value: string): void {
-        if (!this.as<InputManagement>().isFocus || value) {
-            this.currentTime = value;
-        }
-    }
-
-    private updatePopupTime(value: string): void {
-        if (value) {
-            this.internalHour = this.timeStringToNumber(value).hour;
-            this.internalMinute = this.timeStringToNumber(value).minute;
-        } else {
-            this.resetPopupTime();
-        }
-    }
-
-    private resetPopupTime(): void {
-        this.internalHour = NaN;
-        this.internalMinute = NaN;
-    }
-
-    ///////////////////////////////////////
-
-    private onScroll(event: Event): void {
-        if (!this.isMousedown) {
-            clearTimeout(this.scrollTimeout);
-            this.scrollTimeout = setTimeout(() => {
-
-                // tslint:disable-next-line: deprecation
-                if (event.srcElement) {
-                    // tslint:disable-next-line: deprecation
-                    this.positionScroll((event as any).srcElement);
-                }
-            }, 300);
-        }
-    }
-
-    private onSelectHour(hour: number): void {
-        this.internalHour = hour;
-
-        // change available minutes in function of min/max value
-        if (hour === this.timeStringToNumber(this.min).hour) {
-            this.internalFilteredMinutes = this.minutes.filter(x => (x >= this.timeStringToNumber(this.min).minute));
-        } else if (hour === this.timeStringToNumber(this.max).hour) {
-            this.internalFilteredMinutes = this.minutes.filter(x => (x <= this.timeStringToNumber(this.max).minute));
-        } else {
-            this.internalFilteredMinutes = this.minutes;
-        }
-    }
-
-    private onSelectHourKeyup($event: KeyboardEvent, hour: number): void {
-        // tslint:disable-next-line: deprecation
-        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
-            this.onSelectHour(hour);
-        }
-    }
-
-    private onSelectMinute(minute: number): void {
-        this.internalMinute = minute;
-        if (!isNaN(this.internalHour)) {
-            this.currentTime = this.formatTimeString();
-            this.open = false;
-            this.as<InputManagement>().focusInput();
-        }
-    }
-
-    private onSelectMinuteKeyup($event: KeyboardEvent, minute: number): void {
-        // tslint:disable-next-line: deprecation
-        if ($event.keyCode === KeyCode.M_ENTER || $event.keyCode === KeyCode.M_RETURN) {
-            this.onSelectMinute(minute);
-        }
-    }
-
-    private onMousedown(event: Event): void {
-        this.isMousedown = true;
-    }
-
-    private onMouseup(event: Event): void {
-        this.isMousedown = false;
-        // tslint:disable-next-line: deprecation
-        if (event.srcElement) {
-            // tslint:disable-next-line: deprecation
-            this.positionScroll((event as any).srcElement);
-        }
-    }
-
-    private onOk(): void {
-        if (!isNaN(this.internalHour) && !isNaN(this.internalMinute)) {
-            this.currentTime = this.formatTimeString();
-        }
-        this.open = false;
-        this.as<InputManagement>().focusInput();
-    }
-
-    private onClose(): void {
-        if (isNaN(this.internalHour) || isNaN(this.internalMinute)) {
-            this.resetPopupTime();
-        } else {
-            this.updatePopupTime(this.internalTime);
-        }
-    }
-
-    private onOpen(): void {
-        this.as<InputManagement>().focusInput();
-    }
-
-    ///////////////////////////////////////
-
-    public get currentTime(): string {
-        if (!this.internalTime) { return ''; }
-
-        const hourParts: string[] = this.internalTime.split(':');
-        return hourParts.length > 1 ? `${hourParts[0]}:${hourParts[1]}` : '';
-    }
-
-    public set currentTime(value: string) {
-        const hourParts: string[] = (value || '').split(':');
-        const newValue: string = hourParts.length > 1 ? `${hourParts[0]}:${hourParts[1]}` : '';
-
-        let oldTime: string = this.internalTime;
-        this.internalTime = newValue;
-
-        // When the user type in something we close de popup.
-        this.open = false;
-        if (value && this.skipInputValidation) {
-            this.$emit('input', newValue);
-        } else if (value && this.validateTime(value) && validateTimeString(value)) {
-            this.updatePopupTime(newValue);
-
-            if (newValue !== oldTime) {
-                this.$emit('input', newValue);
-            }
-        } else {
-            this.resetPopupTime();
-            this.$emit('input', undefined);
-        }
-    }
-
-    public get currentHour(): number {
-        return this.internalHour;
-    }
-
-    public get currentMinute(): number {
-        return this.internalMinute;
-    }
-
-    public get currentfilteredHours(): number[] {
-        return this.internalFilteredHours = this.hours.filter(x => (x >= this.timeStringToNumber(this.min).hour) && (x <= this.timeStringToNumber(this.max).hour));
-    }
-
-    public get currentFilteredMinutes(): number[] {
-        return this.internalFilteredMinutes.filter(x => (x % this.step === 0));
-    }
-
-    public get currentStep(): number {
-        return this.step * MINUTE_SECONDS;
-    }
-
-    private get timeError(): boolean {
-        return this.internalTimeErrorMessage !== '' || this.as<InputState>().hasError;
-    }
-
-    private get timeErrorMessage(): string {
-        if (this.hideInternalErrorMessage) {
-            return '';
-        } else {
-            return this.internalTimeErrorMessage || this.as<InputState>().errorMessage;
-        }
-    }
-
-    private get open(): boolean {
-        return this.internalOpen;
-    }
-
-    private set open(open: boolean) {
-        this.internalOpen = open;
-        setTimeout(() => {
-            if (this.internalOpen) {
-                this.scrollToSelection(this.$refs.hours);
-                this.scrollToSelection(this.$refs.minutes);
-                this.$emit('open');
-            } else {
-                this.$emit('close');
-            }
-        });
-    }
-
-    private get inputMaskOptions(): InternalCleaveOptions {
-        return {
-            time: true,
-            timePattern: ['h', 'm']
-        };
     }
 }
 
