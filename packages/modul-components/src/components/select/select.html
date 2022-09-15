@@ -81,7 +81,7 @@
                       :aria-controls="scope.ariaControls"
                       :focus="onFocus"
                       :blur="onBlur">
-                    {{ internalValue }}
+                    {{ displayedValue }}
                     <input v-if="!internalValue && placeholder"
                            :placeholder="placeholder"
                            role="none"
@@ -118,7 +118,6 @@
             </template>
         </m-input-style>
     </template>
-
     <template #validation-message>
         <m-validation-message :id="inputAriaDescribedby"
                               class="m-select__validation-message"
@@ -142,8 +141,7 @@
         <slot name="items"
               :item="item"
               :index="index">
-            <span v-html="optionsAreStringArray ? item : item.value"></span>
+            <span v-html="getItemLabel(item)"></span>
         </slot>
     </template>
-
 </m-base-select>
