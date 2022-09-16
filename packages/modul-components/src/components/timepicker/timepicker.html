@@ -1,6 +1,6 @@
 <div class="m-timepicker"
      :class="{
-        'm--has-validation-message': hasValidationMessage
+        'm--has-validation-message': timeError || hasValidationMessage
     }"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
      @click="onClick">
@@ -11,7 +11,7 @@
                    :waiting="isWaiting"
                    :focus="isFocus"
                    :required-marker="requiredMarker"
-                   :label-up="labelUp"
+                   :label-up="labelUp || currentTime"
                    :label="label"
                    :label-for="id"
                    :empty="isEmpty"
@@ -38,6 +38,7 @@
                       :aria-label="inputAriaLabel"
                       :aria-describedby="validationMessageId"
                       :required="required || requiredMarker"
+                      @change="emitChange(currentTime)"
                       @blur="onBlur"
                       @focus="onFocus" />
         <m-icon-button slot="suffix"
@@ -56,7 +57,7 @@
                  :focus-management="false"
                  open-trigger="manual"
                  placement="bottom-end"
-                 @onOpen="onOpen"
+                 @open="onOpen"
                  @close="onClose">
             <div slot="header"
                  class="m-timepicker__header">

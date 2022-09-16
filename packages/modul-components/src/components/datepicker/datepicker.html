@@ -1,6 +1,6 @@
 <div class="m-datepicker"
      :class="{
-        'm--has-validation-message': hasValidationMessage
+        'm--has-validation-message': hasCalandarError || hasValidationMessage
     }"
      :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
      @click="onClick">
