@@ -5,19 +5,15 @@ import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
 
     .add('default', () => ({
-        data(): any {
-            return {
-                model: undefined
-            };
-        },
+        data: () => ({
+            model: undefined
+        }),
         template: `<m-timepicker v-model="model"></m-timepicker>`
     }))
     .add('label', () => ({
-        data(): any {
-            return {
-                model: undefined
-            };
-        },
+        data: () => ({
+            model: undefined
+        }),
         template: `<m-timepicker v-model="model" label="Activity start time" max-width="regular"></m-timepicker>`
     }))
     .add('min 8:45 / max 15:15', () => ({
@@ -30,14 +26,15 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
                 default: '8:45'
             }
         },
-        data(): any {
-            return {
-                model: '12:05'
-            };
-        }
+        data: () => ({
+            model: '12:05'
+        })
     }))
     .add('step 15m', () => ({
-        template: '<m-timepicker :step="step"></m-timepicker>',
+        template: '<m-timepicker v-model="model" :step="step"></m-timepicker>',
+        data: () => ({
+            model: ''
+        }),
         props: {
             step: {
                 default: '15'
@@ -53,22 +50,18 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
         }
     }))
     .add('reactivity', () => ({
-        data(): any {
-            return {
-                model: undefined
-            };
-        },
+        data: () => ({
+            model: undefined
+        }),
         template: `<div>
             <m-timepicker v-model="model"></m-timepicker>
             <m-timepicker v-model="model"></m-timepicker>
         </div>`
     }))
     .add('label-up', () => ({
-        data(): any {
-            return {
-                model: undefined
-            };
-        },
+        data: () => ({
+            model: undefined
+        }),
         props: {
             maxWidth: {
                 default: 'medium'
@@ -93,11 +86,9 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
                 default: '8:45'
             }
         },
-        data(): any {
-            return {
-                model: '12:05'
-            };
-        }
+        data: () => ({
+            model: '12:05'
+        })
     }))
     .add('Hide internal error messages', () => ({
         template: `<div>
@@ -115,17 +106,13 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TIMEPICKER_NAME}`, module)
                 default: '8:45'
             }
         },
-        data(): any {
-            return {
-                model: '12:05'
-            };
-        }
+        data: () => ({
+            model: '12:05'
+        })
     })).add('required', () => ({
-        data(): any {
-            return {
-                model: undefined
-            };
-        },
+        data: () => ({
+            model: undefined
+        }),
         props: {
             maxWidth: {
                 default: 'medium'
