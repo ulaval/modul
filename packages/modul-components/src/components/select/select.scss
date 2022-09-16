@@ -65,4 +65,8 @@
     &__input {
         outline: none;
     }
+
+    &__hidden-label {
+        @include m-visually-hidden();
+    }
 }

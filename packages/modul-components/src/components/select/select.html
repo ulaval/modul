@@ -8,7 +8,7 @@
                :list-min-width="listMinWidth"
                :list-max-height="listMaxHeight"
                :virtual-scroll="virtualScroll"
-               :listbox-aria-labelledby="label ? labelId : undefined"
+               :listbox-aria-labelledby="label || inputAriaLabel ? labelId : undefined"
                @open="onOpen"
                @close="onClose"
                @select-item="onSelect"
@@ -38,6 +38,9 @@
                        :tag-style="tagStyle"
                        :width="inputWidth"
                        @click.prevent="onInputStyleClick(scope.toggle)">
+            <label v-if="inputAriaLabel && !label"
+                  :id="labelId"
+                  class="m-select__hidden-label">{{ inputAriaLabel }}</label>
             <div class="m-select__input"
                  ref="input"
                  :id="id"
@@ -86,7 +89,6 @@
                            readonly
                            tabindex="-1"
                            aria-hidden="true" />
-
                 </slot>
             </div>
             <template #suffix>
@@ -116,7 +118,6 @@
             </template>
         </m-input-style>
     </template>
-
     <template #validation-message>
         <m-validation-message :id="inputAriaDescribedby"
                               class="m-select__validation-message"
@@ -143,5 +144,4 @@
             <span v-html="getItemLabel(item)"></span>
         </slot>
     </template>
-
 </m-base-select>

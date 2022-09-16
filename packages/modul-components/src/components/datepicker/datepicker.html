@@ -29,6 +29,7 @@
                       :raw="false"
                       :value="inputModel"
                       :aria-invalid="hasCalandarError"
+                      :aria-label="inputAriaLabel"
                       :aria-describedby="`${validationMessageId} ${ariaDescribedby}`"
                       autocomplete="off"
                       @focus="onFocus"

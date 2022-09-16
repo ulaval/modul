@@ -1206,7 +1206,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-owns="listboxId-fakeId"
-    class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+    class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
     role="combobox"
   >
     <div
@@ -1216,22 +1216,14 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
       <div
         class="m-input-style__body"
       >
-        <label
+        <span
           class="m-input-style__label"
-          for="mDropdown-fakeId"
-          id="fakeId"
-          style="margin-right: 0px;"
+          style="z-index: -1;"
         >
           <span
             class="m-input-style__text"
-          >
-            <span>
-              Animals
-            </span>
-             
-            <!---->
-          </span>
-        </label>
+          />
+        </span>
          
         <div
           class="m-input-style__input"
@@ -1248,6 +1240,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
               aria-autocomplete="both"
               aria-describedby="fakeId"
               aria-haspopup="listbox"
+              aria-label="Animals"
               class="m-dropdown__input"
               id="mDropdown-fakeId"
               placeholder="Type to filter"

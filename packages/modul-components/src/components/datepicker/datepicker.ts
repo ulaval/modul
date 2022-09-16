@@ -175,19 +175,19 @@ export class MDatepicker extends ModulVue {
         return this.convertValueToModel(this.max);
     }
 
-    private get minModulDate(): ModulDate {
+    public get minModulDate(): ModulDate {
         return new ModulDate(this.min);
     }
 
-    private get maxModulDate(): ModulDate {
+    public get maxModulDate(): ModulDate {
         return new ModulDate(this.max);
     }
 
-    private get maxInputLenght(): number {
+    public get maxInputLenght(): number {
         return this.isTypeYearsMonths ? 7 : 10;
     }
 
-    private get isLessThanTablet(): boolean {
+    public get isLessThanTablet(): boolean {
         return this.as<MediaQueries>().isMqMaxS;
     }
 
@@ -209,16 +209,16 @@ export class MDatepicker extends ModulVue {
     public emitChange(value: DatePickerSupportedTypes): void { }
 
     @Emit('blur')
-    private emitBlur(): void { }
+    public emitBlur(): void { }
 
     @Emit('click')
-    private emitClick(event: Event): void { }
+    public emitClick(event: Event): void { }
 
     @Emit('keydown')
-    private emitKeydown(event: Event): void { }
+    public emitKeydown(event: Event): void { }
 
     @Watch('skipInputValidation')
-    private onSkipInputValidationChangement(skipInputValidation): void {
+    public onSkipInputValidationChangement(skipInputValidation): void {
         this.inputDate(this.inputModel);
         this.showErrorMessage(this.inputModel);
     }
@@ -262,7 +262,7 @@ export class MDatepicker extends ModulVue {
 
     // override from InputManagement
     @Watch('value', { immediate: true })
-    private onValueChange(value: DatePickerSupportedTypes): void {
+    public onValueChange(value: DatePickerSupportedTypes): void {
         if (this.internalDateModel !== this.convertModelToString(value)) {
             this.internalDateModel = this.convertModelToString(value);
 

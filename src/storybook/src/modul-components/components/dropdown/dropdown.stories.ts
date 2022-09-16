@@ -96,7 +96,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/filterable`,
         data: () => ({
             model4: ''
         }),
-        template: `<m-dropdown label="Animals" v-model="model4" placeholder="Type to filter" placeholder-icon-name="m-svg__search" filterable="true">
+        template: `<m-dropdown input-aria-label="Animals" v-model="model4" placeholder="Type to filter" placeholder-icon-name="m-svg__search" filterable="true">
                         <m-dropdown-item value="1a" label="Steer"></m-dropdown-item>
                         <m-dropdown-item value="1b" label="Chameleon"></m-dropdown-item>
                         <m-dropdown-item value="1c" label="Alpaca"></m-dropdown-item>

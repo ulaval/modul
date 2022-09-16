@@ -35,6 +35,7 @@
                       type="text"
                       :raw="false"
                       :aria-invalid="timeError"
+                      :aria-label="inputAriaLabel"
                       :aria-describedby="validationMessageId"
                       :required="required || requiredMarker"
                       @change="emitChange(currentTime)"

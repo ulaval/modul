@@ -56,7 +56,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TEXTFIELD_NAME}`, module)
                 default: text('Text', 'A value')
             }
         },
-        template: '<m-textfield :value="value"></m-textfield>'
+        template: '<m-textfield input-aria-label="Hidden Label" :value="value"></m-textfield>'
     }))
     .add('required-marker', () => ({
         template: '<m-textfield label="Label" :required-marker="true"></m-textfield>'

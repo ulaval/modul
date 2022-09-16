@@ -180,7 +180,7 @@ export const longOptionMenu = () => ({
     data: () => ({
         options: LONG_OPTIONS
     }),
-    template: `<m-select v-model="model" :options="options" label="Fruits" ></m-select>`
+    template: `<m-select v-model="model" :options="options" input-aria-label="Fruits" ></m-select>`
 });
 
 export const readonlyNoSelectionNoLabel = () => ({
