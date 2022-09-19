@@ -36,7 +36,7 @@ export interface TimeObject {
 const validateTimeString: (value: string) => boolean = (value: string): boolean => {
     const regex: RegExp = /(\d\d):(\d\d)/g;
     return !(value || '').length || value.match(regex) ? true : false;
-}
+};
 
 @WithRender
 @Component({
@@ -278,7 +278,7 @@ export class MTimepicker extends ModulVue {
 
     public onOk(): void {
         if (!isNaN(this.internalHour) && !isNaN(this.internalMinute)) {
-            this.emitChange(this.formatTimeString())
+            this.emitChange(this.formatTimeString());
         }
         this.open = false;
         this.as<InputManagement>().focusInput();
@@ -289,7 +289,7 @@ export class MTimepicker extends ModulVue {
         requestAnimationFrame(() => {
             this.scrollToSelection(this.$refs.hours);
             this.scrollToSelection(this.$refs.minutes);
-        })
+        });
         this.emitOpen();
     }
 
