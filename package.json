@@ -21,7 +21,7 @@
         "build:ci": "lerna run --concurrency 1 --stream --sort build",
         "website": "lerna run dev --scope @ulaval/modul-website --stream",
         "lint": "lerna run --stream --sort lint",
-        "lint:ci": "lerna run --stream --sort lint",
+        "lint:ci": "lerna run --stream --sort lint:ci",
         "pretest": "lerna run --stream --sort prepare",
         "test": "lerna run --stream --sort test",
         "test:ci": "lerna run --stream --sort test:ci",
