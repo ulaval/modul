@@ -1,6 +1,6 @@
 import { PluginObject } from 'vue';
 import Component from 'vue-class-component';
-import { Emit, Model, Prop, Ref } from 'vue-property-decorator';
+import { Emit, Model, Prop, Ref, Watch } from 'vue-property-decorator';
 import { InputLabel } from '../../mixins/input-label/input-label';
 import { InputManagement } from '../../mixins/input-management/input-management';
 import { InputState } from '../../mixins/input-state/input-state';
@@ -81,9 +81,11 @@ export class MSelect extends ModulVue {
     @Emit('close')
     public onClose(): void { }
 
-    public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
-        this.$emit('select-item', option, index, event);
-    }
+    @Emit('select-item')
+    public emitSelectItem(_option: MBaseSelectItem<unknown> | string, _index: number, _event: Event): void { }
+
+    @Emit('change')
+    public emitChange(_value: string): void { }
 
     public get hasItems(): boolean {
         return this.options && this.options.length > 0;
@@ -129,6 +131,12 @@ export class MSelect extends ModulVue {
         return typeof this.options[0] === 'string';
     }
 
+    @Watch('model')
+    public onModelChange(newValue: string, oldValue): void {
+        if (newValue === oldValue) { return; }
+        this.emitChange(newValue);
+    }
+
     public onInputStyleClick(callbackToggle: any): void {
         callbackToggle();
 
@@ -149,8 +157,8 @@ export class MSelect extends ModulVue {
     }
 
     public onSelect(option: MBaseSelectItem<unknown> | string, index: number, $event: Event): void {
-        this.emitSelectItem(option, index, $event);
         this.as<InputManagement>().model = this.refBaseSelect.focusValue;
+        this.emitSelectItem(option, index, $event);
     }
 
     public onReset(): void {

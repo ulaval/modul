@@ -69,7 +69,9 @@ export const defaultStory = () => ({
         'close',
         'focus',
         'blur',
-        'select'
+        'select',
+        'change',
+        'input'
     ),
     data: () => ({
         options: OPTIONS_2,
@@ -88,7 +90,8 @@ export const defaultStory = () => ({
         @close="close"
         @focus="focus"
         @select-item="select"
-        @blur="blur"
+        @change="change"
+        @input='input'
     />`
 });
 
