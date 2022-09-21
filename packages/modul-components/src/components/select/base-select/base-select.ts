@@ -115,9 +115,8 @@ export class MBaseSelect extends ModulVue {
         this.focusedIndex = -1;
     }
 
-    public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void {
-        this.$emit('select-item', option, index, event);
-    }
+    @Emit('select-item')
+    public emitSelectItem(option: MBaseSelectItem<unknown> | string, index: number, event: Event): void { }
 
     @Watch('open', { immediate: true })
     public onOpenChange(open: boolean): void {
