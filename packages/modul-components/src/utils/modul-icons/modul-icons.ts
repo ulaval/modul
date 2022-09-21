@@ -122,6 +122,7 @@ export enum ModulIconName {
     RightAnswer = 'right-answer',
     RoleAssignation = 'role-assignation',
     Search = 'search',
+    Setting = 'setting',
     Show = 'show',
     Subtitle = 'subtitle',
     Text1 = 'text1',
@@ -849,6 +850,12 @@ export const ModulIcons: ModulIcon[] = [
         category: [
             ModulIconsCategory.Control,
             ModulIconsCategory.Form
+        ]
+    },
+    {
+        name: ModulIconName.Setting,
+        category: [
+            ModulIconsCategory.Control
         ]
     },
     {

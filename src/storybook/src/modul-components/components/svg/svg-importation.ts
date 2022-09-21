@@ -107,6 +107,7 @@ import MSvgReplace from '@ulaval/modul-components/dist/assets/icons/svg/replace.
 import MSvgRightAnswer from '@ulaval/modul-components/dist/assets/icons/svg/right-answer.svg';
 import MSvgRoleAssignation from '@ulaval/modul-components/dist/assets/icons/svg/role-assignation.svg';
 import MSvgSearch from '@ulaval/modul-components/dist/assets/icons/svg/search.svg';
+import MSvgSetting from '@ulaval/modul-components/dist/assets/icons/svg/setting.svg';
 import MSvgShow from '@ulaval/modul-components/dist/assets/icons/svg/show.svg';
 import MSvgSubtitle from '@ulaval/modul-components/dist/assets/icons/svg/subtitle.svg';
 import MSvgText1 from '@ulaval/modul-components/dist/assets/icons/svg/text1.svg';
@@ -233,6 +234,7 @@ export const importAllSvg: () => void = () => {
     svg.addSvg(ModulIconName.RightAnswer, MSvgRightAnswer);
     svg.addSvg(ModulIconName.RoleAssignation, MSvgRoleAssignation);
     svg.addSvg(ModulIconName.Search, MSvgSearch);
+    svg.addSvg(ModulIconName.Setting, MSvgSetting);
     svg.addSvg(ModulIconName.Show, MSvgShow);
     svg.addSvg(ModulIconName.Subtitle, MSvgSubtitle);
     svg.addSvg(ModulIconName.Text1, MSvgText1);
