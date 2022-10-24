@@ -50,10 +50,13 @@
     .m-message {
         &__wrap {
             display: flex;
-            gap: $m-space;
             padding: $m-space;
             background: var(--m-message-background);
             border-radius: 0 $m-border-radius $m-border-radius 0;
+            
+            > :not(:first-child) {
+                margin-left: $m-space;
+            }
         }
 
         &__icon {
@@ -123,7 +126,10 @@
         &__wrap {
             display: inline-flex;
             align-items: flex-start;
-            gap: $m-space-xs;
+            
+            > :not(:first-child) {
+                margin-left: $m-space-xs;
+            }
         }
 
         &__icon {
