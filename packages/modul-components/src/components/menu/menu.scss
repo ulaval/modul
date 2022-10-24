@@ -53,13 +53,16 @@
         outline: none;
         display: flex;
         align-items: center;
-        gap: $m-space-sm;
         text-decoration: none;
         padding: var(--m-menu--padding);
         min-height: var(--m-menu--min-height);
         text-transform: var(--m-menu--text-transform);
         background-color: var(--m-menu--background-color);
         box-shadow: var(--m-menu--box-shadow);
+        
+        > :not(:first-child) {
+            margin-left: $m-space-sm;
+        }
 
         &:not(.m--is-disabled) {
 
