@@ -1,5 +1,5 @@
 <div class="m-accordion"
-         :class="[
+     :class="[
             'm--is-' + propSkin,
             {
                 'm--is-closed': !propOpen,
@@ -21,7 +21,7 @@
          :tabindex="headerTabindex"
          :aria-disabled="propDisabled"
          ref="accordionHeader"
-         @click.prevent="toggleAccordion"
+         @click="toggleAccordion"
          @keyup.self.enter="toggleAccordion"
          @keydown.space="toggleAccordion">
         <div class="m-accordion__header-content">
@@ -43,24 +43,24 @@
         <!-- Replace v-if / else with keep-alive. -->
         <template v-if="!keepContentAlive">
             <div v-if="propOpen"
-                :id="idBodyWrap"
-                class="m-accordion__body-wrap"
-                role="region"
-                :aria-labelledby="propId">
+                 :id="idBodyWrap"
+                 class="m-accordion__body-wrap"
+                 role="region"
+                 :aria-labelledby="propId">
                 <div class="m-accordion__body"
-                    :class="classBody">
+                     :class="classBody">
                     <slot />
                 </div>
             </div>
         </template>
         <template v-else>
             <div v-show="propOpen"
-                :id="idBodyWrap"
-                class="m-accordion__body-wrap"
-                role="region"
-                :aria-labelledby="propId">
+                 :id="idBodyWrap"
+                 class="m-accordion__body-wrap"
+                 role="region"
+                 :aria-labelledby="propId">
                 <div class="m-accordion__body"
-                    :class="classBody">
+                     :class="classBody">
                     <slot />
                 </div>
             </div>

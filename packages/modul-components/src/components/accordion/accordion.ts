@@ -206,20 +206,25 @@ export class MAccordion extends ModulVue implements AccordionGateway {
 
         const target: Element | null = (event.target as HTMLElement).closest(ACCORDION_CLOSEST_ELEMENTS);
 
-        if (!this.propDisabled && !target) {
-            const initialState: boolean = this.internalOpen;
 
-            if (
-                !this.internalOpen &&
-                this.internalGroupRef &&
-                this.internalGroupRef.concurrent
-            ) {
-                this.internalGroupRef.closeAllAccordions();
-            }
-
-            this.propOpen = !initialState;
-            this.emitClick(event);
+        if (this.propDisabled || target) {
+            return;
         }
+
+
+        const initialState: boolean = this.internalOpen;
+
+        if (
+            !this.internalOpen &&
+            this.internalGroupRef &&
+            this.internalGroupRef.concurrent
+        ) {
+            this.internalGroupRef.closeAllAccordions();
+        }
+
+        this.propOpen = !initialState;
+        this.emitClick(event);
+
     }
 
     protected mounted(): void {
