@@ -17,7 +17,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${ACCORDION_NAME}`, module)
     }))
 
     .add('header', () => ({
-        template: '<m-accordion><h3 class="mu-no-m" slot="header">Value specified in header slot for this example and all others to follow <a href="https://www.google.ca" target="_blank">GOOGLE</a></h3> Some Accordion Content</m-accordion>'
+        template: '<m-accordion><h3 class="mu-no-m" slot="header">Value specified in header slot for this example and all others to follow</h3> Some Accordion Content</m-accordion>'
     }))
     .add('id', () => ({
         template: '<m-accordion id="id123"><h3 class="mu-no-m" slot="header">An Accordion Title</h3> Some Accordion Content</m-accordion>'
