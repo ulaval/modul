@@ -2,6 +2,7 @@
     "name": "@ulaval/modul-website",
     "version": "2.5.22-beta.33",
     "description": "The official website for modUL",
+    "private": true,
     "contributors": [
         "Charles Maheu <charles.maheu@dti.ulaval.ca>",
         "Philippe Rail <philippe.rail@dti.ulaval.ca>"
@@ -49,5 +50,6 @@
     "files": [
         "dist"
     ],
-    "license": "Apache-2.0"
+    "license": "Apache-2.0",
+    "gitHead": "3a372f65416824bb68fc47583fa75e198427aee0"
 }
