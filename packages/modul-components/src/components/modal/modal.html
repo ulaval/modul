@@ -21,11 +21,13 @@
                          aria-modal="true"
                          :aria-labelledby="titleId"
                          tabindex="-1">
-                    <header class="m-modal__header" >
-                        <h2 v-if="title" :id="titleId">{{ title }}</h2>
+                    <header class="m-modal__header">
+                        <h2 v-if="title"
+                            :id="titleId">{{ title }}</h2>
                         <slot name="header" />
                         <slot name="header-bouton">
-                            <m-icon-button icon-name="m-svg__close-clear"
+                            <m-icon-button v-if="showCloseButton"
+                                           icon-name="m-svg__close-clear"
                                            skin="dark"
                                            class="m-modal__close-button"
                                            :title="closeTitle"

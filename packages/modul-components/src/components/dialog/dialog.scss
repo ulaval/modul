@@ -74,10 +74,6 @@ $m-dialog--max-width--l: 500px !default;
 
             .m-dialog__message {
                 @include m-font-size('md');
-
-                @media (min-width: $m-mq-min-sm) {
-                    @include m-font-size('h5');
-                }
             }
 
         }
@@ -110,15 +106,16 @@ $m-dialog--max-width--l: 500px !default;
         h5,
         h6 {
             margin: 0;
-            @include m-font-size('h4');
             font-weight: $m-font-weight-semi-bold;
+
+            @include m-font-size('h4');
         }
 
         &:not(.m--no-padding) {
             padding: $m-space;
 
             @media (min-width: $m-mq-min-sm) {
-                padding: 28px $m-space-md 26px;
+                padding: #{$m-space + $m-space-2xs} $m-space-md;
             }
         }
     }
@@ -140,7 +137,7 @@ $m-dialog--max-width--l: 500px !default;
     }
 
     &__message {
-        +.m-dialog__hint {
+        ~.m-dialog__hint {
             margin-top: $m-space;
 
             @media (min-width: $m-mq-min-sm) {
@@ -150,15 +147,10 @@ $m-dialog--max-width--l: 500px !default;
     }
 
     &__state-icon {
-        .m-message {
-            &.m--is-skin-page-light {
-                margin-top: - $m-space-xs;
-                margin-bottom: $m-space;
 
-                @media (min-width: $m-mq-min-sm) {
-                    margin-top: - $m-space;
-                }
-            }
+        ~.m-dialog__message,
+        ~.m-dialog__hint {
+            margin-top: $m-space-md;
         }
     }
 
@@ -225,13 +217,13 @@ $m-dialog--max-width--l: 500px !default;
             flex-direction: column;
             align-items: center;
 
-            .m-link {
+            a {
                 margin-top: $m-space-sm;
             }
         }
 
-        .m-button {
-            +.m-button {
+        button {
+            +button {
                 margin-top: $m-space-sm;
             }
         }
