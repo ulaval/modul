@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots modul-components|m-modal Prop show-close-button="false" 1`] = `
+<div
+  class="m-modal"
+>
+   
+  <div
+    class="v-portal"
+    style="display: none;"
+  />
+</div>
+`;
+
 exports[`Storyshots modul-components|m-modal close-on-backdrop="false" 1`] = `
 <div
   class="m-modal"
