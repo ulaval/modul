@@ -1,8 +1,11 @@
 # Styles
 
-## Cutoms Properties
+## Design Tokens
 
-### Color
+### Custom properties
+
+#### Colors
+
 | Name |  Value |
 | -- | -- |
 | --m-color-ul-blue | #09f |
@@ -61,16 +64,17 @@
 | --m-color-border | #d7d7d7 |
 | --m-color-border-light | #f4f4f4 |
 
-### Font-familly
+#### Font Familly
+
 | Name |
 | -- |
 | --m-font-family |
 | --m-font-family-fallback |
 
+### SASS Variables
 
-## SASS Variables
+#### Colors
 
-### Color
 | Name |  Value |
 | -- | -- |
 | $m-color-ul-blue | --m-color-ul-blue |
@@ -129,7 +133,8 @@
 | $m-color-border | --m-color-border |
 | $m-color-border-light | --m-color-border-light |
 
-### Font-size
+#### Font Size
+
 Name (SASS) | Name (CSS) |  Value |
 | ---------- | ---------- | ---------- |
 | $m-font-size-lg | - | 20 |
@@ -145,7 +150,8 @@ Name (SASS) | Name (CSS) |  Value |
 | $m-font-size-h5 | --m-font-size-h5 | Mobile: 18 / Desktop: 20 |
 | $m-font-size-h6 | --m-font-size-h6 | Mobile: 16 / Desktop: 16 |
 
-### Font-weight
+#### Font Weight
+
 | Name SASS |
 | -- |
 | $m-font-weight-black |
@@ -155,7 +161,8 @@ Name (SASS) | Name (CSS) |  Value |
 | $m-font-weight |
 | $m-font-weight-light |
 
-### Space
+#### Spaces
+
 | Name | Value |
 | -- | -- |
 | $m-space-4xl | 64px |
@@ -169,7 +176,8 @@ Name (SASS) | Name (CSS) |  Value |
 | $m-space-xs | 8px |
 | $m-space-2xs | 4px |
 
-#### Border
+#### Borders
+
 | Name |
 | -- |
 | $m-border-width-lg |
@@ -181,6 +189,7 @@ Name (SASS) | Name (CSS) |  Value |
 | $m-border-radius-sm |
 
 #### Transitions
+
 | Name SASS |
 | -- |
 | $m-transition-duration-xl |
@@ -189,7 +198,8 @@ Name (SASS) | Name (CSS) |  Value |
 | $m-transition-duration-sm |
 | $m-transition-duration-xs |
 
-#### Media queries
+#### Breakpoints
+
 | Name SASS |
 | -- |
 | $m-mq-min-xl |
@@ -204,21 +214,24 @@ Name (SASS) | Name (CSS) |  Value |
 | $m-mq-max-sm |
 | $m-mq-max-xs |
 
-#### Box-shadow
+#### Box Shadow
+
 | Name SASS |
 | -- |
 | $m-box-shadow-lg |
 | $m-box-shadow |
 | $m-box-shadow-sm |
 
-#### Touch-size
+#### Touch Sizes
+
 | Name SASS |
 | -- |
 | $m-touch-size-lg |
 | $m-touch-size |
 | $m-touch-size-sm |
 
-#### Max-width
+#### Max Width
+
 | Name SASS |
 | -- |
 | $m-max-width-xl |
@@ -230,6 +243,7 @@ Name (SASS) | Name (CSS) |  Value |
 | $m-min-height-box |
 
 ## Mixin `m-font-size('<dimension>')`
+
 | Valeur | Description|
 | -- | -- |
 | 'h1' | Get the font-size of a level 1 title |
@@ -245,10 +259,10 @@ Name (SASS) | Name (CSS) |  Value |
 | 'sm' | Get the small font-size (14px) |
 | 'xs' | Get the extra small font-size (12px) |
 
-
 ## Utility Styles
 
 ### Margin
+
 | Name | Value |
 | -- | -- |
 | mu-m-4xl | margin: 64px; |
@@ -271,6 +285,7 @@ Name (SASS) | Name (CSS) |  Value |
 | mu-mr | margin-right: 16px; |
 
 ### Padding
+
 | Name | Value |
 | -- | -- |
 | mu-p-4xl | padding: 64px; |
@@ -292,8 +307,8 @@ Name (SASS) | Name (CSS) |  Value |
 | ---------- | ---------- |
 | mu-pr | padding-right: 16px; |
 
-
 ### Display
+
 | Name | Value |
 | -- | -- |
 | mu-d-block | display: block; |
@@ -302,8 +317,8 @@ Name (SASS) | Name (CSS) |  Value |
 | mu-d-inline-block | display: inline-block; |
 | mu-d-inline-flex | display: inline-flex; |
 
-
 ### Max-width and min-width
+
 | Name |
 | -- |
 | mu-max-w |
@@ -314,27 +329,8 @@ Name (SASS) | Name (CSS) |  Value |
 | ---------- |
 | mu-min-w |
 
-
-### Link
-| Name |
-| -- |
-| mu-link |
-| mu-link-text |
-| mu-link-icon-left |
-| mu-link-icon-right |
-| mu-link-unvisited |
-
-
-### Button
-| Name |
-| -- |
-| mu-button-primary |
-| mu-button-secondary |
-| mu-link-button-disabled |
-| mu-button-waiting |
-
-
 ### Font
+
 | Name |
 | -- |
 | mu-font-size |
@@ -356,8 +352,8 @@ Name (SASS) | Name (CSS) |  Value |
 | m-u--typo-precision-italic |
 | m-u--typo-highlighting |
 
-
 ### Titre
+
 | Name |
 | -- |
 | mu-h1 |
@@ -370,6 +366,7 @@ Name (SASS) | Name (CSS) |  Value |
 | mu-p |
 
 ### Other Utility Classes
+
 | Name |
 | -- |
 | mu-app-root |
@@ -378,3 +375,22 @@ Name (SASS) | Name (CSS) |  Value |
 | mu-label |
 | mu-asterisk |
 | mu-require |
+
+### Link
+
+| Name |
+| -- |
+| mu-link |
+| mu-link-text |
+| mu-link-icon-left |
+| mu-link-icon-right |
+| mu-link-unvisited |
+
+### Button
+
+| Name |
+| -- |
+| mu-button-primary |
+| mu-button-secondary |
+| mu-link-button-disabled |
+| mu-button-waiting |

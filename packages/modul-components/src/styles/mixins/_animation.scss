@@ -10,8 +10,8 @@
     }
 }
 
-@mixin indeterminate() {
-    @keyframes indeterminate {
+@mixin m-indeterminate() {
+    @keyframes m-indeterminate {
         0% {
             left: -35%;
             right: 100%;
@@ -29,8 +29,8 @@
     }
 }
 
-@mixin indeterminate-short() {
-    @keyframes indeterminate-short {
+@mixin m-indeterminate-short() {
+    @keyframes m-indeterminate-short {
         0% {
             left: -200%;
             right: 100%;

@@ -1,0 +1,19 @@
+.mu-max-w {
+    max-width: $m-max-width;
+
+    &-xs {
+        max-width: $m-max-width-xs;
+    }
+
+    &-sm {
+        max-width: $m-max-width-sm;
+    }
+
+    &-lg {
+        max-width: $m-max-width-lg;
+    }
+
+    &-text {
+        max-width: $m-max-width-text;
+    }
+}

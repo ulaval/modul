@@ -1,0 +1,21 @@
+.mu-font-weight {
+    &-black {
+        font-weight: $m-font-weight-black;
+    }
+
+    &-bold {
+        font-weight: $m-font-weight-bold;
+    }
+
+    &-semi-bold {
+        font-weight: $m-font-weight-semi-bold;
+    }
+
+    &-regular {
+        font-weight: $m-font-weight-regular;
+    }
+
+    &-light {
+        font-weight: $m-font-weight-light;
+    }
+}

@@ -1,0 +1,57 @@
+@mixin m-app-root {
+    @at-root {
+        body#{&} {
+            min-width: $m-min-width;
+        }
+    }
+
+    margin: 0;
+    box-sizing: border-box;
+    font-style: normal;
+    color: $m-color-text;
+    font-weight: $m-font-weight-light;
+    font-size: inherit;
+    line-height: $m-line-height;
+
+    font-family: var(--m-font-family-fallback),
+    Arial,
+    sans-serif;
+
+    @supports (font-variation-settings: normal) {
+        font-family: var(--m-font-family), Arial, sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    * {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    ::selection {
+        background: $m-color-ul-yellow;
+        color: $m-color-text;
+    }
+
+    ul,
+    li {
+        margin: inherit 0 0;
+        padding: 0;
+    }
+
+    abbr {
+        text-decoration: none;
+        box-shadow: 0 1px $m-color-grey-dark;
+    }
+
+    a {
+        color: $m-color-interactive;
+    }
+
+    @include m-heading-styles();
+
+    @include m-text-styles();
+}

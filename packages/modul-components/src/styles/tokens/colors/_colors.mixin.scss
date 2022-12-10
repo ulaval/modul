@@ -1,0 +1,69 @@
+@mixin m-color-tokens() {
+    // Brand
+    --m-color-ul-blue: #09f;
+    --m-color-ul-yellow: #ffc103;
+    --m-color-ul-red: #e30513;
+
+    // Grey
+    --m-color-grey-black: #1f1f1f;
+    --m-color-grey-darkest: #2e2e2e;
+    --m-color-grey-darker: #3d3d3d;
+    --m-color-grey-dark: #696969;
+    --m-color-grey: #929292;
+    --m-color-grey-light: #d7d7d7;
+    --m-color-grey-lighter: #f4f4f4;
+    --m-color-grey-lightest: #f9f9f9;
+
+    // General color
+    --m-color-black: #000;
+    --m-color-white: #fff;
+    --m-color-text: var(--m-color-black);
+    --m-color-text-light: #757575;
+
+    // Interactive colors
+    --m-color-interactive-darker: #0b46ac;
+    --m-color-interactive-dark: #1854be;
+    --m-color-interactive: #096edf;
+    --m-color-interactive-light: var(--m-color-ul-blue);
+    --m-color-interactive-lighter: #6ed2ff;
+    --m-color-interactive-lightest: #dffaff;
+    --m-color-information: #eaf5ff;
+
+    // Accent colors
+    --m-color-accent-dark: #ca7300;
+    --m-color-accent: #db7e00;
+    --m-color-accent-light: #f39612;
+    --m-color-accent-lightest: #ffeecf;
+
+    // Success colors
+    --m-color-success-dark: #086c30;
+    --m-color-success: #0a873c;
+    --m-color-success-light: #baebc7;
+    --m-color-success-lightest: #e8feef;
+
+    // Warning colors
+    --m-color-warning: var(--m-color-accent);
+    --m-color-warning-lightest: var(--m-color-accent-lightest);
+
+    // Error colors
+    --m-color-error-dark: #b3040f;
+    --m-color-error: var(--m-color-ul-red);
+    --m-color-error-lightest: #fcf2f3;
+
+    // Active colors
+    --m-color-active: var(--m-color-ul-yellow);
+
+    // Disabled colors
+    --m-color-disabled-dark: var(--m-color-grey-dark);
+    --m-color-disabled: var(--m-color-grey);
+    --m-color-disabled-light: var(--m-color-grey-light);
+
+    // Scrollbar colors
+    --m-color-scrollbar: var(--m-color-grey);
+    --m-color-scrollbar-light: var(--m-color-grey-light);
+
+    // Border colors
+    --m-color-border-dark: var(--m-color-grey-dark);
+    --m-color-border: var(--m-color-grey-light);
+    --m-color-border-light: var(--m-color-grey-lighter);
+}

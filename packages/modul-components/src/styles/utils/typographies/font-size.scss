@@ -1,0 +1,19 @@
+.mu-font-size {
+    @include m-font-size();
+
+    &-lg {
+        @include m-font-size('lg');
+    }
+
+    &-md {
+        @include m-font-size('md');
+    }
+
+    &-sm {
+        @include m-font-size('sm');
+    }
+
+    &-xs {
+        @include m-font-size('xs');
+    }
+}

@@ -1,0 +1,7 @@
+@import 'colors/colors.mixin';
+@import 'typographies/typographies.mixin';
+
+@mixin m-design-tokens {
+    @include m-color-tokens();
+    @include m-typography-token();
+}

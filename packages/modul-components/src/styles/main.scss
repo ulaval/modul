@@ -1,12 +1,17 @@
 @charset 'utf-8';
 
 @import 'commons';
+@import 'tokens/design-tokens.mixin';
+@import 'root/app-root.mixin';
 
-@import 'custom-properties/index';
+.mu-app-root {
+    @import 'font-face-modul';
 
-// Base
-@import 'base/font-setup', 'base/base', 'base/animations';
+    @include m-design-tokens();
 
-// Utils
-@import 'utils/utils';
+    @include m-app-root();
 
+    @import 'utils';
+}
+
+@import 'root/animations';
