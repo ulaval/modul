@@ -48,14 +48,14 @@
     }
 
     &__main {
+        transition: border-color $m-transition-duration-lg linear, box-shadow $m-transition-duration linear;
         width: 100%;
         display: inherit;
         box-shadow: var(--m-input-style--box-shadow);
         border-radius: $m-input-style--border-radius;
         border: 1px solid var(--m-input-style--border-color);
         background-color: var(--m-input-style--background-color);
-        outline: 1px solid rgba(255, 255, 255, 0);
-        transition: border-color $m-transition-duration-lg linear, box-shadow $m-transition-duration linear;
+        outline: none;
     }
 
     &__append {
@@ -74,13 +74,14 @@
     }
 
     &__label {
-        z-index: 1;
         position: relative;
+        z-index: 1;
         transform-origin: 0 0;
-        @include m-font-size();
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 1px, 0);
         color: var(--m-input-style--label-color);
         font-weight: $m-font-weight-semi-bold;
+
+        @include m-font-size();
 
         .m-icon {
             font-size: 85%;
@@ -211,7 +212,6 @@
     &.m--is-focus:not(.m--is-disabled) {
         .m-input-style__main {
             box-shadow: 0 0 2px var(--m-input-style--border-color);
-            outline: 1px solid var(--m-input-style--border-color);
         }
     }
 

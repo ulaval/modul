@@ -161,6 +161,11 @@ export class MTimepicker extends ModulVue {
         return this.internalTimeErrorMessage !== '' || this.as<InputState>().hasError;
     }
 
+    // override from Input-management
+    public get isFocus(): boolean {
+        return this.as<InputManagement>().internalIsFocus || this.open;
+    }
+
     private get timeErrorMessage(): string {
         if (this.hideInternalErrorMessage) {
             return '';
@@ -252,8 +257,12 @@ export class MTimepicker extends ModulVue {
         if (isNaN(this.internalHour)) { return; }
 
         this.emitChange(this.formatTimeString());
+
         this.open = false;
-        this.as<InputManagement>().focusInput();
+
+        if (this.as<MediaQueries>().isMqMinS) {
+            this.as<InputManagement>().focusInput();
+        }
     }
 
     public onSelectMinuteKeyup(event: KeyboardEvent, minute: number): void {
@@ -285,7 +294,6 @@ export class MTimepicker extends ModulVue {
     }
 
     public onOpen(): void {
-        this.as<InputManagement>().focusInput();
         requestAnimationFrame(() => {
             this.scrollToSelection(this.$refs.hours);
             this.scrollToSelection(this.$refs.minutes);
