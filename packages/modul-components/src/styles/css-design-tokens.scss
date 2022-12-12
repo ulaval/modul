@@ -1,0 +1,5 @@
+@import 'tokens/css-design-tokens.mixin';
+
+:root {
+    @include m-css-design-tokens();
+}
