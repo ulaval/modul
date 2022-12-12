@@ -1,0 +1,15 @@
+@import 'require/require.mixin';
+@import 'asterisk/asterisk.mixin';
+@import 'table/table.mixin';
+@import 'bullet-list/bullet-list.mixin';
+@import 'button/button.mixin';
+@import 'link/link.mixin';
+
+@mixin mu-components() {
+    @include mu-require();
+    @include mu-asterisk();
+    @include mu-table();
+    @include mu-bullet-list();
+    @include mu-button();
+    @include mu-link();
+}

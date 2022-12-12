@@ -1,0 +1,9 @@
+@mixin mu-padding {
+    .mu-p {
+        @include m-space-factory(padding);
+    }
+
+    .mu-no-p {
+        @include m-space-factory(padding, true);
+    }
+}

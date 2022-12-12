@@ -1,0 +1,15 @@
+@import 'display/display.mixin';
+@import 'max-width/max-width.mixin';
+@import 'min-width/min-width.mixin';
+@import 'margin/margin.mixin';
+@import 'padding/padding.mixin';
+@import 'visually-hidden/visually-hidden.mixin';
+
+@mixin mu-layout() {
+    @include mu-display();
+    @include mu-max-width();
+    @include mu-min-width();
+    @include mu-margin();
+    @include mu-padding();
+    @include mu-visually-hidden();
+}

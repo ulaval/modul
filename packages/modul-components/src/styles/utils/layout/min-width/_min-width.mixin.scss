@@ -1,0 +1,5 @@
+@mixin mu-min-width() {
+    .mu-min-w {
+        min-width: $m-min-width;
+    }
+}

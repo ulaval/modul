@@ -76,7 +76,6 @@ import AccordionTransitionPlugin from '@ulaval/modul-components/dist/components/
 import SlideTransitionPlugin from '@ulaval/modul-components/dist/components/transitions/slide-transition/slide-transition';
 import TreePlugin from '@ulaval/modul-components/dist/components/tree/tree';
 import FrenchPlugin from '@ulaval/modul-components/dist/lang/fr';
-import '@ulaval/modul-components/dist/styles/font-face-modul.scss';
 import '@ulaval/modul-components/dist/styles/main.scss';
 import MessagePlugin, { FRENCH } from '@ulaval/modul-components/dist/utils/i18n/i18n';
 import { ConsoleOptions } from '@ulaval/modul-components/dist/utils/logger/logger';

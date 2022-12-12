@@ -1,0 +1,24 @@
+@mixin mu-button() {
+    .mu-button-primary {
+        @include m-button();
+        @include m-button--primary();
+        @include m-button--hover();
+    }
+
+    .mu-button-secondary {
+        @include m-button();
+        @include m-button--secondary();
+        @include m-button--hover();
+    }
+
+    .mu-button-disabled {
+        @include m-button();
+        @include m-button--disabled();
+        @include m-button--hover();
+    }
+
+    .mu-button-waiting {
+        @include m-button();
+        @include m-button--waiting();
+    }
+}

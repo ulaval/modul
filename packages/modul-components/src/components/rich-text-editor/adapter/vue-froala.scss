@@ -42,11 +42,11 @@ $m-froala-toolbar-btn-height: 38px !default;
         &.fr-fullscreen-wrapper {
 
             /deep/ .fr-element.fr-view {
-                padding: $m-space-md $m-space  !important;
+                padding: $m-space-md $m-space !important;
                 background: $m-color-white;
 
                 @media (min-width: $m-mq-min-sm) {
-                    padding: $m-space-md  !important;
+                    padding: $m-space-md !important;
                 }
             }
         }
@@ -113,7 +113,7 @@ $m-froala-toolbar-btn-height: 38px !default;
 
         .fr-element.fr-view,
         .fr-placeholder {
-            padding-top: $m-space  !important;
+            padding-top: $m-space !important;
             padding-bottom: $m-space-xs;
         }
     }
@@ -255,7 +255,7 @@ $m-froala-toolbar-btn-height: 38px !default;
                 li {
                     a {
                         margin-top: 0;
-                        font-family: var(--m-font-family);
+                        font-family: inherit;
                     }
 
                     &:first-child {

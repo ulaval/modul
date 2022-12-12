@@ -1,8 +1,11 @@
 // Font Family
-$m-font-family: #{var(--m-font-family)};
-$m-font-family-fallback: #{var(--m-font-family-fallback)};
-$m-font-family-headings: #{var(--m-font-family-headings)};
-$m-font-family-headings-fallback: #{var(--m-font-family-headings-fallback)};
+
+// Font Family
+$m-font-family: 'Source Sans Variable' !default;
+$m-font-family-fallback: 'Source Sans Pro' !default;
+$m-font-family-headings: $m-font-family;
+$m-font-family-headings-fallback: $m-font-family-fallback !default;
+$m-font-family: $m-font-family !default;
 
 // App Font Size
 $m-font-size-xl: 22;

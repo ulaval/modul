@@ -40,10 +40,14 @@
     font-weight: $m-font-weight-heading;
     line-height: $m-line-height-heading;
 
-    font-family: var($m-font-family-headings-fallback), Arial, sans-serif;
+    font-family: '#{$m-font-family-headings-fallback}',
+    Arial,
+    sans-serif;
 
     @supports (font-variation-settings: normal) {
-        font-family: var($m-font-family-headings), Arial, sans-serif;
+        font-family: '#{$m-font-family-headings}',
+        Arial,
+        sans-serif;
     }
 }
 

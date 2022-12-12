@@ -1,15 +1,8 @@
 @charset 'utf-8';
 
 @import 'commons';
-@import 'tokens/design-tokens.mixin';
 @import 'root/app-root.mixin';
 @import 'utils/utils.mixin';
-
-@import 'font-face';
-
-:root {
-    @include m-design-tokens();
-}
 
 .mu-app-root {
     @include m-app-root();

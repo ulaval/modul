@@ -1,0 +1,21 @@
+@mixin mu-display() {
+    .mu-d-block {
+        display: block;
+    }
+
+    .mu-d-flex {
+        display: flex;
+    }
+
+    .mu-d-inline {
+        display: inline;
+    }
+
+    .mu-d-inline-block {
+        display: inline-block;
+    }
+
+    .mu-d-inline-flex {
+        display: inline-flex;
+    }
+}

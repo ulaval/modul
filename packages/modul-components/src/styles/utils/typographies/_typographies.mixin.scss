@@ -1,0 +1,17 @@
+@import 'headings/headings.mixin';
+@import 'font-size/font-size.mixin';
+@import 'font-style/font-style.mixin';
+@import 'font-weight/font-weight.mixin';
+@import 'label/label.mixin';
+@import 'typo/typo.mixin';
+@import 'paragraph/paragraph.mixin';
+
+@mixin mu-typographies() {
+    @include mu-headings();
+    @include mu-paragraph();
+    @include mu-font-size();
+    @include mu-font-style();
+    @include mu-font-weight();
+    @include mu-label();
+    @include mu-typo();
+}

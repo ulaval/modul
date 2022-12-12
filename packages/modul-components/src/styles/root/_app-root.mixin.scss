@@ -13,12 +13,14 @@
     font-size: inherit;
     line-height: $m-line-height;
 
-    font-family: var(--m-font-family-fallback),
+    font-family: '#{$m-font-family-fallback}',
     Arial,
     sans-serif;
 
     @supports (font-variation-settings: normal) {
-        font-family: var(--m-font-family), Arial, sans-serif;
+        font-family: '#{$m-font-family}',
+        Arial,
+        sans-serif;
     }
 
     *,

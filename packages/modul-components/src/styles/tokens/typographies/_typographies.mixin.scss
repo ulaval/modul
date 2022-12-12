@@ -1,10 +1,4 @@
-@mixin m-typography-token() {
-    // Font Family
-    --m-font-family: 'Source Sans Variable';
-    --m-font-family-fallback: 'Source Sans Pro';
-    --m-font-family-headings: var(--m-font-family);
-    --m-font-family-headings-fallback: var(--m-font-family-fallback);
-
+@mixin m-typography-tokens() {
     // Mobile Heading Font Size
     --m-font-size-h1: 26;
     --m-font-size-h2: 24;

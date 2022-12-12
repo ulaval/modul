@@ -1,6 +1,6 @@
 @import 'commons';
 
-.m-input-style {
+:root {
     // states
     --m-input-style--hover-color: #{ $m-color-grey-black };
     --m-input-style--focus-color: #{ $m-color-interactive };

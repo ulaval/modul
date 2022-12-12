@@ -64,13 +64,6 @@
 | --m-color-border | #d7d7d7 |
 | --m-color-border-light | #f4f4f4 |
 
-#### Font Familly
-
-| Name |
-| -- |
-| --m-font-family |
-| --m-font-family-fallback |
-
 ### SASS Variables
 
 #### Colors
