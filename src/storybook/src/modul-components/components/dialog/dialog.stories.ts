@@ -133,7 +133,7 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DIALOG_NAME}/state`, module
         data: () => ({
             openProp: true
         }),
-        template: `<m-dialog :open.sync="openProp" state="confirmation">A Dialog with state="confirmation"</m-dialog>`
+        template: `<m-dialog title="Success" :open.sync="openProp" state="confirmation">A Dialog with state="confirmation"</m-dialog>`
     }))
     .add('state="information"', () => ({
         data: () => ({
