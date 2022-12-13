@@ -2,11 +2,12 @@
 //  header (list, table)
 // ======================================================================
 .mu-header {
-    @include m-font-size('md');
+    position: relative;
     font-weight: $m-font-weight-semi-bold;
     padding: $m-space;
     background-color: $m-color-grey-lighter;
-    position: relative;
+
+    @include m-font-size('md');
 
     p,
     h1,
@@ -17,8 +18,9 @@
     h6 {
         margin-top: 0;
         margin-bottom: 0;
-        @include m-font-size('md');
         font-weight: $m-font-weight-semi-bold;
+
+        @include m-font-size('md');
     }
 
     &.m-u--has-icon {
