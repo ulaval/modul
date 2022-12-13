@@ -2,6 +2,6 @@
 @import 'typographies/typographies.mixin';
 
 @mixin m-css-design-tokens {
-    @include m-color-tokens();
-    @include m-typography-tokens();
+    @include m-css-color-tokens();
+    @include m-css-typography-tokens();
 }
