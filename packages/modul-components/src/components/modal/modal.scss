@@ -46,8 +46,9 @@ $m-modal--max-width--s: 420px !default;
         h5,
         h6 {
             margin: 0;
-            @include m-font-size('h4');
             font-weight: $m-font-weight-semi-bold;
+
+            @include m-font-size('h4');
         }
 
         @include m-is-ie() {
@@ -141,6 +142,10 @@ $m-modal--max-width--s: 420px !default;
 
         @include m-is-ie() {
             margin: calc(#{$m-space-lg} * 2) auto;
+        }
+
+        @media (min-width: $m-mq-min-sm) {
+            border-radius: $m-border-radius;
         }
     }
 

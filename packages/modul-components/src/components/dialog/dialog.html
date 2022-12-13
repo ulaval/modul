@@ -20,25 +20,26 @@
                              'm--is-message-style-large-and-center': isMessageStyleLargeAndCenter
                          }"
                          tabindex="-1">
-                    <header v-if="title"
+                    <header v-if="title && isStateDefault"
                             class="m-dialog__header">
                         <h2 :id="titleId">{{ title }}</h2>
                     </header>
-                    <div :id="messageId" class="m-dialog__body">
-                        <div class="m-dialog__state-icon"
-                             v-if="state !== 'default'">
-                            <m-message class="m-dialog__state-icon__message"
-                                       :state="getState"
-                                       skin="page-light"></m-message>
-                        </div>
+                    <div :id="messageId"
+                         class="m-dialog__body">
+
+                        <m-message-page v-if="!isStateDefault"
+                                        class="m-dialog__state-icon"
+                                        :title="title"
+                                        :state="getState" />
+
                         <div v-if="$slots.default || message"
                              class="m-dialog__message">
                             <p v-if="message"
                                v-html="message"></p>
                             <slot />
                         </div>
-                        <div class="m-dialog__hint"
-                             v-if="hint">
+                        <div v-if="hint"
+                             class="m-dialog__hint">
                             <div class="m-dialog__hint-body">
                                 <div class="m-dialog__hint-icon">
                                     <m-icon name="m-svg__hint"
@@ -51,7 +52,7 @@
                         </div>
                     </div>
                     <footer class="m-dialog__footer">
-                        <slot name="footer"></slot>
+                        <slot name="footer" />
                         <div class="m-dialog__footer__nav"
                              v-if="!$slots.footer">
                             <m-button ref="buttonOk"

@@ -26,6 +26,12 @@ export enum MModalSize {
     mixins: [Portal, MFocusTrap]
 })
 export class MModal extends ModulVue implements PortalMixinImpl {
+    @Prop()
+    public readonly title: string;
+
+    @Prop({ default: true })
+    public readonly showCloseButton!: boolean;
+
     @Prop({
         default: MModalSize.Regular,
         validator: value => Enums.toValueArray(MModalSize).includes(value)
@@ -37,9 +43,6 @@ export class MModal extends ModulVue implements PortalMixinImpl {
 
     @Prop({ default: true })
     public readonly focusManagement: boolean;
-
-    @Prop()
-    public title: string;
 
     @Prop({ default: true })
     public readonly bodyMaxWidth: boolean;

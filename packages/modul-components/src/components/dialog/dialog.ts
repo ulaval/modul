@@ -10,7 +10,7 @@ import { MButton, MButtonSkin } from '../button/button';
 import { DIALOG_NAME } from '../component-names';
 import { MIcon } from '../icon/icon';
 import { MLink } from '../link/link';
-import { MMessage } from '../message/message';
+import { MMessagePage, MMessagePageState } from '../message-page/message-page';
 import WithRender from './dialog.html?style=./dialog.scss';
 
 export enum MDialogWidth {
@@ -36,7 +36,7 @@ export enum MDialogMessageStyle {
     components: {
         MButton,
         MLink,
-        MMessage,
+        MMessagePage,
         MIcon
     },
     mixins: [Portal, MFocusTrap]
@@ -186,17 +186,20 @@ export class MDialog extends ModulVue implements PortalMixinImpl {
     public get getState(): string {
         switch (this.state) {
             case MDialogState.Confirmation:
-                return 'confirmation';
+                return MMessagePageState.Confirmation;
             case MDialogState.Information:
-                return 'information';
-                break;
+                return MMessagePageState.Information;
             case MDialogState.Warning:
-                return 'warning';
+                return MMessagePageState.Warning;
             case MDialogState.Error:
-                return 'error';
+                return MMessagePageState.Error;
             default:
                 return '';
         }
+    }
+
+    public get isStateDefault(): boolean {
+        return this.state === MDialogState.Default;
     }
 
 }
