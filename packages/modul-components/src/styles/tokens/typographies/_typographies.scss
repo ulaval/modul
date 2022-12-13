@@ -24,14 +24,14 @@ $m-font-size-h5: #{var(--m-font-size-h5)};
 $m-font-size-h6: #{var(--m-font-size-h6)};
 
 // Font Weight
-$m-font-weight-range: 200 900;
-$m-font-weight-black: 650;
-$m-font-weight-bold: 575;
-$m-font-weight-semi-bold: 500;
-$m-font-weight-regular: 425;
-$m-font-weight: 425; // À supprimer une fois les remplacements de variables fait dans Brio
-$m-font-weight-light: 350;
-$m-font-weight-heading: $m-font-weight-semi-bold;
+$m-font-weight-range: 200 900 !default;
+$m-font-weight-black: 650 !default;
+$m-font-weight-bold: 575 !default;
+$m-font-weight-semi-bold: 500 !default;
+$m-font-weight-regular: 425 !default;
+$m-font-weight: 425 !default;
+$m-font-weight-light: 350 !default;
+$m-font-weight-heading: $m-font-weight-semi-bold !default;
 
 // Line Height
 $m-line-height: #{var(--m-line-height)};

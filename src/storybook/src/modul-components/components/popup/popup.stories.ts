@@ -9,38 +9,6 @@ export default {
 };
 
 export const defaultStory = () => ({
-    data: function() {
-        return {
-            open: false,
-            allo: null,
-            allo2: null,
-            reference: null,
-            trigger: null,
-            texte: ''
-        };
-    },
-    mounted() {
-        this.$data.allo = document.getElementById('allo');
-        this.$data.allo2 = document.getElementById('allo2');
-        // this.$data.reference = this.$data.allo2;
-        this.$data.reference = this.$data.allo;
-        console.log(this.$data.allo);
-        const refNo = document.getElementById('no');
-        this.$data.allo?.addEventListener('click', () => {
-            // this.$data.reference = this.$data.allo;
-            this.$data.reference = this.$data.allo;
-            this.$data.open = !this.$data.open;
-            console.log('NO', this.$data.reference);
-            this.$data.texte = 'Titre 1';
-        });
-        this.$data.allo2?.addEventListener('click', () => {
-            // this.$data.reference = this.$data.allo2;
-            this.$data.reference = this.$data.allo2;
-            this.$data.open = !this.$data.open;
-            console.log('NO', this.$data.reference);
-            this.$data.texte = 'Titre 2';
-        });
-    },
     props: {
         closeOnBackdrop: {
             default: boolean('Prop close-on-backdrop', true)
@@ -80,7 +48,7 @@ export const defaultStory = () => ({
         'emitPortalAfterOpen',
         'emitAfterEnter'
     ),
-    template: `<div><${POPUP_NAME}
+    template: `<${POPUP_NAME}
         :close-on-backdrop="closeOnBackdrop"
         :open.sync="open"
         :width="width"
@@ -103,7 +71,6 @@ export const defaultStory = () => ({
             slot="header"
         >
            Slot header
-           {{texte}}
         </p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <p
@@ -113,22 +80,7 @@ export const defaultStory = () => ({
             Slot footer
 
         </p>
-    </${POPUP_NAME}>
-    <p>NO</p>
-    <p id="no">NO</p>
-    <p id="allo2" style="width: 600px; padding: 20px">Allo2</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p>NO</p>
-    <p id="allo" style="width: 200px; padding: 20px">Allo</p>
-    open = {{open}}
-    </div>`
+    </${POPUP_NAME}>`
 });
 defaultStory.story = {
     name: 'default'
