@@ -107,6 +107,17 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${MODAL_NAME}`, module)
                         <m-button slot="footer">Here goes nothing</m-button>
                    </${MODAL_NAME}>`
     }))
+    .add('Prop show-close-button="false"', () => ({
+        data: () => ({
+            openProp: true
+        }),
+        props: {
+            title: {
+                default: text('title', 'This is a custom title')
+            }
+        },
+        template: `<${MODAL_NAME} :open.sync="openProp" :title="title" :show-close-button="false" />`
+    }))
     .add('custom padding by css var', () => ({
         data: () => ({
             openProp: true
