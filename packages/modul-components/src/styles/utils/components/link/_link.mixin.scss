@@ -29,6 +29,8 @@
     }
 
     .mu-link-icon {
+        display: inline-flex;
+        align-items: baseline;
 
         &:hover,
         &:focus {
@@ -44,6 +46,6 @@
 
     .mu-link__text {
         position: relative;
-        vertical-align: middle;
+        vertical-align: baseline;
     }
 }
