@@ -1,58 +1,49 @@
 @mixin mu-link() {
-    .mu-link {
-        transition: color $m-transition-duration ease;
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        font-weight: $m-font-weight-semi-bold;
-        color: $m-color-interactive;
-        text-decoration: none;
-        outline-color: $m-color-interactive;
 
-        &:hover,
-        &:focus {
-            .mu-link-text {
-                @extend %mu-link-text--hover-focus;
-            }
-        }
+    .mu-link,
+    .mu-link-icon {
+        @include m-link();
+
+        text-decoration: none;
 
         &:hover {
-            color: $m-color-interactive-light;
+            @include m-link--hover();
         }
 
         &:active,
         &:focus:not(:hover) {
-            color: $m-color-interactive-dark;
+            @include m-link--focus();
         }
 
-        &:not(.mu-link-unvisited):not(:hover):not(:focus):visited {
-            color: $m-color-interactive-darker;
+        &:not(:hover):not(:focus):visited {
+            @include m-link--visited();
         }
     }
 
-    .mu-link-text {
+    .mu-link {
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .mu-link-icon {
+
+        &:hover,
+        &:focus {
+            .mu-link__text {
+                text-decoration: underline;
+            }
+        }
+
+        > :not(:first-child) {
+            margin-left: $m-space-xs;
+        }
+    }
+
+    .mu-link__text {
         position: relative;
         vertical-align: middle;
-    }
-
-    %mu-link-text--hover-focus {
-        text-decoration: underline;
-    }
-
-    .mu-link-icon-left,
-    .mu-link-icon-right {
-        display: inline-flex;
-        flex-shrink: 0;
-        vertical-align: middle;
-        stroke-width: 2px;
-        width: 0.8em;
-    }
-
-    .mu-link-icon-left {
-        margin-right: $m-space-xs;
-    }
-
-    .mu-link-icon-right {
-        margin-left: $m-space-xs;
     }
 }
