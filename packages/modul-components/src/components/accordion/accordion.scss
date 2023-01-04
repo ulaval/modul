@@ -166,23 +166,24 @@ $m-accordion--color-default: $m-color-interactive !default;
 
     &__header-icon {
         display: block;
+        flex-shrink: 0;
 
         &:not(.m--is-left) {
             margin-left: $m-space;
         }
 
         &.m--is-left {
-            margin-right: $m-space-sm;
-
-            @media (min-width: $m-mq-min-sm) {
-                margin-right: $m-space;
-            }
+            margin-right: $m-space;
         }
 
         .m-accordion.m--is-dark.m--has-icon-left &,
         .m-accordion.m--is-dark-b.m--has-icon-left &,
         .m-accordion.m--is-default.m--has-icon-left & {
-            margin-right: $m-space;
+            margin-right: $m-space-sm;
+
+            @media (min-width: $m-mq-min-sm) {
+                margin-right: $m-space;
+            }
         }
 
         .m-accordion.m--is-dark-b.m--is-open & {
