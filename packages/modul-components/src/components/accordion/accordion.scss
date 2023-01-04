@@ -168,15 +168,15 @@ $m-accordion--color-default: $m-color-interactive !default;
         display: block;
 
         &:not(.m--is-left) {
-            margin-left: $m-space-sm;
-
-            @media (min-width: $m-mq-min-sm) {
-                margin-left: $m-space;
-            }
+            margin-left: $m-space;
         }
 
         &.m--is-left {
-            margin-right: $m-space;
+            margin-right: $m-space-sm;
+
+            @media (min-width: $m-mq-min-sm) {
+                margin-right: $m-space;
+            }
         }
 
         .m-accordion.m--is-dark.m--has-icon-left &,
@@ -237,9 +237,6 @@ $m-accordion--color-default: $m-color-interactive !default;
             .m-accordion.m--is-dark-b>.m-accordion__body-wrap>&,
             .m-accordion.m--is-default>.m-accordion__body-wrap>& {
                 padding: $m-space-md $m-space $m-space-md calc(#{$m-space-sm} + #{$m-accordion--vertical-border-size});
-
-
-
             }
 
             .m-accordion.m--is-dark.m--has-icon-left>.m-accordion__body-wrap>&,
