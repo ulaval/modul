@@ -236,7 +236,7 @@ $m-accordion--color-default: $m-color-interactive !default;
             .m-accordion.m--is-dark>.m-accordion__body-wrap>&,
             .m-accordion.m--is-dark-b>.m-accordion__body-wrap>&,
             .m-accordion.m--is-default>.m-accordion__body-wrap>& {
-                padding: $m-space-md $m-space $m-space-md calc(#{$m-space-sm} + #{$m-accordion--vertical-border-size});
+                padding: $m-space-lg $m-space $m-space-lg calc(#{$m-space-sm} + #{$m-accordion--vertical-border-size});
             }
 
             .m-accordion.m--is-dark.m--has-icon-left>.m-accordion__body-wrap>&,
