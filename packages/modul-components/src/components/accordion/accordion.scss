@@ -41,7 +41,7 @@ $m-accordion--color-default: $m-color-interactive !default;
         .m-accordion.m--is-dark-b>&,
         .m-accordion.m--is-default>& {
             position: relative;
-            min-height: 64px;
+            min-height: 70px;
 
             &::after {
                 position: absolute;
