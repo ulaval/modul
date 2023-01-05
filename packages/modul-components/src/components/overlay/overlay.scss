@@ -84,26 +84,23 @@
         background-color: $m-color-grey-black;
 
         h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h2 {
             margin: 0;
-            @include m-font-size('h2');
             font-weight: $m-font-weight-semi-bold;
+
+            @include m-font-size('h2');
         }
     }
 
     &__header-left {
-        flex: 1 1 auto;
+        flex: auto;
     }
 
     &__body {
         overflow-x: hidden;
         overflow-y: auto;
         position: relative;
-        flex: 1 1 auto;
+        flex: auto;
         width: 100%;
         min-height: 160px;
         -webkit-overflow-scrolling: touch;

@@ -39,18 +39,6 @@ $m-modal--max-width--s: 420px !default;
             justify-content: center;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin: 0;
-            font-weight: $m-font-weight-semi-bold;
-
-            @include m-font-size('h4');
-        }
-
         @include m-is-ie() {
             display: block;
         }
@@ -171,6 +159,14 @@ $m-modal--max-width--s: 420px !default;
         align-items: center;
         justify-content: var(--m-modal--header-justify-content);
         padding: var(--m-modal--header-padding);
+
+        h1,
+        h2 {
+            margin: 0;
+            font-weight: $m-font-weight-semi-bold;
+
+            @include m-font-size('h2');
+        }
     }
 
     &__close-button {
@@ -181,11 +177,11 @@ $m-modal--max-width--s: 420px !default;
         overflow-x: hidden;
         overflow-y: auto;
         position: relative;
-        flex: 1 1 auto;
+        flex: auto;
         width: 100%;
-        -webkit-overflow-scrolling: touch;
         min-height: var(--m-modal--min-height);
         padding: var(--m-modal--body-padding);
+        -webkit-overflow-scrolling: touch;
 
         @include m-scrollbar();
 
