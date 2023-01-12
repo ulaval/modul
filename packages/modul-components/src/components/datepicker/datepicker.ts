@@ -192,10 +192,7 @@ export class MDatepicker extends ModulVue {
     }
 
     @Emit('open')
-    public async onOpen(): Promise<void> {
-        const inputMask: MInputMask = this.$refs.input;
-        inputMask?.focusAndSelectAll();
-    }
+    public async onOpen(): Promise<void> { }
 
     @Emit('close')
     public async onClose(): Promise<void> {
@@ -228,7 +225,10 @@ export class MDatepicker extends ModulVue {
         this.model = this.convertValueToModel(selectedDate);
         this.inputModel = this.internalDateModel;
         this.open = false;
-        this.as<InputManagement>().focusInput();
+        if (this.as<MediaQueries>().isMqMinS) {
+            this.as<InputManagement>().focusInput();
+        }
+
         this.onChange();
     }
 
