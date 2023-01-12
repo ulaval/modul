@@ -26,7 +26,7 @@
     &:hover {
         .modul-search-card {
             &__img {
-                background-color: $m-color-interactive-light;
+                background-color: $m-color-interactive;
             }
         }
     }
@@ -75,6 +75,7 @@
     }
 
     &.modul--is {
+
         &-enter-active,
         &-leave-active {
             transition: transform 0.45s ease, opacity 0.3s linear;

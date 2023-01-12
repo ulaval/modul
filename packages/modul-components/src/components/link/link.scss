@@ -4,7 +4,7 @@
     --m-link--color-visited: #{$m-color-interactive-darker};
     --m-link--color-active: #{$m-color-interactive-dark};
     --m-link--color: #{$m-color-interactive};
-    --m-link--color-hover: #{$m-color-interactive-light};
+    --m-link--color-hover: #{$m-color-interactive-dark};
 
     transition: color $m-transition-duration ease;
     position: relative;

@@ -3,15 +3,15 @@
     position: relative;
     font-weight: $m-font-weight-semi-bold;
     color: $m-color-interactive;
-    outline-color: $m-color-interactive;
+    outline-color: $m-color-interactive-darker;
 }
 
 @mixin m-link--focus() {
-    color: $m-color-interactive-dark;
+    color: $m-color-interactive-darker;
 }
 
 @mixin m-link--hover() {
-    color: $m-color-interactive-light;
+    color: $m-color-interactive-dark;
 }
 
 @mixin m-link--visited() {

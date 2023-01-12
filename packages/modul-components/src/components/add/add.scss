@@ -13,13 +13,13 @@
             &:hover,
             &:focus {
                 .m-link__icon {
-                    color: $m-color-interactive-light;
+                    color: $m-color-interactive-dark;
                 }
             }
 
             &:active {
                 .m-link__icon {
-                    color: $m-color-interactive-dark;
+                    color: $m-color-interactive-darker;
                 }
             }
 

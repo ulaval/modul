@@ -25,9 +25,8 @@
     --m-color-interactive-dark: #1854be;
     --m-color-interactive: #096CDC;
     --m-color-interactive-light: var(--m-color-ul-blue);
-    --m-color-interactive-lighter: #6ed2ff;
-    --m-color-interactive-lightest: #dffaff;
-    --m-color-information: #eaf5ff;
+    --m-color-interactive-lightest: #eaf5ff;
+    --m-color-information: var(--m-color-interactive-lightest);
 
     // Accent
     --m-color-accent-dark: #ca7300;

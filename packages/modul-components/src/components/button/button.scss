@@ -1,7 +1,5 @@
 @import 'commons';
 
-$m-button--border-radius: 4px !default;
-
 .m-button {
     position: relative;
     display: inline-flex;
@@ -9,7 +7,7 @@ $m-button--border-radius: 4px !default;
     text-align: center;
     vertical-align: middle;
     font-size: inherit;
-    border-radius: $m-button--border-radius;
+    border-radius: $m-border-radius;
     padding: 10px $m-space;
     font-weight: $m-font-weight-semi-bold;
     min-height: 44px;

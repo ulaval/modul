@@ -1,15 +1,15 @@
 @import 'commons';
 
 :root {
-    --m-searchfield--color-icon: #{ $m-color-interactive-light };
-    --m-searchfield--color-icon-hover: white;
-    --m-searchfield--color-button: transparent;
-    --m-searchfield--color-button-hover: #{ $m-color-interactive-light };
-    --m-searchfield--color-button-active: #{ $m-color-interactive-dark };
+    --m-searchfield--color-icon: #{ $m-color-interactive };
+    --m-searchfield--color-icon-hover: #fff;
+    --m-searchfield--color-button: rgba(255, 255, 255, 0);
+    --m-searchfield--color-button-hover: #{ $m-color-interactive-dark };
+    --m-searchfield--color-button-active: #{ $m-color-interactive-darker };
 }
 
 .m-searchfield {
-    --m-input-style--hover-color: #{ $m-color-interactive-light };
+    --m-input-style--hover-color: #{ $m-color-interactive-dark };
     --m-input-style--border-color: #{ $m-color-grey-lightest };
     --m-input-style--background-color: #{ $m-color-grey-lightest };
 

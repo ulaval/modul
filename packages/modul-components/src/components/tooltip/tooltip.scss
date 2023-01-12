@@ -28,12 +28,12 @@ $m-tooltip--max-height: 280px !default;
 
     &__icon {
         transition: color $m-transition-duration ease;
-        color: $m-color-interactive-light;
+        color: $m-color-interactive;
         cursor: pointer;
 
         &:hover,
         &:focus {
-            color: $m-color-interactive;
+            color: $m-color-interactive-dark;
         }
 
         &:active {
@@ -45,11 +45,11 @@ $m-tooltip--max-height: 280px !default;
             min-height: auto;
             width: #{$m-font-size * 1px};
             height: #{$m-font-size * 1px};
-            color: $m-color-interactive-light;
+            color: $m-color-interactive;
 
             &:hover,
             &:focus {
-                color: $m-color-interactive;
+                color: $m-color-interactive-dark;
             }
         }
     }

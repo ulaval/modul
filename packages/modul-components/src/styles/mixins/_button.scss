@@ -47,8 +47,8 @@
 
     &:hover {
         color: $m-color-white;
-        background: $m-color-interactive-light;
-        border-color: $m-color-interactive-light;
+        background: $m-color-interactive-dark;
+        border-color: $m-color-interactive-dark;
     }
 
     &:active,
@@ -59,6 +59,6 @@
 
 @mixin m-button--active() {
     color: $m-color-white;
-    background: $m-color-interactive-dark;
-    border-color: $m-color-interactive-dark;
+    background: $m-color-interactive-darker;
+    border-color: $m-color-interactive-darker;
 }

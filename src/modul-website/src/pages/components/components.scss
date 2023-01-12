@@ -6,7 +6,7 @@
     &__component-navigation {
         display: flex;
         margin-top: $m-space-2xl;
-        color: $m-color-interactive-light;
+        color: $m-color-interactive;
     }
 
     &__component-navigation-prev,
@@ -27,14 +27,14 @@
 
         &:hover,
         &:focus {
-            background: $m-color-interactive-light;
-            border-color: $m-color-interactive-light;
+            background: $m-color-interactive-dark;
+            border-color: $m-color-interactive-dark;
             color: $m-color-white;
         }
 
         &:active {
-            background: $m-color-interactive-dark;
-            border-color: $m-color-interactive-dark;
+            background: $m-color-interactive-darker;
+            border-color: $m-color-interactive-darker;
         }
     }
 
