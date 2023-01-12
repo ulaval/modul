@@ -147,6 +147,10 @@ export class MSidebar extends ModulVue implements PortalMixinImpl {
     protected mounted(): void {
         this.as<Portal>().transitionDuration = PortalTransitionDuration.Slow;
     }
+
+    protected beforeDestroy(): void {
+        this.as<MFocusTrap>().removeFocusTrap();
+    }
 }
 
 const SidebarPlugin: PluginObject<any> = {
