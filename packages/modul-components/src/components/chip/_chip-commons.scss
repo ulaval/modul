@@ -7,13 +7,24 @@
     outline-color: $m-color-interactive;
     user-select: none;
     appearance: none;
-    height: 42px; // Magic number: chip height;
+    min-height: 42px; // Magic number: chip height;
+}
+
+@mixin m-chip-medium-style() {
+    min-height: 32px;
+    font-weight: $m-font-weight-semi-bold;
+
+    @include m-font-size('sm');
 }
 
 @mixin m-chip-small-style() {
     padding: calc((#{$m-space-xs} + #{$m-space-2xs} / 2) / 2) 3px calc((#{$m-space-xs} + #{$m-space-2xs} / 2) / 2) 7px; // Magic number: padding-side
     border-radius: 12px;
+    min-height: inherit;
     height: 20px; // Magic number: chip height;
+    font-weight: $m-font-weight-semi-bold;
+
+    @include m-font-size('xs');
 }
 
 @mixin m-chip-body-style() {
