@@ -5,17 +5,9 @@ import { Enums } from '../../utils/enums/enums';
 import { CHIP_NAME } from '../component-names';
 import MChipAdd from './chip-add/chip-add';
 import MChipDelete from './chip-delete/chip-delete';
+import { MChipMode, MChipSize } from './chip.def';
 import WithRender from './chip.html';
-
-export enum MChipMode {
-    Add = 'add',
-    Delete = 'delete'
-}
-
-export enum MChipSize {
-    Small = 'small',
-    Large = 'large'
-}
+export { MChipMode, MChipSize } from './chip.def';
 
 @WithRender
 @Component({

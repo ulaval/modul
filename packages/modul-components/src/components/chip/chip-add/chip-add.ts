@@ -1,19 +1,17 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import addCircleSvg from '../../../assets/icons/svg/add-circle.svg';
 import { Enums } from '../../../utils/enums/enums';
-import { MIcon } from '../../icon/icon';
+import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
+import { MSvg } from '../../svg/svg';
+import { MChipSize } from '../chip.def';
 import WithRender from './chip-add.html?style=./chip-add.scss';
-
-enum MChipSize {
-    Small = 'small',
-    Large = 'large'
-}
 
 @WithRender
 @Component({
     components: {
-        MIcon
+        MSvg
     },
     modul: {
         i18n: {
@@ -38,6 +36,8 @@ export default class MChipAdd extends Vue {
     })
     public readonly size: MChipSize;
 
+    public readonly iconName = ModulIconName.AddCircle;
+
     @Emit('click')
     public emitClick(_event: MouseEvent): void { }
 
@@ -54,5 +54,9 @@ export default class MChipAdd extends Vue {
         }
         this.emitClick(event);
         this.emitAdd(event);
+    }
+
+    protected beforeCreate(): void {
+        this.$svgSprite.addSvg(ModulIconName.AddCircle, addCircleSvg as string);
     }
 }

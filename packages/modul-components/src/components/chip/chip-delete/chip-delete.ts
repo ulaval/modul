@@ -1,25 +1,23 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Prop } from 'vue-property-decorator';
+import closeClearSvg from '../../../assets/icons/svg/close-clear.svg';
 import { Enums } from '../../../utils/enums/enums';
+import { ModulIconName } from '../../../utils/modul-icons/modul-icons';
 import uuid from '../../../utils/uuid/uuid';
-import { MIcon } from '../../icon/icon';
+import { MSvg } from '../../svg/svg';
+import { MChipSize } from '../chip.def';
 import WithRender from './chip-delete.html?style=./chip-delete.scss';
-
-enum MChipSize {
-    Small = 'small',
-    Large = 'large'
-}
 
 @WithRender
 @Component({
     components: {
-        MIcon
+        MSvg
     },
     modul: {
         i18n: {
-            'fr': require('./../chip.lang.fr.json'),
-            'en': require('./../chip.lang.en.json')
+            fr: require('./../chip.lang.fr.json'),
+            en: require('./../chip.lang.en.json')
         }
     }
 })
@@ -36,15 +34,18 @@ export default class MChipDelete extends Vue {
     })
     public readonly size: MChipSize;
 
+    public readonly iconName = ModulIconName.CloseClear;
+    public textId: string = `mChipDeleteText-${uuid.generate()}`;
+    public iconHover: boolean = false;
+    public focused: boolean = false;
+
+
     @Emit('click')
     public emitClick(_event: MouseEvent): void { }
 
     @Emit('delete')
     public emitDelete(_event: MouseEvent): void { }
 
-    public textId: string = `mChipDeleteText-${uuid.generate()}`;
-    public iconHover: boolean = false;
-    public focused: boolean = false;
 
     public get iconSize(): string {
         return this.size === MChipSize.Small ? '8px' : '14px';
@@ -72,5 +73,9 @@ export default class MChipDelete extends Vue {
 
     public onMouseLeave(): void {
         this.iconHover = false;
+    }
+
+    protected beforeCreate(): void {
+        this.$svgSprite.addSvg(ModulIconName.CloseClear, closeClearSvg as string);
     }
 }
