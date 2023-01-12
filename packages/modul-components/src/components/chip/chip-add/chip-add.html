@@ -1,21 +1,17 @@
-<button
-    class="m-chip-add"
-    :class="{
-        'm--is-disabled': disabled,
-        'm--is-small' : size === 'small'
-    }"
-    :disabled="disabled"
-    type="button"
-    @click="onClick"
->
+<button class="m-chip-add"
+        :class="[`m--is-${size}`, {
+            'm--is-disabled': disabled
+        }]"
+        :disabled="disabled"
+        type="button"
+        @click="onClick">
     <div class="m-chip-add__body">
         <span class="m-chip-add__hidden-text">{{ $i18n.translate('chip:add') }}&nbsp;: </span>
         <slot />
-        <m-icon
-            v-if="icon"
-            class="m-chip-add__icon"
-            :size="iconSize"
-            name="m-svg__add-circle"
-        />
+        <m-svg v-if="icon"
+               class="m-chip-add__icon"
+               :width="iconSize"
+               :height="iconSize"
+               :name="iconName" />
     </div>
 </button>

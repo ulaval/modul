@@ -2,7 +2,7 @@
 
 exports[`Storyshots modul-components|m-chip default 1`] = `
 <button
-  class="m-chip-add"
+  class="m-chip-add m--is-large"
   type="button"
 >
   <div
@@ -16,24 +16,17 @@ exports[`Storyshots modul-components|m-chip default 1`] = `
      Default chip 
     <svg
       aria-hidden="true"
-      class="m-icon m-chip-add__icon"
+      class="m-svg m-chip-add__icon"
       height="20px"
       width="20px"
-    >
-      <!---->
-       
-      <use
-        aria-hidden="true"
-        class=""
-      />
-    </svg>
+    />
   </div>
 </button>
 `;
 
 exports[`Storyshots modul-components|m-chip disabled 1`] = `
 <button
-  class="m-chip-add m--is-disabled"
+  class="m-chip-add m--is-large m--is-disabled"
   disabled="disabled"
   type="button"
 >
@@ -48,24 +41,17 @@ exports[`Storyshots modul-components|m-chip disabled 1`] = `
      Disabled 
     <svg
       aria-hidden="true"
-      class="m-icon m-chip-add__icon"
+      class="m-svg m-chip-add__icon"
       height="20px"
       width="20px"
-    >
-      <!---->
-       
-      <use
-        aria-hidden="true"
-        class=""
-      />
-    </svg>
+    />
   </div>
 </button>
 `;
 
 exports[`Storyshots modul-components|m-chip mode="add" 1`] = `
 <button
-  class="m-chip-add"
+  class="m-chip-add m--is-large"
   type="button"
 >
   <div
@@ -79,24 +65,17 @@ exports[`Storyshots modul-components|m-chip mode="add" 1`] = `
      Add mode 
     <svg
       aria-hidden="true"
-      class="m-icon m-chip-add__icon"
+      class="m-svg m-chip-add__icon"
       height="20px"
       width="20px"
-    >
-      <!---->
-       
-      <use
-        aria-hidden="true"
-        class=""
-      />
-    </svg>
+    />
   </div>
 </button>
 `;
 
 exports[`Storyshots modul-components|m-chip mode="delete" 1`] = `
 <div
-  class="m-chip-delete"
+  class="m-chip-delete m--is-large"
 >
   <div
     class="m-chip-delete__body"
@@ -120,17 +99,69 @@ exports[`Storyshots modul-components|m-chip mode="delete" 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="m-icon m-chip-delete__icon"
+        class="m-svg m-chip-delete__icon"
         height="14px"
         width="14px"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots modul-components|m-chip size="medium" - add 1`] = `
+<button
+  class="m-chip-add m--is-medium"
+  type="button"
+>
+  <div
+    class="m-chip-add__body"
+  >
+    <span
+      class="m-chip-add__hidden-text"
+    >
+      Ajouter : 
+    </span>
+     Add mode 
+    <svg
+      aria-hidden="true"
+      class="m-svg m-chip-add__icon"
+      height="20px"
+      width="20px"
+    />
+  </div>
+</button>
+`;
+
+exports[`Storyshots modul-components|m-chip size="medium" - delete 1`] = `
+<div
+  class="m-chip-delete m--is-medium"
+>
+  <div
+    class="m-chip-delete__body"
+  >
+    <span
+      class="m-chip-delete__text"
+      id="mChipDeleteText-fakeId"
+    >
+      <span
+        class="m-chip-delete__hidden-text"
       >
-        <!---->
-         
-        <use
-          aria-hidden="true"
-          class=""
-        />
-      </svg>
+        Supprimer : 
+      </span>
+       Delete mode
+    </span>
+     
+    <button
+      aria-labelledby="mChipDeleteText-fakeId"
+      class="m-chip-delete__button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="m-svg m-chip-delete__icon"
+        height="14px"
+        width="14px"
+      />
     </button>
   </div>
 </div>
@@ -152,17 +183,10 @@ exports[`Storyshots modul-components|m-chip size="small" - add 1`] = `
      Add mode 
     <svg
       aria-hidden="true"
-      class="m-icon m-chip-add__icon"
+      class="m-svg m-chip-add__icon"
       height="13px"
       width="13px"
-    >
-      <!---->
-       
-      <use
-        aria-hidden="true"
-        class=""
-      />
-    </svg>
+    />
   </div>
 </button>
 `;
@@ -193,17 +217,10 @@ exports[`Storyshots modul-components|m-chip size="small" - delete 1`] = `
     >
       <svg
         aria-hidden="true"
-        class="m-icon m-chip-delete__icon"
+        class="m-svg m-chip-delete__icon"
         height="8px"
         width="8px"
-      >
-        <!---->
-         
-        <use
-          aria-hidden="true"
-          class=""
-        />
-      </svg>
+      />
     </button>
   </div>
 </div>
