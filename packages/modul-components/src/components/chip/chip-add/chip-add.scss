@@ -10,9 +10,12 @@
 
     &.m--is-small {
         @include m-chip-small-style();
+    }
 
-        font-weight: $m-font-weight-semi-bold;
-        font-size: 0.75em;
+    &.m--is-medium {
+        @include m-chip-medium-style();
+
+        padding: $m-space-2xs $m-space-xs $m-space-2xs $m-space-sm;
     }
 
     &:not(.m--is-disabled) {
