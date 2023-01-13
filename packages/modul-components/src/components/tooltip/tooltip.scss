@@ -3,11 +3,9 @@ $m-tooltip--width: 320px !default;
 $m-tooltip--width--l: 540px !default;
 $m-tooltip--max-height: 280px !default;
 
-:root {
-    --m-tooltip--max-height: #{$m-tooltip--max-height};
-}
-
 .m-tooltip {
+    --m-tooltip--max-height: #{$m-tooltip--max-height};
+
     > :first-child {
         display: inline;
     }

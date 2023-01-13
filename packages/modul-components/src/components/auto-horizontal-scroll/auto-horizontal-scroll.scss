@@ -2,6 +2,8 @@
 $m-defilement-horizontal-automatique--largueur-bouton: 22px;
 
 .m-auto-horizontal-scroll {
+    --m-auto-horizontal-scroll--button-background: none;
+
     position: relative;
     z-index: 0;
 

@@ -4,23 +4,21 @@ $m-modal--max-width--l: $m-max-width !default;
 $m-modal--max-width: 672px !default; // padding + input + margin + input + padding
 $m-modal--max-width--s: 420px !default;
 
-:root {
-    --m-modal--top: 0;
-    --m-modal--min-height: 160px;
-    --m-modal--header-padding: #{ $m-space };
-    --m-modal--header-justify-content: space-between;
-    --m-modal--body-padding: #{ $m-space-xl  $m-space };
-    --m-modal--footer-padding: #{ $m-space };
-
-    @media (min-width: $m-mq-min-sm) {
-        --m-modal--header-padding: #{ $m-space $m-space-lg };
-        --m-modal--body-padding: #{ $m-space-xl  $m-space-lg };
-        --m-modal--footer-padding: #{ $m-space $m-space-lg };
-    }
-}
-
 .m-modal {
     &__wrap {
+        --m-modal--top: 0;
+        --m-modal--min-height: 160px;
+        --m-modal--header-padding: #{ $m-space };
+        --m-modal--header-justify-content: space-between;
+        --m-modal--body-padding: #{ $m-space-xl  $m-space };
+        --m-modal--footer-padding: #{ $m-space };
+
+        @media (min-width: $m-mq-min-sm) {
+            --m-modal--header-padding: #{ $m-space $m-space-lg };
+            --m-modal--body-padding: #{ $m-space-xl  $m-space-lg };
+            --m-modal--footer-padding: #{ $m-space $m-space-lg };
+        }
+
         position: fixed;
         top: var(--m-modal--top, 0);
         right: 0;
