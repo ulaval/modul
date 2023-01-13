@@ -16,7 +16,7 @@ Utilisation : états, par exemple l'état actif, le survol, le traitement, des d
 
 <modul-color name="--m-color-interactive-darker" hex="#0b46ac" ></modul-color>
 <modul-color name="--m-color-interactive-dark" hex="#1854be" ></modul-color>
-<modul-color name="--m-color-interactive" hex="#096CDC" ></modul-color>
+<modul-color name="--m-color-interactive" hex="#096cdc" ></modul-color>
 <modul-color name="--m-color-interactive-light" hex="#09f" ></modul-color>
 <modul-color name="--m-color-interactive-lightest" hex="#eaf5ff" ></modul-color>
 
