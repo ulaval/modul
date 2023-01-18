@@ -284,5 +284,5 @@ export class MPhonefield extends ModulVue {
     }
 }
 
-export { MCountry as Country, MCountryCodeISO2, MCountryOptions } from '../../utils/country/country';
+export { MCountry, MCountryCodeISO2, MCountryOptions } from '../../utils/country/country';
 

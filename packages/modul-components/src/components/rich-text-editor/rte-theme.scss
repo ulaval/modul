@@ -1,10 +1,10 @@
 @import 'commons';
-@import "../../styles/utils/link";
+@import '../../styles/utils/components/link';
 
 $m-fr-icon-size: 14px !default;
 
 @mixin m-commons-rte-styles() {
-    @include m-titles-styles();
+    @include m-heading-styles();
     @include m-text-styles();
 
     .rte-h1 {
@@ -63,12 +63,12 @@ $m-fr-icon-size: 14px !default;
 
         &:hover,
         &:focus {
-            @extend %mu-link-text--hover-focus;
+            text-decoration: underline;
         }
     }
 
-    .fr-btn > svg,
-    .fr-sub-menu > svg {
+    .fr-btn>svg,
+    .fr-sub-menu>svg {
         width: $m-fr-icon-size;
         height: $m-fr-icon-size;
         margin: $m-space-sm;

@@ -1,0 +1,10 @@
+@charset 'utf-8';
+
+@import 'commons';
+@import 'root/app-root.mixin';
+@import 'utils/utils.mixin';
+
+.mu-app-root {
+    @include m-app-root();
+    @include mu-utils();
+}

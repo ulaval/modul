@@ -1,0 +1,5 @@
+@mixin mu-table {
+    .mu-table {
+        @include m-table();
+    }
+}

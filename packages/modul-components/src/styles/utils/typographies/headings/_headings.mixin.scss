@@ -1,0 +1,3 @@
+@mixin mu-headings() {
+    @include m-heading-styles('.mu-');
+}

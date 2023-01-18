@@ -1,0 +1,11 @@
+@mixin mu-font-style() {
+    .mu-font-style {
+        &-normal {
+            font-style: normal;
+        }
+
+        &-italic {
+            font-style: italic;
+        }
+    }
+}

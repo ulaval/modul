@@ -1,0 +1,22 @@
+@mixin m-css-typography-tokens() {
+    // Mobile Heading Font Size
+    --m-font-size-h1: 26;
+    --m-font-size-h2: 24;
+    --m-font-size-h3: 22;
+    --m-font-size-h4: 20;
+    --m-font-size-h5: 18;
+    --m-font-size-h6: 16;
+
+    @media (min-width: $m-mq-min-sm) {
+        // Desktop Heading Font Size
+        --m-font-size-h1: 36;
+        --m-font-size-h2: 32;
+        --m-font-size-h3: 28;
+        --m-font-size-h4: 24;
+        --m-font-size-h5: 20;
+        --m-font-size-h6: 16;
+    }
+
+    --m-line-height: 1.3;
+    --m-line-height-heading: 1.1;
+}

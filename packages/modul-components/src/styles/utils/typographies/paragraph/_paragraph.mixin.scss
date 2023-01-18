@@ -1,0 +1,5 @@
+@mixin mu-paragraph() {
+    .mu-p {
+        margin: $m-margin-paragraph;
+    }
+}

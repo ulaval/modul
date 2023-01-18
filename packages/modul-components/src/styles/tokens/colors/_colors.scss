@@ -1,0 +1,69 @@
+// Brand ULaval
+$m-color-ul-blue: #{var(--m-color-ul-blue)};
+$m-color-ul-yellow: #{var(--m-color-ul-yellow)};
+$m-color-ul-red: #{var(--m-color-ul-red)};
+
+// Grey
+$m-color-grey-black: #{var(--m-color-grey-black)} !default;
+$m-color-grey-darkest: #{var(--m-color-grey-darkest)} !default;
+$m-color-grey-darker: #{var(--m-color-grey-darker)} !default;
+$m-color-grey-dark: #{var(--m-color-grey-dark)} !default;
+$m-color-grey: #{var(--m-color-grey)} !default;
+$m-color-grey-light: #{var(--m-color-grey-light)} !default;
+$m-color-grey-lighter: #{var(--m-color-grey-lighter)} !default;
+$m-color-grey-lightest: #{var(--m-color-grey-lightest)} !default;
+
+// General
+$m-color-black: #{var(--m-color-black)};
+$m-color-text: #{var(--m-color-text)};
+$m-color-text-light: #{var(--m-color-text-light)} !default;
+$m-color-white: #{var(--m-color-white)};
+
+// Interactive
+$m-color-interactive-darker: #{var(--m-color-interactive-darker)} !default;
+$m-color-interactive-dark: #{var(--m-color-interactive-dark)} !default;
+$m-color-interactive: #{var(--m-color-interactive)} !default;
+$m-color-interactive-light: #{var(--m-color-interactive-light)} !default;
+$m-color-interactive-lighter: #{var(--m-color-interactive-lighter)} !default;
+$m-color-interactive-lightest: #{var(--m-color-interactive-lightest)} !default;
+$m-color-information: #{var(--m-color-information)} !default;
+
+// Success
+$m-color-success-dark: #{var(--m-color-success-dark)} !default;
+$m-color-success: #{var(--m-color-success)} !default;
+$m-color-success-light: #{var(--m-color-success-light)} !default;
+$m-color-success-lightest: #{var(--m-color-success-lightest)} !default;
+
+// Warning
+$m-color-warning: #{var(--m-color-warning)} !default;
+$m-color-warning-lightest: #{var(--m-color-warning-lightest)} !default;
+
+// Error
+$m-color-error-dark: #{var(--m-color-error-dark)} !default;
+$m-color-error: #{var(--m-color-error)} !default;
+$m-color-error-lightest: #{var(--m-color-error-lightest)} !default;
+
+// Hint
+$m-color-hint: $m-color-success !default;
+
+// Accent
+$m-color-accent-dark: #{var(--m-color-accent-dark)} !default;
+$m-color-accent: #{var(--m-color-accent)} !default;
+$m-color-accent-light: #{var(--m-color-accent-light)} !default;
+$m-color-accent-lightest: #{var(--m-color-accent-lightest)} !default;
+
+// Active
+$m-color-active: #{var(--m-color-active)} !default;
+
+//  Disabled
+$m-color-disabled: #{var(--m-color-disabled)} !default;
+$m-color-disabled-light: #{var(--m-color-disabled-light)} !default;
+
+// Border
+$m-color-border-dark: #{var(--m-color-border-dark)} !default;
+$m-color-border: #{var(--m-color-border)} !default;
+$m-color-border-light: #{var(--m-color-border-light)} !default;
+
+// Scrollbar
+$m-color-scrollbar: #{var(--m-color-scrollbar)} !default;
+$m-color-scrollbar-light: #{var(--m-color-scrollbar-light)} !default;

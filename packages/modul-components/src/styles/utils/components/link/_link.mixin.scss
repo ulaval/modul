@@ -1,0 +1,51 @@
+@mixin mu-link() {
+
+    .mu-link,
+    .mu-link-icon {
+        @include m-link();
+
+        text-decoration: none;
+
+        &:hover {
+            @include m-link--hover();
+        }
+
+        &:active,
+        &:focus:not(:hover) {
+            @include m-link--focus();
+        }
+
+        &:not(:hover):not(:focus):visited {
+            @include m-link--visited();
+        }
+    }
+
+    .mu-link {
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    .mu-link-icon {
+        display: inline-flex;
+        align-items: baseline;
+
+        &:hover,
+        &:focus {
+            .mu-link__text {
+                text-decoration: underline;
+            }
+        }
+
+        > :not(:first-child) {
+            margin-left: $m-space-xs;
+        }
+    }
+
+    .mu-link__text {
+        position: relative;
+        vertical-align: baseline;
+    }
+}

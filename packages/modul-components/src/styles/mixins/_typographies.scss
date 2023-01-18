@@ -1,0 +1,136 @@
+@mixin m-font-face($font-family, $url, $font-weight: normal, $font-style: normal, $extensionOTF: false) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $font-weight;
+        font-style: $font-style;
+
+        @if $extensionOTF {
+            src: url('#{$url}.otf.woff2') format('woff2'),
+            url('#{$url}.ttf.woff2') format('woff2'),
+            url('#{$url}.otf.woff') format('woff'),
+            url('#{$url}.ttf.woff') format('woff');
+        }
+
+        @else {
+            src: url('#{$url}.ttf.woff2') format('woff2'),
+            url('#{$url}.ttf.woff') format('woff');
+        }
+    }
+}
+
+@mixin m-font-size($font-size: 'base') {
+    @if $font-size=='base' {
+        font-size: 1rem;
+    }
+
+    @else {
+        $base-font-size: map-get($m-font-size-map, 'base');
+        $size: $font-size;
+
+        @if type-of($font-size)=='string' {
+            $size: map-get($m-font-size-map, $font-size);
+        }
+
+        font-size: calc(#{$size} / #{$base-font-size} * 1rem);
+    }
+
+}
+
+@mixin m-commons-title-styles() {
+    font-weight: $m-font-weight-heading;
+    line-height: $m-line-height-heading;
+
+    font-family: '#{$m-font-family-headings-fallback}',
+    Arial,
+    sans-serif;
+
+    @supports (font-variation-settings: normal) {
+        font-family: '#{$m-font-family-headings}',
+        Arial,
+        sans-serif;
+    }
+}
+
+@mixin m-heading-styles($prefix: '') {
+
+    #{$prefix}h1,
+    #{$prefix}h2,
+    #{$prefix}h3,
+    #{$prefix}h4,
+    #{$prefix}h5,
+    #{$prefix}h6 {
+        @include m-commons-title-styles();
+    }
+
+    #{$prefix}h1 {
+        margin: $m-margin-h1;
+
+        @include m-font-size('h1');
+    }
+
+    #{$prefix}h2 {
+        margin: $m-margin-h2;
+
+        @include m-font-size('h2');
+    }
+
+    #{$prefix}h3 {
+        margin: $m-margin-h3;
+
+        @include m-font-size('h3');
+    }
+
+    #{$prefix}h4 {
+        margin: $m-margin-h4;
+
+        @include m-font-size('h4');
+    }
+
+    #{$prefix}h5 {
+        margin: $m-margin-h5;
+
+        @include m-font-size('h5');
+    }
+
+    #{$prefix}h6 {
+        margin: $m-margin-h6;
+
+        @include m-font-size('h6');
+    }
+}
+
+@mixin m-text-styles() {
+    p {
+        margin: $m-margin-paragraph;
+    }
+
+    b,
+    strong {
+        font-weight: $m-font-weight-semi-bold;
+    }
+
+    i,
+    em {
+        font-style: italic;
+    }
+
+    small {
+        @include m-font-size('sm');
+    }
+
+    pre,
+    code {
+        word-break: break-all;
+        word-wrap: break-word;
+        font-weight: $m-font-weight-light;
+        color: $m-color-text;
+
+        @include m-font-size('sm');
+    }
+}
+
+@mixin m-word-wrap() {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}

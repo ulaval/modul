@@ -1,0 +1,9 @@
+@mixin mu-margin() {
+    .mu-m {
+        @include m-space-factory(margin);
+    }
+
+    .mu-no-m {
+        @include m-space-factory(margin, true);
+    }
+}

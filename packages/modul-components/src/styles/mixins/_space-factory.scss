@@ -1,0 +1,43 @@
+$_m-position-map: (
+    '': '',
+    't': '-top',
+    'r': '-right',
+    'b': '-bottom',
+    'l': '-left',
+);
+
+$_m-space-map: (
+    '-4xl': $m-space-4xl,
+    '-3xl': $m-space-3xl,
+    '-2xl': $m-space-2xl,
+    '-xl': $m-space-xl,
+    '-lg': $m-space-lg,
+    '-md': $m-space-md,
+    '' : $m-space,
+    '-sm': $m-space-sm,
+    '-xs': $m-space-xs,
+    '-2xs': $m-space-2xs
+);
+
+@mixin m-space-factory($attribute, $has-no-value: false) {
+
+    @each $key-position,
+    $value-position in $_m-position-map {
+        @if $has-no-value ==true {
+            &#{$key-position} {
+                #{$attribute}#{$value-position}: 0;
+            }
+        }
+
+        @else {
+
+            @each $key-space,
+            $value-space in $_m-space-map {
+                &#{$key-position}#{$key-space} {
+                    #{$attribute}#{$value-position}: #{$value-space};
+                }
+            }
+        }
+
+    }
+}

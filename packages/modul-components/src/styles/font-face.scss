@@ -1,0 +1,19 @@
+@import 'commons';
+
+$m-font-root-path: './../assets/fonts/' !default;
+
+$m-font-light-path: '#{$m-font-root-path}source-sans-pro/SourceSansPro-Light' !default;
+$m-font-regular-path: '#{$m-font-root-path}source-sans-pro/SourceSansPro-Regular' !default;
+$m-font-semi-bold-path: '#{$m-font-root-path}source-sans-pro/SourceSansPro-Semibold' !default;
+
+$m-font-variable-path: '#{$m-font-root-path}source-sans-variable/SourceSansVariable-Roman' !default;
+$m-font-variable-italic-path: '#{$m-font-root-path}source-sans-variable/SourceSansVariable-Italic' !default;
+
+// Fallback
+@include m-font-face($m-font-family-fallback, $m-font-light-path, $m-font-weight, $extensionOTF: true);
+@include m-font-face($m-font-family-fallback, $m-font-regular-path, $m-font-weight-semi-bold, $extensionOTF: true);
+@include m-font-face($m-font-family-fallback, $m-font-semi-bold-path, $m-font-weight-bold, $extensionOTF: true);
+
+// Font Variable
+@include m-font-face($m-font-family, $m-font-variable-path, $m-font-weight-range);
+@include m-font-face($m-font-family, $m-font-variable-italic-path, $m-font-weight-range, italic);

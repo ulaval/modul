@@ -45,10 +45,12 @@ export const defaultStory = () => ({
         'emitOpen',
         'emitClose',
         'emitPortalMounted',
-        'emitPortalAfterOpen'
+        'emitPortalAfterOpen',
+        'emitAfterEnter'
     ),
     template: `<${POPUP_NAME}
         :close-on-backdrop="closeOnBackdrop"
+        :open.sync="open"
         :width="width"
         :shadow="shadow"
         :padding="padding"
@@ -56,12 +58,14 @@ export const defaultStory = () => ({
         :padding-body="paddingBody"
         :padding-footer="paddingFooter"
         :background="background"
+        :reference="reference"
         @open="emitOpen"
         @close="emitClose"
         @portal-mounted="emitPortalMounted"
         @portal-after-open="emitPortalAfterOpen"
+        @after-enter="emitAfterEnter"
     >
-        <m-button slot="trigger">Open popper</m-button>
+
         <p
             v-if="slotHeader"
             slot="header"
@@ -74,6 +78,7 @@ export const defaultStory = () => ({
             slot="footer"
         >
             Slot footer
+
         </p>
     </${POPUP_NAME}>`
 });
