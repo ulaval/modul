@@ -1,9 +1,7 @@
-import { PHONEFIELD_NAME } from '@ulaval/modul-components/dist/components/component-names';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
 export default {
-    title: `${modulComponentsHierarchyRootSeparator}${PHONEFIELD_NAME}`,
+    title: `${modulComponentsHierarchyRootSeparator}m-phonefield`,
     parameters: { fileName: __filename }
 };
 

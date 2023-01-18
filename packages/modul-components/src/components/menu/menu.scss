@@ -1,6 +1,6 @@
 @import 'commons';
 
-:root {
+.m-menu {
     --m-menu--color: #{ $m-color-grey-light };
     --m-menu--border: none;
     --m-menu--padding: #{ $m-space };
@@ -31,9 +31,7 @@
     --m-menu--group-selected-font-weight: #{ $m-font-weight-bold };
     //
     --m-menu--group-hover-indicator-color: #{ --m-menu--hover-indicator-color };
-}
 
-.m-menu {
     overflow: hidden;
     user-select: none;
     color: var(--m-menu--color);
@@ -59,7 +57,7 @@
         text-transform: var(--m-menu--text-transform);
         background-color: var(--m-menu--background-color);
         box-shadow: var(--m-menu--box-shadow);
-        
+
         > :not(:first-child) {
             margin-left: $m-space-sm;
         }

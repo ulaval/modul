@@ -8,8 +8,8 @@ import { NAVBAR_ITEM_NAME, NAVBAR_NAME } from '../component-names';
 import { MIconButton } from '../icon-button/icon-button';
 import { MAutoHorizontalScroll, MAutoHorizontalScrollGradientStyle, MAutoHorizontalScrollResizeProperties } from './../auto-horizontal-scroll/auto-horizontal-scroll';
 import { MNavbarItem } from './navbar-item/navbar-item';
-import './navbar-unscoped.scss';
 import WithRender from './navbar.html?style=./navbar.scss';
+
 export abstract class BaseNavbar extends ModulVue { }
 
 export interface Navbar {

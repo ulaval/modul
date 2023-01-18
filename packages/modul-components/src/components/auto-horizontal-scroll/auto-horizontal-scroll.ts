@@ -6,7 +6,6 @@ import { REGEX_CSS_NUMBER_VALUE } from '../../utils/props-validation/props-valid
 import { ModulVue } from '../../utils/vue/vue';
 import { AUTO_HORIZONTAL_SCROLL } from '../component-names';
 import { MIconButton, MIconButtonSkin } from '../icon-button/icon-button';
-import './auto-horizontal-scroll-unscoped.scss';
 import WithRender from './auto-horizontal-scroll.html?style=./auto-horizontal-scroll.scss';
 
 export enum MAutoHorizontalScrollGradientStyle {

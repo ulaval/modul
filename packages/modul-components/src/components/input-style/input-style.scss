@@ -1,6 +1,19 @@
 @import 'commons';
 
-:root {
+@mixin input-style-cursor($cursor: default) {
+
+    &,
+    .m-input-style__label,
+    .m-input-style__input,
+    .m-input-style__input input,
+    .m-input-style__input textarea {
+        cursor: $cursor;
+
+        @content;
+    }
+}
+
+.m-input-style {
     // states
     --m-input-style--hover-color: #{ $m-color-grey-black };
     --m-input-style--focus-color: #{ $m-color-interactive };
@@ -18,22 +31,7 @@
     --m-input-style--buttons-color: #{ $m-color-grey };
     --m-input-style--background-color: #{ $m-color-white };
     --m-input-style--placeholder-color: #{ $m-input-style--color-disabled };
-}
 
-@mixin input-style-cursor($cursor: default) {
-
-    &,
-    .m-input-style__label,
-    .m-input-style__input,
-    .m-input-style__input input,
-    .m-input-style__input textarea {
-        cursor: $cursor;
-
-        @content;
-    }
-}
-
-.m-input-style {
     @include input-style-cursor(text);
 
     position: relative;

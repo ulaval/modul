@@ -9,32 +9,32 @@ $m-fr-icon-size: 14px !default;
 
     .rte-h1 {
         @include m-font-size('h1');
-        @include m-commons-title-styles;
+        @include m-commons-heading-styles;
     }
 
     .rte-h2 {
         @include m-font-size('h2');
-        @include m-commons-title-styles;
+        @include m-commons-heading-styles;
     }
 
     .rte-h3 {
         @include m-font-size('h3');
-        @include m-commons-title-styles;
+        @include m-commons-heading-styles;
     }
 
     .rte-h4 {
         @include m-font-size('h4');
-        @include m-commons-title-styles;
+        @include m-commons-heading-styles;
     }
 
     .rte-h5 {
         @include m-font-size('h5');
-        @include m-commons-title-styles;
+        @include m-commons-heading-styles;
     }
 
     .rte-h6 {
         @include m-font-size('h6');
-        @include m-commons-title-styles;
+        @include m-commons-heading-styles;
     }
 
     ul,
