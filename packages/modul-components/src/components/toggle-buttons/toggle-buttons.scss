@@ -13,11 +13,11 @@
             }
 
             &:nth-child(1) {
-                border-radius: $m-button--border-radius 0 0 $m-button--border-radius;
+                border-radius: $m-border-radius 0 0 $m-border-radius;
             }
 
             &:nth-last-child(1) {
-                border-radius: 0 $m-button--border-radius $m-button--border-radius 0;
+                border-radius: 0 $m-border-radius $m-border-radius 0;
             }
         }
     }

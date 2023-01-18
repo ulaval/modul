@@ -13,8 +13,8 @@
         &.m--is-hover,
         &.m--is-focused {
             color: $m-color-white;
-            background: $m-color-interactive-light;
-            border-color: $m-color-interactive-light;
+            background: $m-color-interactive-dark;
+            border-color: $m-color-interactive-dark;
 
             .m-chip-delete__icon {
                 color: $m-color-white;

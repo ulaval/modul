@@ -112,11 +112,11 @@
 
             &:hover,
             &:focus {
-                color: $m-color-interactive-light;
+                color: $m-color-interactive-dark;
             }
 
             &:active {
-                color: $m-color-interactive-dark;
+                color: $m-color-interactive-darker;
             }
 
             &::before {
