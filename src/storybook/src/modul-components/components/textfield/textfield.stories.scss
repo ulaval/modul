@@ -1,7 +1,7 @@
 @import 'commons';
 
 .m-textfield-stories {
-    --m-input-style--label-up-color: #{ $m-color-grey-dark };
-    --m-input-style--label-up-border-color: #{ $m-color-grey-dark };
+    --m-input-style--label-up-color: #{ $m-color-error };
+    --m-input-style--label-up-border-color: #{ $m-color-active };
     --m-input-style--font-weight: 425;
 }
