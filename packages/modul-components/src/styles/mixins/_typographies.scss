@@ -36,7 +36,7 @@
 
 }
 
-@mixin m-commons-title-styles() {
+@mixin m-commons-heading-styles() {
     font-weight: $m-font-weight-heading;
     line-height: $m-line-height-heading;
 
@@ -59,7 +59,7 @@
     #{$prefix}h4,
     #{$prefix}h5,
     #{$prefix}h6 {
-        @include m-commons-title-styles();
+        @include m-commons-heading-styles();
     }
 
     #{$prefix}h1 {
