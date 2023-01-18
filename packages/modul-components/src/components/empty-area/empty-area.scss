@@ -3,7 +3,7 @@
 .m-empty-area {
     position: relative;
     padding: $m-space;
-
+    border-radius: $m-border-radius-sm;
 
     @media (min-width: $m-mq-min-sm) {
         padding: $m-space-lg;
