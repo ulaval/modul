@@ -59,8 +59,8 @@ export class MSelect extends ModulVue {
     })
     public readonly listMaxHeight: string;
 
-    @Prop({ default: uuid.generate() })
-    public inputAriaDescribedby: string;
+    @Prop({ default: () => uuid.generate() })
+    public readonly inputAriaDescribedby: string;
 
     @Prop({
         default: () => `${SELECT_NAME}-${uuid.generate()}`

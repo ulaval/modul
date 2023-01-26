@@ -38,7 +38,7 @@ export class MPhotoEditor extends ModulVue {
     @Prop({ default: () => ['jpg', 'gif', 'png', 'jpeg'] })
     allowedExtensions: string[];
 
-    @Prop({ default: uuid.generate() })
+    @Prop({ default: () => uuid.generate() })
     storeName: string;
 
     @Prop({ default: false })
