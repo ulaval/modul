@@ -337,6 +337,7 @@ exports[`Storyshots modul-components|/m-address/m-address-editor default 1`] = `
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Pays"
           aria-owns="listboxId-fakeId"
           class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
           role="combobox"
@@ -890,6 +891,7 @@ exports[`Storyshots modul-components|/m-address/m-address-editor empty address 1
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Pays"
           aria-owns="listboxId-fakeId"
           class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
           role="combobox"

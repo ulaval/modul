@@ -4,6 +4,7 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -57,7 +58,6 @@ exports[`Storyshots modul-components|m-select Clearable 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -125,6 +125,7 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -184,7 +185,6 @@ exports[`Storyshots modul-components|m-select Clearable And Required Marker 1`] 
                 aria-required="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -252,6 +252,7 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -311,7 +312,6 @@ exports[`Storyshots modul-components|m-select Clearable False And Required Marke
                 aria-required="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -379,6 +379,7 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -433,7 +434,6 @@ exports[`Storyshots modul-components|m-select Default 1`] = `
                 aria-placeholder="Choose a fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -508,6 +508,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -562,7 +563,6 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="-1"
               >
                 
@@ -631,6 +631,7 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -685,7 +686,6 @@ exports[`Storyshots modul-components|m-select Disabled Item Selected With Label 
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="-1"
               >
                 
@@ -800,7 +800,6 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label 1`]
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="-1"
               >
                 
@@ -916,7 +915,6 @@ exports[`Storyshots modul-components|m-select Disabled No Selection No Label Wit
                 aria-placeholder="Choose a fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="-1"
               >
                 
@@ -992,6 +990,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -1046,7 +1045,6 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label 1
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="-1"
               >
                 
@@ -1115,6 +1113,7 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -1170,7 +1169,6 @@ exports[`Storyshots modul-components|m-select Disabled No Selection With Label W
                 aria-placeholder="Choose a fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="-1"
               >
                 
@@ -1292,7 +1290,6 @@ exports[`Storyshots modul-components|m-select Error Message 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -1424,7 +1421,6 @@ exports[`Storyshots modul-components|m-select Focus 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -1492,6 +1488,7 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -1545,7 +1542,6 @@ exports[`Storyshots modul-components|m-select Full Width 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -1635,6 +1631,7 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -1688,7 +1685,6 @@ exports[`Storyshots modul-components|m-select Label 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -1756,6 +1752,7 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -1809,7 +1806,6 @@ exports[`Storyshots modul-components|m-select Label Up 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -1922,7 +1918,6 @@ exports[`Storyshots modul-components|m-select List Max Height 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -1990,6 +1985,7 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -2040,7 +2036,6 @@ exports[`Storyshots modul-components|m-select Long Option Menu 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2108,6 +2103,7 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -2161,7 +2157,6 @@ exports[`Storyshots modul-components|m-select Max Width 500 Px 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2251,6 +2246,7 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -2304,7 +2300,6 @@ exports[`Storyshots modul-components|m-select Max Width Large 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2440,7 +2435,6 @@ exports[`Storyshots modul-components|m-select Placeholder 1`] = `
                 aria-placeholder="Choose a Fruit"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2515,6 +2509,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -2569,7 +2564,6 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2638,6 +2632,7 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -2692,7 +2687,6 @@ exports[`Storyshots modul-components|m-select Readonly Item Selected With Label 
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2807,7 +2801,6 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label 1`]
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2923,7 +2916,6 @@ exports[`Storyshots modul-components|m-select Readonly No Selection No Label Wit
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -2999,6 +2991,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -3053,7 +3046,6 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label 1
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -3122,6 +3114,7 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -3177,7 +3170,6 @@ exports[`Storyshots modul-components|m-select Readonly No Selection With Label W
                 aria-readonly="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -3253,6 +3245,7 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -3312,7 +3305,6 @@ exports[`Storyshots modul-components|m-select Required Marker 1`] = `
                 aria-required="true"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -3380,6 +3372,7 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
+  aria-label="Fruits"
   aria-owns="listbox-fakeId"
   class="m-base-select"
   role="combobox"
@@ -3433,7 +3426,6 @@ exports[`Storyshots modul-components|m-select Selected Item 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -3568,7 +3560,6 @@ exports[`Storyshots modul-components|m-select With Items Slot 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
@@ -3703,7 +3694,6 @@ exports[`Storyshots modul-components|m-select With Outer Items Slot 1`] = `
                 aria-labelledby="fakeId m-select-fakeId"
                 class="m-select__input"
                 id="m-select-fakeId"
-                role="button"
                 tabindex="0"
               >
                 
