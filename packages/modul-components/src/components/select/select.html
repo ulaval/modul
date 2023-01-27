@@ -9,6 +9,7 @@
                :list-max-height="listMaxHeight"
                :virtual-scroll="virtualScroll"
                :listbox-aria-labelledby="label || inputAriaLabel ? labelId : undefined"
+               :aria-label="label || inputAriaLabel"
                @open="onOpen"
                @close="onClose"
                @select-item="onSelect"
@@ -39,12 +40,11 @@
                        :width="inputWidth"
                        @click.prevent="onInputStyleClick(scope.toggle)">
             <label v-if="inputAriaLabel && !label"
-                  :id="labelId"
-                  class="m-select__hidden-label">{{ inputAriaLabel }}</label>
+                   :id="labelId"
+                   class="m-select__hidden-label">{{ inputAriaLabel }}</label>
             <div class="m-select__input"
                  ref="input"
                  :id="id"
-                 role="button"
                  :tabindex="disabled ? '-1' : '0'"
                  :aria-invalid="hasError"
                  :aria-activedescendant="scope.ariaActivedescendant"

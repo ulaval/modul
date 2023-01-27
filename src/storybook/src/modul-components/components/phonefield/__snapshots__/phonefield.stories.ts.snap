@@ -11,6 +11,7 @@ exports[`Storyshots modul-components|m-phonefield Autocomplete Work Phone 1`] = 
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -65,7 +66,6 @@ exports[`Storyshots modul-components|m-phonefield Autocomplete Work Phone 1`] = 
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -275,7 +275,6 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
                     aria-required="true"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     
@@ -364,6 +363,7 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
+          aria-label="Pays"
           aria-owns="listbox-fakeId"
           class="m-base-select m-select-virtual-scroll m-phonefield__country"
           role="combobox"
@@ -418,7 +418,6 @@ exports[`Storyshots modul-components|m-phonefield Detect Country 1`] = `
                         aria-labelledby="fakeId m-select-fakeId"
                         class="m-select__input"
                         id="m-select-fakeId"
-                        role="button"
                         tabindex="0"
                       >
                         <div
@@ -592,6 +591,7 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -647,7 +647,6 @@ exports[`Storyshots modul-components|m-phonefield Disabled 1`] = `
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="-1"
                   >
                     <div
@@ -809,6 +808,7 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -864,7 +864,6 @@ exports[`Storyshots modul-components|m-phonefield Error 1`] = `
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -1029,6 +1028,7 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -1084,7 +1084,6 @@ exports[`Storyshots modul-components|m-phonefield Error Message 1`] = `
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -1268,6 +1267,7 @@ exports[`Storyshots modul-components|m-phonefield Full Width 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -1322,7 +1322,6 @@ exports[`Storyshots modul-components|m-phonefield Full Width 1`] = `
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -1486,6 +1485,7 @@ exports[`Storyshots modul-components|m-phonefield Max Width 500 Px 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -1540,7 +1540,6 @@ exports[`Storyshots modul-components|m-phonefield Max Width 500 Px 1`] = `
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -1704,6 +1703,7 @@ exports[`Storyshots modul-components|m-phonefield Max Width Large 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -1758,7 +1758,6 @@ exports[`Storyshots modul-components|m-phonefield Max Width Large 1`] = `
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -1922,6 +1921,7 @@ exports[`Storyshots modul-components|m-phonefield Other Default Country 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -1976,7 +1976,6 @@ exports[`Storyshots modul-components|m-phonefield Other Default Country 1`] = `
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -2140,6 +2139,7 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -2194,7 +2194,6 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Defined Fr 
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -2358,6 +2357,7 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -2412,7 +2412,6 @@ exports[`Storyshots modul-components|m-phonefield Priority Countries Empty 1`] =
                     aria-labelledby="fakeId m-select-fakeId"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div
@@ -2576,6 +2575,7 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Pays"
       aria-owns="listbox-fakeId"
       class="m-base-select m-select-virtual-scroll m-phonefield__country"
       role="combobox"
@@ -2631,7 +2631,6 @@ exports[`Storyshots modul-components|m-phonefield Waiting 1`] = `
                     aria-readonly="true"
                     class="m-select__input"
                     id="m-select-fakeId"
-                    role="button"
                     tabindex="0"
                   >
                     <div

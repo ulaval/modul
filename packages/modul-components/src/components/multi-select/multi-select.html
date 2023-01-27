@@ -1,115 +1,102 @@
-<m-base-select
-    ref="baseSelect"
-    :control-id="id"
-    :active="active"
-    :items="internalOptions"
-    :selected-items="selectedItems"
-    :open.sync="open"
-    :input-max-width="inputMaxWidth"
-    :close-on-select="false"
-    :hide-radio-button-mobile="true"
-    :width="width"
-    :max-width="maxWidth"
-    :multiselect="true"
-    :listbox-aria-labelledby="label ? labelId : undefined"
-    :error-message="errorMessage"
-    :valid-message="validMessage"
-    :helper-message="helperMessage"
-    @open="emitOpen"
-    @close="emitClose"
-    @select-item="onSelect"
-    @click-on-item="onClickOnItem"
-    @portal-after-close="onPortalAfterClose"
->
+<m-base-select ref="baseSelect"
+               :control-id="id"
+               :active="active"
+               :items="internalOptions"
+               :selected-items="selectedItems"
+               :open.sync="open"
+               :input-max-width="inputMaxWidth"
+               :close-on-select="false"
+               :hide-radio-button-mobile="true"
+               :width="width"
+               :max-width="maxWidth"
+               :multiselect="true"
+               :listbox-aria-labelledby="label ? labelId : undefined"
+               :aria-label="label"
+               :error-message="errorMessage"
+               :valid-message="validMessage"
+               :helper-message="helperMessage"
+               @open="emitOpen"
+               @close="emitClose"
+               @select-item="onSelect"
+               @click-on-item="onClickOnItem"
+               @portal-after-close="onPortalAfterClose">
     <template #default="scope">
-        <m-input-style
-            class="m-multi-select"
-            :class="{
+        <m-input-style class="m-multi-select"
+                       :class="{
                 'm--is-open': open,
                 'm--is-disabled': isDisabled,
                 'm--is-readonly': readonly,
                 'm--is-waiting': isWaiting
             }"
-            :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
-            :label="label"
-            :label-id="labelId"
-            :label-for="id"
-            :disabled="isDisabled"
-            :waiting="isWaiting"
-            :readonly="readonly"
-            :focus="internalFocus"
-            :label-up="labelUp"
-            :empty="isEmpty"
-            :error="hasError"
-            :cursor-pointer="true"
-            :valid="isValid"
-            :required-marker="requiredMarker"
-            :tag-style="tagStyle"
-            @click.prevent="onInputStyleClick(scope.toggle)"
-        >
-            <div
-                ref="input"
-                class="m-multi-select__chips"
-                role="button"
-                tabindex="0"
-                aria-haspopup="listbox"
-                :aria-controls="scope.ariaControls"
-                :aria-labelledby="label ? labelId : undefined"
-                :aria-describedby="`${inputAriaDescribedby} ${selectedValueId}`"
-                aria-hidden="true"
-                :aria-activedescendant="scope.ariaActivedescendant"
-                :aria-required="required || requiredMarker"
-                :aria-readonly="readonly"
-                :aria-disabled="isDisabled"
-                :aria-placeholder="placeholder"
-                @focus="onFocus"
-                @blur="onBlur"
-                @keydown.up.prevent="onKeydownUp"
-                @keydown.down.prevent="onKeydownDown"
-                @keydown.enter.prevent="onKeydownEnter"
-                @keydown.return.prevent="onKeydownEnter"
-                @keydown.space.prevent="onKeydownEnter"
-                @keydown.home.prevent="scope.keyHome"
-                @keydown.end.prevent="scope.keyEnd"
-                @keydown.esc="scope.keyEsc"
-                @keydown.tab="scope.keyTab"
-                @keydown="scope.keyLetter"
-            >
-                <input
-                    v-if="numberOfItemsSelected === 0"
-                    :placeholder="placeholder"
-                    role="none"
-                    type="text"
-                    readonly
-                    tabindex="-1"
-                    aria-hidden="true"
-                />
-                <m-chip-delete
-                    v-else-if="chipsDisplayMode === 1"
-                    class="m-multi-select__chip"
-                    size="small"
-                    tabindex="-1"
-                    @delete="onDeleteAll()"
-                >
+                       :style="{ width: inputWidth, maxWidth: inputMaxWidth }"
+                       :label="label"
+                       :label-id="labelId"
+                       :label-for="id"
+                       :disabled="isDisabled"
+                       :waiting="isWaiting"
+                       :readonly="readonly"
+                       :focus="internalFocus"
+                       :label-up="labelUp"
+                       :empty="isEmpty"
+                       :error="hasError"
+                       :cursor-pointer="true"
+                       :valid="isValid"
+                       :required-marker="requiredMarker"
+                       :tag-style="tagStyle"
+                       @click.prevent="onInputStyleClick(scope.toggle)">
+            <div ref="input"
+                 class="m-multi-select__chips"
+                 role="button"
+                 tabindex="0"
+                 aria-haspopup="listbox"
+                 :aria-controls="scope.ariaControls"
+                 :aria-labelledby="label ? labelId : undefined"
+                 :aria-describedby="`${inputAriaDescribedby} ${selectedValueId}`"
+                 aria-hidden="true"
+                 :aria-activedescendant="scope.ariaActivedescendant"
+                 :aria-required="required || requiredMarker"
+                 :aria-readonly="readonly"
+                 :aria-disabled="isDisabled"
+                 :aria-placeholder="placeholder"
+                 @focus="onFocus"
+                 @blur="onBlur"
+                 @keydown.up.prevent="onKeydownUp"
+                 @keydown.down.prevent="onKeydownDown"
+                 @keydown.enter.prevent="onKeydownEnter"
+                 @keydown.return.prevent="onKeydownEnter"
+                 @keydown.space.prevent="onKeydownEnter"
+                 @keydown.home.prevent="scope.keyHome"
+                 @keydown.end.prevent="scope.keyEnd"
+                 @keydown.esc="scope.keyEsc"
+                 @keydown.tab="scope.keyTab"
+                 @keydown="scope.keyLetter">
+                <input v-if="numberOfItemsSelected === 0"
+                       :placeholder="placeholder"
+                       role="none"
+                       type="text"
+                       readonly
+                       tabindex="-1"
+                       aria-hidden="true" />
+                <m-chip-delete v-else-if="chipsDisplayMode === 1"
+                               class="m-multi-select__chip"
+                               size="small"
+                               tabindex="-1"
+                               @delete="onDeleteAll()">
                     <slot name="chips-all">
                         {{ textNumberOfSelectedItems }}
                     </slot>
                 </m-chip-delete>
 
                 <template v-else-if="chipsDisplayMode === 0">
-                    <m-chip-delete
-                        v-for="item, index in selectedItems.slice(0, maxVisibleChips)"
-                        class="m-multi-select__chip"
-                        :key="index"
-                        size="small"
-                        tabindex="-1"
-                        @delete="onDelete(item)"
-                    >
-                        <slot
-                            name="chips"
-                            :item="item"
-                            :index="index"
-                        >
+                    <m-chip-delete v-for="item, index in selectedItems.slice(0, maxVisibleChips)"
+                                   class="m-multi-select__chip"
+                                   :key="index"
+                                   size="small"
+                                   tabindex="-1"
+                                   @delete="onDelete(item)">
+                        <slot name="chips"
+                              :item="item"
+                              :index="index">
                             {{ getChipLabel(item) }}
                         </slot>
                     </m-chip-delete>
@@ -120,79 +107,67 @@
                     </span>
                 </template>
                 <template v-else-if="chipsDisplayMode === -1">
-                    <m-chip-delete
-                        v-for="item, index in selectedItems"
-                        class="m-multi-select__chip"
-                        :key="index"
-                        size="small"
-                        tabindex="-1"
-                        @delete="onDelete(item)"
-                    >
-                        <slot
-                            name="chips"
-                            :item="item"
-                            :index="index"
-                        >
+                    <m-chip-delete v-for="item, index in selectedItems"
+                                   class="m-multi-select__chip"
+                                   :key="index"
+                                   size="small"
+                                   tabindex="-1"
+                                   @delete="onDelete(item)">
+                        <slot name="chips"
+                              :item="item"
+                              :index="index">
                             {{ getChipLabel(item) }}
                         </slot>
                     </m-chip-delete>
                 </template>
-                <div :id="selectedValueId" class="m-multi-select__visually-hidden" aria-hidden="true">
+                <div :id="selectedValueId"
+                     class="m-multi-select__visually-hidden"
+                     aria-hidden="true">
                     {{ hiddenTextSelectedValue }}
                 </div>
             </div>
-            <div
-                v-if="active"
-                slot="suffix"
-                class="m-multi-select__arrow"
-                :class="{
+            <div v-if="active"
+                 slot="suffix"
+                 class="m-multi-select__arrow"
+                 :class="{
                     'm--is-open': open,
                     'm--is-focus': internalFocus
-                }"
-            >
-                <m-icon
-                    ref="arrow"
-                    class="m-multi-select__arrow-icon"
-                    name="m-svg__arrow-head-filled--down"
-                    size="12px"
-                    :disabled="!active"
-                    :title="!open ? $i18n.translate('m-multi-select:open') : $i18n.translate('m-multi-select:close')"
-                    @keydown.enter.prevent="open = active"
-                />
+                }">
+                <m-icon ref="arrow"
+                        class="m-multi-select__arrow-icon"
+                        name="m-svg__arrow-head-filled--down"
+                        size="12px"
+                        :disabled="!active"
+                        :title="!open ? $i18n.translate('m-multi-select:open') : $i18n.translate('m-multi-select:close')"
+                        @keydown.enter.prevent="open = active" />
             </div>
         </m-input-style>
 
     </template>
-        <m-validation-message
-            :id="inputAriaDescribedby"
-            slot="validation-message"
-            class="m-multi-select__validation-message"
-            :class="{ 'm--has-validation-message': hasValidationMessage }"
-            :disabled="isDisabled"
-            :waiting="isWaiting"
-            :error="hasError"
-            :valid="isValid"
-            :error-message="errorMessage"
-            :valid-message="validMessage"
-            :helper-message="helperMessage"
-        />
+    <m-validation-message :id="inputAriaDescribedby"
+                          slot="validation-message"
+                          class="m-multi-select__validation-message"
+                          :class="{ 'm--has-validation-message': hasValidationMessage }"
+                          :disabled="isDisabled"
+                          :waiting="isWaiting"
+                          :error="hasError"
+                          :valid="isValid"
+                          :error-message="errorMessage"
+                          :valid-message="validMessage"
+                          :helper-message="helperMessage" />
     <template #outer-item="{item, index, getItemPops}">
-        <m-select-item
-            v-if="index === 0 && linkSelectAll"
-            class="m-multi-select__all-check"
-            v-bind="getItemPops"
-            :selected="allSelected"
-            :label="$i18n.translate('m-multi-select:link-select-all')"
-            @click="onToggleAll"
-        />
+        <m-select-item v-if="index === 0 && linkSelectAll"
+                       class="m-multi-select__all-check"
+                       v-bind="getItemPops"
+                       :selected="allSelected"
+                       :label="$i18n.translate('m-multi-select:link-select-all')"
+                       @click="onToggleAll" />
 
     </template>
     <template #items="{item , index}">
-        <slot
-            name="items"
-            :item="item"
-            :index="index"
-        >
+        <slot name="items"
+              :item="item"
+              :index="index">
             <span v-html="item"></span>
         </slot>
     </template>

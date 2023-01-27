@@ -8,6 +8,7 @@ exports[`Storyshots modul-components|m-dropdown default 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-label="Vegetable"
     aria-owns="listboxId-fakeId"
     class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
     role="combobox"
@@ -150,6 +151,7 @@ exports[`Storyshots modul-components|m-dropdown focus 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-label="Avengers"
     aria-owns="listboxId-fakeId"
     class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
     role="combobox"
@@ -261,6 +263,7 @@ exports[`Storyshots modul-components|m-dropdown label-up 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-label="Name"
     aria-owns="listboxId-fakeId"
     class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--is-tag-default"
     role="combobox"
@@ -372,6 +375,7 @@ exports[`Storyshots modul-components|m-dropdown with disabled items 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-label="Vegetable"
     aria-owns="listboxId-fakeId"
     class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
     role="combobox"
@@ -490,6 +494,7 @@ exports[`Storyshots modul-components|m-dropdown/disabled Item selected, with lab
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Avenger"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--is-label-up m--is-disabled m--has-label m--has-value m--is-tag-default"
       role="combobox"
@@ -838,6 +843,7 @@ exports[`Storyshots modul-components|m-dropdown/disabled No selection, with labe
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Avenger"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--is-disabled m--has-label m--is-tag-default"
       role="combobox"
@@ -953,6 +959,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable Clear-model-on-select
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Animals"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
       role="combobox"
@@ -1079,6 +1086,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = 
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Animals"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
       role="combobox"
@@ -1205,6 +1213,7 @@ exports[`Storyshots modul-components|m-dropdown/filterable With placeholder 1`] 
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-label="Animals"
     aria-owns="listboxId-fakeId"
     class="m-input-style m--has-cursor-pointer m--has-value m--is-tag-default"
     role="combobox"
@@ -1318,6 +1327,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly Item selected, with lab
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Avenger"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--is-readonly m--is-label-up m--has-label m--has-value m--is-tag-default"
       role="combobox"
@@ -1665,6 +1675,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Avenger"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--is-readonly m--has-label m--is-tag-default"
       role="combobox"
@@ -1786,6 +1797,7 @@ exports[`Storyshots modul-components|m-dropdown/readonly No selection, with labe
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Avenger"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--is-readonly m--has-label m--is-tag-default"
       role="combobox"

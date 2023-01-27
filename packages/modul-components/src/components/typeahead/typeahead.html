@@ -14,6 +14,7 @@
                :sidebar-full-height="true"
                :enable-animation="false"
                :listbox-aria-labelledby="label ? labelId : undefined"
+               :aria-label="label || inputAriaLabel"
                :focus-management="focusManagement"
                :initial-focus-element="initialFocusElement"
                @select-item="onSelect"

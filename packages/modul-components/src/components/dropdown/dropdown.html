@@ -11,6 +11,7 @@
                    :aria-owns="listboxId"
                    aria-haspopup="listbox"
                    :aria-expanded="open === true ? 'true' : 'false'"
+                   :aria-label="label || inputAriaLabel"
                    ref="mInputStyle"
                    :label="label"
                    :labelId="labelId"
@@ -77,8 +78,7 @@
                     size="12px"
                     :disabled="!active"
                     :aria-label="!open ? $i18n.translate('m-dropdown:open') : $i18n.translate('m-dropdown:close')"
-                    @keydown.enter.prevent="open = active">
-            </m-icon>
+                    @keydown.enter.prevent="open = active" />
         </div>
         <m-popup :id="popupId"
                  slot="popup"

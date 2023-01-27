@@ -28,6 +28,7 @@ exports[`Storyshots modul-components|m-form/all fields Autocomplete 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Autocomplete"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
       role="combobox"
@@ -926,6 +927,7 @@ exports[`Storyshots modul-components|m-form/all fields Dropdown 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
+      aria-label="Type"
       aria-owns="listboxId-fakeId"
       class="m-input-style m--has-cursor-pointer m--has-label m--is-tag-default"
       role="combobox"
@@ -1248,6 +1250,7 @@ exports[`Storyshots modul-components|m-form/all fields Multi Select 1`] = `
   <div
     aria-expanded="false"
     aria-haspopup="listbox"
+    aria-label="La famille Von Trapp"
     aria-owns="listbox-fakeId"
     class="m-base-select"
     control-id="m-multi-select-fakeId"
@@ -1485,7 +1488,6 @@ exports[`Storyshots modul-components|m-form/all fields Radio 1`] = `
          
         <ul
           class="m-radio-group__body"
-          role="radiogroup"
         >
           <li
             class="m-radio"

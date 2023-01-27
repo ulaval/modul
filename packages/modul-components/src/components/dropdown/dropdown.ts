@@ -92,7 +92,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Prop({ default: () => `mDropdown-${uuid.generate()}` })
     public readonly id: string;
 
-    @Prop({ default: uuid.generate() })
+    @Prop({ default: () => uuid.generate() })
     public readonly inputAriaDescribedby: string;
 
     public $refs: {
