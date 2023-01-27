@@ -1,11 +1,11 @@
 <m-input-group class="m-radio-group"
                :class="{
-        'm--is-inline': inline,
-        'm--is-disabled': isDisabled,
-        'm--has-error': hasError,
-        'm--is-valid': isValid,
-        'm--has-validation-message': hasValidationMessage
-    }"
+                    'm--is-inline': inline,
+                    'm--is-disabled': isDisabled,
+                    'm--has-error': hasError,
+                    'm--is-valid': isValid,
+                    'm--has-validation-message': hasValidationMessage
+                }"
                :label="label"
                :required-marker="requiredMarker"
                :validation-message-id="validationMessageId"
@@ -21,7 +21,6 @@
                @focusout="onBlur">
     <slot name="icon"
           slot="icon" />
-
     <ul class="m-radio-group__body">
         <slot />
     </ul>
