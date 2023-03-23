@@ -112,6 +112,7 @@ $m-switch-size: 28px;
     }
 
     &__input {
+        flex-shrink: 0;
         transition-property: color, box-shadow, border-color;
         transition-duration: $m-transition-duration;
         transition-timing-function: ease;
