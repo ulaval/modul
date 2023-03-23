@@ -123,6 +123,7 @@ $m-switch-size: 28px;
         background: $m-color-grey-lighter;
         border: $m-border-width-sm solid currentColor;
         border-radius: $m-switch-size/2;
+        flex-shrink: 0;
     }
 
     &__button {
