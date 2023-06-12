@@ -141,7 +141,6 @@ const SCROLL_TO_OFFSET: number = -50;
     protected selectedImage: HTMLElement | undefined;
     protected imageExtensions: string[] = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'bmp'];
     protected allowedExtensions: string[] = [];
-    private mousedownTriggered: boolean = false;
     private mousedownInsideEditor: boolean = false;
 
     @Watch('value')
@@ -241,7 +240,6 @@ const SCROLL_TO_OFFSET: number = -50;
     }
 
     protected mousedownListener(event: MouseEvent): void {
-        this.mousedownTriggered = true;
         if (this.$el.contains(event.target as HTMLElement) || document.body.querySelector('.fr-modal.fr-active')) {
             this.mousedownInsideEditor = true;
         } else {
@@ -252,7 +250,6 @@ const SCROLL_TO_OFFSET: number = -50;
     protected mouseupListener(event: MouseEvent): void {
         if (!this.mousedownInsideEditor && !this.$el.contains(event.target as HTMLElement) && this.isFocused
             && !this.isFileUploadOpen && !document.body.querySelector('.fr-image-resizer.fr-active')) {
-            this.mousedownTriggered = false;
             this.closeEditor();
         }
     }
@@ -314,7 +311,7 @@ const SCROLL_TO_OFFSET: number = -50;
                     this.activateRichText();
                 },
                 [froalaEvents.Blur]: () => {
-                    if (!this.mousedownTriggered && !this.isFileUploadOpen) {
+                    if (!this.mousedownInsideEditor || !this.isFileUploadOpen) {
                         this.closeEditor();
                     }
                 },
