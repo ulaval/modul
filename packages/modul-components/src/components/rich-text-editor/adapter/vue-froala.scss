@@ -147,9 +147,6 @@ $m-froala-toolbar-btn-height: 38px !default;
                 font-weight: 900;
             }
 
-            height: 40px;
-            // margin-top: 0;
-            padding: 0;
             opacity: 1;
 
             &::before,
@@ -216,7 +213,6 @@ $m-froala-toolbar-btn-height: 38px !default;
             border-top: 0;
             border-right: 0;
             border-left: 0;
-            height: 0;
 
             button {
                 color: $m-color-grey-darker;
