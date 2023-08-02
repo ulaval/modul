@@ -1077,6 +1077,125 @@ exports[`Storyshots modul-components|m-dropdown/filterable Clear-model-on-select
 </div>
 `;
 
+exports[`Storyshots modul-components|m-dropdown/filterable Filterable space 1`] = `
+<div
+  style="padding: 30px;"
+>
+  <div
+    class="m-dropdown"
+    placeholder-icon-name="m-svg__search"
+    style="width: 100%; max-width: 288px;"
+  >
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-label="Filtre mots"
+      aria-owns="listboxId-fakeId"
+      class="m-input-style m--is-label-up m--has-cursor-pointer m--has-label m--has-value m--is-tag-default"
+      role="combobox"
+    >
+      <div
+        class="m-input-style__main"
+        style="width: 100%;"
+      >
+        <div
+          class="m-input-style__body"
+        >
+          <label
+            class="m-input-style__label"
+            for="mDropdown-fakeId"
+            id="fakeId"
+            style="margin-right: 0px;"
+          >
+            <span
+              class="m-input-style__text"
+            >
+              <span>
+                Filtre mots
+              </span>
+               
+              <!---->
+            </span>
+          </label>
+           
+          <div
+            class="m-input-style__input"
+          >
+            <!---->
+             
+            <div
+              class="m-input-style__content"
+            >
+              <!---->
+               
+              <input
+                aria-activedescendant=""
+                aria-autocomplete="both"
+                aria-describedby="fakeId"
+                aria-haspopup="listbox"
+                class="m-dropdown__input"
+                id="mDropdown-fakeId"
+                placeholder="Type to filter"
+                readonly="readonly"
+                role="button"
+                type="text"
+              />
+                
+            </div>
+             
+            <div
+              class="m-input-style__suffix"
+            >
+              <div
+                class="m-dropdown__arrow"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Ouvrir la liste déroulante"
+                  class="m-icon m-dropdown__arrow__icon"
+                  height="12px"
+                  width="12px"
+                >
+                  <!---->
+                   
+                  <use
+                    aria-hidden="true"
+                    class=""
+                  />
+                </svg>
+              </div>
+               
+              <!---->
+            </div>
+          </div>
+        </div>
+         
+        <!---->
+      </div>
+       
+      <div
+        class="m-popper m-popup"
+      >
+         
+        <!---->
+      </div>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="m-validation-message m-dropdown__validation-message"
+      id="fakeId"
+      slot="validation"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots modul-components|m-dropdown/filterable No placeholder 1`] = `
 <div>
   <div

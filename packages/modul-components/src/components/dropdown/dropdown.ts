@@ -53,8 +53,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Prop()
     public readonly value: any;
 
-    @Prop()
+    @Prop({ default: false })
     public readonly filterable: boolean;
+
+    @Prop({ default: undefined })
+    public readonly autocomplete?: string;
 
     @Prop()
     public readonly textNoData: string;
@@ -380,6 +383,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
         }
         this.focusedIndex = 0;
         this.scrollToFocused();
+    }
+
+    public onKeydownSpace($event: KeyboardEvent): void {
+        if (this.filterable) { return; }
+        this.onKeydownEnter($event);
     }
 
     public onKeydownEnd($event: KeyboardEvent): void {

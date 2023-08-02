@@ -92,6 +92,22 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${DROPDOWN_NAME}/filterable`,
                     </m-dropdown></div>`
     }))
 
+    .add('Filterable space', () => ({
+        data: () => ({
+            model3: ''
+        }),
+        template: `<div style="padding:30px"><m-dropdown label="Filtre mots" v-model="model3" filterable="true" placeholder="Type to filter" placeholder-icon-name="m-svg__search">
+                        <m-dropdown-item value="1a" label="AAA bbb"></m-dropdown-item>
+                        <m-dropdown-item value="1b" label="aaa ccc"></m-dropdown-item>
+                        <m-dropdown-item value="1c" label="BBB aaa"></m-dropdown-item>
+                        <m-dropdown-item value="1d" label="bbb ccc"></m-dropdown-item>
+                        <m-dropdown-item value="1e" label="CCC aaa"></m-dropdown-item>
+                        <m-dropdown-item value="1f" label="ccc bbb"></m-dropdown-item>
+                        <m-dropdown-item value="1g" label="DDD aaa"></m-dropdown-item>
+                        <m-dropdown-item value="1h" label="ddd bbb"></m-dropdown-item>
+                    </m-dropdown></div>`
+    }))
+
     .add('With placeholder', () => ({
         data: () => ({
             model4: ''
