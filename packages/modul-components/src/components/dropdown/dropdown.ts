@@ -53,11 +53,11 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     @Prop()
     public readonly value: any;
 
-    @Prop({default: false})
+    @Prop({ default: false })
     public readonly filterable: boolean;
 
-    @Prop({default: undefined})
-    public readonly autocomplete: boolean | undefined;
+    @Prop({ default: undefined })
+    public readonly autocomplete?: string;
 
     @Prop()
     public readonly textNoData: string;
