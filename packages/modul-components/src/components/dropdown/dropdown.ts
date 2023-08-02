@@ -386,7 +386,7 @@ export class MDropdown extends BaseDropdown implements MDropdownInterface {
     }
 
     public onKeydownSpace($event: KeyboardEvent): void {
-        if(this.filterable) return;
+        if (this.filterable) { return; }
         this.onKeydownEnter($event);
     }
 
