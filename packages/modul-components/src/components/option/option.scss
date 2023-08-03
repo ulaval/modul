@@ -41,13 +41,10 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         width: 100%;
         margin: 0;
         padding: 0;
+        list-style: none;
         overflow-x: hidden;
         overflow-y: auto;
-        border: 1px solid $m-color-border;
-        border-radius: $m-border-radius-sm;
-        background: $m-color-white;
-        box-shadow: $m-box-shadow;
-        list-style: none;
+        background-color: $m-color-white;
 
         &.m-option__list {
             @media (max-width: $m-mq-max-sm) {
@@ -57,6 +54,9 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
 
         @media (min-width: $m-mq-min-sm) {
             max-height: 243px; // Magic number: height of 4 items
+            border: 1px solid $m-color-border;
+            border-radius: $m-border-radius-sm;
+            box-shadow: $m-box-shadow;
         }
 
         @include m-scrollbar();
