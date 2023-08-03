@@ -49,6 +49,12 @@ $m-option-mixed-bgc--hover: rgba(0, 0, 0, 0.66);
         box-shadow: $m-box-shadow;
         list-style: none;
 
+        &.m-option__list {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-md;
+            }
+        }
+
         @media (min-width: $m-mq-min-sm) {
             max-height: 243px; // Magic number: height of 4 items
         }

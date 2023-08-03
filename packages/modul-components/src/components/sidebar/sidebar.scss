@@ -197,9 +197,21 @@
         user-select: text;
 
         @include m-scrollbar();
+
+        &:last-child:not(.m--no-padding) {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-xl;
+            }
+        }
     }
 
     &__footer {
         padding: $m-space-sm $m-space;
+
+        &:not(.m--no-padding) {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-lg;
+            }
+        }
     }
 }

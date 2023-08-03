@@ -7,9 +7,15 @@
     &__list {
         margin: 0;
         padding: 0;
-        max-height: 80%;
+        list-style-type: none;
         overflow-x: hidden;
         overflow-y: hidden;
+
+        &.m-base-select__list {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-md;
+            }
+        }
 
         @media (min-width: $m-mq-min-sm) {
             max-height: 208px;

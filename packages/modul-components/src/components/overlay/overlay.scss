@@ -107,10 +107,22 @@
 
         @include m-scrollbar();
         @include m-box-padding();
+
+        &:last-child:not(.m--no-padding) {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-3xl;
+            }
+        }
     }
 
     &__footer {
         border-top: $m-border-width-sm solid $m-color-border;
+
+        &:not(.m--no-padding) {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-lg;
+            }
+        }
     }
 
     &__save-button {
