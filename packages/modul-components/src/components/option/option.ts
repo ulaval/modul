@@ -98,6 +98,7 @@ export class MOption extends BaseOption implements MOptionInterface {
     public emitOpen(): void {
         this.isOutsideClickDetected = false;
         this.lastItemFocus = document.activeElement as HTMLElement;
+
         setTimeout(() => {
             if (this.refMenu) {
                 this.as<MFocusTrap>().setFocusTrap(this.refMenu, { returnFocusOnDeactivate: false });

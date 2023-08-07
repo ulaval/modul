@@ -101,6 +101,9 @@ export class MFileUpload extends ModulVue {
     @Prop()
     public readonly customValidation?: FileUploadCustomValidation;
 
+    @Prop({ default: false })
+    public readonly focusTrapDisabled!: boolean;
+
     public $refs: {
         modal: MModal;
     };
