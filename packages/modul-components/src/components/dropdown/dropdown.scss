@@ -70,6 +70,12 @@ $m-dropdown--margin: $m-space-2xs !default;
         text-align: left;
         background: $m-color-white;
 
+        &.m-dropdown__list {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-md;
+            }
+        }
+
         @media (min-width: $m-mq-min-sm) {
             max-height: 208px;
         }

@@ -64,6 +64,10 @@ $m-tooltip--max-height: 280px !default;
         word-break: break-word;
         user-select: text;
 
+        @media (max-width: $m-mq-max-sm) {
+            padding-bottom: $m-space-xl;
+        }
+
         @media (min-width: $m-mq-min-sm) {
             max-height: var(--m-tooltip--max-height);
             width: $m-tooltip--width;

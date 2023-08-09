@@ -11,7 +11,7 @@ $m-modal--max-width--s: 420px !default;
         --m-modal--header-padding: #{ $m-space };
         --m-modal--header-justify-content: space-between;
         --m-modal--body-padding: #{ $m-space-xl  $m-space };
-        --m-modal--footer-padding: #{ $m-space };
+        --m-modal--footer-padding: #{ $m-space } #{ $m-space } #{ $m-space-lg };
 
         @media (min-width: $m-mq-min-sm) {
             --m-modal--header-padding: #{ $m-space $m-space-lg };
@@ -190,6 +190,12 @@ $m-modal--max-width--s: 420px !default;
         // deprecated
         &.m--has-no-padding {
             --m-modal--body-padding: 0;
+        }
+
+        &:last-child:not(.m--has-no-padding) {
+            @media (max-width: $m-mq-max-sm) {
+                padding-bottom: $m-space-3xl;
+            }
         }
     }
 
