@@ -87,6 +87,8 @@ $m-tooltip--max-height: 280px !default;
 }
 
 .m-tooltip__body-container {
+    --m-tooltip--max-height: #{$m-tooltip--max-height};
+
     &.m--has-close-button {
         position: relative;
 
