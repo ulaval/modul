@@ -18,16 +18,14 @@
                                @click.stop="onMonthPrevious()"
                                :disabled="isMinMonth"
                                icon-name="m-svg__chevron--left"
-                               icon-size="16px"
-                               ref="previousMonth"
-                               skin="link">{{ previousMonthLabel }}</m-icon-button>
+                               icon-size="18px"
+                               ref="previousMonth">{{ previousMonthLabel }}</m-icon-button>
                 <m-icon-button class="m-base-calendar__next"
                                @click.stop="onMonthNext()"
                                :disabled="isMaxMonth"
                                icon-name="m-svg__chevron--right"
-                               icon-size="16px"
-                               ref="nextMonth"
-                               skin="link">{{ nextMonthLabel }}</m-icon-button>
+                               icon-size="18px"
+                               ref="nextMonth">{{ nextMonthLabel }}</m-icon-button>
             </div>
         </transition>
     </nav>

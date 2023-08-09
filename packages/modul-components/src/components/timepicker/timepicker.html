@@ -57,54 +57,56 @@
                  :focus-management="false"
                  open-trigger="manual"
                  placement="bottom-end"
+                 :shadow="false"
                  @open="onOpen"
                  @close="onClose">
-            <div slot="header"
-                 class="m-timepicker__header">
-                <span class="m-timepicker__header__hours">{{ $i18n.translate('m-timepicker:hours') }}</span>:
-                <span class="m-timepicker__header__minutes">{{ $i18n.translate('m-timepicker:minutes') }}</span>
-            </div>
-            <div class="m-timepicker__body">
-                <ul class="m-timepicker__hours"
-                    ref="hours"
-                    role="listbox"
-                    @mousedown="onMousedown"
-                    @mouseup="onMouseup"
-                    @scroll="onScroll">
-                    <li v-for="(h, hoursIndex) in currentfilteredHours"
-                        :key="hoursIndex"
-                        :id="h"
-                        class="m-timepicker__hours-item">
-                        <m-calendar-button :selected="h == currentHour"
-                                           role="option"
-                                           @click="onSelectHour(h)"
-                                           @keyup="onSelectHourKeyup($event, h)">
-                            {{formatNumber(h)}}
-                        </m-calendar-button>
-                    </li>
-                </ul>
-                <ul class="m-timepicker__minutes"
-                    ref="minutes"
-                    @mousedown="onMousedown"
-                    @mouseup="onMouseup"
-                    @scroll="onScroll">
-                    <li v-for="(m, minutesIndex) in currentFilteredMinutes"
-                        :key="minutesIndex"
-                        :id="minutesIndex"
-                        class="m-timepicker__minutes-item">
-                        <m-calendar-button :selected="m == currentMinute"
-                                           @click="onSelectMinute(m)"
-                                           @keyup="onSelectMinuteKeyup($event, m)"
-                                           role="option">
-                            {{formatNumber(m)}}
-                        </m-calendar-button>
-                    </li>
-                </ul>
-            </div>
-            <div slot="footer"
-                 class="m-timepicker__footer">
-                <m-link mode="button"
-                        @click="onOk">{{i18nButton}}</m-link>
+            <div class="m-timepicker__box">
+                <header class="m-timepicker__header">
+                    <span class="m-timepicker__header__hours">{{ $i18n.translate('m-timepicker:hours') }}</span>:
+                    <span class="m-timepicker__header__minutes">{{ $i18n.translate('m-timepicker:minutes') }}</span>
+                </header>
+                <div class="m-timepicker__body">
+                    <ul class="m-timepicker__hours"
+                        ref="hours"
+                        role="listbox"
+                        @mousedown="onMousedown"
+                        @mouseup="onMouseup"
+                        @scroll="onScroll">
+                        <li v-for="(h, hoursIndex) in currentfilteredHours"
+                            :key="hoursIndex"
+                            :id="h"
+                            class="m-timepicker__hours-item">
+                            <m-calendar-button :selected="h == currentHour"
+                                               role="option"
+                                               @click="onSelectHour(h)"
+                                               @keyup="onSelectHourKeyup($event, h)">
+                                {{formatNumber(h)}}
+                            </m-calendar-button>
+                        </li>
+                    </ul>
+                    <ul class="m-timepicker__minutes"
+                        ref="minutes"
+                        @mousedown="onMousedown"
+                        @mouseup="onMouseup"
+                        @scroll="onScroll">
+                        <li v-for="(m, minutesIndex) in currentFilteredMinutes"
+                            :key="minutesIndex"
+                            :id="minutesIndex"
+                            class="m-timepicker__minutes-item">
+                            <m-calendar-button :selected="m == currentMinute"
+                                               @click="onSelectMinute(m)"
+                                               @keyup="onSelectMinuteKeyup($event, m)"
+                                               role="option">
+                                {{formatNumber(m)}}
+                            </m-calendar-button>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="m-timepicker__footer">
+                    <m-link class="m-timepicker__footer-link"
+                            mode="button"
+                            @click="onOk">{{i18nButton}}</m-link>
+                </footer>
             </div>
         </m-popup>
     </m-input-style>

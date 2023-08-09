@@ -156,6 +156,10 @@
             background: rgba(255, 255, 255, 0);
             -webkit-box-shadow: 0 0 0 1000px $m-color-white inset !important;
         }
+
+        &:disabled {
+            color: $m-color-disabled;
+        }
     }
 
     textarea {
