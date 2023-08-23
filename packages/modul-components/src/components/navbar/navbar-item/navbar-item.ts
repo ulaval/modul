@@ -201,7 +201,7 @@ export class MNavbarItem extends ModulVue {
                     // use selected class to reserve space for when selected
                     this.$el.classList.add(FAKE_SELECTED_CLASS);
                     // create a infinite loop if the parent has 'align-items: stretch'
-                    (this.$parent.$refs.list as HTMLElement).style.alignItems = 'flex-start';
+                    ((this.parentNavbar as unknown as BaseNavbar).$refs.list as HTMLElement).style.alignItems = 'flex-start';
 
                     do {
                         itemEl.style.width = itemEl.clientWidth + 1 + 'px'; // increment width
@@ -215,7 +215,7 @@ export class MNavbarItem extends ModulVue {
 
                     // reset styles once completed
                     this.$el.classList.remove(FAKE_SELECTED_CLASS);
-                    (this.$parent.$refs.list as HTMLElement).style.removeProperty('align-items');
+                    ((this.parentNavbar as unknown as BaseNavbar).$refs.list as HTMLElement).style.removeProperty('align-items');
                 }
             } else {
                 itemEl.style.whiteSpace = 'nowrap';
