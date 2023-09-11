@@ -1,6 +1,6 @@
 {
     "name": "@ulaval/modul-components",
-    "version": "1.3.1-beta.62",
+    "version": "1.3.1-beta.64",
     "description": "MODUL vueJS Component library",
     "author": "Martin Simard <martin.simard@dti.ulaval.ca>",
     "homepage": "https://ulaval.github.io/modul",
@@ -33,7 +33,7 @@
         "includeFailureMsg": true
     },
     "dependencies": {
-        "a11y-tab-trap": "^0.0.0-beta.3",
+        "a11y-tab-trap": "^0.0.1",
         "axios": "^0.21.1",
         "cleave.js": "^1.5.8",
         "clipboard": "^2.0.6",
@@ -41,7 +41,6 @@
         "enquire.js": "^2.1.6",
         "exif-js": "^2.3.0",
         "filesize": "^3.6.0",
-        "focus-trap": "^6.7.1",
         "froala-editor": "3.1.1",
         "jquery": "^3.3.1",
         "libphonenumber-js": "^1.9.12",
