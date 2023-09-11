@@ -19,7 +19,7 @@ export class MFocusTrap extends ModulVue {
 
         if (options.initialFocus instanceof HTMLElement) {
             this.focusTrap = createTabTrap(el, {
-                initialFocus: options.initialFocus,
+                initialFocus: options.initialFocus
             });
 
             return;
