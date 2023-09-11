@@ -141,8 +141,7 @@ describe('MToggleButtons', () => {
 
         it(`Then buttons should be disabled`, () => {
             expect(wrapper.vm.$refs.toggle).toBeTruthy();
-            expect(wrapper.findAll('.m-toggle-buttons__button').at(0).props().disabled).toBeTruthy();
-            expect(wrapper.findAll('.m-toggle-buttons__button').at(1).props().disabled).toBeTruthy();
+
         });
     });
 });

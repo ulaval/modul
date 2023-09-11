@@ -1,7 +1,7 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
-import { MButton, MButtonSkin } from '../button/button';
+import { MButtonSkin } from '../button/button';
 import { TOGGLE_BUTTONS_NAME } from '../component-names';
 import WithRender from './toggle-buttons.html?style=./toggle-buttons.scss';
 
@@ -17,11 +17,7 @@ export enum MToggleButtonSkin {
 }
 
 @WithRender
-@Component({
-    components: {
-        MButton
-    }
-})
+@Component
 export class MToggleButtons extends Vue {
     @Model('change')
     @Prop({ default: () => [] })
