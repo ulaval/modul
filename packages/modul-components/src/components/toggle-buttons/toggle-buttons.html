@@ -1,15 +1,21 @@
-<div class="m-toggle-buttons"
-     :class="skinButtons"
-     ref="toggle">
-    <button v-for="button in buttons"
-            :key="button.id"
-            class="m-toggle-buttons__button"
-            :class="{
-                'm--pressed': button.pressed ,
-              }"
-            :aria-pressed="button.pressed ? 'true' : 'false'"
-            :disabled="disabled"
-            @click="toggle(button)">
-        <slot :button="button">{{ button.title }}</slot>
-    </button>
+<div role="group"
+     class="m-toggle-buttons">
+    <ul class="m-toggle-buttons__list"
+        :class="skinButtons"
+        :aria-label="ariaLabel || null"
+        ref="toggle">
+        <li v-for="(button, index) in buttons"
+            :key="index"
+            :class="{'m--checked': button.pressed}">
+            <div class="m-toggle-buttons__button"
+                 :class="{'m--disabled': disabled}"
+                 :tabindex="disabled ? '-1' : '0'"
+                 role="checkbox"
+                 :aria-checked="button.pressed ? 'true' : 'false'"
+                 :aria-disabled="disabled"
+                 @click="toggle(button)">
+                <slot :button="button">{{ button.title }}</slot>
+            </div>
+        </li>
+    </ul>
 </div>

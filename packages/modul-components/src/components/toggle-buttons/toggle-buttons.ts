@@ -22,6 +22,9 @@ export class MToggleButtons extends Vue {
     @Prop({ default: () => [] })
     public readonly buttons: MToggleButton[];
 
+    @Prop({ default: '' })
+    public readonly ariaLabel?: string;
+
     @Prop({ default: true })
     public readonly multiple: boolean;
 
@@ -36,24 +39,27 @@ export class MToggleButtons extends Vue {
     })
     public readonly skin: MToggleButtonSkin;
 
-    public toggle(button: MToggleButton): void {
-        this.$emit('change', this.buttons.map(b => b.id !== button.id ?
-            this.multiple ? b : { ...b, pressed: false } :
-            { ...b, pressed: !b.pressed }
-        ));
-
-        this.onClick({ ...button, pressed: !button.pressed });
-    }
-
-    @Emit('click')
-    private onClick(_button: MToggleButton): void { }
-
-    get skinButtons(): { [key: string]: boolean } {
+    public get skinButtons(): { [key: string]: boolean } {
         return {
             'm--is-default': this.skin === MToggleButtonSkin.SQUARED,
             'm--is-rounded': this.skin === MToggleButtonSkin.ROUNDED
         };
     }
+
+    @Emit('click')
+    public emitClick(_button: MToggleButton): void { }
+
+    public toggle(button: MToggleButton): void {
+        if (this.disabled) return;
+
+        this.$emit('change', this.buttons.map(b => b.id !== button.id ?
+            this.multiple ? b : { ...b, pressed: false } :
+            { ...b, pressed: !b.pressed }
+        ));
+
+        this.emitClick({ ...button, pressed: !button.pressed });
+    }
+
 }
 
 const ToggleButtonsPlugin: PluginObject<any> = {

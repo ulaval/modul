@@ -4,6 +4,17 @@
 .m-toggle-buttons {
     display: inline-flex;
 
+    &__list {
+        display: inline-flex;
+        list-style-type: none;
+
+        &,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
     &__button {
         position: relative;
         z-index: 0;
@@ -29,71 +40,73 @@
         text-align: center;
         padding: 10px $m-space;
 
-        &:not(:disabled) {
+        &:not(.m--disabled) {
             cursor: pointer;
 
-            &:not(.m--pressed):hover {
+            &:not([aria-checked="true"]):hover {
                 background-color: $m-color-information;
             }
 
-            &.m--pressed:hover {
+            &[aria-checked="true"]:hover {
                 background-color: $m-color-interactive-darker;
             }
 
         }
 
-        &:disabled {
+        &.m--disabled {
             cursor: default;
             color: $m-color-disabled;
             background: $m-color-white;
             border-color: $m-color-disabled;
 
-            &.m--pressed {
+            &[aria-checked="true"] {
                 color: $m-color-white;
                 background: $m-color-disabled;
             }
         }
 
-        &.m--pressed {
+        &[aria-checked="true"] {
             color: $m-color-white;
             background: $m-color-interactive;
         }
     }
 
 
+}
 
-    &.m--is-default {
-        .m-toggle-buttons__button {
-            border-radius: 0;
-
-            &:not(:nth-last-child(1)) {
-                border-right: none;
-            }
-
-            &:nth-child(1) {
-                border-radius: $m-border-radius 0 0 $m-border-radius;
-            }
-
-            &:nth-last-child(1) {
-                border-radius: 0 $m-border-radius $m-border-radius 0;
-            }
-
-            &.m--pressed+.m--pressed {
-                border-left-color: $m-color-white;
-            }
-        }
+.m-toggle-buttons__list.m--is-default {
+    .m-toggle-buttons__button {
+        border-radius: 0;
     }
 
-    &.m--is-rounded {
-        flex-wrap: wrap;
-        gap: $m-space-xs 0;
+    >.m--checked+.m--checked .m-toggle-buttons__button {
+        border-left-color: $m-color-white;
+    }
 
-        .m-toggle-buttons__button {
-            border-radius: 25px; // magic number
+    > :not(:nth-last-child(1)) .m-toggle-buttons__button {
+        border-right: none;
+    }
 
-            &:not(:last-child) {
-                margin-right: $m-space-xs;
-            }
-        }
+    > :nth-child(1) .m-toggle-buttons__button {
+        border-radius: $m-border-radius 0 0 $m-border-radius;
+    }
+
+    > :nth-last-child(1) .m-toggle-buttons__button {
+        border-radius: 0 $m-border-radius $m-border-radius 0;
+    }
+
+}
+
+
+.m-toggle-buttons__list.m--is-rounded {
+    flex-wrap: wrap;
+    gap: $m-space-xs 0;
+
+    > :not(:last-child) {
+        margin-right: $m-space-xs;
+    }
+
+    .m-toggle-buttons__button {
+        border-radius: 25px; // magic number
     }
 }
