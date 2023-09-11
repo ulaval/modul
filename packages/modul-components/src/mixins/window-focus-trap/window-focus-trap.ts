@@ -10,7 +10,7 @@ export class MFocusTrap extends ModulVue {
 
     public setFocusTrap(
         el: HTMLElement,
-        options: Partial<A11yTabTrapOptions> = {}
+        options: A11yTabTrapOptions = {}
     ): void {
         if (this.focusTrapDisabled) {
             return;
