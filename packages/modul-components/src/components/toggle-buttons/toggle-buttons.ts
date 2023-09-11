@@ -50,7 +50,7 @@ export class MToggleButtons extends Vue {
     public emitClick(_button: MToggleButton): void { }
 
     public toggle(button: MToggleButton): void {
-        if (this.disabled) return;
+        if (this.disabled) { return; }
 
         this.$emit('change', this.buttons.map(b => b.id !== button.id ?
             this.multiple ? b : { ...b, pressed: false } :

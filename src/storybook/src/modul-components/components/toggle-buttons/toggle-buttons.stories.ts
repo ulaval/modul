@@ -18,7 +18,7 @@ const monthsSingleSelection: MToggleButton[] = [AUGUST, SEPTEMBER, OCTOBER, NOVE
 storiesOf(`${modulComponentsHierarchyRootSeparator}${TOGGLE_BUTTONS_NAME}`, module)
     .add('default', () => ({
         data: () => ({
-            buttons: monthsDefault,
+            buttons: monthsDefault
         }),
         template: '<m-toggle-buttons v-model="buttons" aria-label="Months" />'
     }))
