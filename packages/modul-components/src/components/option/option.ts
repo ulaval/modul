@@ -101,7 +101,7 @@ export class MOption extends BaseOption implements MOptionInterface {
 
         setTimeout(() => {
             if (this.refMenu) {
-                this.as<MFocusTrap>().setFocusTrap(this.refMenu, { returnFocusOnDeactivate: false });
+                this.as<MFocusTrap>().setFocusTrap(this.refMenu, { finalFocus: null });
             }
         }, 0);
     }
