@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
-import { MButtonSkin } from '../button/button';
 import { TOGGLE_BUTTONS_NAME } from '../component-names';
 import WithRender from './toggle-buttons.html?style=./toggle-buttons.scss';
 
@@ -47,11 +46,7 @@ export class MToggleButtons extends Vue {
     }
 
     @Emit('click')
-    private onClick(button: MToggleButton): void { }
-
-    public getSkin(button: MToggleButton): string {
-        return !button.pressed ? MButtonSkin.Secondary : MButtonSkin.Primary;
-    }
+    private onClick(_button: MToggleButton): void { }
 
     get skinButtons(): { [key: string]: boolean } {
         return {

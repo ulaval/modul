@@ -3,7 +3,6 @@ import { TOGGLE_BUTTONS_NAME } from '@ulaval/modul-components/dist/components/co
 import { MToggleButton, MToggleButtonSkin } from '@ulaval/modul-components/dist/components/toggle-buttons/toggle-buttons';
 import { modulComponentsHierarchyRootSeparator } from '../../../utils';
 
-
 const JUNE: MToggleButton = { id: 'june', title: 'June' };
 const JULY: MToggleButton = { id: 'july', title: 'July' };
 const AUGUST: MToggleButton = { id: 'august', title: 'August' };
