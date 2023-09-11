@@ -18,9 +18,9 @@ const monthsSingleSelection: MToggleButton[] = [AUGUST, SEPTEMBER, OCTOBER, NOVE
 storiesOf(`${modulComponentsHierarchyRootSeparator}${TOGGLE_BUTTONS_NAME}`, module)
     .add('default', () => ({
         data: () => ({
-            buttons: monthsDefault
+            buttons: monthsDefault,
         }),
-        template: '<m-toggle-buttons v-model="buttons" />'
+        template: '<m-toggle-buttons v-model="buttons" aria-label="Months" />'
     }))
     .add('skin rounded', () => ({
         props: {
@@ -31,26 +31,26 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOGGLE_BUTTONS_NAME}`, modu
         data: () => ({
             buttons: monthsDefault
         }),
-        template: '<m-toggle-buttons v-model="buttons" :skin="skin" />'
+        template: '<m-toggle-buttons v-model="buttons" aria-label="Months" :skin="skin" />'
     }))
     .add('multiple selection', () => ({
         data: () => ({
             buttons: monthsMultipleSelection
         }),
-        template: '<m-toggle-buttons v-model="buttons" />'
+        template: '<m-toggle-buttons v-model="buttons" aria-label="Months" />'
     }))
     .add('single selection', () => ({
         data: () => ({
             buttons: monthsSingleSelection,
             multiple: false
         }),
-        template: '<m-toggle-buttons v-model="buttons" :multiple="multiple" />'
+        template: '<m-toggle-buttons v-model="buttons" :multiple="multiple" aria-label="Months" />'
     }))
     .add('with slots', () => ({
         data: () => ({
             buttons: monthsSingleSelection
         }),
-        template: `<m-toggle-buttons v-model="buttons">
+        template: `<m-toggle-buttons v-model="buttons" aria-label="Months">
                         <template slot-scope="{button}">
                             <m-icon name="m-svg__close-clear"></m-icon> {{ button.title }} <m-icon name="m-svg__close-clear"></m-icon>
                         </template>
@@ -61,5 +61,5 @@ storiesOf(`${modulComponentsHierarchyRootSeparator}${TOGGLE_BUTTONS_NAME}`, modu
             buttons: monthsSingleSelection,
             disabled: true
         }),
-        template: '<m-toggle-buttons v-model="buttons" :disabled="disabled" />'
+        template: '<m-toggle-buttons v-model="buttons" aria-label="Months" :disabled="disabled" />'
     }));

@@ -1,8 +1,8 @@
 <div role="group"
-     class="m-toggle-buttons">
+     class="m-toggle-buttons"
+     :aria-label="ariaLabel || null">
     <ul class="m-toggle-buttons__list"
         :class="skinButtons"
-        :aria-label="ariaLabel || null"
         ref="toggle">
         <li v-for="(button, index) in buttons"
             :key="index"

@@ -22,7 +22,7 @@ export class MToggleButtons extends Vue {
     @Prop({ default: () => [] })
     public readonly buttons: MToggleButton[];
 
-    @Prop({ default: '' })
+    @Prop({ required: true })
     public readonly ariaLabel?: string;
 
     @Prop({ default: true })
