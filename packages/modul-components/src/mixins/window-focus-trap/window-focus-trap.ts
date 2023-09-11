@@ -1,5 +1,4 @@
 import { A11yTabTrap, A11yTabTrapOptions, createTabTrap } from 'a11y-tab-trap';
-import { Options } from 'focus-trap';
 import { Component, Prop } from 'vue-property-decorator';
 import { ModulVue } from '../../utils/vue/vue';
 @Component
@@ -11,7 +10,7 @@ export class MFocusTrap extends ModulVue {
 
     public setFocusTrap(
         el: HTMLElement,
-        options: Partial<Options> | A11yTabTrapOptions = {}
+        options: Partial<A11yTabTrapOptions> = {}
     ): void {
         if (this.focusTrapDisabled) {
             return;
@@ -37,10 +36,6 @@ export class MFocusTrap extends ModulVue {
 
     protected beforeDestroy(): void {
         if (!this.focusTrap || this.focusTrapDisabled) {
-            return;
-        }
-
-        if (!this.focusTrap) {
             return;
         }
 
