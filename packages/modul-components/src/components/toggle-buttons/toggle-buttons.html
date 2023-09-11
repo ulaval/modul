@@ -13,7 +13,8 @@
                  role="checkbox"
                  :aria-checked="button.pressed ? 'true' : 'false'"
                  :aria-disabled="disabled"
-                 @click="toggle(button)">
+                 @click="toggle(button)"
+                 @keydown.space="toggle(button)">
                 <slot :button="button">{{ button.title }}</slot>
             </div>
         </li>
