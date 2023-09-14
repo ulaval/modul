@@ -1,7 +1,6 @@
 import Vue, { PluginObject } from 'vue';
 import Component from 'vue-class-component';
 import { Emit, Model, Prop } from 'vue-property-decorator';
-import { MButton, MButtonSkin } from '../button/button';
 import { TOGGLE_BUTTONS_NAME } from '../component-names';
 import WithRender from './toggle-buttons.html?style=./toggle-buttons.scss';
 
@@ -17,15 +16,14 @@ export enum MToggleButtonSkin {
 }
 
 @WithRender
-@Component({
-    components: {
-        MButton
-    }
-})
+@Component
 export class MToggleButtons extends Vue {
     @Model('change')
     @Prop({ default: () => [] })
     public readonly buttons: MToggleButton[];
+
+    @Prop({ required: true })
+    public readonly ariaLabel?: string;
 
     @Prop({ default: true })
     public readonly multiple: boolean;
@@ -41,28 +39,27 @@ export class MToggleButtons extends Vue {
     })
     public readonly skin: MToggleButtonSkin;
 
-    public toggle(button: MToggleButton): void {
-        this.$emit('change', this.buttons.map(b => b.id !== button.id ?
-            this.multiple ? b : { ...b, pressed: false } :
-            { ...b, pressed: !b.pressed }
-        ));
-
-        this.onClick({ ...button, pressed: !button.pressed });
-    }
-
-    @Emit('click')
-    private onClick(button: MToggleButton): void { }
-
-    public getSkin(button: MToggleButton): string {
-        return !button.pressed ? MButtonSkin.Secondary : MButtonSkin.Primary;
-    }
-
-    get skinButtons(): { [key: string]: boolean } {
+    public get skinButtons(): { [key: string]: boolean } {
         return {
             'm--is-default': this.skin === MToggleButtonSkin.SQUARED,
             'm--is-rounded': this.skin === MToggleButtonSkin.ROUNDED
         };
     }
+
+    @Emit('click')
+    public emitClick(_button: MToggleButton): void { }
+
+    public toggle(button: MToggleButton): void {
+        if (this.disabled) { return; }
+
+        this.$emit('change', this.buttons.map(b => b.id !== button.id ?
+            this.multiple ? b : { ...b, pressed: false } :
+            { ...b, pressed: !b.pressed }
+        ));
+
+        this.emitClick({ ...button, pressed: !button.pressed });
+    }
+
 }
 
 const ToggleButtonsPlugin: PluginObject<any> = {

@@ -2,30 +2,109 @@
 @import '../button/button.scss';
 
 .m-toggle-buttons {
-    display: inline-block;
+    display: inline-flex;
 
-    &.m--is-default {
-        .m-button {
-            border-radius: 0;
+    &__list {
+        display: inline-flex;
+        list-style-type: none;
 
-            &:not(:nth-last-child(1)) {
-                border-right: none;
-            }
-
-            &:nth-child(1) {
-                border-radius: $m-border-radius 0 0 $m-border-radius;
-            }
-
-            &:nth-last-child(1) {
-                border-radius: 0 $m-border-radius $m-border-radius 0;
-            }
+        &,
+        li {
+            margin: 0;
+            padding: 0;
         }
     }
 
-    &.m--is-rounded {
-        .m-button {
-            border-radius: 25px; // magic number
-            margin: 0 $m-space-2xs $m-space-xs 0;
+    &__button {
+        position: relative;
+        transition-property: background-color, border-color, color, outline;
+        transition-duration: $m-transition-duration;
+        transition-timing-function: ease;
+        display: flex;
+        align-items: center;
+        border: 1px solid $m-color-interactive;
+        padding: 10px $m-space;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: $m-font-weight-semi-bold;
+        text-align: center;
+        text-decoration: none;
+        appearance: none;
+        color: $m-color-interactive;
+        outline-color: $m-color-interactive-darker;
+        outline-offset: 2px;
+        outline-width: 1px;
+        background-color: $m-color-white;
+        user-select: none;
+        overflow: hidden;
+
+        &:not(.m--disabled) {
+            cursor: pointer;
+
+            &:not([aria-checked="true"]):hover {
+                background-color: $m-color-information;
+            }
+
+            &[aria-checked="true"]:hover {
+                background-color: $m-color-interactive-darker;
+            }
+
         }
+
+        &.m--disabled {
+            cursor: default;
+            color: $m-color-disabled;
+            background: $m-color-white;
+            border-color: $m-color-disabled;
+
+            &[aria-checked="true"] {
+                color: $m-color-white;
+                background: $m-color-disabled;
+            }
+        }
+
+        &[aria-checked="true"] {
+            color: $m-color-white;
+            background: $m-color-interactive;
+        }
+    }
+
+
+}
+
+.m-toggle-buttons__list.m--is-default {
+    .m-toggle-buttons__button {
+        border-radius: 0;
+    }
+
+    >.m--checked+.m--checked .m-toggle-buttons__button {
+        border-left-color: $m-color-white;
+    }
+
+    > :not(:nth-last-child(1)) .m-toggle-buttons__button {
+        border-right: none;
+    }
+
+    > :nth-child(1) .m-toggle-buttons__button {
+        border-radius: $m-border-radius 0 0 $m-border-radius;
+    }
+
+    > :nth-last-child(1) .m-toggle-buttons__button {
+        border-radius: 0 $m-border-radius $m-border-radius 0;
+    }
+
+}
+
+
+.m-toggle-buttons__list.m--is-rounded {
+    flex-wrap: wrap;
+    gap: $m-space-xs 0;
+
+    > :not(:last-child) {
+        margin-right: $m-space-xs;
+    }
+
+    .m-toggle-buttons__button {
+        border-radius: 25px; // magic number
     }
 }
